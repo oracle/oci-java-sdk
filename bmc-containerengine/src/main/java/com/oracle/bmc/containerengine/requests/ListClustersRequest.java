@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.containerengine.requests;
 import com.oracle.bmc.containerengine.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListClustersExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListClustersExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListClustersRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
@@ -20,11 +20,19 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A cluster lifecycle state to filter on. Can have multiple parameters of this name. */
+    /**
+     * A cluster lifecycle state to filter on. Can have multiple parameters of this name. For more
+     * information, see [Monitoring
+     * Clusters](https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+     */
     private java.util.List<com.oracle.bmc.containerengine.model.ClusterLifecycleState>
             lifecycleState;
 
-    /** A cluster lifecycle state to filter on. Can have multiple parameters of this name. */
+    /**
+     * A cluster lifecycle state to filter on. Can have multiple parameters of this name. For more
+     * information, see [Monitoring
+     * Clusters](https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+     */
     public java.util.List<com.oracle.bmc.containerengine.model.ClusterLifecycleState>
             getLifecycleState() {
         return lifecycleState;
@@ -40,7 +48,7 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. 1 is the minimum, 1000 is the maximum. For important details about how
      * pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
@@ -48,7 +56,7 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. 1 is the minimum, 1000 is the maximum. For important details about how
      * pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -56,14 +64,14 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -151,12 +159,18 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A cluster lifecycle state to filter on. Can have multiple parameters of this name. */
+        /**
+         * A cluster lifecycle state to filter on. Can have multiple parameters of this name. For
+         * more information, see [Monitoring
+         * Clusters](https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+         */
         private java.util.List<com.oracle.bmc.containerengine.model.ClusterLifecycleState>
                 lifecycleState = null;
 
         /**
-         * A cluster lifecycle state to filter on. Can have multiple parameters of this name.
+         * A cluster lifecycle state to filter on. Can have multiple parameters of this name. For
+         * more information, see [Monitoring
+         * Clusters](https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -170,7 +184,8 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Singular setter. A cluster lifecycle state to filter on. Can have multiple parameters of
-         * this name.
+         * this name. For more information, see [Monitoring
+         * Clusters](https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -197,7 +212,7 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. 1 is the minimum, 1000 is the maximum. For important details about
          * how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
@@ -205,7 +220,7 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. 1 is the minimum, 1000 is the maximum. For important details about
          * how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -218,14 +233,14 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance

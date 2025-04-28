@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -61,6 +61,9 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateConnectionFromBIP.class,
             name = "BIP_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateConnectionFromOAuth2.class,
+            name = "OAUTH2_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateConnectionFromAdwc.class,
             name = "ORACLE_ADWC_CONNECTION"),
@@ -325,6 +328,7 @@ public class CreateConnectionDetails
         MysqlHeatwaveConnection("MYSQL_HEATWAVE_CONNECTION"),
         RestNoAuthConnection("REST_NO_AUTH_CONNECTION"),
         RestBasicAuthConnection("REST_BASIC_AUTH_CONNECTION"),
+        Oauth2Connection("OAUTH2_CONNECTION"),
         ;
 
         private final String value;

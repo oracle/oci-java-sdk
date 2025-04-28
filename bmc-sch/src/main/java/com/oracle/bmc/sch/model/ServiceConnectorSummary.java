@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch.model;
 
 /**
- * A summary of properties for the specified service connector. <br>
+ * A summary of properties for the specified connector. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -65,15 +65,15 @@ public final class ServiceConnectorSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service connector.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * connector.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service connector.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * connector.
          *
          * @param id the value to set
          * @return this builder
@@ -118,15 +118,15 @@ public final class ServiceConnectorSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the service connector.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the connector.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the service connector.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the connector.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -137,14 +137,14 @@ public final class ServiceConnectorSummary
             return this;
         }
         /**
-         * The date and time when the service connector was created. Format is defined by
+         * The date and time when the connector was created. Format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time when the service connector was created. Format is defined by
+         * The date and time when the connector was created. Format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
@@ -156,14 +156,14 @@ public final class ServiceConnectorSummary
             return this;
         }
         /**
-         * The date and time when the service connector was updated. Format is defined by
+         * The date and time when the connector was updated. Format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time when the service connector was updated. Format is defined by
+         * The date and time when the connector was updated. Format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
@@ -174,12 +174,12 @@ public final class ServiceConnectorSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the service connector. */
+        /** The current state of the connector. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the service connector.
+         * The current state of the connector.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -251,8 +251,8 @@ public final class ServiceConnectorSummary
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {orcl-cloud: {free-tier-retain: true}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
@@ -261,8 +261,8 @@ public final class ServiceConnectorSummary
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          * @param systemTags the value to set
          * @return this builder
@@ -345,15 +345,15 @@ public final class ServiceConnectorSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service connector.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * connector.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service connector.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * connector.
      *
      * @return the value
      */
@@ -392,15 +392,15 @@ public final class ServiceConnectorSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the service connector.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the connector.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the service connector.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the connector.
      *
      * @return the value
      */
@@ -409,14 +409,14 @@ public final class ServiceConnectorSummary
     }
 
     /**
-     * The date and time when the service connector was created. Format is defined by
+     * The date and time when the connector was created. Format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time when the service connector was created. Format is defined by
+     * The date and time when the connector was created. Format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
      *
      * @return the value
@@ -426,14 +426,14 @@ public final class ServiceConnectorSummary
     }
 
     /**
-     * The date and time when the service connector was updated. Format is defined by
+     * The date and time when the connector was updated. Format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time when the service connector was updated. Format is defined by
+     * The date and time when the connector was updated. Format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
      *
      * @return the value
@@ -442,12 +442,12 @@ public final class ServiceConnectorSummary
         return timeUpdated;
     }
 
-    /** The current state of the service connector. */
+    /** The current state of the connector. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the service connector.
+     * The current state of the connector.
      *
      * @return the value
      */
@@ -510,7 +510,7 @@ public final class ServiceConnectorSummary
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -520,7 +520,7 @@ public final class ServiceConnectorSummary
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value

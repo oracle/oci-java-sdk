@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.cloudguard.requests;
 import com.oracle.bmc.cloudguard.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateResponderRecipeExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateResponderRecipeExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateResponderRecipeRequest.
  */
@@ -16,18 +16,18 @@ public class UpdateResponderRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateResponderRecipeDetails> {
 
-    /** OCID of ResponderRecipe */
+    /** OCID of the responder recipe. */
     private String responderRecipeId;
 
-    /** OCID of ResponderRecipe */
+    /** OCID of the responder recipe. */
     public String getResponderRecipeId() {
         return responderRecipeId;
     }
-    /** The details to be updated. */
+    /** The details to be updated */
     private com.oracle.bmc.cloudguard.model.UpdateResponderRecipeDetails
             updateResponderRecipeDetails;
 
-    /** The details to be updated. */
+    /** The details to be updated */
     public com.oracle.bmc.cloudguard.model.UpdateResponderRecipeDetails
             getUpdateResponderRecipeDetails() {
         return updateResponderRecipeDetails;
@@ -75,11 +75,11 @@ public class UpdateResponderRecipeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of ResponderRecipe */
+        /** OCID of the responder recipe. */
         private String responderRecipeId = null;
 
         /**
-         * OCID of ResponderRecipe
+         * OCID of the responder recipe.
          *
          * @param responderRecipeId the value to set
          * @return this builder instance
@@ -89,12 +89,12 @@ public class UpdateResponderRecipeRequest
             return this;
         }
 
-        /** The details to be updated. */
+        /** The details to be updated */
         private com.oracle.bmc.cloudguard.model.UpdateResponderRecipeDetails
                 updateResponderRecipeDetails = null;
 
         /**
-         * The details to be updated.
+         * The details to be updated
          *
          * @param updateResponderRecipeDetails the value to set
          * @return this builder instance

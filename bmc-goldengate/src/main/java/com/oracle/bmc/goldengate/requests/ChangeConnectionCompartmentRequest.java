@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.goldengate.requests;
 import com.oracle.bmc.goldengate.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ChangeConnectionCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ChangeConnectionCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeConnectionCompartmentRequest.
  */
@@ -17,13 +17,13 @@ public class ChangeConnectionCompartmentRequest
                 com.oracle.bmc.goldengate.model.ChangeConnectionCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * Connection.
      */
     private String connectionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * Connection.
      */
     public String getConnectionId() {
@@ -62,6 +62,13 @@ public class ChangeConnectionCompartmentRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -82,13 +89,13 @@ public class ChangeConnectionCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Connection.
          */
         private String connectionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Connection.
          *
          * @param connectionId the value to set
@@ -152,6 +159,20 @@ public class ChangeConnectionCompartmentRequest
             return this;
         }
 
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -186,6 +207,7 @@ public class ChangeConnectionCompartmentRequest
             changeConnectionCompartmentDetails(o.getChangeConnectionCompartmentDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -237,9 +259,10 @@ public class ChangeConnectionCompartmentRequest
             request.changeConnectionCompartmentDetails = changeConnectionCompartmentDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isLockOverride = isLockOverride;
             return request;
             // new ChangeConnectionCompartmentRequest(connectionId,
-            // changeConnectionCompartmentDetails, ifMatch, opcRequestId);
+            // changeConnectionCompartmentDetails, ifMatch, opcRequestId, isLockOverride);
         }
     }
 
@@ -253,7 +276,8 @@ public class ChangeConnectionCompartmentRequest
                 .connectionId(connectionId)
                 .changeConnectionCompartmentDetails(changeConnectionCompartmentDetails)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -275,6 +299,7 @@ public class ChangeConnectionCompartmentRequest
                 .append(String.valueOf(this.changeConnectionCompartmentDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -295,7 +320,8 @@ public class ChangeConnectionCompartmentRequest
                         this.changeConnectionCompartmentDetails,
                         other.changeConnectionCompartmentDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -310,6 +336,9 @@ public class ChangeConnectionCompartmentRequest
                                 : this.changeConnectionCompartmentDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

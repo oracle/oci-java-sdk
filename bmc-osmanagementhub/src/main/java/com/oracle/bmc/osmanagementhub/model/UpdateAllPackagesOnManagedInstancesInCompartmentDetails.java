@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The details about the package types to be updated. <br>
+ * Provides the information used to update all packages of a specified type on managed instances
+ * within the specified compartment. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -36,12 +37,16 @@ public final class UpdateAllPackagesOnManagedInstancesInCompartmentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The compartment being targeted by this operation. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The compartment being targeted by this operation.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -51,12 +56,12 @@ public final class UpdateAllPackagesOnManagedInstancesInCompartmentDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The type of updates to be applied. */
+        /** The types of updates to be applied. */
         @com.fasterxml.jackson.annotation.JsonProperty("updateTypes")
         private java.util.List<UpdateTypes> updateTypes;
 
         /**
-         * The type of updates to be applied.
+         * The types of updates to be applied.
          *
          * @param updateTypes the value to set
          * @return this builder
@@ -113,12 +118,16 @@ public final class UpdateAllPackagesOnManagedInstancesInCompartmentDetails
         return new Builder().copy(this);
     }
 
-    /** The compartment being targeted by this operation. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment being targeted by this operation.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      *
      * @return the value
      */
@@ -126,12 +135,12 @@ public final class UpdateAllPackagesOnManagedInstancesInCompartmentDetails
         return compartmentId;
     }
 
-    /** The type of updates to be applied. */
+    /** The types of updates to be applied. */
     @com.fasterxml.jackson.annotation.JsonProperty("updateTypes")
     private final java.util.List<UpdateTypes> updateTypes;
 
     /**
-     * The type of updates to be applied.
+     * The types of updates to be applied.
      *
      * @return the value
      */

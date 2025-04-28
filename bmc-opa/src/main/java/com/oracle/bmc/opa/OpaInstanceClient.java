@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opa;
@@ -141,9 +141,9 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -172,6 +172,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -179,7 +180,6 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeOpaInstanceCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -201,12 +201,12 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateOpaInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateOpaInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -229,11 +229,11 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteOpaInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteOpaInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -255,13 +255,13 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getOpaInstanceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opa.model.OpaInstance.class,
                         GetOpaInstanceResponse.Builder::opaInstance)
                 .handleResponseHeaderString("etag", GetOpaInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOpaInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -283,6 +283,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opa.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -291,7 +292,6 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -318,6 +318,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opa.model.OpaInstanceCollection.class,
                         ListOpaInstancesResponse.Builder::opaInstanceCollection)
@@ -325,7 +326,6 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListOpaInstancesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOpaInstancesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -353,6 +353,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opa.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -360,7 +361,6 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -387,6 +387,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opa.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -394,7 +395,6 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -421,6 +421,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opa.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -428,7 +429,64 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public StartOpaInstanceResponse startOpaInstance(StartOpaInstanceRequest request) {
+
+        Validate.notBlank(request.getOpaInstanceId(), "opaInstanceId must not be blank");
+
+        return clientCall(request, StartOpaInstanceResponse::builder)
+                .logger(LOG, "startOpaInstance")
+                .serviceDetails(
+                        "OpaInstance",
+                        "StartOpaInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/StartOpaInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartOpaInstanceRequest::builder)
+                .basePath("/20210621")
+                .appendPathParam("opaInstances")
+                .appendPathParam(request.getOpaInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("start")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StartOpaInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StartOpaInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public StopOpaInstanceResponse stopOpaInstance(StopOpaInstanceRequest request) {
+
+        Validate.notBlank(request.getOpaInstanceId(), "opaInstanceId must not be blank");
+
+        return clientCall(request, StopOpaInstanceResponse::builder)
+                .logger(LOG, "stopOpaInstance")
+                .serviceDetails(
+                        "OpaInstance",
+                        "StopOpaInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/StopOpaInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopOpaInstanceRequest::builder)
+                .basePath("/20210621")
+                .appendPathParam("opaInstances")
+                .appendPathParam(request.getOpaInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StopOpaInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StopOpaInstanceResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -453,12 +511,12 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateOpaInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateOpaInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.datascience.requests;
 import com.oracle.bmc.datascience.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelVersionSetsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelVersionSetsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListModelVersionSetsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
@@ -16,45 +16,93 @@ public class ListModelVersionSetsRequest
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     private String compartmentId;
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
+     * Specifies the type of model version sets to list. By default, user model version sets are
+     * listed.
+     */
+    private Category category;
+
+    /**
+     * Specifies the type of model version sets to list. By default, user model version sets are
+     * listed.
+     */
+    public enum Category implements com.oracle.bmc.http.internal.BmcEnum {
+        User("USER"),
+        Service("SERVICE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Category> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Category v : Category.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Category(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Category create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Category: " + key);
+        }
+    };
+
+    /**
+     * Specifies the type of model version sets to list. By default, user model version sets are
+     * listed.
+     */
+    public Category getCategory() {
+        return category;
+    }
+    /**
      * <b>Filter</b> results by
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be
-     * an OCID of the correct type for the resource type.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+     * OCID of the correct type for the resource type.
      */
     private String id;
 
     /**
      * <b>Filter</b> results by
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be
-     * an OCID of the correct type for the resource type.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+     * OCID of the correct type for the resource type.
      */
     public String getId() {
         return id;
     }
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * project.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
     private String projectId;
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * project.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
     public String getProjectId() {
         return projectId;
@@ -81,15 +129,15 @@ public class ListModelVersionSetsRequest
     }
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * user who created the resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who
+     * created the resource.
      */
     private String createdBy;
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * user who created the resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who
+     * created the resource.
      */
     public String getCreatedBy() {
         return createdBy;
@@ -97,7 +145,7 @@ public class ListModelVersionSetsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -106,7 +154,7 @@ public class ListModelVersionSetsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -118,7 +166,7 @@ public class ListModelVersionSetsRequest
      * "List" call.
      *
      * <p>See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      */
     private String page;
 
@@ -127,7 +175,7 @@ public class ListModelVersionSetsRequest
      * "List" call.
      *
      * <p>See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -246,15 +294,15 @@ public class ListModelVersionSetsRequest
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the compartment.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the compartment.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -265,16 +313,34 @@ public class ListModelVersionSetsRequest
         }
 
         /**
+         * Specifies the type of model version sets to list. By default, user model version sets are
+         * listed.
+         */
+        private Category category = null;
+
+        /**
+         * Specifies the type of model version sets to list. By default, user model version sets are
+         * listed.
+         *
+         * @param category the value to set
+         * @return this builder instance
+         */
+        public Builder category(Category category) {
+            this.category = category;
+            return this;
+        }
+
+        /**
          * <b>Filter</b> results by
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must
-         * be an OCID of the correct type for the resource type.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resource type.
          */
         private String id = null;
 
         /**
          * <b>Filter</b> results by
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must
-         * be an OCID of the correct type for the resource type.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resource type.
          *
          * @param id the value to set
          * @return this builder instance
@@ -286,15 +352,15 @@ public class ListModelVersionSetsRequest
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the project.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project.
          */
         private String projectId = null;
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the project.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project.
          *
          * @param projectId the value to set
          * @return this builder instance
@@ -340,15 +406,15 @@ public class ListModelVersionSetsRequest
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the user who created the resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+         * who created the resource.
          */
         private String createdBy = null;
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the user who created the resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+         * who created the resource.
          *
          * @param createdBy the value to set
          * @return this builder instance
@@ -361,7 +427,7 @@ public class ListModelVersionSetsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -370,7 +436,7 @@ public class ListModelVersionSetsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -387,7 +453,7 @@ public class ListModelVersionSetsRequest
          * previous "List" call.
          *
          * <p>See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
@@ -396,7 +462,7 @@ public class ListModelVersionSetsRequest
          * previous "List" call.
          *
          * <p>See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -489,6 +555,7 @@ public class ListModelVersionSetsRequest
          */
         public Builder copy(ListModelVersionSetsRequest o) {
             compartmentId(o.getCompartmentId());
+            category(o.getCategory());
             id(o.getId());
             projectId(o.getProjectId());
             name(o.getName());
@@ -534,6 +601,7 @@ public class ListModelVersionSetsRequest
         public ListModelVersionSetsRequest buildWithoutInvocationCallback() {
             ListModelVersionSetsRequest request = new ListModelVersionSetsRequest();
             request.compartmentId = compartmentId;
+            request.category = category;
             request.id = id;
             request.projectId = projectId;
             request.name = name;
@@ -545,8 +613,8 @@ public class ListModelVersionSetsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListModelVersionSetsRequest(compartmentId, id, projectId, name, lifecycleState,
-            // createdBy, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListModelVersionSetsRequest(compartmentId, category, id, projectId, name,
+            // lifecycleState, createdBy, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -558,6 +626,7 @@ public class ListModelVersionSetsRequest
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .category(category)
                 .id(id)
                 .projectId(projectId)
                 .name(name)
@@ -585,6 +654,7 @@ public class ListModelVersionSetsRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",category=").append(String.valueOf(this.category));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",projectId=").append(String.valueOf(this.projectId));
         sb.append(",name=").append(String.valueOf(this.name));
@@ -611,6 +681,7 @@ public class ListModelVersionSetsRequest
         ListModelVersionSetsRequest other = (ListModelVersionSetsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.projectId, other.projectId)
                 && java.util.Objects.equals(this.name, other.name)
@@ -630,6 +701,7 @@ public class ListModelVersionSetsRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());

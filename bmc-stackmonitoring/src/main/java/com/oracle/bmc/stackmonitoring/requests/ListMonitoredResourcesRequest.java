@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.stackmonitoring.requests;
 import com.oracle.bmc.stackmonitoring.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListMonitoredResourcesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListMonitoredResourcesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListMonitoredResourcesRequest.
  */
@@ -36,6 +36,13 @@ public class ListMonitoredResourcesRequest
     public String getWorkRequestId() {
         return workRequestId;
     }
+    /** A filter to return only resources with matching lifecycleState. */
+    private com.oracle.bmc.stackmonitoring.model.ResourceLifecycleState status;
+
+    /** A filter to return only resources with matching lifecycleState. */
+    public com.oracle.bmc.stackmonitoring.model.ResourceLifecycleState getStatus() {
+        return status;
+    }
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for resources is ascending.
@@ -59,14 +66,14 @@ public class ListMonitoredResourcesRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -74,14 +81,14 @@ public class ListMonitoredResourcesRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -150,6 +157,20 @@ public class ListMonitoredResourcesRequest
             return this;
         }
 
+        /** A filter to return only resources with matching lifecycleState. */
+        private com.oracle.bmc.stackmonitoring.model.ResourceLifecycleState status = null;
+
+        /**
+         * A filter to return only resources with matching lifecycleState.
+         *
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(com.oracle.bmc.stackmonitoring.model.ResourceLifecycleState status) {
+            this.status = status;
+            return this;
+        }
+
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
          * is descending. Default order for resources is ascending.
@@ -185,14 +206,14 @@ public class ListMonitoredResourcesRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -205,14 +226,14 @@ public class ListMonitoredResourcesRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -273,6 +294,7 @@ public class ListMonitoredResourcesRequest
             compartmentId(o.getCompartmentId());
             name(o.getName());
             workRequestId(o.getWorkRequestId());
+            status(o.getStatus());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             limit(o.getLimit());
@@ -315,13 +337,14 @@ public class ListMonitoredResourcesRequest
             request.compartmentId = compartmentId;
             request.name = name;
             request.workRequestId = workRequestId;
+            request.status = status;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListMonitoredResourcesRequest(compartmentId, name, workRequestId, sortBy,
+            // new ListMonitoredResourcesRequest(compartmentId, name, workRequestId, status, sortBy,
             // sortOrder, limit, page, opcRequestId);
         }
     }
@@ -336,6 +359,7 @@ public class ListMonitoredResourcesRequest
                 .compartmentId(compartmentId)
                 .name(name)
                 .workRequestId(workRequestId)
+                .status(status)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .limit(limit)
@@ -360,6 +384,7 @@ public class ListMonitoredResourcesRequest
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",workRequestId=").append(String.valueOf(this.workRequestId));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -383,6 +408,7 @@ public class ListMonitoredResourcesRequest
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.workRequestId, other.workRequestId)
+                && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -401,6 +427,7 @@ public class ListMonitoredResourcesRequest
         result =
                 (result * PRIME)
                         + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

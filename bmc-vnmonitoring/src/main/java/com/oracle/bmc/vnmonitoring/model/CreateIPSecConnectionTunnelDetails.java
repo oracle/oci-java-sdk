@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -262,16 +262,16 @@ public final class CreateIPSecConnectionTunnelDetails
         }
         /**
          * The list of virtual circuit
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over
-         * which your network can reach this tunnel.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which
+         * your network can reach this tunnel.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("associatedVirtualCircuits")
         private java.util.List<String> associatedVirtualCircuits;
 
         /**
          * The list of virtual circuit
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over
-         * which your network can reach this tunnel.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which
+         * your network can reach this tunnel.
          *
          * @param associatedVirtualCircuits the value to set
          * @return this builder
@@ -282,8 +282,8 @@ public final class CreateIPSecConnectionTunnelDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DRG route table assigned to this attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG route table assigned to this attachment.
          *
          * <p>The DRG route table manages traffic inside the DRG.
          */
@@ -291,8 +291,8 @@ public final class CreateIPSecConnectionTunnelDetails
         private String drgRouteTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DRG route table assigned to this attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG route table assigned to this attachment.
          *
          * <p>The DRG route table manages traffic inside the DRG.
          *
@@ -714,16 +714,16 @@ public final class CreateIPSecConnectionTunnelDetails
 
     /**
      * The list of virtual circuit
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over
-     * which your network can reach this tunnel.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which
+     * your network can reach this tunnel.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("associatedVirtualCircuits")
     private final java.util.List<String> associatedVirtualCircuits;
 
     /**
      * The list of virtual circuit
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over
-     * which your network can reach this tunnel.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which
+     * your network can reach this tunnel.
      *
      * @return the value
      */
@@ -732,8 +732,8 @@ public final class CreateIPSecConnectionTunnelDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DRG route table assigned to this attachment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * route table assigned to this attachment.
      *
      * <p>The DRG route table manages traffic inside the DRG.
      */
@@ -741,8 +741,8 @@ public final class CreateIPSecConnectionTunnelDetails
     private final String drgRouteTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DRG route table assigned to this attachment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * route table assigned to this attachment.
      *
      * <p>The DRG route table manages traffic inside the DRG.
      *

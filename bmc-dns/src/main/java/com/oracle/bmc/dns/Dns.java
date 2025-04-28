@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns;
@@ -10,7 +10,7 @@ import com.oracle.bmc.dns.responses.*;
 /**
  * API for the DNS service. Use this API to manage DNS zones, records, and other DNS resources. For
  * more information, see [Overview of the DNS
- * Service](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnszonemanagement.htm).
+ * Service](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnszonemanagement.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -81,7 +81,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeResolverCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeResolverCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeResolverCompartment API.
      */
@@ -98,7 +98,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeSteeringPolicyCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeSteeringPolicyCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeSteeringPolicyCompartment API.
      */
@@ -115,7 +115,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeTsigKeyCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeTsigKeyCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeTsigKeyCompartment API.
      */
@@ -135,7 +135,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeViewCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeViewCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeViewCompartment API.
      */
@@ -158,7 +158,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeZoneCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeZoneCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeZoneCompartment API.
      */
@@ -174,7 +174,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateResolverEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateResolverEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateResolverEndpoint API.
      */
@@ -183,7 +183,7 @@ public interface Dns extends AutoCloseable {
     /**
      * Creates a new steering policy in the specified compartment. For more information on creating
      * policies with templates, see [Traffic Management API
-     * Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+     * Guide](https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -192,7 +192,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateSteeringPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateSteeringPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateSteeringPolicy API.
      */
@@ -213,7 +213,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateSteeringPolicyAttachmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateSteeringPolicyAttachmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateSteeringPolicyAttachment API.
      */
@@ -231,7 +231,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateTsigKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateTsigKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTsigKey API.
      */
     CreateTsigKeyResponse createTsigKey(CreateTsigKeyRequest request);
@@ -246,7 +246,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateViewExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateViewExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateView API.
      */
     CreateViewResponse createView(CreateViewRequest request);
@@ -265,7 +265,7 @@ public interface Dns extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateZoneExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateZoneExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateZone API.
      */
     CreateZoneResponse createZone(CreateZoneRequest request);
@@ -311,7 +311,7 @@ public interface Dns extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateZoneFromZoneFileExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateZoneFromZoneFileExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateZoneFromZoneFile API.
      */
@@ -330,7 +330,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteDomainRecordsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteDomainRecordsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDomainRecords
      *     API.
      */
@@ -349,7 +349,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteRRSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteRRSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRRSet API.
      */
     DeleteRRSetResponse deleteRRSet(DeleteRRSetRequest request);
@@ -363,12 +363,12 @@ public interface Dns extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteResolverEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteResolverEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteResolverEndpoint API.
      */
@@ -383,12 +383,12 @@ public interface Dns extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteSteeringPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteSteeringPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteSteeringPolicy API.
      */
@@ -400,12 +400,12 @@ public interface Dns extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteSteeringPolicyAttachmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteSteeringPolicyAttachmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteSteeringPolicyAttachment API.
      */
@@ -417,12 +417,12 @@ public interface Dns extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteTsigKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteTsigKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTsigKey API.
      */
     DeleteTsigKeyResponse deleteTsigKey(DeleteTsigKeyRequest request);
@@ -436,12 +436,12 @@ public interface Dns extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteViewExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteViewExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteView API.
      */
     DeleteViewResponse deleteView(DeleteViewRequest request);
@@ -460,7 +460,7 @@ public interface Dns extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteZoneExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteZoneExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteZone API.
      */
     DeleteZoneResponse deleteZone(DeleteZoneRequest request);
@@ -480,7 +480,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetDomainRecordsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetDomainRecordsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDomainRecords
      *     API.
      */
@@ -500,7 +500,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetRRSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetRRSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRRSet API.
      */
     GetRRSetResponse getRRSet(GetRRSetRequest request);
@@ -518,7 +518,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetResolverExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetResolverExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResolver API.
      */
     GetResolverResponse getResolver(GetResolverRequest request);
@@ -536,7 +536,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetResolverEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetResolverEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResolverEndpoint
      *     API.
      */
@@ -552,7 +552,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetSteeringPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetSteeringPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSteeringPolicy
      *     API.
      */
@@ -568,7 +568,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetSteeringPolicyAttachmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetSteeringPolicyAttachmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetSteeringPolicyAttachment API.
      */
@@ -585,7 +585,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetTsigKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetTsigKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTsigKey API.
      */
     GetTsigKeyResponse getTsigKey(GetTsigKeyRequest request);
@@ -603,7 +603,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetViewExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetViewExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetView API.
      */
     GetViewResponse getView(GetViewRequest request);
@@ -622,7 +622,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetZoneExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetZoneExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetZone API.
      */
     GetZoneResponse getZone(GetZoneRequest request);
@@ -637,7 +637,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetZoneContentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetZoneContentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetZoneContent API.
      */
     GetZoneContentResponse getZoneContent(GetZoneContentRequest request);
@@ -658,7 +658,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetZoneRecordsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetZoneRecordsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetZoneRecords API.
      */
     GetZoneRecordsResponse getZoneRecords(GetZoneRecordsRequest request);
@@ -677,7 +677,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListResolverEndpointsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListResolverEndpointsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListResolverEndpoints API.
      */
@@ -698,7 +698,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListResolversExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListResolversExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResolvers API.
      */
     ListResolversResponse listResolvers(ListResolversRequest request);
@@ -713,7 +713,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListSteeringPoliciesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListSteeringPoliciesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListSteeringPolicies API.
      */
@@ -729,7 +729,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListSteeringPolicyAttachmentsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListSteeringPolicyAttachmentsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListSteeringPolicyAttachments API.
      */
@@ -746,7 +746,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListTsigKeysExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListTsigKeysExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTsigKeys API.
      */
     ListTsigKeysResponse listTsigKeys(ListTsigKeysRequest request);
@@ -766,7 +766,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListViewsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListViewsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListViews API.
      */
     ListViewsResponse listViews(ListViewsRequest request);
@@ -783,7 +783,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListZoneTransferServersExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListZoneTransferServersExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListZoneTransferServers API.
      */
@@ -802,7 +802,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListZonesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListZonesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListZones API.
      */
     ListZonesResponse listZones(ListZonesRequest request);
@@ -822,7 +822,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/PatchDomainRecordsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/PatchDomainRecordsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchDomainRecords
      *     API.
      */
@@ -841,7 +841,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/PatchRRSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/PatchRRSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchRRSet API.
      */
     PatchRRSetResponse patchRRSet(PatchRRSetRequest request);
@@ -861,11 +861,61 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/PatchZoneRecordsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/PatchZoneRecordsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchZoneRecords
      *     API.
      */
     PatchZoneRecordsResponse patchZoneRecords(PatchZoneRecordsRequest request);
+
+    /**
+     * Promotes a specified `DnssecKeyVersion` on the zone.
+     *
+     * <p>If the `DnssecKeyVersion` identified in the request body is a key signing key (KSK) that
+     * is replacing another `DnssecKeyVersion`, then the old `DnssecKeyVersion` is scheduled for
+     * removal from the zone.
+     *
+     * <p>For key signing keys (KSKs), you must create the DS record with the new key information
+     * **before** promoting the new key to establish a chain of trust. To avoid a service
+     * disruption, remove the old DS record as soon as its TTL (time to live) expires.
+     *
+     * <p>For more information, see
+     * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/PromoteZoneDnssecKeyVersionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PromoteZoneDnssecKeyVersion API.
+     */
+    PromoteZoneDnssecKeyVersionResponse promoteZoneDnssecKeyVersion(
+            PromoteZoneDnssecKeyVersionRequest request);
+
+    /**
+     * Stages a new `DnssecKeyVersion` on the zone. Staging is a process that generates a new
+     * \"successor\" key version that replaces an existing \"predecessor\" key version. **Note:** A
+     * new key-signing key (KSK) version is inert until you update the parent zone DS records.
+     *
+     * <p>For more information, see the
+     * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm) documentation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/StageZoneDnssecKeyVersionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     StageZoneDnssecKeyVersion API.
+     */
+    StageZoneDnssecKeyVersionResponse stageZoneDnssecKeyVersion(
+            StageZoneDnssecKeyVersionRequest request);
 
     /**
      * Replaces records in the specified zone at a domain with the records specified in the request
@@ -884,7 +934,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateDomainRecordsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateDomainRecordsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDomainRecords
      *     API.
      */
@@ -903,7 +953,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateRRSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateRRSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRRSet API.
      */
     UpdateRRSetResponse updateRRSet(UpdateRRSetRequest request);
@@ -918,7 +968,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateResolverExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateResolverExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateResolver API.
      */
     UpdateResolverResponse updateResolver(UpdateResolverRequest request);
@@ -933,7 +983,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateResolverEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateResolverEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateResolverEndpoint API.
      */
@@ -949,7 +999,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateSteeringPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateSteeringPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateSteeringPolicy API.
      */
@@ -965,7 +1015,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateSteeringPolicyAttachmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateSteeringPolicyAttachmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateSteeringPolicyAttachment API.
      */
@@ -982,7 +1032,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateTsigKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateTsigKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTsigKey API.
      */
     UpdateTsigKeyResponse updateTsigKey(UpdateTsigKeyRequest request);
@@ -997,7 +1047,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateViewExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateViewExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateView API.
      */
     UpdateViewResponse updateView(UpdateViewRequest request);
@@ -1007,9 +1057,9 @@ public interface Dns extends AutoCloseable {
      *
      * <p>Global secondary zones may have their external masters updated. For more information about
      * secondary zones, see [Manage DNS Service
-     * Zone](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm). When the
-     * zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
-     * then the viewId query parameter is required.
+     * Zone](https://docs.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm). When the zone
+     * name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+     * the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1018,7 +1068,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateZoneExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateZoneExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateZone API.
      */
     UpdateZoneResponse updateZone(UpdateZoneRequest request);
@@ -1039,7 +1089,7 @@ public interface Dns extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateZoneRecordsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateZoneRecordsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateZoneRecords
      *     API.
      */
@@ -1049,8 +1099,21 @@ public interface Dns extends AutoCloseable {
      * Gets the pre-configured waiters available for resources for this service.
      *
      * @return The service waiters.
+     * @deprecated use {@link #newWaiters(WorkRequest)} instead. Otherwise, a default one will be
+     *     provided that does not support operations that rely on the {@code WorkRequestClient} for
+     *     polling. An {@code IllegalStateException} will be thrown for such operations.
      */
+    @Deprecated
     DnsWaiters getWaiters();
+
+    /**
+     * Creates a new {@code DnsWaiters} for resources for this service.
+     *
+     * @param workRequestClient The work request service client used to query for work request
+     *     status
+     * @return The service waiters.
+     */
+    DnsWaiters newWaiters(com.oracle.bmc.workrequests.WorkRequest workRequestClient);
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may

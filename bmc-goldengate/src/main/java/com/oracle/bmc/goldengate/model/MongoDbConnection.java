@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -127,6 +127,15 @@ public final class MongoDbConnection extends Connection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
@@ -169,6 +178,24 @@ public final class MongoDbConnection extends Connection {
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
         /** The MongoDB technology type. */
@@ -223,14 +250,14 @@ public final class MongoDbConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Autonomous Json Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Autonomous Json Database.
          *
          * @param databaseId the value to set
@@ -239,6 +266,87 @@ public final class MongoDbConnection extends Connection {
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
+            return this;
+        }
+        /** Security Protocol for MongoDB. */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
+        private SecurityProtocol securityProtocol;
+
+        /**
+         * Security Protocol for MongoDB.
+         *
+         * @param securityProtocol the value to set
+         * @return this builder
+         */
+        public Builder securityProtocol(SecurityProtocol securityProtocol) {
+            this.securityProtocol = securityProtocol;
+            this.__explicitlySet__.add("securityProtocol");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the password Oracle GoldenGate uses to connect the associated
+         * database. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the password Oracle GoldenGate uses to connect the associated
+         * database. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the certificate key file of the mtls connection. - The content of a
+         * .pem file containing the client private key (for 2-way SSL). Note: When provided,
+         * 'tlsCertificateKeyFile' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFileSecretId")
+        private String tlsCertificateKeyFileSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the certificate key file of the mtls connection. - The content of a
+         * .pem file containing the client private key (for 2-way SSL). Note: When provided,
+         * 'tlsCertificateKeyFile' field must not be provided.
+         *
+         * @param tlsCertificateKeyFileSecretId the value to set
+         * @return this builder
+         */
+        public Builder tlsCertificateKeyFileSecretId(String tlsCertificateKeyFileSecretId) {
+            this.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
+            this.__explicitlySet__.add("tlsCertificateKeyFileSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the password of the tls certificate key file. Note: When provided,
+         * 'tlsCertificateKeyFilePassword' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePasswordSecretId")
+        private String tlsCertificateKeyFilePasswordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the password of the tls certificate key file. Note: When provided,
+         * 'tlsCertificateKeyFilePassword' field must not be provided.
+         *
+         * @param tlsCertificateKeyFilePasswordSecretId the value to set
+         * @return this builder
+         */
+        public Builder tlsCertificateKeyFilePasswordSecretId(
+                String tlsCertificateKeyFilePasswordSecretId) {
+            this.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
+            this.__explicitlySet__.add("tlsCertificateKeyFilePasswordSecretId");
             return this;
         }
 
@@ -259,15 +367,22 @@ public final class MongoDbConnection extends Connection {
                             this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.locks,
                             this.vaultId,
                             this.keyId,
                             this.ingressIps,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.connectionString,
                             this.username,
-                            this.databaseId);
+                            this.databaseId,
+                            this.securityProtocol,
+                            this.passwordSecretId,
+                            this.tlsCertificateKeyFileSecretId,
+                            this.tlsCertificateKeyFilePasswordSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -309,6 +424,9 @@ public final class MongoDbConnection extends Connection {
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
@@ -324,6 +442,12 @@ public final class MongoDbConnection extends Connection {
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -335,6 +459,19 @@ public final class MongoDbConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("databaseId")) {
                 this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("securityProtocol")) {
+                this.securityProtocol(model.getSecurityProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("tlsCertificateKeyFileSecretId")) {
+                this.tlsCertificateKeyFileSecretId(model.getTlsCertificateKeyFileSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("tlsCertificateKeyFilePasswordSecretId")) {
+                this.tlsCertificateKeyFilePasswordSecretId(
+                        model.getTlsCertificateKeyFilePasswordSecretId());
             }
             return this;
         }
@@ -362,15 +499,22 @@ public final class MongoDbConnection extends Connection {
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.List<ResourceLock> locks,
             String vaultId,
             String keyId,
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             TechnologyType technologyType,
             String connectionString,
             String username,
-            String databaseId) {
+            String databaseId,
+            SecurityProtocol securityProtocol,
+            String passwordSecretId,
+            String tlsCertificateKeyFileSecretId,
+            String tlsCertificateKeyFilePasswordSecretId) {
         super(
                 id,
                 displayName,
@@ -383,15 +527,22 @@ public final class MongoDbConnection extends Connection {
                 lifecycleDetails,
                 timeCreated,
                 timeUpdated,
+                locks,
                 vaultId,
                 keyId,
                 ingressIps,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.connectionString = connectionString;
         this.username = username;
         this.databaseId = databaseId;
+        this.securityProtocol = securityProtocol;
+        this.passwordSecretId = passwordSecretId;
+        this.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
+        this.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
     }
 
     /** The MongoDB technology type. */
@@ -399,6 +550,8 @@ public final class MongoDbConnection extends Connection {
         Mongodb("MONGODB"),
         OciAutonomousJsonDatabase("OCI_AUTONOMOUS_JSON_DATABASE"),
         AzureCosmosDbForMongodb("AZURE_COSMOS_DB_FOR_MONGODB"),
+        AmazonDocumentDb("AMAZON_DOCUMENT_DB"),
+        OracleJsonCollection("ORACLE_JSON_COLLECTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -485,20 +638,139 @@ public final class MongoDbConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Autonomous Json Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Autonomous Json Database.
      *
      * @return the value
      */
     public String getDatabaseId() {
         return databaseId;
+    }
+
+    /** Security Protocol for MongoDB. */
+    public enum SecurityProtocol implements com.oracle.bmc.http.internal.BmcEnum {
+        Plain("PLAIN"),
+        Tls("TLS"),
+        Mtls("MTLS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SecurityProtocol.class);
+
+        private final String value;
+        private static java.util.Map<String, SecurityProtocol> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SecurityProtocol v : SecurityProtocol.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SecurityProtocol(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SecurityProtocol create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SecurityProtocol', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Security Protocol for MongoDB. */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
+    private final SecurityProtocol securityProtocol;
+
+    /**
+     * Security Protocol for MongoDB.
+     *
+     * @return the value
+     */
+    public SecurityProtocol getSecurityProtocol() {
+        return securityProtocol;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+     * Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the certificate key file of the mtls connection. - The content of a .pem
+     * file containing the client private key (for 2-way SSL). Note: When provided,
+     * 'tlsCertificateKeyFile' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFileSecretId")
+    private final String tlsCertificateKeyFileSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the certificate key file of the mtls connection. - The content of a .pem
+     * file containing the client private key (for 2-way SSL). Note: When provided,
+     * 'tlsCertificateKeyFile' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getTlsCertificateKeyFileSecretId() {
+        return tlsCertificateKeyFileSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the password of the tls certificate key file. Note: When provided,
+     * 'tlsCertificateKeyFilePassword' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePasswordSecretId")
+    private final String tlsCertificateKeyFilePasswordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the password of the tls certificate key file. Note: When provided,
+     * 'tlsCertificateKeyFilePassword' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getTlsCertificateKeyFilePasswordSecretId() {
+        return tlsCertificateKeyFilePasswordSecretId;
     }
 
     @Override
@@ -520,6 +792,12 @@ public final class MongoDbConnection extends Connection {
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", tlsCertificateKeyFileSecretId=")
+                .append(String.valueOf(this.tlsCertificateKeyFileSecretId));
+        sb.append(", tlsCertificateKeyFilePasswordSecretId=")
+                .append(String.valueOf(this.tlsCertificateKeyFilePasswordSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -538,6 +816,13 @@ public final class MongoDbConnection extends Connection {
                 && java.util.Objects.equals(this.connectionString, other.connectionString)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(
+                        this.tlsCertificateKeyFileSecretId, other.tlsCertificateKeyFileSecretId)
+                && java.util.Objects.equals(
+                        this.tlsCertificateKeyFilePasswordSecretId,
+                        other.tlsCertificateKeyFilePasswordSecretId)
                 && super.equals(other);
     }
 
@@ -553,6 +838,22 @@ public final class MongoDbConnection extends Connection {
                         + (this.connectionString == null ? 43 : this.connectionString.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityProtocol == null ? 43 : this.securityProtocol.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tlsCertificateKeyFileSecretId == null
+                                ? 43
+                                : this.tlsCertificateKeyFileSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tlsCertificateKeyFilePasswordSecretId == null
+                                ? 43
+                                : this.tlsCertificateKeyFilePasswordSecretId.hashCode());
         return result;
     }
 }

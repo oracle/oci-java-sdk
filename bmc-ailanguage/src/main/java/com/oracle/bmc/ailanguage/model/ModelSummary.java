@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage.model;
@@ -49,7 +49,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             String version,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, Object> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -103,15 +103,15 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for
-         * the model's compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * model's compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for
-         * the model's compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * model's compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -195,15 +195,15 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate with the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project to associate with the model.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate with the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project to associate with the model.
          *
          * @param projectId the value to set
          * @return this builder
@@ -215,18 +215,20 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * For pre trained models this will identify model type version used for model creation For
-         * custom identifying the model by model id is difficult. This param provides ease of use
-         * for end customer. <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on
-         * which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+         * custom this will identify model type version used for model creation and custom model on
+         * which training has to be done
+         * <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this
+         * training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
          */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * For pre trained models this will identify model type version used for model creation For
-         * custom identifying the model by model id is difficult. This param provides ease of use
-         * for end customer. <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on
-         * which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+         * custom this will identify model type version used for model creation and custom model on
+         * which training has to be done
+         * <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this
+         * training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
          *
          * @param version the value to set
          * @return this builder
@@ -280,7 +282,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
          * { "orcl-cloud": { "free-tier-retained": "true" } }}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-        private java.util.Map<String, Object> systemTags;
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
@@ -289,7 +291,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
          * @param systemTags the value to set
          * @return this builder
          */
-        public Builder systemTags(java.util.Map<String, Object> systemTags) {
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
@@ -405,14 +407,14 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
      * model's compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
      * model's compartment.
      *
      * @return the value
@@ -485,15 +487,15 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate with the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project to associate with the model.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate with the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project to associate with the model.
      *
      * @return the value
      */
@@ -503,18 +505,18 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * For pre trained models this will identify model type version used for model creation For
-     * custom identifying the model by model id is difficult. This param provides ease of use for
-     * end customer. <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which
-     * this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+     * custom this will identify model type version used for model creation and custom model on
+     * which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom
+     * model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
      */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * For pre trained models this will identify model type version used for model creation For
-     * custom identifying the model by model id is difficult. This param provides ease of use for
-     * end customer. <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which
-     * this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+     * custom this will identify model type version used for model creation and custom model on
+     * which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom
+     * model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
      *
      * @return the value
      */
@@ -561,7 +563,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
      * "orcl-cloud": { "free-tier-retained": "true" } }}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    private final java.util.Map<String, Object> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
@@ -569,7 +571,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
      *
      * @return the value
      */
-    public java.util.Map<String, Object> getSystemTags() {
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 

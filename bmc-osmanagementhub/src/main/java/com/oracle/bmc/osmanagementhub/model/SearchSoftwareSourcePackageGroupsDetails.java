@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Contains a list of software sources to get the list of associated package groups. <br>
+ * Provides the software sources and search parameters to get a list of associated package groups.
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -46,12 +47,16 @@ public final class SearchSoftwareSourcePackageGroupsDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of software source OCIDs. */
+        /**
+         * List of software source
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
         private java.util.List<String> softwareSourceIds;
 
         /**
-         * List of software source OCIDs.
+         * List of software source
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param softwareSourceIds the value to set
          * @return this builder
@@ -91,12 +96,12 @@ public final class SearchSoftwareSourcePackageGroupsDetails
             this.__explicitlySet__.add("sortBy");
             return this;
         }
-        /** filters results, allowing only those with a Name which contains the string. */
+        /** A filter that returns package groups with a name that contains the given string. */
         @com.fasterxml.jackson.annotation.JsonProperty("nameContains")
         private String nameContains;
 
         /**
-         * filters results, allowing only those with a Name which contains the string.
+         * A filter that returns package groups with a name that contains the given string.
          *
          * @param nameContains the value to set
          * @return this builder
@@ -169,12 +174,16 @@ public final class SearchSoftwareSourcePackageGroupsDetails
         return new Builder().copy(this);
     }
 
-    /** List of software source OCIDs. */
+    /**
+     * List of software source
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
     private final java.util.List<String> softwareSourceIds;
 
     /**
-     * List of software source OCIDs.
+     * List of software source
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -273,12 +282,12 @@ public final class SearchSoftwareSourcePackageGroupsDetails
         return sortBy;
     }
 
-    /** filters results, allowing only those with a Name which contains the string. */
+    /** A filter that returns package groups with a name that contains the given string. */
     @com.fasterxml.jackson.annotation.JsonProperty("nameContains")
     private final String nameContains;
 
     /**
-     * filters results, allowing only those with a Name which contains the string.
+     * A filter that returns package groups with a name that contains the given string.
      *
      * @return the value
      */

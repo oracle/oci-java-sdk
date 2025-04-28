@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -79,14 +79,14 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * entity discovered.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * entity discovered.
      *
      * @return the value
@@ -96,14 +96,14 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * agent used for monitoring.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * agent used for monitoring.
      *
      * @return the value
@@ -113,14 +113,14 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * associated connector.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * associated connector.
      *
      * @return the value
@@ -187,7 +187,15 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         NewDiscovered("NEW_DISCOVERED"),
         NotFound("NOT_FOUND"),
         Discovering("DISCOVERING"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DiscoverStatus.class);
 
         private final String value;
         private static java.util.Map<String, DiscoverStatus> map;
@@ -195,7 +203,9 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (DiscoverStatus v : DiscoverStatus.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -213,7 +223,10 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid DiscoverStatus: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DiscoverStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /** The status of the entity discovery. */
@@ -338,7 +351,15 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         DatabaseSystemDiscoverSummary("DATABASE_SYSTEM_DISCOVER_SUMMARY"),
         InfrastructureDiscoverSummary("INFRASTRUCTURE_DISCOVER_SUMMARY"),
         InfrastructureDiscover("INFRASTRUCTURE_DISCOVER"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EntityType.class);
 
         private final String value;
         private static java.util.Map<String, EntityType> map;
@@ -346,7 +367,9 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (EntityType v : EntityType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -364,7 +387,10 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid EntityType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'EntityType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -56,14 +56,14 @@ public final class RegularExpressionFormatEntry extends FormatEntry {
         }
         /**
          * The value that should be used to replace the data matching the regular expression. It can
-         * be a fixed string, fixed number, null value, or SQL expression.
+         * be a fixed string, fixed number or null value.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("replaceWith")
         private String replaceWith;
 
         /**
          * The value that should be used to replace the data matching the regular expression. It can
-         * be a fixed string, fixed number, null value, or SQL expression.
+         * be a fixed string, fixed number or null value.
          *
          * @param replaceWith the value to set
          * @return this builder
@@ -134,14 +134,14 @@ public final class RegularExpressionFormatEntry extends FormatEntry {
 
     /**
      * The value that should be used to replace the data matching the regular expression. It can be
-     * a fixed string, fixed number, null value, or SQL expression.
+     * a fixed string, fixed number or null value.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("replaceWith")
     private final String replaceWith;
 
     /**
      * The value that should be used to replace the data matching the regular expression. It can be
-     * a fixed string, fixed number, null value, or SQL expression.
+     * a fixed string, fixed number or null value.
      *
      * @return the value
      */

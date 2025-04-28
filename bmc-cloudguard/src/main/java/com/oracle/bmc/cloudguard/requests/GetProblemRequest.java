@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -7,16 +7,16 @@ package com.oracle.bmc.cloudguard.requests;
 import com.oracle.bmc.cloudguard.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetProblemExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetProblemExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetProblemRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class GetProblemRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** OCId of the problem. */
+    /** OCID of the problem. */
     private String problemId;
 
-    /** OCId of the problem. */
+    /** OCID of the problem. */
     public String getProblemId() {
         return problemId;
     }
@@ -34,11 +34,11 @@ public class GetProblemRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCId of the problem. */
+        /** OCID of the problem. */
         private String problemId = null;
 
         /**
-         * OCId of the problem.
+         * OCID of the problem.
          *
          * @param problemId the value to set
          * @return this builder instance

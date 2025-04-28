@@ -1,13 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
  * Summary information for a security zone. A security zone is associated with a security zone
- * recipe and enforces all security zone policies in the recipe. Any actions in the zone's
- * compartment (and any subcompartments in the zone) that violate a policy are denied. <br>
+ * recipe and enforces all security zone policies in the recipe. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -69,12 +68,12 @@ public final class SecurityZoneSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /** Unique security zone identifier that can't be changed after creation */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * Unique security zone identifier that can't be changed after creation
          *
          * @param id the value to set
          * @return this builder
@@ -84,12 +83,12 @@ public final class SecurityZoneSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The security zone's name */
+        /** The security zone's display name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The security zone's name
+         * The security zone's display name
          *
          * @param displayName the value to set
          * @return this builder
@@ -129,12 +128,12 @@ public final class SecurityZoneSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the recipe ({@code SecurityRecipe}) for the security zone */
+        /** The OCID of the recipe ({@code SecurityRecipe} resource) for the security zone */
         @com.fasterxml.jackson.annotation.JsonProperty("securityZoneRecipeId")
         private String securityZoneRecipeId;
 
         /**
-         * The OCID of the recipe ({@code SecurityRecipe}) for the security zone
+         * The OCID of the recipe ({@code SecurityRecipe} resource) for the security zone
          *
          * @param securityZoneRecipeId the value to set
          * @return this builder
@@ -174,12 +173,12 @@ public final class SecurityZoneSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the security zone */
+        /** The current lifecycle state of the security zone */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the security zone
+         * The current lifecycle state of the security zone
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -254,7 +253,7 @@ public final class SecurityZoneSummary
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -265,7 +264,7 @@ public final class SecurityZoneSummary
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -354,12 +353,12 @@ public final class SecurityZoneSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /** Unique security zone identifier that can't be changed after creation */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique security zone identifier that can't be changed after creation
      *
      * @return the value
      */
@@ -367,12 +366,12 @@ public final class SecurityZoneSummary
         return id;
     }
 
-    /** The security zone's name */
+    /** The security zone's display name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The security zone's name
+     * The security zone's display name
      *
      * @return the value
      */
@@ -406,12 +405,12 @@ public final class SecurityZoneSummary
         return compartmentId;
     }
 
-    /** The OCID of the recipe ({@code SecurityRecipe}) for the security zone */
+    /** The OCID of the recipe ({@code SecurityRecipe} resource) for the security zone */
     @com.fasterxml.jackson.annotation.JsonProperty("securityZoneRecipeId")
     private final String securityZoneRecipeId;
 
     /**
-     * The OCID of the recipe ({@code SecurityRecipe}) for the security zone
+     * The OCID of the recipe ({@code SecurityRecipe} resource) for the security zone
      *
      * @return the value
      */
@@ -445,12 +444,12 @@ public final class SecurityZoneSummary
         return timeUpdated;
     }
 
-    /** The current state of the security zone */
+    /** The current lifecycle state of the security zone */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the security zone
+     * The current lifecycle state of the security zone
      *
      * @return the value
      */
@@ -516,7 +515,7 @@ public final class SecurityZoneSummary
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -527,7 +526,7 @@ public final class SecurityZoneSummary
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}

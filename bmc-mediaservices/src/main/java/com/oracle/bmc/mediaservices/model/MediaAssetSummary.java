@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.model;
@@ -35,7 +35,8 @@ public final class MediaAssetSummary
         "parentMediaAssetId",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "locks"
     })
     public MediaAssetSummary(
             String id,
@@ -49,7 +50,8 @@ public final class MediaAssetSummary
             String parentMediaAssetId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -63,6 +65,7 @@ public final class MediaAssetSummary
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -264,6 +267,21 @@ public final class MediaAssetSummary
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -282,7 +300,8 @@ public final class MediaAssetSummary
                             this.parentMediaAssetId,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -326,6 +345,9 @@ public final class MediaAssetSummary
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -512,6 +534,19 @@ public final class MediaAssetSummary
         return systemTags;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -539,6 +574,7 @@ public final class MediaAssetSummary
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -565,6 +601,7 @@ public final class MediaAssetSummary
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -596,6 +633,7 @@ public final class MediaAssetSummary
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -23,14 +23,19 @@ package com.oracle.bmc.stackmonitoring.model;
 public final class DiscoveryJobLogSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "logType", "logMessage", "timeCreated"})
+    @java.beans.ConstructorProperties({"id", "logType", "logMessage", "timeCreated", "systemTags"})
     public DiscoveryJobLogSummary(
-            String id, LogType logType, String logMessage, java.util.Date timeCreated) {
+            String id,
+            LogType logType,
+            String logMessage,
+            java.util.Date timeCreated,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.logType = logType;
         this.logMessage = logMessage;
         this.timeCreated = timeCreated;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -95,6 +100,25 @@ public final class DiscoveryJobLogSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -102,7 +126,11 @@ public final class DiscoveryJobLogSummary
         public DiscoveryJobLogSummary build() {
             DiscoveryJobLogSummary model =
                     new DiscoveryJobLogSummary(
-                            this.id, this.logType, this.logMessage, this.timeCreated);
+                            this.id,
+                            this.logType,
+                            this.logMessage,
+                            this.timeCreated,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -122,6 +150,9 @@ public final class DiscoveryJobLogSummary
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -236,6 +267,23 @@ public final class DiscoveryJobLogSummary
         return timeCreated;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -255,6 +303,7 @@ public final class DiscoveryJobLogSummary
         sb.append(", logType=").append(String.valueOf(this.logType));
         sb.append(", logMessage=").append(String.valueOf(this.logMessage));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -273,6 +322,7 @@ public final class DiscoveryJobLogSummary
                 && java.util.Objects.equals(this.logType, other.logType)
                 && java.util.Objects.equals(this.logMessage, other.logMessage)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -284,6 +334,7 @@ public final class DiscoveryJobLogSummary
         result = (result * PRIME) + (this.logType == null ? 43 : this.logType.hashCode());
         result = (result * PRIME) + (this.logMessage == null ? 43 : this.logMessage.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

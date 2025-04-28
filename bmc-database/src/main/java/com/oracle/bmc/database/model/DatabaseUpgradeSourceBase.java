@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -109,8 +109,8 @@ public class DatabaseUpgradeSourceBase
      * Database Home. - Use {@code DB_VERSION} to specify a generally-available Oracle Database
      * software version to upgrade the database. - Use {@code DB_SOFTWARE_IMAGE} to specify a
      * [database software
-     * image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm)
-     * to upgrade the database.
+     * image](https://docs.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to
+     * upgrade the database.
      */
     public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
         DbHome("DB_HOME"),

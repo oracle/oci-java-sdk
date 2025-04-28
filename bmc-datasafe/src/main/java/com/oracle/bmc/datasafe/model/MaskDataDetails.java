@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -26,6 +26,7 @@ public final class MaskDataDetails
         "targetId",
         "isDecrypt",
         "isRerun",
+        "reRunFromStep",
         "tablespace",
         "isIgnoreErrorsEnabled",
         "seed",
@@ -41,6 +42,7 @@ public final class MaskDataDetails
             String targetId,
             Boolean isDecrypt,
             Boolean isRerun,
+            ReRunFromStep reRunFromStep,
             String tablespace,
             Boolean isIgnoreErrorsEnabled,
             String seed,
@@ -55,6 +57,7 @@ public final class MaskDataDetails
         this.targetId = targetId;
         this.isDecrypt = isDecrypt;
         this.isRerun = isRerun;
+        this.reRunFromStep = reRunFromStep;
         this.tablespace = tablespace;
         this.isIgnoreErrorsEnabled = isIgnoreErrorsEnabled;
         this.seed = seed;
@@ -136,6 +139,31 @@ public final class MaskDataDetails
         public Builder isRerun(Boolean isRerun) {
             this.isRerun = isRerun;
             this.__explicitlySet__.add("isRerun");
+            return this;
+        }
+        /**
+         * Specifies the step from which masking needs to be rerun. This param will be used only
+         * when isRerun attribute is true. If PRE_MASKING_SCRIPT is passed, it will rerun the
+         * pre-masking script, followed by masking, and then the post-masking script. If
+         * POST_MASKING_SCRIPT is passed, it will rerun only the post-masking script. If this field
+         * is not set and isRerun is set to true, then it will default to the last failed step.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("reRunFromStep")
+        private ReRunFromStep reRunFromStep;
+
+        /**
+         * Specifies the step from which masking needs to be rerun. This param will be used only
+         * when isRerun attribute is true. If PRE_MASKING_SCRIPT is passed, it will rerun the
+         * pre-masking script, followed by masking, and then the post-masking script. If
+         * POST_MASKING_SCRIPT is passed, it will rerun only the post-masking script. If this field
+         * is not set and isRerun is set to true, then it will default to the last failed step.
+         *
+         * @param reRunFromStep the value to set
+         * @return this builder
+         */
+        public Builder reRunFromStep(ReRunFromStep reRunFromStep) {
+            this.reRunFromStep = reRunFromStep;
+            this.__explicitlySet__.add("reRunFromStep");
             return this;
         }
         /**
@@ -278,7 +306,7 @@ public final class MaskDataDetails
         }
         /**
          * Indicates if redo logging is enabled during a masking operation. Set this attribute to
-         * true to enable redo logging. If set as flase, masking disables redo logging and flashback
+         * true to enable redo logging. If set as false, masking disables redo logging and flashback
          * logging to purge any original unmasked data from logs. However, in certain circumstances
          * when you only want to test masking, rollback changes, and retry masking, you could enable
          * logging and use a flashback database to retrieve the original unmasked data after it has
@@ -290,7 +318,7 @@ public final class MaskDataDetails
 
         /**
          * Indicates if redo logging is enabled during a masking operation. Set this attribute to
-         * true to enable redo logging. If set as flase, masking disables redo logging and flashback
+         * true to enable redo logging. If set as false, masking disables redo logging and flashback
          * logging to purge any original unmasked data from logs. However, in certain circumstances
          * when you only want to test masking, rollback changes, and retry masking, you could enable
          * logging and use a flashback database to retrieve the original unmasked data after it has
@@ -334,8 +362,10 @@ public final class MaskDataDetails
          * of parallelism) or an integer value to be used as the degree of parallelism. Parallel
          * execution helps effectively use multiple CPUs and improve masking performance. Refer to
          * the Oracle Database parallel execution framework when choosing an explicit degree of
-         * parallelism. If it's not provided, the value of the parallelDegree attribute in the
-         * MaskingPolicy resource is used.
+         * parallelism.
+         * https://www.oracle.com/pls/topic/lookup?ctx=dblatest&en/database/oracle/oracle-database&id=VLDBG-GUID-3E2AE088-2505-465E-A8B2-AC38813EA355
+         * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy
+         * resource is used.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("parallelDegree")
         private String parallelDegree;
@@ -346,8 +376,10 @@ public final class MaskDataDetails
          * of parallelism) or an integer value to be used as the degree of parallelism. Parallel
          * execution helps effectively use multiple CPUs and improve masking performance. Refer to
          * the Oracle Database parallel execution framework when choosing an explicit degree of
-         * parallelism. If it's not provided, the value of the parallelDegree attribute in the
-         * MaskingPolicy resource is used.
+         * parallelism.
+         * https://www.oracle.com/pls/topic/lookup?ctx=dblatest&en/database/oracle/oracle-database&id=VLDBG-GUID-3E2AE088-2505-465E-A8B2-AC38813EA355
+         * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy
+         * resource is used.
          *
          * @param parallelDegree the value to set
          * @return this builder
@@ -394,6 +426,7 @@ public final class MaskDataDetails
                             this.targetId,
                             this.isDecrypt,
                             this.isRerun,
+                            this.reRunFromStep,
                             this.tablespace,
                             this.isIgnoreErrorsEnabled,
                             this.seed,
@@ -420,6 +453,9 @@ public final class MaskDataDetails
             }
             if (model.wasPropertyExplicitlySet("isRerun")) {
                 this.isRerun(model.getIsRerun());
+            }
+            if (model.wasPropertyExplicitlySet("reRunFromStep")) {
+                this.reRunFromStep(model.getReRunFromStep());
             }
             if (model.wasPropertyExplicitlySet("tablespace")) {
                 this.tablespace(model.getTablespace());
@@ -525,6 +561,68 @@ public final class MaskDataDetails
      */
     public Boolean getIsRerun() {
         return isRerun;
+    }
+
+    /**
+     * Specifies the step from which masking needs to be rerun. This param will be used only when
+     * isRerun attribute is true. If PRE_MASKING_SCRIPT is passed, it will rerun the pre-masking
+     * script, followed by masking, and then the post-masking script. If POST_MASKING_SCRIPT is
+     * passed, it will rerun only the post-masking script. If this field is not set and isRerun is
+     * set to true, then it will default to the last failed step.
+     */
+    public enum ReRunFromStep implements com.oracle.bmc.http.internal.BmcEnum {
+        PreMaskingScript("PRE_MASKING_SCRIPT"),
+        PostMaskingScript("POST_MASKING_SCRIPT"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ReRunFromStep> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ReRunFromStep v : ReRunFromStep.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ReRunFromStep(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ReRunFromStep create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ReRunFromStep: " + key);
+        }
+    };
+    /**
+     * Specifies the step from which masking needs to be rerun. This param will be used only when
+     * isRerun attribute is true. If PRE_MASKING_SCRIPT is passed, it will rerun the pre-masking
+     * script, followed by masking, and then the post-masking script. If POST_MASKING_SCRIPT is
+     * passed, it will rerun only the post-masking script. If this field is not set and isRerun is
+     * set to true, then it will default to the last failed step.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("reRunFromStep")
+    private final ReRunFromStep reRunFromStep;
+
+    /**
+     * Specifies the step from which masking needs to be rerun. This param will be used only when
+     * isRerun attribute is true. If PRE_MASKING_SCRIPT is passed, it will rerun the pre-masking
+     * script, followed by masking, and then the post-masking script. If POST_MASKING_SCRIPT is
+     * passed, it will rerun only the post-masking script. If this field is not set and isRerun is
+     * set to true, then it will default to the last failed step.
+     *
+     * @return the value
+     */
+    public ReRunFromStep getReRunFromStep() {
+        return reRunFromStep;
     }
 
     /**
@@ -655,7 +753,7 @@ public final class MaskDataDetails
 
     /**
      * Indicates if redo logging is enabled during a masking operation. Set this attribute to true
-     * to enable redo logging. If set as flase, masking disables redo logging and flashback logging
+     * to enable redo logging. If set as false, masking disables redo logging and flashback logging
      * to purge any original unmasked data from logs. However, in certain circumstances when you
      * only want to test masking, rollback changes, and retry masking, you could enable logging and
      * use a flashback database to retrieve the original unmasked data after it has been masked. If
@@ -667,7 +765,7 @@ public final class MaskDataDetails
 
     /**
      * Indicates if redo logging is enabled during a masking operation. Set this attribute to true
-     * to enable redo logging. If set as flase, masking disables redo logging and flashback logging
+     * to enable redo logging. If set as false, masking disables redo logging and flashback logging
      * to purge any original unmasked data from logs. However, in certain circumstances when you
      * only want to test masking, rollback changes, and retry masking, you could enable logging and
      * use a flashback database to retrieve the original unmasked data after it has been masked. If
@@ -706,9 +804,10 @@ public final class MaskDataDetails
      * 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of
      * parallelism) or an integer value to be used as the degree of parallelism. Parallel execution
      * helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle
-     * Database parallel execution framework when choosing an explicit degree of parallelism. If
-     * it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is
-     * used.
+     * Database parallel execution framework when choosing an explicit degree of parallelism.
+     * https://www.oracle.com/pls/topic/lookup?ctx=dblatest&en/database/oracle/oracle-database&id=VLDBG-GUID-3E2AE088-2505-465E-A8B2-AC38813EA355
+     * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource
+     * is used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("parallelDegree")
     private final String parallelDegree;
@@ -718,9 +817,10 @@ public final class MaskDataDetails
      * 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of
      * parallelism) or an integer value to be used as the degree of parallelism. Parallel execution
      * helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle
-     * Database parallel execution framework when choosing an explicit degree of parallelism. If
-     * it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is
-     * used.
+     * Database parallel execution framework when choosing an explicit degree of parallelism.
+     * https://www.oracle.com/pls/topic/lookup?ctx=dblatest&en/database/oracle/oracle-database&id=VLDBG-GUID-3E2AE088-2505-465E-A8B2-AC38813EA355
+     * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource
+     * is used.
      *
      * @return the value
      */
@@ -769,6 +869,7 @@ public final class MaskDataDetails
         sb.append("targetId=").append(String.valueOf(this.targetId));
         sb.append(", isDecrypt=").append(String.valueOf(this.isDecrypt));
         sb.append(", isRerun=").append(String.valueOf(this.isRerun));
+        sb.append(", reRunFromStep=").append(String.valueOf(this.reRunFromStep));
         sb.append(", tablespace=").append(String.valueOf(this.tablespace));
         sb.append(", isIgnoreErrorsEnabled=").append(String.valueOf(this.isIgnoreErrorsEnabled));
         sb.append(", seed=").append("<redacted>");
@@ -799,6 +900,7 @@ public final class MaskDataDetails
         return java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(this.isDecrypt, other.isDecrypt)
                 && java.util.Objects.equals(this.isRerun, other.isRerun)
+                && java.util.Objects.equals(this.reRunFromStep, other.reRunFromStep)
                 && java.util.Objects.equals(this.tablespace, other.tablespace)
                 && java.util.Objects.equals(this.isIgnoreErrorsEnabled, other.isIgnoreErrorsEnabled)
                 && java.util.Objects.equals(this.seed, other.seed)
@@ -822,6 +924,9 @@ public final class MaskDataDetails
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
         result = (result * PRIME) + (this.isDecrypt == null ? 43 : this.isDecrypt.hashCode());
         result = (result * PRIME) + (this.isRerun == null ? 43 : this.isRerun.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reRunFromStep == null ? 43 : this.reRunFromStep.hashCode());
         result = (result * PRIME) + (this.tablespace == null ? 43 : this.tablespace.hashCode());
         result =
                 (result * PRIME)

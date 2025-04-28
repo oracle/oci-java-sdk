@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -39,7 +39,9 @@ public final class SensitiveDataModel
         "appSuiteName",
         "description",
         "schemasForDiscovery",
+        "tablesForDiscovery",
         "sensitiveTypeIdsForDiscovery",
+        "sensitiveTypeGroupIdsForDiscovery",
         "isSampleDataCollectionEnabled",
         "isAppDefinedRelationDiscoveryEnabled",
         "isIncludeAllSchemas",
@@ -59,7 +61,9 @@ public final class SensitiveDataModel
             String appSuiteName,
             String description,
             java.util.List<String> schemasForDiscovery,
+            java.util.List<TablesForDiscovery> tablesForDiscovery,
             java.util.List<String> sensitiveTypeIdsForDiscovery,
+            java.util.List<String> sensitiveTypeGroupIdsForDiscovery,
             Boolean isSampleDataCollectionEnabled,
             Boolean isAppDefinedRelationDiscoveryEnabled,
             Boolean isIncludeAllSchemas,
@@ -78,7 +82,9 @@ public final class SensitiveDataModel
         this.appSuiteName = appSuiteName;
         this.description = description;
         this.schemasForDiscovery = schemasForDiscovery;
+        this.tablesForDiscovery = tablesForDiscovery;
         this.sensitiveTypeIdsForDiscovery = sensitiveTypeIdsForDiscovery;
+        this.sensitiveTypeGroupIdsForDiscovery = sensitiveTypeGroupIdsForDiscovery;
         this.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
         this.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
         this.isIncludeAllSchemas = isIncludeAllSchemas;
@@ -260,6 +266,27 @@ public final class SensitiveDataModel
             this.__explicitlySet__.add("schemasForDiscovery");
             return this;
         }
+        /**
+         * The data discovery jobs will scan the tables specified here, including both schemas and
+         * tables. For instance, the input could be in the format: [{schemaName: "HR", tableName:
+         * ["T1", "T2"]}, {schemaName: "OE", tableName : ["T3", "T4"]}].
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("tablesForDiscovery")
+        private java.util.List<TablesForDiscovery> tablesForDiscovery;
+
+        /**
+         * The data discovery jobs will scan the tables specified here, including both schemas and
+         * tables. For instance, the input could be in the format: [{schemaName: "HR", tableName:
+         * ["T1", "T2"]}, {schemaName: "OE", tableName : ["T3", "T4"]}].
+         *
+         * @param tablesForDiscovery the value to set
+         * @return this builder
+         */
+        public Builder tablesForDiscovery(java.util.List<TablesForDiscovery> tablesForDiscovery) {
+            this.tablesForDiscovery = tablesForDiscovery;
+            this.__explicitlySet__.add("tablesForDiscovery");
+            return this;
+        }
         /** The OCIDs of the sensitive types to be used by data discovery jobs. */
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeIdsForDiscovery")
         private java.util.List<String> sensitiveTypeIdsForDiscovery;
@@ -274,6 +301,22 @@ public final class SensitiveDataModel
                 java.util.List<String> sensitiveTypeIdsForDiscovery) {
             this.sensitiveTypeIdsForDiscovery = sensitiveTypeIdsForDiscovery;
             this.__explicitlySet__.add("sensitiveTypeIdsForDiscovery");
+            return this;
+        }
+        /** The OCIDs of the sensitive type groups to be used by data discovery jobs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeGroupIdsForDiscovery")
+        private java.util.List<String> sensitiveTypeGroupIdsForDiscovery;
+
+        /**
+         * The OCIDs of the sensitive type groups to be used by data discovery jobs.
+         *
+         * @param sensitiveTypeGroupIdsForDiscovery the value to set
+         * @return this builder
+         */
+        public Builder sensitiveTypeGroupIdsForDiscovery(
+                java.util.List<String> sensitiveTypeGroupIdsForDiscovery) {
+            this.sensitiveTypeGroupIdsForDiscovery = sensitiveTypeGroupIdsForDiscovery;
+            this.__explicitlySet__.add("sensitiveTypeGroupIdsForDiscovery");
             return this;
         }
         /**
@@ -378,7 +421,7 @@ public final class SensitiveDataModel
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -388,7 +431,7 @@ public final class SensitiveDataModel
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -403,9 +446,8 @@ public final class SensitiveDataModel
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -413,9 +455,8 @@ public final class SensitiveDataModel
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -464,7 +505,9 @@ public final class SensitiveDataModel
                             this.appSuiteName,
                             this.description,
                             this.schemasForDiscovery,
+                            this.tablesForDiscovery,
                             this.sensitiveTypeIdsForDiscovery,
+                            this.sensitiveTypeGroupIdsForDiscovery,
                             this.isSampleDataCollectionEnabled,
                             this.isAppDefinedRelationDiscoveryEnabled,
                             this.isIncludeAllSchemas,
@@ -510,8 +553,15 @@ public final class SensitiveDataModel
             if (model.wasPropertyExplicitlySet("schemasForDiscovery")) {
                 this.schemasForDiscovery(model.getSchemasForDiscovery());
             }
+            if (model.wasPropertyExplicitlySet("tablesForDiscovery")) {
+                this.tablesForDiscovery(model.getTablesForDiscovery());
+            }
             if (model.wasPropertyExplicitlySet("sensitiveTypeIdsForDiscovery")) {
                 this.sensitiveTypeIdsForDiscovery(model.getSensitiveTypeIdsForDiscovery());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveTypeGroupIdsForDiscovery")) {
+                this.sensitiveTypeGroupIdsForDiscovery(
+                        model.getSensitiveTypeGroupIdsForDiscovery());
             }
             if (model.wasPropertyExplicitlySet("isSampleDataCollectionEnabled")) {
                 this.isSampleDataCollectionEnabled(model.getIsSampleDataCollectionEnabled());
@@ -696,6 +746,25 @@ public final class SensitiveDataModel
         return schemasForDiscovery;
     }
 
+    /**
+     * The data discovery jobs will scan the tables specified here, including both schemas and
+     * tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1",
+     * "T2"]}, {schemaName: "OE", tableName : ["T3", "T4"]}].
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("tablesForDiscovery")
+    private final java.util.List<TablesForDiscovery> tablesForDiscovery;
+
+    /**
+     * The data discovery jobs will scan the tables specified here, including both schemas and
+     * tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1",
+     * "T2"]}, {schemaName: "OE", tableName : ["T3", "T4"]}].
+     *
+     * @return the value
+     */
+    public java.util.List<TablesForDiscovery> getTablesForDiscovery() {
+        return tablesForDiscovery;
+    }
+
     /** The OCIDs of the sensitive types to be used by data discovery jobs. */
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeIdsForDiscovery")
     private final java.util.List<String> sensitiveTypeIdsForDiscovery;
@@ -707,6 +776,19 @@ public final class SensitiveDataModel
      */
     public java.util.List<String> getSensitiveTypeIdsForDiscovery() {
         return sensitiveTypeIdsForDiscovery;
+    }
+
+    /** The OCIDs of the sensitive type groups to be used by data discovery jobs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeGroupIdsForDiscovery")
+    private final java.util.List<String> sensitiveTypeGroupIdsForDiscovery;
+
+    /**
+     * The OCIDs of the sensitive type groups to be used by data discovery jobs.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getSensitiveTypeGroupIdsForDiscovery() {
+        return sensitiveTypeGroupIdsForDiscovery;
     }
 
     /**
@@ -802,7 +884,7 @@ public final class SensitiveDataModel
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -812,7 +894,7 @@ public final class SensitiveDataModel
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -825,9 +907,8 @@ public final class SensitiveDataModel
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -835,9 +916,8 @@ public final class SensitiveDataModel
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */
@@ -889,8 +969,11 @@ public final class SensitiveDataModel
         sb.append(", appSuiteName=").append(String.valueOf(this.appSuiteName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", schemasForDiscovery=").append(String.valueOf(this.schemasForDiscovery));
+        sb.append(", tablesForDiscovery=").append(String.valueOf(this.tablesForDiscovery));
         sb.append(", sensitiveTypeIdsForDiscovery=")
                 .append(String.valueOf(this.sensitiveTypeIdsForDiscovery));
+        sb.append(", sensitiveTypeGroupIdsForDiscovery=")
+                .append(String.valueOf(this.sensitiveTypeGroupIdsForDiscovery));
         sb.append(", isSampleDataCollectionEnabled=")
                 .append(String.valueOf(this.isSampleDataCollectionEnabled));
         sb.append(", isAppDefinedRelationDiscoveryEnabled=")
@@ -925,8 +1008,12 @@ public final class SensitiveDataModel
                 && java.util.Objects.equals(this.appSuiteName, other.appSuiteName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.schemasForDiscovery, other.schemasForDiscovery)
+                && java.util.Objects.equals(this.tablesForDiscovery, other.tablesForDiscovery)
                 && java.util.Objects.equals(
                         this.sensitiveTypeIdsForDiscovery, other.sensitiveTypeIdsForDiscovery)
+                && java.util.Objects.equals(
+                        this.sensitiveTypeGroupIdsForDiscovery,
+                        other.sensitiveTypeGroupIdsForDiscovery)
                 && java.util.Objects.equals(
                         this.isSampleDataCollectionEnabled, other.isSampleDataCollectionEnabled)
                 && java.util.Objects.equals(
@@ -965,9 +1052,19 @@ public final class SensitiveDataModel
                                 : this.schemasForDiscovery.hashCode());
         result =
                 (result * PRIME)
+                        + (this.tablesForDiscovery == null
+                                ? 43
+                                : this.tablesForDiscovery.hashCode());
+        result =
+                (result * PRIME)
                         + (this.sensitiveTypeIdsForDiscovery == null
                                 ? 43
                                 : this.sensitiveTypeIdsForDiscovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveTypeGroupIdsForDiscovery == null
+                                ? 43
+                                : this.sensitiveTypeGroupIdsForDiscovery.hashCode());
         result =
                 (result * PRIME)
                         + (this.isSampleDataCollectionEnabled == null

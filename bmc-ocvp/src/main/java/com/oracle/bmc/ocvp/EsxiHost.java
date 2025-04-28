@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp;
@@ -10,12 +10,12 @@ import com.oracle.bmc.ocvp.responses.*;
 /**
  * Use the Oracle Cloud VMware API to create SDDCs and manage ESXi hosts and software. For more
  * information, see [Oracle Cloud VMware
- * Solution](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
+ * Solution](https://docs.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public interface EsxiHost extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -79,7 +79,7 @@ public interface EsxiHost extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/CreateEsxiHostExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/CreateEsxiHostExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEsxiHost API.
      */
     CreateEsxiHostResponse createEsxiHost(CreateEsxiHostRequest request);
@@ -104,7 +104,7 @@ public interface EsxiHost extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/DeleteEsxiHostExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/DeleteEsxiHostExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEsxiHost API.
      */
     DeleteEsxiHostResponse deleteEsxiHost(DeleteEsxiHostRequest request);
@@ -119,10 +119,25 @@ public interface EsxiHost extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/GetEsxiHostExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/GetEsxiHostExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEsxiHost API.
      */
     GetEsxiHostResponse getEsxiHost(GetEsxiHostRequest request);
+
+    /**
+     * In-place upgrade a ESXi host.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/InplaceUpgradeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use InplaceUpgrade API.
+     */
+    InplaceUpgradeResponse inplaceUpgrade(InplaceUpgradeRequest request);
 
     /**
      * Lists the ESXi hosts in the specified SDDC. The list can be filtered by Compute instance OCID
@@ -141,10 +156,25 @@ public interface EsxiHost extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListEsxiHostsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListEsxiHostsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEsxiHosts API.
      */
     ListEsxiHostsResponse listEsxiHosts(ListEsxiHostsRequest request);
+
+    /**
+     * Replace a faulty ESXi host whose underlying bare metal is broken
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ReplaceHostExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReplaceHost API.
+     */
+    ReplaceHostResponse replaceHost(ReplaceHostRequest request);
 
     /**
      * Swap billing between two Active ESXi hosts.
@@ -156,7 +186,7 @@ public interface EsxiHost extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/SwapBillingExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/SwapBillingExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwapBilling API.
      */
     SwapBillingResponse swapBilling(SwapBillingRequest request);
@@ -171,7 +201,7 @@ public interface EsxiHost extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpdateEsxiHostExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpdateEsxiHostExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEsxiHost API.
      */
     UpdateEsxiHostResponse updateEsxiHost(UpdateEsxiHostRequest request);

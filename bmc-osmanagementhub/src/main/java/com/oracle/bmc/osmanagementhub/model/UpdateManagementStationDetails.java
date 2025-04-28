@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Information for updating an ManagementStation <br>
+ * Provides the information used to update the management station. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,6 +27,7 @@ public final class UpdateManagementStationDetails
         "displayName",
         "description",
         "hostname",
+        "isAutoConfigEnabled",
         "proxy",
         "mirror",
         "freeformTags",
@@ -36,6 +37,7 @@ public final class UpdateManagementStationDetails
             String displayName,
             String description,
             String hostname,
+            Boolean isAutoConfigEnabled,
             UpdateProxyConfigurationDetails proxy,
             UpdateMirrorConfigurationDetails mirror,
             java.util.Map<String, String> freeformTags,
@@ -44,6 +46,7 @@ public final class UpdateManagementStationDetails
         this.displayName = displayName;
         this.description = description;
         this.hostname = hostname;
+        this.isAutoConfigEnabled = isAutoConfigEnabled;
         this.proxy = proxy;
         this.mirror = mirror;
         this.freeformTags = freeformTags;
@@ -52,12 +55,16 @@ public final class UpdateManagementStationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** ManagementStation name */
+        /**
+         * User-friendly name for the management station. Does not have to be unique. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * ManagementStation name
+         * User-friendly name for the management station. Does not have to be unique. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -67,12 +74,16 @@ public final class UpdateManagementStationDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Details describing the ManagementStation config. */
+        /**
+         * User-specified description of the management station. Avoid entering confidential
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Details describing the ManagementStation config.
+         * User-specified description of the management station. Avoid entering confidential
+         * information.
          *
          * @param description the value to set
          * @return this builder
@@ -82,12 +93,12 @@ public final class UpdateManagementStationDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Name of the host */
+        /** Hostname of the management station. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
-         * Name of the host
+         * Hostname of the management station.
          *
          * @param hostname the value to set
          * @return this builder
@@ -95,6 +106,25 @@ public final class UpdateManagementStationDetails
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
+            return this;
+        }
+        /**
+         * When enabled, the station setup script automatically runs to configure the firewall and
+         * SELinux settings on the station.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoConfigEnabled")
+        private Boolean isAutoConfigEnabled;
+
+        /**
+         * When enabled, the station setup script automatically runs to configure the firewall and
+         * SELinux settings on the station.
+         *
+         * @param isAutoConfigEnabled the value to set
+         * @return this builder
+         */
+        public Builder isAutoConfigEnabled(Boolean isAutoConfigEnabled) {
+            this.isAutoConfigEnabled = isAutoConfigEnabled;
+            this.__explicitlySet__.add("isAutoConfigEnabled");
             return this;
         }
 
@@ -118,8 +148,8 @@ public final class UpdateManagementStationDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -127,8 +157,8 @@ public final class UpdateManagementStationDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -141,8 +171,8 @@ public final class UpdateManagementStationDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -150,8 +180,8 @@ public final class UpdateManagementStationDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -172,6 +202,7 @@ public final class UpdateManagementStationDetails
                             this.displayName,
                             this.description,
                             this.hostname,
+                            this.isAutoConfigEnabled,
                             this.proxy,
                             this.mirror,
                             this.freeformTags,
@@ -192,6 +223,9 @@ public final class UpdateManagementStationDetails
             }
             if (model.wasPropertyExplicitlySet("hostname")) {
                 this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoConfigEnabled")) {
+                this.isAutoConfigEnabled(model.getIsAutoConfigEnabled());
             }
             if (model.wasPropertyExplicitlySet("proxy")) {
                 this.proxy(model.getProxy());
@@ -218,12 +252,16 @@ public final class UpdateManagementStationDetails
         return new Builder().copy(this);
     }
 
-    /** ManagementStation name */
+    /**
+     * User-friendly name for the management station. Does not have to be unique. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * ManagementStation name
+     * User-friendly name for the management station. Does not have to be unique. Avoid entering
+     * confidential information.
      *
      * @return the value
      */
@@ -231,12 +269,16 @@ public final class UpdateManagementStationDetails
         return displayName;
     }
 
-    /** Details describing the ManagementStation config. */
+    /**
+     * User-specified description of the management station. Avoid entering confidential
+     * information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Details describing the ManagementStation config.
+     * User-specified description of the management station. Avoid entering confidential
+     * information.
      *
      * @return the value
      */
@@ -244,17 +286,34 @@ public final class UpdateManagementStationDetails
         return description;
     }
 
-    /** Name of the host */
+    /** Hostname of the management station. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
-     * Name of the host
+     * Hostname of the management station.
      *
      * @return the value
      */
     public String getHostname() {
         return hostname;
+    }
+
+    /**
+     * When enabled, the station setup script automatically runs to configure the firewall and
+     * SELinux settings on the station.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoConfigEnabled")
+    private final Boolean isAutoConfigEnabled;
+
+    /**
+     * When enabled, the station setup script automatically runs to configure the firewall and
+     * SELinux settings on the station.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoConfigEnabled() {
+        return isAutoConfigEnabled;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("proxy")
@@ -274,7 +333,7 @@ public final class UpdateManagementStationDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -283,7 +342,7 @@ public final class UpdateManagementStationDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -295,7 +354,7 @@ public final class UpdateManagementStationDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -304,7 +363,7 @@ public final class UpdateManagementStationDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -331,6 +390,7 @@ public final class UpdateManagementStationDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
+        sb.append(", isAutoConfigEnabled=").append(String.valueOf(this.isAutoConfigEnabled));
         sb.append(", proxy=").append(String.valueOf(this.proxy));
         sb.append(", mirror=").append(String.valueOf(this.mirror));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -352,6 +412,7 @@ public final class UpdateManagementStationDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.isAutoConfigEnabled, other.isAutoConfigEnabled)
                 && java.util.Objects.equals(this.proxy, other.proxy)
                 && java.util.Objects.equals(this.mirror, other.mirror)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -366,6 +427,11 @@ public final class UpdateManagementStationDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoConfigEnabled == null
+                                ? 43
+                                : this.isAutoConfigEnabled.hashCode());
         result = (result * PRIME) + (this.proxy == null ? 43 : this.proxy.hashCode());
         result = (result * PRIME) + (this.mirror == null ? 43 : this.mirror.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

@@ -1,22 +1,23 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
- * The properties that define a network load balancer. For more information, see [Managing a network
- * load balancer](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingloadbalancer.htm).
+ * The properties that define a network load balancer. For more information, see [Introduction to
+ * Network Load
+ * Balancer](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you are not
  * authorized, contact an administrator. If you are an administrator who writes policies to give
  * users access, then see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <p>For information about endpoints and signing API requests, see [About the
- * API](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm). For information about
+ * API](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about
  * available SDKs and tools, see [SDKS and Other
- * Tools](https://docs.cloud.oracle.com/Content/API/Concepts/sdks.htm). <br>
+ * Tools](https://docs.oracle.com/iaas/Content/API/Concepts/sdks.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -46,11 +47,13 @@ public final class NetworkLoadBalancer
         "ipAddresses",
         "isPrivate",
         "isPreserveSourceDestination",
+        "isSymmetricHashEnabled",
         "subnetId",
         "networkSecurityGroupIds",
         "listeners",
         "backendSets",
         "freeformTags",
+        "securityAttributes",
         "definedTags",
         "systemTags"
     })
@@ -66,11 +69,13 @@ public final class NetworkLoadBalancer
             java.util.List<IpAddress> ipAddresses,
             Boolean isPrivate,
             Boolean isPreserveSourceDestination,
+            Boolean isSymmetricHashEnabled,
             String subnetId,
             java.util.List<String> networkSecurityGroupIds,
             java.util.Map<String, Listener> listeners,
             java.util.Map<String, BackendSet> backendSets,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
@@ -85,11 +90,13 @@ public final class NetworkLoadBalancer
         this.ipAddresses = ipAddresses;
         this.isPrivate = isPrivate;
         this.isPreserveSourceDestination = isPreserveSourceDestination;
+        this.isSymmetricHashEnabled = isSymmetricHashEnabled;
         this.subnetId = subnetId;
         this.networkSecurityGroupIds = networkSecurityGroupIds;
         this.listeners = listeners;
         this.backendSets = backendSets;
         this.freeformTags = freeformTags;
+        this.securityAttributes = securityAttributes;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
     }
@@ -97,14 +104,14 @@ public final class NetworkLoadBalancer
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network load balancer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network load balancer.
          *
          * @param id the value to set
@@ -116,14 +123,14 @@ public final class NetworkLoadBalancer
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment containing the network load balancer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment containing the network load balancer.
          *
          * @param compartmentId the value to set
@@ -272,10 +279,10 @@ public final class NetworkLoadBalancer
          *
          * <p>A public network load balancer is accessible from the internet, depending the
          * [security list
-         * rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your
+         * rules](https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your
          * virtual cloudn network. For more information about public and private network load
-         * balancers, see [How Network Load Balancing
-         * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+         * balancers, see [Network Load Balancer
+         * Types](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
          * This value is true by default.
          *
          * <p>Example: {@code true}
@@ -292,10 +299,10 @@ public final class NetworkLoadBalancer
          *
          * <p>A public network load balancer is accessible from the internet, depending the
          * [security list
-         * rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your
+         * rules](https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your
          * virtual cloudn network. For more information about public and private network load
-         * balancers, see [How Network Load Balancing
-         * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+         * balancers, see [Network Load Balancer
+         * Types](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
          * This value is true by default.
          *
          * <p>Example: {@code true}
@@ -330,15 +337,36 @@ public final class NetworkLoadBalancer
             return this;
         }
         /**
+         * This can only be enabled when NLB is working in transparent mode with source destination
+         * header preservation enabled. This removes the additional dependency from NLB
+         * backends(like Firewalls) to perform SNAT.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricHashEnabled")
+        private Boolean isSymmetricHashEnabled;
+
+        /**
+         * This can only be enabled when NLB is working in transparent mode with source destination
+         * header preservation enabled. This removes the additional dependency from NLB
+         * backends(like Firewalls) to perform SNAT.
+         *
+         * @param isSymmetricHashEnabled the value to set
+         * @return this builder
+         */
+        public Builder isSymmetricHashEnabled(Boolean isSymmetricHashEnabled) {
+            this.isSymmetricHashEnabled = isSymmetricHashEnabled;
+            this.__explicitlySet__.add("isSymmetricHashEnabled");
+            return this;
+        }
+        /**
          * The subnet in which the network load balancer is spawned
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)."
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The subnet in which the network load balancer is spawned
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)."
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param subnetId the value to set
          * @return this builder
@@ -350,8 +378,8 @@ public final class NetworkLoadBalancer
         }
         /**
          * An array of network security groups
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the network load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the network load balancer.
          *
          * <p>During the creation of the network load balancer, the service adds the new load
          * balancer to the specified network security groups.
@@ -372,8 +400,8 @@ public final class NetworkLoadBalancer
 
         /**
          * An array of network security groups
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the network load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the network load balancer.
          *
          * <p>During the creation of the network load balancer, the service adds the new load
          * balancer to the specified network security groups.
@@ -430,7 +458,7 @@ public final class NetworkLoadBalancer
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -440,7 +468,7 @@ public final class NetworkLoadBalancer
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -453,9 +481,35 @@ public final class NetworkLoadBalancer
             return this;
         }
         /**
+         * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
+         * type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code { "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
+         * type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code { "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -465,7 +519,7 @@ public final class NetworkLoadBalancer
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -515,11 +569,13 @@ public final class NetworkLoadBalancer
                             this.ipAddresses,
                             this.isPrivate,
                             this.isPreserveSourceDestination,
+                            this.isSymmetricHashEnabled,
                             this.subnetId,
                             this.networkSecurityGroupIds,
                             this.listeners,
                             this.backendSets,
                             this.freeformTags,
+                            this.securityAttributes,
                             this.definedTags,
                             this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -563,6 +619,9 @@ public final class NetworkLoadBalancer
             if (model.wasPropertyExplicitlySet("isPreserveSourceDestination")) {
                 this.isPreserveSourceDestination(model.getIsPreserveSourceDestination());
             }
+            if (model.wasPropertyExplicitlySet("isSymmetricHashEnabled")) {
+                this.isSymmetricHashEnabled(model.getIsSymmetricHashEnabled());
+            }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
@@ -577,6 +636,9 @@ public final class NetworkLoadBalancer
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
@@ -598,14 +660,14 @@ public final class NetworkLoadBalancer
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network load balancer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network load balancer.
      *
      * @return the value
@@ -615,14 +677,14 @@ public final class NetworkLoadBalancer
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment containing the network load balancer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment containing the network load balancer.
      *
      * @return the value
@@ -752,10 +814,10 @@ public final class NetworkLoadBalancer
      * <p>If "false", then the service assigns a public IP address to the network load balancer.
      *
      * <p>A public network load balancer is accessible from the internet, depending the [security
-     * list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for
-     * your virtual cloudn network. For more information about public and private network load
-     * balancers, see [How Network Load Balancing
-     * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+     * list rules](https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your
+     * virtual cloudn network. For more information about public and private network load balancers,
+     * see [Network Load Balancer
+     * Types](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
      * This value is true by default.
      *
      * <p>Example: {@code true}
@@ -771,10 +833,10 @@ public final class NetworkLoadBalancer
      * <p>If "false", then the service assigns a public IP address to the network load balancer.
      *
      * <p>A public network load balancer is accessible from the internet, depending the [security
-     * list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for
-     * your virtual cloudn network. For more information about public and private network load
-     * balancers, see [How Network Load Balancing
-     * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+     * list rules](https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your
+     * virtual cloudn network. For more information about public and private network load balancers,
+     * see [Network Load Balancer
+     * Types](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
      * This value is true by default.
      *
      * <p>Example: {@code true}
@@ -805,15 +867,34 @@ public final class NetworkLoadBalancer
     }
 
     /**
+     * This can only be enabled when NLB is working in transparent mode with source destination
+     * header preservation enabled. This removes the additional dependency from NLB backends(like
+     * Firewalls) to perform SNAT.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricHashEnabled")
+    private final Boolean isSymmetricHashEnabled;
+
+    /**
+     * This can only be enabled when NLB is working in transparent mode with source destination
+     * header preservation enabled. This removes the additional dependency from NLB backends(like
+     * Firewalls) to perform SNAT.
+     *
+     * @return the value
+     */
+    public Boolean getIsSymmetricHashEnabled() {
+        return isSymmetricHashEnabled;
+    }
+
+    /**
      * The subnet in which the network load balancer is spawned
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)."
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The subnet in which the network load balancer is spawned
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)."
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -823,7 +904,7 @@ public final class NetworkLoadBalancer
 
     /**
      * An array of network security groups
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the network load balancer.
      *
      * <p>During the creation of the network load balancer, the service adds the new load balancer
@@ -845,7 +926,7 @@ public final class NetworkLoadBalancer
 
     /**
      * An array of network security groups
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the network load balancer.
      *
      * <p>During the creation of the network load balancer, the service adds the new load balancer
@@ -897,7 +978,7 @@ public final class NetworkLoadBalancer
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -907,7 +988,7 @@ public final class NetworkLoadBalancer
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -918,9 +999,32 @@ public final class NetworkLoadBalancer
     }
 
     /**
+     * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
+     * type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code { "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
+     * type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code { "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -930,7 +1034,7 @@ public final class NetworkLoadBalancer
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -984,12 +1088,14 @@ public final class NetworkLoadBalancer
         sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
         sb.append(", isPreserveSourceDestination=")
                 .append(String.valueOf(this.isPreserveSourceDestination));
+        sb.append(", isSymmetricHashEnabled=").append(String.valueOf(this.isSymmetricHashEnabled));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", networkSecurityGroupIds=")
                 .append(String.valueOf(this.networkSecurityGroupIds));
         sb.append(", listeners=").append(String.valueOf(this.listeners));
         sb.append(", backendSets=").append(String.valueOf(this.backendSets));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
@@ -1018,12 +1124,15 @@ public final class NetworkLoadBalancer
                 && java.util.Objects.equals(this.isPrivate, other.isPrivate)
                 && java.util.Objects.equals(
                         this.isPreserveSourceDestination, other.isPreserveSourceDestination)
+                && java.util.Objects.equals(
+                        this.isSymmetricHashEnabled, other.isSymmetricHashEnabled)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(
                         this.networkSecurityGroupIds, other.networkSecurityGroupIds)
                 && java.util.Objects.equals(this.listeners, other.listeners)
                 && java.util.Objects.equals(this.backendSets, other.backendSets)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
@@ -1054,6 +1163,11 @@ public final class NetworkLoadBalancer
                         + (this.isPreserveSourceDestination == null
                                 ? 43
                                 : this.isPreserveSourceDestination.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSymmetricHashEnabled == null
+                                ? 43
+                                : this.isSymmetricHashEnabled.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result =
                 (result * PRIME)
@@ -1063,6 +1177,11 @@ public final class NetworkLoadBalancer
         result = (result * PRIME) + (this.listeners == null ? 43 : this.listeners.hashCode());
         result = (result * PRIME) + (this.backendSets == null ? 43 : this.backendSets.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();

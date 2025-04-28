@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -50,15 +50,15 @@ public final class VirtualCircuitAssociatedTunnelDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of IPSec connection associated with the virtual circuit.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * IPSec connection associated with the virtual circuit.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ipsecConnectionId")
         private String ipsecConnectionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of IPSec connection associated with the virtual circuit.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * IPSec connection associated with the virtual circuit.
          *
          * @param ipsecConnectionId the value to set
          * @return this builder
@@ -69,15 +69,15 @@ public final class VirtualCircuitAssociatedTunnelDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the IPSec tunnel associated with the virtual circuit.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * IPSec tunnel associated with the virtual circuit.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("tunnelId")
         private String tunnelId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the IPSec tunnel associated with the virtual circuit.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * IPSec tunnel associated with the virtual circuit.
          *
          * @param tunnelId the value to set
          * @return this builder
@@ -171,15 +171,15 @@ public final class VirtualCircuitAssociatedTunnelDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * IPSec connection associated with the virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec
+     * connection associated with the virtual circuit.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ipsecConnectionId")
     private final String ipsecConnectionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * IPSec connection associated with the virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec
+     * connection associated with the virtual circuit.
      *
      * @return the value
      */
@@ -188,15 +188,15 @@ public final class VirtualCircuitAssociatedTunnelDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the IPSec tunnel associated with the virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * IPSec tunnel associated with the virtual circuit.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("tunnelId")
     private final String tunnelId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the IPSec tunnel associated with the virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * IPSec tunnel associated with the virtual circuit.
      *
      * @return the value
      */

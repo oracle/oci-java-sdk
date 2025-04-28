@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog;
@@ -67,6 +67,38 @@ public interface DataCatalog extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a Catalog resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AddCatalogLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddCatalogLock API.
+     */
+    AddCatalogLockResponse addCatalogLock(AddCatalogLockRequest request);
+
+    /**
+     * Adds a lock to a CatalogPrivateEndpoint resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AddCatalogPrivateEndpointLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AddCatalogPrivateEndpointLock API.
+     */
+    AddCatalogPrivateEndpointLockResponse addCatalogPrivateEndpointLock(
+            AddCatalogPrivateEndpointLockRequest request);
+
+    /**
      * Add data selector pattern to the data asset.
      *
      * @param request The request object containing the details to send
@@ -76,11 +108,27 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AddDataSelectorPatternsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AddDataSelectorPatternsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     AddDataSelectorPatterns API.
      */
     AddDataSelectorPatternsResponse addDataSelectorPatterns(AddDataSelectorPatternsRequest request);
+
+    /**
+     * Adds a lock to a Metastore resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AddMetastoreLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMetastoreLock
+     *     API.
+     */
+    AddMetastoreLockResponse addMetastoreLock(AddMetastoreLockRequest request);
 
     /**
      * Associate the custom property for the given type
@@ -92,11 +140,29 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AssociateCustomPropertyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AssociateCustomPropertyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     AssociateCustomProperty API.
      */
     AssociateCustomPropertyResponse associateCustomProperty(AssociateCustomPropertyRequest request);
+
+    /**
+     * Export technical objects from a Data Asset in Excel format. Returns details about the job
+     * which actually performs the export.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AsynchronousExportDataAssetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AsynchronousExportDataAsset API.
+     */
+    AsynchronousExportDataAssetResponse asynchronousExportDataAsset(
+            AsynchronousExportDataAssetRequest request);
 
     /**
      * Exports the contents of a glossary in Excel format. Returns details about the job which
@@ -109,7 +175,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AsynchronousExportGlossaryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AsynchronousExportGlossaryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     AsynchronousExportGlossary API.
      */
@@ -127,7 +193,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AttachCatalogPrivateEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AttachCatalogPrivateEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     AttachCatalogPrivateEndpoint API.
      */
@@ -145,7 +211,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ChangeCatalogCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ChangeCatalogCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeCatalogCompartment API.
      */
@@ -163,7 +229,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ChangeCatalogPrivateEndpointCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ChangeCatalogPrivateEndpointCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeCatalogPrivateEndpointCompartment API.
      */
@@ -181,7 +247,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ChangeMetastoreCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ChangeMetastoreCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeMetastoreCompartment API.
      */
@@ -198,7 +264,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateAttributeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateAttributeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAttribute
      *     API.
      */
@@ -214,7 +280,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateAttributeTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateAttributeTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAttributeTag
      *     API.
      */
@@ -231,7 +297,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateCatalogExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateCatalogExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCatalog API.
      */
     CreateCatalogResponse createCatalog(CreateCatalogRequest request);
@@ -246,7 +312,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateCatalogPrivateEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateCatalogPrivateEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateCatalogPrivateEndpoint API.
      */
@@ -263,7 +329,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateConnectionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateConnectionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnection
      *     API.
      */
@@ -279,7 +345,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateCustomPropertyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateCustomPropertyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateCustomProperty API.
      */
@@ -295,7 +361,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateDataAssetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateDataAssetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataAsset
      *     API.
      */
@@ -311,7 +377,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateDataAssetTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateDataAssetTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataAssetTag
      *     API.
      */
@@ -327,7 +393,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateEntityExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateEntityExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEntity API.
      */
     CreateEntityResponse createEntity(CreateEntityRequest request);
@@ -342,7 +408,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateEntityTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateEntityTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEntityTag
      *     API.
      */
@@ -358,7 +424,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateFolderExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateFolderExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFolder API.
      */
     CreateFolderResponse createFolder(CreateFolderRequest request);
@@ -373,7 +439,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateFolderTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateFolderTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFolderTag
      *     API.
      */
@@ -389,7 +455,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateGlossaryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateGlossaryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateGlossary API.
      */
     CreateGlossaryResponse createGlossary(CreateGlossaryRequest request);
@@ -404,7 +470,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJob API.
      */
     CreateJobResponse createJob(CreateJobRequest request);
@@ -419,7 +485,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateJobDefinitionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateJobDefinitionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJobDefinition
      *     API.
      */
@@ -435,7 +501,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateJobExecutionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateJobExecutionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJobExecution
      *     API.
      */
@@ -451,7 +517,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateMetastoreExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateMetastoreExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMetastore
      *     API.
      */
@@ -467,7 +533,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNamespace
      *     API.
      */
@@ -483,7 +549,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreatePatternExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreatePatternExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePattern API.
      */
     CreatePatternResponse createPattern(CreatePatternRequest request);
@@ -498,7 +564,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateTermExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateTermExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTerm API.
      */
     CreateTermResponse createTerm(CreateTermRequest request);
@@ -513,7 +579,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateTermRelationshipExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateTermRelationshipExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateTermRelationship API.
      */
@@ -529,7 +595,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteAttributeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteAttributeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAttribute
      *     API.
      */
@@ -545,7 +611,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteAttributeTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteAttributeTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAttributeTag
      *     API.
      */
@@ -561,7 +627,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteCatalogExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteCatalogExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCatalog API.
      */
     DeleteCatalogResponse deleteCatalog(DeleteCatalogRequest request);
@@ -576,7 +642,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteCatalogPrivateEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteCatalogPrivateEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteCatalogPrivateEndpoint API.
      */
@@ -593,7 +659,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteConnectionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteConnectionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConnection
      *     API.
      */
@@ -609,7 +675,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteCustomPropertyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteCustomPropertyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteCustomProperty API.
      */
@@ -625,7 +691,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteDataAssetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteDataAssetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataAsset
      *     API.
      */
@@ -641,7 +707,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteDataAssetTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteDataAssetTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataAssetTag
      *     API.
      */
@@ -657,7 +723,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteEntityExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteEntityExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEntity API.
      */
     DeleteEntityResponse deleteEntity(DeleteEntityRequest request);
@@ -672,7 +738,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteEntityTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteEntityTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEntityTag
      *     API.
      */
@@ -688,7 +754,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteFolderExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteFolderExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFolder API.
      */
     DeleteFolderResponse deleteFolder(DeleteFolderRequest request);
@@ -703,7 +769,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteFolderTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteFolderTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFolderTag
      *     API.
      */
@@ -719,7 +785,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteGlossaryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteGlossaryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGlossary API.
      */
     DeleteGlossaryResponse deleteGlossary(DeleteGlossaryRequest request);
@@ -734,7 +800,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJob API.
      */
     DeleteJobResponse deleteJob(DeleteJobRequest request);
@@ -749,7 +815,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteJobDefinitionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteJobDefinitionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJobDefinition
      *     API.
      */
@@ -765,7 +831,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteMetastoreExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteMetastoreExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMetastore
      *     API.
      */
@@ -781,7 +847,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNamespace
      *     API.
      */
@@ -797,7 +863,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeletePatternExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeletePatternExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePattern API.
      */
     DeletePatternResponse deletePattern(DeletePatternRequest request);
@@ -812,7 +878,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteTermExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteTermExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTerm API.
      */
     DeleteTermResponse deleteTerm(DeleteTermRequest request);
@@ -827,7 +893,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteTermRelationshipExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteTermRelationshipExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteTermRelationship API.
      */
@@ -844,7 +910,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DetachCatalogPrivateEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DetachCatalogPrivateEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DetachCatalogPrivateEndpoint API.
      */
@@ -861,7 +927,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DisassociateCustomPropertyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DisassociateCustomPropertyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DisassociateCustomProperty API.
      */
@@ -878,7 +944,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ExpandTreeForGlossaryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ExpandTreeForGlossaryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ExpandTreeForGlossary API.
      */
@@ -894,7 +960,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ExportGlossaryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ExportGlossaryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportGlossary API.
      */
     ExportGlossaryResponse exportGlossary(ExportGlossaryRequest request);
@@ -909,7 +975,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/FetchEntityLineageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/FetchEntityLineageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use FetchEntityLineage
      *     API.
      */
@@ -925,7 +991,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetAttributeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetAttributeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAttribute API.
      */
     GetAttributeResponse getAttribute(GetAttributeRequest request);
@@ -940,7 +1006,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetAttributeTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetAttributeTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAttributeTag
      *     API.
      */
@@ -956,7 +1022,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetCatalogExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetCatalogExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCatalog API.
      */
     GetCatalogResponse getCatalog(GetCatalogRequest request);
@@ -971,7 +1037,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetCatalogPrivateEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetCatalogPrivateEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetCatalogPrivateEndpoint API.
      */
@@ -988,7 +1054,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetConnectionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetConnectionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnection API.
      */
     GetConnectionResponse getConnection(GetConnectionRequest request);
@@ -1003,7 +1069,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetCustomPropertyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetCustomPropertyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCustomProperty
      *     API.
      */
@@ -1019,7 +1085,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetDataAssetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetDataAssetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataAsset API.
      */
     GetDataAssetResponse getDataAsset(GetDataAssetRequest request);
@@ -1034,7 +1100,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetDataAssetTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetDataAssetTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataAssetTag
      *     API.
      */
@@ -1050,7 +1116,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetEntityExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetEntityExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEntity API.
      */
     GetEntityResponse getEntity(GetEntityRequest request);
@@ -1065,7 +1131,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetEntityTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetEntityTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEntityTag API.
      */
     GetEntityTagResponse getEntityTag(GetEntityTagRequest request);
@@ -1080,7 +1146,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetFolderExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetFolderExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFolder API.
      */
     GetFolderResponse getFolder(GetFolderRequest request);
@@ -1095,7 +1161,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetFolderTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetFolderTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFolderTag API.
      */
     GetFolderTagResponse getFolderTag(GetFolderTagRequest request);
@@ -1110,7 +1176,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetGlossaryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetGlossaryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGlossary API.
      */
     GetGlossaryResponse getGlossary(GetGlossaryRequest request);
@@ -1125,7 +1191,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJob API.
      */
     GetJobResponse getJob(GetJobRequest request);
@@ -1140,7 +1206,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobDefinitionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobDefinitionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobDefinition
      *     API.
      */
@@ -1156,7 +1222,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobExecutionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobExecutionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobExecution
      *     API.
      */
@@ -1172,7 +1238,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobLogExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobLogExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobLog API.
      */
     GetJobLogResponse getJobLog(GetJobLogRequest request);
@@ -1187,7 +1253,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobMetricsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobMetricsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobMetrics API.
      */
     GetJobMetricsResponse getJobMetrics(GetJobMetricsRequest request);
@@ -1202,7 +1268,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetMetastoreExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetMetastoreExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMetastore API.
      */
     GetMetastoreResponse getMetastore(GetMetastoreRequest request);
@@ -1217,7 +1283,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNamespace API.
      */
     GetNamespaceResponse getNamespace(GetNamespaceRequest request);
@@ -1232,7 +1298,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetPatternExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetPatternExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPattern API.
      */
     GetPatternResponse getPattern(GetPatternRequest request);
@@ -1247,7 +1313,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetTermExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetTermExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTerm API.
      */
     GetTermResponse getTerm(GetTermRequest request);
@@ -1262,7 +1328,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetTermRelationshipExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetTermRelationshipExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTermRelationship
      *     API.
      */
@@ -1278,7 +1344,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetTypeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetTypeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetType API.
      */
     GetTypeResponse getType(GetTypeRequest request);
@@ -1293,7 +1359,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
@@ -1308,7 +1374,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportConnectionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportConnectionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportConnection
      *     API.
      */
@@ -1324,7 +1390,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportDataAssetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportDataAssetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportDataAsset
      *     API.
      */
@@ -1341,10 +1407,25 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportGlossaryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportGlossaryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportGlossary API.
      */
     ImportGlossaryResponse importGlossary(ImportGlossaryRequest request);
+
+    /**
+     * Imports lineage metadata. Returns details about the job that performs the import.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportLineageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportLineage API.
+     */
+    ImportLineageResponse importLineage(ImportLineageRequest request);
 
     /**
      * List the physical entities aggregated by this logical entity.
@@ -1356,7 +1437,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListAggregatedPhysicalEntitiesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListAggregatedPhysicalEntitiesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListAggregatedPhysicalEntities API.
      */
@@ -1373,7 +1454,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListAttributeTagsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListAttributeTagsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAttributeTags
      *     API.
      */
@@ -1389,7 +1470,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListAttributesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListAttributesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAttributes API.
      */
     ListAttributesResponse listAttributes(ListAttributesRequest request);
@@ -1404,7 +1485,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListCatalogPrivateEndpointsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListCatalogPrivateEndpointsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListCatalogPrivateEndpoints API.
      */
@@ -1421,7 +1502,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListCatalogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListCatalogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCatalogs API.
      */
     ListCatalogsResponse listCatalogs(ListCatalogsRequest request);
@@ -1436,7 +1517,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListConnectionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListConnectionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnections
      *     API.
      */
@@ -1452,7 +1533,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListCustomPropertiesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListCustomPropertiesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListCustomProperties API.
      */
@@ -1468,7 +1549,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListDataAssetTagsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListDataAssetTagsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataAssetTags
      *     API.
      */
@@ -1484,7 +1565,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListDataAssetsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListDataAssetsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataAssets API.
      */
     ListDataAssetsResponse listDataAssets(ListDataAssetsRequest request);
@@ -1499,7 +1580,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListDerivedLogicalEntitiesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListDerivedLogicalEntitiesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListDerivedLogicalEntities API.
      */
@@ -1516,7 +1597,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListEntitiesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListEntitiesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEntities API.
      */
     ListEntitiesResponse listEntities(ListEntitiesRequest request);
@@ -1531,7 +1612,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListEntityTagsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListEntityTagsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEntityTags API.
      */
     ListEntityTagsResponse listEntityTags(ListEntityTagsRequest request);
@@ -1546,7 +1627,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListFolderTagsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListFolderTagsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFolderTags API.
      */
     ListFolderTagsResponse listFolderTags(ListFolderTagsRequest request);
@@ -1561,7 +1642,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListFoldersExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListFoldersExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFolders API.
      */
     ListFoldersResponse listFolders(ListFoldersRequest request);
@@ -1576,7 +1657,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListGlossariesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListGlossariesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGlossaries API.
      */
     ListGlossariesResponse listGlossaries(ListGlossariesRequest request);
@@ -1591,7 +1672,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobDefinitionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobDefinitionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobDefinitions
      *     API.
      */
@@ -1607,7 +1688,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobExecutionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobExecutionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobExecutions
      *     API.
      */
@@ -1623,7 +1704,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobLogs API.
      */
     ListJobLogsResponse listJobLogs(ListJobLogsRequest request);
@@ -1638,7 +1719,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobMetricsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobMetricsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobMetrics API.
      */
     ListJobMetricsResponse listJobMetrics(ListJobMetricsRequest request);
@@ -1653,7 +1734,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobs API.
      */
     ListJobsResponse listJobs(ListJobsRequest request);
@@ -1668,7 +1749,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListMetastoresExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListMetastoresExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMetastores API.
      */
     ListMetastoresResponse listMetastores(ListMetastoresRequest request);
@@ -1683,7 +1764,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListNamespacesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListNamespacesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNamespaces API.
      */
     ListNamespacesResponse listNamespaces(ListNamespacesRequest request);
@@ -1698,7 +1779,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListPatternsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListPatternsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatterns API.
      */
     ListPatternsResponse listPatterns(ListPatternsRequest request);
@@ -1713,7 +1794,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListRulesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListRulesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRules API.
      */
     ListRulesResponse listRules(ListRulesRequest request);
@@ -1728,7 +1809,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListTagsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListTagsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTags API.
      */
     ListTagsResponse listTags(ListTagsRequest request);
@@ -1743,7 +1824,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListTermRelationshipsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListTermRelationshipsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListTermRelationships API.
      */
@@ -1759,7 +1840,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListTermsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListTermsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTerms API.
      */
     ListTermsResponse listTerms(ListTermsRequest request);
@@ -1774,7 +1855,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListTypesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListTypesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTypes API.
      */
     ListTypesResponse listTypes(ListTypesRequest request);
@@ -1789,7 +1870,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListWorkRequestErrors API.
      */
@@ -1805,7 +1886,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
      *     API.
      */
@@ -1821,7 +1902,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
@@ -1837,7 +1918,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ObjectStatsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ObjectStatsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ObjectStats API.
      */
     ObjectStatsResponse objectStats(ObjectStatsRequest request);
@@ -1852,7 +1933,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ParseConnectionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ParseConnectionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ParseConnection
      *     API.
      */
@@ -1870,7 +1951,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ProcessRecommendationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ProcessRecommendationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ProcessRecommendation API.
      */
@@ -1888,11 +1969,44 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RecommendationsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RecommendationsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use Recommendations
      *     API.
      */
     RecommendationsResponse recommendations(RecommendationsRequest request);
+
+    /**
+     * Removes a lock from a Catalog resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RemoveCatalogLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveCatalogLock
+     *     API.
+     */
+    RemoveCatalogLockResponse removeCatalogLock(RemoveCatalogLockRequest request);
+
+    /**
+     * Removes a lock from a CatalogPrivateEndpoint resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RemoveCatalogPrivateEndpointLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveCatalogPrivateEndpointLock API.
+     */
+    RemoveCatalogPrivateEndpointLockResponse removeCatalogPrivateEndpointLock(
+            RemoveCatalogPrivateEndpointLockRequest request);
 
     /**
      * Remove data selector pattern from the data asset.
@@ -1904,12 +2018,28 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RemoveDataSelectorPatternsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RemoveDataSelectorPatternsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RemoveDataSelectorPatterns API.
      */
     RemoveDataSelectorPatternsResponse removeDataSelectorPatterns(
             RemoveDataSelectorPatternsRequest request);
+
+    /**
+     * Removes a lock from a Metastore resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RemoveMetastoreLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMetastoreLock
+     *     API.
+     */
+    RemoveMetastoreLockResponse removeMetastoreLock(RemoveMetastoreLockRequest request);
 
     /**
      * Returns a list of search results within a data catalog.
@@ -1921,7 +2051,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/SearchCriteriaExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/SearchCriteriaExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchCriteria API.
      */
     SearchCriteriaResponse searchCriteria(SearchCriteriaRequest request);
@@ -1936,7 +2066,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/SuggestMatchesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/SuggestMatchesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SuggestMatches API.
      */
     SuggestMatchesResponse suggestMatches(SuggestMatchesRequest request);
@@ -1951,7 +2081,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/SynchronousExportDataAssetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/SynchronousExportDataAssetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SynchronousExportDataAsset API.
      */
@@ -1968,7 +2098,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/TestConnectionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/TestConnectionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use TestConnection API.
      */
     TestConnectionResponse testConnection(TestConnectionRequest request);
@@ -1983,7 +2113,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateAttributeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateAttributeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAttribute
      *     API.
      */
@@ -1999,7 +2129,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateCatalogExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateCatalogExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCatalog API.
      */
     UpdateCatalogResponse updateCatalog(UpdateCatalogRequest request);
@@ -2014,7 +2144,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateCatalogPrivateEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateCatalogPrivateEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateCatalogPrivateEndpoint API.
      */
@@ -2031,7 +2161,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateConnectionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateConnectionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConnection
      *     API.
      */
@@ -2047,7 +2177,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateCustomPropertyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateCustomPropertyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateCustomProperty API.
      */
@@ -2063,7 +2193,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateDataAssetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateDataAssetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataAsset
      *     API.
      */
@@ -2079,7 +2209,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateEntityExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateEntityExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEntity API.
      */
     UpdateEntityResponse updateEntity(UpdateEntityRequest request);
@@ -2094,7 +2224,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateFolderExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateFolderExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFolder API.
      */
     UpdateFolderResponse updateFolder(UpdateFolderRequest request);
@@ -2109,7 +2239,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateGlossaryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateGlossaryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGlossary API.
      */
     UpdateGlossaryResponse updateGlossary(UpdateGlossaryRequest request);
@@ -2124,7 +2254,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJob API.
      */
     UpdateJobResponse updateJob(UpdateJobRequest request);
@@ -2139,7 +2269,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateJobDefinitionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateJobDefinitionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJobDefinition
      *     API.
      */
@@ -2155,7 +2285,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateMetastoreExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateMetastoreExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMetastore
      *     API.
      */
@@ -2171,7 +2301,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNamespace
      *     API.
      */
@@ -2187,7 +2317,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdatePatternExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdatePatternExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePattern API.
      */
     UpdatePatternResponse updatePattern(UpdatePatternRequest request);
@@ -2202,7 +2332,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateTermExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateTermExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTerm API.
      */
     UpdateTermResponse updateTerm(UpdateTermRequest request);
@@ -2217,7 +2347,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateTermRelationshipExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateTermRelationshipExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateTermRelationship API.
      */
@@ -2233,7 +2363,7 @@ public interface DataCatalog extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UploadCredentialsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UploadCredentialsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UploadCredentials
      *     API.
      */
@@ -2249,7 +2379,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UsersExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UsersExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use Users API.
      */
     UsersResponse users(UsersRequest request);
@@ -2264,7 +2394,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ValidateConnectionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ValidateConnectionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateConnection
      *     API.
      */
@@ -2280,7 +2410,7 @@ public interface DataCatalog extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ValidatePatternExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ValidatePatternExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidatePattern
      *     API.
      */

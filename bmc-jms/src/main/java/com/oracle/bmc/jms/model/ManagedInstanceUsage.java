@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -32,9 +32,12 @@ public final class ManagedInstanceUsage
         "hostname",
         "hostId",
         "operatingSystem",
+        "agent",
         "approximateApplicationCount",
         "approximateInstallationCount",
         "approximateJreCount",
+        "drsFileStatus",
+        "applicationInvokedBy",
         "timeStart",
         "timeEnd",
         "timeFirstSeen",
@@ -46,9 +49,12 @@ public final class ManagedInstanceUsage
             String hostname,
             String hostId,
             OperatingSystem operatingSystem,
+            Agent agent,
             Integer approximateApplicationCount,
             Integer approximateInstallationCount,
             Integer approximateJreCount,
+            DrsFileStatus drsFileStatus,
+            String applicationInvokedBy,
             java.util.Date timeStart,
             java.util.Date timeEnd,
             java.util.Date timeFirstSeen,
@@ -59,9 +65,12 @@ public final class ManagedInstanceUsage
         this.hostname = hostname;
         this.hostId = hostId;
         this.operatingSystem = operatingSystem;
+        this.agent = agent;
         this.approximateApplicationCount = approximateApplicationCount;
         this.approximateInstallationCount = approximateInstallationCount;
         this.approximateJreCount = approximateJreCount;
+        this.drsFileStatus = drsFileStatus;
+        this.applicationInvokedBy = applicationInvokedBy;
         this.timeStart = timeStart;
         this.timeEnd = timeEnd;
         this.timeFirstSeen = timeFirstSeen;
@@ -71,14 +80,14 @@ public final class ManagedInstanceUsage
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related managed instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related managed instance.
          *
          * @param managedInstanceId the value to set
@@ -120,15 +129,15 @@ public final class ManagedInstanceUsage
             return this;
         }
         /**
-         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * of the related managed instance.
+         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the related managed instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("hostId")
         private String hostId;
 
         /**
-         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * of the related managed instance.
+         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the related managed instance.
          *
          * @param hostId the value to set
          * @return this builder
@@ -145,6 +154,15 @@ public final class ManagedInstanceUsage
         public Builder operatingSystem(OperatingSystem operatingSystem) {
             this.operatingSystem = operatingSystem;
             this.__explicitlySet__.add("operatingSystem");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("agent")
+        private Agent agent;
+
+        public Builder agent(Agent agent) {
+            this.agent = agent;
+            this.__explicitlySet__.add("agent");
             return this;
         }
         /** The approximate count of applications reported by this managed instance. */
@@ -190,6 +208,40 @@ public final class ManagedInstanceUsage
         public Builder approximateJreCount(Integer approximateJreCount) {
             this.approximateJreCount = approximateJreCount;
             this.__explicitlySet__.add("approximateJreCount");
+            return this;
+        }
+        /** DRS file status */
+        @com.fasterxml.jackson.annotation.JsonProperty("drsFileStatus")
+        private DrsFileStatus drsFileStatus;
+
+        /**
+         * DRS file status
+         *
+         * @param drsFileStatus the value to set
+         * @return this builder
+         */
+        public Builder drsFileStatus(DrsFileStatus drsFileStatus) {
+            this.drsFileStatus = drsFileStatus;
+            this.__explicitlySet__.add("drsFileStatus");
+            return this;
+        }
+        /**
+         * Comma separated list of user names that invoked applications within this managed
+         * instance.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("applicationInvokedBy")
+        private String applicationInvokedBy;
+
+        /**
+         * Comma separated list of user names that invoked applications within this managed
+         * instance.
+         *
+         * @param applicationInvokedBy the value to set
+         * @return this builder
+         */
+        public Builder applicationInvokedBy(String applicationInvokedBy) {
+            this.applicationInvokedBy = applicationInvokedBy;
+            this.__explicitlySet__.add("applicationInvokedBy");
             return this;
         }
         /**
@@ -288,9 +340,12 @@ public final class ManagedInstanceUsage
                             this.hostname,
                             this.hostId,
                             this.operatingSystem,
+                            this.agent,
                             this.approximateApplicationCount,
                             this.approximateInstallationCount,
                             this.approximateJreCount,
+                            this.drsFileStatus,
+                            this.applicationInvokedBy,
                             this.timeStart,
                             this.timeEnd,
                             this.timeFirstSeen,
@@ -318,6 +373,9 @@ public final class ManagedInstanceUsage
             if (model.wasPropertyExplicitlySet("operatingSystem")) {
                 this.operatingSystem(model.getOperatingSystem());
             }
+            if (model.wasPropertyExplicitlySet("agent")) {
+                this.agent(model.getAgent());
+            }
             if (model.wasPropertyExplicitlySet("approximateApplicationCount")) {
                 this.approximateApplicationCount(model.getApproximateApplicationCount());
             }
@@ -326,6 +384,12 @@ public final class ManagedInstanceUsage
             }
             if (model.wasPropertyExplicitlySet("approximateJreCount")) {
                 this.approximateJreCount(model.getApproximateJreCount());
+            }
+            if (model.wasPropertyExplicitlySet("drsFileStatus")) {
+                this.drsFileStatus(model.getDrsFileStatus());
+            }
+            if (model.wasPropertyExplicitlySet("applicationInvokedBy")) {
+                this.applicationInvokedBy(model.getApplicationInvokedBy());
             }
             if (model.wasPropertyExplicitlySet("timeStart")) {
                 this.timeStart(model.getTimeStart());
@@ -353,14 +417,14 @@ public final class ManagedInstanceUsage
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * related managed instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * related managed instance.
      *
      * @return the value
@@ -396,15 +460,15 @@ public final class ManagedInstanceUsage
     }
 
     /**
-     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-     * the related managed instance.
+     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * related managed instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("hostId")
     private final String hostId;
 
     /**
-     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-     * the related managed instance.
+     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * related managed instance.
      *
      * @return the value
      */
@@ -417,6 +481,13 @@ public final class ManagedInstanceUsage
 
     public OperatingSystem getOperatingSystem() {
         return operatingSystem;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("agent")
+    private final Agent agent;
+
+    public Agent getAgent() {
+        return agent;
     }
 
     /** The approximate count of applications reported by this managed instance. */
@@ -456,6 +527,34 @@ public final class ManagedInstanceUsage
      */
     public Integer getApproximateJreCount() {
         return approximateJreCount;
+    }
+
+    /** DRS file status */
+    @com.fasterxml.jackson.annotation.JsonProperty("drsFileStatus")
+    private final DrsFileStatus drsFileStatus;
+
+    /**
+     * DRS file status
+     *
+     * @return the value
+     */
+    public DrsFileStatus getDrsFileStatus() {
+        return drsFileStatus;
+    }
+
+    /**
+     * Comma separated list of user names that invoked applications within this managed instance.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationInvokedBy")
+    private final String applicationInvokedBy;
+
+    /**
+     * Comma separated list of user names that invoked applications within this managed instance.
+     *
+     * @return the value
+     */
+    public String getApplicationInvokedBy() {
+        return applicationInvokedBy;
     }
 
     /**
@@ -554,11 +653,14 @@ public final class ManagedInstanceUsage
         sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(", hostId=").append(String.valueOf(this.hostId));
         sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
+        sb.append(", agent=").append(String.valueOf(this.agent));
         sb.append(", approximateApplicationCount=")
                 .append(String.valueOf(this.approximateApplicationCount));
         sb.append(", approximateInstallationCount=")
                 .append(String.valueOf(this.approximateInstallationCount));
         sb.append(", approximateJreCount=").append(String.valueOf(this.approximateJreCount));
+        sb.append(", drsFileStatus=").append(String.valueOf(this.drsFileStatus));
+        sb.append(", applicationInvokedBy=").append(String.valueOf(this.applicationInvokedBy));
         sb.append(", timeStart=").append(String.valueOf(this.timeStart));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
@@ -582,11 +684,14 @@ public final class ManagedInstanceUsage
                 && java.util.Objects.equals(this.hostname, other.hostname)
                 && java.util.Objects.equals(this.hostId, other.hostId)
                 && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
+                && java.util.Objects.equals(this.agent, other.agent)
                 && java.util.Objects.equals(
                         this.approximateApplicationCount, other.approximateApplicationCount)
                 && java.util.Objects.equals(
                         this.approximateInstallationCount, other.approximateInstallationCount)
                 && java.util.Objects.equals(this.approximateJreCount, other.approximateJreCount)
+                && java.util.Objects.equals(this.drsFileStatus, other.drsFileStatus)
+                && java.util.Objects.equals(this.applicationInvokedBy, other.applicationInvokedBy)
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
@@ -611,6 +716,7 @@ public final class ManagedInstanceUsage
         result =
                 (result * PRIME)
                         + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
+        result = (result * PRIME) + (this.agent == null ? 43 : this.agent.hashCode());
         result =
                 (result * PRIME)
                         + (this.approximateApplicationCount == null
@@ -626,6 +732,14 @@ public final class ManagedInstanceUsage
                         + (this.approximateJreCount == null
                                 ? 43
                                 : this.approximateJreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.drsFileStatus == null ? 43 : this.drsFileStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationInvokedBy == null
+                                ? 43
+                                : this.applicationInvokedBy.hashCode());
         result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result =

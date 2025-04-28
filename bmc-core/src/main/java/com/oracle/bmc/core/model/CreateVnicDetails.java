@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -8,7 +8,7 @@ package com.oracle.bmc.core.model;
  * Contains properties for a VNIC. You use this object when creating the primary VNIC during
  * instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual
  * Network Interface Cards
- * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). <br>
+ * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,6 +33,7 @@ public final class CreateVnicDetails
         "definedTags",
         "displayName",
         "freeformTags",
+        "securityAttributes",
         "hostnameLabel",
         "ipv6AddressIpv6SubnetCidrPairDetails",
         "nsgIds",
@@ -48,6 +49,7 @@ public final class CreateVnicDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String hostnameLabel,
             java.util.List<Ipv6AddressIpv6SubnetCidrPairDetails>
                     ipv6AddressIpv6SubnetCidrPairDetails,
@@ -63,6 +65,7 @@ public final class CreateVnicDetails
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
+        this.securityAttributes = securityAttributes;
         this.hostnameLabel = hostnameLabel;
         this.ipv6AddressIpv6SubnetCidrPairDetails = ipv6AddressIpv6SubnetCidrPairDetails;
         this.nsgIds = nsgIds;
@@ -107,13 +110,13 @@ public final class CreateVnicDetails
          *
          * <p>*Note:** This public IP address is associated with the primary private IP on the VNIC.
          * For more information, see [IP
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
          *
          * <p>*Note:** There's a limit to the number of {@link PublicIp} a VNIC or instance can
          * have. If you try to create a secondary VNIC with an assigned public IP for an instance
          * that has already reached its public IP limit, an error is returned. For information about
          * the public IP limits, see [Public IP
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          *
          * <p>Example: {@code false}
          *
@@ -133,13 +136,13 @@ public final class CreateVnicDetails
          *
          * <p>*Note:** This public IP address is associated with the primary private IP on the VNIC.
          * For more information, see [IP
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
          *
          * <p>*Note:** There's a limit to the number of {@link PublicIp} a VNIC or instance can
          * have. If you try to create a secondary VNIC with an assigned public IP for an instance
          * that has already reached its public IP limit, an error is returned. For information about
          * the public IP limits, see [Public IP
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          *
          * <p>Example: {@code false}
          *
@@ -184,7 +187,7 @@ public final class CreateVnicDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -194,7 +197,7 @@ public final class CreateVnicDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -229,7 +232,7 @@ public final class CreateVnicDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -239,7 +242,7 @@ public final class CreateVnicDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -249,6 +252,38 @@ public final class CreateVnicDetails
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -263,7 +298,7 @@ public final class CreateVnicDetails
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>When launching an instance, use this {@code hostnameLabel} instead of the deprecated
          * {@code hostnameLabel} in {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
@@ -289,7 +324,7 @@ public final class CreateVnicDetails
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>When launching an instance, use this {@code hostnameLabel} instead of the deprecated
          * {@code hostnameLabel} in {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
@@ -404,7 +439,7 @@ public final class CreateVnicDetails
          * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
-         * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
          * <p>If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified
          * because the source/destination check is always disabled for VNICs in a VLAN. See {@link
@@ -419,7 +454,7 @@ public final class CreateVnicDetails
          * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
-         * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
          * <p>If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified
          * because the source/destination check is always disabled for VNICs in a VLAN. See {@link
@@ -436,9 +471,9 @@ public final class CreateVnicDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet to create the VNIC in. When launching an instance, use this {@code
-         * subnetId} instead of the deprecated {@code subnetId} in {@link
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet to create the VNIC in. When launching an instance, use this {@code subnetId}
+         * instead of the deprecated {@code subnetId} in {@link
          * #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}. At least one
          * of them is required; if you provide both, the values must match.
          *
@@ -450,9 +485,9 @@ public final class CreateVnicDetails
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet to create the VNIC in. When launching an instance, use this {@code
-         * subnetId} instead of the deprecated {@code subnetId} in {@link
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet to create the VNIC in. When launching an instance, use this {@code subnetId}
+         * instead of the deprecated {@code subnetId} in {@link
          * #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}. At least one
          * of them is required; if you provide both, the values must match.
          *
@@ -471,8 +506,8 @@ public final class CreateVnicDetails
         /**
          * Provide this attribute only if you are an Oracle Cloud VMware Solution customer and
          * creating a secondary VNIC in a VLAN. The value is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the VLAN. See {@link Vlan}.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VLAN. See {@link Vlan}.
          *
          * <p>Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a {@code
          * vlanId} and {@code subnetId}, the request fails.
@@ -483,8 +518,8 @@ public final class CreateVnicDetails
         /**
          * Provide this attribute only if you are an Oracle Cloud VMware Solution customer and
          * creating a secondary VNIC in a VLAN. The value is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the VLAN. See {@link Vlan}.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VLAN. See {@link Vlan}.
          *
          * <p>Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a {@code
          * vlanId} and {@code subnetId}, the request fails.
@@ -510,6 +545,7 @@ public final class CreateVnicDetails
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
+                            this.securityAttributes,
                             this.hostnameLabel,
                             this.ipv6AddressIpv6SubnetCidrPairDetails,
                             this.nsgIds,
@@ -542,6 +578,9 @@ public final class CreateVnicDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("hostnameLabel")) {
                 this.hostnameLabel(model.getHostnameLabel());
@@ -609,13 +648,13 @@ public final class CreateVnicDetails
      *
      * <p>*Note:** This public IP address is associated with the primary private IP on the VNIC. For
      * more information, see [IP
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
      *
      * <p>*Note:** There's a limit to the number of {@link PublicIp} a VNIC or instance can have. If
      * you try to create a secondary VNIC with an assigned public IP for an instance that has
      * already reached its public IP limit, an error is returned. For information about the public
      * IP limits, see [Public IP
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      * <p>Example: {@code false}
      *
@@ -635,13 +674,13 @@ public final class CreateVnicDetails
      *
      * <p>*Note:** This public IP address is associated with the primary private IP on the VNIC. For
      * more information, see [IP
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
      *
      * <p>*Note:** There's a limit to the number of {@link PublicIp} a VNIC or instance can have. If
      * you try to create a secondary VNIC with an assigned public IP for an instance that has
      * already reached its public IP limit, an error is returned. For information about the public
      * IP limits, see [Public IP
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      * <p>Example: {@code false}
      *
@@ -682,7 +721,7 @@ public final class CreateVnicDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -692,7 +731,7 @@ public final class CreateVnicDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -722,7 +761,7 @@ public final class CreateVnicDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -732,7 +771,7 @@ public final class CreateVnicDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -740,6 +779,35 @@ public final class CreateVnicDetails
      */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
+    }
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -753,7 +821,7 @@ public final class CreateVnicDetails
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>When launching an instance, use this {@code hostnameLabel} instead of the deprecated
      * {@code hostnameLabel} in {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
@@ -778,7 +846,7 @@ public final class CreateVnicDetails
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>When launching an instance, use this {@code hostnameLabel} instead of the deprecated
      * {@code hostnameLabel} in {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
@@ -882,7 +950,7 @@ public final class CreateVnicDetails
      * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
-     * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      *
      * <p>If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified
      * because the source/destination check is always disabled for VNICs in a VLAN. See {@link
@@ -897,7 +965,7 @@ public final class CreateVnicDetails
      * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
-     * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      *
      * <p>If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified
      * because the source/destination check is always disabled for VNICs in a VLAN. See {@link
@@ -912,9 +980,9 @@ public final class CreateVnicDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet to create the VNIC in. When launching an instance, use this {@code subnetId}
-     * instead of the deprecated {@code subnetId} in {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet to create the VNIC in. When launching an instance, use this {@code subnetId} instead
+     * of the deprecated {@code subnetId} in {@link
      * #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}. At least one of
      * them is required; if you provide both, the values must match.
      *
@@ -926,9 +994,9 @@ public final class CreateVnicDetails
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet to create the VNIC in. When launching an instance, use this {@code subnetId}
-     * instead of the deprecated {@code subnetId} in {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet to create the VNIC in. When launching an instance, use this {@code subnetId} instead
+     * of the deprecated {@code subnetId} in {@link
      * #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}. At least one of
      * them is required; if you provide both, the values must match.
      *
@@ -945,8 +1013,8 @@ public final class CreateVnicDetails
     /**
      * Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating
      * a secondary VNIC in a VLAN. The value is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VLAN. See {@link Vlan}.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+     * See {@link Vlan}.
      *
      * <p>Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a {@code
      * vlanId} and {@code subnetId}, the request fails.
@@ -957,8 +1025,8 @@ public final class CreateVnicDetails
     /**
      * Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating
      * a secondary VNIC in a VLAN. The value is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VLAN. See {@link Vlan}.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+     * See {@link Vlan}.
      *
      * <p>Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a {@code
      * vlanId} and {@code subnetId}, the request fails.
@@ -990,6 +1058,7 @@ public final class CreateVnicDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipv6AddressIpv6SubnetCidrPairDetails=")
                 .append(String.valueOf(this.ipv6AddressIpv6SubnetCidrPairDetails));
@@ -1019,6 +1088,7 @@ public final class CreateVnicDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(
                         this.ipv6AddressIpv6SubnetCidrPairDetails,
@@ -1047,6 +1117,11 @@ public final class CreateVnicDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());

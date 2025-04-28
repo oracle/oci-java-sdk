@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -154,15 +154,15 @@ public final class PeComanagedHostInsight extends HostInsight {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the OPSI private endpoint
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OPSI private endpoint
          */
         @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
         private String opsiPrivateEndpointId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the OPSI private endpoint
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OPSI private endpoint
          *
          * @param opsiPrivateEndpointId the value to set
          * @return this builder
@@ -176,7 +176,7 @@ public final class PeComanagedHostInsight extends HostInsight {
          * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
          * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight:
          * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
-         * SUNOS, ZLINUX, WINDOWS, AIX].
+         * SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          */
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformType platformType;
@@ -185,7 +185,7 @@ public final class PeComanagedHostInsight extends HostInsight {
          * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
          * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight:
          * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
-         * SUNOS, ZLINUX, WINDOWS, AIX].
+         * SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          *
          * @param platformType the value to set
          * @return this builder
@@ -196,17 +196,15 @@ public final class PeComanagedHostInsight extends HostInsight {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VM Cluster or DB System ID, depending on which configuration the resource belongs
-         * to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VM Cluster or DB System ID, depending on which configuration the resource belongs to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VM Cluster or DB System ID, depending on which configuration the resource belongs
-         * to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VM Cluster or DB System ID, depending on which configuration the resource belongs to.
          *
          * @param parentId the value to set
          * @return this builder
@@ -217,15 +215,15 @@ public final class PeComanagedHostInsight extends HostInsight {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Exadata Infrastructure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("rootId")
         private String rootId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Exadata Infrastructure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Infrastructure.
          *
          * @param rootId the value to set
          * @return this builder
@@ -377,15 +375,15 @@ public final class PeComanagedHostInsight extends HostInsight {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the OPSI private endpoint
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI
+     * private endpoint
      */
     @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
     private final String opsiPrivateEndpointId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the OPSI private endpoint
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI
+     * private endpoint
      *
      * @return the value
      */
@@ -397,7 +395,7 @@ public final class PeComanagedHostInsight extends HostInsight {
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
      * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX].
+     * ZLINUX, WINDOWS, AIX, HP-UX].
      */
     public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Linux("LINUX"),
@@ -406,6 +404,7 @@ public final class PeComanagedHostInsight extends HostInsight {
         Zlinux("ZLINUX"),
         Windows("WINDOWS"),
         Aix("AIX"),
+        HpUx("HP_UX"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -452,7 +451,7 @@ public final class PeComanagedHostInsight extends HostInsight {
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
      * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX].
+     * ZLINUX, WINDOWS, AIX, HP-UX].
      */
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
@@ -461,7 +460,7 @@ public final class PeComanagedHostInsight extends HostInsight {
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
      * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX].
+     * ZLINUX, WINDOWS, AIX, HP-UX].
      *
      * @return the value
      */
@@ -470,15 +469,15 @@ public final class PeComanagedHostInsight extends HostInsight {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
+     * Cluster or DB System ID, depending on which configuration the resource belongs to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
+     * Cluster or DB System ID, depending on which configuration the resource belongs to.
      *
      * @return the value
      */
@@ -487,15 +486,15 @@ public final class PeComanagedHostInsight extends HostInsight {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Exadata Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("rootId")
     private final String rootId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Exadata Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Infrastructure.
      *
      * @return the value
      */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -50,7 +50,14 @@ public final class VmClusterSummary
         "availabilityDomain",
         "freeformTags",
         "definedTags",
-        "dataCollectionOptions"
+        "dataCollectionOptions",
+        "giSoftwareImageId",
+        "fileSystemConfigurationDetails",
+        "vmClusterType",
+        "cloudAutomationUpdateDetails",
+        "exascaleDbStorageVaultId",
+        "storageManagementType",
+        "computeModel"
     })
     public VmClusterSummary(
             String id,
@@ -80,7 +87,14 @@ public final class VmClusterSummary
             String availabilityDomain,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            String giSoftwareImageId,
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
+            VmClusterType vmClusterType,
+            CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
+            String exascaleDbStorageVaultId,
+            StorageManagementType storageManagementType,
+            ComputeModel computeModel) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -110,19 +124,26 @@ public final class VmClusterSummary
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.giSoftwareImageId = giSoftwareImageId;
+        this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+        this.vmClusterType = vmClusterType;
+        this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+        this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+        this.storageManagementType = storageManagementType;
+        this.computeModel = computeModel;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster.
          *
          * @param id the value to set
@@ -134,14 +155,14 @@ public final class VmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -153,14 +174,14 @@ public final class VmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last patch history. This value is updated as soon as a patch operation starts.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
         private String lastPatchHistoryEntryId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last patch history. This value is updated as soon as a patch operation starts.
          *
          * @param lastPatchHistoryEntryId the value to set
@@ -237,14 +258,14 @@ public final class VmClusterSummary
         }
         /**
          * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure
-         * Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
          * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure
-         * Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
@@ -274,14 +295,14 @@ public final class VmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          *
          * @param exadataInfrastructureId the value to set
@@ -312,14 +333,14 @@ public final class VmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster network.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterNetworkId")
         private String vmClusterNetworkId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster network.
          *
          * @param vmClusterNetworkId the value to set
@@ -536,7 +557,7 @@ public final class VmClusterSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -546,7 +567,7 @@ public final class VmClusterSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -561,7 +582,7 @@ public final class VmClusterSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -569,7 +590,7 @@ public final class VmClusterSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -587,6 +608,127 @@ public final class VmClusterSummary
         public Builder dataCollectionOptions(DataCollectionOptions dataCollectionOptions) {
             this.dataCollectionOptions = dataCollectionOptions;
             this.__explicitlySet__.add("dataCollectionOptions");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * grid infrastructure software image. This is a database software image of the type {@code
+         * GRID_IMAGE}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+        private String giSoftwareImageId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * grid infrastructure software image. This is a database software image of the type {@code
+         * GRID_IMAGE}.
+         *
+         * @param giSoftwareImageId the value to set
+         * @return this builder
+         */
+        public Builder giSoftwareImageId(String giSoftwareImageId) {
+            this.giSoftwareImageId = giSoftwareImageId;
+            this.__explicitlySet__.add("giSoftwareImageId");
+            return this;
+        }
+        /** Details of the file system configuration of the VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+        private java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+        /**
+         * Details of the file system configuration of the VM cluster.
+         *
+         * @param fileSystemConfigurationDetails the value to set
+         * @return this builder
+         */
+        public Builder fileSystemConfigurationDetails(
+                java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            this.__explicitlySet__.add("fileSystemConfigurationDetails");
+            return this;
+        }
+        /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+        private VmClusterType vmClusterType;
+
+        /**
+         * The vmcluster type for the VM cluster/Cloud VM cluster.
+         *
+         * @param vmClusterType the value to set
+         * @return this builder
+         */
+        public Builder vmClusterType(VmClusterType vmClusterType) {
+            this.vmClusterType = vmClusterType;
+            this.__explicitlySet__.add("vmClusterType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+        private CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+        public Builder cloudAutomationUpdateDetails(
+                CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
+            this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            this.__explicitlySet__.add("cloudAutomationUpdateDetails");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Database Storage Vault.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+        private String exascaleDbStorageVaultId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Database Storage Vault.
+         *
+         * @param exascaleDbStorageVaultId the value to set
+         * @return this builder
+         */
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+            this.__explicitlySet__.add("exascaleDbStorageVaultId");
+            return this;
+        }
+        /**
+         * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("storageManagementType")
+        private StorageManagementType storageManagementType;
+
+        /**
+         * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+         *
+         * @param storageManagementType the value to set
+         * @return this builder
+         */
+        public Builder storageManagementType(StorageManagementType storageManagementType) {
+            this.storageManagementType = storageManagementType;
+            this.__explicitlySet__.add("storageManagementType");
+            return this;
+        }
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
+         * OCPU compute model is legacy.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
+         * OCPU compute model is legacy.
+         *
+         * @param computeModel the value to set
+         * @return this builder
+         */
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
             return this;
         }
 
@@ -623,7 +765,14 @@ public final class VmClusterSummary
                             this.availabilityDomain,
                             this.freeformTags,
                             this.definedTags,
-                            this.dataCollectionOptions);
+                            this.dataCollectionOptions,
+                            this.giSoftwareImageId,
+                            this.fileSystemConfigurationDetails,
+                            this.vmClusterType,
+                            this.cloudAutomationUpdateDetails,
+                            this.exascaleDbStorageVaultId,
+                            this.storageManagementType,
+                            this.computeModel);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -716,6 +865,27 @@ public final class VmClusterSummary
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
             }
+            if (model.wasPropertyExplicitlySet("giSoftwareImageId")) {
+                this.giSoftwareImageId(model.getGiSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
+                this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterType")) {
+                this.vmClusterType(model.getVmClusterType());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
+                this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("exascaleDbStorageVaultId")) {
+                this.exascaleDbStorageVaultId(model.getExascaleDbStorageVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("storageManagementType")) {
+                this.storageManagementType(model.getStorageManagementType());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
             return this;
         }
     }
@@ -730,14 +900,14 @@ public final class VmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster.
      *
      * @return the value
@@ -747,14 +917,14 @@ public final class VmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -764,15 +934,15 @@ public final class VmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last patch history. This value is updated as soon as a patch operation starts.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * patch history. This value is updated as soon as a patch operation starts.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
     private final String lastPatchHistoryEntryId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last patch history. This value is updated as soon as a patch operation starts.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * patch history. This value is updated as soon as a patch operation starts.
      *
      * @return the value
      */
@@ -889,14 +1059,14 @@ public final class VmClusterSummary
 
     /**
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
      */
@@ -922,14 +1092,14 @@ public final class VmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      *
      * @return the value
@@ -956,14 +1126,14 @@ public final class VmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster network.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterNetworkId")
     private final String vmClusterNetworkId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster network.
      *
      * @return the value
@@ -1194,7 +1364,7 @@ public final class VmClusterSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1204,7 +1374,7 @@ public final class VmClusterSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1217,7 +1387,7 @@ public final class VmClusterSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -1225,7 +1395,7 @@ public final class VmClusterSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -1238,6 +1408,252 @@ public final class VmClusterSummary
 
     public DataCollectionOptions getDataCollectionOptions() {
         return dataCollectionOptions;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid
+     * infrastructure software image. This is a database software image of the type {@code
+     * GRID_IMAGE}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+    private final String giSoftwareImageId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid
+     * infrastructure software image. This is a database software image of the type {@code
+     * GRID_IMAGE}.
+     *
+     * @return the value
+     */
+    public String getGiSoftwareImageId() {
+        return giSoftwareImageId;
+    }
+
+    /** Details of the file system configuration of the VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+    private final java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+    /**
+     * Details of the file system configuration of the VM cluster.
+     *
+     * @return the value
+     */
+    public java.util.List<FileSystemConfigurationDetail> getFileSystemConfigurationDetails() {
+        return fileSystemConfigurationDetails;
+    }
+
+    /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+    public enum VmClusterType implements com.oracle.bmc.http.internal.BmcEnum {
+        Regular("REGULAR"),
+        Developer("DEVELOPER"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(VmClusterType.class);
+
+        private final String value;
+        private static java.util.Map<String, VmClusterType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VmClusterType v : VmClusterType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        VmClusterType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VmClusterType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'VmClusterType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+    private final VmClusterType vmClusterType;
+
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     *
+     * @return the value
+     */
+    public VmClusterType getVmClusterType() {
+        return vmClusterType;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+    private final CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+    public CloudAutomationUpdateDetails getCloudAutomationUpdateDetails() {
+        return cloudAutomationUpdateDetails;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Database Storage Vault.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+    private final String exascaleDbStorageVaultId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Database Storage Vault.
+     *
+     * @return the value
+     */
+    public String getExascaleDbStorageVaultId() {
+        return exascaleDbStorageVaultId;
+    }
+
+    /** Specifies whether the type of storage management for the VM cluster is ASM or Exascale. */
+    public enum StorageManagementType implements com.oracle.bmc.http.internal.BmcEnum {
+        Asm("ASM"),
+        Exascale("EXASCALE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(StorageManagementType.class);
+
+        private final String value;
+        private static java.util.Map<String, StorageManagementType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (StorageManagementType v : StorageManagementType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        StorageManagementType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static StorageManagementType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'StorageManagementType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Specifies whether the type of storage management for the VM cluster is ASM or Exascale. */
+    @com.fasterxml.jackson.annotation.JsonProperty("storageManagementType")
+    private final StorageManagementType storageManagementType;
+
+    /**
+     * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+     *
+     * @return the value
+     */
+    public StorageManagementType getStorageManagementType() {
+        return storageManagementType;
+    }
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy.
+     */
+    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeModel.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy.
+     *
+     * @return the value
+     */
+    public ComputeModel getComputeModel() {
+        return computeModel;
     }
 
     @Override
@@ -1286,6 +1702,16 @@ public final class VmClusterSummary
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
+        sb.append(", fileSystemConfigurationDetails=")
+                .append(String.valueOf(this.fileSystemConfigurationDetails));
+        sb.append(", vmClusterType=").append(String.valueOf(this.vmClusterType));
+        sb.append(", cloudAutomationUpdateDetails=")
+                .append(String.valueOf(this.cloudAutomationUpdateDetails));
+        sb.append(", exascaleDbStorageVaultId=")
+                .append(String.valueOf(this.exascaleDbStorageVaultId));
+        sb.append(", storageManagementType=").append(String.valueOf(this.storageManagementType));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(")");
         return sb.toString();
     }
@@ -1332,6 +1758,16 @@ public final class VmClusterSummary
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
+                && java.util.Objects.equals(
+                        this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
+                && java.util.Objects.equals(this.vmClusterType, other.vmClusterType)
+                && java.util.Objects.equals(
+                        this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
+                && java.util.Objects.equals(
+                        this.exascaleDbStorageVaultId, other.exascaleDbStorageVaultId)
+                && java.util.Objects.equals(this.storageManagementType, other.storageManagementType)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && super.equals(other);
     }
 
@@ -1419,6 +1855,33 @@ public final class VmClusterSummary
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.giSoftwareImageId == null ? 43 : this.giSoftwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileSystemConfigurationDetails == null
+                                ? 43
+                                : this.fileSystemConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmClusterType == null ? 43 : this.vmClusterType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAutomationUpdateDetails == null
+                                ? 43
+                                : this.cloudAutomationUpdateDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exascaleDbStorageVaultId == null
+                                ? 43
+                                : this.exascaleDbStorageVaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageManagementType == null
+                                ? 43
+                                : this.storageManagementType.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -5,14 +5,14 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-addons</artifactId>
-    <version>3.28.0</version>
+    <version>3.63.2</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>oci-java-sdk-addons-sasl</artifactId>
   <name>Oracle Cloud Infrastructure SDK - SASL Client</name>
   <description>This project contains the SASL client used for Oracle Cloud Infrastructure</description>
-  <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
 
   <build>
@@ -55,12 +55,12 @@
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java</artifactId>
-      <version>3.19.6</version>
+      <version>3.25.5</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.28.0</version>
+      <version>3.63.2</version>
     </dependency>
   </dependencies>
 

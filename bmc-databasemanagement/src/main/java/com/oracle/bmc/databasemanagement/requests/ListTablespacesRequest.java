@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -7,20 +7,20 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListTablespacesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListTablespacesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTablespacesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ListTablespacesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     public String getManagedDatabaseId() {
@@ -126,6 +126,13 @@ public class ListTablespacesRequest extends com.oracle.bmc.requests.BmcRequest<j
     public Integer getLimit() {
         return limit;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -134,13 +141,13 @@ public class ListTablespacesRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          *
          * @param managedDatabaseId the value to set
@@ -249,6 +256,20 @@ public class ListTablespacesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -286,6 +307,7 @@ public class ListTablespacesRequest extends com.oracle.bmc.requests.BmcRequest<j
             sortOrder(o.getSortOrder());
             page(o.getPage());
             limit(o.getLimit());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -327,9 +349,10 @@ public class ListTablespacesRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.sortOrder = sortOrder;
             request.page = page;
             request.limit = limit;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new ListTablespacesRequest(managedDatabaseId, opcRequestId, name, sortBy, sortOrder,
-            // page, limit);
+            // page, limit, opcNamedCredentialId);
         }
     }
 
@@ -346,7 +369,8 @@ public class ListTablespacesRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .page(page)
-                .limit(limit);
+                .limit(limit)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -370,6 +394,7 @@ public class ListTablespacesRequest extends com.oracle.bmc.requests.BmcRequest<j
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -391,7 +416,8 @@ public class ListTablespacesRequest extends com.oracle.bmc.requests.BmcRequest<j
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.limit, other.limit);
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -407,6 +433,11 @@ public class ListTablespacesRequest extends com.oracle.bmc.requests.BmcRequest<j
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

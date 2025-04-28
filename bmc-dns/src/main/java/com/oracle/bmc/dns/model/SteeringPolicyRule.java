@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns.model;
@@ -12,7 +12,7 @@ package com.oracle.bmc.dns.model;
  * expression. Cases allow a sequence of conditions to be defined that will apply different
  * parameters to the rule when the conditions are met. For more information about cases, see
  * [Traffic Management API
- * Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+ * Guide](https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
  *
  * <p>**Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>

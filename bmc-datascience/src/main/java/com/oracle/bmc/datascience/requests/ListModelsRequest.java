@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.datascience.requests;
 import com.oracle.bmc.datascience.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListModelsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
@@ -15,14 +15,14 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     private String compartmentId;
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     public String getCompartmentId() {
@@ -42,32 +42,71 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public String getVersionLabel() {
         return versionLabel;
     }
+    /** Specifies the type of models to list. By default, user models are listed. */
+    private Category category;
+
+    /** Specifies the type of models to list. By default, user models are listed. */
+    public enum Category implements com.oracle.bmc.http.internal.BmcEnum {
+        User("USER"),
+        Service("SERVICE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Category> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Category v : Category.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Category(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Category create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Category: " + key);
+        }
+    };
+
+    /** Specifies the type of models to list. By default, user models are listed. */
+    public Category getCategory() {
+        return category;
+    }
     /**
      * <b>Filter</b> results by
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be
-     * an OCID of the correct type for the resource type.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+     * OCID of the correct type for the resource type.
      */
     private String id;
 
     /**
      * <b>Filter</b> results by
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be
-     * an OCID of the correct type for the resource type.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+     * OCID of the correct type for the resource type.
      */
     public String getId() {
         return id;
     }
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * project.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
     private String projectId;
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * project.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
     public String getProjectId() {
         return projectId;
@@ -94,15 +133,15 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * user who created the resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who
+     * created the resource.
      */
     private String createdBy;
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * user who created the resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who
+     * created the resource.
      */
     public String getCreatedBy() {
         return createdBy;
@@ -110,7 +149,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -119,7 +158,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -131,7 +170,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * "List" call.
      *
      * <p>See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      */
     private String page;
 
@@ -140,7 +179,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * "List" call.
      *
      * <p>See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -262,15 +301,15 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the compartment.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the compartment.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -308,17 +347,31 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /** Specifies the type of models to list. By default, user models are listed. */
+        private Category category = null;
+
+        /**
+         * Specifies the type of models to list. By default, user models are listed.
+         *
+         * @param category the value to set
+         * @return this builder instance
+         */
+        public Builder category(Category category) {
+            this.category = category;
+            return this;
+        }
+
         /**
          * <b>Filter</b> results by
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must
-         * be an OCID of the correct type for the resource type.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resource type.
          */
         private String id = null;
 
         /**
          * <b>Filter</b> results by
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must
-         * be an OCID of the correct type for the resource type.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resource type.
          *
          * @param id the value to set
          * @return this builder instance
@@ -330,15 +383,15 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the project.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project.
          */
         private String projectId = null;
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the project.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project.
          *
          * @param projectId the value to set
          * @return this builder instance
@@ -383,15 +436,15 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the user who created the resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+         * who created the resource.
          */
         private String createdBy = null;
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the user who created the resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+         * who created the resource.
          *
          * @param createdBy the value to set
          * @return this builder instance
@@ -404,7 +457,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -413,7 +466,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -430,7 +483,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * previous "List" call.
          *
          * <p>See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
@@ -439,7 +492,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * previous "List" call.
          *
          * <p>See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -536,6 +589,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             compartmentId(o.getCompartmentId());
             modelVersionSetName(o.getModelVersionSetName());
             versionLabel(o.getVersionLabel());
+            category(o.getCategory());
             id(o.getId());
             projectId(o.getProjectId());
             displayName(o.getDisplayName());
@@ -583,6 +637,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.compartmentId = compartmentId;
             request.modelVersionSetName = modelVersionSetName;
             request.versionLabel = versionLabel;
+            request.category = category;
             request.id = id;
             request.projectId = projectId;
             request.displayName = displayName;
@@ -594,7 +649,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListModelsRequest(compartmentId, modelVersionSetName, versionLabel, id,
+            // new ListModelsRequest(compartmentId, modelVersionSetName, versionLabel, category, id,
             // projectId, displayName, lifecycleState, createdBy, limit, page, sortOrder, sortBy,
             // opcRequestId);
         }
@@ -610,6 +665,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .compartmentId(compartmentId)
                 .modelVersionSetName(modelVersionSetName)
                 .versionLabel(versionLabel)
+                .category(category)
                 .id(id)
                 .projectId(projectId)
                 .displayName(displayName)
@@ -639,6 +695,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",modelVersionSetName=").append(String.valueOf(this.modelVersionSetName));
         sb.append(",versionLabel=").append(String.valueOf(this.versionLabel));
+        sb.append(",category=").append(String.valueOf(this.category));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",projectId=").append(String.valueOf(this.projectId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
@@ -667,6 +724,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.modelVersionSetName, other.modelVersionSetName)
                 && java.util.Objects.equals(this.versionLabel, other.versionLabel)
+                && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.projectId, other.projectId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -692,6 +750,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                                 ? 43
                                 : this.modelVersionSetName.hashCode());
         result = (result * PRIME) + (this.versionLabel == null ? 43 : this.versionLabel.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());

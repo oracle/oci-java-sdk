@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A software source contains a collection of packages. <br>
+ * Provides summary information for a software source. A software source contains a collection of
+ * packages. For more information, see [Managing Software
+ * Sources](https://docs.oracle.com/iaas/osmh/doc/software-sources.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,11 +25,17 @@ package com.oracle.bmc.osmanagementhub.model;
         defaultImpl = SoftwareSourceSummary.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PrivateSoftwareSourceSummary.class,
+            name = "PRIVATE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VendorSoftwareSourceSummary.class,
             name = "VENDOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VersionedCustomSoftwareSourceSummary.class,
             name = "VERSIONED"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ThirdPartySoftwareSourceSummary.class,
+            name = "THIRD_PARTY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CustomSoftwareSourceSummary.class,
             name = "CUSTOM")
@@ -47,10 +55,12 @@ public class SoftwareSourceSummary
         "timeUpdated",
         "description",
         "availability",
+        "availabilityAtOci",
         "osFamily",
         "archType",
         "packageCount",
         "lifecycleState",
+        "size",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -65,10 +75,12 @@ public class SoftwareSourceSummary
             java.util.Date timeUpdated,
             String description,
             Availability availability,
+            Availability availabilityAtOci,
             OsFamily osFamily,
             ArchType archType,
             Long packageCount,
             SoftwareSource.LifecycleState lifecycleState,
+            Double size,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -82,21 +94,27 @@ public class SoftwareSourceSummary
         this.timeUpdated = timeUpdated;
         this.description = description;
         this.availability = availability;
+        this.availabilityAtOci = availabilityAtOci;
         this.osFamily = osFamily;
         this.archType = archType;
         this.packageCount = packageCount;
         this.lifecycleState = lifecycleState;
+        this.size = size;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
     }
 
-    /** The OCID for the software source. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * software source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID for the software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * software source.
      *
      * @return the value
      */
@@ -104,12 +122,16 @@ public class SoftwareSourceSummary
         return id;
     }
 
-    /** The OCID of the tenancy containing the software source. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the software source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the software source.
      *
      * @return the value
      */
@@ -117,12 +139,12 @@ public class SoftwareSourceSummary
         return compartmentId;
     }
 
-    /** User friendly name for the software source. */
+    /** User-friendly name for the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * User friendly name for the software source.
+     * User-friendly name for the software source.
      *
      * @return the value
      */
@@ -130,12 +152,12 @@ public class SoftwareSourceSummary
         return displayName;
     }
 
-    /** The Repo ID for the software source. */
+    /** The repository ID for the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("repoId")
     private final String repoId;
 
     /**
-     * The Repo ID for the software source.
+     * The repository ID for the software source.
      *
      * @return the value
      */
@@ -143,12 +165,16 @@ public class SoftwareSourceSummary
         return repoId;
     }
 
-    /** URL for the repository. */
+    /**
+     * URL for the repository. For vendor software sources, this is the URL to the regional yum
+     * server. For custom software sources, this is 'custom/<repoId>'.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
-     * URL for the repository.
+     * URL for the repository. For vendor software sources, this is the URL to the regional yum
+     * server. For custom software sources, this is 'custom/<repoId>'.
      *
      * @return the value
      */
@@ -157,15 +183,15 @@ public class SoftwareSourceSummary
     }
 
     /**
-     * The date and time the software source was created, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the software source was created (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the software source was created, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the software source was created (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      */
@@ -174,15 +200,15 @@ public class SoftwareSourceSummary
     }
 
     /**
-     * The date and time of when the software source was updated as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the software source was updated (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time of when the software source was updated as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the software source was updated (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      */
@@ -190,12 +216,12 @@ public class SoftwareSourceSummary
         return timeUpdated;
     }
 
-    /** Information specified by the user about the software source. */
+    /** Description of the software source. For custom software sources, this is user-specified. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Information specified by the user about the software source.
+     * Description of the software source. For custom software sources, this is user-specified.
      *
      * @return the value
      */
@@ -203,12 +229,12 @@ public class SoftwareSourceSummary
         return description;
     }
 
-    /** Possible availabilities of a software source. */
+    /** Availability of the software source (for non-OCI environments). */
     @com.fasterxml.jackson.annotation.JsonProperty("availability")
     private final Availability availability;
 
     /**
-     * Possible availabilities of a software source.
+     * Availability of the software source (for non-OCI environments).
      *
      * @return the value
      */
@@ -216,12 +242,25 @@ public class SoftwareSourceSummary
         return availability;
     }
 
-    /** The OS family the software source belongs to. */
+    /** Availability of the software source (for OCI environments). */
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
+    private final Availability availabilityAtOci;
+
+    /**
+     * Availability of the software source (for OCI environments).
+     *
+     * @return the value
+     */
+    public Availability getAvailabilityAtOci() {
+        return availabilityAtOci;
+    }
+
+    /** The OS family of the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
-     * The OS family the software source belongs to.
+     * The OS family of the software source.
      *
      * @return the value
      */
@@ -242,12 +281,12 @@ public class SoftwareSourceSummary
         return archType;
     }
 
-    /** Number of packages. */
+    /** Number of packages the software source contains. */
     @com.fasterxml.jackson.annotation.JsonProperty("packageCount")
     private final Long packageCount;
 
     /**
-     * Number of packages.
+     * Number of packages the software source contains.
      *
      * @return the value
      */
@@ -268,10 +307,23 @@ public class SoftwareSourceSummary
         return lifecycleState;
     }
 
+    /** The size of the software source in bytes (B). */
+    @com.fasterxml.jackson.annotation.JsonProperty("size")
+    private final Double size;
+
+    /**
+     * The size of the software source in bytes (B).
+     *
+     * @return the value
+     */
+    public Double getSize() {
+        return size;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -280,7 +332,7 @@ public class SoftwareSourceSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -292,7 +344,7 @@ public class SoftwareSourceSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -301,7 +353,7 @@ public class SoftwareSourceSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -351,10 +403,12 @@ public class SoftwareSourceSummary
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", availability=").append(String.valueOf(this.availability));
+        sb.append(", availabilityAtOci=").append(String.valueOf(this.availabilityAtOci));
         sb.append(", osFamily=").append(String.valueOf(this.osFamily));
         sb.append(", archType=").append(String.valueOf(this.archType));
         sb.append(", packageCount=").append(String.valueOf(this.packageCount));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", size=").append(String.valueOf(this.size));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -381,10 +435,12 @@ public class SoftwareSourceSummary
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.availability, other.availability)
+                && java.util.Objects.equals(this.availabilityAtOci, other.availabilityAtOci)
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
                 && java.util.Objects.equals(this.archType, other.archType)
                 && java.util.Objects.equals(this.packageCount, other.packageCount)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.size, other.size)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -406,12 +462,16 @@ public class SoftwareSourceSummary
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.availability == null ? 43 : this.availability.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityAtOci == null ? 43 : this.availabilityAtOci.hashCode());
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
         result = (result * PRIME) + (this.archType == null ? 43 : this.archType.hashCode());
         result = (result * PRIME) + (this.packageCount == null ? 43 : this.packageCount.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

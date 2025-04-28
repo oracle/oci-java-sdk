@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudbridge.model;
@@ -177,8 +177,7 @@ public final class EnvironmentSummary
         /**
          * The freeform tags associated with this resource, if any. Each tag is a simple key-value
          * pair with no predefined name, type, or namespace/scope. For more information, see
-         * [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -187,8 +186,7 @@ public final class EnvironmentSummary
         /**
          * The freeform tags associated with this resource, if any. Each tag is a simple key-value
          * pair with no predefined name, type, or namespace/scope. For more information, see
-         * [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -202,8 +200,8 @@ public final class EnvironmentSummary
         /**
          * The defined tags associated with this resource, if any. Each key is predefined and scoped
          * to namespaces. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -211,8 +209,8 @@ public final class EnvironmentSummary
         /**
          * The defined tags associated with this resource, if any. Each key is predefined and scoped
          * to namespaces. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -227,8 +225,8 @@ public final class EnvironmentSummary
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {orcl-cloud: {free-tier-retain: true}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
@@ -237,8 +235,8 @@ public final class EnvironmentSummary
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          * @param systemTags the value to set
          * @return this builder
@@ -414,7 +412,7 @@ public final class EnvironmentSummary
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair
      * with no predefined name, type, or namespace/scope. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -423,7 +421,7 @@ public final class EnvironmentSummary
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair
      * with no predefined name, type, or namespace/scope. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -435,7 +433,7 @@ public final class EnvironmentSummary
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to
      * namespaces. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -444,7 +442,7 @@ public final class EnvironmentSummary
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to
      * namespaces. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -457,7 +455,7 @@ public final class EnvironmentSummary
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -467,7 +465,7 @@ public final class EnvironmentSummary
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value

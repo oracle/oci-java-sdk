@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -36,9 +36,15 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         "ldapIdmap",
         "nsgIds",
         "kerberos",
+        "timeBillingCycleEnd",
+        "observedThroughput",
+        "requestedThroughput",
+        "reservedStorageCapacity",
         "timeCreated",
+        "locks",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags"
     })
     public MountTarget(
             String availabilityDomain,
@@ -54,9 +60,15 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             LdapIdmap ldapIdmap,
             java.util.List<String> nsgIds,
             Kerberos kerberos,
+            java.util.Date timeBillingCycleEnd,
+            Long observedThroughput,
+            Long requestedThroughput,
+            Long reservedStorageCapacity,
             java.util.Date timeCreated,
+            java.util.List<ResourceLock> locks,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -71,9 +83,15 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         this.ldapIdmap = ldapIdmap;
         this.nsgIds = nsgIds;
         this.kerberos = kerberos;
+        this.timeBillingCycleEnd = timeBillingCycleEnd;
+        this.observedThroughput = observedThroughput;
+        this.requestedThroughput = requestedThroughput;
+        this.reservedStorageCapacity = reservedStorageCapacity;
         this.timeCreated = timeCreated;
+        this.locks = locks;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -100,14 +118,14 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the mount target.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the mount target.
          *
          * @param compartmentId the value to set
@@ -142,7 +160,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * associated export set. Controls what file systems will be exported through Network File
          * System (NFS) protocol on this mount target.
          */
@@ -150,7 +168,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         private String exportSetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * associated export set. Controls what file systems will be exported through Network File
          * System (NFS) protocol on this mount target.
          *
@@ -163,14 +181,14 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * mount target.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * mount target.
          *
          * @param id the value to set
@@ -227,14 +245,14 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet the mount target is in.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet the mount target is in.
          *
          * @param subnetId the value to set
@@ -275,22 +293,22 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * A list of Network Security Group
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with this mount target. A maximum of 5 is allowed. Setting this to an empty
-         * array after the list is created removes the mount target from all NSGs. For more
-         * information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after
+         * the list is created removes the mount target from all NSGs. For more information about
+         * NSGs, see [Security
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * A list of Network Security Group
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with this mount target. A maximum of 5 is allowed. Setting this to an empty
-         * array after the list is created removes the mount target from all NSGs. For more
-         * information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after
+         * the list is created removes the mount target from all NSGs. For more information about
+         * NSGs, see [Security
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -307,6 +325,86 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         public Builder kerberos(Kerberos kerberos) {
             this.kerberos = kerberos;
             this.__explicitlySet__.add("kerberos");
+            return this;
+        }
+        /**
+         * The date and time the mount target current billing cycle will end and next one starts,
+         * expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeBillingCycleEnd")
+        private java.util.Date timeBillingCycleEnd;
+
+        /**
+         * The date and time the mount target current billing cycle will end and next one starts,
+         * expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeBillingCycleEnd the value to set
+         * @return this builder
+         */
+        public Builder timeBillingCycleEnd(java.util.Date timeBillingCycleEnd) {
+            this.timeBillingCycleEnd = timeBillingCycleEnd;
+            this.__explicitlySet__.add("timeBillingCycleEnd");
+            return this;
+        }
+        /**
+         * Current billed throughput for mount target in Gbps. This corresponds to shape of mount
+         * target. Available shapes and corresponding throughput are listed at [Mount Target
+         * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("observedThroughput")
+        private Long observedThroughput;
+
+        /**
+         * Current billed throughput for mount target in Gbps. This corresponds to shape of mount
+         * target. Available shapes and corresponding throughput are listed at [Mount Target
+         * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         *
+         * @param observedThroughput the value to set
+         * @return this builder
+         */
+        public Builder observedThroughput(Long observedThroughput) {
+            this.observedThroughput = observedThroughput;
+            this.__explicitlySet__.add("observedThroughput");
+            return this;
+        }
+        /** - New throughput for mount target at the end of billing cycle in Gbps. */
+        @com.fasterxml.jackson.annotation.JsonProperty("requestedThroughput")
+        private Long requestedThroughput;
+
+        /**
+         * - New throughput for mount target at the end of billing cycle in Gbps.
+         *
+         * @param requestedThroughput the value to set
+         * @return this builder
+         */
+        public Builder requestedThroughput(Long requestedThroughput) {
+            this.requestedThroughput = requestedThroughput;
+            this.__explicitlySet__.add("requestedThroughput");
+            return this;
+        }
+        /**
+         * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on
+         * observedThroughput value of mount target. Value is listed at [Mount Target
+         * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("reservedStorageCapacity")
+        private Long reservedStorageCapacity;
+
+        /**
+         * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on
+         * observedThroughput value of mount target. Value is listed at [Mount Target
+         * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         *
+         * @param reservedStorageCapacity the value to set
+         * @return this builder
+         */
+        public Builder reservedStorageCapacity(Long reservedStorageCapacity) {
+            this.reservedStorageCapacity = reservedStorageCapacity;
+            this.__explicitlySet__.add("reservedStorageCapacity");
             return this;
         }
         /**
@@ -332,10 +430,25 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -344,7 +457,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -358,7 +471,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -367,7 +480,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -377,6 +490,25 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * System tags for this resource. System tags are applied to resources by internal OCI
+         * services.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. System tags are applied to resources by internal OCI
+         * services.
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
             return this;
         }
 
@@ -399,9 +531,15 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
                             this.ldapIdmap,
                             this.nsgIds,
                             this.kerberos,
+                            this.timeBillingCycleEnd,
+                            this.observedThroughput,
+                            this.requestedThroughput,
+                            this.reservedStorageCapacity,
                             this.timeCreated,
+                            this.locks,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -449,14 +587,32 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             if (model.wasPropertyExplicitlySet("kerberos")) {
                 this.kerberos(model.getKerberos());
             }
+            if (model.wasPropertyExplicitlySet("timeBillingCycleEnd")) {
+                this.timeBillingCycleEnd(model.getTimeBillingCycleEnd());
+            }
+            if (model.wasPropertyExplicitlySet("observedThroughput")) {
+                this.observedThroughput(model.getObservedThroughput());
+            }
+            if (model.wasPropertyExplicitlySet("requestedThroughput")) {
+                this.requestedThroughput(model.getRequestedThroughput());
+            }
+            if (model.wasPropertyExplicitlySet("reservedStorageCapacity")) {
+                this.reservedStorageCapacity(model.getReservedStorageCapacity());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -491,14 +647,14 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the mount target.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the mount target.
      *
      * @return the value
@@ -529,7 +685,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * associated export set. Controls what file systems will be exported through Network File
      * System (NFS) protocol on this mount target.
      */
@@ -537,7 +693,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     private final String exportSetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * associated export set. Controls what file systems will be exported through Network File
      * System (NFS) protocol on this mount target.
      *
@@ -548,14 +704,14 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * mount target.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * mount target.
      *
      * @return the value
@@ -584,6 +740,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -653,14 +810,14 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet the mount target is in.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet the mount target is in.
      *
      * @return the value
@@ -744,20 +901,20 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * A list of Network Security Group
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the
      * list is created removes the mount target from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
      * A list of Network Security Group
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the
      * list is created removes the mount target from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      *
      * @return the value
      */
@@ -770,6 +927,78 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
 
     public Kerberos getKerberos() {
         return kerberos;
+    }
+
+    /**
+     * The date and time the mount target current billing cycle will end and next one starts,
+     * expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeBillingCycleEnd")
+    private final java.util.Date timeBillingCycleEnd;
+
+    /**
+     * The date and time the mount target current billing cycle will end and next one starts,
+     * expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeBillingCycleEnd() {
+        return timeBillingCycleEnd;
+    }
+
+    /**
+     * Current billed throughput for mount target in Gbps. This corresponds to shape of mount
+     * target. Available shapes and corresponding throughput are listed at [Mount Target
+     * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("observedThroughput")
+    private final Long observedThroughput;
+
+    /**
+     * Current billed throughput for mount target in Gbps. This corresponds to shape of mount
+     * target. Available shapes and corresponding throughput are listed at [Mount Target
+     * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     *
+     * @return the value
+     */
+    public Long getObservedThroughput() {
+        return observedThroughput;
+    }
+
+    /** - New throughput for mount target at the end of billing cycle in Gbps. */
+    @com.fasterxml.jackson.annotation.JsonProperty("requestedThroughput")
+    private final Long requestedThroughput;
+
+    /**
+     * - New throughput for mount target at the end of billing cycle in Gbps.
+     *
+     * @return the value
+     */
+    public Long getRequestedThroughput() {
+        return requestedThroughput;
+    }
+
+    /**
+     * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on
+     * observedThroughput value of mount target. Value is listed at [Mount Target
+     * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("reservedStorageCapacity")
+    private final Long reservedStorageCapacity;
+
+    /**
+     * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on
+     * observedThroughput value of mount target. Value is listed at [Mount Target
+     * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     *
+     * @return the value
+     */
+    public Long getReservedStorageCapacity() {
+        return reservedStorageCapacity;
     }
 
     /**
@@ -793,10 +1022,23 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         return timeCreated;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -805,7 +1047,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -817,7 +1059,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -826,13 +1068,28 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * System tags for this resource. System tags are applied to resources by internal OCI services.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. System tags are applied to resources by internal OCI services.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
     }
 
     @Override
@@ -863,9 +1120,16 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", ldapIdmap=").append(String.valueOf(this.ldapIdmap));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", kerberos=").append(String.valueOf(this.kerberos));
+        sb.append(", timeBillingCycleEnd=").append(String.valueOf(this.timeBillingCycleEnd));
+        sb.append(", observedThroughput=").append(String.valueOf(this.observedThroughput));
+        sb.append(", requestedThroughput=").append(String.valueOf(this.requestedThroughput));
+        sb.append(", reservedStorageCapacity=")
+                .append(String.valueOf(this.reservedStorageCapacity));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -893,9 +1157,16 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.ldapIdmap, other.ldapIdmap)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.kerberos, other.kerberos)
+                && java.util.Objects.equals(this.timeBillingCycleEnd, other.timeBillingCycleEnd)
+                && java.util.Objects.equals(this.observedThroughput, other.observedThroughput)
+                && java.util.Objects.equals(this.requestedThroughput, other.requestedThroughput)
+                && java.util.Objects.equals(
+                        this.reservedStorageCapacity, other.reservedStorageCapacity)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -926,9 +1197,31 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         result = (result * PRIME) + (this.ldapIdmap == null ? 43 : this.ldapIdmap.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.kerberos == null ? 43 : this.kerberos.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeBillingCycleEnd == null
+                                ? 43
+                                : this.timeBillingCycleEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.observedThroughput == null
+                                ? 43
+                                : this.observedThroughput.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestedThroughput == null
+                                ? 43
+                                : this.requestedThroughput.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reservedStorageCapacity == null
+                                ? 43
+                                : this.reservedStorageCapacity.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

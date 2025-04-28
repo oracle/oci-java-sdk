@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Results of a Database Connection search. Contains DatabaseConnectionSummary items. <br>
+ * Array of connection summary objects. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = ConnectionCollection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -31,12 +31,12 @@ public final class ConnectionCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Items in collection. */
+        /** An array of Connection summaries. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ConnectionSummary> items;
 
         /**
-         * Items in collection.
+         * An array of Connection summaries.
          *
          * @param items the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class ConnectionCollection
         return new Builder().copy(this);
     }
 
-    /** Items in collection. */
+    /** An array of Connection summaries. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ConnectionSummary> items;
 
     /**
-     * Items in collection.
+     * An array of Connection summaries.
      *
      * @return the value
      */

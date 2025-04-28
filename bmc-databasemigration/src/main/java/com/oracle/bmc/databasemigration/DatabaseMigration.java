@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration;
@@ -12,7 +12,7 @@ import com.oracle.bmc.databasemigration.responses.*;
  * operations. This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the
  * operations by default if no circuit breaker configuration is defined by the user.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public interface DatabaseMigration extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -73,7 +73,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/AbortJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/AbortJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AbortJob API.
      */
     AbortJobResponse abortJob(AbortJobRequest request);
@@ -88,27 +88,11 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/AddMigrationObjectsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/AddMigrationObjectsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMigrationObjects
      *     API.
      */
     AddMigrationObjectsResponse addMigrationObjects(AddMigrationObjectsRequest request);
-
-    /**
-     * Used to configure an ODMS Agent Compartment ID.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ChangeAgentCompartmentExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     ChangeAgentCompartment API.
-     */
-    ChangeAgentCompartmentResponse changeAgentCompartment(ChangeAgentCompartmentRequest request);
 
     /**
      * Used to change the Database Connection compartment.
@@ -120,7 +104,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ChangeConnectionCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ChangeConnectionCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeConnectionCompartment API.
      */
@@ -137,7 +121,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ChangeMigrationCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ChangeMigrationCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeMigrationCompartment API.
      */
@@ -154,7 +138,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/CloneMigrationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/CloneMigrationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CloneMigration API.
      */
     CloneMigrationResponse cloneMigration(CloneMigrationRequest request);
@@ -169,7 +153,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ConnectionDiagnosticsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ConnectionDiagnosticsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ConnectionDiagnostics API.
      */
@@ -186,7 +170,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/CreateConnectionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/CreateConnectionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnection
      *     API.
      */
@@ -203,14 +187,14 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/CreateMigrationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/CreateMigrationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMigration
      *     API.
      */
     CreateMigrationResponse createMigration(CreateMigrationRequest request);
 
     /**
-     * Delete the ODMS Agent represented by the specified ODMS Agent ID.
+     * Creates a new version of the current parameter file contents to the specified value.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -219,10 +203,12 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/DeleteAgentExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAgent API.
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/CreateParameterFileVersionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateParameterFileVersion API.
      */
-    DeleteAgentResponse deleteAgent(DeleteAgentRequest request);
+    CreateParameterFileVersionResponse createParameterFileVersion(
+            CreateParameterFileVersionRequest request);
 
     /**
      * Deletes the Database Connection represented by the specified connection ID.
@@ -234,7 +220,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/DeleteConnectionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/DeleteConnectionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConnection
      *     API.
      */
@@ -250,7 +236,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/DeleteJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/DeleteJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJob API.
      */
     DeleteJobResponse deleteJob(DeleteJobRequest request);
@@ -265,11 +251,28 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/DeleteMigrationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/DeleteMigrationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMigration
      *     API.
      */
     DeleteMigrationResponse deleteMigration(DeleteMigrationRequest request);
+
+    /**
+     * Deletes the given parameter file version
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/DeleteParameterFileVersionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteParameterFileVersion API.
+     */
+    DeleteParameterFileVersionResponse deleteParameterFileVersion(
+            DeleteParameterFileVersionRequest request);
 
     /**
      * Start Validate Migration job.
@@ -281,7 +284,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/EvaluateMigrationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/EvaluateMigrationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use EvaluateMigration
      *     API.
      */
@@ -297,26 +300,11 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetAdvisorReportExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetAdvisorReportExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAdvisorReport
      *     API.
      */
     GetAdvisorReportResponse getAdvisorReport(GetAdvisorReportRequest request);
-
-    /**
-     * Display the ODMS Agent configuration.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetAgentExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAgent API.
-     */
-    GetAgentResponse getAgent(GetAgentRequest request);
 
     /**
      * Display Database Connection details.
@@ -328,7 +316,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetConnectionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetConnectionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnection API.
      */
     GetConnectionResponse getConnection(GetConnectionRequest request);
@@ -343,7 +331,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJob API.
      */
     GetJobResponse getJob(GetJobRequest request);
@@ -358,7 +346,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetJobOutputContentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetJobOutputContentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobOutputContent
      *     API.
      */
@@ -374,10 +362,28 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetMigrationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetMigrationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMigration API.
      */
     GetMigrationResponse getMigration(GetMigrationRequest request);
+
+    /**
+     * Obtain the parameter file version contents for the specified parameter file name and the
+     * associated job. This operation will be allowed only if the job is certain acceptable
+     * lifecycle states.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetParameterFileVersionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetParameterFileVersion API.
+     */
+    GetParameterFileVersionResponse getParameterFileVersion(GetParameterFileVersionRequest request);
 
     /**
      * Gets the details of a work request.
@@ -389,41 +395,10 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
-
-    /**
-     * Get details of the ODMS Agent Images available to install on-premises.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListAgentImagesExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAgentImages
-     *     API.
-     */
-    ListAgentImagesResponse listAgentImages(ListAgentImagesRequest request);
-
-    /**
-     * Display the name of all the existing ODMS Agents in the server.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListAgentsExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAgents API.
-     */
-    ListAgentsResponse listAgents(ListAgentsRequest request);
 
     /**
      * List all Database Connections.
@@ -435,7 +410,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListConnectionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListConnectionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnections
      *     API.
      */
@@ -451,7 +426,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListExcludedObjectsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListExcludedObjectsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExcludedObjects
      *     API.
      */
@@ -467,7 +442,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListJobOutputsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListJobOutputsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobOutputs API.
      */
     ListJobOutputsResponse listJobOutputs(ListJobOutputsRequest request);
@@ -482,7 +457,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListJobsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListJobsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobs API.
      */
     ListJobsResponse listJobs(ListJobsRequest request);
@@ -497,7 +472,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListMigrationObjectTypesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListMigrationObjectTypesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListMigrationObjectTypes API.
      */
@@ -514,11 +489,27 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListMigrationObjectsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListMigrationObjectsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListMigrationObjects API.
      */
     ListMigrationObjectsResponse listMigrationObjects(ListMigrationObjectsRequest request);
+
+    /**
+     * List of parameters that can be used to customize migrations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListMigrationParametersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMigrationParameters API.
+     */
+    ListMigrationParametersResponse listMigrationParameters(ListMigrationParametersRequest request);
 
     /**
      * List all Migrations.
@@ -530,10 +521,29 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListMigrationsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListMigrationsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMigrations API.
      */
     ListMigrationsResponse listMigrations(ListMigrationsRequest request);
+
+    /**
+     * Return a list of the parameter file metadata of the migration execution of the specified job.
+     * This will only be acceptable if the job is in particular state. It will be accessible if the
+     * job is in the FAILED, PAUSED or SUSPENDED state.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListParameterFileVersionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListParameterFileVersions API.
+     */
+    ListParameterFileVersionsResponse listParameterFileVersions(
+            ListParameterFileVersionsRequest request);
 
     /**
      * Gets the errors for a work request.
@@ -545,7 +555,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListWorkRequestErrors API.
      */
@@ -561,7 +571,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
      *     API.
      */
@@ -577,11 +587,28 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Make current the given parameter file version
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/MakeCurrentParameterFileVersionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     MakeCurrentParameterFileVersion API.
+     */
+    MakeCurrentParameterFileVersionResponse makeCurrentParameterFileVersion(
+            MakeCurrentParameterFileVersionRequest request);
 
     /**
      * Remove excluded/included objects.
@@ -593,7 +620,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/RemoveMigrationObjectsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/RemoveMigrationObjectsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RemoveMigrationObjects API.
      */
@@ -609,7 +636,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ResumeJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ResumeJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResumeJob API.
      */
     ResumeJobResponse resumeJob(ResumeJobRequest request);
@@ -624,7 +651,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/RetrieveSupportedPhasesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/RetrieveSupportedPhasesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RetrieveSupportedPhases API.
      */
@@ -640,13 +667,13 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/StartMigrationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/StartMigrationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartMigration API.
      */
     StartMigrationResponse startMigration(StartMigrationRequest request);
 
     /**
-     * Modifies the ODMS Agent represented by the given ODMS Agent ID.
+     * Place the currently executing migration Job in a Suspended State.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -655,10 +682,10 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/UpdateAgentExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAgent API.
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/SuspendJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SuspendJob API.
      */
-    UpdateAgentResponse updateAgent(UpdateAgentRequest request);
+    SuspendJobResponse suspendJob(SuspendJobRequest request);
 
     /**
      * Update Database Connection resource details.
@@ -670,7 +697,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/UpdateConnectionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/UpdateConnectionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConnection
      *     API.
      */
@@ -686,7 +713,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/UpdateJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/UpdateJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJob API.
      */
     UpdateJobResponse updateJob(UpdateJobRequest request);
@@ -701,7 +728,7 @@ public interface DatabaseMigration extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/UpdateMigrationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/UpdateMigrationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMigration
      *     API.
      */

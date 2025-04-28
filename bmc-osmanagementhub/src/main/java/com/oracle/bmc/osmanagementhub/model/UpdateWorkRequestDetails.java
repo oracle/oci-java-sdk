@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Detail information for updating a work request. <br>
+ * Provides the information used to update a work request. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -46,12 +46,12 @@ public final class UpdateWorkRequestDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** status of current work request. */
+        /** Status of current work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private OperationStatus status;
 
         /**
-         * status of current work request.
+         * Status of current work request.
          *
          * @param status the value to set
          * @return this builder
@@ -173,12 +173,12 @@ public final class UpdateWorkRequestDetails
         return new Builder().copy(this);
     }
 
-    /** status of current work request. */
+    /** Status of current work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final OperationStatus status;
 
     /**
-     * status of current work request.
+     * Status of current work request.
      *
      * @return the value
      */

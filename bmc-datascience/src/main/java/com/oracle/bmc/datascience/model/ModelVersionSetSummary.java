@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -32,8 +32,10 @@ public final class ModelVersionSetSummary
         "timeCreated",
         "timeUpdated",
         "createdBy",
+        "category",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags"
     })
     public ModelVersionSetSummary(
             String id,
@@ -44,8 +46,10 @@ public final class ModelVersionSetSummary
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             String createdBy,
+            ModelVersionSetCategory category,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -55,22 +59,24 @@ public final class ModelVersionSetSummary
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.createdBy = createdBy;
+        this.category = category;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model version set.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model version set.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model version set.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model version set.
          *
          * @param id the value to set
          * @return this builder
@@ -81,15 +87,15 @@ public final class ModelVersionSetSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model version set compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model version set compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model version set compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model version set compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -100,15 +106,15 @@ public final class ModelVersionSetSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project associated with the model version set.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project associated with the model version set.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project associated with the model version set.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project associated with the model version set.
          *
          * @param projectId the value to set
          * @return this builder
@@ -187,15 +193,15 @@ public final class ModelVersionSetSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the user who created the model version set.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * user who created the model version set.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the user who created the model version set.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * user who created the model version set.
          *
          * @param createdBy the value to set
          * @return this builder
@@ -205,10 +211,25 @@ public final class ModelVersionSetSummary
             this.__explicitlySet__.add("createdBy");
             return this;
         }
+        /** The category of the model version set. */
+        @com.fasterxml.jackson.annotation.JsonProperty("category")
+        private ModelVersionSetCategory category;
+
+        /**
+         * The category of the model version set.
+         *
+         * @param category the value to set
+         * @return this builder
+         */
+        public Builder category(ModelVersionSetCategory category) {
+            this.category = category;
+            this.__explicitlySet__.add("category");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -217,7 +238,7 @@ public final class ModelVersionSetSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -230,7 +251,7 @@ public final class ModelVersionSetSummary
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -238,7 +259,7 @@ public final class ModelVersionSetSummary
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -248,6 +269,25 @@ public final class ModelVersionSetSummary
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
             return this;
         }
 
@@ -265,8 +305,10 @@ public final class ModelVersionSetSummary
                             this.timeCreated,
                             this.timeUpdated,
                             this.createdBy,
+                            this.category,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -299,11 +341,17 @@ public final class ModelVersionSetSummary
             if (model.wasPropertyExplicitlySet("createdBy")) {
                 this.createdBy(model.getCreatedBy());
             }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -319,15 +367,15 @@ public final class ModelVersionSetSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model version set.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model version set.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model version set.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model version set.
      *
      * @return the value
      */
@@ -336,15 +384,15 @@ public final class ModelVersionSetSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model version set compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model version set compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model version set compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model version set compartment.
      *
      * @return the value
      */
@@ -353,15 +401,15 @@ public final class ModelVersionSetSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project associated with the model version set.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project associated with the model version set.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project associated with the model version set.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project associated with the model version set.
      *
      * @return the value
      */
@@ -430,15 +478,15 @@ public final class ModelVersionSetSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the user who created the model version set.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+     * who created the model version set.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the user who created the model version set.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+     * who created the model version set.
      *
      * @return the value
      */
@@ -446,10 +494,23 @@ public final class ModelVersionSetSummary
         return createdBy;
     }
 
+    /** The category of the model version set. */
+    @com.fasterxml.jackson.annotation.JsonProperty("category")
+    private final ModelVersionSetCategory category;
+
+    /**
+     * The category of the model version set.
+     *
+     * @return the value
+     */
+    public ModelVersionSetCategory getCategory() {
+        return category;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -458,7 +519,7 @@ public final class ModelVersionSetSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -469,7 +530,7 @@ public final class ModelVersionSetSummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -477,13 +538,30 @@ public final class ModelVersionSetSummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
     }
 
     @Override
@@ -509,8 +587,10 @@ public final class ModelVersionSetSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", category=").append(String.valueOf(this.category));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -533,8 +613,10 @@ public final class ModelVersionSetSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -554,8 +636,10 @@ public final class ModelVersionSetSummary
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

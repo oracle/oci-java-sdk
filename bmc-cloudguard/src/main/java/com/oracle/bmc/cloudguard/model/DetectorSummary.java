@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of the Detector. <br>
+ * Summary information for a detector. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -22,22 +22,27 @@ package com.oracle.bmc.cloudguard.model;
 public final class DetectorSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "description", "lifecycleState"})
-    public DetectorSummary(String id, String description, LifecycleState lifecycleState) {
+    @java.beans.ConstructorProperties({"id", "description", "lifecycleState", "locks"})
+    public DetectorSummary(
+            String id,
+            String description,
+            LifecycleState lifecycleState,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.description = description;
         this.lifecycleState = lifecycleState;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** detector Identifier */
+        /** Unique identifier for the detector */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * detector Identifier
+         * Unique identifier for the detector
          *
          * @param id the value to set
          * @return this builder
@@ -47,12 +52,12 @@ public final class DetectorSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** detector description */
+        /** Detector description */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * detector description
+         * Detector description
          *
          * @param description the value to set
          * @return this builder
@@ -62,12 +67,12 @@ public final class DetectorSummary
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The current state of the resource. */
+        /** The current lifecycle state of the resource */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -77,13 +82,28 @@ public final class DetectorSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetectorSummary build() {
             DetectorSummary model =
-                    new DetectorSummary(this.id, this.description, this.lifecycleState);
+                    new DetectorSummary(this.id, this.description, this.lifecycleState, this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -101,6 +121,9 @@ public final class DetectorSummary
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -114,12 +137,12 @@ public final class DetectorSummary
         return new Builder().copy(this);
     }
 
-    /** detector Identifier */
+    /** Unique identifier for the detector */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * detector Identifier
+     * Unique identifier for the detector
      *
      * @return the value
      */
@@ -127,12 +150,12 @@ public final class DetectorSummary
         return id;
     }
 
-    /** detector description */
+    /** Detector description */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * detector description
+     * Detector description
      *
      * @return the value
      */
@@ -140,17 +163,30 @@ public final class DetectorSummary
         return description;
     }
 
-    /** The current state of the resource. */
+    /** The current lifecycle state of the resource */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      *
      * @return the value
      */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -171,6 +207,7 @@ public final class DetectorSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -188,6 +225,7 @@ public final class DetectorSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -200,6 +238,7 @@ public final class DetectorSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

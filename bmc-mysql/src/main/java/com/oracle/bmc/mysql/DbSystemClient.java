@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql;
@@ -147,6 +147,7 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mysql.model.HeatWaveCluster.class,
@@ -156,7 +157,6 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", AddHeatWaveClusterResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", AddHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -175,6 +175,7 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mysql.model.DbSystem.class,
@@ -185,7 +186,6 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateDbSystemResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateDbSystemResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -208,11 +208,11 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDbSystemResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteDbSystemResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -237,12 +237,12 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteHeatWaveClusterResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -269,6 +269,7 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate.class,
                         GenerateHeatWaveClusterMemoryEstimateResponse.Builder
@@ -279,7 +280,6 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         GenerateHeatWaveClusterMemoryEstimateResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -302,13 +302,13 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mysql.model.DbSystem.class,
                         GetDbSystemResponse.Builder::dbSystem)
                 .handleResponseHeaderString("etag", GetDbSystemResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDbSystemResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -332,13 +332,13 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mysql.model.HeatWaveCluster.class,
                         GetHeatWaveClusterResponse.Builder::heatWaveCluster)
                 .handleResponseHeaderString("etag", GetHeatWaveClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetHeatWaveClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -362,6 +362,7 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("heatWaveClusterMemoryEstimate")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate.class,
                         GetHeatWaveClusterMemoryEstimateResponse.Builder
@@ -369,7 +370,6 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetHeatWaveClusterMemoryEstimateResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -405,6 +405,7 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.mysql.model.DbSystemSummary.class,
                         ListDbSystemsResponse.Builder::items)
@@ -412,7 +413,6 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListDbSystemsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDbSystemsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -440,12 +440,12 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", RestartDbSystemResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", RestartDbSystemResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -473,12 +473,12 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", RestartHeatWaveClusterResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RestartHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -504,11 +504,11 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", StartDbSystemResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", StartDbSystemResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -535,12 +535,12 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", StartHeatWaveClusterResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         StartHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -567,12 +567,12 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", StopDbSystemResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", StopDbSystemResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -599,12 +599,12 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", StopHeatWaveClusterResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         StopHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -629,12 +629,12 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDbSystemResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateDbSystemResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -662,13 +662,13 @@ public class DbSystemClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateHeatWaveClusterResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

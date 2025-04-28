@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -10,11 +10,11 @@ import com.oracle.bmc.core.responses.*;
 /**
  * Use the Core Services API to manage resources such as virtual cloud networks (VCNs), compute
  * instances, and block storage volumes. For more information, see the console documentation for the
- * [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
- * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
- * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
- * The required permissions are documented in the [Details for the Core
- * Services](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
+ * [Networking](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm),
+ * [Compute](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and [Block
+ * Volume](https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm) services. The required
+ * permissions are documented in the [Details for the Core
+ * Services](https://docs.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
  * article.
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
@@ -74,7 +74,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Moves a boot volume backup into a different compartment within the same tenancy. For
      * information about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -83,7 +83,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeBootVolumeBackupCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeBootVolumeBackupCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeBootVolumeBackupCompartment API.
      */
@@ -93,7 +93,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Moves a boot volume into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -102,7 +102,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeBootVolumeCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeBootVolumeCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeBootVolumeCompartment API.
      */
@@ -112,7 +112,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Moves a volume backup into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -121,7 +121,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeBackupCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeBackupCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeVolumeBackupCompartment API.
      */
@@ -131,7 +131,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Moves a volume into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -140,7 +140,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeVolumeCompartment API.
      */
@@ -149,7 +149,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Moves a volume group backup into a different compartment within the same tenancy. For
      * information about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -158,7 +158,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeGroupBackupCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeGroupBackupCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeVolumeGroupBackupCompartment API.
      */
@@ -168,7 +168,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Moves a volume group into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -177,7 +177,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeGroupCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeGroupCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeVolumeGroupCompartment API.
      */
@@ -187,7 +187,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Creates a boot volume backup copy in specified region. For general information about volume
      * backups, see [Overview of Boot Volume
-     * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumebackups.htm)
+     * Backups](https://docs.oracle.com/iaas/Content/Block/Concepts/bootvolumebackups.htm)
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -196,7 +196,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CopyBootVolumeBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CopyBootVolumeBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CopyBootVolumeBackup API.
      */
@@ -205,7 +205,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Creates a volume backup copy in specified region. For general information about volume
      * backups, see [Overview of Block Volume Service
-     * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm)
+     * Backups](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm)
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -214,7 +214,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CopyVolumeBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CopyVolumeBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CopyVolumeBackup
      *     API.
      */
@@ -223,7 +223,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Creates a volume group backup copy in specified region. For general information about volume
      * group backups, see [Overview of Block Volume
-     * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm).
+     * Backups](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -232,7 +232,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CopyVolumeGroupBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CopyVolumeGroupBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CopyVolumeGroupBackup API.
      */
@@ -241,7 +241,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Creates a new boot volume in the specified compartment from an existing boot volume or a boot
      * volume backup. For general information about boot volumes, see [Boot
-     * Volumes](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumes.htm). You may
+     * Volumes](https://docs.oracle.com/iaas/Content/Block/Concepts/bootvolumes.htm). You may
      * optionally specify a *display name* for the volume, which is simply a friendly name or
      * description. It does not have to be unique, and you can change it. Avoid entering
      * confidential information.
@@ -253,7 +253,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateBootVolumeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateBootVolumeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBootVolume
      *     API.
      */
@@ -262,7 +262,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Creates a new boot volume backup of the specified boot volume. For general information about
      * boot volume backups, see [Overview of Boot Volume
-     * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumebackups.htm)
+     * Backups](https://docs.oracle.com/iaas/Content/Block/Concepts/bootvolumebackups.htm)
      *
      * <p>When the request is received, the backup object is in a REQUEST_RECEIVED state. When the
      * data is imaged, it goes into a CREATING state. After the backup is fully uploaded to the
@@ -275,7 +275,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateBootVolumeBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateBootVolumeBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateBootVolumeBackup API.
      */
@@ -285,16 +285,15 @@ public interface Blockstorage extends AutoCloseable {
      * Creates a new volume in the specified compartment. Volumes can be created in sizes ranging
      * from 50 GB (51200 MB) to 32 TB (33554432 MB), in 1 GB (1024 MB) increments. By default,
      * volumes are 1 TB (1048576 MB). For general information about block volumes, see [Overview of
-     * Block Volume
-     * Service](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm).
+     * Block Volume Service](https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm).
      *
      * <p>A volume and instance can be in separate compartments but must be in the same availability
      * domain. For information about access control and compartments, see [Overview of the IAM
-     * Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For
+     * Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For
      * information about availability domains, see [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm). To get a
-     * list of availability domains, use the `ListAvailabilityDomains` operation in the Identity and
-     * Access Management Service API.
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). To get a list of
+     * availability domains, use the `ListAvailabilityDomains` operation in the Identity and Access
+     * Management Service API.
      *
      * <p>You may optionally specify a *display name* for the volume, which is simply a friendly
      * name or description. It does not have to be unique, and you can change it. Avoid entering
@@ -307,7 +306,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVolume API.
      */
     CreateVolumeResponse createVolume(CreateVolumeRequest request);
@@ -315,7 +314,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Creates a new backup of the specified volume. For general information about volume backups,
      * see [Overview of Block Volume Service
-     * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm)
+     * Backups](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm)
      *
      * <p>When the request is received, the backup object is in a REQUEST_RECEIVED state. When the
      * data is imaged, it goes into a CREATING state. After the backup is fully uploaded to the
@@ -328,7 +327,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVolumeBackup
      *     API.
      */
@@ -339,7 +338,7 @@ public interface Blockstorage extends AutoCloseable {
      *
      * <p>For more information about Oracle defined backup policies and user defined backup
      * policies, see [Policy-Based
-     * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
+     * Backups](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -348,7 +347,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeBackupPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeBackupPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateVolumeBackupPolicy API.
      */
@@ -367,7 +366,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeBackupPolicyAssignmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeBackupPolicyAssignmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateVolumeBackupPolicyAssignment API.
      */
@@ -382,7 +381,7 @@ public interface Blockstorage extends AutoCloseable {
      * can change it. Avoid entering confidential information.
      *
      * <p>For more information, see [Volume
-     * Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+     * Groups](https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -391,7 +390,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVolumeGroup
      *     API.
      */
@@ -399,7 +398,7 @@ public interface Blockstorage extends AutoCloseable {
 
     /**
      * Creates a new backup volume group of the specified volume group. For more information, see
-     * [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+     * [Volume Groups](https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -408,7 +407,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeGroupBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeGroupBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateVolumeGroupBackup API.
      */
@@ -417,7 +416,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Deletes the specified boot volume. The volume cannot have an active connection to an
      * instance. To disconnect the boot volume from a connected instance, see [Disconnecting From a
-     * Boot Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/deletingbootvolume.htm).
+     * Boot Volume](https://docs.oracle.com/iaas/Content/Block/Tasks/deletingbootvolume.htm).
      * **Warning:** All data on the boot volume will be permanently lost when the boot volume is
      * deleted.
      *
@@ -428,7 +427,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteBootVolumeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteBootVolumeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBootVolume
      *     API.
      */
@@ -444,7 +443,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteBootVolumeBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteBootVolumeBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteBootVolumeBackup API.
      */
@@ -460,7 +459,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteBootVolumeKmsKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteBootVolumeKmsKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteBootVolumeKmsKey API.
      */
@@ -469,7 +468,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Deletes the specified volume. The volume cannot have an active connection to an instance. To
      * disconnect the volume from a connected instance, see [Disconnecting From a
-     * Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/disconnectingfromavolume.htm).
+     * Volume](https://docs.oracle.com/iaas/Content/Block/Tasks/disconnectingfromavolume.htm).
      * **Warning:** All data on the volume will be permanently lost when the volume is deleted.
      *
      * @param request The request object containing the details to send
@@ -479,7 +478,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVolume API.
      */
     DeleteVolumeResponse deleteVolume(DeleteVolumeRequest request);
@@ -494,7 +493,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVolumeBackup
      *     API.
      */
@@ -503,7 +502,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Deletes a user defined backup policy. For more information about user defined backup
      * policies, see [Policy-Based
-     * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies).
+     * Backups](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies).
      *
      * <p>Avoid entering confidential information.
      *
@@ -514,7 +513,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeBackupPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeBackupPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteVolumeBackupPolicy API.
      */
@@ -531,7 +530,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeBackupPolicyAssignmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeBackupPolicyAssignmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteVolumeBackupPolicyAssignment API.
      */
@@ -541,7 +540,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Deletes the specified volume group. Individual volumes are not deleted, only the volume group
      * is deleted. For more information, see [Volume
-     * Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+     * Groups](https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -550,7 +549,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVolumeGroup
      *     API.
      */
@@ -559,7 +558,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Deletes a volume group backup. This operation deletes all the backups in the volume group.
      * For more information, see [Volume
-     * Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+     * Groups](https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -568,7 +567,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeGroupBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeGroupBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteVolumeGroupBackup API.
      */
@@ -584,7 +583,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeKmsKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeKmsKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVolumeKmsKey
      *     API.
      */
@@ -600,7 +599,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBlockVolumeReplicaExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBlockVolumeReplicaExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetBlockVolumeReplica API.
      */
@@ -616,7 +615,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBootVolume API.
      */
     GetBootVolumeResponse getBootVolume(GetBootVolumeRequest request);
@@ -631,7 +630,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBootVolumeBackup
      *     API.
      */
@@ -647,7 +646,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeKmsKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeKmsKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBootVolumeKmsKey
      *     API.
      */
@@ -663,7 +662,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeReplicaExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeReplicaExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetBootVolumeReplica API.
      */
@@ -679,7 +678,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolume API.
      */
     GetVolumeResponse getVolume(GetVolumeRequest request);
@@ -694,7 +693,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolumeBackup
      *     API.
      */
@@ -710,7 +709,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetVolumeBackupPolicy API.
      */
@@ -728,7 +727,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyAssetAssignmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyAssetAssignmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetVolumeBackupPolicyAssetAssignment API.
      */
@@ -745,7 +744,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyAssignmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyAssignmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetVolumeBackupPolicyAssignment API.
      */
@@ -754,7 +753,7 @@ public interface Blockstorage extends AutoCloseable {
 
     /**
      * Gets information for the specified volume group. For more information, see [Volume
-     * Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+     * Groups](https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -763,14 +762,14 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolumeGroup API.
      */
     GetVolumeGroupResponse getVolumeGroup(GetVolumeGroupRequest request);
 
     /**
      * Gets information for the specified volume group backup. For more information, see [Volume
-     * Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+     * Groups](https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -779,7 +778,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeGroupBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeGroupBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetVolumeGroupBackup API.
      */
@@ -795,7 +794,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeGroupReplicaExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeGroupReplicaExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetVolumeGroupReplica API.
      */
@@ -811,7 +810,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeKmsKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeKmsKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolumeKmsKey
      *     API.
      */
@@ -827,7 +826,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBlockVolumeReplicasExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBlockVolumeReplicasExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListBlockVolumeReplicas API.
      */
@@ -844,7 +843,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumeBackupsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumeBackupsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListBootVolumeBackups API.
      */
@@ -860,7 +859,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumeReplicasExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumeReplicasExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListBootVolumeReplicas API.
      */
@@ -876,7 +875,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBootVolumes
      *     API.
      */
@@ -887,7 +886,7 @@ public interface Blockstorage extends AutoCloseable {
      *
      * <p>For more information about Oracle defined backup policies and user defined backup
      * policies, see [Policy-Based
-     * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
+     * Backups](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -896,7 +895,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeBackupPoliciesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeBackupPoliciesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListVolumeBackupPolicies API.
      */
@@ -913,7 +912,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeBackupsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeBackupsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVolumeBackups
      *     API.
      */
@@ -922,7 +921,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Lists the volume group backups in the specified compartment. You can filter the results by
      * volume group. For more information, see [Volume
-     * Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+     * Groups](https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -931,7 +930,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeGroupBackupsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeGroupBackupsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListVolumeGroupBackups API.
      */
@@ -940,7 +939,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Lists the volume group replicas in the specified compartment. You can filter the results by
      * volume group. For more information, see [Volume Group
-     * Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
+     * Replication](https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -949,7 +948,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeGroupReplicasExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeGroupReplicasExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListVolumeGroupReplicas API.
      */
@@ -958,7 +957,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Lists the volume groups in the specified compartment and availability domain. For more
      * information, see [Volume
-     * Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+     * Groups](https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -967,7 +966,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeGroupsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeGroupsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVolumeGroups
      *     API.
      */
@@ -983,7 +982,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVolumes API.
      */
     ListVolumesResponse listVolumes(ListVolumesRequest request);
@@ -998,7 +997,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBootVolume
      *     API.
      */
@@ -1015,7 +1014,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateBootVolumeBackup API.
      */
@@ -1031,7 +1030,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeKmsKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeKmsKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateBootVolumeKmsKey API.
      */
@@ -1047,7 +1046,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVolume API.
      */
     UpdateVolumeResponse updateVolume(UpdateVolumeRequest request);
@@ -1063,7 +1062,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVolumeBackup
      *     API.
      */
@@ -1072,7 +1071,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Updates a user defined backup policy. For more information about user defined backup
      * policies, see [Policy-Based
-     * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies).
+     * Backups](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies).
      *
      * <p>Avoid entering confidential information.
      *
@@ -1083,7 +1082,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeBackupPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeBackupPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateVolumeBackupPolicy API.
      */
@@ -1097,7 +1096,7 @@ public interface Blockstorage extends AutoCloseable {
      * volume group. Avoid entering confidential information.
      *
      * <p>For more information, see [Volume
-     * Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+     * Groups](https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1106,7 +1105,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVolumeGroup
      *     API.
      */
@@ -1114,7 +1113,7 @@ public interface Blockstorage extends AutoCloseable {
 
     /**
      * Updates the display name for the specified volume group backup. For more information, see
-     * [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+     * [Volume Groups](https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1123,7 +1122,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeGroupBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeGroupBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateVolumeGroupBackup API.
      */
@@ -1139,7 +1138,7 @@ public interface Blockstorage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeKmsKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeKmsKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVolumeKmsKey
      *     API.
      */

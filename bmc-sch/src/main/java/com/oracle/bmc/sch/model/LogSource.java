@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch.model;
@@ -32,15 +32,15 @@ public final class LogSource extends com.oracle.bmc.http.client.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the log source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the log source.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the log source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the log source.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -51,15 +51,17 @@ public final class LogSource extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the log group.
+         * Identifier of the log group. Either {@code _Audit} or the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
+         * group. Note: For the Notifications target, only {@code _Audit} is allowed.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the log group.
+         * Identifier of the log group. Either {@code _Audit} or the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
+         * group. Note: For the Notifications target, only {@code _Audit} is allowed.
          *
          * @param logGroupId the value to set
          * @return this builder
@@ -70,15 +72,15 @@ public final class LogSource extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the log.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * log.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("logId")
         private String logId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the log.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * log.
          *
          * @param logId the value to set
          * @return this builder
@@ -125,15 +127,15 @@ public final class LogSource extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the log source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the log source.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the log source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the log source.
      *
      * @return the value
      */
@@ -142,15 +144,17 @@ public final class LogSource extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the log group.
+     * Identifier of the log group. Either {@code _Audit} or the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
+     * group. Note: For the Notifications target, only {@code _Audit} is allowed.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the log group.
+     * Identifier of the log group. Either {@code _Audit} or the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
+     * group. Note: For the Notifications target, only {@code _Audit} is allowed.
      *
      * @return the value
      */
@@ -159,15 +163,13 @@ public final class LogSource extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the log.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("logId")
     private final String logId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the log.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
      *
      * @return the value
      */

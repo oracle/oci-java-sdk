@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument;
@@ -125,6 +125,77 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public AddModelLockResponse addModelLock(AddModelLockRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(request.getAddModelLockDetails(), "addModelLockDetails is required");
+
+        return clientCall(request, AddModelLockResponse::builder)
+                .logger(LOG, "addModelLock")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "AddModelLock",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/Model/AddModelLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddModelLockRequest::builder)
+                .basePath("/20221109")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aidocument.model.Model.class,
+                        AddModelLockResponse.Builder::model)
+                .handleResponseHeaderString("etag", AddModelLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddModelLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public AddProjectLockResponse addProjectLock(AddProjectLockRequest request) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+        Objects.requireNonNull(
+                request.getAddProjectLockDetails(), "addProjectLockDetails is required");
+
+        return clientCall(request, AddProjectLockResponse::builder)
+                .logger(LOG, "addProjectLock")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "AddProjectLock",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/Project/AddProjectLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddProjectLockRequest::builder)
+                .basePath("/20221109")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aidocument.model.Project.class,
+                        AddProjectLockResponse.Builder::project)
+                .handleResponseHeaderString("etag", AddProjectLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddProjectLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public AnalyzeDocumentResponse analyzeDocument(AnalyzeDocumentRequest request) {
         Objects.requireNonNull(
                 request.getAnalyzeDocumentDetails(), "analyzeDocumentDetails is required");
@@ -143,6 +214,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.aidocument.model.AnalyzeDocumentResult.class,
@@ -153,7 +225,6 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString("etag", AnalyzeDocumentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", AnalyzeDocumentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -229,6 +300,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getModelId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -260,6 +332,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getProjectId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -283,6 +356,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.aidocument.model.Model.class,
@@ -295,7 +369,6 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateModelResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -317,6 +390,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.aidocument.model.ProcessorJob.class,
@@ -324,7 +398,6 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", CreateProcessorJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateProcessorJobResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -343,6 +416,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.aidocument.model.Project.class,
@@ -355,7 +429,6 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-work-request-id", CreateProjectResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -375,6 +448,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .basePath("/20221109")
                 .appendPathParam("models")
                 .appendPathParam(request.getModelId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -401,6 +475,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .basePath("/20221109")
                 .appendPathParam("projects")
                 .appendPathParam(request.getProjectId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -429,13 +504,13 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getModelId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aidocument.model.Model.class,
                         GetModelResponse.Builder::model)
                 .handleResponseHeaderString("etag", GetModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -457,13 +532,13 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getProcessorJobId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aidocument.model.ProcessorJob.class,
                         GetProcessorJobResponse.Builder::processorJob)
                 .handleResponseHeaderString("etag", GetProcessorJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProcessorJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -485,13 +560,13 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getProjectId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aidocument.model.Project.class,
                         GetProjectResponse.Builder::project)
                 .handleResponseHeaderString("etag", GetProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -513,6 +588,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aidocument.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -521,7 +597,6 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -549,6 +624,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aidocument.model.ModelCollection.class,
                         ListModelsResponse.Builder::modelCollection)
@@ -556,7 +632,6 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListModelsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListModelsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -583,6 +658,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aidocument.model.ProjectCollection.class,
                         ListProjectsResponse.Builder::projectCollection)
@@ -590,7 +666,6 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListProjectsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListProjectsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -618,6 +693,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aidocument.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -625,7 +701,6 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -652,6 +727,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aidocument.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -659,7 +735,6 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -686,6 +761,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aidocument.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -693,7 +769,6 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -730,6 +805,78 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public RemoveModelLockResponse removeModelLock(RemoveModelLockRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveModelLockDetails(), "removeModelLockDetails is required");
+
+        return clientCall(request, RemoveModelLockResponse::builder)
+                .logger(LOG, "removeModelLock")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "RemoveModelLock",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/Model/RemoveModelLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveModelLockRequest::builder)
+                .basePath("/20221109")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aidocument.model.Model.class,
+                        RemoveModelLockResponse.Builder::model)
+                .handleResponseHeaderString("etag", RemoveModelLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveModelLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RemoveProjectLockResponse removeProjectLock(RemoveProjectLockRequest request) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveProjectLockDetails(), "removeProjectLockDetails is required");
+
+        return clientCall(request, RemoveProjectLockResponse::builder)
+                .logger(LOG, "removeProjectLock")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "RemoveProjectLock",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/Project/RemoveProjectLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveProjectLockRequest::builder)
+                .basePath("/20221109")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aidocument.model.Project.class,
+                        RemoveProjectLockResponse.Builder::project)
+                .handleResponseHeaderString("etag", RemoveProjectLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveProjectLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateModelResponse updateModel(UpdateModelRequest request) {
 
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
@@ -746,6 +893,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .basePath("/20221109")
                 .appendPathParam("models")
                 .appendPathParam(request.getModelId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -775,6 +923,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .basePath("/20221109")
                 .appendPathParam("projects")
                 .appendPathParam(request.getProjectId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())

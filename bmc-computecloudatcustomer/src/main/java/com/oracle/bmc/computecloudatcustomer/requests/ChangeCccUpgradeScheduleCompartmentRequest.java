@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.computecloudatcustomer.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.computecloudatcustomer.requests;
 import com.oracle.bmc.computecloudatcustomer.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ChangeCccUpgradeScheduleCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ChangeCccUpgradeScheduleCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeCccUpgradeScheduleCompartmentRequest.
  */
@@ -19,13 +19,13 @@ public class ChangeCccUpgradeScheduleCompartmentRequest
 
     /**
      * Compute Cloud@Customer upgrade schedule
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String cccUpgradeScheduleId;
 
     /**
      * Compute Cloud@Customer upgrade schedule
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCccUpgradeScheduleId() {
         return cccUpgradeScheduleId;
@@ -33,7 +33,7 @@ public class ChangeCccUpgradeScheduleCompartmentRequest
     /**
      * Details about the compartment change operation including the destination compartment
      * specified by the resource
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private com.oracle.bmc.computecloudatcustomer.model.ChangeCccUpgradeScheduleCompartmentDetails
             changeCccUpgradeScheduleCompartmentDetails;
@@ -41,7 +41,7 @@ public class ChangeCccUpgradeScheduleCompartmentRequest
     /**
      * Details about the compartment change operation including the destination compartment
      * specified by the resource
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public com.oracle.bmc.computecloudatcustomer.model.ChangeCccUpgradeScheduleCompartmentDetails
             getChangeCccUpgradeScheduleCompartmentDetails() {
@@ -85,15 +85,13 @@ public class ChangeCccUpgradeScheduleCompartmentRequest
     }
     /**
      * The client request
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * tracing.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
      */
     private String opcRequestId;
 
     /**
      * The client request
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * tracing.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -121,13 +119,13 @@ public class ChangeCccUpgradeScheduleCompartmentRequest
 
         /**
          * Compute Cloud@Customer upgrade schedule
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String cccUpgradeScheduleId = null;
 
         /**
          * Compute Cloud@Customer upgrade schedule
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param cccUpgradeScheduleId the value to set
          * @return this builder instance
@@ -140,7 +138,7 @@ public class ChangeCccUpgradeScheduleCompartmentRequest
         /**
          * Details about the compartment change operation including the destination compartment
          * specified by the resource
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private com.oracle.bmc.computecloudatcustomer.model
                         .ChangeCccUpgradeScheduleCompartmentDetails
@@ -149,7 +147,7 @@ public class ChangeCccUpgradeScheduleCompartmentRequest
         /**
          * Details about the compartment change operation including the destination compartment
          * specified by the resource
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param changeCccUpgradeScheduleCompartmentDetails the value to set
          * @return this builder instance
@@ -211,14 +209,14 @@ public class ChangeCccUpgradeScheduleCompartmentRequest
 
         /**
          * The client request
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
          * tracing.
          */
         private String opcRequestId = null;
 
         /**
          * The client request
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
          * tracing.
          *
          * @param opcRequestId the value to set

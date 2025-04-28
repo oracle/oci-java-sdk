@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.visualbuilder;
@@ -228,13 +228,13 @@ public class VbInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getVbInstanceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.visualbuilder.model.VbInstance.class,
                         GetVbInstanceResponse.Builder::vbInstance)
                 .handleResponseHeaderString("etag", GetVbInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetVbInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -256,6 +256,7 @@ public class VbInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.visualbuilder.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -264,7 +265,6 @@ public class VbInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -291,6 +291,7 @@ public class VbInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.visualbuilder.model.VbInstanceSummaryCollection.class,
                         ListVbInstancesResponse.Builder::vbInstanceSummaryCollection)
@@ -300,7 +301,6 @@ public class VbInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListVbInstancesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-previous-page", ListVbInstancesResponse.Builder::opcPreviousPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -328,6 +328,7 @@ public class VbInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.visualbuilder.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -337,7 +338,6 @@ public class VbInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-previous-page", ListWorkRequestErrorsResponse.Builder::opcPreviousPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -364,6 +364,7 @@ public class VbInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.visualbuilder.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -373,7 +374,6 @@ public class VbInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-previous-page", ListWorkRequestLogsResponse.Builder::opcPreviousPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -397,6 +397,7 @@ public class VbInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("vbInstanceId", request.getVbInstanceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.visualbuilder.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -406,7 +407,38 @@ public class VbInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-previous-page", ListWorkRequestsResponse.Builder::opcPreviousPage)
-                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ReconfigurePrivateEndpointVbInstanceResponse reconfigurePrivateEndpointVbInstance(
+            ReconfigurePrivateEndpointVbInstanceRequest request) {
+
+        Validate.notBlank(request.getVbInstanceId(), "vbInstanceId must not be blank");
+
+        return clientCall(request, ReconfigurePrivateEndpointVbInstanceResponse::builder)
+                .logger(LOG, "reconfigurePrivateEndpointVbInstance")
+                .serviceDetails(
+                        "VbInstance",
+                        "ReconfigurePrivateEndpointVbInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/ReconfigurePrivateEndpointVbInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReconfigurePrivateEndpointVbInstanceRequest::builder)
+                .basePath("/20210601")
+                .appendPathParam("vbInstances")
+                .appendPathParam(request.getVbInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("reconfigurePrivateEndpoint")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReconfigurePrivateEndpointVbInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ReconfigurePrivateEndpointVbInstanceResponse.Builder::opcRequestId)
                 .callSync();
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage;
@@ -264,6 +264,15 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "opc-request-id", CommitMultipartUploadResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-multipart-md5", CommitMultipartUploadResponse.Builder::opcMultipartMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c",
+                        CommitMultipartUploadResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha256",
+                        CommitMultipartUploadResponse.Builder::opcMultipartSha256)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha384",
+                        CommitMultipartUploadResponse.Builder::opcMultipartSha384)
                 .handleResponseHeaderString("ETag", CommitMultipartUploadResponse.Builder::eTag)
                 .handleResponseHeaderDate(
                         "last-modified", CommitMultipartUploadResponse.Builder::lastModified)
@@ -413,6 +422,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendHeader("opc-sse-customer-key", request.getOpcSseCustomerKey())
                 .appendHeader("opc-sse-customer-key-sha256", request.getOpcSseCustomerKeySha256())
                 .appendHeader("opc-sse-kms-key-id", request.getOpcSseKmsKeyId())
+                .appendEnumHeader("opc-checksum-algorithm", request.getOpcChecksumAlgorithm())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.MultipartUpload.class,
@@ -474,6 +484,48 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreatePreauthenticatedRequestResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePrivateEndpointResponse> createPrivateEndpoint(
+            CreatePrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+        Objects.requireNonNull(
+                request.getCreatePrivateEndpointDetails(),
+                "createPrivateEndpointDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
+        return clientCall(request, CreatePrivateEndpointResponse::builder)
+                .logger(LOG, "createPrivateEndpoint")
+                .serviceDetails(
+                        "ObjectStorage",
+                        "CreatePrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/CreatePrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePrivateEndpointRequest::builder)
+                .basePath("/")
+                .appendPathParam("n")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("pe")
+                .accept("application/json")
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreatePrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        CreatePrivateEndpointResponse.Builder::opcClientRequestId)
                 .callAsync(handler);
     }
 
@@ -749,6 +801,49 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePrivateEndpointResponse> deletePrivateEndpoint(
+            DeletePrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeletePrivateEndpointRequest, DeletePrivateEndpointResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        Validate.notBlank(request.getPeName(), "peName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("peName", request.getPeName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
+        return clientCall(request, DeletePrivateEndpointResponse::builder)
+                .logger(LOG, "deletePrivateEndpoint")
+                .serviceDetails(
+                        "ObjectStorage",
+                        "DeletePrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/DeletePrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePrivateEndpointRequest::builder)
+                .basePath("/")
+                .appendPathParam("n")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("pe")
+                .appendPathParam(request.getPeName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeletePrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        DeletePrivateEndpointResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePrivateEndpointResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteReplicationPolicyResponse> deleteReplicationPolicy(
             DeleteReplicationPolicyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1015,6 +1110,16 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .handleResponseHeaderString("content-md5", GetObjectResponse.Builder::contentMd5)
                 .handleResponseHeaderString(
                         "opc-multipart-md5", GetObjectResponse.Builder::opcMultipartMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c", GetObjectResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-content-sha256", GetObjectResponse.Builder::opcContentSha256)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha256", GetObjectResponse.Builder::opcMultipartSha256)
+                .handleResponseHeaderString(
+                        "opc-content-sha384", GetObjectResponse.Builder::opcContentSha384)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha384", GetObjectResponse.Builder::opcMultipartSha384)
                 .handleResponseHeaderString("content-type", GetObjectResponse.Builder::contentType)
                 .handleResponseHeaderString(
                         "content-language", GetObjectResponse.Builder::contentLanguage)
@@ -1130,6 +1235,51 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         GetPreauthenticatedRequestResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPreauthenticatedRequestResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPrivateEndpointResponse> getPrivateEndpoint(
+            GetPrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPrivateEndpointRequest, GetPrivateEndpointResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        Validate.notBlank(request.getPeName(), "peName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("peName", request.getPeName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
+        return clientCall(request, GetPrivateEndpointResponse::builder)
+                .logger(LOG, "getPrivateEndpoint")
+                .serviceDetails(
+                        "ObjectStorage",
+                        "GetPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/GetPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPrivateEndpointRequest::builder)
+                .basePath("/")
+                .appendPathParam("n")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("pe")
+                .appendPathParam(request.getPeName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("if-none-match", request.getIfNoneMatch())
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .handleBody(
+                        com.oracle.bmc.objectstorage.model.PrivateEndpoint.class,
+                        GetPrivateEndpointResponse.Builder::privateEndpoint)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        GetPrivateEndpointResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetPrivateEndpointResponse.Builder::eTag)
                 .callAsync(handler);
     }
 
@@ -1363,6 +1513,16 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .handleResponseHeaderString("content-md5", HeadObjectResponse.Builder::contentMd5)
                 .handleResponseHeaderString(
                         "opc-multipart-md5", HeadObjectResponse.Builder::opcMultipartMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c", HeadObjectResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-content-sha256", HeadObjectResponse.Builder::opcContentSha256)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha256", HeadObjectResponse.Builder::opcMultipartSha256)
+                .handleResponseHeaderString(
+                        "opc-content-sha384", HeadObjectResponse.Builder::opcContentSha384)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha384", HeadObjectResponse.Builder::opcMultipartSha384)
                 .handleResponseHeaderString("content-type", HeadObjectResponse.Builder::contentType)
                 .handleResponseHeaderString(
                         "content-language", HeadObjectResponse.Builder::contentLanguage)
@@ -1688,6 +1848,56 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
     }
 
     @Override
+    public java.util.concurrent.Future<ListPrivateEndpointsResponse> listPrivateEndpoints(
+            ListPrivateEndpointsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
+        return clientCall(request, ListPrivateEndpointsResponse::builder)
+                .logger(LOG, "listPrivateEndpoints")
+                .serviceDetails(
+                        "ObjectStorage",
+                        "ListPrivateEndpoints",
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpointSummary/ListPrivateEndpoints")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPrivateEndpointsRequest::builder)
+                .basePath("/")
+                .appendPathParam("n")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("pe")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.CommaSeparated)
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.objectstorage.model.PrivateEndpointSummary.class,
+                        ListPrivateEndpointsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        ListPrivateEndpointsResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPrivateEndpointsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPrivateEndpointsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListReplicationPoliciesResponse> listReplicationPolicies(
             ListReplicationPoliciesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1933,6 +2143,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/")
                 .appendPathParam("workRequests")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("privateEndpointName", request.getPrivateEndpointName())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
@@ -2036,6 +2247,10 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendHeader("Expect", request.getExpect())
                 .appendHeader("Content-Length", request.getContentLength())
                 .appendHeader("Content-MD5", request.getContentMD5())
+                .appendEnumHeader("opc-checksum-algorithm", request.getOpcChecksumAlgorithm())
+                .appendHeader("opc-content-crc32c", request.getOpcContentCrc32c())
+                .appendHeader("opc-content-sha256", request.getOpcContentSha256())
+                .appendHeader("opc-content-sha384", request.getOpcContentSha384())
                 .appendHeader("Content-Type", request.getContentType())
                 .appendHeader("Content-Language", request.getContentLanguage())
                 .appendHeader("Content-Encoding", request.getContentEncoding())
@@ -2055,6 +2270,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "opc-request-id", PutObjectResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-content-md5", PutObjectResponse.Builder::opcContentMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c", PutObjectResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-content-sha256", PutObjectResponse.Builder::opcContentSha256)
+                .handleResponseHeaderString(
+                        "opc-content-sha384", PutObjectResponse.Builder::opcContentSha384)
                 .handleResponseHeaderString("ETag", PutObjectResponse.Builder::eTag)
                 .handleResponseHeaderDate("last-modified", PutObjectResponse.Builder::lastModified)
                 .handleResponseHeaderString("version-id", PutObjectResponse.Builder::versionId)
@@ -2422,6 +2643,53 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
     }
 
     @Override
+    public java.util.concurrent.Future<UpdatePrivateEndpointResponse> updatePrivateEndpoint(
+            UpdatePrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePrivateEndpointRequest, UpdatePrivateEndpointResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        Validate.notBlank(request.getPeName(), "peName must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePrivateEndpointDetails(),
+                "updatePrivateEndpointDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("peName", request.getPeName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
+        return clientCall(request, UpdatePrivateEndpointResponse::builder)
+                .logger(LOG, "updatePrivateEndpoint")
+                .serviceDetails(
+                        "ObjectStorage",
+                        "UpdatePrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/UpdatePrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpdatePrivateEndpointRequest::builder)
+                .basePath("/")
+                .appendPathParam("n")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("pe")
+                .appendPathParam(request.getPeName())
+                .accept("application/json")
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdatePrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        UpdatePrivateEndpointResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePrivateEndpointResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateRetentionRuleResponse> updateRetentionRule(
             UpdateRetentionRuleRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2523,6 +2791,10 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendHeader("Expect", request.getExpect())
                 .appendHeader("Content-Length", request.getContentLength())
                 .appendHeader("Content-MD5", request.getContentMD5())
+                .appendEnumHeader("opc-checksum-algorithm", request.getOpcChecksumAlgorithm())
+                .appendHeader("opc-content-crc32c", request.getOpcContentCrc32c())
+                .appendHeader("opc-content-sha256", request.getOpcContentSha256())
+                .appendHeader("opc-content-sha384", request.getOpcContentSha384())
                 .appendHeader("opc-sse-customer-algorithm", request.getOpcSseCustomerAlgorithm())
                 .appendHeader("opc-sse-customer-key", request.getOpcSseCustomerKey())
                 .appendHeader("opc-sse-customer-key-sha256", request.getOpcSseCustomerKeySha256())
@@ -2535,6 +2807,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "opc-request-id", UploadPartResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-content-md5", UploadPartResponse.Builder::opcContentMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c", UploadPartResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-content-sha256", UploadPartResponse.Builder::opcContentSha256)
+                .handleResponseHeaderString(
+                        "opc-content-sha384", UploadPartResponse.Builder::opcContentSha384)
                 .handleResponseHeaderString("ETag", UploadPartResponse.Builder::eTag)
                 .callAsync(handler);
     }

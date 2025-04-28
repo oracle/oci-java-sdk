@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -45,7 +45,7 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
          * Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also
          * see a list of supported standard HTTP methods in the Load Balancing service documentation
          * at [Managing Rule
-         * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
+         * Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
          *
          * <p>Your backend application must be able to handle the methods specified in this list.
          *
@@ -65,7 +65,7 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
          * Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also
          * see a list of supported standard HTTP methods in the Load Balancing service documentation
          * at [Managing Rule
-         * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
+         * Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
          *
          * <p>Your backend application must be able to handle the methods specified in this list.
          *
@@ -157,7 +157,7 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
      * Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also see
      * a list of supported standard HTTP methods in the Load Balancing service documentation at
      * [Managing Rule
-     * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
+     * Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
      *
      * <p>Your backend application must be able to handle the methods specified in this list.
      *
@@ -177,7 +177,7 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
      * Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also see
      * a list of supported standard HTTP methods in the Load Balancing service documentation at
      * [Managing Rule
-     * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
+     * Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
      *
      * <p>Your backend application must be able to handle the methods specified in this list.
      *

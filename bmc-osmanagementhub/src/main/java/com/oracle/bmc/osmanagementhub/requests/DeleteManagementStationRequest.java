@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteManagementStationExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteManagementStationExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteManagementStationRequest.
  */
@@ -15,10 +15,16 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class DeleteManagementStationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the management station. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station.
+     */
     private String managementStationId;
 
-    /** The OCID of the management station. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station.
+     */
     public String getManagementStationId() {
         return managementStationId;
     }
@@ -40,6 +46,25 @@ public class DeleteManagementStationRequest
         return ifMatch;
     }
     /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      */
@@ -59,11 +84,15 @@ public class DeleteManagementStationRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the management station. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * management station.
+         */
         private String managementStationId = null;
 
         /**
-         * The OCID of the management station.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * management station.
          *
          * @param managementStationId the value to set
          * @return this builder instance
@@ -92,6 +121,30 @@ public class DeleteManagementStationRequest
          */
         public Builder ifMatch(String ifMatch) {
             this.ifMatch = ifMatch;
+            return this;
+        }
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
             return this;
         }
 
@@ -145,6 +198,7 @@ public class DeleteManagementStationRequest
         public Builder copy(DeleteManagementStationRequest o) {
             managementStationId(o.getManagementStationId());
             ifMatch(o.getIfMatch());
+            opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -182,9 +236,11 @@ public class DeleteManagementStationRequest
             DeleteManagementStationRequest request = new DeleteManagementStationRequest();
             request.managementStationId = managementStationId;
             request.ifMatch = ifMatch;
+            request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DeleteManagementStationRequest(managementStationId, ifMatch, opcRequestId);
+            // new DeleteManagementStationRequest(managementStationId, ifMatch, opcRetryToken,
+            // opcRequestId);
         }
     }
 
@@ -197,6 +253,7 @@ public class DeleteManagementStationRequest
         return new Builder()
                 .managementStationId(managementStationId)
                 .ifMatch(ifMatch)
+                .opcRetryToken(opcRetryToken)
                 .opcRequestId(opcRequestId);
     }
 
@@ -216,6 +273,7 @@ public class DeleteManagementStationRequest
         sb.append("super=").append(super.toString());
         sb.append(",managementStationId=").append(String.valueOf(this.managementStationId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -234,6 +292,7 @@ public class DeleteManagementStationRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.managementStationId, other.managementStationId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -247,6 +306,9 @@ public class DeleteManagementStationRequest
                                 ? 43
                                 : this.managementStationId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -11,7 +11,7 @@ package com.oracle.bmc.database.model;
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,18 +33,39 @@ public final class FlexComponentSummary
         "name",
         "minimumCoreCount",
         "availableCoreCount",
-        "availableDbStorageInGBs"
+        "availableDbStorageInGBs",
+        "runtimeMinimumCoreCount",
+        "shape",
+        "availableMemoryInGBs",
+        "availableLocalStorageInGBs",
+        "computeModel",
+        "hardwareType",
+        "descriptionSummary"
     })
     public FlexComponentSummary(
             String name,
             Integer minimumCoreCount,
             Integer availableCoreCount,
-            Integer availableDbStorageInGBs) {
+            Integer availableDbStorageInGBs,
+            Integer runtimeMinimumCoreCount,
+            String shape,
+            Integer availableMemoryInGBs,
+            Integer availableLocalStorageInGBs,
+            String computeModel,
+            HardwareType hardwareType,
+            String descriptionSummary) {
         super();
         this.name = name;
         this.minimumCoreCount = minimumCoreCount;
         this.availableCoreCount = availableCoreCount;
         this.availableDbStorageInGBs = availableDbStorageInGBs;
+        this.runtimeMinimumCoreCount = runtimeMinimumCoreCount;
+        this.shape = shape;
+        this.availableMemoryInGBs = availableMemoryInGBs;
+        this.availableLocalStorageInGBs = availableLocalStorageInGBs;
+        this.computeModel = computeModel;
+        this.hardwareType = hardwareType;
+        this.descriptionSummary = descriptionSummary;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -119,6 +140,115 @@ public final class FlexComponentSummary
             this.__explicitlySet__.add("availableDbStorageInGBs");
             return this;
         }
+        /** The runtime minimum number of CPU cores that can be enabled for this Flex Component. */
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeMinimumCoreCount")
+        private Integer runtimeMinimumCoreCount;
+
+        /**
+         * The runtime minimum number of CPU cores that can be enabled for this Flex Component.
+         *
+         * @param runtimeMinimumCoreCount the value to set
+         * @return this builder
+         */
+        public Builder runtimeMinimumCoreCount(Integer runtimeMinimumCoreCount) {
+            this.runtimeMinimumCoreCount = runtimeMinimumCoreCount;
+            this.__explicitlySet__.add("runtimeMinimumCoreCount");
+            return this;
+        }
+        /** The name of the DB system shape for this Flex Component. */
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        /**
+         * The name of the DB system shape for this Flex Component.
+         *
+         * @param shape the value to set
+         * @return this builder
+         */
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
+        /** The maximum memory size that can be enabled on the DB Server for this Flex Component. */
+        @com.fasterxml.jackson.annotation.JsonProperty("availableMemoryInGBs")
+        private Integer availableMemoryInGBs;
+
+        /**
+         * The maximum memory size that can be enabled on the DB Server for this Flex Component.
+         *
+         * @param availableMemoryInGBs the value to set
+         * @return this builder
+         */
+        public Builder availableMemoryInGBs(Integer availableMemoryInGBs) {
+            this.availableMemoryInGBs = availableMemoryInGBs;
+            this.__explicitlySet__.add("availableMemoryInGBs");
+            return this;
+        }
+        /**
+         * The maximum local storage that can be enabled on the DB Server for this Flex Component.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("availableLocalStorageInGBs")
+        private Integer availableLocalStorageInGBs;
+
+        /**
+         * The maximum local storage that can be enabled on the DB Server for this Flex Component.
+         *
+         * @param availableLocalStorageInGBs the value to set
+         * @return this builder
+         */
+        public Builder availableLocalStorageInGBs(Integer availableLocalStorageInGBs) {
+            this.availableLocalStorageInGBs = availableLocalStorageInGBs;
+            this.__explicitlySet__.add("availableLocalStorageInGBs");
+            return this;
+        }
+        /** The compute model of the DB Server for this Flex Component. */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private String computeModel;
+
+        /**
+         * The compute model of the DB Server for this Flex Component.
+         *
+         * @param computeModel the value to set
+         * @return this builder
+         */
+        public Builder computeModel(String computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /**
+         * The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("hardwareType")
+        private HardwareType hardwareType;
+
+        /**
+         * The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component.
+         *
+         * @param hardwareType the value to set
+         * @return this builder
+         */
+        public Builder hardwareType(HardwareType hardwareType) {
+            this.hardwareType = hardwareType;
+            this.__explicitlySet__.add("hardwareType");
+            return this;
+        }
+        /** The description summary for this Flex Component. */
+        @com.fasterxml.jackson.annotation.JsonProperty("descriptionSummary")
+        private String descriptionSummary;
+
+        /**
+         * The description summary for this Flex Component.
+         *
+         * @param descriptionSummary the value to set
+         * @return this builder
+         */
+        public Builder descriptionSummary(String descriptionSummary) {
+            this.descriptionSummary = descriptionSummary;
+            this.__explicitlySet__.add("descriptionSummary");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -129,7 +259,14 @@ public final class FlexComponentSummary
                             this.name,
                             this.minimumCoreCount,
                             this.availableCoreCount,
-                            this.availableDbStorageInGBs);
+                            this.availableDbStorageInGBs,
+                            this.runtimeMinimumCoreCount,
+                            this.shape,
+                            this.availableMemoryInGBs,
+                            this.availableLocalStorageInGBs,
+                            this.computeModel,
+                            this.hardwareType,
+                            this.descriptionSummary);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -149,6 +286,27 @@ public final class FlexComponentSummary
             }
             if (model.wasPropertyExplicitlySet("availableDbStorageInGBs")) {
                 this.availableDbStorageInGBs(model.getAvailableDbStorageInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeMinimumCoreCount")) {
+                this.runtimeMinimumCoreCount(model.getRuntimeMinimumCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("availableMemoryInGBs")) {
+                this.availableMemoryInGBs(model.getAvailableMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("availableLocalStorageInGBs")) {
+                this.availableLocalStorageInGBs(model.getAvailableLocalStorageInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("hardwareType")) {
+                this.hardwareType(model.getHardwareType());
+            }
+            if (model.wasPropertyExplicitlySet("descriptionSummary")) {
+                this.descriptionSummary(model.getDescriptionSummary());
             }
             return this;
         }
@@ -221,6 +379,143 @@ public final class FlexComponentSummary
         return availableDbStorageInGBs;
     }
 
+    /** The runtime minimum number of CPU cores that can be enabled for this Flex Component. */
+    @com.fasterxml.jackson.annotation.JsonProperty("runtimeMinimumCoreCount")
+    private final Integer runtimeMinimumCoreCount;
+
+    /**
+     * The runtime minimum number of CPU cores that can be enabled for this Flex Component.
+     *
+     * @return the value
+     */
+    public Integer getRuntimeMinimumCoreCount() {
+        return runtimeMinimumCoreCount;
+    }
+
+    /** The name of the DB system shape for this Flex Component. */
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    private final String shape;
+
+    /**
+     * The name of the DB system shape for this Flex Component.
+     *
+     * @return the value
+     */
+    public String getShape() {
+        return shape;
+    }
+
+    /** The maximum memory size that can be enabled on the DB Server for this Flex Component. */
+    @com.fasterxml.jackson.annotation.JsonProperty("availableMemoryInGBs")
+    private final Integer availableMemoryInGBs;
+
+    /**
+     * The maximum memory size that can be enabled on the DB Server for this Flex Component.
+     *
+     * @return the value
+     */
+    public Integer getAvailableMemoryInGBs() {
+        return availableMemoryInGBs;
+    }
+
+    /** The maximum local storage that can be enabled on the DB Server for this Flex Component. */
+    @com.fasterxml.jackson.annotation.JsonProperty("availableLocalStorageInGBs")
+    private final Integer availableLocalStorageInGBs;
+
+    /**
+     * The maximum local storage that can be enabled on the DB Server for this Flex Component.
+     *
+     * @return the value
+     */
+    public Integer getAvailableLocalStorageInGBs() {
+        return availableLocalStorageInGBs;
+    }
+
+    /** The compute model of the DB Server for this Flex Component. */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final String computeModel;
+
+    /**
+     * The compute model of the DB Server for this Flex Component.
+     *
+     * @return the value
+     */
+    public String getComputeModel() {
+        return computeModel;
+    }
+
+    /** The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component. */
+    public enum HardwareType implements com.oracle.bmc.http.internal.BmcEnum {
+        Compute("COMPUTE"),
+        Cell("CELL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(HardwareType.class);
+
+        private final String value;
+        private static java.util.Map<String, HardwareType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (HardwareType v : HardwareType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        HardwareType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static HardwareType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'HardwareType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component. */
+    @com.fasterxml.jackson.annotation.JsonProperty("hardwareType")
+    private final HardwareType hardwareType;
+
+    /**
+     * The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component.
+     *
+     * @return the value
+     */
+    public HardwareType getHardwareType() {
+        return hardwareType;
+    }
+
+    /** The description summary for this Flex Component. */
+    @com.fasterxml.jackson.annotation.JsonProperty("descriptionSummary")
+    private final String descriptionSummary;
+
+    /**
+     * The description summary for this Flex Component.
+     *
+     * @return the value
+     */
+    public String getDescriptionSummary() {
+        return descriptionSummary;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -241,6 +536,15 @@ public final class FlexComponentSummary
         sb.append(", availableCoreCount=").append(String.valueOf(this.availableCoreCount));
         sb.append(", availableDbStorageInGBs=")
                 .append(String.valueOf(this.availableDbStorageInGBs));
+        sb.append(", runtimeMinimumCoreCount=")
+                .append(String.valueOf(this.runtimeMinimumCoreCount));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", availableMemoryInGBs=").append(String.valueOf(this.availableMemoryInGBs));
+        sb.append(", availableLocalStorageInGBs=")
+                .append(String.valueOf(this.availableLocalStorageInGBs));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", hardwareType=").append(String.valueOf(this.hardwareType));
+        sb.append(", descriptionSummary=").append(String.valueOf(this.descriptionSummary));
         sb.append(")");
         return sb.toString();
     }
@@ -260,6 +564,15 @@ public final class FlexComponentSummary
                 && java.util.Objects.equals(this.availableCoreCount, other.availableCoreCount)
                 && java.util.Objects.equals(
                         this.availableDbStorageInGBs, other.availableDbStorageInGBs)
+                && java.util.Objects.equals(
+                        this.runtimeMinimumCoreCount, other.runtimeMinimumCoreCount)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.availableMemoryInGBs, other.availableMemoryInGBs)
+                && java.util.Objects.equals(
+                        this.availableLocalStorageInGBs, other.availableLocalStorageInGBs)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(this.hardwareType, other.hardwareType)
+                && java.util.Objects.equals(this.descriptionSummary, other.descriptionSummary)
                 && super.equals(other);
     }
 
@@ -281,6 +594,29 @@ public final class FlexComponentSummary
                         + (this.availableDbStorageInGBs == null
                                 ? 43
                                 : this.availableDbStorageInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runtimeMinimumCoreCount == null
+                                ? 43
+                                : this.runtimeMinimumCoreCount.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableMemoryInGBs == null
+                                ? 43
+                                : this.availableMemoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableLocalStorageInGBs == null
+                                ? 43
+                                : this.availableLocalStorageInGBs.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result = (result * PRIME) + (this.hardwareType == null ? 43 : this.hardwareType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.descriptionSummary == null
+                                ? 43
+                                : this.descriptionSummary.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.licensemanager.requests;
@@ -7,23 +7,21 @@ package com.oracle.bmc.licensemanager.requests;
 import com.oracle.bmc.licensemanager.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListProductLicensesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListProductLicensesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProductLicensesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for
-     * the license record, product license, and configuration.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * used for the license record, product license, and configuration.
      */
     private String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for
-     * the license record, product license, and configuration.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * used for the license record, product license, and configuration.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -176,15 +174,15 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used
-         * for the license record, product license, and configuration.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for
+         * the license record, product license, and configuration.
          */
         private String compartmentId = null;
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used
-         * for the license record, product license, and configuration.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for
+         * the license record, product license, and configuration.
          *
          * @param compartmentId the value to set
          * @return this builder instance

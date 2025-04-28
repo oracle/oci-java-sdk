@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database;
@@ -56,7 +56,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "DatabaseAsyncClient",
-                            "downloadExadataInfrastructureConfigFile,downloadValidationReport,downloadVmClusterNetworkConfigFile,generateAutonomousDatabaseWallet"));
+                            "downloadExadataInfrastructureConfigFile,downloadValidationReport,downloadVmClusterNetworkConfigFile,generateAutonomousDatabaseWallet,getConsoleHistoryContent"));
         }
     }
 
@@ -165,6 +165,55 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ActivateExadataInfrastructureResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddStandbyAutonomousContainerDatabaseResponse>
+            addStandbyAutonomousContainerDatabase(
+                    AddStandbyAutonomousContainerDatabaseRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddStandbyAutonomousContainerDatabaseRequest,
+                                    AddStandbyAutonomousContainerDatabaseResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getAddStandbyAutonomousContainerDatabaseDetails(),
+                "addStandbyAutonomousContainerDatabaseDetails is required");
+
+        Validate.notBlank(
+                request.getAutonomousContainerDatabaseId(),
+                "autonomousContainerDatabaseId must not be blank");
+
+        return clientCall(request, AddStandbyAutonomousContainerDatabaseResponse::builder)
+                .logger(LOG, "addStandbyAutonomousContainerDatabase")
+                .serviceDetails(
+                        "Database",
+                        "AddStandbyAutonomousContainerDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/AddStandbyAutonomousContainerDatabase")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddStandbyAutonomousContainerDatabaseRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabases")
+                .appendPathParam(request.getAutonomousContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("addStandby")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousContainerDatabase.class,
+                        AddStandbyAutonomousContainerDatabaseResponse.Builder
+                                ::autonomousContainerDatabase)
+                .handleResponseHeaderString(
+                        "etag", AddStandbyAutonomousContainerDatabaseResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AddStandbyAutonomousContainerDatabaseResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddStandbyAutonomousContainerDatabaseResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -430,6 +479,85 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<CancelExecutionWindowResponse> cancelExecutionWindow(
+            CancelExecutionWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelExecutionWindowRequest, CancelExecutionWindowResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExecutionWindowId(), "executionWindowId must not be blank");
+        Objects.requireNonNull(
+                request.getCancelExecutionWindowDetails(),
+                "cancelExecutionWindowDetails is required");
+
+        return clientCall(request, CancelExecutionWindowResponse::builder)
+                .logger(LOG, "cancelExecutionWindow")
+                .serviceDetails(
+                        "Database",
+                        "CancelExecutionWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/CancelExecutionWindow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelExecutionWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .appendPathParam(request.getExecutionWindowId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionWindow.class,
+                        CancelExecutionWindowResponse.Builder::executionWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CancelExecutionWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CancelExecutionWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelExecutionWindowResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CascadingDeleteSchedulingPlanResponse>
+            cascadingDeleteSchedulingPlan(
+                    CascadingDeleteSchedulingPlanRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CascadingDeleteSchedulingPlanRequest,
+                                    CascadingDeleteSchedulingPlanResponse>
+                            handler) {
+
+        Validate.notBlank(request.getSchedulingPlanId(), "schedulingPlanId must not be blank");
+
+        return clientCall(request, CascadingDeleteSchedulingPlanResponse::builder)
+                .logger(LOG, "cascadingDeleteSchedulingPlan")
+                .serviceDetails(
+                        "Database",
+                        "CascadingDeleteSchedulingPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPlan/CascadingDeleteSchedulingPlan")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CascadingDeleteSchedulingPlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .appendPathParam(request.getSchedulingPlanId())
+                .appendPathParam("actions")
+                .appendPathParam("cascadingDeleteSchedulingPlan")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CascadingDeleteSchedulingPlanResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CascadingDeleteSchedulingPlanResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeAutonomousContainerDatabaseCompartmentResponse>
             changeAutonomousContainerDatabaseCompartment(
                     ChangeAutonomousContainerDatabaseCompartmentRequest request,
@@ -514,6 +642,97 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeAutonomousDatabaseCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeAutonomousDatabaseSoftwareImageCompartmentResponse>
+            changeAutonomousDatabaseSoftwareImageCompartment(
+                    ChangeAutonomousDatabaseSoftwareImageCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousDatabaseSoftwareImageCompartmentRequest,
+                                    ChangeAutonomousDatabaseSoftwareImageCompartmentResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeAutonomousDatabaseSoftwareImageCompartmentDetails(),
+                "changeAutonomousDatabaseSoftwareImageCompartmentDetails is required");
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseSoftwareImageId(),
+                "autonomousDatabaseSoftwareImageId must not be blank");
+
+        return clientCall(
+                        request, ChangeAutonomousDatabaseSoftwareImageCompartmentResponse::builder)
+                .logger(LOG, "changeAutonomousDatabaseSoftwareImageCompartment")
+                .serviceDetails(
+                        "Database",
+                        "ChangeAutonomousDatabaseSoftwareImageCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseSoftwareImage/ChangeAutonomousDatabaseSoftwareImageCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAutonomousDatabaseSoftwareImageCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseSoftwareImages")
+                .appendPathParam(request.getAutonomousDatabaseSoftwareImageId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag",
+                        ChangeAutonomousDatabaseSoftwareImageCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeAutonomousDatabaseSoftwareImageCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAutonomousDatabaseSoftwareImageCompartmentResponse.Builder
+                                ::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeAutonomousDatabaseSubscriptionResponse>
+            changeAutonomousDatabaseSubscription(
+                    ChangeAutonomousDatabaseSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousDatabaseSubscriptionRequest,
+                                    ChangeAutonomousDatabaseSubscriptionResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeAutonomousDatabaseSubscriptionDetails(),
+                "changeAutonomousDatabaseSubscriptionDetails is required");
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+
+        return clientCall(request, ChangeAutonomousDatabaseSubscriptionResponse::builder)
+                .logger(LOG, "changeAutonomousDatabaseSubscription")
+                .serviceDetails(
+                        "Database",
+                        "ChangeAutonomousDatabaseSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ChangeAutonomousDatabaseSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAutonomousDatabaseSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeAutonomousDatabaseSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAutonomousDatabaseSubscriptionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -738,6 +957,50 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeCloudExadataInfrastructureSubscriptionResponse>
+            changeCloudExadataInfrastructureSubscription(
+                    ChangeCloudExadataInfrastructureSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudExadataInfrastructureSubscriptionRequest,
+                                    ChangeCloudExadataInfrastructureSubscriptionResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeCloudExadataInfrastructureSubscriptionDetails(),
+                "changeCloudExadataInfrastructureSubscriptionDetails is required");
+
+        Validate.notBlank(
+                request.getCloudExadataInfrastructureId(),
+                "cloudExadataInfrastructureId must not be blank");
+
+        return clientCall(request, ChangeCloudExadataInfrastructureSubscriptionResponse::builder)
+                .logger(LOG, "changeCloudExadataInfrastructureSubscription")
+                .serviceDetails(
+                        "Database",
+                        "ChangeCloudExadataInfrastructureSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ChangeCloudExadataInfrastructureSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCloudExadataInfrastructureSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudExadataInfrastructures")
+                .appendPathParam(request.getCloudExadataInfrastructureId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeCloudExadataInfrastructureSubscriptionResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCloudExadataInfrastructureSubscriptionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeCloudVmClusterCompartmentResponse>
             changeCloudVmClusterCompartment(
                     ChangeCloudVmClusterCompartmentRequest request,
@@ -775,6 +1038,47 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeCloudVmClusterCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeCloudVmClusterSubscriptionResponse>
+            changeCloudVmClusterSubscription(
+                    ChangeCloudVmClusterSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudVmClusterSubscriptionRequest,
+                                    ChangeCloudVmClusterSubscriptionResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeCloudVmClusterSubscriptionDetails(),
+                "changeCloudVmClusterSubscriptionDetails is required");
+
+        Validate.notBlank(request.getCloudVmClusterId(), "cloudVmClusterId must not be blank");
+
+        return clientCall(request, ChangeCloudVmClusterSubscriptionResponse::builder)
+                .logger(LOG, "changeCloudVmClusterSubscription")
+                .serviceDetails(
+                        "Database",
+                        "ChangeCloudVmClusterSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ChangeCloudVmClusterSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCloudVmClusterSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudVmClusters")
+                .appendPathParam(request.getCloudVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeCloudVmClusterSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCloudVmClusterSubscriptionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -949,6 +1253,46 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeEncryptionKeyLocationResponse>
+            changeEncryptionKeyLocation(
+                    ChangeEncryptionKeyLocationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeEncryptionKeyLocationRequest,
+                                    ChangeEncryptionKeyLocationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEncryptionKeyLocationDetails(),
+                "encryptionKeyLocationDetails is required");
+
+        return clientCall(request, ChangeEncryptionKeyLocationResponse::builder)
+                .logger(LOG, "changeEncryptionKeyLocation")
+                .serviceDetails(
+                        "Database",
+                        "ChangeEncryptionKeyLocation",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ChangeEncryptionKeyLocation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeEncryptionKeyLocationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeEncryptionKeyLocation")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeEncryptionKeyLocationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeEncryptionKeyLocationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeExadataInfrastructureCompartmentResponse>
             changeExadataInfrastructureCompartment(
                     ChangeExadataInfrastructureCompartmentRequest request,
@@ -987,6 +1331,174 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeExadataInfrastructureCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeExadbVmClusterCompartmentResponse>
+            changeExadbVmClusterCompartment(
+                    ChangeExadbVmClusterCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExadbVmClusterCompartmentRequest,
+                                    ChangeExadbVmClusterCompartmentResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeExadbVmClusterCompartmentDetails(),
+                "changeExadbVmClusterCompartmentDetails is required");
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, ChangeExadbVmClusterCompartmentResponse::builder)
+                .logger(LOG, "changeExadbVmClusterCompartment")
+                .serviceDetails(
+                        "Database",
+                        "ChangeExadbVmClusterCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/ChangeExadbVmClusterCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeExadbVmClusterCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeExadbVmClusterCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeExadbVmClusterCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeExadbVmClusterSubscriptionResponse>
+            changeExadbVmClusterSubscription(
+                    ChangeExadbVmClusterSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExadbVmClusterSubscriptionRequest,
+                                    ChangeExadbVmClusterSubscriptionResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeExadbVmClusterSubscriptionDetails(),
+                "changeExadbVmClusterSubscriptionDetails is required");
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, ChangeExadbVmClusterSubscriptionResponse::builder)
+                .logger(LOG, "changeExadbVmClusterSubscription")
+                .serviceDetails(
+                        "Database",
+                        "ChangeExadbVmClusterSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/ChangeExadbVmClusterSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeExadbVmClusterSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeExadbVmClusterSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeExadbVmClusterSubscriptionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeExascaleDbStorageVaultCompartmentResponse>
+            changeExascaleDbStorageVaultCompartment(
+                    ChangeExascaleDbStorageVaultCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExascaleDbStorageVaultCompartmentRequest,
+                                    ChangeExascaleDbStorageVaultCompartmentResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeExascaleDbStorageVaultCompartmentDetails(),
+                "changeExascaleDbStorageVaultCompartmentDetails is required");
+
+        Validate.notBlank(
+                request.getExascaleDbStorageVaultId(),
+                "exascaleDbStorageVaultId must not be blank");
+
+        return clientCall(request, ChangeExascaleDbStorageVaultCompartmentResponse::builder)
+                .logger(LOG, "changeExascaleDbStorageVaultCompartment")
+                .serviceDetails(
+                        "Database",
+                        "ChangeExascaleDbStorageVaultCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/ChangeExascaleDbStorageVaultCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeExascaleDbStorageVaultCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exascaleDbStorageVaults")
+                .appendPathParam(request.getExascaleDbStorageVaultId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeExascaleDbStorageVaultCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeExascaleDbStorageVaultCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeExascaleDbStorageVaultSubscriptionResponse>
+            changeExascaleDbStorageVaultSubscription(
+                    ChangeExascaleDbStorageVaultSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExascaleDbStorageVaultSubscriptionRequest,
+                                    ChangeExascaleDbStorageVaultSubscriptionResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeExascaleDbStorageVaultSubscriptionDetails(),
+                "changeExascaleDbStorageVaultSubscriptionDetails is required");
+
+        Validate.notBlank(
+                request.getExascaleDbStorageVaultId(),
+                "exascaleDbStorageVaultId must not be blank");
+
+        return clientCall(request, ChangeExascaleDbStorageVaultSubscriptionResponse::builder)
+                .logger(LOG, "changeExascaleDbStorageVaultSubscription")
+                .serviceDetails(
+                        "Database",
+                        "ChangeExascaleDbStorageVaultSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/ChangeExascaleDbStorageVaultSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeExascaleDbStorageVaultSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exascaleDbStorageVaults")
+                .appendPathParam(request.getExascaleDbStorageVaultId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeExascaleDbStorageVaultSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeExascaleDbStorageVaultSubscriptionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1240,6 +1752,88 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeSchedulingPlanCompartmentResponse>
+            changeSchedulingPlanCompartment(
+                    ChangeSchedulingPlanCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSchedulingPlanCompartmentRequest,
+                                    ChangeSchedulingPlanCompartmentResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeSchedulingPlanCompartmentDetails(),
+                "changeSchedulingPlanCompartmentDetails is required");
+
+        Validate.notBlank(request.getSchedulingPlanId(), "schedulingPlanId must not be blank");
+
+        return clientCall(request, ChangeSchedulingPlanCompartmentResponse::builder)
+                .logger(LOG, "changeSchedulingPlanCompartment")
+                .serviceDetails(
+                        "Database",
+                        "ChangeSchedulingPlanCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPlan/ChangeSchedulingPlanCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSchedulingPlanCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .appendPathParam(request.getSchedulingPlanId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSchedulingPlanCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSchedulingPlanCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSchedulingPolicyCompartmentResponse>
+            changeSchedulingPolicyCompartment(
+                    ChangeSchedulingPolicyCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSchedulingPolicyCompartmentRequest,
+                                    ChangeSchedulingPolicyCompartmentResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeSchedulingPolicyCompartmentDetails(),
+                "changeSchedulingPolicyCompartmentDetails is required");
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        return clientCall(request, ChangeSchedulingPolicyCompartmentResponse::builder)
+                .logger(LOG, "changeSchedulingPolicyCompartment")
+                .serviceDetails(
+                        "Database",
+                        "ChangeSchedulingPolicyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPolicy/ChangeSchedulingPolicyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSchedulingPolicyCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSchedulingPolicyCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSchedulingPolicyCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeVmClusterCompartmentResponse>
             changeVmClusterCompartment(
                     ChangeVmClusterCompartmentRequest request,
@@ -1407,6 +2001,182 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ConfigureExascaleExadataInfrastructureResponse>
+            configureExascaleExadataInfrastructure(
+                    ConfigureExascaleExadataInfrastructureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConfigureExascaleExadataInfrastructureRequest,
+                                    ConfigureExascaleExadataInfrastructureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExadataInfrastructureId(), "exadataInfrastructureId must not be blank");
+        Objects.requireNonNull(
+                request.getConfigureExascaleExadataInfrastructureDetails(),
+                "configureExascaleExadataInfrastructureDetails is required");
+
+        return clientCall(request, ConfigureExascaleExadataInfrastructureResponse::builder)
+                .logger(LOG, "configureExascaleExadataInfrastructure")
+                .serviceDetails(
+                        "Database",
+                        "ConfigureExascaleExadataInfrastructure",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ConfigureExascaleExadataInfrastructure")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConfigureExascaleExadataInfrastructureRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadataInfrastructures")
+                .appendPathParam(request.getExadataInfrastructureId())
+                .appendPathParam("actions")
+                .appendPathParam("configureExascale")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadataInfrastructure.class,
+                        ConfigureExascaleExadataInfrastructureResponse.Builder
+                                ::exadataInfrastructure)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConfigureExascaleExadataInfrastructureResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", ConfigureExascaleExadataInfrastructureResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ConfigureExascaleExadataInfrastructureResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureSaasAdminUserResponse> configureSaasAdminUser(
+            ConfigureSaasAdminUserRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ConfigureSaasAdminUserRequest, ConfigureSaasAdminUserResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getConfigureSaasAdminUserDetails(),
+                "configureSaasAdminUserDetails is required");
+
+        return clientCall(request, ConfigureSaasAdminUserResponse::builder)
+                .logger(LOG, "configureSaasAdminUser")
+                .serviceDetails(
+                        "Database",
+                        "ConfigureSaasAdminUser",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ConfigureSaasAdminUser")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConfigureSaasAdminUserRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("configureSaasAdminUser")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabase.class,
+                        ConfigureSaasAdminUserResponse.Builder::autonomousDatabase)
+                .handleResponseHeaderString("etag", ConfigureSaasAdminUserResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConfigureSaasAdminUserResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConfigureSaasAdminUserResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmKeyStoreDetailsAreCorrectResponse>
+            confirmKeyStoreDetailsAreCorrect(
+                    ConfirmKeyStoreDetailsAreCorrectRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConfirmKeyStoreDetailsAreCorrectRequest,
+                                    ConfirmKeyStoreDetailsAreCorrectResponse>
+                            handler) {
+
+        Validate.notBlank(request.getKeyStoreId(), "keyStoreId must not be blank");
+
+        return clientCall(request, ConfirmKeyStoreDetailsAreCorrectResponse::builder)
+                .logger(LOG, "confirmKeyStoreDetailsAreCorrect")
+                .serviceDetails(
+                        "Database",
+                        "ConfirmKeyStoreDetailsAreCorrect",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/ConfirmKeyStoreDetailsAreCorrect")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConfirmKeyStoreDetailsAreCorrectRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("keyStores")
+                .appendPathParam(request.getKeyStoreId())
+                .appendPathParam("actions")
+                .appendPathParam("confirmDetailsAreCorrect")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConfirmKeyStoreDetailsAreCorrectResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ConfirmKeyStoreDetailsAreCorrectResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConvertStandbyAutonomousContainerDatabaseResponse>
+            convertStandbyAutonomousContainerDatabase(
+                    ConvertStandbyAutonomousContainerDatabaseRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConvertStandbyAutonomousContainerDatabaseRequest,
+                                    ConvertStandbyAutonomousContainerDatabaseResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getConvertStandbyAutonomousContainerDatabaseDetails(),
+                "convertStandbyAutonomousContainerDatabaseDetails is required");
+
+        Validate.notBlank(
+                request.getAutonomousContainerDatabaseId(),
+                "autonomousContainerDatabaseId must not be blank");
+
+        return clientCall(request, ConvertStandbyAutonomousContainerDatabaseResponse::builder)
+                .logger(LOG, "convertStandbyAutonomousContainerDatabase")
+                .serviceDetails(
+                        "Database",
+                        "ConvertStandbyAutonomousContainerDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ConvertStandbyAutonomousContainerDatabase")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConvertStandbyAutonomousContainerDatabaseRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabases")
+                .appendPathParam(request.getAutonomousContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("snapshotStandby")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousContainerDatabase.class,
+                        ConvertStandbyAutonomousContainerDatabaseResponse.Builder
+                                ::autonomousContainerDatabase)
+                .handleResponseHeaderString(
+                        "etag", ConvertStandbyAutonomousContainerDatabaseResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConvertStandbyAutonomousContainerDatabaseResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ConvertStandbyAutonomousContainerDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ConvertToPdbResponse> convertToPdb(
             ConvertToPdbRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ConvertToPdbRequest, ConvertToPdbResponse>
@@ -1491,6 +2261,48 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ConvertToStandaloneResponse> convertToStandalone(
+            ConvertToStandaloneRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ConvertToStandaloneRequest, ConvertToStandaloneResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getConvertToStandaloneDetails(), "convertToStandaloneDetails is required");
+
+        return clientCall(request, ConvertToStandaloneResponse::builder)
+                .logger(LOG, "convertToStandalone")
+                .serviceDetails(
+                        "Database",
+                        "ConvertToStandalone",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ConvertToStandalone")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConvertToStandaloneRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuard")
+                .appendPathParam("actions")
+                .appendPathParam("convertToStandalone")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        ConvertToStandaloneResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConvertToStandaloneResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", ConvertToStandaloneResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConvertToStandaloneResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateApplicationVipResponse> createApplicationVip(
             CreateApplicationVipRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1567,6 +2379,60 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<
+                    CreateAutonomousContainerDatabaseDataguardAssociationResponse>
+            createAutonomousContainerDatabaseDataguardAssociation(
+                    CreateAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateAutonomousContainerDatabaseDataguardAssociationRequest,
+                                    CreateAutonomousContainerDatabaseDataguardAssociationResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousContainerDatabaseId(),
+                "autonomousContainerDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateAutonomousContainerDatabaseDataguardAssociationDetails(),
+                "createAutonomousContainerDatabaseDataguardAssociationDetails is required");
+
+        return clientCall(
+                        request,
+                        CreateAutonomousContainerDatabaseDataguardAssociationResponse::builder)
+                .logger(LOG, "createAutonomousContainerDatabaseDataguardAssociation")
+                .serviceDetails(
+                        "Database",
+                        "CreateAutonomousContainerDatabaseDataguardAssociation",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/CreateAutonomousContainerDatabaseDataguardAssociation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(
+                        CreateAutonomousContainerDatabaseDataguardAssociationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabases")
+                .appendPathParam(request.getAutonomousContainerDatabaseId())
+                .appendPathParam("autonomousContainerDatabaseDataguardAssociations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model
+                                .AutonomousContainerDatabaseDataguardAssociation.class,
+                        CreateAutonomousContainerDatabaseDataguardAssociationResponse.Builder
+                                ::autonomousContainerDatabaseDataguardAssociation)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateAutonomousContainerDatabaseDataguardAssociationResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag",
+                        CreateAutonomousContainerDatabaseDataguardAssociationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateAutonomousContainerDatabaseDataguardAssociationResponse.Builder
+                                ::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAutonomousDatabaseResponse> createAutonomousDatabase(
             CreateAutonomousDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1639,6 +2505,47 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateAutonomousDatabaseBackupResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAutonomousDatabaseSoftwareImageResponse>
+            createAutonomousDatabaseSoftwareImage(
+                    CreateAutonomousDatabaseSoftwareImageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateAutonomousDatabaseSoftwareImageRequest,
+                                    CreateAutonomousDatabaseSoftwareImageResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getCreateAutonomousDatabaseSoftwareImageDetails(),
+                "createAutonomousDatabaseSoftwareImageDetails is required");
+
+        return clientCall(request, CreateAutonomousDatabaseSoftwareImageResponse::builder)
+                .logger(LOG, "createAutonomousDatabaseSoftwareImage")
+                .serviceDetails(
+                        "Database",
+                        "CreateAutonomousDatabaseSoftwareImage",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseSoftwareImage/CreateAutonomousDatabaseSoftwareImage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAutonomousDatabaseSoftwareImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseSoftwareImages")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImage.class,
+                        CreateAutonomousDatabaseSoftwareImageResponse.Builder
+                                ::autonomousDatabaseSoftwareImage)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateAutonomousDatabaseSoftwareImageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateAutonomousDatabaseSoftwareImageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateAutonomousDatabaseSoftwareImageResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1899,6 +2806,46 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateConsoleHistoryResponse> createConsoleHistory(
+            CreateConsoleHistoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateConsoleHistoryRequest, CreateConsoleHistoryResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateConsoleHistoryDetails(),
+                "createConsoleHistoryDetails is required");
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+
+        return clientCall(request, CreateConsoleHistoryResponse::builder)
+                .logger(LOG, "createConsoleHistory")
+                .serviceDetails(
+                        "Database",
+                        "CreateConsoleHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/CreateConsoleHistory")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateConsoleHistoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .appendPathParam("consoleHistories")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ConsoleHistory.class,
+                        CreateConsoleHistoryResponse.Builder::consoleHistory)
+                .handleResponseHeaderString("etag", CreateConsoleHistoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateConsoleHistoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateConsoleHistoryResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDataGuardAssociationResponse>
             createDataGuardAssociation(
                     CreateDataGuardAssociationRequest request,
@@ -2081,6 +3028,154 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "etag", CreateExadataInfrastructureResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateExadataInfrastructureResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExadbVmClusterResponse> createExadbVmCluster(
+            CreateExadbVmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateExadbVmClusterRequest, CreateExadbVmClusterResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateExadbVmClusterDetails(),
+                "createExadbVmClusterDetails is required");
+
+        return clientCall(request, CreateExadbVmClusterResponse::builder)
+                .logger(LOG, "createExadbVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "CreateExadbVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/CreateExadbVmCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExadbVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadbVmCluster.class,
+                        CreateExadbVmClusterResponse.Builder::exadbVmCluster)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateExadbVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateExadbVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateExadbVmClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExascaleDbStorageVaultResponse>
+            createExascaleDbStorageVault(
+                    CreateExascaleDbStorageVaultRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExascaleDbStorageVaultRequest,
+                                    CreateExascaleDbStorageVaultResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getCreateExascaleDbStorageVaultDetails(),
+                "createExascaleDbStorageVaultDetails is required");
+
+        return clientCall(request, CreateExascaleDbStorageVaultResponse::builder)
+                .logger(LOG, "createExascaleDbStorageVault")
+                .serviceDetails(
+                        "Database",
+                        "CreateExascaleDbStorageVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/CreateExascaleDbStorageVault")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExascaleDbStorageVaultRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exascaleDbStorageVaults")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExascaleDbStorageVault.class,
+                        CreateExascaleDbStorageVaultResponse.Builder::exascaleDbStorageVault)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateExascaleDbStorageVaultResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateExascaleDbStorageVaultResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateExascaleDbStorageVaultResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExecutionActionResponse> createExecutionAction(
+            CreateExecutionActionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateExecutionActionRequest, CreateExecutionActionResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateExecutionActionDetails(),
+                "createExecutionActionDetails is required");
+
+        return clientCall(request, CreateExecutionActionResponse::builder)
+                .logger(LOG, "createExecutionAction")
+                .serviceDetails(
+                        "Database",
+                        "CreateExecutionAction",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionAction/CreateExecutionAction")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExecutionActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionActions")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionAction.class,
+                        CreateExecutionActionResponse.Builder::executionAction)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateExecutionActionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateExecutionActionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateExecutionActionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExecutionWindowResponse> createExecutionWindow(
+            CreateExecutionWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateExecutionWindowRequest, CreateExecutionWindowResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateExecutionWindowDetails(),
+                "createExecutionWindowDetails is required");
+
+        return clientCall(request, CreateExecutionWindowResponse::builder)
+                .logger(LOG, "createExecutionWindow")
+                .serviceDetails(
+                        "Database",
+                        "CreateExecutionWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/CreateExecutionWindow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExecutionWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionWindow.class,
+                        CreateExecutionWindowResponse.Builder::executionWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateExecutionWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateExecutionWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateExecutionWindowResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2416,6 +3511,148 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateScheduledActionResponse> createScheduledAction(
+            CreateScheduledActionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateScheduledActionRequest, CreateScheduledActionResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateScheduledActionDetails(),
+                "createScheduledActionDetails is required");
+
+        return clientCall(request, CreateScheduledActionResponse::builder)
+                .logger(LOG, "createScheduledAction")
+                .serviceDetails("Database", "CreateScheduledAction", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateScheduledActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("scheduledActions")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ScheduledAction.class,
+                        CreateScheduledActionResponse.Builder::scheduledAction)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateScheduledActionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateScheduledActionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateScheduledActionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSchedulingPlanResponse> createSchedulingPlan(
+            CreateSchedulingPlanRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSchedulingPlanRequest, CreateSchedulingPlanResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateSchedulingPlanDetails(),
+                "createSchedulingPlanDetails is required");
+
+        return clientCall(request, CreateSchedulingPlanResponse::builder)
+                .logger(LOG, "createSchedulingPlan")
+                .serviceDetails("Database", "CreateSchedulingPlan", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSchedulingPlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPlan.class,
+                        CreateSchedulingPlanResponse.Builder::schedulingPlan)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSchedulingPlanResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateSchedulingPlanResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSchedulingPlanResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSchedulingPolicyResponse> createSchedulingPolicy(
+            CreateSchedulingPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSchedulingPolicyRequest, CreateSchedulingPolicyResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateSchedulingPolicyDetails(),
+                "createSchedulingPolicyDetails is required");
+
+        return clientCall(request, CreateSchedulingPolicyResponse::builder)
+                .logger(LOG, "createSchedulingPolicy")
+                .serviceDetails(
+                        "Database",
+                        "CreateSchedulingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPolicy/CreateSchedulingPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSchedulingPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPolicy.class,
+                        CreateSchedulingPolicyResponse.Builder::schedulingPolicy)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSchedulingPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateSchedulingPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSchedulingPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSchedulingWindowResponse> createSchedulingWindow(
+            CreateSchedulingWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSchedulingWindowRequest, CreateSchedulingWindowResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateSchedulingWindowDetails(),
+                "createSchedulingWindowDetails is required");
+
+        return clientCall(request, CreateSchedulingWindowResponse::builder)
+                .logger(LOG, "createSchedulingWindow")
+                .serviceDetails(
+                        "Database",
+                        "CreateSchedulingWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingWindow/CreateSchedulingWindow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSchedulingWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("schedulingWindows")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingWindow.class,
+                        CreateSchedulingWindowResponse.Builder::schedulingWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSchedulingWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateSchedulingWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSchedulingWindowResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateVmClusterResponse> createVmCluster(
             CreateVmClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2620,6 +3857,42 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteAutonomousDatabaseBackupResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAutonomousDatabaseSoftwareImageResponse>
+            deleteAutonomousDatabaseSoftwareImage(
+                    DeleteAutonomousDatabaseSoftwareImageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteAutonomousDatabaseSoftwareImageRequest,
+                                    DeleteAutonomousDatabaseSoftwareImageResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseSoftwareImageId(),
+                "autonomousDatabaseSoftwareImageId must not be blank");
+
+        return clientCall(request, DeleteAutonomousDatabaseSoftwareImageResponse::builder)
+                .logger(LOG, "deleteAutonomousDatabaseSoftwareImage")
+                .serviceDetails(
+                        "Database",
+                        "DeleteAutonomousDatabaseSoftwareImage",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseSoftwareImage/DeleteAutonomousDatabaseSoftwareImage")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAutonomousDatabaseSoftwareImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseSoftwareImages")
+                .appendPathParam(request.getAutonomousDatabaseSoftwareImageId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteAutonomousDatabaseSoftwareImageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteAutonomousDatabaseSoftwareImageResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2852,6 +4125,41 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteConsoleHistoryResponse> deleteConsoleHistory(
+            DeleteConsoleHistoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteConsoleHistoryRequest, DeleteConsoleHistoryResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+
+        Validate.notBlank(request.getConsoleHistoryId(), "consoleHistoryId must not be blank");
+
+        return clientCall(request, DeleteConsoleHistoryResponse::builder)
+                .logger(LOG, "deleteConsoleHistory")
+                .serviceDetails(
+                        "Database",
+                        "DeleteConsoleHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/DeleteConsoleHistory")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteConsoleHistoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .appendPathParam("consoleHistories")
+                .appendPathParam(request.getConsoleHistoryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteConsoleHistoryResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteConsoleHistoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDatabaseResponse> deleteDatabase(
             DeleteDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2975,6 +4283,132 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         DeleteExadataInfrastructureResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteExadataInfrastructureResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExadbVmClusterResponse> deleteExadbVmCluster(
+            DeleteExadbVmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExadbVmClusterRequest, DeleteExadbVmClusterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, DeleteExadbVmClusterResponse::builder)
+                .logger(LOG, "deleteExadbVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "DeleteExadbVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/DeleteExadbVmCluster")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExadbVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExadbVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteExadbVmClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExascaleDbStorageVaultResponse>
+            deleteExascaleDbStorageVault(
+                    DeleteExascaleDbStorageVaultRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExascaleDbStorageVaultRequest,
+                                    DeleteExascaleDbStorageVaultResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExascaleDbStorageVaultId(),
+                "exascaleDbStorageVaultId must not be blank");
+
+        return clientCall(request, DeleteExascaleDbStorageVaultResponse::builder)
+                .logger(LOG, "deleteExascaleDbStorageVault")
+                .serviceDetails(
+                        "Database",
+                        "DeleteExascaleDbStorageVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/DeleteExascaleDbStorageVault")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExascaleDbStorageVaultRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exascaleDbStorageVaults")
+                .appendPathParam(request.getExascaleDbStorageVaultId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExascaleDbStorageVaultResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteExascaleDbStorageVaultResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExecutionActionResponse> deleteExecutionAction(
+            DeleteExecutionActionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExecutionActionRequest, DeleteExecutionActionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExecutionActionId(), "executionActionId must not be blank");
+
+        return clientCall(request, DeleteExecutionActionResponse::builder)
+                .logger(LOG, "deleteExecutionAction")
+                .serviceDetails(
+                        "Database",
+                        "DeleteExecutionAction",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionAction/DeleteExecutionAction")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExecutionActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionActions")
+                .appendPathParam(request.getExecutionActionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExecutionActionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteExecutionActionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExecutionWindowResponse> deleteExecutionWindow(
+            DeleteExecutionWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExecutionWindowRequest, DeleteExecutionWindowResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExecutionWindowId(), "executionWindowId must not be blank");
+
+        return clientCall(request, DeleteExecutionWindowResponse::builder)
+                .logger(LOG, "deleteExecutionWindow")
+                .serviceDetails(
+                        "Database",
+                        "DeleteExecutionWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/DeleteExecutionWindow")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExecutionWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .appendPathParam(request.getExecutionWindowId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteExecutionWindowResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -3209,6 +4643,128 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         DeletePluggableDatabaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeletePluggableDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteScheduledActionResponse> deleteScheduledAction(
+            DeleteScheduledActionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteScheduledActionRequest, DeleteScheduledActionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getScheduledActionId(), "scheduledActionId must not be blank");
+
+        return clientCall(request, DeleteScheduledActionResponse::builder)
+                .logger(LOG, "deleteScheduledAction")
+                .serviceDetails(
+                        "Database",
+                        "DeleteScheduledAction",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ScheduledAction/DeleteScheduledAction")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteScheduledActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("scheduledActions")
+                .appendPathParam(request.getScheduledActionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteScheduledActionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteScheduledActionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSchedulingPlanResponse> deleteSchedulingPlan(
+            DeleteSchedulingPlanRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSchedulingPlanRequest, DeleteSchedulingPlanResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSchedulingPlanId(), "schedulingPlanId must not be blank");
+
+        return clientCall(request, DeleteSchedulingPlanResponse::builder)
+                .logger(LOG, "deleteSchedulingPlan")
+                .serviceDetails(
+                        "Database",
+                        "DeleteSchedulingPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPlan/DeleteSchedulingPlan")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSchedulingPlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .appendPathParam(request.getSchedulingPlanId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSchedulingPlanResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSchedulingPlanResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSchedulingPolicyResponse> deleteSchedulingPolicy(
+            DeleteSchedulingPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSchedulingPolicyRequest, DeleteSchedulingPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        return clientCall(request, DeleteSchedulingPolicyResponse::builder)
+                .logger(LOG, "deleteSchedulingPolicy")
+                .serviceDetails(
+                        "Database",
+                        "DeleteSchedulingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPolicy/DeleteSchedulingPolicy")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSchedulingPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSchedulingPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSchedulingWindowResponse> deleteSchedulingWindow(
+            DeleteSchedulingWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSchedulingWindowRequest, DeleteSchedulingWindowResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        Validate.notBlank(request.getSchedulingWindowId(), "schedulingWindowId must not be blank");
+
+        return clientCall(request, DeleteSchedulingWindowResponse::builder)
+                .logger(LOG, "deleteSchedulingWindow")
+                .serviceDetails(
+                        "Database",
+                        "DeleteSchedulingWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingWindow/DeleteSchedulingWindow")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSchedulingWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("schedulingWindows")
+                .appendPathParam(request.getSchedulingWindowId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSchedulingWindowResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -4001,6 +5557,55 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<EditAutonomousContainerDatabaseDataguardResponse>
+            editAutonomousContainerDatabaseDataguard(
+                    EditAutonomousContainerDatabaseDataguardRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EditAutonomousContainerDatabaseDataguardRequest,
+                                    EditAutonomousContainerDatabaseDataguardResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getEditAutonomousContainerDatabaseDataguardDetails(),
+                "editAutonomousContainerDatabaseDataguardDetails is required");
+
+        Validate.notBlank(
+                request.getAutonomousContainerDatabaseId(),
+                "autonomousContainerDatabaseId must not be blank");
+
+        return clientCall(request, EditAutonomousContainerDatabaseDataguardResponse::builder)
+                .logger(LOG, "editAutonomousContainerDatabaseDataguard")
+                .serviceDetails(
+                        "Database",
+                        "EditAutonomousContainerDatabaseDataguard",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/EditAutonomousContainerDatabaseDataguard")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EditAutonomousContainerDatabaseDataguardRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabases")
+                .appendPathParam(request.getAutonomousContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("editDataguard")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousContainerDatabase.class,
+                        EditAutonomousContainerDatabaseDataguardResponse.Builder
+                                ::autonomousContainerDatabase)
+                .handleResponseHeaderString(
+                        "etag", EditAutonomousContainerDatabaseDataguardResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EditAutonomousContainerDatabaseDataguardResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EditAutonomousContainerDatabaseDataguardResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<EnableAutonomousDatabaseManagementResponse>
             enableAutonomousDatabaseManagement(
                     EnableAutonomousDatabaseManagementRequest request,
@@ -4591,6 +6196,51 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<FailoverAutonomousContainerDatabaseDataguardResponse>
+            failoverAutonomousContainerDatabaseDataguard(
+                    FailoverAutonomousContainerDatabaseDataguardRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    FailoverAutonomousContainerDatabaseDataguardRequest,
+                                    FailoverAutonomousContainerDatabaseDataguardResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousContainerDatabaseId(),
+                "autonomousContainerDatabaseId must not be blank");
+
+        return clientCall(request, FailoverAutonomousContainerDatabaseDataguardResponse::builder)
+                .logger(LOG, "failoverAutonomousContainerDatabaseDataguard")
+                .serviceDetails(
+                        "Database",
+                        "FailoverAutonomousContainerDatabaseDataguard",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/FailoverAutonomousContainerDatabaseDataguard")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(FailoverAutonomousContainerDatabaseDataguardRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabases")
+                .appendPathParam(request.getAutonomousContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("failover")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousContainerDatabase.class,
+                        FailoverAutonomousContainerDatabaseDataguardResponse.Builder
+                                ::autonomousContainerDatabase)
+                .handleResponseHeaderString(
+                        "etag", FailoverAutonomousContainerDatabaseDataguardResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        FailoverAutonomousContainerDatabaseDataguardResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        FailoverAutonomousContainerDatabaseDataguardResponse.Builder
+                                ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<
                     FailoverAutonomousContainerDatabaseDataguardAssociationResponse>
             failoverAutonomousContainerDatabaseDataguardAssociation(
@@ -4645,6 +6295,47 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-work-request-id",
                         FailoverAutonomousContainerDatabaseDataguardAssociationResponse.Builder
                                 ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<FailoverDataGuardResponse> failoverDataGuard(
+            FailoverDataGuardRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            FailoverDataGuardRequest, FailoverDataGuardResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getFailoverDataGuardDetails(), "failoverDataGuardDetails is required");
+
+        return clientCall(request, FailoverDataGuardResponse::builder)
+                .logger(LOG, "failoverDataGuard")
+                .serviceDetails(
+                        "Database",
+                        "FailoverDataGuard",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/FailoverDataGuard")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(FailoverDataGuardRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuard")
+                .appendPathParam("actions")
+                .appendPathParam("failover")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        FailoverDataGuardResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", FailoverDataGuardResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", FailoverDataGuardResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", FailoverDataGuardResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -5086,6 +6777,44 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetAutonomousDatabaseRegionalWalletResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAutonomousDatabaseSoftwareImageResponse>
+            getAutonomousDatabaseSoftwareImage(
+                    GetAutonomousDatabaseSoftwareImageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutonomousDatabaseSoftwareImageRequest,
+                                    GetAutonomousDatabaseSoftwareImageResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseSoftwareImageId(),
+                "autonomousDatabaseSoftwareImageId must not be blank");
+
+        return clientCall(request, GetAutonomousDatabaseSoftwareImageResponse::builder)
+                .logger(LOG, "getAutonomousDatabaseSoftwareImage")
+                .serviceDetails(
+                        "Database",
+                        "GetAutonomousDatabaseSoftwareImage",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseSoftwareImage/GetAutonomousDatabaseSoftwareImage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAutonomousDatabaseSoftwareImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseSoftwareImages")
+                .appendPathParam(request.getAutonomousDatabaseSoftwareImageId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImage.class,
+                        GetAutonomousDatabaseSoftwareImageResponse.Builder
+                                ::autonomousDatabaseSoftwareImage)
+                .handleResponseHeaderString(
+                        "etag", GetAutonomousDatabaseSoftwareImageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetAutonomousDatabaseSoftwareImageResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -5692,6 +7421,77 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<GetConsoleHistoryResponse> getConsoleHistory(
+            GetConsoleHistoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetConsoleHistoryRequest, GetConsoleHistoryResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+
+        Validate.notBlank(request.getConsoleHistoryId(), "consoleHistoryId must not be blank");
+
+        return clientCall(request, GetConsoleHistoryResponse::builder)
+                .logger(LOG, "getConsoleHistory")
+                .serviceDetails(
+                        "Database",
+                        "GetConsoleHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/GetConsoleHistory")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConsoleHistoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .appendPathParam("consoleHistories")
+                .appendPathParam(request.getConsoleHistoryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ConsoleHistory.class,
+                        GetConsoleHistoryResponse.Builder::consoleHistory)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConsoleHistoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetConsoleHistoryResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConsoleHistoryContentResponse> getConsoleHistoryContent(
+            GetConsoleHistoryContentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetConsoleHistoryContentRequest, GetConsoleHistoryContentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+
+        Validate.notBlank(request.getConsoleHistoryId(), "consoleHistoryId must not be blank");
+
+        return clientCall(request, GetConsoleHistoryContentResponse::builder)
+                .logger(LOG, "getConsoleHistoryContent")
+                .serviceDetails(
+                        "Database",
+                        "GetConsoleHistoryContent",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/GetConsoleHistoryContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConsoleHistoryContentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .appendPathParam("consoleHistories")
+                .appendPathParam(request.getConsoleHistoryId())
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetConsoleHistoryContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConsoleHistoryContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetConsoleHistoryContentResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDataGuardAssociationResponse> getDataGuardAssociation(
             GetDataGuardAssociationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6272,6 +8072,207 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<GetExadbVmClusterResponse> getExadbVmCluster(
+            GetExadbVmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetExadbVmClusterRequest, GetExadbVmClusterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, GetExadbVmClusterResponse::builder)
+                .logger(LOG, "getExadbVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "GetExadbVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/GetExadbVmCluster")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExadbVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadbVmCluster.class,
+                        GetExadbVmClusterResponse.Builder::exadbVmCluster)
+                .handleResponseHeaderString("etag", GetExadbVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExadbVmClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExadbVmClusterUpdateResponse> getExadbVmClusterUpdate(
+            GetExadbVmClusterUpdateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetExadbVmClusterUpdateRequest, GetExadbVmClusterUpdateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        Validate.notBlank(request.getUpdateId(), "updateId must not be blank");
+
+        return clientCall(request, GetExadbVmClusterUpdateResponse::builder)
+                .logger(LOG, "getExadbVmClusterUpdate")
+                .serviceDetails(
+                        "Database",
+                        "GetExadbVmClusterUpdate",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmClusterUpdate/GetExadbVmClusterUpdate")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExadbVmClusterUpdateRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("updates")
+                .appendPathParam(request.getUpdateId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadbVmClusterUpdate.class,
+                        GetExadbVmClusterUpdateResponse.Builder::exadbVmClusterUpdate)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExadbVmClusterUpdateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExadbVmClusterUpdateHistoryEntryResponse>
+            getExadbVmClusterUpdateHistoryEntry(
+                    GetExadbVmClusterUpdateHistoryEntryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetExadbVmClusterUpdateHistoryEntryRequest,
+                                    GetExadbVmClusterUpdateHistoryEntryResponse>
+                            handler) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        Validate.notBlank(
+                request.getUpdateHistoryEntryId(), "updateHistoryEntryId must not be blank");
+
+        return clientCall(request, GetExadbVmClusterUpdateHistoryEntryResponse::builder)
+                .logger(LOG, "getExadbVmClusterUpdateHistoryEntry")
+                .serviceDetails(
+                        "Database",
+                        "GetExadbVmClusterUpdateHistoryEntry",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmClusterUpdateHistoryEntry/GetExadbVmClusterUpdateHistoryEntry")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExadbVmClusterUpdateHistoryEntryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("updateHistoryEntries")
+                .appendPathParam(request.getUpdateHistoryEntryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadbVmClusterUpdateHistoryEntry.class,
+                        GetExadbVmClusterUpdateHistoryEntryResponse.Builder
+                                ::exadbVmClusterUpdateHistoryEntry)
+                .handleResponseHeaderString(
+                        "etag", GetExadbVmClusterUpdateHistoryEntryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetExadbVmClusterUpdateHistoryEntryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExascaleDbStorageVaultResponse> getExascaleDbStorageVault(
+            GetExascaleDbStorageVaultRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetExascaleDbStorageVaultRequest, GetExascaleDbStorageVaultResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getExascaleDbStorageVaultId(),
+                "exascaleDbStorageVaultId must not be blank");
+
+        return clientCall(request, GetExascaleDbStorageVaultResponse::builder)
+                .logger(LOG, "getExascaleDbStorageVault")
+                .serviceDetails(
+                        "Database",
+                        "GetExascaleDbStorageVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/GetExascaleDbStorageVault")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExascaleDbStorageVaultRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exascaleDbStorageVaults")
+                .appendPathParam(request.getExascaleDbStorageVaultId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ExascaleDbStorageVault.class,
+                        GetExascaleDbStorageVaultResponse.Builder::exascaleDbStorageVault)
+                .handleResponseHeaderString("etag", GetExascaleDbStorageVaultResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExascaleDbStorageVaultResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExecutionActionResponse> getExecutionAction(
+            GetExecutionActionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetExecutionActionRequest, GetExecutionActionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExecutionActionId(), "executionActionId must not be blank");
+
+        return clientCall(request, GetExecutionActionResponse::builder)
+                .logger(LOG, "getExecutionAction")
+                .serviceDetails(
+                        "Database",
+                        "GetExecutionAction",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionAction/GetExecutionAction")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExecutionActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionActions")
+                .appendPathParam(request.getExecutionActionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionAction.class,
+                        GetExecutionActionResponse.Builder::executionAction)
+                .handleResponseHeaderString("etag", GetExecutionActionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExecutionActionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExecutionWindowResponse> getExecutionWindow(
+            GetExecutionWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetExecutionWindowRequest, GetExecutionWindowResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExecutionWindowId(), "executionWindowId must not be blank");
+
+        return clientCall(request, GetExecutionWindowResponse::builder)
+                .logger(LOG, "getExecutionWindow")
+                .serviceDetails(
+                        "Database",
+                        "GetExecutionWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/GetExecutionWindow")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExecutionWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .appendPathParam(request.getExecutionWindowId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionWindow.class,
+                        GetExecutionWindowResponse.Builder::executionWindow)
+                .handleResponseHeaderString("etag", GetExecutionWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExecutionWindowResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetExternalBackupJobResponse> getExternalBackupJob(
             GetExternalBackupJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6677,6 +8678,134 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString("etag", GetPluggableDatabaseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPluggableDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetScheduledActionResponse> getScheduledAction(
+            GetScheduledActionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetScheduledActionRequest, GetScheduledActionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getScheduledActionId(), "scheduledActionId must not be blank");
+
+        return clientCall(request, GetScheduledActionResponse::builder)
+                .logger(LOG, "getScheduledAction")
+                .serviceDetails(
+                        "Database",
+                        "GetScheduledAction",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ScheduledAction/GetScheduledAction")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetScheduledActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("scheduledActions")
+                .appendPathParam(request.getScheduledActionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ScheduledAction.class,
+                        GetScheduledActionResponse.Builder::scheduledAction)
+                .handleResponseHeaderString("etag", GetScheduledActionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetScheduledActionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSchedulingPlanResponse> getSchedulingPlan(
+            GetSchedulingPlanRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSchedulingPlanRequest, GetSchedulingPlanResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSchedulingPlanId(), "schedulingPlanId must not be blank");
+
+        return clientCall(request, GetSchedulingPlanResponse::builder)
+                .logger(LOG, "getSchedulingPlan")
+                .serviceDetails(
+                        "Database",
+                        "GetSchedulingPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPlan/GetSchedulingPlan")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSchedulingPlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .appendPathParam(request.getSchedulingPlanId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPlan.class,
+                        GetSchedulingPlanResponse.Builder::schedulingPlan)
+                .handleResponseHeaderString("etag", GetSchedulingPlanResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSchedulingPlanResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSchedulingPolicyResponse> getSchedulingPolicy(
+            GetSchedulingPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSchedulingPolicyRequest, GetSchedulingPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        return clientCall(request, GetSchedulingPolicyResponse::builder)
+                .logger(LOG, "getSchedulingPolicy")
+                .serviceDetails(
+                        "Database",
+                        "GetSchedulingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPolicy/GetSchedulingPolicy")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSchedulingPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPolicy.class,
+                        GetSchedulingPolicyResponse.Builder::schedulingPolicy)
+                .handleResponseHeaderString("etag", GetSchedulingPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSchedulingPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSchedulingWindowResponse> getSchedulingWindow(
+            GetSchedulingWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSchedulingWindowRequest, GetSchedulingWindowResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        Validate.notBlank(request.getSchedulingWindowId(), "schedulingWindowId must not be blank");
+
+        return clientCall(request, GetSchedulingWindowResponse::builder)
+                .logger(LOG, "getSchedulingWindow")
+                .serviceDetails(
+                        "Database",
+                        "GetSchedulingWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingWindow/GetSchedulingWindow")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSchedulingWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("schedulingWindows")
+                .appendPathParam(request.getSchedulingWindowId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingWindow.class,
+                        GetSchedulingWindowResponse.Builder::schedulingWindow)
+                .handleResponseHeaderString("etag", GetSchedulingWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSchedulingWindowResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -7305,6 +9434,45 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ListAutonomousDatabasePeersResponse>
+            listAutonomousDatabasePeers(
+                    ListAutonomousDatabasePeersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousDatabasePeersRequest,
+                                    ListAutonomousDatabasePeersResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+
+        return clientCall(request, ListAutonomousDatabasePeersResponse::builder)
+                .logger(LOG, "listAutonomousDatabasePeers")
+                .serviceDetails(
+                        "Database",
+                        "ListAutonomousDatabasePeers",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabasePeers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAutonomousDatabasePeersRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("peers")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabasePeerCollection.class,
+                        ListAutonomousDatabasePeersResponse.Builder
+                                ::autonomousDatabasePeerCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAutonomousDatabasePeersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAutonomousDatabasePeersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAutonomousDatabaseRefreshableClonesResponse>
             listAutonomousDatabaseRefreshableClones(
                     ListAutonomousDatabaseRefreshableClonesRequest request,
@@ -7346,6 +9514,52 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ListAutonomousDatabaseSoftwareImagesResponse>
+            listAutonomousDatabaseSoftwareImages(
+                    ListAutonomousDatabaseSoftwareImagesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousDatabaseSoftwareImagesRequest,
+                                    ListAutonomousDatabaseSoftwareImagesResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getImageShapeFamily(), "imageShapeFamily is required");
+
+        return clientCall(request, ListAutonomousDatabaseSoftwareImagesResponse::builder)
+                .logger(LOG, "listAutonomousDatabaseSoftwareImages")
+                .serviceDetails(
+                        "Database",
+                        "ListAutonomousDatabaseSoftwareImages",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseSoftwareImage/ListAutonomousDatabaseSoftwareImages")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAutonomousDatabaseSoftwareImagesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseSoftwareImages")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("imageShapeFamily", request.getImageShapeFamily())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImageCollection
+                                .class,
+                        ListAutonomousDatabaseSoftwareImagesResponse.Builder
+                                ::autonomousDatabaseSoftwareImageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAutonomousDatabaseSoftwareImagesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAutonomousDatabaseSoftwareImagesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAutonomousDatabasesResponse> listAutonomousDatabases(
             ListAutonomousDatabasesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7372,6 +9586,8 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("infrastructureType", request.getInfrastructureType())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam(
+                        "lifecycleStateNotEqualTo", request.getLifecycleStateNotEqualTo())
                 .appendEnumQueryParam("dbWorkload", request.getDbWorkload())
                 .appendQueryParam("dbVersion", request.getDbVersion())
                 .appendQueryParam("isFreeTier", request.getIsFreeTier())
@@ -7724,6 +9940,16 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("shapeFamily", request.getShapeFamily())
+                .appendQueryParam("version", request.getVersion())
+                .appendQueryParam("type", request.getType())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam(
+                        "timeExpiryScheduledGreaterThanOrEqualTo",
+                        request.getTimeExpiryScheduledGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timeExpiryScheduledLessThan", request.getTimeExpiryScheduledLessThan())
+                .appendQueryParam("backupDestinationType", request.getBackupDestinationType())
                 .accept("application/json")
                 .handleBodyList(
                         com.oracle.bmc.database.model.BackupSummary.class,
@@ -7848,6 +10074,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("clusterPlacementGroupId", request.getClusterPlacementGroupId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -7965,6 +10192,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("vmClusterType", request.getVmClusterType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -8006,6 +10234,45 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id", ListConsoleConnectionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListConsoleConnectionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConsoleHistoriesResponse> listConsoleHistories(
+            ListConsoleHistoriesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListConsoleHistoriesRequest, ListConsoleHistoriesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+
+        return clientCall(request, ListConsoleHistoriesResponse::builder)
+                .logger(LOG, "listConsoleHistories")
+                .serviceDetails(
+                        "Database",
+                        "ListConsoleHistories",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/ListConsoleHistories")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListConsoleHistoriesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .appendPathParam("consoleHistories")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ConsoleHistoryCollection.class,
+                        ListConsoleHistoriesResponse.Builder::consoleHistoryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListConsoleHistoriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListConsoleHistoriesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -8114,6 +10381,9 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendEnumQueryParam("imageType", request.getImageType())
                 .appendEnumQueryParam("imageShapeFamily", request.getImageShapeFamily())
+                .appendQueryParam(
+                        "patchSetGreaterThanOrEqualTo", request.getPatchSetGreaterThanOrEqualTo())
+                .appendQueryParam("dbSystemId", request.getDbSystemId())
                 .appendQueryParam("isUpgradeSupported", request.getIsUpgradeSupported())
                 .accept("application/json")
                 .handleBodyList(
@@ -8731,6 +11001,239 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ListExadbVmClusterUpdateHistoryEntriesResponse>
+            listExadbVmClusterUpdateHistoryEntries(
+                    ListExadbVmClusterUpdateHistoryEntriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListExadbVmClusterUpdateHistoryEntriesRequest,
+                                    ListExadbVmClusterUpdateHistoryEntriesResponse>
+                            handler) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, ListExadbVmClusterUpdateHistoryEntriesResponse::builder)
+                .logger(LOG, "listExadbVmClusterUpdateHistoryEntries")
+                .serviceDetails(
+                        "Database",
+                        "ListExadbVmClusterUpdateHistoryEntries",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmClusterUpdateHistoryEntry/ListExadbVmClusterUpdateHistoryEntries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExadbVmClusterUpdateHistoryEntriesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("updateHistoryEntries")
+                .appendEnumQueryParam("updateType", request.getUpdateType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.ExadbVmClusterUpdateHistoryEntrySummary.class,
+                        ListExadbVmClusterUpdateHistoryEntriesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListExadbVmClusterUpdateHistoryEntriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListExadbVmClusterUpdateHistoryEntriesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExadbVmClusterUpdatesResponse> listExadbVmClusterUpdates(
+            ListExadbVmClusterUpdatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListExadbVmClusterUpdatesRequest, ListExadbVmClusterUpdatesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, ListExadbVmClusterUpdatesResponse::builder)
+                .logger(LOG, "listExadbVmClusterUpdates")
+                .serviceDetails(
+                        "Database",
+                        "ListExadbVmClusterUpdates",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmClusterUpdate/ListExadbVmClusterUpdates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExadbVmClusterUpdatesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("updates")
+                .appendEnumQueryParam("updateType", request.getUpdateType())
+                .appendQueryParam("version", request.getVersion())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.ExadbVmClusterUpdateSummary.class,
+                        ListExadbVmClusterUpdatesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExadbVmClusterUpdatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExadbVmClusterUpdatesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExadbVmClustersResponse> listExadbVmClusters(
+            ListExadbVmClustersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListExadbVmClustersRequest, ListExadbVmClustersResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExadbVmClustersResponse::builder)
+                .logger(LOG, "listExadbVmClusters")
+                .serviceDetails(
+                        "Database",
+                        "ListExadbVmClusters",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/ListExadbVmClusters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExadbVmClustersRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("exascaleDbStorageVaultId", request.getExascaleDbStorageVaultId())
+                .appendQueryParam("clusterPlacementGroupId", request.getClusterPlacementGroupId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.ExadbVmClusterSummary.class,
+                        ListExadbVmClustersResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExadbVmClustersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExadbVmClustersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExascaleDbStorageVaultsResponse>
+            listExascaleDbStorageVaults(
+                    ListExascaleDbStorageVaultsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListExascaleDbStorageVaultsRequest,
+                                    ListExascaleDbStorageVaultsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExascaleDbStorageVaultsResponse::builder)
+                .logger(LOG, "listExascaleDbStorageVaults")
+                .serviceDetails(
+                        "Database",
+                        "ListExascaleDbStorageVaults",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/ListExascaleDbStorageVaults")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExascaleDbStorageVaultsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exascaleDbStorageVaults")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("clusterPlacementGroupId", request.getClusterPlacementGroupId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("exadataInfrastructureId", request.getExadataInfrastructureId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.ExascaleDbStorageVaultSummary.class,
+                        ListExascaleDbStorageVaultsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExascaleDbStorageVaultsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExascaleDbStorageVaultsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExecutionActionsResponse> listExecutionActions(
+            ListExecutionActionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListExecutionActionsRequest, ListExecutionActionsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExecutionActionsResponse::builder)
+                .logger(LOG, "listExecutionActions")
+                .serviceDetails(
+                        "Database",
+                        "ListExecutionActions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionAction/ListExecutionActions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExecutionActionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionActions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("executionWindowId", request.getExecutionWindowId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.ExecutionActionSummary.class,
+                        ListExecutionActionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExecutionActionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExecutionActionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExecutionWindowsResponse> listExecutionWindows(
+            ListExecutionWindowsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListExecutionWindowsRequest, ListExecutionWindowsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExecutionWindowsResponse::builder)
+                .logger(LOG, "listExecutionWindows")
+                .serviceDetails(
+                        "Database",
+                        "ListExecutionWindows",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/ListExecutionWindows")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExecutionWindowsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("executionResourceId", request.getExecutionResourceId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.ExecutionWindowSummary.class,
+                        ListExecutionWindowsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExecutionWindowsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExecutionWindowsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListExternalContainerDatabasesResponse>
             listExternalContainerDatabases(
                     ListExternalContainerDatabasesRequest request,
@@ -8920,6 +11423,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("flexComponents")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("name", request.getName())
+                .appendQueryParam("shape", request.getShape())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("limit", request.getLimit())
@@ -8932,6 +11436,51 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id", ListFlexComponentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFlexComponentsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGiVersionMinorVersionsResponse>
+            listGiVersionMinorVersions(
+                    ListGiVersionMinorVersionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListGiVersionMinorVersionsRequest,
+                                    ListGiVersionMinorVersionsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getVersion(), "version must not be blank");
+
+        return clientCall(request, ListGiVersionMinorVersionsResponse::builder)
+                .logger(LOG, "listGiVersionMinorVersions")
+                .serviceDetails(
+                        "Database",
+                        "ListGiVersionMinorVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiMinorVersionSummary/ListGiVersionMinorVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListGiVersionMinorVersionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("giVersions")
+                .appendPathParam(request.getVersion())
+                .appendPathParam("minorVersions")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("shapeFamily", request.getShapeFamily())
+                .appendQueryParam(
+                        "isGiVersionForProvisioning", request.getIsGiVersionForProvisioning())
+                .appendQueryParam("shape", request.getShape())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.GiMinorVersionSummary.class,
+                        ListGiVersionMinorVersionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListGiVersionMinorVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListGiVersionMinorVersionsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -8958,6 +11507,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("shape", request.getShape())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
                 .accept("application/json")
                 .handleBodyList(
                         com.oracle.bmc.database.model.GiVersionSummary.class,
@@ -9065,6 +11615,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("maintenanceType", request.getMaintenanceType())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("isLocalAdg", request.getIsLocalAdg())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
@@ -9115,6 +11666,39 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id", ListOneoffPatchesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOneoffPatchesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListParamsForActionTypeResponse> listParamsForActionType(
+            ListParamsForActionTypeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListParamsForActionTypeRequest, ListParamsForActionTypeResponse>
+                    handler) {
+        Objects.requireNonNull(request.getType(), "type is required");
+
+        return clientCall(request, ListParamsForActionTypeResponse::builder)
+                .logger(LOG, "listParamsForActionType")
+                .serviceDetails(
+                        "Database",
+                        "ListParamsForActionType",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ActionParamValuesSummary/ListParamsForActionType")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListParamsForActionTypeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("scheduledActionParams")
+                .appendEnumQueryParam("type", request.getType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ActionParamValuesCollection.class,
+                        ListParamsForActionTypeResponse.Builder::actionParamValuesCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListParamsForActionTypeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListParamsForActionTypeResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -9194,6 +11778,252 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id", ListPluggableDatabasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPluggableDatabasesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRecommendedScheduledActionsResponse>
+            listRecommendedScheduledActions(
+                    ListRecommendedScheduledActionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListRecommendedScheduledActionsRequest,
+                                    ListRecommendedScheduledActionsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getSchedulingPolicyTargetResourceId(),
+                "schedulingPolicyTargetResourceId is required");
+
+        Objects.requireNonNull(request.getPlanIntent(), "planIntent is required");
+
+        return clientCall(request, ListRecommendedScheduledActionsResponse::builder)
+                .logger(LOG, "listRecommendedScheduledActions")
+                .serviceDetails(
+                        "Database",
+                        "ListRecommendedScheduledActions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/RecommendedScheduledActionSummary/ListRecommendedScheduledActions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRecommendedScheduledActionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("recommendedScheduledActions")
+                .appendQueryParam(
+                        "schedulingPolicyTargetResourceId",
+                        request.getSchedulingPolicyTargetResourceId())
+                .appendEnumQueryParam("planIntent", request.getPlanIntent())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.RecommendedScheduledActionsCollection.class,
+                        ListRecommendedScheduledActionsResponse.Builder
+                                ::recommendedScheduledActionsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListRecommendedScheduledActionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListRecommendedScheduledActionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScheduledActionsResponse> listScheduledActions(
+            ListScheduledActionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListScheduledActionsRequest, ListScheduledActionsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListScheduledActionsResponse::builder)
+                .logger(LOG, "listScheduledActions")
+                .serviceDetails(
+                        "Database",
+                        "ListScheduledActions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ScheduledAction/ListScheduledActions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListScheduledActionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("scheduledActions")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("serviceType", request.getServiceType())
+                .appendQueryParam("schedulingPlanId", request.getSchedulingPlanId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ScheduledActionCollection.class,
+                        ListScheduledActionsResponse.Builder::scheduledActionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListScheduledActionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListScheduledActionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSchedulingPlansResponse> listSchedulingPlans(
+            ListSchedulingPlansRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSchedulingPlansRequest, ListSchedulingPlansResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSchedulingPlansResponse::builder)
+                .logger(LOG, "listSchedulingPlans")
+                .serviceDetails(
+                        "Database",
+                        "ListSchedulingPlans",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPlan/ListSchedulingPlans")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchedulingPlansRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("schedulingPolicyId", request.getSchedulingPolicyId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .appendQueryParam("id", request.getId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPlanCollection.class,
+                        ListSchedulingPlansResponse.Builder::schedulingPlanCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchedulingPlansResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchedulingPlansResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSchedulingPoliciesResponse> listSchedulingPolicies(
+            ListSchedulingPoliciesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSchedulingPoliciesRequest, ListSchedulingPoliciesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSchedulingPoliciesResponse::builder)
+                .logger(LOG, "listSchedulingPolicies")
+                .serviceDetails(
+                        "Database",
+                        "ListSchedulingPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPolicy/ListSchedulingPolicies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchedulingPoliciesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.SchedulingPolicySummary.class,
+                        ListSchedulingPoliciesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchedulingPoliciesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchedulingPoliciesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSchedulingWindowsResponse> listSchedulingWindows(
+            ListSchedulingWindowsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSchedulingWindowsRequest, ListSchedulingWindowsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        return clientCall(request, ListSchedulingWindowsResponse::builder)
+                .logger(LOG, "listSchedulingWindows")
+                .serviceDetails(
+                        "Database",
+                        "ListSchedulingWindows",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingWindow/ListSchedulingWindows")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchedulingWindowsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("schedulingWindows")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.SchedulingWindowSummary.class,
+                        ListSchedulingWindowsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchedulingWindowsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchedulingWindowsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSystemVersionsResponse> listSystemVersions(
+            ListSystemVersionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSystemVersionsRequest, ListSystemVersionsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getShape(), "shape is required");
+
+        Objects.requireNonNull(request.getGiVersion(), "giVersion is required");
+
+        return clientCall(request, ListSystemVersionsResponse::builder)
+                .logger(LOG, "listSystemVersions")
+                .serviceDetails(
+                        "Database",
+                        "ListSystemVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SystemVersionCollection/ListSystemVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSystemVersionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("systemVersions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("shape", request.getShape())
+                .appendQueryParam("giVersion", request.getGiVersion())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.SystemVersionCollection.class,
+                        ListSystemVersionsResponse.Builder::systemVersionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSystemVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSystemVersionsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -9415,6 +12245,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("vmClusterType", request.getVmClusterType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -9470,6 +12301,113 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "etag", LocalClonePluggableDatabaseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", LocalClonePluggableDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<
+                    MigrateAutonomousContainerDatabaseDataguardAssociationResponse>
+            migrateAutonomousContainerDatabaseDataguardAssociation(
+                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest,
+                                    MigrateAutonomousContainerDatabaseDataguardAssociationResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousContainerDatabaseId(),
+                "autonomousContainerDatabaseId must not be blank");
+
+        Validate.notBlank(
+                request.getAutonomousContainerDatabaseDataguardAssociationId(),
+                "autonomousContainerDatabaseDataguardAssociationId must not be blank");
+
+        return clientCall(
+                        request,
+                        MigrateAutonomousContainerDatabaseDataguardAssociationResponse::builder)
+                .logger(LOG, "migrateAutonomousContainerDatabaseDataguardAssociation")
+                .serviceDetails(
+                        "Database",
+                        "MigrateAutonomousContainerDatabaseDataguardAssociation",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/MigrateAutonomousContainerDatabaseDataguardAssociation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(
+                        MigrateAutonomousContainerDatabaseDataguardAssociationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabases")
+                .appendPathParam(request.getAutonomousContainerDatabaseId())
+                .appendPathParam("autonomousContainerDatabaseDataguardAssociations")
+                .appendPathParam(request.getAutonomousContainerDatabaseDataguardAssociationId())
+                .appendPathParam("actions")
+                .appendPathParam("migrate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model
+                                .AutonomousContainerDatabaseDataguardAssociation.class,
+                        MigrateAutonomousContainerDatabaseDataguardAssociationResponse.Builder
+                                ::autonomousContainerDatabaseDataguardAssociation)
+                .handleResponseHeaderString(
+                        "etag",
+                        MigrateAutonomousContainerDatabaseDataguardAssociationResponse.Builder
+                                ::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        MigrateAutonomousContainerDatabaseDataguardAssociationResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        MigrateAutonomousContainerDatabaseDataguardAssociationResponse.Builder
+                                ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MigrateDataGuardAssociationToMultiDataGuardsResponse>
+            migrateDataGuardAssociationToMultiDataGuards(
+                    MigrateDataGuardAssociationToMultiDataGuardsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    MigrateDataGuardAssociationToMultiDataGuardsRequest,
+                                    MigrateDataGuardAssociationToMultiDataGuardsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+
+        Validate.notBlank(
+                request.getDataGuardAssociationId(), "dataGuardAssociationId must not be blank");
+
+        return clientCall(request, MigrateDataGuardAssociationToMultiDataGuardsResponse::builder)
+                .logger(LOG, "migrateDataGuardAssociationToMultiDataGuards")
+                .serviceDetails(
+                        "Database",
+                        "MigrateDataGuardAssociationToMultiDataGuards",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/MigrateDataGuardAssociationToMultiDataGuards")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(MigrateDataGuardAssociationToMultiDataGuardsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuardAssociations")
+                .appendPathParam(request.getDataGuardAssociationId())
+                .appendPathParam("actions")
+                .appendPathParam("migrate")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        MigrateDataGuardAssociationToMultiDataGuardsResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        MigrateDataGuardAssociationToMultiDataGuardsResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        MigrateDataGuardAssociationToMultiDataGuardsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", MigrateDataGuardAssociationToMultiDataGuardsResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -9646,6 +12584,48 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<MoveExecutionActionMemberResponse> moveExecutionActionMember(
+            MoveExecutionActionMemberRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            MoveExecutionActionMemberRequest, MoveExecutionActionMemberResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExecutionActionId(), "executionActionId must not be blank");
+        Objects.requireNonNull(
+                request.getMoveExecutionActionMemberDetails(),
+                "moveExecutionActionMemberDetails is required");
+
+        return clientCall(request, MoveExecutionActionMemberResponse::builder)
+                .logger(LOG, "moveExecutionActionMember")
+                .serviceDetails(
+                        "Database",
+                        "MoveExecutionActionMember",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionAction/MoveExecutionActionMember")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(MoveExecutionActionMemberRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionActions")
+                .appendPathParam(request.getExecutionActionId())
+                .appendPathParam("actions")
+                .appendPathParam("moveActionMember")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionAction.class,
+                        MoveExecutionActionMemberResponse.Builder::executionAction)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        MoveExecutionActionMemberResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", MoveExecutionActionMemberResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", MoveExecutionActionMemberResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<RefreshPluggableDatabaseResponse> refreshPluggableDatabase(
             RefreshPluggableDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -9722,6 +12702,51 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ReinstateAutonomousContainerDatabaseDataguardResponse>
+            reinstateAutonomousContainerDatabaseDataguard(
+                    ReinstateAutonomousContainerDatabaseDataguardRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ReinstateAutonomousContainerDatabaseDataguardRequest,
+                                    ReinstateAutonomousContainerDatabaseDataguardResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousContainerDatabaseId(),
+                "autonomousContainerDatabaseId must not be blank");
+
+        return clientCall(request, ReinstateAutonomousContainerDatabaseDataguardResponse::builder)
+                .logger(LOG, "reinstateAutonomousContainerDatabaseDataguard")
+                .serviceDetails(
+                        "Database",
+                        "ReinstateAutonomousContainerDatabaseDataguard",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ReinstateAutonomousContainerDatabaseDataguard")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReinstateAutonomousContainerDatabaseDataguardRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabases")
+                .appendPathParam(request.getAutonomousContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("reinstate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousContainerDatabase.class,
+                        ReinstateAutonomousContainerDatabaseDataguardResponse.Builder
+                                ::autonomousContainerDatabase)
+                .handleResponseHeaderString(
+                        "etag", ReinstateAutonomousContainerDatabaseDataguardResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ReinstateAutonomousContainerDatabaseDataguardResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReinstateAutonomousContainerDatabaseDataguardResponse.Builder
+                                ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<
                     ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
             reinstateAutonomousContainerDatabaseDataguardAssociation(
@@ -9776,6 +12801,47 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-work-request-id",
                         ReinstateAutonomousContainerDatabaseDataguardAssociationResponse.Builder
                                 ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReinstateDataGuardResponse> reinstateDataGuard(
+            ReinstateDataGuardRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ReinstateDataGuardRequest, ReinstateDataGuardResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getReinstateDataGuardDetails(), "reinstateDataGuardDetails is required");
+
+        return clientCall(request, ReinstateDataGuardResponse::builder)
+                .logger(LOG, "reinstateDataGuard")
+                .serviceDetails(
+                        "Database",
+                        "ReinstateDataGuard",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ReinstateDataGuard")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReinstateDataGuardRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuard")
+                .appendPathParam("actions")
+                .appendPathParam("reinstate")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        ReinstateDataGuardResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ReinstateDataGuardResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", ReinstateDataGuardResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ReinstateDataGuardResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -9922,6 +12988,52 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveVirtualMachineFromExadbVmClusterResponse>
+            removeVirtualMachineFromExadbVmCluster(
+                    RemoveVirtualMachineFromExadbVmClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveVirtualMachineFromExadbVmClusterRequest,
+                                    RemoveVirtualMachineFromExadbVmClusterResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getRemoveVirtualMachineFromExadbVmClusterDetails(),
+                "removeVirtualMachineFromExadbVmClusterDetails is required");
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, RemoveVirtualMachineFromExadbVmClusterResponse::builder)
+                .logger(LOG, "removeVirtualMachineFromExadbVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "RemoveVirtualMachineFromExadbVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/RemoveVirtualMachineFromExadbVmCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveVirtualMachineFromExadbVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("removeVirtualMachine")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadbVmCluster.class,
+                        RemoveVirtualMachineFromExadbVmClusterResponse.Builder::exadbVmCluster)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveVirtualMachineFromExadbVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", RemoveVirtualMachineFromExadbVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveVirtualMachineFromExadbVmClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveVirtualMachineFromVmClusterResponse>
             removeVirtualMachineFromVmCluster(
                     RemoveVirtualMachineFromVmClusterRequest request,
@@ -9964,6 +13076,92 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RemoveVirtualMachineFromVmClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReorderExecutionActionsResponse> reorderExecutionActions(
+            ReorderExecutionActionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ReorderExecutionActionsRequest, ReorderExecutionActionsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExecutionWindowId(), "executionWindowId must not be blank");
+        Objects.requireNonNull(
+                request.getReorderExecutionActionDetails(),
+                "reorderExecutionActionDetails is required");
+
+        return clientCall(request, ReorderExecutionActionsResponse::builder)
+                .logger(LOG, "reorderExecutionActions")
+                .serviceDetails(
+                        "Database",
+                        "ReorderExecutionActions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/ReorderExecutionActions")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReorderExecutionActionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .appendPathParam(request.getExecutionWindowId())
+                .appendPathParam("actions")
+                .appendPathParam("reorder")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionWindow.class,
+                        ReorderExecutionActionsResponse.Builder::executionWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReorderExecutionActionsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", ReorderExecutionActionsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ReorderExecutionActionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReorderScheduledActionsResponse> reorderScheduledActions(
+            ReorderScheduledActionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ReorderScheduledActionsRequest, ReorderScheduledActionsResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getReorderScheduledActionsDetails(),
+                "reorderScheduledActionsDetails is required");
+
+        Validate.notBlank(request.getSchedulingPlanId(), "schedulingPlanId must not be blank");
+
+        return clientCall(request, ReorderScheduledActionsResponse::builder)
+                .logger(LOG, "reorderScheduledActions")
+                .serviceDetails(
+                        "Database",
+                        "ReorderScheduledActions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPlan/ReorderScheduledActions")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReorderScheduledActionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .appendPathParam(request.getSchedulingPlanId())
+                .appendPathParam("actions")
+                .appendPathParam("reorder")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPlan.class,
+                        ReorderScheduledActionsResponse.Builder::schedulingPlan)
+                .handleResponseHeaderString("etag", ReorderScheduledActionsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ReorderScheduledActionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ReorderScheduledActionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReorderScheduledActionsResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -10240,6 +13438,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousContainerDatabase.class,
                         RotateAutonomousContainerDatabaseEncryptionKeyResponse.Builder
@@ -10287,6 +13486,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
                         RotateAutonomousDatabaseEncryptionKeyResponse.Builder::autonomousDatabase)
@@ -10611,6 +13811,40 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<SaasAdminUserStatusResponse> saasAdminUserStatus(
+            SaasAdminUserStatusRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SaasAdminUserStatusRequest, SaasAdminUserStatusResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+
+        return clientCall(request, SaasAdminUserStatusResponse::builder)
+                .logger(LOG, "saasAdminUserStatus")
+                .serviceDetails(
+                        "Database",
+                        "SaasAdminUserStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/SaasAdminUserStatus")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SaasAdminUserStatusRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("getSaasAdminUserStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.SaasAdminUserStatus.class,
+                        SaasAdminUserStatusResponse.Builder::saasAdminUserStatus)
+                .handleResponseHeaderString("etag", SaasAdminUserStatusResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", SaasAdminUserStatusResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ScanExternalContainerDatabasePluggableDatabasesResponse>
             scanExternalContainerDatabasePluggableDatabases(
                     ScanExternalContainerDatabasePluggableDatabasesRequest request,
@@ -10652,6 +13886,87 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id",
                         ScanExternalContainerDatabasePluggableDatabasesResponse.Builder
                                 ::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetDbKeyVersionResponse> setDbKeyVersion(
+            SetDbKeyVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SetDbKeyVersionRequest, SetDbKeyVersionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getSetKeyVersionDetails(), "setKeyVersionDetails is required");
+
+        return clientCall(request, SetDbKeyVersionResponse::builder)
+                .logger(LOG, "setDbKeyVersion")
+                .serviceDetails(
+                        "Database",
+                        "SetDbKeyVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/SetDbKeyVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SetDbKeyVersionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("setKeyVersion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        SetDbKeyVersionResponse.Builder::database)
+                .handleResponseHeaderString("etag", SetDbKeyVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", SetDbKeyVersionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", SetDbKeyVersionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetPdbKeyVersionResponse> setPdbKeyVersion(
+            SetPdbKeyVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SetPdbKeyVersionRequest, SetPdbKeyVersionResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getSetKeyVersionDetails(), "setKeyVersionDetails is required");
+
+        return clientCall(request, SetPdbKeyVersionResponse::builder)
+                .logger(LOG, "setPdbKeyVersion")
+                .serviceDetails(
+                        "Database",
+                        "SetPdbKeyVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/SetPdbKeyVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SetPdbKeyVersionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("pluggableDatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("setKeyVersion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.PluggableDatabase.class,
+                        SetPdbKeyVersionResponse.Builder::pluggableDatabase)
+                .handleResponseHeaderString("etag", SetPdbKeyVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", SetPdbKeyVersionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", SetPdbKeyVersionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -10842,6 +14157,95 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString("etag", StopPluggableDatabaseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", StopPluggableDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SwitchOverDataGuardResponse> switchOverDataGuard(
+            SwitchOverDataGuardRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SwitchOverDataGuardRequest, SwitchOverDataGuardResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getSwitchOverDataGuardDetails(), "switchOverDataGuardDetails is required");
+
+        return clientCall(request, SwitchOverDataGuardResponse::builder)
+                .logger(LOG, "switchOverDataGuard")
+                .serviceDetails(
+                        "Database",
+                        "SwitchOverDataGuard",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/SwitchOverDataGuard")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SwitchOverDataGuardRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuard")
+                .appendPathParam("actions")
+                .appendPathParam("switchover")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        SwitchOverDataGuardResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        SwitchOverDataGuardResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", SwitchOverDataGuardResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", SwitchOverDataGuardResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SwitchoverAutonomousContainerDatabaseDataguardResponse>
+            switchoverAutonomousContainerDatabaseDataguard(
+                    SwitchoverAutonomousContainerDatabaseDataguardRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SwitchoverAutonomousContainerDatabaseDataguardRequest,
+                                    SwitchoverAutonomousContainerDatabaseDataguardResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousContainerDatabaseId(),
+                "autonomousContainerDatabaseId must not be blank");
+
+        return clientCall(request, SwitchoverAutonomousContainerDatabaseDataguardResponse::builder)
+                .logger(LOG, "switchoverAutonomousContainerDatabaseDataguard")
+                .serviceDetails(
+                        "Database",
+                        "SwitchoverAutonomousContainerDatabaseDataguard",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/SwitchoverAutonomousContainerDatabaseDataguard")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SwitchoverAutonomousContainerDatabaseDataguardRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabases")
+                .appendPathParam(request.getAutonomousContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("switchover")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousContainerDatabase.class,
+                        SwitchoverAutonomousContainerDatabaseDataguardResponse.Builder
+                                ::autonomousContainerDatabase)
+                .handleResponseHeaderString(
+                        "etag",
+                        SwitchoverAutonomousContainerDatabaseDataguardResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SwitchoverAutonomousContainerDatabaseDataguardResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        SwitchoverAutonomousContainerDatabaseDataguardResponse.Builder
+                                ::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -11321,6 +14725,49 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAutonomousDatabaseSoftwareImageResponse>
+            updateAutonomousDatabaseSoftwareImage(
+                    UpdateAutonomousDatabaseSoftwareImageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAutonomousDatabaseSoftwareImageRequest,
+                                    UpdateAutonomousDatabaseSoftwareImageResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseSoftwareImageId(),
+                "autonomousDatabaseSoftwareImageId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateAutonomousDatabaseSoftwareImageDetails(),
+                "updateAutonomousDatabaseSoftwareImageDetails is required");
+
+        return clientCall(request, UpdateAutonomousDatabaseSoftwareImageResponse::builder)
+                .logger(LOG, "updateAutonomousDatabaseSoftwareImage")
+                .serviceDetails(
+                        "Database",
+                        "UpdateAutonomousDatabaseSoftwareImage",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseSoftwareImage/UpdateAutonomousDatabaseSoftwareImage")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAutonomousDatabaseSoftwareImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseSoftwareImages")
+                .appendPathParam(request.getAutonomousDatabaseSoftwareImageId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImage.class,
+                        UpdateAutonomousDatabaseSoftwareImageResponse.Builder
+                                ::autonomousDatabaseSoftwareImage)
+                .handleResponseHeaderString(
+                        "etag", UpdateAutonomousDatabaseSoftwareImageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateAutonomousDatabaseSoftwareImageResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAutonomousDatabaseWalletResponse>
             updateAutonomousDatabaseWallet(
                     UpdateAutonomousDatabaseWalletRequest request,
@@ -11441,6 +14888,41 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString("etag", UpdateAutonomousVmClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAutonomousVmClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBackupResponse> updateBackup(
+            UpdateBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateBackupRequest, UpdateBackupResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBackupId(), "backupId must not be blank");
+        Objects.requireNonNull(request.getUpdateBackupDetails(), "updateBackupDetails is required");
+
+        return clientCall(request, UpdateBackupResponse::builder)
+                .logger(LOG, "updateBackup")
+                .serviceDetails(
+                        "Database",
+                        "UpdateBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/UpdateBackup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateBackupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("backups")
+                .appendPathParam(request.getBackupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Backup.class,
+                        UpdateBackupResponse.Builder::backup)
+                .handleResponseHeaderString("etag", UpdateBackupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateBackupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateBackupResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -11696,6 +15178,90 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString("etag", UpdateConsoleConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConsoleConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConsoleHistoryResponse> updateConsoleHistory(
+            UpdateConsoleHistoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+
+        Validate.notBlank(request.getConsoleHistoryId(), "consoleHistoryId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateConsoleHistoryDetails(),
+                "updateConsoleHistoryDetails is required");
+
+        return clientCall(request, UpdateConsoleHistoryResponse::builder)
+                .logger(LOG, "updateConsoleHistory")
+                .serviceDetails(
+                        "Database",
+                        "UpdateConsoleHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/UpdateConsoleHistory")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateConsoleHistoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .appendPathParam("consoleHistories")
+                .appendPathParam(request.getConsoleHistoryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ConsoleHistory.class,
+                        UpdateConsoleHistoryResponse.Builder::consoleHistory)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateConsoleHistoryResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateConsoleHistoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateConsoleHistoryResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataGuardResponse> updateDataGuard(
+            UpdateDataGuardRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDataGuardRequest, UpdateDataGuardResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDataGuardDetails(), "updateDataGuardDetails is required");
+
+        return clientCall(request, UpdateDataGuardResponse::builder)
+                .logger(LOG, "updateDataGuard")
+                .serviceDetails(
+                        "Database",
+                        "UpdateDataGuard",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpdateDataGuard")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpdateDataGuardRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuard")
+                .appendPathParam("actions")
+                .appendPathParam("updateDataGuard")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        UpdateDataGuardResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDataGuardResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateDataGuardResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateDataGuardResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -12006,6 +15572,168 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateExadataIormConfigResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateExadataIormConfigResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExadbVmClusterResponse> updateExadbVmCluster(
+            UpdateExadbVmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExadbVmClusterRequest, UpdateExadbVmClusterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExadbVmClusterDetails(),
+                "updateExadbVmClusterDetails is required");
+
+        return clientCall(request, UpdateExadbVmClusterResponse::builder)
+                .logger(LOG, "updateExadbVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "UpdateExadbVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/UpdateExadbVmCluster")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExadbVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadbVmCluster.class,
+                        UpdateExadbVmClusterResponse.Builder::exadbVmCluster)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExadbVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateExadbVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExadbVmClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExascaleDbStorageVaultResponse>
+            updateExascaleDbStorageVault(
+                    UpdateExascaleDbStorageVaultRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExascaleDbStorageVaultRequest,
+                                    UpdateExascaleDbStorageVaultResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExascaleDbStorageVaultId(),
+                "exascaleDbStorageVaultId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExascaleDbStorageVaultDetails(),
+                "updateExascaleDbStorageVaultDetails is required");
+
+        return clientCall(request, UpdateExascaleDbStorageVaultResponse::builder)
+                .logger(LOG, "updateExascaleDbStorageVault")
+                .serviceDetails(
+                        "Database",
+                        "UpdateExascaleDbStorageVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/UpdateExascaleDbStorageVault")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExascaleDbStorageVaultRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exascaleDbStorageVaults")
+                .appendPathParam(request.getExascaleDbStorageVaultId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExascaleDbStorageVault.class,
+                        UpdateExascaleDbStorageVaultResponse.Builder::exascaleDbStorageVault)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExascaleDbStorageVaultResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateExascaleDbStorageVaultResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExascaleDbStorageVaultResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExecutionActionResponse> updateExecutionAction(
+            UpdateExecutionActionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExecutionActionRequest, UpdateExecutionActionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExecutionActionId(), "executionActionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExecutionActionDetails(),
+                "updateExecutionActionDetails is required");
+
+        return clientCall(request, UpdateExecutionActionResponse::builder)
+                .logger(LOG, "updateExecutionAction")
+                .serviceDetails(
+                        "Database",
+                        "UpdateExecutionAction",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionAction/UpdateExecutionAction")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExecutionActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionActions")
+                .appendPathParam(request.getExecutionActionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionAction.class,
+                        UpdateExecutionActionResponse.Builder::executionAction)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExecutionActionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateExecutionActionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExecutionActionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExecutionWindowResponse> updateExecutionWindow(
+            UpdateExecutionWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExecutionWindowRequest, UpdateExecutionWindowResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExecutionWindowId(), "executionWindowId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExecutionWindowDetails(),
+                "updateExecutionWindowDetails is required");
+
+        return clientCall(request, UpdateExecutionWindowResponse::builder)
+                .logger(LOG, "updateExecutionWindow")
+                .serviceDetails(
+                        "Database",
+                        "UpdateExecutionWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/UpdateExecutionWindow")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExecutionWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .appendPathParam(request.getExecutionWindowId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionWindow.class,
+                        UpdateExecutionWindowResponse.Builder::executionWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExecutionWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateExecutionWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExecutionWindowResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -12331,6 +16059,124 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString("etag", UpdatePluggableDatabaseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdatePluggableDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScheduledActionResponse> updateScheduledAction(
+            UpdateScheduledActionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateScheduledActionRequest, UpdateScheduledActionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getScheduledActionId(), "scheduledActionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateScheduledActionDetails(),
+                "updateScheduledActionDetails is required");
+
+        return clientCall(request, UpdateScheduledActionResponse::builder)
+                .logger(LOG, "updateScheduledAction")
+                .serviceDetails("Database", "UpdateScheduledAction", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateScheduledActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("scheduledActions")
+                .appendPathParam(request.getScheduledActionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ScheduledAction.class,
+                        UpdateScheduledActionResponse.Builder::scheduledAction)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateScheduledActionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateScheduledActionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateScheduledActionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSchedulingPolicyResponse> updateSchedulingPolicy(
+            UpdateSchedulingPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSchedulingPolicyRequest, UpdateSchedulingPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSchedulingPolicyDetails(),
+                "updateSchedulingPolicyDetails is required");
+
+        return clientCall(request, UpdateSchedulingPolicyResponse::builder)
+                .logger(LOG, "updateSchedulingPolicy")
+                .serviceDetails(
+                        "Database",
+                        "UpdateSchedulingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPolicy/UpdateSchedulingPolicy")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSchedulingPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPolicy.class,
+                        UpdateSchedulingPolicyResponse.Builder::schedulingPolicy)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSchedulingPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateSchedulingPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSchedulingPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSchedulingWindowResponse> updateSchedulingWindow(
+            UpdateSchedulingWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSchedulingWindowRequest, UpdateSchedulingWindowResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        Validate.notBlank(request.getSchedulingWindowId(), "schedulingWindowId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSchedulingWindowDetails(),
+                "updateSchedulingWindowDetails is required");
+
+        return clientCall(request, UpdateSchedulingWindowResponse::builder)
+                .logger(LOG, "updateSchedulingWindow")
+                .serviceDetails(
+                        "Database",
+                        "UpdateSchedulingWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingWindow/UpdateSchedulingWindow")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSchedulingWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("schedulingWindows")
+                .appendPathParam(request.getSchedulingWindowId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingWindow.class,
+                        UpdateSchedulingWindowResponse.Builder::schedulingWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSchedulingWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateSchedulingWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSchedulingWindowResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

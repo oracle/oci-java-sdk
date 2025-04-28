@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -37,8 +37,8 @@ public final class UpdateNetworkSecurityGroupsDetails
     public static class Builder {
         /**
          * An array of NSG
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the load balancer.
          *
          * <p>During the load balancer's creation, the service adds the new load balancer to the
          * specified NSGs.
@@ -56,8 +56,8 @@ public final class UpdateNetworkSecurityGroupsDetails
 
         /**
          * An array of NSG
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the load balancer.
          *
          * <p>During the load balancer's creation, the service adds the new load balancer to the
          * specified NSGs.
@@ -111,7 +111,7 @@ public final class UpdateNetworkSecurityGroupsDetails
 
     /**
      * An array of NSG
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the load balancer.
      *
      * <p>During the load balancer's creation, the service adds the new load balancer to the
@@ -130,7 +130,7 @@ public final class UpdateNetworkSecurityGroupsDetails
 
     /**
      * An array of NSG
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the load balancer.
      *
      * <p>During the load balancer's creation, the service adds the new load balancer to the

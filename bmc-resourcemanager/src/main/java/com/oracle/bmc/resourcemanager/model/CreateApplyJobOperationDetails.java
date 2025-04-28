@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcemanager.model;
@@ -65,16 +65,16 @@ public final class CreateApplyJobOperationDetails extends CreateJobOperationDeta
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
          * executionPlanStrategy}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")
         private String executionPlanJobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
          * executionPlanStrategy}.
          *
          * @param executionPlanJobId the value to set
@@ -166,17 +166,15 @@ public final class CreateApplyJobOperationDetails extends CreateJobOperationDeta
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
-     * executionPlanStrategy}.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan
+     * job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code executionPlanStrategy}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")
     private final String executionPlanJobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
-     * executionPlanStrategy}.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan
+     * job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code executionPlanStrategy}.
      *
      * @return the value
      */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -152,6 +152,27 @@ public final class SystemFormatResourceTypeMetadataDetails extends ResourceTypeM
             this.__explicitlySet__.add("validPropertyValues");
             return this;
         }
+        /**
+         * List of valid sub-resource types for a composite resource type. The sub-resource types
+         * will be obtained from the valid association pairs corresponding to the composite resource
+         * types. It will be empty for non composite resource types
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("validSubResourceTypes")
+        private java.util.List<String> validSubResourceTypes;
+
+        /**
+         * List of valid sub-resource types for a composite resource type. The sub-resource types
+         * will be obtained from the valid association pairs corresponding to the composite resource
+         * types. It will be empty for non composite resource types
+         *
+         * @param validSubResourceTypes the value to set
+         * @return this builder
+         */
+        public Builder validSubResourceTypes(java.util.List<String> validSubResourceTypes) {
+            this.validSubResourceTypes = validSubResourceTypes;
+            this.__explicitlySet__.add("validSubResourceTypes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -164,7 +185,8 @@ public final class SystemFormatResourceTypeMetadataDetails extends ResourceTypeM
                             this.validPropertiesForCreate,
                             this.validPropertiesForUpdate,
                             this.uniquePropertySets,
-                            this.validPropertyValues);
+                            this.validPropertyValues,
+                            this.validSubResourceTypes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -191,6 +213,9 @@ public final class SystemFormatResourceTypeMetadataDetails extends ResourceTypeM
             if (model.wasPropertyExplicitlySet("validPropertyValues")) {
                 this.validPropertyValues(model.getValidPropertyValues());
             }
+            if (model.wasPropertyExplicitlySet("validSubResourceTypes")) {
+                this.validSubResourceTypes(model.getValidSubResourceTypes());
+            }
             return this;
         }
     }
@@ -211,7 +236,8 @@ public final class SystemFormatResourceTypeMetadataDetails extends ResourceTypeM
             java.util.List<String> validPropertiesForCreate,
             java.util.List<String> validPropertiesForUpdate,
             java.util.List<UniquePropertySet> uniquePropertySets,
-            java.util.Map<String, java.util.List<String>> validPropertyValues) {
+            java.util.Map<String, java.util.List<String>> validPropertyValues,
+            java.util.List<String> validSubResourceTypes) {
         super();
         this.requiredProperties = requiredProperties;
         this.agentProperties = agentProperties;
@@ -219,6 +245,7 @@ public final class SystemFormatResourceTypeMetadataDetails extends ResourceTypeM
         this.validPropertiesForUpdate = validPropertiesForUpdate;
         this.uniquePropertySets = uniquePropertySets;
         this.validPropertyValues = validPropertyValues;
+        this.validSubResourceTypes = validSubResourceTypes;
     }
 
     /** List of required properties for resource type. */
@@ -333,6 +360,25 @@ public final class SystemFormatResourceTypeMetadataDetails extends ResourceTypeM
         return validPropertyValues;
     }
 
+    /**
+     * List of valid sub-resource types for a composite resource type. The sub-resource types will
+     * be obtained from the valid association pairs corresponding to the composite resource types.
+     * It will be empty for non composite resource types
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("validSubResourceTypes")
+    private final java.util.List<String> validSubResourceTypes;
+
+    /**
+     * List of valid sub-resource types for a composite resource type. The sub-resource types will
+     * be obtained from the valid association pairs corresponding to the composite resource types.
+     * It will be empty for non composite resource types
+     *
+     * @return the value
+     */
+    public java.util.List<String> getValidSubResourceTypes() {
+        return validSubResourceTypes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -356,6 +402,7 @@ public final class SystemFormatResourceTypeMetadataDetails extends ResourceTypeM
                 .append(String.valueOf(this.validPropertiesForUpdate));
         sb.append(", uniquePropertySets=").append(String.valueOf(this.uniquePropertySets));
         sb.append(", validPropertyValues=").append(String.valueOf(this.validPropertyValues));
+        sb.append(", validSubResourceTypes=").append(String.valueOf(this.validSubResourceTypes));
         sb.append(")");
         return sb.toString();
     }
@@ -378,6 +425,7 @@ public final class SystemFormatResourceTypeMetadataDetails extends ResourceTypeM
                         this.validPropertiesForUpdate, other.validPropertiesForUpdate)
                 && java.util.Objects.equals(this.uniquePropertySets, other.uniquePropertySets)
                 && java.util.Objects.equals(this.validPropertyValues, other.validPropertyValues)
+                && java.util.Objects.equals(this.validSubResourceTypes, other.validSubResourceTypes)
                 && super.equals(other);
     }
 
@@ -413,6 +461,11 @@ public final class SystemFormatResourceTypeMetadataDetails extends ResourceTypeM
                         + (this.validPropertyValues == null
                                 ? 43
                                 : this.validPropertyValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.validSubResourceTypes == null
+                                ? 43
+                                : this.validSubResourceTypes.hashCode());
         return result;
     }
 }

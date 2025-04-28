@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -36,7 +36,11 @@ public final class DeploymentSummary
         "freeformTags",
         "definedTags",
         "subnetId",
+        "loadBalancerSubnetId",
+        "loadBalancerId",
         "licenseModel",
+        "environmentType",
+        "category",
         "fqdn",
         "cpuCoreCount",
         "isAutoScalingEnabled",
@@ -49,7 +53,8 @@ public final class DeploymentSummary
         "timeUpgradeRequired",
         "deploymentType",
         "storageUtilizationInBytes",
-        "isStorageUtilizationLimitExceeded"
+        "isStorageUtilizationLimitExceeded",
+        "locks"
     })
     public DeploymentSummary(
             String id,
@@ -64,7 +69,11 @@ public final class DeploymentSummary
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String subnetId,
+            String loadBalancerSubnetId,
+            String loadBalancerId,
             LicenseModel licenseModel,
+            EnvironmentType environmentType,
+            DeploymentCategory category,
             String fqdn,
             Integer cpuCoreCount,
             Boolean isAutoScalingEnabled,
@@ -77,7 +86,8 @@ public final class DeploymentSummary
             java.util.Date timeUpgradeRequired,
             DeploymentType deploymentType,
             Long storageUtilizationInBytes,
-            Boolean isStorageUtilizationLimitExceeded) {
+            Boolean isStorageUtilizationLimitExceeded,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -91,7 +101,11 @@ public final class DeploymentSummary
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.subnetId = subnetId;
+        this.loadBalancerSubnetId = loadBalancerSubnetId;
+        this.loadBalancerId = loadBalancerId;
         this.licenseModel = licenseModel;
+        this.environmentType = environmentType;
+        this.category = category;
         this.fqdn = fqdn;
         this.cpuCoreCount = cpuCoreCount;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
@@ -105,19 +119,20 @@ public final class DeploymentSummary
         this.deploymentType = deploymentType;
         this.storageUtilizationInBytes = storageUtilizationInBytes;
         this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * deployment being referenced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * deployment being referenced.
          *
          * @param id the value to set
@@ -159,14 +174,14 @@ public final class DeploymentSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment being referenced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment being referenced.
          *
          * @param compartmentId the value to set
@@ -310,15 +325,19 @@ public final class DeploymentSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+         * backward compatibility, public subnets are allowed until May 31 2025, after which the
+         * private subnet will be enforced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+         * backward compatibility, public subnets are allowed until May 31 2025, after which the
+         * private subnet will be enforced.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -326,6 +345,52 @@ public final class DeploymentSummary
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * public subnet in the customer tenancy. Can be provided only for public deployments. If
+         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatibility, this is an optional property. It will become mandatory for
+         * public deployments after October 1, 2024.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+        private String loadBalancerSubnetId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * public subnet in the customer tenancy. Can be provided only for public deployments. If
+         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatibility, this is an optional property. It will become mandatory for
+         * public deployments after October 1, 2024.
+         *
+         * @param loadBalancerSubnetId the value to set
+         * @return this builder
+         */
+        public Builder loadBalancerSubnetId(String loadBalancerSubnetId) {
+            this.loadBalancerSubnetId = loadBalancerSubnetId;
+            this.__explicitlySet__.add("loadBalancerSubnetId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created
+         * in the customer subnet.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
+        private String loadBalancerId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created
+         * in the customer subnet.
+         *
+         * @param loadBalancerId the value to set
+         * @return this builder
+         */
+        public Builder loadBalancerId(String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            this.__explicitlySet__.add("loadBalancerId");
             return this;
         }
         /** The Oracle license model that applies to a Deployment. */
@@ -341,6 +406,46 @@ public final class DeploymentSummary
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+        /**
+         * Specifies whether the deployment is used in a production or development/testing
+         * environment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private EnvironmentType environmentType;
+
+        /**
+         * Specifies whether the deployment is used in a production or development/testing
+         * environment.
+         *
+         * @param environmentType the value to set
+         * @return this builder
+         */
+        public Builder environmentType(EnvironmentType environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
+            return this;
+        }
+        /**
+         * The deployment category defines the broad separation of the deployment type into three
+         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
+         * 'DATA_TRANSFORMS'.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("category")
+        private DeploymentCategory category;
+
+        /**
+         * The deployment category defines the broad separation of the deployment type into three
+         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
+         * 'DATA_TRANSFORMS'.
+         *
+         * @param category the value to set
+         * @return this builder
+         */
+        public Builder category(DeploymentCategory category) {
+            this.category = category;
+            this.__explicitlySet__.add("category");
             return this;
         }
         /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
@@ -456,7 +561,7 @@ public final class DeploymentSummary
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          */
@@ -467,7 +572,7 @@ public final class DeploymentSummary
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
@@ -558,17 +663,23 @@ public final class DeploymentSummary
             return this;
         }
         /**
-         * Indicator will be true if the amount of storage being utilized exceeds the allowable
-         * storage utilization limit. Exceeding the limit may be an indication of a misconfiguration
-         * of the deployment's GoldenGate service.
+         * Deprecated: This field is not updated and will be removed in future versions. If storage
+         * utilization exceeds the limit, the respective warning message will appear in deployment
+         * messages, which can be accessed through /messages?deploymentId=. Indicator will be true
+         * if the amount of storage being utilized exceeds the allowable storage utilization limit.
+         * Exceeding the limit may be an indication of a misconfiguration of the deployment's
+         * GoldenGate service.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isStorageUtilizationLimitExceeded")
         private Boolean isStorageUtilizationLimitExceeded;
 
         /**
-         * Indicator will be true if the amount of storage being utilized exceeds the allowable
-         * storage utilization limit. Exceeding the limit may be an indication of a misconfiguration
-         * of the deployment's GoldenGate service.
+         * Deprecated: This field is not updated and will be removed in future versions. If storage
+         * utilization exceeds the limit, the respective warning message will appear in deployment
+         * messages, which can be accessed through /messages?deploymentId=. Indicator will be true
+         * if the amount of storage being utilized exceeds the allowable storage utilization limit.
+         * Exceeding the limit may be an indication of a misconfiguration of the deployment's
+         * GoldenGate service.
          *
          * @param isStorageUtilizationLimitExceeded the value to set
          * @return this builder
@@ -577,6 +688,21 @@ public final class DeploymentSummary
                 Boolean isStorageUtilizationLimitExceeded) {
             this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
             this.__explicitlySet__.add("isStorageUtilizationLimitExceeded");
+            return this;
+        }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
 
@@ -598,7 +724,11 @@ public final class DeploymentSummary
                             this.freeformTags,
                             this.definedTags,
                             this.subnetId,
+                            this.loadBalancerSubnetId,
+                            this.loadBalancerId,
                             this.licenseModel,
+                            this.environmentType,
+                            this.category,
                             this.fqdn,
                             this.cpuCoreCount,
                             this.isAutoScalingEnabled,
@@ -611,7 +741,8 @@ public final class DeploymentSummary
                             this.timeUpgradeRequired,
                             this.deploymentType,
                             this.storageUtilizationInBytes,
-                            this.isStorageUtilizationLimitExceeded);
+                            this.isStorageUtilizationLimitExceeded,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -656,8 +787,20 @@ public final class DeploymentSummary
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("loadBalancerSubnetId")) {
+                this.loadBalancerSubnetId(model.getLoadBalancerSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerId")) {
+                this.loadBalancerId(model.getLoadBalancerId());
+            }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
             }
             if (model.wasPropertyExplicitlySet("fqdn")) {
                 this.fqdn(model.getFqdn());
@@ -699,6 +842,9 @@ public final class DeploymentSummary
                 this.isStorageUtilizationLimitExceeded(
                         model.getIsStorageUtilizationLimitExceeded());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -713,14 +859,14 @@ public final class DeploymentSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * deployment being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * deployment being referenced.
      *
      * @return the value
@@ -756,14 +902,14 @@ public final class DeploymentSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment being referenced.
      *
      * @return the value
@@ -890,20 +1036,66 @@ public final class DeploymentSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+     * backward compatibility, public subnets are allowed until May 31 2025, after which the private
+     * subnet will be enforced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+     * backward compatibility, public subnets are allowed until May 31 2025, after which the private
+     * subnet will be enforced.
      *
      * @return the value
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public
+     * subnet in the customer tenancy. Can be provided only for public deployments. If provided, the
+     * loadbalancer will be created in this subnet instead of the service tenancy. For backward
+     * compatibility, this is an optional property. It will become mandatory for public deployments
+     * after October 1, 2024.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+    private final String loadBalancerSubnetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public
+     * subnet in the customer tenancy. Can be provided only for public deployments. If provided, the
+     * loadbalancer will be created in this subnet instead of the service tenancy. For backward
+     * compatibility, this is an optional property. It will become mandatory for public deployments
+     * after October 1, 2024.
+     *
+     * @return the value
+     */
+    public String getLoadBalancerSubnetId() {
+        return loadBalancerSubnetId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in
+     * the customer subnet.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
+    private final String loadBalancerId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in
+     * the customer subnet.
+     *
+     * @return the value
+     */
+    public String getLoadBalancerId() {
+        return loadBalancerId;
     }
 
     /** The Oracle license model that applies to a Deployment. */
@@ -917,6 +1109,40 @@ public final class DeploymentSummary
      */
     public LicenseModel getLicenseModel() {
         return licenseModel;
+    }
+
+    /**
+     * Specifies whether the deployment is used in a production or development/testing environment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+    private final EnvironmentType environmentType;
+
+    /**
+     * Specifies whether the deployment is used in a production or development/testing environment.
+     *
+     * @return the value
+     */
+    public EnvironmentType getEnvironmentType() {
+        return environmentType;
+    }
+
+    /**
+     * The deployment category defines the broad separation of the deployment type into three
+     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
+     * 'DATA_TRANSFORMS'.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("category")
+    private final DeploymentCategory category;
+
+    /**
+     * The deployment category defines the broad separation of the deployment type into three
+     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
+     * 'DATA_TRANSFORMS'.
+     *
+     * @return the value
+     */
+    public DeploymentCategory getCategory() {
+        return category;
     }
 
     /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
@@ -1018,7 +1244,7 @@ public final class DeploymentSummary
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      */
@@ -1029,7 +1255,7 @@ public final class DeploymentSummary
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
@@ -1110,22 +1336,41 @@ public final class DeploymentSummary
     }
 
     /**
-     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage
-     * utilization limit. Exceeding the limit may be an indication of a misconfiguration of the
-     * deployment's GoldenGate service.
+     * Deprecated: This field is not updated and will be removed in future versions. If storage
+     * utilization exceeds the limit, the respective warning message will appear in deployment
+     * messages, which can be accessed through /messages?deploymentId=. Indicator will be true if
+     * the amount of storage being utilized exceeds the allowable storage utilization limit.
+     * Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate
+     * service.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isStorageUtilizationLimitExceeded")
     private final Boolean isStorageUtilizationLimitExceeded;
 
     /**
-     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage
-     * utilization limit. Exceeding the limit may be an indication of a misconfiguration of the
-     * deployment's GoldenGate service.
+     * Deprecated: This field is not updated and will be removed in future versions. If storage
+     * utilization exceeds the limit, the respective warning message will appear in deployment
+     * messages, which can be accessed through /messages?deploymentId=. Indicator will be true if
+     * the amount of storage being utilized exceeds the allowable storage utilization limit.
+     * Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate
+     * service.
      *
      * @return the value
      */
     public Boolean getIsStorageUtilizationLimitExceeded() {
         return isStorageUtilizationLimitExceeded;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -1155,7 +1400,11 @@ public final class DeploymentSummary
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", loadBalancerSubnetId=").append(String.valueOf(this.loadBalancerSubnetId));
+        sb.append(", loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", environmentType=").append(String.valueOf(this.environmentType));
+        sb.append(", category=").append(String.valueOf(this.category));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
@@ -1171,6 +1420,7 @@ public final class DeploymentSummary
                 .append(String.valueOf(this.storageUtilizationInBytes));
         sb.append(", isStorageUtilizationLimitExceeded=")
                 .append(String.valueOf(this.isStorageUtilizationLimitExceeded));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -1197,7 +1447,11 @@ public final class DeploymentSummary
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.loadBalancerSubnetId, other.loadBalancerSubnetId)
+                && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.environmentType, other.environmentType)
+                && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
@@ -1214,6 +1468,7 @@ public final class DeploymentSummary
                 && java.util.Objects.equals(
                         this.isStorageUtilizationLimitExceeded,
                         other.isStorageUtilizationLimitExceeded)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -1241,7 +1496,19 @@ public final class DeploymentSummary
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerSubnetId == null
+                                ? 43
+                                : this.loadBalancerSubnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentType == null ? 43 : this.environmentType.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
         result =
@@ -1281,6 +1548,7 @@ public final class DeploymentSummary
                         + (this.isStorageUtilizationLimitExceeded == null
                                 ? 43
                                 : this.isStorageUtilizationLimitExceeded.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

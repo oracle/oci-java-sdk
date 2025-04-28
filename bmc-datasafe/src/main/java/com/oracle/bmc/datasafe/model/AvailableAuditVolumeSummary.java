@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -26,17 +26,23 @@ public final class AvailableAuditVolumeSummary
     @Deprecated
     @java.beans.ConstructorProperties({
         "auditProfileId",
+        "auditTrailId",
+        "databaseUniqueName",
         "trailLocation",
         "monthInConsideration",
         "volume"
     })
     public AvailableAuditVolumeSummary(
             String auditProfileId,
+            String auditTrailId,
+            String databaseUniqueName,
             String trailLocation,
             java.util.Date monthInConsideration,
             Long volume) {
         super();
         this.auditProfileId = auditProfileId;
+        this.auditTrailId = auditTrailId;
+        this.databaseUniqueName = databaseUniqueName;
         this.trailLocation = trailLocation;
         this.monthInConsideration = monthInConsideration;
         this.volume = volume;
@@ -57,6 +63,36 @@ public final class AvailableAuditVolumeSummary
         public Builder auditProfileId(String auditProfileId) {
             this.auditProfileId = auditProfileId;
             this.__explicitlySet__.add("auditProfileId");
+            return this;
+        }
+        /** The OCID of the audit trail. */
+        @com.fasterxml.jackson.annotation.JsonProperty("auditTrailId")
+        private String auditTrailId;
+
+        /**
+         * The OCID of the audit trail.
+         *
+         * @param auditTrailId the value to set
+         * @return this builder
+         */
+        public Builder auditTrailId(String auditTrailId) {
+            this.auditTrailId = auditTrailId;
+            this.__explicitlySet__.add("auditTrailId");
+            return this;
+        }
+        /** Unique name of the database associated to the peer target database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseUniqueName")
+        private String databaseUniqueName;
+
+        /**
+         * Unique name of the database associated to the peer target database.
+         *
+         * @param databaseUniqueName the value to set
+         * @return this builder
+         */
+        public Builder databaseUniqueName(String databaseUniqueName) {
+            this.databaseUniqueName = databaseUniqueName;
+            this.__explicitlySet__.add("databaseUniqueName");
             return this;
         }
         /**
@@ -128,6 +164,8 @@ public final class AvailableAuditVolumeSummary
             AvailableAuditVolumeSummary model =
                     new AvailableAuditVolumeSummary(
                             this.auditProfileId,
+                            this.auditTrailId,
+                            this.databaseUniqueName,
                             this.trailLocation,
                             this.monthInConsideration,
                             this.volume);
@@ -141,6 +179,12 @@ public final class AvailableAuditVolumeSummary
         public Builder copy(AvailableAuditVolumeSummary model) {
             if (model.wasPropertyExplicitlySet("auditProfileId")) {
                 this.auditProfileId(model.getAuditProfileId());
+            }
+            if (model.wasPropertyExplicitlySet("auditTrailId")) {
+                this.auditTrailId(model.getAuditTrailId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseUniqueName")) {
+                this.databaseUniqueName(model.getDatabaseUniqueName());
             }
             if (model.wasPropertyExplicitlySet("trailLocation")) {
                 this.trailLocation(model.getTrailLocation());
@@ -175,6 +219,32 @@ public final class AvailableAuditVolumeSummary
      */
     public String getAuditProfileId() {
         return auditProfileId;
+    }
+
+    /** The OCID of the audit trail. */
+    @com.fasterxml.jackson.annotation.JsonProperty("auditTrailId")
+    private final String auditTrailId;
+
+    /**
+     * The OCID of the audit trail.
+     *
+     * @return the value
+     */
+    public String getAuditTrailId() {
+        return auditTrailId;
+    }
+
+    /** Unique name of the database associated to the peer target database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseUniqueName")
+    private final String databaseUniqueName;
+
+    /**
+     * Unique name of the database associated to the peer target database.
+     *
+     * @return the value
+     */
+    public String getDatabaseUniqueName() {
+        return databaseUniqueName;
     }
 
     /**
@@ -248,6 +318,8 @@ public final class AvailableAuditVolumeSummary
         sb.append("AvailableAuditVolumeSummary(");
         sb.append("super=").append(super.toString());
         sb.append("auditProfileId=").append(String.valueOf(this.auditProfileId));
+        sb.append(", auditTrailId=").append(String.valueOf(this.auditTrailId));
+        sb.append(", databaseUniqueName=").append(String.valueOf(this.databaseUniqueName));
         sb.append(", trailLocation=").append(String.valueOf(this.trailLocation));
         sb.append(", monthInConsideration=").append(String.valueOf(this.monthInConsideration));
         sb.append(", volume=").append(String.valueOf(this.volume));
@@ -266,6 +338,8 @@ public final class AvailableAuditVolumeSummary
 
         AvailableAuditVolumeSummary other = (AvailableAuditVolumeSummary) o;
         return java.util.Objects.equals(this.auditProfileId, other.auditProfileId)
+                && java.util.Objects.equals(this.auditTrailId, other.auditTrailId)
+                && java.util.Objects.equals(this.databaseUniqueName, other.databaseUniqueName)
                 && java.util.Objects.equals(this.trailLocation, other.trailLocation)
                 && java.util.Objects.equals(this.monthInConsideration, other.monthInConsideration)
                 && java.util.Objects.equals(this.volume, other.volume)
@@ -279,6 +353,12 @@ public final class AvailableAuditVolumeSummary
         result =
                 (result * PRIME)
                         + (this.auditProfileId == null ? 43 : this.auditProfileId.hashCode());
+        result = (result * PRIME) + (this.auditTrailId == null ? 43 : this.auditTrailId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseUniqueName == null
+                                ? 43
+                                : this.databaseUniqueName.hashCode());
         result =
                 (result * PRIME)
                         + (this.trailLocation == null ? 43 : this.trailLocation.hashCode());

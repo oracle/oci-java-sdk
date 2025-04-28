@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.model;
@@ -23,17 +23,60 @@ package com.oracle.bmc.monitoring.model;
 public final class AlarmDimensionStatesEntry
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"dimensions", "status", "timestamp"})
+    @java.beans.ConstructorProperties({
+        "alarmSummary",
+        "dimensions",
+        "status",
+        "ruleName",
+        "timestamp"
+    })
     public AlarmDimensionStatesEntry(
-            java.util.Map<String, String> dimensions, Status status, java.util.Date timestamp) {
+            String alarmSummary,
+            java.util.Map<String, String> dimensions,
+            Status status,
+            String ruleName,
+            java.util.Date timestamp) {
         super();
+        this.alarmSummary = alarmSummary;
         this.dimensions = dimensions;
         this.status = status;
+        this.ruleName = ruleName;
         this.timestamp = timestamp;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Customizable alarm summary ({@code alarmSummary} [alarm message
+         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to {@link
+         * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
+         * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
+         * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
+        private String alarmSummary;
+
+        /**
+         * Customizable alarm summary ({@code alarmSummary} [alarm message
+         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to {@link
+         * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
+         * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
+         * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         *
+         * @param alarmSummary the value to set
+         * @return this builder
+         */
+        public Builder alarmSummary(String alarmSummary) {
+            this.alarmSummary = alarmSummary;
+            this.__explicitlySet__.add("alarmSummary");
+            return this;
+        }
         /**
          * Indicator of the metric stream associated with the alarm state entry. Includes one or
          * more dimension key-value pairs.
@@ -75,6 +118,27 @@ public final class AlarmDimensionStatesEntry
             return this;
         }
         /**
+         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm
+         * contains overrides. Default value is {@code BASE}. For information about alarm overrides,
+         * see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
+        private String ruleName;
+
+        /**
+         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm
+         * contains overrides. Default value is {@code BASE}. For information about alarm overrides,
+         * see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         *
+         * @param ruleName the value to set
+         * @return this builder
+         */
+        public Builder ruleName(String ruleName) {
+            this.ruleName = ruleName;
+            this.__explicitlySet__.add("ruleName");
+            return this;
+        }
+        /**
          * Transition time associated with the alarm state entry. Format defined by RFC3339.
          *
          * <p>Example: {@code 2022-02-01T01:02:29.600Z}
@@ -101,7 +165,12 @@ public final class AlarmDimensionStatesEntry
 
         public AlarmDimensionStatesEntry build() {
             AlarmDimensionStatesEntry model =
-                    new AlarmDimensionStatesEntry(this.dimensions, this.status, this.timestamp);
+                    new AlarmDimensionStatesEntry(
+                            this.alarmSummary,
+                            this.dimensions,
+                            this.status,
+                            this.ruleName,
+                            this.timestamp);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -110,11 +179,17 @@ public final class AlarmDimensionStatesEntry
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AlarmDimensionStatesEntry model) {
+            if (model.wasPropertyExplicitlySet("alarmSummary")) {
+                this.alarmSummary(model.getAlarmSummary());
+            }
             if (model.wasPropertyExplicitlySet("dimensions")) {
                 this.dimensions(model.getDimensions());
             }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("ruleName")) {
+                this.ruleName(model.getRuleName());
             }
             if (model.wasPropertyExplicitlySet("timestamp")) {
                 this.timestamp(model.getTimestamp());
@@ -130,6 +205,35 @@ public final class AlarmDimensionStatesEntry
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Customizable alarm summary ({@code alarmSummary} [alarm message
+     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to {@link
+     * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
+     * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
+    private final String alarmSummary;
+
+    /**
+     * Customizable alarm summary ({@code alarmSummary} [alarm message
+     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to {@link
+     * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
+     * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     *
+     * @return the value
+     */
+    public String getAlarmSummary() {
+        return alarmSummary;
     }
 
     /**
@@ -218,6 +322,25 @@ public final class AlarmDimensionStatesEntry
     }
 
     /**
+     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains
+     * overrides. Default value is {@code BASE}. For information about alarm overrides, see {@link
+     * #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
+    private final String ruleName;
+
+    /**
+     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains
+     * overrides. Default value is {@code BASE}. For information about alarm overrides, see {@link
+     * #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     *
+     * @return the value
+     */
+    public String getRuleName() {
+        return ruleName;
+    }
+
+    /**
      * Transition time associated with the alarm state entry. Format defined by RFC3339.
      *
      * <p>Example: {@code 2022-02-01T01:02:29.600Z}
@@ -251,8 +374,10 @@ public final class AlarmDimensionStatesEntry
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AlarmDimensionStatesEntry(");
         sb.append("super=").append(super.toString());
-        sb.append("dimensions=").append(String.valueOf(this.dimensions));
+        sb.append("alarmSummary=").append(String.valueOf(this.alarmSummary));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
         sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", ruleName=").append(String.valueOf(this.ruleName));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
         sb.append(")");
         return sb.toString();
@@ -268,8 +393,10 @@ public final class AlarmDimensionStatesEntry
         }
 
         AlarmDimensionStatesEntry other = (AlarmDimensionStatesEntry) o;
-        return java.util.Objects.equals(this.dimensions, other.dimensions)
+        return java.util.Objects.equals(this.alarmSummary, other.alarmSummary)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
                 && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.ruleName, other.ruleName)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
                 && super.equals(other);
     }
@@ -278,8 +405,10 @@ public final class AlarmDimensionStatesEntry
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.alarmSummary == null ? 43 : this.alarmSummary.hashCode());
         result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.ruleName == null ? 43 : this.ruleName.hashCode());
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

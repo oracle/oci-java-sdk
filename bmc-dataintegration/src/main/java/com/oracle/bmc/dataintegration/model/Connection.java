@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -31,6 +31,9 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ConnectionFromMySQL.class,
             name = "MYSQL_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ConnectionFromOAuth2.class,
+            name = "OAUTH2_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ConnectionFromJdbc.class,
             name = "GENERIC_JDBC_CONNECTION"),
@@ -400,6 +403,7 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         MysqlHeatwaveConnection("MYSQL_HEATWAVE_CONNECTION"),
         RestNoAuthConnection("REST_NO_AUTH_CONNECTION"),
         RestBasicAuthConnection("REST_BASIC_AUTH_CONNECTION"),
+        Oauth2Connection("OAUTH2_CONNECTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

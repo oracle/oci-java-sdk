@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience;
@@ -337,6 +337,589 @@ public class DataScienceWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.datascience.model.JobRunLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMlApplicationRequest, GetMlApplicationResponse>
+            forMlApplication(
+                    GetMlApplicationRequest request,
+                    com.oracle.bmc.datascience.model.MlApplication.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forMlApplication(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMlApplicationRequest, GetMlApplicationResponse>
+            forMlApplication(
+                    GetMlApplicationRequest request,
+                    com.oracle.bmc.datascience.model.MlApplication.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forMlApplication(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMlApplicationRequest, GetMlApplicationResponse>
+            forMlApplication(
+                    GetMlApplicationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datascience.model.MlApplication.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forMlApplication(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for MlApplication.
+    private com.oracle.bmc.waiter.Waiter<GetMlApplicationRequest, GetMlApplicationResponse>
+            forMlApplication(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetMlApplicationRequest request,
+                    final com.oracle.bmc.datascience.model.MlApplication.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datascience.model.MlApplication.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetMlApplicationRequest, GetMlApplicationResponse>() {
+                            @Override
+                            public GetMlApplicationResponse apply(GetMlApplicationRequest request) {
+                                return client.getMlApplication(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetMlApplicationResponse>() {
+                            @Override
+                            public boolean test(GetMlApplicationResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getMlApplication().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationImplementationRequest, GetMlApplicationImplementationResponse>
+            forMlApplicationImplementation(
+                    GetMlApplicationImplementationRequest request,
+                    com.oracle.bmc.datascience.model.MlApplicationImplementation.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forMlApplicationImplementation(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationImplementationRequest, GetMlApplicationImplementationResponse>
+            forMlApplicationImplementation(
+                    GetMlApplicationImplementationRequest request,
+                    com.oracle.bmc.datascience.model.MlApplicationImplementation.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forMlApplicationImplementation(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationImplementationRequest, GetMlApplicationImplementationResponse>
+            forMlApplicationImplementation(
+                    GetMlApplicationImplementationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datascience.model.MlApplicationImplementation.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forMlApplicationImplementation(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for MlApplicationImplementation.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationImplementationRequest, GetMlApplicationImplementationResponse>
+            forMlApplicationImplementation(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetMlApplicationImplementationRequest request,
+                    final com.oracle.bmc.datascience.model.MlApplicationImplementation
+                                            .LifecycleState
+                                    ...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.datascience.model.MlApplicationImplementation.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetMlApplicationImplementationRequest,
+                                GetMlApplicationImplementationResponse>() {
+                            @Override
+                            public GetMlApplicationImplementationResponse apply(
+                                    GetMlApplicationImplementationRequest request) {
+                                return client.getMlApplicationImplementation(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetMlApplicationImplementationResponse>() {
+                            @Override
+                            public boolean test(GetMlApplicationImplementationResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getMlApplicationImplementation()
+                                                .getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationImplementationVersionRequest,
+                    GetMlApplicationImplementationVersionResponse>
+            forMlApplicationImplementationVersion(
+                    GetMlApplicationImplementationVersionRequest request,
+                    com.oracle.bmc.datascience.model.MlApplicationImplementationVersion
+                                            .LifecycleState
+                                    ...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forMlApplicationImplementationVersion(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationImplementationVersionRequest,
+                    GetMlApplicationImplementationVersionResponse>
+            forMlApplicationImplementationVersion(
+                    GetMlApplicationImplementationVersionRequest request,
+                    com.oracle.bmc.datascience.model.MlApplicationImplementationVersion
+                                    .LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forMlApplicationImplementationVersion(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationImplementationVersionRequest,
+                    GetMlApplicationImplementationVersionResponse>
+            forMlApplicationImplementationVersion(
+                    GetMlApplicationImplementationVersionRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datascience.model.MlApplicationImplementationVersion
+                                            .LifecycleState
+                                    ...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forMlApplicationImplementationVersion(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for MlApplicationImplementationVersion.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationImplementationVersionRequest,
+                    GetMlApplicationImplementationVersionResponse>
+            forMlApplicationImplementationVersion(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetMlApplicationImplementationVersionRequest request,
+                    final com.oracle.bmc.datascience.model.MlApplicationImplementationVersion
+                                            .LifecycleState
+                                    ...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.datascience.model.MlApplicationImplementationVersion
+                                .LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetMlApplicationImplementationVersionRequest,
+                                GetMlApplicationImplementationVersionResponse>() {
+                            @Override
+                            public GetMlApplicationImplementationVersionResponse apply(
+                                    GetMlApplicationImplementationVersionRequest request) {
+                                return client.getMlApplicationImplementationVersion(request);
+                            }
+                        },
+                        new java.util.function.Predicate<
+                                GetMlApplicationImplementationVersionResponse>() {
+                            @Override
+                            public boolean test(
+                                    GetMlApplicationImplementationVersionResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getMlApplicationImplementationVersion()
+                                                .getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationInstanceRequest, GetMlApplicationInstanceResponse>
+            forMlApplicationInstance(
+                    GetMlApplicationInstanceRequest request,
+                    com.oracle.bmc.datascience.model.MlApplicationInstance.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forMlApplicationInstance(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationInstanceRequest, GetMlApplicationInstanceResponse>
+            forMlApplicationInstance(
+                    GetMlApplicationInstanceRequest request,
+                    com.oracle.bmc.datascience.model.MlApplicationInstance.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forMlApplicationInstance(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationInstanceRequest, GetMlApplicationInstanceResponse>
+            forMlApplicationInstance(
+                    GetMlApplicationInstanceRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datascience.model.MlApplicationInstance.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forMlApplicationInstance(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for MlApplicationInstance.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationInstanceRequest, GetMlApplicationInstanceResponse>
+            forMlApplicationInstance(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetMlApplicationInstanceRequest request,
+                    final com.oracle.bmc.datascience.model.MlApplicationInstance.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datascience.model.MlApplicationInstance.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetMlApplicationInstanceRequest,
+                                GetMlApplicationInstanceResponse>() {
+                            @Override
+                            public GetMlApplicationInstanceResponse apply(
+                                    GetMlApplicationInstanceRequest request) {
+                                return client.getMlApplicationInstance(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetMlApplicationInstanceResponse>() {
+                            @Override
+                            public boolean test(GetMlApplicationInstanceResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getMlApplicationInstance().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datascience.model.MlApplicationInstance
+                                        .LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationInstanceViewRequest, GetMlApplicationInstanceViewResponse>
+            forMlApplicationInstanceView(
+                    GetMlApplicationInstanceViewRequest request,
+                    com.oracle.bmc.datascience.model.MlApplicationInstanceView.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forMlApplicationInstanceView(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationInstanceViewRequest, GetMlApplicationInstanceViewResponse>
+            forMlApplicationInstanceView(
+                    GetMlApplicationInstanceViewRequest request,
+                    com.oracle.bmc.datascience.model.MlApplicationInstanceView.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forMlApplicationInstanceView(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationInstanceViewRequest, GetMlApplicationInstanceViewResponse>
+            forMlApplicationInstanceView(
+                    GetMlApplicationInstanceViewRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datascience.model.MlApplicationInstanceView.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forMlApplicationInstanceView(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for MlApplicationInstanceView.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetMlApplicationInstanceViewRequest, GetMlApplicationInstanceViewResponse>
+            forMlApplicationInstanceView(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetMlApplicationInstanceViewRequest request,
+                    final com.oracle.bmc.datascience.model.MlApplicationInstanceView.LifecycleState
+                                    ...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.datascience.model.MlApplicationInstanceView.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetMlApplicationInstanceViewRequest,
+                                GetMlApplicationInstanceViewResponse>() {
+                            @Override
+                            public GetMlApplicationInstanceViewResponse apply(
+                                    GetMlApplicationInstanceViewRequest request) {
+                                return client.getMlApplicationInstanceView(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetMlApplicationInstanceViewResponse>() {
+                            @Override
+                            public boolean test(GetMlApplicationInstanceViewResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getMlApplicationInstanceView()
+                                                .getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datascience.model.MlApplicationInstanceView
+                                        .LifecycleState.Deleted)),
                 request);
     }
 
@@ -1067,6 +1650,105 @@ public class DataScienceWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.datascience.model.ProjectLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetScheduleRequest, GetScheduleResponse> forSchedule(
+            GetScheduleRequest request,
+            com.oracle.bmc.datascience.model.ScheduleLifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSchedule(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetScheduleRequest, GetScheduleResponse> forSchedule(
+            GetScheduleRequest request,
+            com.oracle.bmc.datascience.model.ScheduleLifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forSchedule(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetScheduleRequest, GetScheduleResponse> forSchedule(
+            GetScheduleRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.datascience.model.ScheduleLifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSchedule(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for Schedule.
+    private com.oracle.bmc.waiter.Waiter<GetScheduleRequest, GetScheduleResponse> forSchedule(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetScheduleRequest request,
+            final com.oracle.bmc.datascience.model.ScheduleLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.datascience.model.ScheduleLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<GetScheduleRequest, GetScheduleResponse>() {
+                            @Override
+                            public GetScheduleResponse apply(GetScheduleRequest request) {
+                                return client.getSchedule(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetScheduleResponse>() {
+                            @Override
+                            public boolean test(GetScheduleResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSchedule().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datascience.model.ScheduleLifecycleState.Deleted)),
                 request);
     }
 

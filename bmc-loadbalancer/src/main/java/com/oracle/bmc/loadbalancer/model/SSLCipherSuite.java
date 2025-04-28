@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -18,9 +18,9 @@ package com.oracle.bmc.loadbalancer.model;
  *
  * <p>Oracle created the following predefined cipher suites that you can specify when you define a
  * resource's [SSL
- * configuration](https://docs.cloud.oracle.com/api/#/en/loadbalancer/20170115/datatypes/SSLConfigurationDetails).
+ * configuration](https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/datatypes/SSLConfigurationDetails).
  * You can [create custom cipher
- * suites](https://docs.cloud.oracle.com/api/#/en/loadbalancer/20170115/SSLCipherSuite/CreateSSLCipherSuite)
+ * suites](https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/SSLCipherSuite/CreateSSLCipherSuite)
  * if the predefined cipher suites do not meet your requirements.
  *
  * <p>* __oci-default-ssl-cipher-suite-v1__
@@ -73,7 +73,42 @@ package com.oracle.bmc.loadbalancer.model;
  * "ECDHE-RSA-AES256-SHA" "ECDHE-RSA-AES256-SHA384" "ECDHE-RSA-DES-CBC3-SHA" "ECDHE-RSA-RC4-SHA"
  * "IDEA-CBC-SHA" "KRB5-DES-CBC3-MD5" "KRB5-DES-CBC3-SHA" "KRB5-IDEA-CBC-MD5" "KRB5-IDEA-CBC-SHA"
  * "KRB5-RC4-MD5" "KRB5-RC4-SHA" "PSK-3DES-EDE-CBC-SHA" "PSK-AES128-CBC-SHA" "PSK-AES256-CBC-SHA"
- * "PSK-RC4-SHA" "RC4-MD5" "RC4-SHA" "SEED-SHA" <br>
+ * "PSK-RC4-SHA" "RC4-MD5" "RC4-SHA" "SEED-SHA"
+ *
+ * <p>__oci-default-http2-ssl-cipher-suite-v1__
+ *
+ * <p>"ECDHE-RSA-AES256-GCM-SHA384" "ECDHE-ECDSA-AES256-GCM-SHA384" "ECDHE-RSA-AES128-GCM-SHA256"
+ * "ECDHE-ECDSA-AES128-GCM-SHA256" "DHE-RSA-AES256-GCM-SHA384" "DHE-RSA-AES128-GCM-SHA256"
+ *
+ * <p>__oci-default-http2-tls-13-ssl-cipher-suite-v1__
+ *
+ * <p>"TLS_AES_128_GCM_SHA256" "TLS_AES_256_GCM_SHA384" "TLS_CHACHA20_POLY1305_SHA256"
+ *
+ * <p>__oci-default-http2-tls-12-13-ssl-cipher-suite-v1__
+ *
+ * <p>"ECDHE-RSA-AES256-GCM-SHA384" "ECDHE-ECDSA-AES256-GCM-SHA384" "ECDHE-RSA-AES128-GCM-SHA256"
+ * "ECDHE-ECDSA-AES128-GCM-SHA256" "DHE-RSA-AES256-GCM-SHA384" "DHE-RSA-AES128-GCM-SHA256"
+ * "TLS_AES_128_GCM_SHA256" "TLS_AES_256_GCM_SHA384" "TLS_CHACHA20_POLY1305_SHA256"
+ *
+ * <p>__oci-tls-13-recommended-ssl-cipher-suite-v1__
+ *
+ * <p>"TLS_AES_128_GCM_SHA256" "TLS_AES_256_GCM_SHA384" "TLS_CHACHA20_POLY1305_SHA256"
+ *
+ * <p>__oci-tls-12-13-wider-ssl-cipher-suite-v1__
+ *
+ * <p>"TLS_AES_128_GCM_SHA256" "TLS_AES_256_GCM_SHA384" "TLS_CHACHA20_POLY1305_SHA256"
+ * "ECDHE-ECDSA-AES128-GCM-SHA256" "ECDHE-RSA-AES128-GCM-SHA256" "ECDHE-ECDSA-AES128-SHA256"
+ * "ECDHE-RSA-AES128-SHA256" "ECDHE-ECDSA-AES256-GCM-SHA384" "ECDHE-RSA-AES256-GCM-SHA384"
+ * "ECDHE-ECDSA-AES256-SHA384" "ECDHE-RSA-AES256-SHA384" "AES128-GCM-SHA256" "AES128-SHA256"
+ * "AES256-GCM-SHA384" "AES256-SHA256"
+ *
+ * <p>__oci-tls-11-12-13-wider-ssl-cipher-suite-v1__ "TLS_AES_128_GCM_SHA256"
+ * "TLS_AES_256_GCM_SHA384" "TLS_CHACHA20_POLY1305_SHA256" "ECDHE-ECDSA-AES128-GCM-SHA256"
+ * "ECDHE-RSA-AES128-GCM-SHA256" "ECDHE-ECDSA-AES128-SHA256" "ECDHE-RSA-AES128-SHA256"
+ * "ECDHE-ECDSA-AES256-GCM-SHA384" "ECDHE-RSA-AES256-GCM-SHA384" "ECDHE-ECDSA-AES256-SHA384"
+ * "ECDHE-RSA-AES256-SHA384" "AES128-GCM-SHA256" "AES128-SHA256" "AES256-GCM-SHA384" "AES256-SHA256"
+ * "ECDHE-ECDSA-AES128-SHA" "ECDHE-RSA-AES128-SHA" "ECDHE-RSA-AES256-SHA" "ECDHE-ECDSA-AES256-SHA"
+ * "AES128-SHA" "AES256-SHA" <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -107,7 +142,11 @@ public final class SSLCipherSuite
          *
          * <p>oci-default-ssl-cipher-suite-v1 * oci-modern-ssl-cipher-suite-v1 *
          * oci-compatible-ssl-cipher-suite-v1 * oci-wider-compatible-ssl-cipher-suite-v1 *
-         * oci-customized-ssl-cipher-suite
+         * oci-customized-ssl-cipher-suite * oci-default-http2-ssl-cipher-suite-v1 *
+         * oci-default-http2-tls-13-ssl-cipher-suite-v1 *
+         * oci-default-http2-tls-12-13-ssl-cipher-suite-v1 *
+         * oci-tls-13-recommended-ssl-cipher-suite-v1 * oci-tls-12-13-wider-ssl-cipher-suite-v1 *
+         * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
          *
          * <p>example: {@code example_cipher_suite}
          */
@@ -122,7 +161,11 @@ public final class SSLCipherSuite
          *
          * <p>oci-default-ssl-cipher-suite-v1 * oci-modern-ssl-cipher-suite-v1 *
          * oci-compatible-ssl-cipher-suite-v1 * oci-wider-compatible-ssl-cipher-suite-v1 *
-         * oci-customized-ssl-cipher-suite
+         * oci-customized-ssl-cipher-suite * oci-default-http2-ssl-cipher-suite-v1 *
+         * oci-default-http2-tls-13-ssl-cipher-suite-v1 *
+         * oci-default-http2-tls-12-13-ssl-cipher-suite-v1 *
+         * oci-tls-13-recommended-ssl-cipher-suite-v1 * oci-tls-12-13-wider-ssl-cipher-suite-v1 *
+         * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
          *
          * <p>example: {@code example_cipher_suite}
          *
@@ -138,6 +181,11 @@ public final class SSLCipherSuite
          * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
          *
          * <p>The following ciphers are valid values for this property:
+         *
+         * <p>__TLSv1.3 ciphers__
+         *
+         * <p>"TLS_AES_128_GCM_SHA256" "TLS_AES_256_GCM_SHA384" "TLS_CHACHA20_POLY1305_SHA256"
+         * "TLS_AES_128_CCM_SHA256" "TLS_AES_128_CCM_8_SHA256"
          *
          * <p>__TLSv1.2 ciphers__
          *
@@ -183,6 +231,11 @@ public final class SSLCipherSuite
          * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
          *
          * <p>The following ciphers are valid values for this property:
+         *
+         * <p>__TLSv1.3 ciphers__
+         *
+         * <p>"TLS_AES_128_GCM_SHA256" "TLS_AES_256_GCM_SHA384" "TLS_CHACHA20_POLY1305_SHA256"
+         * "TLS_AES_128_CCM_SHA256" "TLS_AES_128_CCM_8_SHA256"
          *
          * <p>__TLSv1.2 ciphers__
          *
@@ -270,7 +323,10 @@ public final class SSLCipherSuite
      *
      * <p>oci-default-ssl-cipher-suite-v1 * oci-modern-ssl-cipher-suite-v1 *
      * oci-compatible-ssl-cipher-suite-v1 * oci-wider-compatible-ssl-cipher-suite-v1 *
-     * oci-customized-ssl-cipher-suite
+     * oci-customized-ssl-cipher-suite * oci-default-http2-ssl-cipher-suite-v1 *
+     * oci-default-http2-tls-13-ssl-cipher-suite-v1 *
+     * oci-default-http2-tls-12-13-ssl-cipher-suite-v1 * oci-tls-13-recommended-ssl-cipher-suite-v1
+     * * oci-tls-12-13-wider-ssl-cipher-suite-v1 * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
      *
      * <p>example: {@code example_cipher_suite}
      */
@@ -285,7 +341,10 @@ public final class SSLCipherSuite
      *
      * <p>oci-default-ssl-cipher-suite-v1 * oci-modern-ssl-cipher-suite-v1 *
      * oci-compatible-ssl-cipher-suite-v1 * oci-wider-compatible-ssl-cipher-suite-v1 *
-     * oci-customized-ssl-cipher-suite
+     * oci-customized-ssl-cipher-suite * oci-default-http2-ssl-cipher-suite-v1 *
+     * oci-default-http2-tls-13-ssl-cipher-suite-v1 *
+     * oci-default-http2-tls-12-13-ssl-cipher-suite-v1 * oci-tls-13-recommended-ssl-cipher-suite-v1
+     * * oci-tls-12-13-wider-ssl-cipher-suite-v1 * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
      *
      * <p>example: {@code example_cipher_suite}
      *
@@ -299,6 +358,11 @@ public final class SSLCipherSuite
      * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
      *
      * <p>The following ciphers are valid values for this property:
+     *
+     * <p>__TLSv1.3 ciphers__
+     *
+     * <p>"TLS_AES_128_GCM_SHA256" "TLS_AES_256_GCM_SHA384" "TLS_CHACHA20_POLY1305_SHA256"
+     * "TLS_AES_128_CCM_SHA256" "TLS_AES_128_CCM_8_SHA256"
      *
      * <p>__TLSv1.2 ciphers__
      *
@@ -343,6 +407,11 @@ public final class SSLCipherSuite
      * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
      *
      * <p>The following ciphers are valid values for this property:
+     *
+     * <p>__TLSv1.3 ciphers__
+     *
+     * <p>"TLS_AES_128_GCM_SHA256" "TLS_AES_256_GCM_SHA384" "TLS_CHACHA20_POLY1305_SHA256"
+     * "TLS_AES_128_CCM_SHA256" "TLS_AES_128_CCM_8_SHA256"
      *
      * <p>__TLSv1.2 ciphers__
      *

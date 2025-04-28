@@ -4,14 +4,42 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.28.0</version>
+    <version>3.63.2</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>oci-java-sdk-common</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Common</name>
   <description>This project contains the common runtime components of the SDK used for Oracle Cloud Infrastructure</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
+  <properties>
+    <jetty.version>9.4.56.v20240826</jetty.version>
+    <maven-surefire-plugin.argLine>--illegal-access=warn
+      --add-opens=java.base/java.io=ALL-UNNAMED
+      --add-opens=java.base/java.lang=ALL-UNNAMED
+      --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+      --add-opens=java.base/java.net=ALL-UNNAMED
+      --add-opens=java.base/java.nio.channels=ALL-UNNAMED
+      --add-opens=java.base/java.text=ALL-UNNAMED
+      --add-opens=java.base/java.security=ALL-UNNAMED
+      --add-opens=java.base/java.util=ALL-UNNAMED
+      --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+      --add-opens=java.base/java.util.regex=ALL-UNNAMED
+      --add-opens=java.base/java.util.stream=ALL-UNNAMED
+      --add-opens=java.base/java.time=ALL-UNNAMED
+    </maven-surefire-plugin.argLine>
+  </properties>
+  <profiles>
+    <profile>
+      <id>jdk-8-only</id>
+      <activation>
+        <jdk>1.8</jdk>
+      </activation>
+      <properties>
+        <maven-surefire-plugin.argLine></maven-surefire-plugin.argLine>
+      </properties>
+    </profile>
+  </profiles>
   <build>
     <!-- Substitutes maven properties into the SDK properties -->
     <resources>
@@ -57,28 +85,59 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.bouncycastle</groupId>
-      <artifactId>bcpkix-jdk15to18</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.bouncycastle</groupId>
-      <artifactId>bcprov-jdk15to18</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-circuitbreaker</artifactId>
-      <version>3.28.0</version>
+      <version>3.63.2</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.28.0</version>
+      <version>3.63.2</version>
     </dependency>
     <!-- Test dependencies -->
     <dependency>
+      <groupId>com.github.tomakehurst</groupId>
+      <artifactId>wiremock</artifactId>
+      <version>2.23.2</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- SDK-6401 / SDK-6502: vulnerabilities in wiremock -->
+    <!-- but cannot upgrade to 3.x, because 3.x requires Java 11 -->
+    <dependency>
+      <groupId>net.minidev</groupId>
+      <artifactId>json-smart</artifactId>
+      <version>2.5.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-server</artifactId>
+      <version>${jetty.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-servlet</artifactId>
+      <version>${jetty.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-servlets</artifactId>
+      <version>${jetty.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-webapp</artifactId>
+      <version>${jetty.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- End SDK-6401/ SDK-6502: vulnerabilities in wiremock -->
+    <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-      <version>3.28.0</version>
+      <version>3.63.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>

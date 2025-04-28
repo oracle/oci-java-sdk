@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTasksExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTasksExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListSqlTuningAdvisorTasksRequest.
  */
@@ -16,13 +16,13 @@ public class ListSqlTuningAdvisorTasksRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     public String getManagedDatabaseId() {
@@ -174,6 +174,13 @@ public class ListSqlTuningAdvisorTasksRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -182,13 +189,13 @@ public class ListSqlTuningAdvisorTasksRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          *
          * @param managedDatabaseId the value to set
@@ -333,6 +340,20 @@ public class ListSqlTuningAdvisorTasksRequest
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -373,6 +394,7 @@ public class ListSqlTuningAdvisorTasksRequest
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -417,10 +439,11 @@ public class ListSqlTuningAdvisorTasksRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new ListSqlTuningAdvisorTasksRequest(managedDatabaseId, name, status,
             // timeGreaterThanOrEqualTo, timeLessThanOrEqualTo, page, limit, sortBy, sortOrder,
-            // opcRequestId);
+            // opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -440,7 +463,8 @@ public class ListSqlTuningAdvisorTasksRequest
                 .limit(limit)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -468,6 +492,7 @@ public class ListSqlTuningAdvisorTasksRequest
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -493,7 +518,8 @@ public class ListSqlTuningAdvisorTasksRequest
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -520,6 +546,11 @@ public class ListSqlTuningAdvisorTasksRequest
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

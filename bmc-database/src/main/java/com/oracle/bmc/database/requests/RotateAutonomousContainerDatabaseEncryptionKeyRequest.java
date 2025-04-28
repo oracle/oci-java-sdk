@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -7,23 +7,25 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousContainerDatabaseEncryptionKeyExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousContainerDatabaseEncryptionKeyExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * RotateAutonomousContainerDatabaseEncryptionKeyRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model
+                        .RotateAutonomousContainerDatabaseEncryptionKeyDetails> {
 
     /**
      * The Autonomous Container Database
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousContainerDatabaseId;
 
     /**
      * The Autonomous Container Database
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getAutonomousContainerDatabaseId() {
         return autonomousContainerDatabaseId;
@@ -71,22 +73,45 @@ public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** Key details provided by the user for rotate key operation for Autonomous Database. */
+    private com.oracle.bmc.database.model.RotateAutonomousContainerDatabaseEncryptionKeyDetails
+            rotateAutonomousContainerDatabaseEncryptionKeyDetails;
+
+    /** Key details provided by the user for rotate key operation for Autonomous Database. */
+    public com.oracle.bmc.database.model.RotateAutonomousContainerDatabaseEncryptionKeyDetails
+            getRotateAutonomousContainerDatabaseEncryptionKeyDetails() {
+        return rotateAutonomousContainerDatabaseEncryptionKeyDetails;
+    }
+
+    /**
+     * Alternative accessor for the body parameter.
+     *
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.database.model.RotateAutonomousContainerDatabaseEncryptionKeyDetails
+            getBody$() {
+        return rotateAutonomousContainerDatabaseEncryptionKeyDetails;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RotateAutonomousContainerDatabaseEncryptionKeyRequest, java.lang.Void> {
+                    RotateAutonomousContainerDatabaseEncryptionKeyRequest,
+                    com.oracle.bmc.database.model
+                            .RotateAutonomousContainerDatabaseEncryptionKeyDetails> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
          * The Autonomous Container Database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String autonomousContainerDatabaseId = null;
 
         /**
          * The Autonomous Container Database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param autonomousContainerDatabaseId the value to set
          * @return this builder instance
@@ -156,6 +181,24 @@ public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
             return this;
         }
 
+        /** Key details provided by the user for rotate key operation for Autonomous Database. */
+        private com.oracle.bmc.database.model.RotateAutonomousContainerDatabaseEncryptionKeyDetails
+                rotateAutonomousContainerDatabaseEncryptionKeyDetails = null;
+
+        /**
+         * Key details provided by the user for rotate key operation for Autonomous Database.
+         *
+         * @param rotateAutonomousContainerDatabaseEncryptionKeyDetails the value to set
+         * @return this builder instance
+         */
+        public Builder rotateAutonomousContainerDatabaseEncryptionKeyDetails(
+                com.oracle.bmc.database.model.RotateAutonomousContainerDatabaseEncryptionKeyDetails
+                        rotateAutonomousContainerDatabaseEncryptionKeyDetails) {
+            this.rotateAutonomousContainerDatabaseEncryptionKeyDetails =
+                    rotateAutonomousContainerDatabaseEncryptionKeyDetails;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -190,6 +233,8 @@ public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            rotateAutonomousContainerDatabaseEncryptionKeyDetails(
+                    o.getRotateAutonomousContainerDatabaseEncryptionKeyDetails());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -216,6 +261,20 @@ public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
         }
 
         /**
+         * Alternative setter for the body parameter.
+         *
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(
+                com.oracle.bmc.database.model.RotateAutonomousContainerDatabaseEncryptionKeyDetails
+                        body) {
+            rotateAutonomousContainerDatabaseEncryptionKeyDetails(body);
+            return this;
+        }
+
+        /**
          * Build the instance of RotateAutonomousContainerDatabaseEncryptionKeyRequest as configured
          * by this builder
          *
@@ -233,10 +292,13 @@ public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.rotateAutonomousContainerDatabaseEncryptionKeyDetails =
+                    rotateAutonomousContainerDatabaseEncryptionKeyDetails;
             return request;
             // new
             // RotateAutonomousContainerDatabaseEncryptionKeyRequest(autonomousContainerDatabaseId,
-            // ifMatch, opcRetryToken, opcRequestId);
+            // ifMatch, opcRetryToken, opcRequestId,
+            // rotateAutonomousContainerDatabaseEncryptionKeyDetails);
         }
     }
 
@@ -250,7 +312,9 @@ public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
                 .autonomousContainerDatabaseId(autonomousContainerDatabaseId)
                 .ifMatch(ifMatch)
                 .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .rotateAutonomousContainerDatabaseEncryptionKeyDetails(
+                        rotateAutonomousContainerDatabaseEncryptionKeyDetails);
     }
 
     /**
@@ -272,6 +336,8 @@ public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",rotateAutonomousContainerDatabaseEncryptionKeyDetails=")
+                .append(String.valueOf(this.rotateAutonomousContainerDatabaseEncryptionKeyDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -292,7 +358,10 @@ public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
                         this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.rotateAutonomousContainerDatabaseEncryptionKeyDetails,
+                        other.rotateAutonomousContainerDatabaseEncryptionKeyDetails);
     }
 
     @Override
@@ -309,6 +378,12 @@ public class RotateAutonomousContainerDatabaseEncryptionKeyRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rotateAutonomousContainerDatabaseEncryptionKeyDetails == null
+                                ? 43
+                                : this.rotateAutonomousContainerDatabaseEncryptionKeyDetails
+                                        .hashCode());
         return result;
     }
 }

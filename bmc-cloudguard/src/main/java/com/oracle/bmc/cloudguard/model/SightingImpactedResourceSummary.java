@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Sighting Impacted Resource summary. <br>
+ * Summary of resources impacted by a sighting. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,7 +32,11 @@ public final class SightingImpactedResourceSummary
         "resourceName",
         "resourceType",
         "region",
-        "timeIdentified"
+        "timeIdentified",
+        "timeFirstDetected",
+        "timeLastDetected",
+        "timeFirstOccurred",
+        "timeLastOccurred"
     })
     public SightingImpactedResourceSummary(
             String id,
@@ -43,7 +47,11 @@ public final class SightingImpactedResourceSummary
             String resourceName,
             String resourceType,
             String region,
-            java.util.Date timeIdentified) {
+            java.util.Date timeIdentified,
+            java.util.Date timeFirstDetected,
+            java.util.Date timeLastDetected,
+            java.util.Date timeFirstOccurred,
+            java.util.Date timeLastOccurred) {
         super();
         this.id = id;
         this.resourceId = resourceId;
@@ -54,16 +62,20 @@ public final class SightingImpactedResourceSummary
         this.resourceType = resourceType;
         this.region = region;
         this.timeIdentified = timeIdentified;
+        this.timeFirstDetected = timeFirstDetected;
+        this.timeLastDetected = timeLastDetected;
+        this.timeFirstOccurred = timeFirstOccurred;
+        this.timeLastOccurred = timeLastOccurred;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for impacted resource */
+        /** Unique identifier for an impacted resource */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for impacted resource
+         * Unique identifier for an impacted resource
          *
          * @param id the value to set
          * @return this builder
@@ -73,12 +85,12 @@ public final class SightingImpactedResourceSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Impacted resource Id */
+        /** Impacted resource ID */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * Impacted resource Id
+         * Impacted resource ID
          *
          * @param resourceId the value to set
          * @return this builder
@@ -88,12 +100,12 @@ public final class SightingImpactedResourceSummary
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Sighting Id */
+        /** Sighting ID for impacted resource */
         @com.fasterxml.jackson.annotation.JsonProperty("sightingId")
         private String sightingId;
 
         /**
-         * Sighting Id
+         * Sighting ID for impacted resource
          *
          * @param sightingId the value to set
          * @return this builder
@@ -103,12 +115,12 @@ public final class SightingImpactedResourceSummary
             this.__explicitlySet__.add("sightingId");
             return this;
         }
-        /** Problem Id for impacted resource */
+        /** Problem ID for impacted resource */
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
-         * Problem Id for impacted resource
+         * Problem ID for impacted resource
          *
          * @param problemId the value to set
          * @return this builder
@@ -118,12 +130,12 @@ public final class SightingImpactedResourceSummary
             this.__explicitlySet__.add("problemId");
             return this;
         }
-        /** Compartment Id for impacted resource */
+        /** Compartment ID for impacted resource */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Id for impacted resource
+         * Compartment ID for impacted resource
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -178,12 +190,12 @@ public final class SightingImpactedResourceSummary
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** Time when the impacted resource is identified for given sighting. */
+        /** Date and time when the impacted resource is identified for given sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("timeIdentified")
         private java.util.Date timeIdentified;
 
         /**
-         * Time when the impacted resource is identified for given sighting.
+         * Date and time when the impacted resource is identified for given sighting
          *
          * @param timeIdentified the value to set
          * @return this builder
@@ -191,6 +203,66 @@ public final class SightingImpactedResourceSummary
         public Builder timeIdentified(java.util.Date timeIdentified) {
             this.timeIdentified = timeIdentified;
             this.__explicitlySet__.add("timeIdentified");
+            return this;
+        }
+        /** Time the activities were first detected. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
+        private java.util.Date timeFirstDetected;
+
+        /**
+         * Time the activities were first detected.
+         *
+         * @param timeFirstDetected the value to set
+         * @return this builder
+         */
+        public Builder timeFirstDetected(java.util.Date timeFirstDetected) {
+            this.timeFirstDetected = timeFirstDetected;
+            this.__explicitlySet__.add("timeFirstDetected");
+            return this;
+        }
+        /** Time the activities were last detected. Same as timeIdentified. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
+        private java.util.Date timeLastDetected;
+
+        /**
+         * Time the activities were last detected. Same as timeIdentified.
+         *
+         * @param timeLastDetected the value to set
+         * @return this builder
+         */
+        public Builder timeLastDetected(java.util.Date timeLastDetected) {
+            this.timeLastDetected = timeLastDetected;
+            this.__explicitlySet__.add("timeLastDetected");
+            return this;
+        }
+        /** Time the activities were first performed. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
+        private java.util.Date timeFirstOccurred;
+
+        /**
+         * Time the activities were first performed.
+         *
+         * @param timeFirstOccurred the value to set
+         * @return this builder
+         */
+        public Builder timeFirstOccurred(java.util.Date timeFirstOccurred) {
+            this.timeFirstOccurred = timeFirstOccurred;
+            this.__explicitlySet__.add("timeFirstOccurred");
+            return this;
+        }
+        /** Time the activities were last performed. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastOccurred")
+        private java.util.Date timeLastOccurred;
+
+        /**
+         * Time the activities were last performed.
+         *
+         * @param timeLastOccurred the value to set
+         * @return this builder
+         */
+        public Builder timeLastOccurred(java.util.Date timeLastOccurred) {
+            this.timeLastOccurred = timeLastOccurred;
+            this.__explicitlySet__.add("timeLastOccurred");
             return this;
         }
 
@@ -208,7 +280,11 @@ public final class SightingImpactedResourceSummary
                             this.resourceName,
                             this.resourceType,
                             this.region,
-                            this.timeIdentified);
+                            this.timeIdentified,
+                            this.timeFirstDetected,
+                            this.timeLastDetected,
+                            this.timeFirstOccurred,
+                            this.timeLastOccurred);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -244,6 +320,18 @@ public final class SightingImpactedResourceSummary
             if (model.wasPropertyExplicitlySet("timeIdentified")) {
                 this.timeIdentified(model.getTimeIdentified());
             }
+            if (model.wasPropertyExplicitlySet("timeFirstDetected")) {
+                this.timeFirstDetected(model.getTimeFirstDetected());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastDetected")) {
+                this.timeLastDetected(model.getTimeLastDetected());
+            }
+            if (model.wasPropertyExplicitlySet("timeFirstOccurred")) {
+                this.timeFirstOccurred(model.getTimeFirstOccurred());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastOccurred")) {
+                this.timeLastOccurred(model.getTimeLastOccurred());
+            }
             return this;
         }
     }
@@ -257,12 +345,12 @@ public final class SightingImpactedResourceSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for impacted resource */
+    /** Unique identifier for an impacted resource */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for impacted resource
+     * Unique identifier for an impacted resource
      *
      * @return the value
      */
@@ -270,12 +358,12 @@ public final class SightingImpactedResourceSummary
         return id;
     }
 
-    /** Impacted resource Id */
+    /** Impacted resource ID */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * Impacted resource Id
+     * Impacted resource ID
      *
      * @return the value
      */
@@ -283,12 +371,12 @@ public final class SightingImpactedResourceSummary
         return resourceId;
     }
 
-    /** Sighting Id */
+    /** Sighting ID for impacted resource */
     @com.fasterxml.jackson.annotation.JsonProperty("sightingId")
     private final String sightingId;
 
     /**
-     * Sighting Id
+     * Sighting ID for impacted resource
      *
      * @return the value
      */
@@ -296,12 +384,12 @@ public final class SightingImpactedResourceSummary
         return sightingId;
     }
 
-    /** Problem Id for impacted resource */
+    /** Problem ID for impacted resource */
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
-     * Problem Id for impacted resource
+     * Problem ID for impacted resource
      *
      * @return the value
      */
@@ -309,12 +397,12 @@ public final class SightingImpactedResourceSummary
         return problemId;
     }
 
-    /** Compartment Id for impacted resource */
+    /** Compartment ID for impacted resource */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Id for impacted resource
+     * Compartment ID for impacted resource
      *
      * @return the value
      */
@@ -361,17 +449,69 @@ public final class SightingImpactedResourceSummary
         return region;
     }
 
-    /** Time when the impacted resource is identified for given sighting. */
+    /** Date and time when the impacted resource is identified for given sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("timeIdentified")
     private final java.util.Date timeIdentified;
 
     /**
-     * Time when the impacted resource is identified for given sighting.
+     * Date and time when the impacted resource is identified for given sighting
      *
      * @return the value
      */
     public java.util.Date getTimeIdentified() {
         return timeIdentified;
+    }
+
+    /** Time the activities were first detected. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
+    private final java.util.Date timeFirstDetected;
+
+    /**
+     * Time the activities were first detected.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeFirstDetected() {
+        return timeFirstDetected;
+    }
+
+    /** Time the activities were last detected. Same as timeIdentified. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
+    private final java.util.Date timeLastDetected;
+
+    /**
+     * Time the activities were last detected. Same as timeIdentified.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastDetected() {
+        return timeLastDetected;
+    }
+
+    /** Time the activities were first performed. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
+    private final java.util.Date timeFirstOccurred;
+
+    /**
+     * Time the activities were first performed.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeFirstOccurred() {
+        return timeFirstOccurred;
+    }
+
+    /** Time the activities were last performed. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastOccurred")
+    private final java.util.Date timeLastOccurred;
+
+    /**
+     * Time the activities were last performed.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastOccurred() {
+        return timeLastOccurred;
     }
 
     @Override
@@ -398,6 +538,10 @@ public final class SightingImpactedResourceSummary
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", timeIdentified=").append(String.valueOf(this.timeIdentified));
+        sb.append(", timeFirstDetected=").append(String.valueOf(this.timeFirstDetected));
+        sb.append(", timeLastDetected=").append(String.valueOf(this.timeLastDetected));
+        sb.append(", timeFirstOccurred=").append(String.valueOf(this.timeFirstOccurred));
+        sb.append(", timeLastOccurred=").append(String.valueOf(this.timeLastOccurred));
         sb.append(")");
         return sb.toString();
     }
@@ -421,6 +565,10 @@ public final class SightingImpactedResourceSummary
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.timeIdentified, other.timeIdentified)
+                && java.util.Objects.equals(this.timeFirstDetected, other.timeFirstDetected)
+                && java.util.Objects.equals(this.timeLastDetected, other.timeLastDetected)
+                && java.util.Objects.equals(this.timeFirstOccurred, other.timeFirstOccurred)
+                && java.util.Objects.equals(this.timeLastOccurred, other.timeLastOccurred)
                 && super.equals(other);
     }
 
@@ -441,6 +589,18 @@ public final class SightingImpactedResourceSummary
         result =
                 (result * PRIME)
                         + (this.timeIdentified == null ? 43 : this.timeIdentified.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstDetected == null ? 43 : this.timeFirstDetected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastDetected == null ? 43 : this.timeLastDetected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstOccurred == null ? 43 : this.timeFirstOccurred.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastOccurred == null ? 43 : this.timeLastOccurred.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

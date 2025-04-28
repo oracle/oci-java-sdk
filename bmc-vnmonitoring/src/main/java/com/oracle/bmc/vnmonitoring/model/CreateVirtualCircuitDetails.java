@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -122,15 +122,15 @@ public final class CreateVirtualCircuitDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to contain the virtual circuit.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to contain the virtual circuit.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to contain the virtual circuit.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to contain the virtual circuit.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -164,7 +164,7 @@ public final class CreateVirtualCircuitDetails
          * The routing policy sets how routing information about the Oracle cloud is shared over a
          * public virtual circuit. Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code
          * REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}. See [Route
-         * Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
+         * Filtering](https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
          * for details. By default, routing information is shared for all routes in the same market.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routingPolicy")
@@ -174,7 +174,7 @@ public final class CreateVirtualCircuitDetails
          * The routing policy sets how routing information about the Oracle cloud is shared over a
          * public virtual circuit. Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code
          * REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}. See [Route
-         * Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
+         * Filtering](https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
          * for details. By default, routing information is shared for all routes in the same market.
          *
          * @param routingPolicy the value to set
@@ -348,16 +348,16 @@ public final class CreateVirtualCircuitDetails
         }
         /**
          * For private virtual circuits only. The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the {@link Drg} that this virtual circuit uses.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@link Drg} that this virtual circuit uses.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
         private String gatewayId;
 
         /**
          * For private virtual circuits only. The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the {@link Drg} that this virtual circuit uses.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@link Drg} that this virtual circuit uses.
          *
          * @param gatewayId the value to set
          * @return this builder
@@ -389,9 +389,9 @@ public final class CreateVirtualCircuitDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service offered by the provider (if you're connecting via a provider). To get a
-         * list of the available service offerings, see {@link
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * service offered by the provider (if you're connecting via a provider). To get a list of
+         * the available service offerings, see {@link
          * #listFastConnectProviderServices(ListFastConnectProviderServicesRequest)
          * listFastConnectProviderServices}.
          */
@@ -399,9 +399,9 @@ public final class CreateVirtualCircuitDetails
         private String providerServiceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service offered by the provider (if you're connecting via a provider). To get a
-         * list of the available service offerings, see {@link
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * service offered by the provider (if you're connecting via a provider). To get a list of
+         * the available service offerings, see {@link
          * #listFastConnectProviderServices(ListFastConnectProviderServicesRequest)
          * listFastConnectProviderServices}.
          *
@@ -666,15 +666,15 @@ public final class CreateVirtualCircuitDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to contain the virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to contain the virtual circuit.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to contain the virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to contain the virtual circuit.
      *
      * @return the value
      */
@@ -738,7 +738,7 @@ public final class CreateVirtualCircuitDetails
      * The routing policy sets how routing information about the Oracle cloud is shared over a
      * public virtual circuit. Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code
      * REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}. See [Route
-     * Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
+     * Filtering](https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
      * for details. By default, routing information is shared for all routes in the same market.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routingPolicy")
@@ -748,7 +748,7 @@ public final class CreateVirtualCircuitDetails
      * The routing policy sets how routing information about the Oracle cloud is shared over a
      * public virtual circuit. Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code
      * REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}. See [Route
-     * Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
+     * Filtering](https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
      * for details. By default, routing information is shared for all routes in the same market.
      *
      * @return the value
@@ -939,16 +939,16 @@ public final class CreateVirtualCircuitDetails
 
     /**
      * For private virtual circuits only. The
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * {@link Drg} that this virtual circuit uses.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link
+     * Drg} that this virtual circuit uses.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
     private final String gatewayId;
 
     /**
      * For private virtual circuits only. The
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * {@link Drg} that this virtual circuit uses.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link
+     * Drg} that this virtual circuit uses.
      *
      * @return the value
      */
@@ -976,9 +976,9 @@ public final class CreateVirtualCircuitDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service offered by the provider (if you're connecting via a provider). To get a list of
-     * the available service offerings, see {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * service offered by the provider (if you're connecting via a provider). To get a list of the
+     * available service offerings, see {@link
      * #listFastConnectProviderServices(ListFastConnectProviderServicesRequest)
      * listFastConnectProviderServices}.
      */
@@ -986,9 +986,9 @@ public final class CreateVirtualCircuitDetails
     private final String providerServiceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service offered by the provider (if you're connecting via a provider). To get a list of
-     * the available service offerings, see {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * service offered by the provider (if you're connecting via a provider). To get a list of the
+     * available service offerings, see {@link
      * #listFastConnectProviderServices(ListFastConnectProviderServicesRequest)
      * listFastConnectProviderServices}.
      *

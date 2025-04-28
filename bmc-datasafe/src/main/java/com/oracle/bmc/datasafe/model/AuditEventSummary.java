@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -57,6 +57,11 @@ public final class AuditEventSummary
         "clientId",
         "auditPolicies",
         "auditType",
+        "peerTargetDatabaseKey",
+        "trailSource",
+        "databaseUniqueName",
+        "applicationContexts",
+        "fgaPolicyName",
         "freeformTags",
         "definedTags"
     })
@@ -93,6 +98,11 @@ public final class AuditEventSummary
             String clientId,
             String auditPolicies,
             AuditType auditType,
+            Integer peerTargetDatabaseKey,
+            AuditTrailSource trailSource,
+            String databaseUniqueName,
+            String applicationContexts,
+            String fgaPolicyName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -128,6 +138,11 @@ public final class AuditEventSummary
         this.clientId = clientId;
         this.auditPolicies = auditPolicies;
         this.auditType = auditType;
+        this.peerTargetDatabaseKey = peerTargetDatabaseKey;
+        this.trailSource = trailSource;
+        this.databaseUniqueName = databaseUniqueName;
+        this.applicationContexts = applicationContexts;
+        this.fgaPolicyName = fgaPolicyName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -150,15 +165,15 @@ public final class AuditEventSummary
             return this;
         }
         /**
-         * The OCID of the compartment containing the audit event. This is the same as that of audit
-         * profile of the target database resource compartment.
+         * The OCID of the compartment containing the audit event. The compartment is the same as
+         * that of audit profile of the target database resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment containing the audit event. This is the same as that of audit
-         * profile of the target database resource compartment.
+         * The OCID of the compartment containing the audit event. The compartment is the same as
+         * that of audit profile of the target database resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -251,12 +266,12 @@ public final class AuditEventSummary
             this.__explicitlySet__.add("targetClass");
             return this;
         }
-        /** The time of the audit event occurrence in the target database. */
+        /** The time that the audit event occurs in the target database. */
         @com.fasterxml.jackson.annotation.JsonProperty("auditEventTime")
         private java.util.Date auditEventTime;
 
         /**
-         * The time of the audit event occurrence in the target database.
+         * The time that the audit event occurs in the target database.
          *
          * @param auditEventTime the value to set
          * @return this builder
@@ -299,15 +314,15 @@ public final class AuditEventSummary
             return this;
         }
         /**
-         * The name of the action executed by the user on the target database. i.e ALTER, CREATE,
-         * DROP.
+         * The name of the action executed by the user on the target database. For example ALTER,
+         * CREATE or DROP.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private String operation;
 
         /**
-         * The name of the action executed by the user on the target database. i.e ALTER, CREATE,
-         * DROP.
+         * The name of the action executed by the user on the target database. For example ALTER,
+         * CREATE or DROP.
          *
          * @param operation the value to set
          * @return this builder
@@ -333,15 +348,15 @@ public final class AuditEventSummary
             return this;
         }
         /**
-         * The name of the detail action executed by the user on the target database. i.e ALTER
-         * SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+         * The name of the detail action executed by the user on the target database. For example
+         * ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("eventName")
         private String eventName;
 
         /**
-         * The name of the detail action executed by the user on the target database. i.e ALTER
-         * SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+         * The name of the detail action executed by the user on the target database. For example
+         * ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
          *
          * @param eventName the value to set
          * @return this builder
@@ -366,12 +381,12 @@ public final class AuditEventSummary
             this.__explicitlySet__.add("errorCode");
             return this;
         }
-        /** The detailed message on why the Error occurred. */
+        /** The detailed message on why the error occurred. */
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
-         * The detailed message on why the Error occurred.
+         * The detailed message on why the error occurred.
          *
          * @param errorMessage the value to set
          * @return this builder
@@ -382,15 +397,15 @@ public final class AuditEventSummary
             return this;
         }
         /**
-         * The type of the object in the source database affected by the action. i.e PL/SQL,
-         * SYNONYM, PACKAGE BODY.
+         * The type of the object in the source database affected by the action. For example PL/SQL,
+         * SYNONYM or PACKAGE BODY.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private String objectType;
 
         /**
-         * The type of the object in the source database affected by the action. i.e PL/SQL,
-         * SYNONYM, PACKAGE BODY.
+         * The type of the object in the source database affected by the action. For example PL/SQL,
+         * SYNONYM or PACKAGE BODY.
          *
          * @param objectType the value to set
          * @return this builder
@@ -510,14 +525,14 @@ public final class AuditEventSummary
             return this;
         }
         /**
-         * The application from which the audit event was generated. Examples SQL Plus or SQL
+         * The application from which the audit event was generated. For example SQL Plus or SQL
          * Developer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
         private String clientProgram;
 
         /**
-         * The application from which the audit event was generated. Examples SQL Plus or SQL
+         * The application from which the audit event was generated. For example SQL Plus or SQL
          * Developer.
          *
          * @param clientProgram the value to set
@@ -652,10 +667,89 @@ public final class AuditEventSummary
             this.__explicitlySet__.add("auditType");
             return this;
         }
+        /** The secondary id assigned for the peer database registered with Data Safe. */
+        @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabaseKey")
+        private Integer peerTargetDatabaseKey;
+
+        /**
+         * The secondary id assigned for the peer database registered with Data Safe.
+         *
+         * @param peerTargetDatabaseKey the value to set
+         * @return this builder
+         */
+        public Builder peerTargetDatabaseKey(Integer peerTargetDatabaseKey) {
+            this.peerTargetDatabaseKey = peerTargetDatabaseKey;
+            this.__explicitlySet__.add("peerTargetDatabaseKey");
+            return this;
+        }
+        /** The underlying source of unified audit trail. */
+        @com.fasterxml.jackson.annotation.JsonProperty("trailSource")
+        private AuditTrailSource trailSource;
+
+        /**
+         * The underlying source of unified audit trail.
+         *
+         * @param trailSource the value to set
+         * @return this builder
+         */
+        public Builder trailSource(AuditTrailSource trailSource) {
+            this.trailSource = trailSource;
+            this.__explicitlySet__.add("trailSource");
+            return this;
+        }
+        /** Unique name of the database associated to the peer target database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseUniqueName")
+        private String databaseUniqueName;
+
+        /**
+         * Unique name of the database associated to the peer target database.
+         *
+         * @param databaseUniqueName the value to set
+         * @return this builder
+         */
+        public Builder databaseUniqueName(String databaseUniqueName) {
+            this.databaseUniqueName = databaseUniqueName;
+            this.__explicitlySet__.add("databaseUniqueName");
+            return this;
+        }
+        /**
+         * Semicolon-seperated list of application context namespace, attribute, value information
+         * in (APPCTX_NSPACE,APPCTX_ATTRIBUTE=<value>) format.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("applicationContexts")
+        private String applicationContexts;
+
+        /**
+         * Semicolon-seperated list of application context namespace, attribute, value information
+         * in (APPCTX_NSPACE,APPCTX_ATTRIBUTE=<value>) format.
+         *
+         * @param applicationContexts the value to set
+         * @return this builder
+         */
+        public Builder applicationContexts(String applicationContexts) {
+            this.applicationContexts = applicationContexts;
+            this.__explicitlySet__.add("applicationContexts");
+            return this;
+        }
+        /** Fine-grained auditing (FGA) policy name that generated this audit record. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fgaPolicyName")
+        private String fgaPolicyName;
+
+        /**
+         * Fine-grained auditing (FGA) policy name that generated this audit record.
+         *
+         * @param fgaPolicyName the value to set
+         * @return this builder
+         */
+        public Builder fgaPolicyName(String fgaPolicyName) {
+            this.fgaPolicyName = fgaPolicyName;
+            this.__explicitlySet__.add("fgaPolicyName");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -665,7 +759,7 @@ public final class AuditEventSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -680,9 +774,8 @@ public final class AuditEventSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -690,9 +783,8 @@ public final class AuditEventSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -742,6 +834,11 @@ public final class AuditEventSummary
                             this.clientId,
                             this.auditPolicies,
                             this.auditType,
+                            this.peerTargetDatabaseKey,
+                            this.trailSource,
+                            this.databaseUniqueName,
+                            this.applicationContexts,
+                            this.fgaPolicyName,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -848,6 +945,21 @@ public final class AuditEventSummary
             if (model.wasPropertyExplicitlySet("auditType")) {
                 this.auditType(model.getAuditType());
             }
+            if (model.wasPropertyExplicitlySet("peerTargetDatabaseKey")) {
+                this.peerTargetDatabaseKey(model.getPeerTargetDatabaseKey());
+            }
+            if (model.wasPropertyExplicitlySet("trailSource")) {
+                this.trailSource(model.getTrailSource());
+            }
+            if (model.wasPropertyExplicitlySet("databaseUniqueName")) {
+                this.databaseUniqueName(model.getDatabaseUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("applicationContexts")) {
+                this.applicationContexts(model.getApplicationContexts());
+            }
+            if (model.wasPropertyExplicitlySet("fgaPolicyName")) {
+                this.fgaPolicyName(model.getFgaPolicyName());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -881,15 +993,15 @@ public final class AuditEventSummary
     }
 
     /**
-     * The OCID of the compartment containing the audit event. This is the same as that of audit
-     * profile of the target database resource compartment.
+     * The OCID of the compartment containing the audit event. The compartment is the same as that
+     * of audit profile of the target database resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment containing the audit event. This is the same as that of audit
-     * profile of the target database resource compartment.
+     * The OCID of the compartment containing the audit event. The compartment is the same as that
+     * of audit profile of the target database resource.
      *
      * @return the value
      */
@@ -1067,12 +1179,12 @@ public final class AuditEventSummary
         return targetClass;
     }
 
-    /** The time of the audit event occurrence in the target database. */
+    /** The time that the audit event occurs in the target database. */
     @com.fasterxml.jackson.annotation.JsonProperty("auditEventTime")
     private final java.util.Date auditEventTime;
 
     /**
-     * The time of the audit event occurrence in the target database.
+     * The time that the audit event occurs in the target database.
      *
      * @return the value
      */
@@ -1107,13 +1219,15 @@ public final class AuditEventSummary
     }
 
     /**
-     * The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+     * The name of the action executed by the user on the target database. For example ALTER, CREATE
+     * or DROP.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final String operation;
 
     /**
-     * The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+     * The name of the action executed by the user on the target database. For example ALTER, CREATE
+     * or DROP.
      *
      * @return the value
      */
@@ -1181,15 +1295,15 @@ public final class AuditEventSummary
     }
 
     /**
-     * The name of the detail action executed by the user on the target database. i.e ALTER
-     * SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+     * The name of the detail action executed by the user on the target database. For example ALTER
+     * SEQUENCE, CREATE TRIGGER or CREATE INDEX.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("eventName")
     private final String eventName;
 
     /**
-     * The name of the detail action executed by the user on the target database. i.e ALTER
-     * SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+     * The name of the detail action executed by the user on the target database. For example ALTER
+     * SEQUENCE, CREATE TRIGGER or CREATE INDEX.
      *
      * @return the value
      */
@@ -1210,12 +1324,12 @@ public final class AuditEventSummary
         return errorCode;
     }
 
-    /** The detailed message on why the Error occurred. */
+    /** The detailed message on why the error occurred. */
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
-     * The detailed message on why the Error occurred.
+     * The detailed message on why the error occurred.
      *
      * @return the value
      */
@@ -1224,15 +1338,15 @@ public final class AuditEventSummary
     }
 
     /**
-     * The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM,
-     * PACKAGE BODY.
+     * The type of the object in the source database affected by the action. For example PL/SQL,
+     * SYNONYM or PACKAGE BODY.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final String objectType;
 
     /**
-     * The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM,
-     * PACKAGE BODY.
+     * The type of the object in the source database affected by the action. For example PL/SQL,
+     * SYNONYM or PACKAGE BODY.
      *
      * @return the value
      */
@@ -1336,13 +1450,15 @@ public final class AuditEventSummary
     }
 
     /**
-     * The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+     * The application from which the audit event was generated. For example SQL Plus or SQL
+     * Developer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
     private final String clientProgram;
 
     /**
-     * The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+     * The application from which the audit event was generated. For example SQL Plus or SQL
+     * Developer.
      *
      * @return the value
      */
@@ -1555,10 +1671,79 @@ public final class AuditEventSummary
         return auditType;
     }
 
+    /** The secondary id assigned for the peer database registered with Data Safe. */
+    @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabaseKey")
+    private final Integer peerTargetDatabaseKey;
+
+    /**
+     * The secondary id assigned for the peer database registered with Data Safe.
+     *
+     * @return the value
+     */
+    public Integer getPeerTargetDatabaseKey() {
+        return peerTargetDatabaseKey;
+    }
+
+    /** The underlying source of unified audit trail. */
+    @com.fasterxml.jackson.annotation.JsonProperty("trailSource")
+    private final AuditTrailSource trailSource;
+
+    /**
+     * The underlying source of unified audit trail.
+     *
+     * @return the value
+     */
+    public AuditTrailSource getTrailSource() {
+        return trailSource;
+    }
+
+    /** Unique name of the database associated to the peer target database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseUniqueName")
+    private final String databaseUniqueName;
+
+    /**
+     * Unique name of the database associated to the peer target database.
+     *
+     * @return the value
+     */
+    public String getDatabaseUniqueName() {
+        return databaseUniqueName;
+    }
+
+    /**
+     * Semicolon-seperated list of application context namespace, attribute, value information in
+     * (APPCTX_NSPACE,APPCTX_ATTRIBUTE=<value>) format.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationContexts")
+    private final String applicationContexts;
+
+    /**
+     * Semicolon-seperated list of application context namespace, attribute, value information in
+     * (APPCTX_NSPACE,APPCTX_ATTRIBUTE=<value>) format.
+     *
+     * @return the value
+     */
+    public String getApplicationContexts() {
+        return applicationContexts;
+    }
+
+    /** Fine-grained auditing (FGA) policy name that generated this audit record. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fgaPolicyName")
+    private final String fgaPolicyName;
+
+    /**
+     * Fine-grained auditing (FGA) policy name that generated this audit record.
+     *
+     * @return the value
+     */
+    public String getFgaPolicyName() {
+        return fgaPolicyName;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1568,7 +1753,7 @@ public final class AuditEventSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1581,9 +1766,8 @@ public final class AuditEventSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -1591,9 +1775,8 @@ public final class AuditEventSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */
@@ -1649,6 +1832,11 @@ public final class AuditEventSummary
         sb.append(", clientId=").append(String.valueOf(this.clientId));
         sb.append(", auditPolicies=").append(String.valueOf(this.auditPolicies));
         sb.append(", auditType=").append(String.valueOf(this.auditType));
+        sb.append(", peerTargetDatabaseKey=").append(String.valueOf(this.peerTargetDatabaseKey));
+        sb.append(", trailSource=").append(String.valueOf(this.trailSource));
+        sb.append(", databaseUniqueName=").append(String.valueOf(this.databaseUniqueName));
+        sb.append(", applicationContexts=").append(String.valueOf(this.applicationContexts));
+        sb.append(", fgaPolicyName=").append(String.valueOf(this.fgaPolicyName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -1698,6 +1886,11 @@ public final class AuditEventSummary
                 && java.util.Objects.equals(this.clientId, other.clientId)
                 && java.util.Objects.equals(this.auditPolicies, other.auditPolicies)
                 && java.util.Objects.equals(this.auditType, other.auditType)
+                && java.util.Objects.equals(this.peerTargetDatabaseKey, other.peerTargetDatabaseKey)
+                && java.util.Objects.equals(this.trailSource, other.trailSource)
+                && java.util.Objects.equals(this.databaseUniqueName, other.databaseUniqueName)
+                && java.util.Objects.equals(this.applicationContexts, other.applicationContexts)
+                && java.util.Objects.equals(this.fgaPolicyName, other.fgaPolicyName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -1759,6 +1952,25 @@ public final class AuditEventSummary
                 (result * PRIME)
                         + (this.auditPolicies == null ? 43 : this.auditPolicies.hashCode());
         result = (result * PRIME) + (this.auditType == null ? 43 : this.auditType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerTargetDatabaseKey == null
+                                ? 43
+                                : this.peerTargetDatabaseKey.hashCode());
+        result = (result * PRIME) + (this.trailSource == null ? 43 : this.trailSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseUniqueName == null
+                                ? 43
+                                : this.databaseUniqueName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationContexts == null
+                                ? 43
+                                : this.applicationContexts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fgaPolicyName == null ? 43 : this.fgaPolicyName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

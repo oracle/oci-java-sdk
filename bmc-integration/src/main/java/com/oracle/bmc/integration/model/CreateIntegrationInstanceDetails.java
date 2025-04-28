@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.integration.model;
@@ -40,6 +40,7 @@ public final class CreateIntegrationInstanceDetails
         "alternateCustomEndpoints",
         "consumptionModel",
         "isFileServerEnabled",
+        "isDisasterRecoveryEnabled",
         "networkEndpointDetails",
         "shape",
         "domainId"
@@ -58,6 +59,7 @@ public final class CreateIntegrationInstanceDetails
             java.util.List<CreateCustomEndpointDetails> alternateCustomEndpoints,
             ConsumptionModel consumptionModel,
             Boolean isFileServerEnabled,
+            Boolean isDisasterRecoveryEnabled,
             NetworkEndpointDetails networkEndpointDetails,
             Shape shape,
             String domainId) {
@@ -75,6 +77,7 @@ public final class CreateIntegrationInstanceDetails
         this.alternateCustomEndpoints = alternateCustomEndpoints;
         this.consumptionModel = consumptionModel;
         this.isFileServerEnabled = isFileServerEnabled;
+        this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
         this.networkEndpointDetails = networkEndpointDetails;
         this.shape = shape;
         this.domainId = domainId;
@@ -297,6 +300,21 @@ public final class CreateIntegrationInstanceDetails
             this.__explicitlySet__.add("isFileServerEnabled");
             return this;
         }
+        /** Is Disaster Recovery enabled or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDisasterRecoveryEnabled")
+        private Boolean isDisasterRecoveryEnabled;
+
+        /**
+         * Is Disaster Recovery enabled or not.
+         *
+         * @param isDisasterRecoveryEnabled the value to set
+         * @return this builder
+         */
+        public Builder isDisasterRecoveryEnabled(Boolean isDisasterRecoveryEnabled) {
+            this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
+            this.__explicitlySet__.add("isDisasterRecoveryEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
         private NetworkEndpointDetails networkEndpointDetails;
@@ -362,6 +380,7 @@ public final class CreateIntegrationInstanceDetails
                             this.alternateCustomEndpoints,
                             this.consumptionModel,
                             this.isFileServerEnabled,
+                            this.isDisasterRecoveryEnabled,
                             this.networkEndpointDetails,
                             this.shape,
                             this.domainId);
@@ -411,6 +430,9 @@ public final class CreateIntegrationInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("isFileServerEnabled")) {
                 this.isFileServerEnabled(model.getIsFileServerEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isDisasterRecoveryEnabled")) {
+                this.isDisasterRecoveryEnabled(model.getIsDisasterRecoveryEnabled());
             }
             if (model.wasPropertyExplicitlySet("networkEndpointDetails")) {
                 this.networkEndpointDetails(model.getNetworkEndpointDetails());
@@ -469,6 +491,7 @@ public final class CreateIntegrationInstanceDetails
         Enterprise("ENTERPRISE"),
         Standardx("STANDARDX"),
         Enterprisex("ENTERPRISEX"),
+        Healthcare("HEALTHCARE"),
         ;
 
         private final String value;
@@ -696,6 +719,19 @@ public final class CreateIntegrationInstanceDetails
         return isFileServerEnabled;
     }
 
+    /** Is Disaster Recovery enabled or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDisasterRecoveryEnabled")
+    private final Boolean isDisasterRecoveryEnabled;
+
+    /**
+     * Is Disaster Recovery enabled or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsDisasterRecoveryEnabled() {
+        return isDisasterRecoveryEnabled;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
     private final NetworkEndpointDetails networkEndpointDetails;
 
@@ -798,6 +834,8 @@ public final class CreateIntegrationInstanceDetails
                 .append(String.valueOf(this.alternateCustomEndpoints));
         sb.append(", consumptionModel=").append(String.valueOf(this.consumptionModel));
         sb.append(", isFileServerEnabled=").append(String.valueOf(this.isFileServerEnabled));
+        sb.append(", isDisasterRecoveryEnabled=")
+                .append(String.valueOf(this.isDisasterRecoveryEnabled));
         sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", domainId=").append(String.valueOf(this.domainId));
@@ -831,6 +869,8 @@ public final class CreateIntegrationInstanceDetails
                         this.alternateCustomEndpoints, other.alternateCustomEndpoints)
                 && java.util.Objects.equals(this.consumptionModel, other.consumptionModel)
                 && java.util.Objects.equals(this.isFileServerEnabled, other.isFileServerEnabled)
+                && java.util.Objects.equals(
+                        this.isDisasterRecoveryEnabled, other.isDisasterRecoveryEnabled)
                 && java.util.Objects.equals(
                         this.networkEndpointDetails, other.networkEndpointDetails)
                 && java.util.Objects.equals(this.shape, other.shape)
@@ -877,6 +917,11 @@ public final class CreateIntegrationInstanceDetails
                         + (this.isFileServerEnabled == null
                                 ? 43
                                 : this.isFileServerEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDisasterRecoveryEnabled == null
+                                ? 43
+                                : this.isDisasterRecoveryEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkEndpointDetails == null

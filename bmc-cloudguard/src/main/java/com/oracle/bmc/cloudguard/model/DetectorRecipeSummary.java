@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of Detector recipe <br>
+ * Summary information for a detector recipe. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -30,6 +30,7 @@ public final class DetectorRecipeSummary
         "compartmentId",
         "sourceDetectorRecipeId",
         "owner",
+        "detectorRecipeType",
         "detector",
         "detectorRules",
         "timeCreated",
@@ -47,6 +48,7 @@ public final class DetectorRecipeSummary
             String compartmentId,
             String sourceDetectorRecipeId,
             OwnerType owner,
+            DetectorRecipeEnum detectorRecipeType,
             DetectorEnum detector,
             java.util.List<DetectorRecipeDetectorRule> detectorRules,
             java.util.Date timeCreated,
@@ -63,6 +65,7 @@ public final class DetectorRecipeSummary
         this.compartmentId = compartmentId;
         this.sourceDetectorRecipeId = sourceDetectorRecipeId;
         this.owner = owner;
+        this.detectorRecipeType = detectorRecipeType;
         this.detector = detector;
         this.detectorRules = detectorRules;
         this.timeCreated = timeCreated;
@@ -76,12 +79,12 @@ public final class DetectorRecipeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Ocid for detector recipe */
+        /** OCID for detector recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Ocid for detector recipe
+         * OCID for detector recipe
          *
          * @param id the value to set
          * @return this builder
@@ -91,12 +94,12 @@ public final class DetectorRecipeSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** DisplayName of detector recipe */
+        /** Display name for detector recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * DisplayName of detector recipe
+         * Display name for detector recipe
          *
          * @param displayName the value to set
          * @return this builder
@@ -121,12 +124,12 @@ public final class DetectorRecipeSummary
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** compartmentId of detector recipe */
+        /** Compartment OCID of detector recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * compartmentId of detector recipe
+         * Compartment OCID of detector recipe
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -136,12 +139,12 @@ public final class DetectorRecipeSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Recipe Ocid of the Source Recipe to be cloned */
+        /** Recipe OCID of the source recipe to be cloned */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDetectorRecipeId")
         private String sourceDetectorRecipeId;
 
         /**
-         * Recipe Ocid of the Source Recipe to be cloned
+         * Recipe OCID of the source recipe to be cloned
          *
          * @param sourceDetectorRecipeId the value to set
          * @return this builder
@@ -151,12 +154,12 @@ public final class DetectorRecipeSummary
             this.__explicitlySet__.add("sourceDetectorRecipeId");
             return this;
         }
-        /** Owner of detector recipe */
+        /** Owner of the detector recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private OwnerType owner;
 
         /**
-         * Owner of detector recipe
+         * Owner of the detector recipe
          *
          * @param owner the value to set
          * @return this builder
@@ -164,6 +167,21 @@ public final class DetectorRecipeSummary
         public Builder owner(OwnerType owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
+            return this;
+        }
+        /** Recipe type ( STANDARD, ENTERPRISE ) */
+        @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeType")
+        private DetectorRecipeEnum detectorRecipeType;
+
+        /**
+         * Recipe type ( STANDARD, ENTERPRISE )
+         *
+         * @param detectorRecipeType the value to set
+         * @return this builder
+         */
+        public Builder detectorRecipeType(DetectorRecipeEnum detectorRecipeType) {
+            this.detectorRecipeType = detectorRecipeType;
+            this.__explicitlySet__.add("detectorRecipeType");
             return this;
         }
         /** Type of detector */
@@ -181,12 +199,12 @@ public final class DetectorRecipeSummary
             this.__explicitlySet__.add("detector");
             return this;
         }
-        /** List of detetor rules for the detector type */
+        /** List of detector rules for the detector type */
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
         private java.util.List<DetectorRecipeDetectorRule> detectorRules;
 
         /**
-         * List of detetor rules for the detector type
+         * List of detector rules for the detector type
          *
          * @param detectorRules the value to set
          * @return this builder
@@ -211,12 +229,12 @@ public final class DetectorRecipeSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time the detector recipe was updated. Format defined by RFC3339. */
+        /** The date and time the detector recipe was last updated. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the detector recipe was updated. Format defined by RFC3339.
+         * The date and time the detector recipe was last updated. Format defined by RFC3339.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -226,12 +244,12 @@ public final class DetectorRecipeSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the resource. */
+        /** The current lifecycle state of the resource */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -302,7 +320,7 @@ public final class DetectorRecipeSummary
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -313,7 +331,7 @@ public final class DetectorRecipeSummary
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -339,6 +357,7 @@ public final class DetectorRecipeSummary
                             this.compartmentId,
                             this.sourceDetectorRecipeId,
                             this.owner,
+                            this.detectorRecipeType,
                             this.detector,
                             this.detectorRules,
                             this.timeCreated,
@@ -373,6 +392,9 @@ public final class DetectorRecipeSummary
             }
             if (model.wasPropertyExplicitlySet("owner")) {
                 this.owner(model.getOwner());
+            }
+            if (model.wasPropertyExplicitlySet("detectorRecipeType")) {
+                this.detectorRecipeType(model.getDetectorRecipeType());
             }
             if (model.wasPropertyExplicitlySet("detector")) {
                 this.detector(model.getDetector());
@@ -414,12 +436,12 @@ public final class DetectorRecipeSummary
         return new Builder().copy(this);
     }
 
-    /** Ocid for detector recipe */
+    /** OCID for detector recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Ocid for detector recipe
+     * OCID for detector recipe
      *
      * @return the value
      */
@@ -427,12 +449,12 @@ public final class DetectorRecipeSummary
         return id;
     }
 
-    /** DisplayName of detector recipe */
+    /** Display name for detector recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * DisplayName of detector recipe
+     * Display name for detector recipe
      *
      * @return the value
      */
@@ -453,12 +475,12 @@ public final class DetectorRecipeSummary
         return description;
     }
 
-    /** compartmentId of detector recipe */
+    /** Compartment OCID of detector recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * compartmentId of detector recipe
+     * Compartment OCID of detector recipe
      *
      * @return the value
      */
@@ -466,12 +488,12 @@ public final class DetectorRecipeSummary
         return compartmentId;
     }
 
-    /** Recipe Ocid of the Source Recipe to be cloned */
+    /** Recipe OCID of the source recipe to be cloned */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetectorRecipeId")
     private final String sourceDetectorRecipeId;
 
     /**
-     * Recipe Ocid of the Source Recipe to be cloned
+     * Recipe OCID of the source recipe to be cloned
      *
      * @return the value
      */
@@ -479,17 +501,30 @@ public final class DetectorRecipeSummary
         return sourceDetectorRecipeId;
     }
 
-    /** Owner of detector recipe */
+    /** Owner of the detector recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final OwnerType owner;
 
     /**
-     * Owner of detector recipe
+     * Owner of the detector recipe
      *
      * @return the value
      */
     public OwnerType getOwner() {
         return owner;
+    }
+
+    /** Recipe type ( STANDARD, ENTERPRISE ) */
+    @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeType")
+    private final DetectorRecipeEnum detectorRecipeType;
+
+    /**
+     * Recipe type ( STANDARD, ENTERPRISE )
+     *
+     * @return the value
+     */
+    public DetectorRecipeEnum getDetectorRecipeType() {
+        return detectorRecipeType;
     }
 
     /** Type of detector */
@@ -505,12 +540,12 @@ public final class DetectorRecipeSummary
         return detector;
     }
 
-    /** List of detetor rules for the detector type */
+    /** List of detector rules for the detector type */
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
     private final java.util.List<DetectorRecipeDetectorRule> detectorRules;
 
     /**
-     * List of detetor rules for the detector type
+     * List of detector rules for the detector type
      *
      * @return the value
      */
@@ -531,12 +566,12 @@ public final class DetectorRecipeSummary
         return timeCreated;
     }
 
-    /** The date and time the detector recipe was updated. Format defined by RFC3339. */
+    /** The date and time the detector recipe was last updated. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the detector recipe was updated. Format defined by RFC3339.
+     * The date and time the detector recipe was last updated. Format defined by RFC3339.
      *
      * @return the value
      */
@@ -544,12 +579,12 @@ public final class DetectorRecipeSummary
         return timeUpdated;
     }
 
-    /** The current state of the resource. */
+    /** The current lifecycle state of the resource */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      *
      * @return the value
      */
@@ -611,7 +646,7 @@ public final class DetectorRecipeSummary
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -622,7 +657,7 @@ public final class DetectorRecipeSummary
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -654,6 +689,7 @@ public final class DetectorRecipeSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", sourceDetectorRecipeId=").append(String.valueOf(this.sourceDetectorRecipeId));
         sb.append(", owner=").append(String.valueOf(this.owner));
+        sb.append(", detectorRecipeType=").append(String.valueOf(this.detectorRecipeType));
         sb.append(", detector=").append(String.valueOf(this.detector));
         sb.append(", detectorRules=").append(String.valueOf(this.detectorRules));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -684,6 +720,7 @@ public final class DetectorRecipeSummary
                 && java.util.Objects.equals(
                         this.sourceDetectorRecipeId, other.sourceDetectorRecipeId)
                 && java.util.Objects.equals(this.owner, other.owner)
+                && java.util.Objects.equals(this.detectorRecipeType, other.detectorRecipeType)
                 && java.util.Objects.equals(this.detector, other.detector)
                 && java.util.Objects.equals(this.detectorRules, other.detectorRules)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -712,6 +749,11 @@ public final class DetectorRecipeSummary
                                 ? 43
                                 : this.sourceDetectorRecipeId.hashCode());
         result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detectorRecipeType == null
+                                ? 43
+                                : this.detectorRecipeType.hashCode());
         result = (result * PRIME) + (this.detector == null ? 43 : this.detector.hashCode());
         result =
                 (result * PRIME)

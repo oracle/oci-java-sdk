@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -22,6 +22,12 @@ package com.oracle.bmc.jms.model;
         property = "kind",
         defaultImpl = WorkItemDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DeployedApplicationWorkItemDetails.class,
+            name = "DEPLOYED_APPLICATION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = LcmWorkItemDetails.class,
+            name = "LCM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = BasicWorkItemDetails.class,
             name = "BASIC"),
@@ -99,6 +105,8 @@ public class WorkItemDetails extends com.oracle.bmc.http.client.internal.Explici
     public enum Kind implements com.oracle.bmc.http.internal.BmcEnum {
         Basic("BASIC"),
         Application("APPLICATION"),
+        Lcm("LCM"),
+        DeployedApplication("DEPLOYED_APPLICATION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

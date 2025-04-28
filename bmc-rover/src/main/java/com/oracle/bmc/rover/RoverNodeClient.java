@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.rover;
@@ -148,10 +148,10 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeRoverNodeCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -173,6 +173,7 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverNode.class,
@@ -180,7 +181,6 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", CreateRoverNodeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateRoverNodeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -204,9 +204,9 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRoverNodeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -228,13 +228,13 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getRoverNodeId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverNode.class,
                         GetRoverNodeResponse.Builder::roverNode)
                 .handleResponseHeaderString("etag", GetRoverNodeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRoverNodeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -258,13 +258,13 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("certificate")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverNodeCertificate.class,
                         GetRoverNodeCertificateResponse.Builder::roverNodeCertificate)
                 .handleResponseHeaderString("etag", GetRoverNodeCertificateResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRoverNodeCertificateResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -288,13 +288,13 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("encryptionKey")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverNodeEncryptionKey.class,
                         GetRoverNodeEncryptionKeyResponse.Builder::roverNodeEncryptionKey)
                 .handleResponseHeaderString("etag", GetRoverNodeEncryptionKeyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRoverNodeEncryptionKeyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -319,13 +319,13 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("jwt", request.getJwt())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverNodeGetRpt.class,
                         GetRoverNodeGetRptResponse.Builder::roverNodeGetRpt)
                 .handleResponseHeaderString("etag", GetRoverNodeGetRptResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRoverNodeGetRptResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -354,6 +354,7 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverNodeCollection.class,
                         ListRoverNodesResponse.Builder::roverNodeCollection)
@@ -363,7 +364,6 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListRoverNodesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListRoverNodesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -390,6 +390,7 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.CaBundleResponse.class,
                         RoverNodeActionRetrieveCaBundleResponse.Builder::caBundleResponse)
@@ -398,7 +399,6 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RoverNodeActionRetrieveCaBundleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -431,6 +431,7 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverNodeSetKey.class,
@@ -438,7 +439,6 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", RoverNodeActionSetKeyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", RoverNodeActionSetKeyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -468,6 +468,7 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.GenerateCertificateResponse.class,
@@ -477,7 +478,6 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RoverNodeGenerateCertificateResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -507,6 +507,7 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.RenewCertificateResponse.class,
@@ -514,7 +515,6 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", RoverNodeRenewCertificateResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", RoverNodeRenewCertificateResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -544,6 +544,7 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.ReplaceCertificateAuthorityResponse.class,
@@ -554,7 +555,6 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RoverNodeReplaceCertificateAuthorityResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -581,6 +581,7 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.LeafCertificateResponse.class,
                         RoverNodeRetrieveLeafCertificateResponse.Builder::leafCertificateResponse)
@@ -589,7 +590,6 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RoverNodeRetrieveLeafCertificateResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -614,6 +614,7 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverNode.class,
@@ -621,7 +622,6 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateRoverNodeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRoverNodeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

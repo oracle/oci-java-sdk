@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -96,6 +96,126 @@ public class ManagedMySqlDatabasesAsyncClient extends com.oracle.bmc.http.intern
     }
 
     @Override
+    public java.util.concurrent.Future<DisableExternalMysqlAssociatedServiceResponse>
+            disableExternalMysqlAssociatedService(
+                    DisableExternalMysqlAssociatedServiceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalMysqlAssociatedServiceRequest,
+                                    DisableExternalMysqlAssociatedServiceResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableExternalMysqlAssociatedServiceDetails(),
+                "disableExternalMysqlAssociatedServiceDetails is required");
+
+        return clientCall(request, DisableExternalMysqlAssociatedServiceResponse::builder)
+                .logger(LOG, "disableExternalMysqlAssociatedService")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "DisableExternalMysqlAssociatedService",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DisableExternalMysqlAssociatedService")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableExternalMysqlAssociatedServiceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("internal")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableAssociatedService")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalMysqlAssociatedServiceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableExternalMysqlAssociatedServiceResponse>
+            enableExternalMysqlAssociatedService(
+                    EnableExternalMysqlAssociatedServiceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalMysqlAssociatedServiceRequest,
+                                    EnableExternalMysqlAssociatedServiceResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalMysqlAssociatedServiceDetails(),
+                "enableExternalMysqlAssociatedServiceDetails is required");
+
+        return clientCall(request, EnableExternalMysqlAssociatedServiceResponse::builder)
+                .logger(LOG, "enableExternalMysqlAssociatedService")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "EnableExternalMysqlAssociatedService",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/EnableExternalMysqlAssociatedService")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalMysqlAssociatedServiceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("internal")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableAssociatedService")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalMysqlAssociatedServiceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHeatWaveFleetMetricResponse> getHeatWaveFleetMetric(
+            GetHeatWaveFleetMetricRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetHeatWaveFleetMetricRequest, GetHeatWaveFleetMetricResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetHeatWaveFleetMetricResponse::builder)
+                .logger(LOG, "getHeatWaveFleetMetric")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "GetHeatWaveFleetMetric",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/HeatWaveFleetMetrics/GetHeatWaveFleetMetric")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetHeatWaveFleetMetricRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("heatWaveFleetMetrics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendEnumQueryParam("filterByHeatWaveStatus", request.getFilterByHeatWaveStatus())
+                .appendQueryParam("filterByHeatWaveShape", request.getFilterByHeatWaveShape())
+                .appendQueryParam(
+                        "isHeatWaveLakehouseEnabled", request.getIsHeatWaveLakehouseEnabled())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.HeatWaveFleetMetrics.class,
+                        GetHeatWaveFleetMetricResponse.Builder::heatWaveFleetMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetHeatWaveFleetMetricResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetManagedMySqlDatabaseResponse> getManagedMySqlDatabase(
             GetManagedMySqlDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -157,9 +277,13 @@ public class ManagedMySqlDatabasesAsyncClient extends com.oracle.bmc.http.intern
                         request.getFilterByMySqlDeploymentTypeParam())
                 .appendEnumQueryParam(
                         "filterByMdsDeploymentType", request.getFilterByMdsDeploymentType())
+                .appendEnumQueryParam(
+                        "filterByMySqlDatabaseTypeParam",
+                        request.getFilterByMySqlDatabaseTypeParam())
                 .appendEnumQueryParam("filterByMySqlStatus", request.getFilterByMySqlStatus())
                 .appendQueryParam(
                         "filterByMySqlDatabaseVersion", request.getFilterByMySqlDatabaseVersion())
+                .appendQueryParam("isHeatWaveEnabled", request.getIsHeatWaveEnabled())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -283,6 +407,9 @@ public class ManagedMySqlDatabasesAsyncClient extends com.oracle.bmc.http.intern
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam(
+                        "filterByMySqlDatabaseTypeParam",
+                        request.getFilterByMySqlDatabaseTypeParam())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")

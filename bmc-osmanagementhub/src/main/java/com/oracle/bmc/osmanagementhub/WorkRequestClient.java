@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -140,6 +140,7 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -148,7 +149,6 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -176,6 +176,7 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -183,7 +184,6 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -210,6 +210,7 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -217,7 +218,6 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -256,8 +256,17 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         request.getOperationType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("displayNameContains", request.getDisplayNameContains())
+                .appendQueryParam("retryOfId", request.getRetryOfId())
+                .appendQueryParam("rerunOfId", request.getRerunOfId())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -265,7 +274,39 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public RerunWorkRequestResponse rerunWorkRequest(RerunWorkRequestRequest request) {
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+        Objects.requireNonNull(
+                request.getRerunWorkRequestDetails(), "rerunWorkRequestDetails is required");
+
+        return clientCall(request, RerunWorkRequestResponse::builder)
+                .logger(LOG, "rerunWorkRequest")
+                .serviceDetails(
+                        "WorkRequest",
+                        "RerunWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WorkRequest/RerunWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RerunWorkRequestRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("actions")
+                .appendPathParam("rerun")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RerunWorkRequestResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RerunWorkRequestResponse.Builder::opcRequestId)
                 .callSync();
     }
 

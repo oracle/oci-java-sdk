@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol.model;
@@ -29,6 +29,7 @@ public final class OperatorControlSummary
         "compartmentId",
         "isFullyPreApproved",
         "resourceType",
+        "numberOfApprovers",
         "timeOfCreation",
         "timeOfModification",
         "timeOfDeletion",
@@ -42,6 +43,7 @@ public final class OperatorControlSummary
             String compartmentId,
             Boolean isFullyPreApproved,
             ResourceTypes resourceType,
+            Integer numberOfApprovers,
             java.util.Date timeOfCreation,
             java.util.Date timeOfModification,
             java.util.Date timeOfDeletion,
@@ -54,6 +56,7 @@ public final class OperatorControlSummary
         this.compartmentId = compartmentId;
         this.isFullyPreApproved = isFullyPreApproved;
         this.resourceType = resourceType;
+        this.numberOfApprovers = numberOfApprovers;
         this.timeOfCreation = timeOfCreation;
         this.timeOfModification = timeOfModification;
         this.timeOfDeletion = timeOfDeletion;
@@ -141,6 +144,21 @@ public final class OperatorControlSummary
         public Builder resourceType(ResourceTypes resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+        /** Number of approvers required to approve an access request. */
+        @com.fasterxml.jackson.annotation.JsonProperty("numberOfApprovers")
+        private Integer numberOfApprovers;
+
+        /**
+         * Number of approvers required to approve an access request.
+         *
+         * @param numberOfApprovers the value to set
+         * @return this builder
+         */
+        public Builder numberOfApprovers(Integer numberOfApprovers) {
+            this.numberOfApprovers = numberOfApprovers;
+            this.__explicitlySet__.add("numberOfApprovers");
             return this;
         }
         /**
@@ -268,6 +286,7 @@ public final class OperatorControlSummary
                             this.compartmentId,
                             this.isFullyPreApproved,
                             this.resourceType,
+                            this.numberOfApprovers,
                             this.timeOfCreation,
                             this.timeOfModification,
                             this.timeOfDeletion,
@@ -296,6 +315,9 @@ public final class OperatorControlSummary
             }
             if (model.wasPropertyExplicitlySet("resourceType")) {
                 this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfApprovers")) {
+                this.numberOfApprovers(model.getNumberOfApprovers());
             }
             if (model.wasPropertyExplicitlySet("timeOfCreation")) {
                 this.timeOfCreation(model.getTimeOfCreation());
@@ -395,6 +417,19 @@ public final class OperatorControlSummary
      */
     public ResourceTypes getResourceType() {
         return resourceType;
+    }
+
+    /** Number of approvers required to approve an access request. */
+    @com.fasterxml.jackson.annotation.JsonProperty("numberOfApprovers")
+    private final Integer numberOfApprovers;
+
+    /**
+     * Number of approvers required to approve an access request.
+     *
+     * @return the value
+     */
+    public Integer getNumberOfApprovers() {
+        return numberOfApprovers;
     }
 
     /**
@@ -513,6 +548,7 @@ public final class OperatorControlSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", isFullyPreApproved=").append(String.valueOf(this.isFullyPreApproved));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", numberOfApprovers=").append(String.valueOf(this.numberOfApprovers));
         sb.append(", timeOfCreation=").append(String.valueOf(this.timeOfCreation));
         sb.append(", timeOfModification=").append(String.valueOf(this.timeOfModification));
         sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
@@ -538,6 +574,7 @@ public final class OperatorControlSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.isFullyPreApproved, other.isFullyPreApproved)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.numberOfApprovers, other.numberOfApprovers)
                 && java.util.Objects.equals(this.timeOfCreation, other.timeOfCreation)
                 && java.util.Objects.equals(this.timeOfModification, other.timeOfModification)
                 && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
@@ -566,6 +603,9 @@ public final class OperatorControlSummary
                                 ? 43
                                 : this.isFullyPreApproved.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfApprovers == null ? 43 : this.numberOfApprovers.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeOfCreation == null ? 43 : this.timeOfCreation.hashCode());

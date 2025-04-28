@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -18,12 +18,12 @@ package com.oracle.bmc.core.model;
  * ID.
  *
  * <p>For more information, see [Overview of the Compute
- * Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
+ * Service](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
@@ -46,8 +46,11 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         "availabilityDomain",
         "capacityReservationId",
         "compartmentId",
+        "clusterPlacementGroupId",
         "dedicatedVmHostId",
         "definedTags",
+        "securityAttributes",
+        "securityAttributesState",
         "displayName",
         "extendedMetadata",
         "faultDomain",
@@ -72,14 +75,18 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         "agentConfig",
         "timeMaintenanceRebootDue",
         "platformConfig",
-        "instanceConfigurationId"
+        "instanceConfigurationId",
+        "licensingConfigs"
     })
     public Instance(
             String availabilityDomain,
             String capacityReservationId,
             String compartmentId,
+            String clusterPlacementGroupId,
             String dedicatedVmHostId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            SecurityAttributesState securityAttributesState,
             String displayName,
             java.util.Map<String, Object> extendedMetadata,
             String faultDomain,
@@ -104,13 +111,17 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             InstanceAgentConfig agentConfig,
             java.util.Date timeMaintenanceRebootDue,
             PlatformConfig platformConfig,
-            String instanceConfigurationId) {
+            String instanceConfigurationId,
+            java.util.List<LicensingConfig> licensingConfigs) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
         this.compartmentId = compartmentId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.dedicatedVmHostId = dedicatedVmHostId;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
+        this.securityAttributesState = securityAttributesState;
         this.displayName = displayName;
         this.extendedMetadata = extendedMetadata;
         this.faultDomain = faultDomain;
@@ -136,6 +147,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
         this.platformConfig = platformConfig;
         this.instanceConfigurationId = instanceConfigurationId;
+        this.licensingConfigs = licensingConfigs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -165,7 +177,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
          * The OCID of the compute capacity reservation this instance is launched under. When this
          * field contains an empty string or is null, the instance is not currently in a capacity
          * reservation. For more information, see [Capacity
-         * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
         private String capacityReservationId;
@@ -174,7 +186,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
          * The OCID of the compute capacity reservation this instance is launched under. When this
          * field contains an empty string or is null, the instance is not currently in a capacity
          * reservation. For more information, see [Capacity
-         * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          *
          * @param capacityReservationId the value to set
          * @return this builder
@@ -199,6 +211,21 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
+        /** The OCID of the cluster placement group of the instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID of the cluster placement group of the instance.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
         /** The OCID of the dedicated virtual machine host that the instance is placed on. */
         @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
         private String dedicatedVmHostId;
@@ -217,7 +244,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -227,7 +254,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -238,6 +265,53 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /** The lifecycle state of the {@code securityAttributes} */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributesState")
+        private SecurityAttributesState securityAttributesState;
+
+        /**
+         * The lifecycle state of the {@code securityAttributes}
+         *
+         * @param securityAttributesState the value to set
+         * @return this builder
+         */
+        public Builder securityAttributesState(SecurityAttributesState securityAttributesState) {
+            this.securityAttributesState = securityAttributesState;
+            this.__explicitlySet__.add("securityAttributesState");
             return this;
         }
         /**
@@ -324,7 +398,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -334,7 +408,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -398,7 +472,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
          *
          * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
          * Infrastructure, see [Bring Your Own
-         * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
          *
          * <p>For more information about iPXE, see http://ipxe.org.
          */
@@ -427,7 +501,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
          *
          * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
          * Infrastructure, see [Bring Your Own
-         * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
          *
          * <p>For more information about iPXE, see http://ipxe.org.
          *
@@ -724,6 +798,21 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("instanceConfigurationId");
             return this;
         }
+        /** List of licensing configurations associated with the instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+        private java.util.List<LicensingConfig> licensingConfigs;
+
+        /**
+         * List of licensing configurations associated with the instance.
+         *
+         * @param licensingConfigs the value to set
+         * @return this builder
+         */
+        public Builder licensingConfigs(java.util.List<LicensingConfig> licensingConfigs) {
+            this.licensingConfigs = licensingConfigs;
+            this.__explicitlySet__.add("licensingConfigs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -734,8 +823,11 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                             this.availabilityDomain,
                             this.capacityReservationId,
                             this.compartmentId,
+                            this.clusterPlacementGroupId,
                             this.dedicatedVmHostId,
                             this.definedTags,
+                            this.securityAttributes,
+                            this.securityAttributesState,
                             this.displayName,
                             this.extendedMetadata,
                             this.faultDomain,
@@ -760,7 +852,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                             this.agentConfig,
                             this.timeMaintenanceRebootDue,
                             this.platformConfig,
-                            this.instanceConfigurationId);
+                            this.instanceConfigurationId,
+                            this.licensingConfigs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -778,11 +871,20 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
             if (model.wasPropertyExplicitlySet("dedicatedVmHostId")) {
                 this.dedicatedVmHostId(model.getDedicatedVmHostId());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributesState")) {
+                this.securityAttributesState(model.getSecurityAttributesState());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -859,6 +961,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
                 this.instanceConfigurationId(model.getInstanceConfigurationId());
             }
+            if (model.wasPropertyExplicitlySet("licensingConfigs")) {
+                this.licensingConfigs(model.getLicensingConfigs());
+            }
             return this;
         }
     }
@@ -895,7 +1000,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
      * The OCID of the compute capacity reservation this instance is launched under. When this field
      * contains an empty string or is null, the instance is not currently in a capacity reservation.
      * For more information, see [Capacity
-     * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
     private final String capacityReservationId;
@@ -904,7 +1009,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
      * The OCID of the compute capacity reservation this instance is launched under. When this field
      * contains an empty string or is null, the instance is not currently in a capacity reservation.
      * For more information, see [Capacity
-     * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      *
      * @return the value
      */
@@ -925,6 +1030,19 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         return compartmentId;
     }
 
+    /** The OCID of the cluster placement group of the instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID of the cluster placement group of the instance.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     /** The OCID of the dedicated virtual machine host that the instance is placed on. */
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
     private final String dedicatedVmHostId;
@@ -941,7 +1059,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -951,7 +1069,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -959,6 +1077,94 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /** The lifecycle state of the {@code securityAttributes} */
+    public enum SecurityAttributesState implements com.oracle.bmc.http.internal.BmcEnum {
+        Stable("STABLE"),
+        Updating("UPDATING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SecurityAttributesState.class);
+
+        private final String value;
+        private static java.util.Map<String, SecurityAttributesState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SecurityAttributesState v : SecurityAttributesState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SecurityAttributesState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SecurityAttributesState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SecurityAttributesState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The lifecycle state of the {@code securityAttributes} */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributesState")
+    private final SecurityAttributesState securityAttributesState;
+
+    /**
+     * The lifecycle state of the {@code securityAttributes}
+     *
+     * @return the value
+     */
+    public SecurityAttributesState getSecurityAttributesState() {
+        return securityAttributesState;
     }
 
     /**
@@ -1039,7 +1245,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1049,7 +1255,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1106,7 +1312,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
      *
      * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
      * Infrastructure, see [Bring Your Own
-     * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      *
      * <p>For more information about iPXE, see http://ipxe.org.
      */
@@ -1134,7 +1340,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
      *
      * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
      * Infrastructure, see [Bring Your Own
-     * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      *
      * <p>For more information about iPXE, see http://ipxe.org.
      *
@@ -1499,6 +1705,19 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         return instanceConfigurationId;
     }
 
+    /** List of licensing configurations associated with the instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+    private final java.util.List<LicensingConfig> licensingConfigs;
+
+    /**
+     * List of licensing configurations associated with the instance.
+     *
+     * @return the value
+     */
+    public java.util.List<LicensingConfig> getLicensingConfigs() {
+        return licensingConfigs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1517,8 +1736,13 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", securityAttributesState=")
+                .append(String.valueOf(this.securityAttributesState));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
@@ -1547,6 +1771,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
         sb.append(", instanceConfigurationId=")
                 .append(String.valueOf(this.instanceConfigurationId));
+        sb.append(", licensingConfigs=").append(String.valueOf(this.licensingConfigs));
         sb.append(")");
         return sb.toString();
     }
@@ -1564,8 +1789,13 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(
+                        this.securityAttributesState, other.securityAttributesState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
@@ -1594,6 +1824,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.platformConfig, other.platformConfig)
                 && java.util.Objects.equals(
                         this.instanceConfigurationId, other.instanceConfigurationId)
+                && java.util.Objects.equals(this.licensingConfigs, other.licensingConfigs)
                 && super.equals(other);
     }
 
@@ -1616,8 +1847,23 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.dedicatedVmHostId == null ? 43 : this.dedicatedVmHostId.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributesState == null
+                                ? 43
+                                : this.securityAttributesState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
@@ -1673,6 +1919,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.instanceConfigurationId == null
                                 ? 43
                                 : this.instanceConfigurationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.licensingConfigs == null ? 43 : this.licensingConfigs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

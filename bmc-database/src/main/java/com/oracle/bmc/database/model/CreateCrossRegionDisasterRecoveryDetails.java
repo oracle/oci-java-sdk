@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -18,18 +18,7 @@ package com.oracle.bmc.database.model;
  * standby database. If included in the request, these parameters must contain the same values as
  * the source Autonomous Database: - dbName - dbVersion - ecpuCount - dataStorageSizeInTB -
  * customerContacts - scheduledOperations - isAutoScalingForStorageEnabled - definedTags -
- * freeformTags - licenseModel - whitelistedIps - isMtlsConnectionRequired Example I - Creating a
- * cross-region standby with required parameters only: {@code { "compartmentId":
- * "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>", "sourceId":
- * "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>", "source":
- * "CROSS_REGION_DISASTER_RECOVERY", "remoteDisasterRecoveryType": "BACKUP_BASED" }} Example II -
- * Creating a cross-region standby that specifies optional parameters in addition to the required
- * parameters: {@code { "compartmentId": "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>",
- * "ecpuCount": 2, "dbName": "adatabasedb1", "sourceId":
- * "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>", "dataStorageSizeInTBs": 1,
- * "source": "CROSS_REGION_DISASTER_RECOVERY", "adminPassword" : "<var>&lt;password&gt;</var>",
- * "dbVersion": "19c", "licenseModel": "LICENSE_INCLUDED", "isAutoScalingForStorageEnabled": "true",
- * "remoteDisasterRecoveryType": "BACKUP_BASED" }} <br>
+ * freeformTags - licenseModel - whitelistedIps - isMtlsConnectionRequired <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -51,6 +40,15 @@ package com.oracle.bmc.database.model;
 public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -186,6 +184,15 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKey")
+        private AutonomousDatabaseEncryptionKeyDetails encryptionKey;
+
+        public Builder encryptionKey(AutonomousDatabaseEncryptionKeyDetails encryptionKey) {
+            this.encryptionKey = encryptionKey;
+            this.__explicitlySet__.add("encryptionKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
@@ -213,6 +220,15 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("byolComputeCountLimit")
+        private Float byolComputeCountLimit;
+
+        public Builder byolComputeCountLimit(Float byolComputeCountLimit) {
+            this.byolComputeCountLimit = byolComputeCountLimit;
+            this.__explicitlySet__.add("byolComputeCountLimit");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isPreviewVersionWithServiceTermsAccepted")
         private Boolean isPreviewVersionWithServiceTermsAccepted;
 
@@ -230,6 +246,15 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             this.isAutoScalingEnabled = isAutoScalingEnabled;
             this.__explicitlySet__.add("isAutoScalingEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
+        private Boolean isDevTier;
+
+        public Builder isDevTier(Boolean isDevTier) {
+            this.isDevTier = isDevTier;
+            this.__explicitlySet__.add("isDevTier");
             return this;
         }
 
@@ -360,6 +385,16 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
         private String privateEndpointIp;
 
@@ -443,15 +478,6 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
-        private Integer maxCpuCoreCount;
-
-        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
-            this.maxCpuCoreCount = maxCpuCoreCount;
-            this.__explicitlySet__.add("maxCpuCoreCount");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
         private AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
 
@@ -467,6 +493,15 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         public Builder dbToolsDetails(java.util.List<DatabaseTool> dbToolsDetails) {
             this.dbToolsDetails = dbToolsDetails;
             this.__explicitlySet__.add("dbToolsDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+        private Boolean isBackupRetentionLocked;
+
+        public Builder isBackupRetentionLocked(Boolean isBackupRetentionLocked) {
+            this.isBackupRetentionLocked = isBackupRetentionLocked;
+            this.__explicitlySet__.add("isBackupRetentionLocked");
             return this;
         }
 
@@ -488,16 +523,16 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new standby database for the DR
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * source Autonomous Database that will be used to create a new peer database for the DR
          * association.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new standby database for the DR
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * source Autonomous Database that will be used to create a new peer database for the DR
          * association.
          *
          * @param sourceId the value to set
@@ -532,6 +567,27 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             this.__explicitlySet__.add("remoteDisasterRecoveryType");
             return this;
         }
+        /**
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
+         * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary
+         * are not replicated to the Standby database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
+        private Boolean isReplicateAutomaticBackups;
+
+        /**
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
+         * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary
+         * are not replicated to the Standby database.
+         *
+         * @param isReplicateAutomaticBackups the value to set
+         * @return this builder
+         */
+        public Builder isReplicateAutomaticBackups(Boolean isReplicateAutomaticBackups) {
+            this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            this.__explicitlySet__.add("isReplicateAutomaticBackups");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -539,6 +595,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         public CreateCrossRegionDisasterRecoveryDetails build() {
             CreateCrossRegionDisasterRecoveryDetails model =
                     new CreateCrossRegionDisasterRecoveryDetails(
+                            this.subscriptionId,
                             this.compartmentId,
                             this.characterSet,
                             this.ncharacterSet,
@@ -554,11 +611,14 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                             this.isFreeTier,
                             this.kmsKeyId,
                             this.vaultId,
+                            this.encryptionKey,
                             this.adminPassword,
                             this.displayName,
                             this.licenseModel,
+                            this.byolComputeCountLimit,
                             this.isPreviewVersionWithServiceTermsAccepted,
                             this.isAutoScalingEnabled,
+                            this.isDevTier,
                             this.isDedicated,
                             this.autonomousContainerDatabaseId,
                             this.inMemoryPercentage,
@@ -573,6 +633,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                             this.privateEndpointLabel,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.privateEndpointIp,
                             this.dbVersion,
                             this.customerContacts,
@@ -582,13 +643,14 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                             this.autonomousMaintenanceScheduleType,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
-                            this.maxCpuCoreCount,
                             this.databaseEdition,
                             this.dbToolsDetails,
+                            this.isBackupRetentionLocked,
                             this.secretId,
                             this.secretVersionNumber,
                             this.sourceId,
-                            this.remoteDisasterRecoveryType);
+                            this.remoteDisasterRecoveryType,
+                            this.isReplicateAutomaticBackups);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -597,6 +659,9 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateCrossRegionDisasterRecoveryDetails model) {
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -642,6 +707,9 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
+            if (model.wasPropertyExplicitlySet("encryptionKey")) {
+                this.encryptionKey(model.getEncryptionKey());
+            }
             if (model.wasPropertyExplicitlySet("adminPassword")) {
                 this.adminPassword(model.getAdminPassword());
             }
@@ -651,12 +719,18 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
             }
+            if (model.wasPropertyExplicitlySet("byolComputeCountLimit")) {
+                this.byolComputeCountLimit(model.getByolComputeCountLimit());
+            }
             if (model.wasPropertyExplicitlySet("isPreviewVersionWithServiceTermsAccepted")) {
                 this.isPreviewVersionWithServiceTermsAccepted(
                         model.getIsPreviewVersionWithServiceTermsAccepted());
             }
             if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
                 this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isDevTier")) {
+                this.isDevTier(model.getIsDevTier());
             }
             if (model.wasPropertyExplicitlySet("isDedicated")) {
                 this.isDedicated(model.getIsDedicated());
@@ -700,6 +774,9 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("privateEndpointIp")) {
                 this.privateEndpointIp(model.getPrivateEndpointIp());
             }
@@ -728,14 +805,14 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             if (model.wasPropertyExplicitlySet("isAutoScalingForStorageEnabled")) {
                 this.isAutoScalingForStorageEnabled(model.getIsAutoScalingForStorageEnabled());
             }
-            if (model.wasPropertyExplicitlySet("maxCpuCoreCount")) {
-                this.maxCpuCoreCount(model.getMaxCpuCoreCount());
-            }
             if (model.wasPropertyExplicitlySet("databaseEdition")) {
                 this.databaseEdition(model.getDatabaseEdition());
             }
             if (model.wasPropertyExplicitlySet("dbToolsDetails")) {
                 this.dbToolsDetails(model.getDbToolsDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
+                this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
             }
             if (model.wasPropertyExplicitlySet("secretId")) {
                 this.secretId(model.getSecretId());
@@ -748,6 +825,9 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             }
             if (model.wasPropertyExplicitlySet("remoteDisasterRecoveryType")) {
                 this.remoteDisasterRecoveryType(model.getRemoteDisasterRecoveryType());
+            }
+            if (model.wasPropertyExplicitlySet("isReplicateAutomaticBackups")) {
+                this.isReplicateAutomaticBackups(model.getIsReplicateAutomaticBackups());
             }
             return this;
         }
@@ -764,6 +844,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
 
     @Deprecated
     public CreateCrossRegionDisasterRecoveryDetails(
+            String subscriptionId,
             String compartmentId,
             String characterSet,
             String ncharacterSet,
@@ -779,11 +860,14 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             Boolean isFreeTier,
             String kmsKeyId,
             String vaultId,
+            AutonomousDatabaseEncryptionKeyDetails encryptionKey,
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
+            Float byolComputeCountLimit,
             Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
+            Boolean isDevTier,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
             Integer inMemoryPercentage,
@@ -798,6 +882,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             String privateEndpointLabel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateEndpointIp,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
@@ -807,14 +892,16 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
-            Integer maxCpuCoreCount,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
+            Boolean isBackupRetentionLocked,
             String secretId,
             Integer secretVersionNumber,
             String sourceId,
-            DisasterRecoveryConfiguration.DisasterRecoveryType remoteDisasterRecoveryType) {
+            DisasterRecoveryConfiguration.DisasterRecoveryType remoteDisasterRecoveryType,
+            Boolean isReplicateAutomaticBackups) {
         super(
+                subscriptionId,
                 compartmentId,
                 characterSet,
                 ncharacterSet,
@@ -830,11 +917,14 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                 isFreeTier,
                 kmsKeyId,
                 vaultId,
+                encryptionKey,
                 adminPassword,
                 displayName,
                 licenseModel,
+                byolComputeCountLimit,
                 isPreviewVersionWithServiceTermsAccepted,
                 isAutoScalingEnabled,
+                isDevTier,
                 isDedicated,
                 autonomousContainerDatabaseId,
                 inMemoryPercentage,
@@ -849,6 +939,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                 privateEndpointLabel,
                 freeformTags,
                 definedTags,
+                securityAttributes,
                 privateEndpointIp,
                 dbVersion,
                 customerContacts,
@@ -858,26 +949,27 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                 autonomousMaintenanceScheduleType,
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
-                maxCpuCoreCount,
                 databaseEdition,
                 dbToolsDetails,
+                isBackupRetentionLocked,
                 secretId,
                 secretVersionNumber);
         this.sourceId = sourceId;
         this.remoteDisasterRecoveryType = remoteDisasterRecoveryType;
+        this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new standby database for the DR
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * source Autonomous Database that will be used to create a new peer database for the DR
      * association.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new standby database for the DR
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * source Autonomous Database that will be used to create a new peer database for the DR
      * association.
      *
      * @return the value
@@ -907,6 +999,25 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         return remoteDisasterRecoveryType;
     }
 
+    /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
+     * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are
+     * not replicated to the Standby database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
+    private final Boolean isReplicateAutomaticBackups;
+
+    /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
+     * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are
+     * not replicated to the Standby database.
+     *
+     * @return the value
+     */
+    public Boolean getIsReplicateAutomaticBackups() {
+        return isReplicateAutomaticBackups;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -925,6 +1036,8 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
         sb.append(", remoteDisasterRecoveryType=")
                 .append(String.valueOf(this.remoteDisasterRecoveryType));
+        sb.append(", isReplicateAutomaticBackups=")
+                .append(String.valueOf(this.isReplicateAutomaticBackups));
         sb.append(")");
         return sb.toString();
     }
@@ -943,6 +1056,8 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         return java.util.Objects.equals(this.sourceId, other.sourceId)
                 && java.util.Objects.equals(
                         this.remoteDisasterRecoveryType, other.remoteDisasterRecoveryType)
+                && java.util.Objects.equals(
+                        this.isReplicateAutomaticBackups, other.isReplicateAutomaticBackups)
                 && super.equals(other);
     }
 
@@ -956,6 +1071,11 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                         + (this.remoteDisasterRecoveryType == null
                                 ? 43
                                 : this.remoteDisasterRecoveryType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isReplicateAutomaticBackups == null
+                                ? 43
+                                : this.isReplicateAutomaticBackups.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -9,12 +9,12 @@ package com.oracle.bmc.vnmonitoring.model;
  * a VNIC to obtain a network connection into the VCN through that subnet. Each instance has a
  * *primary VNIC* that is automatically created and attached during launch. You can add *secondary
  * VNICs* to an instance after it's launched. For more information, see [Virtual Network Interface
- * Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+ * Cards (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
  *
  * <p>Each VNIC has a *primary private IP* that is automatically assigned during launch. You can add
  * *secondary private IPs* to a VNIC after it's created. For more information, see {@link
  * #createPrivateIp(CreatePrivateIpRequest) createPrivateIp} and [IP
- * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+ * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
  *
  * <p>If you are an Oracle Cloud VMware Solution customer, you will have secondary VNICs that reside
  * in a VLAN instead of a subnet. These VNICs have other differences, which are called out in the
@@ -23,8 +23,7 @@ package com.oracle.bmc.vnmonitoring.model;
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- * <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -121,15 +120,15 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the VNIC.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the VNIC.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the VNIC.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the VNIC.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -206,7 +205,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
          * 1123](https://tools.ietf.org/html/rfc1123).
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code bminstance1}
          */
@@ -222,7 +221,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
          * 1123](https://tools.ietf.org/html/rfc1123).
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code bminstance1}
          *
@@ -235,15 +234,15 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC.
          *
          * @param id the value to set
          * @return this builder
@@ -348,9 +347,9 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the {@code vlanId} is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the VLAN the VNIC is in. See {@link Vlan}. If the VNIC is instead in a subnet, {@code
-         * subnetId} has a value.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN
+         * the VNIC is in. See {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId}
+         * has a value.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
         private String vlanId;
@@ -358,9 +357,9 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the {@code vlanId} is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the VLAN the VNIC is in. See {@link Vlan}. If the VNIC is instead in a subnet, {@code
-         * subnetId} has a value.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN
+         * the VNIC is in. See {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId}
+         * has a value.
          *
          * @param vlanId the value to set
          * @return this builder
@@ -412,7 +411,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
          * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
-         * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
          * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the {@code skipSourceDestCheck} attribute is {@code true}. This
@@ -427,7 +426,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
          * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
-         * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
          * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the {@code skipSourceDestCheck} attribute is {@code true}. This
@@ -444,15 +443,15 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet the VNIC is in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet the VNIC is in.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet the VNIC is in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet the VNIC is in.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -601,15 +600,15 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the VNIC.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the VNIC.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the VNIC.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the VNIC.
      *
      * @return the value
      */
@@ -676,7 +675,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code bminstance1}
      */
@@ -691,7 +690,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code bminstance1}
      *
@@ -702,15 +701,15 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * VNIC.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * VNIC.
      *
      * @return the value
      */
@@ -840,9 +839,9 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the {@code vlanId} is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VLAN the VNIC is in. See {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId}
-     * has a value.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the
+     * VNIC is in. See {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId} has a
+     * value.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
     private final String vlanId;
@@ -850,9 +849,9 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the {@code vlanId} is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VLAN the VNIC is in. See {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId}
-     * has a value.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the
+     * VNIC is in. See {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId} has a
+     * value.
      *
      * @return the value
      */
@@ -898,7 +897,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
-     * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      *
      * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the {@code skipSourceDestCheck} attribute is {@code true}. This is
@@ -913,7 +912,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
-     * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      *
      * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the {@code skipSourceDestCheck} attribute is {@code true}. This is
@@ -928,15 +927,15 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet the VNIC is in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet the VNIC is in.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet the VNIC is in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet the VNIC is in.
      *
      * @return the value
      */

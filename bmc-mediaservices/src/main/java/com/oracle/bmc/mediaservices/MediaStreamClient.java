@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices;
@@ -135,12 +135,12 @@ public class MediaStreamClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("token", request.getToken())
                 .accept("application/x-mpegurl", "application/dash+xml")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class, GeneratePlaylistResponse.Builder::inputStream)
                 .handleResponseHeaderString("etag", GeneratePlaylistResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GeneratePlaylistResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -163,6 +163,7 @@ public class MediaStreamClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("generateSessionToken")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.SessionToken.class,
@@ -170,7 +171,6 @@ public class MediaStreamClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", GenerateSessionTokenResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GenerateSessionTokenResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

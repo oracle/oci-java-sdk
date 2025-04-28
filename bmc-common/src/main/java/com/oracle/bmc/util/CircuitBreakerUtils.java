@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.util;
@@ -9,10 +9,17 @@ import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.NoCircuitBreakerConfiguration;
 import org.slf4j.Logger;
 
+import java.time.Duration;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class CircuitBreakerUtils {
 
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(CircuitBreakerUtils.class);
     private static volatile CircuitBreakerConfiguration defaultCircuitBreakerConfiguration;
+    private static final int DEFAULT_FAILURE_RATE_THRESHOLD_FOR_AUTH_CLIENT_CB = 65;
+    private static final int DEFAULT_MINIMUM_NUMBER_OF_CALLS_FOR_AUTH_CLIENT_CB = 3;
+    private static final int DEFAULT_MINIMUM_WAIT_DURATION_IN_OPEN_STATE_FOR_AUTH_CLIENT_CB = 30;
+    private static final int DEFAULT_MAXIMUM_WAIT_DURATION_IN_OPEN_STATE_FOR_AUTH_CLIENT_CB = 49;
 
     public static CircuitBreakerConfiguration getNoCircuitBreakerConfiguration() {
         return new NoCircuitBreakerConfiguration();
@@ -68,5 +75,26 @@ public class CircuitBreakerUtils {
     public static void setDefaultCircuitBreakerConfiguration(
             CircuitBreakerConfiguration defaultCircuitBreakerConfiguration) {
         CircuitBreakerUtils.defaultCircuitBreakerConfiguration = defaultCircuitBreakerConfiguration;
+    }
+
+    /**
+     * Get default CircuitBreakerConfiguration for X509 calls
+     *
+     * @return the default CircuitBreakerConfiguration for Auth client
+     */
+    public static CircuitBreakerConfiguration getDefaultAuthClientCircuitBreakerConfiguration() {
+        LOG.debug(
+                "Configuring default auth client circuit breaker configuration for federation client");
+        return CircuitBreakerConfiguration.builder()
+                .minimumNumberOfCalls(DEFAULT_MINIMUM_NUMBER_OF_CALLS_FOR_AUTH_CLIENT_CB)
+                .failureRateThreshold(DEFAULT_FAILURE_RATE_THRESHOLD_FOR_AUTH_CLIENT_CB)
+                .waitDurationInOpenState(
+                        Duration.ofSeconds(
+                                ThreadLocalRandom.current()
+                                        .nextInt(
+                                                DEFAULT_MINIMUM_WAIT_DURATION_IN_OPEN_STATE_FOR_AUTH_CLIENT_CB,
+                                                DEFAULT_MAXIMUM_WAIT_DURATION_IN_OPEN_STATE_FOR_AUTH_CLIENT_CB
+                                                        + 1)))
+                .build();
     }
 }

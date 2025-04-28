@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi;
@@ -72,7 +72,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "OperationsInsightsClient",
-                            "downloadOperationsInsightsWarehouseWallet"));
+                            "downloadOperationsInsightsWarehouseWallet,getAwrHubObject"));
         }
     }
 
@@ -176,13 +176,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         AddExadataInsightMembersResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", AddExadataInsightMembersResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -213,6 +213,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -222,7 +223,43 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id",
                         ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse.Builder
                                 ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeAwrHubSourceCompartmentResponse changeAwrHubSourceCompartment(
+            ChangeAwrHubSourceCompartmentRequest request) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeAwrHubSourceCompartmentDetails(),
+                "changeAwrHubSourceCompartmentDetails is required");
+
+        return clientCall(request, ChangeAwrHubSourceCompartmentResponse::builder)
+                .logger(LOG, "changeAwrHubSourceCompartment")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ChangeAwrHubSourceCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/ChangeAwrHubSourceCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAwrHubSourceCompartmentRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeAwrHubSourceCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAwrHubSourceCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -252,6 +289,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -259,7 +297,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeDatabaseInsightCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -291,6 +328,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -298,7 +336,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeEnterpriseManagerBridgeCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -328,6 +365,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -335,7 +373,45 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeExadataInsightCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeExternalMysqlDatabaseInsightConnectionResponse
+            changeExternalMysqlDatabaseInsightConnection(
+                    ChangeExternalMysqlDatabaseInsightConnectionRequest request) {
+
+        Validate.notBlank(request.getDatabaseInsightId(), "databaseInsightId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeExternalMysqlDatabaseInsightConnectionDetails(),
+                "changeExternalMysqlDatabaseInsightConnectionDetails is required");
+
+        return clientCall(request, ChangeExternalMysqlDatabaseInsightConnectionResponse::builder)
+                .logger(LOG, "changeExternalMysqlDatabaseInsightConnection")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ChangeExternalMysqlDatabaseInsightConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeExternalMysqlDatabaseInsightConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeExternalMysqlDatabaseInsightConnectionRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam(request.getDatabaseInsightId())
+                .appendPathParam("actions")
+                .appendPathParam("changeExternalMysqlDatabaseInsightConnectionDetails")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeExternalMysqlDatabaseInsightConnectionResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeExternalMysqlDatabaseInsightConnectionResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -365,6 +441,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -372,7 +449,46 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeHostInsightCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeMacsManagedCloudDatabaseInsightConnectionResponse
+            changeMacsManagedCloudDatabaseInsightConnection(
+                    ChangeMacsManagedCloudDatabaseInsightConnectionRequest request) {
+
+        Validate.notBlank(request.getDatabaseInsightId(), "databaseInsightId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMacsManagedCloudDatabaseInsightConnectionDetails(),
+                "changeMacsManagedCloudDatabaseInsightConnectionDetails is required");
+
+        return clientCall(request, ChangeMacsManagedCloudDatabaseInsightConnectionResponse::builder)
+                .logger(LOG, "changeMacsManagedCloudDatabaseInsightConnection")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ChangeMacsManagedCloudDatabaseInsightConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeMacsManagedCloudDatabaseInsightConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMacsManagedCloudDatabaseInsightConnectionRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam(request.getDatabaseInsightId())
+                .appendPathParam("actions")
+                .appendPathParam("changeMacsManagedCloudDatabaseInsightConnectionDetails")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMacsManagedCloudDatabaseInsightConnectionResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMacsManagedCloudDatabaseInsightConnectionResponse.Builder
+                                ::opcRequestId)
                 .callSync();
     }
 
@@ -402,13 +518,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeNewsReportCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeNewsReportCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -443,6 +559,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -452,7 +569,47 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id",
                         ChangeOperationsInsightsPrivateEndpointCompartmentResponse.Builder
                                 ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeOperationsInsightsWarehouseCompartmentResponse
+            changeOperationsInsightsWarehouseCompartment(
+                    ChangeOperationsInsightsWarehouseCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getOperationsInsightsWarehouseId(),
+                "operationsInsightsWarehouseId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeOperationsInsightsWarehouseCompartmentDetails(),
+                "changeOperationsInsightsWarehouseCompartmentDetails is required");
+
+        return clientCall(request, ChangeOperationsInsightsWarehouseCompartmentResponse::builder)
+                .logger(LOG, "changeOperationsInsightsWarehouseCompartment")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ChangeOperationsInsightsWarehouseCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/ChangeOperationsInsightsWarehouseCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeOperationsInsightsWarehouseCompartmentRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("operationsInsightsWarehouses")
+                .appendPathParam(request.getOperationsInsightsWarehouseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeOperationsInsightsWarehouseCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeOperationsInsightsWarehouseCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -483,6 +640,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -490,7 +648,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeOpsiConfigurationCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -520,6 +677,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -527,7 +685,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangePeComanagedDatabaseInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -548,6 +705,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrHub.class,
@@ -560,7 +718,37 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "content-location", CreateAwrHubResponse.Builder::contentLocation)
                 .handleResponseHeaderString("etag", CreateAwrHubResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateAwrHubSourceResponse createAwrHubSource(CreateAwrHubSourceRequest request) {
+        Objects.requireNonNull(
+                request.getCreateAwrHubSourceDetails(), "createAwrHubSourceDetails is required");
+
+        return clientCall(request, CreateAwrHubSourceResponse::builder)
+                .logger(LOG, "createAwrHubSource")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "CreateAwrHubSource",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/CreateAwrHubSource")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAwrHubSourceRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AwrHubSource.class,
+                        CreateAwrHubSourceResponse.Builder::awrHubSource)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateAwrHubSourceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateAwrHubSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateAwrHubSourceResponse.Builder::etag)
                 .callSync();
     }
 
@@ -584,6 +772,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.DatabaseInsight.class,
@@ -598,7 +787,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "content-location", CreateDatabaseInsightResponse.Builder::contentLocation)
                 .handleResponseHeaderString("etag", CreateDatabaseInsightResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -622,6 +810,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.EnterpriseManagerBridge.class,
@@ -639,7 +828,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         CreateEnterpriseManagerBridgeResponse.Builder::contentLocation)
                 .handleResponseHeaderString(
                         "etag", CreateEnterpriseManagerBridgeResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -662,6 +850,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.ExadataInsight.class,
@@ -676,7 +865,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "content-location", CreateExadataInsightResponse.Builder::contentLocation)
                 .handleResponseHeaderString("etag", CreateExadataInsightResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -698,6 +886,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.HostInsight.class,
@@ -710,7 +899,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "content-location", CreateHostInsightResponse.Builder::contentLocation)
                 .handleResponseHeaderString("etag", CreateHostInsightResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -732,6 +920,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.NewsReport.class,
@@ -744,7 +933,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "content-location", CreateNewsReportResponse.Builder::contentLocation)
                 .handleResponseHeaderString("etag", CreateNewsReportResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -768,6 +956,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpoint.class,
@@ -787,7 +976,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         CreateOperationsInsightsPrivateEndpointResponse.Builder::contentLocation)
                 .handleResponseHeaderString(
                         "etag", CreateOperationsInsightsPrivateEndpointResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -811,6 +999,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OperationsInsightsWarehouse.class,
@@ -829,7 +1018,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         CreateOperationsInsightsWarehouseResponse.Builder::contentLocation)
                 .handleResponseHeaderString(
                         "etag", CreateOperationsInsightsWarehouseResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -853,6 +1041,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser.class,
@@ -871,7 +1060,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         CreateOperationsInsightsWarehouseUserResponse.Builder::contentLocation)
                 .handleResponseHeaderString(
                         "etag", CreateOperationsInsightsWarehouseUserResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -911,6 +1099,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OpsiConfiguration.class,
@@ -921,7 +1110,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id", CreateOpsiConfigurationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateOpsiConfigurationResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -944,11 +1132,77 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteAwrHubResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAwrHubResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteAwrHubObjectResponse deleteAwrHubObject(DeleteAwrHubObjectRequest request) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        Validate.notBlank(request.getObjectName(), "objectName must not be blank");
+
+        return clientCall(request, DeleteAwrHubObjectResponse::builder)
+                .logger(LOG, "deleteAwrHubObject")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "DeleteAwrHubObject",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/DeleteAwrHubObject")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAwrHubObjectRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubObjects")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("o")
+                .appendPathParam(request.getObjectName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        DeleteAwrHubObjectResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAwrHubObjectResponse.Builder::opcRequestId)
+                .handleResponseHeaderDate(
+                        "last-modified", DeleteAwrHubObjectResponse.Builder::lastModified)
+                .handleResponseHeaderString(
+                        "version-id", DeleteAwrHubObjectResponse.Builder::versionId)
+                .handleResponseHeaderBoolean(
+                        "is-delete-marker", DeleteAwrHubObjectResponse.Builder::isDeleteMarker)
+                .callSync();
+    }
+
+    @Override
+    public DeleteAwrHubSourceResponse deleteAwrHubSource(DeleteAwrHubSourceRequest request) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        return clientCall(request, DeleteAwrHubSourceResponse::builder)
+                .logger(LOG, "deleteAwrHubSource")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "DeleteAwrHubSource",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/DeleteAwrHubSource")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAwrHubSourceRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteAwrHubSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAwrHubSourceResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -972,12 +1226,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteDatabaseInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDatabaseInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1003,13 +1257,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteEnterpriseManagerBridgeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteEnterpriseManagerBridgeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1032,12 +1286,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteExadataInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteExadataInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1060,11 +1314,11 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteHostInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteHostInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1087,11 +1341,11 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteNewsReportResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteNewsReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1117,13 +1371,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteOperationsInsightsPrivateEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteOperationsInsightsPrivateEndpointResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1149,13 +1403,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteOperationsInsightsWarehouseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteOperationsInsightsWarehouseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1181,13 +1435,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteOperationsInsightsWarehouseUserResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteOperationsInsightsWarehouseUserResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1212,12 +1466,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteOpsiConfigurationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteOpsiConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1246,6 +1500,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DisableAutonomousDatabaseInsightAdvancedFeaturesResponse.Builder
@@ -1254,7 +1509,37 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id",
                         DisableAutonomousDatabaseInsightAdvancedFeaturesResponse.Builder
                                 ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisableAwrHubSourceResponse disableAwrHubSource(DisableAwrHubSourceRequest request) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        return clientCall(request, DisableAwrHubSourceResponse::builder)
+                .logger(LOG, "disableAwrHubSource")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "DisableAwrHubSource",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/DisableAwrHubSource")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableAwrHubSourceRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("actions")
+                .appendPathParam("disable")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableAwrHubSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DisableAwrHubSourceResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1281,12 +1566,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DisableDatabaseInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DisableDatabaseInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1313,12 +1598,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DisableExadataInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DisableExadataInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1344,11 +1629,11 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DisableHostInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DisableHostInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1380,6 +1665,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class,
@@ -1395,7 +1681,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderDate(
                         "last-modified",
                         DownloadOperationsInsightsWarehouseWalletResponse.Builder::lastModified)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1426,6 +1711,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1435,7 +1721,36 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id",
                         EnableAutonomousDatabaseInsightAdvancedFeaturesResponse.Builder
                                 ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableAwrHubSourceResponse enableAwrHubSource(EnableAwrHubSourceRequest request) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        return clientCall(request, EnableAwrHubSourceResponse::builder)
+                .logger(LOG, "enableAwrHubSource")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "EnableAwrHubSource",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/EnableAwrHubSource")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableAwrHubSourceRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("actions")
+                .appendPathParam("enable")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", EnableAwrHubSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableAwrHubSourceResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1465,13 +1780,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         EnableDatabaseInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", EnableDatabaseInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1500,13 +1815,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         EnableExadataInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", EnableExadataInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1534,12 +1849,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", EnableHostInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", EnableHostInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1578,12 +1893,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("reportFormat", request.getReportFormat())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrDatabaseReport.class,
                         GetAwrDatabaseReportResponse.Builder::awrDatabaseReport)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAwrDatabaseReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1625,12 +1940,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("reportFormat", request.getReportFormat())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrDatabaseSqlReport.class,
                         GetAwrDatabaseSqlReportResponse.Builder::awrDatabaseSqlReport)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAwrDatabaseSqlReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1652,12 +1967,108 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendPathParam(request.getAwrHubId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrHub.class, GetAwrHubResponse.Builder::awrHub)
                 .handleResponseHeaderString("etag", GetAwrHubResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAwrHubResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetAwrHubObjectResponse getAwrHubObject(GetAwrHubObjectRequest request) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        Validate.notBlank(request.getObjectName(), "objectName must not be blank");
+
+        return clientCall(request, GetAwrHubObjectResponse::builder)
+                .logger(LOG, "getAwrHubObject")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "GetAwrHubObject",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/GetAwrHubObject")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAwrHubObjectRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubObjects")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("o")
+                .appendPathParam(request.getObjectName())
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(java.io.InputStream.class, GetAwrHubObjectResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        GetAwrHubObjectResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAwrHubObjectResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetAwrHubObjectResponse.Builder::etag)
+                .handleResponseHeadersMap("opc-meta-", GetAwrHubObjectResponse.Builder::opcMeta)
+                .handleResponseHeaderLong(
+                        "content-length", GetAwrHubObjectResponse.Builder::contentLength)
+                .handleResponseHeaderRange(
+                        "content-range", GetAwrHubObjectResponse.Builder::contentRange)
+                .handleResponseHeaderString(
+                        "content-md5", GetAwrHubObjectResponse.Builder::contentMd5)
+                .handleResponseHeaderString(
+                        "opc-multipart-md5", GetAwrHubObjectResponse.Builder::opcMultipartMd5)
+                .handleResponseHeaderString(
+                        "content-type", GetAwrHubObjectResponse.Builder::contentType)
+                .handleResponseHeaderString(
+                        "content-language", GetAwrHubObjectResponse.Builder::contentLanguage)
+                .handleResponseHeaderString(
+                        "content-encoding", GetAwrHubObjectResponse.Builder::contentEncoding)
+                .handleResponseHeaderString(
+                        "cache-control", GetAwrHubObjectResponse.Builder::cacheControl)
+                .handleResponseHeaderString(
+                        "content-disposition", GetAwrHubObjectResponse.Builder::contentDisposition)
+                .handleResponseHeaderDate(
+                        "last-modified", GetAwrHubObjectResponse.Builder::lastModified)
+                .handleResponseHeaderEnum(
+                        "storage-tier",
+                        com.oracle.bmc.opsi.responses.GetAwrHubObjectResponse.StorageTier::create,
+                        GetAwrHubObjectResponse.Builder::storageTier)
+                .handleResponseHeaderEnum(
+                        "archival-state",
+                        com.oracle.bmc.opsi.responses.GetAwrHubObjectResponse.ArchivalState::create,
+                        GetAwrHubObjectResponse.Builder::archivalState)
+                .handleResponseHeaderDate(
+                        "time-of-archival", GetAwrHubObjectResponse.Builder::timeOfArchival)
+                .handleResponseHeaderString(
+                        "version-id", GetAwrHubObjectResponse.Builder::versionId)
+                .handleResponseHeaderDate("expires", GetAwrHubObjectResponse.Builder::expires)
+                .callSync();
+    }
+
+    @Override
+    public GetAwrHubSourceResponse getAwrHubSource(GetAwrHubSourceRequest request) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        return clientCall(request, GetAwrHubSourceResponse::builder)
+                .logger(LOG, "getAwrHubSource")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "GetAwrHubSource",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/GetAwrHubSource")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAwrHubSourceRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AwrHubSource.class,
+                        GetAwrHubSourceResponse.Builder::awrHubSource)
+                .handleResponseHeaderString("etag", GetAwrHubSourceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAwrHubSourceResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1695,12 +2106,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrReport.class,
                         GetAwrReportResponse.Builder::awrReport)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAwrReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1722,13 +2133,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendPathParam(request.getDatabaseInsightId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.DatabaseInsight.class,
                         GetDatabaseInsightResponse.Builder::databaseInsight)
                 .handleResponseHeaderString("etag", GetDatabaseInsightResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDatabaseInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1753,6 +2164,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendPathParam(request.getEnterpriseManagerBridgeId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.EnterpriseManagerBridge.class,
                         GetEnterpriseManagerBridgeResponse.Builder::enterpriseManagerBridge)
@@ -1760,7 +2172,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "etag", GetEnterpriseManagerBridgeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetEnterpriseManagerBridgeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1782,13 +2193,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendPathParam(request.getExadataInsightId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.ExadataInsight.class,
                         GetExadataInsightResponse.Builder::exadataInsight)
                 .handleResponseHeaderString("etag", GetExadataInsightResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExadataInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1810,13 +2221,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendPathParam(request.getHostInsightId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.HostInsight.class,
                         GetHostInsightResponse.Builder::hostInsight)
                 .handleResponseHeaderString("etag", GetHostInsightResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetHostInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1838,13 +2249,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendPathParam(request.getNewsReportId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.NewsReport.class,
                         GetNewsReportResponse.Builder::newsReport)
                 .handleResponseHeaderString("etag", GetNewsReportResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetNewsReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1869,6 +2280,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendPathParam(request.getOperationsInsightsPrivateEndpointId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpoint.class,
                         GetOperationsInsightsPrivateEndpointResponse.Builder
@@ -1878,7 +2290,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetOperationsInsightsPrivateEndpointResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1903,6 +2314,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendPathParam(request.getOperationsInsightsWarehouseId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OperationsInsightsWarehouse.class,
                         GetOperationsInsightsWarehouseResponse.Builder::operationsInsightsWarehouse)
@@ -1911,7 +2323,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetOperationsInsightsWarehouseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1936,6 +2347,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendPathParam(request.getOperationsInsightsWarehouseUserId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser.class,
                         GetOperationsInsightsWarehouseUserResponse.Builder
@@ -1945,7 +2357,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetOperationsInsightsWarehouseUserResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1984,13 +2395,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OpsiConfiguration.class,
                         GetOpsiConfigurationResponse.Builder::opsiConfiguration)
                 .handleResponseHeaderString("etag", GetOpsiConfigurationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOpsiConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2016,12 +2427,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OpsiDataObject.class,
                         GetOpsiDataObjectResponse.Builder::opsiDataObject)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOpsiDataObjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2043,6 +2454,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -2051,7 +2463,71 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderBigDecimal(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callSync();
+    }
+
+    @Override
+    public HeadAwrHubObjectResponse headAwrHubObject(HeadAwrHubObjectRequest request) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        Validate.notBlank(request.getObjectName(), "objectName must not be blank");
+
+        return clientCall(request, HeadAwrHubObjectResponse::builder)
+                .logger(LOG, "headAwrHubObject")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "HeadAwrHubObject",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/HeadAwrHubObject")
+                .method(com.oracle.bmc.http.client.Method.HEAD)
+                .requestBuilder(HeadAwrHubObjectRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubObjects")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("o")
+                .appendPathParam(request.getObjectName())
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        HeadAwrHubObjectResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", HeadAwrHubObjectResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", HeadAwrHubObjectResponse.Builder::etag)
+                .handleResponseHeadersMap("opc-meta-", HeadAwrHubObjectResponse.Builder::opcMeta)
+                .handleResponseHeaderLong(
+                        "content-length", HeadAwrHubObjectResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-md5", HeadAwrHubObjectResponse.Builder::contentMd5)
+                .handleResponseHeaderString(
+                        "opc-multipart-md5", HeadAwrHubObjectResponse.Builder::opcMultipartMd5)
+                .handleResponseHeaderString(
+                        "content-type", HeadAwrHubObjectResponse.Builder::contentType)
+                .handleResponseHeaderString(
+                        "content-language", HeadAwrHubObjectResponse.Builder::contentLanguage)
+                .handleResponseHeaderString(
+                        "content-encoding", HeadAwrHubObjectResponse.Builder::contentEncoding)
+                .handleResponseHeaderString(
+                        "cache-control", HeadAwrHubObjectResponse.Builder::cacheControl)
+                .handleResponseHeaderString(
+                        "content-disposition", HeadAwrHubObjectResponse.Builder::contentDisposition)
+                .handleResponseHeaderDate(
+                        "last-modified", HeadAwrHubObjectResponse.Builder::lastModified)
+                .handleResponseHeaderEnum(
+                        "storage-tier",
+                        com.oracle.bmc.opsi.responses.HeadAwrHubObjectResponse.StorageTier::create,
+                        HeadAwrHubObjectResponse.Builder::storageTier)
+                .handleResponseHeaderEnum(
+                        "archival-state",
+                        com.oracle.bmc.opsi.responses.HeadAwrHubObjectResponse.ArchivalState
+                                ::create,
+                        HeadAwrHubObjectResponse.Builder::archivalState)
+                .handleResponseHeaderDate(
+                        "time-of-archival", HeadAwrHubObjectResponse.Builder::timeOfArchival)
+                .handleResponseHeaderString(
+                        "version-id", HeadAwrHubObjectResponse.Builder::versionId)
                 .callSync();
     }
 
@@ -2078,6 +2554,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.IngestAddmReportsResponseDetails.class,
@@ -2085,7 +2562,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id", IngestAddmReportsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", IngestAddmReportsResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2114,6 +2590,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.IngestDatabaseConfigurationResponseDetails.class,
@@ -2123,7 +2600,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", IngestDatabaseConfigurationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", IngestDatabaseConfigurationResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2153,6 +2629,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.IngestHostConfigurationResponseDetails.class,
@@ -2161,7 +2638,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id", IngestHostConfigurationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", IngestHostConfigurationResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2189,6 +2665,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.IngestHostMetricsResponseDetails.class,
@@ -2196,7 +2673,75 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id", IngestHostMetricsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", IngestHostMetricsResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public IngestMySqlSqlStatsResponse ingestMySqlSqlStats(IngestMySqlSqlStatsRequest request) {
+        Objects.requireNonNull(
+                request.getIngestMySqlSqlStatsDetails(), "ingestMySqlSqlStatsDetails is required");
+
+        return clientCall(request, IngestMySqlSqlStatsResponse::builder)
+                .logger(LOG, "ingestMySqlSqlStats")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "IngestMySqlSqlStats",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestMySqlSqlStats")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(IngestMySqlSqlStatsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("actions")
+                .appendPathParam("ingestMySqlSqlStatsMetric")
+                .appendQueryParam("databaseId", request.getDatabaseId())
+                .appendQueryParam("id", request.getId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.IngestMySqlSqlStatsResponseDetails.class,
+                        IngestMySqlSqlStatsResponse.Builder::ingestMySqlSqlStatsResponseDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", IngestMySqlSqlStatsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", IngestMySqlSqlStatsResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public IngestMySqlSqlTextResponse ingestMySqlSqlText(IngestMySqlSqlTextRequest request) {
+        Objects.requireNonNull(
+                request.getIngestMySqlSqlTextDetails(), "ingestMySqlSqlTextDetails is required");
+
+        return clientCall(request, IngestMySqlSqlTextResponse::builder)
+                .logger(LOG, "ingestMySqlSqlText")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "IngestMySqlSqlText",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestMySqlSqlText")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(IngestMySqlSqlTextRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("actions")
+                .appendPathParam("ingestMySqlSqlText")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("databaseId", request.getDatabaseId())
+                .appendQueryParam("id", request.getId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.IngestMySqlSqlTextResponseDetails.class,
+                        IngestMySqlSqlTextResponse.Builder::ingestMySqlSqlTextResponseDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", IngestMySqlSqlTextResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", IngestMySqlSqlTextResponse.Builder::etag)
                 .callSync();
     }
 
@@ -2224,6 +2769,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.IngestSqlBucketResponseDetails.class,
@@ -2231,7 +2777,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id", IngestSqlBucketResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", IngestSqlBucketResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2259,6 +2804,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.IngestSqlPlanLinesResponseDetails.class,
@@ -2266,7 +2812,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id", IngestSqlPlanLinesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", IngestSqlPlanLinesResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2293,6 +2838,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.IngestSqlStatsResponseDetails.class,
@@ -2300,7 +2846,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id", IngestSqlStatsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", IngestSqlStatsResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2328,6 +2873,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.IngestSqlTextResponseDetails.class,
@@ -2335,7 +2881,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id", IngestSqlTextResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", IngestSqlTextResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2387,6 +2932,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AddmDbFindingCategoryCollection.class,
                         ListAddmDbFindingCategoriesResponse.Builder
@@ -2395,7 +2941,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListAddmDbFindingCategoriesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAddmDbFindingCategoriesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2451,6 +2996,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AddmDbFindingsTimeSeriesCollection.class,
                         ListAddmDbFindingsTimeSeriesResponse.Builder
@@ -2460,7 +3006,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         ListAddmDbFindingsTimeSeriesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAddmDbFindingsTimeSeriesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2512,6 +3057,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AddmDbParameterCategoryCollection.class,
                         ListAddmDbParameterCategoriesResponse.Builder
@@ -2521,7 +3067,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         ListAddmDbParameterCategoriesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAddmDbParameterCategoriesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2573,6 +3118,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AddmDbRecommendationCategoryCollection.class,
                         ListAddmDbRecommendationCategoriesResponse.Builder
@@ -2583,7 +3129,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListAddmDbRecommendationCategoriesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2643,6 +3188,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AddmDbRecommendationsTimeSeriesCollection.class,
                         ListAddmDbRecommendationsTimeSeriesResponse.Builder
@@ -2653,7 +3199,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListAddmDbRecommendationsTimeSeriesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2706,6 +3251,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AddmDbCollection.class,
                         ListAddmDbsResponse.Builder::addmDbCollection)
@@ -2713,7 +3259,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListAddmDbsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAddmDbsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2755,6 +3300,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrDatabaseSnapshotCollection.class,
                         ListAwrDatabaseSnapshotsResponse.Builder::awrDatabaseSnapshotCollection)
@@ -2762,7 +3308,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListAwrDatabaseSnapshotsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAwrDatabaseSnapshotsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2792,6 +3337,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrDatabaseCollection.class,
                         ListAwrDatabasesResponse.Builder::awrDatabaseCollection)
@@ -2799,7 +3345,95 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListAwrDatabasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAwrDatabasesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListAwrHubObjectsResponse listAwrHubObjects(ListAwrHubObjectsRequest request) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        return clientCall(request, ListAwrHubObjectsResponse::builder)
+                .logger(LOG, "listAwrHubObjects")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ListAwrHubObjects",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/ListAwrHubObjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAwrHubObjectsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubObjects")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("o")
+                .appendQueryParam("prefix", request.getPrefix())
+                .appendQueryParam("start", request.getStart())
+                .appendQueryParam("end", request.getEnd())
+                .appendQueryParam("delimiter", request.getDelimiter())
+                .appendQueryParam("startAfter", request.getStartAfter())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("fields", request.getFields())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.ListObjects.class,
+                        ListAwrHubObjectsResponse.Builder::listObjects)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        ListAwrHubObjectsResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAwrHubObjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAwrHubObjectsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListAwrHubSourcesResponse listAwrHubSources(ListAwrHubSourcesRequest request) {
+        Objects.requireNonNull(request.getAwrHubId(), "awrHubId is required");
+
+        return clientCall(request, ListAwrHubSourcesResponse::builder)
+                .logger(LOG, "listAwrHubSources")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ListAwrHubSources",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/ListAwrHubSources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAwrHubSourcesRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendQueryParam("awrHubId", request.getAwrHubId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("awrHubSourceId", request.getAwrHubSourceId())
+                .appendListQueryParam(
+                        "sourceType",
+                        request.getSourceType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "lifecycleState",
+                        request.getLifecycleState(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AwrHubSourceSummaryCollection.class,
+                        ListAwrHubSourcesResponse.Builder::awrHubSourceSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAwrHubSourcesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAwrHubSourcesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -2834,6 +3468,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrHubSummaryCollection.class,
                         ListAwrHubsResponse.Builder::awrHubSummaryCollection)
@@ -2841,7 +3476,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListAwrHubsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAwrHubsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2875,6 +3509,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrSnapshotCollection.class,
                         ListAwrSnapshotsResponse.Builder::awrSnapshotCollection)
@@ -2882,7 +3517,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListAwrSnapshotsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAwrSnapshotsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2955,6 +3589,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.DatabaseConfigurationCollection.class,
                         ListDatabaseConfigurationsResponse.Builder::databaseConfigurationCollection)
@@ -2965,7 +3600,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         ListDatabaseConfigurationsResponse.Builder::opcTotalItems)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDatabaseConfigurationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3018,6 +3652,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("opsiPrivateEndpointId", request.getOpsiPrivateEndpointId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.DatabaseInsightsCollection.class,
                         ListDatabaseInsightsResponse.Builder::databaseInsightsCollection)
@@ -3027,7 +3662,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-total-items", ListDatabaseInsightsResponse.Builder::opcTotalItems)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDatabaseInsightsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3059,6 +3693,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.EnterpriseManagerBridgeCollection.class,
                         ListEnterpriseManagerBridgesResponse.Builder
@@ -3068,7 +3703,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         ListEnterpriseManagerBridgesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListEnterpriseManagerBridgesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3116,8 +3750,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "freeformTagExists",
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.ExadataConfigurationCollection.class,
                         ListExadataConfigurationsResponse.Builder::exadataConfigurationCollection)
@@ -3127,7 +3763,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-total-items", ListExadataConfigurationsResponse.Builder::opcTotalItems)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExadataConfigurationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3170,6 +3805,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.ExadataInsightSummaryCollection.class,
                         ListExadataInsightsResponse.Builder::exadataInsightSummaryCollection)
@@ -3179,7 +3815,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-total-items", ListExadataInsightsResponse.Builder::opcTotalItems)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExadataInsightsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3243,8 +3878,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "vmclusterName",
                         request.getVmclusterName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.HostConfigurationCollection.class,
                         ListHostConfigurationsResponse.Builder::hostConfigurationCollection)
@@ -3254,7 +3894,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-total-items", ListHostConfigurationsResponse.Builder::opcTotalItems)
                 .handleResponseHeaderString(
                         "opc-next-page", ListHostConfigurationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3302,6 +3941,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.HostInsightSummaryCollection.class,
                         ListHostInsightsResponse.Builder::hostInsightSummaryCollection)
@@ -3311,7 +3951,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-total-items", ListHostInsightsResponse.Builder::opcTotalItems)
                 .handleResponseHeaderString(
                         "opc-next-page", ListHostInsightsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3351,8 +3990,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getHostType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("hostId", request.getHostId())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.HostedEntityCollection.class,
                         ListHostedEntitiesResponse.Builder::hostedEntityCollection)
@@ -3360,7 +4004,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListHostedEntitiesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListHostedEntitiesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3386,6 +4029,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.ImportableAgentEntitySummaryCollection.class,
                         ListImportableAgentEntitiesResponse.Builder
@@ -3394,7 +4038,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListImportableAgentEntitiesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListImportableAgentEntitiesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3420,6 +4063,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.ImportableComputeEntitySummaryCollection.class,
                         ListImportableComputeEntitiesResponse.Builder
@@ -3429,7 +4073,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         ListImportableComputeEntitiesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListImportableComputeEntitiesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3466,6 +4109,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getEnterpriseManagerParentEntityIdentifier())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.ImportableEnterpriseManagerEntityCollection.class,
                         ListImportableEnterpriseManagerEntitiesResponse.Builder
@@ -3476,7 +4120,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListImportableEnterpriseManagerEntitiesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3510,6 +4153,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.NewsReportCollection.class,
                         ListNewsReportsResponse.Builder::newsReportCollection)
@@ -3519,7 +4163,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-total-items", ListNewsReportsResponse.Builder::opcTotalItems)
                 .handleResponseHeaderString(
                         "opc-next-page", ListNewsReportsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3553,6 +4196,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointCollection.class,
                         ListOperationsInsightsPrivateEndpointsResponse.Builder
@@ -3563,7 +4207,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListOperationsInsightsPrivateEndpointsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3599,6 +4242,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUserSummaryCollection
                                 .class,
@@ -3610,7 +4254,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListOperationsInsightsWarehouseUsersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3641,6 +4284,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OperationsInsightsWarehouseSummaryCollection
                                 .class,
@@ -3652,7 +4296,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListOperationsInsightsWarehousesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3687,6 +4330,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OpsiConfigurationsCollection.class,
                         ListOpsiConfigurationsResponse.Builder::opsiConfigurationsCollection)
@@ -3694,7 +4338,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListOpsiConfigurationsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOpsiConfigurationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3726,6 +4369,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("name", request.getName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.OpsiDataObjectsCollection.class,
                         ListOpsiDataObjectsResponse.Builder::opsiDataObjectsCollection)
@@ -3733,7 +4377,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListOpsiDataObjectsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOpsiDataObjectsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3767,6 +4410,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SqlPlanCollection.class,
                         ListSqlPlansResponse.Builder::sqlPlanCollection)
@@ -3774,7 +4418,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListSqlPlansResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSqlPlansResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3820,6 +4463,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SqlSearchCollection.class,
                         ListSqlSearchesResponse.Builder::sqlSearchCollection)
@@ -3827,7 +4471,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListSqlSearchesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSqlSearchesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3881,6 +4524,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SqlTextCollection.class,
                         ListSqlTextsResponse.Builder::sqlTextCollection)
@@ -3888,7 +4532,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListSqlTextsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSqlTextsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3928,6 +4571,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.WarehouseDataObjectCollection.class,
                         ListWarehouseDataObjectsResponse.Builder::warehouseDataObjectCollection)
@@ -3935,7 +4579,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListWarehouseDataObjectsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWarehouseDataObjectsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3963,6 +4606,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -3970,7 +4614,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3997,6 +4640,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -4004,7 +4648,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4032,6 +4675,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -4039,7 +4683,49 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public PutAwrHubObjectResponse putAwrHubObject(PutAwrHubObjectRequest request) {
+        Objects.requireNonNull(request.getPutAwrHubObjectBody(), "putAwrHubObjectBody is required");
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        Validate.notBlank(request.getObjectName(), "objectName must not be blank");
+
+        return clientCall(request, PutAwrHubObjectResponse::builder)
+                .logger(LOG, "putAwrHubObject")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "PutAwrHubObject",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/PutAwrHubObject")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutAwrHubObjectRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20200630")
+                .appendPathParam("awrHubObjects")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("o")
+                .appendPathParam(request.getObjectName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        PutAwrHubObjectResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutAwrHubObjectResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-content-md5", PutAwrHubObjectResponse.Builder::opcContentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified", PutAwrHubObjectResponse.Builder::lastModified)
+                .handleResponseHeaderString(
+                        "version-id", PutAwrHubObjectResponse.Builder::versionId)
                 .callSync();
     }
 
@@ -4069,6 +4755,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.QueryDataObjectResultSetRowsCollection.class,
@@ -4078,7 +4765,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", QueryOpsiDataObjectDataResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", QueryOpsiDataObjectDataResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4110,6 +4796,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.opsi.model.QueryDataObjectResultSetRowsCollection.class,
@@ -4120,7 +4807,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         QueryWarehouseDataObjectDataResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", QueryWarehouseDataObjectDataResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4148,13 +4834,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RotateOperationsInsightsWarehouseWalletResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RotateOperationsInsightsWarehouseWalletResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4210,6 +4896,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AddmDbFindingAggregationCollection.class,
                         SummarizeAddmDbFindingsResponse.Builder::addmDbFindingAggregationCollection)
@@ -4217,7 +4904,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", SummarizeAddmDbFindingsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeAddmDbFindingsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4276,6 +4962,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AddmDbParameterChangeAggregationCollection.class,
                         SummarizeAddmDbParameterChangesResponse.Builder
@@ -4286,7 +4973,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeAddmDbParameterChangesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4346,6 +5032,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AddmDbParameterAggregationCollection.class,
                         SummarizeAddmDbParametersResponse.Builder
@@ -4354,7 +5041,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", SummarizeAddmDbParametersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeAddmDbParametersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4415,6 +5101,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AddmDbRecommendationAggregationCollection.class,
                         SummarizeAddmDbRecommendationsResponse.Builder
@@ -4425,7 +5112,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeAddmDbRecommendationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4483,6 +5169,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AddmDbSchemaObjectCollection.class,
                         SummarizeAddmDbSchemaObjectsResponse.Builder::addmDbSchemaObjectCollection)
@@ -4491,7 +5178,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         SummarizeAddmDbSchemaObjectsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeAddmDbSchemaObjectsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4549,6 +5235,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AddmDbSqlStatementCollection.class,
                         SummarizeAddmDbSqlStatementsResponse.Builder::addmDbSqlStatementCollection)
@@ -4557,7 +5244,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         SummarizeAddmDbSqlStatementsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeAddmDbSqlStatementsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4600,6 +5286,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrDatabaseCpuUsageCollection.class,
                         SummarizeAwrDatabaseCpuUsagesResponse.Builder
@@ -4609,7 +5296,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         SummarizeAwrDatabaseCpuUsagesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeAwrDatabaseCpuUsagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4657,6 +5343,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrDatabaseMetricCollection.class,
                         SummarizeAwrDatabaseMetricsResponse.Builder::awrDatabaseMetricCollection)
@@ -4664,7 +5351,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", SummarizeAwrDatabaseMetricsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeAwrDatabaseMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4709,6 +5395,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrDatabaseParameterChangeCollection.class,
                         SummarizeAwrDatabaseParameterChangesResponse.Builder
@@ -4719,7 +5406,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeAwrDatabaseParameterChangesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4769,6 +5455,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrDatabaseParameterCollection.class,
                         SummarizeAwrDatabaseParametersResponse.Builder
@@ -4779,7 +5466,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeAwrDatabaseParametersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4810,6 +5496,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrDatabaseSnapshotRangeCollection.class,
                         SummarizeAwrDatabaseSnapshotRangesResponse.Builder
@@ -4820,7 +5507,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeAwrDatabaseSnapshotRangesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4868,6 +5554,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrDatabaseSysstatCollection.class,
                         SummarizeAwrDatabaseSysstatsResponse.Builder::awrDatabaseSysstatCollection)
@@ -4876,7 +5563,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         SummarizeAwrDatabaseSysstatsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeAwrDatabaseSysstatsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4918,6 +5604,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrDatabaseTopWaitEventCollection.class,
                         SummarizeAwrDatabaseTopWaitEventsResponse.Builder
@@ -4928,7 +5615,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeAwrDatabaseTopWaitEventsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4976,6 +5662,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrDatabaseWaitEventBucketCollection.class,
                         SummarizeAwrDatabaseWaitEventBucketsResponse.Builder
@@ -4986,7 +5673,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeAwrDatabaseWaitEventBucketsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5033,6 +5719,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.AwrDatabaseWaitEventCollection.class,
                         SummarizeAwrDatabaseWaitEventsResponse.Builder
@@ -5043,7 +5730,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeAwrDatabaseWaitEventsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5073,6 +5759,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SummarizeAwrSourcesSummariesCollection.class,
                         SummarizeAwrSourcesSummariesResponse.Builder
@@ -5082,7 +5769,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         SummarizeAwrSourcesSummariesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeAwrSourcesSummariesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5116,6 +5802,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("name", request.getName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.ConfigurationItemsCollection.class,
                         SummarizeConfigurationItemsResponse.Builder::configurationItemsCollection)
@@ -5123,7 +5810,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", SummarizeConfigurationItemsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeConfigurationItemsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5208,6 +5894,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection
@@ -5220,7 +5907,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeDatabaseInsightResourceCapacityTrendResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5307,6 +5993,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeDatabaseInsightResourceForecastTrendAggregation.class,
@@ -5318,7 +6005,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeDatabaseInsightResourceForecastTrendResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5405,6 +6091,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeDatabaseInsightResourceStatisticsAggregationCollection
@@ -5417,7 +6104,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeDatabaseInsightResourceStatisticsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5496,6 +6182,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceUsageAggregation
                                 .class,
@@ -5507,7 +6194,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeDatabaseInsightResourceUsageResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5588,6 +6274,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeDatabaseInsightResourceUsageTrendAggregationCollection
@@ -5600,7 +6287,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeDatabaseInsightResourceUsageTrendResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5684,6 +6370,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeDatabaseInsightResourceUtilizationInsightAggregation
@@ -5698,7 +6385,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-next-page",
                         SummarizeDatabaseInsightResourceUtilizationInsightResponse.Builder
                                 ::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5729,6 +6415,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection
@@ -5741,7 +6428,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeDatabaseInsightTablespaceUsageTrendResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5803,6 +6489,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeExadataInsightResourceCapacityTrendCollection.class,
@@ -5814,7 +6501,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeExadataInsightResourceCapacityTrendResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5881,8 +6567,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "freeformTagExists",
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeExadataInsightResourceCapacityTrendAggregation.class,
@@ -5896,7 +6584,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-next-page",
                         SummarizeExadataInsightResourceCapacityTrendAggregatedResponse.Builder
                                 ::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5962,6 +6649,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeExadataInsightResourceForecastTrendCollection.class,
@@ -5973,7 +6661,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeExadataInsightResourceForecastTrendResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6043,8 +6730,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "freeformTagExists",
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeExadataInsightResourceForecastTrendAggregation.class,
@@ -6058,7 +6747,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-next-page",
                         SummarizeExadataInsightResourceForecastTrendAggregatedResponse.Builder
                                 ::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6108,6 +6796,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeExadataInsightResourceStatisticsAggregationCollection
@@ -6123,7 +6812,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeExadataInsightResourceStatisticsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6190,8 +6878,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "freeformTagExists",
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceUsageCollection
                                 .class,
@@ -6203,7 +6893,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeExadataInsightResourceUsageResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6268,8 +6957,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "freeformTagExists",
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceUsageAggregation
                                 .class,
@@ -6282,7 +6973,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeExadataInsightResourceUsageAggregatedResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6350,8 +7040,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "freeformTagExists",
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("highUtilizationThreshold", request.getHighUtilizationThreshold())
+                .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeExadataInsightResourceUtilizationInsightAggregation.class,
@@ -6369,7 +7063,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-next-page",
                         SummarizeExadataInsightResourceUtilizationInsightResponse.Builder
                                 ::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6400,6 +7093,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.ExadataMemberCollection.class,
                         SummarizeExadataMembersResponse.Builder::exadataMemberCollection)
@@ -6409,7 +7103,146 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-total-items", SummarizeExadataMembersResponse.Builder::opcTotalItems)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeExadataMembersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SummarizeHostInsightDiskStatisticsResponse summarizeHostInsightDiskStatistics(
+            SummarizeHostInsightDiskStatisticsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getId(), "id is required");
+
+        return clientCall(request, SummarizeHostInsightDiskStatisticsResponse::builder)
+                .logger(LOG, "summarizeHostInsightDiskStatistics")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeHostInsightDiskStatistics",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightDiskStatistics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeHostInsightDiskStatisticsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("hostInsights")
+                .appendPathParam("diskStatistics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("analysisTimeInterval", request.getAnalysisTimeInterval())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("hostId", request.getHostId())
+                .appendEnumQueryParam("statistic", request.getStatistic())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.SummarizeHostInsightsDiskStatisticsCollection
+                                .class,
+                        SummarizeHostInsightDiskStatisticsResponse.Builder
+                                ::summarizeHostInsightsDiskStatisticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeHostInsightDiskStatisticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeHostInsightDiskStatisticsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SummarizeHostInsightHostRecommendationResponse summarizeHostInsightHostRecommendation(
+            SummarizeHostInsightHostRecommendationRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getId(), "id is required");
+
+        Objects.requireNonNull(request.getResourceMetric(), "resourceMetric is required");
+
+        return clientCall(request, SummarizeHostInsightHostRecommendationResponse::builder)
+                .logger(LOG, "summarizeHostInsightHostRecommendation")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeHostInsightHostRecommendation",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightHostRecommendation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeHostInsightHostRecommendationRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("hostInsights")
+                .appendPathParam("hostRecommendation")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("resourceMetric", request.getResourceMetric())
+                .appendQueryParam("analysisTimeInterval", request.getAnalysisTimeInterval())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("hostId", request.getHostId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("statistic", request.getStatistic())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.SummarizeHostInsightHostRecommendationAggregation
+                                .class,
+                        SummarizeHostInsightHostRecommendationResponse.Builder
+                                ::summarizeHostInsightHostRecommendationAggregation)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeHostInsightHostRecommendationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeHostInsightHostRecommendationResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SummarizeHostInsightIoUsageTrendResponse summarizeHostInsightIoUsageTrend(
+            SummarizeHostInsightIoUsageTrendRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getId(), "id is required");
+
+        return clientCall(request, SummarizeHostInsightIoUsageTrendResponse::builder)
+                .logger(LOG, "summarizeHostInsightIoUsageTrend")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeHostInsightIoUsageTrend",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightIoUsageTrend")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeHostInsightIoUsageTrendRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("hostInsights")
+                .appendPathParam("ioUsageTrend")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("analysisTimeInterval", request.getAnalysisTimeInterval())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("hostId", request.getHostId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("statistic", request.getStatistic())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.opsi.model
+                                .SummarizeHostInsightIoUsageTrendAggregationCollection.class,
+                        SummarizeHostInsightIoUsageTrendResponse.Builder
+                                ::summarizeHostInsightIoUsageTrendAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeHostInsightIoUsageTrendResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeHostInsightIoUsageTrendResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -6440,8 +7273,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("statistic", request.getStatistic())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeHostInsightNetworkUsageTrendAggregationCollection.class,
@@ -6453,7 +7291,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeHostInsightNetworkUsageTrendResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6525,8 +7362,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("highUtilizationThreshold", request.getHighUtilizationThreshold())
                 .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeHostInsightResourceCapacityTrendAggregationCollection
@@ -6539,7 +7381,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeHostInsightResourceCapacityTrendResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6615,8 +7456,14 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .appendQueryParam("mountPoint", request.getMountPoint())
                 .appendQueryParam("interfaceName", request.getInterfaceName())
+                .appendQueryParam("gpuId", request.getGpuId())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeHostInsightResourceForecastTrendAggregation.class,
@@ -6625,7 +7472,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         SummarizeHostInsightResourceForecastTrendResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6699,8 +7545,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("highUtilizationThreshold", request.getHighUtilizationThreshold())
                 .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeHostInsightResourceStatisticsAggregationCollection.class,
@@ -6712,7 +7563,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeHostInsightResourceStatisticsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6779,8 +7629,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "vmclusterName",
                         request.getVmclusterName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUsageAggregation
                                 .class,
@@ -6789,7 +7644,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         SummarizeHostInsightResourceUsageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6857,8 +7711,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "vmclusterName",
                         request.getVmclusterName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeHostInsightResourceUsageTrendAggregationCollection.class,
@@ -6870,7 +7729,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeHostInsightResourceUsageTrendResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6940,8 +7798,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("highUtilizationThreshold", request.getHighUtilizationThreshold())
                 .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeHostInsightResourceUtilizationInsightAggregation.class,
@@ -6951,7 +7814,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id",
                         SummarizeHostInsightResourceUtilizationInsightResponse.Builder
                                 ::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6982,8 +7844,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("statistic", request.getStatistic())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeHostInsightStorageUsageTrendAggregationCollection.class,
@@ -6995,7 +7862,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeHostInsightStorageUsageTrendResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7036,8 +7902,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("hostId", request.getHostId())
                 .appendQueryParam("timestamp", request.getTimestamp())
                 .appendEnumQueryParam("statistic", request.getStatistic())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SummarizeHostInsightsTopProcessesUsageCollection
                                 .class,
@@ -7049,7 +7920,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeHostInsightTopProcessesUsageResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7089,8 +7959,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("hostId", request.getHostId())
                 .appendQueryParam("processHash", request.getProcessHash())
                 .appendEnumQueryParam("statistic", request.getStatistic())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeHostInsightsTopProcessesUsageTrendCollection.class,
@@ -7102,7 +7977,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeHostInsightTopProcessesUsageTrendResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7130,6 +8004,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendPathParam("resourceUsageSummary")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model
                                 .SummarizeOperationsInsightsWarehouseResourceUsageAggregation.class,
@@ -7142,7 +8017,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id",
                         SummarizeOperationsInsightsWarehouseResourceUsageResponse.Builder
                                 ::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7215,6 +8089,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SqlInsightAggregationCollection.class,
                         SummarizeSqlInsightsResponse.Builder::sqlInsightAggregationCollection)
@@ -7222,7 +8097,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", SummarizeSqlInsightsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeSqlInsightsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7254,6 +8128,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SqlPlanInsightAggregationCollection.class,
                         SummarizeSqlPlanInsightsResponse.Builder
@@ -7262,7 +8137,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", SummarizeSqlPlanInsightsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeSqlPlanInsightsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7294,6 +8168,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SqlResponseTimeDistributionAggregationCollection
                                 .class,
@@ -7305,7 +8180,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeSqlResponseTimeDistributionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7390,6 +8264,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SqlStatisticAggregationCollection.class,
                         SummarizeSqlStatisticsResponse.Builder::sqlStatisticAggregationCollection)
@@ -7397,7 +8272,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", SummarizeSqlStatisticsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeSqlStatisticsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7468,6 +8342,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SqlStatisticsTimeSeriesAggregationCollection
                                 .class,
@@ -7479,7 +8354,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeSqlStatisticsTimeSeriesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7511,6 +8385,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.opsi.model.SqlStatisticsTimeSeriesByPlanAggregationCollection
                                 .class,
@@ -7522,7 +8397,43 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeSqlStatisticsTimeSeriesByPlanResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public TestMacsManagedCloudDatabaseInsightConnectionResponse
+            testMacsManagedCloudDatabaseInsightConnection(
+                    TestMacsManagedCloudDatabaseInsightConnectionRequest request) {
+        Objects.requireNonNull(
+                request.getTestMacsManagedCloudDatabaseInsightConnectionDetails(),
+                "testMacsManagedCloudDatabaseInsightConnectionDetails is required");
+
+        return clientCall(request, TestMacsManagedCloudDatabaseInsightConnectionResponse::builder)
+                .logger(LOG, "testMacsManagedCloudDatabaseInsightConnection")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "TestMacsManagedCloudDatabaseInsightConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/TestMacsManagedCloudDatabaseInsightConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestMacsManagedCloudDatabaseInsightConnectionRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("actions")
+                .appendPathParam("testMacsManagedCloudDatabaseInsightConnectionDetails")
+                .appendQueryParam("databaseId", request.getDatabaseId())
+                .appendQueryParam("id", request.getId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        TestMacsManagedCloudDatabaseInsightConnectionResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        TestMacsManagedCloudDatabaseInsightConnectionResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -7546,12 +8457,42 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateAwrHubResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAwrHubResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateAwrHubSourceResponse updateAwrHubSource(UpdateAwrHubSourceRequest request) {
+        Objects.requireNonNull(
+                request.getUpdateAwrHubSourceDetails(), "updateAwrHubSourceDetails is required");
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        return clientCall(request, UpdateAwrHubSourceResponse::builder)
+                .logger(LOG, "updateAwrHubSource")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "UpdateAwrHubSource",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/UpdateAwrHubSource")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAwrHubSourceRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateAwrHubSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAwrHubSourceResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -7578,13 +8519,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateDatabaseInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDatabaseInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7613,6 +8554,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -7620,7 +8562,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateEnterpriseManagerBridgeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7646,13 +8587,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateExadataInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateExadataInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7677,12 +8618,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateHostInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateHostInsightResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7707,12 +8648,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateNewsReportResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateNewsReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7741,6 +8682,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -7748,7 +8690,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateOperationsInsightsPrivateEndpointResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7777,6 +8718,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -7784,7 +8726,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateOperationsInsightsWarehouseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7813,6 +8754,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -7820,7 +8762,6 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateOperationsInsightsWarehouseUserResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7848,13 +8789,13 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateOpsiConfigurationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateOpsiConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

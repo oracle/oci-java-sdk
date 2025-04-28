@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmconfig.model;
@@ -48,7 +48,8 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
         "updatedBy",
         "etag",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags"
     })
     protected ConfigSummary(
             String id,
@@ -58,7 +59,8 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
             String updatedBy,
             String etag,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.timeCreated = timeCreated;
@@ -68,17 +70,18 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
         this.etag = etag;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * configuration item. An OCID is generated when the item is created.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * configuration item. An OCID is generated when the item is created.
      *
      * @return the value
@@ -126,13 +129,13 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a user.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a user.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      *
      * @return the value
      */
@@ -141,13 +144,13 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a user.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a user.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      *
      * @return the value
      */
@@ -202,6 +205,23 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
         return definedTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -225,6 +245,7 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append(", etag=").append(String.valueOf(this.etag));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -247,6 +268,7 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -262,6 +284,7 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

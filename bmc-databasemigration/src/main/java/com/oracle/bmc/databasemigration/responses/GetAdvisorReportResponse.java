@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.responses;
 
 import com.oracle.bmc.databasemigration.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public class GetAdvisorReportResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

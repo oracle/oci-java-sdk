@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -7,19 +7,23 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListErrataExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListErrataExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListErrataRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment. This parameter is required and returns only resources contained within the
+     * specified compartment.
      */
     private String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment. This parameter is required and returns only resources contained within the
+     * specified compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -55,10 +59,17 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             getClassificationType() {
         return classificationType;
     }
-    /** A filter to return only profiles that match the given osFamily. */
+    /** A filter to return only errata that match the given advisory types. */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisoryTypes> advisoryType;
+
+    /** A filter to return only errata that match the given advisory types. */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisoryTypes> getAdvisoryType() {
+        return advisoryType;
+    }
+    /** A filter to return only resources that match the given operating system family. */
     private com.oracle.bmc.osmanagementhub.model.OsFamily osFamily;
 
-    /** A filter to return only profiles that match the given osFamily. */
+    /** A filter to return only resources that match the given operating system family. */
     public com.oracle.bmc.osmanagementhub.model.OsFamily getOsFamily() {
         return osFamily;
     }
@@ -103,7 +114,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -112,7 +123,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -122,7 +133,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -131,7 +142,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -219,14 +230,16 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list. This parameter is
-         * required.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment. This parameter is required and returns only resources contained within the
+         * specified compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list. This parameter is
-         * required.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment. This parameter is required and returns only resources contained within the
+         * specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -310,11 +323,37 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this.classificationType(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only profiles that match the given osFamily. */
+        /** A filter to return only errata that match the given advisory types. */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisoryTypes> advisoryType =
+                null;
+
+        /**
+         * A filter to return only errata that match the given advisory types.
+         *
+         * @param advisoryType the value to set
+         * @return this builder instance
+         */
+        public Builder advisoryType(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisoryTypes> advisoryType) {
+            this.advisoryType = advisoryType;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only errata that match the given advisory types.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder advisoryType(AdvisoryTypes singularValue) {
+            return this.advisoryType(java.util.Arrays.asList(singularValue));
+        }
+
+        /** A filter to return only resources that match the given operating system family. */
         private com.oracle.bmc.osmanagementhub.model.OsFamily osFamily = null;
 
         /**
-         * A filter to return only profiles that match the given osFamily.
+         * A filter to return only resources that match the given operating system family.
          *
          * @param osFamily the value to set
          * @return this builder instance
@@ -394,7 +433,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -403,7 +442,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -418,7 +457,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          */
@@ -427,7 +466,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          *
@@ -525,6 +564,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             name(o.getName());
             nameContains(o.getNameContains());
             classificationType(o.getClassificationType());
+            advisoryType(o.getAdvisoryType());
             osFamily(o.getOsFamily());
             advisorySeverity(o.getAdvisorySeverity());
             timeIssueDateStart(o.getTimeIssueDateStart());
@@ -572,6 +612,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.name = name;
             request.nameContains = nameContains;
             request.classificationType = classificationType;
+            request.advisoryType = advisoryType;
             request.osFamily = osFamily;
             request.advisorySeverity = advisorySeverity;
             request.timeIssueDateStart = timeIssueDateStart;
@@ -583,8 +624,8 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.opcRequestId = opcRequestId;
             return request;
             // new ListErrataRequest(compartmentId, name, nameContains, classificationType,
-            // osFamily, advisorySeverity, timeIssueDateStart, timeIssueDateEnd, limit, page,
-            // sortOrder, sortBy, opcRequestId);
+            // advisoryType, osFamily, advisorySeverity, timeIssueDateStart, timeIssueDateEnd,
+            // limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -599,6 +640,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .name(name)
                 .nameContains(nameContains)
                 .classificationType(classificationType)
+                .advisoryType(advisoryType)
                 .osFamily(osFamily)
                 .advisorySeverity(advisorySeverity)
                 .timeIssueDateStart(timeIssueDateStart)
@@ -628,6 +670,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",nameContains=").append(String.valueOf(this.nameContains));
         sb.append(",classificationType=").append(String.valueOf(this.classificationType));
+        sb.append(",advisoryType=").append(String.valueOf(this.advisoryType));
         sb.append(",osFamily=").append(String.valueOf(this.osFamily));
         sb.append(",advisorySeverity=").append(String.valueOf(this.advisorySeverity));
         sb.append(",timeIssueDateStart=").append(String.valueOf(this.timeIssueDateStart));
@@ -656,6 +699,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.nameContains, other.nameContains)
                 && java.util.Objects.equals(this.classificationType, other.classificationType)
+                && java.util.Objects.equals(this.advisoryType, other.advisoryType)
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
                 && java.util.Objects.equals(this.advisorySeverity, other.advisorySeverity)
                 && java.util.Objects.equals(this.timeIssueDateStart, other.timeIssueDateStart)
@@ -681,6 +725,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                         + (this.classificationType == null
                                 ? 43
                                 : this.classificationType.hashCode());
+        result = (result * PRIME) + (this.advisoryType == null ? 43 : this.advisoryType.hashCode());
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
         result =
                 (result * PRIME)

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -26,6 +26,7 @@ public final class MonitoredResourceTask
     @java.beans.ConstructorProperties({
         "id",
         "name",
+        "type",
         "compartmentId",
         "tenantId",
         "taskDetails",
@@ -40,6 +41,7 @@ public final class MonitoredResourceTask
     public MonitoredResourceTask(
             String id,
             String name,
+            String type,
             String compartmentId,
             String tenantId,
             MonitoredResourceTaskDetails taskDetails,
@@ -53,6 +55,7 @@ public final class MonitoredResourceTask
         super();
         this.id = id;
         this.name = name;
+        this.type = type;
         this.compartmentId = compartmentId;
         this.tenantId = tenantId;
         this.taskDetails = taskDetails;
@@ -69,14 +72,14 @@ public final class MonitoredResourceTask
     public static class Builder {
         /**
          * Task identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Task identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder
@@ -101,15 +104,30 @@ public final class MonitoredResourceTask
             this.__explicitlySet__.add("name");
             return this;
         }
+        /** Type of the task. */
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private String type;
+
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Type of the task.
+         *
+         * @param type the value to set
+         * @return this builder
+         */
+        public Builder type(String type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment identifier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment identifier.
          *
          * @param compartmentId the value to set
@@ -121,14 +139,14 @@ public final class MonitoredResourceTask
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * tenancy.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * tenancy.
          *
          * @param tenantId the value to set
@@ -149,17 +167,15 @@ public final class MonitoredResourceTask
             return this;
         }
         /**
-         * Identifiers
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for work
-         * requests submitted for this task.
+         * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for work requests submitted for this task.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
         private java.util.List<String> workRequestIds;
 
         /**
-         * Identifiers
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for work
-         * requests submitted for this task.
+         * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for work requests submitted for this task.
          *
          * @param workRequestIds the value to set
          * @return this builder
@@ -289,6 +305,7 @@ public final class MonitoredResourceTask
                     new MonitoredResourceTask(
                             this.id,
                             this.name,
+                            this.type,
                             this.compartmentId,
                             this.tenantId,
                             this.taskDetails,
@@ -312,6 +329,9 @@ public final class MonitoredResourceTask
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -358,14 +378,14 @@ public final class MonitoredResourceTask
 
     /**
      * Task identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Task identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -386,15 +406,28 @@ public final class MonitoredResourceTask
         return name;
     }
 
+    /** Type of the task. */
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    private final String type;
+
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Type of the task.
+     *
+     * @return the value
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment identifier.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment identifier.
      *
      * @return the value
@@ -404,14 +437,14 @@ public final class MonitoredResourceTask
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * tenancy.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * tenancy.
      *
      * @return the value
@@ -428,15 +461,15 @@ public final class MonitoredResourceTask
     }
 
     /**
-     * Identifiers [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * for work requests submitted for this task.
+     * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * work requests submitted for this task.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
     private final java.util.List<String> workRequestIds;
 
     /**
-     * Identifiers [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * for work requests submitted for this task.
+     * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * work requests submitted for this task.
      *
      * @return the value
      */
@@ -559,6 +592,7 @@ public final class MonitoredResourceTask
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", tenantId=").append(String.valueOf(this.tenantId));
         sb.append(", taskDetails=").append(String.valueOf(this.taskDetails));
@@ -585,6 +619,7 @@ public final class MonitoredResourceTask
         MonitoredResourceTask other = (MonitoredResourceTask) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.tenantId, other.tenantId)
                 && java.util.Objects.equals(this.taskDetails, other.taskDetails)
@@ -604,6 +639,7 @@ public final class MonitoredResourceTask
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

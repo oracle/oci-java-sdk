@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Migration tablespace settings valid for ADB-D target type using remap feature. <br>
+ * Remap tablespace settings that are valid for Dedicated Autonomous Databases. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CreateADBDedicatedRemapTargetTablespaceDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
@@ -29,13 +29,15 @@ public final class CreateADBDedicatedRemapTargetTablespaceDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Name of tablespace at target to which the source database tablespace need to be remapped.
+         * Name of the tablespace on the target database to which the source database tablespace is
+         * to be remapped.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("remapTarget")
         private String remapTarget;
 
         /**
-         * Name of tablespace at target to which the source database tablespace need to be remapped.
+         * Name of the tablespace on the target database to which the source database tablespace is
+         * to be remapped.
          *
          * @param remapTarget the value to set
          * @return this builder
@@ -82,12 +84,16 @@ public final class CreateADBDedicatedRemapTargetTablespaceDetails
         this.remapTarget = remapTarget;
     }
 
-    /** Name of tablespace at target to which the source database tablespace need to be remapped. */
+    /**
+     * Name of the tablespace on the target database to which the source database tablespace is to
+     * be remapped.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("remapTarget")
     private final String remapTarget;
 
     /**
-     * Name of tablespace at target to which the source database tablespace need to be remapped.
+     * Name of the tablespace on the target database to which the source database tablespace is to
+     * be remapped.
      *
      * @return the value
      */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration;
@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements DatabaseMigration {
     /** Service instance for DatabaseMigration. */
@@ -158,10 +158,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "AbortJob",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/AbortJob")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/AbortJob")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AbortJobRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("jobs")
                 .appendPathParam(request.getJobId())
                 .appendPathParam("actions")
@@ -170,13 +170,13 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.Job.class,
                         AbortJobResponse.Builder::job)
                 .handleResponseHeaderString(
                         "opc-request-id", AbortJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", AbortJobResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -192,10 +192,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "AddMigrationObjects",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/AddMigrationObjects")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Migration/AddMigrationObjects")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddMigrationObjectsRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrations")
                 .appendPathParam(request.getMigrationId())
                 .appendPathParam("actions")
@@ -203,43 +203,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", AddMigrationObjectsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
-                .callSync();
-    }
-
-    @Override
-    public ChangeAgentCompartmentResponse changeAgentCompartment(
-            ChangeAgentCompartmentRequest request) {
-
-        Validate.notBlank(request.getAgentId(), "agentId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeAgentCompartmentDetails(),
-                "changeAgentCompartmentDetails is required");
-
-        return clientCall(request, ChangeAgentCompartmentResponse::builder)
-                .logger(LOG, "changeAgentCompartment")
-                .serviceDetails(
-                        "DatabaseMigration",
-                        "ChangeAgentCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/ChangeAgentCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeAgentCompartmentRequest::builder)
-                .basePath("/20210929")
-                .appendPathParam("agents")
-                .appendPathParam(request.getAgentId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeAgentCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -257,10 +224,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "ChangeConnectionCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/ChangeConnectionCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Connection/ChangeConnectionCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeConnectionCompartmentRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("connections")
                 .appendPathParam(request.getConnectionId())
                 .appendPathParam("actions")
@@ -269,10 +236,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeConnectionCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -290,10 +257,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "ChangeMigrationCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/ChangeMigrationCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Migration/ChangeMigrationCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeMigrationCompartmentRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrations")
                 .appendPathParam(request.getMigrationId())
                 .appendPathParam("actions")
@@ -302,10 +269,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeMigrationCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -321,10 +288,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "CloneMigration",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/CloneMigration")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Migration/CloneMigration")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CloneMigrationRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrations")
                 .appendPathParam(request.getMigrationId())
                 .appendPathParam("actions")
@@ -333,6 +300,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.Migration.class,
@@ -342,7 +310,6 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-work-request-id", CloneMigrationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", CloneMigrationResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -357,10 +324,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "ConnectionDiagnostics",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/ConnectionDiagnostics")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Connection/ConnectionDiagnostics")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ConnectionDiagnosticsRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("connections")
                 .appendPathParam(request.getConnectionId())
                 .appendPathParam("actions")
@@ -369,13 +336,13 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.DiagnosticsResult.class,
                         ConnectionDiagnosticsResponse.Builder::diagnosticsResult)
                 .handleResponseHeaderString(
                         "opc-request-id", ConnectionDiagnosticsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", ConnectionDiagnosticsResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -389,11 +356,12 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails("DatabaseMigration", "CreateConnection", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateConnectionRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("connections")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.Connection.class,
@@ -403,7 +371,6 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString("etag", CreateConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateConnectionResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -414,14 +381,18 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, CreateMigrationResponse::builder)
                 .logger(LOG, "createMigration")
-                .serviceDetails("DatabaseMigration", "CreateMigration", "")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "CreateMigration",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Migration/CreateMigration")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateMigrationRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrations")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.Migration.class,
@@ -431,34 +402,41 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString("etag", CreateMigrationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateMigrationResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
     @Override
-    public DeleteAgentResponse deleteAgent(DeleteAgentRequest request) {
+    public CreateParameterFileVersionResponse createParameterFileVersion(
+            CreateParameterFileVersionRequest request) {
 
-        Validate.notBlank(request.getAgentId(), "agentId must not be blank");
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateParameterFileVersionDetails(),
+                "createParameterFileVersionDetails is required");
 
-        return clientCall(request, DeleteAgentResponse::builder)
-                .logger(LOG, "deleteAgent")
+        return clientCall(request, CreateParameterFileVersionResponse::builder)
+                .logger(LOG, "createParameterFileVersion")
                 .serviceDetails(
                         "DatabaseMigration",
-                        "DeleteAgent",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/DeleteAgent")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteAgentRequest::builder)
-                .basePath("/20210929")
-                .appendPathParam("agents")
-                .appendPathParam(request.getAgentId())
+                        "CreateParameterFileVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/CreateParameterFileVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateParameterFileVersionRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("parameterFileVersions")
                 .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteAgentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteAgentResponse.Builder::opcWorkRequestId)
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateParameterFileVersionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateParameterFileVersionResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -472,20 +450,20 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "DeleteConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/DeleteConnection")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Connection/DeleteConnection")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteConnectionRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("connections")
                 .appendPathParam(request.getConnectionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteConnectionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteConnectionResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -499,18 +477,18 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "DeleteJob",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/DeleteJob")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/DeleteJob")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJobRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("jobs")
                 .appendPathParam(request.getJobId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -524,20 +502,53 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "DeleteMigration",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/DeleteMigration")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Migration/DeleteMigration")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMigrationRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrations")
                 .appendPathParam(request.getMigrationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMigrationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteMigrationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteParameterFileVersionResponse deleteParameterFileVersion(
+            DeleteParameterFileVersionRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        Validate.notBlank(request.getParameterFileName(), "parameterFileName must not be blank");
+
+        return clientCall(request, DeleteParameterFileVersionResponse::builder)
+                .logger(LOG, "deleteParameterFileVersion")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "DeleteParameterFileVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/DeleteParameterFileVersion")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteParameterFileVersionRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("parameterFileVersions")
+                .appendPathParam(request.getParameterFileName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteParameterFileVersionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteParameterFileVersionResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -551,10 +562,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "EvaluateMigration",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/EvaluateMigration")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/EvaluateMigration")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EvaluateMigrationRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrations")
                 .appendPathParam(request.getMigrationId())
                 .appendPathParam("actions")
@@ -563,6 +574,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.Job.class,
                         EvaluateMigrationResponse.Builder::job)
@@ -571,7 +583,6 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-work-request-id", EvaluateMigrationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", EvaluateMigrationResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -585,50 +596,22 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "GetAdvisorReport",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/GetAdvisorReport")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/GetAdvisorReport")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAdvisorReportRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("jobs")
                 .appendPathParam(request.getJobId())
                 .appendPathParam("advisorReport")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.AdvisorReport.class,
                         GetAdvisorReportResponse.Builder::advisorReport)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAdvisorReportResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetAdvisorReportResponse.Builder::etag)
-                .operationUsesDefaultRetries()
-                .callSync();
-    }
-
-    @Override
-    public GetAgentResponse getAgent(GetAgentRequest request) {
-
-        Validate.notBlank(request.getAgentId(), "agentId must not be blank");
-
-        return clientCall(request, GetAgentResponse::builder)
-                .logger(LOG, "getAgent")
-                .serviceDetails(
-                        "DatabaseMigration",
-                        "GetAgent",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/GetAgent")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetAgentRequest::builder)
-                .basePath("/20210929")
-                .appendPathParam("agents")
-                .appendPathParam(request.getAgentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.databasemigration.model.Agent.class,
-                        GetAgentResponse.Builder::agent)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetAgentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetAgentResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -642,21 +625,21 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "GetConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/GetConnection")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Connection/GetConnection")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetConnectionRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("connections")
                 .appendPathParam(request.getConnectionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.Connection.class,
                         GetConnectionResponse.Builder::connection)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConnectionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetConnectionResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -670,20 +653,20 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "GetJob",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/GetJob")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/GetJob")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJobRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("jobs")
                 .appendPathParam(request.getJobId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.Job.class,
                         GetJobResponse.Builder::job)
                 .handleResponseHeaderString("opc-request-id", GetJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetJobResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -697,21 +680,21 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "GetJobOutputContent",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/GetJobOutputContent")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/GetJobOutputContent")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJobOutputContentRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("jobs")
                 .appendPathParam(request.getJobId())
                 .appendPathParam("output")
                 .appendPathParam("content")
                 .accept("application/x-yaml")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class, GetJobOutputContentResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJobOutputContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -725,22 +708,55 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "GetMigration",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/GetMigration")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Migration/GetMigration")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMigrationRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrations")
                 .appendPathParam(request.getMigrationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.Migration.class,
                         GetMigrationResponse.Builder::migration)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMigrationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetMigrationResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetParameterFileVersionResponse getParameterFileVersion(
+            GetParameterFileVersionRequest request) {
+
+        Validate.notBlank(request.getParameterFileName(), "parameterFileName must not be blank");
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, GetParameterFileVersionResponse::builder)
+                .logger(LOG, "getParameterFileVersion")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "GetParameterFileVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/GetParameterFileVersion")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetParameterFileVersionRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("parameterFileVersions")
+                .appendPathParam(request.getParameterFileName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.ParameterFileVersion.class,
+                        GetParameterFileVersionResponse.Builder::parameterFileVersion)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetParameterFileVersionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetParameterFileVersionResponse.Builder::etag)
                 .callSync();
     }
 
@@ -754,83 +770,20 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequest/GetWorkRequest")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
                 .handleResponseHeaderString(
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
-                .callSync();
-    }
-
-    @Override
-    public ListAgentImagesResponse listAgentImages(ListAgentImagesRequest request) {
-
-        return clientCall(request, ListAgentImagesResponse::builder)
-                .logger(LOG, "listAgentImages")
-                .serviceDetails(
-                        "DatabaseMigration",
-                        "ListAgentImages",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/AgentImageSummary/ListAgentImages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListAgentImagesRequest::builder)
-                .basePath("/20210929")
-                .appendPathParam("agentImages")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.databasemigration.model.AgentImageCollection.class,
-                        ListAgentImagesResponse.Builder::agentImageCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListAgentImagesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListAgentImagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
-                .callSync();
-    }
-
-    @Override
-    public ListAgentsResponse listAgents(ListAgentsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListAgentsResponse::builder)
-                .logger(LOG, "listAgents")
-                .serviceDetails(
-                        "DatabaseMigration",
-                        "ListAgents",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/AgentSummary/ListAgents")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListAgentsRequest::builder)
-                .basePath("/20210929")
-                .appendPathParam("agents")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.databasemigration.model.AgentCollection.class,
-                        ListAgentsResponse.Builder::agentCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListAgentsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListAgentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -843,12 +796,21 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "ListConnections",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/ConnectionSummary/ListConnections")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/ConnectionSummary/ListConnections")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListConnectionsRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("connections")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "technologyType",
+                        request.getTechnologyType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "connectionType",
+                        request.getConnectionType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("sourceConnectionId", request.getSourceConnectionId())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -857,6 +819,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.ConnectionCollection.class,
                         ListConnectionsResponse.Builder::connectionCollection)
@@ -864,7 +827,6 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListConnectionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListConnectionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -878,10 +840,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "ListExcludedObjects",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/ExcludedObjectSummary/ListExcludedObjects")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/ExcludedObjectSummary/ListExcludedObjects")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListExcludedObjectsRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("jobs")
                 .appendPathParam(request.getJobId())
                 .appendPathParam("excludedObjects")
@@ -898,6 +860,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendQueryParam("sourceRule", request.getSourceRule())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.ExcludedObjectSummaryCollection
                                 .class,
@@ -906,7 +869,6 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListExcludedObjectsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExcludedObjectsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -920,10 +882,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "ListJobOutputs",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/JobOutputSummary/ListJobOutputs")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/JobOutputSummary/ListJobOutputs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJobOutputsRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("jobs")
                 .appendPathParam(request.getJobId())
                 .appendPathParam("output")
@@ -931,6 +893,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.JobOutputSummaryCollection.class,
                         ListJobOutputsResponse.Builder::jobOutputSummaryCollection)
@@ -938,7 +901,6 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListJobOutputsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListJobOutputsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -951,10 +913,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "ListJobs",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/JobSummary/ListJobs")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/JobSummary/ListJobs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJobsRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("jobs")
                 .appendQueryParam("migrationId", request.getMigrationId())
                 .appendQueryParam("displayName", request.getDisplayName())
@@ -965,36 +927,39 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.JobCollection.class,
                         ListJobsResponse.Builder::jobCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListJobsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListJobsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
     @Override
     public ListMigrationObjectTypesResponse listMigrationObjectTypes(
             ListMigrationObjectTypesRequest request) {
+        Objects.requireNonNull(request.getConnectionType(), "connectionType is required");
 
         return clientCall(request, ListMigrationObjectTypesResponse::builder)
                 .logger(LOG, "listMigrationObjectTypes")
                 .serviceDetails(
                         "DatabaseMigration",
                         "ListMigrationObjectTypes",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/MigrationObjectTypeSummary/ListMigrationObjectTypes")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/MigrationObjectTypeSummary/ListMigrationObjectTypes")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMigrationObjectTypesRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrationObjectTypes")
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("connectionType", request.getConnectionType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.MigrationObjectTypeSummaryCollection
                                 .class,
@@ -1004,7 +969,6 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListMigrationObjectTypesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMigrationObjectTypesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1018,10 +982,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "ListMigrationObjects",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/MigrationObjectCollection/ListMigrationObjects")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/MigrationObjectCollection/ListMigrationObjects")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMigrationObjectsRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrations")
                 .appendPathParam(request.getMigrationId())
                 .appendPathParam("migrationObjects")
@@ -1030,6 +994,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.MigrationObjectCollection.class,
                         ListMigrationObjectsResponse.Builder::migrationObjectCollection)
@@ -1037,7 +1002,41 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListMigrationObjectsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMigrationObjectsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMigrationParametersResponse listMigrationParameters(
+            ListMigrationParametersRequest request) {
+
+        return clientCall(request, ListMigrationParametersResponse::builder)
+                .logger(LOG, "listMigrationParameters")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "ListMigrationParameters",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/MigrationParameterSummary/ListMigrationParameters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMigrationParametersRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("migrationParameters")
+                .appendEnumQueryParam("migrationType", request.getMigrationType())
+                .appendEnumQueryParam("databaseCombination", request.getDatabaseCombination())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.MigrationParameterSummaryCollection
+                                .class,
+                        ListMigrationParametersResponse.Builder
+                                ::migrationParameterSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMigrationParametersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMigrationParametersResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1050,10 +1049,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "ListMigrations",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/MigrationSummary/ListMigrations")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/MigrationSummary/ListMigrations")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMigrationsRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrations")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("displayName", request.getDisplayName())
@@ -1065,6 +1064,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("lifecycleDetails", request.getLifecycleDetails())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.MigrationCollection.class,
                         ListMigrationsResponse.Builder::migrationCollection)
@@ -1072,7 +1072,42 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListMigrationsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMigrationsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListParameterFileVersionsResponse listParameterFileVersions(
+            ListParameterFileVersionsRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, ListParameterFileVersionsResponse::builder)
+                .logger(LOG, "listParameterFileVersions")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "ListParameterFileVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/ListParameterFileVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListParameterFileVersionsRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("parameterFileVersions")
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.ParameterFileVersionCollection.class,
+                        ListParameterFileVersionsResponse.Builder::parameterFileVersionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListParameterFileVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListParameterFileVersionsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1087,10 +1122,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequestError/ListWorkRequestErrors")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .appendPathParam("errors")
@@ -1100,6 +1135,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -1107,7 +1143,6 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1121,10 +1156,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequestLogEntry/ListWorkRequestLogs")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .appendPathParam("logs")
@@ -1134,6 +1169,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -1141,7 +1177,6 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1154,10 +1189,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequestSummary/ListWorkRequests")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/WorkRequestSummary/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("workRequests")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("resourceId", request.getResourceId())
@@ -1168,6 +1203,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -1175,7 +1211,45 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public MakeCurrentParameterFileVersionResponse makeCurrentParameterFileVersion(
+            MakeCurrentParameterFileVersionRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        Validate.notBlank(request.getParameterFileName(), "parameterFileName must not be blank");
+
+        return clientCall(request, MakeCurrentParameterFileVersionResponse::builder)
+                .logger(LOG, "makeCurrentParameterFileVersion")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "MakeCurrentParameterFileVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/MakeCurrentParameterFileVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(MakeCurrentParameterFileVersionRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("parameterFileVersions")
+                .appendPathParam(request.getParameterFileName())
+                .appendPathParam("actions")
+                .appendPathParam("makeCurrent")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.Job.class,
+                        MakeCurrentParameterFileVersionResponse.Builder::job)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        MakeCurrentParameterFileVersionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", MakeCurrentParameterFileVersionResponse.Builder::etag)
                 .callSync();
     }
 
@@ -1193,10 +1267,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "RemoveMigrationObjects",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/RemoveMigrationObjects")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Migration/RemoveMigrationObjects")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveMigrationObjectsRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrations")
                 .appendPathParam(request.getMigrationId())
                 .appendPathParam("actions")
@@ -1204,10 +1278,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveMigrationObjectsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1221,10 +1295,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "ResumeJob",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/ResumeJob")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/ResumeJob")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ResumeJobRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("jobs")
                 .appendPathParam(request.getJobId())
                 .appendPathParam("actions")
@@ -1233,6 +1307,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.Job.class,
@@ -1240,7 +1315,6 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", ResumeJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", ResumeJobResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1255,22 +1329,22 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "RetrieveSupportedPhases",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/RetrieveSupportedPhases")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Migration/RetrieveSupportedPhases")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RetrieveSupportedPhasesRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrations")
                 .appendPathParam(request.getMigrationId())
                 .appendPathParam("actions")
                 .appendPathParam("getSupportedPhases")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.MigrationPhaseCollection.class,
                         RetrieveSupportedPhasesResponse.Builder::migrationPhaseCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", RetrieveSupportedPhasesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1284,10 +1358,10 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "StartMigration",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/StartMigration")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/StartMigration")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StartMigrationRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrations")
                 .appendPathParam(request.getMigrationId())
                 .appendPathParam("actions")
@@ -1296,6 +1370,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.Job.class,
@@ -1305,39 +1380,38 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-work-request-id", StartMigrationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", StartMigrationResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
     @Override
-    public UpdateAgentResponse updateAgent(UpdateAgentRequest request) {
+    public SuspendJobResponse suspendJob(SuspendJobRequest request) {
 
-        Validate.notBlank(request.getAgentId(), "agentId must not be blank");
-        Objects.requireNonNull(request.getUpdateAgentDetails(), "updateAgentDetails is required");
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
 
-        return clientCall(request, UpdateAgentResponse::builder)
-                .logger(LOG, "updateAgent")
+        return clientCall(request, SuspendJobResponse::builder)
+                .logger(LOG, "suspendJob")
                 .serviceDetails(
                         "DatabaseMigration",
-                        "UpdateAgent",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/UpdateAgent")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateAgentRequest::builder)
-                .basePath("/20210929")
-                .appendPathParam("agents")
-                .appendPathParam(request.getAgentId())
+                        "SuspendJob",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/SuspendJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SuspendJobRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("actions")
+                .appendPathParam("suspend")
                 .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasemigration.model.Agent.class,
-                        UpdateAgentResponse.Builder::agent)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateAgentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", UpdateAgentResponse.Builder::etag)
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.Job.class,
+                        SuspendJobResponse.Builder::job)
+                .handleResponseHeaderString(
+                        "opc-request-id", SuspendJobResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", SuspendJobResponse.Builder::etag)
                 .callSync();
     }
 
@@ -1353,21 +1427,21 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "UpdateConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/UpdateConnection")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Connection/UpdateConnection")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateConnectionRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("connections")
                 .appendPathParam(request.getConnectionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConnectionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateConnectionResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1382,15 +1456,16 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "UpdateJob",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/UpdateJob")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/UpdateJob")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateJobRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("jobs")
                 .appendPathParam(request.getJobId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemigration.model.Job.class,
@@ -1398,7 +1473,6 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateJobResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1414,21 +1488,21 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .serviceDetails(
                         "DatabaseMigration",
                         "UpdateMigration",
-                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/UpdateMigration")
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Migration/UpdateMigration")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateMigrationRequest::builder)
-                .basePath("/20210929")
+                .basePath("/20230518")
                 .appendPathParam("migrations")
                 .appendPathParam(request.getMigrationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMigrationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateMigrationResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -31,6 +31,7 @@ public final class CreatePipelineDetails
         "configurationDetails",
         "logConfigurationDetails",
         "infrastructureConfigurationDetails",
+        "storageMountConfigurationDetailsList",
         "stepDetails",
         "freeformTags",
         "definedTags"
@@ -43,6 +44,7 @@ public final class CreatePipelineDetails
             PipelineConfigurationDetails configurationDetails,
             PipelineLogConfigurationDetails logConfigurationDetails,
             PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails,
+            java.util.List<StorageMountConfigurationDetails> storageMountConfigurationDetailsList,
             java.util.List<PipelineStepDetails> stepDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -54,6 +56,7 @@ public final class CreatePipelineDetails
         this.configurationDetails = configurationDetails;
         this.logConfigurationDetails = logConfigurationDetails;
         this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
+        this.storageMountConfigurationDetailsList = storageMountConfigurationDetailsList;
         this.stepDetails = stepDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -62,15 +65,15 @@ public final class CreatePipelineDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate the pipeline with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project to associate the pipeline with.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate the pipeline with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project to associate the pipeline with.
          *
          * @param projectId the value to set
          * @return this builder
@@ -81,15 +84,15 @@ public final class CreatePipelineDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment where you want to create the pipeline.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment where you want to create the pipeline.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment where you want to create the pipeline.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment where you want to create the pipeline.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -158,6 +161,24 @@ public final class CreatePipelineDetails
             this.__explicitlySet__.add("infrastructureConfigurationDetails");
             return this;
         }
+        /** The storage mount details to mount to the instance running the pipeline step. */
+        @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                storageMountConfigurationDetailsList;
+
+        /**
+         * The storage mount details to mount to the instance running the pipeline step.
+         *
+         * @param storageMountConfigurationDetailsList the value to set
+         * @return this builder
+         */
+        public Builder storageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        storageMountConfigurationDetailsList) {
+            this.storageMountConfigurationDetailsList = storageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("storageMountConfigurationDetailsList");
+            return this;
+        }
         /** Array of step details for each step. */
         @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
         private java.util.List<PipelineStepDetails> stepDetails;
@@ -176,7 +197,7 @@ public final class CreatePipelineDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -185,7 +206,7 @@ public final class CreatePipelineDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -198,7 +219,7 @@ public final class CreatePipelineDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -206,7 +227,7 @@ public final class CreatePipelineDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -232,6 +253,7 @@ public final class CreatePipelineDetails
                             this.configurationDetails,
                             this.logConfigurationDetails,
                             this.infrastructureConfigurationDetails,
+                            this.storageMountConfigurationDetailsList,
                             this.stepDetails,
                             this.freeformTags,
                             this.definedTags);
@@ -265,6 +287,10 @@ public final class CreatePipelineDetails
                 this.infrastructureConfigurationDetails(
                         model.getInfrastructureConfigurationDetails());
             }
+            if (model.wasPropertyExplicitlySet("storageMountConfigurationDetailsList")) {
+                this.storageMountConfigurationDetailsList(
+                        model.getStorageMountConfigurationDetailsList());
+            }
             if (model.wasPropertyExplicitlySet("stepDetails")) {
                 this.stepDetails(model.getStepDetails());
             }
@@ -288,15 +314,15 @@ public final class CreatePipelineDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate the pipeline with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project to associate the pipeline with.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate the pipeline with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project to associate the pipeline with.
      *
      * @return the value
      */
@@ -305,15 +331,15 @@ public final class CreatePipelineDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment where you want to create the pipeline.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment where you want to create the pipeline.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment where you want to create the pipeline.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment where you want to create the pipeline.
      *
      * @return the value
      */
@@ -368,6 +394,21 @@ public final class CreatePipelineDetails
         return infrastructureConfigurationDetails;
     }
 
+    /** The storage mount details to mount to the instance running the pipeline step. */
+    @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            storageMountConfigurationDetailsList;
+
+    /**
+     * The storage mount details to mount to the instance running the pipeline step.
+     *
+     * @return the value
+     */
+    public java.util.List<StorageMountConfigurationDetails>
+            getStorageMountConfigurationDetailsList() {
+        return storageMountConfigurationDetailsList;
+    }
+
     /** Array of step details for each step. */
     @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
     private final java.util.List<PipelineStepDetails> stepDetails;
@@ -384,7 +425,7 @@ public final class CreatePipelineDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -393,7 +434,7 @@ public final class CreatePipelineDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -404,7 +445,7 @@ public final class CreatePipelineDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -412,7 +453,7 @@ public final class CreatePipelineDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -445,6 +486,8 @@ public final class CreatePipelineDetails
                 .append(String.valueOf(this.logConfigurationDetails));
         sb.append(", infrastructureConfigurationDetails=")
                 .append(String.valueOf(this.infrastructureConfigurationDetails));
+        sb.append(", storageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.storageMountConfigurationDetailsList));
         sb.append(", stepDetails=").append(String.valueOf(this.stepDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -472,6 +515,9 @@ public final class CreatePipelineDetails
                 && java.util.Objects.equals(
                         this.infrastructureConfigurationDetails,
                         other.infrastructureConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.storageMountConfigurationDetailsList,
+                        other.storageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.stepDetails, other.stepDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -503,6 +549,11 @@ public final class CreatePipelineDetails
                         + (this.infrastructureConfigurationDetails == null
                                 ? 43
                                 : this.infrastructureConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.storageMountConfigurationDetailsList.hashCode());
         result = (result * PRIME) + (this.stepDetails == null ? 43 : this.stepDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

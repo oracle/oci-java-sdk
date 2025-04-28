@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.logging;
@@ -12,7 +12,7 @@ import com.oracle.bmc.logging.responses.*;
  * objects, log saved searches, and agent configurations.
  *
  * <p>For more information, see [Logging
- * Overview](https://docs.cloud.oracle.com/iaas/Content/Logging/Concepts/loggingoverview.htm).
+ * Overview](https://docs.oracle.com/iaas/Content/Logging/Concepts/loggingoverview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public interface LoggingManagementAsync extends AutoCloseable {
@@ -69,7 +69,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
      * Moves a log group into a different compartment within the same tenancy. When provided, the
      * If-Match is checked against the resource ETag values. For information about moving resources
      * between compartments, see [Moving Resources Between
-     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartments](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -104,7 +104,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
     /**
      * Moves a saved search into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -125,7 +125,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
      * Moves the unified agent configuration into a different compartment within the same tenancy.
      * When provided, the If-Match is checked against the ETag values of the resource. For
      * information about moving resources between compartments, see [Moving Resources Between
-     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartments](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

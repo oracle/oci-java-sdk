@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.28.0</version>
+  <version>3.63.2</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
   <inceptionYear>2016</inceptionYear>
   <licenses>
     <license>
@@ -34,8 +34,8 @@
   </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jackson.version>2.15.2</jackson.version>
-    <jackson.databind.version>2.13.4.2</jackson.databind.version>
+    <jackson.version>2.17.1</jackson.version>
+    <jackson.databind.version>2.17.1</jackson.databind.version>
     <jersey.version>2.35</jersey.version>
     <apache-httpcomponents.version>4.5.13</apache-httpcomponents.version>
     <apache-httpcomponents.httpclient.version>4.5.13</apache-httpcomponents.httpclient.version>
@@ -49,19 +49,19 @@
     <resilience4jVersion>1.7.1</resilience4jVersion>
     <io.vavr.version>0.10.4</io.vavr.version>
     <maven-shade-plugin.version>3.5.0</maven-shade-plugin.version>
-    <bouncycastle.version>1.74</bouncycastle.version>
     <mockito.version>2.18.0</mockito.version>
+    <maven-surefire-plugin.argLine />
     <powermock.version>2.0.2</powermock.version>
     <hk2.version>2.6.1</hk2.version>
     <net.jodah.failsafe.version>0.9.2</net.jodah.failsafe.version>
     <hamcrest.core.version>1.3</hamcrest.core.version>
     <hamcrest.junit.version>2.0.0.0</hamcrest.junit.version>
-    <native.maven.plugin.version>0.9.25</native.maven.plugin.version>
+    <native.maven.plugin.version>0.10.2</native.maven.plugin.version>
     <excluded.testcases>**/*IntegrationAutoTest.java</excluded.testcases>
     <dev.profile.skip.javadoc>true</dev.profile.skip.javadoc>
     <exec.skip>true</exec.skip>
     <exec.mainClass>com.acme.Undefined</exec.mainClass>
-    <oci.codegen.version>2.38</oci.codegen.version>
+    <oci.codegen.version>2.119</oci.codegen.version>
   </properties>
   <profiles>
     <profile>
@@ -69,57 +69,11 @@
       <modules>
         <module>bmc-dist</module>
       </modules>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.commonjava.maven.plugins</groupId>
-            <artifactId>directory-maven-plugin</artifactId>
-            <version>0.1</version>
-            <executions>
-              <execution>
-                <id>directories</id>
-                <goals>
-                  <goal>directory-of</goal>
-                </goals>
-                <phase>initialize</phase>
-                <configuration>
-                  <property>ocijavasdk.basedir</property>
-                  <project>
-                    <groupId>com.oracle.oci.sdk</groupId>
-                    <artifactId>oci-java-sdk</artifactId>
-                  </project>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
     </profile>
     <profile>
       <id>dev</id>
       <build>
         <plugins>
-          <plugin>
-            <groupId>org.commonjava.maven.plugins</groupId>
-            <artifactId>directory-maven-plugin</artifactId>
-            <version>0.1</version>
-            <executions>
-              <execution>
-                <id>directories</id>
-                <goals>
-                  <goal>directory-of</goal>
-                </goals>
-                <phase>initialize</phase>
-                <configuration>
-                  <property>ocijavasdk.basedir</property>
-                  <project>
-                    <groupId>com.oracle.oci.sdk</groupId>
-                    <artifactId>oci-java-sdk</artifactId>
-                  </project>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>build-helper-maven-plugin</artifactId>
@@ -146,7 +100,11 @@
                 <phase>process-sources</phase>
                 <configuration>
                   <target>
-                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}" value="https://docs.cloud.oracle.com" />
+                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}/iaas" value="https://docs.oracle.com/iaas" />
+                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}" value="https://docs.oracle.com/iaas" />
+                    <replace dir="src/main/java" token="https://docs.cloud.oracle.com/iaas" value="https://docs.oracle.com/iaas" />
+                    <replace dir="src/main/java" token="https://docs.cloud.oracle.com" value="https://docs.oracle.com/iaas" />
+                    <replace dir="src/main/java" token="https://docs.us-phoenix-1.oraclecloud.com" value="https://docs.oracle.com/iaas" />
                   </target>
                   <failOnError>false</failOnError>
                 </configuration>
@@ -204,6 +162,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.7.0</version>
             <configuration>
               <skip>${dev.profile.skip.javadoc}</skip>
             </configuration>
@@ -246,6 +205,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.7.0</version>
             <configuration>
               <skip>true</skip>
             </configuration>
@@ -286,12 +246,36 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.7.0</version>
             <configuration>
               <skip>true</skip>
             </configuration>
           </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.19.1</version>
+            <configuration>
+              <excludes>
+                <exclude>**/ConfigFileDelegationTokenUtilsTest.java</exclude>
+                <exclude>**/ConfigFileAuthenticationDetailsProviderTest.java</exclude>
+                <exclude>**/X509FederationClientTest.java</exclude>
+                <exclude>**/DefaultConfiguratorTest.java</exclude>
+                <exclude>**/RequestSignerImplTest.java</exclude>
+              </excludes>
+            </configuration>
+          </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <id>jdk-8-only</id>
+      <activation>
+        <jdk>1.8</jdk>
+      </activation>
+      <properties>
+        <maven-surefire-plugin.argLine />
+      </properties>
     </profile>
   </profiles>
   <build>
@@ -357,7 +341,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>1.12</version>
+          <version>3.6.0</version>
         </plugin>
         <plugin>
           <groupId>com.mycila</groupId>
@@ -396,7 +380,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.7.0</version>
           <goals>
             <goal>jar</goal>
           </goals>
@@ -412,14 +396,13 @@
           <configuration>
             <!-- Exclude classes that shouldn't be exposed to end users, ex, those in 'internal' packages -->
             <excludePackageNames>*.internal.*</excludePackageNames>
-            <aggregate>true</aggregate>
             <minmemory>2048m</minmemory>
             <maxmemory>6144m</maxmemory>
             <doclint>none</doclint>
             <sourcepath>src/main/java</sourcepath>
             <links>
-              <link>https://jax-rs-spec.java.net/nonav/2.0-rev-a/apidocs</link>
-              <link>https://jersey.java.net/apidocs/${jersey.version}/jersey</link>
+              <link>https://javadoc.io/doc/javax.ws.rs/javax.ws.rs-api/2.0</link>
+              <link>https://eclipse-ee4j.github.io/jersey.github.io/apidocs/${jersey.version}/jersey</link>
             </links>
             <additionalJOptions>--allow-script-in-comments</additionalJOptions>
           </configuration>
@@ -437,6 +420,7 @@
             <excludes>
               <exclude>${excluded.testcases}</exclude>
             </excludes>
+            <argLine>${maven-surefire-plugin.argLine}</argLine>
           </configuration>
           <executions>
             <execution>
@@ -447,7 +431,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
-          <version>1.6.0</version>
+          <version>3.3.0</version>
           <inherited>true</inherited>
         </plugin>
         <plugin>
@@ -458,7 +442,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>3.4.1</version>
+          <version>3.5.0</version>
           <dependencies>
             <dependency>
               <groupId>org.codehaus.mojo</groupId>
@@ -468,14 +452,34 @@
           </dependencies>
         </plugin>
         <plugin>
-          <!-- https://ocss.oci.oraclecorp.com/webcodesign/ -->
-          <groupId>com.oracle.ccss</groupId>
-          <artifactId>codesign-maven-plugin</artifactId>
-          <version>4.4</version>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>3.1.2</version>
         </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
+      <plugin>
+        <groupId>org.commonjava.maven.plugins</groupId>
+        <artifactId>directory-maven-plugin</artifactId>
+        <version>0.1</version>
+        <executions>
+          <execution>
+            <id>directories</id>
+            <goals>
+              <goal>directory-of</goal>
+            </goals>
+            <phase>initialize</phase>
+            <configuration>
+              <property>ocijavasdk.basedir</property>
+              <project>
+                <groupId>com.oracle.oci.sdk</groupId>
+                <artifactId>oci-java-sdk</artifactId>
+              </project>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>com.googlecode.maven-download-plugin</groupId>
         <artifactId>download-maven-plugin</artifactId>
@@ -520,16 +524,6 @@
         <groupId>org.apache.httpcomponents</groupId>
         <artifactId>httpcore</artifactId>
         <version>${apache-httpcomponents.httpcore.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.bouncycastle</groupId>
-        <artifactId>bcpkix-jdk15to18</artifactId>
-        <version>${bouncycastle.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.bouncycastle</groupId>
-        <artifactId>bcprov-jdk15to18</artifactId>
-        <version>${bouncycastle.version}</version>
       </dependency>
       <dependency>
         <groupId>org.hamcrest</groupId>
@@ -691,7 +685,6 @@
     <module>bmc-osmanagement</module>
     <module>bmc-marketplace</module>
     <module>bmc-apigateway</module>
-    <module>bmc-applicationmigration</module>
     <module>bmc-datacatalog</module>
     <module>bmc-dataflow</module>
     <module>bmc-datascience</module>
@@ -794,5 +787,26 @@
     <module>bmc-computecloudatcustomer</module>
     <module>bmc-marketplacepublisher</module>
     <module>bmc-redis</module>
+    <module>bmc-jmsjavadownloads</module>
+    <module>bmc-psql</module>
+    <module>bmc-generativeai</module>
+    <module>bmc-generativeaiinference</module>
+    <module>bmc-capacitymanagement</module>
+    <module>bmc-globallydistributeddatabase</module>
+    <module>bmc-desktops</module>
+    <module>bmc-emaildataplane</module>
+    <module>bmc-clusterplacementgroups</module>
+    <module>bmc-marketplaceprivateoffer</module>
+    <module>bmc-resourcescheduler</module>
+    <module>bmc-demandsignal</module>
+    <module>bmc-fleetappsmanagement</module>
+    <module>bmc-delegateaccesscontrol</module>
+    <module>bmc-generativeaiagent</module>
+    <module>bmc-generativeaiagentruntime</module>
+    <module>bmc-securityattribute</module>
+    <module>bmc-zpr</module>
+    <module>bmc-dblm</module>
+    <module>bmc-mngdmac</module>
+    <module>bmc-lustrefilestorage</module>
   </modules>
 </project>

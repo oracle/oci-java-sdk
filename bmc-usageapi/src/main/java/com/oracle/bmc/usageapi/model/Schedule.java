@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi.model;
@@ -161,12 +161,12 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("timeNextRun");
             return this;
         }
-        /** Specifies supported output file format. */
+        /** Specifies the supported output file format. */
         @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
         private OutputFileFormat outputFileFormat;
 
         /**
-         * Specifies supported output file format.
+         * Specifies the supported output file format.
          *
          * @param outputFileFormat the value to set
          * @return this builder
@@ -176,12 +176,12 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("outputFileFormat");
             return this;
         }
-        /** The saved report id which can also be used to generate query. */
+        /** The saved report ID which can also be used to generate a query. */
         @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
         private String savedReportId;
 
         /**
-         * The saved report id which can also be used to generate query.
+         * The saved report ID which can also be used to generate a query.
          *
          * @param savedReportId the value to set
          * @return this builder
@@ -271,7 +271,7 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"bar-key": "value"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -280,7 +280,7 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -293,7 +293,7 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -301,7 +301,7 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
@@ -315,7 +315,7 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -323,7 +323,7 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
@@ -498,7 +498,7 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
         return timeNextRun;
     }
 
-    /** Specifies supported output file format. */
+    /** Specifies the supported output file format. */
     public enum OutputFileFormat implements com.oracle.bmc.http.internal.BmcEnum {
         Csv("CSV"),
         Pdf("PDF"),
@@ -544,12 +544,12 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** Specifies supported output file format. */
+    /** Specifies the supported output file format. */
     @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
     private final OutputFileFormat outputFileFormat;
 
     /**
-     * Specifies supported output file format.
+     * Specifies the supported output file format.
      *
      * @return the value
      */
@@ -557,12 +557,12 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
         return outputFileFormat;
     }
 
-    /** The saved report id which can also be used to generate query. */
+    /** The saved report ID which can also be used to generate a query. */
     @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
     private final String savedReportId;
 
     /**
-     * The saved report id which can also be used to generate query.
+     * The saved report ID which can also be used to generate a query.
      *
      * @return the value
      */
@@ -686,7 +686,7 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"bar-key": "value"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -695,7 +695,7 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -706,7 +706,7 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -714,7 +714,7 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
@@ -725,7 +725,7 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -733,7 +733,7 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value

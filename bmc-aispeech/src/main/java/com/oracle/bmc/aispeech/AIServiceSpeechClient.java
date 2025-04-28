@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aispeech;
@@ -35,6 +35,14 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
+        this(builder, authenticationDetailsProvider, executorService, true);
+    }
+
+    AIServiceSpeechClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            java.util.concurrent.ExecutorService executorService,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
@@ -60,6 +68,11 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
         this.waiters = new AIServiceSpeechWaiters(executorService, this);
 
         this.paginators = new AIServiceSpeechPaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "AIServiceSpeechClient", "synthesizeSpeech"));
+        }
     }
 
     /**
@@ -77,6 +90,7 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, AIServiceSpeechClient> {
+        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
@@ -100,6 +114,17 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
         }
 
         /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
+        }
+
+        /**
          * Build the client.
          *
          * @param authenticationDetailsProvider authentication details provider
@@ -109,7 +134,8 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new AIServiceSpeechClient(this, authenticationDetailsProvider, executorService);
+            return new AIServiceSpeechClient(
+                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
         }
     }
 
@@ -185,6 +211,39 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public ChangeCustomizationCompartmentResponse changeCustomizationCompartment(
+            ChangeCustomizationCompartmentRequest request) {
+
+        Validate.notBlank(request.getCustomizationId(), "customizationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeCustomizationCompartmentDetails(),
+                "changeCustomizationCompartmentDetails is required");
+
+        return clientCall(request, ChangeCustomizationCompartmentResponse::builder)
+                .logger(LOG, "changeCustomizationCompartment")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "ChangeCustomizationCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/ChangeCustomizationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCustomizationCompartmentRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("customizations")
+                .appendPathParam(request.getCustomizationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCustomizationCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeTranscriptionJobCompartmentResponse changeTranscriptionJobCompartment(
             ChangeTranscriptionJobCompartmentRequest request) {
 
@@ -218,6 +277,66 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CreateCustomizationResponse createCustomization(CreateCustomizationRequest request) {
+        Objects.requireNonNull(
+                request.getCreateCustomizationDetails(), "createCustomizationDetails is required");
+
+        return clientCall(request, CreateCustomizationResponse::builder)
+                .logger(LOG, "createCustomization")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "CreateCustomization",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/CreateCustomization")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCustomizationRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("customizations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aispeech.model.Customization.class,
+                        CreateCustomizationResponse.Builder::customization)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCustomizationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateCustomizationResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateRealtimeSessionTokenResponse createRealtimeSessionToken(
+            CreateRealtimeSessionTokenRequest request) {
+        Objects.requireNonNull(
+                request.getCreateRealtimeSessionTokenDetails(),
+                "createRealtimeSessionTokenDetails is required");
+
+        return clientCall(request, CreateRealtimeSessionTokenResponse::builder)
+                .logger(LOG, "createRealtimeSessionToken")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "CreateRealtimeSessionToken",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/RealtimeSessionToken/CreateRealtimeSessionToken")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRealtimeSessionTokenRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("actions")
+                .appendPathParam("realtimeSessionToken")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aispeech.model.RealtimeSessionToken.class,
+                        CreateRealtimeSessionTokenResponse.Builder::realtimeSessionToken)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRealtimeSessionTokenResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateRealtimeSessionTokenResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public CreateTranscriptionJobResponse createTranscriptionJob(
             CreateTranscriptionJobRequest request) {
         Objects.requireNonNull(
@@ -244,6 +363,84 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id", CreateTranscriptionJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateTranscriptionJobResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public DeleteCustomizationResponse deleteCustomization(DeleteCustomizationRequest request) {
+
+        Validate.notBlank(request.getCustomizationId(), "customizationId must not be blank");
+
+        return clientCall(request, DeleteCustomizationResponse::builder)
+                .logger(LOG, "deleteCustomization")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "DeleteCustomization",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/DeleteCustomization")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCustomizationRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("customizations")
+                .appendPathParam(request.getCustomizationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCustomizationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteTranscriptionJobResponse deleteTranscriptionJob(
+            DeleteTranscriptionJobRequest request) {
+
+        Validate.notBlank(request.getTranscriptionJobId(), "transcriptionJobId must not be blank");
+
+        return clientCall(request, DeleteTranscriptionJobResponse::builder)
+                .logger(LOG, "deleteTranscriptionJob")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "DeleteTranscriptionJob",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/DeleteTranscriptionJob")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteTranscriptionJobRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("transcriptionJobs")
+                .appendPathParam(request.getTranscriptionJobId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteTranscriptionJobResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCustomizationResponse getCustomization(GetCustomizationRequest request) {
+
+        Validate.notBlank(request.getCustomizationId(), "customizationId must not be blank");
+
+        return clientCall(request, GetCustomizationResponse::builder)
+                .logger(LOG, "getCustomization")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "GetCustomization",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/GetCustomization")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCustomizationRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("customizations")
+                .appendPathParam(request.getCustomizationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.aispeech.model.Customization.class,
+                        GetCustomizationResponse.Builder::customization)
+                .handleResponseHeaderString("etag", GetCustomizationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCustomizationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -303,6 +500,41 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", GetTranscriptionTaskResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTranscriptionTaskResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListCustomizationsResponse listCustomizations(ListCustomizationsRequest request) {
+
+        return clientCall(request, ListCustomizationsResponse::builder)
+                .logger(LOG, "listCustomizations")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "ListCustomizations",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/ListCustomizations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCustomizationsRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("customizations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.aispeech.model.CustomizationCollection.class,
+                        ListCustomizationsResponse.Builder::customizationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCustomizationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCustomizationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListCustomizationsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -378,6 +610,89 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListTranscriptionTasksResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListTranscriptionTasksResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListVoicesResponse listVoices(ListVoicesRequest request) {
+
+        return clientCall(request, ListVoicesResponse::builder)
+                .logger(LOG, "listVoices")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "ListVoices",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Voice/ListVoices")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVoicesRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("voices")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("modelName", request.getModelName())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.aispeech.model.VoiceCollection.class,
+                        ListVoicesResponse.Builder::voiceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVoicesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public SynthesizeSpeechResponse synthesizeSpeech(SynthesizeSpeechRequest request) {
+        Objects.requireNonNull(
+                request.getSynthesizeSpeechDetails(), "synthesizeSpeechDetails is required");
+
+        return clientCall(request, SynthesizeSpeechResponse::builder)
+                .logger(LOG, "synthesizeSpeech")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "SynthesizeSpeech",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/SynthesizeSpeech/SynthesizeSpeech")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SynthesizeSpeechRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("actions")
+                .appendPathParam("synthesizeSpeech")
+                .accept("audio/mpeg", "audio/ogg", "audio/pcm", "audio/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        java.io.InputStream.class, SynthesizeSpeechResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id", SynthesizeSpeechResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateCustomizationResponse updateCustomization(UpdateCustomizationRequest request) {
+
+        Validate.notBlank(request.getCustomizationId(), "customizationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCustomizationDetails(), "updateCustomizationDetails is required");
+
+        return clientCall(request, UpdateCustomizationResponse::builder)
+                .logger(LOG, "updateCustomization")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "UpdateCustomization",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/UpdateCustomization")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCustomizationRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("customizations")
+                .appendPathParam(request.getCustomizationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aispeech.model.Customization.class,
+                        UpdateCustomizationResponse.Builder::customization)
+                .handleResponseHeaderString("etag", UpdateCustomizationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCustomizationResponse.Builder::opcRequestId)
                 .callSync();
     }
 

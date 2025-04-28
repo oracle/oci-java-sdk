@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
@@ -28,26 +28,29 @@ public final class IncidentResourceType
         "name",
         "label",
         "description",
+        "isSubscriptionsSupported",
         "serviceCategoryList",
         "service",
-        "serviceCategories"
+        "services"
     })
     public IncidentResourceType(
             String resourceTypeKey,
             String name,
             String label,
             String description,
+            Boolean isSubscriptionsSupported,
             java.util.List<ServiceCategory> serviceCategoryList,
             java.util.Map<String, String> service,
-            java.util.List<ServiceCategories> serviceCategories) {
+            java.util.List<Services> services) {
         super();
         this.resourceTypeKey = resourceTypeKey;
         this.name = name;
         this.label = label;
         this.description = description;
+        this.isSubscriptionsSupported = isSubscriptionsSupported;
         this.serviceCategoryList = serviceCategoryList;
         this.service = service;
-        this.serviceCategories = serviceCategories;
+        this.services = services;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -112,6 +115,21 @@ public final class IncidentResourceType
             this.__explicitlySet__.add("description");
             return this;
         }
+        /** Indicates whether multi-subscription is supported */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSubscriptionsSupported")
+        private Boolean isSubscriptionsSupported;
+
+        /**
+         * Indicates whether multi-subscription is supported
+         *
+         * @param isSubscriptionsSupported the value to set
+         * @return this builder
+         */
+        public Builder isSubscriptionsSupported(Boolean isSubscriptionsSupported) {
+            this.isSubscriptionsSupported = isSubscriptionsSupported;
+            this.__explicitlySet__.add("isSubscriptionsSupported");
+            return this;
+        }
         /** The service category list. */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceCategoryList")
         private java.util.List<ServiceCategory> serviceCategoryList;
@@ -143,18 +161,18 @@ public final class IncidentResourceType
             return this;
         }
         /** The service categories list for MOS Taxonomy. */
-        @com.fasterxml.jackson.annotation.JsonProperty("serviceCategories")
-        private java.util.List<ServiceCategories> serviceCategories;
+        @com.fasterxml.jackson.annotation.JsonProperty("services")
+        private java.util.List<Services> services;
 
         /**
          * The service categories list for MOS Taxonomy.
          *
-         * @param serviceCategories the value to set
+         * @param services the value to set
          * @return this builder
          */
-        public Builder serviceCategories(java.util.List<ServiceCategories> serviceCategories) {
-            this.serviceCategories = serviceCategories;
-            this.__explicitlySet__.add("serviceCategories");
+        public Builder services(java.util.List<Services> services) {
+            this.services = services;
+            this.__explicitlySet__.add("services");
             return this;
         }
 
@@ -168,9 +186,10 @@ public final class IncidentResourceType
                             this.name,
                             this.label,
                             this.description,
+                            this.isSubscriptionsSupported,
                             this.serviceCategoryList,
                             this.service,
-                            this.serviceCategories);
+                            this.services);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -191,14 +210,17 @@ public final class IncidentResourceType
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
+            if (model.wasPropertyExplicitlySet("isSubscriptionsSupported")) {
+                this.isSubscriptionsSupported(model.getIsSubscriptionsSupported());
+            }
             if (model.wasPropertyExplicitlySet("serviceCategoryList")) {
                 this.serviceCategoryList(model.getServiceCategoryList());
             }
             if (model.wasPropertyExplicitlySet("service")) {
                 this.service(model.getService());
             }
-            if (model.wasPropertyExplicitlySet("serviceCategories")) {
-                this.serviceCategories(model.getServiceCategories());
+            if (model.wasPropertyExplicitlySet("services")) {
+                this.services(model.getServices());
             }
             return this;
         }
@@ -265,6 +287,19 @@ public final class IncidentResourceType
         return description;
     }
 
+    /** Indicates whether multi-subscription is supported */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSubscriptionsSupported")
+    private final Boolean isSubscriptionsSupported;
+
+    /**
+     * Indicates whether multi-subscription is supported
+     *
+     * @return the value
+     */
+    public Boolean getIsSubscriptionsSupported() {
+        return isSubscriptionsSupported;
+    }
+
     /** The service category list. */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceCategoryList")
     private final java.util.List<ServiceCategory> serviceCategoryList;
@@ -292,16 +327,16 @@ public final class IncidentResourceType
     }
 
     /** The service categories list for MOS Taxonomy. */
-    @com.fasterxml.jackson.annotation.JsonProperty("serviceCategories")
-    private final java.util.List<ServiceCategories> serviceCategories;
+    @com.fasterxml.jackson.annotation.JsonProperty("services")
+    private final java.util.List<Services> services;
 
     /**
      * The service categories list for MOS Taxonomy.
      *
      * @return the value
      */
-    public java.util.List<ServiceCategories> getServiceCategories() {
-        return serviceCategories;
+    public java.util.List<Services> getServices() {
+        return services;
     }
 
     @Override
@@ -323,9 +358,11 @@ public final class IncidentResourceType
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", label=").append(String.valueOf(this.label));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isSubscriptionsSupported=")
+                .append(String.valueOf(this.isSubscriptionsSupported));
         sb.append(", serviceCategoryList=").append(String.valueOf(this.serviceCategoryList));
         sb.append(", service=").append(String.valueOf(this.service));
-        sb.append(", serviceCategories=").append(String.valueOf(this.serviceCategories));
+        sb.append(", services=").append(String.valueOf(this.services));
         sb.append(")");
         return sb.toString();
     }
@@ -344,9 +381,11 @@ public final class IncidentResourceType
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.label, other.label)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(
+                        this.isSubscriptionsSupported, other.isSubscriptionsSupported)
                 && java.util.Objects.equals(this.serviceCategoryList, other.serviceCategoryList)
                 && java.util.Objects.equals(this.service, other.service)
-                && java.util.Objects.equals(this.serviceCategories, other.serviceCategories)
+                && java.util.Objects.equals(this.services, other.services)
                 && super.equals(other);
     }
 
@@ -362,13 +401,16 @@ public final class IncidentResourceType
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =
                 (result * PRIME)
+                        + (this.isSubscriptionsSupported == null
+                                ? 43
+                                : this.isSubscriptionsSupported.hashCode());
+        result =
+                (result * PRIME)
                         + (this.serviceCategoryList == null
                                 ? 43
                                 : this.serviceCategoryList.hashCode());
         result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.serviceCategories == null ? 43 : this.serviceCategories.hashCode());
+        result = (result * PRIME) + (this.services == null ? 43 : this.services.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

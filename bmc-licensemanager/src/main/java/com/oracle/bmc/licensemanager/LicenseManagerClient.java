@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.licensemanager;
@@ -144,13 +144,13 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("bulkUpload")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.BulkUploadResponse.class,
                         BulkUploadLicenseRecordsResponse.Builder::bulkUploadResponse)
                 .handleResponseHeaderString(
                         "opc-request-id", BulkUploadLicenseRecordsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -175,6 +175,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.LicenseRecord.class,
@@ -187,7 +188,6 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", CreateLicenseRecordResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateLicenseRecordResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -210,6 +210,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.ProductLicense.class,
@@ -222,7 +223,6 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", CreateProductLicenseResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateProductLicenseResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -245,6 +245,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteLicenseRecordResponse.Builder::opcWorkRequestId)
@@ -252,7 +253,6 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", DeleteLicenseRecordResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", DeleteLicenseRecordResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -275,6 +275,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteProductLicenseResponse.Builder::opcWorkRequestId)
@@ -282,7 +283,6 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", DeleteProductLicenseResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", DeleteProductLicenseResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -304,6 +304,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("bulkUploadTemplate")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.BulkUploadTemplate.class,
                         GetBulkUploadTemplateResponse.Builder::bulkUploadTemplate)
@@ -311,7 +312,6 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", GetBulkUploadTemplateResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", GetBulkUploadTemplateResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -332,13 +332,13 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.Configuration.class,
                         GetConfigurationResponse.Builder::configuration)
                 .handleResponseHeaderString("etag", GetConfigurationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -360,13 +360,13 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("isCompartmentIdInSubtree", request.getIsCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.LicenseMetric.class,
                         GetLicenseMetricResponse.Builder::licenseMetric)
                 .handleResponseHeaderString("etag", GetLicenseMetricResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetLicenseMetricResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -388,13 +388,13 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getLicenseRecordId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.LicenseRecord.class,
                         GetLicenseRecordResponse.Builder::licenseRecord)
                 .handleResponseHeaderString("etag", GetLicenseRecordResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetLicenseRecordResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -416,13 +416,13 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getProductLicenseId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.ProductLicense.class,
                         GetProductLicenseResponse.Builder::productLicense)
                 .handleResponseHeaderString("etag", GetProductLicenseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProductLicenseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -447,6 +447,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.LicenseRecordCollection.class,
                         ListLicenseRecordsResponse.Builder::licenseRecordCollection)
@@ -454,7 +455,6 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListLicenseRecordsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListLicenseRecordsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -484,6 +484,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.ProductLicenseConsumerCollection.class,
                         ListProductLicenseConsumersResponse.Builder
@@ -492,7 +493,6 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListProductLicenseConsumersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListProductLicenseConsumersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -518,6 +518,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.ProductLicenseCollection.class,
                         ListProductLicensesResponse.Builder::productLicenseCollection)
@@ -525,7 +526,6 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListProductLicensesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListProductLicensesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -552,6 +552,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.TopUtilizedProductLicenseCollection
                                 .class,
@@ -563,7 +564,6 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListTopUtilizedProductLicensesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -591,6 +591,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.TopUtilizedResourceCollection.class,
                         ListTopUtilizedResourcesResponse.Builder::topUtilizedResourceCollection)
@@ -598,7 +599,6 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListTopUtilizedResourcesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTopUtilizedResourcesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -623,6 +623,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.Configuration.class,
@@ -630,7 +631,6 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", UpdateConfigurationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -655,6 +655,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.LicenseRecord.class,
@@ -662,7 +663,6 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", UpdateLicenseRecordResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateLicenseRecordResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -688,6 +688,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.licensemanager.model.ProductLicense.class,
@@ -695,7 +696,6 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", UpdateProductLicenseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateProductLicenseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

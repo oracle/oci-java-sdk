@@ -1,13 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.redis.model;
 
 /**
- * A list of Redis clusters that match filter criteria, if any. A Redis cluster is a memory-based
- * storage solution. For more information, see [OCI Caching Service with
- * Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm). <br>
+ * A list of clusters that match filter criteria, if any. A cluster is a memory-based storage
+ * solution. For more information, see [OCI
+ * Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,12 +33,12 @@ public final class RedisClusterCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of Redis clusters. */
+        /** The list of clusters. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<RedisClusterSummary> items;
 
         /**
-         * The list of Redis clusters.
+         * The list of clusters.
          *
          * @param items the value to set
          * @return this builder
@@ -78,12 +78,12 @@ public final class RedisClusterCollection
         return new Builder().copy(this);
     }
 
-    /** The list of Redis clusters. */
+    /** The list of clusters. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<RedisClusterSummary> items;
 
     /**
-     * The list of Redis clusters.
+     * The list of clusters.
      *
      * @return the value
      */

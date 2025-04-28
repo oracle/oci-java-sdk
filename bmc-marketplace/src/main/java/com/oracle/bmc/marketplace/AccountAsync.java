@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplace;
@@ -10,7 +10,7 @@ import com.oracle.bmc.marketplace.responses.*;
 /**
  * Use the Marketplace API to manage applications in Oracle Cloud Infrastructure Marketplace. For
  * more information, see [Overview of
- * Marketplace](https://docs.cloud.oracle.com/Content/Marketplace/Concepts/marketoverview.htm)
+ * Marketplace](https://docs.oracle.com/iaas/Content/Marketplace/Concepts/marketoverview.htm)
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public interface AccountAsync extends AutoCloseable {

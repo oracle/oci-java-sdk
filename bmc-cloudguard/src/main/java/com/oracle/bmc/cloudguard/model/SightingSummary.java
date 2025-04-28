@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Sighting summary Definition. <br>
+ * Sighting summary definition. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -40,6 +40,8 @@ public final class SightingSummary
         "confidence",
         "timeFirstDetected",
         "timeLastDetected",
+        "timeFirstOccurred",
+        "timeLastOccurred",
         "regions"
     })
     public SightingSummary(
@@ -60,6 +62,8 @@ public final class SightingSummary
             Confidence confidence,
             java.util.Date timeFirstDetected,
             java.util.Date timeLastDetected,
+            java.util.Date timeFirstOccurred,
+            java.util.Date timeLastOccurred,
             java.util.List<String> regions) {
         super();
         this.id = id;
@@ -79,17 +83,19 @@ public final class SightingSummary
         this.confidence = confidence;
         this.timeFirstDetected = timeFirstDetected;
         this.timeLastDetected = timeLastDetected;
+        this.timeFirstOccurred = timeFirstOccurred;
+        this.timeLastOccurred = timeLastOccurred;
         this.regions = regions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for finding event */
+        /** Unique identifier for sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for finding event
+         * Unique identifier for sighting
          *
          * @param id the value to set
          * @return this builder
@@ -99,12 +105,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Compartment Id where the resource is created */
+        /** Compartment OCID where the impacted resource is created */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Id where the resource is created
+         * Compartment OCID where the impacted resource is created
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -114,12 +120,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Problem Id to which the Sighting is associated */
+        /** Problem ID associated with sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
-         * Problem Id to which the Sighting is associated
+         * Problem ID associated with sighting
          *
          * @param problemId the value to set
          * @return this builder
@@ -144,12 +150,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("actorPrincipalId");
             return this;
         }
-        /** Name of the principal actor */
+        /** Name of principal actor */
         @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalName")
         private String actorPrincipalName;
 
         /**
-         * Name of the principal actor
+         * Name of principal actor
          *
          * @param actorPrincipalName the value to set
          * @return this builder
@@ -159,12 +165,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("actorPrincipalName");
             return this;
         }
-        /** Type of the principal actor */
+        /** Type of principal actor */
         @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalType")
         private String actorPrincipalType;
 
         /**
-         * Type of the principal actor
+         * Type of principal actor
          *
          * @param actorPrincipalType the value to set
          * @return this builder
@@ -174,12 +180,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("actorPrincipalType");
             return this;
         }
-        /** Unique identifier of the rule */
+        /** Unique identifier of the detector rule that was triggered */
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
         private String detectorRuleId;
 
         /**
-         * Unique identifier of the rule
+         * Unique identifier of the detector rule that was triggered
          *
          * @param detectorRuleId the value to set
          * @return this builder
@@ -189,12 +195,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("detectorRuleId");
             return this;
         }
-        /** ClassificationStatus of the sighting event */
+        /** Classification status of the sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("classificationStatus")
         private ClassificationStatus classificationStatus;
 
         /**
-         * ClassificationStatus of the sighting event
+         * Classification status of the sighting
          *
          * @param classificationStatus the value to set
          * @return this builder
@@ -204,12 +210,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("classificationStatus");
             return this;
         }
-        /** Identifier for the sighting type */
+        /** Type of sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
         private String sightingType;
 
         /**
-         * Identifier for the sighting type
+         * Type of sighting
          *
          * @param sightingType the value to set
          * @return this builder
@@ -219,12 +225,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("sightingType");
             return this;
         }
-        /** Name of the sighting type */
+        /** Display name of the sighting type */
         @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
         private String sightingTypeDisplayName;
 
         /**
-         * Name of the sighting type
+         * Display name of the sighting type
          *
          * @param sightingTypeDisplayName the value to set
          * @return this builder
@@ -234,12 +240,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("sightingTypeDisplayName");
             return this;
         }
-        /** Name of the Mitre att&ck tactic */
+        /** Name of the MITRE ATT@CK framework tactic */
         @com.fasterxml.jackson.annotation.JsonProperty("tacticName")
         private String tacticName;
 
         /**
-         * Name of the Mitre att&ck tactic
+         * Name of the MITRE ATT@CK framework tactic
          *
          * @param tacticName the value to set
          * @return this builder
@@ -249,12 +255,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("tacticName");
             return this;
         }
-        /** Name of the Mitre att&ck technique */
+        /** Name of the MITRE ATT@CK framework technique */
         @com.fasterxml.jackson.annotation.JsonProperty("techniqueName")
         private String techniqueName;
 
         /**
-         * Name of the Mitre att&ck technique
+         * Name of the MITRE ATT@CK framework technique
          *
          * @param techniqueName the value to set
          * @return this builder
@@ -294,12 +300,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("severity");
             return this;
         }
-        /** Confidence of the sighting */
+        /** Confidence level that the sighting is not a false positive */
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Confidence confidence;
 
         /**
-         * Confidence of the sighting
+         * Confidence level that the sighting is not a false positive
          *
          * @param confidence the value to set
          * @return this builder
@@ -309,12 +315,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("confidence");
             return this;
         }
-        /** The date and time the sighting was first detected. Format defined by RFC3339. */
+        /** Time the activities were first detected. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
         private java.util.Date timeFirstDetected;
 
         /**
-         * The date and time the sighting was first detected. Format defined by RFC3339.
+         * Time the activities were first detected. Format defined by RFC3339.
          *
          * @param timeFirstDetected the value to set
          * @return this builder
@@ -324,12 +330,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("timeFirstDetected");
             return this;
         }
-        /** The date and time the sighting was last detected. Format defined by RFC3339. */
+        /** Time the activities were last detected. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
         private java.util.Date timeLastDetected;
 
         /**
-         * The date and time the sighting was last detected. Format defined by RFC3339.
+         * Time the activities were last detected. Format defined by RFC3339.
          *
          * @param timeLastDetected the value to set
          * @return this builder
@@ -339,12 +345,42 @@ public final class SightingSummary
             this.__explicitlySet__.add("timeLastDetected");
             return this;
         }
-        /** Regions involved in the sighting */
+        /** Time the activities were first performed. Format defined by RFC3339. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
+        private java.util.Date timeFirstOccurred;
+
+        /**
+         * Time the activities were first performed. Format defined by RFC3339.
+         *
+         * @param timeFirstOccurred the value to set
+         * @return this builder
+         */
+        public Builder timeFirstOccurred(java.util.Date timeFirstOccurred) {
+            this.timeFirstOccurred = timeFirstOccurred;
+            this.__explicitlySet__.add("timeFirstOccurred");
+            return this;
+        }
+        /** Time the activities were last performed. Format defined by RFC3339. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastOccurred")
+        private java.util.Date timeLastOccurred;
+
+        /**
+         * Time the activities were last performed. Format defined by RFC3339.
+         *
+         * @param timeLastOccurred the value to set
+         * @return this builder
+         */
+        public Builder timeLastOccurred(java.util.Date timeLastOccurred) {
+            this.timeLastOccurred = timeLastOccurred;
+            this.__explicitlySet__.add("timeLastOccurred");
+            return this;
+        }
+        /** List of regions involved in the sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
-         * Regions involved in the sighting
+         * List of regions involved in the sighting
          *
          * @param regions the value to set
          * @return this builder
@@ -378,6 +414,8 @@ public final class SightingSummary
                             this.confidence,
                             this.timeFirstDetected,
                             this.timeLastDetected,
+                            this.timeFirstOccurred,
+                            this.timeLastOccurred,
                             this.regions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -438,6 +476,12 @@ public final class SightingSummary
             if (model.wasPropertyExplicitlySet("timeLastDetected")) {
                 this.timeLastDetected(model.getTimeLastDetected());
             }
+            if (model.wasPropertyExplicitlySet("timeFirstOccurred")) {
+                this.timeFirstOccurred(model.getTimeFirstOccurred());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastOccurred")) {
+                this.timeLastOccurred(model.getTimeLastOccurred());
+            }
             if (model.wasPropertyExplicitlySet("regions")) {
                 this.regions(model.getRegions());
             }
@@ -454,12 +498,12 @@ public final class SightingSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for finding event */
+    /** Unique identifier for sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for finding event
+     * Unique identifier for sighting
      *
      * @return the value
      */
@@ -467,12 +511,12 @@ public final class SightingSummary
         return id;
     }
 
-    /** Compartment Id where the resource is created */
+    /** Compartment OCID where the impacted resource is created */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Id where the resource is created
+     * Compartment OCID where the impacted resource is created
      *
      * @return the value
      */
@@ -480,12 +524,12 @@ public final class SightingSummary
         return compartmentId;
     }
 
-    /** Problem Id to which the Sighting is associated */
+    /** Problem ID associated with sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
-     * Problem Id to which the Sighting is associated
+     * Problem ID associated with sighting
      *
      * @return the value
      */
@@ -506,12 +550,12 @@ public final class SightingSummary
         return actorPrincipalId;
     }
 
-    /** Name of the principal actor */
+    /** Name of principal actor */
     @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalName")
     private final String actorPrincipalName;
 
     /**
-     * Name of the principal actor
+     * Name of principal actor
      *
      * @return the value
      */
@@ -519,12 +563,12 @@ public final class SightingSummary
         return actorPrincipalName;
     }
 
-    /** Type of the principal actor */
+    /** Type of principal actor */
     @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalType")
     private final String actorPrincipalType;
 
     /**
-     * Type of the principal actor
+     * Type of principal actor
      *
      * @return the value
      */
@@ -532,12 +576,12 @@ public final class SightingSummary
         return actorPrincipalType;
     }
 
-    /** Unique identifier of the rule */
+    /** Unique identifier of the detector rule that was triggered */
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
     private final String detectorRuleId;
 
     /**
-     * Unique identifier of the rule
+     * Unique identifier of the detector rule that was triggered
      *
      * @return the value
      */
@@ -545,12 +589,12 @@ public final class SightingSummary
         return detectorRuleId;
     }
 
-    /** ClassificationStatus of the sighting event */
+    /** Classification status of the sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("classificationStatus")
     private final ClassificationStatus classificationStatus;
 
     /**
-     * ClassificationStatus of the sighting event
+     * Classification status of the sighting
      *
      * @return the value
      */
@@ -558,12 +602,12 @@ public final class SightingSummary
         return classificationStatus;
     }
 
-    /** Identifier for the sighting type */
+    /** Type of sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
     private final String sightingType;
 
     /**
-     * Identifier for the sighting type
+     * Type of sighting
      *
      * @return the value
      */
@@ -571,12 +615,12 @@ public final class SightingSummary
         return sightingType;
     }
 
-    /** Name of the sighting type */
+    /** Display name of the sighting type */
     @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
     private final String sightingTypeDisplayName;
 
     /**
-     * Name of the sighting type
+     * Display name of the sighting type
      *
      * @return the value
      */
@@ -584,12 +628,12 @@ public final class SightingSummary
         return sightingTypeDisplayName;
     }
 
-    /** Name of the Mitre att&ck tactic */
+    /** Name of the MITRE ATT@CK framework tactic */
     @com.fasterxml.jackson.annotation.JsonProperty("tacticName")
     private final String tacticName;
 
     /**
-     * Name of the Mitre att&ck tactic
+     * Name of the MITRE ATT@CK framework tactic
      *
      * @return the value
      */
@@ -597,12 +641,12 @@ public final class SightingSummary
         return tacticName;
     }
 
-    /** Name of the Mitre att&ck technique */
+    /** Name of the MITRE ATT@CK framework technique */
     @com.fasterxml.jackson.annotation.JsonProperty("techniqueName")
     private final String techniqueName;
 
     /**
-     * Name of the Mitre att&ck technique
+     * Name of the MITRE ATT@CK framework technique
      *
      * @return the value
      */
@@ -636,12 +680,12 @@ public final class SightingSummary
         return severity;
     }
 
-    /** Confidence of the sighting */
+    /** Confidence level that the sighting is not a false positive */
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Confidence confidence;
 
     /**
-     * Confidence of the sighting
+     * Confidence level that the sighting is not a false positive
      *
      * @return the value
      */
@@ -649,12 +693,12 @@ public final class SightingSummary
         return confidence;
     }
 
-    /** The date and time the sighting was first detected. Format defined by RFC3339. */
+    /** Time the activities were first detected. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
     private final java.util.Date timeFirstDetected;
 
     /**
-     * The date and time the sighting was first detected. Format defined by RFC3339.
+     * Time the activities were first detected. Format defined by RFC3339.
      *
      * @return the value
      */
@@ -662,12 +706,12 @@ public final class SightingSummary
         return timeFirstDetected;
     }
 
-    /** The date and time the sighting was last detected. Format defined by RFC3339. */
+    /** Time the activities were last detected. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
     private final java.util.Date timeLastDetected;
 
     /**
-     * The date and time the sighting was last detected. Format defined by RFC3339.
+     * Time the activities were last detected. Format defined by RFC3339.
      *
      * @return the value
      */
@@ -675,12 +719,38 @@ public final class SightingSummary
         return timeLastDetected;
     }
 
-    /** Regions involved in the sighting */
+    /** Time the activities were first performed. Format defined by RFC3339. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
+    private final java.util.Date timeFirstOccurred;
+
+    /**
+     * Time the activities were first performed. Format defined by RFC3339.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeFirstOccurred() {
+        return timeFirstOccurred;
+    }
+
+    /** Time the activities were last performed. Format defined by RFC3339. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastOccurred")
+    private final java.util.Date timeLastOccurred;
+
+    /**
+     * Time the activities were last performed. Format defined by RFC3339.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastOccurred() {
+        return timeLastOccurred;
+    }
+
+    /** List of regions involved in the sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
-     * Regions involved in the sighting
+     * List of regions involved in the sighting
      *
      * @return the value
      */
@@ -721,6 +791,8 @@ public final class SightingSummary
         sb.append(", confidence=").append(String.valueOf(this.confidence));
         sb.append(", timeFirstDetected=").append(String.valueOf(this.timeFirstDetected));
         sb.append(", timeLastDetected=").append(String.valueOf(this.timeLastDetected));
+        sb.append(", timeFirstOccurred=").append(String.valueOf(this.timeFirstOccurred));
+        sb.append(", timeLastOccurred=").append(String.valueOf(this.timeLastOccurred));
         sb.append(", regions=").append(String.valueOf(this.regions));
         sb.append(")");
         return sb.toString();
@@ -754,6 +826,8 @@ public final class SightingSummary
                 && java.util.Objects.equals(this.confidence, other.confidence)
                 && java.util.Objects.equals(this.timeFirstDetected, other.timeFirstDetected)
                 && java.util.Objects.equals(this.timeLastDetected, other.timeLastDetected)
+                && java.util.Objects.equals(this.timeFirstOccurred, other.timeFirstOccurred)
+                && java.util.Objects.equals(this.timeLastOccurred, other.timeLastOccurred)
                 && java.util.Objects.equals(this.regions, other.regions)
                 && super.equals(other);
     }
@@ -809,6 +883,12 @@ public final class SightingSummary
         result =
                 (result * PRIME)
                         + (this.timeLastDetected == null ? 43 : this.timeLastDetected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstOccurred == null ? 43 : this.timeFirstOccurred.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastOccurred == null ? 43 : this.timeLastOccurred.hashCode());
         result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

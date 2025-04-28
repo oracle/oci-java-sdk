@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi;
@@ -795,6 +795,124 @@ public class OperationsInsightsPaginators {
                     public java.util.List<com.oracle.bmc.opsi.model.AddmDbSummary> apply(
                             ListAddmDbsResponse response) {
                         return response.getAddmDbCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAwrHubSources operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAwrHubSourcesResponse> listAwrHubSourcesResponseIterator(
+            final ListAwrHubSourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAwrHubSourcesRequest.Builder,
+                ListAwrHubSourcesRequest,
+                ListAwrHubSourcesResponse>(
+                new java.util.function.Supplier<ListAwrHubSourcesRequest.Builder>() {
+                    @Override
+                    public ListAwrHubSourcesRequest.Builder get() {
+                        return ListAwrHubSourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAwrHubSourcesResponse, String>() {
+                    @Override
+                    public String apply(ListAwrHubSourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAwrHubSourcesRequest.Builder>,
+                        ListAwrHubSourcesRequest>() {
+                    @Override
+                    public ListAwrHubSourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAwrHubSourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAwrHubSourcesRequest, ListAwrHubSourcesResponse>() {
+                    @Override
+                    public ListAwrHubSourcesResponse apply(ListAwrHubSourcesRequest request) {
+                        return client.listAwrHubSources(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.opsi.model.AwrHubSourceSummary} objects contained in responses from the
+     * listAwrHubSources operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.opsi.model.AwrHubSourceSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.AwrHubSourceSummary> listAwrHubSourcesRecordIterator(
+            final ListAwrHubSourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAwrHubSourcesRequest.Builder,
+                ListAwrHubSourcesRequest,
+                ListAwrHubSourcesResponse,
+                com.oracle.bmc.opsi.model.AwrHubSourceSummary>(
+                new java.util.function.Supplier<ListAwrHubSourcesRequest.Builder>() {
+                    @Override
+                    public ListAwrHubSourcesRequest.Builder get() {
+                        return ListAwrHubSourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAwrHubSourcesResponse, String>() {
+                    @Override
+                    public String apply(ListAwrHubSourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAwrHubSourcesRequest.Builder>,
+                        ListAwrHubSourcesRequest>() {
+                    @Override
+                    public ListAwrHubSourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAwrHubSourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAwrHubSourcesRequest, ListAwrHubSourcesResponse>() {
+                    @Override
+                    public ListAwrHubSourcesResponse apply(ListAwrHubSourcesRequest request) {
+                        return client.listAwrHubSources(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAwrHubSourcesResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.AwrHubSourceSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.AwrHubSourceSummary> apply(
+                            ListAwrHubSourcesResponse response) {
+                        return response.getAwrHubSourceSummaryCollection().getItems();
                     }
                 });
     }

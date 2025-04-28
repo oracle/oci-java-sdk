@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.model;
@@ -25,26 +25,35 @@ public final class ClusterCreateOptions
     @Deprecated
     @java.beans.ConstructorProperties({
         "serviceLbSubnetIds",
+        "ipFamilies",
         "kubernetesNetworkConfig",
         "addOns",
         "admissionControllerOptions",
         "persistentVolumeConfig",
-        "serviceLbConfig"
+        "serviceLbConfig",
+        "openIdConnectTokenAuthenticationConfig",
+        "openIdConnectDiscovery"
     })
     public ClusterCreateOptions(
             java.util.List<String> serviceLbSubnetIds,
+            java.util.List<IpFamilies> ipFamilies,
             KubernetesNetworkConfig kubernetesNetworkConfig,
             AddOnOptions addOns,
             AdmissionControllerOptions admissionControllerOptions,
             PersistentVolumeConfigDetails persistentVolumeConfig,
-            ServiceLbConfigDetails serviceLbConfig) {
+            ServiceLbConfigDetails serviceLbConfig,
+            OpenIdConnectTokenAuthenticationConfig openIdConnectTokenAuthenticationConfig,
+            OpenIdConnectDiscovery openIdConnectDiscovery) {
         super();
         this.serviceLbSubnetIds = serviceLbSubnetIds;
+        this.ipFamilies = ipFamilies;
         this.kubernetesNetworkConfig = kubernetesNetworkConfig;
         this.addOns = addOns;
         this.admissionControllerOptions = admissionControllerOptions;
         this.persistentVolumeConfig = persistentVolumeConfig;
         this.serviceLbConfig = serviceLbConfig;
+        this.openIdConnectTokenAuthenticationConfig = openIdConnectTokenAuthenticationConfig;
+        this.openIdConnectDiscovery = openIdConnectDiscovery;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -62,6 +71,21 @@ public final class ClusterCreateOptions
         public Builder serviceLbSubnetIds(java.util.List<String> serviceLbSubnetIds) {
             this.serviceLbSubnetIds = serviceLbSubnetIds;
             this.__explicitlySet__.add("serviceLbSubnetIds");
+            return this;
+        }
+        /** IP family to use for single stack or define the order of IP families for dual-stack */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipFamilies")
+        private java.util.List<IpFamilies> ipFamilies;
+
+        /**
+         * IP family to use for single stack or define the order of IP families for dual-stack
+         *
+         * @param ipFamilies the value to set
+         * @return this builder
+         */
+        public Builder ipFamilies(java.util.List<IpFamilies> ipFamilies) {
+            this.ipFamilies = ipFamilies;
+            this.__explicitlySet__.add("ipFamilies");
             return this;
         }
         /** Network configuration for Kubernetes. */
@@ -130,6 +154,25 @@ public final class ClusterCreateOptions
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("openIdConnectTokenAuthenticationConfig")
+        private OpenIdConnectTokenAuthenticationConfig openIdConnectTokenAuthenticationConfig;
+
+        public Builder openIdConnectTokenAuthenticationConfig(
+                OpenIdConnectTokenAuthenticationConfig openIdConnectTokenAuthenticationConfig) {
+            this.openIdConnectTokenAuthenticationConfig = openIdConnectTokenAuthenticationConfig;
+            this.__explicitlySet__.add("openIdConnectTokenAuthenticationConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("openIdConnectDiscovery")
+        private OpenIdConnectDiscovery openIdConnectDiscovery;
+
+        public Builder openIdConnectDiscovery(OpenIdConnectDiscovery openIdConnectDiscovery) {
+            this.openIdConnectDiscovery = openIdConnectDiscovery;
+            this.__explicitlySet__.add("openIdConnectDiscovery");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -137,11 +180,14 @@ public final class ClusterCreateOptions
             ClusterCreateOptions model =
                     new ClusterCreateOptions(
                             this.serviceLbSubnetIds,
+                            this.ipFamilies,
                             this.kubernetesNetworkConfig,
                             this.addOns,
                             this.admissionControllerOptions,
                             this.persistentVolumeConfig,
-                            this.serviceLbConfig);
+                            this.serviceLbConfig,
+                            this.openIdConnectTokenAuthenticationConfig,
+                            this.openIdConnectDiscovery);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -152,6 +198,9 @@ public final class ClusterCreateOptions
         public Builder copy(ClusterCreateOptions model) {
             if (model.wasPropertyExplicitlySet("serviceLbSubnetIds")) {
                 this.serviceLbSubnetIds(model.getServiceLbSubnetIds());
+            }
+            if (model.wasPropertyExplicitlySet("ipFamilies")) {
+                this.ipFamilies(model.getIpFamilies());
             }
             if (model.wasPropertyExplicitlySet("kubernetesNetworkConfig")) {
                 this.kubernetesNetworkConfig(model.getKubernetesNetworkConfig());
@@ -167,6 +216,13 @@ public final class ClusterCreateOptions
             }
             if (model.wasPropertyExplicitlySet("serviceLbConfig")) {
                 this.serviceLbConfig(model.getServiceLbConfig());
+            }
+            if (model.wasPropertyExplicitlySet("openIdConnectTokenAuthenticationConfig")) {
+                this.openIdConnectTokenAuthenticationConfig(
+                        model.getOpenIdConnectTokenAuthenticationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("openIdConnectDiscovery")) {
+                this.openIdConnectDiscovery(model.getOpenIdConnectDiscovery());
             }
             return this;
         }
@@ -192,6 +248,65 @@ public final class ClusterCreateOptions
      */
     public java.util.List<String> getServiceLbSubnetIds() {
         return serviceLbSubnetIds;
+    }
+
+    /** */
+    public enum IpFamilies implements com.oracle.bmc.http.internal.BmcEnum {
+        IPv4("IPv4"),
+        IPv6("IPv6"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IpFamilies.class);
+
+        private final String value;
+        private static java.util.Map<String, IpFamilies> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IpFamilies v : IpFamilies.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        IpFamilies(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IpFamilies create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'IpFamilies', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** IP family to use for single stack or define the order of IP families for dual-stack */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipFamilies")
+    private final java.util.List<IpFamilies> ipFamilies;
+
+    /**
+     * IP family to use for single stack or define the order of IP families for dual-stack
+     *
+     * @return the value
+     */
+    public java.util.List<IpFamilies> getIpFamilies() {
+        return ipFamilies;
     }
 
     /** Network configuration for Kubernetes. */
@@ -247,6 +362,20 @@ public final class ClusterCreateOptions
         return serviceLbConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("openIdConnectTokenAuthenticationConfig")
+    private final OpenIdConnectTokenAuthenticationConfig openIdConnectTokenAuthenticationConfig;
+
+    public OpenIdConnectTokenAuthenticationConfig getOpenIdConnectTokenAuthenticationConfig() {
+        return openIdConnectTokenAuthenticationConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("openIdConnectDiscovery")
+    private final OpenIdConnectDiscovery openIdConnectDiscovery;
+
+    public OpenIdConnectDiscovery getOpenIdConnectDiscovery() {
+        return openIdConnectDiscovery;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -263,6 +392,7 @@ public final class ClusterCreateOptions
         sb.append("ClusterCreateOptions(");
         sb.append("super=").append(super.toString());
         sb.append("serviceLbSubnetIds=").append(String.valueOf(this.serviceLbSubnetIds));
+        sb.append(", ipFamilies=").append(String.valueOf(this.ipFamilies));
         sb.append(", kubernetesNetworkConfig=")
                 .append(String.valueOf(this.kubernetesNetworkConfig));
         sb.append(", addOns=").append(String.valueOf(this.addOns));
@@ -270,6 +400,9 @@ public final class ClusterCreateOptions
                 .append(String.valueOf(this.admissionControllerOptions));
         sb.append(", persistentVolumeConfig=").append(String.valueOf(this.persistentVolumeConfig));
         sb.append(", serviceLbConfig=").append(String.valueOf(this.serviceLbConfig));
+        sb.append(", openIdConnectTokenAuthenticationConfig=")
+                .append(String.valueOf(this.openIdConnectTokenAuthenticationConfig));
+        sb.append(", openIdConnectDiscovery=").append(String.valueOf(this.openIdConnectDiscovery));
         sb.append(")");
         return sb.toString();
     }
@@ -285,6 +418,7 @@ public final class ClusterCreateOptions
 
         ClusterCreateOptions other = (ClusterCreateOptions) o;
         return java.util.Objects.equals(this.serviceLbSubnetIds, other.serviceLbSubnetIds)
+                && java.util.Objects.equals(this.ipFamilies, other.ipFamilies)
                 && java.util.Objects.equals(
                         this.kubernetesNetworkConfig, other.kubernetesNetworkConfig)
                 && java.util.Objects.equals(this.addOns, other.addOns)
@@ -293,6 +427,11 @@ public final class ClusterCreateOptions
                 && java.util.Objects.equals(
                         this.persistentVolumeConfig, other.persistentVolumeConfig)
                 && java.util.Objects.equals(this.serviceLbConfig, other.serviceLbConfig)
+                && java.util.Objects.equals(
+                        this.openIdConnectTokenAuthenticationConfig,
+                        other.openIdConnectTokenAuthenticationConfig)
+                && java.util.Objects.equals(
+                        this.openIdConnectDiscovery, other.openIdConnectDiscovery)
                 && super.equals(other);
     }
 
@@ -305,6 +444,7 @@ public final class ClusterCreateOptions
                         + (this.serviceLbSubnetIds == null
                                 ? 43
                                 : this.serviceLbSubnetIds.hashCode());
+        result = (result * PRIME) + (this.ipFamilies == null ? 43 : this.ipFamilies.hashCode());
         result =
                 (result * PRIME)
                         + (this.kubernetesNetworkConfig == null
@@ -324,6 +464,16 @@ public final class ClusterCreateOptions
         result =
                 (result * PRIME)
                         + (this.serviceLbConfig == null ? 43 : this.serviceLbConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.openIdConnectTokenAuthenticationConfig == null
+                                ? 43
+                                : this.openIdConnectTokenAuthenticationConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.openIdConnectDiscovery == null
+                                ? 43
+                                : this.openIdConnectDiscovery.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

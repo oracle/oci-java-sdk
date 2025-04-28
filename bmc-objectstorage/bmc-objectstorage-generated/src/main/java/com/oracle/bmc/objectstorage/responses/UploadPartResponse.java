@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.responses;
@@ -52,6 +52,56 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcContentMd5;
     }
 
+    /**
+     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the request body as computed by
+     * the server. Applicable only if CRC32C was specified in opc-checksum-algorithm request header
+     * during upload.
+     */
+    private String opcContentCrc32c;
+
+    /**
+     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the request body as computed by
+     * the server. Applicable only if CRC32C was specified in opc-checksum-algorithm request header
+     * during upload.
+     *
+     * @return the value
+     */
+    public String getOpcContentCrc32c() {
+        return opcContentCrc32c;
+    }
+
+    /**
+     * The base64-encoded SHA256 hash of the request body as computed by the server. Applicable only
+     * if SHA256 was specified in opc-checksum-algorithm request header during upload.
+     */
+    private String opcContentSha256;
+
+    /**
+     * The base64-encoded SHA256 hash of the request body as computed by the server. Applicable only
+     * if SHA256 was specified in opc-checksum-algorithm request header during upload.
+     *
+     * @return the value
+     */
+    public String getOpcContentSha256() {
+        return opcContentSha256;
+    }
+
+    /**
+     * The base64-encoded SHA384 hash of the request body as computed by the server. Applicable only
+     * if SHA384 was specified in opc-checksum-algorithm request header during upload.
+     */
+    private String opcContentSha384;
+
+    /**
+     * The base64-encoded SHA384 hash of the request body as computed by the server. Applicable only
+     * if SHA384 was specified in opc-checksum-algorithm request header during upload.
+     *
+     * @return the value
+     */
+    public String getOpcContentSha384() {
+        return opcContentSha384;
+    }
+
     /** The entity tag (ETag) for the object. */
     private String eTag;
 
@@ -70,6 +120,9 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
         "opcClientRequestId",
         "opcRequestId",
         "opcContentMd5",
+        "opcContentCrc32c",
+        "opcContentSha256",
+        "opcContentSha384",
         "eTag"
     })
     private UploadPartResponse(
@@ -78,11 +131,17 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
             String opcClientRequestId,
             String opcRequestId,
             String opcContentMd5,
+            String opcContentCrc32c,
+            String opcContentSha256,
+            String opcContentSha384,
             String eTag) {
         super(__httpStatusCode__, headers);
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
         this.opcContentMd5 = opcContentMd5;
+        this.opcContentCrc32c = opcContentCrc32c;
+        this.opcContentSha256 = opcContentSha256;
+        this.opcContentSha384 = opcContentSha384;
         this.eTag = eTag;
     }
 
@@ -154,6 +213,62 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the request body as computed
+         * by the server. Applicable only if CRC32C was specified in opc-checksum-algorithm request
+         * header during upload.
+         */
+        private String opcContentCrc32c;
+
+        /**
+         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the request body as computed
+         * by the server. Applicable only if CRC32C was specified in opc-checksum-algorithm request
+         * header during upload.
+         *
+         * @param opcContentCrc32c the value to set
+         * @return this builder
+         */
+        public Builder opcContentCrc32c(String opcContentCrc32c) {
+            this.opcContentCrc32c = opcContentCrc32c;
+            return this;
+        }
+
+        /**
+         * The base64-encoded SHA256 hash of the request body as computed by the server. Applicable
+         * only if SHA256 was specified in opc-checksum-algorithm request header during upload.
+         */
+        private String opcContentSha256;
+
+        /**
+         * The base64-encoded SHA256 hash of the request body as computed by the server. Applicable
+         * only if SHA256 was specified in opc-checksum-algorithm request header during upload.
+         *
+         * @param opcContentSha256 the value to set
+         * @return this builder
+         */
+        public Builder opcContentSha256(String opcContentSha256) {
+            this.opcContentSha256 = opcContentSha256;
+            return this;
+        }
+
+        /**
+         * The base64-encoded SHA384 hash of the request body as computed by the server. Applicable
+         * only if SHA384 was specified in opc-checksum-algorithm request header during upload.
+         */
+        private String opcContentSha384;
+
+        /**
+         * The base64-encoded SHA384 hash of the request body as computed by the server. Applicable
+         * only if SHA384 was specified in opc-checksum-algorithm request header during upload.
+         *
+         * @param opcContentSha384 the value to set
+         * @return this builder
+         */
+        public Builder opcContentSha384(String opcContentSha384) {
+            this.opcContentSha384 = opcContentSha384;
+            return this;
+        }
+
         /** The entity tag (ETag) for the object. */
         private String eTag;
 
@@ -180,6 +295,9 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             opcContentMd5(o.getOpcContentMd5());
+            opcContentCrc32c(o.getOpcContentCrc32c());
+            opcContentSha256(o.getOpcContentSha256());
+            opcContentSha384(o.getOpcContentSha384());
             eTag(o.getETag());
 
             return this;
@@ -198,6 +316,9 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
                     opcClientRequestId,
                     opcRequestId,
                     opcContentMd5,
+                    opcContentCrc32c,
+                    opcContentSha256,
+                    opcContentSha384,
                     eTag);
         }
     }
@@ -219,6 +340,9 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append(",opcClientRequestId=").append(String.valueOf(opcClientRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",opcContentMd5=").append(String.valueOf(opcContentMd5));
+        sb.append(",opcContentCrc32c=").append(String.valueOf(opcContentCrc32c));
+        sb.append(",opcContentSha256=").append(String.valueOf(opcContentSha256));
+        sb.append(",opcContentSha384=").append(String.valueOf(opcContentSha384));
         sb.append(",eTag=").append(String.valueOf(eTag));
         sb.append(")");
         return sb.toString();
@@ -238,6 +362,9 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
                 && java.util.Objects.equals(this.opcClientRequestId, other.opcClientRequestId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcContentMd5, other.opcContentMd5)
+                && java.util.Objects.equals(this.opcContentCrc32c, other.opcContentCrc32c)
+                && java.util.Objects.equals(this.opcContentSha256, other.opcContentSha256)
+                && java.util.Objects.equals(this.opcContentSha384, other.opcContentSha384)
                 && java.util.Objects.equals(this.eTag, other.eTag);
     }
 
@@ -254,6 +381,15 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
         result =
                 (result * PRIME)
                         + (this.opcContentMd5 == null ? 43 : this.opcContentMd5.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentCrc32c == null ? 43 : this.opcContentCrc32c.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentSha256 == null ? 43 : this.opcContentSha256.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentSha384 == null ? 43 : this.opcContentSha384.hashCode());
         result = (result * PRIME) + (this.eTag == null ? 43 : this.eTag.hashCode());
         return result;
     }

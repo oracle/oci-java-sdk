@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer;
@@ -504,6 +504,48 @@ public class NetworkLoadBalancerAsyncClient extends com.oracle.bmc.http.internal
                         GetBackendHealthResponse.Builder::backendHealth)
                 .handleResponseHeaderString(
                         "opc-request-id", GetBackendHealthResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBackendOperationalStatusResponse>
+            getBackendOperationalStatus(
+                    GetBackendOperationalStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetBackendOperationalStatusRequest,
+                                    GetBackendOperationalStatusResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getNetworkLoadBalancerId(), "networkLoadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        Validate.notBlank(request.getBackendName(), "backendName must not be blank");
+
+        return clientCall(request, GetBackendOperationalStatusResponse::builder)
+                .logger(LOG, "getBackendOperationalStatus")
+                .serviceDetails(
+                        "NetworkLoadBalancer",
+                        "GetBackendOperationalStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendOperationalStatus/GetBackendOperationalStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBackendOperationalStatusRequest::builder)
+                .basePath("/20200501")
+                .appendPathParam("networkLoadBalancers")
+                .appendPathParam(request.getNetworkLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .appendPathParam("backends")
+                .appendPathParam(request.getBackendName())
+                .appendPathParam("operationalStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.networkloadbalancer.model.BackendOperationalStatus.class,
+                        GetBackendOperationalStatusResponse.Builder::backendOperationalStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBackendOperationalStatusResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of a Detector Rule to be created in Detector Recipe <br>
+ * Details of a detector rule to be created in a detector recipe. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -64,12 +64,12 @@ public final class CreateDetectorRuleDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Id of source detector rule */
+        /** ID of source detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDetectorRuleId")
         private String sourceDetectorRuleId;
 
         /**
-         * Id of source detector rule
+         * ID of source detector rule
          *
          * @param sourceDetectorRuleId the value to set
          * @return this builder
@@ -109,12 +109,12 @@ public final class CreateDetectorRuleDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Identifies state for detector rule */
+        /** Enablement state of the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Identifies state for detector rule
+         * Enablement state of the detector rule
          *
          * @param isEnabled the value to set
          * @return this builder
@@ -124,12 +124,12 @@ public final class CreateDetectorRuleDetails
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /** The Risk Level */
+        /** The risk level for the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
         private RiskLevel riskLevel;
 
         /**
-         * The Risk Level
+         * The risk level for the detector rule
          *
          * @param riskLevel the value to set
          * @return this builder
@@ -139,12 +139,12 @@ public final class CreateDetectorRuleDetails
             this.__explicitlySet__.add("riskLevel");
             return this;
         }
-        /** Configuration details */
+        /** List of detector rule configurations */
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<DetectorConfiguration> configurations;
 
         /**
-         * Configuration details
+         * List of detector rule configurations
          *
          * @param configurations the value to set
          * @return this builder
@@ -163,12 +163,12 @@ public final class CreateDetectorRuleDetails
             this.__explicitlySet__.add("condition");
             return this;
         }
-        /** user defined labels for a detector rule */
+        /** User-defined labels for the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
-         * user defined labels for a detector rule
+         * User-defined labels for the detector rule
          *
          * @param labels the value to set
          * @return this builder
@@ -178,12 +178,12 @@ public final class CreateDetectorRuleDetails
             this.__explicitlySet__.add("labels");
             return this;
         }
-        /** Recommendations of the detector rule */
+        /** Recommendations for the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
         private String recommendation;
 
         /**
-         * Recommendations of the detector rule
+         * Recommendations for the detector rule
          *
          * @param recommendation the value to set
          * @return this builder
@@ -193,12 +193,12 @@ public final class CreateDetectorRuleDetails
             this.__explicitlySet__.add("recommendation");
             return this;
         }
-        /** ocid of the data source which needs to attached */
+        /** OCID of the data source which is attached */
         @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
         private String dataSourceId;
 
         /**
-         * ocid of the data source which needs to attached
+         * OCID of the data source which is attached
          *
          * @param dataSourceId the value to set
          * @return this builder
@@ -208,12 +208,12 @@ public final class CreateDetectorRuleDetails
             this.__explicitlySet__.add("dataSourceId");
             return this;
         }
-        /** Data Source entities mapping for a Detector Rule */
+        /** Data source entities mapping for the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("entitiesMappings")
         private java.util.List<EntitiesMapping> entitiesMappings;
 
         /**
-         * Data Source entities mapping for a Detector Rule
+         * Data source entities mapping for the detector rule
          *
          * @param entitiesMappings the value to set
          * @return this builder
@@ -295,12 +295,12 @@ public final class CreateDetectorRuleDetails
         return new Builder().copy(this);
     }
 
-    /** Id of source detector rule */
+    /** ID of source detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetectorRuleId")
     private final String sourceDetectorRuleId;
 
     /**
-     * Id of source detector rule
+     * ID of source detector rule
      *
      * @return the value
      */
@@ -334,12 +334,12 @@ public final class CreateDetectorRuleDetails
         return description;
     }
 
-    /** Identifies state for detector rule */
+    /** Enablement state of the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Identifies state for detector rule
+     * Enablement state of the detector rule
      *
      * @return the value
      */
@@ -347,12 +347,12 @@ public final class CreateDetectorRuleDetails
         return isEnabled;
     }
 
-    /** The Risk Level */
+    /** The risk level for the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     private final RiskLevel riskLevel;
 
     /**
-     * The Risk Level
+     * The risk level for the detector rule
      *
      * @return the value
      */
@@ -360,12 +360,12 @@ public final class CreateDetectorRuleDetails
         return riskLevel;
     }
 
-    /** Configuration details */
+    /** List of detector rule configurations */
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<DetectorConfiguration> configurations;
 
     /**
-     * Configuration details
+     * List of detector rule configurations
      *
      * @return the value
      */
@@ -380,12 +380,12 @@ public final class CreateDetectorRuleDetails
         return condition;
     }
 
-    /** user defined labels for a detector rule */
+    /** User-defined labels for the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
-     * user defined labels for a detector rule
+     * User-defined labels for the detector rule
      *
      * @return the value
      */
@@ -393,12 +393,12 @@ public final class CreateDetectorRuleDetails
         return labels;
     }
 
-    /** Recommendations of the detector rule */
+    /** Recommendations for the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
     private final String recommendation;
 
     /**
-     * Recommendations of the detector rule
+     * Recommendations for the detector rule
      *
      * @return the value
      */
@@ -406,12 +406,12 @@ public final class CreateDetectorRuleDetails
         return recommendation;
     }
 
-    /** ocid of the data source which needs to attached */
+    /** OCID of the data source which is attached */
     @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
     private final String dataSourceId;
 
     /**
-     * ocid of the data source which needs to attached
+     * OCID of the data source which is attached
      *
      * @return the value
      */
@@ -419,12 +419,12 @@ public final class CreateDetectorRuleDetails
         return dataSourceId;
     }
 
-    /** Data Source entities mapping for a Detector Rule */
+    /** Data source entities mapping for the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("entitiesMappings")
     private final java.util.List<EntitiesMapping> entitiesMappings;
 
     /**
-     * Data Source entities mapping for a Detector Rule
+     * Data source entities mapping for the detector rule
      *
      * @return the value
      */

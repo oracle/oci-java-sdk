@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue;
@@ -9,9 +9,9 @@ import com.oracle.bmc.queue.responses.*;
 
 /**
  * Use the Queue API to produce and consume messages, create queues, and manage related items. For
- * more information, see [Queue](https://docs.cloud.oracle.com/iaas/Content/queue/overview.htm).
- * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
- * default if no circuit breaker configuration is defined by the user.
+ * more information, see [Queue](https://docs.oracle.com/iaas/Content/queue/overview.htm). This
+ * service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default
+ * if no circuit breaker configuration is defined by the user.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public interface Queue extends AutoCloseable {
@@ -66,7 +66,7 @@ public interface Queue extends AutoCloseable {
 
     /**
      * Deletes the message represented by the receipt from the queue. You must use the [messages
-     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
      * to delete messages. The messages endpoint may be different for different queues. Use {@link
      * #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`.
      *
@@ -77,14 +77,15 @@ public interface Queue extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/DeleteMessageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/DeleteMessageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMessage API.
      */
     DeleteMessageResponse deleteMessage(DeleteMessageRequest request);
 
     /**
-     * Deletes multiple messages from the queue. You must use the [messages
-     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * Deletes multiple messages from the queue or the consumer group. Only messages from the same
+     * queue/consumer group can be deleted at once. You must use the [messages
+     * endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
      * to delete messages. The messages endpoint may be different for different queues. Use {@link
      * #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`.
      *
@@ -95,14 +96,14 @@ public interface Queue extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/DeleteMessagesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/DeleteMessagesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMessages API.
      */
     DeleteMessagesResponse deleteMessages(DeleteMessagesRequest request);
 
     /**
      * Consumes messages from the queue. You must use the [messages
-     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
      * to consume messages. The messages endpoint may be different for different queues. Use {@link
      * #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`. GetMessages
      * accepts optional channelFilter query parameter that can filter source channels of the
@@ -117,14 +118,14 @@ public interface Queue extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/GetMessagesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/GetMessagesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMessages API.
      */
     GetMessagesResponse getMessages(GetMessagesRequest request);
 
     /**
      * Gets the statistics for the queue and its dead letter queue. You must use the [messages
-     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
      * to get a queue's statistics. The messages endpoint may be different for different queues. Use
      * {@link #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`.
      *
@@ -135,7 +136,7 @@ public interface Queue extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/GetStatsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/GetStatsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStats API.
      */
     GetStatsResponse getStats(GetStatsRequest request);
@@ -154,14 +155,14 @@ public interface Queue extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/ListChannelsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/ListChannelsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListChannels API.
      */
     ListChannelsResponse listChannels(ListChannelsRequest request);
 
     /**
      * Puts messages into the queue. You must use the [messages
-     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
      * to produce messages. The messages endpoint may be different for different queues. Use {@link
      * #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`.
      *
@@ -172,14 +173,14 @@ public interface Queue extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/PutMessagesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/PutMessagesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutMessages API.
      */
     PutMessagesResponse putMessages(PutMessagesRequest request);
 
     /**
      * Updates the visibility of the message represented by the receipt. You must use the [messages
-     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
      * to update messages. The messages endpoint may be different for different queues. Use {@link
      * #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`.
      *
@@ -190,14 +191,15 @@ public interface Queue extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/UpdateMessageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/UpdateMessageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMessage API.
      */
     UpdateMessageResponse updateMessage(UpdateMessageRequest request);
 
     /**
-     * Updates multiple messages in the queue. You must use the [messages
-     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * Updates multiple messages in the queue or the consumer group. Only messages from the same
+     * queue/consumer group can be updated at once. You must use the [messages
+     * endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
      * to update messages. The messages endpoint may be different for different queues. Use {@link
      * #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`.
      *
@@ -208,7 +210,7 @@ public interface Queue extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/UpdateMessagesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/UpdateMessagesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMessages API.
      */
     UpdateMessagesResponse updateMessages(UpdateMessagesRequest request);

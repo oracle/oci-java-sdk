@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -26,9 +26,11 @@ public final class DeploymentBackupSummary
     @java.beans.ConstructorProperties({
         "id",
         "deploymentId",
+        "deploymentType",
         "compartmentId",
         "displayName",
         "isAutomatic",
+        "backupSourceType",
         "lifecycleState",
         "lifecycleDetails",
         "timeOfBackup",
@@ -43,14 +45,18 @@ public final class DeploymentBackupSummary
         "timeUpdated",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "isMetadataOnly",
+        "locks"
     })
     public DeploymentBackupSummary(
             String id,
             String deploymentId,
+            DeploymentType deploymentType,
             String compartmentId,
             String displayName,
             Boolean isAutomatic,
+            BackupSourceType backupSourceType,
             LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Date timeOfBackup,
@@ -65,13 +71,17 @@ public final class DeploymentBackupSummary
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            Boolean isMetadataOnly,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.deploymentId = deploymentId;
+        this.deploymentType = deploymentType;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.isAutomatic = isAutomatic;
+        this.backupSourceType = backupSourceType;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.timeOfBackup = timeOfBackup;
@@ -87,19 +97,21 @@ public final class DeploymentBackupSummary
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.isMetadataOnly = isMetadataOnly;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup being referenced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup being referenced.
          *
          * @param id the value to set
@@ -111,14 +123,14 @@ public final class DeploymentBackupSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * deployment being referenced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
         private String deploymentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * deployment being referenced.
          *
          * @param deploymentId the value to set
@@ -130,14 +142,35 @@ public final class DeploymentBackupSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the
+         * value 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in
+         * favor of 'DATABASE_ORACLE'.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+        private DeploymentType deploymentType;
+
+        /**
+         * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the
+         * value 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in
+         * favor of 'DATABASE_ORACLE'.
+         *
+         * @param deploymentType the value to set
+         * @return this builder
+         */
+        public Builder deploymentType(DeploymentType deploymentType) {
+            this.deploymentType = deploymentType;
+            this.__explicitlySet__.add("deploymentType");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment being referenced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment being referenced.
          *
          * @param compartmentId the value to set
@@ -176,6 +209,21 @@ public final class DeploymentBackupSummary
         public Builder isAutomatic(Boolean isAutomatic) {
             this.isAutomatic = isAutomatic;
             this.__explicitlySet__.add("isAutomatic");
+            return this;
+        }
+        /** Possible deployment backup source types. */
+        @com.fasterxml.jackson.annotation.JsonProperty("backupSourceType")
+        private BackupSourceType backupSourceType;
+
+        /**
+         * Possible deployment backup source types.
+         *
+         * @param backupSourceType the value to set
+         * @return this builder
+         */
+        public Builder backupSourceType(BackupSourceType backupSourceType) {
+            this.backupSourceType = backupSourceType;
+            this.__explicitlySet__.add("backupSourceType");
             return this;
         }
         /** Possible lifecycle states. */
@@ -427,7 +475,7 @@ public final class DeploymentBackupSummary
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          */
@@ -438,7 +486,7 @@ public final class DeploymentBackupSummary
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
@@ -450,6 +498,36 @@ public final class DeploymentBackupSummary
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /** Parameter to allow users to create backup without trails */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMetadataOnly")
+        private Boolean isMetadataOnly;
+
+        /**
+         * Parameter to allow users to create backup without trails
+         *
+         * @param isMetadataOnly the value to set
+         * @return this builder
+         */
+        public Builder isMetadataOnly(Boolean isMetadataOnly) {
+            this.isMetadataOnly = isMetadataOnly;
+            this.__explicitlySet__.add("isMetadataOnly");
+            return this;
+        }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -459,9 +537,11 @@ public final class DeploymentBackupSummary
                     new DeploymentBackupSummary(
                             this.id,
                             this.deploymentId,
+                            this.deploymentType,
                             this.compartmentId,
                             this.displayName,
                             this.isAutomatic,
+                            this.backupSourceType,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.timeOfBackup,
@@ -476,7 +556,9 @@ public final class DeploymentBackupSummary
                             this.timeUpdated,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.isMetadataOnly,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -491,6 +573,9 @@ public final class DeploymentBackupSummary
             if (model.wasPropertyExplicitlySet("deploymentId")) {
                 this.deploymentId(model.getDeploymentId());
             }
+            if (model.wasPropertyExplicitlySet("deploymentType")) {
+                this.deploymentType(model.getDeploymentType());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -499,6 +584,9 @@ public final class DeploymentBackupSummary
             }
             if (model.wasPropertyExplicitlySet("isAutomatic")) {
                 this.isAutomatic(model.getIsAutomatic());
+            }
+            if (model.wasPropertyExplicitlySet("backupSourceType")) {
+                this.backupSourceType(model.getBackupSourceType());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -545,6 +633,12 @@ public final class DeploymentBackupSummary
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("isMetadataOnly")) {
+                this.isMetadataOnly(model.getIsMetadataOnly());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -559,14 +653,14 @@ public final class DeploymentBackupSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup being referenced.
      *
      * @return the value
@@ -576,14 +670,14 @@ public final class DeploymentBackupSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * deployment being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
     private final String deploymentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * deployment being referenced.
      *
      * @return the value
@@ -593,14 +687,33 @@ public final class DeploymentBackupSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the value
+     * 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in favor of
+     * 'DATABASE_ORACLE'.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+    private final DeploymentType deploymentType;
+
+    /**
+     * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the value
+     * 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in favor of
+     * 'DATABASE_ORACLE'.
+     *
+     * @return the value
+     */
+    public DeploymentType getDeploymentType() {
+        return deploymentType;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment being referenced.
      *
      * @return the value
@@ -633,6 +746,66 @@ public final class DeploymentBackupSummary
      */
     public Boolean getIsAutomatic() {
         return isAutomatic;
+    }
+
+    /** Possible deployment backup source types. */
+    public enum BackupSourceType implements com.oracle.bmc.http.internal.BmcEnum {
+        Manual("MANUAL"),
+        Automatic("AUTOMATIC"),
+        Scheduled("SCHEDULED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BackupSourceType.class);
+
+        private final String value;
+        private static java.util.Map<String, BackupSourceType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BackupSourceType v : BackupSourceType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BackupSourceType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BackupSourceType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BackupSourceType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Possible deployment backup source types. */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupSourceType")
+    private final BackupSourceType backupSourceType;
+
+    /**
+     * Possible deployment backup source types.
+     *
+     * @return the value
+     */
+    public BackupSourceType getBackupSourceType() {
+        return backupSourceType;
     }
 
     /** Possible lifecycle states. */
@@ -855,7 +1028,7 @@ public final class DeploymentBackupSummary
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      */
@@ -866,7 +1039,7 @@ public final class DeploymentBackupSummary
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
@@ -874,6 +1047,32 @@ public final class DeploymentBackupSummary
      */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
+    }
+
+    /** Parameter to allow users to create backup without trails */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMetadataOnly")
+    private final Boolean isMetadataOnly;
+
+    /**
+     * Parameter to allow users to create backup without trails
+     *
+     * @return the value
+     */
+    public Boolean getIsMetadataOnly() {
+        return isMetadataOnly;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -893,9 +1092,11 @@ public final class DeploymentBackupSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", deploymentId=").append(String.valueOf(this.deploymentId));
+        sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", isAutomatic=").append(String.valueOf(this.isAutomatic));
+        sb.append(", backupSourceType=").append(String.valueOf(this.backupSourceType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeOfBackup=").append(String.valueOf(this.timeOfBackup));
@@ -911,6 +1112,8 @@ public final class DeploymentBackupSummary
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", isMetadataOnly=").append(String.valueOf(this.isMetadataOnly));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -927,9 +1130,11 @@ public final class DeploymentBackupSummary
         DeploymentBackupSummary other = (DeploymentBackupSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.deploymentId, other.deploymentId)
+                && java.util.Objects.equals(this.deploymentType, other.deploymentType)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.isAutomatic, other.isAutomatic)
+                && java.util.Objects.equals(this.backupSourceType, other.backupSourceType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeOfBackup, other.timeOfBackup)
@@ -945,6 +1150,8 @@ public final class DeploymentBackupSummary
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.isMetadataOnly, other.isMetadataOnly)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -956,9 +1163,15 @@ public final class DeploymentBackupSummary
         result = (result * PRIME) + (this.deploymentId == null ? 43 : this.deploymentId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
+        result =
+                (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.isAutomatic == null ? 43 : this.isAutomatic.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupSourceType == null ? 43 : this.backupSourceType.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
@@ -984,6 +1197,10 @@ public final class DeploymentBackupSummary
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMetadataOnly == null ? 43 : this.isMetadataOnly.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fusionapps.model;
@@ -8,7 +8,7 @@ package com.oracle.bmc.fusionapps.model;
  * An environment refresh copies data from a source environment to a target environment, making a
  * copy of the source environment onto the target environment. For more information, see [Refreshing
  * an
- * Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/refresh-environment.htm).
+ * Environment](https://docs.oracle.com/iaas/Content/fusion-applications/refresh-environment.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -38,6 +38,7 @@ public final class RefreshActivity
         "timeFinished",
         "timeAccepted",
         "timeUpdated",
+        "isDataMaskingOpted",
         "refreshIssueDetailsList",
         "lifecycleDetails"
     })
@@ -53,6 +54,7 @@ public final class RefreshActivity
             java.util.Date timeFinished,
             java.util.Date timeAccepted,
             java.util.Date timeUpdated,
+            Boolean isDataMaskingOpted,
             java.util.List<RefreshIssueDetails> refreshIssueDetailsList,
             LifecycleDetails lifecycleDetails) {
         super();
@@ -67,6 +69,7 @@ public final class RefreshActivity
         this.timeFinished = timeFinished;
         this.timeAccepted = timeAccepted;
         this.timeUpdated = timeUpdated;
+        this.isDataMaskingOpted = isDataMaskingOpted;
         this.refreshIssueDetailsList = refreshIssueDetailsList;
         this.lifecycleDetails = lifecycleDetails;
     }
@@ -258,6 +261,21 @@ public final class RefreshActivity
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /** Represents if the customer opted for Data Masking or not during refreshActivity. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDataMaskingOpted")
+        private Boolean isDataMaskingOpted;
+
+        /**
+         * Represents if the customer opted for Data Masking or not during refreshActivity.
+         *
+         * @param isDataMaskingOpted the value to set
+         * @return this builder
+         */
+        public Builder isDataMaskingOpted(Boolean isDataMaskingOpted) {
+            this.isDataMaskingOpted = isDataMaskingOpted;
+            this.__explicitlySet__.add("isDataMaskingOpted");
+            return this;
+        }
         /** Details of refresh investigation information, each item represents a different issue. */
         @com.fasterxml.jackson.annotation.JsonProperty("refreshIssueDetailsList")
         private java.util.List<RefreshIssueDetails> refreshIssueDetailsList;
@@ -311,6 +329,7 @@ public final class RefreshActivity
                             this.timeFinished,
                             this.timeAccepted,
                             this.timeUpdated,
+                            this.isDataMaskingOpted,
                             this.refreshIssueDetailsList,
                             this.lifecycleDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -353,6 +372,9 @@ public final class RefreshActivity
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("isDataMaskingOpted")) {
+                this.isDataMaskingOpted(model.getIsDataMaskingOpted());
             }
             if (model.wasPropertyExplicitlySet("refreshIssueDetailsList")) {
                 this.refreshIssueDetailsList(model.getRefreshIssueDetailsList());
@@ -622,6 +644,19 @@ public final class RefreshActivity
         return timeUpdated;
     }
 
+    /** Represents if the customer opted for Data Masking or not during refreshActivity. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDataMaskingOpted")
+    private final Boolean isDataMaskingOpted;
+
+    /**
+     * Represents if the customer opted for Data Masking or not during refreshActivity.
+     *
+     * @return the value
+     */
+    public Boolean getIsDataMaskingOpted() {
+        return isDataMaskingOpted;
+    }
+
     /** Details of refresh investigation information, each item represents a different issue. */
     @com.fasterxml.jackson.annotation.JsonProperty("refreshIssueDetailsList")
     private final java.util.List<RefreshIssueDetails> refreshIssueDetailsList;
@@ -731,6 +766,7 @@ public final class RefreshActivity
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
         sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", isDataMaskingOpted=").append(String.valueOf(this.isDataMaskingOpted));
         sb.append(", refreshIssueDetailsList=")
                 .append(String.valueOf(this.refreshIssueDetailsList));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -761,6 +797,7 @@ public final class RefreshActivity
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
                 && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.isDataMaskingOpted, other.isDataMaskingOpted)
                 && java.util.Objects.equals(
                         this.refreshIssueDetailsList, other.refreshIssueDetailsList)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -804,6 +841,11 @@ public final class RefreshActivity
         result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
         result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDataMaskingOpted == null
+                                ? 43
+                                : this.isDataMaskingOpted.hashCode());
         result =
                 (result * PRIME)
                         + (this.refreshIssueDetailsList == null

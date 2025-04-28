@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.recovery.model;
@@ -34,6 +34,7 @@ public final class ProtectedDatabase
         "vpcUserName",
         "databaseSize",
         "protectionPolicyId",
+        "policyLockedDateTime",
         "recoveryServiceSubnets",
         "databaseId",
         "databaseSizeInGBs",
@@ -48,6 +49,7 @@ public final class ProtectedDatabase
         "lifecycleDetails",
         "healthDetails",
         "metrics",
+        "subscriptionId",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -60,6 +62,7 @@ public final class ProtectedDatabase
             String vpcUserName,
             DatabaseSizes databaseSize,
             String protectionPolicyId,
+            String policyLockedDateTime,
             java.util.List<RecoveryServiceSubnetDetails> recoveryServiceSubnets,
             String databaseId,
             Integer databaseSizeInGBs,
@@ -74,6 +77,7 @@ public final class ProtectedDatabase
             String lifecycleDetails,
             String healthDetails,
             Metrics metrics,
+            String subscriptionId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -85,6 +89,7 @@ public final class ProtectedDatabase
         this.vpcUserName = vpcUserName;
         this.databaseSize = databaseSize;
         this.protectionPolicyId = protectionPolicyId;
+        this.policyLockedDateTime = policyLockedDateTime;
         this.recoveryServiceSubnets = recoveryServiceSubnets;
         this.databaseId = databaseId;
         this.databaseSizeInGBs = databaseSizeInGBs;
@@ -99,6 +104,7 @@ public final class ProtectedDatabase
         this.lifecycleDetails = lifecycleDetails;
         this.healthDetails = healthDetails;
         this.metrics = metrics;
+        this.subscriptionId = subscriptionId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -225,6 +231,39 @@ public final class ProtectedDatabase
         public Builder protectionPolicyId(String protectionPolicyId) {
             this.protectionPolicyId = protectionPolicyId;
             this.__explicitlySet__.add("protectionPolicyId");
+            return this;
+        }
+        /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the
+         * retention lock to take effect and permanently lock the retention period defined in the
+         * policy.
+         *
+         * <p>The retention lock feature controls whether Recovery Service strictly preserves
+         * backups for the duration defined in a policy. Retention lock is useful to enforce
+         * recovery window compliance and to prevent unintentional modifications to protected
+         * database backups. Recovery Service enforces a 14-day delay before the retention lock set
+         * for a policy can take effect.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+        private String policyLockedDateTime;
+
+        /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the
+         * retention lock to take effect and permanently lock the retention period defined in the
+         * policy.
+         *
+         * <p>The retention lock feature controls whether Recovery Service strictly preserves
+         * backups for the duration defined in a policy. Retention lock is useful to enforce
+         * recovery window compliance and to prevent unintentional modifications to protected
+         * database backups. Recovery Service enforces a 14-day delay before the retention lock set
+         * for a policy can take effect.
+         *
+         * @param policyLockedDateTime the value to set
+         * @return this builder
+         */
+        public Builder policyLockedDateTime(String policyLockedDateTime) {
+            this.policyLockedDateTime = policyLockedDateTime;
+            this.__explicitlySet__.add("policyLockedDateTime");
             return this;
         }
         /** List of recovery service subnet resources associated with the protected database. */
@@ -390,13 +429,12 @@ public final class ProtectedDatabase
             return this;
         }
         /**
-         * Indicates the protection status of the database. Allowed values are: - HEALTHY - WARNING
-         * - ALERT
+         * Indicates the protection status of the database.
          *
-         * <p>A 'HEALTHY' status indicates that Recovery Service can ensure database recovery to any
-         * point in time within the entire recovery window. The potential data loss exposure since
-         * the last backup is: - Less than 10 seconds, if Real-time data protection is enabled -
-         * Less than 70 minutes if Real-time data protection is disabled
+         * <p>A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to
+         * any point in time within the entire recovery window. The potential data loss exposure
+         * since the last backup is: - Less than 10 seconds, if Real-time data protection is enabled
+         * - Less than 70 minutes if Real-time data protection is disabled
          *
          * <p>A 'WARNING' status indicates that Recovery Service can ensure database recovery within
          * the current recovery window - 1 day. The potential data loss exposure since the last
@@ -410,13 +448,12 @@ public final class ProtectedDatabase
         private Health health;
 
         /**
-         * Indicates the protection status of the database. Allowed values are: - HEALTHY - WARNING
-         * - ALERT
+         * Indicates the protection status of the database.
          *
-         * <p>A 'HEALTHY' status indicates that Recovery Service can ensure database recovery to any
-         * point in time within the entire recovery window. The potential data loss exposure since
-         * the last backup is: - Less than 10 seconds, if Real-time data protection is enabled -
-         * Less than 70 minutes if Real-time data protection is disabled
+         * <p>A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to
+         * any point in time within the entire recovery window. The potential data loss exposure
+         * since the last backup is: - Less than 10 seconds, if Real-time data protection is enabled
+         * - Less than 70 minutes if Real-time data protection is disabled
          *
          * <p>A 'WARNING' status indicates that Recovery Service can ensure database recovery within
          * the current recovery window - 1 day. The potential data loss exposure since the last
@@ -504,6 +541,21 @@ public final class ProtectedDatabase
             this.__explicitlySet__.add("metrics");
             return this;
         }
+        /** The OCID of the cloud service subscription to which the protected database is linked. */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The OCID of the cloud service subscription to which the protected database is linked.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -582,6 +634,7 @@ public final class ProtectedDatabase
                             this.vpcUserName,
                             this.databaseSize,
                             this.protectionPolicyId,
+                            this.policyLockedDateTime,
                             this.recoveryServiceSubnets,
                             this.databaseId,
                             this.databaseSizeInGBs,
@@ -596,6 +649,7 @@ public final class ProtectedDatabase
                             this.lifecycleDetails,
                             this.healthDetails,
                             this.metrics,
+                            this.subscriptionId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -627,6 +681,9 @@ public final class ProtectedDatabase
             }
             if (model.wasPropertyExplicitlySet("protectionPolicyId")) {
                 this.protectionPolicyId(model.getProtectionPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("policyLockedDateTime")) {
+                this.policyLockedDateTime(model.getPolicyLockedDateTime());
             }
             if (model.wasPropertyExplicitlySet("recoveryServiceSubnets")) {
                 this.recoveryServiceSubnets(model.getRecoveryServiceSubnets());
@@ -669,6 +726,9 @@ public final class ProtectedDatabase
             }
             if (model.wasPropertyExplicitlySet("metrics")) {
                 this.metrics(model.getMetrics());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -797,6 +857,33 @@ public final class ProtectedDatabase
      */
     public String getProtectionPolicyId() {
         return protectionPolicyId;
+    }
+
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
+     * lock to take effect and permanently lock the retention period defined in the policy.
+     *
+     * <p>The retention lock feature controls whether Recovery Service strictly preserves backups
+     * for the duration defined in a policy. Retention lock is useful to enforce recovery window
+     * compliance and to prevent unintentional modifications to protected database backups. Recovery
+     * Service enforces a 14-day delay before the retention lock set for a policy can take effect.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+    private final String policyLockedDateTime;
+
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
+     * lock to take effect and permanently lock the retention period defined in the policy.
+     *
+     * <p>The retention lock feature controls whether Recovery Service strictly preserves backups
+     * for the duration defined in a policy. Retention lock is useful to enforce recovery window
+     * compliance and to prevent unintentional modifications to protected database backups. Recovery
+     * Service enforces a 14-day delay before the retention lock set for a policy can take effect.
+     *
+     * @return the value
+     */
+    public String getPolicyLockedDateTime() {
+        return policyLockedDateTime;
     }
 
     /** List of recovery service subnet resources associated with the protected database. */
@@ -943,10 +1030,9 @@ public final class ProtectedDatabase
     }
 
     /**
-     * Indicates the protection status of the database. Allowed values are: - HEALTHY - WARNING -
-     * ALERT
+     * Indicates the protection status of the database.
      *
-     * <p>A 'HEALTHY' status indicates that Recovery Service can ensure database recovery to any
+     * <p>A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any
      * point in time within the entire recovery window. The potential data loss exposure since the
      * last backup is: - Less than 10 seconds, if Real-time data protection is enabled - Less than
      * 70 minutes if Real-time data protection is disabled
@@ -963,10 +1049,9 @@ public final class ProtectedDatabase
     private final Health health;
 
     /**
-     * Indicates the protection status of the database. Allowed values are: - HEALTHY - WARNING -
-     * ALERT
+     * Indicates the protection status of the database.
      *
-     * <p>A 'HEALTHY' status indicates that Recovery Service can ensure database recovery to any
+     * <p>A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any
      * point in time within the entire recovery window. The potential data loss exposure since the
      * last backup is: - Less than 10 seconds, if Real-time data protection is enabled - Less than
      * 70 minutes if Real-time data protection is disabled
@@ -1043,6 +1128,19 @@ public final class ProtectedDatabase
 
     public Metrics getMetrics() {
         return metrics;
+    }
+
+    /** The OCID of the cloud service subscription to which the protected database is linked. */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The OCID of the cloud service subscription to which the protected database is linked.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     /**
@@ -1122,6 +1220,7 @@ public final class ProtectedDatabase
         sb.append(", vpcUserName=").append(String.valueOf(this.vpcUserName));
         sb.append(", databaseSize=").append(String.valueOf(this.databaseSize));
         sb.append(", protectionPolicyId=").append(String.valueOf(this.protectionPolicyId));
+        sb.append(", policyLockedDateTime=").append(String.valueOf(this.policyLockedDateTime));
         sb.append(", recoveryServiceSubnets=").append(String.valueOf(this.recoveryServiceSubnets));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", databaseSizeInGBs=").append(String.valueOf(this.databaseSizeInGBs));
@@ -1136,6 +1235,7 @@ public final class ProtectedDatabase
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", healthDetails=").append(String.valueOf(this.healthDetails));
         sb.append(", metrics=").append(String.valueOf(this.metrics));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1160,6 +1260,7 @@ public final class ProtectedDatabase
                 && java.util.Objects.equals(this.vpcUserName, other.vpcUserName)
                 && java.util.Objects.equals(this.databaseSize, other.databaseSize)
                 && java.util.Objects.equals(this.protectionPolicyId, other.protectionPolicyId)
+                && java.util.Objects.equals(this.policyLockedDateTime, other.policyLockedDateTime)
                 && java.util.Objects.equals(
                         this.recoveryServiceSubnets, other.recoveryServiceSubnets)
                 && java.util.Objects.equals(this.databaseId, other.databaseId)
@@ -1175,6 +1276,7 @@ public final class ProtectedDatabase
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.healthDetails, other.healthDetails)
                 && java.util.Objects.equals(this.metrics, other.metrics)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1198,6 +1300,11 @@ public final class ProtectedDatabase
                         + (this.protectionPolicyId == null
                                 ? 43
                                 : this.protectionPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.policyLockedDateTime == null
+                                ? 43
+                                : this.policyLockedDateTime.hashCode());
         result =
                 (result * PRIME)
                         + (this.recoveryServiceSubnets == null
@@ -1232,6 +1339,9 @@ public final class ProtectedDatabase
                 (result * PRIME)
                         + (this.healthDetails == null ? 43 : this.healthDetails.hashCode());
         result = (result * PRIME) + (this.metrics == null ? 43 : this.metrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

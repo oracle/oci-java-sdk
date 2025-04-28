@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeClusterExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeClusterExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateComputeClusterRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -17,16 +17,16 @@ public class CreateComputeClusterRequest
 
     /**
      * The data for creating a [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A
-     * compute cluster is an empty remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute
+     * cluster is an empty remote direct memory access (RDMA) network group.
      *
      * <p>After the compute cluster is created, you can use the compute cluster's OCID with the
      * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances
      * in the compute cluster. The instances must be created in the same compartment and
      * availability domain as the cluster.
      *
-     * <p>Use compute clusters when you want to manage instances in the cluster individually, or
-     * when you want to use different types of instances in the RDMA network group.
+     * <p>Use compute clusters when you want to manage instances in the cluster individually in the
+     * RDMA network group.
      *
      * <p>For details about creating a cluster network that uses instance pools to manage groups of
      * identical instances, see {@link
@@ -37,16 +37,16 @@ public class CreateComputeClusterRequest
 
     /**
      * The data for creating a [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A
-     * compute cluster is an empty remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute
+     * cluster is an empty remote direct memory access (RDMA) network group.
      *
      * <p>After the compute cluster is created, you can use the compute cluster's OCID with the
      * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances
      * in the compute cluster. The instances must be created in the same compartment and
      * availability domain as the cluster.
      *
-     * <p>Use compute clusters when you want to manage instances in the cluster individually, or
-     * when you want to use different types of instances in the RDMA network group.
+     * <p>Use compute clusters when you want to manage instances in the cluster individually in the
+     * RDMA network group.
      *
      * <p>For details about creating a cluster network that uses instance pools to manage groups of
      * identical instances, see {@link
@@ -109,16 +109,16 @@ public class CreateComputeClusterRequest
 
         /**
          * The data for creating a [compute
-         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
-         * A compute cluster is an empty remote direct memory access (RDMA) network group.
+         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A
+         * compute cluster is an empty remote direct memory access (RDMA) network group.
          *
          * <p>After the compute cluster is created, you can use the compute cluster's OCID with the
          * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create
          * instances in the compute cluster. The instances must be created in the same compartment
          * and availability domain as the cluster.
          *
-         * <p>Use compute clusters when you want to manage instances in the cluster individually, or
-         * when you want to use different types of instances in the RDMA network group.
+         * <p>Use compute clusters when you want to manage instances in the cluster individually in
+         * the RDMA network group.
          *
          * <p>For details about creating a cluster network that uses instance pools to manage groups
          * of identical instances, see {@link
@@ -130,16 +130,16 @@ public class CreateComputeClusterRequest
 
         /**
          * The data for creating a [compute
-         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
-         * A compute cluster is an empty remote direct memory access (RDMA) network group.
+         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A
+         * compute cluster is an empty remote direct memory access (RDMA) network group.
          *
          * <p>After the compute cluster is created, you can use the compute cluster's OCID with the
          * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create
          * instances in the compute cluster. The instances must be created in the same compartment
          * and availability domain as the cluster.
          *
-         * <p>Use compute clusters when you want to manage instances in the cluster individually, or
-         * when you want to use different types of instances in the RDMA network group.
+         * <p>Use compute clusters when you want to manage instances in the cluster individually in
+         * the RDMA network group.
          *
          * <p>For details about creating a cluster network that uses instance pools to manage groups
          * of identical instances, see {@link

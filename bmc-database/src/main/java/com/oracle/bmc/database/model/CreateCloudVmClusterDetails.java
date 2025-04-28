@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -26,6 +26,7 @@ public final class CreateCloudVmClusterDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
+        "subscriptionId",
         "subnetId",
         "backupSubnetId",
         "cpuCoreCount",
@@ -53,10 +54,16 @@ public final class CreateCloudVmClusterDetails
         "giVersion",
         "freeformTags",
         "definedTags",
-        "dataCollectionOptions"
+        "securityAttributes",
+        "dataCollectionOptions",
+        "systemVersion",
+        "fileSystemConfigurationDetails",
+        "cloudAutomationUpdateDetails",
+        "vmClusterType"
     })
     public CreateCloudVmClusterDetails(
             String compartmentId,
+            String subscriptionId,
             String subnetId,
             String backupSubnetId,
             Integer cpuCoreCount,
@@ -84,9 +91,15 @@ public final class CreateCloudVmClusterDetails
             String giVersion,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            DataCollectionOptions dataCollectionOptions) {
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            DataCollectionOptions dataCollectionOptions,
+            String systemVersion,
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
+            CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
+            VmClusterType vmClusterType) {
         super();
         this.compartmentId = compartmentId;
+        this.subscriptionId = subscriptionId;
         this.subnetId = subnetId;
         this.backupSubnetId = backupSubnetId;
         this.cpuCoreCount = cpuCoreCount;
@@ -114,20 +127,25 @@ public final class CreateCloudVmClusterDetails
         this.giVersion = giVersion;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.systemVersion = systemVersion;
+        this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+        this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+        this.vmClusterType = vmClusterType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -139,14 +157,33 @@ public final class CreateCloudVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet associated with the cloud VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet associated with the cloud VM cluster.
          *
          * @param subnetId the value to set
@@ -158,14 +195,14 @@ public final class CreateCloudVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup network subnet associated with the cloud VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
         private String backupSubnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup network subnet associated with the cloud VM cluster.
          *
          * @param backupSubnetId the value to set
@@ -314,7 +351,7 @@ public final class CreateCloudVmClusterDetails
          * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
          * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent
          * assigned to DATA storage. See [Storage
-         * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
          * in the Exadata documentation for details on the impact of the configuration settings on
          * storage.
          */
@@ -326,7 +363,7 @@ public final class CreateCloudVmClusterDetails
          * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
          * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent
          * assigned to DATA storage. See [Storage
-         * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
          * in the Exadata documentation for details on the impact of the configuration settings on
          * storage.
          *
@@ -354,14 +391,14 @@ public final class CreateCloudVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud Exadata infrastructure resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
         private String cloudExadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud Exadata infrastructure resource.
          *
          * @param cloudExadataInfrastructureId the value to set
@@ -508,14 +545,14 @@ public final class CreateCloudVmClusterDetails
         }
         /**
          * The time zone to use for the cloud VM cluster. For details, see [Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
          * The time zone to use for the cloud VM cluster. For details, see [Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
@@ -572,24 +609,24 @@ public final class CreateCloudVmClusterDetails
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -601,11 +638,11 @@ public final class CreateCloudVmClusterDetails
         }
         /**
          * A list of the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups (NSGs) that the backup network of this DB system belongs to.
          * Setting this to an empty array after the list is created removes the resource from all
          * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * Applicable only to Exadata systems.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
@@ -613,11 +650,11 @@ public final class CreateCloudVmClusterDetails
 
         /**
          * A list of the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups (NSGs) that the backup network of this DB system belongs to.
          * Setting this to an empty array after the list is created removes the resource from all
          * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * Applicable only to Exadata systems.
          *
          * @param backupNetworkNsgIds the value to set
@@ -646,7 +683,7 @@ public final class CreateCloudVmClusterDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -656,7 +693,7 @@ public final class CreateCloudVmClusterDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -671,7 +708,7 @@ public final class CreateCloudVmClusterDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -679,7 +716,7 @@ public final class CreateCloudVmClusterDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -688,6 +725,30 @@ public final class CreateCloudVmClusterDetails
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
 
@@ -699,6 +760,62 @@ public final class CreateCloudVmClusterDetails
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
+        /** Operating system version of the image. */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+        private String systemVersion;
+
+        /**
+         * Operating system version of the image.
+         *
+         * @param systemVersion the value to set
+         * @return this builder
+         */
+        public Builder systemVersion(String systemVersion) {
+            this.systemVersion = systemVersion;
+            this.__explicitlySet__.add("systemVersion");
+            return this;
+        }
+        /** Details of the file system configuration of the VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+        private java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+        /**
+         * Details of the file system configuration of the VM cluster.
+         *
+         * @param fileSystemConfigurationDetails the value to set
+         * @return this builder
+         */
+        public Builder fileSystemConfigurationDetails(
+                java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            this.__explicitlySet__.add("fileSystemConfigurationDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+        private CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+        public Builder cloudAutomationUpdateDetails(
+                CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
+            this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            this.__explicitlySet__.add("cloudAutomationUpdateDetails");
+            return this;
+        }
+        /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+        private VmClusterType vmClusterType;
+
+        /**
+         * The vmcluster type for the VM cluster/Cloud VM cluster.
+         *
+         * @param vmClusterType the value to set
+         * @return this builder
+         */
+        public Builder vmClusterType(VmClusterType vmClusterType) {
+            this.vmClusterType = vmClusterType;
+            this.__explicitlySet__.add("vmClusterType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -707,6 +824,7 @@ public final class CreateCloudVmClusterDetails
             CreateCloudVmClusterDetails model =
                     new CreateCloudVmClusterDetails(
                             this.compartmentId,
+                            this.subscriptionId,
                             this.subnetId,
                             this.backupSubnetId,
                             this.cpuCoreCount,
@@ -734,7 +852,12 @@ public final class CreateCloudVmClusterDetails
                             this.giVersion,
                             this.freeformTags,
                             this.definedTags,
-                            this.dataCollectionOptions);
+                            this.securityAttributes,
+                            this.dataCollectionOptions,
+                            this.systemVersion,
+                            this.fileSystemConfigurationDetails,
+                            this.cloudAutomationUpdateDetails,
+                            this.vmClusterType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -745,6 +868,9 @@ public final class CreateCloudVmClusterDetails
         public Builder copy(CreateCloudVmClusterDetails model) {
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
@@ -827,8 +953,23 @@ public final class CreateCloudVmClusterDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            if (model.wasPropertyExplicitlySet("systemVersion")) {
+                this.systemVersion(model.getSystemVersion());
+            }
+            if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
+                this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
+                this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterType")) {
+                this.vmClusterType(model.getVmClusterType());
             }
             return this;
         }
@@ -844,14 +985,14 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -861,14 +1002,31 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet associated with the cloud VM cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet associated with the cloud VM cluster.
      *
      * @return the value
@@ -878,14 +1036,14 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup network subnet associated with the cloud VM cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
     private final String backupSubnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup network subnet associated with the cloud VM cluster.
      *
      * @return the value
@@ -1016,7 +1174,7 @@ public final class CreateCloudVmClusterDetails
      * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
      * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned
      * to DATA storage. See [Storage
-     * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
      * in the Exadata documentation for details on the impact of the configuration settings on
      * storage.
      */
@@ -1028,7 +1186,7 @@ public final class CreateCloudVmClusterDetails
      * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
      * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned
      * to DATA storage. See [Storage
-     * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
      * in the Exadata documentation for details on the impact of the configuration settings on
      * storage.
      *
@@ -1052,14 +1210,14 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud Exadata infrastructure resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
     private final String cloudExadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud Exadata infrastructure resource.
      *
      * @return the value
@@ -1224,14 +1382,14 @@ public final class CreateCloudVmClusterDetails
 
     /**
      * The time zone to use for the cloud VM cluster. For details, see [Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
      * The time zone to use for the cloud VM cluster. For details, see [Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
      */
@@ -1279,10 +1437,10 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      */
@@ -1290,10 +1448,10 @@ public final class CreateCloudVmClusterDetails
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      *
@@ -1304,22 +1462,22 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * of the network security groups (NSGs) that the backup network of this DB system belongs to.
      * Setting this to an empty array after the list is created removes the resource from all NSGs.
      * For more information about NSGs, see [Security
-     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
      * only to Exadata systems.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     private final java.util.List<String> backupNetworkNsgIds;
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * of the network security groups (NSGs) that the backup network of this DB system belongs to.
      * Setting this to an empty array after the list is created removes the resource from all NSGs.
      * For more information about NSGs, see [Security
-     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
      * only to Exadata systems.
      *
      * @return the value
@@ -1344,7 +1502,7 @@ public final class CreateCloudVmClusterDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1354,7 +1512,7 @@ public final class CreateCloudVmClusterDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1367,7 +1525,7 @@ public final class CreateCloudVmClusterDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -1375,7 +1533,7 @@ public final class CreateCloudVmClusterDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -1383,11 +1541,111 @@ public final class CreateCloudVmClusterDetails
         return definedTags;
     }
 
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
     private final DataCollectionOptions dataCollectionOptions;
 
     public DataCollectionOptions getDataCollectionOptions() {
         return dataCollectionOptions;
+    }
+
+    /** Operating system version of the image. */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+    private final String systemVersion;
+
+    /**
+     * Operating system version of the image.
+     *
+     * @return the value
+     */
+    public String getSystemVersion() {
+        return systemVersion;
+    }
+
+    /** Details of the file system configuration of the VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+    private final java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+    /**
+     * Details of the file system configuration of the VM cluster.
+     *
+     * @return the value
+     */
+    public java.util.List<FileSystemConfigurationDetail> getFileSystemConfigurationDetails() {
+        return fileSystemConfigurationDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+    private final CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+    public CloudAutomationUpdateDetails getCloudAutomationUpdateDetails() {
+        return cloudAutomationUpdateDetails;
+    }
+
+    /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+    public enum VmClusterType implements com.oracle.bmc.http.internal.BmcEnum {
+        Regular("REGULAR"),
+        Developer("DEVELOPER"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, VmClusterType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VmClusterType v : VmClusterType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        VmClusterType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VmClusterType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid VmClusterType: " + key);
+        }
+    };
+    /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+    private final VmClusterType vmClusterType;
+
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     *
+     * @return the value
+     */
+    public VmClusterType getVmClusterType() {
+        return vmClusterType;
     }
 
     @Override
@@ -1406,6 +1664,7 @@ public final class CreateCloudVmClusterDetails
         sb.append("CreateCloudVmClusterDetails(");
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", backupSubnetId=").append(String.valueOf(this.backupSubnetId));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
@@ -1435,7 +1694,14 @@ public final class CreateCloudVmClusterDetails
         sb.append(", giVersion=").append(String.valueOf(this.giVersion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
+        sb.append(", fileSystemConfigurationDetails=")
+                .append(String.valueOf(this.fileSystemConfigurationDetails));
+        sb.append(", cloudAutomationUpdateDetails=")
+                .append(String.valueOf(this.cloudAutomationUpdateDetails));
+        sb.append(", vmClusterType=").append(String.valueOf(this.vmClusterType));
         sb.append(")");
         return sb.toString();
     }
@@ -1451,6 +1717,7 @@ public final class CreateCloudVmClusterDetails
 
         CreateCloudVmClusterDetails other = (CreateCloudVmClusterDetails) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.backupSubnetId, other.backupSubnetId)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
@@ -1482,7 +1749,14 @@ public final class CreateCloudVmClusterDetails
                 && java.util.Objects.equals(this.giVersion, other.giVersion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.systemVersion, other.systemVersion)
+                && java.util.Objects.equals(
+                        this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
+                && java.util.Objects.equals(this.vmClusterType, other.vmClusterType)
                 && super.equals(other);
     }
 
@@ -1493,6 +1767,9 @@ public final class CreateCloudVmClusterDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result =
                 (result * PRIME)
@@ -1566,9 +1843,30 @@ public final class CreateCloudVmClusterDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =
                 (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
+        result =
+                (result * PRIME)
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemVersion == null ? 43 : this.systemVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileSystemConfigurationDetails == null
+                                ? 43
+                                : this.fileSystemConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAutomationUpdateDetails == null
+                                ? 43
+                                : this.cloudAutomationUpdateDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmClusterType == null ? 43 : this.vmClusterType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

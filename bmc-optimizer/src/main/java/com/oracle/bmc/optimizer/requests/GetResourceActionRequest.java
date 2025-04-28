@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.optimizer.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.optimizer.requests;
 import com.oracle.bmc.optimizer.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetResourceActionExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetResourceActionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetResourceActionRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
@@ -19,6 +19,13 @@ public class GetResourceActionRequest extends com.oracle.bmc.requests.BmcRequest
     /** The unique OCID associated with the resource action. */
     public String getResourceActionId() {
         return resourceActionId;
+    }
+    /** Supplement additional resource information in extended metadata response. */
+    private Boolean includeResourceMetadata;
+
+    /** Supplement additional resource information in extended metadata response. */
+    public Boolean getIncludeResourceMetadata() {
+        return includeResourceMetadata;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -51,6 +58,20 @@ public class GetResourceActionRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder resourceActionId(String resourceActionId) {
             this.resourceActionId = resourceActionId;
+            return this;
+        }
+
+        /** Supplement additional resource information in extended metadata response. */
+        private Boolean includeResourceMetadata = null;
+
+        /**
+         * Supplement additional resource information in extended metadata response.
+         *
+         * @param includeResourceMetadata the value to set
+         * @return this builder instance
+         */
+        public Builder includeResourceMetadata(Boolean includeResourceMetadata) {
+            this.includeResourceMetadata = includeResourceMetadata;
             return this;
         }
 
@@ -103,6 +124,7 @@ public class GetResourceActionRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder copy(GetResourceActionRequest o) {
             resourceActionId(o.getResourceActionId());
+            includeResourceMetadata(o.getIncludeResourceMetadata());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -139,9 +161,11 @@ public class GetResourceActionRequest extends com.oracle.bmc.requests.BmcRequest
         public GetResourceActionRequest buildWithoutInvocationCallback() {
             GetResourceActionRequest request = new GetResourceActionRequest();
             request.resourceActionId = resourceActionId;
+            request.includeResourceMetadata = includeResourceMetadata;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetResourceActionRequest(resourceActionId, opcRequestId);
+            // new GetResourceActionRequest(resourceActionId, includeResourceMetadata,
+            // opcRequestId);
         }
     }
 
@@ -151,7 +175,10 @@ public class GetResourceActionRequest extends com.oracle.bmc.requests.BmcRequest
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().resourceActionId(resourceActionId).opcRequestId(opcRequestId);
+        return new Builder()
+                .resourceActionId(resourceActionId)
+                .includeResourceMetadata(includeResourceMetadata)
+                .opcRequestId(opcRequestId);
     }
 
     /**
@@ -169,6 +196,7 @@ public class GetResourceActionRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",resourceActionId=").append(String.valueOf(this.resourceActionId));
+        sb.append(",includeResourceMetadata=").append(String.valueOf(this.includeResourceMetadata));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -186,6 +214,8 @@ public class GetResourceActionRequest extends com.oracle.bmc.requests.BmcRequest
         GetResourceActionRequest other = (GetResourceActionRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.resourceActionId, other.resourceActionId)
+                && java.util.Objects.equals(
+                        this.includeResourceMetadata, other.includeResourceMetadata)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -196,6 +226,11 @@ public class GetResourceActionRequest extends com.oracle.bmc.requests.BmcRequest
         result =
                 (result * PRIME)
                         + (this.resourceActionId == null ? 43 : this.resourceActionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.includeResourceMetadata == null
+                                ? 43
+                                : this.includeResourceMetadata.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Create an empty Sql tuning sets. <br>
+ * Create an empty Sql tuning sets. It takes either credentialDetails or databaseCredential. It's
+ * recommended to provide databaseCredential <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -25,6 +26,7 @@ public final class CreateSqlTuningSetDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
+        "databaseCredential",
         "name",
         "owner",
         "description",
@@ -32,12 +34,14 @@ public final class CreateSqlTuningSetDetails
     })
     public CreateSqlTuningSetDetails(
             SqlTuningSetAdminCredentialDetails credentialDetails,
+            DatabaseCredentialDetails databaseCredential,
             String name,
             String owner,
             String description,
             Integer showSqlOnly) {
         super();
         this.credentialDetails = credentialDetails;
+        this.databaseCredential = databaseCredential;
         this.name = name;
         this.owner = owner;
         this.description = description;
@@ -53,6 +57,15 @@ public final class CreateSqlTuningSetDetails
         public Builder credentialDetails(SqlTuningSetAdminCredentialDetails credentialDetails) {
             this.credentialDetails = credentialDetails;
             this.__explicitlySet__.add("credentialDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
             return this;
         }
         /** A unique Sql tuning set name. */
@@ -127,6 +140,7 @@ public final class CreateSqlTuningSetDetails
             CreateSqlTuningSetDetails model =
                     new CreateSqlTuningSetDetails(
                             this.credentialDetails,
+                            this.databaseCredential,
                             this.name,
                             this.owner,
                             this.description,
@@ -141,6 +155,9 @@ public final class CreateSqlTuningSetDetails
         public Builder copy(CreateSqlTuningSetDetails model) {
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
@@ -172,6 +189,13 @@ public final class CreateSqlTuningSetDetails
 
     public SqlTuningSetAdminCredentialDetails getCredentialDetails() {
         return credentialDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
     }
 
     /** A unique Sql tuning set name. */
@@ -246,6 +270,7 @@ public final class CreateSqlTuningSetDetails
         sb.append("CreateSqlTuningSetDetails(");
         sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", owner=").append(String.valueOf(this.owner));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -265,6 +290,7 @@ public final class CreateSqlTuningSetDetails
 
         CreateSqlTuningSetDetails other = (CreateSqlTuningSetDetails) o;
         return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.owner, other.owner)
                 && java.util.Objects.equals(this.description, other.description)
@@ -279,6 +305,11 @@ public final class CreateSqlTuningSetDetails
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());

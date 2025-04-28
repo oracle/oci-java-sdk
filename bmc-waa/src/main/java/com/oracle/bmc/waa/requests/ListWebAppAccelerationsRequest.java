@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.waa.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.waa.requests;
 import com.oracle.bmc.waa.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/ListWebAppAccelerationsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/ListWebAppAccelerationsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListWebAppAccelerationsRequest.
  */
@@ -16,13 +16,13 @@ public class ListWebAppAccelerationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which to list resources.
      */
     public String getCompartmentId() {
@@ -30,27 +30,27 @@ public class ListWebAppAccelerationsRequest
     }
     /**
      * A filter to return only the WebAppAcceleration with the given
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String id;
 
     /**
      * A filter to return only the WebAppAcceleration with the given
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getId() {
         return id;
     }
     /**
      * A filter to return only the WebAppAcceleration with the given
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of related
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related
      * WebAppAccelerationPolicy.
      */
     private String webAppAccelerationPolicyId;
 
     /**
      * A filter to return only the WebAppAcceleration with the given
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of related
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related
      * WebAppAccelerationPolicy.
      */
     public String getWebAppAccelerationPolicyId() {
@@ -167,13 +167,13 @@ public class ListWebAppAccelerationsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which to list resources.
          *
          * @param compartmentId the value to set
@@ -186,13 +186,13 @@ public class ListWebAppAccelerationsRequest
 
         /**
          * A filter to return only the WebAppAcceleration with the given
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String id = null;
 
         /**
          * A filter to return only the WebAppAcceleration with the given
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder instance
@@ -204,14 +204,14 @@ public class ListWebAppAccelerationsRequest
 
         /**
          * A filter to return only the WebAppAcceleration with the given
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of related
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related
          * WebAppAccelerationPolicy.
          */
         private String webAppAccelerationPolicyId = null;
 
         /**
          * A filter to return only the WebAppAcceleration with the given
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of related
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related
          * WebAppAccelerationPolicy.
          *
          * @param webAppAccelerationPolicyId the value to set

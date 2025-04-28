@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.optimizer;
@@ -147,6 +147,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", BulkApplyRecommendationsResponse.Builder::opcRequestId)
@@ -174,6 +175,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.Profile.class,
@@ -203,6 +205,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteProfileResponse.Builder::opcRequestId)
                 .callSync();
@@ -238,10 +241,12 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         request.getChildTenancyIds(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("includeOrganization", request.getIncludeOrganization())
+                .appendQueryParam("includeResourceMetadata", request.getIncludeResourceMetadata())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.ResourceActionCollection.class,
@@ -273,6 +278,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getCategoryId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.Category.class,
                         GetCategoryResponse.Builder::category)
@@ -299,6 +305,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getEnrollmentStatusId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.EnrollmentStatus.class,
                         GetEnrollmentStatusResponse.Builder::enrollmentStatus)
@@ -326,6 +333,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getProfileId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.Profile.class,
                         GetProfileResponse.Builder::profile)
@@ -353,6 +361,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getRecommendationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.Recommendation.class,
                         GetRecommendationResponse.Builder::recommendation)
@@ -378,8 +387,10 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .basePath("/20200606")
                 .appendPathParam("resourceActions")
                 .appendPathParam(request.getResourceActionId())
+                .appendQueryParam("includeResourceMetadata", request.getIncludeResourceMetadata())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.ResourceAction.class,
                         GetResourceActionResponse.Builder::resourceAction)
@@ -407,6 +418,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -449,6 +461,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.CategoryCollection.class,
                         ListCategoriesResponse.Builder::categoryCollection)
@@ -485,6 +498,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("status", request.getStatus())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.EnrollmentStatusCollection.class,
                         ListEnrollmentStatusesResponse.Builder::enrollmentStatusCollection)
@@ -526,8 +540,10 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("includeResourceMetadata", request.getIncludeResourceMetadata())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.HistoryCollection.class,
                         ListHistoriesResponse.Builder::historyCollection)
@@ -567,6 +583,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.ProfileLevelCollection.class,
                         ListProfileLevelsResponse.Builder::profileLevelCollection)
@@ -602,6 +619,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.ProfileCollection.class,
                         ListProfilesResponse.Builder::profileCollection)
@@ -642,6 +660,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.RecommendationStrategyCollection.class,
                         ListRecommendationStrategiesResponse.Builder
@@ -691,6 +710,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("status", request.getStatus())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.RecommendationCollection.class,
                         ListRecommendationsResponse.Builder::recommendationCollection)
@@ -729,6 +749,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.QueryableFieldCollection.class,
                         ListResourceActionQueryableFieldsResponse.Builder::queryableFieldCollection)
@@ -778,8 +799,10 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("includeResourceMetadata", request.getIncludeResourceMetadata())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.ResourceActionCollection.class,
                         ListResourceActionsResponse.Builder::resourceActionCollection)
@@ -814,6 +837,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -845,6 +869,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -874,6 +899,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -907,6 +933,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.EnrollmentStatus.class,
@@ -938,6 +965,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.Profile.class,
@@ -1002,6 +1030,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.ResourceAction.class,

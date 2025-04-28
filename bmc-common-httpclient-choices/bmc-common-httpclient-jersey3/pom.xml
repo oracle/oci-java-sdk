@@ -4,21 +4,44 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-common-httpclient-choices</artifactId>
-    <version>3.28.0</version>
+    <version>3.63.2</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>oci-java-sdk-common-httpclient-jersey3</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Common HTTP client - Jakarta EE 9/Jersey 3 implementation</name>
   <description>This project contains the HTTP client jersey 3 implementation of the SDK used for Oracle Cloud Infrastructure</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
   <properties>
     <jersey3.version>3.0.8</jersey3.version>
     <jakarta9.ws.rs-api.version>3.0.0</jakarta9.ws.rs-api.version>
     <jakarta9.annotations.version>2.1.1</jakarta9.annotations.version>
+    <maven-surefire-plugin.argLine>--illegal-access=warn
+      --add-opens=java.base/java.io=ALL-UNNAMED
+      --add-opens=java.base/java.lang=ALL-UNNAMED
+      --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+      --add-opens=java.base/java.net=ALL-UNNAMED
+      --add-opens=java.base/java.time=ALL-UNNAMED
+      --add-opens=java.base/java.security.cert=ALL-UNNAMED
+      --add-opens=java.base/java.util=ALL-UNNAMED
+      --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+      --add-opens=java.base/sun.security.rsa=ALL-UNNAMED
+      --add-opens=java.base/sun.security.x509=ALL-UNNAMED
+    </maven-surefire-plugin.argLine>
   </properties>
 
+  <profiles>
+    <profile>
+      <id>jdk-8-only</id>
+      <activation>
+        <jdk>1.8</jdk>
+      </activation>
+      <properties>
+        <maven-surefire-plugin.argLine></maven-surefire-plugin.argLine>
+      </properties>
+    </profile>
+  </profiles>
 
   <build>
     <!-- Substitutes maven properties into the SDK properties -->
@@ -70,7 +93,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-addons-apache-configurator-jersey3</artifactId>
-        <version>3.28.0</version>
+        <version>3.63.2</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -79,7 +102,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.28.0</version>
+      <version>3.63.2</version>
     </dependency>
     <dependency>
       <groupId>jakarta.ws.rs</groupId>
@@ -117,11 +140,6 @@
       <groupId>org.graalvm.nativeimage</groupId>
       <artifactId>svm</artifactId>
       <version>${graalvm.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.bouncycastle</groupId>
-      <artifactId>bcprov-jdk15to18</artifactId>
       <scope>provided</scope>
     </dependency>
     <!-- Begin ApacheConnector Http Dependencies  -->

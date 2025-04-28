@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -42,7 +42,9 @@ public final class CreateDatabaseDetails
         "kmsKeyId",
         "kmsKeyVersionId",
         "vaultId",
-        "sidPrefix"
+        "sidPrefix",
+        "keyStoreId",
+        "encryptionKeyLocationDetails"
     })
     public CreateDatabaseDetails(
             String dbName,
@@ -60,7 +62,9 @@ public final class CreateDatabaseDetails
             String kmsKeyId,
             String kmsKeyVersionId,
             String vaultId,
-            String sidPrefix) {
+            String sidPrefix,
+            String keyStoreId,
+            EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
         super();
         this.dbName = dbName;
         this.dbUniqueName = dbUniqueName;
@@ -78,6 +82,8 @@ public final class CreateDatabaseDetails
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.vaultId = vaultId;
         this.sidPrefix = sidPrefix;
+        this.keyStoreId = keyStoreId;
+        this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -118,14 +124,14 @@ public final class CreateDatabaseDetails
         }
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          *
          * @param databaseSoftwareImageId the value to set
          * @return this builder
@@ -309,7 +315,7 @@ public final class CreateDatabaseDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -319,7 +325,7 @@ public final class CreateDatabaseDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -334,7 +340,7 @@ public final class CreateDatabaseDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -342,7 +348,7 @@ public final class CreateDatabaseDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -375,7 +381,9 @@ public final class CreateDatabaseDetails
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation.
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * Database Serverless instances.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
@@ -383,7 +391,9 @@ public final class CreateDatabaseDetails
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation.
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
@@ -394,17 +404,19 @@ public final class CreateDatabaseDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
-         * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * This parameter and {@code secretId} are required for Customer Managed Keys.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
-         * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * This parameter and {@code secretId} are required for Customer Managed Keys.
          *
          * @param vaultId the value to set
          * @return this builder
@@ -429,6 +441,35 @@ public final class CreateDatabaseDetails
             this.__explicitlySet__.add("sidPrefix");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key store of Oracle Vault.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
+        private String keyStoreId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key store of Oracle Vault.
+         *
+         * @param keyStoreId the value to set
+         * @return this builder
+         */
+        public Builder keyStoreId(String keyStoreId) {
+            this.keyStoreId = keyStoreId;
+            this.__explicitlySet__.add("keyStoreId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+        private EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+        public Builder encryptionKeyLocationDetails(
+                EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            this.__explicitlySet__.add("encryptionKeyLocationDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -451,7 +492,9 @@ public final class CreateDatabaseDetails
                             this.kmsKeyId,
                             this.kmsKeyVersionId,
                             this.vaultId,
-                            this.sidPrefix);
+                            this.sidPrefix,
+                            this.keyStoreId,
+                            this.encryptionKeyLocationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -508,6 +551,12 @@ public final class CreateDatabaseDetails
             if (model.wasPropertyExplicitlySet("sidPrefix")) {
                 this.sidPrefix(model.getSidPrefix());
             }
+            if (model.wasPropertyExplicitlySet("keyStoreId")) {
+                this.keyStoreId(model.getKeyStoreId());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionKeyLocationDetails")) {
+                this.encryptionKeyLocationDetails(model.getEncryptionKeyLocationDetails());
+            }
             return this;
         }
     }
@@ -553,14 +602,14 @@ public final class CreateDatabaseDetails
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      *
      * @return the value
      */
@@ -767,7 +816,7 @@ public final class CreateDatabaseDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -777,7 +826,7 @@ public final class CreateDatabaseDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -790,7 +839,7 @@ public final class CreateDatabaseDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -798,7 +847,7 @@ public final class CreateDatabaseDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -826,7 +875,9 @@ public final class CreateDatabaseDetails
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation.
+     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
+     * does not use key versions, hence is not applicable for Autonomous Database Serverless
+     * instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
@@ -834,7 +885,9 @@ public final class CreateDatabaseDetails
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation.
+     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
+     * does not use key versions, hence is not applicable for Autonomous Database Serverless
+     * instances.
      *
      * @return the value
      */
@@ -843,17 +896,19 @@ public final class CreateDatabaseDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
-     * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * This parameter and {@code secretId} are required for Customer Managed Keys.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
-     * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * This parameter and {@code secretId} are required for Customer Managed Keys.
      *
      * @return the value
      */
@@ -872,6 +927,30 @@ public final class CreateDatabaseDetails
      */
     public String getSidPrefix() {
         return sidPrefix;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * store of Oracle Vault.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
+    private final String keyStoreId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * store of Oracle Vault.
+     *
+     * @return the value
+     */
+    public String getKeyStoreId() {
+        return keyStoreId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+    private final EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+    public EncryptionKeyLocationDetails getEncryptionKeyLocationDetails() {
+        return encryptionKeyLocationDetails;
     }
 
     @Override
@@ -906,6 +985,9 @@ public final class CreateDatabaseDetails
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
+        sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
+        sb.append(", encryptionKeyLocationDetails=")
+                .append(String.valueOf(this.encryptionKeyLocationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -937,6 +1019,9 @@ public final class CreateDatabaseDetails
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
+                && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
+                && java.util.Objects.equals(
+                        this.encryptionKeyLocationDetails, other.encryptionKeyLocationDetails)
                 && super.equals(other);
     }
 
@@ -974,6 +1059,12 @@ public final class CreateDatabaseDetails
                         + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.sidPrefix == null ? 43 : this.sidPrefix.hashCode());
+        result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionKeyLocationDetails == null
+                                ? 43
+                                : this.encryptionKeyLocationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

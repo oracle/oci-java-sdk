@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -8,7 +8,7 @@ package com.oracle.bmc.disasterrecovery.model;
  * The lifecycle states of a DR protection group. - CREATING - DR protection group is being created.
  * - ACTIVE - DR protection group is active and available for operations. - UPDATING - DR protection
  * group is being updated and is not available for operations. - INACTIVE - The DR protection group
- * is locked because a DR drill is in progress. - NEEDS_ATTENTION - DR protection group needs user
+ * is locked because a DR Drill is in progress. - NEEDS_ATTENTION - DR protection group needs user
  * attention. - DELETING - DR protection group is being deleted. - DELETED - DR protection group has
  * been deleted. - FAILED - DR protection group is in a failed state.
  */

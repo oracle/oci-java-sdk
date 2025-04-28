@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -106,12 +106,12 @@ public final class ImportableEnterpriseManagerEntity
             this.__explicitlySet__.add("enterpriseManagerEntityIdentifier");
             return this;
         }
-        /** Operations Insights internal representation of the resource type. */
+        /** Ops Insights internal representation of the resource type. */
         @com.fasterxml.jackson.annotation.JsonProperty("opsiEntityType")
         private String opsiEntityType;
 
         /**
-         * Operations Insights internal representation of the resource type.
+         * Ops Insights internal representation of the resource type.
          *
          * @param opsiEntityType the value to set
          * @return this builder
@@ -222,12 +222,12 @@ public final class ImportableEnterpriseManagerEntity
         return enterpriseManagerEntityIdentifier;
     }
 
-    /** Operations Insights internal representation of the resource type. */
+    /** Ops Insights internal representation of the resource type. */
     @com.fasterxml.jackson.annotation.JsonProperty("opsiEntityType")
     private final String opsiEntityType;
 
     /**
-     * Operations Insights internal representation of the resource type.
+     * Ops Insights internal representation of the resource type.
      *
      * @return the value
      */

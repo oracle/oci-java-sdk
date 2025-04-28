@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -7,7 +7,7 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * The configuration details for a load balancer backend set. For more information on backend set
  * configuration, see [Managing Backend
- * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm).
+ * Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingbackendsets.htm).
  *
  * <p>*Note:** The {@code sessionPersistenceConfiguration} (application cookie stickiness) and
  * {@code lbCookieSessionPersistenceConfiguration} (LB cookie stickiness) attributes are mutually
@@ -33,6 +33,7 @@ public final class BackendSetDetails
     @java.beans.ConstructorProperties({
         "policy",
         "backends",
+        "backendMaxConnections",
         "healthChecker",
         "sslConfiguration",
         "sessionPersistenceConfiguration",
@@ -41,6 +42,7 @@ public final class BackendSetDetails
     public BackendSetDetails(
             String policy,
             java.util.List<BackendDetails> backends,
+            Integer backendMaxConnections,
             HealthCheckerDetails healthChecker,
             SSLConfigurationDetails sslConfiguration,
             SessionPersistenceConfigurationDetails sessionPersistenceConfiguration,
@@ -49,6 +51,7 @@ public final class BackendSetDetails
         super();
         this.policy = policy;
         this.backends = backends;
+        this.backendMaxConnections = backendMaxConnections;
         this.healthChecker = healthChecker;
         this.sslConfiguration = sslConfiguration;
         this.sessionPersistenceConfiguration = sessionPersistenceConfiguration;
@@ -87,6 +90,33 @@ public final class BackendSetDetails
         public Builder backends(java.util.List<BackendDetails> backends) {
             this.backends = backends;
             this.__explicitlySet__.add("backends");
+            return this;
+        }
+        /**
+         * The maximum number of simultaneous connections the load balancer can make to any backend
+         * in the backend set unless the backend has its own maxConnections setting. If this is not
+         * set then the number of simultaneous connections the load balancer can make to any backend
+         * in the backend set unless the backend has its own maxConnections setting is unlimited.
+         *
+         * <p>Example: {@code 300}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("backendMaxConnections")
+        private Integer backendMaxConnections;
+
+        /**
+         * The maximum number of simultaneous connections the load balancer can make to any backend
+         * in the backend set unless the backend has its own maxConnections setting. If this is not
+         * set then the number of simultaneous connections the load balancer can make to any backend
+         * in the backend set unless the backend has its own maxConnections setting is unlimited.
+         *
+         * <p>Example: {@code 300}
+         *
+         * @param backendMaxConnections the value to set
+         * @return this builder
+         */
+        public Builder backendMaxConnections(Integer backendMaxConnections) {
+            this.backendMaxConnections = backendMaxConnections;
+            this.__explicitlySet__.add("backendMaxConnections");
             return this;
         }
 
@@ -138,6 +168,7 @@ public final class BackendSetDetails
                     new BackendSetDetails(
                             this.policy,
                             this.backends,
+                            this.backendMaxConnections,
                             this.healthChecker,
                             this.sslConfiguration,
                             this.sessionPersistenceConfiguration,
@@ -155,6 +186,9 @@ public final class BackendSetDetails
             }
             if (model.wasPropertyExplicitlySet("backends")) {
                 this.backends(model.getBackends());
+            }
+            if (model.wasPropertyExplicitlySet("backendMaxConnections")) {
+                this.backendMaxConnections(model.getBackendMaxConnections());
             }
             if (model.wasPropertyExplicitlySet("healthChecker")) {
                 this.healthChecker(model.getHealthChecker());
@@ -210,6 +244,31 @@ public final class BackendSetDetails
         return backends;
     }
 
+    /**
+     * The maximum number of simultaneous connections the load balancer can make to any backend in
+     * the backend set unless the backend has its own maxConnections setting. If this is not set
+     * then the number of simultaneous connections the load balancer can make to any backend in the
+     * backend set unless the backend has its own maxConnections setting is unlimited.
+     *
+     * <p>Example: {@code 300}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("backendMaxConnections")
+    private final Integer backendMaxConnections;
+
+    /**
+     * The maximum number of simultaneous connections the load balancer can make to any backend in
+     * the backend set unless the backend has its own maxConnections setting. If this is not set
+     * then the number of simultaneous connections the load balancer can make to any backend in the
+     * backend set unless the backend has its own maxConnections setting is unlimited.
+     *
+     * <p>Example: {@code 300}
+     *
+     * @return the value
+     */
+    public Integer getBackendMaxConnections() {
+        return backendMaxConnections;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
     private final HealthCheckerDetails healthChecker;
 
@@ -257,6 +316,7 @@ public final class BackendSetDetails
         sb.append("super=").append(super.toString());
         sb.append("policy=").append(String.valueOf(this.policy));
         sb.append(", backends=").append(String.valueOf(this.backends));
+        sb.append(", backendMaxConnections=").append(String.valueOf(this.backendMaxConnections));
         sb.append(", healthChecker=").append(String.valueOf(this.healthChecker));
         sb.append(", sslConfiguration=").append(String.valueOf(this.sslConfiguration));
         sb.append(", sessionPersistenceConfiguration=")
@@ -279,6 +339,7 @@ public final class BackendSetDetails
         BackendSetDetails other = (BackendSetDetails) o;
         return java.util.Objects.equals(this.policy, other.policy)
                 && java.util.Objects.equals(this.backends, other.backends)
+                && java.util.Objects.equals(this.backendMaxConnections, other.backendMaxConnections)
                 && java.util.Objects.equals(this.healthChecker, other.healthChecker)
                 && java.util.Objects.equals(this.sslConfiguration, other.sslConfiguration)
                 && java.util.Objects.equals(
@@ -295,6 +356,11 @@ public final class BackendSetDetails
         int result = 1;
         result = (result * PRIME) + (this.policy == null ? 43 : this.policy.hashCode());
         result = (result * PRIME) + (this.backends == null ? 43 : this.backends.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backendMaxConnections == null
+                                ? 43
+                                : this.backendMaxConnections.hashCode());
         result =
                 (result * PRIME)
                         + (this.healthChecker == null ? 43 : this.healthChecker.hashCode());

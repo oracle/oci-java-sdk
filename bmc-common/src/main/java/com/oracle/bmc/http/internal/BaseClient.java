@@ -1,10 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
 
+import com.oracle.bmc.internal.SpiClientConfigurator;
+import com.oracle.bmc.util.internal.ClientCompatibilityChecker;
 import com.oracle.bmc.ClientConfiguration;
+import com.oracle.bmc.ClientRuntime;
 import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
@@ -30,7 +33,7 @@ import com.oracle.bmc.internal.Alloy;
 import com.oracle.bmc.internal.EndpointBuilder;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.BmcResponse;
-import com.oracle.bmc.util.internal.StringUtils;
+import com.oracle.bmc.util.internal.Validate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,6 +44,8 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.HashSet;
+import java.util.Arrays;
 import java.util.Optional;
 import java.util.function.Supplier;
 import java.util.regex.Matcher;
@@ -50,7 +55,6 @@ abstract class BaseClient implements AutoCloseable {
     private static final ClientConfigurator DEFAULT_CONFIGURATOR = new DefaultConfigurator();
     private static final ClientIdFilter CLIENT_ID_FILTER = new ClientIdFilter();
     private static final LogHeadersFilter LOG_HEADERS_FILTER = new LogHeadersFilter();
-
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     private final Service service;
@@ -67,6 +71,21 @@ abstract class BaseClient implements AutoCloseable {
     private volatile String endpoint;
     private volatile HttpClient httpClient;
     private volatile Region region;
+
+    /** Compatible SDK version, provided by the codegen. */
+    public final String clientCommonLibraryVersion;
+
+    /** Minimum compatible SDK version, maybe provided by the codegen. */
+    public final Optional<String> minimumClientCommonLibraryVersionFromClient;
+
+    private static final String JAVASDK_DISABLED_SPI_CLASSES_PROPERTY =
+            "oci.javasdk.disabled.spi.classes";
+
+    private static final String DISABLED_SPI_CLASSES_STRING;
+
+    static {
+        DISABLED_SPI_CLASSES_STRING = System.getProperty(JAVASDK_DISABLED_SPI_CLASSES_PROPERTY, "");
+    }
 
     protected BaseClient(
             ClientBuilderBase<?, ?> builder,
@@ -114,6 +133,25 @@ abstract class BaseClient implements AutoCloseable {
         }
         List<ClientConfigurator> additionalClientConfigurators =
                 InternalBuilderAccess.getAdditionalClientConfigurators(builder);
+        // Adding all default Client configurators
+        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        List<SpiClientConfigurator> additionalSpiClientConfigurator =
+                SpiClientConfigurator.getSpiClientConfigurators();
+        HashSet<String> disabledSpiClasses =
+                new HashSet<>(Arrays.asList(DISABLED_SPI_CLASSES_STRING.split(",")));
+        for (SpiClientConfigurator spiClientConfigurator : additionalSpiClientConfigurator) {
+            if (!disabledSpiClasses.contains(spiClientConfigurator.getClass().getName())) {
+                additionalClientConfigurators.add(spiClientConfigurator);
+                logger.info(
+                        "Additional client configurator loaded using SPI: {}",
+                        spiClientConfigurator.getClass());
+            } else {
+                logger.info(
+                        "Did not load additional client configurator using SPI since it was disabled using the oci.javasdk.disabled.spi.classes system property: {}",
+                        spiClientConfigurator.getClass());
+            }
+        }
+
         if (!additionalClientConfigurators.isEmpty()) {
             List<ClientConfigurator> composedList =
                     new ArrayList<>(additionalClientConfigurators.size() + 1);
@@ -154,6 +192,45 @@ abstract class BaseClient implements AutoCloseable {
                 setRegion(regionFromBuilder);
             }
         }
+
+        // setting version information for the client
+        String version = null;
+        String minVersion = null;
+
+        try (java.io.InputStream propertyStream =
+                this.getClass()
+                        .getClassLoader()
+                        .getResourceAsStream(
+                                this.getClass().getPackage().getName().replace('.', '/')
+                                        + "/client.properties")) {
+            if (propertyStream != null) {
+                java.util.Properties properties = new java.util.Properties();
+                properties.load(propertyStream);
+                version =
+                        properties.getProperty(
+                                ClientCompatibilityChecker
+                                        .JAVA_CLIENT_CODEGEN_VERSION_PROPERTY_NAME);
+                minVersion =
+                        properties.getProperty(
+                                ClientCompatibilityChecker
+                                        .JAVA_MINIMUM_CLIENT_CODEGEN_VERSION_FROM_CLIENT_PROPERTY_NAME);
+            } else {
+                logger.warn("Failed to load client.properties for {}", this.getClass().getName());
+            }
+        } catch (Exception e) {
+            logger.warn("Failed to load client.properties for " + this.getClass().getName(), e);
+        } finally {
+            clientCommonLibraryVersion = version;
+            minimumClientCommonLibraryVersionFromClient = Optional.ofNullable(minVersion);
+        }
+
+        ClientRuntime.getRuntime()
+                .getClientCompatibilityChecker()
+                .isClientCodegenVersionCompatible(
+                        this.getClass().getName(),
+                        clientCommonLibraryVersion,
+                        minimumClientCommonLibraryVersionFromClient,
+                        logger);
     }
 
     protected ClientConfigurator getDefaultConfigurator() {
@@ -283,36 +360,9 @@ abstract class BaseClient implements AutoCloseable {
      * @param endpoint The updated endpoint to use
      */
     public final synchronized void updateBaseEndpoint(String endpoint) {
+        Validate.notBlank(endpoint, "Cannot update the endpoint since it is null or blank.");
         logger.info("Updating endpoint to {}", endpoint);
-
-        HttpClientBuilder builder =
-                httpProvider
-                        .newBuilder()
-                        .baseUri(endpoint)
-                        .property(
-                                StandardClientProperties.CONNECT_TIMEOUT,
-                                Duration.ofMillis(
-                                        clientConfigurationToUse.getConnectionTimeoutMillis()))
-                        .property(
-                                StandardClientProperties.READ_TIMEOUT,
-                                Duration.ofMillis(clientConfigurationToUse.getReadTimeoutMillis()))
-                        .property(
-                                StandardClientProperties.ASYNC_POOL_SIZE,
-                                clientConfigurationToUse.getMaxAsyncThreads())
-                        .registerRequestInterceptor(
-                                Priorities.AUTHENTICATION,
-                                new AuthnClientFilter(defaultRequestSigner, requestSigners))
-                        .registerRequestInterceptor(Priorities.HEADER_DECORATOR, CLIENT_ID_FILTER)
-                        .registerRequestInterceptor(Priorities.USER, LOG_HEADERS_FILTER);
-        clientConfigurator.customizeClient(builder);
-        HttpClient oldClient = this.httpClient;
-        if (oldClient != null) {
-            oldClient.close();
-        }
-        this.httpClient = builder.build();
-
-        circuitBreaker =
-                CircuitBreakerHelper.makeCircuitBreaker(httpClient, circuitBreakerConfiguration);
+        this.httpClient.updateEndpoint(endpoint);
     }
 
     public final synchronized void setEndpoint(String endpoint) {
@@ -404,6 +454,14 @@ abstract class BaseClient implements AutoCloseable {
         if (httpClient != null) {
             httpClient.close();
         }
+    }
+
+    public String getClientCommonLibraryVersion() {
+        return clientCommonLibraryVersion;
+    }
+
+    public Optional<String> getMinimumClientCommonLibraryVersionFromClient() {
+        return minimumClientCommonLibraryVersionFromClient;
     }
 
     protected <

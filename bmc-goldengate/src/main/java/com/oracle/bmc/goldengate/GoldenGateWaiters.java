@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate;
@@ -23,6 +23,111 @@ public class GoldenGateWaiters {
             java.util.concurrent.ExecutorService executorService, GoldenGate client) {
         this.executorService = executorService;
         this.client = client;
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCertificateRequest, GetCertificateResponse>
+            forCertificate(
+                    GetCertificateRequest request,
+                    com.oracle.bmc.goldengate.model.CertificateLifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forCertificate(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCertificateRequest, GetCertificateResponse>
+            forCertificate(
+                    GetCertificateRequest request,
+                    com.oracle.bmc.goldengate.model.CertificateLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forCertificate(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetCertificateRequest, GetCertificateResponse>
+            forCertificate(
+                    GetCertificateRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.goldengate.model.CertificateLifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forCertificate(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for Certificate.
+    private com.oracle.bmc.waiter.Waiter<GetCertificateRequest, GetCertificateResponse>
+            forCertificate(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetCertificateRequest request,
+                    final com.oracle.bmc.goldengate.model.CertificateLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.goldengate.model.CertificateLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetCertificateRequest, GetCertificateResponse>() {
+                            @Override
+                            public GetCertificateResponse apply(GetCertificateRequest request) {
+                                return client.getCertificate(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetCertificateResponse>() {
+                            @Override
+                            public boolean test(GetCertificateResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getCertificate().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.goldengate.model.CertificateLifecycleState.Deleted)),
+                request);
     }
 
     /**
@@ -652,6 +757,105 @@ public class GoldenGateWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.goldengate.model.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetPipelineRequest, GetPipelineResponse> forPipeline(
+            GetPipelineRequest request,
+            com.oracle.bmc.goldengate.model.Pipeline.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forPipeline(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetPipelineRequest, GetPipelineResponse> forPipeline(
+            GetPipelineRequest request,
+            com.oracle.bmc.goldengate.model.Pipeline.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forPipeline(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetPipelineRequest, GetPipelineResponse> forPipeline(
+            GetPipelineRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.goldengate.model.Pipeline.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forPipeline(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for Pipeline.
+    private com.oracle.bmc.waiter.Waiter<GetPipelineRequest, GetPipelineResponse> forPipeline(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetPipelineRequest request,
+            final com.oracle.bmc.goldengate.model.Pipeline.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.goldengate.model.Pipeline.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<GetPipelineRequest, GetPipelineResponse>() {
+                            @Override
+                            public GetPipelineResponse apply(GetPipelineRequest request) {
+                                return client.getPipeline(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetPipelineResponse>() {
+                            @Override
+                            public boolean test(GetPipelineResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getPipeline().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.goldengate.model.Pipeline.LifecycleState.Deleted)),
                 request);
     }
 

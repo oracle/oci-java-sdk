@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -154,15 +154,15 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Management Agent
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Management Agent
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Management Agent
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Management Agent
          *
          * @param managementAgentId the value to set
          * @return this builder
@@ -173,15 +173,15 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of External Database Connector
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * External Database Connector
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of External Database Connector
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * External Database Connector
          *
          * @param connectorId the value to set
          * @return this builder
@@ -210,15 +210,15 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database.
          *
          * @param databaseId the value to set
          * @return this builder
@@ -276,7 +276,7 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
         /**
          * Additional details of a database in JSON format. For autonomous databases, this is the
          * AutonomousDatabase object serialized as a JSON string as defined in
-         * https://docs.cloud.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/.
+         * https://docs.oracle.com/iaas/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/.
          * For EM, pass in null or an empty string. Note that this string needs to be escaped when
          * specified in the curl command.
          */
@@ -286,7 +286,7 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
         /**
          * Additional details of a database in JSON format. For autonomous databases, this is the
          * AutonomousDatabase object serialized as a JSON string as defined in
-         * https://docs.cloud.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/.
+         * https://docs.oracle.com/iaas/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/.
          * For EM, pass in null or an empty string. Note that this string needs to be escaped when
          * specified in the curl command.
          *
@@ -470,15 +470,15 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      *
      * @return the value
      */
@@ -487,15 +487,15 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * External Database Connector
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External
+     * Database Connector
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * External Database Connector
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External
+     * Database Connector
      *
      * @return the value
      */
@@ -518,15 +518,15 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
      *
      * @return the value
      */
@@ -576,7 +576,7 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
     /**
      * Additional details of a database in JSON format. For autonomous databases, this is the
      * AutonomousDatabase object serialized as a JSON string as defined in
-     * https://docs.cloud.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For
+     * https://docs.oracle.com/iaas/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For
      * EM, pass in null or an empty string. Note that this string needs to be escaped when specified
      * in the curl command.
      */
@@ -586,7 +586,7 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
     /**
      * Additional details of a database in JSON format. For autonomous databases, this is the
      * AutonomousDatabase object serialized as a JSON string as defined in
-     * https://docs.cloud.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For
+     * https://docs.oracle.com/iaas/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For
      * EM, pass in null or an empty string. Note that this string needs to be escaped when specified
      * in the curl command.
      *

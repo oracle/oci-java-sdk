@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Detailed information about an ManagementStation config <br>
+ * Provides information about the management station, including name, state, and configuration. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -39,7 +39,16 @@ public final class ManagementStation
         "mirrorSyncStatus",
         "proxy",
         "mirror",
+        "health",
         "lifecycleState",
+        "isAutoConfigEnabled",
+        "peerManagementStations",
+        "location",
+        "mirrorStorageAvailableSize",
+        "mirrorStorageSize",
+        "mirrorSize",
+        "mirrorUniquePackageCount",
+        "mirrorPackageCount",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -60,7 +69,16 @@ public final class ManagementStation
             MirrorSyncStatus mirrorSyncStatus,
             ProxyConfiguration proxy,
             MirrorConfiguration mirror,
+            StationHealth health,
             LifecycleState lifecycleState,
+            Boolean isAutoConfigEnabled,
+            java.util.List<PeerManagementStation> peerManagementStations,
+            ManagedInstanceLocation location,
+            Long mirrorStorageAvailableSize,
+            Long mirrorStorageSize,
+            Long mirrorSize,
+            Integer mirrorUniquePackageCount,
+            Integer mirrorPackageCount,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -80,7 +98,16 @@ public final class ManagementStation
         this.mirrorSyncStatus = mirrorSyncStatus;
         this.proxy = proxy;
         this.mirror = mirror;
+        this.health = health;
         this.lifecycleState = lifecycleState;
+        this.isAutoConfigEnabled = isAutoConfigEnabled;
+        this.peerManagementStations = peerManagementStations;
+        this.location = location;
+        this.mirrorStorageAvailableSize = mirrorStorageAvailableSize;
+        this.mirrorStorageSize = mirrorStorageSize;
+        this.mirrorSize = mirrorSize;
+        this.mirrorUniquePackageCount = mirrorUniquePackageCount;
+        this.mirrorPackageCount = mirrorPackageCount;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -88,12 +115,16 @@ public final class ManagementStation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID for the ManagementStation config */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * management station.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * OCID for the ManagementStation config
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * management station.
          *
          * @param id the value to set
          * @return this builder
@@ -103,12 +134,16 @@ public final class ManagementStation
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** OCID for the Instance associated with the Management Station. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * instance that is acting as the management station.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
         /**
-         * OCID for the Instance associated with the Management Station.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * instance that is acting as the management station.
          *
          * @param managedInstanceId the value to set
          * @return this builder
@@ -118,12 +153,16 @@ public final class ManagementStation
             this.__explicitlySet__.add("managedInstanceId");
             return this;
         }
-        /** The OCID of the tenancy containing the Management Station. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the management station.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the tenancy containing the Management Station.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the management station.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -133,12 +172,16 @@ public final class ManagementStation
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** OCID of the Scheduled Job for mirror sync */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * scheduled job for the mirror sync.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledJobId")
         private String scheduledJobId;
 
         /**
-         * OCID of the Scheduled Job for mirror sync
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * scheduled job for the mirror sync.
          *
          * @param scheduledJobId the value to set
          * @return this builder
@@ -148,12 +191,16 @@ public final class ManagementStation
             this.__explicitlySet__.add("scheduledJobId");
             return this;
         }
-        /** OCID of the Profile associated with the Station */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * registration profile used for the management station.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("profileId")
         private String profileId;
 
         /**
-         * OCID of the Profile associated with the Station
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * registration profile used for the management station.
          *
          * @param profileId the value to set
          * @return this builder
@@ -163,12 +210,12 @@ public final class ManagementStation
             this.__explicitlySet__.add("profileId");
             return this;
         }
-        /** ManagementStation name */
+        /** A user-friendly name for the management station. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * ManagementStation name
+         * A user-friendly name for the management station.
          *
          * @param displayName the value to set
          * @return this builder
@@ -178,12 +225,12 @@ public final class ManagementStation
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Details describing the ManagementStation config. */
+        /** User-specified description for the management station. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Details describing the ManagementStation config.
+         * User-specified description for the management station.
          *
          * @param description the value to set
          * @return this builder
@@ -193,12 +240,12 @@ public final class ManagementStation
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Name of the host */
+        /** Hostname of the management station. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
-         * Name of the host
+         * Hostname of the management station.
          *
          * @param hostname the value to set
          * @return this builder
@@ -208,12 +255,12 @@ public final class ManagementStation
             this.__explicitlySet__.add("hostname");
             return this;
         }
-        /** Current state of the mirroring */
+        /** Current state of the mirror sync for the management station. */
         @com.fasterxml.jackson.annotation.JsonProperty("overallState")
         private OverallState overallState;
 
         /**
-         * Current state of the mirroring
+         * Current state of the mirror sync for the management station.
          *
          * @param overallState the value to set
          * @return this builder
@@ -223,12 +270,12 @@ public final class ManagementStation
             this.__explicitlySet__.add("overallState");
             return this;
         }
-        /** A decimal number representing the completeness percentage */
+        /** A decimal number representing the progress of the current mirror sync. */
         @com.fasterxml.jackson.annotation.JsonProperty("overallPercentage")
         private Integer overallPercentage;
 
         /**
-         * A decimal number representing the completeness percentage
+         * A decimal number representing the progress of the current mirror sync.
          *
          * @param overallPercentage the value to set
          * @return this builder
@@ -238,12 +285,12 @@ public final class ManagementStation
             this.__explicitlySet__.add("overallPercentage");
             return this;
         }
-        /** A decimal number representing the mirror capacity */
+        /** A decimal number representing the amount of mirror capacity used by the sync. */
         @com.fasterxml.jackson.annotation.JsonProperty("mirrorCapacity")
         private Integer mirrorCapacity;
 
         /**
-         * A decimal number representing the mirror capacity
+         * A decimal number representing the amount of mirror capacity used by the sync.
          *
          * @param mirrorCapacity the value to set
          * @return this builder
@@ -253,12 +300,12 @@ public final class ManagementStation
             this.__explicitlySet__.add("mirrorCapacity");
             return this;
         }
-        /** A decimal number representing the total of repos */
+        /** The number of software sources that the station is mirroring. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalMirrors")
         private Integer totalMirrors;
 
         /**
-         * A decimal number representing the total of repos
+         * The number of software sources that the station is mirroring.
          *
          * @param totalMirrors the value to set
          * @return this builder
@@ -295,12 +342,21 @@ public final class ManagementStation
             this.__explicitlySet__.add("mirror");
             return this;
         }
-        /** The current state of the Management Station config. */
+
+        @com.fasterxml.jackson.annotation.JsonProperty("health")
+        private StationHealth health;
+
+        public Builder health(StationHealth health) {
+            this.health = health;
+            this.__explicitlySet__.add("health");
+            return this;
+        }
+        /** The current state of the management station. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Management Station config.
+         * The current state of the management station.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -311,10 +367,145 @@ public final class ManagementStation
             return this;
         }
         /**
+         * When enabled, the station setup script automatically runs to configure the firewall and
+         * SELinux settings on the station.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoConfigEnabled")
+        private Boolean isAutoConfigEnabled;
+
+        /**
+         * When enabled, the station setup script automatically runs to configure the firewall and
+         * SELinux settings on the station.
+         *
+         * @param isAutoConfigEnabled the value to set
+         * @return this builder
+         */
+        public Builder isAutoConfigEnabled(Boolean isAutoConfigEnabled) {
+            this.isAutoConfigEnabled = isAutoConfigEnabled;
+            this.__explicitlySet__.add("isAutoConfigEnabled");
+            return this;
+        }
+        /**
+         * A list of other management stations that are behind the same load balancer within a high
+         * availability configuration. Stations are identified as peers if they have the same
+         * hostname and compartment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("peerManagementStations")
+        private java.util.List<PeerManagementStation> peerManagementStations;
+
+        /**
+         * A list of other management stations that are behind the same load balancer within a high
+         * availability configuration. Stations are identified as peers if they have the same
+         * hostname and compartment.
+         *
+         * @param peerManagementStations the value to set
+         * @return this builder
+         */
+        public Builder peerManagementStations(
+                java.util.List<PeerManagementStation> peerManagementStations) {
+            this.peerManagementStations = peerManagementStations;
+            this.__explicitlySet__.add("peerManagementStations");
+            return this;
+        }
+        /** The location of the instance that is acting as the management station. */
+        @com.fasterxml.jackson.annotation.JsonProperty("location")
+        private ManagedInstanceLocation location;
+
+        /**
+         * The location of the instance that is acting as the management station.
+         *
+         * @param location the value to set
+         * @return this builder
+         */
+        public Builder location(ManagedInstanceLocation location) {
+            this.location = location;
+            this.__explicitlySet__.add("location");
+            return this;
+        }
+        /** Amount of available mirror storage in bytes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mirrorStorageAvailableSize")
+        private Long mirrorStorageAvailableSize;
+
+        /**
+         * Amount of available mirror storage in bytes.
+         *
+         * @param mirrorStorageAvailableSize the value to set
+         * @return this builder
+         */
+        public Builder mirrorStorageAvailableSize(Long mirrorStorageAvailableSize) {
+            this.mirrorStorageAvailableSize = mirrorStorageAvailableSize;
+            this.__explicitlySet__.add("mirrorStorageAvailableSize");
+            return this;
+        }
+        /** Total mirror storage size in bytes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mirrorStorageSize")
+        private Long mirrorStorageSize;
+
+        /**
+         * Total mirror storage size in bytes.
+         *
+         * @param mirrorStorageSize the value to set
+         * @return this builder
+         */
+        public Builder mirrorStorageSize(Long mirrorStorageSize) {
+            this.mirrorStorageSize = mirrorStorageSize;
+            this.__explicitlySet__.add("mirrorStorageSize");
+            return this;
+        }
+        /** The total size of all software source mirrors in bytes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mirrorSize")
+        private Long mirrorSize;
+
+        /**
+         * The total size of all software source mirrors in bytes.
+         *
+         * @param mirrorSize the value to set
+         * @return this builder
+         */
+        public Builder mirrorSize(Long mirrorSize) {
+            this.mirrorSize = mirrorSize;
+            this.__explicitlySet__.add("mirrorSize");
+            return this;
+        }
+        /**
+         * The total number of unique packages within the mirrored software sources on the station.
+         * Each package is counted only once, regardless of how many versions it has.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("mirrorUniquePackageCount")
+        private Integer mirrorUniquePackageCount;
+
+        /**
+         * The total number of unique packages within the mirrored software sources on the station.
+         * Each package is counted only once, regardless of how many versions it has.
+         *
+         * @param mirrorUniquePackageCount the value to set
+         * @return this builder
+         */
+        public Builder mirrorUniquePackageCount(Integer mirrorUniquePackageCount) {
+            this.mirrorUniquePackageCount = mirrorUniquePackageCount;
+            this.__explicitlySet__.add("mirrorUniquePackageCount");
+            return this;
+        }
+        /** The total number of all packages within the mirrored software sources. */
+        @com.fasterxml.jackson.annotation.JsonProperty("mirrorPackageCount")
+        private Integer mirrorPackageCount;
+
+        /**
+         * The total number of all packages within the mirrored software sources.
+         *
+         * @param mirrorPackageCount the value to set
+         * @return this builder
+         */
+        public Builder mirrorPackageCount(Integer mirrorPackageCount) {
+            this.mirrorPackageCount = mirrorPackageCount;
+            this.__explicitlySet__.add("mirrorPackageCount");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -322,8 +513,8 @@ public final class ManagementStation
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -336,8 +527,8 @@ public final class ManagementStation
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -345,8 +536,8 @@ public final class ManagementStation
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -398,7 +589,16 @@ public final class ManagementStation
                             this.mirrorSyncStatus,
                             this.proxy,
                             this.mirror,
+                            this.health,
                             this.lifecycleState,
+                            this.isAutoConfigEnabled,
+                            this.peerManagementStations,
+                            this.location,
+                            this.mirrorStorageAvailableSize,
+                            this.mirrorStorageSize,
+                            this.mirrorSize,
+                            this.mirrorUniquePackageCount,
+                            this.mirrorPackageCount,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -455,8 +655,35 @@ public final class ManagementStation
             if (model.wasPropertyExplicitlySet("mirror")) {
                 this.mirror(model.getMirror());
             }
+            if (model.wasPropertyExplicitlySet("health")) {
+                this.health(model.getHealth());
+            }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoConfigEnabled")) {
+                this.isAutoConfigEnabled(model.getIsAutoConfigEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("peerManagementStations")) {
+                this.peerManagementStations(model.getPeerManagementStations());
+            }
+            if (model.wasPropertyExplicitlySet("location")) {
+                this.location(model.getLocation());
+            }
+            if (model.wasPropertyExplicitlySet("mirrorStorageAvailableSize")) {
+                this.mirrorStorageAvailableSize(model.getMirrorStorageAvailableSize());
+            }
+            if (model.wasPropertyExplicitlySet("mirrorStorageSize")) {
+                this.mirrorStorageSize(model.getMirrorStorageSize());
+            }
+            if (model.wasPropertyExplicitlySet("mirrorSize")) {
+                this.mirrorSize(model.getMirrorSize());
+            }
+            if (model.wasPropertyExplicitlySet("mirrorUniquePackageCount")) {
+                this.mirrorUniquePackageCount(model.getMirrorUniquePackageCount());
+            }
+            if (model.wasPropertyExplicitlySet("mirrorPackageCount")) {
+                this.mirrorPackageCount(model.getMirrorPackageCount());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -480,12 +707,16 @@ public final class ManagementStation
         return new Builder().copy(this);
     }
 
-    /** OCID for the ManagementStation config */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * OCID for the ManagementStation config
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station.
      *
      * @return the value
      */
@@ -493,12 +724,16 @@ public final class ManagementStation
         return id;
     }
 
-    /** OCID for the Instance associated with the Management Station. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * instance that is acting as the management station.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
     /**
-     * OCID for the Instance associated with the Management Station.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * instance that is acting as the management station.
      *
      * @return the value
      */
@@ -506,12 +741,16 @@ public final class ManagementStation
         return managedInstanceId;
     }
 
-    /** The OCID of the tenancy containing the Management Station. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the management station.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the Management Station.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the management station.
      *
      * @return the value
      */
@@ -519,12 +758,16 @@ public final class ManagementStation
         return compartmentId;
     }
 
-    /** OCID of the Scheduled Job for mirror sync */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * scheduled job for the mirror sync.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledJobId")
     private final String scheduledJobId;
 
     /**
-     * OCID of the Scheduled Job for mirror sync
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * scheduled job for the mirror sync.
      *
      * @return the value
      */
@@ -532,12 +775,16 @@ public final class ManagementStation
         return scheduledJobId;
     }
 
-    /** OCID of the Profile associated with the Station */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * registration profile used for the management station.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("profileId")
     private final String profileId;
 
     /**
-     * OCID of the Profile associated with the Station
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * registration profile used for the management station.
      *
      * @return the value
      */
@@ -545,12 +792,12 @@ public final class ManagementStation
         return profileId;
     }
 
-    /** ManagementStation name */
+    /** A user-friendly name for the management station. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * ManagementStation name
+     * A user-friendly name for the management station.
      *
      * @return the value
      */
@@ -558,12 +805,12 @@ public final class ManagementStation
         return displayName;
     }
 
-    /** Details describing the ManagementStation config. */
+    /** User-specified description for the management station. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Details describing the ManagementStation config.
+     * User-specified description for the management station.
      *
      * @return the value
      */
@@ -571,12 +818,12 @@ public final class ManagementStation
         return description;
     }
 
-    /** Name of the host */
+    /** Hostname of the management station. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
-     * Name of the host
+     * Hostname of the management station.
      *
      * @return the value
      */
@@ -584,12 +831,12 @@ public final class ManagementStation
         return hostname;
     }
 
-    /** Current state of the mirroring */
+    /** Current state of the mirror sync for the management station. */
     @com.fasterxml.jackson.annotation.JsonProperty("overallState")
     private final OverallState overallState;
 
     /**
-     * Current state of the mirroring
+     * Current state of the mirror sync for the management station.
      *
      * @return the value
      */
@@ -597,12 +844,12 @@ public final class ManagementStation
         return overallState;
     }
 
-    /** A decimal number representing the completeness percentage */
+    /** A decimal number representing the progress of the current mirror sync. */
     @com.fasterxml.jackson.annotation.JsonProperty("overallPercentage")
     private final Integer overallPercentage;
 
     /**
-     * A decimal number representing the completeness percentage
+     * A decimal number representing the progress of the current mirror sync.
      *
      * @return the value
      */
@@ -610,12 +857,12 @@ public final class ManagementStation
         return overallPercentage;
     }
 
-    /** A decimal number representing the mirror capacity */
+    /** A decimal number representing the amount of mirror capacity used by the sync. */
     @com.fasterxml.jackson.annotation.JsonProperty("mirrorCapacity")
     private final Integer mirrorCapacity;
 
     /**
-     * A decimal number representing the mirror capacity
+     * A decimal number representing the amount of mirror capacity used by the sync.
      *
      * @return the value
      */
@@ -623,12 +870,12 @@ public final class ManagementStation
         return mirrorCapacity;
     }
 
-    /** A decimal number representing the total of repos */
+    /** The number of software sources that the station is mirroring. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalMirrors")
     private final Integer totalMirrors;
 
     /**
-     * A decimal number representing the total of repos
+     * The number of software sources that the station is mirroring.
      *
      * @return the value
      */
@@ -657,7 +904,14 @@ public final class ManagementStation
         return mirror;
     }
 
-    /** The current state of the Management Station config. */
+    @com.fasterxml.jackson.annotation.JsonProperty("health")
+    private final StationHealth health;
+
+    public StationHealth getHealth() {
+        return health;
+    }
+
+    /** The current state of the management station. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Updating("UPDATING"),
@@ -707,12 +961,12 @@ public final class ManagementStation
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Management Station config. */
+    /** The current state of the management station. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Management Station config.
+     * The current state of the management station.
      *
      * @return the value
      */
@@ -721,9 +975,127 @@ public final class ManagementStation
     }
 
     /**
+     * When enabled, the station setup script automatically runs to configure the firewall and
+     * SELinux settings on the station.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoConfigEnabled")
+    private final Boolean isAutoConfigEnabled;
+
+    /**
+     * When enabled, the station setup script automatically runs to configure the firewall and
+     * SELinux settings on the station.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoConfigEnabled() {
+        return isAutoConfigEnabled;
+    }
+
+    /**
+     * A list of other management stations that are behind the same load balancer within a high
+     * availability configuration. Stations are identified as peers if they have the same hostname
+     * and compartment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("peerManagementStations")
+    private final java.util.List<PeerManagementStation> peerManagementStations;
+
+    /**
+     * A list of other management stations that are behind the same load balancer within a high
+     * availability configuration. Stations are identified as peers if they have the same hostname
+     * and compartment.
+     *
+     * @return the value
+     */
+    public java.util.List<PeerManagementStation> getPeerManagementStations() {
+        return peerManagementStations;
+    }
+
+    /** The location of the instance that is acting as the management station. */
+    @com.fasterxml.jackson.annotation.JsonProperty("location")
+    private final ManagedInstanceLocation location;
+
+    /**
+     * The location of the instance that is acting as the management station.
+     *
+     * @return the value
+     */
+    public ManagedInstanceLocation getLocation() {
+        return location;
+    }
+
+    /** Amount of available mirror storage in bytes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mirrorStorageAvailableSize")
+    private final Long mirrorStorageAvailableSize;
+
+    /**
+     * Amount of available mirror storage in bytes.
+     *
+     * @return the value
+     */
+    public Long getMirrorStorageAvailableSize() {
+        return mirrorStorageAvailableSize;
+    }
+
+    /** Total mirror storage size in bytes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mirrorStorageSize")
+    private final Long mirrorStorageSize;
+
+    /**
+     * Total mirror storage size in bytes.
+     *
+     * @return the value
+     */
+    public Long getMirrorStorageSize() {
+        return mirrorStorageSize;
+    }
+
+    /** The total size of all software source mirrors in bytes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mirrorSize")
+    private final Long mirrorSize;
+
+    /**
+     * The total size of all software source mirrors in bytes.
+     *
+     * @return the value
+     */
+    public Long getMirrorSize() {
+        return mirrorSize;
+    }
+
+    /**
+     * The total number of unique packages within the mirrored software sources on the station. Each
+     * package is counted only once, regardless of how many versions it has.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("mirrorUniquePackageCount")
+    private final Integer mirrorUniquePackageCount;
+
+    /**
+     * The total number of unique packages within the mirrored software sources on the station. Each
+     * package is counted only once, regardless of how many versions it has.
+     *
+     * @return the value
+     */
+    public Integer getMirrorUniquePackageCount() {
+        return mirrorUniquePackageCount;
+    }
+
+    /** The total number of all packages within the mirrored software sources. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mirrorPackageCount")
+    private final Integer mirrorPackageCount;
+
+    /**
+     * The total number of all packages within the mirrored software sources.
+     *
+     * @return the value
+     */
+    public Integer getMirrorPackageCount() {
+        return mirrorPackageCount;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -732,7 +1104,7 @@ public final class ManagementStation
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -744,7 +1116,7 @@ public final class ManagementStation
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -753,7 +1125,7 @@ public final class ManagementStation
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -809,7 +1181,18 @@ public final class ManagementStation
         sb.append(", mirrorSyncStatus=").append(String.valueOf(this.mirrorSyncStatus));
         sb.append(", proxy=").append(String.valueOf(this.proxy));
         sb.append(", mirror=").append(String.valueOf(this.mirror));
+        sb.append(", health=").append(String.valueOf(this.health));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", isAutoConfigEnabled=").append(String.valueOf(this.isAutoConfigEnabled));
+        sb.append(", peerManagementStations=").append(String.valueOf(this.peerManagementStations));
+        sb.append(", location=").append(String.valueOf(this.location));
+        sb.append(", mirrorStorageAvailableSize=")
+                .append(String.valueOf(this.mirrorStorageAvailableSize));
+        sb.append(", mirrorStorageSize=").append(String.valueOf(this.mirrorStorageSize));
+        sb.append(", mirrorSize=").append(String.valueOf(this.mirrorSize));
+        sb.append(", mirrorUniquePackageCount=")
+                .append(String.valueOf(this.mirrorUniquePackageCount));
+        sb.append(", mirrorPackageCount=").append(String.valueOf(this.mirrorPackageCount));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -842,7 +1225,19 @@ public final class ManagementStation
                 && java.util.Objects.equals(this.mirrorSyncStatus, other.mirrorSyncStatus)
                 && java.util.Objects.equals(this.proxy, other.proxy)
                 && java.util.Objects.equals(this.mirror, other.mirror)
+                && java.util.Objects.equals(this.health, other.health)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.isAutoConfigEnabled, other.isAutoConfigEnabled)
+                && java.util.Objects.equals(
+                        this.peerManagementStations, other.peerManagementStations)
+                && java.util.Objects.equals(this.location, other.location)
+                && java.util.Objects.equals(
+                        this.mirrorStorageAvailableSize, other.mirrorStorageAvailableSize)
+                && java.util.Objects.equals(this.mirrorStorageSize, other.mirrorStorageSize)
+                && java.util.Objects.equals(this.mirrorSize, other.mirrorSize)
+                && java.util.Objects.equals(
+                        this.mirrorUniquePackageCount, other.mirrorUniquePackageCount)
+                && java.util.Objects.equals(this.mirrorPackageCount, other.mirrorPackageCount)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -880,9 +1275,40 @@ public final class ManagementStation
                         + (this.mirrorSyncStatus == null ? 43 : this.mirrorSyncStatus.hashCode());
         result = (result * PRIME) + (this.proxy == null ? 43 : this.proxy.hashCode());
         result = (result * PRIME) + (this.mirror == null ? 43 : this.mirror.hashCode());
+        result = (result * PRIME) + (this.health == null ? 43 : this.health.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoConfigEnabled == null
+                                ? 43
+                                : this.isAutoConfigEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerManagementStations == null
+                                ? 43
+                                : this.peerManagementStations.hashCode());
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mirrorStorageAvailableSize == null
+                                ? 43
+                                : this.mirrorStorageAvailableSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mirrorStorageSize == null ? 43 : this.mirrorStorageSize.hashCode());
+        result = (result * PRIME) + (this.mirrorSize == null ? 43 : this.mirrorSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mirrorUniquePackageCount == null
+                                ? 43
+                                : this.mirrorUniquePackageCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mirrorPackageCount == null
+                                ? 43
+                                : this.mirrorPackageCount.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

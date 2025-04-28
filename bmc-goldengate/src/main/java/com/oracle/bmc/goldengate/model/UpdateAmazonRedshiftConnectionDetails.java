@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -90,6 +90,33 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * Connection URL. e.g.:
          * 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
@@ -133,7 +160,8 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on.
+         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
+         * "passwordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
@@ -141,7 +169,8 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on.
+         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
+         * "passwordSecretId". This field will be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -149,6 +178,31 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
 
@@ -165,9 +219,13 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
+                            this.doesUseSecretIds,
                             this.connectionUrl,
                             this.username,
-                            this.password);
+                            this.password,
+                            this.passwordSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -197,6 +255,15 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
             }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("connectionUrl")) {
                 this.connectionUrl(model.getConnectionUrl());
             }
@@ -205,6 +272,9 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
             }
             if (model.wasPropertyExplicitlySet("password")) {
                 this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
             }
             return this;
         }
@@ -228,13 +298,28 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             String connectionUrl,
             String username,
-            String password) {
-        super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
+            String password,
+            String passwordSecretId) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds);
         this.connectionUrl = connectionUrl;
         this.username = username;
         this.password = password;
+        this.passwordSecretId = passwordSecretId;
     }
 
     /**
@@ -276,7 +361,8 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
+     * will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
@@ -284,12 +370,36 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
+     * will be removed after February 15 2026.
      *
      * @return the value
      */
     public String getPassword() {
         return password;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
     }
 
     @Override
@@ -310,6 +420,7 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
         sb.append(", connectionUrl=").append(String.valueOf(this.connectionUrl));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -327,6 +438,7 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
         return java.util.Objects.equals(this.connectionUrl, other.connectionUrl)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && super.equals(other);
     }
 
@@ -339,6 +451,9 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
                         + (this.connectionUrl == null ? 43 : this.connectionUrl.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         return result;
     }
 }

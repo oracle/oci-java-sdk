@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.stackmonitoring.requests;
 import com.oracle.bmc.stackmonitoring.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListMonitoredResourceTypesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListMonitoredResourceTypesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListMonitoredResourceTypesRequest.
  */
@@ -16,13 +16,13 @@ public class ListMonitoredResourceTypesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * tenancy for which monitored resource types should be listed.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * tenancy for which monitored resource types should be listed.
      */
     public String getCompartmentId() {
@@ -67,6 +67,20 @@ public class ListMonitoredResourceTypesRequest
     /** A filter to return monitored resource types that has the matching namespace. */
     public String getMetricNamespace() {
         return metricNamespace;
+    }
+    /** A filter to return only resources with matching source type. */
+    private com.oracle.bmc.stackmonitoring.model.SourceType sourceType;
+
+    /** A filter to return only resources with matching source type. */
+    public com.oracle.bmc.stackmonitoring.model.SourceType getSourceType() {
+        return sourceType;
+    }
+    /** A filter to return only resources with matching resource category. */
+    private com.oracle.bmc.stackmonitoring.model.ResourceCategory resourceCategory;
+
+    /** A filter to return only resources with matching resource category. */
+    public com.oracle.bmc.stackmonitoring.model.ResourceCategory getResourceCategory() {
+        return resourceCategory;
     }
     /**
      * The field to sort by. Only one sort order may be provided. Default order for 'timeUpdated' is
@@ -128,14 +142,14 @@ public class ListMonitoredResourceTypesRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -143,14 +157,14 @@ public class ListMonitoredResourceTypesRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -226,13 +240,13 @@ public class ListMonitoredResourceTypesRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * tenancy for which monitored resource types should be listed.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * tenancy for which monitored resource types should be listed.
          *
          * @param compartmentId the value to set
@@ -308,6 +322,35 @@ public class ListMonitoredResourceTypesRequest
             return this;
         }
 
+        /** A filter to return only resources with matching source type. */
+        private com.oracle.bmc.stackmonitoring.model.SourceType sourceType = null;
+
+        /**
+         * A filter to return only resources with matching source type.
+         *
+         * @param sourceType the value to set
+         * @return this builder instance
+         */
+        public Builder sourceType(com.oracle.bmc.stackmonitoring.model.SourceType sourceType) {
+            this.sourceType = sourceType;
+            return this;
+        }
+
+        /** A filter to return only resources with matching resource category. */
+        private com.oracle.bmc.stackmonitoring.model.ResourceCategory resourceCategory = null;
+
+        /**
+         * A filter to return only resources with matching resource category.
+         *
+         * @param resourceCategory the value to set
+         * @return this builder instance
+         */
+        public Builder resourceCategory(
+                com.oracle.bmc.stackmonitoring.model.ResourceCategory resourceCategory) {
+            this.resourceCategory = resourceCategory;
+            return this;
+        }
+
         /**
          * The field to sort by. Only one sort order may be provided. Default order for
          * 'timeUpdated' is descending. Default order for 'name' is ascending.
@@ -343,14 +386,14 @@ public class ListMonitoredResourceTypesRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -363,14 +406,14 @@ public class ListMonitoredResourceTypesRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -530,6 +573,8 @@ public class ListMonitoredResourceTypesRequest
             status(o.getStatus());
             isExcludeSystemTypes(o.getIsExcludeSystemTypes());
             metricNamespace(o.getMetricNamespace());
+            sourceType(o.getSourceType());
+            resourceCategory(o.getResourceCategory());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             limit(o.getLimit());
@@ -576,6 +621,8 @@ public class ListMonitoredResourceTypesRequest
             request.status = status;
             request.isExcludeSystemTypes = isExcludeSystemTypes;
             request.metricNamespace = metricNamespace;
+            request.sourceType = sourceType;
+            request.resourceCategory = resourceCategory;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.limit = limit;
@@ -585,8 +632,8 @@ public class ListMonitoredResourceTypesRequest
             request.excludeFields = excludeFields;
             return request;
             // new ListMonitoredResourceTypesRequest(compartmentId, name, status,
-            // isExcludeSystemTypes, metricNamespace, sortBy, sortOrder, limit, page, opcRequestId,
-            // fields, excludeFields);
+            // isExcludeSystemTypes, metricNamespace, sourceType, resourceCategory, sortBy,
+            // sortOrder, limit, page, opcRequestId, fields, excludeFields);
         }
     }
 
@@ -602,6 +649,8 @@ public class ListMonitoredResourceTypesRequest
                 .status(status)
                 .isExcludeSystemTypes(isExcludeSystemTypes)
                 .metricNamespace(metricNamespace)
+                .sourceType(sourceType)
+                .resourceCategory(resourceCategory)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .limit(limit)
@@ -630,6 +679,8 @@ public class ListMonitoredResourceTypesRequest
         sb.append(",status=").append(String.valueOf(this.status));
         sb.append(",isExcludeSystemTypes=").append(String.valueOf(this.isExcludeSystemTypes));
         sb.append(",metricNamespace=").append(String.valueOf(this.metricNamespace));
+        sb.append(",sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(",resourceCategory=").append(String.valueOf(this.resourceCategory));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -657,6 +708,8 @@ public class ListMonitoredResourceTypesRequest
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.isExcludeSystemTypes, other.isExcludeSystemTypes)
                 && java.util.Objects.equals(this.metricNamespace, other.metricNamespace)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.resourceCategory, other.resourceCategory)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -683,6 +736,10 @@ public class ListMonitoredResourceTypesRequest
         result =
                 (result * PRIME)
                         + (this.metricNamespace == null ? 43 : this.metricNamespace.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCategory == null ? 43 : this.resourceCategory.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

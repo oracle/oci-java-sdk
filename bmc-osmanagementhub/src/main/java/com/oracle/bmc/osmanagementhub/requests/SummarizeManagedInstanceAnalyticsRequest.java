@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SummarizeManagedInstanceAnalyticsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SummarizeManagedInstanceAnalyticsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * SummarizeManagedInstanceAnalyticsRequest.
  */
@@ -23,47 +23,96 @@ public class SummarizeManagedInstanceAnalyticsRequest
         return metricNames;
     }
     /**
-     * This compartmentId is used to list managed instances within a compartment. Or serve as an
-     * additional filter to restrict only managed instances with in certain compartment if other
-     * filter presents.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment. This filter returns only resources contained within the specified compartment.
      */
     private String compartmentId;
 
     /**
-     * This compartmentId is used to list managed instances within a compartment. Or serve as an
-     * additional filter to restrict only managed instances with in certain compartment if other
-     * filter presents.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment. This filter returns only resources contained within the specified compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The OCID of the managed instance group for which to list resources. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group. This filter returns resources associated with this group.
+     */
     private String managedInstanceGroupId;
 
-    /** The OCID of the managed instance group for which to list resources. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group. This filter returns resources associated with this group.
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
-    /** The OCID of the lifecycle environment. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * lifecycle environment. This filter returns only resource contained with the specified
+     * lifecycle environment.
+     */
     private String lifecycleEnvironmentId;
 
-    /** The OCID of the lifecycle environment. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * lifecycle environment. This filter returns only resource contained with the specified
+     * lifecycle environment.
+     */
     public String getLifecycleEnvironmentId() {
         return lifecycleEnvironmentId;
     }
-    /** The OCID of the lifecycle stage for which to list resources. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * lifecycle stage. This resource returns resources associated with this lifecycle stage.
+     */
     private String lifecycleStageId;
 
-    /** The OCID of the lifecycle stage for which to list resources. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * lifecycle stage. This resource returns resources associated with this lifecycle stage.
+     */
     public String getLifecycleStageId() {
         return lifecycleStageId;
     }
-    /** A filter to return only instances whose managed instance status matches the given status. */
+    /** A filter to return only managed instances whose status matches the status provided. */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceStatus> status;
 
-    /** A filter to return only instances whose managed instance status matches the given status. */
+    /** A filter to return only managed instances whose status matches the status provided. */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceStatus> getStatus() {
         return status;
+    }
+    /** A filter to return only resources whose location matches the given value. */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation> location;
+
+    /** A filter to return only resources whose location matches the given value. */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+            getLocation() {
+        return location;
+    }
+    /** A filter to return only resources whose location does not match the given value. */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+            locationNotEqualTo;
+
+    /** A filter to return only resources whose location does not match the given value. */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+            getLocationNotEqualTo() {
+        return locationNotEqualTo;
+    }
+    /** A filter to return only resources that match the given operating system family. */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.OsFamily> osFamily;
+
+    /** A filter to return only resources that match the given operating system family. */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.OsFamily> getOsFamily() {
+        return osFamily;
+    }
+    /** Indicates whether to list only resources managed by the Autonomous Linux service. */
+    private Boolean isManagedByAutonomousLinux;
+
+    /** Indicates whether to list only resources managed by the Autonomous Linux service. */
+    public Boolean getIsManagedByAutonomousLinux() {
+        return isManagedByAutonomousLinux;
     }
     /** A filter to return resources that match the given display names. */
     private java.util.List<String> displayName;
@@ -79,17 +128,10 @@ public class SummarizeManagedInstanceAnalyticsRequest
     public String getDisplayNameContains() {
         return displayNameContains;
     }
-    /** Filter instances by Location. Used when report target type is compartment or group. */
-    private com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation instanceLocation;
-
-    /** Filter instances by Location. Used when report target type is compartment or group. */
-    public com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation getInstanceLocation() {
-        return instanceLocation;
-    }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -98,7 +140,7 @@ public class SummarizeManagedInstanceAnalyticsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -108,7 +150,7 @@ public class SummarizeManagedInstanceAnalyticsRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -117,7 +159,7 @@ public class SummarizeManagedInstanceAnalyticsRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -125,17 +167,21 @@ public class SummarizeManagedInstanceAnalyticsRequest
         return page;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for name is
-     * ascending.
+     * The field to sort by. Only one sort order may be provided. The default is to sort in
+     * ascending order by metricName (previously name, which is now depricated). You can also sort
+     * by displayName (default is ascending order).
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for name is
-     * ascending.
+     * The field to sort by. Only one sort order may be provided. The default is to sort in
+     * ascending order by metricName (previously name, which is now depricated). You can also sort
+     * by displayName (default is ascending order).
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Name("name"),
+        MetricName("metricName"),
+        DisplayName("displayName"),
         ;
 
         private final String value;
@@ -167,8 +213,9 @@ public class SummarizeManagedInstanceAnalyticsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for name is
-     * ascending.
+     * The field to sort by. Only one sort order may be provided. The default is to sort in
+     * ascending order by metricName (previously name, which is now depricated). You can also sort
+     * by displayName (default is ascending order).
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -227,16 +274,16 @@ public class SummarizeManagedInstanceAnalyticsRequest
         }
 
         /**
-         * This compartmentId is used to list managed instances within a compartment. Or serve as an
-         * additional filter to restrict only managed instances with in certain compartment if other
-         * filter presents.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment. This filter returns only resources contained within the specified
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * This compartmentId is used to list managed instances within a compartment. Or serve as an
-         * additional filter to restrict only managed instances with in certain compartment if other
-         * filter presents.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment. This filter returns only resources contained within the specified
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -246,11 +293,15 @@ public class SummarizeManagedInstanceAnalyticsRequest
             return this;
         }
 
-        /** The OCID of the managed instance group for which to list resources. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group. This filter returns resources associated with this group.
+         */
         private String managedInstanceGroupId = null;
 
         /**
-         * The OCID of the managed instance group for which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group. This filter returns resources associated with this group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
@@ -260,11 +311,17 @@ public class SummarizeManagedInstanceAnalyticsRequest
             return this;
         }
 
-        /** The OCID of the lifecycle environment. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * lifecycle environment. This filter returns only resource contained with the specified
+         * lifecycle environment.
+         */
         private String lifecycleEnvironmentId = null;
 
         /**
-         * The OCID of the lifecycle environment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * lifecycle environment. This filter returns only resource contained with the specified
+         * lifecycle environment.
          *
          * @param lifecycleEnvironmentId the value to set
          * @return this builder instance
@@ -274,11 +331,15 @@ public class SummarizeManagedInstanceAnalyticsRequest
             return this;
         }
 
-        /** The OCID of the lifecycle stage for which to list resources. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * lifecycle stage. This resource returns resources associated with this lifecycle stage.
+         */
         private String lifecycleStageId = null;
 
         /**
-         * The OCID of the lifecycle stage for which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * lifecycle stage. This resource returns resources associated with this lifecycle stage.
          *
          * @param lifecycleStageId the value to set
          * @return this builder instance
@@ -288,14 +349,12 @@ public class SummarizeManagedInstanceAnalyticsRequest
             return this;
         }
 
-        /**
-         * A filter to return only instances whose managed instance status matches the given status.
-         */
+        /** A filter to return only managed instances whose status matches the status provided. */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceStatus> status =
                 null;
 
         /**
-         * A filter to return only instances whose managed instance status matches the given status.
+         * A filter to return only managed instances whose status matches the status provided.
          *
          * @param status the value to set
          * @return this builder instance
@@ -307,14 +366,110 @@ public class SummarizeManagedInstanceAnalyticsRequest
         }
 
         /**
-         * Singular setter. A filter to return only instances whose managed instance status matches
-         * the given status.
+         * Singular setter. A filter to return only managed instances whose status matches the
+         * status provided.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder status(ManagedInstanceStatus singularValue) {
             return this.status(java.util.Arrays.asList(singularValue));
+        }
+
+        /** A filter to return only resources whose location matches the given value. */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                location = null;
+
+        /**
+         * A filter to return only resources whose location matches the given value.
+         *
+         * @param location the value to set
+         * @return this builder instance
+         */
+        public Builder location(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                        location) {
+            this.location = location;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources whose location matches the given
+         * value.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder location(ManagedInstanceLocation singularValue) {
+            return this.location(java.util.Arrays.asList(singularValue));
+        }
+
+        /** A filter to return only resources whose location does not match the given value. */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                locationNotEqualTo = null;
+
+        /**
+         * A filter to return only resources whose location does not match the given value.
+         *
+         * @param locationNotEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder locationNotEqualTo(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                        locationNotEqualTo) {
+            this.locationNotEqualTo = locationNotEqualTo;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources whose location does not match the
+         * given value.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder locationNotEqualTo(ManagedInstanceLocation singularValue) {
+            return this.locationNotEqualTo(java.util.Arrays.asList(singularValue));
+        }
+
+        /** A filter to return only resources that match the given operating system family. */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.OsFamily> osFamily = null;
+
+        /**
+         * A filter to return only resources that match the given operating system family.
+         *
+         * @param osFamily the value to set
+         * @return this builder instance
+         */
+        public Builder osFamily(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.OsFamily> osFamily) {
+            this.osFamily = osFamily;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources that match the given operating system
+         * family.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder osFamily(OsFamily singularValue) {
+            return this.osFamily(java.util.Arrays.asList(singularValue));
+        }
+
+        /** Indicates whether to list only resources managed by the Autonomous Linux service. */
+        private Boolean isManagedByAutonomousLinux = null;
+
+        /**
+         * Indicates whether to list only resources managed by the Autonomous Linux service.
+         *
+         * @param isManagedByAutonomousLinux the value to set
+         * @return this builder instance
+         */
+        public Builder isManagedByAutonomousLinux(Boolean isManagedByAutonomousLinux) {
+            this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            return this;
         }
 
         /** A filter to return resources that match the given display names. */
@@ -355,26 +510,10 @@ public class SummarizeManagedInstanceAnalyticsRequest
             return this;
         }
 
-        /** Filter instances by Location. Used when report target type is compartment or group. */
-        private com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation instanceLocation =
-                null;
-
-        /**
-         * Filter instances by Location. Used when report target type is compartment or group.
-         *
-         * @param instanceLocation the value to set
-         * @return this builder instance
-         */
-        public Builder instanceLocation(
-                com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation instanceLocation) {
-            this.instanceLocation = instanceLocation;
-            return this;
-        }
-
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -383,7 +522,7 @@ public class SummarizeManagedInstanceAnalyticsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -398,7 +537,7 @@ public class SummarizeManagedInstanceAnalyticsRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          */
@@ -407,7 +546,7 @@ public class SummarizeManagedInstanceAnalyticsRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          *
@@ -420,14 +559,16 @@ public class SummarizeManagedInstanceAnalyticsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for name is
-         * ascending.
+         * The field to sort by. Only one sort order may be provided. The default is to sort in
+         * ascending order by metricName (previously name, which is now depricated). You can also
+         * sort by displayName (default is ascending order).
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for name is
-         * ascending.
+         * The field to sort by. Only one sort order may be provided. The default is to sort in
+         * ascending order by metricName (previously name, which is now depricated). You can also
+         * sort by displayName (default is ascending order).
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -505,9 +646,12 @@ public class SummarizeManagedInstanceAnalyticsRequest
             lifecycleEnvironmentId(o.getLifecycleEnvironmentId());
             lifecycleStageId(o.getLifecycleStageId());
             status(o.getStatus());
+            location(o.getLocation());
+            locationNotEqualTo(o.getLocationNotEqualTo());
+            osFamily(o.getOsFamily());
+            isManagedByAutonomousLinux(o.getIsManagedByAutonomousLinux());
             displayName(o.getDisplayName());
             displayNameContains(o.getDisplayNameContains());
-            instanceLocation(o.getInstanceLocation());
             limit(o.getLimit());
             page(o.getPage());
             sortBy(o.getSortBy());
@@ -556,9 +700,12 @@ public class SummarizeManagedInstanceAnalyticsRequest
             request.lifecycleEnvironmentId = lifecycleEnvironmentId;
             request.lifecycleStageId = lifecycleStageId;
             request.status = status;
+            request.location = location;
+            request.locationNotEqualTo = locationNotEqualTo;
+            request.osFamily = osFamily;
+            request.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
             request.displayName = displayName;
             request.displayNameContains = displayNameContains;
-            request.instanceLocation = instanceLocation;
             request.limit = limit;
             request.page = page;
             request.sortBy = sortBy;
@@ -566,9 +713,9 @@ public class SummarizeManagedInstanceAnalyticsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new SummarizeManagedInstanceAnalyticsRequest(metricNames, compartmentId,
-            // managedInstanceGroupId, lifecycleEnvironmentId, lifecycleStageId, status,
-            // displayName, displayNameContains, instanceLocation, limit, page, sortBy, sortOrder,
-            // opcRequestId);
+            // managedInstanceGroupId, lifecycleEnvironmentId, lifecycleStageId, status, location,
+            // locationNotEqualTo, osFamily, isManagedByAutonomousLinux, displayName,
+            // displayNameContains, limit, page, sortBy, sortOrder, opcRequestId);
         }
     }
 
@@ -585,9 +732,12 @@ public class SummarizeManagedInstanceAnalyticsRequest
                 .lifecycleEnvironmentId(lifecycleEnvironmentId)
                 .lifecycleStageId(lifecycleStageId)
                 .status(status)
+                .location(location)
+                .locationNotEqualTo(locationNotEqualTo)
+                .osFamily(osFamily)
+                .isManagedByAutonomousLinux(isManagedByAutonomousLinux)
                 .displayName(displayName)
                 .displayNameContains(displayNameContains)
-                .instanceLocation(instanceLocation)
                 .limit(limit)
                 .page(page)
                 .sortBy(sortBy)
@@ -615,9 +765,13 @@ public class SummarizeManagedInstanceAnalyticsRequest
         sb.append(",lifecycleEnvironmentId=").append(String.valueOf(this.lifecycleEnvironmentId));
         sb.append(",lifecycleStageId=").append(String.valueOf(this.lifecycleStageId));
         sb.append(",status=").append(String.valueOf(this.status));
+        sb.append(",location=").append(String.valueOf(this.location));
+        sb.append(",locationNotEqualTo=").append(String.valueOf(this.locationNotEqualTo));
+        sb.append(",osFamily=").append(String.valueOf(this.osFamily));
+        sb.append(",isManagedByAutonomousLinux=")
+                .append(String.valueOf(this.isManagedByAutonomousLinux));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",displayNameContains=").append(String.valueOf(this.displayNameContains));
-        sb.append(",instanceLocation=").append(String.valueOf(this.instanceLocation));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
@@ -647,9 +801,13 @@ public class SummarizeManagedInstanceAnalyticsRequest
                         this.lifecycleEnvironmentId, other.lifecycleEnvironmentId)
                 && java.util.Objects.equals(this.lifecycleStageId, other.lifecycleStageId)
                 && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.location, other.location)
+                && java.util.Objects.equals(this.locationNotEqualTo, other.locationNotEqualTo)
+                && java.util.Objects.equals(this.osFamily, other.osFamily)
+                && java.util.Objects.equals(
+                        this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.displayNameContains, other.displayNameContains)
-                && java.util.Objects.equals(this.instanceLocation, other.instanceLocation)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
@@ -679,15 +837,24 @@ public class SummarizeManagedInstanceAnalyticsRequest
                 (result * PRIME)
                         + (this.lifecycleStageId == null ? 43 : this.lifecycleStageId.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.locationNotEqualTo == null
+                                ? 43
+                                : this.locationNotEqualTo.hashCode());
+        result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isManagedByAutonomousLinux == null
+                                ? 43
+                                : this.isManagedByAutonomousLinux.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
                         + (this.displayNameContains == null
                                 ? 43
                                 : this.displayNameContains.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.instanceLocation == null ? 43 : this.instanceLocation.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());

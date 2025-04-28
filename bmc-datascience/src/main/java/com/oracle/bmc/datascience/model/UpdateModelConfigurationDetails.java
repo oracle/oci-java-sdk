@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -27,18 +27,21 @@ public final class UpdateModelConfigurationDetails
         "modelId",
         "instanceConfiguration",
         "scalingPolicy",
-        "bandwidthMbps"
+        "bandwidthMbps",
+        "maximumBandwidthMbps"
     })
     public UpdateModelConfigurationDetails(
             String modelId,
             InstanceConfiguration instanceConfiguration,
             ScalingPolicy scalingPolicy,
-            Integer bandwidthMbps) {
+            Integer bandwidthMbps,
+            Integer maximumBandwidthMbps) {
         super();
         this.modelId = modelId;
         this.instanceConfiguration = instanceConfiguration;
         this.scalingPolicy = scalingPolicy;
         this.bandwidthMbps = bandwidthMbps;
+        this.maximumBandwidthMbps = maximumBandwidthMbps;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -91,6 +94,21 @@ public final class UpdateModelConfigurationDetails
             this.__explicitlySet__.add("bandwidthMbps");
             return this;
         }
+        /** The maximum network bandwidth for the model deployment. */
+        @com.fasterxml.jackson.annotation.JsonProperty("maximumBandwidthMbps")
+        private Integer maximumBandwidthMbps;
+
+        /**
+         * The maximum network bandwidth for the model deployment.
+         *
+         * @param maximumBandwidthMbps the value to set
+         * @return this builder
+         */
+        public Builder maximumBandwidthMbps(Integer maximumBandwidthMbps) {
+            this.maximumBandwidthMbps = maximumBandwidthMbps;
+            this.__explicitlySet__.add("maximumBandwidthMbps");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -101,7 +119,8 @@ public final class UpdateModelConfigurationDetails
                             this.modelId,
                             this.instanceConfiguration,
                             this.scalingPolicy,
-                            this.bandwidthMbps);
+                            this.bandwidthMbps,
+                            this.maximumBandwidthMbps);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -121,6 +140,9 @@ public final class UpdateModelConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("bandwidthMbps")) {
                 this.bandwidthMbps(model.getBandwidthMbps());
+            }
+            if (model.wasPropertyExplicitlySet("maximumBandwidthMbps")) {
+                this.maximumBandwidthMbps(model.getMaximumBandwidthMbps());
             }
             return this;
         }
@@ -175,6 +197,19 @@ public final class UpdateModelConfigurationDetails
         return bandwidthMbps;
     }
 
+    /** The maximum network bandwidth for the model deployment. */
+    @com.fasterxml.jackson.annotation.JsonProperty("maximumBandwidthMbps")
+    private final Integer maximumBandwidthMbps;
+
+    /**
+     * The maximum network bandwidth for the model deployment.
+     *
+     * @return the value
+     */
+    public Integer getMaximumBandwidthMbps() {
+        return maximumBandwidthMbps;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -194,6 +229,7 @@ public final class UpdateModelConfigurationDetails
         sb.append(", instanceConfiguration=").append(String.valueOf(this.instanceConfiguration));
         sb.append(", scalingPolicy=").append(String.valueOf(this.scalingPolicy));
         sb.append(", bandwidthMbps=").append(String.valueOf(this.bandwidthMbps));
+        sb.append(", maximumBandwidthMbps=").append(String.valueOf(this.maximumBandwidthMbps));
         sb.append(")");
         return sb.toString();
     }
@@ -212,6 +248,7 @@ public final class UpdateModelConfigurationDetails
                 && java.util.Objects.equals(this.instanceConfiguration, other.instanceConfiguration)
                 && java.util.Objects.equals(this.scalingPolicy, other.scalingPolicy)
                 && java.util.Objects.equals(this.bandwidthMbps, other.bandwidthMbps)
+                && java.util.Objects.equals(this.maximumBandwidthMbps, other.maximumBandwidthMbps)
                 && super.equals(other);
     }
 
@@ -231,6 +268,11 @@ public final class UpdateModelConfigurationDetails
         result =
                 (result * PRIME)
                         + (this.bandwidthMbps == null ? 43 : this.bandwidthMbps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maximumBandwidthMbps == null
+                                ? 43
+                                : this.maximumBandwidthMbps.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

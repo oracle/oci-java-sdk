@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.emwarehouse;
@@ -130,10 +130,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails(
-                        "EmWarehouse",
-                        "CancelWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/CancelWorkRequest")
+                .serviceDetails("EmWarehouse", "CancelWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20180828")
@@ -158,10 +155,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ChangeEmWarehouseCompartmentResponse::builder)
                 .logger(LOG, "changeEmWarehouseCompartment")
-                .serviceDetails(
-                        "EmWarehouse",
-                        "ChangeEmWarehouseCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/ChangeEmWarehouseCompartment")
+                .serviceDetails("EmWarehouse", "ChangeEmWarehouseCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeEmWarehouseCompartmentRequest::builder)
                 .basePath("/20180828")
@@ -190,10 +184,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, CreateEmWarehouseResponse::builder)
                 .logger(LOG, "createEmWarehouse")
-                .serviceDetails(
-                        "EmWarehouse",
-                        "CreateEmWarehouse",
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/CreateEmWarehouse")
+                .serviceDetails("EmWarehouse", "CreateEmWarehouse", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateEmWarehouseRequest::builder)
                 .basePath("/20180828")
@@ -216,10 +207,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, DeleteEmWarehouseResponse::builder)
                 .logger(LOG, "deleteEmWarehouse")
-                .serviceDetails(
-                        "EmWarehouse",
-                        "DeleteEmWarehouse",
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/DeleteEmWarehouse")
+                .serviceDetails("EmWarehouse", "DeleteEmWarehouse", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteEmWarehouseRequest::builder)
                 .basePath("/20180828")
@@ -242,10 +230,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, GetEmWarehouseResponse::builder)
                 .logger(LOG, "getEmWarehouse")
-                .serviceDetails(
-                        "EmWarehouse",
-                        "GetEmWarehouse",
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/GetEmWarehouse")
+                .serviceDetails("EmWarehouse", "GetEmWarehouse", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetEmWarehouseRequest::builder)
                 .basePath("/20180828")
@@ -270,10 +255,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, GetEmWarehouseResourceUsageResponse::builder)
                 .logger(LOG, "getEmWarehouseResourceUsage")
-                .serviceDetails(
-                        "EmWarehouse",
-                        "GetEmWarehouseResourceUsage",
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/ResourceUsage/GetEmWarehouseResourceUsage")
+                .serviceDetails("EmWarehouse", "GetEmWarehouseResourceUsage", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetEmWarehouseResourceUsageRequest::builder)
                 .basePath("/20180828")
@@ -299,10 +281,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "EmWarehouse",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/GetWorkRequest")
+                .serviceDetails("EmWarehouse", "GetWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20180828")
@@ -326,10 +305,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListEmWarehousesResponse::builder)
                 .logger(LOG, "listEmWarehouses")
-                .serviceDetails(
-                        "EmWarehouse",
-                        "ListEmWarehouses",
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouseCollection/ListEmWarehouses")
+                .serviceDetails("EmWarehouse", "ListEmWarehouses", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListEmWarehousesRequest::builder)
                 .basePath("/20180828")
@@ -363,10 +339,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListEtlRunsResponse::builder)
                 .logger(LOG, "listEtlRuns")
-                .serviceDetails(
-                        "EmWarehouse",
-                        "ListEtlRuns",
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EtlRunCollection/ListEtlRuns")
+                .serviceDetails("EmWarehouse", "ListEtlRuns", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListEtlRunsRequest::builder)
                 .basePath("/20180828")
@@ -399,10 +372,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "EmWarehouse",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequestError/ListWorkRequestErrors")
+                .serviceDetails("EmWarehouse", "ListWorkRequestErrors", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20180828")
@@ -432,10 +402,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "EmWarehouse",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequestLogEntry/ListWorkRequestLogs")
+                .serviceDetails("EmWarehouse", "ListWorkRequestLogs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20180828")
@@ -463,10 +430,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "EmWarehouse",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/ListWorkRequests")
+                .serviceDetails("EmWarehouse", "ListWorkRequests", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20180828")
@@ -500,10 +464,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, UpdateEmWarehouseResponse::builder)
                 .logger(LOG, "updateEmWarehouse")
-                .serviceDetails(
-                        "EmWarehouse",
-                        "UpdateEmWarehouse",
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/UpdateEmWarehouse")
+                .serviceDetails("EmWarehouse", "UpdateEmWarehouse", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateEmWarehouseRequest::builder)
                 .basePath("/20180828")

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.mediaservices.requests;
 import com.oracle.bmc.mediaservices.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaWorkflowConfigurationExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaWorkflowConfigurationExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteMediaWorkflowConfigurationRequest.
  */
@@ -21,6 +21,13 @@ public class DeleteMediaWorkflowConfigurationRequest
     /** Unique MediaWorkflowConfiguration identifier. */
     public String getMediaWorkflowConfigurationId() {
         return mediaWorkflowConfigurationId;
+    }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
@@ -64,6 +71,20 @@ public class DeleteMediaWorkflowConfigurationRequest
          */
         public Builder mediaWorkflowConfigurationId(String mediaWorkflowConfigurationId) {
             this.mediaWorkflowConfigurationId = mediaWorkflowConfigurationId;
+            return this;
+        }
+
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -134,6 +155,7 @@ public class DeleteMediaWorkflowConfigurationRequest
          */
         public Builder copy(DeleteMediaWorkflowConfigurationRequest o) {
             mediaWorkflowConfigurationId(o.getMediaWorkflowConfigurationId());
+            isLockOverride(o.getIsLockOverride());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -174,11 +196,12 @@ public class DeleteMediaWorkflowConfigurationRequest
             DeleteMediaWorkflowConfigurationRequest request =
                     new DeleteMediaWorkflowConfigurationRequest();
             request.mediaWorkflowConfigurationId = mediaWorkflowConfigurationId;
+            request.isLockOverride = isLockOverride;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DeleteMediaWorkflowConfigurationRequest(mediaWorkflowConfigurationId, ifMatch,
-            // opcRequestId);
+            // new DeleteMediaWorkflowConfigurationRequest(mediaWorkflowConfigurationId,
+            // isLockOverride, ifMatch, opcRequestId);
         }
     }
 
@@ -190,6 +213,7 @@ public class DeleteMediaWorkflowConfigurationRequest
     public Builder toBuilder() {
         return new Builder()
                 .mediaWorkflowConfigurationId(mediaWorkflowConfigurationId)
+                .isLockOverride(isLockOverride)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
@@ -210,6 +234,7 @@ public class DeleteMediaWorkflowConfigurationRequest
         sb.append("super=").append(super.toString());
         sb.append(",mediaWorkflowConfigurationId=")
                 .append(String.valueOf(this.mediaWorkflowConfigurationId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -229,6 +254,7 @@ public class DeleteMediaWorkflowConfigurationRequest
         return super.equals(o)
                 && java.util.Objects.equals(
                         this.mediaWorkflowConfigurationId, other.mediaWorkflowConfigurationId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -242,6 +268,9 @@ public class DeleteMediaWorkflowConfigurationRequest
                         + (this.mediaWorkflowConfigurationId == null
                                 ? 43
                                 : this.mediaWorkflowConfigurationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

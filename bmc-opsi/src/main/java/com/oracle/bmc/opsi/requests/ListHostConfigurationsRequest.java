@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListHostConfigurationsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListHostConfigurationsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListHostConfigurationsRequest.
  */
@@ -16,14 +16,14 @@ public class ListHostConfigurationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -37,26 +37,26 @@ public class ListHostConfigurationsRequest
     }
     /**
      * Optional list of host insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> id;
 
     /**
      * Optional list of host insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getId() {
         return id;
     }
     /**
      * Optional list of exadata insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> exadataInsightId;
 
     /**
      * Optional list of exadata insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getExadataInsightId() {
         return exadataInsightId;
@@ -65,7 +65,7 @@ public class ListHostConfigurationsRequest
      * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
      * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
      * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
      */
     private java.util.List<PlatformType> platformType;
 
@@ -73,7 +73,7 @@ public class ListHostConfigurationsRequest
      * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
      * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
      * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
      */
     public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Linux("LINUX"),
@@ -82,6 +82,7 @@ public class ListHostConfigurationsRequest
         Zlinux("ZLINUX"),
         Windows("WINDOWS"),
         Aix("AIX"),
+        HpUx("HP_UX"),
         ;
 
         private final String value;
@@ -116,7 +117,7 @@ public class ListHostConfigurationsRequest
      * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
      * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
      * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
      */
     public java.util.List<PlatformType> getPlatformType() {
         return platformType;
@@ -124,7 +125,7 @@ public class ListHostConfigurationsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
      * {@code 50}
      */
     private Integer limit;
@@ -132,7 +133,7 @@ public class ListHostConfigurationsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
      * {@code 50}
      */
     public Integer getLimit() {
@@ -141,14 +142,14 @@ public class ListHostConfigurationsRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -301,26 +302,26 @@ public class ListHostConfigurationsRequest
     }
     /**
      * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST,
-     * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+     * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
      */
     private java.util.List<String> hostType;
 
     /**
      * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST,
-     * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+     * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
      */
     public java.util.List<String> getHostType() {
         return hostType;
     }
     /**
-     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host (Compute Id)
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host (Compute Id)
      */
     private String hostId;
 
     /**
-     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host (Compute Id)
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host (Compute Id)
      */
     public String getHostId() {
         return hostId;
@@ -332,6 +333,13 @@ public class ListHostConfigurationsRequest
     public java.util.List<String> getVmclusterName() {
         return vmclusterName;
     }
+    /** Resource Status */
+    private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
+
+    /** Resource Status */
+    public java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> getStatus() {
+        return status;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -340,14 +348,14 @@ public class ListHostConfigurationsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -373,13 +381,13 @@ public class ListHostConfigurationsRequest
 
         /**
          * Optional list of host insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> id = null;
 
         /**
          * Optional list of host insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder instance
@@ -391,7 +399,7 @@ public class ListHostConfigurationsRequest
 
         /**
          * Singular setter. Optional list of host insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -402,13 +410,13 @@ public class ListHostConfigurationsRequest
 
         /**
          * Optional list of exadata insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> exadataInsightId = null;
 
         /**
          * Optional list of exadata insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param exadataInsightId the value to set
          * @return this builder instance
@@ -420,7 +428,7 @@ public class ListHostConfigurationsRequest
 
         /**
          * Singular setter. Optional list of exadata insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -433,7 +441,7 @@ public class ListHostConfigurationsRequest
          * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
          * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
          * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          */
         private java.util.List<PlatformType> platformType = null;
 
@@ -441,7 +449,7 @@ public class ListHostConfigurationsRequest
          * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
          * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
          * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          *
          * @param platformType the value to set
          * @return this builder instance
@@ -455,7 +463,7 @@ public class ListHostConfigurationsRequest
          * Singular setter. Filter by one or more platform types. Supported platformType(s) for
          * MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s)
          * for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed
-         * external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+         * external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -467,7 +475,7 @@ public class ListHostConfigurationsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          */
         private Integer limit = null;
@@ -475,7 +483,7 @@ public class ListHostConfigurationsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -489,14 +497,14 @@ public class ListHostConfigurationsRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -726,13 +734,13 @@ public class ListHostConfigurationsRequest
 
         /**
          * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST,
-         * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+         * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
          */
         private java.util.List<String> hostType = null;
 
         /**
          * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST,
-         * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+         * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
          *
          * @param hostType the value to set
          * @return this builder instance
@@ -744,7 +752,8 @@ public class ListHostConfigurationsRequest
 
         /**
          * Singular setter. Filter by one or more host types. Possible values are CLOUD-HOST,
-         * EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+         * EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST,
+         * COMANAGED-EXACC-HOST
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -754,15 +763,13 @@ public class ListHostConfigurationsRequest
         }
 
         /**
-         * Optional
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host (Compute Id)
          */
         private String hostId = null;
 
         /**
-         * Optional
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host (Compute Id)
          *
          * @param hostId the value to set
@@ -795,6 +802,30 @@ public class ListHostConfigurationsRequest
          */
         public Builder vmclusterName(String singularValue) {
             return this.vmclusterName(java.util.Arrays.asList(singularValue));
+        }
+
+        /** Resource Status */
+        private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
+
+        /**
+         * Resource Status
+         *
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. Resource Status
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder status(ResourceStatus singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
         }
 
         /**
@@ -845,6 +876,7 @@ public class ListHostConfigurationsRequest
             hostType(o.getHostType());
             hostId(o.getHostId());
             vmclusterName(o.getVmclusterName());
+            status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -897,11 +929,12 @@ public class ListHostConfigurationsRequest
             request.hostType = hostType;
             request.hostId = hostId;
             request.vmclusterName = vmclusterName;
+            request.status = status;
             return request;
             // new ListHostConfigurationsRequest(compartmentId, enterpriseManagerBridgeId, id,
             // exadataInsightId, platformType, limit, page, sortOrder, sortBy, opcRequestId,
             // definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists,
-            // compartmentIdInSubtree, hostType, hostId, vmclusterName);
+            // compartmentIdInSubtree, hostType, hostId, vmclusterName, status);
         }
     }
 
@@ -929,7 +962,8 @@ public class ListHostConfigurationsRequest
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .hostType(hostType)
                 .hostId(hostId)
-                .vmclusterName(vmclusterName);
+                .vmclusterName(vmclusterName)
+                .status(status);
     }
 
     /**
@@ -965,6 +999,7 @@ public class ListHostConfigurationsRequest
         sb.append(",hostType=").append(String.valueOf(this.hostType));
         sb.append(",hostId=").append(String.valueOf(this.hostId));
         sb.append(",vmclusterName=").append(String.valueOf(this.vmclusterName));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
     }
@@ -999,7 +1034,8 @@ public class ListHostConfigurationsRequest
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.hostType, other.hostType)
                 && java.util.Objects.equals(this.hostId, other.hostId)
-                && java.util.Objects.equals(this.vmclusterName, other.vmclusterName);
+                && java.util.Objects.equals(this.vmclusterName, other.vmclusterName)
+                && java.util.Objects.equals(this.status, other.status);
     }
 
     @Override
@@ -1046,6 +1082,7 @@ public class ListHostConfigurationsRequest
         result =
                 (result * PRIME)
                         + (this.vmclusterName == null ? 43 : this.vmclusterName.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }
 }

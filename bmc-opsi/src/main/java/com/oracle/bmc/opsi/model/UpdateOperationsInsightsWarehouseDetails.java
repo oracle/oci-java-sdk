@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -26,6 +26,7 @@ public final class UpdateOperationsInsightsWarehouseDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "cpuAllocated",
+        "computeModel",
         "storageAllocatedInGBs",
         "freeformTags",
         "definedTags"
@@ -33,12 +34,14 @@ public final class UpdateOperationsInsightsWarehouseDetails
     public UpdateOperationsInsightsWarehouseDetails(
             String displayName,
             Double cpuAllocated,
+            OperationsInsightsWarehouse.ComputeModel computeModel,
             Double storageAllocatedInGBs,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.cpuAllocated = cpuAllocated;
+        this.computeModel = computeModel;
         this.storageAllocatedInGBs = storageAllocatedInGBs;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -46,12 +49,12 @@ public final class UpdateOperationsInsightsWarehouseDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** User-friedly name of Operations Insights Warehouse that does not have to be unique. */
+        /** User-friedly name of Ops Insights Warehouse that does not have to be unique. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+         * User-friedly name of Ops Insights Warehouse that does not have to be unique.
          *
          * @param displayName the value to set
          * @return this builder
@@ -61,12 +64,12 @@ public final class UpdateOperationsInsightsWarehouseDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Number of OCPUs allocated to OPSI Warehouse ADW. */
+        /** Number of CPUs allocated to OPSI Warehouse ADW. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuAllocated")
         private Double cpuAllocated;
 
         /**
-         * Number of OCPUs allocated to OPSI Warehouse ADW.
+         * Number of CPUs allocated to OPSI Warehouse ADW.
          *
          * @param cpuAllocated the value to set
          * @return this builder
@@ -74,6 +77,21 @@ public final class UpdateOperationsInsightsWarehouseDetails
         public Builder cpuAllocated(Double cpuAllocated) {
             this.cpuAllocated = cpuAllocated;
             this.__explicitlySet__.add("cpuAllocated");
+            return this;
+        }
+        /** The compute model for the OPSI warehouse ADW (OCPU or ECPU) */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private OperationsInsightsWarehouse.ComputeModel computeModel;
+
+        /**
+         * The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+         *
+         * @param computeModel the value to set
+         * @return this builder
+         */
+        public Builder computeModel(OperationsInsightsWarehouse.ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
             return this;
         }
         /** Storage allocated to OPSI Warehouse ADW. */
@@ -139,6 +157,7 @@ public final class UpdateOperationsInsightsWarehouseDetails
                     new UpdateOperationsInsightsWarehouseDetails(
                             this.displayName,
                             this.cpuAllocated,
+                            this.computeModel,
                             this.storageAllocatedInGBs,
                             this.freeformTags,
                             this.definedTags);
@@ -155,6 +174,9 @@ public final class UpdateOperationsInsightsWarehouseDetails
             }
             if (model.wasPropertyExplicitlySet("cpuAllocated")) {
                 this.cpuAllocated(model.getCpuAllocated());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
             }
             if (model.wasPropertyExplicitlySet("storageAllocatedInGBs")) {
                 this.storageAllocatedInGBs(model.getStorageAllocatedInGBs());
@@ -178,12 +200,12 @@ public final class UpdateOperationsInsightsWarehouseDetails
         return new Builder().copy(this);
     }
 
-    /** User-friedly name of Operations Insights Warehouse that does not have to be unique. */
+    /** User-friedly name of Ops Insights Warehouse that does not have to be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * User-friedly name of Ops Insights Warehouse that does not have to be unique.
      *
      * @return the value
      */
@@ -191,17 +213,30 @@ public final class UpdateOperationsInsightsWarehouseDetails
         return displayName;
     }
 
-    /** Number of OCPUs allocated to OPSI Warehouse ADW. */
+    /** Number of CPUs allocated to OPSI Warehouse ADW. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuAllocated")
     private final Double cpuAllocated;
 
     /**
-     * Number of OCPUs allocated to OPSI Warehouse ADW.
+     * Number of CPUs allocated to OPSI Warehouse ADW.
      *
      * @return the value
      */
     public Double getCpuAllocated() {
         return cpuAllocated;
+    }
+
+    /** The compute model for the OPSI warehouse ADW (OCPU or ECPU) */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final OperationsInsightsWarehouse.ComputeModel computeModel;
+
+    /**
+     * The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+     *
+     * @return the value
+     */
+    public OperationsInsightsWarehouse.ComputeModel getComputeModel() {
+        return computeModel;
     }
 
     /** Storage allocated to OPSI Warehouse ADW. */
@@ -268,6 +303,7 @@ public final class UpdateOperationsInsightsWarehouseDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", cpuAllocated=").append(String.valueOf(this.cpuAllocated));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", storageAllocatedInGBs=").append(String.valueOf(this.storageAllocatedInGBs));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -288,6 +324,7 @@ public final class UpdateOperationsInsightsWarehouseDetails
                 (UpdateOperationsInsightsWarehouseDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.cpuAllocated, other.cpuAllocated)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(this.storageAllocatedInGBs, other.storageAllocatedInGBs)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -300,6 +337,7 @@ public final class UpdateOperationsInsightsWarehouseDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.cpuAllocated == null ? 43 : this.cpuAllocated.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result =
                 (result * PRIME)
                         + (this.storageAllocatedInGBs == null

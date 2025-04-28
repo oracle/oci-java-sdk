@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
@@ -39,8 +39,11 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         "confidence",
         "timeFirstDetected",
         "timeLastDetected",
+        "timeFirstOccurred",
+        "timeLastOccurred",
         "regions",
-        "additionalDetails"
+        "additionalDetails",
+        "locks"
     })
     public Sighting(
             String id,
@@ -60,8 +63,11 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             Confidence confidence,
             java.util.Date timeFirstDetected,
             java.util.Date timeLastDetected,
+            java.util.Date timeFirstOccurred,
+            java.util.Date timeLastOccurred,
             java.util.List<String> regions,
-            java.util.Map<String, String> additionalDetails) {
+            java.util.Map<String, String> additionalDetails,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.description = description;
@@ -80,18 +86,21 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         this.confidence = confidence;
         this.timeFirstDetected = timeFirstDetected;
         this.timeLastDetected = timeLastDetected;
+        this.timeFirstOccurred = timeFirstOccurred;
+        this.timeLastOccurred = timeLastOccurred;
         this.regions = regions;
         this.additionalDetails = additionalDetails;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for sighting event */
+        /** Unique identifier for the sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for sighting event
+         * Unique identifier for the sighting
          *
          * @param id the value to set
          * @return this builder
@@ -101,12 +110,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Description of the sighting event */
+        /** Description of the sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of the sighting event
+         * Description of the sighting
          *
          * @param description the value to set
          * @return this builder
@@ -116,12 +125,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Problem Id to which the Sighting is associated */
+        /** Problem ID associated the sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
-         * Problem Id to which the Sighting is associated
+         * Problem ID associated the sighting
          *
          * @param problemId the value to set
          * @return this builder
@@ -131,12 +140,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("problemId");
             return this;
         }
-        /** Compartment Id where the resource is created */
+        /** Compartment OCID where the resource is created */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Id where the resource is created
+         * Compartment OCID where the resource is created
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -191,12 +200,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("actorPrincipalType");
             return this;
         }
-        /** ClassificationStatus of the sighting event */
+        /** Classification status of the sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("classificationStatus")
         private ClassificationStatus classificationStatus;
 
         /**
-         * ClassificationStatus of the sighting event
+         * Classification status of the sighting
          *
          * @param classificationStatus the value to set
          * @return this builder
@@ -206,12 +215,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("classificationStatus");
             return this;
         }
-        /** Identifier for the sighting type */
+        /** Type of sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
         private String sightingType;
 
         /**
-         * Identifier for the sighting type
+         * Type of sighting
          *
          * @param sightingType the value to set
          * @return this builder
@@ -236,12 +245,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("sightingTypeDisplayName");
             return this;
         }
-        /** Name of the Mitre att&ck tactic */
+        /** Name of the MITRE ATT@CK framework tactic */
         @com.fasterxml.jackson.annotation.JsonProperty("tacticName")
         private String tacticName;
 
         /**
-         * Name of the Mitre att&ck tactic
+         * Name of the MITRE ATT@CK framework tactic
          *
          * @param tacticName the value to set
          * @return this builder
@@ -251,12 +260,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("tacticName");
             return this;
         }
-        /** Name of the Mitre att&ck technique */
+        /** Name of the MITRE ATT@CK framework technique */
         @com.fasterxml.jackson.annotation.JsonProperty("techniqueName")
         private String techniqueName;
 
         /**
-         * Name of the Mitre att&ck technique
+         * Name of the MITRE ATT@CK framework technique
          *
          * @param techniqueName the value to set
          * @return this builder
@@ -296,12 +305,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("severity");
             return this;
         }
-        /** Confidence of the sighting */
+        /** Level of confidence that the sighting is not a false positive */
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Confidence confidence;
 
         /**
-         * Confidence of the sighting
+         * Level of confidence that the sighting is not a false positive
          *
          * @param confidence the value to set
          * @return this builder
@@ -311,12 +320,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("confidence");
             return this;
         }
-        /** The date and time the sighting was first detected. Format defined by RFC3339. */
+        /** Time the activities were first detected. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
         private java.util.Date timeFirstDetected;
 
         /**
-         * The date and time the sighting was first detected. Format defined by RFC3339.
+         * Time the activities were first detected. Format defined by RFC3339.
          *
          * @param timeFirstDetected the value to set
          * @return this builder
@@ -326,12 +335,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("timeFirstDetected");
             return this;
         }
-        /** The date and time the sighting was last detected. Format defined by RFC3339. */
+        /** Time the activities were last detected. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
         private java.util.Date timeLastDetected;
 
         /**
-         * The date and time the sighting was last detected. Format defined by RFC3339.
+         * Time the activities were last detected. Format defined by RFC3339.
          *
          * @param timeLastDetected the value to set
          * @return this builder
@@ -341,12 +350,42 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("timeLastDetected");
             return this;
         }
-        /** regions involved in the sighting */
+        /** Time the activities were first performed. Format defined by RFC3339. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
+        private java.util.Date timeFirstOccurred;
+
+        /**
+         * Time the activities were first performed. Format defined by RFC3339.
+         *
+         * @param timeFirstOccurred the value to set
+         * @return this builder
+         */
+        public Builder timeFirstOccurred(java.util.Date timeFirstOccurred) {
+            this.timeFirstOccurred = timeFirstOccurred;
+            this.__explicitlySet__.add("timeFirstOccurred");
+            return this;
+        }
+        /** Time the activities were last performed. Format defined by RFC3339. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastOccurred")
+        private java.util.Date timeLastOccurred;
+
+        /**
+         * Time the activities were last performed. Format defined by RFC3339.
+         *
+         * @param timeLastOccurred the value to set
+         * @return this builder
+         */
+        public Builder timeLastOccurred(java.util.Date timeLastOccurred) {
+            this.timeLastOccurred = timeLastOccurred;
+            this.__explicitlySet__.add("timeLastOccurred");
+            return this;
+        }
+        /** List of regions involved in the sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
-         * regions involved in the sighting
+         * List of regions involved in the sighting
          *
          * @param regions the value to set
          * @return this builder
@@ -356,12 +395,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("regions");
             return this;
         }
-        /** The additional details of the Sighting */
+        /** The additional details for the sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
         private java.util.Map<String, String> additionalDetails;
 
         /**
-         * The additional details of the Sighting
+         * The additional details for the sighting
          *
          * @param additionalDetails the value to set
          * @return this builder
@@ -369,6 +408,21 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         public Builder additionalDetails(java.util.Map<String, String> additionalDetails) {
             this.additionalDetails = additionalDetails;
             this.__explicitlySet__.add("additionalDetails");
+            return this;
+        }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
 
@@ -395,8 +449,11 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
                             this.confidence,
                             this.timeFirstDetected,
                             this.timeLastDetected,
+                            this.timeFirstOccurred,
+                            this.timeLastOccurred,
                             this.regions,
-                            this.additionalDetails);
+                            this.additionalDetails,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -456,11 +513,20 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("timeLastDetected")) {
                 this.timeLastDetected(model.getTimeLastDetected());
             }
+            if (model.wasPropertyExplicitlySet("timeFirstOccurred")) {
+                this.timeFirstOccurred(model.getTimeFirstOccurred());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastOccurred")) {
+                this.timeLastOccurred(model.getTimeLastOccurred());
+            }
             if (model.wasPropertyExplicitlySet("regions")) {
                 this.regions(model.getRegions());
             }
             if (model.wasPropertyExplicitlySet("additionalDetails")) {
                 this.additionalDetails(model.getAdditionalDetails());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -475,12 +541,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for sighting event */
+    /** Unique identifier for the sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for sighting event
+     * Unique identifier for the sighting
      *
      * @return the value
      */
@@ -488,12 +554,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         return id;
     }
 
-    /** Description of the sighting event */
+    /** Description of the sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of the sighting event
+     * Description of the sighting
      *
      * @return the value
      */
@@ -501,12 +567,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         return description;
     }
 
-    /** Problem Id to which the Sighting is associated */
+    /** Problem ID associated the sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
-     * Problem Id to which the Sighting is associated
+     * Problem ID associated the sighting
      *
      * @return the value
      */
@@ -514,12 +580,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         return problemId;
     }
 
-    /** Compartment Id where the resource is created */
+    /** Compartment OCID where the resource is created */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Id where the resource is created
+     * Compartment OCID where the resource is created
      *
      * @return the value
      */
@@ -566,12 +632,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         return actorPrincipalType;
     }
 
-    /** ClassificationStatus of the sighting event */
+    /** Classification status of the sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("classificationStatus")
     private final ClassificationStatus classificationStatus;
 
     /**
-     * ClassificationStatus of the sighting event
+     * Classification status of the sighting
      *
      * @return the value
      */
@@ -579,12 +645,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         return classificationStatus;
     }
 
-    /** Identifier for the sighting type */
+    /** Type of sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
     private final String sightingType;
 
     /**
-     * Identifier for the sighting type
+     * Type of sighting
      *
      * @return the value
      */
@@ -605,12 +671,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         return sightingTypeDisplayName;
     }
 
-    /** Name of the Mitre att&ck tactic */
+    /** Name of the MITRE ATT@CK framework tactic */
     @com.fasterxml.jackson.annotation.JsonProperty("tacticName")
     private final String tacticName;
 
     /**
-     * Name of the Mitre att&ck tactic
+     * Name of the MITRE ATT@CK framework tactic
      *
      * @return the value
      */
@@ -618,12 +684,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         return tacticName;
     }
 
-    /** Name of the Mitre att&ck technique */
+    /** Name of the MITRE ATT@CK framework technique */
     @com.fasterxml.jackson.annotation.JsonProperty("techniqueName")
     private final String techniqueName;
 
     /**
-     * Name of the Mitre att&ck technique
+     * Name of the MITRE ATT@CK framework technique
      *
      * @return the value
      */
@@ -657,12 +723,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         return severity;
     }
 
-    /** Confidence of the sighting */
+    /** Level of confidence that the sighting is not a false positive */
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Confidence confidence;
 
     /**
-     * Confidence of the sighting
+     * Level of confidence that the sighting is not a false positive
      *
      * @return the value
      */
@@ -670,12 +736,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         return confidence;
     }
 
-    /** The date and time the sighting was first detected. Format defined by RFC3339. */
+    /** Time the activities were first detected. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
     private final java.util.Date timeFirstDetected;
 
     /**
-     * The date and time the sighting was first detected. Format defined by RFC3339.
+     * Time the activities were first detected. Format defined by RFC3339.
      *
      * @return the value
      */
@@ -683,12 +749,12 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         return timeFirstDetected;
     }
 
-    /** The date and time the sighting was last detected. Format defined by RFC3339. */
+    /** Time the activities were last detected. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
     private final java.util.Date timeLastDetected;
 
     /**
-     * The date and time the sighting was last detected. Format defined by RFC3339.
+     * Time the activities were last detected. Format defined by RFC3339.
      *
      * @return the value
      */
@@ -696,12 +762,38 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         return timeLastDetected;
     }
 
-    /** regions involved in the sighting */
+    /** Time the activities were first performed. Format defined by RFC3339. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
+    private final java.util.Date timeFirstOccurred;
+
+    /**
+     * Time the activities were first performed. Format defined by RFC3339.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeFirstOccurred() {
+        return timeFirstOccurred;
+    }
+
+    /** Time the activities were last performed. Format defined by RFC3339. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastOccurred")
+    private final java.util.Date timeLastOccurred;
+
+    /**
+     * Time the activities were last performed. Format defined by RFC3339.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastOccurred() {
+        return timeLastOccurred;
+    }
+
+    /** List of regions involved in the sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
-     * regions involved in the sighting
+     * List of regions involved in the sighting
      *
      * @return the value
      */
@@ -709,17 +801,30 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         return regions;
     }
 
-    /** The additional details of the Sighting */
+    /** The additional details for the sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
     private final java.util.Map<String, String> additionalDetails;
 
     /**
-     * The additional details of the Sighting
+     * The additional details for the sighting
      *
      * @return the value
      */
     public java.util.Map<String, String> getAdditionalDetails() {
         return additionalDetails;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -755,8 +860,11 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", confidence=").append(String.valueOf(this.confidence));
         sb.append(", timeFirstDetected=").append(String.valueOf(this.timeFirstDetected));
         sb.append(", timeLastDetected=").append(String.valueOf(this.timeLastDetected));
+        sb.append(", timeFirstOccurred=").append(String.valueOf(this.timeFirstOccurred));
+        sb.append(", timeLastOccurred=").append(String.valueOf(this.timeLastOccurred));
         sb.append(", regions=").append(String.valueOf(this.regions));
         sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -789,8 +897,11 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.confidence, other.confidence)
                 && java.util.Objects.equals(this.timeFirstDetected, other.timeFirstDetected)
                 && java.util.Objects.equals(this.timeLastDetected, other.timeLastDetected)
+                && java.util.Objects.equals(this.timeFirstOccurred, other.timeFirstOccurred)
+                && java.util.Objects.equals(this.timeLastOccurred, other.timeLastOccurred)
                 && java.util.Objects.equals(this.regions, other.regions)
                 && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -843,10 +954,17 @@ public final class Sighting extends com.oracle.bmc.http.client.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.timeLastDetected == null ? 43 : this.timeLastDetected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstOccurred == null ? 43 : this.timeFirstOccurred.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastOccurred == null ? 43 : this.timeLastOccurred.hashCode());
         result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
         result =
                 (result * PRIME)
                         + (this.additionalDetails == null ? 43 : this.additionalDetails.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

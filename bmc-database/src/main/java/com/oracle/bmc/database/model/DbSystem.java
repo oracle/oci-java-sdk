@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -32,6 +32,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "backupSubnetId",
         "nsgIds",
         "backupNetworkNsgIds",
+        "giSoftwareImageId",
         "memorySizeInGBs",
         "storageVolumePerformanceMode",
         "shape",
@@ -56,6 +57,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "sparseDiskgroup",
         "scanIpIds",
         "vipIds",
+        "scanIpv6Ids",
+        "vipv6Ids",
         "scanDnsRecordId",
         "scanDnsName",
         "zoneId",
@@ -68,6 +71,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "nextMaintenanceRunId",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "sourceDbSystemId",
         "pointInTimeDataDiskCloneTimestamp",
         "dataCollectionOptions"
@@ -83,6 +87,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             String backupSubnetId,
             java.util.List<String> nsgIds,
             java.util.List<String> backupNetworkNsgIds,
+            String giSoftwareImageId,
             Integer memorySizeInGBs,
             StorageVolumePerformanceMode storageVolumePerformanceMode,
             String shape,
@@ -107,6 +112,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             Boolean sparseDiskgroup,
             java.util.List<String> scanIpIds,
             java.util.List<String> vipIds,
+            java.util.List<String> scanIpv6Ids,
+            java.util.List<String> vipv6Ids,
             String scanDnsRecordId,
             String scanDnsName,
             String zoneId,
@@ -119,6 +126,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             String nextMaintenanceRunId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String sourceDbSystemId,
             java.util.Date pointInTimeDataDiskCloneTimestamp,
             DataCollectionOptions dataCollectionOptions) {
@@ -133,6 +141,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.backupSubnetId = backupSubnetId;
         this.nsgIds = nsgIds;
         this.backupNetworkNsgIds = backupNetworkNsgIds;
+        this.giSoftwareImageId = giSoftwareImageId;
         this.memorySizeInGBs = memorySizeInGBs;
         this.storageVolumePerformanceMode = storageVolumePerformanceMode;
         this.shape = shape;
@@ -157,6 +166,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.sparseDiskgroup = sparseDiskgroup;
         this.scanIpIds = scanIpIds;
         this.vipIds = vipIds;
+        this.scanIpv6Ids = scanIpv6Ids;
+        this.vipv6Ids = vipv6Ids;
         this.scanDnsRecordId = scanDnsRecordId;
         this.scanDnsName = scanDnsName;
         this.zoneId = zoneId;
@@ -169,6 +180,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.nextMaintenanceRunId = nextMaintenanceRunId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.sourceDbSystemId = sourceDbSystemId;
         this.pointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
         this.dataCollectionOptions = dataCollectionOptions;
@@ -186,14 +198,14 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          *
          * @param id the value to set
@@ -205,14 +217,14 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -269,7 +281,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet the DB system is associated with.
          *
          * <p>*Subnet Restrictions:** - For bare metal DB systems and for single node virtual
@@ -285,7 +297,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet the DB system is associated with.
          *
          * <p>*Subnet Restrictions:** - For bare metal DB systems and for single node virtual
@@ -306,7 +318,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup network subnet the DB system is associated with. Applicable only to Exadata DB
          * systems.
          *
@@ -316,7 +328,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         private String backupSubnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup network subnet the DB system is associated with. Applicable only to Exadata DB
          * systems.
          *
@@ -332,24 +344,24 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -361,11 +373,11 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * A list of the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups (NSGs) that the backup network of this DB system belongs to.
          * Setting this to an empty array after the list is created removes the resource from all
          * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * Applicable only to Exadata systems.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
@@ -373,11 +385,11 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
 
         /**
          * A list of the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups (NSGs) that the backup network of this DB system belongs to.
          * Setting this to an empty array after the list is created removes the resource from all
          * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * Applicable only to Exadata systems.
          *
          * @param backupNetworkNsgIds the value to set
@@ -386,6 +398,27 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         public Builder backupNetworkNsgIds(java.util.List<String> backupNetworkNsgIds) {
             this.backupNetworkNsgIds = backupNetworkNsgIds;
             this.__explicitlySet__.add("backupNetworkNsgIds");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * grid infrastructure software image. This is a database software image of the type {@code
+         * GRID_IMAGE}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+        private String giSoftwareImageId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * grid infrastructure software image. This is a database software image of the type {@code
+         * GRID_IMAGE}.
+         *
+         * @param giSoftwareImageId the value to set
+         * @return this builder
+         */
+        public Builder giSoftwareImageId(String giSoftwareImageId) {
+            this.giSoftwareImageId = giSoftwareImageId;
+            this.__explicitlySet__.add("giSoftwareImageId");
             return this;
         }
         /** Memory allocated to the DB system, in gigabytes. */
@@ -406,7 +439,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * The block storage volume performance level. Valid values are {@code BALANCED} and {@code
          * HIGH_PERFORMANCE}. See [Block Volume
-         * Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm)
+         * Performance](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
          * for more information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("storageVolumePerformanceMode")
@@ -415,7 +448,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * The block storage volume performance level. Valid values are {@code BALANCED} and {@code
          * HIGH_PERFORMANCE}. See [Block Volume
-         * Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm)
+         * Performance](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
          * for more information.
          *
          * @param storageVolumePerformanceMode the value to set
@@ -474,14 +507,14 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * The time zone of the DB system. For details, see [DB System Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
          * The time zone of the DB system. For details, see [DB System Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
@@ -647,14 +680,14 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last patch history. This value is updated as soon as a patch operation starts.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
         private String lastPatchHistoryEntryId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last patch history. This value is updated as soon as a patch operation starts.
          *
          * @param lastPatchHistoryEntryId the value to set
@@ -764,8 +797,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4
          * addresses are typically used for load balancing and are not assigned to any interface.
          * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
          *
@@ -775,8 +808,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         private java.util.List<String> scanIpIds;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4
          * addresses are typically used for load balancing and are not assigned to any interface.
          * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
          *
@@ -791,10 +824,11 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services
-         * (CRS) creates and maintains one VIP address for each node in the DB system to enable
-         * failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services
+         * (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable
+         * failover. If one node fails, the VIPv4 is reassigned to another active node in the
+         * cluster.
          *
          * <p>*Note:** For a single-node DB system, this list is empty.
          */
@@ -802,10 +836,11 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         private java.util.List<String> vipIds;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services
-         * (CRS) creates and maintains one VIP address for each node in the DB system to enable
-         * failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services
+         * (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable
+         * failover. If one node fails, the VIPv4 is reassigned to another active node in the
+         * cluster.
          *
          * <p>*Note:** For a single-node DB system, this list is empty.
          *
@@ -818,14 +853,68 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6
+         * addresses are typically used for load balancing and are not assigned to any interface.
+         * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+         *
+         * <p>*Note:** For a single-node DB system, this list is empty.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("scanIpv6Ids")
+        private java.util.List<String> scanIpv6Ids;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6
+         * addresses are typically used for load balancing and are not assigned to any interface.
+         * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+         *
+         * <p>*Note:** For a single-node DB system, this list is empty.
+         *
+         * @param scanIpv6Ids the value to set
+         * @return this builder
+         */
+        public Builder scanIpv6Ids(java.util.List<String> scanIpv6Ids) {
+            this.scanIpv6Ids = scanIpv6Ids;
+            this.__explicitlySet__.add("scanIpv6Ids");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services
+         * (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable
+         * failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+         *
+         * <p>*Note:** For a single-node DB system, this list is empty.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vipv6Ids")
+        private java.util.List<String> vipv6Ids;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services
+         * (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable
+         * failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+         *
+         * <p>*Note:** For a single-node DB system, this list is empty.
+         *
+         * @param vipv6Ids the value to set
+         * @return this builder
+         */
+        public Builder vipv6Ids(java.util.List<String> vipv6Ids) {
+            this.vipv6Ids = vipv6Ids;
+            this.__explicitlySet__.add("vipv6Ids");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DNS record for the SCAN IP addresses that are associated with the DB system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
         private String scanDnsRecordId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DNS record for the SCAN IP addresses that are associated with the DB system.
          *
          * @param scanDnsRecordId the value to set
@@ -954,14 +1043,14 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last maintenance run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
         private String lastMaintenanceRunId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last maintenance run.
          *
          * @param lastMaintenanceRunId the value to set
@@ -973,14 +1062,14 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * next maintenance run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
         private String nextMaintenanceRunId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * next maintenance run.
          *
          * @param nextMaintenanceRunId the value to set
@@ -994,7 +1083,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -1004,7 +1093,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -1019,7 +1108,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -1027,7 +1116,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -1039,14 +1128,38 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
         private String sourceDbSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          *
          * @param sourceDbSystemId the value to set
@@ -1103,6 +1216,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.backupSubnetId,
                             this.nsgIds,
                             this.backupNetworkNsgIds,
+                            this.giSoftwareImageId,
                             this.memorySizeInGBs,
                             this.storageVolumePerformanceMode,
                             this.shape,
@@ -1127,6 +1241,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.sparseDiskgroup,
                             this.scanIpIds,
                             this.vipIds,
+                            this.scanIpv6Ids,
+                            this.vipv6Ids,
                             this.scanDnsRecordId,
                             this.scanDnsName,
                             this.zoneId,
@@ -1139,6 +1255,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.nextMaintenanceRunId,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.sourceDbSystemId,
                             this.pointInTimeDataDiskCloneTimestamp,
                             this.dataCollectionOptions);
@@ -1179,6 +1296,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("backupNetworkNsgIds")) {
                 this.backupNetworkNsgIds(model.getBackupNetworkNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("giSoftwareImageId")) {
+                this.giSoftwareImageId(model.getGiSoftwareImageId());
             }
             if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
                 this.memorySizeInGBs(model.getMemorySizeInGBs());
@@ -1252,6 +1372,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("vipIds")) {
                 this.vipIds(model.getVipIds());
             }
+            if (model.wasPropertyExplicitlySet("scanIpv6Ids")) {
+                this.scanIpv6Ids(model.getScanIpv6Ids());
+            }
+            if (model.wasPropertyExplicitlySet("vipv6Ids")) {
+                this.vipv6Ids(model.getVipv6Ids());
+            }
             if (model.wasPropertyExplicitlySet("scanDnsRecordId")) {
                 this.scanDnsRecordId(model.getScanDnsRecordId());
             }
@@ -1288,6 +1414,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("sourceDbSystemId")) {
                 this.sourceDbSystemId(model.getSourceDbSystemId());
             }
@@ -1319,14 +1448,14 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      *
      * @return the value
@@ -1336,14 +1465,14 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -1392,7 +1521,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet the DB system is associated with.
      *
      * <p>*Subnet Restrictions:** - For bare metal DB systems and for single node virtual machine DB
@@ -1407,7 +1536,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet the DB system is associated with.
      *
      * <p>*Subnet Restrictions:** - For bare metal DB systems and for single node virtual machine DB
@@ -1425,7 +1554,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup network subnet the DB system is associated with. Applicable only to Exadata DB
      * systems.
      *
@@ -1435,7 +1564,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     private final String backupSubnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup network subnet the DB system is associated with. Applicable only to Exadata DB
      * systems.
      *
@@ -1448,10 +1577,10 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      */
@@ -1459,10 +1588,10 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      *
@@ -1473,28 +1602,47 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * of the network security groups (NSGs) that the backup network of this DB system belongs to.
      * Setting this to an empty array after the list is created removes the resource from all NSGs.
      * For more information about NSGs, see [Security
-     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
      * only to Exadata systems.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     private final java.util.List<String> backupNetworkNsgIds;
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * of the network security groups (NSGs) that the backup network of this DB system belongs to.
      * Setting this to an empty array after the list is created removes the resource from all NSGs.
      * For more information about NSGs, see [Security
-     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
      * only to Exadata systems.
      *
      * @return the value
      */
     public java.util.List<String> getBackupNetworkNsgIds() {
         return backupNetworkNsgIds;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid
+     * infrastructure software image. This is a database software image of the type {@code
+     * GRID_IMAGE}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+    private final String giSoftwareImageId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid
+     * infrastructure software image. This is a database software image of the type {@code
+     * GRID_IMAGE}.
+     *
+     * @return the value
+     */
+    public String getGiSoftwareImageId() {
+        return giSoftwareImageId;
     }
 
     /** Memory allocated to the DB system, in gigabytes. */
@@ -1513,7 +1661,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * The block storage volume performance level. Valid values are {@code BALANCED} and {@code
      * HIGH_PERFORMANCE}. See [Block Volume
-     * Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm)
+     * Performance](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
      * for more information.
      */
     public enum StorageVolumePerformanceMode implements com.oracle.bmc.http.internal.BmcEnum {
@@ -1564,7 +1712,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * The block storage volume performance level. Valid values are {@code BALANCED} and {@code
      * HIGH_PERFORMANCE}. See [Block Volume
-     * Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm)
+     * Performance](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
      * for more information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("storageVolumePerformanceMode")
@@ -1573,7 +1721,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * The block storage volume performance level. Valid values are {@code BALANCED} and {@code
      * HIGH_PERFORMANCE}. See [Block Volume
-     * Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm)
+     * Performance](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
      * for more information.
      *
      * @return the value
@@ -1623,14 +1771,14 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * The time zone of the DB system. For details, see [DB System Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
      * The time zone of the DB system. For details, see [DB System Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
      */
@@ -1822,15 +1970,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last patch history. This value is updated as soon as a patch operation starts.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * patch history. This value is updated as soon as a patch operation starts.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
     private final String lastPatchHistoryEntryId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last patch history. This value is updated as soon as a patch operation starts.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * patch history. This value is updated as soon as a patch operation starts.
      *
      * @return the value
      */
@@ -2028,8 +2176,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4
      * addresses are typically used for load balancing and are not assigned to any interface. Oracle
      * Clusterware directs the requests to the appropriate nodes in the cluster.
      *
@@ -2039,8 +2187,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     private final java.util.List<String> scanIpIds;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4
      * addresses are typically used for load balancing and are not assigned to any interface. Oracle
      * Clusterware directs the requests to the appropriate nodes in the cluster.
      *
@@ -2053,10 +2201,10 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS)
-     * creates and maintains one VIP address for each node in the DB system to enable failover. If
-     * one node fails, the VIP is reassigned to another active node in the cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS)
+     * creates and maintains one VIPv4 address for each node in the DB system to enable failover. If
+     * one node fails, the VIPv4 is reassigned to another active node in the cluster.
      *
      * <p>*Note:** For a single-node DB system, this list is empty.
      */
@@ -2064,10 +2212,10 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     private final java.util.List<String> vipIds;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS)
-     * creates and maintains one VIP address for each node in the DB system to enable failover. If
-     * one node fails, the VIP is reassigned to another active node in the cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS)
+     * creates and maintains one VIPv4 address for each node in the DB system to enable failover. If
+     * one node fails, the VIPv4 is reassigned to another active node in the cluster.
      *
      * <p>*Note:** For a single-node DB system, this list is empty.
      *
@@ -2078,14 +2226,64 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DNS
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6
+     * addresses are typically used for load balancing and are not assigned to any interface. Oracle
+     * Clusterware directs the requests to the appropriate nodes in the cluster.
+     *
+     * <p>*Note:** For a single-node DB system, this list is empty.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("scanIpv6Ids")
+    private final java.util.List<String> scanIpv6Ids;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6
+     * addresses are typically used for load balancing and are not assigned to any interface. Oracle
+     * Clusterware directs the requests to the appropriate nodes in the cluster.
+     *
+     * <p>*Note:** For a single-node DB system, this list is empty.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getScanIpv6Ids() {
+        return scanIpv6Ids;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS)
+     * creates and maintains one VIP IpV6 address for each node in the DB system to enable failover.
+     * If one node fails, the VIP is reassigned to another active node in the cluster.
+     *
+     * <p>*Note:** For a single-node DB system, this list is empty.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vipv6Ids")
+    private final java.util.List<String> vipv6Ids;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS)
+     * creates and maintains one VIP IpV6 address for each node in the DB system to enable failover.
+     * If one node fails, the VIP is reassigned to another active node in the cluster.
+     *
+     * <p>*Note:** For a single-node DB system, this list is empty.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getVipv6Ids() {
+        return vipv6Ids;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS
      * record for the SCAN IP addresses that are associated with the DB system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
     private final String scanDnsRecordId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DNS
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS
      * record for the SCAN IP addresses that are associated with the DB system.
      *
      * @return the value
@@ -2243,15 +2441,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last maintenance run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * maintenance run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
     private final String lastMaintenanceRunId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last maintenance run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * maintenance run.
      *
      * @return the value
      */
@@ -2260,15 +2458,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * next maintenance run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next
+     * maintenance run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
     private final String nextMaintenanceRunId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * next maintenance run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next
+     * maintenance run.
      *
      * @return the value
      */
@@ -2279,7 +2477,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -2289,7 +2487,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -2302,7 +2500,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -2310,7 +2508,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -2319,14 +2517,35 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
     private final String sourceDbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      *
      * @return the value
@@ -2384,6 +2603,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", backupSubnetId=").append(String.valueOf(this.backupSubnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", backupNetworkNsgIds=").append(String.valueOf(this.backupNetworkNsgIds));
+        sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
         sb.append(", storageVolumePerformanceMode=")
                 .append(String.valueOf(this.storageVolumePerformanceMode));
@@ -2410,6 +2630,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", sparseDiskgroup=").append(String.valueOf(this.sparseDiskgroup));
         sb.append(", scanIpIds=").append(String.valueOf(this.scanIpIds));
         sb.append(", vipIds=").append(String.valueOf(this.vipIds));
+        sb.append(", scanIpv6Ids=").append(String.valueOf(this.scanIpv6Ids));
+        sb.append(", vipv6Ids=").append(String.valueOf(this.vipv6Ids));
         sb.append(", scanDnsRecordId=").append(String.valueOf(this.scanDnsRecordId));
         sb.append(", scanDnsName=").append(String.valueOf(this.scanDnsName));
         sb.append(", zoneId=").append(String.valueOf(this.zoneId));
@@ -2422,6 +2644,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", sourceDbSystemId=").append(String.valueOf(this.sourceDbSystemId));
         sb.append(", pointInTimeDataDiskCloneTimestamp=")
                 .append(String.valueOf(this.pointInTimeDataDiskCloneTimestamp));
@@ -2450,6 +2673,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.backupSubnetId, other.backupSubnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.backupNetworkNsgIds, other.backupNetworkNsgIds)
+                && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
                 && java.util.Objects.equals(
                         this.storageVolumePerformanceMode, other.storageVolumePerformanceMode)
@@ -2476,6 +2700,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.sparseDiskgroup, other.sparseDiskgroup)
                 && java.util.Objects.equals(this.scanIpIds, other.scanIpIds)
                 && java.util.Objects.equals(this.vipIds, other.vipIds)
+                && java.util.Objects.equals(this.scanIpv6Ids, other.scanIpv6Ids)
+                && java.util.Objects.equals(this.vipv6Ids, other.vipv6Ids)
                 && java.util.Objects.equals(this.scanDnsRecordId, other.scanDnsRecordId)
                 && java.util.Objects.equals(this.scanDnsName, other.scanDnsName)
                 && java.util.Objects.equals(this.zoneId, other.zoneId)
@@ -2488,6 +2714,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.sourceDbSystemId, other.sourceDbSystemId)
                 && java.util.Objects.equals(
                         this.pointInTimeDataDiskCloneTimestamp,
@@ -2524,6 +2751,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.backupNetworkNsgIds == null
                                 ? 43
                                 : this.backupNetworkNsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.giSoftwareImageId == null ? 43 : this.giSoftwareImageId.hashCode());
         result =
                 (result * PRIME)
                         + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());
@@ -2576,6 +2806,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.sparseDiskgroup == null ? 43 : this.sparseDiskgroup.hashCode());
         result = (result * PRIME) + (this.scanIpIds == null ? 43 : this.scanIpIds.hashCode());
         result = (result * PRIME) + (this.vipIds == null ? 43 : this.vipIds.hashCode());
+        result = (result * PRIME) + (this.scanIpv6Ids == null ? 43 : this.scanIpv6Ids.hashCode());
+        result = (result * PRIME) + (this.vipv6Ids == null ? 43 : this.vipv6Ids.hashCode());
         result =
                 (result * PRIME)
                         + (this.scanDnsRecordId == null ? 43 : this.scanDnsRecordId.hashCode());
@@ -2608,6 +2840,11 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                                 : this.nextMaintenanceRunId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.sourceDbSystemId == null ? 43 : this.sourceDbSystemId.hashCode());

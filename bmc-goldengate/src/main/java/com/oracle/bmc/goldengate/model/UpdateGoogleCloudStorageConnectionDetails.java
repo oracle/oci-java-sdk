@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -90,16 +90,45 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The base64 encoded content of the service account key file containing the credentials
-         * required to use Google Cloud Storage.
+         * required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced
+         * by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFile")
         private String serviceAccountKeyFile;
 
         /**
          * The base64 encoded content of the service account key file containing the credentials
-         * required to use Google Cloud Storage.
+         * required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced
+         * by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
          *
          * @param serviceAccountKeyFile the value to set
          * @return this builder
@@ -107,6 +136,29 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
         public Builder serviceAccountKeyFile(String serviceAccountKeyFile) {
             this.serviceAccountKeyFile = serviceAccountKeyFile;
             this.__explicitlySet__.add("serviceAccountKeyFile");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the content of the service account key file is stored, which containing the
+         * credentials required to use Google Cloud Storage. Note: When provided,
+         * 'serviceAccountKeyFile' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFileSecretId")
+        private String serviceAccountKeyFileSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the content of the service account key file is stored, which containing the
+         * credentials required to use Google Cloud Storage. Note: When provided,
+         * 'serviceAccountKeyFile' field must not be provided.
+         *
+         * @param serviceAccountKeyFileSecretId the value to set
+         * @return this builder
+         */
+        public Builder serviceAccountKeyFileSecretId(String serviceAccountKeyFileSecretId) {
+            this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
+            this.__explicitlySet__.add("serviceAccountKeyFileSecretId");
             return this;
         }
 
@@ -123,7 +175,11 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
-                            this.serviceAccountKeyFile);
+                            this.subnetId,
+                            this.routingMethod,
+                            this.doesUseSecretIds,
+                            this.serviceAccountKeyFile,
+                            this.serviceAccountKeyFileSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -153,8 +209,20 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
             }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("serviceAccountKeyFile")) {
                 this.serviceAccountKeyFile(model.getServiceAccountKeyFile());
+            }
+            if (model.wasPropertyExplicitlySet("serviceAccountKeyFileSecretId")) {
+                this.serviceAccountKeyFileSecretId(model.getServiceAccountKeyFileSecretId());
             }
             return this;
         }
@@ -178,26 +246,64 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
-            String serviceAccountKeyFile) {
-        super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            String serviceAccountKeyFile,
+            String serviceAccountKeyFileSecretId) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds);
         this.serviceAccountKeyFile = serviceAccountKeyFile;
+        this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
     }
 
     /**
      * The base64 encoded content of the service account key file containing the credentials
-     * required to use Google Cloud Storage.
+     * required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by
+     * "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFile")
     private final String serviceAccountKeyFile;
 
     /**
      * The base64 encoded content of the service account key file containing the credentials
-     * required to use Google Cloud Storage.
+     * required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by
+     * "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
     public String getServiceAccountKeyFile() {
         return serviceAccountKeyFile;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the content of the service account key file is stored, which containing the
+     * credentials required to use Google Cloud Storage. Note: When provided,
+     * 'serviceAccountKeyFile' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFileSecretId")
+    private final String serviceAccountKeyFileSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the content of the service account key file is stored, which containing the
+     * credentials required to use Google Cloud Storage. Note: When provided,
+     * 'serviceAccountKeyFile' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getServiceAccountKeyFileSecretId() {
+        return serviceAccountKeyFileSecretId;
     }
 
     @Override
@@ -216,6 +322,8 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
         sb.append("UpdateGoogleCloudStorageConnectionDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", serviceAccountKeyFile=").append(String.valueOf(this.serviceAccountKeyFile));
+        sb.append(", serviceAccountKeyFileSecretId=")
+                .append(String.valueOf(this.serviceAccountKeyFileSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -232,6 +340,8 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
         UpdateGoogleCloudStorageConnectionDetails other =
                 (UpdateGoogleCloudStorageConnectionDetails) o;
         return java.util.Objects.equals(this.serviceAccountKeyFile, other.serviceAccountKeyFile)
+                && java.util.Objects.equals(
+                        this.serviceAccountKeyFileSecretId, other.serviceAccountKeyFileSecretId)
                 && super.equals(other);
     }
 
@@ -244,6 +354,11 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
                         + (this.serviceAccountKeyFile == null
                                 ? 43
                                 : this.serviceAccountKeyFile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceAccountKeyFileSecretId == null
+                                ? 43
+                                : this.serviceAccountKeyFileSecretId.hashCode());
         return result;
     }
 }

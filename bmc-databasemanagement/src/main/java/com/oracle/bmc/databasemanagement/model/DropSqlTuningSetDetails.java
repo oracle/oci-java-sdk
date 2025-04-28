@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to drop a Sql tuning set. <br>
+ * The details required to drop a Sql tuning set. It takes either credentialDetails or
+ * databaseCredential. It's recommended to provide databaseCredential <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,14 +24,22 @@ package com.oracle.bmc.databasemanagement.model;
 public final class DropSqlTuningSetDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"credentialDetails", "name", "owner", "showSqlOnly"})
+    @java.beans.ConstructorProperties({
+        "credentialDetails",
+        "databaseCredential",
+        "name",
+        "owner",
+        "showSqlOnly"
+    })
     public DropSqlTuningSetDetails(
             SqlTuningSetAdminCredentialDetails credentialDetails,
+            DatabaseCredentialDetails databaseCredential,
             String name,
             String owner,
             Integer showSqlOnly) {
         super();
         this.credentialDetails = credentialDetails;
+        this.databaseCredential = databaseCredential;
         this.name = name;
         this.owner = owner;
         this.showSqlOnly = showSqlOnly;
@@ -45,6 +54,15 @@ public final class DropSqlTuningSetDetails
         public Builder credentialDetails(SqlTuningSetAdminCredentialDetails credentialDetails) {
             this.credentialDetails = credentialDetails;
             this.__explicitlySet__.add("credentialDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
             return this;
         }
         /** A unique Sql tuning set name. */
@@ -103,7 +121,11 @@ public final class DropSqlTuningSetDetails
         public DropSqlTuningSetDetails build() {
             DropSqlTuningSetDetails model =
                     new DropSqlTuningSetDetails(
-                            this.credentialDetails, this.name, this.owner, this.showSqlOnly);
+                            this.credentialDetails,
+                            this.databaseCredential,
+                            this.name,
+                            this.owner,
+                            this.showSqlOnly);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -114,6 +136,9 @@ public final class DropSqlTuningSetDetails
         public Builder copy(DropSqlTuningSetDetails model) {
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
@@ -142,6 +167,13 @@ public final class DropSqlTuningSetDetails
 
     public SqlTuningSetAdminCredentialDetails getCredentialDetails() {
         return credentialDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
     }
 
     /** A unique Sql tuning set name. */
@@ -203,6 +235,7 @@ public final class DropSqlTuningSetDetails
         sb.append("DropSqlTuningSetDetails(");
         sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", owner=").append(String.valueOf(this.owner));
         sb.append(", showSqlOnly=").append(String.valueOf(this.showSqlOnly));
@@ -221,6 +254,7 @@ public final class DropSqlTuningSetDetails
 
         DropSqlTuningSetDetails other = (DropSqlTuningSetDetails) o;
         return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.owner, other.owner)
                 && java.util.Objects.equals(this.showSqlOnly, other.showSqlOnly)
@@ -234,6 +268,11 @@ public final class DropSqlTuningSetDetails
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
         result = (result * PRIME) + (this.showSqlOnly == null ? 43 : this.showSqlOnly.hashCode());

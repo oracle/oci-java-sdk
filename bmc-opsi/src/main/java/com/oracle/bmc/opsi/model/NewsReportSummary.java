@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -39,7 +39,11 @@ public final class NewsReportSummary
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "dayOfWeek",
+        "areChildCompartmentsIncluded",
+        "tagFilters",
+        "matchRule"
     })
     public NewsReportSummary(
             NewsFrequency newsFrequency,
@@ -57,7 +61,11 @@ public final class NewsReportSummary
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
-            String lifecycleDetails) {
+            String lifecycleDetails,
+            DayOfWeek dayOfWeek,
+            Boolean areChildCompartmentsIncluded,
+            java.util.List<String> tagFilters,
+            MatchRule matchRule) {
         super();
         this.newsFrequency = newsFrequency;
         this.contentTypes = contentTypes;
@@ -75,6 +83,10 @@ public final class NewsReportSummary
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.dayOfWeek = dayOfWeek;
+        this.areChildCompartmentsIncluded = areChildCompartmentsIncluded;
+        this.tagFilters = tagFilters;
+        this.matchRule = matchRule;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -119,15 +131,15 @@ public final class NewsReportSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the news report resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * news report resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the news report resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * news report resource.
          *
          * @param id the value to set
          * @return this builder
@@ -153,15 +165,15 @@ public final class NewsReportSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -187,15 +199,15 @@ public final class NewsReportSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the ONS topic.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * ONS topic.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
         private String onsTopicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the ONS topic.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * ONS topic.
          *
          * @param onsTopicId the value to set
          * @return this builder
@@ -263,12 +275,12 @@ public final class NewsReportSummary
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Indicates the status of a news report in Operations Insights. */
+        /** Indicates the status of a news report in Ops Insights. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ResourceStatus status;
 
         /**
-         * Indicates the status of a news report in Operations Insights.
+         * Indicates the status of a news report in Ops Insights.
          *
          * @param status the value to set
          * @return this builder
@@ -342,6 +354,74 @@ public final class NewsReportSummary
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /**
+         * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
+        private DayOfWeek dayOfWeek;
+
+        /**
+         * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+         *
+         * @param dayOfWeek the value to set
+         * @return this builder
+         */
+        public Builder dayOfWeek(DayOfWeek dayOfWeek) {
+            this.dayOfWeek = dayOfWeek;
+            this.__explicitlySet__.add("dayOfWeek");
+            return this;
+        }
+        /** A flag to consider the resources within a given compartment and all sub-compartments. */
+        @com.fasterxml.jackson.annotation.JsonProperty("areChildCompartmentsIncluded")
+        private Boolean areChildCompartmentsIncluded;
+
+        /**
+         * A flag to consider the resources within a given compartment and all sub-compartments.
+         *
+         * @param areChildCompartmentsIncluded the value to set
+         * @return this builder
+         */
+        public Builder areChildCompartmentsIncluded(Boolean areChildCompartmentsIncluded) {
+            this.areChildCompartmentsIncluded = areChildCompartmentsIncluded;
+            this.__explicitlySet__.add("areChildCompartmentsIncluded");
+            return this;
+        }
+        /**
+         * List of tag filters; each filter composed by a namespace, key, and value. Example for
+         * defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags -
+         * '<TagKey>=<TagValue>'.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("tagFilters")
+        private java.util.List<String> tagFilters;
+
+        /**
+         * List of tag filters; each filter composed by a namespace, key, and value. Example for
+         * defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags -
+         * '<TagKey>=<TagValue>'.
+         *
+         * @param tagFilters the value to set
+         * @return this builder
+         */
+        public Builder tagFilters(java.util.List<String> tagFilters) {
+            this.tagFilters = tagFilters;
+            this.__explicitlySet__.add("tagFilters");
+            return this;
+        }
+        /** Match rule used for tag filters. */
+        @com.fasterxml.jackson.annotation.JsonProperty("matchRule")
+        private MatchRule matchRule;
+
+        /**
+         * Match rule used for tag filters.
+         *
+         * @param matchRule the value to set
+         * @return this builder
+         */
+        public Builder matchRule(MatchRule matchRule) {
+            this.matchRule = matchRule;
+            this.__explicitlySet__.add("matchRule");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -364,7 +444,11 @@ public final class NewsReportSummary
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
-                            this.lifecycleDetails);
+                            this.lifecycleDetails,
+                            this.dayOfWeek,
+                            this.areChildCompartmentsIncluded,
+                            this.tagFilters,
+                            this.matchRule);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -421,6 +505,18 @@ public final class NewsReportSummary
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
+            if (model.wasPropertyExplicitlySet("dayOfWeek")) {
+                this.dayOfWeek(model.getDayOfWeek());
+            }
+            if (model.wasPropertyExplicitlySet("areChildCompartmentsIncluded")) {
+                this.areChildCompartmentsIncluded(model.getAreChildCompartmentsIncluded());
+            }
+            if (model.wasPropertyExplicitlySet("tagFilters")) {
+                this.tagFilters(model.getTagFilters());
+            }
+            if (model.wasPropertyExplicitlySet("matchRule")) {
+                this.matchRule(model.getMatchRule());
+            }
             return this;
         }
     }
@@ -468,15 +564,15 @@ public final class NewsReportSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the news report resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news
+     * report resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the news report resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news
+     * report resource.
      *
      * @return the value
      */
@@ -498,15 +594,15 @@ public final class NewsReportSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      *
      * @return the value
      */
@@ -528,15 +624,15 @@ public final class NewsReportSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the ONS topic.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS
+     * topic.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
     private final String onsTopicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the ONS topic.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS
+     * topic.
      *
      * @return the value
      */
@@ -595,12 +691,12 @@ public final class NewsReportSummary
         return systemTags;
     }
 
-    /** Indicates the status of a news report in Operations Insights. */
+    /** Indicates the status of a news report in Ops Insights. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ResourceStatus status;
 
     /**
-     * Indicates the status of a news report in Operations Insights.
+     * Indicates the status of a news report in Ops Insights.
      *
      * @return the value
      */
@@ -664,6 +760,64 @@ public final class NewsReportSummary
         return lifecycleDetails;
     }
 
+    /** Day of the week in which the news report will be sent if the frequency is set to WEEKLY. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
+    private final DayOfWeek dayOfWeek;
+
+    /**
+     * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     *
+     * @return the value
+     */
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    /** A flag to consider the resources within a given compartment and all sub-compartments. */
+    @com.fasterxml.jackson.annotation.JsonProperty("areChildCompartmentsIncluded")
+    private final Boolean areChildCompartmentsIncluded;
+
+    /**
+     * A flag to consider the resources within a given compartment and all sub-compartments.
+     *
+     * @return the value
+     */
+    public Boolean getAreChildCompartmentsIncluded() {
+        return areChildCompartmentsIncluded;
+    }
+
+    /**
+     * List of tag filters; each filter composed by a namespace, key, and value. Example for defined
+     * tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags -
+     * '<TagKey>=<TagValue>'.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("tagFilters")
+    private final java.util.List<String> tagFilters;
+
+    /**
+     * List of tag filters; each filter composed by a namespace, key, and value. Example for defined
+     * tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags -
+     * '<TagKey>=<TagValue>'.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getTagFilters() {
+        return tagFilters;
+    }
+
+    /** Match rule used for tag filters. */
+    @com.fasterxml.jackson.annotation.JsonProperty("matchRule")
+    private final MatchRule matchRule;
+
+    /**
+     * Match rule used for tag filters.
+     *
+     * @return the value
+     */
+    public MatchRule getMatchRule() {
+        return matchRule;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -695,6 +849,11 @@ public final class NewsReportSummary
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", dayOfWeek=").append(String.valueOf(this.dayOfWeek));
+        sb.append(", areChildCompartmentsIncluded=")
+                .append(String.valueOf(this.areChildCompartmentsIncluded));
+        sb.append(", tagFilters=").append(String.valueOf(this.tagFilters));
+        sb.append(", matchRule=").append(String.valueOf(this.matchRule));
         sb.append(")");
         return sb.toString();
     }
@@ -725,6 +884,11 @@ public final class NewsReportSummary
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.dayOfWeek, other.dayOfWeek)
+                && java.util.Objects.equals(
+                        this.areChildCompartmentsIncluded, other.areChildCompartmentsIncluded)
+                && java.util.Objects.equals(this.tagFilters, other.tagFilters)
+                && java.util.Objects.equals(this.matchRule, other.matchRule)
                 && super.equals(other);
     }
 
@@ -756,6 +920,14 @@ public final class NewsReportSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.dayOfWeek == null ? 43 : this.dayOfWeek.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areChildCompartmentsIncluded == null
+                                ? 43
+                                : this.areChildCompartmentsIncluded.hashCode());
+        result = (result * PRIME) + (this.tagFilters == null ? 43 : this.tagFilters.hashCode());
+        result = (result * PRIME) + (this.matchRule == null ? 43 : this.matchRule.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

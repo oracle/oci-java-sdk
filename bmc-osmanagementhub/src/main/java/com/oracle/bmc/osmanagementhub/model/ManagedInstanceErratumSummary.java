@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * An erratum associated with a managed instance. <br>
+ * Provides summary information about an erratum associated with a managed instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -64,12 +64,12 @@ public final class ManagedInstanceErratumSummary
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The type of the erratum. */
+        /** The advisory type of the erratum. */
         @com.fasterxml.jackson.annotation.JsonProperty("advisoryType")
         private ClassificationTypes advisoryType;
 
         /**
-         * The type of the erratum.
+         * The advisory type of the erratum.
          *
          * @param advisoryType the value to set
          * @return this builder
@@ -80,15 +80,15 @@ public final class ManagedInstanceErratumSummary
             return this;
         }
         /**
-         * The date and time the package was issued by a providing erratum (if available), as
-         * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the package was issued by a providing erratum (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
         private java.util.Date timeIssued;
 
         /**
-         * The date and time the package was issued by a providing erratum (if available), as
-         * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the package was issued by a providing erratum (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeIssued the value to set
          * @return this builder
@@ -98,12 +98,12 @@ public final class ManagedInstanceErratumSummary
             this.__explicitlySet__.add("timeIssued");
             return this;
         }
-        /** Summary description of the erratum. */
+        /** A summary description of the erratum. */
         @com.fasterxml.jackson.annotation.JsonProperty("synopsis")
         private String synopsis;
 
         /**
-         * Summary description of the erratum.
+         * A summary description of the erratum.
          *
          * @param synopsis the value to set
          * @return this builder
@@ -113,12 +113,12 @@ public final class ManagedInstanceErratumSummary
             this.__explicitlySet__.add("synopsis");
             return this;
         }
-        /** List of CVEs applicable to this erratum. */
+        /** The list of CVEs applicable to this erratum. */
         @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
         private java.util.List<String> relatedCves;
 
         /**
-         * List of CVEs applicable to this erratum.
+         * The list of CVEs applicable to this erratum.
          *
          * @param relatedCves the value to set
          * @return this builder
@@ -128,12 +128,12 @@ public final class ManagedInstanceErratumSummary
             this.__explicitlySet__.add("relatedCves");
             return this;
         }
-        /** The list of Packages affected by this erratum. */
+        /** The list of packages affected by this erratum. */
         @com.fasterxml.jackson.annotation.JsonProperty("packages")
         private java.util.List<PackageNameSummary> packages;
 
         /**
-         * The list of Packages affected by this erratum.
+         * The list of packages affected by this erratum.
          *
          * @param packages the value to set
          * @return this builder
@@ -208,12 +208,12 @@ public final class ManagedInstanceErratumSummary
         return name;
     }
 
-    /** The type of the erratum. */
+    /** The advisory type of the erratum. */
     @com.fasterxml.jackson.annotation.JsonProperty("advisoryType")
     private final ClassificationTypes advisoryType;
 
     /**
-     * The type of the erratum.
+     * The advisory type of the erratum.
      *
      * @return the value
      */
@@ -222,15 +222,15 @@ public final class ManagedInstanceErratumSummary
     }
 
     /**
-     * The date and time the package was issued by a providing erratum (if available), as described
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the package was issued by a providing erratum (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
     private final java.util.Date timeIssued;
 
     /**
-     * The date and time the package was issued by a providing erratum (if available), as described
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the package was issued by a providing erratum (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      */
@@ -238,12 +238,12 @@ public final class ManagedInstanceErratumSummary
         return timeIssued;
     }
 
-    /** Summary description of the erratum. */
+    /** A summary description of the erratum. */
     @com.fasterxml.jackson.annotation.JsonProperty("synopsis")
     private final String synopsis;
 
     /**
-     * Summary description of the erratum.
+     * A summary description of the erratum.
      *
      * @return the value
      */
@@ -251,12 +251,12 @@ public final class ManagedInstanceErratumSummary
         return synopsis;
     }
 
-    /** List of CVEs applicable to this erratum. */
+    /** The list of CVEs applicable to this erratum. */
     @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
     private final java.util.List<String> relatedCves;
 
     /**
-     * List of CVEs applicable to this erratum.
+     * The list of CVEs applicable to this erratum.
      *
      * @return the value
      */
@@ -264,12 +264,12 @@ public final class ManagedInstanceErratumSummary
         return relatedCves;
     }
 
-    /** The list of Packages affected by this erratum. */
+    /** The list of packages affected by this erratum. */
     @com.fasterxml.jackson.annotation.JsonProperty("packages")
     private final java.util.List<PackageNameSummary> packages;
 
     /**
-     * The list of Packages affected by this erratum.
+     * The list of packages affected by this erratum.
      *
      * @return the value
      */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -33,14 +33,14 @@ public final class WorkRequestError
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A machine-usable code for the error that occured. Error codes are listed on
+         * A machine-usable code for the error that occurred. Error codes are listed on
          * (https://docs.oracle.com/en-us/iaas/Content/API/References/apierrors.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
-         * A machine-usable code for the error that occured. Error codes are listed on
+         * A machine-usable code for the error that occurred. Error codes are listed on
          * (https://docs.oracle.com/en-us/iaas/Content/API/References/apierrors.htm).
          *
          * @param code the value to set
@@ -66,12 +66,12 @@ public final class WorkRequestError
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** The time the error occured, shown as an RFC 3339 formatted datetime string. */
+        /** The time the error occurred, shown as an RFC 3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the error occured, shown as an RFC 3339 formatted datetime string.
+         * The time the error occurred, shown as an RFC 3339 formatted datetime string.
          *
          * @param timestamp the value to set
          * @return this builder
@@ -118,14 +118,14 @@ public final class WorkRequestError
     }
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
+     * A machine-usable code for the error that occurred. Error codes are listed on
      * (https://docs.oracle.com/en-us/iaas/Content/API/References/apierrors.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
+     * A machine-usable code for the error that occurred. Error codes are listed on
      * (https://docs.oracle.com/en-us/iaas/Content/API/References/apierrors.htm).
      *
      * @return the value
@@ -147,12 +147,12 @@ public final class WorkRequestError
         return message;
     }
 
-    /** The time the error occured, shown as an RFC 3339 formatted datetime string. */
+    /** The time the error occurred, shown as an RFC 3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the error occured, shown as an RFC 3339 formatted datetime string.
+     * The time the error occurred, shown as an RFC 3339 formatted datetime string.
      *
      * @return the value
      */

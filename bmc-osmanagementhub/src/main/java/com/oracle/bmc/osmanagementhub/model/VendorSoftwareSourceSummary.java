@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A vendor software source summary summarizes a vendor software source. <br>
+ * Provides summary information for a vendor software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -108,6 +108,15 @@ public final class VendorSoftwareSourceSummary extends SoftwareSourceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
+        private Availability availabilityAtOci;
+
+        public Builder availabilityAtOci(Availability availabilityAtOci) {
+            this.availabilityAtOci = availabilityAtOci;
+            this.__explicitlySet__.add("availabilityAtOci");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamily osFamily;
 
@@ -141,6 +150,15 @@ public final class VendorSoftwareSourceSummary extends SoftwareSourceSummary {
         public Builder lifecycleState(SoftwareSource.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("size")
+        private Double size;
+
+        public Builder size(Double size) {
+            this.size = size;
+            this.__explicitlySet__.add("size");
             return this;
         }
 
@@ -186,6 +204,21 @@ public final class VendorSoftwareSourceSummary extends SoftwareSourceSummary {
             this.__explicitlySet__.add("vendorName");
             return this;
         }
+        /** Indicates whether the software source is required for the Autonomous Linux service. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMandatoryForAutonomousLinux")
+        private Boolean isMandatoryForAutonomousLinux;
+
+        /**
+         * Indicates whether the software source is required for the Autonomous Linux service.
+         *
+         * @param isMandatoryForAutonomousLinux the value to set
+         * @return this builder
+         */
+        public Builder isMandatoryForAutonomousLinux(Boolean isMandatoryForAutonomousLinux) {
+            this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            this.__explicitlySet__.add("isMandatoryForAutonomousLinux");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -202,14 +235,17 @@ public final class VendorSoftwareSourceSummary extends SoftwareSourceSummary {
                             this.timeUpdated,
                             this.description,
                             this.availability,
+                            this.availabilityAtOci,
                             this.osFamily,
                             this.archType,
                             this.packageCount,
                             this.lifecycleState,
+                            this.size,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
-                            this.vendorName);
+                            this.vendorName,
+                            this.isMandatoryForAutonomousLinux);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -245,6 +281,9 @@ public final class VendorSoftwareSourceSummary extends SoftwareSourceSummary {
             if (model.wasPropertyExplicitlySet("availability")) {
                 this.availability(model.getAvailability());
             }
+            if (model.wasPropertyExplicitlySet("availabilityAtOci")) {
+                this.availabilityAtOci(model.getAvailabilityAtOci());
+            }
             if (model.wasPropertyExplicitlySet("osFamily")) {
                 this.osFamily(model.getOsFamily());
             }
@@ -257,6 +296,9 @@ public final class VendorSoftwareSourceSummary extends SoftwareSourceSummary {
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -268,6 +310,9 @@ public final class VendorSoftwareSourceSummary extends SoftwareSourceSummary {
             }
             if (model.wasPropertyExplicitlySet("vendorName")) {
                 this.vendorName(model.getVendorName());
+            }
+            if (model.wasPropertyExplicitlySet("isMandatoryForAutonomousLinux")) {
+                this.isMandatoryForAutonomousLinux(model.getIsMandatoryForAutonomousLinux());
             }
             return this;
         }
@@ -293,14 +338,17 @@ public final class VendorSoftwareSourceSummary extends SoftwareSourceSummary {
             java.util.Date timeUpdated,
             String description,
             Availability availability,
+            Availability availabilityAtOci,
             OsFamily osFamily,
             ArchType archType,
             Long packageCount,
             SoftwareSource.LifecycleState lifecycleState,
+            Double size,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
-            VendorName vendorName) {
+            VendorName vendorName,
+            Boolean isMandatoryForAutonomousLinux) {
         super(
                 id,
                 compartmentId,
@@ -311,14 +359,17 @@ public final class VendorSoftwareSourceSummary extends SoftwareSourceSummary {
                 timeUpdated,
                 description,
                 availability,
+                availabilityAtOci,
                 osFamily,
                 archType,
                 packageCount,
                 lifecycleState,
+                size,
                 freeformTags,
                 definedTags,
                 systemTags);
         this.vendorName = vendorName;
+        this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
     }
 
     /** Name of the vendor providing the software source. */
@@ -332,6 +383,19 @@ public final class VendorSoftwareSourceSummary extends SoftwareSourceSummary {
      */
     public VendorName getVendorName() {
         return vendorName;
+    }
+
+    /** Indicates whether the software source is required for the Autonomous Linux service. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMandatoryForAutonomousLinux")
+    private final Boolean isMandatoryForAutonomousLinux;
+
+    /**
+     * Indicates whether the software source is required for the Autonomous Linux service.
+     *
+     * @return the value
+     */
+    public Boolean getIsMandatoryForAutonomousLinux() {
+        return isMandatoryForAutonomousLinux;
     }
 
     @Override
@@ -350,6 +414,8 @@ public final class VendorSoftwareSourceSummary extends SoftwareSourceSummary {
         sb.append("VendorSoftwareSourceSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", vendorName=").append(String.valueOf(this.vendorName));
+        sb.append(", isMandatoryForAutonomousLinux=")
+                .append(String.valueOf(this.isMandatoryForAutonomousLinux));
         sb.append(")");
         return sb.toString();
     }
@@ -364,7 +430,10 @@ public final class VendorSoftwareSourceSummary extends SoftwareSourceSummary {
         }
 
         VendorSoftwareSourceSummary other = (VendorSoftwareSourceSummary) o;
-        return java.util.Objects.equals(this.vendorName, other.vendorName) && super.equals(other);
+        return java.util.Objects.equals(this.vendorName, other.vendorName)
+                && java.util.Objects.equals(
+                        this.isMandatoryForAutonomousLinux, other.isMandatoryForAutonomousLinux)
+                && super.equals(other);
     }
 
     @Override
@@ -372,6 +441,11 @@ public final class VendorSoftwareSourceSummary extends SoftwareSourceSummary {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.vendorName == null ? 43 : this.vendorName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMandatoryForAutonomousLinux == null
+                                ? 43
+                                : this.isMandatoryForAutonomousLinux.hashCode());
         return result;
     }
 }

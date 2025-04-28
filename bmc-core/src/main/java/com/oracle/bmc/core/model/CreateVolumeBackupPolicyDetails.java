@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -7,10 +7,9 @@ package com.oracle.bmc.core.model;
 /**
  * Specifies the properties for creating user defined backup policy. For more information about user
  * defined backup policies, see [User Defined
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies)
+ * Policies](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies)
  * in [Policy-Based
- * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
- * <br>
+ * Backups](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -91,7 +90,7 @@ public final class CreateVolumeBackupPolicyDetails
         /**
          * The paired destination region for copying scheduled backups to. Example: {@code
          * us-ashburn-1}. See [Region
-         * Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs)
+         * Pairs](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs)
          * for details about paired regions.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
@@ -100,7 +99,7 @@ public final class CreateVolumeBackupPolicyDetails
         /**
          * The paired destination region for copying scheduled backups to. Example: {@code
          * us-ashburn-1}. See [Region
-         * Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs)
+         * Pairs](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs)
          * for details about paired regions.
          *
          * @param destinationRegion the value to set
@@ -113,9 +112,9 @@ public final class CreateVolumeBackupPolicyDetails
         }
         /**
          * The collection of schedules for the volume backup policy. See see
-         * [Schedules](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules)
+         * [Schedules](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules)
          * in [Policy-Based
-         * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm)
+         * Backups](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm)
          * for more information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("schedules")
@@ -123,9 +122,9 @@ public final class CreateVolumeBackupPolicyDetails
 
         /**
          * The collection of schedules for the volume backup policy. See see
-         * [Schedules](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules)
+         * [Schedules](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules)
          * in [Policy-Based
-         * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm)
+         * Backups](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm)
          * for more information.
          *
          * @param schedules the value to set
@@ -139,7 +138,7 @@ public final class CreateVolumeBackupPolicyDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -149,7 +148,7 @@ public final class CreateVolumeBackupPolicyDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -165,7 +164,7 @@ public final class CreateVolumeBackupPolicyDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -175,7 +174,7 @@ public final class CreateVolumeBackupPolicyDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -272,7 +271,7 @@ public final class CreateVolumeBackupPolicyDetails
     /**
      * The paired destination region for copying scheduled backups to. Example: {@code
      * us-ashburn-1}. See [Region
-     * Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs)
+     * Pairs](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs)
      * for details about paired regions.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
@@ -281,7 +280,7 @@ public final class CreateVolumeBackupPolicyDetails
     /**
      * The paired destination region for copying scheduled backups to. Example: {@code
      * us-ashburn-1}. See [Region
-     * Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs)
+     * Pairs](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs)
      * for details about paired regions.
      *
      * @return the value
@@ -292,20 +291,20 @@ public final class CreateVolumeBackupPolicyDetails
 
     /**
      * The collection of schedules for the volume backup policy. See see
-     * [Schedules](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules)
+     * [Schedules](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules)
      * in [Policy-Based
-     * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm)
-     * for more information.
+     * Backups](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm) for
+     * more information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("schedules")
     private final java.util.List<VolumeBackupSchedule> schedules;
 
     /**
      * The collection of schedules for the volume backup policy. See see
-     * [Schedules](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules)
+     * [Schedules](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules)
      * in [Policy-Based
-     * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm)
-     * for more information.
+     * Backups](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm) for
+     * more information.
      *
      * @return the value
      */
@@ -316,7 +315,7 @@ public final class CreateVolumeBackupPolicyDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -326,7 +325,7 @@ public final class CreateVolumeBackupPolicyDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -339,7 +338,7 @@ public final class CreateVolumeBackupPolicyDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -349,7 +348,7 @@ public final class CreateVolumeBackupPolicyDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *

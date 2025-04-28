@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -96,6 +96,15 @@ public final class TimeStatsDataColumn extends AbstractColumn {
         public Builder isEvaluable(Boolean isEvaluable) {
             this.isEvaluable = isEvaluable;
             this.__explicitlySet__.add("isEvaluable");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
+        private Boolean isHidden;
+
+        public Builder isHidden(Boolean isHidden) {
+            this.isHidden = isHidden;
+            this.__explicitlySet__.add("isHidden");
             return this;
         }
 
@@ -215,6 +224,7 @@ public final class TimeStatsDataColumn extends AbstractColumn {
                             this.isCaseSensitive,
                             this.isGroupable,
                             this.isEvaluable,
+                            this.isHidden,
                             this.valueType,
                             this.originalDisplayName,
                             this.internalName,
@@ -254,6 +264,9 @@ public final class TimeStatsDataColumn extends AbstractColumn {
             }
             if (model.wasPropertyExplicitlySet("isEvaluable")) {
                 this.isEvaluable(model.getIsEvaluable());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
             }
             if (model.wasPropertyExplicitlySet("valueType")) {
                 this.valueType(model.getValueType());
@@ -302,6 +315,7 @@ public final class TimeStatsDataColumn extends AbstractColumn {
             Boolean isCaseSensitive,
             Boolean isGroupable,
             Boolean isEvaluable,
+            Boolean isHidden,
             ValueType valueType,
             String originalDisplayName,
             String internalName,
@@ -319,6 +333,7 @@ public final class TimeStatsDataColumn extends AbstractColumn {
                 isCaseSensitive,
                 isGroupable,
                 isEvaluable,
+                isHidden,
                 valueType,
                 originalDisplayName,
                 internalName);

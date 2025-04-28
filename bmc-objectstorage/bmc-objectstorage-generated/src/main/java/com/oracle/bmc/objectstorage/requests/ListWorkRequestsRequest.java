@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.objectstorage.requests;
 import com.oracle.bmc.objectstorage.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListWorkRequestsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListWorkRequestsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -20,6 +20,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getCompartmentId() {
         return compartmentId;
     }
+    /** The name of the privateEndpoint for which to list work requests. */
+    private String privateEndpointName;
+
+    /** The name of the privateEndpoint for which to list work requests. */
+    public String getPrivateEndpointName() {
+        return privateEndpointName;
+    }
     /** The client request ID for tracing. */
     private String opcClientRequestId;
 
@@ -30,14 +37,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -45,14 +52,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -78,6 +85,20 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /** The name of the privateEndpoint for which to list work requests. */
+        private String privateEndpointName = null;
+
+        /**
+         * The name of the privateEndpoint for which to list work requests.
+         *
+         * @param privateEndpointName the value to set
+         * @return this builder instance
+         */
+        public Builder privateEndpointName(String privateEndpointName) {
+            this.privateEndpointName = privateEndpointName;
+            return this;
+        }
+
         /** The client request ID for tracing. */
         private String opcClientRequestId = null;
 
@@ -95,14 +116,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -115,14 +136,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -163,6 +184,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
          */
         public Builder copy(ListWorkRequestsRequest o) {
             compartmentId(o.getCompartmentId());
+            privateEndpointName(o.getPrivateEndpointName());
             opcClientRequestId(o.getOpcClientRequestId());
             page(o.getPage());
             limit(o.getLimit());
@@ -201,11 +223,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         public ListWorkRequestsRequest buildWithoutInvocationCallback() {
             ListWorkRequestsRequest request = new ListWorkRequestsRequest();
             request.compartmentId = compartmentId;
+            request.privateEndpointName = privateEndpointName;
             request.opcClientRequestId = opcClientRequestId;
             request.page = page;
             request.limit = limit;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, opcClientRequestId, page, limit);
+            // new ListWorkRequestsRequest(compartmentId, privateEndpointName, opcClientRequestId,
+            // page, limit);
         }
     }
 
@@ -217,6 +241,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .privateEndpointName(privateEndpointName)
                 .opcClientRequestId(opcClientRequestId)
                 .page(page)
                 .limit(limit);
@@ -237,6 +262,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",privateEndpointName=").append(String.valueOf(this.privateEndpointName));
         sb.append(",opcClientRequestId=").append(String.valueOf(this.opcClientRequestId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -256,6 +282,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         ListWorkRequestsRequest other = (ListWorkRequestsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.privateEndpointName, other.privateEndpointName)
                 && java.util.Objects.equals(this.opcClientRequestId, other.opcClientRequestId)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit);
@@ -268,6 +295,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointName == null
+                                ? 43
+                                : this.privateEndpointName.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcClientRequestId == null

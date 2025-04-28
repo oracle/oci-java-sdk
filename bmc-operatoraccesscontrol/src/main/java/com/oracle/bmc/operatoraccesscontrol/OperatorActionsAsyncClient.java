@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -107,10 +107,7 @@ public class OperatorActionsAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetOperatorActionResponse::builder)
                 .logger(LOG, "getOperatorAction")
-                .serviceDetails(
-                        "OperatorActions",
-                        "GetOperatorAction",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/GetOperatorAction")
+                .serviceDetails("OperatorActions", "GetOperatorAction", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOperatorActionRequest::builder)
                 .basePath("/20200630")
@@ -136,10 +133,7 @@ public class OperatorActionsAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListOperatorActionsResponse::builder)
                 .logger(LOG, "listOperatorActions")
-                .serviceDetails(
-                        "OperatorActions",
-                        "ListOperatorActions",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/ListOperatorActions")
+                .serviceDetails("OperatorActions", "ListOperatorActions", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOperatorActionsRequest::builder)
                 .basePath("/20200630")

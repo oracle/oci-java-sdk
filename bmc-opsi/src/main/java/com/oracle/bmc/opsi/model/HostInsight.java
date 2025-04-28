@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -28,6 +28,9 @@ package com.oracle.bmc.opsi.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = EmManagedExternalHostInsight.class,
             name = "EM_MANAGED_EXTERNAL_HOST"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MacsManagedCloudDatabaseHostInsight.class,
+            name = "MACS_MANAGED_CLOUD_DB_HOST"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PeComanagedHostInsight.class,
             name = "PE_COMANAGED_HOST"),
@@ -88,15 +91,15 @@ public class HostInsight extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the host insight resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
+     * insight resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the host insight resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
+     * insight resource.
      *
      * @return the value
      */
@@ -105,15 +108,15 @@ public class HostInsight extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      *
      * @return the value
      */
@@ -151,16 +154,12 @@ public class HostInsight extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return hostDisplayName;
     }
 
-    /**
-     * Operations Insights internal representation of the host type. Possible value is
-     * EXTERNAL-HOST.
-     */
+    /** Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostType")
     private final String hostType;
 
     /**
-     * Operations Insights internal representation of the host type. Possible value is
-     * EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      *
      * @return the value
      */

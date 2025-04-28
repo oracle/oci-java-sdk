@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -29,11 +29,20 @@ package com.oracle.bmc.opsi.model;
             value = AutonomousDatabaseInsightSummary.class,
             name = "AUTONOMOUS_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MacsManagedCloudDatabaseInsightSummary.class,
+            name = "MACS_MANAGED_CLOUD_DATABASE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MdsMySqlDatabaseInsightSummary.class,
+            name = "MDS_MYSQL_DATABASE_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PeComanagedDatabaseInsightSummary.class,
             name = "PE_COMANAGED_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = EmManagedExternalDatabaseInsightSummary.class,
-            name = "EM_MANAGED_EXTERNAL_DATABASE")
+            name = "EM_MANAGED_EXTERNAL_DATABASE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ExternalMysqlDatabaseInsightSummary.class,
+            name = "EXTERNAL_MYSQL_DATABASE_SYSTEM")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -101,15 +110,15 @@ public class DatabaseInsightSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database insight resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database insight resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database insight resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database insight resource.
      *
      * @return the value
      */
@@ -118,15 +127,15 @@ public class DatabaseInsightSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
      *
      * @return the value
      */
@@ -135,15 +144,15 @@ public class DatabaseInsightSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      *
      * @return the value
      */
@@ -177,12 +186,12 @@ public class DatabaseInsightSummary
         return databaseDisplayName;
     }
 
-    /** Operations Insights internal representation of the database type. */
+    /** Ops Insights internal representation of the database type. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final String databaseType;
 
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      *
      * @return the value
      */

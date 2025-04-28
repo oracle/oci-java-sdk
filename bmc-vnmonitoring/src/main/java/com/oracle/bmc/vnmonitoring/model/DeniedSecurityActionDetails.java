@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -61,7 +61,7 @@ public final class DeniedSecurityActionDetails
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * evaluated security lists associcated with the OCI resource's subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("evaluatedSecurityListIds")
@@ -69,7 +69,7 @@ public final class DeniedSecurityActionDetails
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * evaluated security lists associcated with the OCI resource's subnet.
          *
          * @param evaluatedSecurityListIds the value to set
@@ -81,15 +81,15 @@ public final class DeniedSecurityActionDetails
             return this;
         }
         /**
-         * List of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * of evaluated network security groups associated with the OCI resource's VNIC.
+         * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * evaluated network security groups associated with the OCI resource's VNIC.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("evaluatedNsgIds")
         private java.util.List<String> evaluatedNsgIds;
 
         /**
-         * List of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * of evaluated network security groups associated with the OCI resource's VNIC.
+         * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * evaluated network security groups associated with the OCI resource's VNIC.
          *
          * @param evaluatedNsgIds the value to set
          * @return this builder
@@ -155,15 +155,15 @@ public final class DeniedSecurityActionDetails
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of evaluated security lists associcated with the OCI resource's subnet.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * evaluated security lists associcated with the OCI resource's subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("evaluatedSecurityListIds")
     private final java.util.List<String> evaluatedSecurityListIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of evaluated security lists associcated with the OCI resource's subnet.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * evaluated security lists associcated with the OCI resource's subnet.
      *
      * @return the value
      */
@@ -172,14 +172,14 @@ public final class DeniedSecurityActionDetails
     }
 
     /**
-     * List of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * evaluated network security groups associated with the OCI resource's VNIC.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("evaluatedNsgIds")
     private final java.util.List<String> evaluatedNsgIds;
 
     /**
-     * List of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * evaluated network security groups associated with the OCI resource's VNIC.
      *
      * @return the value

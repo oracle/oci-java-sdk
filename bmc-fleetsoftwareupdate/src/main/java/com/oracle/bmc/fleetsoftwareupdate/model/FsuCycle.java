@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
@@ -36,11 +36,14 @@ public class FsuCycle extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         "collectionType",
         "executingFsuActionId",
         "nextActionToExecute",
+        "lastCompletedActionId",
+        "rollbackCycleState",
         "lastCompletedAction",
         "goalVersionDetails",
         "batchingStrategy",
         "stageActionSchedule",
         "applyActionSchedule",
+        "diagnosticsCollection",
         "timeCreated",
         "timeUpdated",
         "timeFinished",
@@ -58,11 +61,14 @@ public class FsuCycle extends com.oracle.bmc.http.client.internal.ExplicitlySetB
             CollectionTypes collectionType,
             String executingFsuActionId,
             java.util.List<NextActionToExecuteDetails> nextActionToExecute,
+            String lastCompletedActionId,
+            RollbackCycleStates rollbackCycleState,
             DetailedActionTypes lastCompletedAction,
             FsuGoalVersionDetails goalVersionDetails,
             BatchingStrategyDetails batchingStrategy,
             ScheduleDetails stageActionSchedule,
             ScheduleDetails applyActionSchedule,
+            DiagnosticsCollectionDetails diagnosticsCollection,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeFinished,
@@ -79,11 +85,14 @@ public class FsuCycle extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         this.collectionType = collectionType;
         this.executingFsuActionId = executingFsuActionId;
         this.nextActionToExecute = nextActionToExecute;
+        this.lastCompletedActionId = lastCompletedActionId;
+        this.rollbackCycleState = rollbackCycleState;
         this.lastCompletedAction = lastCompletedAction;
         this.goalVersionDetails = goalVersionDetails;
         this.batchingStrategy = batchingStrategy;
         this.stageActionSchedule = stageActionSchedule;
         this.applyActionSchedule = applyActionSchedule;
+        this.diagnosticsCollection = diagnosticsCollection;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.timeFinished = timeFinished;
@@ -190,6 +199,40 @@ public class FsuCycle extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     }
 
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * latest Action in the Exadata Fleet Update Cycle.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("lastCompletedActionId")
+    private final String lastCompletedActionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * latest Action in the Exadata Fleet Update Cycle.
+     *
+     * @return the value
+     */
+    public String getLastCompletedActionId() {
+        return lastCompletedActionId;
+    }
+
+    /**
+     * Current rollback cycle state if rollback maintenance cycle action has been attempted. No
+     * value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("rollbackCycleState")
+    private final RollbackCycleStates rollbackCycleState;
+
+    /**
+     * Current rollback cycle state if rollback maintenance cycle action has been attempted. No
+     * value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     *
+     * @return the value
+     */
+    public RollbackCycleStates getRollbackCycleState() {
+        return rollbackCycleState;
+    }
+
+    /**
      * The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would
      * indicate that the Cycle has not completed any Action yet.
      */
@@ -232,6 +275,13 @@ public class FsuCycle extends com.oracle.bmc.http.client.internal.ExplicitlySetB
 
     public ScheduleDetails getApplyActionSchedule() {
         return applyActionSchedule;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("diagnosticsCollection")
+    private final DiagnosticsCollectionDetails diagnosticsCollection;
+
+    public DiagnosticsCollectionDetails getDiagnosticsCollection() {
+        return diagnosticsCollection;
     }
 
     /**
@@ -388,11 +438,14 @@ public class FsuCycle extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         sb.append(", collectionType=").append(String.valueOf(this.collectionType));
         sb.append(", executingFsuActionId=").append(String.valueOf(this.executingFsuActionId));
         sb.append(", nextActionToExecute=").append(String.valueOf(this.nextActionToExecute));
+        sb.append(", lastCompletedActionId=").append(String.valueOf(this.lastCompletedActionId));
+        sb.append(", rollbackCycleState=").append(String.valueOf(this.rollbackCycleState));
         sb.append(", lastCompletedAction=").append(String.valueOf(this.lastCompletedAction));
         sb.append(", goalVersionDetails=").append(String.valueOf(this.goalVersionDetails));
         sb.append(", batchingStrategy=").append(String.valueOf(this.batchingStrategy));
         sb.append(", stageActionSchedule=").append(String.valueOf(this.stageActionSchedule));
         sb.append(", applyActionSchedule=").append(String.valueOf(this.applyActionSchedule));
+        sb.append(", diagnosticsCollection=").append(String.valueOf(this.diagnosticsCollection));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
@@ -422,11 +475,14 @@ public class FsuCycle extends com.oracle.bmc.http.client.internal.ExplicitlySetB
                 && java.util.Objects.equals(this.collectionType, other.collectionType)
                 && java.util.Objects.equals(this.executingFsuActionId, other.executingFsuActionId)
                 && java.util.Objects.equals(this.nextActionToExecute, other.nextActionToExecute)
+                && java.util.Objects.equals(this.lastCompletedActionId, other.lastCompletedActionId)
+                && java.util.Objects.equals(this.rollbackCycleState, other.rollbackCycleState)
                 && java.util.Objects.equals(this.lastCompletedAction, other.lastCompletedAction)
                 && java.util.Objects.equals(this.goalVersionDetails, other.goalVersionDetails)
                 && java.util.Objects.equals(this.batchingStrategy, other.batchingStrategy)
                 && java.util.Objects.equals(this.stageActionSchedule, other.stageActionSchedule)
                 && java.util.Objects.equals(this.applyActionSchedule, other.applyActionSchedule)
+                && java.util.Objects.equals(this.diagnosticsCollection, other.diagnosticsCollection)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
@@ -465,6 +521,16 @@ public class FsuCycle extends com.oracle.bmc.http.client.internal.ExplicitlySetB
                                 : this.nextActionToExecute.hashCode());
         result =
                 (result * PRIME)
+                        + (this.lastCompletedActionId == null
+                                ? 43
+                                : this.lastCompletedActionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rollbackCycleState == null
+                                ? 43
+                                : this.rollbackCycleState.hashCode());
+        result =
+                (result * PRIME)
                         + (this.lastCompletedAction == null
                                 ? 43
                                 : this.lastCompletedAction.hashCode());
@@ -486,6 +552,11 @@ public class FsuCycle extends com.oracle.bmc.http.client.internal.ExplicitlySetB
                         + (this.applyActionSchedule == null
                                 ? 43
                                 : this.applyActionSchedule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.diagnosticsCollection == null
+                                ? 43
+                                : this.diagnosticsCollection.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());

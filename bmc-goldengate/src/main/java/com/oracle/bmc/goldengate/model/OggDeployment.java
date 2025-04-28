@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -28,7 +28,8 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         "certificate",
         "credentialStore",
         "identityDomainId",
-        "passwordSecretId"
+        "passwordSecretId",
+        "groupToRolesMapping"
     })
     public OggDeployment(
             String deploymentName,
@@ -37,7 +38,8 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
             String certificate,
             CredentialStore credentialStore,
             String identityDomainId,
-            String passwordSecretId) {
+            String passwordSecretId,
+            GroupToRolesMappingDetails groupToRolesMapping) {
         super();
         this.deploymentName = deploymentName;
         this.adminUsername = adminUsername;
@@ -46,6 +48,7 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         this.credentialStore = credentialStore;
         this.identityDomainId = identityDomainId;
         this.passwordSecretId = passwordSecretId;
+        this.groupToRolesMapping = groupToRolesMapping;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -99,12 +102,12 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("oggVersion");
             return this;
         }
-        /** A PEM-encoded SSL certificate. */
+        /** The base64 encoded content of the PEM file containing the SSL certificate. */
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
 
         /**
-         * A PEM-encoded SSL certificate.
+         * The base64 encoded content of the PEM file containing the SSL certificate.
          *
          * @param certificate the value to set
          * @return this builder
@@ -130,14 +133,14 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Identity Domain when IAM credential store is used.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
         private String identityDomainId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Identity Domain when IAM credential store is used.
          *
          * @param identityDomainId the value to set
@@ -149,14 +152,14 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the deployment password is stored.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the deployment password is stored.
          *
          * @param passwordSecretId the value to set
@@ -165,6 +168,15 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("groupToRolesMapping")
+        private GroupToRolesMappingDetails groupToRolesMapping;
+
+        public Builder groupToRolesMapping(GroupToRolesMappingDetails groupToRolesMapping) {
+            this.groupToRolesMapping = groupToRolesMapping;
+            this.__explicitlySet__.add("groupToRolesMapping");
             return this;
         }
 
@@ -180,7 +192,8 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
                             this.certificate,
                             this.credentialStore,
                             this.identityDomainId,
-                            this.passwordSecretId);
+                            this.passwordSecretId,
+                            this.groupToRolesMapping);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -209,6 +222,9 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("passwordSecretId")) {
                 this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("groupToRolesMapping")) {
+                this.groupToRolesMapping(model.getGroupToRolesMapping());
             }
             return this;
         }
@@ -266,12 +282,12 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         return oggVersion;
     }
 
-    /** A PEM-encoded SSL certificate. */
+    /** The base64 encoded content of the PEM file containing the SSL certificate. */
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
     private final String certificate;
 
     /**
-     * A PEM-encoded SSL certificate.
+     * The base64 encoded content of the PEM file containing the SSL certificate.
      *
      * @return the value
      */
@@ -293,14 +309,14 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Identity Domain when IAM credential store is used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
     private final String identityDomainId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Identity Domain when IAM credential store is used.
      *
      * @return the value
@@ -310,20 +326,27 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the deployment password is stored.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the deployment password is stored.
      *
      * @return the value
      */
     public String getPasswordSecretId() {
         return passwordSecretId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("groupToRolesMapping")
+    private final GroupToRolesMappingDetails groupToRolesMapping;
+
+    public GroupToRolesMappingDetails getGroupToRolesMapping() {
+        return groupToRolesMapping;
     }
 
     @Override
@@ -348,6 +371,7 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", credentialStore=").append(String.valueOf(this.credentialStore));
         sb.append(", identityDomainId=").append(String.valueOf(this.identityDomainId));
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", groupToRolesMapping=").append(String.valueOf(this.groupToRolesMapping));
         sb.append(")");
         return sb.toString();
     }
@@ -369,6 +393,7 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.credentialStore, other.credentialStore)
                 && java.util.Objects.equals(this.identityDomainId, other.identityDomainId)
                 && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(this.groupToRolesMapping, other.groupToRolesMapping)
                 && super.equals(other);
     }
 
@@ -393,6 +418,11 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         result =
                 (result * PRIME)
                         + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupToRolesMapping == null
+                                ? 43
+                                : this.groupToRolesMapping.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

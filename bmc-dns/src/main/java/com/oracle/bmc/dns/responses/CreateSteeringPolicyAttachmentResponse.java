@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns.responses;
@@ -52,6 +52,22 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
     /** The returned {@code SteeringPolicyAttachment} instance. */
     private com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment;
 
@@ -70,6 +86,7 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         "eTag",
         "location",
         "opcRequestId",
+        "opcWorkRequestId",
         "steeringPolicyAttachment"
     })
     private CreateSteeringPolicyAttachmentResponse(
@@ -78,11 +95,13 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
             String eTag,
             String location,
             String opcRequestId,
+            String opcWorkRequestId,
             com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment) {
         super(__httpStatusCode__, headers);
         this.eTag = eTag;
         this.location = location;
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
         this.steeringPolicyAttachment = steeringPolicyAttachment;
     }
 
@@ -157,6 +176,24 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
         /** The returned {@code SteeringPolicyAttachment} instance. */
         private com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment;
 
@@ -184,6 +221,7 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
             eTag(o.getETag());
             location(o.getLocation());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             steeringPolicyAttachment(o.getSteeringPolicyAttachment());
 
             return this;
@@ -202,6 +240,7 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
                     eTag,
                     location,
                     opcRequestId,
+                    opcWorkRequestId,
                     steeringPolicyAttachment);
         }
     }
@@ -223,6 +262,7 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         sb.append(",eTag=").append(String.valueOf(eTag));
         sb.append(",location=").append(String.valueOf(location));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",steeringPolicyAttachment=").append(String.valueOf(steeringPolicyAttachment));
         sb.append(")");
         return sb.toString();
@@ -242,6 +282,7 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
                 && java.util.Objects.equals(this.eTag, other.eTag)
                 && java.util.Objects.equals(this.location, other.location)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(
                         this.steeringPolicyAttachment, other.steeringPolicyAttachment);
     }
@@ -253,6 +294,9 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         result = (result * PRIME) + (this.eTag == null ? 43 : this.eTag.hashCode());
         result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result =
                 (result * PRIME)
                         + (this.steeringPolicyAttachment == null

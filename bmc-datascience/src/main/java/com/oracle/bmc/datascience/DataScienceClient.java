@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience;
@@ -71,7 +71,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "DataScienceClient",
-                            "getJobArtifactContent,getModelArtifactContent,getStepArtifactContent"));
+                            "getJobArtifactContent,getMlApplicationHistoricalPackageContent,getMlApplicationPackageContent,getModelArtifactContent,getModelCustomMetadatumArtifactContent,getModelDefinedMetadatumArtifactContent,getStepArtifactContent"));
         }
     }
 
@@ -170,13 +170,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Model.class,
                         ActivateModelResponse.Builder::model)
                 .handleResponseHeaderString("etag", ActivateModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ActivateModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -241,6 +241,36 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ActivateScheduleResponse activateSchedule(ActivateScheduleRequest request) {
+
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+
+        return clientCall(request, ActivateScheduleResponse::builder)
+                .logger(LOG, "activateSchedule")
+                .serviceDetails(
+                        "DataScience",
+                        "ActivateSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/ActivateSchedule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateScheduleRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .appendPathParam("actions")
+                .appendPathParam("activate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", ActivateScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ActivateScheduleResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public CancelJobRunResponse cancelJobRun(CancelJobRunRequest request) {
 
         Validate.notBlank(request.getJobRunId(), "jobRunId must not be blank");
@@ -261,9 +291,9 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelJobRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -285,13 +315,14 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getPipelineRunId())
                 .appendPathParam("actions")
                 .appendPathParam("cancelPipelineRun")
+                .appendQueryParam("terminateGracefully", request.getTerminateGracefully())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelPipelineRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -348,6 +379,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -356,7 +388,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-work-request-id",
                         ChangeDataSciencePrivateEndpointCompartmentResponse.Builder
                                 ::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -418,6 +449,160 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeJobRunCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeMlApplicationCompartmentResponse changeMlApplicationCompartment(
+            ChangeMlApplicationCompartmentRequest request) {
+
+        Validate.notBlank(request.getMlApplicationId(), "mlApplicationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMlApplicationCompartmentDetails(),
+                "changeMlApplicationCompartmentDetails is required");
+
+        return clientCall(request, ChangeMlApplicationCompartmentResponse::builder)
+                .logger(LOG, "changeMlApplicationCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeMlApplicationCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/ChangeMlApplicationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMlApplicationCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplications")
+                .appendPathParam(request.getMlApplicationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMlApplicationCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeMlApplicationImplementationCompartmentResponse
+            changeMlApplicationImplementationCompartment(
+                    ChangeMlApplicationImplementationCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMlApplicationImplementationCompartmentDetails(),
+                "changeMlApplicationImplementationCompartmentDetails is required");
+
+        return clientCall(request, ChangeMlApplicationImplementationCompartmentResponse::builder)
+                .logger(LOG, "changeMlApplicationImplementationCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeMlApplicationImplementationCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/ChangeMlApplicationImplementationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMlApplicationImplementationCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendPathParam(request.getMlApplicationImplementationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMlApplicationImplementationCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMlApplicationImplementationCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeMlApplicationInstanceCompartmentResponse changeMlApplicationInstanceCompartment(
+            ChangeMlApplicationInstanceCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceId(), "mlApplicationInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMlApplicationInstanceCompartmentDetails(),
+                "changeMlApplicationInstanceCompartmentDetails is required");
+
+        return clientCall(request, ChangeMlApplicationInstanceCompartmentResponse::builder)
+                .logger(LOG, "changeMlApplicationInstanceCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeMlApplicationInstanceCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/ChangeMlApplicationInstanceCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMlApplicationInstanceCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .appendPathParam(request.getMlApplicationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMlApplicationInstanceCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMlApplicationInstanceCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeMlApplicationInstanceViewCompartmentResponse
+            changeMlApplicationInstanceViewCompartment(
+                    ChangeMlApplicationInstanceViewCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMlApplicationInstanceViewCompartmentDetails(),
+                "changeMlApplicationInstanceViewCompartmentDetails is required");
+
+        return clientCall(request, ChangeMlApplicationInstanceViewCompartmentResponse::builder)
+                .logger(LOG, "changeMlApplicationInstanceViewCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeMlApplicationInstanceViewCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/ChangeMlApplicationInstanceViewCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMlApplicationInstanceViewCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMlApplicationInstanceViewCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMlApplicationInstanceViewCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -651,6 +836,42 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ChangeScheduleCompartmentResponse changeScheduleCompartment(
+            ChangeScheduleCompartmentRequest request) {
+
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeScheduleCompartmentDetails(),
+                "changeScheduleCompartmentDetails is required");
+
+        return clientCall(request, ChangeScheduleCompartmentResponse::builder)
+                .logger(LOG, "changeScheduleCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeScheduleCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/ChangeScheduleCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeScheduleCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeScheduleCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeScheduleCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateDataSciencePrivateEndpointResponse createDataSciencePrivateEndpoint(
             CreateDataSciencePrivateEndpointRequest request) {
         Objects.requireNonNull(
@@ -667,6 +888,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.DataSciencePrivateEndpoint.class,
@@ -682,7 +904,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         CreateDataSciencePrivateEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "Location", CreateDataSciencePrivateEndpointResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -703,13 +924,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Job.class, CreateJobResponse.Builder::job)
                 .handleResponseHeaderString("etag", CreateJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -762,6 +983,8 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-parent-rpt-url", request.getOpcParentRptUrl())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.JobRun.class,
@@ -769,7 +992,109 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreateJobRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateJobRunResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateMlApplicationResponse createMlApplication(CreateMlApplicationRequest request) {
+        Objects.requireNonNull(
+                request.getCreateMlApplicationDetails(), "createMlApplicationDetails is required");
+
+        return clientCall(request, CreateMlApplicationResponse::builder)
+                .logger(LOG, "createMlApplication")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateMlApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/CreateMlApplication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMlApplicationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplications")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplication.class,
+                        CreateMlApplicationResponse.Builder::mlApplication)
+                .handleResponseHeaderString("etag", CreateMlApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMlApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateMlApplicationImplementationResponse createMlApplicationImplementation(
+            CreateMlApplicationImplementationRequest request) {
+        Objects.requireNonNull(
+                request.getCreateMlApplicationImplementationDetails(),
+                "createMlApplicationImplementationDetails is required");
+
+        return clientCall(request, CreateMlApplicationImplementationResponse::builder)
+                .logger(LOG, "createMlApplicationImplementation")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateMlApplicationImplementation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/CreateMlApplicationImplementation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMlApplicationImplementationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationImplementation.class,
+                        CreateMlApplicationImplementationResponse.Builder
+                                ::mlApplicationImplementation)
+                .handleResponseHeaderString(
+                        "etag", CreateMlApplicationImplementationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateMlApplicationImplementationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateMlApplicationInstanceResponse createMlApplicationInstance(
+            CreateMlApplicationInstanceRequest request) {
+        Objects.requireNonNull(
+                request.getCreateMlApplicationInstanceDetails(),
+                "createMlApplicationInstanceDetails is required");
+
+        return clientCall(request, CreateMlApplicationInstanceResponse::builder)
+                .logger(LOG, "createMlApplicationInstance")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateMlApplicationInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/CreateMlApplicationInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMlApplicationInstanceRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstance.class,
+                        CreateMlApplicationInstanceResponse.Builder::mlApplicationInstance)
+                .handleResponseHeaderString(
+                        "etag", CreateMlApplicationInstanceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CreateMlApplicationInstanceResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateMlApplicationInstanceResponse.Builder::contentLocation)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMlApplicationInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateMlApplicationInstanceResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -790,6 +1115,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Model.class,
@@ -797,7 +1123,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreateModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -826,12 +1151,94 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("content-length", request.getContentLength())
                 .appendHeader("content-disposition", request.getContentDisposition())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString("etag", CreateModelArtifactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CreateModelCustomMetadatumArtifactResponse createModelCustomMetadatumArtifact(
+            CreateModelCustomMetadatumArtifactRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+        Objects.requireNonNull(
+                request.getModelCustomMetadatumArtifact(),
+                "modelCustomMetadatumArtifact is required");
+
+        return clientCall(request, CreateModelCustomMetadatumArtifactResponse::builder)
+                .logger(LOG, "createModelCustomMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateModelCustomMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelCustomMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelCustomMetadatumArtifactRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("customMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", CreateModelCustomMetadatumArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateModelCustomMetadatumArtifactResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateModelDefinedMetadatumArtifactResponse createModelDefinedMetadatumArtifact(
+            CreateModelDefinedMetadatumArtifactRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+        Objects.requireNonNull(
+                request.getModelDefinedMetadatumArtifact(),
+                "modelDefinedMetadatumArtifact is required");
+
+        return clientCall(request, CreateModelDefinedMetadatumArtifactResponse::builder)
+                .logger(LOG, "createModelDefinedMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateModelDefinedMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelDefinedMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelDefinedMetadatumArtifactRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("definedMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", CreateModelDefinedMetadatumArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateModelDefinedMetadatumArtifactResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -855,6 +1262,8 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-parent-rpt-url", request.getOpcParentRptUrl())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelDeployment.class,
@@ -867,7 +1276,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateModelDeploymentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -895,6 +1303,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelProvenance.class,
@@ -902,7 +1311,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelProvenanceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateModelProvenanceResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -926,6 +1334,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelVersionSet.class,
@@ -933,7 +1342,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreateModelVersionSetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelVersionSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -957,6 +1365,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.NotebookSession.class,
@@ -969,7 +1378,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateNotebookSessionResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -991,6 +1399,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Pipeline.class,
@@ -998,7 +1407,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreatePipelineResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreatePipelineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1020,6 +1428,8 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-parent-rpt-url", request.getOpcParentRptUrl())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.PipelineRun.class,
@@ -1028,7 +1438,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("location", CreatePipelineRunResponse.Builder::location)
                 .handleResponseHeaderString(
                         "opc-request-id", CreatePipelineRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1050,6 +1459,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Project.class,
@@ -1057,7 +1467,40 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreateProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateProjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateScheduleResponse createSchedule(CreateScheduleRequest request) {
+        Objects.requireNonNull(
+                request.getCreateScheduleDetails(), "createScheduleDetails is required");
+
+        return clientCall(request, CreateScheduleResponse::builder)
+                .logger(LOG, "createSchedule")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/CreateSchedule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateScheduleRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Schedule.class,
+                        CreateScheduleResponse.Builder::schedule)
+                .handleResponseHeaderString("location", CreateScheduleResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", CreateScheduleResponse.Builder::contentLocation)
+                .handleResponseHeaderString("etag", CreateScheduleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateScheduleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateScheduleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1117,13 +1560,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Model.class,
                         DeactivateModelResponse.Builder::model)
                 .handleResponseHeaderString("etag", DeactivateModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", DeactivateModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1188,6 +1631,36 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public DeactivateScheduleResponse deactivateSchedule(DeactivateScheduleRequest request) {
+
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+
+        return clientCall(request, DeactivateScheduleResponse::builder)
+                .logger(LOG, "deactivateSchedule")
+                .serviceDetails(
+                        "DataScience",
+                        "DeactivateSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/DeactivateSchedule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateScheduleRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeactivateScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeactivateScheduleResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteDataSciencePrivateEndpointResponse deleteDataSciencePrivateEndpoint(
             DeleteDataSciencePrivateEndpointRequest request) {
 
@@ -1238,11 +1711,11 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteJobResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1265,9 +1738,96 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteJobRunResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteMlApplicationResponse deleteMlApplication(DeleteMlApplicationRequest request) {
+
+        Validate.notBlank(request.getMlApplicationId(), "mlApplicationId must not be blank");
+
+        return clientCall(request, DeleteMlApplicationResponse::builder)
+                .logger(LOG, "deleteMlApplication")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteMlApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/DeleteMlApplication")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMlApplicationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplications")
+                .appendPathParam(request.getMlApplicationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMlApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteMlApplicationImplementationResponse deleteMlApplicationImplementation(
+            DeleteMlApplicationImplementationRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId must not be blank");
+
+        return clientCall(request, DeleteMlApplicationImplementationResponse::builder)
+                .logger(LOG, "deleteMlApplicationImplementation")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteMlApplicationImplementation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/DeleteMlApplicationImplementation")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMlApplicationImplementationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendPathParam(request.getMlApplicationImplementationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMlApplicationImplementationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteMlApplicationImplementationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteMlApplicationInstanceResponse deleteMlApplicationInstance(
+            DeleteMlApplicationInstanceRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceId(), "mlApplicationInstanceId must not be blank");
+
+        return clientCall(request, DeleteMlApplicationInstanceResponse::builder)
+                .logger(LOG, "deleteMlApplicationInstance")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteMlApplicationInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/DeleteMlApplicationInstance")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMlApplicationInstanceRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .appendPathParam(request.getMlApplicationInstanceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMlApplicationInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMlApplicationInstanceResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1290,9 +1850,73 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteModelResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteModelCustomMetadatumArtifactResponse deleteModelCustomMetadatumArtifact(
+            DeleteModelCustomMetadatumArtifactRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+
+        return clientCall(request, DeleteModelCustomMetadatumArtifactResponse::builder)
+                .logger(LOG, "deleteModelCustomMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteModelCustomMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeleteModelCustomMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteModelCustomMetadatumArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("customMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteModelCustomMetadatumArtifactResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteModelDefinedMetadatumArtifactResponse deleteModelDefinedMetadatumArtifact(
+            DeleteModelDefinedMetadatumArtifactRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+
+        return clientCall(request, DeleteModelDefinedMetadatumArtifactResponse::builder)
+                .logger(LOG, "deleteModelDefinedMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteModelDefinedMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeleteModelDefinedMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteModelDefinedMetadatumArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("definedMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteModelDefinedMetadatumArtifactResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1316,12 +1940,12 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteModelDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteModelDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1346,12 +1970,12 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteModelVersionSetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteModelVersionSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1375,12 +1999,12 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteNotebookSessionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteNotebookSessionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1457,11 +2081,121 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteProjectResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteProjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteScheduleResponse deleteSchedule(DeleteScheduleRequest request) {
+
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+
+        return clientCall(request, DeleteScheduleResponse::builder)
+                .logger(LOG, "deleteSchedule")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/DeleteSchedule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteScheduleRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteScheduleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteScheduleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisableMlApplicationInstanceViewTriggerResponse disableMlApplicationInstanceViewTrigger(
+            DisableMlApplicationInstanceViewTriggerRequest request) {
+        Objects.requireNonNull(
+                request.getDisableMlApplicationInstanceViewTriggerDetails(),
+                "disableMlApplicationInstanceViewTriggerDetails is required");
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+
+        return clientCall(request, DisableMlApplicationInstanceViewTriggerResponse::builder)
+                .logger(LOG, "disableMlApplicationInstanceViewTrigger")
+                .serviceDetails(
+                        "DataScience",
+                        "DisableMlApplicationInstanceViewTrigger",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/DisableMlApplicationInstanceViewTrigger")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableMlApplicationInstanceViewTriggerRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .appendPathParam("actions")
+                .appendPathParam("disableTrigger")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstanceView.class,
+                        DisableMlApplicationInstanceViewTriggerResponse.Builder
+                                ::mlApplicationInstanceView)
+                .handleResponseHeaderString(
+                        "etag", DisableMlApplicationInstanceViewTriggerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableMlApplicationInstanceViewTriggerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableMlApplicationInstanceViewTriggerResponse enableMlApplicationInstanceViewTrigger(
+            EnableMlApplicationInstanceViewTriggerRequest request) {
+        Objects.requireNonNull(
+                request.getEnableMlApplicationInstanceViewTriggerDetails(),
+                "enableMlApplicationInstanceViewTriggerDetails is required");
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+
+        return clientCall(request, EnableMlApplicationInstanceViewTriggerResponse::builder)
+                .logger(LOG, "enableMlApplicationInstanceViewTrigger")
+                .serviceDetails(
+                        "DataScience",
+                        "EnableMlApplicationInstanceViewTrigger",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/EnableMlApplicationInstanceViewTrigger")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableMlApplicationInstanceViewTriggerRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .appendPathParam("actions")
+                .appendPathParam("enableTrigger")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstanceView.class,
+                        EnableMlApplicationInstanceViewTriggerResponse.Builder
+                                ::mlApplicationInstanceView)
+                .handleResponseHeaderString(
+                        "etag", EnableMlApplicationInstanceViewTriggerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableMlApplicationInstanceViewTriggerResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1489,13 +2223,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ExportModelArtifactResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ExportModelArtifactResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1520,6 +2254,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getDataSciencePrivateEndpointId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.DataSciencePrivateEndpoint.class,
                         GetDataSciencePrivateEndpointResponse.Builder::dataSciencePrivateEndpoint)
@@ -1528,7 +2263,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetDataSciencePrivateEndpointResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1550,10 +2284,10 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getJobId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.datascience.model.Job.class, GetJobResponse.Builder::job)
                 .handleResponseHeaderString("etag", GetJobResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1579,6 +2313,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("range", request.getRange())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetJobArtifactContentResponse.Builder::inputStream)
@@ -1594,7 +2329,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "content-disposition",
                         GetJobArtifactContentResponse.Builder::contentDisposition)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1616,13 +2350,243 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getJobRunId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.JobRun.class,
                         GetJobRunResponse.Builder::jobRun)
                 .handleResponseHeaderString("etag", GetJobRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJobRunResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationResponse getMlApplication(GetMlApplicationRequest request) {
+
+        Validate.notBlank(request.getMlApplicationId(), "mlApplicationId must not be blank");
+
+        return clientCall(request, GetMlApplicationResponse::builder)
+                .logger(LOG, "getMlApplication")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/GetMlApplication")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplications")
+                .appendPathParam(request.getMlApplicationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplication.class,
+                        GetMlApplicationResponse.Builder::mlApplication)
+                .handleResponseHeaderString("etag", GetMlApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMlApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationHistoricalPackageContentResponse
+            getMlApplicationHistoricalPackageContent(
+                    GetMlApplicationHistoricalPackageContentRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationVersionId(),
+                "mlApplicationImplementationVersionId must not be blank");
+
+        return clientCall(request, GetMlApplicationHistoricalPackageContentResponse::builder)
+                .logger(LOG, "getMlApplicationHistoricalPackageContent")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplicationHistoricalPackageContent",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementationVersion/GetMlApplicationHistoricalPackageContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationHistoricalPackageContentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementationVersions")
+                .appendPathParam(request.getMlApplicationImplementationVersionId())
+                .appendPathParam("mlApplicationHistoricalPackage")
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetMlApplicationHistoricalPackageContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "etag", GetMlApplicationHistoricalPackageContentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMlApplicationHistoricalPackageContentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationImplementationResponse getMlApplicationImplementation(
+            GetMlApplicationImplementationRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId must not be blank");
+
+        return clientCall(request, GetMlApplicationImplementationResponse::builder)
+                .logger(LOG, "getMlApplicationImplementation")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplicationImplementation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/GetMlApplicationImplementation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationImplementationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendPathParam(request.getMlApplicationImplementationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationImplementation.class,
+                        GetMlApplicationImplementationResponse.Builder::mlApplicationImplementation)
+                .handleResponseHeaderString(
+                        "etag", GetMlApplicationImplementationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMlApplicationImplementationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationImplementationVersionResponse getMlApplicationImplementationVersion(
+            GetMlApplicationImplementationVersionRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationVersionId(),
+                "mlApplicationImplementationVersionId must not be blank");
+
+        return clientCall(request, GetMlApplicationImplementationVersionResponse::builder)
+                .logger(LOG, "getMlApplicationImplementationVersion")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplicationImplementationVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementationVersion/GetMlApplicationImplementationVersion")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationImplementationVersionRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementationVersions")
+                .appendPathParam(request.getMlApplicationImplementationVersionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationImplementationVersion.class,
+                        GetMlApplicationImplementationVersionResponse.Builder
+                                ::mlApplicationImplementationVersion)
+                .handleResponseHeaderString(
+                        "etag", GetMlApplicationImplementationVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMlApplicationImplementationVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationInstanceResponse getMlApplicationInstance(
+            GetMlApplicationInstanceRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceId(), "mlApplicationInstanceId must not be blank");
+
+        return clientCall(request, GetMlApplicationInstanceResponse::builder)
+                .logger(LOG, "getMlApplicationInstance")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplicationInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/GetMlApplicationInstance")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationInstanceRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .appendPathParam(request.getMlApplicationInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstance.class,
+                        GetMlApplicationInstanceResponse.Builder::mlApplicationInstance)
+                .handleResponseHeaderString("etag", GetMlApplicationInstanceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMlApplicationInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationInstanceViewResponse getMlApplicationInstanceView(
+            GetMlApplicationInstanceViewRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+
+        return clientCall(request, GetMlApplicationInstanceViewResponse::builder)
+                .logger(LOG, "getMlApplicationInstanceView")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplicationInstanceView",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/GetMlApplicationInstanceView")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationInstanceViewRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstanceView.class,
+                        GetMlApplicationInstanceViewResponse.Builder::mlApplicationInstanceView)
+                .handleResponseHeaderString(
+                        "etag", GetMlApplicationInstanceViewResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMlApplicationInstanceViewResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMlApplicationPackageContentResponse getMlApplicationPackageContent(
+            GetMlApplicationPackageContentRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId must not be blank");
+
+        return clientCall(request, GetMlApplicationPackageContentResponse::builder)
+                .logger(LOG, "getMlApplicationPackageContent")
+                .serviceDetails(
+                        "DataScience",
+                        "GetMlApplicationPackageContent",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/GetMlApplicationPackageContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMlApplicationPackageContentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendPathParam(request.getMlApplicationImplementationId())
+                .appendPathParam("mlApplicationPackage")
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetMlApplicationPackageContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMlApplicationPackageContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-ml-app-package-args",
+                        GetMlApplicationPackageContentResponse.Builder::opcMlAppPackageArgs)
                 .callSync();
     }
 
@@ -1644,13 +2608,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getModelId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Model.class,
                         GetModelResponse.Builder::model)
                 .handleResponseHeaderString("etag", GetModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1676,6 +2640,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("range", request.getRange())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetModelArtifactContentResponse.Builder::inputStream)
@@ -1691,7 +2656,106 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "content-md5", GetModelArtifactContentResponse.Builder::contentMd5)
                 .handleResponseHeaderDate(
                         "last-modified", GetModelArtifactContentResponse.Builder::lastModified)
+                .callSync();
+    }
+
+    @Override
+    public GetModelCustomMetadatumArtifactContentResponse getModelCustomMetadatumArtifactContent(
+            GetModelCustomMetadatumArtifactContentRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+
+        return clientCall(request, GetModelCustomMetadatumArtifactContentResponse::builder)
+                .logger(LOG, "getModelCustomMetadatumArtifactContent")
+                .serviceDetails(
+                        "DataScience",
+                        "GetModelCustomMetadatumArtifactContent",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelCustomMetadatumArtifactContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelCustomMetadatumArtifactContentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("customMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("range", request.getRange())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetModelCustomMetadatumArtifactContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "etag", GetModelCustomMetadatumArtifactContentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetModelCustomMetadatumArtifactContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length",
+                        GetModelCustomMetadatumArtifactContentResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        GetModelCustomMetadatumArtifactContentResponse.Builder::contentDisposition)
+                .handleResponseHeaderString(
+                        "content-md5",
+                        GetModelCustomMetadatumArtifactContentResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified",
+                        GetModelCustomMetadatumArtifactContentResponse.Builder::lastModified)
+                .callSync();
+    }
+
+    @Override
+    public GetModelDefinedMetadatumArtifactContentResponse getModelDefinedMetadatumArtifactContent(
+            GetModelDefinedMetadatumArtifactContentRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+
+        return clientCall(request, GetModelDefinedMetadatumArtifactContentResponse::builder)
+                .logger(LOG, "getModelDefinedMetadatumArtifactContent")
+                .serviceDetails(
+                        "DataScience",
+                        "GetModelDefinedMetadatumArtifactContent",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelDefinedMetadatumArtifactContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelDefinedMetadatumArtifactContentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("definedMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("range", request.getRange())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetModelDefinedMetadatumArtifactContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "etag", GetModelDefinedMetadatumArtifactContentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetModelDefinedMetadatumArtifactContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length",
+                        GetModelDefinedMetadatumArtifactContentResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        GetModelDefinedMetadatumArtifactContentResponse.Builder::contentDisposition)
+                .handleResponseHeaderString(
+                        "content-md5",
+                        GetModelDefinedMetadatumArtifactContentResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified",
+                        GetModelDefinedMetadatumArtifactContentResponse.Builder::lastModified)
                 .callSync();
     }
 
@@ -1713,13 +2777,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getModelDeploymentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelDeployment.class,
                         GetModelDeploymentResponse.Builder::modelDeployment)
                 .handleResponseHeaderString("etag", GetModelDeploymentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1742,13 +2806,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("provenance")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelProvenance.class,
                         GetModelProvenanceResponse.Builder::modelProvenance)
                 .handleResponseHeaderString("etag", GetModelProvenanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelProvenanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1770,13 +2834,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getModelVersionSetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelVersionSet.class,
                         GetModelVersionSetResponse.Builder::modelVersionSet)
                 .handleResponseHeaderString("etag", GetModelVersionSetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelVersionSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1798,13 +2862,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getNotebookSessionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.NotebookSession.class,
                         GetNotebookSessionResponse.Builder::notebookSession)
                 .handleResponseHeaderString("etag", GetNotebookSessionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetNotebookSessionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1826,13 +2890,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getPipelineId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Pipeline.class,
                         GetPipelineResponse.Builder::pipeline)
                 .handleResponseHeaderString("etag", GetPipelineResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPipelineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1854,13 +2918,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getPipelineRunId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.PipelineRun.class,
                         GetPipelineRunResponse.Builder::pipelineRun)
                 .handleResponseHeaderString("etag", GetPipelineRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPipelineRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1882,13 +2946,41 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getProjectId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Project.class,
                         GetProjectResponse.Builder::project)
                 .handleResponseHeaderString("etag", GetProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetScheduleResponse getSchedule(GetScheduleRequest request) {
+
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+
+        return clientCall(request, GetScheduleResponse::builder)
+                .logger(LOG, "getSchedule")
+                .serviceDetails(
+                        "DataScience",
+                        "GetSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/GetSchedule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetScheduleRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Schedule.class,
+                        GetScheduleResponse.Builder::schedule)
+                .handleResponseHeaderString("etag", GetScheduleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetScheduleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1919,6 +3011,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("range", request.getRange())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetStepArtifactContentResponse.Builder::inputStream)
@@ -1934,7 +3027,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "content-disposition",
                         GetStepArtifactContentResponse.Builder::contentDisposition)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1956,6 +3048,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -1964,7 +3057,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1988,6 +3080,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("content")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString("etag", HeadJobArtifactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", HeadJobArtifactResponse.Builder::opcRequestId)
@@ -1999,7 +3092,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "content-disposition", HeadJobArtifactResponse.Builder::contentDisposition)
                 .handleResponseHeaderDate(
                         "last-modified", HeadJobArtifactResponse.Builder::lastModified)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2023,6 +3115,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("content")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString("etag", HeadModelArtifactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", HeadModelArtifactResponse.Builder::opcRequestId)
@@ -2035,7 +3128,97 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "content-md5", HeadModelArtifactResponse.Builder::contentMd5)
                 .handleResponseHeaderDate(
                         "last-modified", HeadModelArtifactResponse.Builder::lastModified)
+                .callSync();
+    }
+
+    @Override
+    public HeadModelCustomMetadatumArtifactResponse headModelCustomMetadatumArtifact(
+            HeadModelCustomMetadatumArtifactRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+
+        return clientCall(request, HeadModelCustomMetadatumArtifactResponse::builder)
+                .logger(LOG, "headModelCustomMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "HeadModelCustomMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/HeadModelCustomMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.HEAD)
+                .requestBuilder(HeadModelCustomMetadatumArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("customMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "etag", HeadModelCustomMetadatumArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        HeadModelCustomMetadatumArtifactResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length",
+                        HeadModelCustomMetadatumArtifactResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        HeadModelCustomMetadatumArtifactResponse.Builder::contentDisposition)
+                .handleResponseHeaderString(
+                        "content-md5", HeadModelCustomMetadatumArtifactResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified",
+                        HeadModelCustomMetadatumArtifactResponse.Builder::lastModified)
+                .callSync();
+    }
+
+    @Override
+    public HeadModelDefinedMetadatumArtifactResponse headModelDefinedMetadatumArtifact(
+            HeadModelDefinedMetadatumArtifactRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+
+        return clientCall(request, HeadModelDefinedMetadatumArtifactResponse::builder)
+                .logger(LOG, "headModelDefinedMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "HeadModelDefinedMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/HeadModelDefinedMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.HEAD)
+                .requestBuilder(HeadModelDefinedMetadatumArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("definedMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "etag", HeadModelDefinedMetadatumArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        HeadModelDefinedMetadatumArtifactResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length",
+                        HeadModelDefinedMetadatumArtifactResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        HeadModelDefinedMetadatumArtifactResponse.Builder::contentDisposition)
+                .handleResponseHeaderString(
+                        "content-md5",
+                        HeadModelDefinedMetadatumArtifactResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified",
+                        HeadModelDefinedMetadatumArtifactResponse.Builder::lastModified)
                 .callSync();
     }
 
@@ -2063,6 +3246,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("content")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString("etag", HeadStepArtifactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", HeadStepArtifactResponse.Builder::opcRequestId)
@@ -2074,7 +3258,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "content-disposition", HeadStepArtifactResponse.Builder::contentDisposition)
                 .handleResponseHeaderDate(
                         "last-modified", HeadStepArtifactResponse.Builder::lastModified)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2111,6 +3294,43 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ListContainersResponse listContainers(ListContainersRequest request) {
+
+        return clientCall(request, ListContainersResponse::builder)
+                .logger(LOG, "listContainers")
+                .serviceDetails(
+                        "DataScience",
+                        "ListContainers",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ContainerSummary/ListContainers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListContainersRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("containers")
+                .appendQueryParam("isLatest", request.getIsLatest())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("containerName", request.getContainerName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("targetWorkload", request.getTargetWorkload())
+                .appendEnumQueryParam("usageQueryParam", request.getUsageQueryParam())
+                .appendQueryParam("tagQueryParam", request.getTagQueryParam())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ContainerSummary.class,
+                        ListContainersResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListContainersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListContainersResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListContainersResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ListDataSciencePrivateEndpointsResponse listDataSciencePrivateEndpoints(
             ListDataSciencePrivateEndpointsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -2137,6 +3357,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "dataScienceResourceType", request.getDataScienceResourceType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.DataSciencePrivateEndpointSummary.class,
                         ListDataSciencePrivateEndpointsResponse.Builder::items)
@@ -2149,7 +3370,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListDataSciencePrivateEndpointsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2173,6 +3393,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary.class,
                         ListFastLaunchJobConfigsResponse.Builder::items)
@@ -2182,7 +3403,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListFastLaunchJobConfigsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListFastLaunchJobConfigsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2212,6 +3432,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.JobRunSummary.class,
                         ListJobRunsResponse.Builder::items)
@@ -2221,7 +3442,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListJobRunsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListJobRunsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2244,6 +3464,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.JobShapeSummary.class,
                         ListJobShapesResponse.Builder::items)
@@ -2253,7 +3474,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListJobShapesResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListJobShapesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2283,6 +3503,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.JobSummary.class,
                         ListJobsResponse.Builder::items)
@@ -2290,7 +3511,203 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("opc-prev-page", ListJobsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListJobsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListMlApplicationImplementationVersionsResponse listMlApplicationImplementationVersions(
+            ListMlApplicationImplementationVersionsRequest request) {
+        Objects.requireNonNull(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId is required");
+
+        return clientCall(request, ListMlApplicationImplementationVersionsResponse::builder)
+                .logger(LOG, "listMlApplicationImplementationVersions")
+                .serviceDetails(
+                        "DataScience",
+                        "ListMlApplicationImplementationVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementationVersion/ListMlApplicationImplementationVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMlApplicationImplementationVersionsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementationVersions")
+                .appendQueryParam(
+                        "mlApplicationImplementationId", request.getMlApplicationImplementationId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model
+                                .MlApplicationImplementationVersionCollection.class,
+                        ListMlApplicationImplementationVersionsResponse.Builder
+                                ::mlApplicationImplementationVersionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMlApplicationImplementationVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMlApplicationImplementationVersionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMlApplicationImplementationsResponse listMlApplicationImplementations(
+            ListMlApplicationImplementationsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMlApplicationImplementationsResponse::builder)
+                .logger(LOG, "listMlApplicationImplementations")
+                .serviceDetails(
+                        "DataScience",
+                        "ListMlApplicationImplementations",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/ListMlApplicationImplementations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMlApplicationImplementationsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendQueryParam(
+                        "mlApplicationImplementationId", request.getMlApplicationImplementationId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("mlApplicationId", request.getMlApplicationId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationImplementationCollection
+                                .class,
+                        ListMlApplicationImplementationsResponse.Builder
+                                ::mlApplicationImplementationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMlApplicationImplementationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMlApplicationImplementationsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMlApplicationInstanceViewsResponse listMlApplicationInstanceViews(
+            ListMlApplicationInstanceViewsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMlApplicationInstanceViewsResponse::builder)
+                .logger(LOG, "listMlApplicationInstanceViews")
+                .serviceDetails(
+                        "DataScience",
+                        "ListMlApplicationInstanceViews",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/ListMlApplicationInstanceViews")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMlApplicationInstanceViewsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("mlApplicationId", request.getMlApplicationId())
+                .appendQueryParam(
+                        "mlApplicationImplementationId", request.getMlApplicationImplementationId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstanceViewCollection.class,
+                        ListMlApplicationInstanceViewsResponse.Builder
+                                ::mlApplicationInstanceViewCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMlApplicationInstanceViewsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMlApplicationInstanceViewsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMlApplicationInstancesResponse listMlApplicationInstances(
+            ListMlApplicationInstancesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMlApplicationInstancesResponse::builder)
+                .logger(LOG, "listMlApplicationInstances")
+                .serviceDetails(
+                        "DataScience",
+                        "ListMlApplicationInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/ListMlApplicationInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMlApplicationInstancesRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("mlApplicationId", request.getMlApplicationId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstanceCollection.class,
+                        ListMlApplicationInstancesResponse.Builder::mlApplicationInstanceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMlApplicationInstancesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMlApplicationInstancesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMlApplicationsResponse listMlApplications(ListMlApplicationsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMlApplicationsResponse::builder)
+                .logger(LOG, "listMlApplications")
+                .serviceDetails(
+                        "DataScience",
+                        "ListMlApplications",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/ListMlApplications")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMlApplicationsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplications")
+                .appendQueryParam("mlApplicationId", request.getMlApplicationId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationCollection.class,
+                        ListMlApplicationsResponse.Builder::mlApplicationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMlApplicationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMlApplicationsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -2314,6 +3731,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary.class,
                         ListModelDeploymentShapesResponse.Builder::items)
@@ -2323,7 +3741,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListModelDeploymentShapesResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListModelDeploymentShapesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2353,6 +3770,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.ModelDeploymentSummary.class,
                         ListModelDeploymentsResponse.Builder::items)
@@ -2362,7 +3780,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListModelDeploymentsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListModelDeploymentsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2381,6 +3798,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20190101")
                 .appendPathParam("modelVersionSets")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("category", request.getCategory())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("projectId", request.getProjectId())
                 .appendQueryParam("name", request.getName())
@@ -2392,6 +3810,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.ModelVersionSetSummary.class,
                         ListModelVersionSetsResponse.Builder::items)
@@ -2401,7 +3820,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListModelVersionSetsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListModelVersionSetsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2422,6 +3840,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("modelVersionSetName", request.getModelVersionSetName())
                 .appendQueryParam("versionLabel", request.getVersionLabel())
+                .appendEnumQueryParam("category", request.getCategory())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("projectId", request.getProjectId())
                 .appendQueryParam("displayName", request.getDisplayName())
@@ -2433,6 +3852,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.ModelSummary.class,
                         ListModelsResponse.Builder::items)
@@ -2442,7 +3862,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListModelsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListModelsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2466,6 +3885,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.NotebookSessionShapeSummary.class,
                         ListNotebookSessionShapesResponse.Builder::items)
@@ -2475,7 +3895,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListNotebookSessionShapesResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListNotebookSessionShapesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2505,6 +3924,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.NotebookSessionSummary.class,
                         ListNotebookSessionsResponse.Builder::items)
@@ -2514,7 +3934,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListNotebookSessionsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListNotebookSessionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2544,6 +3963,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.PipelineRunSummary.class,
                         ListPipelineRunsResponse.Builder::items)
@@ -2553,7 +3973,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListPipelineRunsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListPipelineRunsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2583,6 +4002,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.PipelineSummary.class,
                         ListPipelinesResponse.Builder::items)
@@ -2592,7 +4012,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListPipelinesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListPipelinesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2621,6 +4040,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.ProjectSummary.class,
                         ListProjectsResponse.Builder::items)
@@ -2630,7 +4050,42 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListProjectsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListProjectsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListSchedulesResponse listSchedules(ListSchedulesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSchedulesResponse::builder)
+                .logger(LOG, "listSchedules")
+                .serviceDetails(
+                        "DataScience",
+                        "ListSchedules",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/ListSchedules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchedulesRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ScheduleSummary.class,
+                        ListSchedulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchedulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchedulesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -2656,6 +4111,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.WorkRequestError.class,
                         ListWorkRequestErrorsResponse.Builder::items)
@@ -2665,7 +4121,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListWorkRequestErrorsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2690,6 +4145,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.WorkRequestLogEntry.class,
                         ListWorkRequestLogsResponse.Builder::items)
@@ -2699,7 +4155,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListWorkRequestLogsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2727,6 +4182,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.WorkRequestSummary.class,
                         ListWorkRequestsResponse.Builder::items)
@@ -2736,7 +4192,224 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListWorkRequestsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public PutMlApplicationPackageResponse putMlApplicationPackage(
+            PutMlApplicationPackageRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId must not be blank");
+        Objects.requireNonNull(
+                request.getPutMlApplicationPackage(), "putMlApplicationPackage is required");
+
+        return clientCall(request, PutMlApplicationPackageResponse::builder)
+                .logger(LOG, "putMlApplicationPackage")
+                .serviceDetails(
+                        "DataScience",
+                        "PutMlApplicationPackage",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/PutMlApplicationPackage")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutMlApplicationPackageRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendPathParam(request.getMlApplicationImplementationId())
+                .appendPathParam("mlApplicationPackage")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .appendHeader("opc-ml-app-package-args", request.getOpcMlAppPackageArgs())
                 .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        PutMlApplicationPackageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutMlApplicationPackageResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RecoverMlApplicationInstanceViewResponse recoverMlApplicationInstanceView(
+            RecoverMlApplicationInstanceViewRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+
+        return clientCall(request, RecoverMlApplicationInstanceViewResponse::builder)
+                .logger(LOG, "recoverMlApplicationInstanceView")
+                .serviceDetails(
+                        "DataScience",
+                        "RecoverMlApplicationInstanceView",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/RecoverMlApplicationInstanceView")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RecoverMlApplicationInstanceViewRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .appendPathParam("actions")
+                .appendPathParam("recover")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RecoverMlApplicationInstanceViewResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RecoverMlApplicationInstanceViewResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RegisterModelArtifactReferenceResponse registerModelArtifactReference(
+            RegisterModelArtifactReferenceRequest request) {
+        Objects.requireNonNull(
+                request.getRegisterModelArtifactReferenceDetails(),
+                "registerModelArtifactReferenceDetails is required");
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, RegisterModelArtifactReferenceResponse::builder)
+                .logger(LOG, "registerModelArtifactReference")
+                .serviceDetails(
+                        "DataScience",
+                        "RegisterModelArtifactReference",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/RegisterModelArtifactReferenceDetails/RegisterModelArtifactReference")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RegisterModelArtifactReferenceRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("registerArtifactReference")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RegisterModelArtifactReferenceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RegisterModelArtifactReferenceResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RestoreArchivedModelArtifactResponse restoreArchivedModelArtifact(
+            RestoreArchivedModelArtifactRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, RestoreArchivedModelArtifactResponse::builder)
+                .logger(LOG, "restoreArchivedModelArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "RestoreArchivedModelArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/RestoreArchivedModelArtifact")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RestoreArchivedModelArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("restore")
+                .appendQueryParam(
+                        "restoreModelForHoursSpecified", request.getRestoreModelForHoursSpecified())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RestoreArchivedModelArtifactResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public TriggerMlApplicationInstanceFlowResponse triggerMlApplicationInstanceFlow(
+            TriggerMlApplicationInstanceFlowRequest request) {
+        Objects.requireNonNull(
+                request.getTriggerMlApplicationInstanceFlowDetails(),
+                "triggerMlApplicationInstanceFlowDetails is required");
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceId(), "mlApplicationInstanceId must not be blank");
+
+        return clientCall(request, TriggerMlApplicationInstanceFlowResponse::builder)
+                .logger(LOG, "triggerMlApplicationInstanceFlow")
+                .serviceDetails(
+                        "DataScience",
+                        "TriggerMlApplicationInstanceFlow",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/TriggerMlApplicationInstanceFlow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TriggerMlApplicationInstanceFlowRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .appendPathParam(request.getMlApplicationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("trigger")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        TriggerMlApplicationInstanceFlowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        TriggerMlApplicationInstanceFlowResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public TriggerMlApplicationInstanceViewFlowResponse triggerMlApplicationInstanceViewFlow(
+            TriggerMlApplicationInstanceViewFlowRequest request) {
+        Objects.requireNonNull(
+                request.getTriggerMlApplicationInstanceViewFlowDetails(),
+                "triggerMlApplicationInstanceViewFlowDetails is required");
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+
+        return clientCall(request, TriggerMlApplicationInstanceViewFlowResponse::builder)
+                .logger(LOG, "triggerMlApplicationInstanceViewFlow")
+                .serviceDetails(
+                        "DataScience",
+                        "TriggerMlApplicationInstanceViewFlow",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/TriggerMlApplicationInstanceViewFlow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TriggerMlApplicationInstanceViewFlowRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .appendPathParam("actions")
+                .appendPathParam("trigger")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        TriggerMlApplicationInstanceViewFlowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        TriggerMlApplicationInstanceViewFlowResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2801,13 +4474,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Job.class, UpdateJobResponse.Builder::job)
                 .handleResponseHeaderString("etag", UpdateJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2831,6 +4504,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.JobRun.class,
@@ -2838,7 +4512,185 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateJobRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateJobRunResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMlApplicationResponse updateMlApplication(UpdateMlApplicationRequest request) {
+
+        Validate.notBlank(request.getMlApplicationId(), "mlApplicationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMlApplicationDetails(), "updateMlApplicationDetails is required");
+
+        return clientCall(request, UpdateMlApplicationResponse::builder)
+                .logger(LOG, "updateMlApplication")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateMlApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplication/UpdateMlApplication")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMlApplicationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplications")
+                .appendPathParam(request.getMlApplicationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplication.class,
+                        UpdateMlApplicationResponse.Builder::mlApplication)
+                .handleResponseHeaderString("etag", UpdateMlApplicationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMlApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMlApplicationImplementationResponse updateMlApplicationImplementation(
+            UpdateMlApplicationImplementationRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationId(),
+                "mlApplicationImplementationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMlApplicationImplementationDetails(),
+                "updateMlApplicationImplementationDetails is required");
+
+        return clientCall(request, UpdateMlApplicationImplementationResponse::builder)
+                .logger(LOG, "updateMlApplicationImplementation")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateMlApplicationImplementation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementation/UpdateMlApplicationImplementation")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMlApplicationImplementationRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementations")
+                .appendPathParam(request.getMlApplicationImplementationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateMlApplicationImplementationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateMlApplicationImplementationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMlApplicationImplementationVersionResponse
+            updateMlApplicationImplementationVersion(
+                    UpdateMlApplicationImplementationVersionRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationImplementationVersionId(),
+                "mlApplicationImplementationVersionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMlApplicationImplementationVersionDetails(),
+                "updateMlApplicationImplementationVersionDetails is required");
+
+        return clientCall(request, UpdateMlApplicationImplementationVersionResponse::builder)
+                .logger(LOG, "updateMlApplicationImplementationVersion")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateMlApplicationImplementationVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationImplementationVersion/UpdateMlApplicationImplementationVersion")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMlApplicationImplementationVersionRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationImplementationVersions")
+                .appendPathParam(request.getMlApplicationImplementationVersionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationImplementationVersion.class,
+                        UpdateMlApplicationImplementationVersionResponse.Builder
+                                ::mlApplicationImplementationVersion)
+                .handleResponseHeaderString(
+                        "etag", UpdateMlApplicationImplementationVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateMlApplicationImplementationVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMlApplicationInstanceResponse updateMlApplicationInstance(
+            UpdateMlApplicationInstanceRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceId(), "mlApplicationInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMlApplicationInstanceDetails(),
+                "updateMlApplicationInstanceDetails is required");
+
+        return clientCall(request, UpdateMlApplicationInstanceResponse::builder)
+                .logger(LOG, "updateMlApplicationInstance")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateMlApplicationInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstance/UpdateMlApplicationInstance")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMlApplicationInstanceRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstances")
+                .appendPathParam(request.getMlApplicationInstanceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateMlApplicationInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMlApplicationInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMlApplicationInstanceViewResponse updateMlApplicationInstanceView(
+            UpdateMlApplicationInstanceViewRequest request) {
+
+        Validate.notBlank(
+                request.getMlApplicationInstanceViewId(),
+                "mlApplicationInstanceViewId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMlApplicationInstanceViewDetails(),
+                "updateMlApplicationInstanceViewDetails is required");
+
+        return clientCall(request, UpdateMlApplicationInstanceViewResponse::builder)
+                .logger(LOG, "updateMlApplicationInstanceView")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateMlApplicationInstanceView",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/MlApplicationInstanceView/UpdateMlApplicationInstanceView")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMlApplicationInstanceViewRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("mlApplicationInstanceViews")
+                .appendPathParam(request.getMlApplicationInstanceViewId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.MlApplicationInstanceView.class,
+                        UpdateMlApplicationInstanceViewResponse.Builder::mlApplicationInstanceView)
+                .handleResponseHeaderString(
+                        "etag", UpdateMlApplicationInstanceViewResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateMlApplicationInstanceViewResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2862,6 +4714,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Model.class,
@@ -2869,7 +4722,90 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateModelCustomMetadatumArtifactResponse updateModelCustomMetadatumArtifact(
+            UpdateModelCustomMetadatumArtifactRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+        Objects.requireNonNull(
+                request.getModelCustomMetadatumArtifact(),
+                "modelCustomMetadatumArtifact is required");
+
+        return clientCall(request, UpdateModelCustomMetadatumArtifactResponse::builder)
+                .logger(LOG, "updateModelCustomMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateModelCustomMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModelCustomMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateModelCustomMetadatumArtifactRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("customMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", UpdateModelCustomMetadatumArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateModelCustomMetadatumArtifactResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateModelDefinedMetadatumArtifactResponse updateModelDefinedMetadatumArtifact(
+            UpdateModelDefinedMetadatumArtifactRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+        Objects.requireNonNull(
+                request.getModelDefinedMetadatumArtifact(),
+                "modelDefinedMetadatumArtifact is required");
+
+        return clientCall(request, UpdateModelDefinedMetadatumArtifactResponse::builder)
+                .logger(LOG, "updateModelDefinedMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateModelDefinedMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModelDefinedMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateModelDefinedMetadatumArtifactRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("definedMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", UpdateModelDefinedMetadatumArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateModelDefinedMetadatumArtifactResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2896,13 +4832,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelDeploymentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateModelDeploymentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2930,6 +4866,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelProvenance.class,
@@ -2937,7 +4874,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelProvenanceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateModelProvenanceResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2964,6 +4900,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelVersionSet.class,
@@ -2971,7 +4908,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateModelVersionSetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelVersionSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2998,6 +4934,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.NotebookSession.class,
@@ -3005,7 +4942,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateNotebookSessionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateNotebookSessionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3092,6 +5028,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Project.class,
@@ -3099,7 +5036,35 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request) {
+
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateScheduleDetails(), "updateScheduleDetails is required");
+
+        return clientCall(request, UpdateScheduleResponse::builder)
+                .logger(LOG, "updateSchedule")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/UpdateSchedule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateScheduleRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateScheduleResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

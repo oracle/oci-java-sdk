@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceUsageExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceUsageExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * SummarizeExadataInsightResourceUsageRequest.
  */
@@ -16,14 +16,14 @@ public class SummarizeExadataInsightResourceUsageRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -97,13 +97,13 @@ public class SummarizeExadataInsightResourceUsageRequest
     }
     /**
      * Optional list of exadata insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> exadataInsightId;
 
     /**
      * Optional list of exadata insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getExadataInsightId() {
         return exadataInsightId;
@@ -182,14 +182,14 @@ public class SummarizeExadataInsightResourceUsageRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -197,7 +197,7 @@ public class SummarizeExadataInsightResourceUsageRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
      * {@code 50}
      */
     private Integer limit;
@@ -205,7 +205,7 @@ public class SummarizeExadataInsightResourceUsageRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
      * {@code 50}
      */
     public Integer getLimit() {
@@ -296,6 +296,13 @@ public class SummarizeExadataInsightResourceUsageRequest
     public java.util.List<String> getFreeformTagExists() {
         return freeformTagExists;
     }
+    /** A flag to search all resources within a given compartment and all sub-compartments. */
+    private Boolean compartmentIdInSubtree;
+
+    /** A flag to search all resources within a given compartment and all sub-compartments. */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -317,14 +324,14 @@ public class SummarizeExadataInsightResourceUsageRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -434,13 +441,13 @@ public class SummarizeExadataInsightResourceUsageRequest
 
         /**
          * Optional list of exadata insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> exadataInsightId = null;
 
         /**
          * Optional list of exadata insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param exadataInsightId the value to set
          * @return this builder instance
@@ -452,7 +459,7 @@ public class SummarizeExadataInsightResourceUsageRequest
 
         /**
          * Singular setter. Optional list of exadata insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -565,14 +572,14 @@ public class SummarizeExadataInsightResourceUsageRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -585,7 +592,7 @@ public class SummarizeExadataInsightResourceUsageRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          */
         private Integer limit = null;
@@ -593,7 +600,7 @@ public class SummarizeExadataInsightResourceUsageRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -778,6 +785,20 @@ public class SummarizeExadataInsightResourceUsageRequest
             return this.freeformTagExists(java.util.Arrays.asList(singularValue));
         }
 
+        /** A flag to search all resources within a given compartment and all sub-compartments. */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * A flag to search all resources within a given compartment and all sub-compartments.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
@@ -845,6 +866,7 @@ public class SummarizeExadataInsightResourceUsageRequest
             freeformTagEquals(o.getFreeformTagEquals());
             definedTagExists(o.getDefinedTagExists());
             freeformTagExists(o.getFreeformTagExists());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -902,13 +924,14 @@ public class SummarizeExadataInsightResourceUsageRequest
             request.freeformTagEquals = freeformTagEquals;
             request.definedTagExists = definedTagExists;
             request.freeformTagExists = freeformTagExists;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.opcRequestId = opcRequestId;
             return request;
             // new SummarizeExadataInsightResourceUsageRequest(compartmentId, resourceType,
             // resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd,
             // exadataInsightId, exadataType, cdbName, hostName, sortOrder, sortBy, page, limit,
             // percentile, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists,
-            // opcRequestId);
+            // compartmentIdInSubtree, opcRequestId);
         }
     }
 
@@ -938,6 +961,7 @@ public class SummarizeExadataInsightResourceUsageRequest
                 .freeformTagEquals(freeformTagEquals)
                 .definedTagExists(definedTagExists)
                 .freeformTagExists(freeformTagExists)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .opcRequestId(opcRequestId);
     }
 
@@ -974,6 +998,7 @@ public class SummarizeExadataInsightResourceUsageRequest
         sb.append(",freeformTagEquals=").append(String.valueOf(this.freeformTagEquals));
         sb.append(",definedTagExists=").append(String.valueOf(this.definedTagExists));
         sb.append(",freeformTagExists=").append(String.valueOf(this.freeformTagExists));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -1010,6 +1035,8 @@ public class SummarizeExadataInsightResourceUsageRequest
                 && java.util.Objects.equals(this.freeformTagEquals, other.freeformTagEquals)
                 && java.util.Objects.equals(this.definedTagExists, other.definedTagExists)
                 && java.util.Objects.equals(this.freeformTagExists, other.freeformTagExists)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -1058,6 +1085,11 @@ public class SummarizeExadataInsightResourceUsageRequest
         result =
                 (result * PRIME)
                         + (this.freeformTagExists == null ? 43 : this.freeformTagExists.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

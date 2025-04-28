@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ons;
@@ -11,7 +11,7 @@ import com.oracle.bmc.ons.responses.*;
  * Use the Notifications API to broadcast messages to distributed components by topic, using a
  * publish-subscribe pattern. For information about managing topics, subscriptions, and messages,
  * see [Notifications
- * Overview](https://docs.cloud.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm).
+ * Overview](https://docs.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -70,7 +70,7 @@ public interface NotificationDataPlane extends AutoCloseable {
     /**
      * Moves a subscription into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
@@ -81,7 +81,7 @@ public interface NotificationDataPlane extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ChangeSubscriptionCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ChangeSubscriptionCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeSubscriptionCompartment API.
      */
@@ -92,7 +92,7 @@ public interface NotificationDataPlane extends AutoCloseable {
      * Creates a subscription for the specified topic and sends a subscription confirmation URL to
      * the endpoint. The subscription remains in \"Pending\" status until it has been confirmed. For
      * information about confirming subscriptions, see [To confirm a
-     * subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub).
+     * subscription](https://docs.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub).
      *
      * <p>Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
@@ -103,7 +103,7 @@ public interface NotificationDataPlane extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/CreateSubscriptionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/CreateSubscriptionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSubscription
      *     API.
      */
@@ -121,7 +121,7 @@ public interface NotificationDataPlane extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/DeleteSubscriptionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/DeleteSubscriptionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSubscription
      *     API.
      */
@@ -139,7 +139,7 @@ public interface NotificationDataPlane extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetConfirmSubscriptionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetConfirmSubscriptionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetConfirmSubscription API.
      */
@@ -157,7 +157,7 @@ public interface NotificationDataPlane extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetSubscriptionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetSubscriptionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubscription
      *     API.
      */
@@ -175,7 +175,7 @@ public interface NotificationDataPlane extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetUnsubscriptionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetUnsubscriptionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUnsubscription
      *     API.
      */
@@ -193,7 +193,7 @@ public interface NotificationDataPlane extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ListSubscriptionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ListSubscriptionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSubscriptions
      *     API.
      */
@@ -218,9 +218,9 @@ public interface NotificationDataPlane extends AutoCloseable {
      * TPM limit represents messages per minute.)
      *
      * <p>For more information about publishing messages, see [Publishing
-     * Messages](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/publishingmessages.htm).
+     * Messages](https://docs.oracle.com/iaas/Content/Notification/Tasks/publishingmessages.htm).
      * For steps to request a limit increase, see [Requesting a Service Limit
-     * Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm#three).
+     * Increase](https://docs.oracle.com/iaas/Content/General/Concepts/servicelimits.htm#three).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -229,7 +229,7 @@ public interface NotificationDataPlane extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/PublishMessageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/PublishMessageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishMessage API.
      */
     PublishMessageResponse publishMessage(PublishMessageRequest request);
@@ -246,7 +246,7 @@ public interface NotificationDataPlane extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ResendSubscriptionConfirmationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ResendSubscriptionConfirmationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ResendSubscriptionConfirmation API.
      */
@@ -265,7 +265,7 @@ public interface NotificationDataPlane extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/UpdateSubscriptionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/UpdateSubscriptionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSubscription
      *     API.
      */

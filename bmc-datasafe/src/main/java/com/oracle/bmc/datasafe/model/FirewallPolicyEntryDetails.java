@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
 
 /**
- * SQL firewall policy details. <br>
+ * SQL Firewall policy details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -28,14 +28,14 @@ public final class FirewallPolicyEntryDetails extends EntryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The time the the SQL firewall policy was generated on the target database, in the format
+         * The time the the SQL Firewall policy was generated on the target database, in the format
          * defined by RFC3339.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
         private java.util.Date timeGenerated;
 
         /**
-         * The time the the SQL firewall policy was generated on the target database, in the format
+         * The time the the SQL Firewall policy was generated on the target database, in the format
          * defined by RFC3339.
          *
          * @param timeGenerated the value to set
@@ -47,14 +47,14 @@ public final class FirewallPolicyEntryDetails extends EntryDetails {
             return this;
         }
         /**
-         * The last date and time the status of the SQL firewall policy was updated on the target
+         * The last date and time the status of the SQL Firewall policy was updated on the target
          * database, in the format defined by RFC3339.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStatusUpdated")
         private java.util.Date timeStatusUpdated;
 
         /**
-         * The last date and time the status of the SQL firewall policy was updated on the target
+         * The last date and time the status of the SQL Firewall policy was updated on the target
          * database, in the format defined by RFC3339.
          *
          * @param timeStatusUpdated the value to set
@@ -108,14 +108,14 @@ public final class FirewallPolicyEntryDetails extends EntryDetails {
     }
 
     /**
-     * The time the the SQL firewall policy was generated on the target database, in the format
+     * The time the the SQL Firewall policy was generated on the target database, in the format
      * defined by RFC3339.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
     private final java.util.Date timeGenerated;
 
     /**
-     * The time the the SQL firewall policy was generated on the target database, in the format
+     * The time the the SQL Firewall policy was generated on the target database, in the format
      * defined by RFC3339.
      *
      * @return the value
@@ -125,14 +125,14 @@ public final class FirewallPolicyEntryDetails extends EntryDetails {
     }
 
     /**
-     * The last date and time the status of the SQL firewall policy was updated on the target
+     * The last date and time the status of the SQL Firewall policy was updated on the target
      * database, in the format defined by RFC3339.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusUpdated")
     private final java.util.Date timeStatusUpdated;
 
     /**
-     * The last date and time the status of the SQL firewall policy was updated on the target
+     * The last date and time the status of the SQL Firewall policy was updated on the target
      * database, in the format defined by RFC3339.
      *
      * @return the value

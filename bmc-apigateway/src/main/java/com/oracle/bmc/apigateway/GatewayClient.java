@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apigateway;
@@ -171,6 +171,7 @@ public class GatewayClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.Gateway.class,
@@ -181,7 +182,6 @@ public class GatewayClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id", CreateGatewayResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("location", CreateGatewayResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -229,13 +229,13 @@ public class GatewayClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam(request.getGatewayId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.Gateway.class,
                         GetGatewayResponse.Builder::gateway)
                 .handleResponseHeaderString("etag", GetGatewayResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetGatewayResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -263,6 +263,7 @@ public class GatewayClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.GatewayCollection.class,
                         ListGatewaysResponse.Builder::gatewayCollection)
@@ -272,7 +273,6 @@ public class GatewayClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-next-page", ListGatewaysResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListGatewaysResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

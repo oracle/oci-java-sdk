@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -102,6 +102,25 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
             this.__explicitlySet__.add("refreshableCloneDetails");
             return this;
         }
+        /**
+         * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs
+         * to be thick cloned.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isThinClone")
+        private Boolean isThinClone;
+
+        /**
+         * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs
+         * to be thick cloned.
+         *
+         * @param isThinClone the value to set
+         * @return this builder
+         */
+        public Builder isThinClone(Boolean isThinClone) {
+            this.isThinClone = isThinClone;
+            this.__explicitlySet__.add("isThinClone");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -113,7 +132,8 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
                             this.dblinkUserPassword,
                             this.sourcePluggableDatabaseId,
                             this.sourceContainerDatabaseAdminPassword,
-                            this.refreshableCloneDetails);
+                            this.refreshableCloneDetails,
+                            this.isThinClone);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -138,6 +158,9 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
             if (model.wasPropertyExplicitlySet("refreshableCloneDetails")) {
                 this.refreshableCloneDetails(model.getRefreshableCloneDetails());
             }
+            if (model.wasPropertyExplicitlySet("isThinClone")) {
+                this.isThinClone(model.getIsThinClone());
+            }
             return this;
         }
     }
@@ -157,13 +180,15 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
             String dblinkUserPassword,
             String sourcePluggableDatabaseId,
             String sourceContainerDatabaseAdminPassword,
-            CreatePluggableDatabaseRefreshableCloneDetails refreshableCloneDetails) {
+            CreatePluggableDatabaseRefreshableCloneDetails refreshableCloneDetails,
+            Boolean isThinClone) {
         super();
         this.dblinkUsername = dblinkUsername;
         this.dblinkUserPassword = dblinkUserPassword;
         this.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
         this.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
         this.refreshableCloneDetails = refreshableCloneDetails;
+        this.isThinClone = isThinClone;
     }
 
     /** The name of the DB link user. */
@@ -225,6 +250,23 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
         return refreshableCloneDetails;
     }
 
+    /**
+     * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to
+     * be thick cloned.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isThinClone")
+    private final Boolean isThinClone;
+
+    /**
+     * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to
+     * be thick cloned.
+     *
+     * @return the value
+     */
+    public Boolean getIsThinClone() {
+        return isThinClone;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -247,6 +289,7 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
         sb.append(", sourceContainerDatabaseAdminPassword=").append("<redacted>");
         sb.append(", refreshableCloneDetails=")
                 .append(String.valueOf(this.refreshableCloneDetails));
+        sb.append(", isThinClone=").append(String.valueOf(this.isThinClone));
         sb.append(")");
         return sb.toString();
     }
@@ -271,6 +314,7 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
                         other.sourceContainerDatabaseAdminPassword)
                 && java.util.Objects.equals(
                         this.refreshableCloneDetails, other.refreshableCloneDetails)
+                && java.util.Objects.equals(this.isThinClone, other.isThinClone)
                 && super.equals(other);
     }
 
@@ -301,6 +345,7 @@ public final class CreatePluggableDatabaseFromRemoteCloneDetails
                         + (this.refreshableCloneDetails == null
                                 ? 43
                                 : this.refreshableCloneDetails.hashCode());
+        result = (result * PRIME) + (this.isThinClone == null ? 43 : this.isThinClone.hashCode());
         return result;
     }
 }

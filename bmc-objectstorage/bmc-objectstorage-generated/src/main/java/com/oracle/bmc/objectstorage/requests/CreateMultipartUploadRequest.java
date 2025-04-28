@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.objectstorage.requests;
 import com.oracle.bmc.objectstorage.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateMultipartUploadExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateMultipartUploadExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateMultipartUploadRequest.
  */
@@ -83,14 +83,14 @@ public class CreateMultipartUploadRequest
     /**
      * The optional header that specifies "AES256" as the encryption algorithm. For more
      * information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     private String opcSseCustomerAlgorithm;
 
     /**
      * The optional header that specifies "AES256" as the encryption algorithm. For more
      * information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     public String getOpcSseCustomerAlgorithm() {
         return opcSseCustomerAlgorithm;
@@ -98,14 +98,14 @@ public class CreateMultipartUploadRequest
     /**
      * The optional header that specifies the base64-encoded 256-bit encryption key to use to
      * encrypt or decrypt the data. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     private String opcSseCustomerKey;
 
     /**
      * The optional header that specifies the base64-encoded 256-bit encryption key to use to
      * encrypt or decrypt the data. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     public String getOpcSseCustomerKey() {
         return opcSseCustomerKey;
@@ -114,7 +114,7 @@ public class CreateMultipartUploadRequest
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
      * value is used to check the integrity of the encryption key. For more information, see [Using
      * Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     private String opcSseCustomerKeySha256;
 
@@ -122,25 +122,40 @@ public class CreateMultipartUploadRequest
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
      * value is used to check the integrity of the encryption key. For more information, see [Using
      * Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     public String getOpcSseCustomerKeySha256() {
         return opcSseCustomerKeySha256;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
-     * master encryption key used to call the Key Management service to generate a data encryption
-     * key or to encrypt or decrypt a data encryption key.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master
+     * encryption key used to call the Key Management service to generate a data encryption key or
+     * to encrypt or decrypt a data encryption key.
      */
     private String opcSseKmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
-     * master encryption key used to call the Key Management service to generate a data encryption
-     * key or to encrypt or decrypt a data encryption key.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master
+     * encryption key used to call the Key Management service to generate a data encryption key or
+     * to encrypt or decrypt a data encryption key.
      */
     public String getOpcSseKmsKeyId() {
         return opcSseKmsKeyId;
+    }
+    /**
+     * The optional checksum algorithm to use to compute and store the checksum of the body of the
+     * HTTP request (or the parts in case of multipart uploads), in addition to the default MD5
+     * checksum.
+     */
+    private com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm;
+
+    /**
+     * The optional checksum algorithm to use to compute and store the checksum of the body of the
+     * HTTP request (or the parts in case of multipart uploads), in addition to the default MD5
+     * checksum.
+     */
+    public com.oracle.bmc.objectstorage.model.ChecksumAlgorithm getOpcChecksumAlgorithm() {
+        return opcChecksumAlgorithm;
     }
 
     /**
@@ -265,14 +280,14 @@ public class CreateMultipartUploadRequest
         /**
          * The optional header that specifies "AES256" as the encryption algorithm. For more
          * information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          */
         private String opcSseCustomerAlgorithm = null;
 
         /**
          * The optional header that specifies "AES256" as the encryption algorithm. For more
          * information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerAlgorithm the value to set
          * @return this builder instance
@@ -286,7 +301,7 @@ public class CreateMultipartUploadRequest
          * The optional header that specifies the base64-encoded 256-bit encryption key to use to
          * encrypt or decrypt the data. For more information, see [Using Your Own Keys for
          * Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          */
         private String opcSseCustomerKey = null;
 
@@ -294,7 +309,7 @@ public class CreateMultipartUploadRequest
          * The optional header that specifies the base64-encoded 256-bit encryption key to use to
          * encrypt or decrypt the data. For more information, see [Using Your Own Keys for
          * Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerKey the value to set
          * @return this builder instance
@@ -308,7 +323,7 @@ public class CreateMultipartUploadRequest
          * The optional header that specifies the base64-encoded SHA256 hash of the encryption key.
          * This value is used to check the integrity of the encryption key. For more information,
          * see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          */
         private String opcSseCustomerKeySha256 = null;
 
@@ -316,7 +331,7 @@ public class CreateMultipartUploadRequest
          * The optional header that specifies the base64-encoded SHA256 hash of the encryption key.
          * This value is used to check the integrity of the encryption key. For more information,
          * see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerKeySha256 the value to set
          * @return this builder instance
@@ -327,14 +342,14 @@ public class CreateMultipartUploadRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * master encryption key used to call the Key Management service to generate a data
          * encryption key or to encrypt or decrypt a data encryption key.
          */
         private String opcSseKmsKeyId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * master encryption key used to call the Key Management service to generate a data
          * encryption key or to encrypt or decrypt a data encryption key.
          *
@@ -343,6 +358,27 @@ public class CreateMultipartUploadRequest
          */
         public Builder opcSseKmsKeyId(String opcSseKmsKeyId) {
             this.opcSseKmsKeyId = opcSseKmsKeyId;
+            return this;
+        }
+
+        /**
+         * The optional checksum algorithm to use to compute and store the checksum of the body of
+         * the HTTP request (or the parts in case of multipart uploads), in addition to the default
+         * MD5 checksum.
+         */
+        private com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm = null;
+
+        /**
+         * The optional checksum algorithm to use to compute and store the checksum of the body of
+         * the HTTP request (or the parts in case of multipart uploads), in addition to the default
+         * MD5 checksum.
+         *
+         * @param opcChecksumAlgorithm the value to set
+         * @return this builder instance
+         */
+        public Builder opcChecksumAlgorithm(
+                com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm) {
+            this.opcChecksumAlgorithm = opcChecksumAlgorithm;
             return this;
         }
 
@@ -386,6 +422,7 @@ public class CreateMultipartUploadRequest
             opcSseCustomerKey(o.getOpcSseCustomerKey());
             opcSseCustomerKeySha256(o.getOpcSseCustomerKeySha256());
             opcSseKmsKeyId(o.getOpcSseKmsKeyId());
+            opcChecksumAlgorithm(o.getOpcChecksumAlgorithm());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -442,10 +479,12 @@ public class CreateMultipartUploadRequest
             request.opcSseCustomerKey = opcSseCustomerKey;
             request.opcSseCustomerKeySha256 = opcSseCustomerKeySha256;
             request.opcSseKmsKeyId = opcSseKmsKeyId;
+            request.opcChecksumAlgorithm = opcChecksumAlgorithm;
             return request;
             // new CreateMultipartUploadRequest(namespaceName, bucketName,
             // createMultipartUploadDetails, ifMatch, ifNoneMatch, opcClientRequestId,
-            // opcSseCustomerAlgorithm, opcSseCustomerKey, opcSseCustomerKeySha256, opcSseKmsKeyId);
+            // opcSseCustomerAlgorithm, opcSseCustomerKey, opcSseCustomerKeySha256, opcSseKmsKeyId,
+            // opcChecksumAlgorithm);
         }
     }
 
@@ -465,7 +504,8 @@ public class CreateMultipartUploadRequest
                 .opcSseCustomerAlgorithm(opcSseCustomerAlgorithm)
                 .opcSseCustomerKey(opcSseCustomerKey)
                 .opcSseCustomerKeySha256(opcSseCustomerKeySha256)
-                .opcSseKmsKeyId(opcSseKmsKeyId);
+                .opcSseKmsKeyId(opcSseKmsKeyId)
+                .opcChecksumAlgorithm(opcChecksumAlgorithm);
     }
 
     /**
@@ -493,6 +533,7 @@ public class CreateMultipartUploadRequest
         sb.append(",opcSseCustomerKey=").append(String.valueOf(this.opcSseCustomerKey));
         sb.append(",opcSseCustomerKeySha256=").append(String.valueOf(this.opcSseCustomerKeySha256));
         sb.append(",opcSseKmsKeyId=").append(String.valueOf(this.opcSseKmsKeyId));
+        sb.append(",opcChecksumAlgorithm=").append(String.valueOf(this.opcChecksumAlgorithm));
         sb.append(")");
         return sb.toString();
     }
@@ -520,7 +561,8 @@ public class CreateMultipartUploadRequest
                 && java.util.Objects.equals(this.opcSseCustomerKey, other.opcSseCustomerKey)
                 && java.util.Objects.equals(
                         this.opcSseCustomerKeySha256, other.opcSseCustomerKeySha256)
-                && java.util.Objects.equals(this.opcSseKmsKeyId, other.opcSseKmsKeyId);
+                && java.util.Objects.equals(this.opcSseKmsKeyId, other.opcSseKmsKeyId)
+                && java.util.Objects.equals(this.opcChecksumAlgorithm, other.opcChecksumAlgorithm);
     }
 
     @Override
@@ -559,6 +601,11 @@ public class CreateMultipartUploadRequest
         result =
                 (result * PRIME)
                         + (this.opcSseKmsKeyId == null ? 43 : this.opcSseKmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcChecksumAlgorithm == null
+                                ? 43
+                                : this.opcChecksumAlgorithm.hashCode());
         return result;
     }
 }

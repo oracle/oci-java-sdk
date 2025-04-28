@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -23,11 +23,12 @@ package com.oracle.bmc.datasafe.model;
 public final class UpdateAlertPolicyRuleDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"description", "expression"})
-    public UpdateAlertPolicyRuleDetails(String description, String expression) {
+    @java.beans.ConstructorProperties({"description", "expression", "displayName"})
+    public UpdateAlertPolicyRuleDetails(String description, String expression, String displayName) {
         super();
         this.description = description;
         this.expression = expression;
+        this.displayName = displayName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -62,13 +63,29 @@ public final class UpdateAlertPolicyRuleDetails
             this.__explicitlySet__.add("expression");
             return this;
         }
+        /** The display name of the alert policy rule. */
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+        private String displayName;
+
+        /**
+         * The display name of the alert policy rule.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateAlertPolicyRuleDetails build() {
             UpdateAlertPolicyRuleDetails model =
-                    new UpdateAlertPolicyRuleDetails(this.description, this.expression);
+                    new UpdateAlertPolicyRuleDetails(
+                            this.description, this.expression, this.displayName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +99,9 @@ public final class UpdateAlertPolicyRuleDetails
             }
             if (model.wasPropertyExplicitlySet("expression")) {
                 this.expression(model.getExpression());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
             }
             return this;
         }
@@ -122,6 +142,19 @@ public final class UpdateAlertPolicyRuleDetails
         return expression;
     }
 
+    /** The display name of the alert policy rule. */
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    private final String displayName;
+
+    /**
+     * The display name of the alert policy rule.
+     *
+     * @return the value
+     */
+    public String getDisplayName() {
+        return displayName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -139,6 +172,7 @@ public final class UpdateAlertPolicyRuleDetails
         sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", expression=").append(String.valueOf(this.expression));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(")");
         return sb.toString();
     }
@@ -155,6 +189,7 @@ public final class UpdateAlertPolicyRuleDetails
         UpdateAlertPolicyRuleDetails other = (UpdateAlertPolicyRuleDetails) o;
         return java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.expression, other.expression)
+                && java.util.Objects.equals(this.displayName, other.displayName)
                 && super.equals(other);
     }
 
@@ -164,6 +199,7 @@ public final class UpdateAlertPolicyRuleDetails
         int result = 1;
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.expression == null ? 43 : this.expression.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

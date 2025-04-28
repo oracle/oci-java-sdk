@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -144,6 +144,15 @@ public final class TaskSummaryFromIntegrationTask extends TaskSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isConcurrentAllowed")
+        private Boolean isConcurrentAllowed;
+
+        public Builder isConcurrentAllowed(Boolean isConcurrentAllowed) {
+            this.isConcurrentAllowed = isConcurrentAllowed;
+            this.__explicitlySet__.add("isConcurrentAllowed");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private ObjectMetadata metadata;
 
@@ -190,6 +199,7 @@ public final class TaskSummaryFromIntegrationTask extends TaskSummary {
                             this.parameters,
                             this.opConfigValues,
                             this.configProviderDelegate,
+                            this.isConcurrentAllowed,
                             this.metadata,
                             this.keyMap,
                             this.dataFlow);
@@ -240,6 +250,9 @@ public final class TaskSummaryFromIntegrationTask extends TaskSummary {
             if (model.wasPropertyExplicitlySet("configProviderDelegate")) {
                 this.configProviderDelegate(model.getConfigProviderDelegate());
             }
+            if (model.wasPropertyExplicitlySet("isConcurrentAllowed")) {
+                this.isConcurrentAllowed(model.getIsConcurrentAllowed());
+            }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
             }
@@ -277,6 +290,7 @@ public final class TaskSummaryFromIntegrationTask extends TaskSummary {
             java.util.List<Parameter> parameters,
             ConfigValues opConfigValues,
             ConfigProvider configProviderDelegate,
+            Boolean isConcurrentAllowed,
             ObjectMetadata metadata,
             java.util.Map<String, String> keyMap,
             DataFlow dataFlow) {
@@ -294,6 +308,7 @@ public final class TaskSummaryFromIntegrationTask extends TaskSummary {
                 parameters,
                 opConfigValues,
                 configProviderDelegate,
+                isConcurrentAllowed,
                 metadata,
                 keyMap);
         this.dataFlow = dataFlow;

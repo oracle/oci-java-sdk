@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information about Event details of DataSource. <br>
+ * Summary information about a data source event. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -67,12 +67,12 @@ public final class DataSourceEventSummary
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** Data source event date time */
+        /** Data source event date and time */
         @com.fasterxml.jackson.annotation.JsonProperty("eventDate")
         private java.util.Date eventDate;
 
         /**
-         * Data source event date time
+         * Data source event date and time
          *
          * @param eventDate the value to set
          * @return this builder
@@ -82,12 +82,12 @@ public final class DataSourceEventSummary
             this.__explicitlySet__.add("eventDate");
             return this;
         }
-        /** Attached data Source */
+        /** Unique identifier of data source. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
         private String dataSourceId;
 
         /**
-         * Attached data Source
+         * Unique identifier of data source.
          *
          * @param dataSourceId the value to set
          * @return this builder
@@ -97,12 +97,12 @@ public final class DataSourceEventSummary
             this.__explicitlySet__.add("dataSourceId");
             return this;
         }
-        /** Data source event created time */
+        /** Data source event creation date and time */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Data source event created time
+         * Data source event creation date and time
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -220,12 +220,12 @@ public final class DataSourceEventSummary
         return region;
     }
 
-    /** Data source event date time */
+    /** Data source event date and time */
     @com.fasterxml.jackson.annotation.JsonProperty("eventDate")
     private final java.util.Date eventDate;
 
     /**
-     * Data source event date time
+     * Data source event date and time
      *
      * @return the value
      */
@@ -233,12 +233,12 @@ public final class DataSourceEventSummary
         return eventDate;
     }
 
-    /** Attached data Source */
+    /** Unique identifier of data source. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
     private final String dataSourceId;
 
     /**
-     * Attached data Source
+     * Unique identifier of data source.
      *
      * @return the value
      */
@@ -246,12 +246,12 @@ public final class DataSourceEventSummary
         return dataSourceId;
     }
 
-    /** Data source event created time */
+    /** Data source event creation date and time */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Data source event created time
+     * Data source event creation date and time
      *
      * @return the value
      */

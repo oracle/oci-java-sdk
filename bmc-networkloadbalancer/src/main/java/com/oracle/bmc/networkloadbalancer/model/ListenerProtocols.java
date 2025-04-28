@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
@@ -11,6 +11,7 @@ public enum ListenerProtocols implements com.oracle.bmc.http.internal.BmcEnum {
     Tcp("TCP"),
     Udp("UDP"),
     TcpAndUdp("TCP_AND_UDP"),
+    L3Ip("L3IP"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

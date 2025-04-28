@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.oce;
@@ -148,6 +148,7 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -155,7 +156,6 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeOceInstanceCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -177,12 +177,12 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateOceInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateOceInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -205,11 +205,11 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteOceInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteOceInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -231,13 +231,13 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getOceInstanceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.oce.model.OceInstance.class,
                         GetOceInstanceResponse.Builder::oceInstance)
                 .handleResponseHeaderString("etag", GetOceInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOceInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -259,6 +259,7 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.oce.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -267,7 +268,6 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -295,6 +295,7 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.oce.model.OceInstanceSummary.class,
                         ListOceInstancesResponse.Builder::items)
@@ -302,7 +303,6 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListOceInstancesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOceInstancesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -328,6 +328,7 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.oce.model.WorkRequestError.class,
                         ListWorkRequestErrorsResponse.Builder::items)
@@ -335,7 +336,6 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -360,6 +360,7 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.oce.model.WorkRequestLogEntry.class,
                         ListWorkRequestLogsResponse.Builder::items)
@@ -367,7 +368,6 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -391,6 +391,7 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.oce.model.WorkRequest.class,
                         ListWorkRequestsResponse.Builder::items)
@@ -398,7 +399,6 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -423,12 +423,12 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateOceInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateOceInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

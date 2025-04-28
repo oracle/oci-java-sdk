@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -31,6 +31,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         "description",
         "jobConfigurationDetails",
         "jobInfrastructureConfigurationDetails",
+        "jobEnvironmentConfigurationDetails",
         "jobLogConfigurationDetails",
         "jobStorageMountConfigurationDetailsList",
         "lifecycleState",
@@ -48,6 +49,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             String description,
             JobConfigurationDetails jobConfigurationDetails,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails,
+            JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails,
             JobLogConfigurationDetails jobLogConfigurationDetails,
             java.util.List<StorageMountConfigurationDetails>
                     jobStorageMountConfigurationDetailsList,
@@ -65,6 +67,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         this.description = description;
         this.jobConfigurationDetails = jobConfigurationDetails;
         this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+        this.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
         this.jobLogConfigurationDetails = jobLogConfigurationDetails;
         this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
         this.lifecycleState = lifecycleState;
@@ -76,15 +79,15 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * job.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * job.
          *
          * @param id the value to set
          * @return this builder
@@ -114,15 +117,15 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the user who created the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * user who created the job.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the user who created the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * user who created the job.
          *
          * @param createdBy the value to set
          * @return this builder
@@ -133,15 +136,15 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate the job with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project to associate the job with.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate the job with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project to associate the job with.
          *
          * @param projectId the value to set
          * @return this builder
@@ -152,15 +155,15 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment where you want to create the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment where you want to create the job.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment where you want to create the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment where you want to create the job.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -217,6 +220,16 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails) {
             this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             this.__explicitlySet__.add("jobInfrastructureConfigurationDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationDetails")
+        private JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails;
+
+        public Builder jobEnvironmentConfigurationDetails(
+                JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails) {
+            this.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
+            this.__explicitlySet__.add("jobEnvironmentConfigurationDetails");
             return this;
         }
 
@@ -280,7 +293,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -289,7 +302,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -302,7 +315,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -310,7 +323,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -338,6 +351,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.description,
                             this.jobConfigurationDetails,
                             this.jobInfrastructureConfigurationDetails,
+                            this.jobEnvironmentConfigurationDetails,
                             this.jobLogConfigurationDetails,
                             this.jobStorageMountConfigurationDetailsList,
                             this.lifecycleState,
@@ -380,6 +394,10 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 this.jobInfrastructureConfigurationDetails(
                         model.getJobInfrastructureConfigurationDetails());
             }
+            if (model.wasPropertyExplicitlySet("jobEnvironmentConfigurationDetails")) {
+                this.jobEnvironmentConfigurationDetails(
+                        model.getJobEnvironmentConfigurationDetails());
+            }
             if (model.wasPropertyExplicitlySet("jobLogConfigurationDetails")) {
                 this.jobLogConfigurationDetails(model.getJobLogConfigurationDetails());
             }
@@ -413,15 +431,13 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      *
      * @return the value
      */
@@ -447,15 +463,15 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the user who created the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+     * who created the job.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the user who created the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+     * who created the job.
      *
      * @return the value
      */
@@ -464,15 +480,15 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate the job with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project to associate the job with.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate the job with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project to associate the job with.
      *
      * @return the value
      */
@@ -481,15 +497,15 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment where you want to create the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment where you want to create the job.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment where you want to create the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment where you want to create the job.
      *
      * @return the value
      */
@@ -535,6 +551,13 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     public JobInfrastructureConfigurationDetails getJobInfrastructureConfigurationDetails() {
         return jobInfrastructureConfigurationDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationDetails")
+    private final JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails;
+
+    public JobEnvironmentConfigurationDetails getJobEnvironmentConfigurationDetails() {
+        return jobEnvironmentConfigurationDetails;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("jobLogConfigurationDetails")
@@ -588,7 +611,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -597,7 +620,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -608,7 +631,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -616,7 +639,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -651,6 +674,8 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 .append(String.valueOf(this.jobConfigurationDetails));
         sb.append(", jobInfrastructureConfigurationDetails=")
                 .append(String.valueOf(this.jobInfrastructureConfigurationDetails));
+        sb.append(", jobEnvironmentConfigurationDetails=")
+                .append(String.valueOf(this.jobEnvironmentConfigurationDetails));
         sb.append(", jobLogConfigurationDetails=")
                 .append(String.valueOf(this.jobLogConfigurationDetails));
         sb.append(", jobStorageMountConfigurationDetailsList=")
@@ -686,6 +711,9 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                         this.jobInfrastructureConfigurationDetails,
                         other.jobInfrastructureConfigurationDetails)
                 && java.util.Objects.equals(
+                        this.jobEnvironmentConfigurationDetails,
+                        other.jobEnvironmentConfigurationDetails)
+                && java.util.Objects.equals(
                         this.jobLogConfigurationDetails, other.jobLogConfigurationDetails)
                 && java.util.Objects.equals(
                         this.jobStorageMountConfigurationDetailsList,
@@ -720,6 +748,11 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                         + (this.jobInfrastructureConfigurationDetails == null
                                 ? 43
                                 : this.jobInfrastructureConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobEnvironmentConfigurationDetails == null
+                                ? 43
+                                : this.jobEnvironmentConfigurationDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.jobLogConfigurationDetails == null

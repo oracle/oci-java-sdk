@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.waas;
@@ -226,13 +226,13 @@ public class RedirectClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getHttpRedirectId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.HttpRedirect.class,
                         GetHttpRedirectResponse.Builder::httpRedirect)
                 .handleResponseHeaderString("etag", GetHttpRedirectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetHttpRedirectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -273,6 +273,7 @@ public class RedirectClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.HttpRedirectSummary.class,
                         ListHttpRedirectsResponse.Builder::items)
@@ -280,7 +281,6 @@ public class RedirectClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListHttpRedirectsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListHttpRedirectsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

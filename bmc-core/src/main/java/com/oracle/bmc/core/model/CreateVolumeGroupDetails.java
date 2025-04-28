@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -31,7 +31,9 @@ public final class CreateVolumeGroupDetails
         "displayName",
         "freeformTags",
         "sourceDetails",
-        "volumeGroupReplicas"
+        "volumeGroupReplicas",
+        "clusterPlacementGroupId",
+        "xrcKmsKeyId"
     })
     public CreateVolumeGroupDetails(
             String availabilityDomain,
@@ -41,7 +43,9 @@ public final class CreateVolumeGroupDetails
             String displayName,
             java.util.Map<String, String> freeformTags,
             VolumeGroupSourceDetails sourceDetails,
-            java.util.List<VolumeGroupReplicaDetails> volumeGroupReplicas) {
+            java.util.List<VolumeGroupReplicaDetails> volumeGroupReplicas,
+            String clusterPlacementGroupId,
+            String xrcKmsKeyId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.backupPolicyId = backupPolicyId;
@@ -51,6 +55,8 @@ public final class CreateVolumeGroupDetails
         this.freeformTags = freeformTags;
         this.sourceDetails = sourceDetails;
         this.volumeGroupReplicas = volumeGroupReplicas;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.xrcKmsKeyId = xrcKmsKeyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -107,7 +113,7 @@ public final class CreateVolumeGroupDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -117,7 +123,7 @@ public final class CreateVolumeGroupDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -152,7 +158,7 @@ public final class CreateVolumeGroupDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -162,7 +168,7 @@ public final class CreateVolumeGroupDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -203,6 +209,48 @@ public final class CreateVolumeGroupDetails
             this.__explicitlySet__.add("volumeGroupReplicas");
             return this;
         }
+        /** The clusterPlacementGroup Id of the volume group for volume group placement. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The clusterPlacementGroup Id of the volume group for volume group placement.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the volume's
+         * cross region backups, which will be used in the destination region to encrypt the
+         * backup's encryption keys. For more information about the Vault service and encryption
+         * keys, see [Overview of Vault
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
+        private String xrcKmsKeyId;
+
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the volume's
+         * cross region backups, which will be used in the destination region to encrypt the
+         * backup's encryption keys. For more information about the Vault service and encryption
+         * keys, see [Overview of Vault
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         * @param xrcKmsKeyId the value to set
+         * @return this builder
+         */
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            this.xrcKmsKeyId = xrcKmsKeyId;
+            this.__explicitlySet__.add("xrcKmsKeyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -217,7 +265,9 @@ public final class CreateVolumeGroupDetails
                             this.displayName,
                             this.freeformTags,
                             this.sourceDetails,
-                            this.volumeGroupReplicas);
+                            this.volumeGroupReplicas,
+                            this.clusterPlacementGroupId,
+                            this.xrcKmsKeyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -249,6 +299,12 @@ public final class CreateVolumeGroupDetails
             }
             if (model.wasPropertyExplicitlySet("volumeGroupReplicas")) {
                 this.volumeGroupReplicas(model.getVolumeGroupReplicas());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("xrcKmsKeyId")) {
+                this.xrcKmsKeyId(model.getXrcKmsKeyId());
             }
             return this;
         }
@@ -309,7 +365,7 @@ public final class CreateVolumeGroupDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -319,7 +375,7 @@ public final class CreateVolumeGroupDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -349,7 +405,7 @@ public final class CreateVolumeGroupDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -359,7 +415,7 @@ public final class CreateVolumeGroupDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -393,6 +449,44 @@ public final class CreateVolumeGroupDetails
         return volumeGroupReplicas;
     }
 
+    /** The clusterPlacementGroup Id of the volume group for volume group placement. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The clusterPlacementGroup Id of the volume group for volume group placement.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the volume's cross
+     * region backups, which will be used in the destination region to encrypt the backup's
+     * encryption keys. For more information about the Vault service and encryption keys, see
+     * [Overview of Vault
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
+    private final String xrcKmsKeyId;
+
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the volume's cross
+     * region backups, which will be used in the destination region to encrypt the backup's
+     * encryption keys. For more information about the Vault service and encryption keys, see
+     * [Overview of Vault
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     * @return the value
+     */
+    public String getXrcKmsKeyId() {
+        return xrcKmsKeyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -416,6 +510,9 @@ public final class CreateVolumeGroupDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", volumeGroupReplicas=").append(String.valueOf(this.volumeGroupReplicas));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", xrcKmsKeyId=").append(String.valueOf(this.xrcKmsKeyId));
         sb.append(")");
         return sb.toString();
     }
@@ -438,6 +535,9 @@ public final class CreateVolumeGroupDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.volumeGroupReplicas, other.volumeGroupReplicas)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.xrcKmsKeyId, other.xrcKmsKeyId)
                 && super.equals(other);
     }
 
@@ -467,6 +567,12 @@ public final class CreateVolumeGroupDetails
                         + (this.volumeGroupReplicas == null
                                 ? 43
                                 : this.volumeGroupReplicas.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result = (result * PRIME) + (this.xrcKmsKeyId == null ? 43 : this.xrcKmsKeyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

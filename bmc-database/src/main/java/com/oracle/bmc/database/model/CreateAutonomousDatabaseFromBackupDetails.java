@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -28,6 +28,15 @@ package com.oracle.bmc.database.model;
 public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -163,6 +172,15 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKey")
+        private AutonomousDatabaseEncryptionKeyDetails encryptionKey;
+
+        public Builder encryptionKey(AutonomousDatabaseEncryptionKeyDetails encryptionKey) {
+            this.encryptionKey = encryptionKey;
+            this.__explicitlySet__.add("encryptionKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
@@ -190,6 +208,15 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("byolComputeCountLimit")
+        private Float byolComputeCountLimit;
+
+        public Builder byolComputeCountLimit(Float byolComputeCountLimit) {
+            this.byolComputeCountLimit = byolComputeCountLimit;
+            this.__explicitlySet__.add("byolComputeCountLimit");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isPreviewVersionWithServiceTermsAccepted")
         private Boolean isPreviewVersionWithServiceTermsAccepted;
 
@@ -207,6 +234,15 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             this.isAutoScalingEnabled = isAutoScalingEnabled;
             this.__explicitlySet__.add("isAutoScalingEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
+        private Boolean isDevTier;
+
+        public Builder isDevTier(Boolean isDevTier) {
+            this.isDevTier = isDevTier;
+            this.__explicitlySet__.add("isDevTier");
             return this;
         }
 
@@ -337,6 +373,16 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
         private String privateEndpointIp;
 
@@ -420,15 +466,6 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
-        private Integer maxCpuCoreCount;
-
-        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
-            this.maxCpuCoreCount = maxCpuCoreCount;
-            this.__explicitlySet__.add("maxCpuCoreCount");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
         private AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
 
@@ -444,6 +481,15 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         public Builder dbToolsDetails(java.util.List<DatabaseTool> dbToolsDetails) {
             this.dbToolsDetails = dbToolsDetails;
             this.__explicitlySet__.add("dbToolsDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+        private Boolean isBackupRetentionLocked;
+
+        public Builder isBackupRetentionLocked(Boolean isBackupRetentionLocked) {
+            this.isBackupRetentionLocked = isBackupRetentionLocked;
+            this.__explicitlySet__.add("isBackupRetentionLocked");
             return this;
         }
 
@@ -465,7 +511,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source Autonomous Database Backup that you will clone to create a new Autonomous
          * Database.
          */
@@ -473,7 +519,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         private String autonomousDatabaseBackupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source Autonomous Database Backup that you will clone to create a new Autonomous
          * Database.
          *
@@ -500,6 +546,25 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             this.__explicitlySet__.add("cloneType");
             return this;
         }
+        /**
+         * A list of the source Autonomous Database's table space number(s) used to create this
+         * partial clone from the backup.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
+        private java.util.List<Integer> cloneTableSpaceList;
+
+        /**
+         * A list of the source Autonomous Database's table space number(s) used to create this
+         * partial clone from the backup.
+         *
+         * @param cloneTableSpaceList the value to set
+         * @return this builder
+         */
+        public Builder cloneTableSpaceList(java.util.List<Integer> cloneTableSpaceList) {
+            this.cloneTableSpaceList = cloneTableSpaceList;
+            this.__explicitlySet__.add("cloneTableSpaceList");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -507,6 +572,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         public CreateAutonomousDatabaseFromBackupDetails build() {
             CreateAutonomousDatabaseFromBackupDetails model =
                     new CreateAutonomousDatabaseFromBackupDetails(
+                            this.subscriptionId,
                             this.compartmentId,
                             this.characterSet,
                             this.ncharacterSet,
@@ -522,11 +588,14 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                             this.isFreeTier,
                             this.kmsKeyId,
                             this.vaultId,
+                            this.encryptionKey,
                             this.adminPassword,
                             this.displayName,
                             this.licenseModel,
+                            this.byolComputeCountLimit,
                             this.isPreviewVersionWithServiceTermsAccepted,
                             this.isAutoScalingEnabled,
+                            this.isDevTier,
                             this.isDedicated,
                             this.autonomousContainerDatabaseId,
                             this.inMemoryPercentage,
@@ -541,6 +610,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                             this.privateEndpointLabel,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.privateEndpointIp,
                             this.dbVersion,
                             this.customerContacts,
@@ -550,13 +620,14 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                             this.autonomousMaintenanceScheduleType,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
-                            this.maxCpuCoreCount,
                             this.databaseEdition,
                             this.dbToolsDetails,
+                            this.isBackupRetentionLocked,
                             this.secretId,
                             this.secretVersionNumber,
                             this.autonomousDatabaseBackupId,
-                            this.cloneType);
+                            this.cloneType,
+                            this.cloneTableSpaceList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -565,6 +636,9 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateAutonomousDatabaseFromBackupDetails model) {
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -610,6 +684,9 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
+            if (model.wasPropertyExplicitlySet("encryptionKey")) {
+                this.encryptionKey(model.getEncryptionKey());
+            }
             if (model.wasPropertyExplicitlySet("adminPassword")) {
                 this.adminPassword(model.getAdminPassword());
             }
@@ -619,12 +696,18 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
             }
+            if (model.wasPropertyExplicitlySet("byolComputeCountLimit")) {
+                this.byolComputeCountLimit(model.getByolComputeCountLimit());
+            }
             if (model.wasPropertyExplicitlySet("isPreviewVersionWithServiceTermsAccepted")) {
                 this.isPreviewVersionWithServiceTermsAccepted(
                         model.getIsPreviewVersionWithServiceTermsAccepted());
             }
             if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
                 this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isDevTier")) {
+                this.isDevTier(model.getIsDevTier());
             }
             if (model.wasPropertyExplicitlySet("isDedicated")) {
                 this.isDedicated(model.getIsDedicated());
@@ -668,6 +751,9 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("privateEndpointIp")) {
                 this.privateEndpointIp(model.getPrivateEndpointIp());
             }
@@ -696,14 +782,14 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             if (model.wasPropertyExplicitlySet("isAutoScalingForStorageEnabled")) {
                 this.isAutoScalingForStorageEnabled(model.getIsAutoScalingForStorageEnabled());
             }
-            if (model.wasPropertyExplicitlySet("maxCpuCoreCount")) {
-                this.maxCpuCoreCount(model.getMaxCpuCoreCount());
-            }
             if (model.wasPropertyExplicitlySet("databaseEdition")) {
                 this.databaseEdition(model.getDatabaseEdition());
             }
             if (model.wasPropertyExplicitlySet("dbToolsDetails")) {
                 this.dbToolsDetails(model.getDbToolsDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
+                this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
             }
             if (model.wasPropertyExplicitlySet("secretId")) {
                 this.secretId(model.getSecretId());
@@ -716,6 +802,9 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             }
             if (model.wasPropertyExplicitlySet("cloneType")) {
                 this.cloneType(model.getCloneType());
+            }
+            if (model.wasPropertyExplicitlySet("cloneTableSpaceList")) {
+                this.cloneTableSpaceList(model.getCloneTableSpaceList());
             }
             return this;
         }
@@ -732,6 +821,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
 
     @Deprecated
     public CreateAutonomousDatabaseFromBackupDetails(
+            String subscriptionId,
             String compartmentId,
             String characterSet,
             String ncharacterSet,
@@ -747,11 +837,14 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             Boolean isFreeTier,
             String kmsKeyId,
             String vaultId,
+            AutonomousDatabaseEncryptionKeyDetails encryptionKey,
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
+            Float byolComputeCountLimit,
             Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
+            Boolean isDevTier,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
             Integer inMemoryPercentage,
@@ -766,6 +859,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             String privateEndpointLabel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateEndpointIp,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
@@ -775,14 +869,16 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
-            Integer maxCpuCoreCount,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
+            Boolean isBackupRetentionLocked,
             String secretId,
             Integer secretVersionNumber,
             String autonomousDatabaseBackupId,
-            CloneType cloneType) {
+            CloneType cloneType,
+            java.util.List<Integer> cloneTableSpaceList) {
         super(
+                subscriptionId,
                 compartmentId,
                 characterSet,
                 ncharacterSet,
@@ -798,11 +894,14 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                 isFreeTier,
                 kmsKeyId,
                 vaultId,
+                encryptionKey,
                 adminPassword,
                 displayName,
                 licenseModel,
+                byolComputeCountLimit,
                 isPreviewVersionWithServiceTermsAccepted,
                 isAutoScalingEnabled,
+                isDevTier,
                 isDedicated,
                 autonomousContainerDatabaseId,
                 inMemoryPercentage,
@@ -817,6 +916,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                 privateEndpointLabel,
                 freeformTags,
                 definedTags,
+                securityAttributes,
                 privateEndpointIp,
                 dbVersion,
                 customerContacts,
@@ -826,24 +926,25 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                 autonomousMaintenanceScheduleType,
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
-                maxCpuCoreCount,
                 databaseEdition,
                 dbToolsDetails,
+                isBackupRetentionLocked,
                 secretId,
                 secretVersionNumber);
         this.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
         this.cloneType = cloneType;
+        this.cloneTableSpaceList = cloneTableSpaceList;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source Autonomous Database Backup that you will clone to create a new Autonomous Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseBackupId")
     private final String autonomousDatabaseBackupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source Autonomous Database Backup that you will clone to create a new Autonomous Database.
      *
      * @return the value
@@ -856,6 +957,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
     public enum CloneType implements com.oracle.bmc.http.internal.BmcEnum {
         Full("FULL"),
         Metadata("METADATA"),
+        Partial("PARTIAL"),
         ;
 
         private final String value;
@@ -898,6 +1000,23 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         return cloneType;
     }
 
+    /**
+     * A list of the source Autonomous Database's table space number(s) used to create this partial
+     * clone from the backup.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
+    private final java.util.List<Integer> cloneTableSpaceList;
+
+    /**
+     * A list of the source Autonomous Database's table space number(s) used to create this partial
+     * clone from the backup.
+     *
+     * @return the value
+     */
+    public java.util.List<Integer> getCloneTableSpaceList() {
+        return cloneTableSpaceList;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -916,6 +1035,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         sb.append(", autonomousDatabaseBackupId=")
                 .append(String.valueOf(this.autonomousDatabaseBackupId));
         sb.append(", cloneType=").append(String.valueOf(this.cloneType));
+        sb.append(", cloneTableSpaceList=").append(String.valueOf(this.cloneTableSpaceList));
         sb.append(")");
         return sb.toString();
     }
@@ -934,6 +1054,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         return java.util.Objects.equals(
                         this.autonomousDatabaseBackupId, other.autonomousDatabaseBackupId)
                 && java.util.Objects.equals(this.cloneType, other.cloneType)
+                && java.util.Objects.equals(this.cloneTableSpaceList, other.cloneTableSpaceList)
                 && super.equals(other);
     }
 
@@ -947,6 +1068,11 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                                 ? 43
                                 : this.autonomousDatabaseBackupId.hashCode());
         result = (result * PRIME) + (this.cloneType == null ? 43 : this.cloneType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloneTableSpaceList == null
+                                ? 43
+                                : this.cloneTableSpaceList.hashCode());
         return result;
     }
 }

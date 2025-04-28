@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Validate the basic filter criteria provided by the user. <br>
+ * Validate the basic filter criteria provided by the user. It takes either credentialDetails or
+ * databaseCredential. It's recommended to provide databaseCredential <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,14 +24,22 @@ package com.oracle.bmc.databasemanagement.model;
 public final class ValidateBasicFilterDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"credentialDetails", "owner", "name", "basicFilter"})
+    @java.beans.ConstructorProperties({
+        "credentialDetails",
+        "databaseCredential",
+        "owner",
+        "name",
+        "basicFilter"
+    })
     public ValidateBasicFilterDetails(
             SqlTuningSetAdminCredentialDetails credentialDetails,
+            DatabaseCredentialDetails databaseCredential,
             String owner,
             String name,
             String basicFilter) {
         super();
         this.credentialDetails = credentialDetails;
+        this.databaseCredential = databaseCredential;
         this.owner = owner;
         this.name = name;
         this.basicFilter = basicFilter;
@@ -45,6 +54,15 @@ public final class ValidateBasicFilterDetails
         public Builder credentialDetails(SqlTuningSetAdminCredentialDetails credentialDetails) {
             this.credentialDetails = credentialDetails;
             this.__explicitlySet__.add("credentialDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
             return this;
         }
         /** The owner of the Sql tuning set. */
@@ -107,7 +125,11 @@ public final class ValidateBasicFilterDetails
         public ValidateBasicFilterDetails build() {
             ValidateBasicFilterDetails model =
                     new ValidateBasicFilterDetails(
-                            this.credentialDetails, this.owner, this.name, this.basicFilter);
+                            this.credentialDetails,
+                            this.databaseCredential,
+                            this.owner,
+                            this.name,
+                            this.basicFilter);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -118,6 +140,9 @@ public final class ValidateBasicFilterDetails
         public Builder copy(ValidateBasicFilterDetails model) {
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             if (model.wasPropertyExplicitlySet("owner")) {
                 this.owner(model.getOwner());
@@ -146,6 +171,13 @@ public final class ValidateBasicFilterDetails
 
     public SqlTuningSetAdminCredentialDetails getCredentialDetails() {
         return credentialDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
     }
 
     /** The owner of the Sql tuning set. */
@@ -211,6 +243,7 @@ public final class ValidateBasicFilterDetails
         sb.append("ValidateBasicFilterDetails(");
         sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(", owner=").append(String.valueOf(this.owner));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", basicFilter=").append(String.valueOf(this.basicFilter));
@@ -229,6 +262,7 @@ public final class ValidateBasicFilterDetails
 
         ValidateBasicFilterDetails other = (ValidateBasicFilterDetails) o;
         return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && java.util.Objects.equals(this.owner, other.owner)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.basicFilter, other.basicFilter)
@@ -242,6 +276,11 @@ public final class ValidateBasicFilterDetails
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.basicFilter == null ? 43 : this.basicFilter.hashCode());

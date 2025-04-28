@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics;
@@ -110,10 +110,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, AggregateNetworkDataResponse::builder)
                 .logger(LOG, "aggregateNetworkData")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "AggregateNetworkData",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/AggregatedNetworkDataResult/AggregateNetworkData")
+                .serviceDetails("ApmSynthetic", "AggregateNetworkData", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AggregateNetworkDataRequest::builder)
                 .basePath("/20200630")
@@ -151,10 +148,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, CreateDedicatedVantagePointResponse::builder)
                 .logger(LOG, "createDedicatedVantagePoint")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "CreateDedicatedVantagePoint",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/CreateDedicatedVantagePoint")
+                .serviceDetails("ApmSynthetic", "CreateDedicatedVantagePoint", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDedicatedVantagePointRequest::builder)
                 .basePath("/20200630")
@@ -186,10 +180,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, CreateMonitorResponse::builder)
                 .logger(LOG, "createMonitor")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "CreateMonitor",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/CreateMonitor")
+                .serviceDetails("ApmSynthetic", "CreateMonitor", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateMonitorRequest::builder)
                 .basePath("/20200630")
@@ -209,6 +200,42 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOnPremiseVantagePointResponse>
+            createOnPremiseVantagePoint(
+                    CreateOnPremiseVantagePointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOnPremiseVantagePointRequest,
+                                    CreateOnPremiseVantagePointResponse>
+                            handler) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Objects.requireNonNull(
+                request.getCreateOnPremiseVantagePointDetails(),
+                "createOnPremiseVantagePointDetails is required");
+
+        return clientCall(request, CreateOnPremiseVantagePointResponse::builder)
+                .logger(LOG, "createOnPremiseVantagePoint")
+                .serviceDetails("ApmSynthetic", "CreateOnPremiseVantagePoint", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOnPremiseVantagePointRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("onPremiseVantagePoints")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.OnPremiseVantagePoint.class,
+                        CreateOnPremiseVantagePointResponse.Builder::onPremiseVantagePoint)
+                .handleResponseHeaderString(
+                        "etag", CreateOnPremiseVantagePointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateOnPremiseVantagePointResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateScriptResponse> createScript(
             CreateScriptRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateScriptRequest, CreateScriptResponse>
@@ -219,10 +246,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, CreateScriptResponse::builder)
                 .logger(LOG, "createScript")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "CreateScript",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/CreateScript")
+                .serviceDetails("ApmSynthetic", "CreateScript", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateScriptRequest::builder)
                 .basePath("/20200630")
@@ -242,6 +266,40 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWorkerResponse> createWorker(
+            CreateWorkerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateWorkerRequest, CreateWorkerResponse>
+                    handler) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Validate.notBlank(
+                request.getOnPremiseVantagePointId(), "onPremiseVantagePointId must not be blank");
+        Objects.requireNonNull(request.getCreateWorkerDetails(), "createWorkerDetails is required");
+
+        return clientCall(request, CreateWorkerResponse::builder)
+                .logger(LOG, "createWorker")
+                .serviceDetails("ApmSynthetic", "CreateWorker", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateWorkerRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("onPremiseVantagePoints")
+                .appendPathParam(request.getOnPremiseVantagePointId())
+                .appendPathParam("workers")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.Worker.class,
+                        CreateWorkerResponse.Builder::worker)
+                .handleResponseHeaderString("etag", CreateWorkerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateWorkerResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDedicatedVantagePointResponse>
             deleteDedicatedVantagePoint(
                     DeleteDedicatedVantagePointRequest request,
@@ -256,10 +314,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DeleteDedicatedVantagePointResponse::builder)
                 .logger(LOG, "deleteDedicatedVantagePoint")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "DeleteDedicatedVantagePoint",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/DeleteDedicatedVantagePoint")
+                .serviceDetails("ApmSynthetic", "DeleteDedicatedVantagePoint", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDedicatedVantagePointRequest::builder)
                 .basePath("/20200630")
@@ -285,10 +340,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DeleteMonitorResponse::builder)
                 .logger(LOG, "deleteMonitor")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "DeleteMonitor",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/DeleteMonitor")
+                .serviceDetails("ApmSynthetic", "DeleteMonitor", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMonitorRequest::builder)
                 .basePath("/20200630")
@@ -304,6 +356,36 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteOnPremiseVantagePointResponse>
+            deleteOnPremiseVantagePoint(
+                    DeleteOnPremiseVantagePointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOnPremiseVantagePointRequest,
+                                    DeleteOnPremiseVantagePointResponse>
+                            handler) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Validate.notBlank(
+                request.getOnPremiseVantagePointId(), "onPremiseVantagePointId must not be blank");
+
+        return clientCall(request, DeleteOnPremiseVantagePointResponse::builder)
+                .logger(LOG, "deleteOnPremiseVantagePoint")
+                .serviceDetails("ApmSynthetic", "DeleteOnPremiseVantagePoint", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOnPremiseVantagePointRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("onPremiseVantagePoints")
+                .appendPathParam(request.getOnPremiseVantagePointId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteOnPremiseVantagePointResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteScriptResponse> deleteScript(
             DeleteScriptRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteScriptRequest, DeleteScriptResponse>
@@ -314,10 +396,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, DeleteScriptResponse::builder)
                 .logger(LOG, "deleteScript")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "DeleteScript",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/DeleteScript")
+                .serviceDetails("ApmSynthetic", "DeleteScript", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteScriptRequest::builder)
                 .basePath("/20200630")
@@ -329,6 +408,37 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteScriptResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkerResponse> deleteWorker(
+            DeleteWorkerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteWorkerRequest, DeleteWorkerResponse>
+                    handler) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Validate.notBlank(
+                request.getOnPremiseVantagePointId(), "onPremiseVantagePointId must not be blank");
+
+        Validate.notBlank(request.getWorkerId(), "workerId must not be blank");
+
+        return clientCall(request, DeleteWorkerResponse::builder)
+                .logger(LOG, "deleteWorker")
+                .serviceDetails("ApmSynthetic", "DeleteWorker", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteWorkerRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("onPremiseVantagePoints")
+                .appendPathParam(request.getOnPremiseVantagePointId())
+                .appendPathParam("workers")
+                .appendPathParam(request.getWorkerId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteWorkerResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -345,10 +455,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetDedicatedVantagePointResponse::builder)
                 .logger(LOG, "getDedicatedVantagePoint")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "GetDedicatedVantagePoint",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/GetDedicatedVantagePoint")
+                .serviceDetails("ApmSynthetic", "GetDedicatedVantagePoint", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDedicatedVantagePointRequest::builder)
                 .basePath("/20200630")
@@ -377,10 +484,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetMonitorResponse::builder)
                 .logger(LOG, "getMonitor")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "GetMonitor",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/GetMonitor")
+                .serviceDetails("ApmSynthetic", "GetMonitor", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMonitorRequest::builder)
                 .basePath("/20200630")
@@ -417,10 +521,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetMonitorResultResponse::builder)
                 .logger(LOG, "getMonitorResult")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "GetMonitorResult",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorResult/GetMonitorResult")
+                .serviceDetails("ApmSynthetic", "GetMonitorResult", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMonitorResultRequest::builder)
                 .basePath("/20200630")
@@ -443,6 +544,37 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetOnPremiseVantagePointResponse> getOnPremiseVantagePoint(
+            GetOnPremiseVantagePointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOnPremiseVantagePointRequest, GetOnPremiseVantagePointResponse>
+                    handler) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Validate.notBlank(
+                request.getOnPremiseVantagePointId(), "onPremiseVantagePointId must not be blank");
+
+        return clientCall(request, GetOnPremiseVantagePointResponse::builder)
+                .logger(LOG, "getOnPremiseVantagePoint")
+                .serviceDetails("ApmSynthetic", "GetOnPremiseVantagePoint", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOnPremiseVantagePointRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("onPremiseVantagePoints")
+                .appendPathParam(request.getOnPremiseVantagePointId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.OnPremiseVantagePoint.class,
+                        GetOnPremiseVantagePointResponse.Builder::onPremiseVantagePoint)
+                .handleResponseHeaderString("etag", GetOnPremiseVantagePointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOnPremiseVantagePointResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetScriptResponse> getScript(
             GetScriptRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetScriptRequest, GetScriptResponse>
@@ -453,10 +585,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, GetScriptResponse::builder)
                 .logger(LOG, "getScript")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "GetScript",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/GetScript")
+                .serviceDetails("ApmSynthetic", "GetScript", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetScriptRequest::builder)
                 .basePath("/20200630")
@@ -475,6 +604,40 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetWorkerResponse> getWorker(
+            GetWorkerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetWorkerRequest, GetWorkerResponse>
+                    handler) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Validate.notBlank(
+                request.getOnPremiseVantagePointId(), "onPremiseVantagePointId must not be blank");
+
+        Validate.notBlank(request.getWorkerId(), "workerId must not be blank");
+
+        return clientCall(request, GetWorkerResponse::builder)
+                .logger(LOG, "getWorker")
+                .serviceDetails("ApmSynthetic", "GetWorker", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkerRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("onPremiseVantagePoints")
+                .appendPathParam(request.getOnPremiseVantagePointId())
+                .appendPathParam("workers")
+                .appendPathParam(request.getWorkerId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.Worker.class,
+                        GetWorkerResponse.Builder::worker)
+                .handleResponseHeaderString("etag", GetWorkerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkerResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDedicatedVantagePointsResponse>
             listDedicatedVantagePoints(
                     ListDedicatedVantagePointsRequest request,
@@ -486,10 +649,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListDedicatedVantagePointsResponse::builder)
                 .logger(LOG, "listDedicatedVantagePoints")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "ListDedicatedVantagePoints",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePointCollection/ListDedicatedVantagePoints")
+                .serviceDetails("ApmSynthetic", "ListDedicatedVantagePoints", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDedicatedVantagePointsRequest::builder)
                 .basePath("/20200630")
@@ -523,10 +683,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListMonitorsResponse::builder)
                 .logger(LOG, "listMonitors")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "ListMonitors",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorCollection/ListMonitors")
+                .serviceDetails("ApmSynthetic", "ListMonitors", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMonitorsRequest::builder)
                 .basePath("/20200630")
@@ -557,6 +714,42 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListOnPremiseVantagePointsResponse>
+            listOnPremiseVantagePoints(
+                    ListOnPremiseVantagePointsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOnPremiseVantagePointsRequest,
+                                    ListOnPremiseVantagePointsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        return clientCall(request, ListOnPremiseVantagePointsResponse::builder)
+                .logger(LOG, "listOnPremiseVantagePoints")
+                .serviceDetails("ApmSynthetic", "ListOnPremiseVantagePoints", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOnPremiseVantagePointsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("onPremiseVantagePoints")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("name", request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.OnPremiseVantagePointCollection.class,
+                        ListOnPremiseVantagePointsResponse.Builder::onPremiseVantagePointCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOnPremiseVantagePointsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOnPremiseVantagePointsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPublicVantagePointsResponse> listPublicVantagePoints(
             ListPublicVantagePointsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -566,10 +759,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListPublicVantagePointsResponse::builder)
                 .logger(LOG, "listPublicVantagePoints")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "ListPublicVantagePoints",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/PublicVantagePointCollection/ListPublicVantagePoints")
+                .serviceDetails("ApmSynthetic", "ListPublicVantagePoints", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPublicVantagePointsRequest::builder)
                 .basePath("/20200630")
@@ -602,10 +792,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, ListScriptsResponse::builder)
                 .logger(LOG, "listScripts")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "ListScripts",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/ScriptCollection/ListScripts")
+                .serviceDetails("ApmSynthetic", "ListScripts", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListScriptsRequest::builder)
                 .basePath("/20200630")
@@ -630,6 +817,46 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListWorkersResponse> listWorkers(
+            ListWorkersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListWorkersRequest, ListWorkersResponse>
+                    handler) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Validate.notBlank(
+                request.getOnPremiseVantagePointId(), "onPremiseVantagePointId must not be blank");
+
+        return clientCall(request, ListWorkersResponse::builder)
+                .logger(LOG, "listWorkers")
+                .serviceDetails("ApmSynthetic", "ListWorkers", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkersRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("onPremiseVantagePoints")
+                .appendPathParam(request.getOnPremiseVantagePointId())
+                .appendPathParam("workers")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("capability", request.getCapability())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("name", request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.WorkerCollection.class,
+                        ListWorkersResponse.Builder::workerCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDedicatedVantagePointResponse>
             updateDedicatedVantagePoint(
                     UpdateDedicatedVantagePointRequest request,
@@ -647,10 +874,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, UpdateDedicatedVantagePointResponse::builder)
                 .logger(LOG, "updateDedicatedVantagePoint")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "UpdateDedicatedVantagePoint",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/UpdateDedicatedVantagePoint")
+                .serviceDetails("ApmSynthetic", "UpdateDedicatedVantagePoint", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDedicatedVantagePointRequest::builder)
                 .basePath("/20200630")
@@ -684,10 +908,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, UpdateMonitorResponse::builder)
                 .logger(LOG, "updateMonitor")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "UpdateMonitor",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/UpdateMonitor")
+                .serviceDetails("ApmSynthetic", "UpdateMonitor", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateMonitorRequest::builder)
                 .basePath("/20200630")
@@ -708,6 +929,45 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateOnPremiseVantagePointResponse>
+            updateOnPremiseVantagePoint(
+                    UpdateOnPremiseVantagePointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateOnPremiseVantagePointRequest,
+                                    UpdateOnPremiseVantagePointResponse>
+                            handler) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Validate.notBlank(
+                request.getOnPremiseVantagePointId(), "onPremiseVantagePointId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateOnPremiseVantagePointDetails(),
+                "updateOnPremiseVantagePointDetails is required");
+
+        return clientCall(request, UpdateOnPremiseVantagePointResponse::builder)
+                .logger(LOG, "updateOnPremiseVantagePoint")
+                .serviceDetails("ApmSynthetic", "UpdateOnPremiseVantagePoint", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateOnPremiseVantagePointRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("onPremiseVantagePoints")
+                .appendPathParam(request.getOnPremiseVantagePointId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.OnPremiseVantagePoint.class,
+                        UpdateOnPremiseVantagePointResponse.Builder::onPremiseVantagePoint)
+                .handleResponseHeaderString(
+                        "etag", UpdateOnPremiseVantagePointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateOnPremiseVantagePointResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateScriptResponse> updateScript(
             UpdateScriptRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateScriptRequest, UpdateScriptResponse>
@@ -719,10 +979,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         return clientCall(request, UpdateScriptResponse::builder)
                 .logger(LOG, "updateScript")
-                .serviceDetails(
-                        "ApmSynthetic",
-                        "UpdateScript",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/UpdateScript")
+                .serviceDetails("ApmSynthetic", "UpdateScript", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateScriptRequest::builder)
                 .basePath("/20200630")
@@ -739,6 +996,43 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString("etag", UpdateScriptResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateScriptResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkerResponse> updateWorker(
+            UpdateWorkerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateWorkerRequest, UpdateWorkerResponse>
+                    handler) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Validate.notBlank(
+                request.getOnPremiseVantagePointId(), "onPremiseVantagePointId must not be blank");
+
+        Validate.notBlank(request.getWorkerId(), "workerId must not be blank");
+        Objects.requireNonNull(request.getUpdateWorkerDetails(), "updateWorkerDetails is required");
+
+        return clientCall(request, UpdateWorkerResponse::builder)
+                .logger(LOG, "updateWorker")
+                .serviceDetails("ApmSynthetic", "UpdateWorker", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateWorkerRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("onPremiseVantagePoints")
+                .appendPathParam(request.getOnPremiseVantagePointId())
+                .appendPathParam("workers")
+                .appendPathParam(request.getWorkerId())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmsynthetics.model.Worker.class,
+                        UpdateWorkerResponse.Builder::worker)
+                .handleResponseHeaderString("etag", UpdateWorkerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateWorkerResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

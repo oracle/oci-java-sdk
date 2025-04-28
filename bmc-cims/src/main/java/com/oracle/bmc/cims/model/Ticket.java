@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
@@ -131,12 +131,12 @@ public final class Ticket extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The time when the ticket was created, in milliseconds since epoch time. */
+        /** The time when the ticket was created, in seconds since epoch time. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private Integer timeCreated;
 
         /**
-         * The time when the ticket was created, in milliseconds since epoch time.
+         * The time when the ticket was created, in seconds since epoch time.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -146,12 +146,12 @@ public final class Ticket extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time when the ticket was updated, in milliseconds since epoch time. */
+        /** The time when the ticket was updated, in seconds since epoch time. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private Integer timeUpdated;
 
         /**
-         * The time when the ticket was updated, in milliseconds since epoch time.
+         * The time when the ticket was updated, in seconds since epoch time.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -368,12 +368,12 @@ public final class Ticket extends com.oracle.bmc.http.client.internal.Explicitly
         return description;
     }
 
-    /** The time when the ticket was created, in milliseconds since epoch time. */
+    /** The time when the ticket was created, in seconds since epoch time. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final Integer timeCreated;
 
     /**
-     * The time when the ticket was created, in milliseconds since epoch time.
+     * The time when the ticket was created, in seconds since epoch time.
      *
      * @return the value
      */
@@ -381,12 +381,12 @@ public final class Ticket extends com.oracle.bmc.http.client.internal.Explicitly
         return timeCreated;
     }
 
-    /** The time when the ticket was updated, in milliseconds since epoch time. */
+    /** The time when the ticket was updated, in seconds since epoch time. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final Integer timeUpdated;
 
     /**
-     * The time when the ticket was updated, in milliseconds since epoch time.
+     * The time when the ticket was updated, in seconds since epoch time.
      *
      * @return the value
      */

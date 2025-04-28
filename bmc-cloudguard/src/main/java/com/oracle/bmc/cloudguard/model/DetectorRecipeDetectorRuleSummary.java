@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of the Detector Recipe Rule. <br>
+ * Summary information for a DetectorRecipeDetectorRule resoource. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -94,12 +94,12 @@ public final class DetectorRecipeDetectorRuleSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** DetectorTemplate Identifier, can be renamed */
+        /** Display name of the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * DetectorTemplate Identifier, can be renamed
+         * Display name of the detector rule
          *
          * @param displayName the value to set
          * @return this builder
@@ -109,12 +109,12 @@ public final class DetectorRecipeDetectorRuleSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** DetectorTemplate Identifier, can be renamed */
+        /** Description of the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * DetectorTemplate Identifier, can be renamed
+         * Description of the detector rule
          *
          * @param description the value to set
          * @return this builder
@@ -124,12 +124,12 @@ public final class DetectorRecipeDetectorRuleSummary
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Recommendation for DetectorRecipeDetectorRule */
+        /** Recommendation for the Display name of the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
         private String recommendation;
 
         /**
-         * Recommendation for DetectorRecipeDetectorRule
+         * Recommendation for the Display name of the detector rule
          *
          * @param recommendation the value to set
          * @return this builder
@@ -139,12 +139,12 @@ public final class DetectorRecipeDetectorRuleSummary
             this.__explicitlySet__.add("recommendation");
             return this;
         }
-        /** possible type of detectors */
+        /** Possible types of detectors */
         @com.fasterxml.jackson.annotation.JsonProperty("detector")
         private DetectorEnum detector;
 
         /**
-         * possible type of detectors
+         * Possible types of detectors
          *
          * @param detector the value to set
          * @return this builder
@@ -154,12 +154,12 @@ public final class DetectorRecipeDetectorRuleSummary
             this.__explicitlySet__.add("detector");
             return this;
         }
-        /** service type of the configuration to which the rule is applied */
+        /** Service type of the configuration to which the rule is applied */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
         private String serviceType;
 
         /**
-         * service type of the configuration to which the rule is applied
+         * Service type of the configuration to which the rule is applied
          *
          * @param serviceType the value to set
          * @return this builder
@@ -169,12 +169,12 @@ public final class DetectorRecipeDetectorRuleSummary
             this.__explicitlySet__.add("serviceType");
             return this;
         }
-        /** resource type of the configuration to which the rule is applied */
+        /** Resource type of the configuration to which the rule is applied */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
-         * resource type of the configuration to which the rule is applied
+         * Resource type of the configuration to which the rule is applied
          *
          * @param resourceType the value to set
          * @return this builder
@@ -184,12 +184,12 @@ public final class DetectorRecipeDetectorRuleSummary
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** List of cloudguard managed list types related to this rule */
+        /** List of managed list types related to this rule */
         @com.fasterxml.jackson.annotation.JsonProperty("managedListTypes")
         private java.util.List<ManagedListTypes> managedListTypes;
 
         /**
-         * List of cloudguard managed list types related to this rule
+         * List of managed list types related to this rule
          *
          * @param managedListTypes the value to set
          * @return this builder
@@ -199,12 +199,16 @@ public final class DetectorRecipeDetectorRuleSummary
             this.__explicitlySet__.add("managedListTypes");
             return this;
         }
-        /** List of CandidateResponderRule related to this rule */
+        /**
+         * List of responder rules that can be used to remediate problems triggered by this detector
+         * rule
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("candidateResponderRules")
         private java.util.List<CandidateResponderRule> candidateResponderRules;
 
         /**
-         * List of CandidateResponderRule related to this rule
+         * List of responder rules that can be used to remediate problems triggered by this detector
+         * rule
          *
          * @param candidateResponderRules the value to set
          * @return this builder
@@ -239,12 +243,14 @@ public final class DetectorRecipeDetectorRuleSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time the detector recipe rule was updated. Format defined by RFC3339. */
+        /**
+         * The date and time the detector recipe rule was last updated. Format defined by RFC3339.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the detector recipe rule was updated. Format defined by RFC3339.
+         * The date and time the detector recipe rule was last updated. Format defined by RFC3339.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -254,12 +260,12 @@ public final class DetectorRecipeDetectorRuleSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the detector recipe rule */
+        /** The current lifecycle state of the detector recipe rule */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the detector recipe rule
+         * The current lifecycle state of the detector recipe rule
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -288,12 +294,12 @@ public final class DetectorRecipeDetectorRuleSummary
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The id of the attached DataSource. */
+        /** The ID of the attached data source */
         @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
         private String dataSourceId;
 
         /**
-         * The id of the attached DataSource.
+         * The ID of the attached data source
          *
          * @param dataSourceId the value to set
          * @return this builder
@@ -303,12 +309,12 @@ public final class DetectorRecipeDetectorRuleSummary
             this.__explicitlySet__.add("dataSourceId");
             return this;
         }
-        /** Data Source entities mapping for a Detector Rule */
+        /** Data source entities mapping for the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("entitiesMappings")
         private java.util.List<EntitiesMapping> entitiesMappings;
 
         /**
-         * Data Source entities mapping for a Detector Rule
+         * Data source entities mapping for the detector rule
          *
          * @param entitiesMappings the value to set
          * @return this builder
@@ -423,12 +429,12 @@ public final class DetectorRecipeDetectorRuleSummary
         return id;
     }
 
-    /** DetectorTemplate Identifier, can be renamed */
+    /** Display name of the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * DetectorTemplate Identifier, can be renamed
+     * Display name of the detector rule
      *
      * @return the value
      */
@@ -436,12 +442,12 @@ public final class DetectorRecipeDetectorRuleSummary
         return displayName;
     }
 
-    /** DetectorTemplate Identifier, can be renamed */
+    /** Description of the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * DetectorTemplate Identifier, can be renamed
+     * Description of the detector rule
      *
      * @return the value
      */
@@ -449,12 +455,12 @@ public final class DetectorRecipeDetectorRuleSummary
         return description;
     }
 
-    /** Recommendation for DetectorRecipeDetectorRule */
+    /** Recommendation for the Display name of the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
     private final String recommendation;
 
     /**
-     * Recommendation for DetectorRecipeDetectorRule
+     * Recommendation for the Display name of the detector rule
      *
      * @return the value
      */
@@ -462,12 +468,12 @@ public final class DetectorRecipeDetectorRuleSummary
         return recommendation;
     }
 
-    /** possible type of detectors */
+    /** Possible types of detectors */
     @com.fasterxml.jackson.annotation.JsonProperty("detector")
     private final DetectorEnum detector;
 
     /**
-     * possible type of detectors
+     * Possible types of detectors
      *
      * @return the value
      */
@@ -475,12 +481,12 @@ public final class DetectorRecipeDetectorRuleSummary
         return detector;
     }
 
-    /** service type of the configuration to which the rule is applied */
+    /** Service type of the configuration to which the rule is applied */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
     private final String serviceType;
 
     /**
-     * service type of the configuration to which the rule is applied
+     * Service type of the configuration to which the rule is applied
      *
      * @return the value
      */
@@ -488,12 +494,12 @@ public final class DetectorRecipeDetectorRuleSummary
         return serviceType;
     }
 
-    /** resource type of the configuration to which the rule is applied */
+    /** Resource type of the configuration to which the rule is applied */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
-     * resource type of the configuration to which the rule is applied
+     * Resource type of the configuration to which the rule is applied
      *
      * @return the value
      */
@@ -515,6 +521,8 @@ public final class DetectorRecipeDetectorRuleSummary
         City("CITY"),
         Tags("TAGS"),
         Generic("GENERIC"),
+        FusionAppsRole("FUSION_APPS_ROLE"),
+        FusionAppsPermission("FUSION_APPS_PERMISSION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -557,12 +565,12 @@ public final class DetectorRecipeDetectorRuleSummary
             return UnknownEnumValue;
         }
     };
-    /** List of cloudguard managed list types related to this rule */
+    /** List of managed list types related to this rule */
     @com.fasterxml.jackson.annotation.JsonProperty("managedListTypes")
     private final java.util.List<ManagedListTypes> managedListTypes;
 
     /**
-     * List of cloudguard managed list types related to this rule
+     * List of managed list types related to this rule
      *
      * @return the value
      */
@@ -570,12 +578,16 @@ public final class DetectorRecipeDetectorRuleSummary
         return managedListTypes;
     }
 
-    /** List of CandidateResponderRule related to this rule */
+    /**
+     * List of responder rules that can be used to remediate problems triggered by this detector
+     * rule
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("candidateResponderRules")
     private final java.util.List<CandidateResponderRule> candidateResponderRules;
 
     /**
-     * List of CandidateResponderRule related to this rule
+     * List of responder rules that can be used to remediate problems triggered by this detector
+     * rule
      *
      * @return the value
      */
@@ -603,12 +615,12 @@ public final class DetectorRecipeDetectorRuleSummary
         return timeCreated;
     }
 
-    /** The date and time the detector recipe rule was updated. Format defined by RFC3339. */
+    /** The date and time the detector recipe rule was last updated. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the detector recipe rule was updated. Format defined by RFC3339.
+     * The date and time the detector recipe rule was last updated. Format defined by RFC3339.
      *
      * @return the value
      */
@@ -616,12 +628,12 @@ public final class DetectorRecipeDetectorRuleSummary
         return timeUpdated;
     }
 
-    /** The current state of the detector recipe rule */
+    /** The current lifecycle state of the detector recipe rule */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the detector recipe rule
+     * The current lifecycle state of the detector recipe rule
      *
      * @return the value
      */
@@ -646,12 +658,12 @@ public final class DetectorRecipeDetectorRuleSummary
         return lifecycleDetails;
     }
 
-    /** The id of the attached DataSource. */
+    /** The ID of the attached data source */
     @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
     private final String dataSourceId;
 
     /**
-     * The id of the attached DataSource.
+     * The ID of the attached data source
      *
      * @return the value
      */
@@ -659,12 +671,12 @@ public final class DetectorRecipeDetectorRuleSummary
         return dataSourceId;
     }
 
-    /** Data Source entities mapping for a Detector Rule */
+    /** Data source entities mapping for the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("entitiesMappings")
     private final java.util.List<EntitiesMapping> entitiesMappings;
 
     /**
-     * Data Source entities mapping for a Detector Rule
+     * Data source entities mapping for the detector rule
      *
      * @return the value
      */

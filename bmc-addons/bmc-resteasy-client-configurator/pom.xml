@@ -4,26 +4,26 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-addons</artifactId>
-    <version>3.28.0</version>
+    <version>3.63.2</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>oci-java-sdk-addons-resteasy-client-configurator</artifactId>
   <name>Oracle Cloud Infrastructure SDK - RestEasyClientConfigurator</name>
   <description>This project adds support for the RestEasyClientConfigurator for the Java SDK</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
   <dependencies>
     <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-core -->
     <dependency>
       <groupId>org.jboss.resteasy</groupId>
       <artifactId>resteasy-core</artifactId>
-      <version>5.0.3.Final</version>
+      <version>5.0.6.Final</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.28.0</version>
+      <version>3.63.2</version>
     </dependency>
   </dependencies>
 </project>

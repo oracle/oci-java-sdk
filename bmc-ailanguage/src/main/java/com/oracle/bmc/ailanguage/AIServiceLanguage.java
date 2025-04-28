@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage;
@@ -72,7 +72,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      * supports passing a batch of records.
      *
      * <p>[List of supported
-     * languages.](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect)
+     * languages.](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect)
      *
      * <p>Limitations: - A batch may have up to 100 records. - A record may be up to 5000 characters
      * long. - The total of characters to process in a request can be up to 20,000 characters.
@@ -84,7 +84,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectDominantLanguageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectDominantLanguageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     BatchDetectDominantLanguage API.
      */
@@ -92,11 +92,8 @@ public interface AIServiceLanguage extends AutoCloseable {
             BatchDetectDominantLanguageRequest request);
 
     /**
-     * The API extracts entities in text records. For each entity, its type/subtype and confidence
+     * The API extracts health entities in text records. For each entity, its type and confidence
      * score (between 0 and 1) is returned. It supports passing a batch of records.
-     *
-     * <p>[List of supported
-     * entities.](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#ner__sup-ner-entity)
      *
      * <p>Limitations: - A batch may have up to 100 records. - A record may be up to 5000 characters
      * long. - The total of characters to process in a request can be up to 20,000 characters.
@@ -108,7 +105,30 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageEntitiesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectHealthEntityExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     BatchDetectHealthEntity API.
+     */
+    BatchDetectHealthEntityResponse batchDetectHealthEntity(BatchDetectHealthEntityRequest request);
+
+    /**
+     * The API extracts entities in text records. For each entity, its type/subtype and confidence
+     * score (between 0 and 1) is returned. It supports passing a batch of records.
+     *
+     * <p>[List of supported
+     * entities.](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#ner__sup-ner-entity)
+     *
+     * <p>Limitations: - A batch may have up to 100 records. - A record may be up to 5000 characters
+     * long. - The total of characters to process in a request can be up to 20,000 characters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageEntitiesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     BatchDetectLanguageEntities API.
      */
@@ -130,7 +150,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageKeyPhrasesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageKeyPhrasesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     BatchDetectLanguageKeyPhrases API.
      */
@@ -151,7 +171,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguagePiiEntitiesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguagePiiEntitiesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     BatchDetectLanguagePiiEntities API.
      */
@@ -169,7 +189,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      * negative, neutral and mixed).
      *
      * <p>Learn more about sentiment analysis
-     * [here](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#sentiment).
+     * [here](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#sentiment).
      *
      * <p>Limitations: - A batch may have up to 100 records. - A record may be up to 5000 characters
      * long. - The total of characters to process in a request can be up to 20,000 characters.
@@ -181,7 +201,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageSentimentsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageSentimentsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     BatchDetectLanguageSentiments API.
      */
@@ -195,7 +215,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      * <p>It supports passing a batch of records.
      *
      * <p>Learn more about text classification
-     * [here](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#text-class).
+     * [here](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#text-class).
      *
      * <p>Limitations: - A batch may have up to 100 records. - A record may be up to 5000 characters
      * long. - The total of characters to process in a request can be up to 20,000 characters.
@@ -207,7 +227,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageTextClassificationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageTextClassificationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     BatchDetectLanguageTextClassification API.
      */
@@ -215,10 +235,9 @@ public interface AIServiceLanguage extends AutoCloseable {
             BatchDetectLanguageTextClassificationRequest request);
 
     /**
-     * Translate text to other language over pre-deployed model. Use state of the art neural machine
-     * translation to translate text between more than 15 languages. Limitations: - A batch may have
-     * up to 100 records. - A record may be up to 5000 characters long. - The total of characters to
-     * process in a request can be up to 20,000 characters.
+     * Translates a batch of text documents from source to target language. A batch can contain: -
+     * up to 100 records. - documents length less than 5000 characters. - 20,000 characters in total
+     * as a sum of all documents length.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -227,12 +246,27 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchLanguageTranslationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchLanguageTranslationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     BatchLanguageTranslation API.
      */
     BatchLanguageTranslationResponse batchLanguageTranslation(
             BatchLanguageTranslationRequest request);
+
+    /**
+     * Canceling the job cancels all the tasks under it.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/CancelJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelJob API.
+     */
+    CancelJobResponse cancelJob(CancelJobRequest request);
 
     /**
      * Moves a Endpoint into a different compartment. When provided, If-Match is checked against
@@ -245,12 +279,29 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ChangeEndpointCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ChangeEndpointCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeEndpointCompartment API.
      */
     ChangeEndpointCompartmentResponse changeEndpointCompartment(
             ChangeEndpointCompartmentRequest request);
+
+    /**
+     * Moves a Job into a different compartment. When provided, If-Match is checked against ETag
+     * values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ChangeJobCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeJobCompartment API.
+     */
+    ChangeJobCompartmentResponse changeJobCompartment(ChangeJobCompartmentRequest request);
 
     /**
      * Moves a Model into a different compartment. When provided, If-Match is checked against ETag
@@ -263,7 +314,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ChangeModelCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ChangeModelCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeModelCompartment API.
      */
@@ -280,7 +331,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ChangeProjectCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ChangeProjectCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeProjectCompartment API.
      */
@@ -297,10 +348,25 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/CreateEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/CreateEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEndpoint API.
      */
     CreateEndpointResponse createEndpoint(CreateEndpointRequest request);
+
+    /**
+     * Creates a new language service async job.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/CreateJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJob API.
+     */
+    CreateJobResponse createJob(CreateJobRequest request);
 
     /**
      * Creates a new model for training and train the model with date provided.
@@ -312,7 +378,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/CreateModelExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/CreateModelExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateModel API.
      */
     CreateModelResponse createModel(CreateModelRequest request);
@@ -327,7 +393,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/CreateProjectExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/CreateProjectExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProject API.
      */
     CreateProjectResponse createProject(CreateProjectRequest request);
@@ -344,10 +410,25 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DeleteEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DeleteEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEndpoint API.
      */
     DeleteEndpointResponse deleteEndpoint(DeleteEndpointRequest request);
+
+    /**
+     * Deletes the language service async Job
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DeleteJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJob API.
+     */
+    DeleteJobResponse deleteJob(DeleteJobRequest request);
 
     /**
      * Deletes a provisioned model resource by identifier. This operation fails with a 409 error
@@ -361,7 +442,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DeleteModelExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DeleteModelExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteModel API.
      */
     DeleteModelResponse deleteModel(DeleteModelRequest request);
@@ -378,17 +459,21 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DeleteProjectExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DeleteProjectExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProject API.
      */
     DeleteProjectResponse deleteProject(DeleteProjectRequest request);
 
     /**
-     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT The API returns the detected
-     * language and a related confidence score (between 0 and 1).
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectDominantLanguage](https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectDominantLanguage/BatchDetectDominantLanguage).
+     *
+     * <p>The DetectDominantLanguage API returns the detected language and a related confidence
+     * score (between 0 and 1).
      *
      * <p>[List of supported
-     * languages.](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect)
+     * languages](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect)
      *
      * <p>Limitations: - A record may be up to 1000 characters long.
      *
@@ -399,15 +484,19 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectDominantLanguageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectDominantLanguageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DetectDominantLanguage API.
      */
     DetectDominantLanguageResponse detectDominantLanguage(DetectDominantLanguageRequest request);
 
     /**
-     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT The API extracts entities in
-     * text records. For each entity, its type and confidence score (between 0 and 1) is returned.
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectLanguageEntities](https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageEntities/BatchDetectLanguageEntities).
+     *
+     * <p>The DetectLanguageEntities API extracts entities in text records. For each entity, its
+     * type and confidence score (between 0 and 1) is returned.
      *
      * <p>Limitations: - A text may be up to 1000 characters long.
      *
@@ -418,18 +507,21 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectLanguageEntitiesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectLanguageEntitiesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DetectLanguageEntities API.
      */
     DetectLanguageEntitiesResponse detectLanguageEntities(DetectLanguageEntitiesRequest request);
 
     /**
-     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT The API extracts key-phrases in
-     * text records. For each key-phrase, a score (between 0 and 1) is returned that highlights the
-     * importance of the key-phrase in the context of the text.
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectLanguageKeyPhrases](https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases).
      *
-     * <p>Limitations: - A record may be up to 1000 characters long.
+     * <p>The DetectLanguageKeyPhrases API extracts key-phrases in text records. For each
+     * key-phrase, a score (between 0 and 1) is returned that highlights the importance of the
+     * key-phrase in the context of the text. Limitations: - A record may be up to 1000 characters
+     * long.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -438,7 +530,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectLanguageKeyPhrasesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectLanguageKeyPhrasesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DetectLanguageKeyPhrases API.
      */
@@ -446,8 +538,11 @@ public interface AIServiceLanguage extends AutoCloseable {
             DetectLanguageKeyPhrasesRequest request);
 
     /**
-     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT The API extracts aspect-based in
-     * text records.
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectLanguageSentiments](https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments).
+     *
+     * <p>The DetectLanguageSentiments API extracts aspect-based in text records.
      *
      * <p>For aspect-based sentiment analysis, a set of aspects and their respective sentiment is
      * returned.
@@ -456,7 +551,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      * negative, neutral).
      *
      * <p>Learn more about sentiment analysis
-     * [here](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#sentiment).
+     * [here](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#sentiment).
      *
      * <p>Limitations: - A record may be up to 1000 characters long.
      *
@@ -467,7 +562,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectLanguageSentimentsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectLanguageSentimentsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DetectLanguageSentiments API.
      */
@@ -475,12 +570,16 @@ public interface AIServiceLanguage extends AutoCloseable {
             DetectLanguageSentimentsRequest request);
 
     /**
-     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT The API automatically classifies
-     * text into a set of pre-determined classes and sub-classes. A single class/subclass is
-     * returned for each record classified.
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectLanguageTextClassification](https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification).
+     *
+     * <p>The DetectLanguageTextClassification API automatically classifies text into a set of
+     * pre-determined classes and sub-classes. A single class/subclass is returned for each record
+     * classified.
      *
      * <p>Learn more about text classification
-     * [here](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#text-class).
+     * [here](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#text-class).
      *
      * <p>Limitations: - A record may be up to 1000 characters long.
      *
@@ -491,7 +590,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectLanguageTextClassificationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectLanguageTextClassificationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DetectLanguageTextClassification API.
      */
@@ -508,10 +607,25 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/GetEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/GetEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEndpoint API.
      */
     GetEndpointResponse getEndpoint(GetEndpointRequest request);
+
+    /**
+     * Gets a language service async job
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/GetJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJob API.
+     */
+    GetJobResponse getJob(GetJobRequest request);
 
     /**
      * Gets a model by identifier
@@ -523,7 +637,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/GetModelExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/GetModelExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModel API.
      */
     GetModelResponse getModel(GetModelRequest request);
@@ -538,7 +652,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/GetModelTypeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/GetModelTypeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModelType API.
      */
     GetModelTypeResponse getModelType(GetModelTypeRequest request);
@@ -553,7 +667,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/GetProjectExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/GetProjectExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProject API.
      */
     GetProjectResponse getProject(GetProjectRequest request);
@@ -568,7 +682,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
@@ -583,7 +697,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListEndpointsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListEndpointsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEndpoints API.
      */
     ListEndpointsResponse listEndpoints(ListEndpointsRequest request);
@@ -598,11 +712,26 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListEvaluationResultsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListEvaluationResultsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListEvaluationResults API.
      */
     ListEvaluationResultsResponse listEvaluationResults(ListEvaluationResultsRequest request);
+
+    /**
+     * Returns a list of language service async Jobs.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListJobsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobs API.
+     */
+    ListJobsResponse listJobs(ListJobsRequest request);
 
     /**
      * Returns a list of models.
@@ -614,7 +743,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListModelsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListModelsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModels API.
      */
     ListModelsResponse listModels(ListModelsRequest request);
@@ -629,7 +758,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListProjectsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListProjectsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProjects API.
      */
     ListProjectsResponse listProjects(ListProjectsRequest request);
@@ -644,7 +773,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListWorkRequestErrors API.
      */
@@ -660,7 +789,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
      *     API.
      */
@@ -676,7 +805,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
@@ -692,10 +821,25 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/UpdateEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/UpdateEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEndpoint API.
      */
     UpdateEndpointResponse updateEndpoint(UpdateEndpointRequest request);
+
+    /**
+     * Updates the language service async Job
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/UpdateJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJob API.
+     */
+    UpdateJobResponse updateJob(UpdateJobRequest request);
 
     /**
      * Updates the model
@@ -707,7 +851,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/UpdateModelExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/UpdateModelExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateModel API.
      */
     UpdateModelResponse updateModel(UpdateModelRequest request);
@@ -722,7 +866,7 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/UpdateProjectExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/UpdateProjectExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProject API.
      */
     UpdateProjectResponse updateProject(UpdateProjectRequest request);

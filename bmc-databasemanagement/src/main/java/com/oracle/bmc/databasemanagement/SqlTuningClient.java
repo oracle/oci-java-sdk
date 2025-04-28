@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -142,13 +142,13 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningSet.class,
                         CreateSqlTuningSetResponse.Builder::sqlTuningSet)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSqlTuningSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -178,13 +178,13 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
                         DropSqlTuningSetResponse.Builder::sqlTuningSetAdminActionStatus)
                 .handleResponseHeaderString(
                         "opc-request-id", DropSqlTuningSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -245,13 +245,13 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
                         DropSqlsInSqlTuningSetResponse.Builder::sqlTuningSetAdminActionStatus)
                 .handleResponseHeaderString(
                         "opc-request-id", DropSqlsInSqlTuningSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -279,13 +279,13 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningSet.class,
                         FetchSqlTuningSetResponse.Builder::sqlTuningSet)
                 .handleResponseHeaderString(
                         "opc-request-id", FetchSqlTuningSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -317,6 +317,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("executionId", request.getExecutionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExecutionPlanStatsComparision.class,
                         GetExecutionPlanStatsComparisionResponse.Builder
@@ -354,6 +355,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("attribute", request.getAttribute())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSqlExecutionPlan
                                 .class,
@@ -393,6 +395,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "endExecIdLessThanOrEqualTo", request.getEndExecIdLessThanOrEqualTo())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSummaryReport
                                 .class,
@@ -436,6 +439,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .SqlTuningAdvisorTaskFindingCollection.class,
@@ -482,6 +486,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .SqlTuningAdvisorTaskRecommendationCollection.class,
@@ -524,6 +529,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskCollection
                                 .class,
@@ -560,6 +566,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningSetCollection.class,
                         ListSqlTuningSetsResponse.Builder::sqlTuningSetCollection)
@@ -596,13 +603,13 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
                         LoadSqlTuningSetResponse.Builder::sqlTuningSetAdminActionStatus)
                 .handleResponseHeaderString(
                         "opc-request-id", LoadSqlTuningSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -632,13 +639,13 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
                         SaveSqlTuningSetAsResponse.Builder::sqlTuningSetAdminActionStatus)
                 .handleResponseHeaderString(
                         "opc-request-id", SaveSqlTuningSetAsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -700,13 +707,13 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
                         ValidateBasicFilterResponse.Builder::sqlTuningSetAdminActionStatus)
                 .handleResponseHeaderString(
                         "opc-request-id", ValidateBasicFilterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

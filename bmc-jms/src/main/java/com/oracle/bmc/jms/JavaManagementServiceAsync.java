@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms;
@@ -7,7 +7,13 @@ package com.oracle.bmc.jms;
 import com.oracle.bmc.jms.requests.*;
 import com.oracle.bmc.jms.responses.*;
 
-/** API for the Java Management Service. Use this API to view, create, and manage Fleets. */
+/**
+ * The APIs for the [Fleet
+ * Management](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-management.html) feature of Java
+ * Management Service to monitor and manage the usage of Java in your enterprise. Use these APIs to
+ * manage fleets, configure managed instances to report to fleets, and gain insights into the Java
+ * workloads running on these instances by carrying out basic and advanced features.
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public interface JavaManagementServiceAsync extends AutoCloseable {
 
@@ -124,6 +130,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Request to perform validation of the DRS file and create the file to the Object Storage.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDrsFileResponse> createDrsFile(
+            CreateDrsFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateDrsFileRequest, CreateDrsFileResponse>
+                    handler);
+
+    /**
      * Create a new Fleet using the information provided.
      *
      * <p>`inventoryLog` is now a required parameter for CreateFleet API. Update existing
@@ -142,6 +163,24 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateFleetResponse> createFleet(
             CreateFleetRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateFleetRequest, CreateFleetResponse> handler);
+
+    /**
+     * Registers an agent's JmsPlugin, optionally attaching to an existing fleet of the tenancy.
+     * JmsPlugins registered fleet-less are created with lifecycle state INACTIVE. For the operation
+     * to be authorized, the agent must exist, and the authorized user requires JMS_PLUGIN_CREATE
+     * permission for the agent's compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateJmsPluginResponse> createJmsPlugin(
+            CreateJmsPluginRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateJmsPluginRequest, CreateJmsPluginResponse>
+                    handler);
 
     /**
      * Deletes the blocklist record specified by an identifier.
@@ -173,6 +212,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             DeleteCryptoAnalysisResultRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteCryptoAnalysisResultRequest, DeleteCryptoAnalysisResultResponse>
+                    handler);
+
+    /**
+     * Request to delete the DRS file from the Object Storage.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDrsFileResponse> deleteDrsFile(
+            DeleteDrsFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteDrsFileRequest, DeleteDrsFileResponse>
                     handler);
 
     /**
@@ -209,6 +263,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deletes a JmsPlugin. The JmsPlugin may be visible for some time with state DELETED. Deleted
+     * plugins will not be able to communicate with the JMS service.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteJmsPluginResponse> deleteJmsPlugin(
+            DeleteJmsPluginRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteJmsPluginRequest, DeleteJmsPluginResponse>
+                    handler);
+
+    /**
      * Deletes only the metadata of the Performance Tuning Analysis result, but the file remains in
      * the object storage.
      *
@@ -228,6 +298,34 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Request to disable the DRS in the selected target in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableDrsResponse> disableDrs(
+            DisableDrsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DisableDrsRequest, DisableDrsResponse> handler);
+
+    /**
+     * Request to enable the DRS in the selected target in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableDrsResponse> enableDrs(
+            EnableDrsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<EnableDrsRequest, EnableDrsResponse> handler);
+
+    /**
      * Generates Agent Deploy Script for Fleet using the information provided.
      *
      * @param request The request object containing the details to send
@@ -244,6 +342,40 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Generates the agent installer configuration using the information provided.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateAgentInstallerConfigurationResponse>
+            generateAgentInstallerConfiguration(
+                    GenerateAgentInstallerConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateAgentInstallerConfigurationRequest,
+                                    GenerateAgentInstallerConfigurationResponse>
+                            handler);
+
+    /**
+     * Generates Load Pipeline Script
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateLoadPipelineScriptResponse> generateLoadPipelineScript(
+            GenerateLoadPipelineScriptRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GenerateLoadPipelineScriptRequest, GenerateLoadPipelineScriptResponse>
+                    handler);
+
+    /**
      * Retrieve the metadata for the result of a Crypto event analysis.
      *
      * @param request The request object containing the details to send
@@ -257,6 +389,50 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             GetCryptoAnalysisResultRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetCryptoAnalysisResultRequest, GetCryptoAnalysisResultResponse>
+                    handler);
+
+    /**
+     * Get the detail about the created DRS file in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDrsFileResponse> getDrsFile(
+            GetDrsFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetDrsFileRequest, GetDrsFileResponse> handler);
+
+    /**
+     * Returns export setting for the specified fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExportSettingResponse> getExportSetting(
+            GetExportSettingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetExportSettingRequest, GetExportSettingResponse>
+                    handler);
+
+    /**
+     * Returns last export status for the specified fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExportStatusResponse> getExportStatus(
+            GetExportStatusRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetExportStatusRequest, GetExportStatusResponse>
                     handler);
 
     /**
@@ -356,6 +532,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns the JmsPlugin.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetJmsPluginResponse> getJmsPlugin(
+            GetJmsPluginRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetJmsPluginRequest, GetJmsPluginResponse>
+                    handler);
+
+    /**
      * Retrieve metadata of the Performance Tuning Analysis result.
      *
      * @param request The request object containing the details to send
@@ -386,6 +577,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Returns a list of the agent installer information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAgentInstallersResponse> listAgentInstallers(
+            ListAgentInstallersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAgentInstallersRequest, ListAgentInstallersResponse>
                     handler);
 
     /**
@@ -436,6 +643,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List the details about the created DRS files in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDrsFilesResponse> listDrsFiles(
+            ListDrsFilesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListDrsFilesRequest, ListDrsFilesResponse>
+                    handler);
+
+    /**
      * List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle
      * state.
      *
@@ -450,6 +672,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             ListFleetDiagnosesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListFleetDiagnosesRequest, ListFleetDiagnosesResponse>
+                    handler);
+
+    /**
+     * Returns a list of fleet errors that describe all detected errors.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListFleetErrorsResponse> listFleetErrors(
+            ListFleetErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListFleetErrorsRequest, ListFleetErrorsResponse>
                     handler);
 
     /**
@@ -533,6 +770,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the JmsPlugins.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListJmsPluginsResponse> listJmsPlugins(
+            ListJmsPluginsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListJmsPluginsRequest, ListJmsPluginsResponse>
+                    handler);
+
+    /**
      * List Java Runtime usage in a specified host filtered by query parameters.
      *
      * @param request The request object containing the details to send
@@ -564,6 +816,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                                     ListPerformanceTuningAnalysisResultsRequest,
                                     ListPerformanceTuningAnalysisResultsResponse>
                             handler);
+
+    /**
+     * Returns a list of plugin errors that describe all detected errors.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPluginErrorsResponse> listPluginErrors(
+            ListPluginErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPluginErrorsRequest, ListPluginErrorsResponse>
+                    handler);
 
     /**
      * Retrieve a paginated list of work items for a specified work request.
@@ -662,6 +929,26 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             RequestCryptoAnalysesRequest, RequestCryptoAnalysesResponse>
                     handler);
+
+    /**
+     * Request to perform a deployed Java migration analyses. The results of the deployed Java
+     * migration analyses will be uploaded to the Object Storage bucket that you designate when you
+     * enable the Java Migration Analyses feature.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RequestDeployedApplicationMigrationAnalysesResponse>
+            requestDeployedApplicationMigrationAnalyses(
+                    RequestDeployedApplicationMigrationAnalysesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RequestDeployedApplicationMigrationAnalysesRequest,
+                                    RequestDeployedApplicationMigrationAnalysesResponse>
+                            handler);
 
     /**
      * Request to perform a Java migration analysis. The results of the Java migration analysis will
@@ -828,6 +1115,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Returns a high level summary of FleetErrors.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeFleetErrorsResponse> summarizeFleetErrors(
+            SummarizeFleetErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeFleetErrorsRequest, SummarizeFleetErrorsResponse>
+                    handler);
+
+    /**
      * List Java installation usage in a Fleet filtered by query parameters.
      *
      * @param request The request object containing the details to send
@@ -928,6 +1231,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Returns a high level summary of PluginErrors.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizePluginErrorsResponse> summarizePluginErrors(
+            SummarizePluginErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizePluginErrorsRequest, SummarizePluginErrorsResponse>
+                    handler);
+
+    /**
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of
      * _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
      *
@@ -942,6 +1261,38 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             SummarizeResourceInventoryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             SummarizeResourceInventoryRequest, SummarizeResourceInventoryResponse>
+                    handler);
+
+    /**
+     * Request to perform validation of the DRS file and update the existing file in the Object
+     * Storage.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDrsFileResponse> updateDrsFile(
+            UpdateDrsFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateDrsFileRequest, UpdateDrsFileResponse>
+                    handler);
+
+    /**
+     * Updates existing export setting for the specified fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExportSettingResponse> updateExportSetting(
+            UpdateExportSettingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExportSettingRequest, UpdateExportSettingResponse>
                     handler);
 
     /**
@@ -994,4 +1345,19 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                                     UpdateFleetAgentConfigurationRequest,
                                     UpdateFleetAgentConfigurationResponse>
                             handler);
+
+    /**
+     * Updates the Fleet of a JmsPlugin.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateJmsPluginResponse> updateJmsPlugin(
+            UpdateJmsPluginRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateJmsPluginRequest, UpdateJmsPluginResponse>
+                    handler);
 }

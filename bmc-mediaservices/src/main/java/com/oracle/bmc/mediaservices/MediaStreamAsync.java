@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices;
@@ -14,8 +14,8 @@ import com.oracle.bmc.mediaservices.responses.*;
  *
  * <p>Use the Media Services API to configure media workflows and run Media Flow jobs, create
  * distribution channels, ingest assets, create Preview URLs and play assets. For more information,
- * see [Media Flow](https://docs.cloud.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media
- * Streams](https://docs.cloud.oracle.com/iaas/Content/dms-mediastream/home.htm).
+ * see [Media Flow](https://docs.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media
+ * Streams](https://docs.oracle.com/iaas/Content/dms-mediastream/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public interface MediaStreamAsync extends AutoCloseable {
@@ -70,7 +70,10 @@ public interface MediaStreamAsync extends AutoCloseable {
 
     /**
      * Gets the playlist content for the specified Packaging Configuration and Media Asset
-     * combination.
+     * combination. This API call is made using the MediaStreamsClient, which requires the endpoint
+     * to be set with the value of the distribution channel domain name (for example,
+     * https://example_channel.dc.mediaservices.example_region.oci.oraclecloud.com) to generate a
+     * session token or playlist for a media asset registered in this distribution channel.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -85,7 +88,11 @@ public interface MediaStreamAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Generate a new streaming session token.
+     * Generate a new streaming session token. This API call is made using the MediaStreamsClient,
+     * which requires the endpoint to be set with the value of the distribution channel domain name
+     * (for example, https://example_channel.dc.mediaservices.example_region.oci.oraclecloud.com) to
+     * generate a session token or playlist for a media asset registered in this distribution
+     * channel.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

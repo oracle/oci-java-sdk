@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring;
@@ -56,7 +56,8 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
         if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
-                            "StackMonitoringAsyncClient", "exportMetricExtension"));
+                            "StackMonitoringAsyncClient",
+                            "exportMetricExtension,exportMonitoringTemplate"));
         }
     }
 
@@ -121,6 +122,41 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     @Override
     public void setRegion(String regionId) {
         super.setRegion(regionId);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApplyMonitoringTemplateResponse> applyMonitoringTemplate(
+            ApplyMonitoringTemplateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ApplyMonitoringTemplateRequest, ApplyMonitoringTemplateResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMonitoringTemplateId(), "monitoringTemplateId must not be blank");
+
+        return clientCall(request, ApplyMonitoringTemplateResponse::builder)
+                .logger(LOG, "applyMonitoringTemplate")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ApplyMonitoringTemplate",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoringTemplate/ApplyMonitoringTemplate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ApplyMonitoringTemplateRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoringTemplates")
+                .appendPathParam(request.getMonitoringTemplateId())
+                .appendPathParam("actions")
+                .appendPathParam("apply")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ApplyMonitoringTemplateResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ApplyMonitoringTemplateResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -297,7 +333,7 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "StackMonitoring",
                         "ChangeMonitoredResourceTaskCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/monitoredResourceTask/ChangeMonitoredResourceTaskCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceTask/ChangeMonitoredResourceTaskCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeMonitoredResourceTaskCompartmentRequest::builder)
                 .basePath("/20210330")
@@ -317,6 +353,81 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeProcessSetCompartmentResponse>
+            changeProcessSetCompartment(
+                    ChangeProcessSetCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeProcessSetCompartmentRequest,
+                                    ChangeProcessSetCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getProcessSetId(), "processSetId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeProcessSetCompartmentDetails(),
+                "changeProcessSetCompartmentDetails is required");
+
+        return clientCall(request, ChangeProcessSetCompartmentResponse::builder)
+                .logger(LOG, "changeProcessSetCompartment")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ChangeProcessSetCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/ChangeProcessSetCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeProcessSetCompartmentRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendPathParam(request.getProcessSetId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeProcessSetCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAlarmConditionResponse> createAlarmCondition(
+            CreateAlarmConditionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateAlarmConditionRequest, CreateAlarmConditionResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateAlarmConditionDetails(),
+                "createAlarmConditionDetails is required");
+
+        Validate.notBlank(
+                request.getMonitoringTemplateId(), "monitoringTemplateId must not be blank");
+
+        return clientCall(request, CreateAlarmConditionResponse::builder)
+                .logger(LOG, "createAlarmCondition")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "CreateAlarmCondition",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/AlarmCondition/CreateAlarmCondition")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAlarmConditionRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoringTemplates")
+                .appendPathParam(request.getMonitoringTemplateId())
+                .appendPathParam("alarmConditions")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.AlarmCondition.class,
+                        CreateAlarmConditionResponse.Builder::alarmCondition)
+                .handleResponseHeaderString("etag", CreateAlarmConditionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateAlarmConditionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBaselineableMetricResponse> createBaselineableMetric(
             CreateBaselineableMetricRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -331,7 +442,7 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "StackMonitoring",
                         "CreateBaselineableMetric",
-                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/CreateBaselineableMetricDetails/CreateBaselineableMetric")
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/CreateBaselineableMetric")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateBaselineableMetricRequest::builder)
                 .basePath("/20210330")
@@ -410,6 +521,42 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", CreateDiscoveryJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDiscoveryJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMaintenanceWindowResponse> createMaintenanceWindow(
+            CreateMaintenanceWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateMaintenanceWindowRequest, CreateMaintenanceWindowResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateMaintenanceWindowDetails(),
+                "createMaintenanceWindowDetails is required");
+
+        return clientCall(request, CreateMaintenanceWindowResponse::builder)
+                .logger(LOG, "createMaintenanceWindow")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "CreateMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/CreateMaintenanceWindow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMaintenanceWindowRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MaintenanceWindow.class,
+                        CreateMaintenanceWindowResponse.Builder::maintenanceWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateMaintenanceWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMaintenanceWindowResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateMaintenanceWindowResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -569,6 +716,104 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMonitoringTemplateResponse> createMonitoringTemplate(
+            CreateMonitoringTemplateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateMonitoringTemplateRequest, CreateMonitoringTemplateResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateMonitoringTemplateDetails(),
+                "createMonitoringTemplateDetails is required");
+
+        return clientCall(request, CreateMonitoringTemplateResponse::builder)
+                .logger(LOG, "createMonitoringTemplate")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "CreateMonitoringTemplate",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoringTemplate/CreateMonitoringTemplate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMonitoringTemplateRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoringTemplates")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MonitoringTemplate.class,
+                        CreateMonitoringTemplateResponse.Builder::monitoringTemplate)
+                .handleResponseHeaderString("etag", CreateMonitoringTemplateResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMonitoringTemplateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProcessSetResponse> createProcessSet(
+            CreateProcessSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateProcessSetRequest, CreateProcessSetResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateProcessSetDetails(), "createProcessSetDetails is required");
+
+        return clientCall(request, CreateProcessSetResponse::builder)
+                .logger(LOG, "createProcessSet")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "CreateProcessSet",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/CreateProcessSet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateProcessSetRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.ProcessSet.class,
+                        CreateProcessSetResponse.Builder::processSet)
+                .handleResponseHeaderString("etag", CreateProcessSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateProcessSetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAlarmConditionResponse> deleteAlarmCondition(
+            DeleteAlarmConditionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAlarmConditionRequest, DeleteAlarmConditionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAlarmConditionId(), "alarmConditionId must not be blank");
+
+        Validate.notBlank(
+                request.getMonitoringTemplateId(), "monitoringTemplateId must not be blank");
+
+        return clientCall(request, DeleteAlarmConditionResponse::builder)
+                .logger(LOG, "deleteAlarmCondition")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "DeleteAlarmCondition",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/AlarmCondition/DeleteAlarmCondition")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAlarmConditionRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoringTemplates")
+                .appendPathParam(request.getMonitoringTemplateId())
+                .appendPathParam("alarmConditions")
+                .appendPathParam(request.getAlarmConditionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAlarmConditionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteBaselineableMetricResponse> deleteBaselineableMetric(
             DeleteBaselineableMetricRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -651,6 +896,38 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDiscoveryJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMaintenanceWindowResponse> deleteMaintenanceWindow(
+            DeleteMaintenanceWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMaintenanceWindowRequest, DeleteMaintenanceWindowResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMaintenanceWindowId(), "maintenanceWindowId must not be blank");
+
+        return clientCall(request, DeleteMaintenanceWindowResponse::builder)
+                .logger(LOG, "deleteMaintenanceWindow")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "DeleteMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/DeleteMaintenanceWindow")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMaintenanceWindowRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .appendPathParam(request.getMaintenanceWindowId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMaintenanceWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMaintenanceWindowResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -743,6 +1020,63 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMonitoredResourceTypeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMonitoringTemplateResponse> deleteMonitoringTemplate(
+            DeleteMonitoringTemplateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMonitoringTemplateRequest, DeleteMonitoringTemplateResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMonitoringTemplateId(), "monitoringTemplateId must not be blank");
+
+        return clientCall(request, DeleteMonitoringTemplateResponse::builder)
+                .logger(LOG, "deleteMonitoringTemplate")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "DeleteMonitoringTemplate",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoringTemplate/DeleteMonitoringTemplate")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMonitoringTemplateRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoringTemplates")
+                .appendPathParam(request.getMonitoringTemplateId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMonitoringTemplateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProcessSetResponse> deleteProcessSet(
+            DeleteProcessSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteProcessSetRequest, DeleteProcessSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProcessSetId(), "processSetId must not be blank");
+
+        return clientCall(request, DeleteProcessSetResponse::builder)
+                .logger(LOG, "deleteProcessSet")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "DeleteProcessSet",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/DeleteProcessSet")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteProcessSetRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendPathParam(request.getProcessSetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteProcessSetResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -912,7 +1246,7 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "StackMonitoring",
                         "EvaluateBaselineableMetric",
-                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/EvaluateBaselineableMetricResult/EvaluateBaselineableMetric")
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/EvaluateBaselineableMetric")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EvaluateBaselineableMetricRequest::builder)
                 .basePath("/20210330")
@@ -968,6 +1302,78 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", ExportMetricExtensionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ExportMetricExtensionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportMonitoringTemplateResponse> exportMonitoringTemplate(
+            ExportMonitoringTemplateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ExportMonitoringTemplateRequest, ExportMonitoringTemplateResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMonitoringTemplateId(), "monitoringTemplateId must not be blank");
+
+        return clientCall(request, ExportMonitoringTemplateResponse::builder)
+                .logger(LOG, "exportMonitoringTemplate")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ExportMonitoringTemplate",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoringTemplate/ExportMonitoringTemplate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExportMonitoringTemplateRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoringTemplates")
+                .appendPathParam(request.getMonitoringTemplateId())
+                .appendPathParam("actions")
+                .appendPathParam("export")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        java.io.InputStream.class,
+                        ExportMonitoringTemplateResponse.Builder::inputStream)
+                .handleResponseHeaderString("etag", ExportMonitoringTemplateResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportMonitoringTemplateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAlarmConditionResponse> getAlarmCondition(
+            GetAlarmConditionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAlarmConditionRequest, GetAlarmConditionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAlarmConditionId(), "alarmConditionId must not be blank");
+
+        Validate.notBlank(
+                request.getMonitoringTemplateId(), "monitoringTemplateId must not be blank");
+
+        return clientCall(request, GetAlarmConditionResponse::builder)
+                .logger(LOG, "getAlarmCondition")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "GetAlarmCondition",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/AlarmCondition/GetAlarmCondition")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAlarmConditionRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoringTemplates")
+                .appendPathParam(request.getMonitoringTemplateId())
+                .appendPathParam("alarmConditions")
+                .appendPathParam(request.getAlarmConditionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.AlarmCondition.class,
+                        GetAlarmConditionResponse.Builder::alarmCondition)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAlarmConditionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetAlarmConditionResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -1063,6 +1469,38 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", GetDiscoveryJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDiscoveryJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMaintenanceWindowResponse> getMaintenanceWindow(
+            GetMaintenanceWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMaintenanceWindowRequest, GetMaintenanceWindowResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMaintenanceWindowId(), "maintenanceWindowId must not be blank");
+
+        return clientCall(request, GetMaintenanceWindowResponse::builder)
+                .logger(LOG, "getMaintenanceWindow")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "GetMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/GetMaintenanceWindow")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMaintenanceWindowRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .appendPathParam(request.getMaintenanceWindowId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MaintenanceWindow.class,
+                        GetMaintenanceWindowResponse.Builder::maintenanceWindow)
+                .handleResponseHeaderString("etag", GetMaintenanceWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMaintenanceWindowResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1194,6 +1632,68 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetMonitoringTemplateResponse> getMonitoringTemplate(
+            GetMonitoringTemplateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMonitoringTemplateRequest, GetMonitoringTemplateResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMonitoringTemplateId(), "monitoringTemplateId must not be blank");
+
+        return clientCall(request, GetMonitoringTemplateResponse::builder)
+                .logger(LOG, "getMonitoringTemplate")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "GetMonitoringTemplate",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoringTemplate/GetMonitoringTemplate")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMonitoringTemplateRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoringTemplates")
+                .appendPathParam(request.getMonitoringTemplateId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MonitoringTemplate.class,
+                        GetMonitoringTemplateResponse.Builder::monitoringTemplate)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMonitoringTemplateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetMonitoringTemplateResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProcessSetResponse> getProcessSet(
+            GetProcessSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetProcessSetRequest, GetProcessSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProcessSetId(), "processSetId must not be blank");
+
+        return clientCall(request, GetProcessSetResponse::builder)
+                .logger(LOG, "getProcessSet")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "GetProcessSet",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/GetProcessSet")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetProcessSetRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendPathParam(request.getProcessSetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.ProcessSet.class,
+                        GetProcessSetResponse.Builder::processSet)
+                .handleResponseHeaderString("etag", GetProcessSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetProcessSetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1226,6 +1726,54 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ListAlarmConditionsResponse> listAlarmConditions(
+            ListAlarmConditionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAlarmConditionsRequest, ListAlarmConditionsResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMonitoringTemplateId(), "monitoringTemplateId must not be blank");
+
+        return clientCall(request, ListAlarmConditionsResponse::builder)
+                .logger(LOG, "listAlarmConditions")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListAlarmConditions",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/AlarmCondition/ListAlarmConditions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAlarmConditionsRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoringTemplates")
+                .appendPathParam(request.getMonitoringTemplateId())
+                .appendPathParam("alarmConditions")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendListQueryParam(
+                        "resourceTypes",
+                        request.getResourceTypes(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "metricName",
+                        request.getMetricName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.AlarmConditionCollection.class,
+                        ListAlarmConditionsResponse.Builder::alarmConditionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAlarmConditionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAlarmConditionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListBaselineableMetricsResponse> listBaselineableMetrics(
             ListBaselineableMetricsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1237,12 +1785,14 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "StackMonitoring",
                         "ListBaselineableMetrics",
-                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetricSummary/ListBaselineableMetrics")
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/ListBaselineableMetrics")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListBaselineableMetricsRequest::builder)
                 .basePath("/20210330")
                 .appendPathParam("baselineableMetrics")
                 .appendQueryParam("resourceGroup", request.getResourceGroup())
+                .appendQueryParam("resourceType", request.getResourceType())
+                .appendQueryParam("isOutOfBox", request.getIsOutOfBox())
                 .appendQueryParam("name", request.getName())
                 .appendQueryParam("metricNamespace", request.getMetricNamespace())
                 .appendQueryParam("limit", request.getLimit())
@@ -1301,6 +1851,52 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListConfigsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListConfigsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDefinedMonitoringTemplatesResponse>
+            listDefinedMonitoringTemplates(
+                    ListDefinedMonitoringTemplatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDefinedMonitoringTemplatesRequest,
+                                    ListDefinedMonitoringTemplatesResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDefinedMonitoringTemplatesResponse::builder)
+                .logger(LOG, "listDefinedMonitoringTemplates")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListDefinedMonitoringTemplates",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DefinedMonitoringTemplateSummary/ListDefinedMonitoringTemplates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDefinedMonitoringTemplatesRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("definedMonitoringTemplates")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "resourceTypes",
+                        request.getResourceTypes(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.DefinedMonitoringTemplateCollection
+                                .class,
+                        ListDefinedMonitoringTemplatesResponse.Builder
+                                ::definedMonitoringTemplateCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDefinedMonitoringTemplatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDefinedMonitoringTemplatesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -1379,12 +1975,51 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ListMaintenanceWindowsResponse> listMaintenanceWindows(
+            ListMaintenanceWindowsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMaintenanceWindowsResponse::builder)
+                .logger(LOG, "listMaintenanceWindows")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListMaintenanceWindows",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/ListMaintenanceWindows")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMaintenanceWindowsRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("lifecycleDetails", request.getLifecycleDetails())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MaintenanceWindowCollection.class,
+                        ListMaintenanceWindowsResponse.Builder::maintenanceWindowCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMaintenanceWindowsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMaintenanceWindowsResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListMaintenanceWindowsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMetricExtensionsResponse> listMetricExtensions(
             ListMetricExtensionsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
                             ListMetricExtensionsRequest, ListMetricExtensionsResponse>
                     handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListMetricExtensionsResponse::builder)
                 .logger(LOG, "listMetricExtensions")
@@ -1406,6 +2041,7 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("status", request.getStatus())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("enabledOnResourceId", request.getEnabledOnResourceId())
+                .appendQueryParam("metricExtensionId", request.getMetricExtensionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -1485,6 +2121,8 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("status", request.getStatus())
                 .appendQueryParam("isExcludeSystemTypes", request.getIsExcludeSystemTypes())
                 .appendQueryParam("metricNamespace", request.getMetricNamespace())
+                .appendEnumQueryParam("sourceType", request.getSourceType())
+                .appendEnumQueryParam("resourceCategory", request.getResourceCategory())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("limit", request.getLimit())
@@ -1534,6 +2172,7 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("name", request.getName())
                 .appendQueryParam("workRequestId", request.getWorkRequestId())
+                .appendEnumQueryParam("status", request.getStatus())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("limit", request.getLimit())
@@ -1549,6 +2188,92 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-next-page", ListMonitoredResourcesResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListMonitoredResourcesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitoringTemplatesResponse> listMonitoringTemplates(
+            ListMonitoringTemplatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMonitoringTemplatesRequest, ListMonitoringTemplatesResponse>
+                    handler) {
+
+        return clientCall(request, ListMonitoringTemplatesResponse::builder)
+                .logger(LOG, "listMonitoringTemplates")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListMonitoringTemplates",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoringTemplate/ListMonitoringTemplates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMonitoringTemplatesRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoringTemplates")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("monitoringTemplateId", request.getMonitoringTemplateId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendListQueryParam(
+                        "resourceTypes",
+                        request.getResourceTypes(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "metricName",
+                        request.getMetricName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "namespace",
+                        request.getNamespace(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MonitoringTemplateCollection.class,
+                        ListMonitoringTemplatesResponse.Builder::monitoringTemplateCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMonitoringTemplatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMonitoringTemplatesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProcessSetsResponse> listProcessSets(
+            ListProcessSetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListProcessSetsRequest, ListProcessSetsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListProcessSetsResponse::builder)
+                .logger(LOG, "listProcessSets")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListProcessSets",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSetCollection/ListProcessSets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProcessSetsRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.ProcessSetCollection.class,
+                        ListProcessSetsResponse.Builder::processSetCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProcessSetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProcessSetsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1785,6 +2510,135 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<RequestSummarizedMetricExtensionsMetricsResponse>
+            requestSummarizedMetricExtensionsMetrics(
+                    RequestSummarizedMetricExtensionsMetricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RequestSummarizedMetricExtensionsMetricsRequest,
+                                    RequestSummarizedMetricExtensionsMetricsResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getRequestSummarizedMetricExtensionsMetricsDetails(),
+                "requestSummarizedMetricExtensionsMetricsDetails is required");
+
+        return clientCall(request, RequestSummarizedMetricExtensionsMetricsResponse::builder)
+                .logger(LOG, "requestSummarizedMetricExtensionsMetrics")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "RequestSummarizedMetricExtensionsMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/RequestSummarizedMetricExtensionsMetrics")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RequestSummarizedMetricExtensionsMetricsRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("metricExtensions")
+                .appendPathParam("actions")
+                .appendPathParam("summarizeMetrics")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model
+                                .MetricExtensionMetricAggregationCollection.class,
+                        RequestSummarizedMetricExtensionsMetricsResponse.Builder
+                                ::metricExtensionMetricAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RequestSummarizedMetricExtensionsMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        RequestSummarizedMetricExtensionsMetricsResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        RequestSummarizedMetricExtensionsMetricsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestSummarizedMetricExtensionsResourcesResponse>
+            requestSummarizedMetricExtensionsResources(
+                    RequestSummarizedMetricExtensionsResourcesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RequestSummarizedMetricExtensionsResourcesRequest,
+                                    RequestSummarizedMetricExtensionsResourcesResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getRequestSummarizedMetricExtensionsResourcesDetails(),
+                "requestSummarizedMetricExtensionsResourcesDetails is required");
+
+        return clientCall(request, RequestSummarizedMetricExtensionsResourcesResponse::builder)
+                .logger(LOG, "requestSummarizedMetricExtensionsResources")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "RequestSummarizedMetricExtensionsResources",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/RequestSummarizedMetricExtensionsResources")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RequestSummarizedMetricExtensionsResourcesRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("metricExtensions")
+                .appendPathParam("actions")
+                .appendPathParam("summarizeResources")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model
+                                .MetricExtensionResourceAggregationCollection.class,
+                        RequestSummarizedMetricExtensionsResourcesResponse.Builder
+                                ::metricExtensionResourceAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RequestSummarizedMetricExtensionsResourcesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        RequestSummarizedMetricExtensionsResourcesResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        RequestSummarizedMetricExtensionsResourcesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetryFailedMaintenanceWindowOperationResponse>
+            retryFailedMaintenanceWindowOperation(
+                    RetryFailedMaintenanceWindowOperationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RetryFailedMaintenanceWindowOperationRequest,
+                                    RetryFailedMaintenanceWindowOperationResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getMaintenanceWindowId(), "maintenanceWindowId must not be blank");
+
+        return clientCall(request, RetryFailedMaintenanceWindowOperationResponse::builder)
+                .logger(LOG, "retryFailedMaintenanceWindowOperation")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "RetryFailedMaintenanceWindowOperation",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/RetryFailedMaintenanceWindowOperation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RetryFailedMaintenanceWindowOperationRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .appendPathParam(request.getMaintenanceWindowId())
+                .appendPathParam("actions")
+                .appendPathParam("retryFailedOperation")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RetryFailedMaintenanceWindowOperationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RetryFailedMaintenanceWindowOperationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchAssociatedResourcesResponse> searchAssociatedResources(
             SearchAssociatedResourcesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1985,6 +2839,40 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<StopMaintenanceWindowResponse> stopMaintenanceWindow(
+            StopMaintenanceWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StopMaintenanceWindowRequest, StopMaintenanceWindowResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMaintenanceWindowId(), "maintenanceWindowId must not be blank");
+
+        return clientCall(request, StopMaintenanceWindowResponse::builder)
+                .logger(LOG, "stopMaintenanceWindow")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "StopMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/StopMaintenanceWindow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopMaintenanceWindowRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .appendPathParam(request.getMaintenanceWindowId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        StopMaintenanceWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StopMaintenanceWindowResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<TestMetricExtensionResponse> testMetricExtension(
             TestMetricExtensionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2022,6 +2910,82 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                         TestMetricExtensionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", TestMetricExtensionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnapplyMonitoringTemplateResponse> unapplyMonitoringTemplate(
+            UnapplyMonitoringTemplateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UnapplyMonitoringTemplateRequest, UnapplyMonitoringTemplateResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMonitoringTemplateId(), "monitoringTemplateId must not be blank");
+
+        return clientCall(request, UnapplyMonitoringTemplateResponse::builder)
+                .logger(LOG, "unapplyMonitoringTemplate")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UnapplyMonitoringTemplate",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoringTemplate/UnapplyMonitoringTemplate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UnapplyMonitoringTemplateRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoringTemplates")
+                .appendPathParam(request.getMonitoringTemplateId())
+                .appendPathParam("actions")
+                .appendPathParam("unapply")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UnapplyMonitoringTemplateResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UnapplyMonitoringTemplateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAlarmConditionResponse> updateAlarmCondition(
+            UpdateAlarmConditionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAlarmConditionRequest, UpdateAlarmConditionResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getUpdateAlarmConditionDetails(),
+                "updateAlarmConditionDetails is required");
+
+        Validate.notBlank(request.getAlarmConditionId(), "alarmConditionId must not be blank");
+
+        Validate.notBlank(
+                request.getMonitoringTemplateId(), "monitoringTemplateId must not be blank");
+
+        return clientCall(request, UpdateAlarmConditionResponse::builder)
+                .logger(LOG, "updateAlarmCondition")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UpdateAlarmCondition",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/AlarmCondition/UpdateAlarmCondition")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAlarmConditionRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoringTemplates")
+                .appendPathParam(request.getMonitoringTemplateId())
+                .appendPathParam("alarmConditions")
+                .appendPathParam(request.getAlarmConditionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.AlarmCondition.class,
+                        UpdateAlarmConditionResponse.Builder::alarmCondition)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAlarmConditionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateAlarmConditionResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -2082,7 +3046,7 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "StackMonitoring",
                         "UpdateBaselineableMetric",
-                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/UpdateBaselineableMetricDetails/UpdateBaselineableMetric")
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/UpdateBaselineableMetric")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateBaselineableMetricRequest::builder)
                 .basePath("/20210330")
@@ -2133,6 +3097,42 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", UpdateConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConfigResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMaintenanceWindowResponse> updateMaintenanceWindow(
+            UpdateMaintenanceWindowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMaintenanceWindowId(), "maintenanceWindowId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMaintenanceWindowDetails(),
+                "updateMaintenanceWindowDetails is required");
+
+        return clientCall(request, UpdateMaintenanceWindowResponse::builder)
+                .logger(LOG, "updateMaintenanceWindow")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UpdateMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/UpdateMaintenanceWindow")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMaintenanceWindowRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .appendPathParam(request.getMaintenanceWindowId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateMaintenanceWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMaintenanceWindowResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2287,6 +3287,78 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "etag", UpdateMonitoredResourceTypeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMonitoredResourceTypeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMonitoringTemplateResponse> updateMonitoringTemplate(
+            UpdateMonitoringTemplateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMonitoringTemplateRequest, UpdateMonitoringTemplateResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMonitoringTemplateId(), "monitoringTemplateId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMonitoringTemplateDetails(),
+                "updateMonitoringTemplateDetails is required");
+
+        return clientCall(request, UpdateMonitoringTemplateResponse::builder)
+                .logger(LOG, "updateMonitoringTemplate")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UpdateMonitoringTemplate",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoringTemplate/UpdateMonitoringTemplate")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMonitoringTemplateRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoringTemplates")
+                .appendPathParam(request.getMonitoringTemplateId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MonitoringTemplate.class,
+                        UpdateMonitoringTemplateResponse.Builder::monitoringTemplate)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMonitoringTemplateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateMonitoringTemplateResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProcessSetResponse> updateProcessSet(
+            UpdateProcessSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateProcessSetRequest, UpdateProcessSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProcessSetId(), "processSetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateProcessSetDetails(), "updateProcessSetDetails is required");
+
+        return clientCall(request, UpdateProcessSetResponse::builder)
+                .logger(LOG, "updateProcessSet")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UpdateProcessSet",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/UpdateProcessSet")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateProcessSetRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendPathParam(request.getProcessSetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.ProcessSet.class,
+                        UpdateProcessSetResponse.Builder::processSet)
+                .handleResponseHeaderString("etag", UpdateProcessSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateProcessSetResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

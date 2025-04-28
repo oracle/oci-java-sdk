@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -124,6 +124,41 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public ChangeManagementStationCompartmentResponse changeManagementStationCompartment(
+            ChangeManagementStationCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getManagementStationId(), "managementStationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeManagementStationCompartmentDetails(),
+                "changeManagementStationCompartmentDetails is required");
+
+        return clientCall(request, ChangeManagementStationCompartmentResponse::builder)
+                .logger(LOG, "changeManagementStationCompartment")
+                .serviceDetails(
+                        "ManagementStation",
+                        "ChangeManagementStationCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/ChangeManagementStationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeManagementStationCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managementStations")
+                .appendPathParam(request.getManagementStationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeManagementStationCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateManagementStationResponse createManagementStation(
             CreateManagementStationRequest request) {
         Objects.requireNonNull(
@@ -143,6 +178,7 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagementStation.class,
@@ -150,7 +186,6 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", CreateManagementStationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateManagementStationResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -174,10 +209,11 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getManagementStationId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteManagementStationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -200,6 +236,7 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getManagementStationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagementStation.class,
                         GetManagementStationResponse.Builder::managementStation)
@@ -208,7 +245,6 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", GetManagementStationResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetManagementStationResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -233,11 +269,20 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("id", request.getId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagementStationCollection.class,
                         ListManagementStationsResponse.Builder::managementStationCollection)
@@ -245,7 +290,6 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListManagementStationsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListManagementStationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -279,6 +323,7 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.MirrorsCollection.class,
                         ListMirrorsResponse.Builder::mirrorsCollection)
@@ -286,7 +331,40 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListMirrorsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMirrorsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public RefreshManagementStationConfigResponse refreshManagementStationConfig(
+            RefreshManagementStationConfigRequest request) {
+
+        Validate.notBlank(
+                request.getManagementStationId(), "managementStationId must not be blank");
+
+        return clientCall(request, RefreshManagementStationConfigResponse::builder)
+                .logger(LOG, "refreshManagementStationConfig")
+                .serviceDetails(
+                        "ManagementStation",
+                        "RefreshManagementStationConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/RefreshManagementStationConfig")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshManagementStationConfigRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managementStations")
+                .appendPathParam(request.getManagementStationId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshManagementStationConfigResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RefreshManagementStationConfigResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -315,12 +393,12 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", SynchronizeMirrorsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", SynchronizeMirrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -352,12 +430,12 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         SynchronizeSingleMirrorsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", SynchronizeSingleMirrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -385,6 +463,7 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagementStation.class,
@@ -392,7 +471,6 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString("etag", UpdateManagementStationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateManagementStationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

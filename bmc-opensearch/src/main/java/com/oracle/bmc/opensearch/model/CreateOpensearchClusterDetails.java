@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opensearch.model;
@@ -48,6 +48,12 @@ public final class CreateOpensearchClusterDetails
         "securityMode",
         "securityMasterUserName",
         "securityMasterUserPasswordHash",
+        "securitySamlConfig",
+        "backupPolicy",
+        "reverseConnectionEndpointCustomerIps",
+        "inboundClusterIds",
+        "outboundClusterConfig",
+        "maintenanceDetails",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -77,6 +83,12 @@ public final class CreateOpensearchClusterDetails
             SecurityMode securityMode,
             String securityMasterUserName,
             String securityMasterUserPasswordHash,
+            SecuritySamlConfig securitySamlConfig,
+            BackupPolicy backupPolicy,
+            java.util.List<String> reverseConnectionEndpointCustomerIps,
+            java.util.List<String> inboundClusterIds,
+            OutboundClusterConfig outboundClusterConfig,
+            CreateMaintenanceDetails maintenanceDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -105,6 +117,12 @@ public final class CreateOpensearchClusterDetails
         this.securityMode = securityMode;
         this.securityMasterUserName = securityMasterUserName;
         this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
+        this.securitySamlConfig = securitySamlConfig;
+        this.backupPolicy = backupPolicy;
+        this.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
+        this.inboundClusterIds = inboundClusterIds;
+        this.outboundClusterConfig = outboundClusterConfig;
+        this.maintenanceDetails = maintenanceDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -474,6 +492,73 @@ public final class CreateOpensearchClusterDetails
             this.__explicitlySet__.add("securityMasterUserPasswordHash");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securitySamlConfig")
+        private SecuritySamlConfig securitySamlConfig;
+
+        public Builder securitySamlConfig(SecuritySamlConfig securitySamlConfig) {
+            this.securitySamlConfig = securitySamlConfig;
+            this.__explicitlySet__.add("securitySamlConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
+        private BackupPolicy backupPolicy;
+
+        public Builder backupPolicy(BackupPolicy backupPolicy) {
+            this.backupPolicy = backupPolicy;
+            this.__explicitlySet__.add("backupPolicy");
+            return this;
+        }
+        /** The customer IP addresses of the endpoint in customer VCN */
+        @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpointCustomerIps")
+        private java.util.List<String> reverseConnectionEndpointCustomerIps;
+
+        /**
+         * The customer IP addresses of the endpoint in customer VCN
+         *
+         * @param reverseConnectionEndpointCustomerIps the value to set
+         * @return this builder
+         */
+        public Builder reverseConnectionEndpointCustomerIps(
+                java.util.List<String> reverseConnectionEndpointCustomerIps) {
+            this.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
+            this.__explicitlySet__.add("reverseConnectionEndpointCustomerIps");
+            return this;
+        }
+        /** List of inbound clusters that will be queried using cross cluster search */
+        @com.fasterxml.jackson.annotation.JsonProperty("inboundClusterIds")
+        private java.util.List<String> inboundClusterIds;
+
+        /**
+         * List of inbound clusters that will be queried using cross cluster search
+         *
+         * @param inboundClusterIds the value to set
+         * @return this builder
+         */
+        public Builder inboundClusterIds(java.util.List<String> inboundClusterIds) {
+            this.inboundClusterIds = inboundClusterIds;
+            this.__explicitlySet__.add("inboundClusterIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("outboundClusterConfig")
+        private OutboundClusterConfig outboundClusterConfig;
+
+        public Builder outboundClusterConfig(OutboundClusterConfig outboundClusterConfig) {
+            this.outboundClusterConfig = outboundClusterConfig;
+            this.__explicitlySet__.add("outboundClusterConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceDetails")
+        private CreateMaintenanceDetails maintenanceDetails;
+
+        public Builder maintenanceDetails(CreateMaintenanceDetails maintenanceDetails) {
+            this.maintenanceDetails = maintenanceDetails;
+            this.__explicitlySet__.add("maintenanceDetails");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -563,6 +648,12 @@ public final class CreateOpensearchClusterDetails
                             this.securityMode,
                             this.securityMasterUserName,
                             this.securityMasterUserPasswordHash,
+                            this.securitySamlConfig,
+                            this.backupPolicy,
+                            this.reverseConnectionEndpointCustomerIps,
+                            this.inboundClusterIds,
+                            this.outboundClusterConfig,
+                            this.maintenanceDetails,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -645,6 +736,25 @@ public final class CreateOpensearchClusterDetails
             }
             if (model.wasPropertyExplicitlySet("securityMasterUserPasswordHash")) {
                 this.securityMasterUserPasswordHash(model.getSecurityMasterUserPasswordHash());
+            }
+            if (model.wasPropertyExplicitlySet("securitySamlConfig")) {
+                this.securitySamlConfig(model.getSecuritySamlConfig());
+            }
+            if (model.wasPropertyExplicitlySet("backupPolicy")) {
+                this.backupPolicy(model.getBackupPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("reverseConnectionEndpointCustomerIps")) {
+                this.reverseConnectionEndpointCustomerIps(
+                        model.getReverseConnectionEndpointCustomerIps());
+            }
+            if (model.wasPropertyExplicitlySet("inboundClusterIds")) {
+                this.inboundClusterIds(model.getInboundClusterIds());
+            }
+            if (model.wasPropertyExplicitlySet("outboundClusterConfig")) {
+                this.outboundClusterConfig(model.getOutboundClusterConfig());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceDetails")) {
+                this.maintenanceDetails(model.getMaintenanceDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -980,6 +1090,60 @@ public final class CreateOpensearchClusterDetails
         return securityMasterUserPasswordHash;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("securitySamlConfig")
+    private final SecuritySamlConfig securitySamlConfig;
+
+    public SecuritySamlConfig getSecuritySamlConfig() {
+        return securitySamlConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
+    private final BackupPolicy backupPolicy;
+
+    public BackupPolicy getBackupPolicy() {
+        return backupPolicy;
+    }
+
+    /** The customer IP addresses of the endpoint in customer VCN */
+    @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpointCustomerIps")
+    private final java.util.List<String> reverseConnectionEndpointCustomerIps;
+
+    /**
+     * The customer IP addresses of the endpoint in customer VCN
+     *
+     * @return the value
+     */
+    public java.util.List<String> getReverseConnectionEndpointCustomerIps() {
+        return reverseConnectionEndpointCustomerIps;
+    }
+
+    /** List of inbound clusters that will be queried using cross cluster search */
+    @com.fasterxml.jackson.annotation.JsonProperty("inboundClusterIds")
+    private final java.util.List<String> inboundClusterIds;
+
+    /**
+     * List of inbound clusters that will be queried using cross cluster search
+     *
+     * @return the value
+     */
+    public java.util.List<String> getInboundClusterIds() {
+        return inboundClusterIds;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("outboundClusterConfig")
+    private final OutboundClusterConfig outboundClusterConfig;
+
+    public OutboundClusterConfig getOutboundClusterConfig() {
+        return outboundClusterConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceDetails")
+    private final CreateMaintenanceDetails maintenanceDetails;
+
+    public CreateMaintenanceDetails getMaintenanceDetails() {
+        return maintenanceDetails;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -1076,6 +1240,13 @@ public final class CreateOpensearchClusterDetails
         sb.append(", securityMasterUserName=").append(String.valueOf(this.securityMasterUserName));
         sb.append(", securityMasterUserPasswordHash=")
                 .append(String.valueOf(this.securityMasterUserPasswordHash));
+        sb.append(", securitySamlConfig=").append(String.valueOf(this.securitySamlConfig));
+        sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
+        sb.append(", reverseConnectionEndpointCustomerIps=")
+                .append(String.valueOf(this.reverseConnectionEndpointCustomerIps));
+        sb.append(", inboundClusterIds=").append(String.valueOf(this.inboundClusterIds));
+        sb.append(", outboundClusterConfig=").append(String.valueOf(this.outboundClusterConfig));
+        sb.append(", maintenanceDetails=").append(String.valueOf(this.maintenanceDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1126,6 +1297,14 @@ public final class CreateOpensearchClusterDetails
                         this.securityMasterUserName, other.securityMasterUserName)
                 && java.util.Objects.equals(
                         this.securityMasterUserPasswordHash, other.securityMasterUserPasswordHash)
+                && java.util.Objects.equals(this.securitySamlConfig, other.securitySamlConfig)
+                && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
+                && java.util.Objects.equals(
+                        this.reverseConnectionEndpointCustomerIps,
+                        other.reverseConnectionEndpointCustomerIps)
+                && java.util.Objects.equals(this.inboundClusterIds, other.inboundClusterIds)
+                && java.util.Objects.equals(this.outboundClusterConfig, other.outboundClusterConfig)
+                && java.util.Objects.equals(this.maintenanceDetails, other.maintenanceDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1226,6 +1405,30 @@ public final class CreateOpensearchClusterDetails
                         + (this.securityMasterUserPasswordHash == null
                                 ? 43
                                 : this.securityMasterUserPasswordHash.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securitySamlConfig == null
+                                ? 43
+                                : this.securitySamlConfig.hashCode());
+        result = (result * PRIME) + (this.backupPolicy == null ? 43 : this.backupPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reverseConnectionEndpointCustomerIps == null
+                                ? 43
+                                : this.reverseConnectionEndpointCustomerIps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inboundClusterIds == null ? 43 : this.inboundClusterIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outboundClusterConfig == null
+                                ? 43
+                                : this.outboundClusterConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceDetails == null
+                                ? 43
+                                : this.maintenanceDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

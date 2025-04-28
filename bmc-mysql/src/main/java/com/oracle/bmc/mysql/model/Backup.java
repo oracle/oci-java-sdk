@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -11,7 +11,7 @@ package com.oracle.bmc.mysql.model;
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -46,7 +46,11 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         "mysqlVersion",
         "shapeName",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags",
+        "immediateSourceBackupId",
+        "originalSourceBackupId",
+        "timeCopyCreated"
     })
     public Backup(
             String id,
@@ -67,7 +71,11 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             String mysqlVersion,
             String shapeName,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String immediateSourceBackupId,
+            String originalSourceBackupId,
+            java.util.Date timeCopyCreated) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -88,6 +96,10 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         this.shapeName = shapeName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
+        this.immediateSourceBackupId = immediateSourceBackupId;
+        this.originalSourceBackupId = originalSourceBackupId;
+        this.timeCopyCreated = timeCopyCreated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -380,6 +392,82 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
+         * The OCID of the immediate source DB system backup from which this DB system backup was
+         * copied.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("immediateSourceBackupId")
+        private String immediateSourceBackupId;
+
+        /**
+         * The OCID of the immediate source DB system backup from which this DB system backup was
+         * copied.
+         *
+         * @param immediateSourceBackupId the value to set
+         * @return this builder
+         */
+        public Builder immediateSourceBackupId(String immediateSourceBackupId) {
+            this.immediateSourceBackupId = immediateSourceBackupId;
+            this.__explicitlySet__.add("immediateSourceBackupId");
+            return this;
+        }
+        /**
+         * The OCID of the original source DB system backup from which this DB system backup was
+         * copied.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("originalSourceBackupId")
+        private String originalSourceBackupId;
+
+        /**
+         * The OCID of the original source DB system backup from which this DB system backup was
+         * copied.
+         *
+         * @param originalSourceBackupId the value to set
+         * @return this builder
+         */
+        public Builder originalSourceBackupId(String originalSourceBackupId) {
+            this.originalSourceBackupId = originalSourceBackupId;
+            this.__explicitlySet__.add("originalSourceBackupId");
+            return this;
+        }
+        /**
+         * The date and time the DB system backup copy was created, as described by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCopyCreated")
+        private java.util.Date timeCopyCreated;
+
+        /**
+         * The date and time the DB system backup copy was created, as described by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
+         * @param timeCopyCreated the value to set
+         * @return this builder
+         */
+        public Builder timeCopyCreated(java.util.Date timeCopyCreated) {
+            this.timeCopyCreated = timeCopyCreated;
+            this.__explicitlySet__.add("timeCopyCreated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -405,7 +493,11 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                             this.mysqlVersion,
                             this.shapeName,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.systemTags,
+                            this.immediateSourceBackupId,
+                            this.originalSourceBackupId,
+                            this.timeCopyCreated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -470,6 +562,18 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("immediateSourceBackupId")) {
+                this.immediateSourceBackupId(model.getImmediateSourceBackupId());
+            }
+            if (model.wasPropertyExplicitlySet("originalSourceBackupId")) {
+                this.originalSourceBackupId(model.getOriginalSourceBackupId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCopyCreated")) {
+                this.timeCopyCreated(model.getTimeCopyCreated());
             }
             return this;
         }
@@ -877,6 +981,72 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return definedTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
+     * The OCID of the immediate source DB system backup from which this DB system backup was
+     * copied.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("immediateSourceBackupId")
+    private final String immediateSourceBackupId;
+
+    /**
+     * The OCID of the immediate source DB system backup from which this DB system backup was
+     * copied.
+     *
+     * @return the value
+     */
+    public String getImmediateSourceBackupId() {
+        return immediateSourceBackupId;
+    }
+
+    /**
+     * The OCID of the original source DB system backup from which this DB system backup was copied.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("originalSourceBackupId")
+    private final String originalSourceBackupId;
+
+    /**
+     * The OCID of the original source DB system backup from which this DB system backup was copied.
+     *
+     * @return the value
+     */
+    public String getOriginalSourceBackupId() {
+        return originalSourceBackupId;
+    }
+
+    /**
+     * The date and time the DB system backup copy was created, as described by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCopyCreated")
+    private final java.util.Date timeCopyCreated;
+
+    /**
+     * The date and time the DB system backup copy was created, as described by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeCopyCreated() {
+        return timeCopyCreated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -911,6 +1081,11 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", immediateSourceBackupId=")
+                .append(String.valueOf(this.immediateSourceBackupId));
+        sb.append(", originalSourceBackupId=").append(String.valueOf(this.originalSourceBackupId));
+        sb.append(", timeCopyCreated=").append(String.valueOf(this.timeCopyCreated));
         sb.append(")");
         return sb.toString();
     }
@@ -944,6 +1119,12 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(
+                        this.immediateSourceBackupId, other.immediateSourceBackupId)
+                && java.util.Objects.equals(
+                        this.originalSourceBackupId, other.originalSourceBackupId)
+                && java.util.Objects.equals(this.timeCopyCreated, other.timeCopyCreated)
                 && super.equals(other);
     }
 
@@ -986,6 +1167,20 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.immediateSourceBackupId == null
+                                ? 43
+                                : this.immediateSourceBackupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.originalSourceBackupId == null
+                                ? 43
+                                : this.originalSourceBackupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCopyCreated == null ? 43 : this.timeCopyCreated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

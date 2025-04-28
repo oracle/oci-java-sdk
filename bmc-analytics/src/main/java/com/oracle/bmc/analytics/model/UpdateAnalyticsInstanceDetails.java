@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.analytics.model;
@@ -29,20 +29,23 @@ public final class UpdateAnalyticsInstanceDetails
         "emailNotification",
         "licenseType",
         "definedTags",
-        "freeformTags"
+        "freeformTags",
+        "updateChannel"
     })
     public UpdateAnalyticsInstanceDetails(
             String description,
             String emailNotification,
             LicenseType licenseType,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            UpdateChannel updateChannel) {
         super();
         this.description = description;
         this.emailNotification = emailNotification;
         this.licenseType = licenseType;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.updateChannel = updateChannel;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -95,7 +98,7 @@ public final class UpdateAnalyticsInstanceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -105,7 +108,7 @@ public final class UpdateAnalyticsInstanceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -121,7 +124,7 @@ public final class UpdateAnalyticsInstanceDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -131,7 +134,7 @@ public final class UpdateAnalyticsInstanceDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -141,6 +144,21 @@ public final class UpdateAnalyticsInstanceDetails
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /** Analytics instance update channel. */
+        @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
+        private UpdateChannel updateChannel;
+
+        /**
+         * Analytics instance update channel.
+         *
+         * @param updateChannel the value to set
+         * @return this builder
+         */
+        public Builder updateChannel(UpdateChannel updateChannel) {
+            this.updateChannel = updateChannel;
+            this.__explicitlySet__.add("updateChannel");
             return this;
         }
 
@@ -154,7 +172,8 @@ public final class UpdateAnalyticsInstanceDetails
                             this.emailNotification,
                             this.licenseType,
                             this.definedTags,
-                            this.freeformTags);
+                            this.freeformTags,
+                            this.updateChannel);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -177,6 +196,9 @@ public final class UpdateAnalyticsInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("updateChannel")) {
+                this.updateChannel(model.getUpdateChannel());
             }
             return this;
         }
@@ -233,7 +255,7 @@ public final class UpdateAnalyticsInstanceDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -243,7 +265,7 @@ public final class UpdateAnalyticsInstanceDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -256,7 +278,7 @@ public final class UpdateAnalyticsInstanceDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -266,7 +288,7 @@ public final class UpdateAnalyticsInstanceDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -274,6 +296,19 @@ public final class UpdateAnalyticsInstanceDetails
      */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
+    }
+
+    /** Analytics instance update channel. */
+    @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
+    private final UpdateChannel updateChannel;
+
+    /**
+     * Analytics instance update channel.
+     *
+     * @return the value
+     */
+    public UpdateChannel getUpdateChannel() {
+        return updateChannel;
     }
 
     @Override
@@ -296,6 +331,7 @@ public final class UpdateAnalyticsInstanceDetails
         sb.append(", licenseType=").append(String.valueOf(this.licenseType));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", updateChannel=").append(String.valueOf(this.updateChannel));
         sb.append(")");
         return sb.toString();
     }
@@ -315,6 +351,7 @@ public final class UpdateAnalyticsInstanceDetails
                 && java.util.Objects.equals(this.licenseType, other.licenseType)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.updateChannel, other.updateChannel)
                 && super.equals(other);
     }
 
@@ -329,6 +366,9 @@ public final class UpdateAnalyticsInstanceDetails
         result = (result * PRIME) + (this.licenseType == null ? 43 : this.licenseType.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateChannel == null ? 43 : this.updateChannel.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

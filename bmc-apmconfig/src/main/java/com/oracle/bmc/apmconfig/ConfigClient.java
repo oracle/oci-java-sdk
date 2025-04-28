@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmconfig;
@@ -88,6 +88,43 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     @Override
+    public CopyConfigurationResponse copyConfiguration(CopyConfigurationRequest request) {
+        Objects.requireNonNull(
+                request.getCopyConfigurationDetails(), "copyConfigurationDetails is required");
+
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Objects.requireNonNull(request.getApmTargetDomainId(), "apmTargetDomainId is required");
+
+        return clientCall(request, CopyConfigurationResponse::builder)
+                .logger(LOG, "copyConfiguration")
+                .serviceDetails(
+                        "Config",
+                        "CopyConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ExportConfigurationDetails/CopyConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CopyConfigurationRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("actions")
+                .appendPathParam("copyConfiguration")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("apmTargetDomainId", request.getApmTargetDomainId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmconfig.model.ImportConfigurationFailedItemsCollection
+                                .class,
+                        CopyConfigurationResponse.Builder::importConfigurationFailedItemsCollection)
+                .handleResponseHeaderString("etag", CopyConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CopyConfigurationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateConfigResponse createConfig(CreateConfigRequest request) {
         Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
@@ -108,6 +145,7 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-dry-run", request.getOpcDryRun())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.apmconfig.model.Config.class,
@@ -115,7 +153,6 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString("etag", CreateConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -140,9 +177,42 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteConfigResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ExportConfigurationResponse exportConfiguration(ExportConfigurationRequest request) {
+        Objects.requireNonNull(
+                request.getExportConfigurationDetails(), "exportConfigurationDetails is required");
+
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        return clientCall(request, ExportConfigurationResponse::builder)
+                .logger(LOG, "exportConfiguration")
+                .serviceDetails(
+                        "Config",
+                        "ExportConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ExportConfigurationDetails/ExportConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExportConfigurationRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("actions")
+                .appendPathParam("exportConfiguration")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmconfig.model.ExportConfigurationResponseDetails.class,
+                        ExportConfigurationResponse.Builder::exportConfigurationResponseDetails)
+                .handleResponseHeaderString("etag", ExportConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportConfigurationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -166,13 +236,48 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("apmDomainId", request.getApmDomainId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apmconfig.model.Config.class,
                         GetConfigResponse.Builder::config)
                 .handleResponseHeaderString("etag", GetConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConfigResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ImportConfigurationResponse importConfiguration(ImportConfigurationRequest request) {
+        Objects.requireNonNull(
+                request.getImportConfigurationDetails(), "importConfigurationDetails is required");
+
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        return clientCall(request, ImportConfigurationResponse::builder)
+                .logger(LOG, "importConfiguration")
+                .serviceDetails(
+                        "Config",
+                        "ImportConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ImportConfigurationDetails/ImportConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportConfigurationRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("actions")
+                .appendPathParam("importConfiguration")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmconfig.model.ImportConfigurationFailedItemsCollection
+                                .class,
+                        ImportConfigurationResponse.Builder
+                                ::importConfigurationFailedItemsCollection)
+                .handleResponseHeaderString("etag", ImportConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportConfigurationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -216,6 +321,7 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apmconfig.model.ConfigCollection.class,
                         ListConfigsResponse.Builder::configCollection)
@@ -223,7 +329,6 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListConfigsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListConfigsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -250,6 +355,7 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("apmDomainId", request.getApmDomainId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.apmconfig.model.NamespaceMetricCollection.class,
@@ -257,7 +363,6 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", RetrieveNamespaceMetricsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", RetrieveNamespaceMetricsResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -279,13 +384,43 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("apmDomainId", request.getApmDomainId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apmconfig.model.NamespaceCollection.class,
                         RetrieveNamespacesResponse.Builder::namespaceCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", RetrieveNamespacesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", RetrieveNamespacesResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public TestResponse test(TestRequest request) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Objects.requireNonNull(request.getTestDetails(), "testDetails is required");
+
+        return clientCall(request, TestResponse::builder)
+                .logger(LOG, "test")
+                .serviceDetails(
+                        "Config",
+                        "Test",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/TestOutput/Test")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("actions")
+                .appendPathParam("test")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmconfig.model.TestOutput.class,
+                        TestResponse.Builder::testOutput)
+                .handleResponseHeaderString("opc-request-id", TestResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", TestResponse.Builder::etag)
                 .callSync();
     }
 
@@ -312,6 +447,7 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-dry-run", request.getOpcDryRun())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.apmconfig.model.Config.class,
@@ -319,7 +455,6 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString("etag", UpdateConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -346,10 +481,10 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("apmDomainId", request.getApmDomainId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ValidateSpanFilterPatternResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

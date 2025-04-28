@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
 
 /**
- * A SDM masking policy difference resource. It helps track the difference between sensitive columns
- * of SDM and masking columns of the masking policy. <br>
+ * A resource that tracks the differences between sensitive columns in the sensitive data model and
+ * masking columns in the masking policy <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -68,12 +68,12 @@ public final class SdmMaskingPolicyDifference
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the SDM masking policy difference. */
+        /** The OCID of the Sensitive data model and masking policy difference resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the SDM masking policy difference.
+         * The OCID of the Sensitive data model and masking policy difference resource.
          *
          * @param id the value to set
          * @return this builder
@@ -83,12 +83,16 @@ public final class SdmMaskingPolicyDifference
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the compartment that contains the SDM masking policy difference. */
+        /**
+         * The OCID of the compartment that contains the Sensitive data model and masking policy
+         * difference resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment that contains the SDM masking policy difference.
+         * The OCID of the compartment that contains the Sensitive data model and masking policy
+         * difference resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -230,7 +234,7 @@ public final class SdmMaskingPolicyDifference
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -240,7 +244,7 @@ public final class SdmMaskingPolicyDifference
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -255,9 +259,8 @@ public final class SdmMaskingPolicyDifference
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -265,9 +268,8 @@ public final class SdmMaskingPolicyDifference
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -375,12 +377,12 @@ public final class SdmMaskingPolicyDifference
         return new Builder().copy(this);
     }
 
-    /** The OCID of the SDM masking policy difference. */
+    /** The OCID of the Sensitive data model and masking policy difference resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the SDM masking policy difference.
+     * The OCID of the Sensitive data model and masking policy difference resource.
      *
      * @return the value
      */
@@ -388,12 +390,16 @@ public final class SdmMaskingPolicyDifference
         return id;
     }
 
-    /** The OCID of the compartment that contains the SDM masking policy difference. */
+    /**
+     * The OCID of the compartment that contains the Sensitive data model and masking policy
+     * difference resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the SDM masking policy difference.
+     * The OCID of the compartment that contains the Sensitive data model and masking policy
+     * difference resource.
      *
      * @return the value
      */
@@ -623,7 +629,7 @@ public final class SdmMaskingPolicyDifference
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -633,7 +639,7 @@ public final class SdmMaskingPolicyDifference
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -646,9 +652,8 @@ public final class SdmMaskingPolicyDifference
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -656,9 +661,8 @@ public final class SdmMaskingPolicyDifference
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */

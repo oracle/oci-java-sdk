@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -34,9 +34,12 @@ public final class InstanceConfigurationCreateVolumeDetails
         "freeformTags",
         "kmsKeyId",
         "vpusPerGB",
+        "clusterPlacementGroupId",
         "sizeInGBs",
         "sourceDetails",
-        "autotunePolicies"
+        "autotunePolicies",
+        "xrcKmsKeyId",
+        "isReservationsEnabled"
     })
     public InstanceConfigurationCreateVolumeDetails(
             String availabilityDomain,
@@ -49,9 +52,12 @@ public final class InstanceConfigurationCreateVolumeDetails
             java.util.Map<String, String> freeformTags,
             String kmsKeyId,
             Long vpusPerGB,
+            String clusterPlacementGroupId,
             Long sizeInGBs,
             InstanceConfigurationVolumeSourceDetails sourceDetails,
-            java.util.List<InstanceConfigurationAutotunePolicy> autotunePolicies) {
+            java.util.List<InstanceConfigurationAutotunePolicy> autotunePolicies,
+            String xrcKmsKeyId,
+            Boolean isReservationsEnabled) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.backupPolicyId = backupPolicyId;
@@ -63,9 +69,12 @@ public final class InstanceConfigurationCreateVolumeDetails
         this.freeformTags = freeformTags;
         this.kmsKeyId = kmsKeyId;
         this.vpusPerGB = vpusPerGB;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.sizeInGBs = sizeInGBs;
         this.sourceDetails = sourceDetails;
         this.autotunePolicies = autotunePolicies;
+        this.xrcKmsKeyId = xrcKmsKeyId;
+        this.isReservationsEnabled = isReservationsEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -170,7 +179,7 @@ public final class InstanceConfigurationCreateVolumeDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -180,7 +189,7 @@ public final class InstanceConfigurationCreateVolumeDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -215,7 +224,7 @@ public final class InstanceConfigurationCreateVolumeDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -225,7 +234,7 @@ public final class InstanceConfigurationCreateVolumeDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -258,7 +267,7 @@ public final class InstanceConfigurationCreateVolumeDetails
          * The number of volume performance units (VPUs) that will be applied to this volume per GB,
          * representing the Block Volume service's elastic performance options. See [Block Volume
          * Performance
-         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
          * for more information.
          *
          * <p>Allowed values:
@@ -280,7 +289,7 @@ public final class InstanceConfigurationCreateVolumeDetails
          * The number of volume performance units (VPUs) that will be applied to this volume per GB,
          * representing the Block Volume service's elastic performance options. See [Block Volume
          * Performance
-         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
          * for more information.
          *
          * <p>Allowed values:
@@ -301,6 +310,21 @@ public final class InstanceConfigurationCreateVolumeDetails
         public Builder vpusPerGB(Long vpusPerGB) {
             this.vpusPerGB = vpusPerGB;
             this.__explicitlySet__.add("vpusPerGB");
+            return this;
+        }
+        /** The clusterPlacementGroup Id of the volume for volume placement. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The clusterPlacementGroup Id of the volume for volume placement.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
         /** The size of the volume in GBs. */
@@ -343,6 +367,52 @@ public final class InstanceConfigurationCreateVolumeDetails
             this.__explicitlySet__.add("autotunePolicies");
             return this;
         }
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the block volume
+         * cross region backups, which will be used in the destination region to encrypt the
+         * backup's encryption keys. For more information about the Vault service and encryption
+         * keys, see [Overview of Vault
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
+        private String xrcKmsKeyId;
+
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the block volume
+         * cross region backups, which will be used in the destination region to encrypt the
+         * backup's encryption keys. For more information about the Vault service and encryption
+         * keys, see [Overview of Vault
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         * @param xrcKmsKeyId the value to set
+         * @return this builder
+         */
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            this.xrcKmsKeyId = xrcKmsKeyId;
+            this.__explicitlySet__.add("xrcKmsKeyId");
+            return this;
+        }
+        /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation)
+         * on a volume.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isReservationsEnabled")
+        private Boolean isReservationsEnabled;
+
+        /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation)
+         * on a volume.
+         *
+         * @param isReservationsEnabled the value to set
+         * @return this builder
+         */
+        public Builder isReservationsEnabled(Boolean isReservationsEnabled) {
+            this.isReservationsEnabled = isReservationsEnabled;
+            this.__explicitlySet__.add("isReservationsEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -360,9 +430,12 @@ public final class InstanceConfigurationCreateVolumeDetails
                             this.freeformTags,
                             this.kmsKeyId,
                             this.vpusPerGB,
+                            this.clusterPlacementGroupId,
                             this.sizeInGBs,
                             this.sourceDetails,
-                            this.autotunePolicies);
+                            this.autotunePolicies,
+                            this.xrcKmsKeyId,
+                            this.isReservationsEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -401,6 +474,9 @@ public final class InstanceConfigurationCreateVolumeDetails
             if (model.wasPropertyExplicitlySet("vpusPerGB")) {
                 this.vpusPerGB(model.getVpusPerGB());
             }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
             if (model.wasPropertyExplicitlySet("sizeInGBs")) {
                 this.sizeInGBs(model.getSizeInGBs());
             }
@@ -409,6 +485,12 @@ public final class InstanceConfigurationCreateVolumeDetails
             }
             if (model.wasPropertyExplicitlySet("autotunePolicies")) {
                 this.autotunePolicies(model.getAutotunePolicies());
+            }
+            if (model.wasPropertyExplicitlySet("xrcKmsKeyId")) {
+                this.xrcKmsKeyId(model.getXrcKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("isReservationsEnabled")) {
+                this.isReservationsEnabled(model.getIsReservationsEnabled());
             }
             return this;
         }
@@ -512,7 +594,7 @@ public final class InstanceConfigurationCreateVolumeDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -522,7 +604,7 @@ public final class InstanceConfigurationCreateVolumeDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -552,7 +634,7 @@ public final class InstanceConfigurationCreateVolumeDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -562,7 +644,7 @@ public final class InstanceConfigurationCreateVolumeDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -589,7 +671,7 @@ public final class InstanceConfigurationCreateVolumeDetails
      * The number of volume performance units (VPUs) that will be applied to this volume per GB,
      * representing the Block Volume service's elastic performance options. See [Block Volume
      * Performance
-     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
      * for more information.
      *
      * <p>Allowed values:
@@ -611,7 +693,7 @@ public final class InstanceConfigurationCreateVolumeDetails
      * The number of volume performance units (VPUs) that will be applied to this volume per GB,
      * representing the Block Volume service's elastic performance options. See [Block Volume
      * Performance
-     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
      * for more information.
      *
      * <p>Allowed values:
@@ -630,6 +712,19 @@ public final class InstanceConfigurationCreateVolumeDetails
      */
     public Long getVpusPerGB() {
         return vpusPerGB;
+    }
+
+    /** The clusterPlacementGroup Id of the volume for volume placement. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
     }
 
     /** The size of the volume in GBs. */
@@ -665,6 +760,48 @@ public final class InstanceConfigurationCreateVolumeDetails
         return autotunePolicies;
     }
 
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block volume
+     * cross region backups, which will be used in the destination region to encrypt the backup's
+     * encryption keys. For more information about the Vault service and encryption keys, see
+     * [Overview of Vault
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
+    private final String xrcKmsKeyId;
+
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block volume
+     * cross region backups, which will be used in the destination region to encrypt the backup's
+     * encryption keys. For more information about the Vault service and encryption keys, see
+     * [Overview of Vault
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     * @return the value
+     */
+    public String getXrcKmsKeyId() {
+        return xrcKmsKeyId;
+    }
+
+    /**
+     * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on
+     * a volume.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isReservationsEnabled")
+    private final Boolean isReservationsEnabled;
+
+    /**
+     * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on
+     * a volume.
+     *
+     * @return the value
+     */
+    public Boolean getIsReservationsEnabled() {
+        return isReservationsEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -690,9 +827,13 @@ public final class InstanceConfigurationCreateVolumeDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", vpusPerGB=").append(String.valueOf(this.vpusPerGB));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", autotunePolicies=").append(String.valueOf(this.autotunePolicies));
+        sb.append(", xrcKmsKeyId=").append(String.valueOf(this.xrcKmsKeyId));
+        sb.append(", isReservationsEnabled=").append(String.valueOf(this.isReservationsEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -718,9 +859,13 @@ public final class InstanceConfigurationCreateVolumeDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.vpusPerGB, other.vpusPerGB)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.autotunePolicies, other.autotunePolicies)
+                && java.util.Objects.equals(this.xrcKmsKeyId, other.xrcKmsKeyId)
+                && java.util.Objects.equals(this.isReservationsEnabled, other.isReservationsEnabled)
                 && super.equals(other);
     }
 
@@ -752,6 +897,11 @@ public final class InstanceConfigurationCreateVolumeDetails
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + (this.vpusPerGB == null ? 43 : this.vpusPerGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.sizeInGBs == null ? 43 : this.sizeInGBs.hashCode());
         result =
                 (result * PRIME)
@@ -759,6 +909,12 @@ public final class InstanceConfigurationCreateVolumeDetails
         result =
                 (result * PRIME)
                         + (this.autotunePolicies == null ? 43 : this.autotunePolicies.hashCode());
+        result = (result * PRIME) + (this.xrcKmsKeyId == null ? 43 : this.xrcKmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isReservationsEnabled == null
+                                ? 43
+                                : this.isReservationsEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

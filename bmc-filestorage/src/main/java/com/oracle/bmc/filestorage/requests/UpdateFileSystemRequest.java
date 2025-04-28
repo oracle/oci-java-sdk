@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.filestorage.requests;
 import com.oracle.bmc.filestorage.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateFileSystemExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateFileSystemExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateFileSystemRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
@@ -16,14 +16,14 @@ public class UpdateFileSystemRequest
                 com.oracle.bmc.filestorage.model.UpdateFileSystemDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system.
      */
     private String fileSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system.
      */
     public String getFileSystemId() {
         return fileSystemId;
@@ -65,6 +65,13 @@ public class UpdateFileSystemRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -85,13 +92,13 @@ public class UpdateFileSystemRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system.
          */
         private String fileSystemId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system.
          *
          * @param fileSystemId the value to set
@@ -158,6 +165,20 @@ public class UpdateFileSystemRequest
             return this;
         }
 
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -192,6 +213,7 @@ public class UpdateFileSystemRequest
             updateFileSystemDetails(o.getUpdateFileSystemDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -242,9 +264,10 @@ public class UpdateFileSystemRequest
             request.updateFileSystemDetails = updateFileSystemDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isLockOverride = isLockOverride;
             return request;
             // new UpdateFileSystemRequest(fileSystemId, updateFileSystemDetails, ifMatch,
-            // opcRequestId);
+            // opcRequestId, isLockOverride);
         }
     }
 
@@ -258,7 +281,8 @@ public class UpdateFileSystemRequest
                 .fileSystemId(fileSystemId)
                 .updateFileSystemDetails(updateFileSystemDetails)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -279,6 +303,7 @@ public class UpdateFileSystemRequest
         sb.append(",updateFileSystemDetails=").append(String.valueOf(this.updateFileSystemDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -298,7 +323,8 @@ public class UpdateFileSystemRequest
                 && java.util.Objects.equals(
                         this.updateFileSystemDetails, other.updateFileSystemDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -313,6 +339,9 @@ public class UpdateFileSystemRequest
                                 : this.updateFileSystemDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

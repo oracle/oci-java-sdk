@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -27,6 +27,8 @@ public final class UpdateMonitoredResourceTypeDetails
         "displayName",
         "description",
         "metricNamespace",
+        "sourceType",
+        "resourceCategory",
         "metadata",
         "freeformTags",
         "definedTags"
@@ -35,6 +37,8 @@ public final class UpdateMonitoredResourceTypeDetails
             String displayName,
             String description,
             String metricNamespace,
+            SourceType sourceType,
+            ResourceCategory resourceCategory,
             ResourceTypeMetadataDetails metadata,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -42,6 +46,8 @@ public final class UpdateMonitoredResourceTypeDetails
         this.displayName = displayName;
         this.description = description;
         this.metricNamespace = metricNamespace;
+        this.sourceType = sourceType;
+        this.resourceCategory = resourceCategory;
         this.metadata = metadata;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -92,6 +98,40 @@ public final class UpdateMonitoredResourceTypeDetails
         public Builder metricNamespace(String metricNamespace) {
             this.metricNamespace = metricNamespace;
             this.__explicitlySet__.add("metricNamespace");
+            return this;
+        }
+        /**
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native
+         * resource, etc.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private SourceType sourceType;
+
+        /**
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native
+         * resource, etc.
+         *
+         * @param sourceType the value to set
+         * @return this builder
+         */
+        public Builder sourceType(SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
+        /** Resource Category to indicate the kind of resource type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+        private ResourceCategory resourceCategory;
+
+        /**
+         * Resource Category to indicate the kind of resource type.
+         *
+         * @param resourceCategory the value to set
+         * @return this builder
+         */
+        public Builder resourceCategory(ResourceCategory resourceCategory) {
+            this.resourceCategory = resourceCategory;
+            this.__explicitlySet__.add("resourceCategory");
             return this;
         }
 
@@ -152,6 +192,8 @@ public final class UpdateMonitoredResourceTypeDetails
                             this.displayName,
                             this.description,
                             this.metricNamespace,
+                            this.sourceType,
+                            this.resourceCategory,
                             this.metadata,
                             this.freeformTags,
                             this.definedTags);
@@ -171,6 +213,12 @@ public final class UpdateMonitoredResourceTypeDetails
             }
             if (model.wasPropertyExplicitlySet("metricNamespace")) {
                 this.metricNamespace(model.getMetricNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceCategory")) {
+                this.resourceCategory(model.getResourceCategory());
             }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
@@ -233,6 +281,36 @@ public final class UpdateMonitoredResourceTypeDetails
         return metricNamespace;
     }
 
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
+     * etc.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final SourceType sourceType;
+
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
+     * etc.
+     *
+     * @return the value
+     */
+    public SourceType getSourceType() {
+        return sourceType;
+    }
+
+    /** Resource Category to indicate the kind of resource type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+    private final ResourceCategory resourceCategory;
+
+    /**
+     * Resource Category to indicate the kind of resource type.
+     *
+     * @return the value
+     */
+    public ResourceCategory getResourceCategory() {
+        return resourceCategory;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final ResourceTypeMetadataDetails metadata;
 
@@ -292,6 +370,8 @@ public final class UpdateMonitoredResourceTypeDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", metricNamespace=").append(String.valueOf(this.metricNamespace));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", resourceCategory=").append(String.valueOf(this.resourceCategory));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -312,6 +392,8 @@ public final class UpdateMonitoredResourceTypeDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.metricNamespace, other.metricNamespace)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.resourceCategory, other.resourceCategory)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -327,6 +409,10 @@ public final class UpdateMonitoredResourceTypeDetails
         result =
                 (result * PRIME)
                         + (this.metricNamespace == null ? 43 : this.metricNamespace.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCategory == null ? 43 : this.resourceCategory.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -36,7 +36,13 @@ public final class ExternalDatabaseSummary
         "dbManagementConfig",
         "instanceDetails",
         "lifecycleState",
-        "timeCreated"
+        "timeCreated",
+        "freeformTags",
+        "definedTags",
+        "systemTags",
+        "dbmgmtFeatureConfigs",
+        "databaseVersion",
+        "databasePlatformName"
     })
     public ExternalDatabaseSummary(
             String id,
@@ -51,7 +57,13 @@ public final class ExternalDatabaseSummary
             DatabaseManagementConfig dbManagementConfig,
             java.util.List<ExternalDatabaseInstance> instanceDetails,
             LifecycleState lifecycleState,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs,
+            String databaseVersion,
+            String databasePlatformName) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -66,19 +78,25 @@ public final class ExternalDatabaseSummary
         this.instanceDetails = instanceDetails;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+        this.dbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
+        this.databaseVersion = databaseVersion;
+        this.databasePlatformName = databasePlatformName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external DB system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external DB system.
          *
          * @param id the value to set
@@ -105,14 +123,14 @@ public final class ExternalDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -173,14 +191,14 @@ public final class ExternalDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * parent Container Database (CDB) if this is a Pluggable Database (PDB).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("externalContainerDatabaseId")
         private String externalContainerDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * parent Container Database (CDB) if this is a Pluggable Database (PDB).
          *
          * @param externalContainerDatabaseId the value to set
@@ -192,14 +210,14 @@ public final class ExternalDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external DB home.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("externalDbHomeId")
         private String externalDbHomeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external DB home.
          *
          * @param externalDbHomeId the value to set
@@ -273,6 +291,126 @@ public final class ExternalDatabaseSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
+         * tags can be viewed by users, but can only be created by the system.
+         *
+         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
+         * tags can be viewed by users, but can only be created by the system.
+         *
+         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /** The list of feature configurations */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbmgmtFeatureConfigs")
+        private java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs;
+
+        /**
+         * The list of feature configurations
+         *
+         * @param dbmgmtFeatureConfigs the value to set
+         * @return this builder
+         */
+        public Builder dbmgmtFeatureConfigs(
+                java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs) {
+            this.dbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
+            this.__explicitlySet__.add("dbmgmtFeatureConfigs");
+            return this;
+        }
+        /** The Oracle database version. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
+        private String databaseVersion;
+
+        /**
+         * The Oracle database version.
+         *
+         * @param databaseVersion the value to set
+         * @return this builder
+         */
+        public Builder databaseVersion(String databaseVersion) {
+            this.databaseVersion = databaseVersion;
+            this.__explicitlySet__.add("databaseVersion");
+            return this;
+        }
+        /** The operating system of database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databasePlatformName")
+        private String databasePlatformName;
+
+        /**
+         * The operating system of database.
+         *
+         * @param databasePlatformName the value to set
+         * @return this builder
+         */
+        public Builder databasePlatformName(String databasePlatformName) {
+            this.databasePlatformName = databasePlatformName;
+            this.__explicitlySet__.add("databasePlatformName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -292,7 +430,13 @@ public final class ExternalDatabaseSummary
                             this.dbManagementConfig,
                             this.instanceDetails,
                             this.lifecycleState,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.dbmgmtFeatureConfigs,
+                            this.databaseVersion,
+                            this.databasePlatformName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -340,6 +484,24 @@ public final class ExternalDatabaseSummary
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("dbmgmtFeatureConfigs")) {
+                this.dbmgmtFeatureConfigs(model.getDbmgmtFeatureConfigs());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("databasePlatformName")) {
+                this.databasePlatformName(model.getDatabasePlatformName());
+            }
             return this;
         }
     }
@@ -354,14 +516,14 @@ public final class ExternalDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB system.
      *
      * @return the value
@@ -384,14 +546,14 @@ public final class ExternalDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -444,14 +606,14 @@ public final class ExternalDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * parent Container Database (CDB) if this is a Pluggable Database (PDB).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("externalContainerDatabaseId")
     private final String externalContainerDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * parent Container Database (CDB) if this is a Pluggable Database (PDB).
      *
      * @return the value
@@ -461,14 +623,14 @@ public final class ExternalDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB home.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("externalDbHomeId")
     private final String externalDbHomeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB home.
      *
      * @return the value
@@ -581,6 +743,112 @@ public final class ExternalDatabaseSummary
         return timeCreated;
     }
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
+     * can be viewed by users, but can only be created by the system.
+     *
+     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
+     * can be viewed by users, but can only be created by the system.
+     *
+     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /** The list of feature configurations */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbmgmtFeatureConfigs")
+    private final java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs;
+
+    /**
+     * The list of feature configurations
+     *
+     * @return the value
+     */
+    public java.util.List<DatabaseFeatureConfiguration> getDbmgmtFeatureConfigs() {
+        return dbmgmtFeatureConfigs;
+    }
+
+    /** The Oracle database version. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
+    private final String databaseVersion;
+
+    /**
+     * The Oracle database version.
+     *
+     * @return the value
+     */
+    public String getDatabaseVersion() {
+        return databaseVersion;
+    }
+
+    /** The operating system of database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databasePlatformName")
+    private final String databasePlatformName;
+
+    /**
+     * The operating system of database.
+     *
+     * @return the value
+     */
+    public String getDatabasePlatformName() {
+        return databasePlatformName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -610,6 +878,12 @@ public final class ExternalDatabaseSummary
         sb.append(", instanceDetails=").append(String.valueOf(this.instanceDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", dbmgmtFeatureConfigs=").append(String.valueOf(this.dbmgmtFeatureConfigs));
+        sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
+        sb.append(", databasePlatformName=").append(String.valueOf(this.databasePlatformName));
         sb.append(")");
         return sb.toString();
     }
@@ -638,6 +912,12 @@ public final class ExternalDatabaseSummary
                 && java.util.Objects.equals(this.instanceDetails, other.instanceDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.dbmgmtFeatureConfigs, other.dbmgmtFeatureConfigs)
+                && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
+                && java.util.Objects.equals(this.databasePlatformName, other.databasePlatformName)
                 && super.equals(other);
     }
 
@@ -676,6 +956,22 @@ public final class ExternalDatabaseSummary
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbmgmtFeatureConfigs == null
+                                ? 43
+                                : this.dbmgmtFeatureConfigs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseVersion == null ? 43 : this.databaseVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databasePlatformName == null
+                                ? 43
+                                : this.databasePlatformName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement;
@@ -9,8 +9,8 @@ import com.oracle.bmc.keymanagement.responses.*;
 
 /**
  * Use the Key Management API to manage vaults and keys. For more information, see [Managing
- * Vaults](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingvaults.htm) and
- * [Managing Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingkeys.htm).
+ * Vaults](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingvaults.htm) and
+ * [Managing Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingkeys.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public interface KmsManagementAsync extends AutoCloseable {
@@ -91,7 +91,7 @@ public interface KmsManagementAsync extends AutoCloseable {
     /**
      * Moves a key into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When provided, if-match is checked against the ETag values of the key.
      *
@@ -133,7 +133,7 @@ public interface KmsManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateKeyRequest, CreateKeyResponse> handler);
 
     /**
-     * Generates a new [KeyVersion](https://docs.cloud.oracle.com/api/#/en/key/latest/KeyVersion/)
+     * Generates a new [KeyVersion](https://docs.oracle.com/iaas/api/#/en/key/latest/KeyVersion/)
      * resource that provides new cryptographic material for a master encryption key. The key must
      * be in an `ENABLED` state to be rotated.
      *
@@ -312,7 +312,7 @@ public interface KmsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all [KeyVersion](https://docs.cloud.oracle.com/api/#/en/key/latest/KeyVersion/)
+     * Lists all [KeyVersion](https://docs.oracle.com/iaas/api/#/en/key/latest/KeyVersion/)
      * resources for the specified master encryption key.
      *
      * <p>As a management operation, this call is subject to a Key Management limit that applies to

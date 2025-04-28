@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information to be updated in attached Target DetectorRecipe <br>
+ * Parameters to update a detector recipe attached to a target. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,12 +34,12 @@ public final class UpdateTargetDetectorRecipe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Identifier for DetectorRecipe. */
+        /** Unique identifier for target detector recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipeId")
         private String targetDetectorRecipeId;
 
         /**
-         * Identifier for DetectorRecipe.
+         * Unique identifier for target detector recipe
          *
          * @param targetDetectorRecipeId the value to set
          * @return this builder
@@ -49,12 +49,12 @@ public final class UpdateTargetDetectorRecipe
             this.__explicitlySet__.add("targetDetectorRecipeId");
             return this;
         }
-        /** Updates to be applied to Detector Rule associated with the target */
+        /** Updates to be applied to detector rules in target detector recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
         private java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
 
         /**
-         * Updates to be applied to Detector Rule associated with the target
+         * Updates to be applied to detector rules in target detector recipe
          *
          * @param detectorRules the value to set
          * @return this builder
@@ -99,12 +99,12 @@ public final class UpdateTargetDetectorRecipe
         return new Builder().copy(this);
     }
 
-    /** Identifier for DetectorRecipe. */
+    /** Unique identifier for target detector recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipeId")
     private final String targetDetectorRecipeId;
 
     /**
-     * Identifier for DetectorRecipe.
+     * Unique identifier for target detector recipe
      *
      * @return the value
      */
@@ -112,12 +112,12 @@ public final class UpdateTargetDetectorRecipe
         return targetDetectorRecipeId;
     }
 
-    /** Updates to be applied to Detector Rule associated with the target */
+    /** Updates to be applied to detector rules in target detector recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
     private final java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
 
     /**
-     * Updates to be applied to Detector Rule associated with the target
+     * Updates to be applied to detector rules in target detector recipe
      *
      * @return the value
      */

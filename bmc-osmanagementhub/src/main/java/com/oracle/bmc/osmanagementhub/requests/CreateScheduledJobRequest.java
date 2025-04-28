@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateScheduledJobExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateScheduledJobExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateScheduledJobRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
@@ -15,11 +15,11 @@ public class CreateScheduledJobRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagementhub.model.CreateScheduledJobDetails> {
 
-    /** Details for the new scheduled job. */
+    /** Provides the information used to create the scheduled job. */
     private com.oracle.bmc.osmanagementhub.model.CreateScheduledJobDetails
             createScheduledJobDetails;
 
-    /** Details for the new scheduled job. */
+    /** Provides the information used to create the scheduled job. */
     public com.oracle.bmc.osmanagementhub.model.CreateScheduledJobDetails
             getCreateScheduledJobDetails() {
         return createScheduledJobDetails;
@@ -75,12 +75,12 @@ public class CreateScheduledJobRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new scheduled job. */
+        /** Provides the information used to create the scheduled job. */
         private com.oracle.bmc.osmanagementhub.model.CreateScheduledJobDetails
                 createScheduledJobDetails = null;
 
         /**
-         * Details for the new scheduled job.
+         * Provides the information used to create the scheduled job.
          *
          * @param createScheduledJobDetails the value to set
          * @return this builder instance

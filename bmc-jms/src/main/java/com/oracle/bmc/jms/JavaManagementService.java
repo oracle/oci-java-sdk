@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms;
@@ -8,9 +8,13 @@ import com.oracle.bmc.jms.requests.*;
 import com.oracle.bmc.jms.responses.*;
 
 /**
- * API for the Java Management Service. Use this API to view, create, and manage Fleets. This
- * service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default
- * if no circuit breaker configuration is defined by the user.
+ * The APIs for the [Fleet
+ * Management](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-management.html) feature of Java
+ * Management Service to monitor and manage the usage of Java in your enterprise. Use these APIs to
+ * manage fleets, configure managed instances to report to fleets, and gain insights into the Java
+ * workloads running on these instances by carrying out basic and advanced features. This service
+ * client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no
+ * circuit breaker configuration is defined by the user.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public interface JavaManagementService extends AutoCloseable {
@@ -73,7 +77,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/AddFleetInstallationSitesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/AddFleetInstallationSitesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     AddFleetInstallationSites API.
      */
@@ -90,7 +94,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CancelWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CancelWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest
      *     API.
      */
@@ -107,7 +111,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ChangeFleetCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ChangeFleetCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeFleetCompartment API.
      */
@@ -123,11 +127,26 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CreateBlocklistExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CreateBlocklistExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBlocklist
      *     API.
      */
     CreateBlocklistResponse createBlocklist(CreateBlocklistRequest request);
+
+    /**
+     * Request to perform validation of the DRS file and create the file to the Object Storage.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CreateDrsFileExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrsFile API.
+     */
+    CreateDrsFileResponse createDrsFile(CreateDrsFileRequest request);
 
     /**
      * Create a new Fleet using the information provided.
@@ -145,10 +164,29 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CreateFleetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CreateFleetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFleet API.
      */
     CreateFleetResponse createFleet(CreateFleetRequest request);
+
+    /**
+     * Registers an agent's JmsPlugin, optionally attaching to an existing fleet of the tenancy.
+     * JmsPlugins registered fleet-less are created with lifecycle state INACTIVE. For the operation
+     * to be authorized, the agent must exist, and the authorized user requires JMS_PLUGIN_CREATE
+     * permission for the agent's compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CreateJmsPluginExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJmsPlugin
+     *     API.
+     */
+    CreateJmsPluginResponse createJmsPlugin(CreateJmsPluginRequest request);
 
     /**
      * Deletes the blocklist record specified by an identifier.
@@ -160,7 +198,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteBlocklistExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteBlocklistExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBlocklist
      *     API.
      */
@@ -177,12 +215,27 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteCryptoAnalysisResultExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteCryptoAnalysisResultExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteCryptoAnalysisResult API.
      */
     DeleteCryptoAnalysisResultResponse deleteCryptoAnalysisResult(
             DeleteCryptoAnalysisResultRequest request);
+
+    /**
+     * Request to delete the DRS file from the Object Storage.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteDrsFileExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrsFile API.
+     */
+    DeleteDrsFileResponse deleteDrsFile(DeleteDrsFileRequest request);
 
     /**
      * Deletes the Fleet specified by an identifier.
@@ -194,7 +247,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteFleetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteFleetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFleet API.
      */
     DeleteFleetResponse deleteFleet(DeleteFleetRequest request);
@@ -210,12 +263,29 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteJavaMigrationAnalysisResultExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteJavaMigrationAnalysisResultExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteJavaMigrationAnalysisResult API.
      */
     DeleteJavaMigrationAnalysisResultResponse deleteJavaMigrationAnalysisResult(
             DeleteJavaMigrationAnalysisResultRequest request);
+
+    /**
+     * Deletes a JmsPlugin. The JmsPlugin may be visible for some time with state DELETED. Deleted
+     * plugins will not be able to communicate with the JMS service.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteJmsPluginExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJmsPlugin
+     *     API.
+     */
+    DeleteJmsPluginResponse deleteJmsPlugin(DeleteJmsPluginRequest request);
 
     /**
      * Deletes only the metadata of the Performance Tuning Analysis result, but the file remains in
@@ -228,12 +298,42 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeletePerformanceTuningAnalysisResultExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeletePerformanceTuningAnalysisResultExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeletePerformanceTuningAnalysisResult API.
      */
     DeletePerformanceTuningAnalysisResultResponse deletePerformanceTuningAnalysisResult(
             DeletePerformanceTuningAnalysisResultRequest request);
+
+    /**
+     * Request to disable the DRS in the selected target in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DisableDrsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableDrs API.
+     */
+    DisableDrsResponse disableDrs(DisableDrsRequest request);
+
+    /**
+     * Request to enable the DRS in the selected target in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/EnableDrsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableDrs API.
+     */
+    EnableDrsResponse enableDrs(EnableDrsRequest request);
 
     /**
      * Generates Agent Deploy Script for Fleet using the information provided.
@@ -245,12 +345,46 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GenerateAgentDeployScriptExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GenerateAgentDeployScriptExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GenerateAgentDeployScript API.
      */
     GenerateAgentDeployScriptResponse generateAgentDeployScript(
             GenerateAgentDeployScriptRequest request);
+
+    /**
+     * Generates the agent installer configuration using the information provided.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GenerateAgentInstallerConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GenerateAgentInstallerConfiguration API.
+     */
+    GenerateAgentInstallerConfigurationResponse generateAgentInstallerConfiguration(
+            GenerateAgentInstallerConfigurationRequest request);
+
+    /**
+     * Generates Load Pipeline Script
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GenerateLoadPipelineScriptExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GenerateLoadPipelineScript API.
+     */
+    GenerateLoadPipelineScriptResponse generateLoadPipelineScript(
+            GenerateLoadPipelineScriptRequest request);
 
     /**
      * Retrieve the metadata for the result of a Crypto event analysis.
@@ -262,11 +396,58 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetCryptoAnalysisResultExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetCryptoAnalysisResultExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetCryptoAnalysisResult API.
      */
     GetCryptoAnalysisResultResponse getCryptoAnalysisResult(GetCryptoAnalysisResultRequest request);
+
+    /**
+     * Get the detail about the created DRS file in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetDrsFileExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrsFile API.
+     */
+    GetDrsFileResponse getDrsFile(GetDrsFileRequest request);
+
+    /**
+     * Returns export setting for the specified fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetExportSettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExportSetting
+     *     API.
+     */
+    GetExportSettingResponse getExportSetting(GetExportSettingRequest request);
+
+    /**
+     * Returns last export status for the specified fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetExportStatusExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExportStatus
+     *     API.
+     */
+    GetExportStatusResponse getExportStatus(GetExportStatusRequest request);
 
     /**
      * Retrieve a Fleet with the specified identifier.
@@ -278,7 +459,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetFleetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetFleetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFleet API.
      */
     GetFleetResponse getFleet(GetFleetRequest request);
@@ -293,7 +474,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetFleetAdvancedFeatureConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetFleetAdvancedFeatureConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetFleetAdvancedFeatureConfiguration API.
      */
@@ -310,7 +491,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetFleetAgentConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetFleetAgentConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetFleetAgentConfiguration API.
      */
@@ -327,7 +508,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetJavaFamilyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetJavaFamilyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaFamily API.
      */
     GetJavaFamilyResponse getJavaFamily(GetJavaFamilyRequest request);
@@ -342,7 +523,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetJavaMigrationAnalysisResultExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetJavaMigrationAnalysisResultExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetJavaMigrationAnalysisResult API.
      */
@@ -359,10 +540,25 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetJavaReleaseExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetJavaReleaseExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaRelease API.
      */
     GetJavaReleaseResponse getJavaRelease(GetJavaReleaseRequest request);
+
+    /**
+     * Returns the JmsPlugin.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetJmsPluginExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJmsPlugin API.
+     */
+    GetJmsPluginResponse getJmsPlugin(GetJmsPluginRequest request);
 
     /**
      * Retrieve metadata of the Performance Tuning Analysis result.
@@ -374,7 +570,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetPerformanceTuningAnalysisResultExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetPerformanceTuningAnalysisResultExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetPerformanceTuningAnalysisResult API.
      */
@@ -391,10 +587,26 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Returns a list of the agent installer information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListAgentInstallersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAgentInstallers
+     *     API.
+     */
+    ListAgentInstallersResponse listAgentInstallers(ListAgentInstallersRequest request);
 
     /**
      * Return a list of AnnouncementSummary items
@@ -406,7 +618,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListAnnouncementsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListAnnouncementsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAnnouncements
      *     API.
      */
@@ -422,7 +634,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListBlocklistsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListBlocklistsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBlocklists API.
      */
     ListBlocklistsResponse listBlocklists(ListBlocklistsRequest request);
@@ -437,12 +649,27 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListCryptoAnalysisResultsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListCryptoAnalysisResultsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListCryptoAnalysisResults API.
      */
     ListCryptoAnalysisResultsResponse listCryptoAnalysisResults(
             ListCryptoAnalysisResultsRequest request);
+
+    /**
+     * List the details about the created DRS files in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListDrsFilesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrsFiles API.
+     */
+    ListDrsFilesResponse listDrsFiles(ListDrsFilesRequest request);
 
     /**
      * List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle
@@ -455,11 +682,27 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListFleetDiagnosesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListFleetDiagnosesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleetDiagnoses
      *     API.
      */
     ListFleetDiagnosesResponse listFleetDiagnoses(ListFleetDiagnosesRequest request);
+
+    /**
+     * Returns a list of fleet errors that describe all detected errors.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListFleetErrorsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleetErrors
+     *     API.
+     */
+    ListFleetErrorsResponse listFleetErrors(ListFleetErrorsRequest request);
 
     /**
      * Returns a list of all the Fleets contained by a compartment. The query parameter
@@ -472,7 +715,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListFleetsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListFleetsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleets API.
      */
     ListFleetsResponse listFleets(ListFleetsRequest request);
@@ -487,7 +730,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListInstallationSitesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListInstallationSitesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListInstallationSites API.
      */
@@ -504,7 +747,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaFamiliesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaFamiliesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaFamilies
      *     API.
      */
@@ -520,7 +763,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaMigrationAnalysisResultsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaMigrationAnalysisResultsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListJavaMigrationAnalysisResults API.
      */
@@ -537,11 +780,26 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaReleasesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaReleasesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaReleases
      *     API.
      */
     ListJavaReleasesResponse listJavaReleases(ListJavaReleasesRequest request);
+
+    /**
+     * Lists the JmsPlugins.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJmsPluginsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJmsPlugins API.
+     */
+    ListJmsPluginsResponse listJmsPlugins(ListJmsPluginsRequest request);
 
     /**
      * List Java Runtime usage in a specified host filtered by query parameters.
@@ -553,7 +811,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJreUsageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJreUsageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJreUsage API.
      */
     ListJreUsageResponse listJreUsage(ListJreUsageRequest request);
@@ -568,12 +826,28 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListPerformanceTuningAnalysisResultsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListPerformanceTuningAnalysisResultsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListPerformanceTuningAnalysisResults API.
      */
     ListPerformanceTuningAnalysisResultsResponse listPerformanceTuningAnalysisResults(
             ListPerformanceTuningAnalysisResultsRequest request);
+
+    /**
+     * Returns a list of plugin errors that describe all detected errors.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListPluginErrorsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPluginErrors
+     *     API.
+     */
+    ListPluginErrorsResponse listPluginErrors(ListPluginErrorsRequest request);
 
     /**
      * Retrieve a paginated list of work items for a specified work request.
@@ -585,7 +859,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListWorkItemsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListWorkItemsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkItems API.
      */
     ListWorkItemsResponse listWorkItems(ListWorkItemsRequest request);
@@ -600,7 +874,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListWorkRequestErrors API.
      */
@@ -616,7 +890,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
      *     API.
      */
@@ -633,7 +907,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
@@ -649,7 +923,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RemoveFleetInstallationSitesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RemoveFleetInstallationSitesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RemoveFleetInstallationSites API.
      */
@@ -668,11 +942,30 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestCryptoAnalysesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestCryptoAnalysesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RequestCryptoAnalyses API.
      */
     RequestCryptoAnalysesResponse requestCryptoAnalyses(RequestCryptoAnalysesRequest request);
+
+    /**
+     * Request to perform a deployed Java migration analyses. The results of the deployed Java
+     * migration analyses will be uploaded to the Object Storage bucket that you designate when you
+     * enable the Java Migration Analyses feature.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestDeployedApplicationMigrationAnalysesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RequestDeployedApplicationMigrationAnalyses API.
+     */
+    RequestDeployedApplicationMigrationAnalysesResponse requestDeployedApplicationMigrationAnalyses(
+            RequestDeployedApplicationMigrationAnalysesRequest request);
 
     /**
      * Request to perform a Java migration analysis. The results of the Java migration analysis will
@@ -686,7 +979,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestJavaMigrationAnalysesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestJavaMigrationAnalysesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RequestJavaMigrationAnalyses API.
      */
@@ -705,7 +998,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestJfrRecordingsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestJfrRecordingsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RequestJfrRecordings API.
      */
@@ -723,7 +1016,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestPerformanceTuningAnalysesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestPerformanceTuningAnalysesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RequestPerformanceTuningAnalyses API.
      */
@@ -740,7 +1033,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ScanJavaServerUsageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ScanJavaServerUsageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScanJavaServerUsage
      *     API.
      */
@@ -756,7 +1049,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ScanLibraryUsageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ScanLibraryUsageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScanLibraryUsage
      *     API.
      */
@@ -775,7 +1068,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeApplicationInstallationUsageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeApplicationInstallationUsageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeApplicationInstallationUsage API.
      */
@@ -792,7 +1085,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeApplicationUsageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeApplicationUsageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeApplicationUsage API.
      */
@@ -812,7 +1105,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeDeployedApplicationInstallationUsageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeDeployedApplicationInstallationUsageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeDeployedApplicationInstallationUsage API.
      */
@@ -830,12 +1123,28 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeDeployedApplicationUsageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeDeployedApplicationUsageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeDeployedApplicationUsage API.
      */
     SummarizeDeployedApplicationUsageResponse summarizeDeployedApplicationUsage(
             SummarizeDeployedApplicationUsageRequest request);
+
+    /**
+     * Returns a high level summary of FleetErrors.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeFleetErrorsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeFleetErrors API.
+     */
+    SummarizeFleetErrorsResponse summarizeFleetErrors(SummarizeFleetErrorsRequest request);
 
     /**
      * List Java installation usage in a Fleet filtered by query parameters.
@@ -847,7 +1156,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeInstallationUsageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeInstallationUsageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeInstallationUsage API.
      */
@@ -864,7 +1173,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeJavaServerInstanceUsageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeJavaServerInstanceUsageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeJavaServerInstanceUsage API.
      */
@@ -881,7 +1190,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeJavaServerUsageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeJavaServerUsageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeJavaServerUsage API.
      */
@@ -898,7 +1207,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeJreUsageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeJreUsageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeJreUsage
      *     API.
      */
@@ -914,7 +1223,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeLibraryUsageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeLibraryUsageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeLibraryUsage API.
      */
@@ -930,12 +1239,28 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeManagedInstanceUsageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeManagedInstanceUsageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeManagedInstanceUsage API.
      */
     SummarizeManagedInstanceUsageResponse summarizeManagedInstanceUsage(
             SummarizeManagedInstanceUsageRequest request);
+
+    /**
+     * Returns a high level summary of PluginErrors.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizePluginErrorsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizePluginErrors API.
+     */
+    SummarizePluginErrorsResponse summarizePluginErrors(SummarizePluginErrorsRequest request);
 
     /**
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of
@@ -948,12 +1273,44 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeResourceInventoryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeResourceInventoryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeResourceInventory API.
      */
     SummarizeResourceInventoryResponse summarizeResourceInventory(
             SummarizeResourceInventoryRequest request);
+
+    /**
+     * Request to perform validation of the DRS file and update the existing file in the Object
+     * Storage.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateDrsFileExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrsFile API.
+     */
+    UpdateDrsFileResponse updateDrsFile(UpdateDrsFileRequest request);
+
+    /**
+     * Updates existing export setting for the specified fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateExportSettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExportSetting
+     *     API.
+     */
+    UpdateExportSettingResponse updateExportSetting(UpdateExportSettingRequest request);
 
     /**
      * Update the Fleet specified by an identifier.
@@ -965,7 +1322,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateFleetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateFleetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFleet API.
      */
     UpdateFleetResponse updateFleet(UpdateFleetRequest request);
@@ -981,7 +1338,7 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateFleetAdvancedFeatureConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateFleetAdvancedFeatureConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateFleetAdvancedFeatureConfiguration API.
      */
@@ -998,12 +1355,28 @@ public interface JavaManagementService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateFleetAgentConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateFleetAgentConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateFleetAgentConfiguration API.
      */
     UpdateFleetAgentConfigurationResponse updateFleetAgentConfiguration(
             UpdateFleetAgentConfigurationRequest request);
+
+    /**
+     * Updates the Fleet of a JmsPlugin.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateJmsPluginExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJmsPlugin
+     *     API.
+     */
+    UpdateJmsPluginResponse updateJmsPlugin(UpdateJmsPluginRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

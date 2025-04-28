@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -291,6 +291,10 @@ public final class WorkRequestSummary
         DeactivateTargetDatabase("DEACTIVATE_TARGET_DATABASE"),
         DeleteTargetDatabase("DELETE_TARGET_DATABASE"),
         ChangeTargetDatabaseCompartment("CHANGE_TARGET_DATABASE_COMPARTMENT"),
+        CreatePeerTargetDatabase("CREATE_PEER_TARGET_DATABASE"),
+        UpdatePeerTargetDatabase("UPDATE_PEER_TARGET_DATABASE"),
+        DeletePeerTargetDatabase("DELETE_PEER_TARGET_DATABASE"),
+        RefreshTargetDatabase("REFRESH_TARGET_DATABASE"),
         CreateUserAssessment("CREATE_USER_ASSESSMENT"),
         AssessUserAssessment("ASSESS_USER_ASSESSMENT"),
         CreateSnapshotUserAssessment("CREATE_SNAPSHOT_USER_ASSESSMENT"),
@@ -310,10 +314,14 @@ public final class WorkRequestSummary
         CompareWithBaselineSecurityAssessment("COMPARE_WITH_BASELINE_SECURITY_ASSESSMENT"),
         DeleteSecurityAssessment("DELETE_SECURITY_ASSESSMENT"),
         UpdateSecurityAssessment("UPDATE_SECURITY_ASSESSMENT"),
+        UpdateFindingRisk("UPDATE_FINDING_RISK"),
         ChangeSecurityAssessmentCompartment("CHANGE_SECURITY_ASSESSMENT_COMPARTMENT"),
         SetSecurityAssessmentBaseline("SET_SECURITY_ASSESSMENT_BASELINE"),
         UnsetSecurityAssessmentBaseline("UNSET_SECURITY_ASSESSMENT_BASELINE"),
         GenerateSecurityAssessmentReport("GENERATE_SECURITY_ASSESSMENT_REPORT"),
+        DeleteSqlFirewallAllowedSql("DELETE_SQL_FIREWALL_ALLOWED_SQL"),
+        BulkCreateSqlFirewallAllowedSql("BULK_CREATE_SQL_FIREWALL_ALLOWED_SQL"),
+        BulkDeleteSqlFirewallAllowedSql("BULK_DELETE_SQL_FIREWALL_ALLOWED_SQL"),
         CalculateVolume("CALCULATE_VOLUME"),
         CalculateCollectedVolume("CALCULATE_COLLECTED_VOLUME"),
         CreateDbSecurityConfig("CREATE_DB_SECURITY_CONFIG"),
@@ -332,6 +340,8 @@ public final class WorkRequestSummary
         ChangeSqlCollectionCompartment("CHANGE_SQL_COLLECTION_COMPARTMENT"),
         RefreshSqlCollectionLogInsights("REFRESH_SQL_COLLECTION_LOG_INSIGHTS"),
         PurgeSqlCollectionLogs("PURGE_SQL_COLLECTION_LOGS"),
+        RefreshViolations("REFRESH_VIOLATIONS"),
+        CreateArchival("CREATE_ARCHIVAL"),
         UpdateSecurityPolicy("UPDATE_SECURITY_POLICY"),
         ChangeSecurityPolicyCompartment("CHANGE_SECURITY_POLICY_COMPARTMENT"),
         UpdateSecurityPolicyDeployment("UPDATE_SECURITY_POLICY_DEPLOYMENT"),
@@ -387,10 +397,26 @@ public final class WorkRequestSummary
         UpdateDifference("UPDATE_DIFFERENCE"),
         PatchDifference("PATCH_DIFFERENCE"),
         ApplyDifference("APPLY_DIFFERENCE"),
+        MaskPolicyGenerateHealthReport("MASK_POLICY_GENERATE_HEALTH_REPORT"),
+        MaskPolicyDeleteHealthReport("MASK_POLICY_DELETE_HEALTH_REPORT"),
+        CreateSensitiveTypesExport("CREATE_SENSITIVE_TYPES_EXPORT"),
+        UpdateSensitiveTypesExport("UPDATE_SENSITIVE_TYPES_EXPORT"),
+        BulkCreateSensitiveTypes("BULK_CREATE_SENSITIVE_TYPES"),
+        AbortMasking("ABORT_MASKING"),
+        CreateSecurityPolicyReport("CREATE_SECURITY_POLICY_REPORT"),
+        RefreshSecurityPolicyCache("REFRESH_SECURITY_POLICY_CACHE"),
+        DeleteSecurityPolicyCache("DELETE_SECURITY_POLICY_CACHE"),
         CreateSchedule("CREATE_SCHEDULE"),
         RemoveScheduleReport("REMOVE_SCHEDULE_REPORT"),
         UpdateAllAlert("UPDATE_ALL_ALERT"),
         PatchTargetAlertPolicyAssociation("PATCH_TARGET_ALERT_POLICY_ASSOCIATION"),
+        CreateAlertPolicy("CREATE_ALERT_POLICY"),
+        UpdateAlertPolicy("UPDATE_ALERT_POLICY"),
+        DeleteAlertPolicy("DELETE_ALERT_POLICY"),
+        CreateAlertPolicyRule("CREATE_ALERT_POLICY_RULE"),
+        UpdateAlertPolicyRule("UPDATE_ALERT_POLICY_RULE"),
+        DeleteAlertPolicyRule("DELETE_ALERT_POLICY_RULE"),
+        ChangeAlertPolicyCompartment("CHANGE_ALERT_POLICY_COMPARTMENT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

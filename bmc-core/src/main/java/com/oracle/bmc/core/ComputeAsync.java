@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -10,11 +10,11 @@ import com.oracle.bmc.core.responses.*;
 /**
  * Use the Core Services API to manage resources such as virtual cloud networks (VCNs), compute
  * instances, and block storage volumes. For more information, see the console documentation for the
- * [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
- * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
- * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
- * The required permissions are documented in the [Details for the Core
- * Services](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
+ * [Networking](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm),
+ * [Compute](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and [Block
+ * Volume](https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm) services. The required
+ * permissions are documented in the [Details for the Core
+ * Services](https://docs.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
  * article.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -122,7 +122,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Creates a secondary VNIC and attaches it to the specified instance. For more information
      * about secondary VNICs, see [Virtual Network Interface Cards
-     * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -181,7 +181,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Moves a compute capacity reservation into a different compartment. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -199,13 +199,33 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a compute capacity topology into a different compartment. For information about moving
+     * resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeComputeCapacityTopologyCompartmentResponse>
+            changeComputeCapacityTopologyCompartment(
+                    ChangeComputeCapacityTopologyCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeCapacityTopologyCompartmentRequest,
+                                    ChangeComputeCapacityTopologyCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a compute cluster into a different compartment within the same tenancy. A [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
-     * remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote
+     * direct memory access (RDMA) network group.
      *
      * <p>For information about moving resources between compartments, see [Moving Resources to a
      * Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -223,10 +243,69 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a compute GPU memory cluster into a different compartment. For information about moving
+     * resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeComputeGpuMemoryClusterCompartmentResponse>
+            changeComputeGpuMemoryClusterCompartment(
+                    ChangeComputeGpuMemoryClusterCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeGpuMemoryClusterCompartmentRequest,
+                                    ChangeComputeGpuMemoryClusterCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a compute GPU memory fabric into a different compartment. For information about moving
+     * resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeComputeGpuMemoryFabricCompartmentResponse>
+            changeComputeGpuMemoryFabricCompartment(
+                    ChangeComputeGpuMemoryFabricCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeGpuMemoryFabricCompartmentRequest,
+                                    ChangeComputeGpuMemoryFabricCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a compute host into a different compartment. For information about moving resources
+     * between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeComputeHostCompartmentResponse> changeComputeHostCompartment(
+            ChangeComputeHostCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeComputeHostCompartmentRequest,
+                            ChangeComputeHostCompartmentResponse>
+                    handler);
+
+    /**
      * Moves a compute image capability schema into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see [Moving Resources to a
      * Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -264,7 +343,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Moves an image into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -282,7 +361,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Moves an instance into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When you move an instance to a different compartment, associated resources such as boot
      * volumes and VNICs are not moved.
@@ -344,7 +423,7 @@ public interface ComputeAsync extends AutoCloseable {
      * domain. Compute capacity reservations let you reserve instances in a compartment. When you
      * launch an instance using this reservation, you are assured that you have enough space for
      * your instance, and you won't get out of capacity errors. For more information, see [Reserved
-     * Capacity](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+     * Capacity](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -362,17 +441,40 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Creates a new compute capacity topology in the specified compartment and availability domain.
+     *
+     * <p>Compute capacity topologies provide the RDMA network topology of your bare metal hosts so
+     * that you can launch instances on your bare metal hosts with targeted network locations.
+     *
+     * <p>Compute capacity topologies report the health status of your bare metal hosts.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateComputeCapacityTopologyResponse>
+            createComputeCapacityTopology(
+                    CreateComputeCapacityTopologyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateComputeCapacityTopologyRequest,
+                                    CreateComputeCapacityTopologyResponse>
+                            handler);
+
+    /**
      * Creates an empty [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A
-     * compute cluster is a remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute
+     * cluster is a remote direct memory access (RDMA) network group.
      *
      * <p>After the compute cluster is created, you can use the compute cluster's OCID with the
      * {@link #launchInstance(LaunchInstanceRequest, Consumer, Consumer) launchInstance} operation
      * to create instances in the compute cluster. The instances must be created in the same
      * compartment and availability domain as the cluster.
      *
-     * <p>Use compute clusters when you want to manage instances in the cluster individually, or
-     * when you want to use different types of instances in the RDMA network group.
+     * <p>Use compute clusters when you want to manage instances in the cluster individually in the
+     * RDMA network group.
      *
      * <p>If you want predictable capacity for a specific number of identical instances that are
      * managed as a group, create a cluster network that uses instance pools by using the {@link
@@ -391,6 +493,24 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateComputeClusterRequest, CreateComputeClusterResponse>
                     handler);
+
+    /**
+     * Create a compute GPU memory cluster instance on a specific compute GPU memory fabric
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateComputeGpuMemoryClusterResponse>
+            createComputeGpuMemoryCluster(
+                    CreateComputeGpuMemoryClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateComputeGpuMemoryClusterRequest,
+                                    CreateComputeGpuMemoryClusterResponse>
+                            handler);
 
     /**
      * Creates compute image capability schema.
@@ -415,7 +535,7 @@ public interface ComputeAsync extends AutoCloseable {
      * availability domain. Dedicated virtual machine hosts enable you to run your Compute virtual
      * machine (VM) instances on dedicated servers that are a single tenant and not shared with
      * other customers. For more information, see [Dedicated Virtual Machine
-     * Hosts](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
+     * Hosts](https://docs.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -437,7 +557,7 @@ public interface ComputeAsync extends AutoCloseable {
      * <p>When creating a new image, you must provide the OCID of the instance you want to use as
      * the basis for the image, and the OCID of the compartment containing that instance. For more
      * information about images, see [Managing Custom
-     * Images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
+     * Images](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
      *
      * <p>When importing an exported image from Object Storage, you specify the source information
      * in {@link #imageSourceDetails(ImageSourceDetailsRequest, Consumer, Consumer)
@@ -450,13 +570,13 @@ public interface ComputeAsync extends AutoCloseable {
      * <p>When importing an image based on the Object Storage URL, use {@link
      * #imageSourceViaObjectStorageUriDetails(ImageSourceViaObjectStorageUriDetailsRequest,
      * Consumer, Consumer) imageSourceViaObjectStorageUriDetails}. See [Object Storage
-     * URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs)
-     * and [Using Pre-Authenticated
-     * Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * URLs](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and
+     * [Using Pre-Authenticated
+     * Requests](https://docs.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
      * for constructing URLs for image import/export.
      *
      * <p>For more information about importing exported images, see [Image
-     * Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
+     * Import/Export](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
      *
      * <p>You may optionally specify a *display name* for the image, which is simply a friendly name
      * or description. It does not have to be unique, and you can change it. See {@link
@@ -480,7 +600,7 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * <p>For more information about instance console connections, see [Troubleshooting Instances
      * Using Instance Console
-     * Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
+     * Connections](https://docs.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -533,9 +653,27 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deletes the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteComputeCapacityTopologyResponse>
+            deleteComputeCapacityTopology(
+                    DeleteComputeCapacityTopologyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteComputeCapacityTopologyRequest,
+                                    DeleteComputeCapacityTopologyResponse>
+                            handler);
+
+    /**
      * Deletes a compute cluster. A [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
-     * remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote
+     * direct memory access (RDMA) network group.
      *
      * <p>Before you delete a compute cluster, first delete all instances in the cluster by using
      * the {@link #terminateInstance(TerminateInstanceRequest, Consumer, Consumer)
@@ -553,6 +691,24 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteComputeClusterRequest, DeleteComputeClusterResponse>
                     handler);
+
+    /**
+     * Terminates and deletes the specified compute GPU memory cluster and underlying instances.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteComputeGpuMemoryClusterResponse>
+            deleteComputeGpuMemoryCluster(
+                    DeleteComputeGpuMemoryClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteComputeGpuMemoryClusterRequest,
+                                    DeleteComputeGpuMemoryClusterResponse>
+                            handler);
 
     /**
      * Deletes the specified Compute Image Capability Schema
@@ -664,7 +820,7 @@ public interface ComputeAsync extends AutoCloseable {
      * secondary) are automatically detached and deleted.
      *
      * <p>*Important:** If the VNIC has a {@link PrivateIp} that is the [target of a route
-     * rule](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip),
+     * rule](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip),
      * deleting the VNIC causes that route rule to blackhole and the traffic will be dropped.
      *
      * @param request The request object containing the details to send
@@ -703,16 +859,16 @@ public interface ComputeAsync extends AutoCloseable {
      * specifying the location to export to.
      *
      * <p>For more information about exporting images, see [Image
-     * Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
+     * Import/Export](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
      *
      * <p>To perform an image export, you need write access to the Object Storage bucket for the
      * image, see [Let Users Write Objects to Object Storage
-     * Buckets](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm#Let4).
+     * Buckets](https://docs.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm#Let4).
      *
      * <p>See [Object Storage
-     * URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs)
-     * and [Using Pre-Authenticated
-     * Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * URLs](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and
+     * [Using Pre-Authenticated
+     * Requests](https://docs.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
      * for constructing URLs for image import/export.
      *
      * @param request The request object containing the details to send
@@ -813,9 +969,25 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets information about the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeCapacityTopologyResponse> getComputeCapacityTopology(
+            GetComputeCapacityTopologyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeCapacityTopologyRequest, GetComputeCapacityTopologyResponse>
+                    handler);
+
+    /**
      * Gets information about a compute cluster. A [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
-     * remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote
+     * direct memory access (RDMA) network group.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -865,6 +1037,53 @@ public interface ComputeAsync extends AutoCloseable {
                                     GetComputeGlobalImageCapabilitySchemaVersionRequest,
                                     GetComputeGlobalImageCapabilitySchemaVersionResponse>
                             handler);
+
+    /**
+     * Gets information about the specified compute GPU memory cluster
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeGpuMemoryClusterResponse> getComputeGpuMemoryCluster(
+            GetComputeGpuMemoryClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeGpuMemoryClusterRequest, GetComputeGpuMemoryClusterResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified compute GPU memory fabric
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeGpuMemoryFabricResponse> getComputeGpuMemoryFabric(
+            GetComputeGpuMemoryFabricRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeGpuMemoryFabricRequest, GetComputeGpuMemoryFabricResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified compute host
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeHostResponse> getComputeHost(
+            GetComputeHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetComputeHostRequest, GetComputeHostResponse>
+                    handler);
 
     /**
      * Gets the specified Compute Image Capability Schema
@@ -1005,9 +1224,25 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the maintenance event for the given instance.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetInstanceMaintenanceEventResponse> getInstanceMaintenanceEvent(
+            GetInstanceMaintenanceEventRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetInstanceMaintenanceEventRequest, GetInstanceMaintenanceEventResponse>
+                    handler);
+
+    /**
      * Gets the maximum possible date that a maintenance reboot can be extended. For more
      * information, see [Infrastructure
-     * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+     * Maintenance](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1117,25 +1352,24 @@ public interface ComputeAsync extends AutoCloseable {
      * crashes. The crash dump captures information about the state of the OS at the time of the
      * crash. After the OS restarts, you can analyze the crash dump to diagnose the issue. For more
      * information, see [Sending a Diagnostic
-     * Interrupt](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm).
+     * Interrupt](https://docs.oracle.com/iaas/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm).
      *
      * <p>
      *
      * <p>- **DIAGNOSTICREBOOT** - Powers off the instance, rebuilds it, and then powers it back on.
      * Before you send a diagnostic reboot, restart the instance's OS, confirm that the instance and
      * networking settings are configured correctly, and try other [troubleshooting
-     * steps](https://docs.cloud.oracle.com/iaas/Content/Compute/References/troubleshooting-compute-instances.htm).
+     * steps](https://docs.oracle.com/iaas/Content/Compute/References/troubleshooting-compute-instances.htm).
      * Use diagnostic reboot as a final attempt to troubleshoot an unreachable instance. For virtual
      * machine (VM) instances only. For more information, see [Performing a Diagnostic
-     * Reboot](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/diagnostic-reboot.htm).
+     * Reboot](https://docs.oracle.com/iaas/Content/Compute/Tasks/diagnostic-reboot.htm).
      *
      * <p>- **REBOOTMIGRATE** - Powers off the instance, moves it to new hardware, and then powers
      * it back on. For more information, see [Infrastructure
-     * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+     * Maintenance](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      *
      * <p>For more information about managing instance lifecycle states, see [Stopping and Starting
-     * an
-     * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm).
+     * an Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1152,15 +1386,15 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Creates a new instance in the specified compartment and the specified availability domain.
      * For general information about instances, see [Overview of the Compute
-     * Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
+     * Service](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
      *
      * <p>For information about access control and compartments, see [Overview of the IAM
-     * Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      *
      * <p>For information about availability domains, see [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm). To get a
-     * list of availability domains, use the `ListAvailabilityDomains` operation in the Identity and
-     * Access Management Service API.
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). To get a list of
+     * availability domains, use the `ListAvailabilityDomains` operation in the Identity and Access
+     * Management Service API.
      *
      * <p>All Oracle Cloud Infrastructure resources, including instances, get an Oracle-assigned,
      * unique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find
@@ -1180,7 +1414,7 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * <p>You can later add secondary VNICs to an instance. For more information, see [Virtual
      * Network Interface Cards
-     * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      *
      * <p>To launch an instance from a Marketplace image listing, you must provide the image ID of
      * the listing resource version that you want, but you also must subscribe to the listing before
@@ -1193,6 +1427,11 @@ public interface ComputeAsync extends AutoCloseable {
      * operation, call {@link
      * #getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionRequest, Consumer,
      * Consumer) getAppCatalogListingResourceVersion}.
+     *
+     * <p>When launching an instance, you may provide the `securityAttributes` parameter in {@link
+     * LaunchInstanceDetails} to manage security attributes via the instance, or in the embedded
+     * {@link CreateVnicDetails} to manage security attributes via the VNIC directly, but not both.
+     * Providing `securityAttributes` in both locations will return a 400 Bad Request response.
      *
      * <p>To determine whether capacity is available for a specific shape before you create an
      * instance, use the {@link #createComputeCapacityReport(CreateComputeCapacityReportRequest,
@@ -1336,9 +1575,82 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Lists the compute capacity topologies in the specified compartment. You can filter the list
+     * by a compute capacity topology display name.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeCapacityTopologiesResponse>
+            listComputeCapacityTopologies(
+                    ListComputeCapacityTopologiesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityTopologiesRequest,
+                                    ListComputeCapacityTopologiesResponse>
+                            handler);
+
+    /**
+     * Lists compute bare metal hosts in the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeCapacityTopologyComputeBareMetalHostsResponse>
+            listComputeCapacityTopologyComputeBareMetalHosts(
+                    ListComputeCapacityTopologyComputeBareMetalHostsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityTopologyComputeBareMetalHostsRequest,
+                                    ListComputeCapacityTopologyComputeBareMetalHostsResponse>
+                            handler);
+
+    /**
+     * Lists compute HPC islands in the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeCapacityTopologyComputeHpcIslandsResponse>
+            listComputeCapacityTopologyComputeHpcIslands(
+                    ListComputeCapacityTopologyComputeHpcIslandsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityTopologyComputeHpcIslandsRequest,
+                                    ListComputeCapacityTopologyComputeHpcIslandsResponse>
+                            handler);
+
+    /**
+     * Lists compute network blocks in the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeCapacityTopologyComputeNetworkBlocksResponse>
+            listComputeCapacityTopologyComputeNetworkBlocks(
+                    ListComputeCapacityTopologyComputeNetworkBlocksRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityTopologyComputeNetworkBlocksRequest,
+                                    ListComputeCapacityTopologyComputeNetworkBlocksResponse>
+                            handler);
+
+    /**
      * Lists the compute clusters in the specified compartment. A [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
-     * remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote
+     * direct memory access (RDMA) network group.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1388,6 +1700,72 @@ public interface ComputeAsync extends AutoCloseable {
                                     ListComputeGlobalImageCapabilitySchemasRequest,
                                     ListComputeGlobalImageCapabilitySchemasResponse>
                             handler);
+
+    /**
+     * List all of the GPU memory cluster instances.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeGpuMemoryClusterInstancesResponse>
+            listComputeGpuMemoryClusterInstances(
+                    ListComputeGpuMemoryClusterInstancesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeGpuMemoryClusterInstancesRequest,
+                                    ListComputeGpuMemoryClusterInstancesResponse>
+                            handler);
+
+    /**
+     * List all of the compute GPU memory clusters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeGpuMemoryClustersResponse> listComputeGpuMemoryClusters(
+            ListComputeGpuMemoryClustersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeGpuMemoryClustersRequest,
+                            ListComputeGpuMemoryClustersResponse>
+                    handler);
+
+    /**
+     * Lists the compute GPU memory fabrics that match the specified criteria and compartmentId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeGpuMemoryFabricsResponse> listComputeGpuMemoryFabrics(
+            ListComputeGpuMemoryFabricsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeGpuMemoryFabricsRequest, ListComputeGpuMemoryFabricsResponse>
+                    handler);
+
+    /**
+     * Generates a list of summary host details
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeHostsResponse> listComputeHosts(
+            ListComputeHostsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListComputeHostsRequest, ListComputeHostsResponse>
+                    handler);
 
     /**
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a
@@ -1520,9 +1898,9 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Lists a subset of images available in the specified compartment, including [platform
-     * images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and [custom
-     * images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
-     * The list of platform images includes the three most recently published versions of each major
+     * images](https://docs.oracle.com/iaas/Content/Compute/References/images.htm) and [custom
+     * images](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm). The
+     * list of platform images includes the three most recently published versions of each major
      * distribution. The list does not support filtering based on image tags.
      *
      * <p>The list of images returned is ordered to first show the recent platform images, then all
@@ -1548,7 +1926,7 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * <p>For more information about instance console connections, see [Troubleshooting Instances
      * Using Instance Console
-     * Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
+     * Connections](https://docs.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1581,6 +1959,24 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListInstanceDevicesRequest, ListInstanceDevicesResponse>
                     handler);
+
+    /**
+     * Gets a list of all the maintenance events for the given instance.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListInstanceMaintenanceEventsResponse>
+            listInstanceMaintenanceEvents(
+                    ListInstanceMaintenanceEventsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListInstanceMaintenanceEventsRequest,
+                                    ListInstanceMaintenanceEventsResponse>
+                            handler);
 
     /**
      * Lists the instances in the specified compartment and the specified availability domain. You
@@ -1683,6 +2079,10 @@ public interface ComputeAsync extends AutoCloseable {
      * `PreserveBootVolumeQueryParam`. To delete the boot volume when the instance is deleted,
      * specify `false` or do not specify a value for `PreserveBootVolumeQueryParam`.
      *
+     * <p>To preserve data volumes created with the instance, specify `true` or do not specify a
+     * value for `PreserveDataVolumesQueryParam`. To delete the data volumes when the instance
+     * itself is deleted, specify `false` for `PreserveDataVolumesQueryParam`.
+     *
      * <p>This is an asynchronous operation. The instance's `lifecycleState` changes to TERMINATING
      * temporarily until the instance is completely deleted. After the instance is deleted, the
      * record remains visible in the list of instances with the state TERMINATED for at least 12
@@ -1722,9 +2122,28 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Updates the specified compute capacity topology. Fields that are not provided in the request
+     * will not be updated.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeCapacityTopologyResponse>
+            updateComputeCapacityTopology(
+                    UpdateComputeCapacityTopologyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateComputeCapacityTopologyRequest,
+                                    UpdateComputeCapacityTopologyResponse>
+                            handler);
+
+    /**
      * Updates a compute cluster. A [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
-     * remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote
+     * direct memory access (RDMA) network group.
      *
      * <p>To create instances within a compute cluster, use the {@link
      * #launchInstance(LaunchInstanceRequest, Consumer, Consumer) launchInstance} operation.
@@ -1744,6 +2163,57 @@ public interface ComputeAsync extends AutoCloseable {
             UpdateComputeClusterRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateComputeClusterRequest, UpdateComputeClusterResponse>
+                    handler);
+
+    /**
+     * Updates a compute gpu memory cluster resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeGpuMemoryClusterResponse>
+            updateComputeGpuMemoryCluster(
+                    UpdateComputeGpuMemoryClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateComputeGpuMemoryClusterRequest,
+                                    UpdateComputeGpuMemoryClusterResponse>
+                            handler);
+
+    /**
+     * Customer can update displayName and tags for compute GPU memory fabric record
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeGpuMemoryFabricResponse> updateComputeGpuMemoryFabric(
+            UpdateComputeGpuMemoryFabricRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeGpuMemoryFabricRequest,
+                            UpdateComputeGpuMemoryFabricResponse>
+                    handler);
+
+    /**
+     * Customer can update the some fields for ComputeHost record
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeHostResponse> updateComputeHost(
+            UpdateComputeHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeHostRequest, UpdateComputeHostResponse>
                     handler);
 
     /**
@@ -1848,6 +2318,24 @@ public interface ComputeAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     UpdateInstanceConsoleConnectionRequest,
                                     UpdateInstanceConsoleConnectionResponse>
+                            handler);
+
+    /**
+     * Updates the maintenance event for the given instance.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateInstanceMaintenanceEventResponse>
+            updateInstanceMaintenanceEvent(
+                    UpdateInstanceMaintenanceEventRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateInstanceMaintenanceEventRequest,
+                                    UpdateInstanceMaintenanceEventResponse>
                             handler);
 
     /**

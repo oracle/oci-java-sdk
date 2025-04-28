@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplace;
@@ -10,7 +10,7 @@ import com.oracle.bmc.marketplace.responses.*;
 /**
  * Use the Marketplace API to manage applications in Oracle Cloud Infrastructure Marketplace. For
  * more information, see [Overview of
- * Marketplace](https://docs.cloud.oracle.com/Content/Marketplace/Concepts/marketoverview.htm)
+ * Marketplace](https://docs.oracle.com/iaas/Content/Marketplace/Concepts/marketoverview.htm)
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public interface MarketplaceAsync extends AutoCloseable {
@@ -206,20 +206,20 @@ public interface MarketplaceAsync extends AutoCloseable {
      *
      * <p>Subscribing to the listing requires you to first get a signature from the terms of use
      * agreement for the listing resource version. To get the signature, issue a
-     * [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
+     * [GetAppCatalogListingAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
      * API call. The
-     * [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
+     * [AppCatalogListingResourceVersionAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
      * object, including its signature, is returned in the response. With the signature for the
      * terms of use agreement for the desired listing resource version, create a subscription by
      * issuing a
-     * [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
+     * [CreateAppCatalogSubscription](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
      * API call.
      *
      * <p>To get the image ID to launch an instance, issue a
-     * [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
+     * [GetAppCatalogListingResourceVersion](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
      * API call. Lastly, to launch the instance, use the image ID of the listing resource version to
      * issue a
-     * [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
+     * [LaunchInstance](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
      * API call.
      *
      * @param request The request object containing the details to send
@@ -243,20 +243,20 @@ public interface MarketplaceAsync extends AutoCloseable {
      *
      * <p>Subscribing to the listing requires you to first get a signature from the terms of use
      * agreement for the listing resource version. To get the signature, issue a
-     * [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
+     * [GetAppCatalogListingAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
      * API call. The
-     * [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
+     * [AppCatalogListingResourceVersionAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
      * object, including its signature, is returned in the response. With the signature for the
      * terms of use agreement for the desired listing resource version, create a subscription by
      * issuing a
-     * [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
+     * [CreateAppCatalogSubscription](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
      * API call.
      *
      * <p>To get the image ID to launch an instance, issue a
-     * [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
+     * [GetAppCatalogListingResourceVersion](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
      * API call. Lastly, to launch the instance, use the image ID of the listing resource version to
      * issue a
-     * [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
+     * [LaunchInstance](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
      * API call.
      *
      * @param request The request object containing the details to send
@@ -375,20 +375,20 @@ public interface MarketplaceAsync extends AutoCloseable {
      *
      * <p>Subscribing to the listing requires you to first get a signature from the terms of use
      * agreement for the listing resource version. To get the signature, issue a
-     * [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
+     * [GetAppCatalogListingAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
      * API call. The
-     * [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
+     * [AppCatalogListingResourceVersionAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
      * object, including its signature, is returned in the response. With the signature for the
      * terms of use agreement for the desired listing resource version, create a subscription by
      * issuing a
-     * [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
+     * [CreateAppCatalogSubscription](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
      * API call.
      *
      * <p>To get the image ID to launch an instance, issue a
-     * [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
+     * [GetAppCatalogListingResourceVersion](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
      * API call. Lastly, to launch the instance, use the image ID of the listing resource version to
      * issue a
-     * [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
+     * [LaunchInstance](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
      * API call.
      *
      * @param request The request object containing the details to send
@@ -412,20 +412,20 @@ public interface MarketplaceAsync extends AutoCloseable {
      *
      * <p>Subscribing to the listing requires you to first get a signature from the terms of use
      * agreement for the listing resource version. To get the signature, issue a
-     * [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
+     * [GetAppCatalogListingAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
      * API call. The
-     * [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
+     * [AppCatalogListingResourceVersionAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
      * object, including its signature, is returned in the response. With the signature for the
      * terms of use agreement for the desired listing resource version, create a subscription by
      * issuing a
-     * [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
+     * [CreateAppCatalogSubscription](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
      * API call.
      *
      * <p>To get the image ID to launch an instance, issue a
-     * [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
+     * [GetAppCatalogListingResourceVersion](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
      * API call. Lastly, to launch the instance, use the image ID of the listing resource version to
      * issue a
-     * [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
+     * [LaunchInstance](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
      * API call.
      *
      * @param request The request object containing the details to send

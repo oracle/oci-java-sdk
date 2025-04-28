@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -101,10 +101,10 @@ public final class UpdateCpeDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the CPE device type. You can provide a value if you want to generate CPE device
-         * configuration content for IPSec connections that use this CPE. For a list of possible
-         * values, see {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * CPE device type. You can provide a value if you want to generate CPE device configuration
+         * content for IPSec connections that use this CPE. For a list of possible values, see
+         * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
          *
          * <p>For more information about generating CPE device configuration content, see:
          *
@@ -120,10 +120,10 @@ public final class UpdateCpeDetails
         private String cpeDeviceShapeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the CPE device type. You can provide a value if you want to generate CPE device
-         * configuration content for IPSec connections that use this CPE. For a list of possible
-         * values, see {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * CPE device type. You can provide a value if you want to generate CPE device configuration
+         * content for IPSec connections that use this CPE. For a list of possible values, see
+         * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
          *
          * <p>For more information about generating CPE device configuration content, see:
          *
@@ -239,9 +239,9 @@ public final class UpdateCpeDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the CPE device type. You can provide a value if you want to generate CPE device configuration
-     * content for IPSec connections that use this CPE. For a list of possible values, see {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE
+     * device type. You can provide a value if you want to generate CPE device configuration content
+     * for IPSec connections that use this CPE. For a list of possible values, see {@link
      * #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
      *
      * <p>For more information about generating CPE device configuration content, see:
@@ -258,9 +258,9 @@ public final class UpdateCpeDetails
     private final String cpeDeviceShapeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the CPE device type. You can provide a value if you want to generate CPE device configuration
-     * content for IPSec connections that use this CPE. For a list of possible values, see {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE
+     * device type. You can provide a value if you want to generate CPE device configuration content
+     * for IPSec connections that use this CPE. For a list of possible values, see {@link
      * #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
      *
      * <p>For more information about generating CPE device configuration content, see:

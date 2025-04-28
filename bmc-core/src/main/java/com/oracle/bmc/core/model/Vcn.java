@@ -1,18 +1,17 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
 /**
  * A virtual cloud network (VCN). For more information, see [Overview of the Networking
- * Service](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm).
+ * Service](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- * <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -41,6 +40,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         "displayName",
         "dnsLabel",
         "freeformTags",
+        "securityAttributes",
         "id",
         "ipv6CidrBlocks",
         "lifecycleState",
@@ -60,6 +60,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             String displayName,
             String dnsLabel,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String id,
             java.util.List<String> ipv6CidrBlocks,
             LifecycleState lifecycleState,
@@ -78,6 +79,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         this.displayName = displayName;
         this.dnsLabel = dnsLabel;
         this.freeformTags = freeformTags;
+        this.securityAttributes = securityAttributes;
         this.id = id;
         this.ipv6CidrBlocks = ipv6CidrBlocks;
         this.lifecycleState = lifecycleState;
@@ -158,15 +160,15 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the VCN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the VCN.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the VCN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the VCN.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -177,15 +179,15 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the VCN's default set of DHCP options.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * VCN's default set of DHCP options.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultDhcpOptionsId")
         private String defaultDhcpOptionsId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the VCN's default set of DHCP options.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * VCN's default set of DHCP options.
          *
          * @param defaultDhcpOptionsId the value to set
          * @return this builder
@@ -196,15 +198,15 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the VCN's default route table.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * VCN's default route table.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultRouteTableId")
         private String defaultRouteTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the VCN's default route table.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * VCN's default route table.
          *
          * @param defaultRouteTableId the value to set
          * @return this builder
@@ -215,15 +217,15 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the VCN's default security list.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * VCN's default security list.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultSecurityListId")
         private String defaultSecurityListId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the VCN's default security list.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * VCN's default security list.
          *
          * @param defaultSecurityListId the value to set
          * @return this builder
@@ -236,7 +238,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -246,7 +248,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -288,7 +290,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
          * this VCN.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code vcn1}
          */
@@ -305,7 +307,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
          * this VCN.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code vcn1}
          *
@@ -320,7 +322,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -330,7 +332,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -343,15 +345,47 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * The VCN's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The VCN's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          *
          * @param id the value to set
          * @return this builder
@@ -423,7 +457,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
          * oraclevcn.com} domain.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code vcn1.oraclevcn.com}
          */
@@ -435,7 +469,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
          * oraclevcn.com} domain.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code vcn1.oraclevcn.com}
          *
@@ -466,6 +500,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.displayName,
                             this.dnsLabel,
                             this.freeformTags,
+                            this.securityAttributes,
                             this.id,
                             this.ipv6CidrBlocks,
                             this.lifecycleState,
@@ -514,6 +549,9 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
@@ -606,15 +644,15 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the VCN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the VCN.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the VCN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the VCN.
      *
      * @return the value
      */
@@ -623,15 +661,15 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the VCN's default set of DHCP options.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * VCN's default set of DHCP options.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultDhcpOptionsId")
     private final String defaultDhcpOptionsId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the VCN's default set of DHCP options.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * VCN's default set of DHCP options.
      *
      * @return the value
      */
@@ -640,15 +678,15 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the VCN's default route table.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * VCN's default route table.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultRouteTableId")
     private final String defaultRouteTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the VCN's default route table.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * VCN's default route table.
      *
      * @return the value
      */
@@ -657,15 +695,15 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the VCN's default security list.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * VCN's default security list.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultSecurityListId")
     private final String defaultSecurityListId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the VCN's default security list.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * VCN's default security list.
      *
      * @return the value
      */
@@ -676,7 +714,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -686,7 +724,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -723,7 +761,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * VCN.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code vcn1}
      */
@@ -740,7 +778,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * VCN.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code vcn1}
      *
@@ -753,7 +791,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -763,7 +801,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -774,15 +812,44 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * The VCN's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The VCN's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      *
      * @return the value
      */
@@ -895,7 +962,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * domain.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code vcn1.oraclevcn.com}
      */
@@ -907,7 +974,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * domain.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code vcn1.oraclevcn.com}
      *
@@ -944,6 +1011,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", dnsLabel=").append(String.valueOf(this.dnsLabel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", ipv6CidrBlocks=").append(String.valueOf(this.ipv6CidrBlocks));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -975,6 +1043,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.dnsLabel, other.dnsLabel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.ipv6CidrBlocks, other.ipv6CidrBlocks)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -1019,6 +1088,11 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.dnsLabel == null ? 43 : this.dnsLabel.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result =
                 (result * PRIME)

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.model;
@@ -51,15 +51,15 @@ public final class QueueStats extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * If channelId is presented in GetStats call, the channel id will be returned in the
-         * GetStats response.
+         * If channelId is present in GetStats call, the channel id will be returned in the GetStats
+         * response.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("channelId")
         private String channelId;
 
         /**
-         * If channelId is presented in GetStats call, the channel id will be returned in the
-         * GetStats response.
+         * If channelId is present in GetStats call, the channel id will be returned in the GetStats
+         * response.
          *
          * @param channelId the value to set
          * @return this builder
@@ -120,14 +120,14 @@ public final class QueueStats extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * If channelId is presented in GetStats call, the channel id will be returned in the GetStats
+     * If channelId is present in GetStats call, the channel id will be returned in the GetStats
      * response.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("channelId")
     private final String channelId;
 
     /**
-     * If channelId is presented in GetStats call, the channel id will be returned in the GetStats
+     * If channelId is present in GetStats call, the channel id will be returned in the GetStats
      * response.
      *
      * @return the value

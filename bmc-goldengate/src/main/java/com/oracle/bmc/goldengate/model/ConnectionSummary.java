@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -23,14 +23,11 @@ package com.oracle.bmc.goldengate.model;
         defaultImpl = ConnectionSummary.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = GoldenGateConnectionSummary.class,
-            name = "GOLDENGATE"),
+            value = MicrosoftFabricConnectionSummary.class,
+            name = "MICROSOFT_FABRIC"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = KafkaSchemaRegistryConnectionSummary.class,
             name = "KAFKA_SCHEMA_REGISTRY"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = JavaMessageServiceConnectionSummary.class,
-            name = "JAVA_MESSAGE_SERVICE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = MicrosoftSqlserverConnectionSummary.class,
             name = "MICROSOFT_SQLSERVER"),
@@ -41,6 +38,36 @@ package com.oracle.bmc.goldengate.model;
             value = OracleConnectionSummary.class,
             name = "ORACLE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OciObjectStorageConnectionSummary.class,
+            name = "OCI_OBJECT_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AzureSynapseConnectionSummary.class,
+            name = "AZURE_SYNAPSE_ANALYTICS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MongoDbConnectionSummary.class,
+            name = "MONGODB"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AmazonS3ConnectionSummary.class,
+            name = "AMAZON_S3"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MysqlConnectionSummary.class,
+            name = "MYSQL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ElasticsearchConnectionSummary.class,
+            name = "ELASTICSEARCH"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GooglePubSubConnectionSummary.class,
+            name = "GOOGLE_PUBSUB"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GoogleCloudStorageConnectionSummary.class,
+            name = "GOOGLE_CLOUD_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GoldenGateConnectionSummary.class,
+            name = "GOLDENGATE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = JavaMessageServiceConnectionSummary.class,
+            name = "JAVA_MESSAGE_SERVICE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = SnowflakeConnectionSummary.class,
             name = "SNOWFLAKE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -50,29 +77,14 @@ package com.oracle.bmc.goldengate.model;
             value = RedisConnectionSummary.class,
             name = "REDIS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OciObjectStorageConnectionSummary.class,
-            name = "OCI_OBJECT_STORAGE"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AzureDataLakeStorageConnectionSummary.class,
             name = "AZURE_DATA_LAKE_STORAGE"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AzureSynapseConnectionSummary.class,
-            name = "AZURE_SYNAPSE_ANALYTICS"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = MongoDbConnectionSummary.class,
-            name = "MONGODB"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GoogleBigQueryConnectionSummary.class,
             name = "GOOGLE_BIGQUERY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AmazonS3ConnectionSummary.class,
-            name = "AMAZON_S3"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PostgresqlConnectionSummary.class,
             name = "POSTGRESQL"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = MysqlConnectionSummary.class,
-            name = "MYSQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GenericConnectionSummary.class,
             name = "GENERIC"),
@@ -80,17 +92,17 @@ package com.oracle.bmc.goldengate.model;
             value = KafkaConnectionSummary.class,
             name = "KAFKA"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ElasticsearchConnectionSummary.class,
-            name = "ELASTICSEARCH"),
+            value = Db2ConnectionSummary.class,
+            name = "DB2"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AmazonRedshiftConnectionSummary.class,
             name = "AMAZON_REDSHIFT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = HdfsConnectionSummary.class,
-            name = "HDFS"),
+            value = DatabricksConnectionSummary.class,
+            name = "DATABRICKS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = GoogleCloudStorageConnectionSummary.class,
-            name = "GOOGLE_CLOUD_STORAGE")
+            value = HdfsConnectionSummary.class,
+            name = "HDFS")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -112,7 +124,10 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         "keyId",
         "ingressIps",
         "nsgIds",
-        "subnetId"
+        "subnetId",
+        "routingMethod",
+        "locks",
+        "doesUseSecretIds"
     })
     protected ConnectionSummary(
             String id,
@@ -130,7 +145,10 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
             String keyId,
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
-            String subnetId) {
+            String subnetId,
+            RoutingMethod routingMethod,
+            java.util.List<ResourceLock> locks,
+            Boolean doesUseSecretIds) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -148,17 +166,20 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         this.ingressIps = ingressIps;
         this.nsgIds = nsgIds;
         this.subnetId = subnetId;
+        this.routingMethod = routingMethod;
+        this.locks = locks;
+        this.doesUseSecretIds = doesUseSecretIds;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * connection being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * connection being referenced.
      *
      * @return the value
@@ -194,14 +215,14 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment being referenced.
      *
      * @return the value
@@ -254,7 +275,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      */
@@ -265,7 +286,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
@@ -412,20 +433,71 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * target subnet of the dedicated connection.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * target subnet of the dedicated connection.
      *
      * @return the value
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows
+     * through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+     * SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private
+     * endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is
+     * created in the target VCN subnet for the connection. The subnetId is required when
+     * DEDICATED_ENDPOINT networking is selected.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+    private final RoutingMethod routingMethod;
+
+    /**
+     * Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows
+     * through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+     * SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private
+     * endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is
+     * created in the target VCN subnet for the connection. The subnetId is required when
+     * DEDICATED_ENDPOINT networking is selected.
+     *
+     * @return the value
+     */
+    public RoutingMethod getRoutingMethod() {
+        return routingMethod;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
+    /** Indicates that sensitive attributes are provided via Secrets. */
+    @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+    private final Boolean doesUseSecretIds;
+
+    /**
+     * Indicates that sensitive attributes are provided via Secrets.
+     *
+     * @return the value
+     */
+    public Boolean getDoesUseSecretIds() {
+        return doesUseSecretIds;
     }
 
     @Override
@@ -459,6 +531,9 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", ingressIps=").append(String.valueOf(this.ingressIps));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", routingMethod=").append(String.valueOf(this.routingMethod));
+        sb.append(", locks=").append(String.valueOf(this.locks));
+        sb.append(", doesUseSecretIds=").append(String.valueOf(this.doesUseSecretIds));
         sb.append(")");
         return sb.toString();
     }
@@ -489,6 +564,9 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.ingressIps, other.ingressIps)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.routingMethod, other.routingMethod)
+                && java.util.Objects.equals(this.locks, other.locks)
+                && java.util.Objects.equals(this.doesUseSecretIds, other.doesUseSecretIds)
                 && super.equals(other);
     }
 
@@ -518,6 +596,13 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         result = (result * PRIME) + (this.ingressIps == null ? 43 : this.ingressIps.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.routingMethod == null ? 43 : this.routingMethod.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.doesUseSecretIds == null ? 43 : this.doesUseSecretIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

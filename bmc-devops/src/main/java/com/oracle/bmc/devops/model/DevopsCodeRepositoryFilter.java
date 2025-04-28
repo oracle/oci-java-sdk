@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -27,12 +27,12 @@ package com.oracle.bmc.devops.model;
 public final class DevopsCodeRepositoryFilter extends Filter {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The events only support PUSH. */
+        /** The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED. */
         @com.fasterxml.jackson.annotation.JsonProperty("events")
         private java.util.List<Events> events;
 
         /**
-         * The events only support PUSH.
+         * The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
          *
          * @param events the value to set
          * @return this builder
@@ -111,6 +111,8 @@ public final class DevopsCodeRepositoryFilter extends Filter {
     /** */
     public enum Events implements com.oracle.bmc.http.internal.BmcEnum {
         Push("PUSH"),
+        PullRequestCreated("PULL_REQUEST_CREATED"),
+        PullRequestUpdated("PULL_REQUEST_UPDATED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -152,12 +154,12 @@ public final class DevopsCodeRepositoryFilter extends Filter {
             return UnknownEnumValue;
         }
     };
-    /** The events only support PUSH. */
+    /** The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED. */
     @com.fasterxml.jackson.annotation.JsonProperty("events")
     private final java.util.List<Events> events;
 
     /**
-     * The events only support PUSH.
+     * The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
      *
      * @return the value
      */

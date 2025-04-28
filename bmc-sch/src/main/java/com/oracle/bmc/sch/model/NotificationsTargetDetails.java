@@ -1,14 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch.model;
 
 /**
- * The topic used for the Notifications target. For configuration instructions, see [To create a
- * service
- * connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
- * <br>
+ * The destination topic for data transferred from the source. For configuration instructions, see
+ * [Creating a
+ * Connector](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,15 +30,15 @@ public final class NotificationsTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the topic.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * topic.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("topicId")
         private String topicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the topic.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * topic.
          *
          * @param topicId the value to set
          * @return this builder
@@ -51,20 +50,16 @@ public final class NotificationsTargetDetails extends TargetDetails {
         }
         /**
          * Whether to apply a simplified, user-friendly format to the message. Applies only when
-         * friendly formatting is supported by the service connector source and the subscription
-         * protocol.
-         *
-         * <p>Example: {@code true}
+         * friendly formatting is supported by the connector source and the subscription protocol.
+         * Example: {@code true}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("enableFormattedMessaging")
         private Boolean enableFormattedMessaging;
 
         /**
          * Whether to apply a simplified, user-friendly format to the message. Applies only when
-         * friendly formatting is supported by the service connector source and the subscription
-         * protocol.
-         *
-         * <p>Example: {@code true}
+         * friendly formatting is supported by the connector source and the subscription protocol.
+         * Example: {@code true}
          *
          * @param enableFormattedMessaging the value to set
          * @return this builder
@@ -116,15 +111,15 @@ public final class NotificationsTargetDetails extends TargetDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the topic.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * topic.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
     private final String topicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the topic.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * topic.
      *
      * @return the value
      */
@@ -134,20 +129,16 @@ public final class NotificationsTargetDetails extends TargetDetails {
 
     /**
      * Whether to apply a simplified, user-friendly format to the message. Applies only when
-     * friendly formatting is supported by the service connector source and the subscription
-     * protocol.
-     *
-     * <p>Example: {@code true}
+     * friendly formatting is supported by the connector source and the subscription protocol.
+     * Example: {@code true}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("enableFormattedMessaging")
     private final Boolean enableFormattedMessaging;
 
     /**
      * Whether to apply a simplified, user-friendly format to the message. Applies only when
-     * friendly formatting is supported by the service connector source and the subscription
-     * protocol.
-     *
-     * <p>Example: {@code true}
+     * friendly formatting is supported by the connector source and the subscription protocol.
+     * Example: {@code true}
      *
      * @return the value
      */

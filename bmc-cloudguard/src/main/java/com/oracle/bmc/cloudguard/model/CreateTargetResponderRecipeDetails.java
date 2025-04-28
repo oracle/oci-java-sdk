@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information required to create TargetResponderRecipe <br>
+ * Parameters to be used to create a new target responder recipe (TargetDetectorRecipe resource).
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,12 +35,12 @@ public final class CreateTargetResponderRecipeDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Identifier for ResponderRecipe. */
+        /** Unique identifier for responder recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
         private String responderRecipeId;
 
         /**
-         * Identifier for ResponderRecipe.
+         * Unique identifier for responder recipe
          *
          * @param responderRecipeId the value to set
          * @return this builder
@@ -49,12 +50,12 @@ public final class CreateTargetResponderRecipeDetails
             this.__explicitlySet__.add("responderRecipeId");
             return this;
         }
-        /** Override responder rules associated with reponder recipe in a target. */
+        /** List of overrides to be applied to responder rules associated with the target */
         @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
         private java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules;
 
         /**
-         * Override responder rules associated with reponder recipe in a target.
+         * List of overrides to be applied to responder rules associated with the target
          *
          * @param responderRules the value to set
          * @return this builder
@@ -100,12 +101,12 @@ public final class CreateTargetResponderRecipeDetails
         return new Builder().copy(this);
     }
 
-    /** Identifier for ResponderRecipe. */
+    /** Unique identifier for responder recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
     private final String responderRecipeId;
 
     /**
-     * Identifier for ResponderRecipe.
+     * Unique identifier for responder recipe
      *
      * @return the value
      */
@@ -113,12 +114,12 @@ public final class CreateTargetResponderRecipeDetails
         return responderRecipeId;
     }
 
-    /** Override responder rules associated with reponder recipe in a target. */
+    /** List of overrides to be applied to responder rules associated with the target */
     @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
     private final java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules;
 
     /**
-     * Override responder rules associated with reponder recipe in a target.
+     * List of overrides to be applied to responder rules associated with the target
      *
      * @return the value
      */

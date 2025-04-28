@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -150,6 +150,7 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -157,7 +158,41 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         AttachManagedInstancesToLifecycleStageResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeLifecycleEnvironmentCompartmentResponse changeLifecycleEnvironmentCompartment(
+            ChangeLifecycleEnvironmentCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getLifecycleEnvironmentId(), "lifecycleEnvironmentId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeLifecycleEnvironmentCompartmentDetails(),
+                "changeLifecycleEnvironmentCompartmentDetails is required");
+
+        return clientCall(request, ChangeLifecycleEnvironmentCompartmentResponse::builder)
+                .logger(LOG, "changeLifecycleEnvironmentCompartment")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "ChangeLifecycleEnvironmentCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/ChangeLifecycleEnvironmentCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeLifecycleEnvironmentCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("lifecycleEnvironments")
+                .appendPathParam(request.getLifecycleEnvironmentId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeLifecycleEnvironmentCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -181,6 +216,7 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.LifecycleEnvironment.class,
@@ -189,7 +225,6 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                         "etag", CreateLifecycleEnvironmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateLifecycleEnvironmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -214,9 +249,9 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteLifecycleEnvironmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -247,6 +282,7 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -254,7 +290,6 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DetachManagedInstancesFromLifecycleStageResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -278,13 +313,13 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getLifecycleEnvironmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.LifecycleEnvironment.class,
                         GetLifecycleEnvironmentResponse.Builder::lifecycleEnvironment)
                 .handleResponseHeaderString("etag", GetLifecycleEnvironmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetLifecycleEnvironmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -306,13 +341,13 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getLifecycleStageId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.LifecycleStage.class,
                         GetLifecycleStageResponse.Builder::lifecycleStage)
                 .handleResponseHeaderString("etag", GetLifecycleStageResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetLifecycleStageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -339,6 +374,14 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("lifecycleEnvironmentId", request.getLifecycleEnvironmentId())
                 .appendEnumQueryParam("archType", request.getArchType())
                 .appendEnumQueryParam("osFamily", request.getOsFamily())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
@@ -346,6 +389,7 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.LifecycleEnvironmentCollection.class,
                         ListLifecycleEnvironmentsResponse.Builder::lifecycleEnvironmentCollection)
@@ -353,7 +397,6 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListLifecycleEnvironmentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListLifecycleEnvironmentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -388,6 +431,7 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.InstalledPackageCollection.class,
                         ListLifecycleStageInstalledPackagesResponse.Builder
@@ -398,7 +442,6 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListLifecycleStageInstalledPackagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -425,6 +468,14 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("softwareSourceId", request.getSoftwareSourceId())
                 .appendEnumQueryParam("archType", request.getArchType())
                 .appendEnumQueryParam("osFamily", request.getOsFamily())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
@@ -432,6 +483,7 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.LifecycleStageCollection.class,
                         ListLifecycleStagesResponse.Builder::lifecycleStageCollection)
@@ -439,7 +491,6 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListLifecycleStagesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListLifecycleStagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -470,6 +521,7 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -477,7 +529,41 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         PromoteSoftwareSourceToLifecycleStageResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RebootLifecycleStageResponse rebootLifecycleStage(RebootLifecycleStageRequest request) {
+
+        Validate.notBlank(request.getLifecycleStageId(), "lifecycleStageId must not be blank");
+        Objects.requireNonNull(
+                request.getRebootLifecycleStageDetails(),
+                "rebootLifecycleStageDetails is required");
+
+        return clientCall(request, RebootLifecycleStageResponse::builder)
+                .logger(LOG, "rebootLifecycleStage")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "RebootLifecycleStage",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/RebootLifecycleStage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RebootLifecycleStageRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("lifecycleStages")
+                .appendPathParam(request.getLifecycleStageId())
+                .appendPathParam("actions")
+                .appendPathParam("reboot")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RebootLifecycleStageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RebootLifecycleStageResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -505,6 +591,7 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.LifecycleEnvironment.class,
@@ -513,7 +600,6 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                         "etag", UpdateLifecycleEnvironmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateLifecycleEnvironmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

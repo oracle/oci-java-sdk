@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -17,7 +17,7 @@ package com.oracle.bmc.core.model;
  *
  * <p>You can add *secondary private IPs* to a VNIC after it's created. For more information, see
  * the {@code privateIp} operations and also [IP
- * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+ * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
  *
  * <p>*Note:** Only {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and {@link
  * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} work with *primary* private IPs. To create and
@@ -34,8 +34,7 @@ package com.oracle.bmc.core.model;
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- * <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -64,7 +63,10 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         "vlanId",
         "subnetId",
         "timeCreated",
-        "vnicId"
+        "vnicId",
+        "ipState",
+        "lifetime",
+        "routeTableId"
     })
     public PrivateIp(
             String availabilityDomain,
@@ -79,7 +81,10 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             String vlanId,
             String subnetId,
             java.util.Date timeCreated,
-            String vnicId) {
+            String vnicId,
+            IpState ipState,
+            Lifetime lifetime,
+            String routeTableId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -94,6 +99,9 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
         this.vnicId = vnicId;
+        this.ipState = ipState;
+        this.lifetime = lifetime;
+        this.routeTableId = routeTableId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -122,15 +130,15 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the private IP.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the private IP.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the private IP.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the private IP.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -143,7 +151,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -153,7 +161,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -188,7 +196,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -198,7 +206,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -218,7 +226,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
          * 1123](https://tools.ietf.org/html/rfc1123).
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code bminstance1}
          */
@@ -233,7 +241,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
          * 1123](https://tools.ietf.org/html/rfc1123).
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code bminstance1}
          *
@@ -247,14 +255,14 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * The private IP's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The private IP's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          *
          * @param id the value to set
          * @return this builder
@@ -321,8 +329,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         /**
          * Applicable only if the {@code PrivateIp} object is being used with a VLAN as part of the
          * Oracle Cloud VMware Solution. The {@code vlanId} is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the VLAN. See {@link Vlan}.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VLAN. See {@link Vlan}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
         private String vlanId;
@@ -330,8 +338,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         /**
          * Applicable only if the {@code PrivateIp} object is being used with a VLAN as part of the
          * Oracle Cloud VMware Solution. The {@code vlanId} is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the VLAN. See {@link Vlan}.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VLAN. See {@link Vlan}.
          *
          * @param vlanId the value to set
          * @return this builder
@@ -342,8 +350,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet the VNIC is in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet the VNIC is in.
          *
          * <p>However, if the {@code PrivateIp} object is being used with a VLAN as part of the
          * Oracle Cloud VMware Solution, the {@code subnetId} is null.
@@ -352,8 +360,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet the VNIC is in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet the VNIC is in.
          *
          * <p>However, if the {@code PrivateIp} object is being used with a VLAN as part of the
          * Oracle Cloud VMware Solution, the {@code subnetId} is null.
@@ -390,19 +398,19 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC the private IP is assigned to. The VNIC and private IP must be in the same
-         * subnet. However, if the {@code PrivateIp} object is being used with a VLAN as part of the
-         * Oracle Cloud VMware Solution, the {@code vnicId} is null.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC the private IP is assigned to. The VNIC and private IP must be in the same subnet.
+         * However, if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle
+         * Cloud VMware Solution, the {@code vnicId} is null.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC the private IP is assigned to. The VNIC and private IP must be in the same
-         * subnet. However, if the {@code PrivateIp} object is being used with a VLAN as part of the
-         * Oracle Cloud VMware Solution, the {@code vnicId} is null.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC the private IP is assigned to. The VNIC and private IP must be in the same subnet.
+         * However, if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle
+         * Cloud VMware Solution, the {@code vnicId} is null.
          *
          * @param vnicId the value to set
          * @return this builder
@@ -410,6 +418,61 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         public Builder vnicId(String vnicId) {
             this.vnicId = vnicId;
             this.__explicitlySet__.add("vnicId");
+            return this;
+        }
+        /**
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise
+         * it is AVAILABLE.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipState")
+        private IpState ipState;
+
+        /**
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise
+         * it is AVAILABLE.
+         *
+         * @param ipState the value to set
+         * @return this builder
+         */
+        public Builder ipState(IpState ipState) {
+            this.ipState = ipState;
+            this.__explicitlySet__.add("ipState");
+            return this;
+        }
+        /** Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
+        private Lifetime lifetime;
+
+        /**
+         * Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved
+         *
+         * @param lifetime the value to set
+         * @return this builder
+         */
+        public Builder lifetime(Lifetime lifetime) {
+            this.lifetime = lifetime;
+            this.__explicitlySet__.add("lifetime");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
+         * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
+         * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+         *
+         * @param routeTableId the value to set
+         * @return this builder
+         */
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
             return this;
         }
 
@@ -431,7 +494,10 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
                             this.vlanId,
                             this.subnetId,
                             this.timeCreated,
-                            this.vnicId);
+                            this.vnicId,
+                            this.ipState,
+                            this.lifetime,
+                            this.routeTableId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -479,6 +545,15 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             if (model.wasPropertyExplicitlySet("vnicId")) {
                 this.vnicId(model.getVnicId());
             }
+            if (model.wasPropertyExplicitlySet("ipState")) {
+                this.ipState(model.getIpState());
+            }
+            if (model.wasPropertyExplicitlySet("lifetime")) {
+                this.lifetime(model.getLifetime());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
+            }
             return this;
         }
     }
@@ -514,15 +589,15 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the private IP.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the private IP.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the private IP.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the private IP.
      *
      * @return the value
      */
@@ -533,7 +608,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -543,7 +618,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -573,7 +648,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -583,7 +658,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -601,7 +676,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
      * 1123](https://tools.ietf.org/html/rfc1123).
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code bminstance1}
      */
@@ -616,7 +691,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
      * 1123](https://tools.ietf.org/html/rfc1123).
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code bminstance1}
      *
@@ -628,14 +703,14 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * The private IP's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The private IP's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      *
      * @return the value
      */
@@ -696,8 +771,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     /**
      * Applicable only if the {@code PrivateIp} object is being used with a VLAN as part of the
      * Oracle Cloud VMware Solution. The {@code vlanId} is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VLAN. See {@link Vlan}.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+     * See {@link Vlan}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
     private final String vlanId;
@@ -705,8 +780,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     /**
      * Applicable only if the {@code PrivateIp} object is being used with a VLAN as part of the
      * Oracle Cloud VMware Solution. The {@code vlanId} is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VLAN. See {@link Vlan}.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+     * See {@link Vlan}.
      *
      * @return the value
      */
@@ -715,8 +790,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet the VNIC is in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet the VNIC is in.
      *
      * <p>However, if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle
      * Cloud VMware Solution, the {@code subnetId} is null.
@@ -725,8 +800,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet the VNIC is in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet the VNIC is in.
      *
      * <p>However, if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle
      * Cloud VMware Solution, the {@code subnetId} is null.
@@ -759,24 +834,168 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC the private IP is assigned to. The VNIC and private IP must be in the same subnet.
-     * However, if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle
-     * Cloud VMware Solution, the {@code vnicId} is null.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * the private IP is assigned to. The VNIC and private IP must be in the same subnet. However,
+     * if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle Cloud VMware
+     * Solution, the {@code vnicId} is null.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC the private IP is assigned to. The VNIC and private IP must be in the same subnet.
-     * However, if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle
-     * Cloud VMware Solution, the {@code vnicId} is null.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * the private IP is assigned to. The VNIC and private IP must be in the same subnet. However,
+     * if the {@code PrivateIp} object is being used with a VLAN as part of the Oracle Cloud VMware
+     * Solution, the {@code vnicId} is null.
      *
      * @return the value
      */
     public String getVnicId() {
         return vnicId;
+    }
+
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it
+     * is AVAILABLE.
+     */
+    public enum IpState implements com.oracle.bmc.http.internal.BmcEnum {
+        Assigned("ASSIGNED"),
+        Available("AVAILABLE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IpState.class);
+
+        private final String value;
+        private static java.util.Map<String, IpState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IpState v : IpState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        IpState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IpState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'IpState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it
+     * is AVAILABLE.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipState")
+    private final IpState ipState;
+
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it
+     * is AVAILABLE.
+     *
+     * @return the value
+     */
+    public IpState getIpState() {
+        return ipState;
+    }
+
+    /** Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved */
+    public enum Lifetime implements com.oracle.bmc.http.internal.BmcEnum {
+        Ephemeral("EPHEMERAL"),
+        Reserved("RESERVED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Lifetime.class);
+
+        private final String value;
+        private static java.util.Map<String, Lifetime> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Lifetime v : Lifetime.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Lifetime(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Lifetime create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Lifetime', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
+    private final Lifetime lifetime;
+
+    /**
+     * Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved
+     *
+     * @return the value
+     */
+    public Lifetime getLifetime() {
+        return lifetime;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
+     * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    private final String routeTableId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
+     * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     *
+     * @return the value
+     */
+    public String getRouteTableId() {
+        return routeTableId;
     }
 
     @Override
@@ -807,6 +1026,9 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
+        sb.append(", ipState=").append(String.valueOf(this.ipState));
+        sb.append(", lifetime=").append(String.valueOf(this.lifetime));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(")");
         return sb.toString();
     }
@@ -834,6 +1056,9 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
+                && java.util.Objects.equals(this.ipState, other.ipState)
+                && java.util.Objects.equals(this.lifetime, other.lifetime)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && super.equals(other);
     }
 
@@ -862,6 +1087,9 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
+        result = (result * PRIME) + (this.ipState == null ? 43 : this.ipState.hashCode());
+        result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

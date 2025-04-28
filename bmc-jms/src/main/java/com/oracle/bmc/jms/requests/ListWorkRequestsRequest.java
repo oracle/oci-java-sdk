@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.requests;
@@ -7,20 +7,20 @@ package com.oracle.bmc.jms.requests;
 import com.oracle.bmc.jms.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListWorkRequestsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListWorkRequestsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which to list resources.
      */
     public String getCompartmentId() {
@@ -34,13 +34,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return id;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * fleet.
      */
     private String fleetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * fleet.
      */
     public String getFleetId() {
@@ -73,6 +73,27 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public Integer getLimit() {
         return limit;
     }
+    /** The Fleet-unique identifier of the managed instance. */
+    private String managedInstanceId;
+
+    /** The Fleet-unique identifier of the managed instance. */
+    public String getManagedInstanceId() {
+        return managedInstanceId;
+    }
+    /** The operation type of the work request. */
+    private com.oracle.bmc.jms.model.OperationType operationType;
+
+    /** The operation type of the work request. */
+    public com.oracle.bmc.jms.model.OperationType getOperationType() {
+        return operationType;
+    }
+    /** The status of the work request. */
+    private java.util.List<com.oracle.bmc.jms.model.OperationStatus> status;
+
+    /** The status of the work request. */
+    public java.util.List<com.oracle.bmc.jms.model.OperationStatus> getStatus() {
+        return status;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -81,13 +102,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which to list resources.
          *
          * @param compartmentId the value to set
@@ -113,13 +134,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * fleet.
          */
         private String fleetId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * fleet.
          *
          * @param fleetId the value to set
@@ -176,6 +197,58 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /** The Fleet-unique identifier of the managed instance. */
+        private String managedInstanceId = null;
+
+        /**
+         * The Fleet-unique identifier of the managed instance.
+         *
+         * @param managedInstanceId the value to set
+         * @return this builder instance
+         */
+        public Builder managedInstanceId(String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
+            return this;
+        }
+
+        /** The operation type of the work request. */
+        private com.oracle.bmc.jms.model.OperationType operationType = null;
+
+        /**
+         * The operation type of the work request.
+         *
+         * @param operationType the value to set
+         * @return this builder instance
+         */
+        public Builder operationType(com.oracle.bmc.jms.model.OperationType operationType) {
+            this.operationType = operationType;
+            return this;
+        }
+
+        /** The status of the work request. */
+        private java.util.List<com.oracle.bmc.jms.model.OperationStatus> status = null;
+
+        /**
+         * The status of the work request.
+         *
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<com.oracle.bmc.jms.model.OperationStatus> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. The status of the work request.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder status(OperationStatus singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -212,6 +285,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());
+            managedInstanceId(o.getManagedInstanceId());
+            operationType(o.getOperationType());
+            status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -252,8 +328,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.opcRequestId = opcRequestId;
             request.page = page;
             request.limit = limit;
+            request.managedInstanceId = managedInstanceId;
+            request.operationType = operationType;
+            request.status = status;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, id, fleetId, opcRequestId, page, limit);
+            // new ListWorkRequestsRequest(compartmentId, id, fleetId, opcRequestId, page, limit,
+            // managedInstanceId, operationType, status);
         }
     }
 
@@ -269,7 +349,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .fleetId(fleetId)
                 .opcRequestId(opcRequestId)
                 .page(page)
-                .limit(limit);
+                .limit(limit)
+                .managedInstanceId(managedInstanceId)
+                .operationType(operationType)
+                .status(status);
     }
 
     /**
@@ -292,6 +375,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
+        sb.append(",operationType=").append(String.valueOf(this.operationType));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
     }
@@ -312,7 +398,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.limit, other.limit);
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
+                && java.util.Objects.equals(this.operationType, other.operationType)
+                && java.util.Objects.equals(this.status, other.status);
     }
 
     @Override
@@ -327,6 +416,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationType == null ? 43 : this.operationType.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }
 }

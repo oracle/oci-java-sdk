@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information about problem entities details of DataSource for a CloudGuard Problem. <br>
+ * Summary information about problem entities for a data source for a problem. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -79,12 +79,12 @@ public final class ProblemEntitySummary
             this.__explicitlySet__.add("timeFirstDetected");
             return this;
         }
-        /** Attached problem id */
+        /** Attached problem ID */
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
-         * Attached problem id
+         * Attached problem ID
          *
          * @param problemId the value to set
          * @return this builder
@@ -109,12 +109,12 @@ public final class ProblemEntitySummary
             this.__explicitlySet__.add("timeLastDetected");
             return this;
         }
-        /** Log result query url for a data source query */
+        /** Log result query URL for a data source query */
         @com.fasterxml.jackson.annotation.JsonProperty("resultUrl")
         private String resultUrl;
 
         /**
-         * Log result query url for a data source query
+         * Log result query URL for a data source query
          *
          * @param resultUrl the value to set
          * @return this builder
@@ -124,12 +124,12 @@ public final class ProblemEntitySummary
             this.__explicitlySet__.add("resultUrl");
             return this;
         }
-        /** List of event related to a DataSource */
+        /** List of entity details related to a data source */
         @com.fasterxml.jackson.annotation.JsonProperty("entityDetails")
         private java.util.List<EntityDetails> entityDetails;
 
         /**
-         * List of event related to a DataSource
+         * List of entity details related to a data source
          *
          * @param entityDetails the value to set
          * @return this builder
@@ -217,12 +217,12 @@ public final class ProblemEntitySummary
         return timeFirstDetected;
     }
 
-    /** Attached problem id */
+    /** Attached problem ID */
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
-     * Attached problem id
+     * Attached problem ID
      *
      * @return the value
      */
@@ -243,12 +243,12 @@ public final class ProblemEntitySummary
         return timeLastDetected;
     }
 
-    /** Log result query url for a data source query */
+    /** Log result query URL for a data source query */
     @com.fasterxml.jackson.annotation.JsonProperty("resultUrl")
     private final String resultUrl;
 
     /**
-     * Log result query url for a data source query
+     * Log result query URL for a data source query
      *
      * @return the value
      */
@@ -256,12 +256,12 @@ public final class ProblemEntitySummary
         return resultUrl;
     }
 
-    /** List of event related to a DataSource */
+    /** List of entity details related to a data source */
     @com.fasterxml.jackson.annotation.JsonProperty("entityDetails")
     private final java.util.List<EntityDetails> entityDetails;
 
     /**
-     * List of event related to a DataSource
+     * List of entity details related to a data source
      *
      * @return the value
      */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -29,7 +29,10 @@ public final class ManagedMySqlDatabaseSummary
         "dbName",
         "dbVersion",
         "timeCreated",
-        "name"
+        "name",
+        "databaseType",
+        "managementState",
+        "lifecycleState"
     })
     public ManagedMySqlDatabaseSummary(
             String id,
@@ -37,7 +40,10 @@ public final class ManagedMySqlDatabaseSummary
             String dbName,
             String dbVersion,
             java.util.Date timeCreated,
-            String name) {
+            String name,
+            MySqlType databaseType,
+            ManagementState managementState,
+            LifecycleStates lifecycleState) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -45,6 +51,9 @@ public final class ManagedMySqlDatabaseSummary
         this.dbVersion = dbVersion;
         this.timeCreated = timeCreated;
         this.name = name;
+        this.databaseType = databaseType;
+        this.managementState = managementState;
+        this.lifecycleState = lifecycleState;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -139,6 +148,51 @@ public final class ManagedMySqlDatabaseSummary
             this.__explicitlySet__.add("name");
             return this;
         }
+        /** The type of the MySQL Database. Indicates whether the database is external or MDS. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+        private MySqlType databaseType;
+
+        /**
+         * The type of the MySQL Database. Indicates whether the database is external or MDS.
+         *
+         * @param databaseType the value to set
+         * @return this builder
+         */
+        public Builder databaseType(MySqlType databaseType) {
+            this.databaseType = databaseType;
+            this.__explicitlySet__.add("databaseType");
+            return this;
+        }
+        /** Indicates database management status. */
+        @com.fasterxml.jackson.annotation.JsonProperty("managementState")
+        private ManagementState managementState;
+
+        /**
+         * Indicates database management status.
+         *
+         * @param managementState the value to set
+         * @return this builder
+         */
+        public Builder managementState(ManagementState managementState) {
+            this.managementState = managementState;
+            this.__explicitlySet__.add("managementState");
+            return this;
+        }
+        /** Indicates lifecycle state of the resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleStates lifecycleState;
+
+        /**
+         * Indicates lifecycle state of the resource.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         */
+        public Builder lifecycleState(LifecycleStates lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -151,7 +205,10 @@ public final class ManagedMySqlDatabaseSummary
                             this.dbName,
                             this.dbVersion,
                             this.timeCreated,
-                            this.name);
+                            this.name,
+                            this.databaseType,
+                            this.managementState,
+                            this.lifecycleState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -177,6 +234,15 @@ public final class ManagedMySqlDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("managementState")) {
+                this.managementState(model.getManagementState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
             }
             return this;
         }
@@ -269,6 +335,45 @@ public final class ManagedMySqlDatabaseSummary
         return name;
     }
 
+    /** The type of the MySQL Database. Indicates whether the database is external or MDS. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+    private final MySqlType databaseType;
+
+    /**
+     * The type of the MySQL Database. Indicates whether the database is external or MDS.
+     *
+     * @return the value
+     */
+    public MySqlType getDatabaseType() {
+        return databaseType;
+    }
+
+    /** Indicates database management status. */
+    @com.fasterxml.jackson.annotation.JsonProperty("managementState")
+    private final ManagementState managementState;
+
+    /**
+     * Indicates database management status.
+     *
+     * @return the value
+     */
+    public ManagementState getManagementState() {
+        return managementState;
+    }
+
+    /** Indicates lifecycle state of the resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final LifecycleStates lifecycleState;
+
+    /**
+     * Indicates lifecycle state of the resource.
+     *
+     * @return the value
+     */
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -290,6 +395,9 @@ public final class ManagedMySqlDatabaseSummary
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(", managementState=").append(String.valueOf(this.managementState));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
     }
@@ -310,6 +418,9 @@ public final class ManagedMySqlDatabaseSummary
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.managementState, other.managementState)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && super.equals(other);
     }
 
@@ -325,6 +436,13 @@ public final class ManagedMySqlDatabaseSummary
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementState == null ? 43 : this.managementState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

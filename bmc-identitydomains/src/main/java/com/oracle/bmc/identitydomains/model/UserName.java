@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -12,7 +12,7 @@ package com.oracle.bmc.identitydomains.model;
  * [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name,
  * mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName],
  * [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]] - idcsPii: true - multiValued:
- * false - mutability: readWrite - required: true - returned: default - type: complex - uniqueness:
+ * false - mutability: readWrite - required: false - returned: default - type: complex - uniqueness:
  * none <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -84,7 +84,7 @@ public final class UserName extends com.oracle.bmc.http.client.internal.Explicit
          * Last name
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Last Name -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: true -
+         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
          * returned: default - type: string - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("familyName")
@@ -94,7 +94,7 @@ public final class UserName extends com.oracle.bmc.http.client.internal.Explicit
          * Last name
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Last Name -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: true -
+         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
          * returned: default - type: string - uniqueness: none
          *
          * @param familyName the value to set
@@ -282,7 +282,7 @@ public final class UserName extends com.oracle.bmc.http.client.internal.Explicit
      * Last name
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Last Name -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: true -
+     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
      * returned: default - type: string - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("familyName")
@@ -292,7 +292,7 @@ public final class UserName extends com.oracle.bmc.http.client.internal.Explicit
      * Last name
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Last Name -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: true -
+     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
      * returned: default - type: string - uniqueness: none
      *
      * @return the value

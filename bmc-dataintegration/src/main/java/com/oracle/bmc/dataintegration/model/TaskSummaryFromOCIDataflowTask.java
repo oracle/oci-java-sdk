@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -144,6 +144,15 @@ public final class TaskSummaryFromOCIDataflowTask extends TaskSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isConcurrentAllowed")
+        private Boolean isConcurrentAllowed;
+
+        public Builder isConcurrentAllowed(Boolean isConcurrentAllowed) {
+            this.isConcurrentAllowed = isConcurrentAllowed;
+            this.__explicitlySet__.add("isConcurrentAllowed");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private ObjectMetadata metadata;
 
@@ -171,6 +180,24 @@ public final class TaskSummaryFromOCIDataflowTask extends TaskSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("driverShapeDetails")
+        private ShapeDetails driverShapeDetails;
+
+        public Builder driverShapeDetails(ShapeDetails driverShapeDetails) {
+            this.driverShapeDetails = driverShapeDetails;
+            this.__explicitlySet__.add("driverShapeDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("executorShapeDetails")
+        private ShapeDetails executorShapeDetails;
+
+        public Builder executorShapeDetails(ShapeDetails executorShapeDetails) {
+            this.executorShapeDetails = executorShapeDetails;
+            this.__explicitlySet__.add("executorShapeDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -190,9 +217,12 @@ public final class TaskSummaryFromOCIDataflowTask extends TaskSummary {
                             this.parameters,
                             this.opConfigValues,
                             this.configProviderDelegate,
+                            this.isConcurrentAllowed,
                             this.metadata,
                             this.keyMap,
-                            this.dataflowApplication);
+                            this.dataflowApplication,
+                            this.driverShapeDetails,
+                            this.executorShapeDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -240,6 +270,9 @@ public final class TaskSummaryFromOCIDataflowTask extends TaskSummary {
             if (model.wasPropertyExplicitlySet("configProviderDelegate")) {
                 this.configProviderDelegate(model.getConfigProviderDelegate());
             }
+            if (model.wasPropertyExplicitlySet("isConcurrentAllowed")) {
+                this.isConcurrentAllowed(model.getIsConcurrentAllowed());
+            }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
             }
@@ -248,6 +281,12 @@ public final class TaskSummaryFromOCIDataflowTask extends TaskSummary {
             }
             if (model.wasPropertyExplicitlySet("dataflowApplication")) {
                 this.dataflowApplication(model.getDataflowApplication());
+            }
+            if (model.wasPropertyExplicitlySet("driverShapeDetails")) {
+                this.driverShapeDetails(model.getDriverShapeDetails());
+            }
+            if (model.wasPropertyExplicitlySet("executorShapeDetails")) {
+                this.executorShapeDetails(model.getExecutorShapeDetails());
             }
             return this;
         }
@@ -277,9 +316,12 @@ public final class TaskSummaryFromOCIDataflowTask extends TaskSummary {
             java.util.List<Parameter> parameters,
             ConfigValues opConfigValues,
             ConfigProvider configProviderDelegate,
+            Boolean isConcurrentAllowed,
             ObjectMetadata metadata,
             java.util.Map<String, String> keyMap,
-            DataflowApplication dataflowApplication) {
+            DataflowApplication dataflowApplication,
+            ShapeDetails driverShapeDetails,
+            ShapeDetails executorShapeDetails) {
         super(
                 key,
                 modelVersion,
@@ -294,9 +336,12 @@ public final class TaskSummaryFromOCIDataflowTask extends TaskSummary {
                 parameters,
                 opConfigValues,
                 configProviderDelegate,
+                isConcurrentAllowed,
                 metadata,
                 keyMap);
         this.dataflowApplication = dataflowApplication;
+        this.driverShapeDetails = driverShapeDetails;
+        this.executorShapeDetails = executorShapeDetails;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataflowApplication")
@@ -304,6 +349,20 @@ public final class TaskSummaryFromOCIDataflowTask extends TaskSummary {
 
     public DataflowApplication getDataflowApplication() {
         return dataflowApplication;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("driverShapeDetails")
+    private final ShapeDetails driverShapeDetails;
+
+    public ShapeDetails getDriverShapeDetails() {
+        return driverShapeDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("executorShapeDetails")
+    private final ShapeDetails executorShapeDetails;
+
+    public ShapeDetails getExecutorShapeDetails() {
+        return executorShapeDetails;
     }
 
     @Override
@@ -322,6 +381,8 @@ public final class TaskSummaryFromOCIDataflowTask extends TaskSummary {
         sb.append("TaskSummaryFromOCIDataflowTask(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", dataflowApplication=").append(String.valueOf(this.dataflowApplication));
+        sb.append(", driverShapeDetails=").append(String.valueOf(this.driverShapeDetails));
+        sb.append(", executorShapeDetails=").append(String.valueOf(this.executorShapeDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -337,6 +398,8 @@ public final class TaskSummaryFromOCIDataflowTask extends TaskSummary {
 
         TaskSummaryFromOCIDataflowTask other = (TaskSummaryFromOCIDataflowTask) o;
         return java.util.Objects.equals(this.dataflowApplication, other.dataflowApplication)
+                && java.util.Objects.equals(this.driverShapeDetails, other.driverShapeDetails)
+                && java.util.Objects.equals(this.executorShapeDetails, other.executorShapeDetails)
                 && super.equals(other);
     }
 
@@ -349,6 +412,16 @@ public final class TaskSummaryFromOCIDataflowTask extends TaskSummary {
                         + (this.dataflowApplication == null
                                 ? 43
                                 : this.dataflowApplication.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.driverShapeDetails == null
+                                ? 43
+                                : this.driverShapeDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.executorShapeDetails == null
+                                ? 43
+                                : this.executorShapeDetails.hashCode());
         return result;
     }
 }

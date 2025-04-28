@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -8,10 +8,9 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for the operating system
- * environments in your private data centers through a single management console. For more
- * information, see [Overview of OS Management
- * Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
+ * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
+ * Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public interface ManagementStationAsync extends AutoCloseable {
@@ -65,7 +64,25 @@ public interface ManagementStationAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Creates a management station.
+     * Moves a managment station to a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeManagementStationCompartmentResponse>
+            changeManagementStationCompartment(
+                    ChangeManagementStationCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeManagementStationCompartmentRequest,
+                                    ChangeManagementStationCompartmentResponse>
+                            handler);
+
+    /**
+     * Creates a management station using the proxy and mirror configuration information provided.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -81,7 +98,9 @@ public interface ManagementStationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a management station.
+     * Deletes a management station. You can't delete a station if there are resources associated
+     * with the station (such as instances using the station or profiles associated with the
+     * station). Switch stations and edit profiles as needed before deleting the station.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -97,7 +116,7 @@ public interface ManagementStationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified management station.
+     * Returns information about the specified management station.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -113,7 +132,8 @@ public interface ManagementStationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists management stations in a compartment.
+     * Lists management stations within the specified compartment. Filter the list against a variety
+     * of criteria including but not limited to name, status, and location.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -143,7 +163,25 @@ public interface ManagementStationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListMirrorsRequest, ListMirrorsResponse> handler);
 
     /**
-     * Synchronizes the specified mirrors associated with the management station.
+     * Refreshes the list of software sources mirrored by the management station.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RefreshManagementStationConfigResponse>
+            refreshManagementStationConfig(
+                    RefreshManagementStationConfigRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshManagementStationConfigRequest,
+                                    RefreshManagementStationConfigResponse>
+                            handler);
+
+    /**
+     * Synchronize the specified software sources mirrored on the management station.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -159,7 +197,7 @@ public interface ManagementStationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Synchronize the specified mirror associated with a management station.
+     * Synchronize the specified software source mirrors on the management station.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

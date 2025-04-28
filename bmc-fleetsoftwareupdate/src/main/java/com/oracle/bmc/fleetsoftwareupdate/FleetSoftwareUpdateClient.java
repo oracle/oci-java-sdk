@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetsoftwareupdate;
@@ -173,9 +173,9 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", AbortFsuDiscoveryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -204,13 +204,13 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         AddFsuCollectionTargetsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", AddFsuCollectionTargetsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -236,9 +236,9 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelFsuActionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -268,13 +268,13 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeFsuActionCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeFsuActionCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -304,6 +304,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -311,7 +312,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeFsuCollectionCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -341,13 +341,13 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeFsuCycleCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeFsuCycleCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -377,11 +377,11 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeFsuDiscoveryCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -408,6 +408,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuCycle.class,
@@ -418,7 +419,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", CloneFsuCycleResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CloneFsuCycleResponse.Builder::etag)
                 .handleResponseHeaderString("Location", CloneFsuCycleResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -437,6 +437,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuAction.class,
@@ -447,7 +448,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", CreateFsuActionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateFsuActionResponse.Builder::etag)
                 .handleResponseHeaderString("Location", CreateFsuActionResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -466,6 +466,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuCollection.class,
@@ -478,7 +479,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", CreateFsuCollectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "Location", CreateFsuCollectionResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -497,6 +497,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuCycle.class,
@@ -507,7 +508,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", CreateFsuCycleResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateFsuCycleResponse.Builder::etag)
                 .handleResponseHeaderString("Location", CreateFsuCycleResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -526,6 +526,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuDiscovery.class,
@@ -537,7 +538,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", CreateFsuDiscoveryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "Location", CreateFsuDiscoveryResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -560,11 +560,11 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteFsuActionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteFsuActionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -587,12 +587,45 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteFsuCollectionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteFsuCollectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteFsuCollectionTargetResponse deleteFsuCollectionTarget(
+            DeleteFsuCollectionTargetRequest request) {
+
+        Validate.notBlank(request.getFsuCollectionId(), "fsuCollectionId must not be blank");
+
+        Validate.notBlank(request.getTargetId(), "targetId must not be blank");
+
+        return clientCall(request, DeleteFsuCollectionTargetResponse::builder)
+                .logger(LOG, "deleteFsuCollectionTarget")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "DeleteFsuCollectionTarget",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/DeleteFsuCollectionTarget")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteFsuCollectionTargetRequest::builder)
+                .basePath("/20220528")
+                .appendPathParam("fsuCollections")
+                .appendPathParam(request.getFsuCollectionId())
+                .appendPathParam("targets")
+                .appendPathParam(request.getTargetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteFsuCollectionTargetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteFsuCollectionTargetResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -615,11 +648,11 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteFsuCycleResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteFsuCycleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -642,11 +675,11 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteFsuDiscoveryResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteFsuDiscoveryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -669,9 +702,9 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteFsuJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -693,13 +726,13 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam(request.getFsuActionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuAction.class,
                         GetFsuActionResponse.Builder::fsuAction)
                 .handleResponseHeaderString("etag", GetFsuActionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFsuActionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -724,12 +757,12 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam("content")
                 .accept("application/x-yaml")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetFsuActionOutputContentResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFsuActionOutputContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -751,13 +784,46 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam(request.getFsuCollectionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuCollection.class,
                         GetFsuCollectionResponse.Builder::fsuCollection)
                 .handleResponseHeaderString("etag", GetFsuCollectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFsuCollectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetFsuCollectionTargetResponse getFsuCollectionTarget(
+            GetFsuCollectionTargetRequest request) {
+
+        Validate.notBlank(request.getFsuCollectionId(), "fsuCollectionId must not be blank");
+
+        Validate.notBlank(request.getTargetId(), "targetId must not be blank");
+
+        return clientCall(request, GetFsuCollectionTargetResponse::builder)
+                .logger(LOG, "getFsuCollectionTarget")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "GetFsuCollectionTarget",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollectionTarget/GetFsuCollectionTarget")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFsuCollectionTargetRequest::builder)
+                .basePath("/20220528")
+                .appendPathParam("fsuCollections")
+                .appendPathParam(request.getFsuCollectionId())
+                .appendPathParam("targets")
+                .appendPathParam(request.getTargetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetsoftwareupdate.model.FsuCollectionTarget.class,
+                        GetFsuCollectionTargetResponse.Builder::fsuCollectionTarget)
+                .handleResponseHeaderString("etag", GetFsuCollectionTargetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetFsuCollectionTargetResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -779,13 +845,13 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam(request.getFsuCycleId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuCycle.class,
                         GetFsuCycleResponse.Builder::fsuCycle)
                 .handleResponseHeaderString("etag", GetFsuCycleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFsuCycleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -807,13 +873,13 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam(request.getFsuDiscoveryId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuDiscovery.class,
                         GetFsuDiscoveryResponse.Builder::fsuDiscovery)
                 .handleResponseHeaderString("etag", GetFsuDiscoveryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFsuDiscoveryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -835,13 +901,13 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam(request.getFsuJobId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuJob.class,
                         GetFsuJobResponse.Builder::fsuJob)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFsuJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetFsuJobResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -866,12 +932,12 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam("content")
                 .accept("application/x-yaml")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetFsuJobOutputContentResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFsuJobOutputContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -893,6 +959,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -901,7 +968,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -930,6 +996,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuActionSummaryCollection.class,
                         ListFsuActionsResponse.Builder::fsuActionSummaryCollection)
@@ -937,7 +1004,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", ListFsuActionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFsuActionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -968,6 +1034,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.TargetSummaryCollection.class,
                         ListFsuCollectionTargetsResponse.Builder::targetSummaryCollection)
@@ -975,7 +1042,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", ListFsuCollectionTargetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFsuCollectionTargetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1003,6 +1069,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuCollectionSummaryCollection
                                 .class,
@@ -1011,7 +1078,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", ListFsuCollectionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFsuCollectionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1041,6 +1107,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuCycleSummaryCollection.class,
                         ListFsuCyclesResponse.Builder::fsuCycleSummaryCollection)
@@ -1048,7 +1115,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", ListFsuCyclesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFsuCyclesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1075,6 +1141,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuDiscoverySummaryCollection
                                 .class,
@@ -1083,7 +1150,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", ListFsuDiscoveriesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFsuDiscoveriesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1114,6 +1180,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.TargetSummaryCollection.class,
                         ListFsuDiscoveryTargetsResponse.Builder::targetSummaryCollection)
@@ -1121,7 +1188,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", ListFsuDiscoveryTargetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFsuDiscoveryTargetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1146,6 +1212,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuJobOutputSummaryCollection
                                 .class,
@@ -1154,7 +1221,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", ListFsuJobOutputsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFsuJobOutputsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1181,6 +1247,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuJobCollection.class,
                         ListFsuJobsResponse.Builder::fsuJobCollection)
@@ -1188,7 +1255,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", ListFsuJobsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFsuJobsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1216,6 +1282,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -1223,7 +1290,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1250,6 +1316,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.WorkRequestLogEntryCollection
                                 .class,
@@ -1258,7 +1325,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1286,6 +1352,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -1293,7 +1360,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1322,13 +1388,13 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RemoveFsuCollectionTargetsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveFsuCollectionTargetsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1354,9 +1420,9 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", ResumeFsuActionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1382,9 +1448,9 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", RetryFsuJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1409,12 +1475,12 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateFsuActionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateFsuActionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1439,13 +1505,13 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateFsuCollectionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateFsuCollectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1470,12 +1536,12 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateFsuCycleResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateFsuCycleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1500,10 +1566,10 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateFsuDiscoveryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1527,6 +1593,7 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.fleetsoftwareupdate.model.FsuJob.class,
@@ -1534,7 +1601,6 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateFsuJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateFsuJobResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

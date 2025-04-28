@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.datacatalog.requests;
 import com.oracle.bmc.datacatalog.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListEntitiesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListEntitiesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListEntitiesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
@@ -409,6 +409,13 @@ public class ListEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java
     /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /** A filter to return only process entities. */
+    private Boolean isProcess;
+
+    /** A filter to return only process entities. */
+    public Boolean getIsProcess() {
+        return isProcess;
     }
 
     public static class Builder
@@ -882,6 +889,20 @@ public class ListEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /** A filter to return only process entities. */
+        private Boolean isProcess = null;
+
+        /**
+         * A filter to return only process entities.
+         *
+         * @param isProcess the value to set
+         * @return this builder instance
+         */
+        public Builder isProcess(Boolean isProcess) {
+            this.isProcess = isProcess;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -940,6 +961,7 @@ public class ListEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java
             limit(o.getLimit());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
+            isProcess(o.getIsProcess());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -1002,12 +1024,14 @@ public class ListEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
+            request.isProcess = isProcess;
             return request;
             // new ListEntitiesRequest(catalogId, dataAssetKey, displayName, businessName,
             // displayOrBusinessNameContains, typeKey, displayNameContains, lifecycleState,
             // timeCreated, timeUpdated, createdById, updatedById, externalKey, patternKey,
             // timeExternal, timeStatusUpdated, isLogical, isPartition, folderKey, path,
-            // harvestStatus, lastJobKey, fields, sortBy, sortOrder, limit, page, opcRequestId);
+            // harvestStatus, lastJobKey, fields, sortBy, sortOrder, limit, page, opcRequestId,
+            // isProcess);
         }
     }
 
@@ -1045,7 +1069,8 @@ public class ListEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .sortOrder(sortOrder)
                 .limit(limit)
                 .page(page)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isProcess(isProcess);
     }
 
     /**
@@ -1091,6 +1116,7 @@ public class ListEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isProcess=").append(String.valueOf(this.isProcess));
         sb.append(")");
         return sb.toString();
     }
@@ -1134,7 +1160,8 @@ public class ListEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isProcess, other.isProcess);
     }
 
     @Override
@@ -1183,6 +1210,7 @@ public class ListEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.isProcess == null ? 43 : this.isProcess.hashCode());
         return result;
     }
 }

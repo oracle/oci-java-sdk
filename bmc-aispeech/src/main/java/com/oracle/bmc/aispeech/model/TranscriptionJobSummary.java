@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aispeech.model;
@@ -80,15 +80,15 @@ public final class TranscriptionJobSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * job.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * job.
          *
          * @param id the value to set
          * @return this builder
@@ -114,15 +114,15 @@ public final class TranscriptionJobSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment where you want to create the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment where you want to create the job.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment where you want to create the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment where you want to create the job.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -133,15 +133,15 @@ public final class TranscriptionJobSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the user who created the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * user who created the job.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the user who created the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * user who created the job.
          *
          * @param createdBy the value to set
          * @return this builder
@@ -296,14 +296,14 @@ public final class TranscriptionJobSummary
         }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}.
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -315,14 +315,16 @@ public final class TranscriptionJobSummary
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace-1": {"bar-key-1": "value-1", "bar-key-2": "value-2"},
+         * "foo-namespace-2": {"bar-key-1": "value-1", "bar-key-2": "value-2"}}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace-1": {"bar-key-1": "value-1", "bar-key-2": "value-2"},
+         * "foo-namespace-2": {"bar-key-1": "value-1", "bar-key-2": "value-2"}}}.
          *
          * @param definedTags the value to set
          * @return this builder
@@ -335,14 +337,14 @@ public final class TranscriptionJobSummary
         }
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}.
          *
          * @param systemTags the value to set
          * @return this builder
@@ -445,15 +447,13 @@ public final class TranscriptionJobSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      *
      * @return the value
      */
@@ -475,15 +475,15 @@ public final class TranscriptionJobSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment where you want to create the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment where you want to create the job.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment where you want to create the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment where you want to create the job.
      *
      * @return the value
      */
@@ -492,15 +492,15 @@ public final class TranscriptionJobSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the user who created the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+     * who created the job.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the user who created the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+     * who created the job.
      *
      * @return the value
      */
@@ -633,14 +633,14 @@ public final class TranscriptionJobSummary
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}.
      *
      * @return the value
      */
@@ -650,14 +650,16 @@ public final class TranscriptionJobSummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace-1": {"bar-key-1": "value-1", "bar-key-2": "value-2"},
+     * "foo-namespace-2": {"bar-key-1": "value-1", "bar-key-2": "value-2"}}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace-1": {"bar-key-1": "value-1", "bar-key-2": "value-2"},
+     * "foo-namespace-2": {"bar-key-1": "value-1", "bar-key-2": "value-2"}}}.
      *
      * @return the value
      */
@@ -667,14 +669,14 @@ public final class TranscriptionJobSummary
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}.
      *
      * @return the value
      */

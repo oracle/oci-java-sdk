@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -23,11 +23,13 @@ package com.oracle.bmc.bds.model;
 public final class InstallOsPatchDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"osPatchVersion", "clusterAdminPassword"})
-    public InstallOsPatchDetails(String osPatchVersion, String clusterAdminPassword) {
+    @java.beans.ConstructorProperties({"osPatchVersion", "clusterAdminPassword", "patchingConfigs"})
+    public InstallOsPatchDetails(
+            String osPatchVersion, String clusterAdminPassword, PatchingConfigs patchingConfigs) {
         super();
         this.osPatchVersion = osPatchVersion;
         this.clusterAdminPassword = clusterAdminPassword;
+        this.patchingConfigs = patchingConfigs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -63,12 +65,22 @@ public final class InstallOsPatchDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("patchingConfigs")
+        private PatchingConfigs patchingConfigs;
+
+        public Builder patchingConfigs(PatchingConfigs patchingConfigs) {
+            this.patchingConfigs = patchingConfigs;
+            this.__explicitlySet__.add("patchingConfigs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstallOsPatchDetails build() {
             InstallOsPatchDetails model =
-                    new InstallOsPatchDetails(this.osPatchVersion, this.clusterAdminPassword);
+                    new InstallOsPatchDetails(
+                            this.osPatchVersion, this.clusterAdminPassword, this.patchingConfigs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +94,9 @@ public final class InstallOsPatchDetails
             }
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("patchingConfigs")) {
+                this.patchingConfigs(model.getPatchingConfigs());
             }
             return this;
         }
@@ -122,6 +137,13 @@ public final class InstallOsPatchDetails
         return clusterAdminPassword;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("patchingConfigs")
+    private final PatchingConfigs patchingConfigs;
+
+    public PatchingConfigs getPatchingConfigs() {
+        return patchingConfigs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -139,6 +161,7 @@ public final class InstallOsPatchDetails
         sb.append("super=").append(super.toString());
         sb.append("osPatchVersion=").append(String.valueOf(this.osPatchVersion));
         sb.append(", clusterAdminPassword=").append("<redacted>");
+        sb.append(", patchingConfigs=").append(String.valueOf(this.patchingConfigs));
         sb.append(")");
         return sb.toString();
     }
@@ -155,6 +178,7 @@ public final class InstallOsPatchDetails
         InstallOsPatchDetails other = (InstallOsPatchDetails) o;
         return java.util.Objects.equals(this.osPatchVersion, other.osPatchVersion)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.patchingConfigs, other.patchingConfigs)
                 && super.equals(other);
     }
 
@@ -170,6 +194,9 @@ public final class InstallOsPatchDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patchingConfigs == null ? 43 : this.patchingConfigs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

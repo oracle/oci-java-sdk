@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.waf.model;
@@ -22,6 +22,9 @@ package com.oracle.bmc.waf.model;
         property = "type",
         defaultImpl = HttpResponseBody.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DynamicHttpResponseBody.class,
+            name = "DYNAMIC"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = StaticTextHttpResponseBody.class,
             name = "STATIC_TEXT")
@@ -78,6 +81,7 @@ public class HttpResponseBody extends com.oracle.bmc.http.client.internal.Explic
     /** Type of HttpResponseBody. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         StaticText("STATIC_TEXT"),
+        Dynamic("DYNAMIC"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

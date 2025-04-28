@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -7,7 +7,7 @@ package com.oracle.bmc.disasterrecovery.model;
 /**
  * The types of DR plan that can be created, updated, or deleted by the user. - SWITCHOVER -
  * Switchover from primary to standby. - FAILOVER - Failover to standby. - START_DRILL - Start DR
- * drill. - STOP_DRILL - Stop DR drill.
+ * Drill. - STOP_DRILL - Stop DR Drill.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanType implements com.oracle.bmc.http.internal.BmcEnum {

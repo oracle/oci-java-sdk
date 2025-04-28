@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.circuitbreaker;
@@ -22,7 +22,7 @@ public class CircuitBreakerConfiguration {
     public static final int DEFAULT_FAILURE_RATE_THRESHOLD = 80; // Percentage
     public static final int DEFAULT_SLOW_CALL_RATE_THRESHOLD = 100; // Percentage
     public static final int DEFAULT_WAIT_DURATION_IN_OPEN_STATE = 30; // Seconds
-    public static final int DEFAULT_PERMITTED_CALLS_IN_HALF_OPEN_STATE = 10;
+    public static final int DEFAULT_PERMITTED_CALLS_IN_HALF_OPEN_STATE = 1;
     public static final int DEFAULT_MINIMUM_NUMBER_OF_CALLS = 10;
     public static final int DEFAULT_SLIDING_WINDOW_SIZE = 120;
     public static final int DEFAULT_SLOW_CALL_DURATION_THRESHOLD = 60; // Minutes

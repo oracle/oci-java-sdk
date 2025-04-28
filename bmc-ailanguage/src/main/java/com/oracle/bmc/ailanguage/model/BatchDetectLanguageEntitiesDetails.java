@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage.model;
@@ -23,10 +23,14 @@ package com.oracle.bmc.ailanguage.model;
 public final class BatchDetectLanguageEntitiesDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"compartmentId", "endpointId", "documents"})
+    @java.beans.ConstructorProperties({"alias", "compartmentId", "endpointId", "documents"})
     public BatchDetectLanguageEntitiesDetails(
-            String compartmentId, String endpointId, java.util.List<TextDocument> documents) {
+            String alias,
+            String compartmentId,
+            String endpointId,
+            java.util.List<TextDocument> documents) {
         super();
+        this.alias = alias;
         this.compartmentId = compartmentId;
         this.endpointId = endpointId;
         this.documents = documents;
@@ -35,14 +39,33 @@ public final class BatchDetectLanguageEntitiesDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Unique name across user tenancy in a region to identify an endpoint to be used for
+         * inferencing.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("alias")
+        private String alias;
+
+        /**
+         * Unique name across user tenancy in a region to identify an endpoint to be used for
+         * inferencing.
+         *
+         * @param alias the value to set
+         * @return this builder
+         */
+        public Builder alias(String alias) {
+            this.alias = alias;
+            this.__explicitlySet__.add("alias");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that calls the API, inference will be served from pre trained model
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that calls the API, inference will be served from pre trained model
          *
          * @param compartmentId the value to set
@@ -96,7 +119,7 @@ public final class BatchDetectLanguageEntitiesDetails
         public BatchDetectLanguageEntitiesDetails build() {
             BatchDetectLanguageEntitiesDetails model =
                     new BatchDetectLanguageEntitiesDetails(
-                            this.compartmentId, this.endpointId, this.documents);
+                            this.alias, this.compartmentId, this.endpointId, this.documents);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -105,6 +128,9 @@ public final class BatchDetectLanguageEntitiesDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BatchDetectLanguageEntitiesDetails model) {
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -128,14 +154,31 @@ public final class BatchDetectLanguageEntitiesDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Unique name across user tenancy in a region to identify an endpoint to be used for
+     * inferencing.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("alias")
+    private final String alias;
+
+    /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for
+     * inferencing.
+     *
+     * @return the value
+     */
+    public String getAlias() {
+        return alias;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that calls the API, inference will be served from pre trained model
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that calls the API, inference will be served from pre trained model
      *
      * @return the value
@@ -189,7 +232,8 @@ public final class BatchDetectLanguageEntitiesDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BatchDetectLanguageEntitiesDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append("alias=").append(String.valueOf(this.alias));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", endpointId=").append(String.valueOf(this.endpointId));
         sb.append(", documents=").append(String.valueOf(this.documents));
         sb.append(")");
@@ -206,7 +250,8 @@ public final class BatchDetectLanguageEntitiesDetails
         }
 
         BatchDetectLanguageEntitiesDetails other = (BatchDetectLanguageEntitiesDetails) o;
-        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+        return java.util.Objects.equals(this.alias, other.alias)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.endpointId, other.endpointId)
                 && java.util.Objects.equals(this.documents, other.documents)
                 && super.equals(other);
@@ -216,6 +261,7 @@ public final class BatchDetectLanguageEntitiesDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.transfer;
@@ -43,6 +43,9 @@ public class DownloadManagerTest {
     private String bucketName;
     private String objectName;
     private String etag;
+    private String contentCrc32c;
+    private String contentSha256;
+    private String contentSha384;
 
     @BeforeClass
     public static void setupClass() {
@@ -65,6 +68,9 @@ public class DownloadManagerTest {
         this.bucketName = mockObject.getBucketName();
         this.objectName = mockObject.getObjectName();
         this.etag = mockObject.getEtag();
+        this.contentCrc32c = mockObject.getContentCrc32c();
+        this.contentSha256 = mockObject.getContentSha256();
+        this.contentSha384 = mockObject.getContentSha384();
         this.objectStorage = MockObjectStorage.create(mockObject);
     }
 
@@ -340,6 +346,135 @@ public class DownloadManagerTest {
             final GetObjectResponse response = downloadManager.getObject(request);
             verify(request, response);
         }
+    }
+
+    @Test
+    public void testAdditionalChecksumSinglePartCorrectCrc32c() throws IOException {
+        final DownloadConfiguration config =
+                DownloadConfiguration.builder()
+                        .executorService(executorService)
+                        .enforceDataIntegrityForDownload(true)
+                        .build();
+
+        final DownloadManager downloadManager = new DownloadManager(objectStorage, config);
+        final GetObjectRequest request =
+                GetObjectRequest.builder()
+                        .namespaceName(namespaceName)
+                        .bucketName(bucketName)
+                        .objectName(objectName)
+                        .build();
+        final GetObjectResponse response = downloadManager.getObject(request);
+        verify(request, response);
+        Assert.assertEquals(contentCrc32c, response.getOpcContentCrc32c());
+    }
+
+    @Test
+    public void testAdditionalChecksumSinglePartCorrectSha256() throws IOException {
+        final DownloadConfiguration config =
+                DownloadConfiguration.builder()
+                        .executorService(executorService)
+                        .enforceDataIntegrityForDownload(true)
+                        .build();
+
+        final DownloadManager downloadManager = new DownloadManager(objectStorage, config);
+        final GetObjectRequest request =
+                GetObjectRequest.builder()
+                        .namespaceName(namespaceName)
+                        .bucketName(bucketName)
+                        .objectName(objectName)
+                        .build();
+        final GetObjectResponse response = downloadManager.getObject(request);
+        verify(request, response);
+        Assert.assertEquals(contentSha256, response.getOpcContentSha256());
+    }
+
+    @Test
+    public void testAdditionalChecksumSinglePartCorrectSha384() throws IOException {
+        final DownloadConfiguration config =
+                DownloadConfiguration.builder()
+                        .executorService(executorService)
+                        .enforceDataIntegrityForDownload(true)
+                        .build();
+
+        final DownloadManager downloadManager = new DownloadManager(objectStorage, config);
+        final GetObjectRequest request =
+                GetObjectRequest.builder()
+                        .namespaceName(namespaceName)
+                        .bucketName(bucketName)
+                        .objectName(objectName)
+                        .build();
+        final GetObjectResponse response = downloadManager.getObject(request);
+        verify(request, response);
+        Assert.assertEquals(contentSha384, response.getOpcContentSha384());
+    }
+
+    @Test
+    public void testAdditionalChecksumMultiPartCorrectCrc32c() throws IOException {
+        final DownloadConfiguration config =
+                DownloadConfiguration.builder()
+                        .executorService(executorService)
+                        .partSizeInBytes(4 * 1024 * 1024)
+                        .multipartDownloadThresholdInBytes(4 * 1024 * 1024)
+                        .parallelDownloads(2)
+                        .enforceDataIntegrityForDownload(true)
+                        .build();
+
+        final DownloadManager downloadManager = new DownloadManager(objectStorage, config);
+        final GetObjectRequest request =
+                GetObjectRequest.builder()
+                        .namespaceName(namespaceName)
+                        .bucketName(bucketName)
+                        .objectName(objectName)
+                        .build();
+        final GetObjectResponse response = downloadManager.getObject(request);
+        verify(request, response);
+        Assert.assertEquals(contentCrc32c, response.getOpcContentCrc32c());
+    }
+
+    @Test
+    public void testAdditionalChecksumMultiPartCorrectSha256() throws IOException {
+        final DownloadConfiguration config =
+                DownloadConfiguration.builder()
+                        .executorService(executorService)
+                        .partSizeInBytes(4 * 1024 * 1024)
+                        .multipartDownloadThresholdInBytes(4 * 1024 * 1024)
+                        .parallelDownloads(2)
+                        .enforceDataIntegrityForDownload(true)
+                        .build();
+
+        final DownloadManager downloadManager = new DownloadManager(objectStorage, config);
+        final GetObjectRequest request =
+                GetObjectRequest.builder()
+                        .namespaceName(namespaceName)
+                        .bucketName(bucketName)
+                        .objectName(objectName)
+                        .build();
+        final GetObjectResponse response = downloadManager.getObject(request);
+        verify(request, response);
+        Assert.assertEquals(contentSha256, response.getOpcContentSha256());
+    }
+
+    @Test
+    public void testAdditionalChecksumMultiPartCorrectSha384() throws IOException {
+        final DownloadConfiguration config =
+                DownloadConfiguration.builder()
+                        .executorService(executorService)
+                        .partSizeInBytes(4 * 1024 * 1024)
+                        .multipartDownloadThresholdInBytes(4 * 1024 * 1024)
+                        .parallelDownloads(2)
+                        .enforceDataIntegrityForDownload(true)
+                        .build();
+
+        final DownloadManager downloadManager = new DownloadManager(objectStorage, config);
+        final GetObjectRequest request =
+                GetObjectRequest.builder()
+                        .namespaceName(namespaceName)
+                        .bucketName(bucketName)
+                        .objectName(objectName)
+                        .build();
+        final GetObjectResponse response = downloadManager.getObject(request);
+        verify(request, response);
+        Assert.assertEquals(contentSha384, response.getOpcContentSha384());
     }
 
     private void verify(GetObjectRequest request, GetObjectResponse response) throws IOException {

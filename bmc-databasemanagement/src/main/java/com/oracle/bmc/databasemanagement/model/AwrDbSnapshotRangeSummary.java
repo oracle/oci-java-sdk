@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -26,6 +26,9 @@ public final class AwrDbSnapshotRangeSummary
     @java.beans.ConstructorProperties({
         "awrDbId",
         "dbName",
+        "dbUniqueName",
+        "srcDbId",
+        "srcDbName",
         "instanceList",
         "timeDbStartup",
         "timeFirstSnapshotBegin",
@@ -41,6 +44,9 @@ public final class AwrDbSnapshotRangeSummary
     public AwrDbSnapshotRangeSummary(
             String awrDbId,
             String dbName,
+            String dbUniqueName,
+            String srcDbId,
+            String srcDbName,
             java.util.List<Integer> instanceList,
             java.util.Date timeDbStartup,
             java.util.Date timeFirstSnapshotBegin,
@@ -55,6 +61,9 @@ public final class AwrDbSnapshotRangeSummary
         super();
         this.awrDbId = awrDbId;
         this.dbName = dbName;
+        this.dbUniqueName = dbUniqueName;
+        this.srcDbId = srcDbId;
+        this.srcDbName = srcDbName;
         this.instanceList = instanceList;
         this.timeDbStartup = timeDbStartup;
         this.timeFirstSnapshotBegin = timeFirstSnapshotBegin;
@@ -72,7 +81,7 @@ public final class AwrDbSnapshotRangeSummary
     public static class Builder {
         /**
          * The internal ID of the database. The internal ID of the database is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint: /managedDatabases/{managedDatabaseId}/awrDbs
          */
         @com.fasterxml.jackson.annotation.JsonProperty("awrDbId")
@@ -80,7 +89,7 @@ public final class AwrDbSnapshotRangeSummary
 
         /**
          * The internal ID of the database. The internal ID of the database is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint: /managedDatabases/{managedDatabaseId}/awrDbs
          *
          * @param awrDbId the value to set
@@ -104,6 +113,51 @@ public final class AwrDbSnapshotRangeSummary
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
+            return this;
+        }
+        /** The unique name of the database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+        private String dbUniqueName;
+
+        /**
+         * The unique name of the database.
+         *
+         * @param dbUniqueName the value to set
+         * @return this builder
+         */
+        public Builder dbUniqueName(String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
+            this.__explicitlySet__.add("dbUniqueName");
+            return this;
+        }
+        /** The internal ID of the database where the AWR snapshot data was collected. */
+        @com.fasterxml.jackson.annotation.JsonProperty("srcDbId")
+        private String srcDbId;
+
+        /**
+         * The internal ID of the database where the AWR snapshot data was collected.
+         *
+         * @param srcDbId the value to set
+         * @return this builder
+         */
+        public Builder srcDbId(String srcDbId) {
+            this.srcDbId = srcDbId;
+            this.__explicitlySet__.add("srcDbId");
+            return this;
+        }
+        /** The name of the database where the AWR snapshot data was collected. */
+        @com.fasterxml.jackson.annotation.JsonProperty("srcDbName")
+        private String srcDbName;
+
+        /**
+         * The name of the database where the AWR snapshot data was collected.
+         *
+         * @param srcDbName the value to set
+         * @return this builder
+         */
+        public Builder srcDbName(String srcDbName) {
+            this.srcDbName = srcDbName;
+            this.__explicitlySet__.add("srcDbName");
             return this;
         }
         /** The database instance numbers. */
@@ -168,7 +222,7 @@ public final class AwrDbSnapshotRangeSummary
         }
         /**
          * The ID of the earliest snapshot. The snapshot ID is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
          */
@@ -177,7 +231,7 @@ public final class AwrDbSnapshotRangeSummary
 
         /**
          * The ID of the earliest snapshot. The snapshot ID is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
          *
@@ -191,7 +245,7 @@ public final class AwrDbSnapshotRangeSummary
         }
         /**
          * The ID of the latest snapshot. The snapshot ID is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
          */
@@ -200,7 +254,7 @@ public final class AwrDbSnapshotRangeSummary
 
         /**
          * The ID of the latest snapshot. The snapshot ID is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
          *
@@ -244,7 +298,7 @@ public final class AwrDbSnapshotRangeSummary
         }
         /**
          * ID of the database container. The database container ID is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
          */
@@ -253,7 +307,7 @@ public final class AwrDbSnapshotRangeSummary
 
         /**
          * ID of the database container. The database container ID is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
          *
@@ -304,6 +358,9 @@ public final class AwrDbSnapshotRangeSummary
                     new AwrDbSnapshotRangeSummary(
                             this.awrDbId,
                             this.dbName,
+                            this.dbUniqueName,
+                            this.srcDbId,
+                            this.srcDbName,
                             this.instanceList,
                             this.timeDbStartup,
                             this.timeFirstSnapshotBegin,
@@ -328,6 +385,15 @@ public final class AwrDbSnapshotRangeSummary
             }
             if (model.wasPropertyExplicitlySet("dbName")) {
                 this.dbName(model.getDbName());
+            }
+            if (model.wasPropertyExplicitlySet("dbUniqueName")) {
+                this.dbUniqueName(model.getDbUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("srcDbId")) {
+                this.srcDbId(model.getSrcDbId());
+            }
+            if (model.wasPropertyExplicitlySet("srcDbName")) {
+                this.srcDbName(model.getSrcDbName());
             }
             if (model.wasPropertyExplicitlySet("instanceList")) {
                 this.instanceList(model.getInstanceList());
@@ -377,7 +443,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * The internal ID of the database. The internal ID of the database is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /managedDatabases/{managedDatabaseId}/awrDbs
      */
     @com.fasterxml.jackson.annotation.JsonProperty("awrDbId")
@@ -385,7 +451,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * The internal ID of the database. The internal ID of the database is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /managedDatabases/{managedDatabaseId}/awrDbs
      *
      * @return the value
@@ -405,6 +471,45 @@ public final class AwrDbSnapshotRangeSummary
      */
     public String getDbName() {
         return dbName;
+    }
+
+    /** The unique name of the database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+    private final String dbUniqueName;
+
+    /**
+     * The unique name of the database.
+     *
+     * @return the value
+     */
+    public String getDbUniqueName() {
+        return dbUniqueName;
+    }
+
+    /** The internal ID of the database where the AWR snapshot data was collected. */
+    @com.fasterxml.jackson.annotation.JsonProperty("srcDbId")
+    private final String srcDbId;
+
+    /**
+     * The internal ID of the database where the AWR snapshot data was collected.
+     *
+     * @return the value
+     */
+    public String getSrcDbId() {
+        return srcDbId;
+    }
+
+    /** The name of the database where the AWR snapshot data was collected. */
+    @com.fasterxml.jackson.annotation.JsonProperty("srcDbName")
+    private final String srcDbName;
+
+    /**
+     * The name of the database where the AWR snapshot data was collected.
+     *
+     * @return the value
+     */
+    public String getSrcDbName() {
+        return srcDbName;
     }
 
     /** The database instance numbers. */
@@ -461,7 +566,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * The ID of the earliest snapshot. The snapshot ID is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
      */
@@ -470,7 +575,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * The ID of the earliest snapshot. The snapshot ID is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
      *
@@ -482,7 +587,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * The ID of the latest snapshot. The snapshot ID is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
      */
@@ -491,7 +596,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * The ID of the latest snapshot. The snapshot ID is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
      *
@@ -529,7 +634,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * ID of the database container. The database container ID is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
      */
@@ -538,7 +643,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * ID of the database container. The database container ID is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
      *
@@ -591,6 +696,9 @@ public final class AwrDbSnapshotRangeSummary
         sb.append("super=").append(super.toString());
         sb.append("awrDbId=").append(String.valueOf(this.awrDbId));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
+        sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
+        sb.append(", srcDbId=").append(String.valueOf(this.srcDbId));
+        sb.append(", srcDbName=").append(String.valueOf(this.srcDbName));
         sb.append(", instanceList=").append(String.valueOf(this.instanceList));
         sb.append(", timeDbStartup=").append(String.valueOf(this.timeDbStartup));
         sb.append(", timeFirstSnapshotBegin=").append(String.valueOf(this.timeFirstSnapshotBegin));
@@ -618,6 +726,9 @@ public final class AwrDbSnapshotRangeSummary
         AwrDbSnapshotRangeSummary other = (AwrDbSnapshotRangeSummary) o;
         return java.util.Objects.equals(this.awrDbId, other.awrDbId)
                 && java.util.Objects.equals(this.dbName, other.dbName)
+                && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
+                && java.util.Objects.equals(this.srcDbId, other.srcDbId)
+                && java.util.Objects.equals(this.srcDbName, other.srcDbName)
                 && java.util.Objects.equals(this.instanceList, other.instanceList)
                 && java.util.Objects.equals(this.timeDbStartup, other.timeDbStartup)
                 && java.util.Objects.equals(
@@ -639,6 +750,9 @@ public final class AwrDbSnapshotRangeSummary
         int result = 1;
         result = (result * PRIME) + (this.awrDbId == null ? 43 : this.awrDbId.hashCode());
         result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
+        result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
+        result = (result * PRIME) + (this.srcDbId == null ? 43 : this.srcDbId.hashCode());
+        result = (result * PRIME) + (this.srcDbName == null ? 43 : this.srcDbName.hashCode());
         result = (result * PRIME) + (this.instanceList == null ? 43 : this.instanceList.hashCode());
         result =
                 (result * PRIME)

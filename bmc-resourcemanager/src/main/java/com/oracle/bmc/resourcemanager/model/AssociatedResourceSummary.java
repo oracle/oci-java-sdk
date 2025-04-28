@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcemanager.model;
@@ -143,16 +143,16 @@ public final class AssociatedResourceSummary
         }
         /**
          * Resource region. For information about regions, see [Regions and Availability
-         * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         * Example: {@code us-phoenix-1}
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). Example:
+         * {@code us-phoenix-1}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * Resource region. For information about regions, see [Regions and Availability
-         * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         * Example: {@code us-phoenix-1}
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). Example:
+         * {@code us-phoenix-1}
          *
          * @param region the value to set
          * @return this builder
@@ -314,16 +314,16 @@ public final class AssociatedResourceSummary
 
     /**
      * Resource region. For information about regions, see [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm). Example:
-     * {@code us-phoenix-1}
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). Example: {@code
+     * us-phoenix-1}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * Resource region. For information about regions, see [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm). Example:
-     * {@code us-phoenix-1}
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). Example: {@code
+     * us-phoenix-1}
      *
      * @return the value
      */

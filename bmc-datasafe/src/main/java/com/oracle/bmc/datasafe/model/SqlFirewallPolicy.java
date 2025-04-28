@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The SQL firewall policy resource contains the firewall policy metadata for a single user. <br>
+ * The SQL Firewall policy resource contains the firewall policy metadata for a single user. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -94,12 +94,12 @@ public final class SqlFirewallPolicy
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the SQL firewall policy. */
+        /** The OCID of the SQL Firewall policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the SQL firewall policy.
+         * The OCID of the SQL Firewall policy.
          *
          * @param id the value to set
          * @return this builder
@@ -109,12 +109,12 @@ public final class SqlFirewallPolicy
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the compartment containing the SQL firewall policy. */
+        /** The OCID of the compartment containing the SQL Firewall policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment containing the SQL firewall policy.
+         * The OCID of the compartment containing the SQL Firewall policy.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -124,12 +124,12 @@ public final class SqlFirewallPolicy
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The display name of the SQL firewall policy. */
+        /** The display name of the SQL Firewall policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The display name of the SQL firewall policy.
+         * The display name of the SQL Firewall policy.
          *
          * @param displayName the value to set
          * @return this builder
@@ -139,12 +139,12 @@ public final class SqlFirewallPolicy
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The description of the SQL firewall policy. */
+        /** The description of the SQL Firewall policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The description of the SQL firewall policy.
+         * The description of the SQL Firewall policy.
          *
          * @param description the value to set
          * @return this builder
@@ -154,12 +154,12 @@ public final class SqlFirewallPolicy
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The OCID of the security policy corresponding to the SQL firewall policy. */
+        /** The OCID of the security policy corresponding to the SQL Firewall policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("securityPolicyId")
         private String securityPolicyId;
 
         /**
-         * The OCID of the security policy corresponding to the SQL firewall policy.
+         * The OCID of the security policy corresponding to the SQL Firewall policy.
          *
          * @param securityPolicyId the value to set
          * @return this builder
@@ -185,7 +185,7 @@ public final class SqlFirewallPolicy
             return this;
         }
         /**
-         * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+         * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
          * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
          * issued inside PL/SQL units.
          */
@@ -193,7 +193,7 @@ public final class SqlFirewallPolicy
         private SqlLevel sqlLevel;
 
         /**
-         * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+         * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
          * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
          * issued inside PL/SQL units.
          *
@@ -205,12 +205,12 @@ public final class SqlFirewallPolicy
             this.__explicitlySet__.add("sqlLevel");
             return this;
         }
-        /** Specifies whether the SQL firewall policy is enabled or disabled. */
+        /** Specifies whether the SQL Firewall policy is enabled or disabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * Specifies whether the SQL firewall policy is enabled or disabled.
+         * Specifies whether the SQL Firewall policy is enabled or disabled.
          *
          * @param status the value to set
          * @return this builder
@@ -220,12 +220,12 @@ public final class SqlFirewallPolicy
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Specifies the SQL firewall policy enforcement option. */
+        /** Specifies the SQL Firewall policy enforcement option. */
         @com.fasterxml.jackson.annotation.JsonProperty("enforcementScope")
         private EnforcementScope enforcementScope;
 
         /**
-         * Specifies the SQL firewall policy enforcement option.
+         * Specifies the SQL Firewall policy enforcement option.
          *
          * @param enforcementScope the value to set
          * @return this builder
@@ -235,12 +235,12 @@ public final class SqlFirewallPolicy
             this.__explicitlySet__.add("enforcementScope");
             return this;
         }
-        /** Specifies the mode in which the SQL firewall policy is enabled. */
+        /** Specifies the mode in which the SQL Firewall policy is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("violationAction")
         private ViolationAction violationAction;
 
         /**
-         * Specifies the mode in which the SQL firewall policy is enabled.
+         * Specifies the mode in which the SQL Firewall policy is enabled.
          *
          * @param violationAction the value to set
          * @return this builder
@@ -251,14 +251,14 @@ public final class SqlFirewallPolicy
             return this;
         }
         /**
-         * Specifies whether a unified audit policy should be enabled for auditing the SQL firewall
+         * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall
          * policy violations.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("violationAudit")
         private ViolationAudit violationAudit;
 
         /**
-         * Specifies whether a unified audit policy should be enabled for auditing the SQL firewall
+         * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall
          * policy violations.
          *
          * @param violationAudit the value to set
@@ -269,12 +269,12 @@ public final class SqlFirewallPolicy
             this.__explicitlySet__.add("violationAudit");
             return this;
         }
-        /** The list of allowed ip addresses for the SQL firewall policy. */
+        /** The list of allowed ip addresses for the SQL Firewall policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedClientIps")
         private java.util.List<String> allowedClientIps;
 
         /**
-         * The list of allowed ip addresses for the SQL firewall policy.
+         * The list of allowed ip addresses for the SQL Firewall policy.
          *
          * @param allowedClientIps the value to set
          * @return this builder
@@ -284,12 +284,12 @@ public final class SqlFirewallPolicy
             this.__explicitlySet__.add("allowedClientIps");
             return this;
         }
-        /** The list of allowed operating system user names for the SQL firewall policy. */
+        /** The list of allowed operating system user names for the SQL Firewall policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedClientOsUsernames")
         private java.util.List<String> allowedClientOsUsernames;
 
         /**
-         * The list of allowed operating system user names for the SQL firewall policy.
+         * The list of allowed operating system user names for the SQL Firewall policy.
          *
          * @param allowedClientOsUsernames the value to set
          * @return this builder
@@ -299,12 +299,12 @@ public final class SqlFirewallPolicy
             this.__explicitlySet__.add("allowedClientOsUsernames");
             return this;
         }
-        /** The list of allowed client programs for the SQL firewall policy. */
+        /** The list of allowed client programs for the SQL Firewall policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedClientPrograms")
         private java.util.List<String> allowedClientPrograms;
 
         /**
-         * The list of allowed client programs for the SQL firewall policy.
+         * The list of allowed client programs for the SQL Firewall policy.
          *
          * @param allowedClientPrograms the value to set
          * @return this builder
@@ -314,12 +314,12 @@ public final class SqlFirewallPolicy
             this.__explicitlySet__.add("allowedClientPrograms");
             return this;
         }
-        /** The time that the SQL firewall policy was created, in the format defined by RFC3339. */
+        /** The time that the SQL Firewall policy was created, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time that the SQL firewall policy was created, in the format defined by RFC3339.
+         * The time that the SQL Firewall policy was created, in the format defined by RFC3339.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -330,14 +330,14 @@ public final class SqlFirewallPolicy
             return this;
         }
         /**
-         * The date and time the SQL firewall policy was last updated, in the format defined by
+         * The date and time the SQL Firewall policy was last updated, in the format defined by
          * RFC3339.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the SQL firewall policy was last updated, in the format defined by
+         * The date and time the SQL Firewall policy was last updated, in the format defined by
          * RFC3339.
          *
          * @param timeUpdated the value to set
@@ -348,12 +348,12 @@ public final class SqlFirewallPolicy
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the SQL firewall policy. */
+        /** The current state of the SQL Firewall policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private SqlFirewallPolicyLifecycleState lifecycleState;
 
         /**
-         * The current state of the SQL firewall policy.
+         * The current state of the SQL Firewall policy.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -363,12 +363,12 @@ public final class SqlFirewallPolicy
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Details about the current state of the SQL firewall policy in Data Safe. */
+        /** Details about the current state of the SQL Firewall policy in Data Safe. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * Details about the current state of the SQL firewall policy in Data Safe.
+         * Details about the current state of the SQL Firewall policy in Data Safe.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
@@ -381,7 +381,7 @@ public final class SqlFirewallPolicy
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -391,7 +391,7 @@ public final class SqlFirewallPolicy
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -406,9 +406,8 @@ public final class SqlFirewallPolicy
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -416,9 +415,8 @@ public final class SqlFirewallPolicy
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -562,12 +560,12 @@ public final class SqlFirewallPolicy
         return new Builder().copy(this);
     }
 
-    /** The OCID of the SQL firewall policy. */
+    /** The OCID of the SQL Firewall policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the SQL firewall policy.
+     * The OCID of the SQL Firewall policy.
      *
      * @return the value
      */
@@ -575,12 +573,12 @@ public final class SqlFirewallPolicy
         return id;
     }
 
-    /** The OCID of the compartment containing the SQL firewall policy. */
+    /** The OCID of the compartment containing the SQL Firewall policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment containing the SQL firewall policy.
+     * The OCID of the compartment containing the SQL Firewall policy.
      *
      * @return the value
      */
@@ -588,12 +586,12 @@ public final class SqlFirewallPolicy
         return compartmentId;
     }
 
-    /** The display name of the SQL firewall policy. */
+    /** The display name of the SQL Firewall policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The display name of the SQL firewall policy.
+     * The display name of the SQL Firewall policy.
      *
      * @return the value
      */
@@ -601,12 +599,12 @@ public final class SqlFirewallPolicy
         return displayName;
     }
 
-    /** The description of the SQL firewall policy. */
+    /** The description of the SQL Firewall policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The description of the SQL firewall policy.
+     * The description of the SQL Firewall policy.
      *
      * @return the value
      */
@@ -614,12 +612,12 @@ public final class SqlFirewallPolicy
         return description;
     }
 
-    /** The OCID of the security policy corresponding to the SQL firewall policy. */
+    /** The OCID of the security policy corresponding to the SQL Firewall policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("securityPolicyId")
     private final String securityPolicyId;
 
     /**
-     * The OCID of the security policy corresponding to the SQL firewall policy.
+     * The OCID of the security policy corresponding to the SQL Firewall policy.
      *
      * @return the value
      */
@@ -641,7 +639,7 @@ public final class SqlFirewallPolicy
     }
 
     /**
-     * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
      * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
      * issued inside PL/SQL units.
      */
@@ -691,7 +689,7 @@ public final class SqlFirewallPolicy
         }
     };
     /**
-     * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
      * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
      * issued inside PL/SQL units.
      */
@@ -699,7 +697,7 @@ public final class SqlFirewallPolicy
     private final SqlLevel sqlLevel;
 
     /**
-     * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
      * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
      * issued inside PL/SQL units.
      *
@@ -709,7 +707,7 @@ public final class SqlFirewallPolicy
         return sqlLevel;
     }
 
-    /** Specifies whether the SQL firewall policy is enabled or disabled. */
+    /** Specifies whether the SQL Firewall policy is enabled or disabled. */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
@@ -754,12 +752,12 @@ public final class SqlFirewallPolicy
             return UnknownEnumValue;
         }
     };
-    /** Specifies whether the SQL firewall policy is enabled or disabled. */
+    /** Specifies whether the SQL Firewall policy is enabled or disabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * Specifies whether the SQL firewall policy is enabled or disabled.
+     * Specifies whether the SQL Firewall policy is enabled or disabled.
      *
      * @return the value
      */
@@ -767,7 +765,7 @@ public final class SqlFirewallPolicy
         return status;
     }
 
-    /** Specifies the SQL firewall policy enforcement option. */
+    /** Specifies the SQL Firewall policy enforcement option. */
     public enum EnforcementScope implements com.oracle.bmc.http.internal.BmcEnum {
         EnforceContext("ENFORCE_CONTEXT"),
         EnforceSql("ENFORCE_SQL"),
@@ -814,12 +812,12 @@ public final class SqlFirewallPolicy
             return UnknownEnumValue;
         }
     };
-    /** Specifies the SQL firewall policy enforcement option. */
+    /** Specifies the SQL Firewall policy enforcement option. */
     @com.fasterxml.jackson.annotation.JsonProperty("enforcementScope")
     private final EnforcementScope enforcementScope;
 
     /**
-     * Specifies the SQL firewall policy enforcement option.
+     * Specifies the SQL Firewall policy enforcement option.
      *
      * @return the value
      */
@@ -827,7 +825,7 @@ public final class SqlFirewallPolicy
         return enforcementScope;
     }
 
-    /** Specifies the mode in which the SQL firewall policy is enabled. */
+    /** Specifies the mode in which the SQL Firewall policy is enabled. */
     public enum ViolationAction implements com.oracle.bmc.http.internal.BmcEnum {
         Block("BLOCK"),
         Observe("OBSERVE"),
@@ -873,12 +871,12 @@ public final class SqlFirewallPolicy
             return UnknownEnumValue;
         }
     };
-    /** Specifies the mode in which the SQL firewall policy is enabled. */
+    /** Specifies the mode in which the SQL Firewall policy is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("violationAction")
     private final ViolationAction violationAction;
 
     /**
-     * Specifies the mode in which the SQL firewall policy is enabled.
+     * Specifies the mode in which the SQL Firewall policy is enabled.
      *
      * @return the value
      */
@@ -887,7 +885,7 @@ public final class SqlFirewallPolicy
     }
 
     /**
-     * Specifies whether a unified audit policy should be enabled for auditing the SQL firewall
+     * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall
      * policy violations.
      */
     public enum ViolationAudit implements com.oracle.bmc.http.internal.BmcEnum {
@@ -936,14 +934,14 @@ public final class SqlFirewallPolicy
         }
     };
     /**
-     * Specifies whether a unified audit policy should be enabled for auditing the SQL firewall
+     * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall
      * policy violations.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("violationAudit")
     private final ViolationAudit violationAudit;
 
     /**
-     * Specifies whether a unified audit policy should be enabled for auditing the SQL firewall
+     * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall
      * policy violations.
      *
      * @return the value
@@ -952,12 +950,12 @@ public final class SqlFirewallPolicy
         return violationAudit;
     }
 
-    /** The list of allowed ip addresses for the SQL firewall policy. */
+    /** The list of allowed ip addresses for the SQL Firewall policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedClientIps")
     private final java.util.List<String> allowedClientIps;
 
     /**
-     * The list of allowed ip addresses for the SQL firewall policy.
+     * The list of allowed ip addresses for the SQL Firewall policy.
      *
      * @return the value
      */
@@ -965,12 +963,12 @@ public final class SqlFirewallPolicy
         return allowedClientIps;
     }
 
-    /** The list of allowed operating system user names for the SQL firewall policy. */
+    /** The list of allowed operating system user names for the SQL Firewall policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedClientOsUsernames")
     private final java.util.List<String> allowedClientOsUsernames;
 
     /**
-     * The list of allowed operating system user names for the SQL firewall policy.
+     * The list of allowed operating system user names for the SQL Firewall policy.
      *
      * @return the value
      */
@@ -978,12 +976,12 @@ public final class SqlFirewallPolicy
         return allowedClientOsUsernames;
     }
 
-    /** The list of allowed client programs for the SQL firewall policy. */
+    /** The list of allowed client programs for the SQL Firewall policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedClientPrograms")
     private final java.util.List<String> allowedClientPrograms;
 
     /**
-     * The list of allowed client programs for the SQL firewall policy.
+     * The list of allowed client programs for the SQL Firewall policy.
      *
      * @return the value
      */
@@ -991,12 +989,12 @@ public final class SqlFirewallPolicy
         return allowedClientPrograms;
     }
 
-    /** The time that the SQL firewall policy was created, in the format defined by RFC3339. */
+    /** The time that the SQL Firewall policy was created, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time that the SQL firewall policy was created, in the format defined by RFC3339.
+     * The time that the SQL Firewall policy was created, in the format defined by RFC3339.
      *
      * @return the value
      */
@@ -1005,13 +1003,13 @@ public final class SqlFirewallPolicy
     }
 
     /**
-     * The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+     * The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+     * The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
      *
      * @return the value
      */
@@ -1019,12 +1017,12 @@ public final class SqlFirewallPolicy
         return timeUpdated;
     }
 
-    /** The current state of the SQL firewall policy. */
+    /** The current state of the SQL Firewall policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final SqlFirewallPolicyLifecycleState lifecycleState;
 
     /**
-     * The current state of the SQL firewall policy.
+     * The current state of the SQL Firewall policy.
      *
      * @return the value
      */
@@ -1032,12 +1030,12 @@ public final class SqlFirewallPolicy
         return lifecycleState;
     }
 
-    /** Details about the current state of the SQL firewall policy in Data Safe. */
+    /** Details about the current state of the SQL Firewall policy in Data Safe. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * Details about the current state of the SQL firewall policy in Data Safe.
+     * Details about the current state of the SQL Firewall policy in Data Safe.
      *
      * @return the value
      */
@@ -1048,7 +1046,7 @@ public final class SqlFirewallPolicy
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1058,7 +1056,7 @@ public final class SqlFirewallPolicy
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1071,9 +1069,8 @@ public final class SqlFirewallPolicy
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -1081,9 +1078,8 @@ public final class SqlFirewallPolicy
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */

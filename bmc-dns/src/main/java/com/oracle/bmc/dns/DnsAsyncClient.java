@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns;
@@ -195,6 +195,9 @@ public class DnsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeSteeringPolicyCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSteeringPolicyCompartmentResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -382,6 +385,9 @@ public class DnsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                         "Location", CreateSteeringPolicyResponse.Builder::location)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSteeringPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSteeringPolicyResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -419,6 +425,9 @@ public class DnsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateSteeringPolicyAttachmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSteeringPolicyAttachmentResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -689,6 +698,9 @@ public class DnsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSteeringPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSteeringPolicyResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -721,6 +733,9 @@ public class DnsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteSteeringPolicyAttachmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSteeringPolicyAttachmentResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1549,6 +1564,7 @@ public class DnsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .appendEnumQueryParam("scope", request.getScope())
                 .appendQueryParam("viewId", request.getViewId())
                 .appendQueryParam("tsigKeyId", request.getTsigKeyId())
+                .appendEnumQueryParam("dnssecState", request.getDnssecState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -1698,6 +1714,88 @@ public class DnsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", PatchZoneRecordsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", PatchZoneRecordsResponse.Builder::eTag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PromoteZoneDnssecKeyVersionResponse>
+            promoteZoneDnssecKeyVersion(
+                    PromoteZoneDnssecKeyVersionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PromoteZoneDnssecKeyVersionRequest,
+                                    PromoteZoneDnssecKeyVersionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getZoneId(), "zoneId must not be blank");
+        Objects.requireNonNull(
+                request.getPromoteZoneDnssecKeyVersionDetails(),
+                "promoteZoneDnssecKeyVersionDetails is required");
+
+        return clientCall(request, PromoteZoneDnssecKeyVersionResponse::builder)
+                .logger(LOG, "promoteZoneDnssecKeyVersion")
+                .serviceDetails(
+                        "Dns",
+                        "PromoteZoneDnssecKeyVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/PromoteZoneDnssecKeyVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(PromoteZoneDnssecKeyVersionRequest::builder)
+                .basePath("/20180115")
+                .appendPathParam("zones")
+                .appendPathParam(request.getZoneId())
+                .appendPathParam("actions")
+                .appendPathParam("promoteDnssecKeyVersion")
+                .appendEnumQueryParam("scope", request.getScope())
+                .accept("application/json")
+                .appendHeader("If-Match", request.getIfMatch())
+                .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", PromoteZoneDnssecKeyVersionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        PromoteZoneDnssecKeyVersionResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StageZoneDnssecKeyVersionResponse> stageZoneDnssecKeyVersion(
+            StageZoneDnssecKeyVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StageZoneDnssecKeyVersionRequest, StageZoneDnssecKeyVersionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getZoneId(), "zoneId must not be blank");
+        Objects.requireNonNull(
+                request.getStageZoneDnssecKeyVersionDetails(),
+                "stageZoneDnssecKeyVersionDetails is required");
+
+        return clientCall(request, StageZoneDnssecKeyVersionResponse::builder)
+                .logger(LOG, "stageZoneDnssecKeyVersion")
+                .serviceDetails(
+                        "Dns",
+                        "StageZoneDnssecKeyVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/StageZoneDnssecKeyVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StageZoneDnssecKeyVersionRequest::builder)
+                .basePath("/20180115")
+                .appendPathParam("zones")
+                .appendPathParam(request.getZoneId())
+                .appendPathParam("actions")
+                .appendPathParam("stageDnssecKeyVersion")
+                .appendEnumQueryParam("scope", request.getScope())
+                .accept("application/json")
+                .appendHeader("If-Match", request.getIfMatch())
+                .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", StageZoneDnssecKeyVersionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        StageZoneDnssecKeyVersionResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1915,6 +2013,9 @@ public class DnsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                         UpdateSteeringPolicyResponse.Builder::steeringPolicy)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSteeringPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSteeringPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("ETag", UpdateSteeringPolicyResponse.Builder::eTag)
                 .callAsync(handler);
     }
@@ -1958,6 +2059,9 @@ public class DnsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateSteeringPolicyAttachmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSteeringPolicyAttachmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "ETag", UpdateSteeringPolicyAttachmentResponse.Builder::eTag)
                 .callAsync(handler);

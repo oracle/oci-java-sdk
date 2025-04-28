@@ -6,17 +6,17 @@
     <parent>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk</artifactId>
-        <version>3.28.0</version>
+        <version>3.63.2</version>
     </parent>
 
     <artifactId>oci-java-sdk-enforcer-rules</artifactId>
     <name>Oracle Cloud Infrastructure SDK - Java SDK Enforcer Rules</name>
     <description>This project enforces custom rules for the Oracle Cloud Infrastructure Java SDK.</description>
-    <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+    <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
     <properties>
         <maven.version>3.9.5</maven.version>
-        <maven.enforcer.version>3.4.1</maven.enforcer.version>
+        <maven.enforcer.version>3.5.0</maven.enforcer.version>
         <!-- see https://maven.apache.org/enforcer/enforcer-api/writing-a-custom-rule.html -->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>

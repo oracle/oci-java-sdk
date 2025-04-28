@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -32,12 +32,16 @@ public final class UserAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The array of user aggregation data. */
+        /**
+         * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ]
+         * }}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<java.util.Map<String, Object>> items;
 
         /**
-         * The array of user aggregation data.
+         * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ]
+         * }}
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +81,14 @@ public final class UserAggregation
         return new Builder().copy(this);
     }
 
-    /** The array of user aggregation data. */
+    /**
+     * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<java.util.Map<String, Object>> items;
 
     /**
-     * The array of user aggregation data.
+     * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
      *
      * @return the value
      */

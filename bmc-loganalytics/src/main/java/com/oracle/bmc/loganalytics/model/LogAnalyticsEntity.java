@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -39,6 +39,8 @@ public final class LogAnalyticsEntity
         "creationSource",
         "timeCreated",
         "timeUpdated",
+        "timeLastDiscovered",
+        "metadata",
         "areLogsCollected",
         "cloudResourceId",
         "hostname",
@@ -62,6 +64,8 @@ public final class LogAnalyticsEntity
             CreationSource creationSource,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.Date timeLastDiscovered,
+            LogAnalyticsMetadataSummary metadata,
             Boolean areLogsCollected,
             String cloudResourceId,
             String hostname,
@@ -84,6 +88,8 @@ public final class LogAnalyticsEntity
         this.creationSource = creationSource;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.timeLastDiscovered = timeLastDiscovered;
+        this.metadata = metadata;
         this.areLogsCollected = areLogsCollected;
         this.cloudResourceId = cloudResourceId;
         this.hostname = hostname;
@@ -132,14 +138,14 @@ public final class LogAnalyticsEntity
         }
         /**
          * Compartment Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -331,6 +337,30 @@ public final class LogAnalyticsEntity
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /** The date and time the resource was last discovered, in the format defined by RFC3339. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastDiscovered")
+        private java.util.Date timeLastDiscovered;
+
+        /**
+         * The date and time the resource was last discovered, in the format defined by RFC3339.
+         *
+         * @param timeLastDiscovered the value to set
+         * @return this builder
+         */
+        public Builder timeLastDiscovered(java.util.Date timeLastDiscovered) {
+            this.timeLastDiscovered = timeLastDiscovered;
+            this.__explicitlySet__.add("timeLastDiscovered");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private LogAnalyticsMetadataSummary metadata;
+
+        public Builder metadata(LogAnalyticsMetadataSummary metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
+            return this;
+        }
         /**
          * The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
          */
@@ -470,6 +500,8 @@ public final class LogAnalyticsEntity
                             this.creationSource,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.timeLastDiscovered,
+                            this.metadata,
                             this.areLogsCollected,
                             this.cloudResourceId,
                             this.hostname,
@@ -528,6 +560,12 @@ public final class LogAnalyticsEntity
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastDiscovered")) {
+                this.timeLastDiscovered(model.getTimeLastDiscovered());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
             }
             if (model.wasPropertyExplicitlySet("areLogsCollected")) {
                 this.areLogsCollected(model.getAreLogsCollected());
@@ -594,14 +632,14 @@ public final class LogAnalyticsEntity
 
     /**
      * Compartment Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -767,6 +805,26 @@ public final class LogAnalyticsEntity
         return timeUpdated;
     }
 
+    /** The date and time the resource was last discovered, in the format defined by RFC3339. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastDiscovered")
+    private final java.util.Date timeLastDiscovered;
+
+    /**
+     * The date and time the resource was last discovered, in the format defined by RFC3339.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastDiscovered() {
+        return timeLastDiscovered;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    private final LogAnalyticsMetadataSummary metadata;
+
+    public LogAnalyticsMetadataSummary getMetadata() {
+        return metadata;
+    }
+
     /** The Boolean flag to indicate if logs are collected for an entity for log analytics usage. */
     @com.fasterxml.jackson.annotation.JsonProperty("areLogsCollected")
     private final Boolean areLogsCollected;
@@ -895,6 +953,8 @@ public final class LogAnalyticsEntity
         sb.append(", creationSource=").append(String.valueOf(this.creationSource));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", timeLastDiscovered=").append(String.valueOf(this.timeLastDiscovered));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", areLogsCollected=").append(String.valueOf(this.areLogsCollected));
         sb.append(", cloudResourceId=").append(String.valueOf(this.cloudResourceId));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
@@ -933,6 +993,8 @@ public final class LogAnalyticsEntity
                 && java.util.Objects.equals(this.creationSource, other.creationSource)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.timeLastDiscovered, other.timeLastDiscovered)
+                && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.areLogsCollected, other.areLogsCollected)
                 && java.util.Objects.equals(this.cloudResourceId, other.cloudResourceId)
                 && java.util.Objects.equals(this.hostname, other.hostname)
@@ -987,6 +1049,12 @@ public final class LogAnalyticsEntity
                         + (this.creationSource == null ? 43 : this.creationSource.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastDiscovered == null
+                                ? 43
+                                : this.timeLastDiscovered.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result =
                 (result * PRIME)
                         + (this.areLogsCollected == null ? 43 : this.areLogsCollected.hashCode());

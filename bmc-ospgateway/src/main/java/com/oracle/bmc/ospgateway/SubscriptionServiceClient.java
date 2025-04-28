@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ospgateway;
@@ -20,7 +20,8 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("SUBSCRIPTIONSERVICE")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://ospap.oracle.com")
+                    .serviceEndpointTemplate(
+                            "https://osp-oci-integ.osp.{region}.oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -117,6 +118,7 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentReceipt.class,
@@ -127,7 +129,6 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                         AuthorizeSubscriptionPaymentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", AuthorizeSubscriptionPaymentResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -151,13 +152,13 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ospgateway.model.Subscription.class,
                         GetSubscriptionResponse.Builder::subscription)
                 .handleResponseHeaderString("etag", GetSubscriptionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSubscriptionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -182,6 +183,7 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ospgateway.model.SubscriptionCollection.class,
                         ListSubscriptionsResponse.Builder::subscriptionCollection)
@@ -191,7 +193,6 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                         "opc-next-page", ListSubscriptionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListSubscriptionsResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -221,6 +222,7 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.ospgateway.model.PaySubscriptionReceipt.class,
@@ -228,7 +230,6 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString(
                         "opc-request-id", PaySubscriptionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", PaySubscriptionResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -256,6 +257,7 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.ospgateway.model.Subscription.class,
@@ -263,7 +265,6 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", UpdateSubscriptionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSubscriptionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

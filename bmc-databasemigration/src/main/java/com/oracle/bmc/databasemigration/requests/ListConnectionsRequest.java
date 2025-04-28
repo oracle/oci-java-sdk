@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.requests;
@@ -7,10 +7,10 @@ package com.oracle.bmc.databasemigration.requests;
 import com.oracle.bmc.databasemigration.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListConnectionsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListConnectionsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListConnectionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The ID of the compartment in which to list resources. */
@@ -32,6 +32,29 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /** The array of technology types. */
+    private java.util.List<com.oracle.bmc.databasemigration.model.TechnologyType> technologyType;
+
+    /** The array of technology types. */
+    public java.util.List<com.oracle.bmc.databasemigration.model.TechnologyType>
+            getTechnologyType() {
+        return technologyType;
+    }
+    /** The array of connection types. */
+    private java.util.List<com.oracle.bmc.databasemigration.model.ConnectionType> connectionType;
+
+    /** The array of connection types. */
+    public java.util.List<com.oracle.bmc.databasemigration.model.ConnectionType>
+            getConnectionType() {
+        return connectionType;
+    }
+    /** The OCID of the source database connection. */
+    private String sourceConnectionId;
+
+    /** The OCID of the source database connection. */
+    public String getSourceConnectionId() {
+        return sourceConnectionId;
     }
     /** A filter to return only resources that match the entire display name given. */
     private String displayName;
@@ -166,6 +189,74 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /** The array of technology types. */
+        private java.util.List<com.oracle.bmc.databasemigration.model.TechnologyType>
+                technologyType = null;
+
+        /**
+         * The array of technology types.
+         *
+         * @param technologyType the value to set
+         * @return this builder instance
+         */
+        public Builder technologyType(
+                java.util.List<com.oracle.bmc.databasemigration.model.TechnologyType>
+                        technologyType) {
+            this.technologyType = technologyType;
+            return this;
+        }
+
+        /**
+         * Singular setter. The array of technology types.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder technologyType(TechnologyType singularValue) {
+            return this.technologyType(java.util.Arrays.asList(singularValue));
+        }
+
+        /** The array of connection types. */
+        private java.util.List<com.oracle.bmc.databasemigration.model.ConnectionType>
+                connectionType = null;
+
+        /**
+         * The array of connection types.
+         *
+         * @param connectionType the value to set
+         * @return this builder instance
+         */
+        public Builder connectionType(
+                java.util.List<com.oracle.bmc.databasemigration.model.ConnectionType>
+                        connectionType) {
+            this.connectionType = connectionType;
+            return this;
+        }
+
+        /**
+         * Singular setter. The array of connection types.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder connectionType(ConnectionType singularValue) {
+            return this.connectionType(java.util.Arrays.asList(singularValue));
+        }
+
+        /** The OCID of the source database connection. */
+        private String sourceConnectionId = null;
+
+        /**
+         * The OCID of the source database connection.
+         *
+         * @param sourceConnectionId the value to set
+         * @return this builder instance
+         */
+        public Builder sourceConnectionId(String sourceConnectionId) {
+            this.sourceConnectionId = sourceConnectionId;
+            return this;
+        }
+
         /** A filter to return only resources that match the entire display name given. */
         private String displayName = null;
 
@@ -293,6 +384,9 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
         public Builder copy(ListConnectionsRequest o) {
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
+            technologyType(o.getTechnologyType());
+            connectionType(o.getConnectionType());
+            sourceConnectionId(o.getSourceConnectionId());
             displayName(o.getDisplayName());
             limit(o.getLimit());
             page(o.getPage());
@@ -335,6 +429,9 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             ListConnectionsRequest request = new ListConnectionsRequest();
             request.compartmentId = compartmentId;
             request.opcRequestId = opcRequestId;
+            request.technologyType = technologyType;
+            request.connectionType = connectionType;
+            request.sourceConnectionId = sourceConnectionId;
             request.displayName = displayName;
             request.limit = limit;
             request.page = page;
@@ -342,8 +439,9 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             return request;
-            // new ListConnectionsRequest(compartmentId, opcRequestId, displayName, limit, page,
-            // sortBy, sortOrder, lifecycleState);
+            // new ListConnectionsRequest(compartmentId, opcRequestId, technologyType,
+            // connectionType, sourceConnectionId, displayName, limit, page, sortBy, sortOrder,
+            // lifecycleState);
         }
     }
 
@@ -356,6 +454,9 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
         return new Builder()
                 .compartmentId(compartmentId)
                 .opcRequestId(opcRequestId)
+                .technologyType(technologyType)
+                .connectionType(connectionType)
+                .sourceConnectionId(sourceConnectionId)
                 .displayName(displayName)
                 .limit(limit)
                 .page(page)
@@ -380,6 +481,9 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",technologyType=").append(String.valueOf(this.technologyType));
+        sb.append(",connectionType=").append(String.valueOf(this.connectionType));
+        sb.append(",sourceConnectionId=").append(String.valueOf(this.sourceConnectionId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -403,6 +507,9 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.technologyType, other.technologyType)
+                && java.util.Objects.equals(this.connectionType, other.connectionType)
+                && java.util.Objects.equals(this.sourceConnectionId, other.sourceConnectionId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -419,6 +526,17 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.technologyType == null ? 43 : this.technologyType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionType == null ? 43 : this.connectionType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceConnectionId == null
+                                ? 43
+                                : this.sourceConnectionId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

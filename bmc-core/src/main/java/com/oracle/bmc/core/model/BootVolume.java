@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -7,12 +7,12 @@ package com.oracle.bmc.core.model;
 /**
  * A detachable boot volume device that contains the image used to boot a Compute instance. For more
  * information, see [Overview of Boot
- * Volumes](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumes.htm).
+ * Volumes](https://docs.oracle.com/iaas/Content/Block/Concepts/bootvolumes.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
@@ -41,6 +41,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         "id",
         "imageId",
         "isHydrated",
+        "clusterPlacementGroupId",
         "vpusPerGB",
         "lifecycleState",
         "sizeInGBs",
@@ -64,6 +65,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
             String id,
             String imageId,
             Boolean isHydrated,
+            String clusterPlacementGroupId,
             Long vpusPerGB,
             LifecycleState lifecycleState,
             Long sizeInGBs,
@@ -86,6 +88,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         this.id = id;
         this.imageId = imageId;
         this.isHydrated = isHydrated;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.vpusPerGB = vpusPerGB;
         this.lifecycleState = lifecycleState;
         this.sizeInGBs = sizeInGBs;
@@ -141,7 +144,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -151,7 +154,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -205,7 +208,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -215,7 +218,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -276,11 +279,26 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("isHydrated");
             return this;
         }
+        /** The clusterPlacementGroup Id of the volume for volume placement. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The clusterPlacementGroup Id of the volume for volume placement.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
         /**
          * The number of volume performance units (VPUs) that will be applied to this boot volume
          * per GB, representing the Block Volume service's elastic performance options. See [Block
          * Volume Performance
-         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
          * for more information.
          *
          * <p>Allowed values:
@@ -300,7 +318,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
          * The number of volume performance units (VPUs) that will be applied to this boot volume
          * per GB, representing the Block Volume service's elastic performance options. See [Block
          * Volume Performance
-         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
          * for more information.
          *
          * <p>Allowed values:
@@ -515,6 +533,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
                             this.id,
                             this.imageId,
                             this.isHydrated,
+                            this.clusterPlacementGroupId,
                             this.vpusPerGB,
                             this.lifecycleState,
                             this.sizeInGBs,
@@ -561,6 +580,9 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("isHydrated")) {
                 this.isHydrated(model.getIsHydrated());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("vpusPerGB")) {
                 this.vpusPerGB(model.getVpusPerGB());
@@ -646,7 +668,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -656,7 +678,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -703,7 +725,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -713,7 +735,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -766,11 +788,24 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         return isHydrated;
     }
 
+    /** The clusterPlacementGroup Id of the volume for volume placement. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     /**
      * The number of volume performance units (VPUs) that will be applied to this boot volume per
      * GB, representing the Block Volume service's elastic performance options. See [Block Volume
      * Performance
-     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
      * for more information.
      *
      * <p>Allowed values:
@@ -790,7 +825,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
      * The number of volume performance units (VPUs) that will be applied to this boot volume per
      * GB, representing the Block Volume service's elastic performance options. See [Block Volume
      * Performance
-     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
      * for more information.
      *
      * <p>Allowed values:
@@ -1036,6 +1071,8 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", imageId=").append(String.valueOf(this.imageId));
         sb.append(", isHydrated=").append(String.valueOf(this.isHydrated));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", vpusPerGB=").append(String.valueOf(this.vpusPerGB));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
@@ -1071,6 +1108,8 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.imageId, other.imageId)
                 && java.util.Objects.equals(this.isHydrated, other.isHydrated)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.vpusPerGB, other.vpusPerGB)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
@@ -1105,6 +1144,11 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
         result = (result * PRIME) + (this.isHydrated == null ? 43 : this.isHydrated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.vpusPerGB == null ? 43 : this.vpusPerGB.hashCode());
         result =
                 (result * PRIME)

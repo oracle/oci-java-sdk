@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -30,7 +30,13 @@ public final class UpdateNewsReportDetails
         "contentTypes",
         "onsTopicId",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "name",
+        "description",
+        "dayOfWeek",
+        "areChildCompartmentsIncluded",
+        "tagFilters",
+        "matchRule"
     })
     public UpdateNewsReportDetails(
             ResourceStatus status,
@@ -39,7 +45,13 @@ public final class UpdateNewsReportDetails
             NewsContentTypes contentTypes,
             String onsTopicId,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String name,
+            String description,
+            DayOfWeek dayOfWeek,
+            Boolean areChildCompartmentsIncluded,
+            java.util.List<String> tagFilters,
+            MatchRule matchRule) {
         super();
         this.status = status;
         this.newsFrequency = newsFrequency;
@@ -48,6 +60,12 @@ public final class UpdateNewsReportDetails
         this.onsTopicId = onsTopicId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.name = name;
+        this.description = description;
+        this.dayOfWeek = dayOfWeek;
+        this.areChildCompartmentsIncluded = areChildCompartmentsIncluded;
+        this.tagFilters = tagFilters;
+        this.matchRule = matchRule;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -107,15 +125,15 @@ public final class UpdateNewsReportDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the ONS topic.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * ONS topic.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
         private String onsTopicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the ONS topic.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * ONS topic.
          *
          * @param onsTopicId the value to set
          * @return this builder
@@ -164,6 +182,104 @@ public final class UpdateNewsReportDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** The news report name. */
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        /**
+         * The news report name.
+         *
+         * @param name the value to set
+         * @return this builder
+         */
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+        /** The description of the news report. */
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * The description of the news report.
+         *
+         * @param description the value to set
+         * @return this builder
+         */
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
+        private DayOfWeek dayOfWeek;
+
+        /**
+         * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+         *
+         * @param dayOfWeek the value to set
+         * @return this builder
+         */
+        public Builder dayOfWeek(DayOfWeek dayOfWeek) {
+            this.dayOfWeek = dayOfWeek;
+            this.__explicitlySet__.add("dayOfWeek");
+            return this;
+        }
+        /** A flag to consider the resources within a given compartment and all sub-compartments. */
+        @com.fasterxml.jackson.annotation.JsonProperty("areChildCompartmentsIncluded")
+        private Boolean areChildCompartmentsIncluded;
+
+        /**
+         * A flag to consider the resources within a given compartment and all sub-compartments.
+         *
+         * @param areChildCompartmentsIncluded the value to set
+         * @return this builder
+         */
+        public Builder areChildCompartmentsIncluded(Boolean areChildCompartmentsIncluded) {
+            this.areChildCompartmentsIncluded = areChildCompartmentsIncluded;
+            this.__explicitlySet__.add("areChildCompartmentsIncluded");
+            return this;
+        }
+        /**
+         * List of tag filters; each filter composed by a namespace, key, and value. Example for
+         * defined tags - '<TagNamespace>.<TagKey>=<TagValue>' Example for freeform tags -
+         * '<TagKey>=<TagValue>'
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("tagFilters")
+        private java.util.List<String> tagFilters;
+
+        /**
+         * List of tag filters; each filter composed by a namespace, key, and value. Example for
+         * defined tags - '<TagNamespace>.<TagKey>=<TagValue>' Example for freeform tags -
+         * '<TagKey>=<TagValue>'
+         *
+         * @param tagFilters the value to set
+         * @return this builder
+         */
+        public Builder tagFilters(java.util.List<String> tagFilters) {
+            this.tagFilters = tagFilters;
+            this.__explicitlySet__.add("tagFilters");
+            return this;
+        }
+        /** Match rule used for tag filters. */
+        @com.fasterxml.jackson.annotation.JsonProperty("matchRule")
+        private MatchRule matchRule;
+
+        /**
+         * Match rule used for tag filters.
+         *
+         * @param matchRule the value to set
+         * @return this builder
+         */
+        public Builder matchRule(MatchRule matchRule) {
+            this.matchRule = matchRule;
+            this.__explicitlySet__.add("matchRule");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -177,7 +293,13 @@ public final class UpdateNewsReportDetails
                             this.contentTypes,
                             this.onsTopicId,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.name,
+                            this.description,
+                            this.dayOfWeek,
+                            this.areChildCompartmentsIncluded,
+                            this.tagFilters,
+                            this.matchRule);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -206,6 +328,24 @@ public final class UpdateNewsReportDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("dayOfWeek")) {
+                this.dayOfWeek(model.getDayOfWeek());
+            }
+            if (model.wasPropertyExplicitlySet("areChildCompartmentsIncluded")) {
+                this.areChildCompartmentsIncluded(model.getAreChildCompartmentsIncluded());
+            }
+            if (model.wasPropertyExplicitlySet("tagFilters")) {
+                this.tagFilters(model.getTagFilters());
+            }
+            if (model.wasPropertyExplicitlySet("matchRule")) {
+                this.matchRule(model.getMatchRule());
             }
             return this;
         }
@@ -267,15 +407,15 @@ public final class UpdateNewsReportDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the ONS topic.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS
+     * topic.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
     private final String onsTopicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the ONS topic.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS
+     * topic.
      *
      * @return the value
      */
@@ -317,6 +457,88 @@ public final class UpdateNewsReportDetails
         return definedTags;
     }
 
+    /** The news report name. */
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    private final String name;
+
+    /**
+     * The news report name.
+     *
+     * @return the value
+     */
+    public String getName() {
+        return name;
+    }
+
+    /** The description of the news report. */
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * The description of the news report.
+     *
+     * @return the value
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /** Day of the week in which the news report will be sent if the frequency is set to WEEKLY. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
+    private final DayOfWeek dayOfWeek;
+
+    /**
+     * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     *
+     * @return the value
+     */
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    /** A flag to consider the resources within a given compartment and all sub-compartments. */
+    @com.fasterxml.jackson.annotation.JsonProperty("areChildCompartmentsIncluded")
+    private final Boolean areChildCompartmentsIncluded;
+
+    /**
+     * A flag to consider the resources within a given compartment and all sub-compartments.
+     *
+     * @return the value
+     */
+    public Boolean getAreChildCompartmentsIncluded() {
+        return areChildCompartmentsIncluded;
+    }
+
+    /**
+     * List of tag filters; each filter composed by a namespace, key, and value. Example for defined
+     * tags - '<TagNamespace>.<TagKey>=<TagValue>' Example for freeform tags - '<TagKey>=<TagValue>'
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("tagFilters")
+    private final java.util.List<String> tagFilters;
+
+    /**
+     * List of tag filters; each filter composed by a namespace, key, and value. Example for defined
+     * tags - '<TagNamespace>.<TagKey>=<TagValue>' Example for freeform tags - '<TagKey>=<TagValue>'
+     *
+     * @return the value
+     */
+    public java.util.List<String> getTagFilters() {
+        return tagFilters;
+    }
+
+    /** Match rule used for tag filters. */
+    @com.fasterxml.jackson.annotation.JsonProperty("matchRule")
+    private final MatchRule matchRule;
+
+    /**
+     * Match rule used for tag filters.
+     *
+     * @return the value
+     */
+    public MatchRule getMatchRule() {
+        return matchRule;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -339,6 +561,13 @@ public final class UpdateNewsReportDetails
         sb.append(", onsTopicId=").append(String.valueOf(this.onsTopicId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", dayOfWeek=").append(String.valueOf(this.dayOfWeek));
+        sb.append(", areChildCompartmentsIncluded=")
+                .append(String.valueOf(this.areChildCompartmentsIncluded));
+        sb.append(", tagFilters=").append(String.valueOf(this.tagFilters));
+        sb.append(", matchRule=").append(String.valueOf(this.matchRule));
         sb.append(")");
         return sb.toString();
     }
@@ -360,6 +589,13 @@ public final class UpdateNewsReportDetails
                 && java.util.Objects.equals(this.onsTopicId, other.onsTopicId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.dayOfWeek, other.dayOfWeek)
+                && java.util.Objects.equals(
+                        this.areChildCompartmentsIncluded, other.areChildCompartmentsIncluded)
+                && java.util.Objects.equals(this.tagFilters, other.tagFilters)
+                && java.util.Objects.equals(this.matchRule, other.matchRule)
                 && super.equals(other);
     }
 
@@ -376,6 +612,16 @@ public final class UpdateNewsReportDetails
         result = (result * PRIME) + (this.onsTopicId == null ? 43 : this.onsTopicId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.dayOfWeek == null ? 43 : this.dayOfWeek.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areChildCompartmentsIncluded == null
+                                ? 43
+                                : this.areChildCompartmentsIncluded.hashCode());
+        result = (result * PRIME) + (this.tagFilters == null ? 43 : this.tagFilters.hashCode());
+        result = (result * PRIME) + (this.matchRule == null ? 43 : this.matchRule.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate;
@@ -39,6 +39,122 @@ public class GoldenGatePaginators {
 
     public GoldenGatePaginators(GoldenGate client) {
         this.client = client;
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCertificates operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCertificatesResponse> listCertificatesResponseIterator(
+            final ListCertificatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCertificatesRequest.Builder, ListCertificatesRequest, ListCertificatesResponse>(
+                new java.util.function.Supplier<ListCertificatesRequest.Builder>() {
+                    @Override
+                    public ListCertificatesRequest.Builder get() {
+                        return ListCertificatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCertificatesResponse, String>() {
+                    @Override
+                    public String apply(ListCertificatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCertificatesRequest.Builder>,
+                        ListCertificatesRequest>() {
+                    @Override
+                    public ListCertificatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCertificatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCertificatesRequest, ListCertificatesResponse>() {
+                    @Override
+                    public ListCertificatesResponse apply(ListCertificatesRequest request) {
+                        return client.listCertificates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.goldengate.model.CertificateSummary} objects contained in responses from the
+     * listCertificates operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.goldengate.model.CertificateSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.CertificateSummary>
+            listCertificatesRecordIterator(final ListCertificatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCertificatesRequest.Builder,
+                ListCertificatesRequest,
+                ListCertificatesResponse,
+                com.oracle.bmc.goldengate.model.CertificateSummary>(
+                new java.util.function.Supplier<ListCertificatesRequest.Builder>() {
+                    @Override
+                    public ListCertificatesRequest.Builder get() {
+                        return ListCertificatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCertificatesResponse, String>() {
+                    @Override
+                    public String apply(ListCertificatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCertificatesRequest.Builder>,
+                        ListCertificatesRequest>() {
+                    @Override
+                    public ListCertificatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCertificatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCertificatesRequest, ListCertificatesResponse>() {
+                    @Override
+                    public ListCertificatesResponse apply(ListCertificatesRequest request) {
+                        return client.listCertificates(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCertificatesResponse,
+                        java.util.List<com.oracle.bmc.goldengate.model.CertificateSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.goldengate.model.CertificateSummary> apply(
+                            ListCertificatesResponse response) {
+                        return response.getCertificateCollection().getItems();
+                    }
+                });
     }
 
     /**
@@ -523,6 +639,250 @@ public class GoldenGatePaginators {
                     public java.util.List<com.oracle.bmc.goldengate.model.DeploymentBackupSummary>
                             apply(ListDeploymentBackupsResponse response) {
                         return response.getDeploymentBackupCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDeploymentEnvironments operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDeploymentEnvironmentsResponse> listDeploymentEnvironmentsResponseIterator(
+            final ListDeploymentEnvironmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDeploymentEnvironmentsRequest.Builder,
+                ListDeploymentEnvironmentsRequest,
+                ListDeploymentEnvironmentsResponse>(
+                new java.util.function.Supplier<ListDeploymentEnvironmentsRequest.Builder>() {
+                    @Override
+                    public ListDeploymentEnvironmentsRequest.Builder get() {
+                        return ListDeploymentEnvironmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDeploymentEnvironmentsResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentEnvironmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentEnvironmentsRequest.Builder>,
+                        ListDeploymentEnvironmentsRequest>() {
+                    @Override
+                    public ListDeploymentEnvironmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentEnvironmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentEnvironmentsRequest, ListDeploymentEnvironmentsResponse>() {
+                    @Override
+                    public ListDeploymentEnvironmentsResponse apply(
+                            ListDeploymentEnvironmentsRequest request) {
+                        return client.listDeploymentEnvironments(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary} objects contained in responses
+     * from the listDeploymentEnvironments operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary>
+            listDeploymentEnvironmentsRecordIterator(
+                    final ListDeploymentEnvironmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDeploymentEnvironmentsRequest.Builder,
+                ListDeploymentEnvironmentsRequest,
+                ListDeploymentEnvironmentsResponse,
+                com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary>(
+                new java.util.function.Supplier<ListDeploymentEnvironmentsRequest.Builder>() {
+                    @Override
+                    public ListDeploymentEnvironmentsRequest.Builder get() {
+                        return ListDeploymentEnvironmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDeploymentEnvironmentsResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentEnvironmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentEnvironmentsRequest.Builder>,
+                        ListDeploymentEnvironmentsRequest>() {
+                    @Override
+                    public ListDeploymentEnvironmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentEnvironmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentEnvironmentsRequest, ListDeploymentEnvironmentsResponse>() {
+                    @Override
+                    public ListDeploymentEnvironmentsResponse apply(
+                            ListDeploymentEnvironmentsRequest request) {
+                        return client.listDeploymentEnvironments(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentEnvironmentsResponse,
+                        java.util.List<
+                                com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary>
+                            apply(ListDeploymentEnvironmentsResponse response) {
+                        return response.getDeploymentEnvironmentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDeploymentPeers operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDeploymentPeersResponse> listDeploymentPeersResponseIterator(
+            final ListDeploymentPeersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDeploymentPeersRequest.Builder,
+                ListDeploymentPeersRequest,
+                ListDeploymentPeersResponse>(
+                new java.util.function.Supplier<ListDeploymentPeersRequest.Builder>() {
+                    @Override
+                    public ListDeploymentPeersRequest.Builder get() {
+                        return ListDeploymentPeersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDeploymentPeersResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentPeersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentPeersRequest.Builder>,
+                        ListDeploymentPeersRequest>() {
+                    @Override
+                    public ListDeploymentPeersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentPeersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentPeersRequest, ListDeploymentPeersResponse>() {
+                    @Override
+                    public ListDeploymentPeersResponse apply(ListDeploymentPeersRequest request) {
+                        return client.listDeploymentPeers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.goldengate.model.DeploymentPeerSummary} objects contained in responses from
+     * the listDeploymentPeers operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.goldengate.model.DeploymentPeerSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.DeploymentPeerSummary>
+            listDeploymentPeersRecordIterator(final ListDeploymentPeersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDeploymentPeersRequest.Builder,
+                ListDeploymentPeersRequest,
+                ListDeploymentPeersResponse,
+                com.oracle.bmc.goldengate.model.DeploymentPeerSummary>(
+                new java.util.function.Supplier<ListDeploymentPeersRequest.Builder>() {
+                    @Override
+                    public ListDeploymentPeersRequest.Builder get() {
+                        return ListDeploymentPeersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDeploymentPeersResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentPeersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentPeersRequest.Builder>,
+                        ListDeploymentPeersRequest>() {
+                    @Override
+                    public ListDeploymentPeersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentPeersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentPeersRequest, ListDeploymentPeersResponse>() {
+                    @Override
+                    public ListDeploymentPeersResponse apply(ListDeploymentPeersRequest request) {
+                        return client.listDeploymentPeers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentPeersResponse,
+                        java.util.List<com.oracle.bmc.goldengate.model.DeploymentPeerSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.goldengate.model.DeploymentPeerSummary>
+                            apply(ListDeploymentPeersResponse response) {
+                        return response.getDeploymentPeerCollection().getItems();
                     }
                 });
     }
@@ -1132,6 +1492,605 @@ public class GoldenGatePaginators {
                     public java.util.List<com.oracle.bmc.goldengate.model.DeploymentSummary> apply(
                             ListDeploymentsResponse response) {
                         return response.getDeploymentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listPipelineRunningProcesses operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListPipelineRunningProcessesResponse>
+            listPipelineRunningProcessesResponseIterator(
+                    final ListPipelineRunningProcessesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPipelineRunningProcessesRequest.Builder,
+                ListPipelineRunningProcessesRequest,
+                ListPipelineRunningProcessesResponse>(
+                new java.util.function.Supplier<ListPipelineRunningProcessesRequest.Builder>() {
+                    @Override
+                    public ListPipelineRunningProcessesRequest.Builder get() {
+                        return ListPipelineRunningProcessesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPipelineRunningProcessesResponse, String>() {
+                    @Override
+                    public String apply(ListPipelineRunningProcessesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPipelineRunningProcessesRequest.Builder>,
+                        ListPipelineRunningProcessesRequest>() {
+                    @Override
+                    public ListPipelineRunningProcessesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPipelineRunningProcessesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPipelineRunningProcessesRequest,
+                        ListPipelineRunningProcessesResponse>() {
+                    @Override
+                    public ListPipelineRunningProcessesResponse apply(
+                            ListPipelineRunningProcessesRequest request) {
+                        return client.listPipelineRunningProcesses(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.goldengate.model.PipelineRunningProcessSummary} objects contained in responses
+     * from the listPipelineRunningProcesses operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.goldengate.model.PipelineRunningProcessSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.PipelineRunningProcessSummary>
+            listPipelineRunningProcessesRecordIterator(
+                    final ListPipelineRunningProcessesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPipelineRunningProcessesRequest.Builder,
+                ListPipelineRunningProcessesRequest,
+                ListPipelineRunningProcessesResponse,
+                com.oracle.bmc.goldengate.model.PipelineRunningProcessSummary>(
+                new java.util.function.Supplier<ListPipelineRunningProcessesRequest.Builder>() {
+                    @Override
+                    public ListPipelineRunningProcessesRequest.Builder get() {
+                        return ListPipelineRunningProcessesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPipelineRunningProcessesResponse, String>() {
+                    @Override
+                    public String apply(ListPipelineRunningProcessesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPipelineRunningProcessesRequest.Builder>,
+                        ListPipelineRunningProcessesRequest>() {
+                    @Override
+                    public ListPipelineRunningProcessesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPipelineRunningProcessesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPipelineRunningProcessesRequest,
+                        ListPipelineRunningProcessesResponse>() {
+                    @Override
+                    public ListPipelineRunningProcessesResponse apply(
+                            ListPipelineRunningProcessesRequest request) {
+                        return client.listPipelineRunningProcesses(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPipelineRunningProcessesResponse,
+                        java.util.List<
+                                com.oracle.bmc.goldengate.model.PipelineRunningProcessSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.goldengate.model.PipelineRunningProcessSummary>
+                            apply(ListPipelineRunningProcessesResponse response) {
+                        return response.getPipelineRunningProcessCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listPipelineSchemaTables operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListPipelineSchemaTablesResponse> listPipelineSchemaTablesResponseIterator(
+            final ListPipelineSchemaTablesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPipelineSchemaTablesRequest.Builder,
+                ListPipelineSchemaTablesRequest,
+                ListPipelineSchemaTablesResponse>(
+                new java.util.function.Supplier<ListPipelineSchemaTablesRequest.Builder>() {
+                    @Override
+                    public ListPipelineSchemaTablesRequest.Builder get() {
+                        return ListPipelineSchemaTablesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPipelineSchemaTablesResponse, String>() {
+                    @Override
+                    public String apply(ListPipelineSchemaTablesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPipelineSchemaTablesRequest.Builder>,
+                        ListPipelineSchemaTablesRequest>() {
+                    @Override
+                    public ListPipelineSchemaTablesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPipelineSchemaTablesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPipelineSchemaTablesRequest, ListPipelineSchemaTablesResponse>() {
+                    @Override
+                    public ListPipelineSchemaTablesResponse apply(
+                            ListPipelineSchemaTablesRequest request) {
+                        return client.listPipelineSchemaTables(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.goldengate.model.PipelineSchemaTableSummary} objects contained in responses
+     * from the listPipelineSchemaTables operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.goldengate.model.PipelineSchemaTableSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.PipelineSchemaTableSummary>
+            listPipelineSchemaTablesRecordIterator(final ListPipelineSchemaTablesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPipelineSchemaTablesRequest.Builder,
+                ListPipelineSchemaTablesRequest,
+                ListPipelineSchemaTablesResponse,
+                com.oracle.bmc.goldengate.model.PipelineSchemaTableSummary>(
+                new java.util.function.Supplier<ListPipelineSchemaTablesRequest.Builder>() {
+                    @Override
+                    public ListPipelineSchemaTablesRequest.Builder get() {
+                        return ListPipelineSchemaTablesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPipelineSchemaTablesResponse, String>() {
+                    @Override
+                    public String apply(ListPipelineSchemaTablesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPipelineSchemaTablesRequest.Builder>,
+                        ListPipelineSchemaTablesRequest>() {
+                    @Override
+                    public ListPipelineSchemaTablesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPipelineSchemaTablesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPipelineSchemaTablesRequest, ListPipelineSchemaTablesResponse>() {
+                    @Override
+                    public ListPipelineSchemaTablesResponse apply(
+                            ListPipelineSchemaTablesRequest request) {
+                        return client.listPipelineSchemaTables(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPipelineSchemaTablesResponse,
+                        java.util.List<
+                                com.oracle.bmc.goldengate.model.PipelineSchemaTableSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.goldengate.model.PipelineSchemaTableSummary>
+                            apply(ListPipelineSchemaTablesResponse response) {
+                        return response.getPipelineSchemaTableCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listPipelineSchemas operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListPipelineSchemasResponse> listPipelineSchemasResponseIterator(
+            final ListPipelineSchemasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPipelineSchemasRequest.Builder,
+                ListPipelineSchemasRequest,
+                ListPipelineSchemasResponse>(
+                new java.util.function.Supplier<ListPipelineSchemasRequest.Builder>() {
+                    @Override
+                    public ListPipelineSchemasRequest.Builder get() {
+                        return ListPipelineSchemasRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPipelineSchemasResponse, String>() {
+                    @Override
+                    public String apply(ListPipelineSchemasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPipelineSchemasRequest.Builder>,
+                        ListPipelineSchemasRequest>() {
+                    @Override
+                    public ListPipelineSchemasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPipelineSchemasRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPipelineSchemasRequest, ListPipelineSchemasResponse>() {
+                    @Override
+                    public ListPipelineSchemasResponse apply(ListPipelineSchemasRequest request) {
+                        return client.listPipelineSchemas(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.goldengate.model.PipelineSchemaSummary} objects contained in responses from
+     * the listPipelineSchemas operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.goldengate.model.PipelineSchemaSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.PipelineSchemaSummary>
+            listPipelineSchemasRecordIterator(final ListPipelineSchemasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPipelineSchemasRequest.Builder,
+                ListPipelineSchemasRequest,
+                ListPipelineSchemasResponse,
+                com.oracle.bmc.goldengate.model.PipelineSchemaSummary>(
+                new java.util.function.Supplier<ListPipelineSchemasRequest.Builder>() {
+                    @Override
+                    public ListPipelineSchemasRequest.Builder get() {
+                        return ListPipelineSchemasRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPipelineSchemasResponse, String>() {
+                    @Override
+                    public String apply(ListPipelineSchemasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPipelineSchemasRequest.Builder>,
+                        ListPipelineSchemasRequest>() {
+                    @Override
+                    public ListPipelineSchemasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPipelineSchemasRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPipelineSchemasRequest, ListPipelineSchemasResponse>() {
+                    @Override
+                    public ListPipelineSchemasResponse apply(ListPipelineSchemasRequest request) {
+                        return client.listPipelineSchemas(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPipelineSchemasResponse,
+                        java.util.List<com.oracle.bmc.goldengate.model.PipelineSchemaSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.goldengate.model.PipelineSchemaSummary>
+                            apply(ListPipelineSchemasResponse response) {
+                        return response.getPipelineSchemaCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPipelines
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListPipelinesResponse> listPipelinesResponseIterator(
+            final ListPipelinesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPipelinesRequest.Builder, ListPipelinesRequest, ListPipelinesResponse>(
+                new java.util.function.Supplier<ListPipelinesRequest.Builder>() {
+                    @Override
+                    public ListPipelinesRequest.Builder get() {
+                        return ListPipelinesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPipelinesResponse, String>() {
+                    @Override
+                    public String apply(ListPipelinesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPipelinesRequest.Builder>,
+                        ListPipelinesRequest>() {
+                    @Override
+                    public ListPipelinesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPipelinesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListPipelinesRequest, ListPipelinesResponse>() {
+                    @Override
+                    public ListPipelinesResponse apply(ListPipelinesRequest request) {
+                        return client.listPipelines(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.goldengate.model.PipelineSummary} objects contained in responses from the
+     * listPipelines operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.goldengate.model.PipelineSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.PipelineSummary> listPipelinesRecordIterator(
+            final ListPipelinesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPipelinesRequest.Builder,
+                ListPipelinesRequest,
+                ListPipelinesResponse,
+                com.oracle.bmc.goldengate.model.PipelineSummary>(
+                new java.util.function.Supplier<ListPipelinesRequest.Builder>() {
+                    @Override
+                    public ListPipelinesRequest.Builder get() {
+                        return ListPipelinesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPipelinesResponse, String>() {
+                    @Override
+                    public String apply(ListPipelinesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPipelinesRequest.Builder>,
+                        ListPipelinesRequest>() {
+                    @Override
+                    public ListPipelinesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPipelinesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListPipelinesRequest, ListPipelinesResponse>() {
+                    @Override
+                    public ListPipelinesResponse apply(ListPipelinesRequest request) {
+                        return client.listPipelines(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPipelinesResponse,
+                        java.util.List<com.oracle.bmc.goldengate.model.PipelineSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.goldengate.model.PipelineSummary> apply(
+                            ListPipelinesResponse response) {
+                        return response.getPipelineCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listRecipes
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListRecipesResponse> listRecipesResponseIterator(
+            final ListRecipesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRecipesRequest.Builder, ListRecipesRequest, ListRecipesResponse>(
+                new java.util.function.Supplier<ListRecipesRequest.Builder>() {
+                    @Override
+                    public ListRecipesRequest.Builder get() {
+                        return ListRecipesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRecipesResponse, String>() {
+                    @Override
+                    public String apply(ListRecipesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRecipesRequest.Builder>,
+                        ListRecipesRequest>() {
+                    @Override
+                    public ListRecipesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRecipesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListRecipesRequest, ListRecipesResponse>() {
+                    @Override
+                    public ListRecipesResponse apply(ListRecipesRequest request) {
+                        return client.listRecipes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.goldengate.model.RecipeSummary} objects contained in responses from the
+     * listRecipes operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.goldengate.model.RecipeSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.RecipeSummary> listRecipesRecordIterator(
+            final ListRecipesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRecipesRequest.Builder,
+                ListRecipesRequest,
+                ListRecipesResponse,
+                com.oracle.bmc.goldengate.model.RecipeSummary>(
+                new java.util.function.Supplier<ListRecipesRequest.Builder>() {
+                    @Override
+                    public ListRecipesRequest.Builder get() {
+                        return ListRecipesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRecipesResponse, String>() {
+                    @Override
+                    public String apply(ListRecipesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRecipesRequest.Builder>,
+                        ListRecipesRequest>() {
+                    @Override
+                    public ListRecipesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRecipesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListRecipesRequest, ListRecipesResponse>() {
+                    @Override
+                    public ListRecipesResponse apply(ListRecipesRequest request) {
+                        return client.listRecipes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRecipesResponse,
+                        java.util.List<com.oracle.bmc.goldengate.model.RecipeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.goldengate.model.RecipeSummary> apply(
+                            ListRecipesResponse response) {
+                        return response.getRecipeSummaryCollection().getItems();
                     }
                 });
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.objectstorage.requests;
 import com.oracle.bmc.objectstorage.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UploadPartExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UploadPartExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UploadPartRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -130,7 +130,7 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
         return expect;
     }
     /**
-     * The optional base-64 header that defines the encoded MD5 hash of the body. If the optional
+     * The optional header that defines the base64-encoded MD5 hash of the body. If the optional
      * Content-MD5 header is present, Object Storage performs an integrity check on the body of the
      * HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied
      * in the header. If the two hashes do not match, the object is rejected and an HTTP-400
@@ -142,7 +142,7 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
     private String contentMD5;
 
     /**
-     * The optional base-64 header that defines the encoded MD5 hash of the body. If the optional
+     * The optional header that defines the base64-encoded MD5 hash of the body. If the optional
      * Content-MD5 header is present, Object Storage performs an integrity check on the body of the
      * HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied
      * in the header. If the two hashes do not match, the object is rejected and an HTTP-400
@@ -155,16 +155,120 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
         return contentMD5;
     }
     /**
+     * The optional checksum algorithm to use to compute and store the checksum of the body of the
+     * HTTP request (or the parts in case of multipart uploads), in addition to the default MD5
+     * checksum.
+     */
+    private com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm;
+
+    /**
+     * The optional checksum algorithm to use to compute and store the checksum of the body of the
+     * HTTP request (or the parts in case of multipart uploads), in addition to the default MD5
+     * checksum.
+     */
+    public com.oracle.bmc.objectstorage.model.ChecksumAlgorithm getOpcChecksumAlgorithm() {
+        return opcChecksumAlgorithm;
+    }
+    /**
+     * Applicable only if CRC32C is specified in the opc-checksum-algorithm request header.
+     *
+     * <p>The optional header that defines the base64-encoded, 32-bit CRC32C (Castagnoli) checksum
+     * of the body. If the optional opc-content-crc32c header is present, Object Storage performs an
+     * integrity check on the body of the HTTP request by computing the CRC32C checksum for the body
+     * and comparing it to the CRC32C checksum supplied in the header. If the two checksums do not
+     * match, the object is rejected and an HTTP-400 Unmatched Content CRC32C error is returned with
+     * the message:
+     *
+     * <p>"The computed CRC32C of the request body (ACTUAL_CRC32C) does not match the
+     * opc-content-crc32c header (HEADER_CRC32C)"
+     */
+    private String opcContentCrc32c;
+
+    /**
+     * Applicable only if CRC32C is specified in the opc-checksum-algorithm request header.
+     *
+     * <p>The optional header that defines the base64-encoded, 32-bit CRC32C (Castagnoli) checksum
+     * of the body. If the optional opc-content-crc32c header is present, Object Storage performs an
+     * integrity check on the body of the HTTP request by computing the CRC32C checksum for the body
+     * and comparing it to the CRC32C checksum supplied in the header. If the two checksums do not
+     * match, the object is rejected and an HTTP-400 Unmatched Content CRC32C error is returned with
+     * the message:
+     *
+     * <p>"The computed CRC32C of the request body (ACTUAL_CRC32C) does not match the
+     * opc-content-crc32c header (HEADER_CRC32C)"
+     */
+    public String getOpcContentCrc32c() {
+        return opcContentCrc32c;
+    }
+    /**
+     * Applicable only if SHA256 is specified in the opc-checksum-algorithm request header.
+     *
+     * <p>The optional header that defines the base64-encoded SHA256 hash of the body. If the
+     * optional opc-content-sha256 header is present, Object Storage performs an integrity check on
+     * the body of the HTTP request by computing the SHA256 hash for the body and comparing it to
+     * the SHA256 hash supplied in the header. If the two hashes do not match, the object is
+     * rejected and an HTTP-400 Unmatched Content SHA256 error is returned with the message:
+     *
+     * <p>"The computed SHA256 of the request body (ACTUAL_SHA256) does not match the
+     * opc-content-sha256 header (HEADER_SHA256)"
+     */
+    private String opcContentSha256;
+
+    /**
+     * Applicable only if SHA256 is specified in the opc-checksum-algorithm request header.
+     *
+     * <p>The optional header that defines the base64-encoded SHA256 hash of the body. If the
+     * optional opc-content-sha256 header is present, Object Storage performs an integrity check on
+     * the body of the HTTP request by computing the SHA256 hash for the body and comparing it to
+     * the SHA256 hash supplied in the header. If the two hashes do not match, the object is
+     * rejected and an HTTP-400 Unmatched Content SHA256 error is returned with the message:
+     *
+     * <p>"The computed SHA256 of the request body (ACTUAL_SHA256) does not match the
+     * opc-content-sha256 header (HEADER_SHA256)"
+     */
+    public String getOpcContentSha256() {
+        return opcContentSha256;
+    }
+    /**
+     * Applicable only if SHA384 is specified in the opc-checksum-algorithm request header.
+     *
+     * <p>The optional header that defines the base64-encoded SHA384 hash of the body. If the
+     * optional opc-content-sha384 header is present, Object Storage performs an integrity check on
+     * the body of the HTTP request by computing the SHA384 hash for the body and comparing it to
+     * the SHA384 hash supplied in the header. If the two hashes do not match, the object is
+     * rejected and an HTTP-400 Unmatched Content SHA384 error is returned with the message:
+     *
+     * <p>"The computed SHA384 of the request body (ACTUAL_SHA384) does not match the
+     * opc-content-sha384 header (HEADER_SHA384)"
+     */
+    private String opcContentSha384;
+
+    /**
+     * Applicable only if SHA384 is specified in the opc-checksum-algorithm request header.
+     *
+     * <p>The optional header that defines the base64-encoded SHA384 hash of the body. If the
+     * optional opc-content-sha384 header is present, Object Storage performs an integrity check on
+     * the body of the HTTP request by computing the SHA384 hash for the body and comparing it to
+     * the SHA384 hash supplied in the header. If the two hashes do not match, the object is
+     * rejected and an HTTP-400 Unmatched Content SHA384 error is returned with the message:
+     *
+     * <p>"The computed SHA384 of the request body (ACTUAL_SHA384) does not match the
+     * opc-content-sha384 header (HEADER_SHA384)"
+     */
+    public String getOpcContentSha384() {
+        return opcContentSha384;
+    }
+    /**
      * The optional header that specifies "AES256" as the encryption algorithm. For more
      * information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     private String opcSseCustomerAlgorithm;
 
     /**
      * The optional header that specifies "AES256" as the encryption algorithm. For more
      * information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     public String getOpcSseCustomerAlgorithm() {
         return opcSseCustomerAlgorithm;
@@ -172,14 +276,14 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
     /**
      * The optional header that specifies the base64-encoded 256-bit encryption key to use to
      * encrypt or decrypt the data. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     private String opcSseCustomerKey;
 
     /**
      * The optional header that specifies the base64-encoded 256-bit encryption key to use to
      * encrypt or decrypt the data. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     public String getOpcSseCustomerKey() {
         return opcSseCustomerKey;
@@ -188,7 +292,7 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
      * value is used to check the integrity of the encryption key. For more information, see [Using
      * Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     private String opcSseCustomerKeySha256;
 
@@ -196,22 +300,22 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
      * value is used to check the integrity of the encryption key. For more information, see [Using
      * Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     public String getOpcSseCustomerKeySha256() {
         return opcSseCustomerKeySha256;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
-     * master encryption key used to call the Key Management service to generate a data encryption
-     * key or to encrypt or decrypt a data encryption key.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master
+     * encryption key used to call the Key Management service to generate a data encryption key or
+     * to encrypt or decrypt a data encryption key.
      */
     private String opcSseKmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
-     * master encryption key used to call the Key Management service to generate a data encryption
-     * key or to encrypt or decrypt a data encryption key.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master
+     * encryption key used to call the Key Management service to generate a data encryption key or
+     * to encrypt or decrypt a data encryption key.
      */
     public String getOpcSseKmsKeyId() {
         return opcSseKmsKeyId;
@@ -422,11 +526,11 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
         }
 
         /**
-         * The optional base-64 header that defines the encoded MD5 hash of the body. If the
-         * optional Content-MD5 header is present, Object Storage performs an integrity check on the
-         * body of the HTTP request by computing the MD5 hash for the body and comparing it to the
-         * MD5 hash supplied in the header. If the two hashes do not match, the object is rejected
-         * and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+         * The optional header that defines the base64-encoded MD5 hash of the body. If the optional
+         * Content-MD5 header is present, Object Storage performs an integrity check on the body of
+         * the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash
+         * supplied in the header. If the two hashes do not match, the object is rejected and an
+         * HTTP-400 Unmatched Content MD5 error is returned with the message:
          *
          * <p>"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5
          * header (HEADER_MD5)"
@@ -434,11 +538,11 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
         private String contentMD5 = null;
 
         /**
-         * The optional base-64 header that defines the encoded MD5 hash of the body. If the
-         * optional Content-MD5 header is present, Object Storage performs an integrity check on the
-         * body of the HTTP request by computing the MD5 hash for the body and comparing it to the
-         * MD5 hash supplied in the header. If the two hashes do not match, the object is rejected
-         * and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+         * The optional header that defines the base64-encoded MD5 hash of the body. If the optional
+         * Content-MD5 header is present, Object Storage performs an integrity check on the body of
+         * the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash
+         * supplied in the header. If the two hashes do not match, the object is rejected and an
+         * HTTP-400 Unmatched Content MD5 error is returned with the message:
          *
          * <p>"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5
          * header (HEADER_MD5)"
@@ -452,16 +556,141 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
         }
 
         /**
+         * The optional checksum algorithm to use to compute and store the checksum of the body of
+         * the HTTP request (or the parts in case of multipart uploads), in addition to the default
+         * MD5 checksum.
+         */
+        private com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm = null;
+
+        /**
+         * The optional checksum algorithm to use to compute and store the checksum of the body of
+         * the HTTP request (or the parts in case of multipart uploads), in addition to the default
+         * MD5 checksum.
+         *
+         * @param opcChecksumAlgorithm the value to set
+         * @return this builder instance
+         */
+        public Builder opcChecksumAlgorithm(
+                com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm) {
+            this.opcChecksumAlgorithm = opcChecksumAlgorithm;
+            return this;
+        }
+
+        /**
+         * Applicable only if CRC32C is specified in the opc-checksum-algorithm request header.
+         *
+         * <p>The optional header that defines the base64-encoded, 32-bit CRC32C (Castagnoli)
+         * checksum of the body. If the optional opc-content-crc32c header is present, Object
+         * Storage performs an integrity check on the body of the HTTP request by computing the
+         * CRC32C checksum for the body and comparing it to the CRC32C checksum supplied in the
+         * header. If the two checksums do not match, the object is rejected and an HTTP-400
+         * Unmatched Content CRC32C error is returned with the message:
+         *
+         * <p>"The computed CRC32C of the request body (ACTUAL_CRC32C) does not match the
+         * opc-content-crc32c header (HEADER_CRC32C)"
+         */
+        private String opcContentCrc32c = null;
+
+        /**
+         * Applicable only if CRC32C is specified in the opc-checksum-algorithm request header.
+         *
+         * <p>The optional header that defines the base64-encoded, 32-bit CRC32C (Castagnoli)
+         * checksum of the body. If the optional opc-content-crc32c header is present, Object
+         * Storage performs an integrity check on the body of the HTTP request by computing the
+         * CRC32C checksum for the body and comparing it to the CRC32C checksum supplied in the
+         * header. If the two checksums do not match, the object is rejected and an HTTP-400
+         * Unmatched Content CRC32C error is returned with the message:
+         *
+         * <p>"The computed CRC32C of the request body (ACTUAL_CRC32C) does not match the
+         * opc-content-crc32c header (HEADER_CRC32C)"
+         *
+         * @param opcContentCrc32c the value to set
+         * @return this builder instance
+         */
+        public Builder opcContentCrc32c(String opcContentCrc32c) {
+            this.opcContentCrc32c = opcContentCrc32c;
+            return this;
+        }
+
+        /**
+         * Applicable only if SHA256 is specified in the opc-checksum-algorithm request header.
+         *
+         * <p>The optional header that defines the base64-encoded SHA256 hash of the body. If the
+         * optional opc-content-sha256 header is present, Object Storage performs an integrity check
+         * on the body of the HTTP request by computing the SHA256 hash for the body and comparing
+         * it to the SHA256 hash supplied in the header. If the two hashes do not match, the object
+         * is rejected and an HTTP-400 Unmatched Content SHA256 error is returned with the message:
+         *
+         * <p>"The computed SHA256 of the request body (ACTUAL_SHA256) does not match the
+         * opc-content-sha256 header (HEADER_SHA256)"
+         */
+        private String opcContentSha256 = null;
+
+        /**
+         * Applicable only if SHA256 is specified in the opc-checksum-algorithm request header.
+         *
+         * <p>The optional header that defines the base64-encoded SHA256 hash of the body. If the
+         * optional opc-content-sha256 header is present, Object Storage performs an integrity check
+         * on the body of the HTTP request by computing the SHA256 hash for the body and comparing
+         * it to the SHA256 hash supplied in the header. If the two hashes do not match, the object
+         * is rejected and an HTTP-400 Unmatched Content SHA256 error is returned with the message:
+         *
+         * <p>"The computed SHA256 of the request body (ACTUAL_SHA256) does not match the
+         * opc-content-sha256 header (HEADER_SHA256)"
+         *
+         * @param opcContentSha256 the value to set
+         * @return this builder instance
+         */
+        public Builder opcContentSha256(String opcContentSha256) {
+            this.opcContentSha256 = opcContentSha256;
+            return this;
+        }
+
+        /**
+         * Applicable only if SHA384 is specified in the opc-checksum-algorithm request header.
+         *
+         * <p>The optional header that defines the base64-encoded SHA384 hash of the body. If the
+         * optional opc-content-sha384 header is present, Object Storage performs an integrity check
+         * on the body of the HTTP request by computing the SHA384 hash for the body and comparing
+         * it to the SHA384 hash supplied in the header. If the two hashes do not match, the object
+         * is rejected and an HTTP-400 Unmatched Content SHA384 error is returned with the message:
+         *
+         * <p>"The computed SHA384 of the request body (ACTUAL_SHA384) does not match the
+         * opc-content-sha384 header (HEADER_SHA384)"
+         */
+        private String opcContentSha384 = null;
+
+        /**
+         * Applicable only if SHA384 is specified in the opc-checksum-algorithm request header.
+         *
+         * <p>The optional header that defines the base64-encoded SHA384 hash of the body. If the
+         * optional opc-content-sha384 header is present, Object Storage performs an integrity check
+         * on the body of the HTTP request by computing the SHA384 hash for the body and comparing
+         * it to the SHA384 hash supplied in the header. If the two hashes do not match, the object
+         * is rejected and an HTTP-400 Unmatched Content SHA384 error is returned with the message:
+         *
+         * <p>"The computed SHA384 of the request body (ACTUAL_SHA384) does not match the
+         * opc-content-sha384 header (HEADER_SHA384)"
+         *
+         * @param opcContentSha384 the value to set
+         * @return this builder instance
+         */
+        public Builder opcContentSha384(String opcContentSha384) {
+            this.opcContentSha384 = opcContentSha384;
+            return this;
+        }
+
+        /**
          * The optional header that specifies "AES256" as the encryption algorithm. For more
          * information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          */
         private String opcSseCustomerAlgorithm = null;
 
         /**
          * The optional header that specifies "AES256" as the encryption algorithm. For more
          * information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerAlgorithm the value to set
          * @return this builder instance
@@ -475,7 +704,7 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
          * The optional header that specifies the base64-encoded 256-bit encryption key to use to
          * encrypt or decrypt the data. For more information, see [Using Your Own Keys for
          * Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          */
         private String opcSseCustomerKey = null;
 
@@ -483,7 +712,7 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
          * The optional header that specifies the base64-encoded 256-bit encryption key to use to
          * encrypt or decrypt the data. For more information, see [Using Your Own Keys for
          * Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerKey the value to set
          * @return this builder instance
@@ -497,7 +726,7 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
          * The optional header that specifies the base64-encoded SHA256 hash of the encryption key.
          * This value is used to check the integrity of the encryption key. For more information,
          * see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          */
         private String opcSseCustomerKeySha256 = null;
 
@@ -505,7 +734,7 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
          * The optional header that specifies the base64-encoded SHA256 hash of the encryption key.
          * This value is used to check the integrity of the encryption key. For more information,
          * see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerKeySha256 the value to set
          * @return this builder instance
@@ -516,14 +745,14 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * master encryption key used to call the Key Management service to generate a data
          * encryption key or to encrypt or decrypt a data encryption key.
          */
         private String opcSseKmsKeyId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * master encryption key used to call the Key Management service to generate a data
          * encryption key or to encrypt or decrypt a data encryption key.
          *
@@ -577,6 +806,10 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
             ifNoneMatch(o.getIfNoneMatch());
             expect(o.getExpect());
             contentMD5(o.getContentMD5());
+            opcChecksumAlgorithm(o.getOpcChecksumAlgorithm());
+            opcContentCrc32c(o.getOpcContentCrc32c());
+            opcContentSha256(o.getOpcContentSha256());
+            opcContentSha384(o.getOpcContentSha384());
             opcSseCustomerAlgorithm(o.getOpcSseCustomerAlgorithm());
             opcSseCustomerKey(o.getOpcSseCustomerKey());
             opcSseCustomerKeySha256(o.getOpcSseCustomerKeySha256());
@@ -639,6 +872,10 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
             request.ifNoneMatch = ifNoneMatch;
             request.expect = expect;
             request.contentMD5 = contentMD5;
+            request.opcChecksumAlgorithm = opcChecksumAlgorithm;
+            request.opcContentCrc32c = opcContentCrc32c;
+            request.opcContentSha256 = opcContentSha256;
+            request.opcContentSha384 = opcContentSha384;
             request.opcSseCustomerAlgorithm = opcSseCustomerAlgorithm;
             request.opcSseCustomerKey = opcSseCustomerKey;
             request.opcSseCustomerKeySha256 = opcSseCustomerKeySha256;
@@ -646,8 +883,9 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
             return request;
             // new UploadPartRequest(namespaceName, bucketName, objectName, uploadId, uploadPartNum,
             // contentLength, uploadPartBody, opcClientRequestId, ifMatch, ifNoneMatch, expect,
-            // contentMD5, opcSseCustomerAlgorithm, opcSseCustomerKey, opcSseCustomerKeySha256,
-            // opcSseKmsKeyId);
+            // contentMD5, opcChecksumAlgorithm, opcContentCrc32c, opcContentSha256,
+            // opcContentSha384, opcSseCustomerAlgorithm, opcSseCustomerKey,
+            // opcSseCustomerKeySha256, opcSseKmsKeyId);
         }
     }
 
@@ -670,6 +908,10 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
                 .ifNoneMatch(ifNoneMatch)
                 .expect(expect)
                 .contentMD5(contentMD5)
+                .opcChecksumAlgorithm(opcChecksumAlgorithm)
+                .opcContentCrc32c(opcContentCrc32c)
+                .opcContentSha256(opcContentSha256)
+                .opcContentSha384(opcContentSha384)
                 .opcSseCustomerAlgorithm(opcSseCustomerAlgorithm)
                 .opcSseCustomerKey(opcSseCustomerKey)
                 .opcSseCustomerKeySha256(opcSseCustomerKeySha256)
@@ -702,6 +944,10 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
         sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
         sb.append(",expect=").append(String.valueOf(this.expect));
         sb.append(",contentMD5=").append(String.valueOf(this.contentMD5));
+        sb.append(",opcChecksumAlgorithm=").append(String.valueOf(this.opcChecksumAlgorithm));
+        sb.append(",opcContentCrc32c=").append(String.valueOf(this.opcContentCrc32c));
+        sb.append(",opcContentSha256=").append(String.valueOf(this.opcContentSha256));
+        sb.append(",opcContentSha384=").append(String.valueOf(this.opcContentSha384));
         sb.append(",opcSseCustomerAlgorithm=").append(String.valueOf(this.opcSseCustomerAlgorithm));
         sb.append(",opcSseCustomerKey=").append(String.valueOf(this.opcSseCustomerKey));
         sb.append(",opcSseCustomerKeySha256=").append(String.valueOf(this.opcSseCustomerKeySha256));
@@ -733,6 +979,10 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
                 && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
                 && java.util.Objects.equals(this.expect, other.expect)
                 && java.util.Objects.equals(this.contentMD5, other.contentMD5)
+                && java.util.Objects.equals(this.opcChecksumAlgorithm, other.opcChecksumAlgorithm)
+                && java.util.Objects.equals(this.opcContentCrc32c, other.opcContentCrc32c)
+                && java.util.Objects.equals(this.opcContentSha256, other.opcContentSha256)
+                && java.util.Objects.equals(this.opcContentSha384, other.opcContentSha384)
                 && java.util.Objects.equals(
                         this.opcSseCustomerAlgorithm, other.opcSseCustomerAlgorithm)
                 && java.util.Objects.equals(this.opcSseCustomerKey, other.opcSseCustomerKey)
@@ -769,6 +1019,20 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest<java.i
         result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
         result = (result * PRIME) + (this.expect == null ? 43 : this.expect.hashCode());
         result = (result * PRIME) + (this.contentMD5 == null ? 43 : this.contentMD5.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcChecksumAlgorithm == null
+                                ? 43
+                                : this.opcChecksumAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentCrc32c == null ? 43 : this.opcContentCrc32c.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentSha256 == null ? 43 : this.opcContentSha256.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentSha384 == null ? 43 : this.opcContentSha384.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcSseCustomerAlgorithm == null

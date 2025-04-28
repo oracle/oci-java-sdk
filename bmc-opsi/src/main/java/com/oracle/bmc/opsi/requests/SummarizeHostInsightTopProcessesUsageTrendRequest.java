@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeHostInsightTopProcessesUsageTrendExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeHostInsightTopProcessesUsageTrendExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * SummarizeHostInsightTopProcessesUsageTrendRequest.
  */
@@ -16,27 +16,27 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host insight resource.
+     * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host insight resource.
      */
     private String id;
 
     /**
-     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host insight resource.
+     * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host insight resource.
      */
     public String getId() {
         return id;
@@ -106,14 +106,14 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -121,7 +121,7 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
      * {@code 50}
      */
     private Integer limit;
@@ -129,7 +129,7 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
      * {@code 50}
      */
     public Integer getLimit() {
@@ -150,26 +150,26 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
     }
     /**
      * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST,
-     * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+     * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
      */
     private java.util.List<String> hostType;
 
     /**
      * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST,
-     * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+     * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
      */
     public java.util.List<String> getHostType() {
         return hostType;
     }
     /**
-     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host (Compute Id)
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host (Compute Id)
      */
     private String hostId;
 
     /**
-     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host (Compute Id)
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host (Compute Id)
      */
     public String getHostId() {
         return hostId;
@@ -222,6 +222,13 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
     public Statistic getStatistic() {
         return statistic;
     }
+    /** Resource Status */
+    private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
+
+    /** Resource Status */
+    public java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> getStatus() {
+        return status;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -230,14 +237,14 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -248,15 +255,13 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         }
 
         /**
-         * Required
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host insight resource.
          */
         private String id = null;
 
         /**
-         * Required
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host insight resource.
          *
          * @param id the value to set
@@ -354,14 +359,14 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -374,7 +379,7 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          */
         private Integer limit = null;
@@ -382,7 +387,7 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -413,13 +418,13 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
 
         /**
          * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST,
-         * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+         * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
          */
         private java.util.List<String> hostType = null;
 
         /**
          * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST,
-         * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+         * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
          *
          * @param hostType the value to set
          * @return this builder instance
@@ -431,7 +436,8 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
 
         /**
          * Singular setter. Filter by one or more host types. Possible values are CLOUD-HOST,
-         * EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+         * EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST,
+         * COMANAGED-EXACC-HOST
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -441,15 +447,13 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         }
 
         /**
-         * Optional
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host (Compute Id)
          */
         private String hostId = null;
 
         /**
-         * Optional
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host (Compute Id)
          *
          * @param hostId the value to set
@@ -486,6 +490,30 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         public Builder statistic(Statistic statistic) {
             this.statistic = statistic;
             return this;
+        }
+
+        /** Resource Status */
+        private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
+
+        /**
+         * Resource Status
+         *
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. Resource Status
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder status(ResourceStatus singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
         }
 
         /**
@@ -531,6 +559,7 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
             hostId(o.getHostId());
             processHash(o.getProcessHash());
             statistic(o.getStatistic());
+            status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -582,10 +611,11 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
             request.hostId = hostId;
             request.processHash = processHash;
             request.statistic = statistic;
+            request.status = status;
             return request;
             // new SummarizeHostInsightTopProcessesUsageTrendRequest(compartmentId, id,
             // resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, page,
-            // limit, opcRequestId, hostType, hostId, processHash, statistic);
+            // limit, opcRequestId, hostType, hostId, processHash, statistic, status);
         }
     }
 
@@ -608,7 +638,8 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
                 .hostType(hostType)
                 .hostId(hostId)
                 .processHash(processHash)
-                .statistic(statistic);
+                .statistic(statistic)
+                .status(status);
     }
 
     /**
@@ -638,6 +669,7 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         sb.append(",hostId=").append(String.valueOf(this.hostId));
         sb.append(",processHash=").append(String.valueOf(this.processHash));
         sb.append(",statistic=").append(String.valueOf(this.statistic));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
     }
@@ -666,7 +698,8 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
                 && java.util.Objects.equals(this.hostType, other.hostType)
                 && java.util.Objects.equals(this.hostId, other.hostId)
                 && java.util.Objects.equals(this.processHash, other.processHash)
-                && java.util.Objects.equals(this.statistic, other.statistic);
+                && java.util.Objects.equals(this.statistic, other.statistic)
+                && java.util.Objects.equals(this.status, other.status);
     }
 
     @Override
@@ -698,6 +731,7 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         result = (result * PRIME) + (this.hostId == null ? 43 : this.hostId.hashCode());
         result = (result * PRIME) + (this.processHash == null ? 43 : this.processHash.hashCode());
         result = (result * PRIME) + (this.statistic == null ? 43 : this.statistic.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }
 }

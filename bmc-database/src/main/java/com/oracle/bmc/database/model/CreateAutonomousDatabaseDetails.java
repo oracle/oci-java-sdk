@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -27,6 +27,15 @@ package com.oracle.bmc.database.model;
 public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -162,6 +171,15 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKey")
+        private AutonomousDatabaseEncryptionKeyDetails encryptionKey;
+
+        public Builder encryptionKey(AutonomousDatabaseEncryptionKeyDetails encryptionKey) {
+            this.encryptionKey = encryptionKey;
+            this.__explicitlySet__.add("encryptionKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
@@ -189,6 +207,15 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("byolComputeCountLimit")
+        private Float byolComputeCountLimit;
+
+        public Builder byolComputeCountLimit(Float byolComputeCountLimit) {
+            this.byolComputeCountLimit = byolComputeCountLimit;
+            this.__explicitlySet__.add("byolComputeCountLimit");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isPreviewVersionWithServiceTermsAccepted")
         private Boolean isPreviewVersionWithServiceTermsAccepted;
 
@@ -206,6 +233,15 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             this.isAutoScalingEnabled = isAutoScalingEnabled;
             this.__explicitlySet__.add("isAutoScalingEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
+        private Boolean isDevTier;
+
+        public Builder isDevTier(Boolean isDevTier) {
+            this.isDevTier = isDevTier;
+            this.__explicitlySet__.add("isDevTier");
             return this;
         }
 
@@ -336,6 +372,16 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
         private String privateEndpointIp;
 
@@ -419,15 +465,6 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
-        private Integer maxCpuCoreCount;
-
-        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
-            this.maxCpuCoreCount = maxCpuCoreCount;
-            this.__explicitlySet__.add("maxCpuCoreCount");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
         private AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
 
@@ -443,6 +480,15 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
         public Builder dbToolsDetails(java.util.List<DatabaseTool> dbToolsDetails) {
             this.dbToolsDetails = dbToolsDetails;
             this.__explicitlySet__.add("dbToolsDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+        private Boolean isBackupRetentionLocked;
+
+        public Builder isBackupRetentionLocked(Boolean isBackupRetentionLocked) {
+            this.isBackupRetentionLocked = isBackupRetentionLocked;
+            this.__explicitlySet__.add("isBackupRetentionLocked");
             return this;
         }
 
@@ -470,6 +516,7 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
         public CreateAutonomousDatabaseDetails build() {
             CreateAutonomousDatabaseDetails model =
                     new CreateAutonomousDatabaseDetails(
+                            this.subscriptionId,
                             this.compartmentId,
                             this.characterSet,
                             this.ncharacterSet,
@@ -485,11 +532,14 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
                             this.isFreeTier,
                             this.kmsKeyId,
                             this.vaultId,
+                            this.encryptionKey,
                             this.adminPassword,
                             this.displayName,
                             this.licenseModel,
+                            this.byolComputeCountLimit,
                             this.isPreviewVersionWithServiceTermsAccepted,
                             this.isAutoScalingEnabled,
+                            this.isDevTier,
                             this.isDedicated,
                             this.autonomousContainerDatabaseId,
                             this.inMemoryPercentage,
@@ -504,6 +554,7 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
                             this.privateEndpointLabel,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.privateEndpointIp,
                             this.dbVersion,
                             this.customerContacts,
@@ -513,9 +564,9 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
                             this.autonomousMaintenanceScheduleType,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
-                            this.maxCpuCoreCount,
                             this.databaseEdition,
                             this.dbToolsDetails,
+                            this.isBackupRetentionLocked,
                             this.secretId,
                             this.secretVersionNumber);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -526,6 +577,9 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateAutonomousDatabaseDetails model) {
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -571,6 +625,9 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
+            if (model.wasPropertyExplicitlySet("encryptionKey")) {
+                this.encryptionKey(model.getEncryptionKey());
+            }
             if (model.wasPropertyExplicitlySet("adminPassword")) {
                 this.adminPassword(model.getAdminPassword());
             }
@@ -580,12 +637,18 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
             }
+            if (model.wasPropertyExplicitlySet("byolComputeCountLimit")) {
+                this.byolComputeCountLimit(model.getByolComputeCountLimit());
+            }
             if (model.wasPropertyExplicitlySet("isPreviewVersionWithServiceTermsAccepted")) {
                 this.isPreviewVersionWithServiceTermsAccepted(
                         model.getIsPreviewVersionWithServiceTermsAccepted());
             }
             if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
                 this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isDevTier")) {
+                this.isDevTier(model.getIsDevTier());
             }
             if (model.wasPropertyExplicitlySet("isDedicated")) {
                 this.isDedicated(model.getIsDedicated());
@@ -629,6 +692,9 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("privateEndpointIp")) {
                 this.privateEndpointIp(model.getPrivateEndpointIp());
             }
@@ -657,14 +723,14 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             if (model.wasPropertyExplicitlySet("isAutoScalingForStorageEnabled")) {
                 this.isAutoScalingForStorageEnabled(model.getIsAutoScalingForStorageEnabled());
             }
-            if (model.wasPropertyExplicitlySet("maxCpuCoreCount")) {
-                this.maxCpuCoreCount(model.getMaxCpuCoreCount());
-            }
             if (model.wasPropertyExplicitlySet("databaseEdition")) {
                 this.databaseEdition(model.getDatabaseEdition());
             }
             if (model.wasPropertyExplicitlySet("dbToolsDetails")) {
                 this.dbToolsDetails(model.getDbToolsDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
+                this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
             }
             if (model.wasPropertyExplicitlySet("secretId")) {
                 this.secretId(model.getSecretId());
@@ -687,6 +753,7 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
 
     @Deprecated
     public CreateAutonomousDatabaseDetails(
+            String subscriptionId,
             String compartmentId,
             String characterSet,
             String ncharacterSet,
@@ -702,11 +769,14 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             Boolean isFreeTier,
             String kmsKeyId,
             String vaultId,
+            AutonomousDatabaseEncryptionKeyDetails encryptionKey,
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
+            Float byolComputeCountLimit,
             Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
+            Boolean isDevTier,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
             Integer inMemoryPercentage,
@@ -721,6 +791,7 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             String privateEndpointLabel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateEndpointIp,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
@@ -730,12 +801,13 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
-            Integer maxCpuCoreCount,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
+            Boolean isBackupRetentionLocked,
             String secretId,
             Integer secretVersionNumber) {
         super(
+                subscriptionId,
                 compartmentId,
                 characterSet,
                 ncharacterSet,
@@ -751,11 +823,14 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
                 isFreeTier,
                 kmsKeyId,
                 vaultId,
+                encryptionKey,
                 adminPassword,
                 displayName,
                 licenseModel,
+                byolComputeCountLimit,
                 isPreviewVersionWithServiceTermsAccepted,
                 isAutoScalingEnabled,
+                isDevTier,
                 isDedicated,
                 autonomousContainerDatabaseId,
                 inMemoryPercentage,
@@ -770,6 +845,7 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
                 privateEndpointLabel,
                 freeformTags,
                 definedTags,
+                securityAttributes,
                 privateEndpointIp,
                 dbVersion,
                 customerContacts,
@@ -779,9 +855,9 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
                 autonomousMaintenanceScheduleType,
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
-                maxCpuCoreCount,
                 databaseEdition,
                 dbToolsDetails,
+                isBackupRetentionLocked,
                 secretId,
                 secretVersionNumber);
     }

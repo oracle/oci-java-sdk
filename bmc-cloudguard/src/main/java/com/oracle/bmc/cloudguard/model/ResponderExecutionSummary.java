@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of the Responder Execution. <br>
+ * A summary of detailed information on responder execution. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -97,12 +97,12 @@ public final class ResponderExecutionSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Responder Rule id for the responder execution */
+        /** Responder rule ID for the responder execution */
         @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
         private String responderRuleId;
 
         /**
-         * Responder Rule id for the responder execution
+         * Responder rule ID for the responder execution
          *
          * @param responderRuleId the value to set
          * @return this builder
@@ -112,12 +112,12 @@ public final class ResponderExecutionSummary
             this.__explicitlySet__.add("responderRuleId");
             return this;
         }
-        /** Rule Type for the responder execution */
+        /** Rule type for the responder execution */
         @com.fasterxml.jackson.annotation.JsonProperty("responderRuleType")
         private ResponderType responderRuleType;
 
         /**
-         * Rule Type for the responder execution
+         * Rule type for the responder execution
          *
          * @param responderRuleType the value to set
          * @return this builder
@@ -142,12 +142,12 @@ public final class ResponderExecutionSummary
             this.__explicitlySet__.add("responderRuleName");
             return this;
         }
-        /** Problem id associated with the responder execution */
+        /** Problem ID associated with the responder execution */
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
-         * Problem id associated with the responder execution
+         * Problem ID associated with the responder execution
          *
          * @param problemId the value to set
          * @return this builder
@@ -187,12 +187,12 @@ public final class ResponderExecutionSummary
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** Target Id of the problem for the responder execution */
+        /** Target ID of the problem for the responder execution */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * Target Id of the problem for the responder execution
+         * Target ID of the problem for the responder execution
          *
          * @param targetId the value to set
          * @return this builder
@@ -202,12 +202,12 @@ public final class ResponderExecutionSummary
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** compartment id of the problem for the responder execution */
+        /** Compartment OCID of the problem for the responder execution */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * compartment id of the problem for the responder execution
+         * Compartment OCID of the problem for the responder execution
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -232,16 +232,12 @@ public final class ResponderExecutionSummary
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /**
-         * resource name of the problem for the responder execution. TODO-DOC link to resource
-         * definition doc
-         */
+        /** Resource name of the problem for the responder execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
-         * resource name of the problem for the responder execution. TODO-DOC link to resource
-         * definition doc
+         * Resource name of the problem for the responder execution.
          *
          * @param resourceName the value to set
          * @return this builder
@@ -281,12 +277,12 @@ public final class ResponderExecutionSummary
             this.__explicitlySet__.add("timeCompleted");
             return this;
         }
-        /** current execution status of the responder */
+        /** Current execution status of the responder */
         @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionStatus")
         private ResponderExecutionStates responderExecutionStatus;
 
         /**
-         * current execution status of the responder
+         * Current execution status of the responder
          *
          * @param responderExecutionStatus the value to set
          * @return this builder
@@ -296,12 +292,12 @@ public final class ResponderExecutionSummary
             this.__explicitlySet__.add("responderExecutionStatus");
             return this;
         }
-        /** possible type of responder execution modes */
+        /** Possible type of responder execution modes */
         @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionMode")
         private ResponderExecutionModes responderExecutionMode;
 
         /**
-         * possible type of responder execution modes
+         * Possible type of responder execution modes
          *
          * @param responderExecutionMode the value to set
          * @return this builder
@@ -445,12 +441,12 @@ public final class ResponderExecutionSummary
         return id;
     }
 
-    /** Responder Rule id for the responder execution */
+    /** Responder rule ID for the responder execution */
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
     private final String responderRuleId;
 
     /**
-     * Responder Rule id for the responder execution
+     * Responder rule ID for the responder execution
      *
      * @return the value
      */
@@ -458,12 +454,12 @@ public final class ResponderExecutionSummary
         return responderRuleId;
     }
 
-    /** Rule Type for the responder execution */
+    /** Rule type for the responder execution */
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleType")
     private final ResponderType responderRuleType;
 
     /**
-     * Rule Type for the responder execution
+     * Rule type for the responder execution
      *
      * @return the value
      */
@@ -484,12 +480,12 @@ public final class ResponderExecutionSummary
         return responderRuleName;
     }
 
-    /** Problem id associated with the responder execution */
+    /** Problem ID associated with the responder execution */
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
-     * Problem id associated with the responder execution
+     * Problem ID associated with the responder execution
      *
      * @return the value
      */
@@ -523,12 +519,12 @@ public final class ResponderExecutionSummary
         return region;
     }
 
-    /** Target Id of the problem for the responder execution */
+    /** Target ID of the problem for the responder execution */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * Target Id of the problem for the responder execution
+     * Target ID of the problem for the responder execution
      *
      * @return the value
      */
@@ -536,12 +532,12 @@ public final class ResponderExecutionSummary
         return targetId;
     }
 
-    /** compartment id of the problem for the responder execution */
+    /** Compartment OCID of the problem for the responder execution */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * compartment id of the problem for the responder execution
+     * Compartment OCID of the problem for the responder execution
      *
      * @return the value
      */
@@ -562,16 +558,12 @@ public final class ResponderExecutionSummary
         return resourceType;
     }
 
-    /**
-     * resource name of the problem for the responder execution. TODO-DOC link to resource
-     * definition doc
-     */
+    /** Resource name of the problem for the responder execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
-     * resource name of the problem for the responder execution. TODO-DOC link to resource
-     * definition doc
+     * Resource name of the problem for the responder execution.
      *
      * @return the value
      */
@@ -605,12 +597,12 @@ public final class ResponderExecutionSummary
         return timeCompleted;
     }
 
-    /** current execution status of the responder */
+    /** Current execution status of the responder */
     @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionStatus")
     private final ResponderExecutionStates responderExecutionStatus;
 
     /**
-     * current execution status of the responder
+     * Current execution status of the responder
      *
      * @return the value
      */
@@ -618,12 +610,12 @@ public final class ResponderExecutionSummary
         return responderExecutionStatus;
     }
 
-    /** possible type of responder execution modes */
+    /** Possible type of responder execution modes */
     @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionMode")
     private final ResponderExecutionModes responderExecutionMode;
 
     /**
-     * possible type of responder execution modes
+     * Possible type of responder execution modes
      *
      * @return the value
      */

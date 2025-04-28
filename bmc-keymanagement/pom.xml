@@ -4,19 +4,19 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.28.0</version>
+    <version>3.63.2</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-keymanagement</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Key Management</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure Key Management</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.28.0</version>
+      <version>3.63.2</version>
     </dependency>
   </dependencies>
 </project>

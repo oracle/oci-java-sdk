@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -40,7 +40,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         "kmsKeyVersionId",
         "vaultId",
         "keyStoreId",
-        "keyStoreWalletName"
+        "keyStoreWalletName",
+        "secondaryKmsKeyIds",
+        "retentionPeriodInDays",
+        "retentionPeriodInYears",
+        "timeExpiryScheduled",
+        "isUsingOracleManagedKeys",
+        "backupDestinationType",
+        "encryptionKeyLocationDetails"
     })
     public Backup(
             String id,
@@ -61,7 +68,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             String kmsKeyVersionId,
             String vaultId,
             String keyStoreId,
-            String keyStoreWalletName) {
+            String keyStoreWalletName,
+            java.util.List<String> secondaryKmsKeyIds,
+            Integer retentionPeriodInDays,
+            Integer retentionPeriodInYears,
+            java.util.Date timeExpiryScheduled,
+            Boolean isUsingOracleManagedKeys,
+            BackupDestinationType backupDestinationType,
+            EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -82,19 +96,26 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         this.vaultId = vaultId;
         this.keyStoreId = keyStoreId;
         this.keyStoreWalletName = keyStoreWalletName;
+        this.secondaryKmsKeyIds = secondaryKmsKeyIds;
+        this.retentionPeriodInDays = retentionPeriodInDays;
+        this.retentionPeriodInYears = retentionPeriodInYears;
+        this.timeExpiryScheduled = timeExpiryScheduled;
+        this.isUsingOracleManagedKeys = isUsingOracleManagedKeys;
+        this.backupDestinationType = backupDestinationType;
+        this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup.
          *
          * @param id the value to set
@@ -106,14 +127,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -125,14 +146,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database.
          *
          * @param databaseId the value to set
@@ -332,7 +353,9 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation.
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * Database Serverless instances.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
@@ -340,7 +363,9 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation.
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
@@ -351,17 +376,19 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
-         * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * This parameter and {@code secretId} are required for Customer Managed Keys.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
-         * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * This parameter and {@code secretId} are required for Customer Managed Keys.
          *
          * @param vaultId the value to set
          * @return this builder
@@ -372,15 +399,15 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * key store.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key store of Oracle Vault.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
         private String keyStoreId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * key store.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key store of Oracle Vault.
          *
          * @param keyStoreId the value to set
          * @return this builder
@@ -403,6 +430,110 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder keyStoreWalletName(String keyStoreWalletName) {
             this.keyStoreWalletName = keyStoreWalletName;
             this.__explicitlySet__.add("keyStoreWalletName");
+            return this;
+        }
+        /**
+         * List of OCIDs of the key containers used as the secondary encryption key in database
+         * transparent data encryption (TDE) operations.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("secondaryKmsKeyIds")
+        private java.util.List<String> secondaryKmsKeyIds;
+
+        /**
+         * List of OCIDs of the key containers used as the secondary encryption key in database
+         * transparent data encryption (TDE) operations.
+         *
+         * @param secondaryKmsKeyIds the value to set
+         * @return this builder
+         */
+        public Builder secondaryKmsKeyIds(java.util.List<String> secondaryKmsKeyIds) {
+            this.secondaryKmsKeyIds = secondaryKmsKeyIds;
+            this.__explicitlySet__.add("secondaryKmsKeyIds");
+            return this;
+        }
+        /** The retention period of the long term backup in days. */
+        @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInDays")
+        private Integer retentionPeriodInDays;
+
+        /**
+         * The retention period of the long term backup in days.
+         *
+         * @param retentionPeriodInDays the value to set
+         * @return this builder
+         */
+        public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
+            this.retentionPeriodInDays = retentionPeriodInDays;
+            this.__explicitlySet__.add("retentionPeriodInDays");
+            return this;
+        }
+        /** The retention period of the long term backup in years. */
+        @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInYears")
+        private Integer retentionPeriodInYears;
+
+        /**
+         * The retention period of the long term backup in years.
+         *
+         * @param retentionPeriodInYears the value to set
+         * @return this builder
+         */
+        public Builder retentionPeriodInYears(Integer retentionPeriodInYears) {
+            this.retentionPeriodInYears = retentionPeriodInYears;
+            this.__explicitlySet__.add("retentionPeriodInYears");
+            return this;
+        }
+        /** Expiration time of the long term database backup. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeExpiryScheduled")
+        private java.util.Date timeExpiryScheduled;
+
+        /**
+         * Expiration time of the long term database backup.
+         *
+         * @param timeExpiryScheduled the value to set
+         * @return this builder
+         */
+        public Builder timeExpiryScheduled(java.util.Date timeExpiryScheduled) {
+            this.timeExpiryScheduled = timeExpiryScheduled;
+            this.__explicitlySet__.add("timeExpiryScheduled");
+            return this;
+        }
+        /** True if Oracle Managed Keys is required for restore of the backup. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isUsingOracleManagedKeys")
+        private Boolean isUsingOracleManagedKeys;
+
+        /**
+         * True if Oracle Managed Keys is required for restore of the backup.
+         *
+         * @param isUsingOracleManagedKeys the value to set
+         * @return this builder
+         */
+        public Builder isUsingOracleManagedKeys(Boolean isUsingOracleManagedKeys) {
+            this.isUsingOracleManagedKeys = isUsingOracleManagedKeys;
+            this.__explicitlySet__.add("isUsingOracleManagedKeys");
+            return this;
+        }
+        /** Type of the backup destination. */
+        @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationType")
+        private BackupDestinationType backupDestinationType;
+
+        /**
+         * Type of the backup destination.
+         *
+         * @param backupDestinationType the value to set
+         * @return this builder
+         */
+        public Builder backupDestinationType(BackupDestinationType backupDestinationType) {
+            this.backupDestinationType = backupDestinationType;
+            this.__explicitlySet__.add("backupDestinationType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+        private EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+        public Builder encryptionKeyLocationDetails(
+                EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            this.__explicitlySet__.add("encryptionKeyLocationDetails");
             return this;
         }
 
@@ -430,7 +561,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                             this.kmsKeyVersionId,
                             this.vaultId,
                             this.keyStoreId,
-                            this.keyStoreWalletName);
+                            this.keyStoreWalletName,
+                            this.secondaryKmsKeyIds,
+                            this.retentionPeriodInDays,
+                            this.retentionPeriodInYears,
+                            this.timeExpiryScheduled,
+                            this.isUsingOracleManagedKeys,
+                            this.backupDestinationType,
+                            this.encryptionKeyLocationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -496,6 +634,27 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             if (model.wasPropertyExplicitlySet("keyStoreWalletName")) {
                 this.keyStoreWalletName(model.getKeyStoreWalletName());
             }
+            if (model.wasPropertyExplicitlySet("secondaryKmsKeyIds")) {
+                this.secondaryKmsKeyIds(model.getSecondaryKmsKeyIds());
+            }
+            if (model.wasPropertyExplicitlySet("retentionPeriodInDays")) {
+                this.retentionPeriodInDays(model.getRetentionPeriodInDays());
+            }
+            if (model.wasPropertyExplicitlySet("retentionPeriodInYears")) {
+                this.retentionPeriodInYears(model.getRetentionPeriodInYears());
+            }
+            if (model.wasPropertyExplicitlySet("timeExpiryScheduled")) {
+                this.timeExpiryScheduled(model.getTimeExpiryScheduled());
+            }
+            if (model.wasPropertyExplicitlySet("isUsingOracleManagedKeys")) {
+                this.isUsingOracleManagedKeys(model.getIsUsingOracleManagedKeys());
+            }
+            if (model.wasPropertyExplicitlySet("backupDestinationType")) {
+                this.backupDestinationType(model.getBackupDestinationType());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionKeyLocationDetails")) {
+                this.encryptionKeyLocationDetails(model.getEncryptionKeyLocationDetails());
+            }
             return this;
         }
     }
@@ -510,14 +669,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup.
      *
      * @return the value
@@ -527,14 +686,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -544,14 +703,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database.
      *
      * @return the value
@@ -691,6 +850,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         Deleted("DELETED"),
         Failed("FAILED"),
         Restoring("RESTORING"),
+        Updating("UPDATING"),
         Canceling("CANCELING"),
         Canceled("CANCELED"),
 
@@ -868,7 +1028,9 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation.
+     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
+     * does not use key versions, hence is not applicable for Autonomous Database Serverless
+     * instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
@@ -876,7 +1038,9 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation.
+     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
+     * does not use key versions, hence is not applicable for Autonomous Database Serverless
+     * instances.
      *
      * @return the value
      */
@@ -885,17 +1049,19 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
-     * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * This parameter and {@code secretId} are required for Customer Managed Keys.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
-     * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * This parameter and {@code secretId} are required for Customer Managed Keys.
      *
      * @return the value
      */
@@ -904,15 +1070,15 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
-     * store.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * store of Oracle Vault.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
     private final String keyStoreId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
-     * store.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * store of Oracle Vault.
      *
      * @return the value
      */
@@ -931,6 +1097,141 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
      */
     public String getKeyStoreWalletName() {
         return keyStoreWalletName;
+    }
+
+    /**
+     * List of OCIDs of the key containers used as the secondary encryption key in database
+     * transparent data encryption (TDE) operations.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("secondaryKmsKeyIds")
+    private final java.util.List<String> secondaryKmsKeyIds;
+
+    /**
+     * List of OCIDs of the key containers used as the secondary encryption key in database
+     * transparent data encryption (TDE) operations.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getSecondaryKmsKeyIds() {
+        return secondaryKmsKeyIds;
+    }
+
+    /** The retention period of the long term backup in days. */
+    @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInDays")
+    private final Integer retentionPeriodInDays;
+
+    /**
+     * The retention period of the long term backup in days.
+     *
+     * @return the value
+     */
+    public Integer getRetentionPeriodInDays() {
+        return retentionPeriodInDays;
+    }
+
+    /** The retention period of the long term backup in years. */
+    @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInYears")
+    private final Integer retentionPeriodInYears;
+
+    /**
+     * The retention period of the long term backup in years.
+     *
+     * @return the value
+     */
+    public Integer getRetentionPeriodInYears() {
+        return retentionPeriodInYears;
+    }
+
+    /** Expiration time of the long term database backup. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeExpiryScheduled")
+    private final java.util.Date timeExpiryScheduled;
+
+    /**
+     * Expiration time of the long term database backup.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeExpiryScheduled() {
+        return timeExpiryScheduled;
+    }
+
+    /** True if Oracle Managed Keys is required for restore of the backup. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isUsingOracleManagedKeys")
+    private final Boolean isUsingOracleManagedKeys;
+
+    /**
+     * True if Oracle Managed Keys is required for restore of the backup.
+     *
+     * @return the value
+     */
+    public Boolean getIsUsingOracleManagedKeys() {
+        return isUsingOracleManagedKeys;
+    }
+
+    /** Type of the backup destination. */
+    public enum BackupDestinationType implements com.oracle.bmc.http.internal.BmcEnum {
+        ObjectStore("OBJECT_STORE"),
+        Dbrs("DBRS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BackupDestinationType.class);
+
+        private final String value;
+        private static java.util.Map<String, BackupDestinationType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BackupDestinationType v : BackupDestinationType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BackupDestinationType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BackupDestinationType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BackupDestinationType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Type of the backup destination. */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationType")
+    private final BackupDestinationType backupDestinationType;
+
+    /**
+     * Type of the backup destination.
+     *
+     * @return the value
+     */
+    public BackupDestinationType getBackupDestinationType() {
+        return backupDestinationType;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+    private final EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+    public EncryptionKeyLocationDetails getEncryptionKeyLocationDetails() {
+        return encryptionKeyLocationDetails;
     }
 
     @Override
@@ -967,6 +1268,15 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
         sb.append(", keyStoreWalletName=").append(String.valueOf(this.keyStoreWalletName));
+        sb.append(", secondaryKmsKeyIds=").append(String.valueOf(this.secondaryKmsKeyIds));
+        sb.append(", retentionPeriodInDays=").append(String.valueOf(this.retentionPeriodInDays));
+        sb.append(", retentionPeriodInYears=").append(String.valueOf(this.retentionPeriodInYears));
+        sb.append(", timeExpiryScheduled=").append(String.valueOf(this.timeExpiryScheduled));
+        sb.append(", isUsingOracleManagedKeys=")
+                .append(String.valueOf(this.isUsingOracleManagedKeys));
+        sb.append(", backupDestinationType=").append(String.valueOf(this.backupDestinationType));
+        sb.append(", encryptionKeyLocationDetails=")
+                .append(String.valueOf(this.encryptionKeyLocationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1000,6 +1310,16 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
                 && java.util.Objects.equals(this.keyStoreWalletName, other.keyStoreWalletName)
+                && java.util.Objects.equals(this.secondaryKmsKeyIds, other.secondaryKmsKeyIds)
+                && java.util.Objects.equals(this.retentionPeriodInDays, other.retentionPeriodInDays)
+                && java.util.Objects.equals(
+                        this.retentionPeriodInYears, other.retentionPeriodInYears)
+                && java.util.Objects.equals(this.timeExpiryScheduled, other.timeExpiryScheduled)
+                && java.util.Objects.equals(
+                        this.isUsingOracleManagedKeys, other.isUsingOracleManagedKeys)
+                && java.util.Objects.equals(this.backupDestinationType, other.backupDestinationType)
+                && java.util.Objects.equals(
+                        this.encryptionKeyLocationDetails, other.encryptionKeyLocationDetails)
                 && super.equals(other);
     }
 
@@ -1046,6 +1366,41 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                         + (this.keyStoreWalletName == null
                                 ? 43
                                 : this.keyStoreWalletName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secondaryKmsKeyIds == null
+                                ? 43
+                                : this.secondaryKmsKeyIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionPeriodInDays == null
+                                ? 43
+                                : this.retentionPeriodInDays.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionPeriodInYears == null
+                                ? 43
+                                : this.retentionPeriodInYears.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeExpiryScheduled == null
+                                ? 43
+                                : this.timeExpiryScheduled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUsingOracleManagedKeys == null
+                                ? 43
+                                : this.isUsingOracleManagedKeys.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupDestinationType == null
+                                ? 43
+                                : this.backupDestinationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionKeyLocationDetails == null
+                                ? 43
+                                : this.encryptionKeyLocationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -52,7 +52,8 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
         "databaseSoftwareImageId",
         "freeformTags",
         "definedTags",
-        "isDesupportedVersion"
+        "isDesupportedVersion",
+        "isUnifiedAuditingEnabled"
     })
     protected CreateDbHomeBase(
             String displayName,
@@ -61,7 +62,8 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
             String databaseSoftwareImageId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            Boolean isDesupportedVersion) {
+            Boolean isDesupportedVersion,
+            Boolean isUnifiedAuditingEnabled) {
         super();
         this.displayName = displayName;
         this.kmsKeyId = kmsKeyId;
@@ -70,6 +72,7 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.isDesupportedVersion = isDesupportedVersion;
+        this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
     }
 
     /** The user-provided name of the Database Home. */
@@ -105,7 +108,9 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation.
+     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
+     * does not use key versions, hence is not applicable for Autonomous Database Serverless
+     * instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
@@ -113,7 +118,9 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation.
+     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
+     * does not use key versions, hence is not applicable for Autonomous Database Serverless
+     * instances.
      *
      * @return the value
      */
@@ -123,14 +130,14 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      *
      * @return the value
      */
@@ -141,7 +148,7 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -151,7 +158,7 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -164,7 +171,7 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -172,7 +179,7 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -195,6 +202,23 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
      */
     public Boolean getIsDesupportedVersion() {
         return isDesupportedVersion;
+    }
+
+    /**
+     * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing
+     * on respective DBHome.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+    private final Boolean isUnifiedAuditingEnabled;
+
+    /**
+     * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing
+     * on respective DBHome.
+     *
+     * @return the value
+     */
+    public Boolean getIsUnifiedAuditingEnabled() {
+        return isUnifiedAuditingEnabled;
     }
 
     @Override
@@ -220,6 +244,8 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", isDesupportedVersion=").append(String.valueOf(this.isDesupportedVersion));
+        sb.append(", isUnifiedAuditingEnabled=")
+                .append(String.valueOf(this.isUnifiedAuditingEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -242,6 +268,8 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.isDesupportedVersion, other.isDesupportedVersion)
+                && java.util.Objects.equals(
+                        this.isUnifiedAuditingEnabled, other.isUnifiedAuditingEnabled)
                 && super.equals(other);
     }
 
@@ -266,6 +294,11 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
                         + (this.isDesupportedVersion == null
                                 ? 43
                                 : this.isDesupportedVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUnifiedAuditingEnabled == null
+                                ? 43
+                                : this.isUnifiedAuditingEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

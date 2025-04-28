@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -32,6 +32,9 @@ package com.oracle.bmc.opsi.model;
             value = HostFilesystemConfiguration.class,
             name = "HOST_FILESYSTEM_CONFIGURATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = HostContainers.class,
+            name = "HOST_CONTAINERS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = HostNetworkConfiguration.class,
             name = "HOST_NETWORK_CONFIGURATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -43,6 +46,9 @@ package com.oracle.bmc.opsi.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = HostCpuHardwareConfiguration.class,
             name = "HOST_CPU_HARDWARE_CONFIGURATION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = HostGpuConfiguration.class,
+            name = "HOST_GPU_CONFIGURATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = HostHardwareConfiguration.class,
             name = "HOST_HARDWARE_CONFIGURATION")
@@ -126,6 +132,8 @@ public class HostConfigurationMetricGroup
         HostNetworkConfiguration("HOST_NETWORK_CONFIGURATION"),
         HostEntites("HOST_ENTITES"),
         HostFilesystemConfiguration("HOST_FILESYSTEM_CONFIGURATION"),
+        HostGpuConfiguration("HOST_GPU_CONFIGURATION"),
+        HostContainers("HOST_CONTAINERS"),
         ;
 
         private final String value;

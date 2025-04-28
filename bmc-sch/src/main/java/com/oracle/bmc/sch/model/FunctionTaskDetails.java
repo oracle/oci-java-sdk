@@ -1,14 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch.model;
 
 /**
  * The Functions task. Batch input for a function can be limited by either size or time. The first
- * limit reached determines the boundary of the batch. For configuration instructions, see [To
- * create a service
- * connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+ * limit reached determines the boundary of the batch. For configuration instructions, see [Creating
+ * a Connector](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -32,15 +31,15 @@ public final class FunctionTaskDetails extends TaskDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the function to be used as a task.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * function to be used as a task.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private String functionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the function to be used as a task.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * function to be used as a task.
          *
          * @param functionId the value to set
          * @return this builder
@@ -127,15 +126,15 @@ public final class FunctionTaskDetails extends TaskDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the function to be used as a task.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * function to be used as a task.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
     private final String functionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the function to be used as a task.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * function to be used as a task.
      *
      * @return the value
      */

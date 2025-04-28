@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.cloudguard.requests;
 import com.oracle.bmc.cloudguard.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResponderRecipeResponderRuleExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResponderRecipeResponderRuleExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetResponderRecipeResponderRuleRequest.
  */
@@ -15,17 +15,17 @@ import com.oracle.bmc.cloudguard.model.*;
 public class GetResponderRecipeResponderRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** OCID of ResponderRecipe */
+    /** OCID of the responder recipe. */
     private String responderRecipeId;
 
-    /** OCID of ResponderRecipe */
+    /** OCID of the responder recipe. */
     public String getResponderRecipeId() {
         return responderRecipeId;
     }
-    /** The id of ResponderRule */
+    /** Unique identifier of the responder rule. */
     private String responderRuleId;
 
-    /** The id of ResponderRule */
+    /** Unique identifier of the responder rule. */
     public String getResponderRuleId() {
         return responderRuleId;
     }
@@ -43,11 +43,11 @@ public class GetResponderRecipeResponderRuleRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of ResponderRecipe */
+        /** OCID of the responder recipe. */
         private String responderRecipeId = null;
 
         /**
-         * OCID of ResponderRecipe
+         * OCID of the responder recipe.
          *
          * @param responderRecipeId the value to set
          * @return this builder instance
@@ -57,11 +57,11 @@ public class GetResponderRecipeResponderRuleRequest
             return this;
         }
 
-        /** The id of ResponderRule */
+        /** Unique identifier of the responder rule. */
         private String responderRuleId = null;
 
         /**
-         * The id of ResponderRule
+         * Unique identifier of the responder rule.
          *
          * @param responderRuleId the value to set
          * @return this builder instance

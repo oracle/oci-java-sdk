@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Summary information pertaining to a module on a managed instance group. <br>
+ * Provides the summary information about a module on a managed instance group. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -43,12 +43,12 @@ public final class ManagedInstanceGroupModuleSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the module that contains the stream. */
+        /** The name of the module. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the module that contains the stream.
+         * The name of the module.
          *
          * @param name the value to set
          * @return this builder
@@ -58,12 +58,12 @@ public final class ManagedInstanceGroupModuleSummary
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The name of the module that contains the stream. */
+        /** The name of the module stream that is enabled for the group. */
         @com.fasterxml.jackson.annotation.JsonProperty("enabledStream")
         private String enabledStream;
 
         /**
-         * The name of the module that contains the stream.
+         * The name of the module stream that is enabled for the group.
          *
          * @param enabledStream the value to set
          * @return this builder
@@ -88,12 +88,16 @@ public final class ManagedInstanceGroupModuleSummary
             this.__explicitlySet__.add("installedProfiles");
             return this;
         }
-        /** The OCID of the software source that provides this module stream. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * software source that provides this module stream.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
-         * The OCID of the software source that provides this module stream.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * software source that provides this module stream.
          *
          * @param softwareSourceId the value to set
          * @return this builder
@@ -147,12 +151,12 @@ public final class ManagedInstanceGroupModuleSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the module that contains the stream. */
+    /** The name of the module. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the module that contains the stream.
+     * The name of the module.
      *
      * @return the value
      */
@@ -160,12 +164,12 @@ public final class ManagedInstanceGroupModuleSummary
         return name;
     }
 
-    /** The name of the module that contains the stream. */
+    /** The name of the module stream that is enabled for the group. */
     @com.fasterxml.jackson.annotation.JsonProperty("enabledStream")
     private final String enabledStream;
 
     /**
-     * The name of the module that contains the stream.
+     * The name of the module stream that is enabled for the group.
      *
      * @return the value
      */
@@ -186,12 +190,16 @@ public final class ManagedInstanceGroupModuleSummary
         return installedProfiles;
     }
 
-    /** The OCID of the software source that provides this module stream. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * software source that provides this module stream.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
-     * The OCID of the software source that provides this module stream.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * software source that provides this module stream.
      *
      * @return the value
      */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.cloudguard.requests;
 import com.oracle.bmc.cloudguard.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteDetectorRecipeDetectorRuleExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteDetectorRecipeDetectorRuleExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteDetectorRecipeDetectorRuleRequest.
  */
@@ -15,17 +15,17 @@ import com.oracle.bmc.cloudguard.model.*;
 public class DeleteDetectorRecipeDetectorRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     private String detectorRecipeId;
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
-    /** The key of Detector Rule. */
+    /** The unique identifier of a detector rule. */
     private String detectorRuleId;
 
-    /** The key of Detector Rule. */
+    /** The unique identifier of a detector rule. */
     public String getDetectorRuleId() {
         return detectorRuleId;
     }
@@ -60,11 +60,11 @@ public class DeleteDetectorRecipeDetectorRuleRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** DetectorRecipe OCID */
+        /** Detector recipe OCID */
         private String detectorRecipeId = null;
 
         /**
-         * DetectorRecipe OCID
+         * Detector recipe OCID
          *
          * @param detectorRecipeId the value to set
          * @return this builder instance
@@ -74,11 +74,11 @@ public class DeleteDetectorRecipeDetectorRuleRequest
             return this;
         }
 
-        /** The key of Detector Rule. */
+        /** The unique identifier of a detector rule. */
         private String detectorRuleId = null;
 
         /**
-         * The key of Detector Rule.
+         * The unique identifier of a detector rule.
          *
          * @param detectorRuleId the value to set
          * @return this builder instance

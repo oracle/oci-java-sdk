@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate;
@@ -123,6 +123,145 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public AddConnectionLockResponse addConnectionLock(AddConnectionLockRequest request) {
+
+        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddConnectionLockResponse::builder)
+                .logger(LOG, "addConnectionLock")
+                .serviceDetails(
+                        "GoldenGate",
+                        "AddConnectionLock",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/AddConnectionLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddConnectionLockRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.Connection.class,
+                        AddConnectionLockResponse.Builder::connection)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddConnectionLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddConnectionLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public AddDeploymentBackupLockResponse addDeploymentBackupLock(
+            AddDeploymentBackupLockRequest request) {
+
+        Validate.notBlank(request.getDeploymentBackupId(), "deploymentBackupId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddDeploymentBackupLockResponse::builder)
+                .logger(LOG, "addDeploymentBackupLock")
+                .serviceDetails(
+                        "GoldenGate",
+                        "AddDeploymentBackupLock",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/AddDeploymentBackupLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDeploymentBackupLockRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentBackups")
+                .appendPathParam(request.getDeploymentBackupId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentBackup.class,
+                        AddDeploymentBackupLockResponse.Builder::deploymentBackup)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddDeploymentBackupLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddDeploymentBackupLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public AddDeploymentLocalPeerResponse addDeploymentLocalPeer(
+            AddDeploymentLocalPeerRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getAddDeploymentLocalPeerDetails(),
+                "addDeploymentLocalPeerDetails is required");
+
+        return clientCall(request, AddDeploymentLocalPeerResponse::builder)
+                .logger(LOG, "addDeploymentLocalPeer")
+                .serviceDetails(
+                        "GoldenGate",
+                        "AddDeploymentLocalPeer",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/AddDeploymentLocalPeer")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDeploymentLocalPeerRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("addLocalPeer")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AddDeploymentLocalPeerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddDeploymentLocalPeerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public AddDeploymentLockResponse addDeploymentLock(AddDeploymentLockRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddDeploymentLockResponse::builder)
+                .logger(LOG, "addDeploymentLock")
+                .serviceDetails(
+                        "GoldenGate",
+                        "AddDeploymentLock",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/AddDeploymentLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDeploymentLockRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.Deployment.class,
+                        AddDeploymentLockResponse.Builder::deployment)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddDeploymentLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddDeploymentLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public CancelDeploymentBackupResponse cancelDeploymentBackup(
             CancelDeploymentBackupRequest request) {
 
@@ -144,17 +283,18 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentBackupId())
                 .appendPathParam("actions")
                 .appendPathParam("cancel")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CancelDeploymentBackupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CancelDeploymentBackupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -185,6 +325,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DeploymentUpgrade.class,
@@ -192,7 +333,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", CancelDeploymentUpgradeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CancelDeploymentUpgradeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -223,11 +363,11 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CancelSnoozeDeploymentUpgradeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -253,16 +393,17 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getConnectionId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeConnectionCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeConnectionCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -293,6 +434,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -302,7 +444,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         ChangeDatabaseRegistrationCompartmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "sunset", ChangeDatabaseRegistrationCompartmentResponse.Builder::sunset)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -328,15 +469,16 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentBackupId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeDeploymentBackupCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -362,17 +504,55 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeDeploymentCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeDeploymentCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangePipelineCompartmentResponse changePipelineCompartment(
+            ChangePipelineCompartmentRequest request) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+        Objects.requireNonNull(
+                request.getChangePipelineCompartmentDetails(),
+                "changePipelineCompartmentDetails is required");
+
+        return clientCall(request, ChangePipelineCompartmentResponse::builder)
+                .logger(LOG, "changePipelineCompartment")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ChangePipelineCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/ChangePipelineCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangePipelineCompartmentRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangePipelineCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangePipelineCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -402,13 +582,49 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CollectDeploymentDiagnosticResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CollectDeploymentDiagnosticResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CollectPipelineDiagnosticResponse collectPipelineDiagnostic(
+            CollectPipelineDiagnosticRequest request) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+        Objects.requireNonNull(
+                request.getCollectPipelineDiagnosticDetails(),
+                "collectPipelineDiagnosticDetails is required");
+
+        return clientCall(request, CollectPipelineDiagnosticResponse::builder)
+                .logger(LOG, "collectPipelineDiagnostic")
+                .serviceDetails(
+                        "GoldenGate",
+                        "CollectPipelineDiagnostic",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/CollectPipelineDiagnostic")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CollectPipelineDiagnosticRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("actions")
+                .appendPathParam("collectDiagnostics")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CollectPipelineDiagnosticResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CollectPipelineDiagnosticResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -437,13 +653,49 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentBackup.class,
+                        CopyDeploymentBackupResponse.Builder::deploymentBackup)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CopyDeploymentBackupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CopyDeploymentBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CopyDeploymentBackupResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateCertificateResponse createCertificate(CreateCertificateRequest request) {
+        Objects.requireNonNull(
+                request.getCreateCertificateDetails(), "createCertificateDetails is required");
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+
+        return clientCall(request, CreateCertificateResponse::builder)
+                .logger(LOG, "createCertificate")
+                .serviceDetails(
+                        "GoldenGate",
+                        "CreateCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/CertificateCollection/CreateCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCertificateRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("certificates")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateCertificateResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCertificateResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -465,6 +717,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.Connection.class,
@@ -474,7 +727,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id", CreateConnectionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateConnectionResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -495,9 +747,11 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .requestBuilder(CreateConnectionAssignmentRequest::builder)
                 .basePath("/20200407")
                 .appendPathParam("connectionAssignments")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.ConnectionAssignment.class,
@@ -509,7 +763,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", CreateConnectionAssignmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateConnectionAssignmentResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -533,6 +786,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DatabaseRegistration.class,
@@ -546,7 +800,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "etag", CreateDatabaseRegistrationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "sunset", CreateDatabaseRegistrationResponse.Builder::sunset)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -568,6 +821,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.Deployment.class,
@@ -577,7 +831,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDeploymentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateDeploymentResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -601,13 +854,80 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentBackup.class,
+                        CreateDeploymentBackupResponse.Builder::deploymentBackup)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateDeploymentBackupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDeploymentBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateDeploymentBackupResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreatePipelineResponse createPipeline(CreatePipelineRequest request) {
+        Objects.requireNonNull(
+                request.getCreatePipelineDetails(), "createPipelineDetails is required");
+
+        return clientCall(request, CreatePipelineResponse::builder)
+                .logger(LOG, "createPipeline")
+                .serviceDetails(
+                        "GoldenGate",
+                        "CreatePipeline",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/CreatePipeline")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePipelineRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.Pipeline.class,
+                        CreatePipelineResponse.Builder::pipeline)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreatePipelineResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePipelineResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreatePipelineResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+
+        Validate.notBlank(request.getCertificateKey(), "certificateKey must not be blank");
+
+        return clientCall(request, DeleteCertificateResponse::builder)
+                .logger(LOG, "deleteCertificate")
+                .serviceDetails(
+                        "GoldenGate",
+                        "DeleteCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Certificate/DeleteCertificate")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCertificateRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("certificates")
+                .appendPathParam(request.getCertificateKey())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteCertificateResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCertificateResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -627,14 +947,15 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20200407")
                 .appendPathParam("connections")
                 .appendPathParam(request.getConnectionId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteConnectionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -656,15 +977,16 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20200407")
                 .appendPathParam("connectionAssignments")
                 .appendPathParam(request.getConnectionAssignmentId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteConnectionAssignmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteConnectionAssignmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -689,6 +1011,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteDatabaseRegistrationResponse.Builder::opcWorkRequestId)
@@ -696,7 +1019,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", DeleteDatabaseRegistrationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "sunset", DeleteDatabaseRegistrationResponse.Builder::sunset)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -716,14 +1038,15 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20200407")
                 .appendPathParam("deployments")
                 .appendPathParam(request.getDeploymentId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -744,15 +1067,44 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20200407")
                 .appendPathParam("deploymentBackups")
                 .appendPathParam(request.getDeploymentBackupId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteDeploymentBackupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDeploymentBackupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeletePipelineResponse deletePipeline(DeletePipelineRequest request) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+
+        return clientCall(request, DeletePipelineResponse::builder)
+                .logger(LOG, "deletePipeline")
+                .serviceDetails(
+                        "GoldenGate",
+                        "DeletePipeline",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/DeletePipeline")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePipelineRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeletePipelineResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePipelineResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -782,6 +1134,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DeploymentWalletExistsResponseDetails.class,
@@ -790,7 +1143,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id", DeploymentWalletExistsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", DeploymentWalletExistsResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -820,13 +1172,80 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ExportDeploymentWalletResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ExportDeploymentWalletResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GenerateLibraryUrlResponse generateLibraryUrl(GenerateLibraryUrlRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getGenerateLibraryUrlDetails(), "generateLibraryUrlDetails is required");
+
+        return clientCall(request, GenerateLibraryUrlResponse::builder)
+                .logger(LOG, "generateLibraryUrl")
+                .serviceDetails(
+                        "GoldenGate",
+                        "GenerateLibraryUrl",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GenerateLibraryUrl")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateLibraryUrlRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("generateLibraryUrl")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.LibraryUrl.class,
+                        GenerateLibraryUrlResponse.Builder::libraryUrl)
+                .handleResponseHeaderString(
+                        "opc-request-id", GenerateLibraryUrlResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GenerateLibraryUrlResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetCertificateResponse getCertificate(GetCertificateRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+
+        Validate.notBlank(request.getCertificateKey(), "certificateKey must not be blank");
+
+        return clientCall(request, GetCertificateResponse::builder)
+                .logger(LOG, "getCertificate")
+                .serviceDetails(
+                        "GoldenGate",
+                        "GetCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Certificate/GetCertificate")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCertificateRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("certificates")
+                .appendPathParam(request.getCertificateKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.Certificate.class,
+                        GetCertificateResponse.Builder::certificate)
+                .handleResponseHeaderString("etag", GetCertificateResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCertificateResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -848,13 +1267,13 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getConnectionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.Connection.class,
                         GetConnectionResponse.Builder::connection)
                 .handleResponseHeaderString("etag", GetConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -878,13 +1297,13 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getConnectionAssignmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.ConnectionAssignment.class,
                         GetConnectionAssignmentResponse.Builder::connectionAssignment)
                 .handleResponseHeaderString("etag", GetConnectionAssignmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConnectionAssignmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -908,6 +1327,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDatabaseRegistrationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DatabaseRegistration.class,
                         GetDatabaseRegistrationResponse.Builder::databaseRegistration)
@@ -916,7 +1336,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", GetDatabaseRegistrationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "sunset", GetDatabaseRegistrationResponse.Builder::sunset)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -938,13 +1357,13 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.Deployment.class,
                         GetDeploymentResponse.Builder::deployment)
                 .handleResponseHeaderString("etag", GetDeploymentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -966,13 +1385,13 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentBackupId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DeploymentBackup.class,
                         GetDeploymentBackupResponse.Builder::deploymentBackup)
                 .handleResponseHeaderString("etag", GetDeploymentBackupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDeploymentBackupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -995,13 +1414,41 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentUpgradeId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DeploymentUpgrade.class,
                         GetDeploymentUpgradeResponse.Builder::deploymentUpgrade)
                 .handleResponseHeaderString("etag", GetDeploymentUpgradeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDeploymentUpgradeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetPipelineResponse getPipeline(GetPipelineRequest request) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+
+        return clientCall(request, GetPipelineResponse::builder)
+                .logger(LOG, "getPipeline")
+                .serviceDetails(
+                        "GoldenGate",
+                        "GetPipeline",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/GetPipeline")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPipelineRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.Pipeline.class,
+                        GetPipelineResponse.Builder::pipeline)
+                .handleResponseHeaderString("etag", GetPipelineResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPipelineResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1023,6 +1470,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -1030,7 +1478,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1056,17 +1503,53 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentId())
                 .appendPathParam("actions")
                 .appendPathParam("importWallet")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ImportDeploymentWalletResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ImportDeploymentWalletResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+
+        return clientCall(request, ListCertificatesResponse::builder)
+                .logger(LOG, "listCertificates")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListCertificates",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/CertificateCollection/ListCertificates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCertificatesRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("certificates")
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.CertificateCollection.class,
+                        ListCertificatesResponse.Builder::certificateCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCertificatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCertificatesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1096,6 +1579,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.ConnectionAssignmentCollection.class,
                         ListConnectionAssignmentsResponse.Builder::connectionAssignmentCollection)
@@ -1103,7 +1587,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListConnectionAssignmentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListConnectionAssignmentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1142,6 +1625,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.ConnectionCollection.class,
                         ListConnectionsResponse.Builder::connectionCollection)
@@ -1149,7 +1633,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListConnectionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListConnectionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1177,6 +1660,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DatabaseRegistrationCollection.class,
                         ListDatabaseRegistrationsResponse.Builder::databaseRegistrationCollection)
@@ -1186,7 +1670,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListDatabaseRegistrationsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "sunset", ListDatabaseRegistrationsResponse.Builder::sunset)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1215,6 +1698,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DeploymentBackupCollection.class,
                         ListDeploymentBackupsResponse.Builder::deploymentBackupCollection)
@@ -1222,7 +1706,75 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListDeploymentBackupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeploymentBackupsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListDeploymentEnvironmentsResponse listDeploymentEnvironments(
+            ListDeploymentEnvironmentsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDeploymentEnvironmentsResponse::builder)
+                .logger(LOG, "listDeploymentEnvironments")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListDeploymentEnvironments",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentEnvironmentCollection/ListDeploymentEnvironments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDeploymentEnvironmentsRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentEnvironments")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentEnvironmentCollection.class,
+                        ListDeploymentEnvironmentsResponse.Builder::deploymentEnvironmentCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDeploymentEnvironmentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDeploymentEnvironmentsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListDeploymentPeersResponse listDeploymentPeers(ListDeploymentPeersRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+
+        return clientCall(request, ListDeploymentPeersResponse::builder)
+                .logger(LOG, "listDeploymentPeers")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListDeploymentPeers",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentPeerSummary/ListDeploymentPeers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDeploymentPeersRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("peers")
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentPeerCollection.class,
+                        ListDeploymentPeersResponse.Builder::deploymentPeerCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDeploymentPeersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDeploymentPeersResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1250,6 +1802,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DeploymentTypeCollection.class,
                         ListDeploymentTypesResponse.Builder::deploymentTypeCollection)
@@ -1257,7 +1810,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListDeploymentTypesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeploymentTypesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1286,6 +1838,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DeploymentUpgradeCollection.class,
                         ListDeploymentUpgradesResponse.Builder::deploymentUpgradeCollection)
@@ -1293,7 +1846,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListDeploymentUpgradesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeploymentUpgradesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1321,6 +1873,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DeploymentVersionCollection.class,
                         ListDeploymentVersionsResponse.Builder::deploymentVersionCollection)
@@ -1328,7 +1881,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListDeploymentVersionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeploymentVersionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1357,6 +1909,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DeploymentWalletsOperationCollection.class,
                         ListDeploymentWalletsOperationsResponse.Builder
@@ -1367,7 +1920,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListDeploymentWalletsOperationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1400,6 +1952,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DeploymentCollection.class,
                         ListDeploymentsResponse.Builder::deploymentCollection)
@@ -1407,7 +1960,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListDeploymentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeploymentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1430,12 +1982,227 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DeploymentMessageCollection.class,
                         ListMessagesResponse.Builder::deploymentMessageCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListMessagesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListPipelineInitializationStepsResponse listPipelineInitializationSteps(
+            ListPipelineInitializationStepsRequest request) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+
+        return clientCall(request, ListPipelineInitializationStepsResponse::builder)
+                .logger(LOG, "listPipelineInitializationSteps")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListPipelineInitializationSteps",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/ListPipelineInitializationSteps")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPipelineInitializationStepsRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("initializationSteps")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.PipelineInitializationSteps.class,
+                        ListPipelineInitializationStepsResponse.Builder
+                                ::pipelineInitializationSteps)
+                .handleResponseHeaderString(
+                        "etag", ListPipelineInitializationStepsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListPipelineInitializationStepsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListPipelineRunningProcessesResponse listPipelineRunningProcesses(
+            ListPipelineRunningProcessesRequest request) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+
+        return clientCall(request, ListPipelineRunningProcessesResponse::builder)
+                .logger(LOG, "listPipelineRunningProcesses")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListPipelineRunningProcesses",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/ListPipelineRunningProcesses")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPipelineRunningProcessesRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("runningProcesses")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.PipelineRunningProcessCollection.class,
+                        ListPipelineRunningProcessesResponse.Builder
+                                ::pipelineRunningProcessCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPipelineRunningProcessesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListPipelineRunningProcessesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListPipelineSchemaTablesResponse listPipelineSchemaTables(
+            ListPipelineSchemaTablesRequest request) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+        Objects.requireNonNull(request.getSourceSchemaName(), "sourceSchemaName is required");
+
+        Objects.requireNonNull(request.getTargetSchemaName(), "targetSchemaName is required");
+
+        return clientCall(request, ListPipelineSchemaTablesResponse::builder)
+                .logger(LOG, "listPipelineSchemaTables")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListPipelineSchemaTables",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/ListPipelineSchemaTables")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPipelineSchemaTablesRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("schemaTables")
+                .appendQueryParam("sourceSchemaName", request.getSourceSchemaName())
+                .appendQueryParam("targetSchemaName", request.getTargetSchemaName())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.PipelineSchemaTableCollection.class,
+                        ListPipelineSchemaTablesResponse.Builder::pipelineSchemaTableCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPipelineSchemaTablesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPipelineSchemaTablesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListPipelineSchemasResponse listPipelineSchemas(ListPipelineSchemasRequest request) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+
+        return clientCall(request, ListPipelineSchemasResponse::builder)
+                .logger(LOG, "listPipelineSchemas")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListPipelineSchemas",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/ListPipelineSchemas")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPipelineSchemasRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("schemas")
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.PipelineSchemaCollection.class,
+                        ListPipelineSchemasResponse.Builder::pipelineSchemaCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPipelineSchemasResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPipelineSchemasResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListPipelinesResponse listPipelines(ListPipelinesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListPipelinesResponse::builder)
+                .logger(LOG, "listPipelines")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListPipelines",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/ListPipelines")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPipelinesRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("lifecycleSubState", request.getLifecycleSubState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.PipelineCollection.class,
+                        ListPipelinesResponse.Builder::pipelineCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPipelinesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPipelinesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListRecipesResponse listRecipes(ListRecipesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListRecipesResponse::builder)
+                .logger(LOG, "listRecipes")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListRecipes",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/RecipeSummaryCollection/ListRecipes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRecipesRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("recipes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("recipeType", request.getRecipeType())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.RecipeSummaryCollection.class,
+                        ListRecipesResponse.Builder::recipeSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRecipesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRecipesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1462,6 +2229,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.TrailFileCollection.class,
                         ListTrailFilesResponse.Builder::trailFileCollection)
@@ -1469,7 +2237,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListTrailFilesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTrailFilesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1499,6 +2266,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.TrailSequenceCollection.class,
                         ListTrailSequencesResponse.Builder::trailSequenceCollection)
@@ -1506,7 +2274,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListTrailSequencesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTrailSequencesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1532,6 +2299,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.goldengate.model.WorkRequestError.class,
                         ListWorkRequestErrorsResponse.Builder::items)
@@ -1539,7 +2307,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1564,6 +2331,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.goldengate.model.WorkRequestLogEntry.class,
                         ListWorkRequestLogsResponse.Builder::items)
@@ -1571,7 +2339,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1595,6 +2362,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.goldengate.model.WorkRequest.class,
                         ListWorkRequestsResponse.Builder::items)
@@ -1602,7 +2370,179 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public RefreshConnectionResponse refreshConnection(RefreshConnectionRequest request) {
+
+        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
+        Objects.requireNonNull(
+                request.getRefreshConnectionDetails(), "refreshConnectionDetails is required");
+
+        return clientCall(request, RefreshConnectionResponse::builder)
+                .logger(LOG, "refreshConnection")
+                .serviceDetails(
+                        "GoldenGate",
+                        "RefreshConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/RefreshConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshConnectionRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RefreshConnectionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RefreshConnectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RemoveConnectionLockResponse removeConnectionLock(RemoveConnectionLockRequest request) {
+
+        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveConnectionLockResponse::builder)
+                .logger(LOG, "removeConnectionLock")
+                .serviceDetails(
+                        "GoldenGate",
+                        "RemoveConnectionLock",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/RemoveConnectionLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveConnectionLockRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.Connection.class,
+                        RemoveConnectionLockResponse.Builder::connection)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveConnectionLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveConnectionLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public RemoveDeploymentBackupLockResponse removeDeploymentBackupLock(
+            RemoveDeploymentBackupLockRequest request) {
+
+        Validate.notBlank(request.getDeploymentBackupId(), "deploymentBackupId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveDeploymentBackupLockResponse::builder)
+                .logger(LOG, "removeDeploymentBackupLock")
+                .serviceDetails(
+                        "GoldenGate",
+                        "RemoveDeploymentBackupLock",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/RemoveDeploymentBackupLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDeploymentBackupLockRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentBackups")
+                .appendPathParam(request.getDeploymentBackupId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentBackup.class,
+                        RemoveDeploymentBackupLockResponse.Builder::deploymentBackup)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveDeploymentBackupLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", RemoveDeploymentBackupLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public RemoveDeploymentLocalPeerResponse removeDeploymentLocalPeer(
+            RemoveDeploymentLocalPeerRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveDeploymentLocalPeerDetails(),
+                "removeDeploymentLocalPeerDetails is required");
+
+        return clientCall(request, RemoveDeploymentLocalPeerResponse::builder)
+                .logger(LOG, "removeDeploymentLocalPeer")
+                .serviceDetails(
+                        "GoldenGate",
+                        "RemoveDeploymentLocalPeer",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/RemoveDeploymentLocalPeer")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDeploymentLocalPeerRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLocalPeer")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveDeploymentLocalPeerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveDeploymentLocalPeerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RemoveDeploymentLockResponse removeDeploymentLock(RemoveDeploymentLockRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveDeploymentLockResponse::builder)
+                .logger(LOG, "removeDeploymentLock")
+                .serviceDetails(
+                        "GoldenGate",
+                        "RemoveDeploymentLock",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/RemoveDeploymentLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDeploymentLockRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.Deployment.class,
+                        RemoveDeploymentLockResponse.Builder::deployment)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveDeploymentLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveDeploymentLockResponse.Builder::etag)
                 .callSync();
     }
 
@@ -1633,6 +2573,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DeploymentUpgrade.class,
@@ -1641,7 +2582,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "etag", RescheduleDeploymentUpgradeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", RescheduleDeploymentUpgradeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1665,16 +2605,17 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentBackupId())
                 .appendPathParam("actions")
                 .appendPathParam("restore")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", RestoreDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RestoreDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1701,17 +2642,18 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentUpgradeId())
                 .appendPathParam("actions")
                 .appendPathParam("rollback")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RollbackDeploymentUpgradeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RollbackDeploymentUpgradeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1742,10 +2684,10 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", SnoozeDeploymentUpgradeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1769,16 +2711,51 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentId())
                 .appendPathParam("actions")
                 .appendPathParam("start")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", StartDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", StartDeploymentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public StartPipelineResponse startPipeline(StartPipelineRequest request) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+        Objects.requireNonNull(
+                request.getStartPipelineDetails(), "startPipelineDetails is required");
+
+        return clientCall(request, StartPipelineResponse::builder)
+                .logger(LOG, "startPipeline")
+                .serviceDetails(
+                        "GoldenGate",
+                        "StartPipeline",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/StartPipeline")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartPipelineRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("actions")
+                .appendPathParam("start")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StartPipelineResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StartPipelineResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1802,16 +2779,86 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentId())
                 .appendPathParam("actions")
                 .appendPathParam("stop")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", StopDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", StopDeploymentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public StopPipelineResponse stopPipeline(StopPipelineRequest request) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+        Objects.requireNonNull(request.getStopPipelineDetails(), "stopPipelineDetails is required");
+
+        return clientCall(request, StopPipelineResponse::builder)
+                .logger(LOG, "stopPipeline")
+                .serviceDetails(
+                        "GoldenGate",
+                        "StopPipeline",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/StopPipeline")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopPipelineRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StopPipelineResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StopPipelineResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public SwitchoverDeploymentPeerResponse switchoverDeploymentPeer(
+            SwitchoverDeploymentPeerRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getSwitchoverDeploymentPeerDetails(),
+                "switchoverDeploymentPeerDetails is required");
+
+        return clientCall(request, SwitchoverDeploymentPeerResponse::builder)
+                .logger(LOG, "switchoverDeploymentPeer")
+                .serviceDetails(
+                        "GoldenGate",
+                        "SwitchoverDeploymentPeer",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/SwitchoverDeploymentPeer")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SwitchoverDeploymentPeerRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("switchover")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        SwitchoverDeploymentPeerResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", SwitchoverDeploymentPeerResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1842,6 +2889,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.TestConnectionAssignmentResult.class,
@@ -1849,7 +2897,43 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id", TestConnectionAssignmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", TestConnectionAssignmentResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public TestPipelineConnectionResponse testPipelineConnection(
+            TestPipelineConnectionRequest request) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+        Objects.requireNonNull(
+                request.getTestPipelineConnectionDetails(),
+                "testPipelineConnectionDetails is required");
+
+        return clientCall(request, TestPipelineConnectionResponse::builder)
+                .logger(LOG, "testPipelineConnection")
+                .serviceDetails(
+                        "GoldenGate",
+                        "TestPipelineConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/TestPipelineConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestPipelineConnectionRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("actions")
+                .appendPathParam("testConnection")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.TestPipelineConnectionResult.class,
+                        TestPipelineConnectionResponse.Builder::testPipelineConnectionResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", TestPipelineConnectionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", TestPipelineConnectionResponse.Builder::etag)
                 .callSync();
     }
 
@@ -1871,15 +2955,16 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20200407")
                 .appendPathParam("connections")
                 .appendPathParam(request.getConnectionId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateConnectionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1907,6 +2992,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1915,7 +3001,6 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", UpdateDatabaseRegistrationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "sunset", UpdateDatabaseRegistrationResponse.Builder::sunset)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1937,15 +3022,16 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20200407")
                 .appendPathParam("deployments")
                 .appendPathParam(request.getDeploymentId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1969,9 +3055,11 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20200407")
                 .appendPathParam("deploymentBackups")
                 .appendPathParam(request.getDeploymentBackupId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.goldengate.model.DeploymentBackup.class,
@@ -1979,7 +3067,37 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", UpdateDeploymentBackupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDeploymentBackupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdatePipelineResponse updatePipeline(UpdatePipelineRequest request) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePipelineDetails(), "updatePipelineDetails is required");
+
+        return clientCall(request, UpdatePipelineResponse::builder)
+                .logger(LOG, "updatePipeline")
+                .serviceDetails(
+                        "GoldenGate",
+                        "UpdatePipeline",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Pipeline/UpdatePipeline")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePipelineRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdatePipelineResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePipelineResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2003,16 +3121,17 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentId())
                 .appendPathParam("actions")
                 .appendPathParam("upgrade")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpgradeDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpgradeDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2039,17 +3158,18 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentUpgradeId())
                 .appendPathParam("actions")
                 .appendPathParam("upgrade")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpgradeDeploymentUpgradeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpgradeDeploymentUpgradeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

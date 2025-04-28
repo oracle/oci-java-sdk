@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics;
@@ -4157,6 +4157,10 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "metadataEquals",
+                        request.getMetadataEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4202,6 +4206,10 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "metadataEquals",
+                        request.getMetadataEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4874,6 +4882,7 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendEnumQueryParam("kind", request.getKind())
+                .appendQueryParam("targetService", request.getTargetService())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -4924,6 +4933,7 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("savedSearchId", request.getSavedSearchId())
                 .appendQueryParam("displayNameContains", request.getDisplayNameContains())
+                .appendQueryParam("targetService", request.getTargetService())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5234,6 +5244,7 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("name", request.getName())
+                .appendQueryParam("sourceType", request.getSourceType())
                 .appendQueryParam("categories", request.getCategories())
                 .appendQueryParam("isSimplified", request.getIsSimplified())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
@@ -6979,6 +6990,51 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<UploadDiscoveryDataResponse> uploadDiscoveryData(
+            UploadDiscoveryDataRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UploadDiscoveryDataRequest, UploadDiscoveryDataResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+        Objects.requireNonNull(
+                request.getUploadDiscoveryDataDetails(), "uploadDiscoveryDataDetails is required");
+
+        return clientCall(request, UploadDiscoveryDataResponse::builder)
+                .logger(LOG, "uploadDiscoveryData")
+                .serviceDetails(
+                        "LogAnalytics",
+                        "UploadDiscoveryData",
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/UploadDiscoveryData")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UploadDiscoveryDataRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20200601")
+                .appendPathParam("namespaces")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("actions")
+                .appendPathParam("uploadDiscoveryData")
+                .appendEnumQueryParam("discoveryDataType", request.getDiscoveryDataType())
+                .appendQueryParam("logGroupId", request.getLogGroupId())
+                .appendEnumQueryParam("payloadType", request.getPayloadType())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-meta-properties", request.getOpcMetaProperties())
+                .appendHeader("content-type", request.getContentType())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("expect", request.getExpect())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UploadDiscoveryDataResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-object-id", UploadDiscoveryDataResponse.Builder::opcObjectId)
+                .handleResponseHeaderDate(
+                        "timeCreated", UploadDiscoveryDataResponse.Builder::timeCreated)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UploadLogEventsFileResponse> uploadLogEventsFile(
             UploadLogEventsFileRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7012,6 +7068,7 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("content-type", request.getContentType())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-meta-properties", request.getOpcMetaProperties())
                 .appendHeader("expect", request.getExpect())
                 .hasBinaryRequestBody()
                 .hasBody()

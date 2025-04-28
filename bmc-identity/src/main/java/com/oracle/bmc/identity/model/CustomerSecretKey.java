@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identity.model;
@@ -7,14 +7,14 @@ package com.oracle.bmc.identity.model;
 /**
  * A {@code CustomerSecretKey} is an Oracle-provided key for using the Object Storage Service's
  * [Amazon S3 compatible
- * API](https://docs.cloud.oracle.com/Content/Object/Tasks/s3compatibleapi.htm). The key consists of
+ * API](https://docs.oracle.com/iaas/Content/Object/Tasks/s3compatibleapi.htm). The key consists of
  * a secret key/access key pair. A user can have up to two secret keys at a time.
  *
  * <p>*Note:** The secret key is always an Oracle-generated string; you can't change it to a string
  * of your choice.
  *
  * <p>For more information, see [Managing User
- * Credentials](https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm).
+ * Credentials](https://docs.oracle.com/iaas/Content/Identity/access/managing-user-credentials.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

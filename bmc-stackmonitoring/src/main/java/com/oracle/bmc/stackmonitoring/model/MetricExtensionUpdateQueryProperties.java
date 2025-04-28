@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -30,7 +30,10 @@ package com.oracle.bmc.stackmonitoring.model;
             name = "JMX"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = OsCommandUpdateQueryProperties.class,
-            name = "OS_COMMAND")
+            name = "OS_COMMAND"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = HttpUpdateQueryProperties.class,
+            name = "HTTP")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.model;
@@ -107,19 +107,23 @@ public final class SummarizeMetricsDataDetails
          * points to aggregate. The query must specify a metric, statistic, and interval. Supported
          * values for interval depend on the specified time range. More interval values are
          * supported for smaller time ranges. You can optionally specify dimensions and grouping
-         * functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
+         * functions. When specifying a dimension value, surround it with double quotes, and escape
+         * each double quote with a backslash ({@code \\}) character. Supported grouping functions:
+         * {@code grouping()}, {@code groupBy()}.
          *
          * <p>Construct your query to avoid exceeding limits on returned data. See {@link
          * MetricData}.
          *
          * <p>For details about Monitoring Query Language (MQL), see [Monitoring Query Language
-         * (MQL)
-         * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
+         * (MQL) Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
          * available dimensions, review the metric definition for the supported service. See
          * [Supported
-         * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          *
-         * <p>Example: {@code CpuUtilization[1m].sum()}
+         * <p>Example 1: {@code CpuUtilization[1m].sum()}
+         *
+         * <p>Example 2 (escaped double quotes for value string): {@code
+         * CpuUtilization[1m]{resourceId = \\"<var>&lt;instance_OCID&gt;</var>\\"}.max()}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
@@ -129,19 +133,23 @@ public final class SummarizeMetricsDataDetails
          * points to aggregate. The query must specify a metric, statistic, and interval. Supported
          * values for interval depend on the specified time range. More interval values are
          * supported for smaller time ranges. You can optionally specify dimensions and grouping
-         * functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
+         * functions. When specifying a dimension value, surround it with double quotes, and escape
+         * each double quote with a backslash ({@code \\}) character. Supported grouping functions:
+         * {@code grouping()}, {@code groupBy()}.
          *
          * <p>Construct your query to avoid exceeding limits on returned data. See {@link
          * MetricData}.
          *
          * <p>For details about Monitoring Query Language (MQL), see [Monitoring Query Language
-         * (MQL)
-         * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
+         * (MQL) Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
          * available dimensions, review the metric definition for the supported service. See
          * [Supported
-         * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          *
-         * <p>Example: {@code CpuUtilization[1m].sum()}
+         * <p>Example 1: {@code CpuUtilization[1m].sum()}
+         *
+         * <p>Example 2 (escaped double quotes for value string): {@code
+         * CpuUtilization[1m]{resourceId = \\"<var>&lt;instance_OCID&gt;</var>\\"}.max()}
          *
          * @param query the value to set
          * @return this builder
@@ -156,7 +164,7 @@ public final class SummarizeMetricsDataDetails
          * defined by RFC3339. The response includes metric data points for the startTime. Default
          * value: the timestamp 3 hours before the call was sent.
          *
-         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("startTime")
         private java.util.Date startTime;
@@ -166,7 +174,7 @@ public final class SummarizeMetricsDataDetails
          * defined by RFC3339. The response includes metric data points for the startTime. Default
          * value: the timestamp 3 hours before the call was sent.
          *
-         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param startTime the value to set
          * @return this builder
@@ -181,7 +189,7 @@ public final class SummarizeMetricsDataDetails
          * by RFC3339. The response excludes metric data points for the endTime. Default value: the
          * timestamp representing when the call was sent.
          *
-         * <p>Example: {@code 2019-02-01T02:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T02:02:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("endTime")
         private java.util.Date endTime;
@@ -191,7 +199,7 @@ public final class SummarizeMetricsDataDetails
          * by RFC3339. The response excludes metric data points for the endTime. Default value: the
          * timestamp representing when the call was sent.
          *
-         * <p>Example: {@code 2019-02-01T02:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T02:02:29.600Z}
          *
          * @param endTime the value to set
          * @return this builder
@@ -334,17 +342,22 @@ public final class SummarizeMetricsDataDetails
      * The Monitoring Query Language (MQL) expression to use when searching for metric data points
      * to aggregate. The query must specify a metric, statistic, and interval. Supported values for
      * interval depend on the specified time range. More interval values are supported for smaller
-     * time ranges. You can optionally specify dimensions and grouping functions. Supported grouping
-     * functions: {@code grouping()}, {@code groupBy()}.
+     * time ranges. You can optionally specify dimensions and grouping functions. When specifying a
+     * dimension value, surround it with double quotes, and escape each double quote with a
+     * backslash ({@code \\}) character. Supported grouping functions: {@code grouping()}, {@code
+     * groupBy()}.
      *
      * <p>Construct your query to avoid exceeding limits on returned data. See {@link MetricData}.
      *
      * <p>For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL)
-     * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
-     * available dimensions, review the metric definition for the supported service. See [Supported
-     * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available
+     * dimensions, review the metric definition for the supported service. See [Supported
+     * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      *
-     * <p>Example: {@code CpuUtilization[1m].sum()}
+     * <p>Example 1: {@code CpuUtilization[1m].sum()}
+     *
+     * <p>Example 2 (escaped double quotes for value string): {@code CpuUtilization[1m]{resourceId =
+     * \\"<var>&lt;instance_OCID&gt;</var>\\"}.max()}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
@@ -353,17 +366,22 @@ public final class SummarizeMetricsDataDetails
      * The Monitoring Query Language (MQL) expression to use when searching for metric data points
      * to aggregate. The query must specify a metric, statistic, and interval. Supported values for
      * interval depend on the specified time range. More interval values are supported for smaller
-     * time ranges. You can optionally specify dimensions and grouping functions. Supported grouping
-     * functions: {@code grouping()}, {@code groupBy()}.
+     * time ranges. You can optionally specify dimensions and grouping functions. When specifying a
+     * dimension value, surround it with double quotes, and escape each double quote with a
+     * backslash ({@code \\}) character. Supported grouping functions: {@code grouping()}, {@code
+     * groupBy()}.
      *
      * <p>Construct your query to avoid exceeding limits on returned data. See {@link MetricData}.
      *
      * <p>For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL)
-     * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
-     * available dimensions, review the metric definition for the supported service. See [Supported
-     * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available
+     * dimensions, review the metric definition for the supported service. See [Supported
+     * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      *
-     * <p>Example: {@code CpuUtilization[1m].sum()}
+     * <p>Example 1: {@code CpuUtilization[1m].sum()}
+     *
+     * <p>Example 2 (escaped double quotes for value string): {@code CpuUtilization[1m]{resourceId =
+     * \\"<var>&lt;instance_OCID&gt;</var>\\"}.max()}
      *
      * @return the value
      */
@@ -376,7 +394,7 @@ public final class SummarizeMetricsDataDetails
      * defined by RFC3339. The response includes metric data points for the startTime. Default
      * value: the timestamp 3 hours before the call was sent.
      *
-     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
     private final java.util.Date startTime;
@@ -386,7 +404,7 @@ public final class SummarizeMetricsDataDetails
      * defined by RFC3339. The response includes metric data points for the startTime. Default
      * value: the timestamp 3 hours before the call was sent.
      *
-     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
      */
@@ -399,7 +417,7 @@ public final class SummarizeMetricsDataDetails
      * RFC3339. The response excludes metric data points for the endTime. Default value: the
      * timestamp representing when the call was sent.
      *
-     * <p>Example: {@code 2019-02-01T02:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T02:02:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("endTime")
     private final java.util.Date endTime;
@@ -409,7 +427,7 @@ public final class SummarizeMetricsDataDetails
      * RFC3339. The response excludes metric data points for the endTime. Default value: the
      * timestamp representing when the call was sent.
      *
-     * <p>Example: {@code 2019-02-01T02:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T02:02:29.600Z}
      *
      * @return the value
      */

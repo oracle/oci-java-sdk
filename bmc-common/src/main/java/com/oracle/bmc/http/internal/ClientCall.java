@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
@@ -33,6 +33,7 @@ import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import com.oracle.bmc.waiter.TerminationStrategy;
 import com.oracle.bmc.waiter.WaiterScheduler;
 import jakarta.annotation.Nullable;
+import com.oracle.bmc.model.SdkRuntimeException;
 import org.slf4j.Logger;
 
 import java.io.IOException;
@@ -68,6 +69,10 @@ public final class ClientCall<
         RESP_BUILDER extends BmcResponse.Builder<RESP>> {
     private static final String OPC_CLIENT_RETRIES_HEADER = "opc-client-retries";
     private static final String OPC_REQUEST_ID_HEADER = "opc-request-id";
+    private static final String EVENT_STREAM_MEDIA_TYPE = "text/event-stream";
+    private static final String CONTENT_TYPE_HEADER = "Content-Type";
+    private static final String APPLICATION_OCTET_STREAM_TYPE = "application/octet-stream";
+    private static final String APPLICATION_JSON_TYPE = "application/json";
 
     private final HttpClient httpClient;
 
@@ -101,6 +106,12 @@ public final class ClientCall<
     private WaiterScheduler waiterScheduler = WaiterScheduler.UNSUPPORTED;
     private Executor offloadExecutor = null;
     private boolean firstAttempt = true;
+    private BiConsumer<RESP_BUILDER, Object> responseEventStreamHandler;
+
+    // Unless overridden, throw BmcException when receive a response error.
+    @SuppressWarnings("rawtypes")
+    private ResponseErrorRuntimeExceptionFactory responseErrorExceptionFactory =
+            ResponseErrorBmcExceptionFactory.INSTANCE;
 
     private ClientCall(HttpClient httpClient) {
         this.httpClient = httpClient;
@@ -176,14 +187,20 @@ public final class ClientCall<
 
     public ClientCall<REQ, RESP, RESP_BUILDER> hasBinaryRequestBody() {
         this.hasBinaryRequestBody = true;
-        if (request.getRetryConfiguration() != null
+        RetryConfiguration preferredRetryConfiguration =
+                Retriers.getPreferredRetryConfiguration(
+                        this.request.getRetryConfiguration(),
+                        this.retryConfiguration,
+                        this.operationUsesDefaultRetries);
+        if (Retriers.shouldPrepareForRetryBecauseOfRetryConfiguration(preferredRetryConfiguration)
                 || authenticationDetailsProvider instanceof RefreshableOnNotAuthenticatedProvider) {
             request =
                     (REQ)
                             Retriers.wrapBodyInputStreamIfNecessary(
                                     (BmcRequest<InputStream>) request,
                                     (BmcRequest.Builder<BmcRequest<InputStream>, InputStream>)
-                                            requestBuilder.get());
+                                            requestBuilder.get(),
+                                    preferredRetryConfiguration);
         }
         return this;
     }
@@ -200,19 +217,17 @@ public final class ClientCall<
         } else {
             httpRequest.body(body);
         }
-        if (body instanceof InputStream) {
-            // EntityFactory used to try to infer this from request.getContentType (and also
-            // getContentLanguage and
-            // getContentEncoding) using reflection. However it seems like this is only used for
-            // PutObjectRequest, which
-            // also sets these manually (they're `in: header` parameters), so we don't need to do
-            // this. There's a test
-            // in bmc-sdk-swagger that ensures these headers aren't overwritten by jax-rs.
-            if (!headers.contains("content-type")) {
-                appendHeader("Content-Type", "application/octet-stream");
+        if (!headers.contains("content-type")) {
+            if (body instanceof InputStream) {
+                // EntityFactory used to try to infer this from request.getContentType (and also
+                // getContentLanguage and getContentEncoding) using reflection.
+                // However, it seems like this is only used for PutObjectRequest, which
+                // also sets these manually (they're `in: header` parameters), so we don't need to
+                // do this. These headers aren't overwritten by jax-rs.
+                appendHeader(CONTENT_TYPE_HEADER, APPLICATION_OCTET_STREAM_TYPE);
+            } else {
+                appendHeader(CONTENT_TYPE_HEADER, APPLICATION_JSON_TYPE);
             }
-        } else {
-            appendHeader("Content-Type", "application/json");
         }
         if (request.supportsExpect100Continue() && !headers.contains("expect")) {
             appendHeader("Expect", "100-continue");
@@ -541,6 +556,12 @@ public final class ClientCall<
         return this;
     }
 
+    public <RESP_BODY> ClientCall<REQ, RESP, RESP_BUILDER> handleEventStream(
+            BiConsumer<RESP_BUILDER, RESP_BODY> handle) {
+        responseEventStreamHandler = (BiConsumer) handle;
+        return this;
+    }
+
     public <RESP_BODY> ClientCall<REQ, RESP, RESP_BUILDER> handleBody(
             Class<RESP_BODY> type, BiConsumer<RESP_BUILDER, RESP_BODY> handle) {
         responseBodyList = false;
@@ -633,6 +654,13 @@ public final class ClientCall<
         return this;
     }
 
+    @SuppressWarnings("rawtypes")
+    public ClientCall<REQ, RESP, RESP_BUILDER> responseErrorExceptionFactory(
+            ResponseErrorRuntimeExceptionFactory responseErrorExceptionFactory) {
+        this.responseErrorExceptionFactory = responseErrorExceptionFactory;
+        return this;
+    }
+
     private CompletionStage<RESP> transformResponse(HttpResponse rawResponse) {
         CompletionStage<RESP> failure = checkError(rawResponse);
         if (failure != null) {
@@ -677,11 +705,24 @@ public final class ClientCall<
         if (responseBodyList) {
             future = rawResponse.listBody(responseBodyUnwrappedType);
         } else {
+            // If the operation supports eventStreams and the returned content-type is
+            // text/event-stream
+            // then use the responseEventStreamHandler and return the response stream
+            if (responseEventStreamHandler != null
+                    && rawResponse.header(CONTENT_TYPE_HEADER).equals(EVENT_STREAM_MEDIA_TYPE)) {
+                future = rawResponse.streamBody();
+                return future.thenApply(
+                        deserialized -> {
+                            responseEventStreamHandler.accept(builder, deserialized);
+                            return finalizeResponse(builder);
+                        });
+            }
             if (responseBodyUnwrappedType == InputStream.class) {
                 future = rawResponse.streamBody();
             } else if (responseBodyUnwrappedType == String.class) {
                 future = rawResponse.textBody();
-                if ("application/json".equalsIgnoreCase(rawResponse.header("Content-Type"))) {
+                if (APPLICATION_JSON_TYPE.equalsIgnoreCase(
+                        rawResponse.header(CONTENT_TYPE_HEADER))) {
                     future =
                             thenApply(
                                     future,
@@ -744,7 +785,7 @@ public final class ClientCall<
         }
         String opcRequestId = response.header(OPC_REQUEST_ID_HEADER);
         String contentType = response.header("content-type");
-        if (contentType == null || !contentType.startsWith("application/json")) {
+        if (contentType == null || !contentType.startsWith(APPLICATION_JSON_TYPE)) {
             CompletionStage<String> responseBody =
                     response.textBody()
                             .exceptionally(
@@ -758,17 +799,17 @@ public final class ClientCall<
                     responseBody,
                     s ->
                             failedFuture(
-                                    new BmcException(
+                                    responseErrorExceptionFactory.createRuntimeException(
                                             status,
                                             "Unknown",
                                             String.format(
                                                     "Unexpected Content-Type: %s instead of %s. Response body: %s",
-                                                    contentType, "application/json", s),
+                                                    contentType, APPLICATION_JSON_TYPE, s),
                                             opcRequestId,
                                             buildServiceDetails())));
         }
 
-        return response.body(ResponseHelper.ErrorCodeAndMessage.class)
+        return response.body(this.responseErrorExceptionFactory.getResponseErrorModelType())
                 .handle(
                         (ecm, t) -> {
                             if (t != null) {
@@ -783,13 +824,14 @@ public final class ClientCall<
                                         msgFuture,
                                         msg ->
                                                 ClientCall.<T>failedFuture(
-                                                        new BmcException(
-                                                                status,
-                                                                "Unknown",
-                                                                msg,
-                                                                opcRequestId,
-                                                                t,
-                                                                buildServiceDetails())));
+                                                        responseErrorExceptionFactory
+                                                                .createRuntimeException(
+                                                                        status,
+                                                                        "Unknown",
+                                                                        msg,
+                                                                        opcRequestId,
+                                                                        (Throwable) t,
+                                                                        buildServiceDetails())));
                             } else {
                                 if (ecm == null) {
                                     String defaultMessage =
@@ -797,7 +839,7 @@ public final class ClientCall<
                                                     status,
                                                     "Detailed exception information not available");
                                     return ClientCall.<T>failedFuture(
-                                            new BmcException(
+                                            responseErrorExceptionFactory.createRuntimeException(
                                                     status,
                                                     "Unknown",
                                                     defaultMessage,
@@ -805,15 +847,11 @@ public final class ClientCall<
                                                     buildServiceDetails()));
                                 } else {
                                     return ClientCall.<T>failedFuture(
-                                            new BmcException(
+                                            responseErrorExceptionFactory.createRuntimeException(
                                                     status,
-                                                    ecm.getCode(),
-                                                    ecm.getMessage(),
                                                     opcRequestId,
-                                                    buildServiceDetails(),
-                                                    ecm.getOriginalMessage(),
-                                                    ecm.getOriginalMessageTemplate(),
-                                                    ecm.getMessageArguments()));
+                                                    ecm,
+                                                    buildServiceDetails()));
                                 }
                             }
                         })
@@ -856,6 +894,12 @@ public final class ClientCall<
     private CompletionStage<RESP> callAsync0(AsyncHandler<REQ, RESP> handler) {
         CompletionStage<RESP> stage;
         boolean discardImmediately = true;
+
+        if (httpRequest != null && httpRequest.uri() != null && httpRequest.method() != null) {
+            logger.debug(
+                    "HTTP request method and URI: {} {}", httpRequest.method(), httpRequest.uri());
+        }
+
         try {
             stage = callAsyncWithRetrier();
             // when the request has been executed for the last time, discard our httpRequest field.
@@ -926,7 +970,7 @@ public final class ClientCall<
 
     private CompletionStage<RESP> callAsyncImpl() {
         if (!firstAttempt && hasBinaryRequestBody) {
-            Retriers.tryResetStreamForRetry((InputStream) request.getBody$(), true);
+            Retriers.tryResetStreamForRetry((InputStream) httpRequest.body(), true);
         }
         firstAttempt = false;
 
@@ -965,9 +1009,13 @@ public final class ClientCall<
                                             if (isProcessingException(t)) {
                                                 throw new BmcException(
                                                         true, t.getMessage(), t, requestId);
+                                            } else if (t != null) {
+                                                return ClientCall.<HttpResponse>failedFuture(t);
+                                            } else {
+                                                return CompletableFuture.completedFuture(r);
                                             }
-                                            return r;
-                                        });
+                                        })
+                                .thenCompose(Function.identity());
             } catch (Exception e) {
                 return failedFuture(e);
             }
@@ -1001,9 +1049,13 @@ public final class ClientCall<
                                                         t);
                                                 throw new BmcException(
                                                         true, t.getMessage(), t, requestId);
+                                            } else if (t != null) {
+                                                return ClientCall.<HttpResponse>failedFuture(t);
+                                            } else {
+                                                return CompletableFuture.completedFuture(r);
                                             }
-                                            return r;
-                                        });
+                                        })
+                                .thenCompose(Function.identity());
             } catch (Exception e) {
                 addToHistory(e);
                 circuitBreaker.onError(
@@ -1087,7 +1139,7 @@ public final class ClientCall<
 
         try {
             return futureWaiter.listenForResult(callAsync0(null));
-        } catch (BmcException e) {
+        } catch (SdkRuntimeException e) {
             throw e;
         } catch (Throwable e) {
             throw BmcException.createClientSide("Unknown error", e, null, buildServiceDetails());

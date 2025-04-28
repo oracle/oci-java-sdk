@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aianomalydetection;
@@ -142,9 +142,9 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -175,6 +175,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -182,7 +183,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeAiPrivateEndpointCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -212,6 +212,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.DataAsset.class,
@@ -220,7 +221,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                         "etag", ChangeDataAssetCompartmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeDataAssetCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -249,11 +249,11 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeDetectAnomalyJobCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -283,10 +283,10 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeModelCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -316,10 +316,10 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeProjectCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -343,13 +343,13 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", CreateAiPrivateEndpointResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateAiPrivateEndpointResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -371,6 +371,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.DataAsset.class,
@@ -378,7 +379,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString("etag", CreateDataAssetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDataAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -402,6 +402,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.DetectAnomalyJob.class,
@@ -409,7 +410,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString("etag", CreateDetectAnomalyJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDetectAnomalyJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -430,6 +430,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.Model.class,
@@ -440,7 +441,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-work-request-id", CreateModelResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -462,6 +462,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.Project.class,
@@ -469,7 +470,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString("etag", CreateProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -494,12 +494,12 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteAiPrivateEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAiPrivateEndpointResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -522,9 +522,9 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDataAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -548,9 +548,9 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDetectAnomalyJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -573,11 +573,11 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteModelResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -600,11 +600,11 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteProjectResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -628,13 +628,13 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.AnomalyDetectResult.class,
                         DetectAnomaliesResponse.Builder::anomalyDetectResult)
                 .handleResponseHeaderString(
                         "opc-request-id", DetectAnomaliesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -657,13 +657,13 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam(request.getAiPrivateEndpointId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint.class,
                         GetAiPrivateEndpointResponse.Builder::aiPrivateEndpoint)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAiPrivateEndpointResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetAiPrivateEndpointResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -685,13 +685,13 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam(request.getDataAssetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.DataAsset.class,
                         GetDataAssetResponse.Builder::dataAsset)
                 .handleResponseHeaderString("etag", GetDataAssetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDataAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -713,13 +713,13 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam(request.getDetectAnomalyJobId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.DetectAnomalyJob.class,
                         GetDetectAnomalyJobResponse.Builder::detectAnomalyJob)
                 .handleResponseHeaderString("etag", GetDetectAnomalyJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDetectAnomalyJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -741,13 +741,13 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam(request.getModelId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.Model.class,
                         GetModelResponse.Builder::model)
                 .handleResponseHeaderString("etag", GetModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -769,13 +769,13 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam(request.getProjectId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.Project.class,
                         GetProjectResponse.Builder::project)
                 .handleResponseHeaderString("etag", GetProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -797,6 +797,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -805,7 +806,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -834,6 +834,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.AiPrivateEndpointCollection.class,
                         ListAiPrivateEndpointsResponse.Builder::aiPrivateEndpointCollection)
@@ -841,7 +842,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListAiPrivateEndpointsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAiPrivateEndpointsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -869,6 +869,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.DataAssetCollection.class,
                         ListDataAssetsResponse.Builder::dataAssetCollection)
@@ -876,7 +877,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListDataAssetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDataAssetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -907,6 +907,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.DetectAnomalyJobCollection.class,
                         ListDetectAnomalyJobsResponse.Builder::detectAnomalyJobCollection)
@@ -916,7 +917,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-prev-page", ListDetectAnomalyJobsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDetectAnomalyJobsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -944,6 +944,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.ModelCollection.class,
                         ListModelsResponse.Builder::modelCollection)
@@ -951,7 +952,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListModelsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListModelsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -978,6 +978,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.ProjectCollection.class,
                         ListProjectsResponse.Builder::projectCollection)
@@ -985,7 +986,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListProjectsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListProjectsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1011,6 +1011,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -1018,7 +1019,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1043,6 +1043,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -1050,7 +1051,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1074,6 +1074,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -1081,7 +1082,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1109,13 +1109,13 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAiPrivateEndpointResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateAiPrivateEndpointResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1140,6 +1140,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.DataAsset.class,
@@ -1147,7 +1148,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString("etag", UpdateDataAssetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDataAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1174,6 +1174,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.DetectAnomalyJob.class,
@@ -1181,7 +1182,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString("etag", UpdateDetectAnomalyJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDetectAnomalyJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1205,12 +1205,12 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateModelResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1235,6 +1235,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.aianomalydetection.model.Project.class,
@@ -1242,7 +1243,6 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString("etag", UpdateProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.rover;
@@ -148,11 +148,11 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeRoverClusterCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -174,6 +174,7 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverCluster.class,
@@ -181,7 +182,6 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", CreateRoverClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateRoverClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -205,9 +205,9 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRoverClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -229,13 +229,13 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getRoverClusterId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverCluster.class,
                         GetRoverClusterResponse.Builder::roverCluster)
                 .handleResponseHeaderString("etag", GetRoverClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRoverClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -259,6 +259,7 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("certificate")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverClusterCertificate.class,
                         GetRoverClusterCertificateResponse.Builder::roverClusterCertificate)
@@ -266,7 +267,6 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "etag", GetRoverClusterCertificateResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRoverClusterCertificateResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -294,6 +294,7 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverClusterCollection.class,
                         ListRoverClustersResponse.Builder::roverClusterCollection)
@@ -303,7 +304,6 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListRoverClustersResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListRoverClustersResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -333,13 +333,13 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", RequestAdditionalNodesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RequestAdditionalNodesResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -364,6 +364,7 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverCluster.class,
@@ -371,7 +372,6 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", UpdateRoverClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRoverClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

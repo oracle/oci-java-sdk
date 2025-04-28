@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -127,6 +127,15 @@ public final class GenericConnection extends Connection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
@@ -169,6 +178,24 @@ public final class GenericConnection extends Connection {
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
         /** The Generic technology type. */
@@ -227,11 +254,14 @@ public final class GenericConnection extends Connection {
                             this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.locks,
                             this.vaultId,
                             this.keyId,
                             this.ingressIps,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.host);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -275,6 +305,9 @@ public final class GenericConnection extends Connection {
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
@@ -289,6 +322,12 @@ public final class GenericConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -322,11 +361,14 @@ public final class GenericConnection extends Connection {
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.List<ResourceLock> locks,
             String vaultId,
             String keyId,
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             TechnologyType technologyType,
             String host) {
         super(
@@ -341,11 +383,14 @@ public final class GenericConnection extends Connection {
                 lifecycleDetails,
                 timeCreated,
                 timeUpdated,
+                locks,
                 vaultId,
                 keyId,
                 ingressIps,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.host = host;
     }

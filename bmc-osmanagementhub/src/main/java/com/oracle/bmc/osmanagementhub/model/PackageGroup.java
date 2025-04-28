@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Yum/DNF package group, category or environment. <br>
+ * Yum or DNF package group, category, or environment. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -86,12 +86,12 @@ public final class PackageGroup extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** the IDs of the package group's repositories. */
+        /** The repository IDs of the package group's repositories. */
         @com.fasterxml.jackson.annotation.JsonProperty("repositories")
         private java.util.List<String> repositories;
 
         /**
-         * the IDs of the package group's repositories.
+         * The repository IDs of the package group's repositories.
          *
          * @param repositories the value to set
          * @return this builder
@@ -101,12 +101,12 @@ public final class PackageGroup extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("repositories");
             return this;
         }
-        /** description of the package group. */
+        /** Description of the package group. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * description of the package group.
+         * Description of the package group.
          *
          * @param description the value to set
          * @return this builder
@@ -116,12 +116,12 @@ public final class PackageGroup extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Indicates if this package group is visible by users. */
+        /** Indicates if this package group is visible to users. */
         @com.fasterxml.jackson.annotation.JsonProperty("isUserVisible")
         private Boolean isUserVisible;
 
         /**
-         * Indicates if this package group is visible by users.
+         * Indicates if this package group is visible to users.
          *
          * @param isUserVisible the value to set
          * @return this builder
@@ -146,12 +146,12 @@ public final class PackageGroup extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-        /** Indicates if this is a group, category or environment. */
+        /** Indicates if this is a group, category, or environment. */
         @com.fasterxml.jackson.annotation.JsonProperty("groupType")
         private GroupType groupType;
 
         /**
-         * Indicates if this is a group, category or environment.
+         * Indicates if this is a group, category, or environment.
          *
          * @param groupType the value to set
          * @return this builder
@@ -281,12 +281,12 @@ public final class PackageGroup extends com.oracle.bmc.http.client.internal.Expl
         return name;
     }
 
-    /** the IDs of the package group's repositories. */
+    /** The repository IDs of the package group's repositories. */
     @com.fasterxml.jackson.annotation.JsonProperty("repositories")
     private final java.util.List<String> repositories;
 
     /**
-     * the IDs of the package group's repositories.
+     * The repository IDs of the package group's repositories.
      *
      * @return the value
      */
@@ -294,12 +294,12 @@ public final class PackageGroup extends com.oracle.bmc.http.client.internal.Expl
         return repositories;
     }
 
-    /** description of the package group. */
+    /** Description of the package group. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * description of the package group.
+     * Description of the package group.
      *
      * @return the value
      */
@@ -307,12 +307,12 @@ public final class PackageGroup extends com.oracle.bmc.http.client.internal.Expl
         return description;
     }
 
-    /** Indicates if this package group is visible by users. */
+    /** Indicates if this package group is visible to users. */
     @com.fasterxml.jackson.annotation.JsonProperty("isUserVisible")
     private final Boolean isUserVisible;
 
     /**
-     * Indicates if this package group is visible by users.
+     * Indicates if this package group is visible to users.
      *
      * @return the value
      */
@@ -333,7 +333,7 @@ public final class PackageGroup extends com.oracle.bmc.http.client.internal.Expl
         return isDefault;
     }
 
-    /** Indicates if this is a group, category or environment. */
+    /** Indicates if this is a group, category, or environment. */
     public enum GroupType implements com.oracle.bmc.http.internal.BmcEnum {
         Group("GROUP"),
         Environment("ENVIRONMENT"),
@@ -380,12 +380,12 @@ public final class PackageGroup extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** Indicates if this is a group, category or environment. */
+    /** Indicates if this is a group, category, or environment. */
     @com.fasterxml.jackson.annotation.JsonProperty("groupType")
     private final GroupType groupType;
 
     /**
-     * Indicates if this is a group, category or environment.
+     * Indicates if this is a group, category, or environment.
      *
      * @return the value
      */

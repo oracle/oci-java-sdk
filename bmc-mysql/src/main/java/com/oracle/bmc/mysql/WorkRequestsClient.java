@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql;
@@ -141,6 +141,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mysql.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -149,7 +150,6 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "Retry-After", GetWorkRequestResponse.Builder::retryAfter)
                 .handleResponseHeaderString(
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -175,6 +175,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.mysql.model.WorkRequestError.class,
                         ListWorkRequestErrorsResponse.Builder::items)
@@ -182,7 +183,6 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -207,6 +207,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.mysql.model.WorkRequestLogEntry.class,
                         ListWorkRequestLogsResponse.Builder::items)
@@ -214,7 +215,6 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -239,6 +239,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.mysql.model.WorkRequestSummary.class,
                         ListWorkRequestsResponse.Builder::items)
@@ -246,7 +247,6 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

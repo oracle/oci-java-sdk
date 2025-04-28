@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument;
@@ -94,6 +94,82 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
     @Override
     public void setRegion(String regionId) {
         super.setRegion(regionId);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddModelLockResponse> addModelLock(
+            AddModelLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<AddModelLockRequest, AddModelLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(request.getAddModelLockDetails(), "addModelLockDetails is required");
+
+        return clientCall(request, AddModelLockResponse::builder)
+                .logger(LOG, "addModelLock")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "AddModelLock",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/Model/AddModelLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddModelLockRequest::builder)
+                .basePath("/20221109")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aidocument.model.Model.class,
+                        AddModelLockResponse.Builder::model)
+                .handleResponseHeaderString("etag", AddModelLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddModelLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddProjectLockResponse> addProjectLock(
+            AddProjectLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddProjectLockRequest, AddProjectLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+        Objects.requireNonNull(
+                request.getAddProjectLockDetails(), "addProjectLockDetails is required");
+
+        return clientCall(request, AddProjectLockResponse::builder)
+                .logger(LOG, "addProjectLock")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "AddProjectLock",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/Project/AddProjectLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddProjectLockRequest::builder)
+                .basePath("/20221109")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aidocument.model.Project.class,
+                        AddProjectLockResponse.Builder::project)
+                .handleResponseHeaderString("etag", AddProjectLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddProjectLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -215,6 +291,7 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
                 .appendPathParam(request.getModelId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -249,6 +326,7 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
                 .appendPathParam(request.getProjectId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -374,6 +452,7 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
                 .basePath("/20221109")
                 .appendPathParam("models")
                 .appendPathParam(request.getModelId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -403,6 +482,7 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
                 .basePath("/20221109")
                 .appendPathParam("projects")
                 .appendPathParam(request.getProjectId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -757,6 +837,84 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveModelLockResponse> removeModelLock(
+            RemoveModelLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveModelLockRequest, RemoveModelLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveModelLockDetails(), "removeModelLockDetails is required");
+
+        return clientCall(request, RemoveModelLockResponse::builder)
+                .logger(LOG, "removeModelLock")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "RemoveModelLock",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/Model/RemoveModelLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveModelLockRequest::builder)
+                .basePath("/20221109")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aidocument.model.Model.class,
+                        RemoveModelLockResponse.Builder::model)
+                .handleResponseHeaderString("etag", RemoveModelLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveModelLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveProjectLockResponse> removeProjectLock(
+            RemoveProjectLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveProjectLockRequest, RemoveProjectLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveProjectLockDetails(), "removeProjectLockDetails is required");
+
+        return clientCall(request, RemoveProjectLockResponse::builder)
+                .logger(LOG, "removeProjectLock")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "RemoveProjectLock",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/Project/RemoveProjectLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveProjectLockRequest::builder)
+                .basePath("/20221109")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aidocument.model.Project.class,
+                        RemoveProjectLockResponse.Builder::project)
+                .handleResponseHeaderString("etag", RemoveProjectLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveProjectLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateModelResponse> updateModel(
             UpdateModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse>
@@ -776,6 +934,7 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
                 .basePath("/20221109")
                 .appendPathParam("models")
                 .appendPathParam(request.getModelId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -808,6 +967,7 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
                 .basePath("/20221109")
                 .appendPathParam("projects")
                 .appendPathParam(request.getProjectId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())

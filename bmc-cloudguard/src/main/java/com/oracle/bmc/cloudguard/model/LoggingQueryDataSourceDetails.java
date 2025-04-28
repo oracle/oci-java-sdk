@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information about new Logging Query of type DataSource. <br>
+ * Information for a logging query for a data source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,12 +27,12 @@ package com.oracle.bmc.cloudguard.model;
 public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Logging Query regions */
+        /** List of logging query regions */
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
-         * Logging Query regions
+         * List of logging query regions
          *
          * @param regions the value to set
          * @return this builder
@@ -42,12 +42,12 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
             this.__explicitlySet__.add("regions");
             return this;
         }
-        /** The continuous query expression that is run periodically. */
+        /** The continuous query expression that is run periodicall */
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
         /**
-         * The continuous query expression that is run periodically.
+         * The continuous query expression that is run periodicall
          *
          * @param query the value to set
          * @return this builder
@@ -74,14 +74,14 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
         }
         /**
          * The integer value that must be exceeded, fall below or equal to (depending on the
-         * operator), the query result to trigger an event.
+         * operator), for the query result to trigger an event
          */
         @com.fasterxml.jackson.annotation.JsonProperty("threshold")
         private Integer threshold;
 
         /**
          * The integer value that must be exceeded, fall below or equal to (depending on the
-         * operator), the query result to trigger an event.
+         * operator), for the query result to trigger an event
          *
          * @param threshold the value to set
          * @return this builder
@@ -100,12 +100,12 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
             this.__explicitlySet__.add("queryStartTime");
             return this;
         }
-        /** Operator used in Data Soruce */
+        /** Operator used in data source */
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private LoggingQueryOperatorType operator;
 
         /**
-         * Operator used in Data Soruce
+         * Operator used in data source
          *
          * @param operator the value to set
          * @return this builder
@@ -115,12 +115,12 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
             this.__explicitlySet__.add("operator");
             return this;
         }
-        /** Logging query type for data source (Sighting/Insight) */
+        /** Type of logging query for data source (Sighting/Insight) */
         @com.fasterxml.jackson.annotation.JsonProperty("loggingQueryType")
         private LoggingQueryType loggingQueryType;
 
         /**
-         * Logging query type for data source (Sighting/Insight)
+         * Type of logging query for data source (Sighting/Insight)
          *
          * @param loggingQueryType the value to set
          * @return this builder
@@ -130,12 +130,12 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
             this.__explicitlySet__.add("loggingQueryType");
             return this;
         }
-        /** The additional entities count used for data source query. */
+        /** The additional entities count used for data source query */
         @com.fasterxml.jackson.annotation.JsonProperty("additionalEntitiesCount")
         private Integer additionalEntitiesCount;
 
         /**
-         * The additional entities count used for data source query.
+         * The additional entities count used for data source query
          *
          * @param additionalEntitiesCount the value to set
          * @return this builder
@@ -241,12 +241,12 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
         this.loggingQueryDetails = loggingQueryDetails;
     }
 
-    /** Logging Query regions */
+    /** List of logging query regions */
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
-     * Logging Query regions
+     * List of logging query regions
      *
      * @return the value
      */
@@ -254,12 +254,12 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
         return regions;
     }
 
-    /** The continuous query expression that is run periodically. */
+    /** The continuous query expression that is run periodicall */
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
     /**
-     * The continuous query expression that is run periodically.
+     * The continuous query expression that is run periodicall
      *
      * @return the value
      */
@@ -282,14 +282,14 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
 
     /**
      * The integer value that must be exceeded, fall below or equal to (depending on the operator),
-     * the query result to trigger an event.
+     * for the query result to trigger an event
      */
     @com.fasterxml.jackson.annotation.JsonProperty("threshold")
     private final Integer threshold;
 
     /**
      * The integer value that must be exceeded, fall below or equal to (depending on the operator),
-     * the query result to trigger an event.
+     * for the query result to trigger an event
      *
      * @return the value
      */
@@ -304,12 +304,12 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
         return queryStartTime;
     }
 
-    /** Operator used in Data Soruce */
+    /** Operator used in data source */
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final LoggingQueryOperatorType operator;
 
     /**
-     * Operator used in Data Soruce
+     * Operator used in data source
      *
      * @return the value
      */
@@ -317,12 +317,12 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
         return operator;
     }
 
-    /** Logging query type for data source (Sighting/Insight) */
+    /** Type of logging query for data source (Sighting/Insight) */
     @com.fasterxml.jackson.annotation.JsonProperty("loggingQueryType")
     private final LoggingQueryType loggingQueryType;
 
     /**
-     * Logging query type for data source (Sighting/Insight)
+     * Type of logging query for data source (Sighting/Insight)
      *
      * @return the value
      */
@@ -330,12 +330,12 @@ public final class LoggingQueryDataSourceDetails extends DataSourceDetails {
         return loggingQueryType;
     }
 
-    /** The additional entities count used for data source query. */
+    /** The additional entities count used for data source query */
     @com.fasterxml.jackson.annotation.JsonProperty("additionalEntitiesCount")
     private final Integer additionalEntitiesCount;
 
     /**
-     * The additional entities count used for data source query.
+     * The additional entities count used for data source query
      *
      * @return the value
      */

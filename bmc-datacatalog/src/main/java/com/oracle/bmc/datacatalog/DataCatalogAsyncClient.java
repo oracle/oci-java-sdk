@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog;
@@ -122,6 +122,86 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<AddCatalogLockResponse> addCatalogLock(
+            AddCatalogLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddCatalogLockRequest, AddCatalogLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddCatalogLockResponse::builder)
+                .logger(LOG, "addCatalogLock")
+                .serviceDetails(
+                        "DataCatalog",
+                        "AddCatalogLock",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/AddCatalogLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddCatalogLockRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogs")
+                .appendPathParam(request.getCatalogId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.Catalog.class,
+                        AddCatalogLockResponse.Builder::catalog)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddCatalogLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddCatalogLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddCatalogPrivateEndpointLockResponse>
+            addCatalogPrivateEndpointLock(
+                    AddCatalogPrivateEndpointLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddCatalogPrivateEndpointLockRequest,
+                                    AddCatalogPrivateEndpointLockResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getCatalogPrivateEndpointId(),
+                "catalogPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddCatalogPrivateEndpointLockResponse::builder)
+                .logger(LOG, "addCatalogPrivateEndpointLock")
+                .serviceDetails(
+                        "DataCatalog",
+                        "AddCatalogPrivateEndpointLock",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/AddCatalogPrivateEndpointLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddCatalogPrivateEndpointLockRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogPrivateEndpoints")
+                .appendPathParam(request.getCatalogPrivateEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.CatalogPrivateEndpoint.class,
+                        AddCatalogPrivateEndpointLockResponse.Builder::catalogPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddCatalogPrivateEndpointLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", AddCatalogPrivateEndpointLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<AddDataSelectorPatternsResponse> addDataSelectorPatterns(
             AddDataSelectorPatternsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -160,6 +240,43 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString("etag", AddDataSelectorPatternsResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", AddDataSelectorPatternsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddMetastoreLockResponse> addMetastoreLock(
+            AddMetastoreLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddMetastoreLockRequest, AddMetastoreLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getMetastoreId(), "metastoreId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddMetastoreLockResponse::builder)
+                .logger(LOG, "addMetastoreLock")
+                .serviceDetails(
+                        "DataCatalog",
+                        "AddMetastoreLock",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/AddMetastoreLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddMetastoreLockRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("metastores")
+                .appendPathParam(request.getMetastoreId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.Metastore.class,
+                        AddMetastoreLockResponse.Builder::metastore)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddMetastoreLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddMetastoreLockResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -203,6 +320,56 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString("etag", AssociateCustomPropertyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", AssociateCustomPropertyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AsynchronousExportDataAssetResponse>
+            asynchronousExportDataAsset(
+                    AsynchronousExportDataAssetRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AsynchronousExportDataAssetRequest,
+                                    AsynchronousExportDataAssetResponse>
+                            handler) {
+
+        Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
+
+        Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
+        Objects.requireNonNull(
+                request.getAsynchronousExportDataAssetDetails(),
+                "asynchronousExportDataAssetDetails is required");
+
+        Objects.requireNonNull(request.getExportType(), "exportType is required");
+
+        return clientCall(request, AsynchronousExportDataAssetResponse::builder)
+                .logger(LOG, "asynchronousExportDataAsset")
+                .serviceDetails(
+                        "DataCatalog",
+                        "AsynchronousExportDataAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/AsynchronousExportDataAsset")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AsynchronousExportDataAssetRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogs")
+                .appendPathParam(request.getCatalogId())
+                .appendPathParam("dataAssets")
+                .appendPathParam(request.getDataAssetKey())
+                .appendPathParam("actions")
+                .appendPathParam("asynchronousExport")
+                .appendListQueryParam(
+                        "exportType",
+                        request.getExportType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.AsynchronousExportDataAssetResult.class,
+                        AsynchronousExportDataAssetResponse.Builder
+                                ::asynchronousExportDataAssetResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", AsynchronousExportDataAssetResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -279,6 +446,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendPathParam(request.getCatalogId())
                 .appendPathParam("actions")
                 .appendPathParam("attachCatalogPrivateEndpoint")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -318,6 +486,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendPathParam(request.getCatalogId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -359,6 +528,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendPathParam(request.getCatalogPrivateEndpointId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -399,6 +569,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendPathParam(request.getMetastoreId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1320,6 +1491,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .basePath("/20190325")
                 .appendPathParam("catalogs")
                 .appendPathParam(request.getCatalogId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1354,6 +1526,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .basePath("/20190325")
                 .appendPathParam("catalogPrivateEndpoints")
                 .appendPathParam(request.getCatalogPrivateEndpointId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1771,6 +1944,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .basePath("/20190325")
                 .appendPathParam("metastores")
                 .appendPathParam(request.getMetastoreId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1947,6 +2121,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendPathParam(request.getCatalogId())
                 .appendPathParam("actions")
                 .appendPathParam("detachCatalogPrivateEndpoint")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -3274,6 +3449,45 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<ImportLineageResponse> importLineage(
+            ImportLineageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ImportLineageRequest, ImportLineageResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
+
+        Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
+        Objects.requireNonNull(
+                request.getImportLineageDetails(), "importLineageDetails is required");
+
+        return clientCall(request, ImportLineageResponse::builder)
+                .logger(LOG, "importLineage")
+                .serviceDetails(
+                        "DataCatalog",
+                        "ImportLineage",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ImportLineage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportLineageRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogs")
+                .appendPathParam(request.getCatalogId())
+                .appendPathParam("dataAssets")
+                .appendPathParam(request.getDataAssetKey())
+                .appendPathParam("actions")
+                .appendPathParam("importLineage")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.ImportLineageJobResult.class,
+                        ImportLineageResponse.Builder::importLineageJobResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportLineageResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAggregatedPhysicalEntitiesResponse>
             listAggregatedPhysicalEntities(
                     ListAggregatedPhysicalEntitiesRequest request,
@@ -3842,6 +4056,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("isProcess", request.getIsProcess())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5007,6 +5222,86 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveCatalogLockResponse> removeCatalogLock(
+            RemoveCatalogLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveCatalogLockRequest, RemoveCatalogLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveCatalogLockResponse::builder)
+                .logger(LOG, "removeCatalogLock")
+                .serviceDetails(
+                        "DataCatalog",
+                        "RemoveCatalogLock",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/RemoveCatalogLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveCatalogLockRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogs")
+                .appendPathParam(request.getCatalogId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.Catalog.class,
+                        RemoveCatalogLockResponse.Builder::catalog)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveCatalogLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveCatalogLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveCatalogPrivateEndpointLockResponse>
+            removeCatalogPrivateEndpointLock(
+                    RemoveCatalogPrivateEndpointLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveCatalogPrivateEndpointLockRequest,
+                                    RemoveCatalogPrivateEndpointLockResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getCatalogPrivateEndpointId(),
+                "catalogPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveCatalogPrivateEndpointLockResponse::builder)
+                .logger(LOG, "removeCatalogPrivateEndpointLock")
+                .serviceDetails(
+                        "DataCatalog",
+                        "RemoveCatalogPrivateEndpointLock",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/RemoveCatalogPrivateEndpointLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveCatalogPrivateEndpointLockRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogPrivateEndpoints")
+                .appendPathParam(request.getCatalogPrivateEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.CatalogPrivateEndpoint.class,
+                        RemoveCatalogPrivateEndpointLockResponse.Builder::catalogPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveCatalogPrivateEndpointLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", RemoveCatalogPrivateEndpointLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveDataSelectorPatternsResponse>
             removeDataSelectorPatterns(
                     RemoveDataSelectorPatternsRequest request,
@@ -5048,6 +5343,43 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                         "etag", RemoveDataSelectorPatternsResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveDataSelectorPatternsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveMetastoreLockResponse> removeMetastoreLock(
+            RemoveMetastoreLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveMetastoreLockRequest, RemoveMetastoreLockResponse>
+                    handler) {
+
+        Validate.notBlank(request.getMetastoreId(), "metastoreId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveMetastoreLockResponse::builder)
+                .logger(LOG, "removeMetastoreLock")
+                .serviceDetails(
+                        "DataCatalog",
+                        "RemoveMetastoreLock",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/RemoveMetastoreLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveMetastoreLockRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("metastores")
+                .appendPathParam(request.getMetastoreId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.Metastore.class,
+                        RemoveMetastoreLockResponse.Builder::metastore)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveMetastoreLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveMetastoreLockResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -5288,6 +5620,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .basePath("/20190325")
                 .appendPathParam("catalogs")
                 .appendPathParam(request.getCatalogId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -5328,6 +5661,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .basePath("/20190325")
                 .appendPathParam("catalogPrivateEndpoints")
                 .appendPathParam(request.getCatalogPrivateEndpointId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -5685,6 +6019,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .basePath("/20190325")
                 .appendPathParam("metastores")
                 .appendPathParam(request.getMetastoreId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())

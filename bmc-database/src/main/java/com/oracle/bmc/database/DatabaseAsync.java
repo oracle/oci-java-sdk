@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database;
@@ -10,7 +10,7 @@ import com.oracle.bmc.database.responses.*;
 /**
  * The API for the Database Service. Use this API to manage resources such as databases and DB
  * Systems. For more information, see [Overview of the Database
- * Service](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm).
+ * Service](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface DatabaseAsync extends AutoCloseable {
@@ -80,6 +80,28 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ActivateExadataInfrastructureRequest,
                                     ActivateExadataInfrastructureResponse>
+                            handler);
+
+    /**
+     * Create Standby Autonomous Container Database. For more information about changing Autonomous
+     * Container Databases Add Standby, see [Create Standby Autonomous Container
+     * Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80)
+     * and [Convert Snapshot Standby to Physical
+     * Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddStandbyAutonomousContainerDatabaseResponse>
+            addStandbyAutonomousContainerDatabase(
+                    AddStandbyAutonomousContainerDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddStandbyAutonomousContainerDatabaseRequest,
+                                    AddStandbyAutonomousContainerDatabaseResponse>
                             handler);
 
     /**
@@ -192,10 +214,45 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Cancels the in progress maintenance activity under this execution window.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelExecutionWindowResponse> cancelExecutionWindow(
+            CancelExecutionWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelExecutionWindowRequest, CancelExecutionWindowResponse>
+                    handler);
+
+    /**
+     * Delete the scheduling plan resource along with all the scheduled actions associated with this
+     * resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CascadingDeleteSchedulingPlanResponse>
+            cascadingDeleteSchedulingPlan(
+                    CascadingDeleteSchedulingPlanRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CascadingDeleteSchedulingPlanRequest,
+                                    CascadingDeleteSchedulingPlanResponse>
+                            handler);
+
+    /**
      * Move the Autonomous Container Database and its dependent resources to the specified
      * compartment. For more information about moving Autonomous Container Databases, see [Moving
      * Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -216,7 +273,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * Move the Autonomous Database and its dependent resources to the specified compartment. For
      * more information about moving Autonomous Databases, see [Moving Database Resources to a
      * Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -234,6 +291,43 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Move the Autonomous Database Software Image and its dependent resources to the specified
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAutonomousDatabaseSoftwareImageCompartmentResponse>
+            changeAutonomousDatabaseSoftwareImageCompartment(
+                    ChangeAutonomousDatabaseSoftwareImageCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousDatabaseSoftwareImageCompartmentRequest,
+                                    ChangeAutonomousDatabaseSoftwareImageCompartmentResponse>
+                            handler);
+
+    /**
+     * Associate an Autonomous Database with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAutonomousDatabaseSubscriptionResponse>
+            changeAutonomousDatabaseSubscription(
+                    ChangeAutonomousDatabaseSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousDatabaseSubscriptionRequest,
+                                    ChangeAutonomousDatabaseSubscriptionResponse>
+                            handler);
+
+    /**
      * **Deprecated.** Use the {@link
      * #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest,
      * Consumer, Consumer) changeCloudExadataInfrastructureCompartment} operation to move an Exadata
@@ -242,7 +336,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * Consumer, Consumer) changeCloudAutonomousVmClusterCompartment} operation to move an
      * Autonomous Exadata VM cluster to a different compartment. For more information, see [Moving
      * Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -283,7 +377,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Move the backup destination and its dependent resources to the specified compartment. For
      * more information, see [Moving Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -326,7 +420,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated
      * Exadata infrastructure only.For more information about moving resources to a different
      * compartment, see [Moving Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -341,6 +435,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeCloudExadataInfrastructureCompartmentRequest,
                                     ChangeCloudExadataInfrastructureCompartmentResponse>
+                            handler);
+
+    /**
+     * Associate a cloud Exadata infrastructure with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCloudExadataInfrastructureSubscriptionResponse>
+            changeCloudExadataInfrastructureSubscription(
+                    ChangeCloudExadataInfrastructureSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudExadataInfrastructureSubscriptionRequest,
+                                    ChangeCloudExadataInfrastructureSubscriptionResponse>
                             handler);
 
     /**
@@ -364,10 +476,28 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Associate a cloud VM cluster with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCloudVmClusterSubscriptionResponse>
+            changeCloudVmClusterSubscription(
+                    ChangeCloudVmClusterSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudVmClusterSubscriptionRequest,
+                                    ChangeCloudVmClusterSubscriptionResponse>
+                            handler);
+
+    /**
      * Move the Database Software Image and its dependent resources to the specified compartment.
      * For more information about moving Databse Software Images, see [Moving Database Resources to
      * a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -408,7 +538,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Moves the DB system and its dependent resources to the specified compartment. For more
      * information about moving DB systems, see [Moving Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -443,6 +573,22 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Update the encryption key management location for the database
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeEncryptionKeyLocationResponse> changeEncryptionKeyLocation(
+            ChangeEncryptionKeyLocationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeEncryptionKeyLocationRequest, ChangeEncryptionKeyLocationResponse>
+                    handler);
+
+    /**
      * Moves an Exadata infrastructure resource and its dependent resources to another compartment.
      * Applies to Exadata Cloud@Customer instances only. To move an Exadata Cloud Service
      * infrastructure resource to another compartment, use the {@link
@@ -465,12 +611,85 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a Exadata VM cluster on Exascale Infrastructure and its dependent resources to another
+     * compartment. Applies to Exadata Database Service on Exascale Infrastructure only.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExadbVmClusterCompartmentResponse>
+            changeExadbVmClusterCompartment(
+                    ChangeExadbVmClusterCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExadbVmClusterCompartmentRequest,
+                                    ChangeExadbVmClusterCompartmentResponse>
+                            handler);
+
+    /**
+     * Associate a Exadata VM cluster on Exascale Infrastructure with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExadbVmClusterSubscriptionResponse>
+            changeExadbVmClusterSubscription(
+                    ChangeExadbVmClusterSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExadbVmClusterSubscriptionRequest,
+                                    ChangeExadbVmClusterSubscriptionResponse>
+                            handler);
+
+    /**
+     * Moves a Exadata Database Storage Vault to another compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExascaleDbStorageVaultCompartmentResponse>
+            changeExascaleDbStorageVaultCompartment(
+                    ChangeExascaleDbStorageVaultCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExascaleDbStorageVaultCompartmentRequest,
+                                    ChangeExascaleDbStorageVaultCompartmentResponse>
+                            handler);
+
+    /**
+     * Associate a Exadata Database Storage Vault with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExascaleDbStorageVaultSubscriptionResponse>
+            changeExascaleDbStorageVaultSubscription(
+                    ChangeExascaleDbStorageVaultSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExascaleDbStorageVaultSubscriptionRequest,
+                                    ChangeExascaleDbStorageVaultSubscriptionResponse>
+                            handler);
+
+    /**
      * Move the {@link
      * #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest,
      * Consumer, Consumer) createExternalContainerDatabaseDetails} and its dependent resources to
      * the specified compartment. For more information about moving external container databases,
      * see [Moving Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -491,7 +710,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * Move the external non-container database and its dependent resources to the specified
      * compartment. For more information about moving external non-container databases, see [Moving
      * Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -514,7 +733,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * Consumer, Consumer) createExternalPluggableDatabaseDetails} and its dependent resources to
      * the specified compartment. For more information about moving external pluggable databases,
      * see [Moving Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -534,7 +753,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Move the key store resource to the specified compartment. For more information about moving
      * key stores, see [Moving Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -583,6 +802,42 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves an scheduling plan resource to another compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSchedulingPlanCompartmentResponse>
+            changeSchedulingPlanCompartment(
+                    ChangeSchedulingPlanCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSchedulingPlanCompartmentRequest,
+                                    ChangeSchedulingPlanCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves an scheduling policy resource to another compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSchedulingPolicyCompartmentResponse>
+            changeSchedulingPolicyCompartment(
+                    ChangeSchedulingPolicyCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSchedulingPolicyCompartmentRequest,
+                                    ChangeSchedulingPolicyCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a VM cluster and its dependent resources to another compartment. Applies to Exadata
      * Cloud@Customer instances only. To move a cloud VM cluster in an Exadata Cloud Service
      * instance to another compartment, use the {@link
@@ -629,7 +884,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead
      * using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure
      * by Creating a Backup in the
-     * Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more
+     * Cloud](https://docs.oracle.com/iaas/Content/Database/Tasks/mig-onprembackup.htm) for more
      * information.
      *
      * @param request The request object containing the details to send
@@ -647,7 +902,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Configures the Autonomous Database Vault service
-     * [key](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -662,6 +917,85 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ConfigureAutonomousDatabaseVaultKeyRequest,
                                     ConfigureAutonomousDatabaseVaultKeyResponse>
+                            handler);
+
+    /**
+     * Configures Exascale on Exadata infrastructure resource. Applies to Exadata Cloud@Customer
+     * instances only.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConfigureExascaleExadataInfrastructureResponse>
+            configureExascaleExadataInfrastructure(
+                    ConfigureExascaleExadataInfrastructureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ConfigureExascaleExadataInfrastructureRequest,
+                                    ConfigureExascaleExadataInfrastructureResponse>
+                            handler);
+
+    /**
+     * This operation updates SaaS administrative user configuration of the Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConfigureSaasAdminUserResponse> configureSaasAdminUser(
+            ConfigureSaasAdminUserRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ConfigureSaasAdminUserRequest, ConfigureSaasAdminUserResponse>
+                    handler);
+
+    /**
+     * This is for user to confirm to DBaaS that the Oracle Key Valut (OKV) connection IPs, username
+     * and password are all correct. This operation will put the Key Store back into Active state.
+     * If details are incorrect, your OKV account may get locked after some unsuccessful attempts to
+     * connect.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConfirmKeyStoreDetailsAreCorrectResponse>
+            confirmKeyStoreDetailsAreCorrect(
+                    ConfirmKeyStoreDetailsAreCorrectRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ConfirmKeyStoreDetailsAreCorrectRequest,
+                                    ConfirmKeyStoreDetailsAreCorrectResponse>
+                            handler);
+
+    /**
+     * Convert between and SnapshotStandby Standby Autonomous Container Database . For more
+     * information about changing Autonomous Container Databases Add Standby, see [Convert Standby
+     * Autonomous Container
+     * Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80)
+     * and [Convert Snapshot Standby to Physical
+     * Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConvertStandbyAutonomousContainerDatabaseResponse>
+            convertStandbyAutonomousContainerDatabase(
+                    ConvertStandbyAutonomousContainerDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ConvertStandbyAutonomousContainerDatabaseRequest,
+                                    ConvertStandbyAutonomousContainerDatabaseResponse>
                             handler);
 
     /**
@@ -699,6 +1033,27 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Disassociate the standby database identified by the `databaseId` parameter from existing Data
+     * Guard group.
+     *
+     * <p>Convert the standby to a standalone database.
+     *
+     * <p>This operation should be performed on respective standby database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConvertToStandaloneResponse> convertToStandalone(
+            ConvertToStandaloneRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ConvertToStandaloneRequest, ConvertToStandaloneResponse>
+                    handler);
+
+    /**
      * Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on
      * the request parameters you provide.
      *
@@ -734,6 +1089,34 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Create a new Autonomous Data Guard association. An Autonomous Data Guard association
+     * represents the replication relationship between the specified Autonomous Container database
+     * and a peer Autonomous Container database. For more information, see [Using Oracle Data
+     * Guard](https://docs.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
+     *
+     * <p>All Oracle Cloud Infrastructure resources, including Data Guard associations, get an
+     * Oracle-assigned, unique ID called an Oracle Cloud Identifier (OCID). When you create a
+     * resource, you can find its OCID in the response. You can also retrieve a resource's OCID by
+     * using a List API operation on that resource type, or by viewing the resource in the Console.
+     * For more information, see [Resource
+     * Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAutonomousContainerDatabaseDataguardAssociationResponse>
+            createAutonomousContainerDatabaseDataguardAssociation(
+                    CreateAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateAutonomousContainerDatabaseDataguardAssociationRequest,
+                                    CreateAutonomousContainerDatabaseDataguardAssociationResponse>
+                            handler);
+
+    /**
      * Creates a new Autonomous Database.
      *
      * @param request The request object containing the details to send
@@ -766,6 +1149,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     CreateAutonomousDatabaseBackupRequest,
                                     CreateAutonomousDatabaseBackupResponse>
+                            handler);
+
+    /**
+     * create Autonomous Database Software Image in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAutonomousDatabaseSoftwareImageResponse>
+            createAutonomousDatabaseSoftwareImage(
+                    CreateAutonomousDatabaseSoftwareImageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateAutonomousDatabaseSoftwareImageRequest,
+                                    CreateAutonomousDatabaseSoftwareImageResponse>
                             handler);
 
     /**
@@ -845,7 +1246,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Creates a cloud Exadata infrastructure resource. This resource is used to create either an
      * [Exadata Cloud
-     * Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance or
+     * Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance or
      * an Autonomous Database on dedicated Exadata infrastructure.
      *
      * @param request The request object containing the details to send
@@ -897,17 +1298,34 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Captures the most recent serial console data (up to a megabyte) for the specified database
+     * node.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateConsoleHistoryResponse> createConsoleHistory(
+            CreateConsoleHistoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateConsoleHistoryRequest, CreateConsoleHistoryResponse>
+                    handler);
+
+    /**
      * Creates a new Data Guard association. A Data Guard association represents the replication
      * relationship between the specified database and a peer database. For more information, see
      * [Using Oracle Data
-     * Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
+     * Guard](https://docs.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
      *
      * <p>All Oracle Cloud Infrastructure resources, including Data Guard associations, get an
      * Oracle-assigned, unique ID called an Oracle Cloud Identifier (OCID). When you create a
      * resource, you can find its OCID in the response. You can also retrieve a resource's OCID by
      * using a List API operation on that resource type, or by viewing the resource in the Console.
      * For more information, see [Resource
-     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -992,6 +1410,71 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates an Exadata VM cluster on Exascale Infrastructure
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExadbVmClusterResponse> createExadbVmCluster(
+            CreateExadbVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateExadbVmClusterRequest, CreateExadbVmClusterResponse>
+                    handler);
+
+    /**
+     * Creates an Exadata Database Storage Vault
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExascaleDbStorageVaultResponse> createExascaleDbStorageVault(
+            CreateExascaleDbStorageVaultRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateExascaleDbStorageVaultRequest,
+                            CreateExascaleDbStorageVaultResponse>
+                    handler);
+
+    /**
+     * Creates an execution action resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExecutionActionResponse> createExecutionAction(
+            CreateExecutionActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateExecutionActionRequest, CreateExecutionActionResponse>
+                    handler);
+
+    /**
+     * Creates an execution window resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExecutionWindowResponse> createExecutionWindow(
+            CreateExecutionWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateExecutionWindowRequest, CreateExecutionWindowResponse>
+                    handler);
+
+    /**
      * Creates a new backup resource and returns the information the caller needs to back up an
      * on-premises Oracle Database to Oracle Cloud Infrastructure.
      *
@@ -999,7 +1482,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead
      * using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure
      * by Creating a Backup in the
-     * Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more
+     * Cloud](https://docs.oracle.com/iaas/Content/Database/Tasks/mig-onprembackup.htm) for more
      * information.
      *
      * @param request The request object containing the details to send
@@ -1105,10 +1588,10 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a maintenance run with one of the following: The latest available release update
-     * patch (RUP) for the Autonomous Container Database. The latest available RUP and DST time zone
-     * (TZ) file updates for the Autonomous Container Database. Creates a maintenance run to update
-     * the DST TZ file for the Autonomous Container Database.
+     * Creates a maintenance run with one of the following: 1. The latest available release update
+     * patch (RUP) for the Autonomous Container Database. 2. The latest available RUP and DST
+     * time-zone (TZ) file updates for the Autonomous Container Database. 3. The DST TZ file updates
+     * for the Autonomous Container Database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1158,6 +1641,70 @@ public interface DatabaseAsync extends AutoCloseable {
             CreatePluggableDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreatePluggableDatabaseRequest, CreatePluggableDatabaseResponse>
+                    handler);
+
+    /**
+     * Creates a Scheduled Action resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateScheduledActionResponse> createScheduledAction(
+            CreateScheduledActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateScheduledActionRequest, CreateScheduledActionResponse>
+                    handler);
+
+    /**
+     * Creates a Scheduling Plan resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSchedulingPlanResponse> createSchedulingPlan(
+            CreateSchedulingPlanRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSchedulingPlanRequest, CreateSchedulingPlanResponse>
+                    handler);
+
+    /**
+     * Creates a Scheduling Policy resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSchedulingPolicyResponse> createSchedulingPolicy(
+            CreateSchedulingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSchedulingPolicyRequest, CreateSchedulingPolicyResponse>
+                    handler);
+
+    /**
+     * Creates a Scheduling Window resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSchedulingWindowResponse> createSchedulingWindow(
+            CreateSchedulingWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSchedulingWindowRequest, CreateSchedulingWindowResponse>
                     handler);
 
     /**
@@ -1267,6 +1814,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     DeleteAutonomousDatabaseBackupRequest,
                                     DeleteAutonomousDatabaseBackupResponse>
+                            handler);
+
+    /**
+     * Delete an Autonomous Database Software Image
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAutonomousDatabaseSoftwareImageResponse>
+            deleteAutonomousDatabaseSoftwareImage(
+                    DeleteAutonomousDatabaseSoftwareImageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteAutonomousDatabaseSoftwareImageRequest,
+                                    DeleteAutonomousDatabaseSoftwareImageResponse>
                             handler);
 
     /**
@@ -1393,6 +1958,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified database node console history.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteConsoleHistoryResponse> deleteConsoleHistory(
+            DeleteConsoleHistoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteConsoleHistoryRequest, DeleteConsoleHistoryResponse>
+                    handler);
+
+    /**
      * Deletes the specified database. Applies only to Exadata systems.
      *
      * <p>The data in this database is local to the Exadata system and will be lost when the
@@ -1464,6 +2045,72 @@ public interface DatabaseAsync extends AutoCloseable {
             DeleteExadataInfrastructureRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteExadataInfrastructureRequest, DeleteExadataInfrastructureResponse>
+                    handler);
+
+    /**
+     * Deletes the specified Exadata VM cluster on Exascale Infrastructure. Applies to Exadata
+     * Database Service on Exascale Infrastructure only.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExadbVmClusterResponse> deleteExadbVmCluster(
+            DeleteExadbVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExadbVmClusterRequest, DeleteExadbVmClusterResponse>
+                    handler);
+
+    /**
+     * Deletes the specified Exadata Database Storage Vault.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExascaleDbStorageVaultResponse> deleteExascaleDbStorageVault(
+            DeleteExascaleDbStorageVaultRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExascaleDbStorageVaultRequest,
+                            DeleteExascaleDbStorageVaultResponse>
+                    handler);
+
+    /**
+     * Deletes the execution action.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExecutionActionResponse> deleteExecutionAction(
+            DeleteExecutionActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExecutionActionRequest, DeleteExecutionActionResponse>
+                    handler);
+
+    /**
+     * Deletes the execution window.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExecutionWindowResponse> deleteExecutionWindow(
+            DeleteExecutionWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExecutionWindowRequest, DeleteExecutionWindowResponse>
                     handler);
 
     /**
@@ -1591,6 +2238,70 @@ public interface DatabaseAsync extends AutoCloseable {
             DeletePluggableDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeletePluggableDatabaseRequest, DeletePluggableDatabaseResponse>
+                    handler);
+
+    /**
+     * Deletes the scheduled action.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteScheduledActionResponse> deleteScheduledAction(
+            DeleteScheduledActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteScheduledActionRequest, DeleteScheduledActionResponse>
+                    handler);
+
+    /**
+     * Deletes the scheduling plan.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSchedulingPlanResponse> deleteSchedulingPlan(
+            DeleteSchedulingPlanRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSchedulingPlanRequest, DeleteSchedulingPlanResponse>
+                    handler);
+
+    /**
+     * Deletes the scheduling policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSchedulingPolicyResponse> deleteSchedulingPolicy(
+            DeleteSchedulingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSchedulingPolicyRequest, DeleteSchedulingPolicyResponse>
+                    handler);
+
+    /**
+     * Deletes the scheduling window.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSchedulingWindowResponse> deleteSchedulingWindow(
+            DeleteSchedulingWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSchedulingWindowRequest, DeleteSchedulingWindowResponse>
                     handler);
 
     /**
@@ -1736,7 +2447,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Disable Database Management Service for the external non-container database. For more
      * information about the Database Management Service, see [Database Management
-     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1792,7 +2503,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Disable Database Management Service for the external pluggable database. For more information
      * about the Database Management Service, see [Database Management
-     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1934,6 +2645,28 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Edit Autonomous Container Database Dataguard. For more information about changing Autonomous
+     * Container Databases Add Standby, see [Update Autonomous Container Database
+     * Dataguard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80)
+     * and [Convert Snapshot Standby to Physical
+     * Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EditAutonomousContainerDatabaseDataguardResponse>
+            editAutonomousContainerDatabaseDataguard(
+                    EditAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EditAutonomousContainerDatabaseDataguardRequest,
+                                    EditAutonomousContainerDatabaseDataguardResponse>
+                            handler);
+
+    /**
      * Enables Database Management for Autonomous Database.
      *
      * @param request The request object containing the details to send
@@ -1990,7 +2723,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Enables Database Management Service for the external container database. For more information
      * about the Database Management Service, see [Database Management
-     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2028,7 +2761,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Enable Database Management Service for the external non-container database. For more
      * information about the Database Management Service, see [Database Management
-     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2084,7 +2817,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Enable Database Management Service for the external pluggable database. For more information
      * about the Database Management Service, see [Database Management
-     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2159,10 +2892,12 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Initiates a failover the specified Autonomous Database to a standby. To perform a failover to
-     * a standby located in a remote region, specify the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote
-     * standby using the `peerDbId` parameter.
+     * Initiates a failover of the specified Autonomous Database to the associated peer database.
+     * Applicable only to databases with Disaster Recovery enabled. This API should be called in the
+     * remote region where the peer database resides. Below parameter is optional: - `peerDbId` Use
+     * this parameter to specify the database OCID of the Disaster Recovery peer, which is located
+     * in a different (remote) region from the current peer database. If this parameter is not
+     * provided, the failover will happen in the same region.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2176,6 +2911,25 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             FailOverAutonomousDatabaseRequest, FailOverAutonomousDatabaseResponse>
                     handler);
+
+    /**
+     * Failover Autonomous Container Database, identified by the autonomousContainerDatabaseId
+     * parameter, to an active standby Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<FailoverAutonomousContainerDatabaseDataguardResponse>
+            failoverAutonomousContainerDatabaseDataguard(
+                    FailoverAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    FailoverAutonomousContainerDatabaseDataguardRequest,
+                                    FailoverAutonomousContainerDatabaseDataguardResponse>
+                            handler);
 
     /**
      * Fails over the standby Autonomous Container Database identified by the
@@ -2199,6 +2953,29 @@ public interface DatabaseAsync extends AutoCloseable {
                                     FailoverAutonomousContainerDatabaseDataguardAssociationRequest,
                                     FailoverAutonomousContainerDatabaseDataguardAssociationResponse>
                             handler);
+
+    /**
+     * Performs a failover to transition the standby database identified by the `databaseId` path
+     * parameter into the primary role after the existing primary database fails or becomes
+     * unreachable.
+     *
+     * <p>A failover might result in data loss depending on the protection mode in effect at the
+     * time of the primary database failure.
+     *
+     * <p>This operation should be performed on respective standby database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<FailoverDataGuardResponse> failoverDataGuard(
+            FailoverDataGuardRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            FailoverDataGuardRequest, FailoverDataGuardResponse>
+                    handler);
 
     /**
      * Performs a failover to transition the standby database identified by the `databaseId`
@@ -2396,6 +3173,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     GetAutonomousDatabaseRegionalWalletRequest,
                                     GetAutonomousDatabaseRegionalWalletResponse>
+                            handler);
+
+    /**
+     * Gets information about the specified Autonomous Database Software Image.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAutonomousDatabaseSoftwareImageResponse>
+            getAutonomousDatabaseSoftwareImage(
+                    GetAutonomousDatabaseSoftwareImageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutonomousDatabaseSoftwareImageRequest,
+                                    GetAutonomousDatabaseSoftwareImageResponse>
                             handler);
 
     /**
@@ -2699,6 +3494,38 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified database node console history.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetConsoleHistoryResponse> getConsoleHistory(
+            GetConsoleHistoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetConsoleHistoryRequest, GetConsoleHistoryResponse>
+                    handler);
+
+    /**
+     * Retrieves the specified database node console history contents upto a megabyte.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetConsoleHistoryContentResponse> getConsoleHistoryContent(
+            GetConsoleHistoryContentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetConsoleHistoryContentRequest, GetConsoleHistoryContentResponse>
+                    handler);
+
+    /**
      * Gets the specified Data Guard association's configuration information.
      *
      * @param request The request object containing the details to send
@@ -2839,12 +3666,12 @@ public interface DatabaseAsync extends AutoCloseable {
      * Gets information about the specified DB system.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
@@ -2971,12 +3798,12 @@ public interface DatabaseAsync extends AutoCloseable {
      * service instances have default IORM settings.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * <p>The {@link #getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigRequest, Consumer,
@@ -2997,13 +3824,114 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified Exadata VM cluster on Exascale Infrastructure. Applies
+     * to Exadata Database Service on Exascale Infrastructure only.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExadbVmClusterResponse> getExadbVmCluster(
+            GetExadbVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExadbVmClusterRequest, GetExadbVmClusterResponse>
+                    handler);
+
+    /**
+     * Gets information about a specified maintenance update package for a Exadata VM cluster on
+     * Exascale Infrastructure.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExadbVmClusterUpdateResponse> getExadbVmClusterUpdate(
+            GetExadbVmClusterUpdateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExadbVmClusterUpdateRequest, GetExadbVmClusterUpdateResponse>
+                    handler);
+
+    /**
+     * Gets the maintenance update history details for the specified update history entry.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExadbVmClusterUpdateHistoryEntryResponse>
+            getExadbVmClusterUpdateHistoryEntry(
+                    GetExadbVmClusterUpdateHistoryEntryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetExadbVmClusterUpdateHistoryEntryRequest,
+                                    GetExadbVmClusterUpdateHistoryEntryResponse>
+                            handler);
+
+    /**
+     * Gets information about the specified Exadata Database Storage Vaults in the specified
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExascaleDbStorageVaultResponse> getExascaleDbStorageVault(
+            GetExascaleDbStorageVaultRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExascaleDbStorageVaultRequest, GetExascaleDbStorageVaultResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified execution action.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExecutionActionResponse> getExecutionAction(
+            GetExecutionActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExecutionActionRequest, GetExecutionActionResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified execution window.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExecutionWindowResponse> getExecutionWindow(
+            GetExecutionWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExecutionWindowRequest, GetExecutionWindowResponse>
+                    handler);
+
+    /**
      * Gets information about the specified external backup job.
      *
      * <p>*Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged
      * with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead
      * using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure
      * by Creating a Backup in the
-     * Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more
+     * Cloud](https://docs.oracle.com/iaas/Content/Database/Tasks/mig-onprembackup.htm) for more
      * information.
      *
      * @param request The request object containing the details to send
@@ -3206,6 +4134,70 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified Scheduled Action.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetScheduledActionResponse> getScheduledAction(
+            GetScheduledActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetScheduledActionRequest, GetScheduledActionResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified Scheduling Plan.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSchedulingPlanResponse> getSchedulingPlan(
+            GetSchedulingPlanRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSchedulingPlanRequest, GetSchedulingPlanResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified Scheduling Policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSchedulingPolicyResponse> getSchedulingPolicy(
+            GetSchedulingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSchedulingPolicyRequest, GetSchedulingPolicyResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified Scheduling Window.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSchedulingWindowResponse> getSchedulingWindow(
+            GetSchedulingWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSchedulingWindowRequest, GetSchedulingWindowResponse>
+                    handler);
+
+    /**
      * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
@@ -3341,15 +4333,15 @@ public interface DatabaseAsync extends AutoCloseable {
      * <p>An initial database is created on the DB system based on the request parameters you
      * provide and some default options. For detailed information about default options, see [Bare
      * metal and virtual machine DB system default
-     * options.](https://docs.cloud.oracle.com/Content/Database/Tasks/creatingDBsystem.htm#Default)
+     * options.](https://docs.oracle.com/iaas/Content/Database/Tasks/creatingDBsystem.htm#Default)
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * <p>Use the {@link #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest,
@@ -3514,6 +4506,22 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAutonomousDatabasePeersResponse> listAutonomousDatabasePeers(
+            ListAutonomousDatabasePeersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAutonomousDatabasePeersRequest, ListAutonomousDatabasePeersResponse>
+                    handler);
+
+    /**
      * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with
      * the region where they exist for the specified source database.
      *
@@ -3530,6 +4538,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ListAutonomousDatabaseRefreshableClonesRequest,
                                     ListAutonomousDatabaseRefreshableClonesResponse>
+                            handler);
+
+    /**
+     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAutonomousDatabaseSoftwareImagesResponse>
+            listAutonomousDatabaseSoftwareImages(
+                    ListAutonomousDatabaseSoftwareImagesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousDatabaseSoftwareImagesRequest,
+                                    ListAutonomousDatabaseSoftwareImagesResponse>
                             handler);
 
     /**
@@ -3841,6 +4867,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the console histories for the specified database node.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListConsoleHistoriesResponse> listConsoleHistories(
+            ListConsoleHistoriesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListConsoleHistoriesRequest, ListConsoleHistoriesResponse>
+                    handler);
+
+    /**
      * Lists the patches applicable to the requested container database.
      *
      * @param request The request object containing the details to send
@@ -4115,12 +5157,12 @@ public interface DatabaseAsync extends AutoCloseable {
      * the DB systems that support creating a database using this backup in this compartment.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
@@ -4168,6 +5210,107 @@ public interface DatabaseAsync extends AutoCloseable {
             ListExadataInfrastructuresRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListExadataInfrastructuresRequest, ListExadataInfrastructuresResponse>
+                    handler);
+
+    /**
+     * Gets the history of the maintenance update actions performed on the specified Exadata VM
+     * cluster on Exascale Infrastructure.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExadbVmClusterUpdateHistoryEntriesResponse>
+            listExadbVmClusterUpdateHistoryEntries(
+                    ListExadbVmClusterUpdateHistoryEntriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListExadbVmClusterUpdateHistoryEntriesRequest,
+                                    ListExadbVmClusterUpdateHistoryEntriesResponse>
+                            handler);
+
+    /**
+     * Lists the maintenance updates that can be applied to the specified Exadata VM cluster on
+     * Exascale Infrastructure.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExadbVmClusterUpdatesResponse> listExadbVmClusterUpdates(
+            ListExadbVmClusterUpdatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExadbVmClusterUpdatesRequest, ListExadbVmClusterUpdatesResponse>
+                    handler);
+
+    /**
+     * Gets a list of the Exadata VM clusters on Exascale Infrastructure in the specified
+     * compartment. Applies to Exadata Database Service on Exascale Infrastructure only.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExadbVmClustersResponse> listExadbVmClusters(
+            ListExadbVmClustersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExadbVmClustersRequest, ListExadbVmClustersResponse>
+                    handler);
+
+    /**
+     * Gets a list of the Exadata Database Storage Vaults in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExascaleDbStorageVaultsResponse> listExascaleDbStorageVaults(
+            ListExascaleDbStorageVaultsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>
+                    handler);
+
+    /**
+     * Lists the execution action resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExecutionActionsResponse> listExecutionActions(
+            ListExecutionActionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExecutionActionsRequest, ListExecutionActionsResponse>
+                    handler);
+
+    /**
+     * Lists the execution window resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExecutionWindowsResponse> listExecutionWindows(
+            ListExecutionWindowsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExecutionWindowsRequest, ListExecutionWindowsResponse>
                     handler);
 
     /**
@@ -4264,7 +5407,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
+     * Gets a list of supported Oracle Grid Infrastructure minor versions for the given major
+     * version and shape family.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListGiVersionMinorVersionsResponse> listGiVersionMinorVersions(
+            ListGiVersionMinorVersionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListGiVersionMinorVersionsRequest, ListGiVersionMinorVersionsResponse>
+                    handler);
+
+    /**
+     * Gets a list of supported GI versions.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4342,6 +5502,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List all the action params and their possible values for a given action type
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListParamsForActionTypeResponse> listParamsForActionType(
+            ListParamsForActionTypeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListParamsForActionTypeRequest, ListParamsForActionTypeResponse>
+                    handler);
+
+    /**
      * Gets the pluggable database conversion history for a specified database in a bare metal or
      * virtual machine DB system.
      *
@@ -4375,6 +5551,105 @@ public interface DatabaseAsync extends AutoCloseable {
             ListPluggableDatabasesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
+                    handler);
+
+    /**
+     * Returns a recommended Scheduled Actions configuration for a given resource, plan intent and
+     * scheduling policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRecommendedScheduledActionsResponse>
+            listRecommendedScheduledActions(
+                    ListRecommendedScheduledActionsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListRecommendedScheduledActionsRequest,
+                                    ListRecommendedScheduledActionsResponse>
+                            handler);
+
+    /**
+     * Lists the Scheduled Action resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListScheduledActionsResponse> listScheduledActions(
+            ListScheduledActionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListScheduledActionsRequest, ListScheduledActionsResponse>
+                    handler);
+
+    /**
+     * Lists the Scheduling Plan resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSchedulingPlansResponse> listSchedulingPlans(
+            ListSchedulingPlansRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSchedulingPlansRequest, ListSchedulingPlansResponse>
+                    handler);
+
+    /**
+     * Lists the Scheduling Policy resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSchedulingPoliciesResponse> listSchedulingPolicies(
+            ListSchedulingPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSchedulingPoliciesRequest, ListSchedulingPoliciesResponse>
+                    handler);
+
+    /**
+     * Lists the Scheduling Window resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSchedulingWindowsResponse> listSchedulingWindows(
+            ListSchedulingWindowsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSchedulingWindowsRequest, ListSchedulingWindowsResponse>
+                    handler);
+
+    /**
+     * Gets a list of supported Exadata system versions for a given shape and GI version.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSystemVersionsResponse> listSystemVersions(
+            ListSystemVersionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSystemVersionsRequest, ListSystemVersionsResponse>
                     handler);
 
     /**
@@ -4503,8 +5778,48 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Migrate Autonomous Container Database, identified by the autonomousContainerDatabaseId
+     * parameter.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<MigrateAutonomousContainerDatabaseDataguardAssociationResponse>
+            migrateAutonomousContainerDatabaseDataguardAssociation(
+                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest,
+                                    MigrateAutonomousContainerDatabaseDataguardAssociationResponse>
+                            handler);
+
+    /**
+     * Migrates the existing Data Guard association to new Data Guard model to support multiple
+     * standby databases functionality.
+     *
+     * <p>This operation should always be performed on primary.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<MigrateDataGuardAssociationToMultiDataGuardsResponse>
+            migrateDataGuardAssociationToMultiDataGuards(
+                    MigrateDataGuardAssociationToMultiDataGuardsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    MigrateDataGuardAssociationToMultiDataGuardsRequest,
+                                    MigrateDataGuardAssociationToMultiDataGuardsResponse>
+                            handler);
+
+    /**
      * Migrates the Exadata DB system to the new [Exadata resource
-     * model](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model).
+     * model](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model).
      * All related resources will be migrated.
      *
      * @param request The request object containing the details to send
@@ -4524,8 +5839,8 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Changes encryption key management from customer-managed, using the [Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm),
-     * to Oracle-managed.
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm), to
+     * Oracle-managed.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4574,6 +5889,22 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves an execution action member to this execution action resource from another.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<MoveExecutionActionMemberResponse> moveExecutionActionMember(
+            MoveExecutionActionMemberRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            MoveExecutionActionMemberRequest, MoveExecutionActionMemberResponse>
+                    handler);
+
+    /**
      * Refreshes a pluggable database (PDB) Refreshable clone.
      *
      * @param request The request object containing the details to send
@@ -4618,6 +5949,25 @@ public interface DatabaseAsync extends AutoCloseable {
      *     java.io.InputStream) may not be able to be read in both places as the underlying stream
      *     may only be consumed once.
      */
+    java.util.concurrent.Future<ReinstateAutonomousContainerDatabaseDataguardResponse>
+            reinstateAutonomousContainerDatabaseDataguard(
+                    ReinstateAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ReinstateAutonomousContainerDatabaseDataguardRequest,
+                                    ReinstateAutonomousContainerDatabaseDataguardResponse>
+                            handler);
+
+    /**
+     * Reinstates a disabled standby Autonomous Container Database, identified by the
+     * autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
     java.util.concurrent.Future<ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
             reinstateAutonomousContainerDatabaseDataguardAssociation(
                     ReinstateAutonomousContainerDatabaseDataguardAssociationRequest request,
@@ -4625,6 +5975,25 @@ public interface DatabaseAsync extends AutoCloseable {
                                     ReinstateAutonomousContainerDatabaseDataguardAssociationRequest,
                                     ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
                             handler);
+
+    /**
+     * Reinstates the database identified by the `databaseId` parameter into the standby role in a
+     * Data Guard association.
+     *
+     * <p>This operation should be performed on disabled standby database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ReinstateDataGuardResponse> reinstateDataGuard(
+            ReinstateDataGuardRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ReinstateDataGuardRequest, ReinstateDataGuardResponse>
+                    handler);
 
     /**
      * Reinstates the database identified by the `databaseId` parameter into the standby role in a
@@ -4687,6 +6056,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Remove Virtual Machines from the Exadata VM cluster on Exascale Infrastructure. Applies to
+     * Exadata Cloud instances only.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveVirtualMachineFromExadbVmClusterResponse>
+            removeVirtualMachineFromExadbVmCluster(
+                    RemoveVirtualMachineFromExadbVmClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveVirtualMachineFromExadbVmClusterRequest,
+                                    RemoveVirtualMachineFromExadbVmClusterResponse>
+                            handler);
+
+    /**
      * Remove Virtual Machines from the VM cluster. Applies to Exadata Cloud@Customer instances
      * only.
      *
@@ -4704,6 +6092,38 @@ public interface DatabaseAsync extends AutoCloseable {
                                     RemoveVirtualMachineFromVmClusterRequest,
                                     RemoveVirtualMachineFromVmClusterResponse>
                             handler);
+
+    /**
+     * Reorders the execution actions under this execution window resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ReorderExecutionActionsResponse> reorderExecutionActions(
+            ReorderExecutionActionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ReorderExecutionActionsRequest, ReorderExecutionActionsResponse>
+                    handler);
+
+    /**
+     * Re-order the scheduled actions under this scheduling plan resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ReorderScheduledActionsResponse> reorderScheduledActions(
+            ReorderScheduledActionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ReorderScheduledActionsRequest, ReorderScheduledActionsResponse>
+                    handler);
 
     /**
      * Adds or removes Db server network nodes to extend or shrink the existing VM cluster network.
@@ -4805,8 +6225,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Creates a new version of an existing [Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * key.
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4825,8 +6244,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Rotate existing AutonomousDatabase [Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * key.
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4972,8 +6390,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Creates a new version of an existing [Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * key.
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4985,6 +6402,22 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<RotateVaultKeyResponse> rotateVaultKey(
             RotateVaultKeyRequest request,
             com.oracle.bmc.responses.AsyncHandler<RotateVaultKeyRequest, RotateVaultKeyResponse>
+                    handler);
+
+    /**
+     * This operation gets SaaS administrative user status of the Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SaasAdminUserStatusResponse> saasAdminUserStatus(
+            SaasAdminUserStatusRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SaasAdminUserStatusRequest, SaasAdminUserStatusResponse>
                     handler);
 
     /**
@@ -5006,6 +6439,38 @@ public interface DatabaseAsync extends AutoCloseable {
                                     ScanExternalContainerDatabasePluggableDatabasesRequest,
                                     ScanExternalContainerDatabasePluggableDatabasesResponse>
                             handler);
+
+    /**
+     * Sets a new version of an existing [Vault
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SetDbKeyVersionResponse> setDbKeyVersion(
+            SetDbKeyVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SetDbKeyVersionRequest, SetDbKeyVersionResponse>
+                    handler);
+
+    /**
+     * Sets a new version of an existing [Vault
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SetPdbKeyVersionResponse> setPdbKeyVersion(
+            SetPdbKeyVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SetPdbKeyVersionRequest, SetPdbKeyVersionResponse>
+                    handler);
 
     /**
      * This operation shrinks the current allocated storage down to the current actual used data
@@ -5093,6 +6558,47 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Performs a switchover to transition primary database of this Data Guard association into a
+     * standby role. The standby database associated with the `dataGuardAssociationId` assumes the
+     * primary database role.
+     *
+     * <p>A switchover guarantees no data loss.
+     *
+     * <p>This operation should be performed on respective standby database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SwitchOverDataGuardResponse> switchOverDataGuard(
+            SwitchOverDataGuardRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SwitchOverDataGuardRequest, SwitchOverDataGuardResponse>
+                    handler);
+
+    /**
+     * Switchover Autonomous Container Database, identified by the autonomousContainerDatabaseId
+     * parameter, to an active standby Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SwitchoverAutonomousContainerDatabaseDataguardResponse>
+            switchoverAutonomousContainerDatabaseDataguard(
+                    SwitchoverAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SwitchoverAutonomousContainerDatabaseDataguardRequest,
+                                    SwitchoverAutonomousContainerDatabaseDataguardResponse>
+                            handler);
+
+    /**
      * Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer
      * association to standby role. The standby Autonomous Container Database associated with
      * autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container
@@ -5116,11 +6622,12 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Initiates a switchover of the specified Autonomous Database to the associated standby
-     * database. Applicable only to databases with Autonomous Data Guard enabled. To perform a
-     * switchover to a standby located in a remote region, specify the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote
-     * standby using the `peerDbId` parameter.
+     * Initiates a switchover of the specified Autonomous Database to the associated peer database.
+     * Applicable only to databases with Disaster Recovery enabled. This API should be called in the
+     * remote region where the peer database resides. Below parameter is optional: - `peerDbId` Use
+     * this parameter to specify the database OCID of the Disaster Recovery peer, which is located
+     * in a different (remote) region from the current peer database. If this parameter is not
+     * provided, the switchover will happen in the same region.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -5210,12 +6717,12 @@ public interface DatabaseAsync extends AutoCloseable {
      * prior to terminating it.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
@@ -5323,6 +6830,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Updates the properties of an Autonomous Database Software Image, like add tags
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAutonomousDatabaseSoftwareImageResponse>
+            updateAutonomousDatabaseSoftwareImage(
+                    UpdateAutonomousDatabaseSoftwareImageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAutonomousDatabaseSoftwareImageRequest,
+                                    UpdateAutonomousDatabaseSoftwareImageResponse>
+                            handler);
+
+    /**
      * Updates the wallet for the specified Autonomous Database.
      *
      * @param request The request object containing the details to send
@@ -5380,6 +6905,21 @@ public interface DatabaseAsync extends AutoCloseable {
             UpdateAutonomousVmClusterRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateAutonomousVmClusterRequest, UpdateAutonomousVmClusterResponse>
+                    handler);
+
+    /**
+     * Updates database backup details.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateBackupResponse> updateBackup(
+            UpdateBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateBackupRequest, UpdateBackupResponse>
                     handler);
 
     /**
@@ -5493,6 +7033,40 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the specified database node console history.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateConsoleHistoryResponse> updateConsoleHistory(
+            UpdateConsoleHistoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>
+                    handler);
+
+    /**
+     * Update an existing Data Guard member. A Data Guard member represents the replication
+     * relationship between the specified database and a standby database. For more information, see
+     * [Using Oracle Data
+     * Guard](https://docs.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDataGuardResponse> updateDataGuard(
+            UpdateDataGuardRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateDataGuardRequest, UpdateDataGuardResponse>
+                    handler);
+
+    /**
      * Updates the Data Guard association the specified database. This API can be used to change the
      * `protectionMode` and `transportType` of the Data Guard association.
      *
@@ -5574,12 +7148,12 @@ public interface DatabaseAsync extends AutoCloseable {
      * Updates the properties of the specified DB system.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
@@ -5617,12 +7191,12 @@ public interface DatabaseAsync extends AutoCloseable {
      * Updates IORM settings for the specified Exadata DB system.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * <p>The {@link #updateCloudVmClusterIormConfig(UpdateCloudVmClusterIormConfigRequest,
@@ -5640,6 +7214,72 @@ public interface DatabaseAsync extends AutoCloseable {
             UpdateExadataIormConfigRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateExadataIormConfigRequest, UpdateExadataIormConfigResponse>
+                    handler);
+
+    /**
+     * Updates the specified Exadata VM cluster on Exascale Infrastructure. Applies to Exadata
+     * Database Service on Exascale Infrastructure only.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExadbVmClusterResponse> updateExadbVmCluster(
+            UpdateExadbVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExadbVmClusterRequest, UpdateExadbVmClusterResponse>
+                    handler);
+
+    /**
+     * Updates the specified Exadata Database Storage Vault.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExascaleDbStorageVaultResponse> updateExascaleDbStorageVault(
+            UpdateExascaleDbStorageVaultRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExascaleDbStorageVaultRequest,
+                            UpdateExascaleDbStorageVaultResponse>
+                    handler);
+
+    /**
+     * Updates the execution action resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExecutionActionResponse> updateExecutionAction(
+            UpdateExecutionActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExecutionActionRequest, UpdateExecutionActionResponse>
+                    handler);
+
+    /**
+     * Updates the execution window resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExecutionWindowResponse> updateExecutionWindow(
+            UpdateExecutionWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExecutionWindowRequest, UpdateExecutionWindowResponse>
                     handler);
 
     /**
@@ -5721,7 +7361,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * If no database is associated with the key store, edit the key store.
+     * Edit the key store.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -5781,6 +7421,54 @@ public interface DatabaseAsync extends AutoCloseable {
             UpdatePluggableDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdatePluggableDatabaseRequest, UpdatePluggableDatabaseResponse>
+                    handler);
+
+    /**
+     * Updates the Scheduled Action resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateScheduledActionResponse> updateScheduledAction(
+            UpdateScheduledActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateScheduledActionRequest, UpdateScheduledActionResponse>
+                    handler);
+
+    /**
+     * Updates the Scheduling Policy resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSchedulingPolicyResponse> updateSchedulingPolicy(
+            UpdateSchedulingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSchedulingPolicyRequest, UpdateSchedulingPolicyResponse>
+                    handler);
+
+    /**
+     * Updates the Scheduling Window resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSchedulingWindowResponse> updateSchedulingWindow(
+            UpdateSchedulingWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSchedulingWindowRequest, UpdateSchedulingWindowResponse>
                     handler);
 
     /**

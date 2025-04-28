@@ -1,12 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * An immutable custom software source that is assigned a version and contains a custom collection
- * of packages. <br>
+ * Provides summary information for a versioned custom software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -109,6 +108,15 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
+        private Availability availabilityAtOci;
+
+        public Builder availabilityAtOci(Availability availabilityAtOci) {
+            this.availabilityAtOci = availabilityAtOci;
+            this.__explicitlySet__.add("availabilityAtOci");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamily osFamily;
 
@@ -145,6 +153,15 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("size")
+        private Double size;
+
+        public Builder size(Double size) {
+            this.size = size;
+            this.__explicitlySet__.add("size");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -172,12 +189,16 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** List of vendor software sources. */
+        /**
+         * List of vendor software sources that are used for the basis of the versioned custom
+         * software source.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
         private java.util.List<Id> vendorSoftwareSources;
 
         /**
-         * List of vendor software sources.
+         * List of vendor software sources that are used for the basis of the versioned custom
+         * software source.
          *
          * @param vendorSoftwareSources the value to set
          * @return this builder
@@ -202,6 +223,21 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
             this.__explicitlySet__.add("softwareSourceVersion");
             return this;
         }
+        /** Identifies how the versioned custom software source was created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
+        private SoftwareSourceSubType softwareSourceSubType;
+
+        /**
+         * Identifies how the versioned custom software source was created.
+         *
+         * @param softwareSourceSubType the value to set
+         * @return this builder
+         */
+        public Builder softwareSourceSubType(SoftwareSourceSubType softwareSourceSubType) {
+            this.softwareSourceSubType = softwareSourceSubType;
+            this.__explicitlySet__.add("softwareSourceSubType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -218,15 +254,18 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
                             this.timeUpdated,
                             this.description,
                             this.availability,
+                            this.availabilityAtOci,
                             this.osFamily,
                             this.archType,
                             this.packageCount,
                             this.lifecycleState,
+                            this.size,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
                             this.vendorSoftwareSources,
-                            this.softwareSourceVersion);
+                            this.softwareSourceVersion,
+                            this.softwareSourceSubType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -262,6 +301,9 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
             if (model.wasPropertyExplicitlySet("availability")) {
                 this.availability(model.getAvailability());
             }
+            if (model.wasPropertyExplicitlySet("availabilityAtOci")) {
+                this.availabilityAtOci(model.getAvailabilityAtOci());
+            }
             if (model.wasPropertyExplicitlySet("osFamily")) {
                 this.osFamily(model.getOsFamily());
             }
@@ -273,6 +315,9 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -288,6 +333,9 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
             }
             if (model.wasPropertyExplicitlySet("softwareSourceVersion")) {
                 this.softwareSourceVersion(model.getSoftwareSourceVersion());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSourceSubType")) {
+                this.softwareSourceSubType(model.getSoftwareSourceSubType());
             }
             return this;
         }
@@ -313,15 +361,18 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
             java.util.Date timeUpdated,
             String description,
             Availability availability,
+            Availability availabilityAtOci,
             OsFamily osFamily,
             ArchType archType,
             Long packageCount,
             SoftwareSource.LifecycleState lifecycleState,
+            Double size,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<Id> vendorSoftwareSources,
-            String softwareSourceVersion) {
+            String softwareSourceVersion,
+            SoftwareSourceSubType softwareSourceSubType) {
         super(
                 id,
                 compartmentId,
@@ -332,23 +383,30 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
                 timeUpdated,
                 description,
                 availability,
+                availabilityAtOci,
                 osFamily,
                 archType,
                 packageCount,
                 lifecycleState,
+                size,
                 freeformTags,
                 definedTags,
                 systemTags);
         this.vendorSoftwareSources = vendorSoftwareSources;
         this.softwareSourceVersion = softwareSourceVersion;
+        this.softwareSourceSubType = softwareSourceSubType;
     }
 
-    /** List of vendor software sources. */
+    /**
+     * List of vendor software sources that are used for the basis of the versioned custom software
+     * source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
     private final java.util.List<Id> vendorSoftwareSources;
 
     /**
-     * List of vendor software sources.
+     * List of vendor software sources that are used for the basis of the versioned custom software
+     * source.
      *
      * @return the value
      */
@@ -369,6 +427,19 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
         return softwareSourceVersion;
     }
 
+    /** Identifies how the versioned custom software source was created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
+    private final SoftwareSourceSubType softwareSourceSubType;
+
+    /**
+     * Identifies how the versioned custom software source was created.
+     *
+     * @return the value
+     */
+    public SoftwareSourceSubType getSoftwareSourceSubType() {
+        return softwareSourceSubType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -386,6 +457,7 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", vendorSoftwareSources=").append(String.valueOf(this.vendorSoftwareSources));
         sb.append(", softwareSourceVersion=").append(String.valueOf(this.softwareSourceVersion));
+        sb.append(", softwareSourceSubType=").append(String.valueOf(this.softwareSourceSubType));
         sb.append(")");
         return sb.toString();
     }
@@ -402,6 +474,7 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
         VersionedCustomSoftwareSourceSummary other = (VersionedCustomSoftwareSourceSummary) o;
         return java.util.Objects.equals(this.vendorSoftwareSources, other.vendorSoftwareSources)
                 && java.util.Objects.equals(this.softwareSourceVersion, other.softwareSourceVersion)
+                && java.util.Objects.equals(this.softwareSourceSubType, other.softwareSourceSubType)
                 && super.equals(other);
     }
 
@@ -419,6 +492,11 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
                         + (this.softwareSourceVersion == null
                                 ? 43
                                 : this.softwareSourceVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSourceSubType == null
+                                ? 43
+                                : this.softwareSourceSubType.hashCode());
         return result;
     }
 }

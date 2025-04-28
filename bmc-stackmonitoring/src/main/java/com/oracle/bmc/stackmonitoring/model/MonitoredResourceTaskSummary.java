@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -26,6 +26,7 @@ public final class MonitoredResourceTaskSummary
     @java.beans.ConstructorProperties({
         "id",
         "name",
+        "type",
         "taskDetails",
         "workRequestIds",
         "timeCreated",
@@ -38,6 +39,7 @@ public final class MonitoredResourceTaskSummary
     public MonitoredResourceTaskSummary(
             String id,
             String name,
+            String type,
             MonitoredResourceTaskDetails taskDetails,
             java.util.List<String> workRequestIds,
             java.util.Date timeCreated,
@@ -49,6 +51,7 @@ public final class MonitoredResourceTaskSummary
         super();
         this.id = id;
         this.name = name;
+        this.type = type;
         this.taskDetails = taskDetails;
         this.workRequestIds = workRequestIds;
         this.timeCreated = timeCreated;
@@ -63,14 +66,14 @@ public final class MonitoredResourceTaskSummary
     public static class Builder {
         /**
          * Task identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Task identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder
@@ -95,6 +98,21 @@ public final class MonitoredResourceTaskSummary
             this.__explicitlySet__.add("name");
             return this;
         }
+        /** Type of the task. */
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private String type;
+
+        /**
+         * Type of the task.
+         *
+         * @param type the value to set
+         * @return this builder
+         */
+        public Builder type(String type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("taskDetails")
         private MonitoredResourceTaskDetails taskDetails;
@@ -105,17 +123,15 @@ public final class MonitoredResourceTaskSummary
             return this;
         }
         /**
-         * Identifiers
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for work
-         * requests submitted for this task.
+         * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for work requests submitted for this task.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
         private java.util.List<String> workRequestIds;
 
         /**
-         * Identifiers
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for work
-         * requests submitted for this task.
+         * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for work requests submitted for this task.
          *
          * @param workRequestIds the value to set
          * @return this builder
@@ -245,6 +261,7 @@ public final class MonitoredResourceTaskSummary
                     new MonitoredResourceTaskSummary(
                             this.id,
                             this.name,
+                            this.type,
                             this.taskDetails,
                             this.workRequestIds,
                             this.timeCreated,
@@ -266,6 +283,9 @@ public final class MonitoredResourceTaskSummary
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
             }
             if (model.wasPropertyExplicitlySet("taskDetails")) {
                 this.taskDetails(model.getTaskDetails());
@@ -306,14 +326,14 @@ public final class MonitoredResourceTaskSummary
 
     /**
      * Task identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Task identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -334,6 +354,19 @@ public final class MonitoredResourceTaskSummary
         return name;
     }
 
+    /** Type of the task. */
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    private final String type;
+
+    /**
+     * Type of the task.
+     *
+     * @return the value
+     */
+    public String getType() {
+        return type;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("taskDetails")
     private final MonitoredResourceTaskDetails taskDetails;
 
@@ -342,15 +375,15 @@ public final class MonitoredResourceTaskSummary
     }
 
     /**
-     * Identifiers [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * for work requests submitted for this task.
+     * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * work requests submitted for this task.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
     private final java.util.List<String> workRequestIds;
 
     /**
-     * Identifiers [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * for work requests submitted for this task.
+     * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * work requests submitted for this task.
      *
      * @return the value
      */
@@ -473,6 +506,7 @@ public final class MonitoredResourceTaskSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", taskDetails=").append(String.valueOf(this.taskDetails));
         sb.append(", workRequestIds=").append(String.valueOf(this.workRequestIds));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -497,6 +531,7 @@ public final class MonitoredResourceTaskSummary
         MonitoredResourceTaskSummary other = (MonitoredResourceTaskSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.taskDetails, other.taskDetails)
                 && java.util.Objects.equals(this.workRequestIds, other.workRequestIds)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -514,6 +549,7 @@ public final class MonitoredResourceTaskSummary
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.taskDetails == null ? 43 : this.taskDetails.hashCode());
         result =
                 (result * PRIME)

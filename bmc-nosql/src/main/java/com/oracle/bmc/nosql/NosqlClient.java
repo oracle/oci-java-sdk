@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.nosql;
@@ -147,13 +147,13 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeTableCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeTableCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -178,12 +178,12 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateIndexResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateIndexResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -210,12 +210,12 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateReplicaResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateReplicaResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -236,12 +236,12 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateTableResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateTableResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -421,11 +421,11 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.nosql.model.Index.class, GetIndexResponse.Builder::index)
                 .handleResponseHeaderString("etag", GetIndexResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIndexResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -456,10 +456,10 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendQueryParam("timeoutInMs", request.getTimeoutInMs())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.nosql.model.Row.class, GetRowResponse.Builder::row)
                 .handleResponseHeaderString("etag", GetRowResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetRowResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -482,11 +482,11 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.nosql.model.Table.class, GetTableResponse.Builder::table)
                 .handleResponseHeaderString("etag", GetTableResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTableResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -508,6 +508,7 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.nosql.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -516,7 +517,6 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -546,6 +546,7 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.nosql.model.IndexCollection.class,
                         ListIndexesResponse.Builder::indexCollection)
@@ -553,7 +554,6 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                         "opc-next-page", ListIndexesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListIndexesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -581,6 +581,7 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.nosql.model.TableUsageCollection.class,
                         ListTableUsageResponse.Builder::tableUsageCollection)
@@ -588,7 +589,6 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                         "opc-next-page", ListTableUsageResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListTableUsageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -615,6 +615,7 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.nosql.model.TableCollection.class,
                         ListTablesResponse.Builder::tableCollection)
@@ -622,7 +623,6 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                         "opc-next-page", ListTablesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListTablesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -648,6 +648,7 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.nosql.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -655,7 +656,6 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -680,6 +680,7 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.nosql.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -687,7 +688,6 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -710,6 +710,7 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.nosql.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -717,7 +718,6 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -743,12 +743,12 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendQueryParam("isGetQueryPlan", request.getIsGetQueryPlan())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.nosql.model.PreparedStatement.class,
                         PrepareStatementResponse.Builder::preparedStatement)
                 .handleResponseHeaderString(
                         "opc-request-id", PrepareStatementResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -800,12 +800,12 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendQueryParam("statement", request.getStatement())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.nosql.model.StatementSummary.class,
                         SummarizeStatementResponse.Builder::statementSummary)
                 .handleResponseHeaderString(
                         "opc-request-id", SummarizeStatementResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

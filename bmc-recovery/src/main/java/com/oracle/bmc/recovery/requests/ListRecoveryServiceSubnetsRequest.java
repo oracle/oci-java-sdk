@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.recovery.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.recovery.requests;
 import com.oracle.bmc.recovery.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListRecoveryServiceSubnetsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListRecoveryServiceSubnetsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListRecoveryServiceSubnetsRequest.
  */
@@ -22,16 +22,10 @@ public class ListRecoveryServiceSubnetsRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * A filter to return only the resources that match the specified lifecycle state. Allowed
-     * values are: - CREATING - UPDATING - ACTIVE - DELETING - DELETED - FAILED
-     */
+    /** A filter to return only the resources that match the specified lifecycle state. */
     private com.oracle.bmc.recovery.model.LifecycleState lifecycleState;
 
-    /**
-     * A filter to return only the resources that match the specified lifecycle state. Allowed
-     * values are: - CREATING - UPDATING - ACTIVE - DELETING - DELETED - FAILED
-     */
+    /** A filter to return only the resources that match the specified lifecycle state. */
     public com.oracle.bmc.recovery.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -173,15 +167,11 @@ public class ListRecoveryServiceSubnetsRequest
             return this;
         }
 
-        /**
-         * A filter to return only the resources that match the specified lifecycle state. Allowed
-         * values are: - CREATING - UPDATING - ACTIVE - DELETING - DELETED - FAILED
-         */
+        /** A filter to return only the resources that match the specified lifecycle state. */
         private com.oracle.bmc.recovery.model.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only the resources that match the specified lifecycle state. Allowed
-         * values are: - CREATING - UPDATING - ACTIVE - DELETING - DELETED - FAILED
+         * A filter to return only the resources that match the specified lifecycle state.
          *
          * @param lifecycleState the value to set
          * @return this builder instance

@@ -1,9 +1,10 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc;
 
+import com.oracle.bmc.util.internal.ClientCompatibilityChecker;
 import org.slf4j.Logger;
 
 import java.io.IOException;
@@ -15,6 +16,8 @@ import com.oracle.bmc.util.internal.StringUtils;
 /** This class provides client info that will be sent to the servers as part of each request. */
 public class ClientRuntime {
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(ClientRuntime.class);
+    public static final String SDK_VERSION_PROPERTY_NAME = "sdk.version";
+
     /**
      * Sets an extra piece of information into the user-agent header passed to the server. The
      * format is (by convention) "Application/Version", ex "MyApp/1.3.5".
@@ -39,15 +42,20 @@ public class ClientRuntime {
     /** The SDK client info to send. */
     private final String clientInfo;
 
+    private final String sdkVersion;
+
+    private final ClientCompatibilityChecker clientCompatibilityChecker;
     private static final String ENV_VAR_USER_AGENT = "OCI_SDK_APPEND_USER_AGENT";
 
-    private ClientRuntime() {
+    ClientRuntime() {
         String os = System.getProperty("os.name");
         String osVersion = System.getProperty("os.version");
         String javaVersion = System.getProperty("java.version");
         String javaVmName = System.getProperty("java.vm.name");
         String javaVmVersion = System.getProperty("java.vm.version");
-        String sdkVersion = sdkVersion();
+        Properties sdkProperties = getSdkProperties();
+        sdkVersion = extractSdkVersionFromProperties(sdkProperties);
+        clientCompatibilityChecker = new ClientCompatibilityChecker(sdkProperties);
 
         String userAgentFromEnvVar = System.getenv(ENV_VAR_USER_AGENT);
         String ociSdkAppendUserAgent =
@@ -79,16 +87,18 @@ public class ClientRuntime {
         LOG.info("User agent set to: {}", userAgent);
     }
 
-    private String sdkVersion() {
+    static Properties getSdkProperties() {
         InputStream propertyStream =
-                getClass().getClassLoader().getResourceAsStream("com/oracle/bmc/sdk.properties");
+                ClientRuntime.class
+                        .getClassLoader()
+                        .getResourceAsStream("com/oracle/bmc/sdk.properties");
 
         Properties properties = new Properties();
         try {
             properties.load(propertyStream);
         } catch (Exception e) {
             LOG.error("Failed to load sdk.properties", e);
-            return "Unknown";
+            return properties;
         } finally {
             try {
                 propertyStream.close();
@@ -96,7 +106,11 @@ public class ClientRuntime {
                 LOG.warn("Failed to close property stream correctly", e);
             }
         }
-        return properties.getProperty("sdk.version");
+        return properties;
+    }
+
+    public static String extractSdkVersionFromProperties(Properties sdkProperties) {
+        return sdkProperties.getProperty(SDK_VERSION_PROPERTY_NAME, "Unknown");
     }
 
     /**
@@ -114,6 +128,14 @@ public class ClientRuntime {
 
     public String getClientInfo() {
         return this.clientInfo;
+    }
+
+    public String getSdkVersion() {
+        return sdkVersion;
+    }
+
+    public ClientCompatibilityChecker getClientCompatibilityChecker() {
+        return clientCompatibilityChecker;
     }
 
     // holder

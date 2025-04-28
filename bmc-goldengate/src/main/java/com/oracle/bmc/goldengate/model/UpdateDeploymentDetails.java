@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -26,49 +26,61 @@ public final class UpdateDeploymentDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "licenseModel",
+        "environmentType",
         "description",
         "freeformTags",
         "definedTags",
         "nsgIds",
         "subnetId",
+        "loadBalancerSubnetId",
         "isPublic",
         "fqdn",
         "cpuCoreCount",
         "isAutoScalingEnabled",
+        "placements",
         "oggData",
         "maintenanceWindow",
-        "maintenanceConfiguration"
+        "maintenanceConfiguration",
+        "backupSchedule"
     })
     public UpdateDeploymentDetails(
             String displayName,
             LicenseModel licenseModel,
+            EnvironmentType environmentType,
             String description,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<String> nsgIds,
             String subnetId,
+            String loadBalancerSubnetId,
             Boolean isPublic,
             String fqdn,
             Integer cpuCoreCount,
             Boolean isAutoScalingEnabled,
+            java.util.List<DeploymentPlacementDetails> placements,
             UpdateOggDeploymentDetails oggData,
             UpdateMaintenanceWindowDetails maintenanceWindow,
-            UpdateMaintenanceConfigurationDetails maintenanceConfiguration) {
+            UpdateMaintenanceConfigurationDetails maintenanceConfiguration,
+            UpdateBackupScheduleDetails backupSchedule) {
         super();
         this.displayName = displayName;
         this.licenseModel = licenseModel;
+        this.environmentType = environmentType;
         this.description = description;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.nsgIds = nsgIds;
         this.subnetId = subnetId;
+        this.loadBalancerSubnetId = loadBalancerSubnetId;
         this.isPublic = isPublic;
         this.fqdn = fqdn;
         this.cpuCoreCount = cpuCoreCount;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
+        this.placements = placements;
         this.oggData = oggData;
         this.maintenanceWindow = maintenanceWindow;
         this.maintenanceConfiguration = maintenanceConfiguration;
+        this.backupSchedule = backupSchedule;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -101,6 +113,25 @@ public final class UpdateDeploymentDetails
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+        /**
+         * Specifies whether the deployment is used in a production or development/testing
+         * environment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private EnvironmentType environmentType;
+
+        /**
+         * Specifies whether the deployment is used in a production or development/testing
+         * environment.
+         *
+         * @param environmentType the value to set
+         * @return this builder
+         */
+        public Builder environmentType(EnvironmentType environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
             return this;
         }
         /** Metadata about this specific object. */
@@ -183,15 +214,19 @@ public final class UpdateDeploymentDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+         * backward compatibility, public subnets are allowed until May 31 2025, after which the
+         * private subnet will be enforced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+         * backward compatibility, public subnets are allowed until May 31 2025, after which the
+         * private subnet will be enforced.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -199,6 +234,31 @@ public final class UpdateDeploymentDetails
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * public subnet in the customer tenancy. Can be provided only for public deployments. If
+         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatibility, this is an optional property. It will become mandatory for
+         * public deployments after October 1, 2024.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+        private String loadBalancerSubnetId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * public subnet in the customer tenancy. Can be provided only for public deployments. If
+         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatibility, this is an optional property. It will become mandatory for
+         * public deployments after October 1, 2024.
+         *
+         * @param loadBalancerSubnetId the value to set
+         * @return this builder
+         */
+        public Builder loadBalancerSubnetId(String loadBalancerSubnetId) {
+            this.loadBalancerSubnetId = loadBalancerSubnetId;
+            this.__explicitlySet__.add("loadBalancerSubnetId");
             return this;
         }
         /** True if this object is publicly available. */
@@ -261,6 +321,21 @@ public final class UpdateDeploymentDetails
             this.__explicitlySet__.add("isAutoScalingEnabled");
             return this;
         }
+        /** An array of local peers of deployment */
+        @com.fasterxml.jackson.annotation.JsonProperty("placements")
+        private java.util.List<DeploymentPlacementDetails> placements;
+
+        /**
+         * An array of local peers of deployment
+         *
+         * @param placements the value to set
+         * @return this builder
+         */
+        public Builder placements(java.util.List<DeploymentPlacementDetails> placements) {
+            this.placements = placements;
+            this.__explicitlySet__.add("placements");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("oggData")
         private UpdateOggDeploymentDetails oggData;
@@ -290,6 +365,15 @@ public final class UpdateDeploymentDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("backupSchedule")
+        private UpdateBackupScheduleDetails backupSchedule;
+
+        public Builder backupSchedule(UpdateBackupScheduleDetails backupSchedule) {
+            this.backupSchedule = backupSchedule;
+            this.__explicitlySet__.add("backupSchedule");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -298,18 +382,22 @@ public final class UpdateDeploymentDetails
                     new UpdateDeploymentDetails(
                             this.displayName,
                             this.licenseModel,
+                            this.environmentType,
                             this.description,
                             this.freeformTags,
                             this.definedTags,
                             this.nsgIds,
                             this.subnetId,
+                            this.loadBalancerSubnetId,
                             this.isPublic,
                             this.fqdn,
                             this.cpuCoreCount,
                             this.isAutoScalingEnabled,
+                            this.placements,
                             this.oggData,
                             this.maintenanceWindow,
-                            this.maintenanceConfiguration);
+                            this.maintenanceConfiguration,
+                            this.backupSchedule);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -323,6 +411,9 @@ public final class UpdateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -339,6 +430,9 @@ public final class UpdateDeploymentDetails
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("loadBalancerSubnetId")) {
+                this.loadBalancerSubnetId(model.getLoadBalancerSubnetId());
+            }
             if (model.wasPropertyExplicitlySet("isPublic")) {
                 this.isPublic(model.getIsPublic());
             }
@@ -351,6 +445,9 @@ public final class UpdateDeploymentDetails
             if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
                 this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
             }
+            if (model.wasPropertyExplicitlySet("placements")) {
+                this.placements(model.getPlacements());
+            }
             if (model.wasPropertyExplicitlySet("oggData")) {
                 this.oggData(model.getOggData());
             }
@@ -359,6 +456,9 @@ public final class UpdateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("maintenanceConfiguration")) {
                 this.maintenanceConfiguration(model.getMaintenanceConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("backupSchedule")) {
+                this.backupSchedule(model.getBackupSchedule());
             }
             return this;
         }
@@ -397,6 +497,21 @@ public final class UpdateDeploymentDetails
      */
     public LicenseModel getLicenseModel() {
         return licenseModel;
+    }
+
+    /**
+     * Specifies whether the deployment is used in a production or development/testing environment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+    private final EnvironmentType environmentType;
+
+    /**
+     * Specifies whether the deployment is used in a production or development/testing environment.
+     *
+     * @return the value
+     */
+    public EnvironmentType getEnvironmentType() {
+        return environmentType;
     }
 
     /** Metadata about this specific object. */
@@ -470,20 +585,47 @@ public final class UpdateDeploymentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+     * backward compatibility, public subnets are allowed until May 31 2025, after which the private
+     * subnet will be enforced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+     * backward compatibility, public subnets are allowed until May 31 2025, after which the private
+     * subnet will be enforced.
      *
      * @return the value
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public
+     * subnet in the customer tenancy. Can be provided only for public deployments. If provided, the
+     * loadbalancer will be created in this subnet instead of the service tenancy. For backward
+     * compatibility, this is an optional property. It will become mandatory for public deployments
+     * after October 1, 2024.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+    private final String loadBalancerSubnetId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public
+     * subnet in the customer tenancy. Can be provided only for public deployments. If provided, the
+     * loadbalancer will be created in this subnet instead of the service tenancy. For backward
+     * compatibility, this is an optional property. It will become mandatory for public deployments
+     * after October 1, 2024.
+     *
+     * @return the value
+     */
+    public String getLoadBalancerSubnetId() {
+        return loadBalancerSubnetId;
     }
 
     /** True if this object is publicly available. */
@@ -538,6 +680,19 @@ public final class UpdateDeploymentDetails
         return isAutoScalingEnabled;
     }
 
+    /** An array of local peers of deployment */
+    @com.fasterxml.jackson.annotation.JsonProperty("placements")
+    private final java.util.List<DeploymentPlacementDetails> placements;
+
+    /**
+     * An array of local peers of deployment
+     *
+     * @return the value
+     */
+    public java.util.List<DeploymentPlacementDetails> getPlacements() {
+        return placements;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("oggData")
     private final UpdateOggDeploymentDetails oggData;
 
@@ -559,6 +714,13 @@ public final class UpdateDeploymentDetails
         return maintenanceConfiguration;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("backupSchedule")
+    private final UpdateBackupScheduleDetails backupSchedule;
+
+    public UpdateBackupScheduleDetails getBackupSchedule() {
+        return backupSchedule;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -576,19 +738,23 @@ public final class UpdateDeploymentDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", loadBalancerSubnetId=").append(String.valueOf(this.loadBalancerSubnetId));
         sb.append(", isPublic=").append(String.valueOf(this.isPublic));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
+        sb.append(", placements=").append(String.valueOf(this.placements));
         sb.append(", oggData=").append(String.valueOf(this.oggData));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", maintenanceConfiguration=")
                 .append(String.valueOf(this.maintenanceConfiguration));
+        sb.append(", backupSchedule=").append(String.valueOf(this.backupSchedule));
         sb.append(")");
         return sb.toString();
     }
@@ -605,19 +771,23 @@ public final class UpdateDeploymentDetails
         UpdateDeploymentDetails other = (UpdateDeploymentDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.loadBalancerSubnetId, other.loadBalancerSubnetId)
                 && java.util.Objects.equals(this.isPublic, other.isPublic)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
+                && java.util.Objects.equals(this.placements, other.placements)
                 && java.util.Objects.equals(this.oggData, other.oggData)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(
                         this.maintenanceConfiguration, other.maintenanceConfiguration)
+                && java.util.Objects.equals(this.backupSchedule, other.backupSchedule)
                 && super.equals(other);
     }
 
@@ -627,11 +797,19 @@ public final class UpdateDeploymentDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentType == null ? 43 : this.environmentType.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerSubnetId == null
+                                ? 43
+                                : this.loadBalancerSubnetId.hashCode());
         result = (result * PRIME) + (this.isPublic == null ? 43 : this.isPublic.hashCode());
         result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
@@ -640,6 +818,7 @@ public final class UpdateDeploymentDetails
                         + (this.isAutoScalingEnabled == null
                                 ? 43
                                 : this.isAutoScalingEnabled.hashCode());
+        result = (result * PRIME) + (this.placements == null ? 43 : this.placements.hashCode());
         result = (result * PRIME) + (this.oggData == null ? 43 : this.oggData.hashCode());
         result =
                 (result * PRIME)
@@ -649,6 +828,9 @@ public final class UpdateDeploymentDetails
                         + (this.maintenanceConfiguration == null
                                 ? 43
                                 : this.maintenanceConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupSchedule == null ? 43 : this.backupSchedule.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

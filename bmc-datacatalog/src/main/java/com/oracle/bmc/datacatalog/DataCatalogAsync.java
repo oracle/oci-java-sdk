@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog;
@@ -64,6 +64,39 @@ public interface DataCatalogAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a Catalog resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddCatalogLockResponse> addCatalogLock(
+            AddCatalogLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddCatalogLockRequest, AddCatalogLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a CatalogPrivateEndpoint resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddCatalogPrivateEndpointLockResponse>
+            addCatalogPrivateEndpointLock(
+                    AddCatalogPrivateEndpointLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddCatalogPrivateEndpointLockRequest,
+                                    AddCatalogPrivateEndpointLockResponse>
+                            handler);
+
+    /**
      * Add data selector pattern to the data asset.
      *
      * @param request The request object containing the details to send
@@ -80,6 +113,21 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Adds a lock to a Metastore resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddMetastoreLockResponse> addMetastoreLock(
+            AddMetastoreLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddMetastoreLockRequest, AddMetastoreLockResponse>
+                    handler);
+
+    /**
      * Associate the custom property for the given type
      *
      * @param request The request object containing the details to send
@@ -93,6 +141,23 @@ public interface DataCatalogAsync extends AutoCloseable {
             AssociateCustomPropertyRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             AssociateCustomPropertyRequest, AssociateCustomPropertyResponse>
+                    handler);
+
+    /**
+     * Export technical objects from a Data Asset in Excel format. Returns details about the job
+     * which actually performs the export.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AsynchronousExportDataAssetResponse> asynchronousExportDataAsset(
+            AsynchronousExportDataAssetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AsynchronousExportDataAssetRequest, AsynchronousExportDataAssetResponse>
                     handler);
 
     /**
@@ -1307,6 +1372,21 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Imports lineage metadata. Returns details about the job that performs the import.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ImportLineageResponse> importLineage(
+            ImportLineageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ImportLineageRequest, ImportLineageResponse>
+                    handler);
+
+    /**
      * List the physical entities aggregated by this logical entity.
      *
      * @param request The request object containing the details to send
@@ -1842,6 +1922,40 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Removes a lock from a Catalog resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveCatalogLockResponse> removeCatalogLock(
+            RemoveCatalogLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveCatalogLockRequest, RemoveCatalogLockResponse>
+                    handler);
+
+    /**
+     * Removes a lock from a CatalogPrivateEndpoint resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveCatalogPrivateEndpointLockResponse>
+            removeCatalogPrivateEndpointLock(
+                    RemoveCatalogPrivateEndpointLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveCatalogPrivateEndpointLockRequest,
+                                    RemoveCatalogPrivateEndpointLockResponse>
+                            handler);
+
+    /**
      * Remove data selector pattern from the data asset.
      *
      * @param request The request object containing the details to send
@@ -1855,6 +1969,22 @@ public interface DataCatalogAsync extends AutoCloseable {
             RemoveDataSelectorPatternsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             RemoveDataSelectorPatternsRequest, RemoveDataSelectorPatternsResponse>
+                    handler);
+
+    /**
+     * Removes a lock from a Metastore resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveMetastoreLockResponse> removeMetastoreLock(
+            RemoveMetastoreLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveMetastoreLockRequest, RemoveMetastoreLockResponse>
                     handler);
 
     /**

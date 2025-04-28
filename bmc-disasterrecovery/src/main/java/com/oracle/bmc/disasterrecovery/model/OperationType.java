@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -17,6 +17,8 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateDrPlan("CREATE_DR_PLAN"),
     UpdateDrPlan("UPDATE_DR_PLAN"),
     DeleteDrPlan("DELETE_DR_PLAN"),
+    RefreshDrPlan("REFRESH_DR_PLAN"),
+    VerifyDrPlan("VERIFY_DR_PLAN"),
     CreateDrPlanExecution("CREATE_DR_PLAN_EXECUTION"),
     UpdateDrPlanExecution("UPDATE_DR_PLAN_EXECUTION"),
     DeleteDrPlanExecution("DELETE_DR_PLAN_EXECUTION"),

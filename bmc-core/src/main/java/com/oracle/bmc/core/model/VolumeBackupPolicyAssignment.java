@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -9,8 +9,7 @@ package com.oracle.bmc.core.model;
  *
  * <p>For more information about Oracle defined backup policies and custom backup policies, see
  * [Policy-Based
- * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
- * <br>
+ * Backups](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -28,14 +27,19 @@ package com.oracle.bmc.core.model;
 public final class VolumeBackupPolicyAssignment
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"assetId", "id", "policyId", "timeCreated"})
+    @java.beans.ConstructorProperties({"assetId", "id", "policyId", "timeCreated", "xrcKmsKeyId"})
     public VolumeBackupPolicyAssignment(
-            String assetId, String id, String policyId, java.util.Date timeCreated) {
+            String assetId,
+            String id,
+            String policyId,
+            java.util.Date timeCreated,
+            String xrcKmsKeyId) {
         super();
         this.assetId = assetId;
         this.id = id;
         this.policyId = policyId;
         this.timeCreated = timeCreated;
+        this.xrcKmsKeyId = xrcKmsKeyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -104,6 +108,33 @@ public final class VolumeBackupPolicyAssignment
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the block / boot
+         * volume cross region backups, which will be used in the destination region to encrypt the
+         * backup's encryption keys. For more information about the Vault service and encryption
+         * keys, see [Overview of Vault
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
+        private String xrcKmsKeyId;
+
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the block / boot
+         * volume cross region backups, which will be used in the destination region to encrypt the
+         * backup's encryption keys. For more information about the Vault service and encryption
+         * keys, see [Overview of Vault
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         * @param xrcKmsKeyId the value to set
+         * @return this builder
+         */
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            this.xrcKmsKeyId = xrcKmsKeyId;
+            this.__explicitlySet__.add("xrcKmsKeyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -111,7 +142,11 @@ public final class VolumeBackupPolicyAssignment
         public VolumeBackupPolicyAssignment build() {
             VolumeBackupPolicyAssignment model =
                     new VolumeBackupPolicyAssignment(
-                            this.assetId, this.id, this.policyId, this.timeCreated);
+                            this.assetId,
+                            this.id,
+                            this.policyId,
+                            this.timeCreated,
+                            this.xrcKmsKeyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -131,6 +166,9 @@ public final class VolumeBackupPolicyAssignment
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("xrcKmsKeyId")) {
+                this.xrcKmsKeyId(model.getXrcKmsKeyId());
             }
             return this;
         }
@@ -201,6 +239,31 @@ public final class VolumeBackupPolicyAssignment
         return timeCreated;
     }
 
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block / boot
+     * volume cross region backups, which will be used in the destination region to encrypt the
+     * backup's encryption keys. For more information about the Vault service and encryption keys,
+     * see [Overview of Vault
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
+    private final String xrcKmsKeyId;
+
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block / boot
+     * volume cross region backups, which will be used in the destination region to encrypt the
+     * backup's encryption keys. For more information about the Vault service and encryption keys,
+     * see [Overview of Vault
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     * @return the value
+     */
+    public String getXrcKmsKeyId() {
+        return xrcKmsKeyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -220,6 +283,7 @@ public final class VolumeBackupPolicyAssignment
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", policyId=").append(String.valueOf(this.policyId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", xrcKmsKeyId=").append(String.valueOf(this.xrcKmsKeyId));
         sb.append(")");
         return sb.toString();
     }
@@ -238,6 +302,7 @@ public final class VolumeBackupPolicyAssignment
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.policyId, other.policyId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.xrcKmsKeyId, other.xrcKmsKeyId)
                 && super.equals(other);
     }
 
@@ -249,6 +314,7 @@ public final class VolumeBackupPolicyAssignment
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.policyId == null ? 43 : this.policyId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.xrcKmsKeyId == null ? 43 : this.xrcKmsKeyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

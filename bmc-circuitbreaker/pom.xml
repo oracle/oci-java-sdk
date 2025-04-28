@@ -5,16 +5,19 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.28.0</version>
+    <version>3.63.2</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-circuitbreaker</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Circuit Breaker</name>
   <description>This project contains the Circuit Breaker module used for Oracle Cloud Infrastructure
     SDKs</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
-
-
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
+  <properties>
+    <maven-surefire-plugin.argLine>--illegal-access=warn
+      --add-opens=java.base/java.lang=ALL-UNNAMED
+    </maven-surefire-plugin.argLine>
+  </properties>
 
   <build>
     <plugins>

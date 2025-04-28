@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -171,6 +171,33 @@ public final class OracleConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /** The Oracle technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private OracleConnection.TechnologyType technologyType;
@@ -223,6 +250,25 @@ public final class OracleConnectionSummary extends ConnectionSummary {
             return this;
         }
         /**
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database
+         * Serverless connections, when a databaseId is provided. The default value is MTLS.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
+        private OracleConnection.AuthenticationMode authenticationMode;
+
+        /**
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database
+         * Serverless connections, when a databaseId is provided. The default value is MTLS.
+         *
+         * @param authenticationMode the value to set
+         * @return this builder
+         */
+        public Builder authenticationMode(OracleConnection.AuthenticationMode authenticationMode) {
+            this.authenticationMode = authenticationMode;
+            this.__explicitlySet__.add("authenticationMode");
+            return this;
+        }
+        /**
          * The mode of the database connection session to be established by the data client.
          * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC
          * database involves a redirection received from the SCAN listeners to the database node to
@@ -246,7 +292,11 @@ public final class OracleConnectionSummary extends ConnectionSummary {
             return this;
         }
         /**
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * Deprecated: this field will be removed in future versions. Either specify the private IP
+         * in the connectionString or host field, or make sure the host name is resolvable in the
+         * target VCN.
+         *
+         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
          * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
          * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
@@ -257,7 +307,11 @@ public final class OracleConnectionSummary extends ConnectionSummary {
         private String privateIp;
 
         /**
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * Deprecated: this field will be removed in future versions. Either specify the private IP
+         * in the connectionString or host field, or make sure the host name is resolvable in the
+         * target VCN.
+         *
+         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
          * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
          * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
@@ -273,14 +327,14 @@ public final class OracleConnectionSummary extends ConnectionSummary {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database being referenced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database being referenced.
          *
          * @param databaseId the value to set
@@ -289,6 +343,52 @@ public final class OracleConnectionSummary extends ConnectionSummary {
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the wallet file is stored. The wallet contents Oracle GoldenGate uses to
+         * make connections to a database. Note: When provided, 'wallet' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
+        private String walletSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the wallet file is stored. The wallet contents Oracle GoldenGate uses to
+         * make connections to a database. Note: When provided, 'wallet' field must not be provided.
+         *
+         * @param walletSecretId the value to set
+         * @return this builder
+         */
+        public Builder walletSecretId(String walletSecretId) {
+            this.walletSecretId = walletSecretId;
+            this.__explicitlySet__.add("walletSecretId");
             return this;
         }
 
@@ -314,12 +414,18 @@ public final class OracleConnectionSummary extends ConnectionSummary {
                             this.ingressIps,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
+                            this.locks,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.username,
                             this.connectionString,
+                            this.authenticationMode,
                             this.sessionMode,
                             this.privateIp,
-                            this.databaseId);
+                            this.databaseId,
+                            this.passwordSecretId,
+                            this.walletSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -376,6 +482,15 @@ public final class OracleConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -385,6 +500,9 @@ public final class OracleConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("connectionString")) {
                 this.connectionString(model.getConnectionString());
             }
+            if (model.wasPropertyExplicitlySet("authenticationMode")) {
+                this.authenticationMode(model.getAuthenticationMode());
+            }
             if (model.wasPropertyExplicitlySet("sessionMode")) {
                 this.sessionMode(model.getSessionMode());
             }
@@ -393,6 +511,12 @@ public final class OracleConnectionSummary extends ConnectionSummary {
             }
             if (model.wasPropertyExplicitlySet("databaseId")) {
                 this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("walletSecretId")) {
+                this.walletSecretId(model.getWalletSecretId());
             }
             return this;
         }
@@ -425,12 +549,18 @@ public final class OracleConnectionSummary extends ConnectionSummary {
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
+            java.util.List<ResourceLock> locks,
+            Boolean doesUseSecretIds,
             OracleConnection.TechnologyType technologyType,
             String username,
             String connectionString,
+            OracleConnection.AuthenticationMode authenticationMode,
             OracleConnection.SessionMode sessionMode,
             String privateIp,
-            String databaseId) {
+            String databaseId,
+            String passwordSecretId,
+            String walletSecretId) {
         super(
                 id,
                 displayName,
@@ -447,13 +577,19 @@ public final class OracleConnectionSummary extends ConnectionSummary {
                 keyId,
                 ingressIps,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod,
+                locks,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.username = username;
         this.connectionString = connectionString;
+        this.authenticationMode = authenticationMode;
         this.sessionMode = sessionMode;
         this.privateIp = privateIp;
         this.databaseId = databaseId;
+        this.passwordSecretId = passwordSecretId;
+        this.walletSecretId = walletSecretId;
     }
 
     /** The Oracle technology type. */
@@ -502,6 +638,23 @@ public final class OracleConnectionSummary extends ConnectionSummary {
     }
 
     /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
+     * connections, when a databaseId is provided. The default value is MTLS.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
+    private final OracleConnection.AuthenticationMode authenticationMode;
+
+    /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
+     * connections, when a databaseId is provided. The default value is MTLS.
+     *
+     * @return the value
+     */
+    public OracleConnection.AuthenticationMode getAuthenticationMode() {
+        return authenticationMode;
+    }
+
+    /**
      * The mode of the database connection session to be established by the data client. 'REDIRECT'
      * - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database
      * involves a redirection received from the SCAN listeners to the database node to connect to.
@@ -523,7 +676,11 @@ public final class OracleConnectionSummary extends ConnectionSummary {
     }
 
     /**
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in
+     * the connectionString or host field, or make sure the host name is resolvable in the target
+     * VCN.
+     *
+     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
      * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
      * not provided it is assumed the datasource is publicly accessible. In case the connection is
@@ -534,7 +691,11 @@ public final class OracleConnectionSummary extends ConnectionSummary {
     private final String privateIp;
 
     /**
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in
+     * the connectionString or host field, or make sure the host name is resolvable in the target
+     * VCN.
+     *
+     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
      * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
      * not provided it is assumed the datasource is publicly accessible. In case the connection is
@@ -548,20 +709,62 @@ public final class OracleConnectionSummary extends ConnectionSummary {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database being referenced.
      *
      * @return the value
      */
     public String getDatabaseId() {
         return databaseId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the wallet file is stored. The wallet contents Oracle GoldenGate uses to make
+     * connections to a database. Note: When provided, 'wallet' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
+    private final String walletSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the wallet file is stored. The wallet contents Oracle GoldenGate uses to make
+     * connections to a database. Note: When provided, 'wallet' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getWalletSecretId() {
+        return walletSecretId;
     }
 
     @Override
@@ -582,9 +785,12 @@ public final class OracleConnectionSummary extends ConnectionSummary {
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
+        sb.append(", authenticationMode=").append(String.valueOf(this.authenticationMode));
         sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", walletSecretId=").append(String.valueOf(this.walletSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -602,9 +808,12 @@ public final class OracleConnectionSummary extends ConnectionSummary {
         return java.util.Objects.equals(this.technologyType, other.technologyType)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.connectionString, other.connectionString)
+                && java.util.Objects.equals(this.authenticationMode, other.authenticationMode)
                 && java.util.Objects.equals(this.sessionMode, other.sessionMode)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(this.walletSecretId, other.walletSecretId)
                 && super.equals(other);
     }
 
@@ -619,9 +828,20 @@ public final class OracleConnectionSummary extends ConnectionSummary {
         result =
                 (result * PRIME)
                         + (this.connectionString == null ? 43 : this.connectionString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationMode == null
+                                ? 43
+                                : this.authenticationMode.hashCode());
         result = (result * PRIME) + (this.sessionMode == null ? 43 : this.sessionMode.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.walletSecretId == null ? 43 : this.walletSecretId.hashCode());
         return result;
     }
 }

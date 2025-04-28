@@ -1,12 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * An immutable custom software source that is assigned a version and contains a custom collection
- * of packages. <br>
+ * The object that defines a versioned custom software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -79,6 +78,15 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
         public Builder availability(Availability availability) {
             this.availability = availability;
             this.__explicitlySet__.add("availability");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
+        private Availability availabilityAtOci;
+
+        public Builder availabilityAtOci(Availability availabilityAtOci) {
+            this.availabilityAtOci = availabilityAtOci;
+            this.__explicitlySet__.add("availabilityAtOci");
             return this;
         }
 
@@ -172,6 +180,15 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("size")
+        private Double size;
+
+        public Builder size(Double size) {
+            this.size = size;
+            this.__explicitlySet__.add("size");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -199,12 +216,16 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** List of vendor software sources. */
+        /**
+         * List of vendor software sources that are used for the basis of the versioned custom
+         * software source.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
         private java.util.List<Id> vendorSoftwareSources;
 
         /**
-         * List of vendor software sources.
+         * List of vendor software sources that are used for the basis of the versioned custom
+         * software source.
          *
          * @param vendorSoftwareSources the value to set
          * @return this builder
@@ -239,6 +260,132 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             this.__explicitlySet__.add("softwareSourceVersion");
             return this;
         }
+        /**
+         * Indicates whether the service should automatically resolve package dependencies when
+         * including specific packages in the software source.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoResolveDependencies")
+        private Boolean isAutoResolveDependencies;
+
+        /**
+         * Indicates whether the service should automatically resolve package dependencies when
+         * including specific packages in the software source.
+         *
+         * @param isAutoResolveDependencies the value to set
+         * @return this builder
+         */
+        public Builder isAutoResolveDependencies(Boolean isAutoResolveDependencies) {
+            this.isAutoResolveDependencies = isAutoResolveDependencies;
+            this.__explicitlySet__.add("isAutoResolveDependencies");
+            return this;
+        }
+        /**
+         * Indicates whether the service should create the software source from a list of packages
+         * provided by the user.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isCreatedFromPackageList")
+        private Boolean isCreatedFromPackageList;
+
+        /**
+         * Indicates whether the service should create the software source from a list of packages
+         * provided by the user.
+         *
+         * @param isCreatedFromPackageList the value to set
+         * @return this builder
+         */
+        public Builder isCreatedFromPackageList(Boolean isCreatedFromPackageList) {
+            this.isCreatedFromPackageList = isCreatedFromPackageList;
+            this.__explicitlySet__.add("isCreatedFromPackageList");
+            return this;
+        }
+        /**
+         * Indicates whether the software source will include only the latest versions of content
+         * from vendor software sources, while accounting for other constraints set in the custom or
+         * versioned custom software source (such as a package list or filters). * For a module
+         * filter that does not specify a stream, this will include all available streams, and
+         * within each stream only the latest version of packages. * For a module filter that does
+         * specify a stream, this will include only the latest version of packages for the specified
+         * stream. * For a package filter that does not specify a version, this will include only
+         * the latest available version of the package. * For a package filter that does specify a
+         * version, this will include only the specified version of the package (the
+         * isLatestContentOnly attribute is ignored). * For a package list, this will include only
+         * the specified version of packages and modules in the list (the isLatestContentOnly
+         * attribute is ignored).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isLatestContentOnly")
+        private Boolean isLatestContentOnly;
+
+        /**
+         * Indicates whether the software source will include only the latest versions of content
+         * from vendor software sources, while accounting for other constraints set in the custom or
+         * versioned custom software source (such as a package list or filters). * For a module
+         * filter that does not specify a stream, this will include all available streams, and
+         * within each stream only the latest version of packages. * For a module filter that does
+         * specify a stream, this will include only the latest version of packages for the specified
+         * stream. * For a package filter that does not specify a version, this will include only
+         * the latest available version of the package. * For a package filter that does specify a
+         * version, this will include only the specified version of the package (the
+         * isLatestContentOnly attribute is ignored). * For a package list, this will include only
+         * the specified version of packages and modules in the list (the isLatestContentOnly
+         * attribute is ignored).
+         *
+         * @param isLatestContentOnly the value to set
+         * @return this builder
+         */
+        public Builder isLatestContentOnly(Boolean isLatestContentOnly) {
+            this.isLatestContentOnly = isLatestContentOnly;
+            this.__explicitlySet__.add("isLatestContentOnly");
+            return this;
+        }
+        /** The packages in the software source. */
+        @com.fasterxml.jackson.annotation.JsonProperty("packages")
+        private java.util.List<String> packages;
+
+        /**
+         * The packages in the software source.
+         *
+         * @param packages the value to set
+         * @return this builder
+         */
+        public Builder packages(java.util.List<String> packages) {
+            this.packages = packages;
+            this.__explicitlySet__.add("packages");
+            return this;
+        }
+        /** Identifies how the versioned custom software source was created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
+        private SoftwareSourceSubType softwareSourceSubType;
+
+        /**
+         * Identifies how the versioned custom software source was created.
+         *
+         * @param softwareSourceSubType the value to set
+         * @return this builder
+         */
+        public Builder softwareSourceSubType(SoftwareSourceSubType softwareSourceSubType) {
+            this.softwareSourceSubType = softwareSourceSubType;
+            this.__explicitlySet__.add("softwareSourceSubType");
+            return this;
+        }
+        /**
+         * The date and time the metadata for this software source was last updated (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMetadataUpdated")
+        private java.util.Date timeMetadataUpdated;
+
+        /**
+         * The date and time the metadata for this software source was last updated (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         * @param timeMetadataUpdated the value to set
+         * @return this builder
+         */
+        public Builder timeMetadataUpdated(java.util.Date timeMetadataUpdated) {
+            this.timeMetadataUpdated = timeMetadataUpdated;
+            this.__explicitlySet__.add("timeMetadataUpdated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -252,6 +399,7 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
                             this.timeCreated,
                             this.description,
                             this.availability,
+                            this.availabilityAtOci,
                             this.repoId,
                             this.osFamily,
                             this.archType,
@@ -262,12 +410,19 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
                             this.gpgKeyUrl,
                             this.gpgKeyId,
                             this.gpgKeyFingerprint,
+                            this.size,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
                             this.vendorSoftwareSources,
                             this.customSoftwareSourceFilter,
-                            this.softwareSourceVersion);
+                            this.softwareSourceVersion,
+                            this.isAutoResolveDependencies,
+                            this.isCreatedFromPackageList,
+                            this.isLatestContentOnly,
+                            this.packages,
+                            this.softwareSourceSubType,
+                            this.timeMetadataUpdated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -293,6 +448,9 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             }
             if (model.wasPropertyExplicitlySet("availability")) {
                 this.availability(model.getAvailability());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityAtOci")) {
+                this.availabilityAtOci(model.getAvailabilityAtOci());
             }
             if (model.wasPropertyExplicitlySet("repoId")) {
                 this.repoId(model.getRepoId());
@@ -324,6 +482,9 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             if (model.wasPropertyExplicitlySet("gpgKeyFingerprint")) {
                 this.gpgKeyFingerprint(model.getGpgKeyFingerprint());
             }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -341,6 +502,24 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             }
             if (model.wasPropertyExplicitlySet("softwareSourceVersion")) {
                 this.softwareSourceVersion(model.getSoftwareSourceVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoResolveDependencies")) {
+                this.isAutoResolveDependencies(model.getIsAutoResolveDependencies());
+            }
+            if (model.wasPropertyExplicitlySet("isCreatedFromPackageList")) {
+                this.isCreatedFromPackageList(model.getIsCreatedFromPackageList());
+            }
+            if (model.wasPropertyExplicitlySet("isLatestContentOnly")) {
+                this.isLatestContentOnly(model.getIsLatestContentOnly());
+            }
+            if (model.wasPropertyExplicitlySet("packages")) {
+                this.packages(model.getPackages());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSourceSubType")) {
+                this.softwareSourceSubType(model.getSoftwareSourceSubType());
+            }
+            if (model.wasPropertyExplicitlySet("timeMetadataUpdated")) {
+                this.timeMetadataUpdated(model.getTimeMetadataUpdated());
             }
             return this;
         }
@@ -363,6 +542,7 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             java.util.Date timeCreated,
             String description,
             Availability availability,
+            Availability availabilityAtOci,
             String repoId,
             OsFamily osFamily,
             ArchType archType,
@@ -373,12 +553,19 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             String gpgKeyUrl,
             String gpgKeyId,
             String gpgKeyFingerprint,
+            Double size,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<Id> vendorSoftwareSources,
             CustomSoftwareSourceFilter customSoftwareSourceFilter,
-            String softwareSourceVersion) {
+            String softwareSourceVersion,
+            Boolean isAutoResolveDependencies,
+            Boolean isCreatedFromPackageList,
+            Boolean isLatestContentOnly,
+            java.util.List<String> packages,
+            SoftwareSourceSubType softwareSourceSubType,
+            java.util.Date timeMetadataUpdated) {
         super(
                 id,
                 compartmentId,
@@ -386,6 +573,7 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
                 timeCreated,
                 description,
                 availability,
+                availabilityAtOci,
                 repoId,
                 osFamily,
                 archType,
@@ -396,20 +584,31 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
                 gpgKeyUrl,
                 gpgKeyId,
                 gpgKeyFingerprint,
+                size,
                 freeformTags,
                 definedTags,
                 systemTags);
         this.vendorSoftwareSources = vendorSoftwareSources;
         this.customSoftwareSourceFilter = customSoftwareSourceFilter;
         this.softwareSourceVersion = softwareSourceVersion;
+        this.isAutoResolveDependencies = isAutoResolveDependencies;
+        this.isCreatedFromPackageList = isCreatedFromPackageList;
+        this.isLatestContentOnly = isLatestContentOnly;
+        this.packages = packages;
+        this.softwareSourceSubType = softwareSourceSubType;
+        this.timeMetadataUpdated = timeMetadataUpdated;
     }
 
-    /** List of vendor software sources. */
+    /**
+     * List of vendor software sources that are used for the basis of the versioned custom software
+     * source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
     private final java.util.List<Id> vendorSoftwareSources;
 
     /**
-     * List of vendor software sources.
+     * List of vendor software sources that are used for the basis of the versioned custom software
+     * source.
      *
      * @return the value
      */
@@ -437,6 +636,118 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
         return softwareSourceVersion;
     }
 
+    /**
+     * Indicates whether the service should automatically resolve package dependencies when
+     * including specific packages in the software source.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoResolveDependencies")
+    private final Boolean isAutoResolveDependencies;
+
+    /**
+     * Indicates whether the service should automatically resolve package dependencies when
+     * including specific packages in the software source.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoResolveDependencies() {
+        return isAutoResolveDependencies;
+    }
+
+    /**
+     * Indicates whether the service should create the software source from a list of packages
+     * provided by the user.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isCreatedFromPackageList")
+    private final Boolean isCreatedFromPackageList;
+
+    /**
+     * Indicates whether the service should create the software source from a list of packages
+     * provided by the user.
+     *
+     * @return the value
+     */
+    public Boolean getIsCreatedFromPackageList() {
+        return isCreatedFromPackageList;
+    }
+
+    /**
+     * Indicates whether the software source will include only the latest versions of content from
+     * vendor software sources, while accounting for other constraints set in the custom or
+     * versioned custom software source (such as a package list or filters). * For a module filter
+     * that does not specify a stream, this will include all available streams, and within each
+     * stream only the latest version of packages. * For a module filter that does specify a stream,
+     * this will include only the latest version of packages for the specified stream. * For a
+     * package filter that does not specify a version, this will include only the latest available
+     * version of the package. * For a package filter that does specify a version, this will include
+     * only the specified version of the package (the isLatestContentOnly attribute is ignored). *
+     * For a package list, this will include only the specified version of packages and modules in
+     * the list (the isLatestContentOnly attribute is ignored).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isLatestContentOnly")
+    private final Boolean isLatestContentOnly;
+
+    /**
+     * Indicates whether the software source will include only the latest versions of content from
+     * vendor software sources, while accounting for other constraints set in the custom or
+     * versioned custom software source (such as a package list or filters). * For a module filter
+     * that does not specify a stream, this will include all available streams, and within each
+     * stream only the latest version of packages. * For a module filter that does specify a stream,
+     * this will include only the latest version of packages for the specified stream. * For a
+     * package filter that does not specify a version, this will include only the latest available
+     * version of the package. * For a package filter that does specify a version, this will include
+     * only the specified version of the package (the isLatestContentOnly attribute is ignored). *
+     * For a package list, this will include only the specified version of packages and modules in
+     * the list (the isLatestContentOnly attribute is ignored).
+     *
+     * @return the value
+     */
+    public Boolean getIsLatestContentOnly() {
+        return isLatestContentOnly;
+    }
+
+    /** The packages in the software source. */
+    @com.fasterxml.jackson.annotation.JsonProperty("packages")
+    private final java.util.List<String> packages;
+
+    /**
+     * The packages in the software source.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getPackages() {
+        return packages;
+    }
+
+    /** Identifies how the versioned custom software source was created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
+    private final SoftwareSourceSubType softwareSourceSubType;
+
+    /**
+     * Identifies how the versioned custom software source was created.
+     *
+     * @return the value
+     */
+    public SoftwareSourceSubType getSoftwareSourceSubType() {
+        return softwareSourceSubType;
+    }
+
+    /**
+     * The date and time the metadata for this software source was last updated (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMetadataUpdated")
+    private final java.util.Date timeMetadataUpdated;
+
+    /**
+     * The date and time the metadata for this software source was last updated (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeMetadataUpdated() {
+        return timeMetadataUpdated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -456,6 +767,14 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
         sb.append(", customSoftwareSourceFilter=")
                 .append(String.valueOf(this.customSoftwareSourceFilter));
         sb.append(", softwareSourceVersion=").append(String.valueOf(this.softwareSourceVersion));
+        sb.append(", isAutoResolveDependencies=")
+                .append(String.valueOf(this.isAutoResolveDependencies));
+        sb.append(", isCreatedFromPackageList=")
+                .append(String.valueOf(this.isCreatedFromPackageList));
+        sb.append(", isLatestContentOnly=").append(String.valueOf(this.isLatestContentOnly));
+        sb.append(", packages=").append(String.valueOf(this.packages));
+        sb.append(", softwareSourceSubType=").append(String.valueOf(this.softwareSourceSubType));
+        sb.append(", timeMetadataUpdated=").append(String.valueOf(this.timeMetadataUpdated));
         sb.append(")");
         return sb.toString();
     }
@@ -474,6 +793,14 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
                 && java.util.Objects.equals(
                         this.customSoftwareSourceFilter, other.customSoftwareSourceFilter)
                 && java.util.Objects.equals(this.softwareSourceVersion, other.softwareSourceVersion)
+                && java.util.Objects.equals(
+                        this.isAutoResolveDependencies, other.isAutoResolveDependencies)
+                && java.util.Objects.equals(
+                        this.isCreatedFromPackageList, other.isCreatedFromPackageList)
+                && java.util.Objects.equals(this.isLatestContentOnly, other.isLatestContentOnly)
+                && java.util.Objects.equals(this.packages, other.packages)
+                && java.util.Objects.equals(this.softwareSourceSubType, other.softwareSourceSubType)
+                && java.util.Objects.equals(this.timeMetadataUpdated, other.timeMetadataUpdated)
                 && super.equals(other);
     }
 
@@ -496,6 +823,32 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
                         + (this.softwareSourceVersion == null
                                 ? 43
                                 : this.softwareSourceVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoResolveDependencies == null
+                                ? 43
+                                : this.isAutoResolveDependencies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCreatedFromPackageList == null
+                                ? 43
+                                : this.isCreatedFromPackageList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLatestContentOnly == null
+                                ? 43
+                                : this.isLatestContentOnly.hashCode());
+        result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSourceSubType == null
+                                ? 43
+                                : this.softwareSourceSubType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMetadataUpdated == null
+                                ? 43
+                                : this.timeMetadataUpdated.hashCode());
         return result;
     }
 }

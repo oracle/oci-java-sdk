@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.datasafe.requests;
 import com.oracle.bmc.datasafe.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSensitiveTypesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSensitiveTypesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSensitiveTypesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
@@ -298,14 +298,14 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List"
      * call. For details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List"
      * call. For details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -314,7 +314,7 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
      * For list pagination. The page token representing the page at which to start retrieving
      * results. It is usually retrieved from a previous "List" call. For details about how
      * pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
@@ -322,7 +322,7 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
      * For list pagination. The page token representing the page at which to start retrieving
      * results. It is usually retrieved from a previous "List" call. For details about how
      * pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -333,6 +333,19 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
     /** A filter to return only the resources that match the specified lifecycle state. */
     public com.oracle.bmc.datasafe.model.DiscoveryLifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+    /**
+     * A filter to return only the common sensitive type resources. Common sensitive types belong to
+     * library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    private Boolean isCommon;
+
+    /**
+     * A filter to return only the common sensitive type resources. Common sensitive types belong to
+     * library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    public Boolean getIsCommon() {
+        return isCommon;
     }
 
     public static class Builder
@@ -600,14 +613,14 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List"
          * call. For details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List"
          * call. For details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -621,7 +634,7 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
          * For list pagination. The page token representing the page at which to start retrieving
          * results. It is usually retrieved from a previous "List" call. For details about how
          * pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
@@ -629,7 +642,7 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
          * For list pagination. The page token representing the page at which to start retrieving
          * results. It is usually retrieved from a previous "List" call. For details about how
          * pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -651,6 +664,26 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         public Builder lifecycleState(
                 com.oracle.bmc.datasafe.model.DiscoveryLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        /**
+         * A filter to return only the common sensitive type resources. Common sensitive types
+         * belong to library sensitive types which are frequently used to perform sensitive data
+         * discovery.
+         */
+        private Boolean isCommon = null;
+
+        /**
+         * A filter to return only the common sensitive type resources. Common sensitive types
+         * belong to library sensitive types which are frequently used to perform sensitive data
+         * discovery.
+         *
+         * @param isCommon the value to set
+         * @return this builder instance
+         */
+        public Builder isCommon(Boolean isCommon) {
+            this.isCommon = isCommon;
             return this;
         }
 
@@ -701,6 +734,7 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
             limit(o.getLimit());
             page(o.getPage());
             lifecycleState(o.getLifecycleState());
+            isCommon(o.getIsCommon());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -752,11 +786,12 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
             request.limit = limit;
             request.page = page;
             request.lifecycleState = lifecycleState;
+            request.isCommon = isCommon;
             return request;
             // new ListSensitiveTypesRequest(compartmentId, compartmentIdInSubtree, accessLevel,
             // displayName, sensitiveTypeId, sensitiveTypeSource, entityType, parentCategoryId,
             // defaultMaskingFormatId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan,
-            // sortOrder, sortBy, opcRequestId, limit, page, lifecycleState);
+            // sortOrder, sortBy, opcRequestId, limit, page, lifecycleState, isCommon);
         }
     }
 
@@ -783,7 +818,8 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
                 .opcRequestId(opcRequestId)
                 .limit(limit)
                 .page(page)
-                .lifecycleState(lifecycleState);
+                .lifecycleState(lifecycleState)
+                .isCommon(isCommon);
     }
 
     /**
@@ -818,6 +854,7 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",isCommon=").append(String.valueOf(this.isCommon));
         sb.append(")");
         return sb.toString();
     }
@@ -852,7 +889,8 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.isCommon, other.isCommon);
     }
 
     @Override
@@ -904,6 +942,7 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.isCommon == null ? 43 : this.isCommon.hashCode());
         return result;
     }
 }

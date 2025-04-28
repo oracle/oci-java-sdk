@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol.model;
@@ -31,6 +31,7 @@ public final class UpdateOperatorControlDetails
         "preApprovedOpActionList",
         "isFullyPreApproved",
         "emailIdList",
+        "numberOfApprovers",
         "systemMessage",
         "freeformTags",
         "definedTags"
@@ -43,6 +44,7 @@ public final class UpdateOperatorControlDetails
             java.util.List<String> preApprovedOpActionList,
             Boolean isFullyPreApproved,
             java.util.List<String> emailIdList,
+            Integer numberOfApprovers,
             String systemMessage,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -54,6 +56,7 @@ public final class UpdateOperatorControlDetails
         this.preApprovedOpActionList = preApprovedOpActionList;
         this.isFullyPreApproved = isFullyPreApproved;
         this.emailIdList = emailIdList;
+        this.numberOfApprovers = numberOfApprovers;
         this.systemMessage = systemMessage;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -184,6 +187,21 @@ public final class UpdateOperatorControlDetails
             this.__explicitlySet__.add("emailIdList");
             return this;
         }
+        /** Number of approvers required to approve an access request. */
+        @com.fasterxml.jackson.annotation.JsonProperty("numberOfApprovers")
+        private Integer numberOfApprovers;
+
+        /**
+         * Number of approvers required to approve an access request.
+         *
+         * @param numberOfApprovers the value to set
+         * @return this builder
+         */
+        public Builder numberOfApprovers(Integer numberOfApprovers) {
+            this.numberOfApprovers = numberOfApprovers;
+            this.__explicitlySet__.add("numberOfApprovers");
+            return this;
+        }
         /**
          * System message that would be displayed to the operator users on accessing the target
          * resource under the governance of this operator control.
@@ -252,6 +270,7 @@ public final class UpdateOperatorControlDetails
                             this.preApprovedOpActionList,
                             this.isFullyPreApproved,
                             this.emailIdList,
+                            this.numberOfApprovers,
                             this.systemMessage,
                             this.freeformTags,
                             this.definedTags);
@@ -283,6 +302,9 @@ public final class UpdateOperatorControlDetails
             }
             if (model.wasPropertyExplicitlySet("emailIdList")) {
                 this.emailIdList(model.getEmailIdList());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfApprovers")) {
+                this.numberOfApprovers(model.getNumberOfApprovers());
             }
             if (model.wasPropertyExplicitlySet("systemMessage")) {
                 this.systemMessage(model.getSystemMessage());
@@ -415,6 +437,19 @@ public final class UpdateOperatorControlDetails
         return emailIdList;
     }
 
+    /** Number of approvers required to approve an access request. */
+    @com.fasterxml.jackson.annotation.JsonProperty("numberOfApprovers")
+    private final Integer numberOfApprovers;
+
+    /**
+     * Number of approvers required to approve an access request.
+     *
+     * @return the value
+     */
+    public Integer getNumberOfApprovers() {
+        return numberOfApprovers;
+    }
+
     /**
      * System message that would be displayed to the operator users on accessing the target resource
      * under the governance of this operator control.
@@ -485,6 +520,7 @@ public final class UpdateOperatorControlDetails
                 .append(String.valueOf(this.preApprovedOpActionList));
         sb.append(", isFullyPreApproved=").append(String.valueOf(this.isFullyPreApproved));
         sb.append(", emailIdList=").append(String.valueOf(this.emailIdList));
+        sb.append(", numberOfApprovers=").append(String.valueOf(this.numberOfApprovers));
         sb.append(", systemMessage=").append(String.valueOf(this.systemMessage));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -510,6 +546,7 @@ public final class UpdateOperatorControlDetails
                         this.preApprovedOpActionList, other.preApprovedOpActionList)
                 && java.util.Objects.equals(this.isFullyPreApproved, other.isFullyPreApproved)
                 && java.util.Objects.equals(this.emailIdList, other.emailIdList)
+                && java.util.Objects.equals(this.numberOfApprovers, other.numberOfApprovers)
                 && java.util.Objects.equals(this.systemMessage, other.systemMessage)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -545,6 +582,9 @@ public final class UpdateOperatorControlDetails
                                 ? 43
                                 : this.isFullyPreApproved.hashCode());
         result = (result * PRIME) + (this.emailIdList == null ? 43 : this.emailIdList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfApprovers == null ? 43 : this.numberOfApprovers.hashCode());
         result =
                 (result * PRIME)
                         + (this.systemMessage == null ? 43 : this.systemMessage.hashCode());

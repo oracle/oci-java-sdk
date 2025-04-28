@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalDatabasesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalDatabasesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListExternalDatabasesRequest.
  */
@@ -16,30 +16,43 @@ public class ListExternalDatabasesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB system.
      */
     private String externalDbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB system.
      */
     public String getExternalDbSystemId() {
         return externalDbSystemId;
+    }
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * external database.
+     */
+    private String externalDatabaseId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * external database.
+     */
+    public String getExternalDatabaseId() {
+        return externalDatabaseId;
     }
     /** A filter to only return the resources that match the entire display name. */
     private String displayName;
@@ -149,13 +162,13 @@ public class ListExternalDatabasesRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -167,13 +180,13 @@ public class ListExternalDatabasesRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external DB system.
          */
         private String externalDbSystemId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external DB system.
          *
          * @param externalDbSystemId the value to set
@@ -181,6 +194,24 @@ public class ListExternalDatabasesRequest
          */
         public Builder externalDbSystemId(String externalDbSystemId) {
             this.externalDbSystemId = externalDbSystemId;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * external database.
+         */
+        private String externalDatabaseId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * external database.
+         *
+         * @param externalDatabaseId the value to set
+         * @return this builder instance
+         */
+        public Builder externalDatabaseId(String externalDatabaseId) {
+            this.externalDatabaseId = externalDatabaseId;
             return this;
         }
 
@@ -314,6 +345,7 @@ public class ListExternalDatabasesRequest
         public Builder copy(ListExternalDatabasesRequest o) {
             compartmentId(o.getCompartmentId());
             externalDbSystemId(o.getExternalDbSystemId());
+            externalDatabaseId(o.getExternalDatabaseId());
             displayName(o.getDisplayName());
             page(o.getPage());
             limit(o.getLimit());
@@ -356,6 +388,7 @@ public class ListExternalDatabasesRequest
             ListExternalDatabasesRequest request = new ListExternalDatabasesRequest();
             request.compartmentId = compartmentId;
             request.externalDbSystemId = externalDbSystemId;
+            request.externalDatabaseId = externalDatabaseId;
             request.displayName = displayName;
             request.page = page;
             request.limit = limit;
@@ -363,8 +396,8 @@ public class ListExternalDatabasesRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListExternalDatabasesRequest(compartmentId, externalDbSystemId, displayName,
-            // page, limit, sortBy, sortOrder, opcRequestId);
+            // new ListExternalDatabasesRequest(compartmentId, externalDbSystemId,
+            // externalDatabaseId, displayName, page, limit, sortBy, sortOrder, opcRequestId);
         }
     }
 
@@ -377,6 +410,7 @@ public class ListExternalDatabasesRequest
         return new Builder()
                 .compartmentId(compartmentId)
                 .externalDbSystemId(externalDbSystemId)
+                .externalDatabaseId(externalDatabaseId)
                 .displayName(displayName)
                 .page(page)
                 .limit(limit)
@@ -401,6 +435,7 @@ public class ListExternalDatabasesRequest
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",externalDbSystemId=").append(String.valueOf(this.externalDbSystemId));
+        sb.append(",externalDatabaseId=").append(String.valueOf(this.externalDatabaseId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -424,6 +459,7 @@ public class ListExternalDatabasesRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.externalDbSystemId, other.externalDbSystemId)
+                && java.util.Objects.equals(this.externalDatabaseId, other.externalDatabaseId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -444,6 +480,11 @@ public class ListExternalDatabasesRequest
                         + (this.externalDbSystemId == null
                                 ? 43
                                 : this.externalDbSystemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalDatabaseId == null
+                                ? 43
+                                : this.externalDatabaseId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

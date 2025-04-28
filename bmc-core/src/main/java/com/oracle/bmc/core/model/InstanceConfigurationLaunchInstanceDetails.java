@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -31,8 +31,10 @@ public final class InstanceConfigurationLaunchInstanceDetails
         "availabilityDomain",
         "capacityReservationId",
         "compartmentId",
+        "clusterPlacementGroupId",
         "createVnicDetails",
         "definedTags",
+        "securityAttributes",
         "displayName",
         "extendedMetadata",
         "freeformTags",
@@ -51,14 +53,17 @@ public final class InstanceConfigurationLaunchInstanceDetails
         "preferredMaintenanceAction",
         "instanceOptions",
         "availabilityConfig",
-        "preemptibleInstanceConfig"
+        "preemptibleInstanceConfig",
+        "licensingConfigs"
     })
     public InstanceConfigurationLaunchInstanceDetails(
             String availabilityDomain,
             String capacityReservationId,
             String compartmentId,
+            String clusterPlacementGroupId,
             InstanceConfigurationCreateVnicDetails createVnicDetails,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String displayName,
             java.util.Map<String, Object> extendedMetadata,
             java.util.Map<String, String> freeformTags,
@@ -77,13 +82,16 @@ public final class InstanceConfigurationLaunchInstanceDetails
             PreferredMaintenanceAction preferredMaintenanceAction,
             InstanceConfigurationInstanceOptions instanceOptions,
             InstanceConfigurationAvailabilityConfig availabilityConfig,
-            PreemptibleInstanceConfigDetails preemptibleInstanceConfig) {
+            PreemptibleInstanceConfigDetails preemptibleInstanceConfig,
+            java.util.List<LaunchInstanceLicensingConfig> licensingConfigs) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
         this.compartmentId = compartmentId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.createVnicDetails = createVnicDetails;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.displayName = displayName;
         this.extendedMetadata = extendedMetadata;
         this.freeformTags = freeformTags;
@@ -103,6 +111,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         this.instanceOptions = instanceOptions;
         this.availabilityConfig = availabilityConfig;
         this.preemptibleInstanceConfig = preemptibleInstanceConfig;
+        this.licensingConfigs = licensingConfigs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -164,6 +173,21 @@ public final class InstanceConfigurationLaunchInstanceDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
+        /** The OCID of the cluster placement group of the instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID of the cluster placement group of the instance.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("createVnicDetails")
         private InstanceConfigurationCreateVnicDetails createVnicDetails;
@@ -176,7 +200,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -186,7 +210,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -197,6 +221,38 @@ public final class InstanceConfigurationLaunchInstanceDetails
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -252,7 +308,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -262,7 +318,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -293,7 +349,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
          *
          * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
          * Infrastructure, see [Bring Your Own
-         * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
          *
          * <p>For more information about iPXE, see http://ipxe.org.
          */
@@ -319,7 +375,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
          *
          * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
          * Infrastructure, see [Bring Your Own
-         * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
          *
          * <p>For more information about iPXE, see http://ipxe.org.
          *
@@ -674,6 +730,22 @@ public final class InstanceConfigurationLaunchInstanceDetails
             this.__explicitlySet__.add("preemptibleInstanceConfig");
             return this;
         }
+        /** List of licensing configurations associated with target launch values. */
+        @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+        private java.util.List<LaunchInstanceLicensingConfig> licensingConfigs;
+
+        /**
+         * List of licensing configurations associated with target launch values.
+         *
+         * @param licensingConfigs the value to set
+         * @return this builder
+         */
+        public Builder licensingConfigs(
+                java.util.List<LaunchInstanceLicensingConfig> licensingConfigs) {
+            this.licensingConfigs = licensingConfigs;
+            this.__explicitlySet__.add("licensingConfigs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -684,8 +756,10 @@ public final class InstanceConfigurationLaunchInstanceDetails
                             this.availabilityDomain,
                             this.capacityReservationId,
                             this.compartmentId,
+                            this.clusterPlacementGroupId,
                             this.createVnicDetails,
                             this.definedTags,
+                            this.securityAttributes,
                             this.displayName,
                             this.extendedMetadata,
                             this.freeformTags,
@@ -704,7 +778,8 @@ public final class InstanceConfigurationLaunchInstanceDetails
                             this.preferredMaintenanceAction,
                             this.instanceOptions,
                             this.availabilityConfig,
-                            this.preemptibleInstanceConfig);
+                            this.preemptibleInstanceConfig,
+                            this.licensingConfigs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -722,11 +797,17 @@ public final class InstanceConfigurationLaunchInstanceDetails
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
             if (model.wasPropertyExplicitlySet("createVnicDetails")) {
                 this.createVnicDetails(model.getCreateVnicDetails());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -784,6 +865,9 @@ public final class InstanceConfigurationLaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("preemptibleInstanceConfig")) {
                 this.preemptibleInstanceConfig(model.getPreemptibleInstanceConfig());
+            }
+            if (model.wasPropertyExplicitlySet("licensingConfigs")) {
+                this.licensingConfigs(model.getLicensingConfigs());
             }
             return this;
         }
@@ -849,6 +933,19 @@ public final class InstanceConfigurationLaunchInstanceDetails
         return compartmentId;
     }
 
+    /** The OCID of the cluster placement group of the instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID of the cluster placement group of the instance.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("createVnicDetails")
     private final InstanceConfigurationCreateVnicDetails createVnicDetails;
 
@@ -859,7 +956,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -869,7 +966,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -877,6 +974,35 @@ public final class InstanceConfigurationLaunchInstanceDetails
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -928,7 +1054,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -938,7 +1064,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -966,7 +1092,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
      *
      * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
      * Infrastructure, see [Bring Your Own
-     * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      *
      * <p>For more information about iPXE, see http://ipxe.org.
      */
@@ -991,7 +1117,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
      *
      * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
      * Infrastructure, see [Bring Your Own
-     * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      *
      * <p>For more information about iPXE, see http://ipxe.org.
      *
@@ -1408,6 +1534,19 @@ public final class InstanceConfigurationLaunchInstanceDetails
         return preemptibleInstanceConfig;
     }
 
+    /** List of licensing configurations associated with target launch values. */
+    @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+    private final java.util.List<LaunchInstanceLicensingConfig> licensingConfigs;
+
+    /**
+     * List of licensing configurations associated with target launch values.
+     *
+     * @return the value
+     */
+    public java.util.List<LaunchInstanceLicensingConfig> getLicensingConfigs() {
+        return licensingConfigs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1426,8 +1565,11 @@ public final class InstanceConfigurationLaunchInstanceDetails
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", createVnicDetails=").append(String.valueOf(this.createVnicDetails));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -1450,6 +1592,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         sb.append(", availabilityConfig=").append(String.valueOf(this.availabilityConfig));
         sb.append(", preemptibleInstanceConfig=")
                 .append(String.valueOf(this.preemptibleInstanceConfig));
+        sb.append(", licensingConfigs=").append(String.valueOf(this.licensingConfigs));
         sb.append(")");
         return sb.toString();
     }
@@ -1468,8 +1611,11 @@ public final class InstanceConfigurationLaunchInstanceDetails
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.createVnicDetails, other.createVnicDetails)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -1492,6 +1638,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
                 && java.util.Objects.equals(this.availabilityConfig, other.availabilityConfig)
                 && java.util.Objects.equals(
                         this.preemptibleInstanceConfig, other.preemptibleInstanceConfig)
+                && java.util.Objects.equals(this.licensingConfigs, other.licensingConfigs)
                 && super.equals(other);
     }
 
@@ -1514,8 +1661,18 @@ public final class InstanceConfigurationLaunchInstanceDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.createVnicDetails == null ? 43 : this.createVnicDetails.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
@@ -1563,6 +1720,9 @@ public final class InstanceConfigurationLaunchInstanceDetails
                         + (this.preemptibleInstanceConfig == null
                                 ? 43
                                 : this.preemptibleInstanceConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.licensingConfigs == null ? 43 : this.licensingConfigs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

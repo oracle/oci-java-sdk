@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -92,6 +92,44 @@ public class ScheduledJobAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     @Override
     public void setRegion(String regionId) {
         super.setRegion(regionId);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeScheduledJobCompartmentResponse>
+            changeScheduledJobCompartment(
+                    ChangeScheduledJobCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeScheduledJobCompartmentRequest,
+                                    ChangeScheduledJobCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getScheduledJobId(), "scheduledJobId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeScheduledJobCompartmentDetails(),
+                "changeScheduledJobCompartmentDetails is required");
+
+        return clientCall(request, ChangeScheduledJobCompartmentResponse::builder)
+                .logger(LOG, "changeScheduledJobCompartment")
+                .serviceDetails(
+                        "ScheduledJob",
+                        "ChangeScheduledJobCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/ChangeScheduledJobCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeScheduledJobCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("scheduledJobs")
+                .appendPathParam(request.getScheduledJobId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeScheduledJobCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -225,6 +263,16 @@ public class ScheduledJobAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("isRestricted", request.getIsRestricted())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

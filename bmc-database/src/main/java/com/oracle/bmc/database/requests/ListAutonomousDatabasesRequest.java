@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabasesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabasesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListAutonomousDatabasesRequest.
  */
@@ -17,26 +17,26 @@ public class ListAutonomousDatabasesRequest
 
     /**
      * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
      * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * The Autonomous Container Database
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousContainerDatabaseId;
 
     /**
      * The Autonomous Container Database
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getAutonomousContainerDatabaseId() {
         return autonomousContainerDatabaseId;
@@ -175,6 +175,15 @@ public class ListAutonomousDatabasesRequest
             getLifecycleState() {
         return lifecycleState;
     }
+    /** A filter to return only resources that not match the given lifecycle state. */
+    private com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState
+            lifecycleStateNotEqualTo;
+
+    /** A filter to return only resources that not match the given lifecycle state. */
+    public com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState
+            getLifecycleStateNotEqualTo() {
+        return lifecycleStateNotEqualTo;
+    }
     /**
      * A filter to return only autonomous database resources that match the specified workload type.
      */
@@ -266,14 +275,14 @@ public class ListAutonomousDatabasesRequest
         return isResourcePoolLeader;
     }
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the resourcepool Leader Autonomous Database.
+     * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the resourcepool Leader Autonomous Database.
      */
     private String resourcePoolLeaderId;
 
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the resourcepool Leader Autonomous Database.
+     * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the resourcepool Leader Autonomous Database.
      */
     public String getResourcePoolLeaderId() {
         return resourcePoolLeaderId;
@@ -287,13 +296,13 @@ public class ListAutonomousDatabasesRequest
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -305,13 +314,13 @@ public class ListAutonomousDatabasesRequest
 
         /**
          * The Autonomous Container Database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String autonomousContainerDatabaseId = null;
 
         /**
          * The Autonomous Container Database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param autonomousContainerDatabaseId the value to set
          * @return this builder instance
@@ -420,6 +429,23 @@ public class ListAutonomousDatabasesRequest
                 com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState
                         lifecycleState) {
             this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        /** A filter to return only resources that not match the given lifecycle state. */
+        private com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState
+                lifecycleStateNotEqualTo = null;
+
+        /**
+         * A filter to return only resources that not match the given lifecycle state.
+         *
+         * @param lifecycleStateNotEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder lifecycleStateNotEqualTo(
+                com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState
+                        lifecycleStateNotEqualTo) {
+            this.lifecycleStateNotEqualTo = lifecycleStateNotEqualTo;
             return this;
         }
 
@@ -569,14 +595,14 @@ public class ListAutonomousDatabasesRequest
 
         /**
          * The database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * resourcepool Leader Autonomous Database.
          */
         private String resourcePoolLeaderId = null;
 
         /**
          * The database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * resourcepool Leader Autonomous Database.
          *
          * @param resourcePoolLeaderId the value to set
@@ -625,6 +651,7 @@ public class ListAutonomousDatabasesRequest
             sortOrder(o.getSortOrder());
             infrastructureType(o.getInfrastructureType());
             lifecycleState(o.getLifecycleState());
+            lifecycleStateNotEqualTo(o.getLifecycleStateNotEqualTo());
             dbWorkload(o.getDbWorkload());
             dbVersion(o.getDbVersion());
             isFreeTier(o.getIsFreeTier());
@@ -676,6 +703,7 @@ public class ListAutonomousDatabasesRequest
             request.sortOrder = sortOrder;
             request.infrastructureType = infrastructureType;
             request.lifecycleState = lifecycleState;
+            request.lifecycleStateNotEqualTo = lifecycleStateNotEqualTo;
             request.dbWorkload = dbWorkload;
             request.dbVersion = dbVersion;
             request.isFreeTier = isFreeTier;
@@ -687,9 +715,10 @@ public class ListAutonomousDatabasesRequest
             request.resourcePoolLeaderId = resourcePoolLeaderId;
             return request;
             // new ListAutonomousDatabasesRequest(compartmentId, autonomousContainerDatabaseId,
-            // limit, page, sortBy, sortOrder, infrastructureType, lifecycleState, dbWorkload,
-            // dbVersion, isFreeTier, displayName, opcRequestId, isRefreshableClone,
-            // isDataGuardEnabled, isResourcePoolLeader, resourcePoolLeaderId);
+            // limit, page, sortBy, sortOrder, infrastructureType, lifecycleState,
+            // lifecycleStateNotEqualTo, dbWorkload, dbVersion, isFreeTier, displayName,
+            // opcRequestId, isRefreshableClone, isDataGuardEnabled, isResourcePoolLeader,
+            // resourcePoolLeaderId);
         }
     }
 
@@ -708,6 +737,7 @@ public class ListAutonomousDatabasesRequest
                 .sortOrder(sortOrder)
                 .infrastructureType(infrastructureType)
                 .lifecycleState(lifecycleState)
+                .lifecycleStateNotEqualTo(lifecycleStateNotEqualTo)
                 .dbWorkload(dbWorkload)
                 .dbVersion(dbVersion)
                 .isFreeTier(isFreeTier)
@@ -742,6 +772,8 @@ public class ListAutonomousDatabasesRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",infrastructureType=").append(String.valueOf(this.infrastructureType));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",lifecycleStateNotEqualTo=")
+                .append(String.valueOf(this.lifecycleStateNotEqualTo));
         sb.append(",dbWorkload=").append(String.valueOf(this.dbWorkload));
         sb.append(",dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(",isFreeTier=").append(String.valueOf(this.isFreeTier));
@@ -775,6 +807,8 @@ public class ListAutonomousDatabasesRequest
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.infrastructureType, other.infrastructureType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.lifecycleStateNotEqualTo, other.lifecycleStateNotEqualTo)
                 && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.isFreeTier, other.isFreeTier)
@@ -810,6 +844,11 @@ public class ListAutonomousDatabasesRequest
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleStateNotEqualTo == null
+                                ? 43
+                                : this.lifecycleStateNotEqualTo.hashCode());
         result = (result * PRIME) + (this.dbWorkload == null ? 43 : this.dbWorkload.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result = (result * PRIME) + (this.isFreeTier == null ? 43 : this.isFreeTier.hashCode());

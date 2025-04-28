@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dashboardservice;
@@ -228,13 +228,13 @@ public class DashboardGroupClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-cross-region", request.getOpcCrossRegion())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dashboardservice.model.DashboardGroup.class,
                         GetDashboardGroupResponse.Builder::dashboardGroup)
                 .handleResponseHeaderString("etag", GetDashboardGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDashboardGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -263,6 +263,7 @@ public class DashboardGroupClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-cross-region", request.getOpcCrossRegion())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dashboardservice.model.DashboardGroupCollection.class,
                         ListDashboardGroupsResponse.Builder::dashboardGroupCollection)
@@ -270,7 +271,6 @@ public class DashboardGroupClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListDashboardGroupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDashboardGroupsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

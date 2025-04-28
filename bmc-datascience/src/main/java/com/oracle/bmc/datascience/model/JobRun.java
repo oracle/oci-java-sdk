@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -33,6 +33,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         "displayName",
         "jobConfigurationOverrideDetails",
         "jobInfrastructureConfigurationDetails",
+        "jobEnvironmentConfigurationOverrideDetails",
         "jobLogConfigurationOverrideDetails",
         "jobStorageMountConfigurationDetailsList",
         "logDetails",
@@ -53,6 +54,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             String displayName,
             JobConfigurationDetails jobConfigurationOverrideDetails,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails,
+            JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails,
             JobLogConfigurationDetails jobLogConfigurationOverrideDetails,
             java.util.List<StorageMountConfigurationDetails>
                     jobStorageMountConfigurationDetailsList,
@@ -73,6 +75,8 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         this.displayName = displayName;
         this.jobConfigurationOverrideDetails = jobConfigurationOverrideDetails;
         this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+        this.jobEnvironmentConfigurationOverrideDetails =
+                jobEnvironmentConfigurationOverrideDetails;
         this.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
         this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
         this.logDetails = logDetails;
@@ -85,15 +89,15 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * job run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * job run.
          *
          * @param id the value to set
          * @return this builder
@@ -161,15 +165,15 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the user who created the job run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * user who created the job run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the user who created the job run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * user who created the job run.
          *
          * @param createdBy the value to set
          * @return this builder
@@ -180,15 +184,15 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate the job with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project to associate the job run with.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate the job with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project to associate the job run with.
          *
          * @param projectId the value to set
          * @return this builder
@@ -199,15 +203,15 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment where you want to create the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment where you want to create the job run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment where you want to create the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment where you want to create the job run.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -218,15 +222,15 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * job.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("jobId")
         private String jobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * job.
          *
          * @param jobId the value to set
          * @return this builder
@@ -269,6 +273,17 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                 JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails) {
             this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             this.__explicitlySet__.add("jobInfrastructureConfigurationDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationOverrideDetails")
+        private JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails;
+
+        public Builder jobEnvironmentConfigurationOverrideDetails(
+                JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails) {
+            this.jobEnvironmentConfigurationOverrideDetails =
+                    jobEnvironmentConfigurationOverrideDetails;
+            this.__explicitlySet__.add("jobEnvironmentConfigurationOverrideDetails");
             return this;
         }
 
@@ -341,7 +356,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -350,7 +365,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -363,7 +378,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -371,7 +386,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -401,6 +416,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                             this.displayName,
                             this.jobConfigurationOverrideDetails,
                             this.jobInfrastructureConfigurationDetails,
+                            this.jobEnvironmentConfigurationOverrideDetails,
                             this.jobLogConfigurationOverrideDetails,
                             this.jobStorageMountConfigurationDetailsList,
                             this.logDetails,
@@ -450,6 +466,10 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                 this.jobInfrastructureConfigurationDetails(
                         model.getJobInfrastructureConfigurationDetails());
             }
+            if (model.wasPropertyExplicitlySet("jobEnvironmentConfigurationOverrideDetails")) {
+                this.jobEnvironmentConfigurationOverrideDetails(
+                        model.getJobEnvironmentConfigurationOverrideDetails());
+            }
             if (model.wasPropertyExplicitlySet("jobLogConfigurationOverrideDetails")) {
                 this.jobLogConfigurationOverrideDetails(
                         model.getJobLogConfigurationOverrideDetails());
@@ -487,15 +507,15 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job
+     * run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job
+     * run.
      *
      * @return the value
      */
@@ -555,15 +575,15 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the user who created the job run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+     * who created the job run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the user who created the job run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+     * who created the job run.
      *
      * @return the value
      */
@@ -572,15 +592,15 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate the job with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project to associate the job run with.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate the job with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project to associate the job run with.
      *
      * @return the value
      */
@@ -589,15 +609,15 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment where you want to create the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment where you want to create the job run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment where you want to create the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment where you want to create the job run.
      *
      * @return the value
      */
@@ -606,15 +626,13 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("jobId")
     private final String jobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      *
      * @return the value
      */
@@ -647,6 +665,13 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
 
     public JobInfrastructureConfigurationDetails getJobInfrastructureConfigurationDetails() {
         return jobInfrastructureConfigurationDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationOverrideDetails")
+    private final JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails;
+
+    public JobEnvironmentConfigurationDetails getJobEnvironmentConfigurationOverrideDetails() {
+        return jobEnvironmentConfigurationOverrideDetails;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("jobLogConfigurationOverrideDetails")
@@ -707,7 +732,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -716,7 +741,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -727,7 +752,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -735,7 +760,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -772,6 +797,8 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                 .append(String.valueOf(this.jobConfigurationOverrideDetails));
         sb.append(", jobInfrastructureConfigurationDetails=")
                 .append(String.valueOf(this.jobInfrastructureConfigurationDetails));
+        sb.append(", jobEnvironmentConfigurationOverrideDetails=")
+                .append(String.valueOf(this.jobEnvironmentConfigurationOverrideDetails));
         sb.append(", jobLogConfigurationOverrideDetails=")
                 .append(String.valueOf(this.jobLogConfigurationOverrideDetails));
         sb.append(", jobStorageMountConfigurationDetailsList=")
@@ -809,6 +836,9 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(
                         this.jobInfrastructureConfigurationDetails,
                         other.jobInfrastructureConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.jobEnvironmentConfigurationOverrideDetails,
+                        other.jobEnvironmentConfigurationOverrideDetails)
                 && java.util.Objects.equals(
                         this.jobLogConfigurationOverrideDetails,
                         other.jobLogConfigurationOverrideDetails)
@@ -848,6 +878,11 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                         + (this.jobInfrastructureConfigurationDetails == null
                                 ? 43
                                 : this.jobInfrastructureConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobEnvironmentConfigurationOverrideDetails == null
+                                ? 43
+                                : this.jobEnvironmentConfigurationOverrideDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.jobLogConfigurationOverrideDetails == null

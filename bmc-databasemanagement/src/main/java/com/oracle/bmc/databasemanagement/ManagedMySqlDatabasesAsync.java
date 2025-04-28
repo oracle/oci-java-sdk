@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -8,9 +8,9 @@ import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
 
 /**
- * Use the Database Management API to perform tasks such as obtaining performance and resource usage
- * metrics for a fleet of Managed Databases or a specific Managed Database, creating Managed
- * Database Groups, and running a SQL job on a Managed Database or Managed Database Group.
+ * Use the Database Management API to monitor and manage resources such as Oracle Databases, MySQL
+ * Databases, and External Database Systems. For more information, see [Database
+ * Management](https://docs.oracle.com/iaas/database-management/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public interface ManagedMySqlDatabasesAsync extends AutoCloseable {
@@ -62,6 +62,60 @@ public interface ManagedMySqlDatabasesAsync extends AutoCloseable {
      *     template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
+     * Disable an Associated Service for an external MySQL database resource. An Associated Service
+     * example is OPSI.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalMysqlAssociatedServiceResponse>
+            disableExternalMysqlAssociatedService(
+                    DisableExternalMysqlAssociatedServiceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalMysqlAssociatedServiceRequest,
+                                    DisableExternalMysqlAssociatedServiceResponse>
+                            handler);
+
+    /**
+     * Enable an Associated Service for an external MySQL database resource. An Associated Service
+     * example is OPSI.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalMysqlAssociatedServiceResponse>
+            enableExternalMysqlAssociatedService(
+                    EnableExternalMysqlAssociatedServiceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalMysqlAssociatedServiceRequest,
+                                    EnableExternalMysqlAssociatedServiceResponse>
+                            handler);
+
+    /**
+     * Gets the health metrics for a fleet of HeatWave clusters in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetHeatWaveFleetMetricResponse> getHeatWaveFleetMetric(
+            GetHeatWaveFleetMetricRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetHeatWaveFleetMetricRequest, GetHeatWaveFleetMetricResponse>
+                    handler);
 
     /**
      * Retrieves the general information for a specific MySQL Database.

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe;
@@ -71,7 +71,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "DataSafeClient",
-                            "downloadDiscoveryReport,downloadMaskingLog,downloadMaskingPolicy,downloadMaskingReport,downloadPrivilegeScript,downloadSecurityAssessmentReport,downloadSensitiveDataModel,downloadUserAssessmentReport,generateOnPremConnectorConfiguration,getReportContent"));
+                            "downloadDiscoveryReport,downloadMaskingLog,downloadMaskingPolicy,downloadMaskingReport,downloadPrivilegeScript,downloadSecurityAssessmentReport,downloadSensitiveDataModel,downloadSensitiveTypesExport,downloadUserAssessmentReport,generateOnPremConnectorConfiguration,getReportContent"));
         }
     }
 
@@ -175,13 +175,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ActivateTargetDatabaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ActivateTargetDatabaseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -207,12 +207,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         AddMaskingColumnsFromSdmResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", AddMaskingColumnsFromSdmResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -238,12 +238,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", AlertsUpdateResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", AlertsUpdateResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -274,13 +274,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ApplyDiscoveryJobResultsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ApplyDiscoveryJobResultsResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -311,6 +311,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -318,7 +319,106 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ApplySdmMaskingPolicyDifferenceResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public BulkCreateSensitiveTypesResponse bulkCreateSensitiveTypes(
+            BulkCreateSensitiveTypesRequest request) {
+        Objects.requireNonNull(
+                request.getBulkCreateSensitiveTypesDetails(),
+                "bulkCreateSensitiveTypesDetails is required");
+
+        Objects.requireNonNull(request.getOpcCompartmentId(), "opcCompartmentId is required");
+
+        return clientCall(request, BulkCreateSensitiveTypesResponse::builder)
+                .logger(LOG, "bulkCreateSensitiveTypes")
+                .serviceDetails(
+                        "DataSafe",
+                        "BulkCreateSensitiveTypes",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/BulkCreateSensitiveTypes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkCreateSensitiveTypesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypes")
+                .appendPathParam("actions")
+                .appendPathParam("bulkCreateSensitiveTypes")
+                .accept("application/json")
+                .appendHeader("opc-compartment-id", request.getOpcCompartmentId())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        BulkCreateSensitiveTypesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", BulkCreateSensitiveTypesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public BulkCreateSqlFirewallAllowedSqlsResponse bulkCreateSqlFirewallAllowedSqls(
+            BulkCreateSqlFirewallAllowedSqlsRequest request) {
+        Objects.requireNonNull(
+                request.getBulkCreateSqlFirewallAllowedSqlsDetails(),
+                "bulkCreateSqlFirewallAllowedSqlsDetails is required");
+
+        return clientCall(request, BulkCreateSqlFirewallAllowedSqlsResponse::builder)
+                .logger(LOG, "bulkCreateSqlFirewallAllowedSqls")
+                .serviceDetails(
+                        "DataSafe",
+                        "BulkCreateSqlFirewallAllowedSqls",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSql/BulkCreateSqlFirewallAllowedSqls")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkCreateSqlFirewallAllowedSqlsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallAllowedSqls")
+                .appendPathParam("actions")
+                .appendPathParam("bulkCreate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        BulkCreateSqlFirewallAllowedSqlsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        BulkCreateSqlFirewallAllowedSqlsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public BulkDeleteSqlFirewallAllowedSqlsResponse bulkDeleteSqlFirewallAllowedSqls(
+            BulkDeleteSqlFirewallAllowedSqlsRequest request) {
+        Objects.requireNonNull(
+                request.getBulkDeleteSqlFirewallAllowedSqlsDetails(),
+                "bulkDeleteSqlFirewallAllowedSqlsDetails is required");
+
+        return clientCall(request, BulkDeleteSqlFirewallAllowedSqlsResponse::builder)
+                .logger(LOG, "bulkDeleteSqlFirewallAllowedSqls")
+                .serviceDetails(
+                        "DataSafe",
+                        "BulkDeleteSqlFirewallAllowedSqls",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSql/BulkDeleteSqlFirewallAllowedSqls")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkDeleteSqlFirewallAllowedSqlsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallAllowedSqls")
+                .appendPathParam("actions")
+                .appendPathParam("bulkDelete")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        BulkDeleteSqlFirewallAllowedSqlsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        BulkDeleteSqlFirewallAllowedSqlsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -348,6 +448,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -355,7 +456,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CalculateAuditVolumeAvailableResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -385,6 +485,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -392,7 +493,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CalculateAuditVolumeCollectedResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -416,11 +516,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", CancelWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -450,10 +550,47 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeAlertCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeAlertPolicyCompartmentResponse changeAlertPolicyCompartment(
+            ChangeAlertPolicyCompartmentRequest request) {
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeAlertPolicyCompartmentDetails(),
+                "changeAlertPolicyCompartmentDetails is required");
+
+        return clientCall(request, ChangeAlertPolicyCompartmentResponse::builder)
+                .logger(LOG, "changeAlertPolicyCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeAlertPolicyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/ChangeAlertPolicyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAlertPolicyCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeAlertPolicyCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAlertPolicyCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -484,6 +621,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -491,7 +629,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeAuditArchiveRetrievalCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -521,6 +658,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -528,7 +666,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeAuditPolicyCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -558,6 +695,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -565,7 +703,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeAuditProfileCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -597,6 +734,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -604,7 +742,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeDataSafePrivateEndpointCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -636,6 +773,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -643,7 +781,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeDatabaseSecurityConfigCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -673,11 +810,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeDiscoveryJobCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -708,11 +845,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeLibraryMaskingFormatCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -742,11 +879,48 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeMaskingPolicyCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeMaskingPolicyHealthReportCompartmentResponse
+            changeMaskingPolicyHealthReportCompartment(
+                    ChangeMaskingPolicyHealthReportCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getMaskingPolicyHealthReportId(),
+                "maskingPolicyHealthReportId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMaskingPolicyHealthReportCompartmentDetails(),
+                "changeMaskingPolicyHealthReportCompartmentDetails is required");
+
+        return clientCall(request, ChangeMaskingPolicyHealthReportCompartmentResponse::builder)
+                .logger(LOG, "changeMaskingPolicyHealthReportCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeMaskingPolicyHealthReportCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/ChangeMaskingPolicyHealthReportCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMaskingPolicyHealthReportCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicyHealthReports")
+                .appendPathParam(request.getMaskingPolicyHealthReportId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMaskingPolicyHealthReportCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -776,11 +950,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeOnPremConnectorCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -810,13 +984,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeReportCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeReportCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -846,6 +1020,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -853,7 +1028,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeReportDefinitionCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -881,12 +1055,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", ChangeRetentionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeRetentionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -919,11 +1093,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeSdmMaskingPolicyDifferenceCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -954,11 +1128,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeSecurityAssessmentCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -988,6 +1162,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -995,7 +1170,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeSecurityPolicyCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1028,6 +1202,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1035,7 +1210,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeSecurityPolicyDeploymentCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1066,11 +1240,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeSensitiveDataModelCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1100,11 +1274,81 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeSensitiveTypeCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeSensitiveTypeGroupCompartmentResponse changeSensitiveTypeGroupCompartment(
+            ChangeSensitiveTypeGroupCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypeGroupId(), "sensitiveTypeGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSensitiveTypeGroupCompartmentDetails(),
+                "changeSensitiveTypeGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeSensitiveTypeGroupCompartmentResponse::builder)
+                .logger(LOG, "changeSensitiveTypeGroupCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeSensitiveTypeGroupCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/ChangeSensitiveTypeGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSensitiveTypeGroupCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendPathParam(request.getSensitiveTypeGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSensitiveTypeGroupCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeSensitiveTypesExportCompartmentResponse changeSensitiveTypesExportCompartment(
+            ChangeSensitiveTypesExportCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypesExportId(), "sensitiveTypesExportId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSensitiveTypesExportCompartmentDetails(),
+                "changeSensitiveTypesExportCompartmentDetails is required");
+
+        return clientCall(request, ChangeSensitiveTypesExportCompartmentResponse::builder)
+                .logger(LOG, "changeSensitiveTypesExportCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeSensitiveTypesExportCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExport/ChangeSensitiveTypesExportCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSensitiveTypesExportCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .appendPathParam(request.getSensitiveTypesExportId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSensitiveTypesExportCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1134,6 +1378,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1141,7 +1386,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeSqlCollectionCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1172,6 +1416,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1179,7 +1424,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeSqlFirewallPolicyCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1212,11 +1456,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeTargetAlertPolicyAssociationCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1246,11 +1490,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeTargetDatabaseCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1280,11 +1524,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeUserAssessmentCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1315,13 +1559,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CompareSecurityAssessmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CompareSecurityAssessmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1351,13 +1595,85 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CompareUserAssessmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CompareUserAssessmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateAlertPolicyResponse createAlertPolicy(CreateAlertPolicyRequest request) {
+        Objects.requireNonNull(
+                request.getCreateAlertPolicyDetails(), "createAlertPolicyDetails is required");
+
+        return clientCall(request, CreateAlertPolicyResponse::builder)
+                .logger(LOG, "createAlertPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateAlertPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/CreateAlertPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAlertPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.AlertPolicy.class,
+                        CreateAlertPolicyResponse.Builder::alertPolicy)
+                .handleResponseHeaderString("etag", CreateAlertPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateAlertPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateAlertPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("location", CreateAlertPolicyResponse.Builder::location)
+                .callSync();
+    }
+
+    @Override
+    public CreateAlertPolicyRuleResponse createAlertPolicyRule(
+            CreateAlertPolicyRuleRequest request) {
+        Objects.requireNonNull(
+                request.getCreateAlertPolicyRuleDetails(),
+                "createAlertPolicyRuleDetails is required");
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+
+        return clientCall(request, CreateAlertPolicyRuleResponse::builder)
+                .logger(LOG, "createAlertPolicyRule")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateAlertPolicyRule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicyRule/CreateAlertPolicyRule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAlertPolicyRuleRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .appendPathParam("rules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.AlertPolicyRule.class,
+                        CreateAlertPolicyRuleResponse.Builder::alertPolicyRule)
+                .handleResponseHeaderString("etag", CreateAlertPolicyRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateAlertPolicyRuleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateAlertPolicyRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateAlertPolicyRuleResponse.Builder::location)
                 .callSync();
     }
 
@@ -1378,6 +1694,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditArchiveRetrieval.class,
@@ -1389,7 +1706,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         CreateAuditArchiveRetrievalResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateAuditArchiveRetrievalResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1413,6 +1729,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.DataSafePrivateEndpoint.class,
@@ -1427,7 +1744,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         CreateDataSafePrivateEndpointResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateDataSafePrivateEndpointResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1446,6 +1762,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.DiscoveryJob.class,
@@ -1457,7 +1774,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateDiscoveryJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateDiscoveryJobResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1481,6 +1797,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.LibraryMaskingFormat.class,
@@ -1494,7 +1811,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateLibraryMaskingFormatResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateLibraryMaskingFormatResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1520,13 +1836,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateMaskingColumnResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateMaskingColumnResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1548,6 +1864,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.MaskingPolicy.class,
@@ -1560,7 +1877,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateMaskingPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateMaskingPolicyResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1584,6 +1900,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.OnPremConnector.class,
@@ -1596,7 +1913,82 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateOnPremConnectorResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateOnPremConnectorResponse.Builder::location)
+                .callSync();
+    }
+
+    @Override
+    public CreatePeerTargetDatabaseResponse createPeerTargetDatabase(
+            CreatePeerTargetDatabaseRequest request) {
+
+        Validate.notBlank(request.getTargetDatabaseId(), "targetDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getCreatePeerTargetDatabaseDetails(),
+                "createPeerTargetDatabaseDetails is required");
+
+        return clientCall(request, CreatePeerTargetDatabaseResponse::builder)
+                .logger(LOG, "createPeerTargetDatabase")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreatePeerTargetDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/CreatePeerTargetDatabase")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePeerTargetDatabaseRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("targetDatabases")
+                .appendPathParam(request.getTargetDatabaseId())
+                .appendPathParam("peerTargetDatabases")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.PeerTargetDatabase.class,
+                        CreatePeerTargetDatabaseResponse.Builder::peerTargetDatabase)
+                .handleResponseHeaderString("etag", CreatePeerTargetDatabaseResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreatePeerTargetDatabaseResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePeerTargetDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreatePeerTargetDatabaseResponse.Builder::location)
+                .callSync();
+    }
+
+    @Override
+    public CreateReferentialRelationResponse createReferentialRelation(
+            CreateReferentialRelationRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveDataModelId(), "sensitiveDataModelId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateReferentialRelationDetails(),
+                "createReferentialRelationDetails is required");
+
+        return clientCall(request, CreateReferentialRelationResponse::builder)
+                .logger(LOG, "createReferentialRelation")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateReferentialRelation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReferentialRelation/CreateReferentialRelation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateReferentialRelationRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveDataModels")
+                .appendPathParam(request.getSensitiveDataModelId())
+                .appendPathParam("referentialRelations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateReferentialRelationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateReferentialRelationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1620,6 +2012,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.ReportDefinition.class,
@@ -1630,7 +2023,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         CreateReportDefinitionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateReportDefinitionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1651,6 +2043,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifference.class,
@@ -1666,7 +2059,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         CreateSdmMaskingPolicyDifferenceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateSdmMaskingPolicyDifferenceResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1690,6 +2082,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SecurityAssessment.class,
@@ -1702,7 +2095,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateSecurityAssessmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateSecurityAssessmentResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1731,13 +2123,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateSensitiveColumnResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSensitiveColumnResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1761,6 +2153,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SensitiveDataModel.class,
@@ -1773,7 +2166,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateSensitiveDataModelResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateSensitiveDataModelResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1792,6 +2184,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SensitiveType.class,
@@ -1804,7 +2197,79 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateSensitiveTypeResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateSensitiveTypeResponse.Builder::location)
+                .callSync();
+    }
+
+    @Override
+    public CreateSensitiveTypeGroupResponse createSensitiveTypeGroup(
+            CreateSensitiveTypeGroupRequest request) {
+        Objects.requireNonNull(
+                request.getCreateSensitiveTypeGroupDetails(),
+                "createSensitiveTypeGroupDetails is required");
+
+        return clientCall(request, CreateSensitiveTypeGroupResponse::builder)
+                .logger(LOG, "createSensitiveTypeGroup")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateSensitiveTypeGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/CreateSensitiveTypeGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSensitiveTypeGroupRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveTypeGroup.class,
+                        CreateSensitiveTypeGroupResponse.Builder::sensitiveTypeGroup)
+                .handleResponseHeaderString("etag", CreateSensitiveTypeGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSensitiveTypeGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSensitiveTypeGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateSensitiveTypeGroupResponse.Builder::location)
+                .callSync();
+    }
+
+    @Override
+    public CreateSensitiveTypesExportResponse createSensitiveTypesExport(
+            CreateSensitiveTypesExportRequest request) {
+        Objects.requireNonNull(
+                request.getCreateSensitiveTypesExportDetails(),
+                "createSensitiveTypesExportDetails is required");
+
+        return clientCall(request, CreateSensitiveTypesExportResponse::builder)
+                .logger(LOG, "createSensitiveTypesExport")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateSensitiveTypesExport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExport/CreateSensitiveTypesExport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSensitiveTypesExportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveTypesExport.class,
+                        CreateSensitiveTypesExportResponse.Builder::sensitiveTypesExport)
+                .handleResponseHeaderString(
+                        "etag", CreateSensitiveTypesExportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSensitiveTypesExportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSensitiveTypesExportResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateSensitiveTypesExportResponse.Builder::location)
                 .callSync();
     }
 
@@ -1826,6 +2291,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SqlCollection.class,
@@ -1838,7 +2304,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateSqlCollectionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateSqlCollectionResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1862,6 +2327,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation.class,
@@ -1877,7 +2343,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         CreateTargetAlertPolicyAssociationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateTargetAlertPolicyAssociationResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1900,6 +2365,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.TargetDatabase.class,
@@ -1912,7 +2378,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateTargetDatabaseResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateTargetDatabaseResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1935,6 +2400,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.UserAssessment.class,
@@ -1947,7 +2413,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateUserAssessmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateUserAssessmentResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1974,12 +2439,72 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeactivateTargetDatabaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeactivateTargetDatabaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteAlertPolicyResponse deleteAlertPolicy(DeleteAlertPolicyRequest request) {
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+
+        return clientCall(request, DeleteAlertPolicyResponse::builder)
+                .logger(LOG, "deleteAlertPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteAlertPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/DeleteAlertPolicy")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAlertPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteAlertPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAlertPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteAlertPolicyRuleResponse deleteAlertPolicyRule(
+            DeleteAlertPolicyRuleRequest request) {
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+
+        Validate.notBlank(request.getRuleKey(), "ruleKey must not be blank");
+
+        return clientCall(request, DeleteAlertPolicyRuleResponse::builder)
+                .logger(LOG, "deleteAlertPolicyRule")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteAlertPolicyRule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicyRule/DeleteAlertPolicyRule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAlertPolicyRuleRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .appendPathParam("rules")
+                .appendPathParam(request.getRuleKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteAlertPolicyRuleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAlertPolicyRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2004,12 +2529,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteAuditArchiveRetrievalResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAuditArchiveRetrievalResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2032,11 +2557,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteAuditTrailResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAuditTrailResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2062,13 +2587,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteDataSafePrivateEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteDataSafePrivateEndpointResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2091,11 +2616,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteDiscoveryJobResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDiscoveryJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2123,9 +2648,9 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDiscoveryJobResultResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2150,9 +2675,9 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteLibraryMaskingFormatResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2179,9 +2704,9 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMaskingColumnResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2204,12 +2729,72 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteMaskingPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMaskingPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteMaskingPolicyHealthReportResponse deleteMaskingPolicyHealthReport(
+            DeleteMaskingPolicyHealthReportRequest request) {
+
+        Validate.notBlank(
+                request.getMaskingPolicyHealthReportId(),
+                "maskingPolicyHealthReportId must not be blank");
+
+        return clientCall(request, DeleteMaskingPolicyHealthReportResponse::builder)
+                .logger(LOG, "deleteMaskingPolicyHealthReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteMaskingPolicyHealthReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/DeleteMaskingPolicyHealthReport")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMaskingPolicyHealthReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicyHealthReports")
+                .appendPathParam(request.getMaskingPolicyHealthReportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMaskingPolicyHealthReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteMaskingPolicyHealthReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteMaskingReportResponse deleteMaskingReport(DeleteMaskingReportRequest request) {
+
+        Validate.notBlank(request.getMaskingReportId(), "maskingReportId must not be blank");
+
+        return clientCall(request, DeleteMaskingReportResponse::builder)
+                .logger(LOG, "deleteMaskingReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteMaskingReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingReport/DeleteMaskingReport")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMaskingReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingReports")
+                .appendPathParam(request.getMaskingReportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMaskingReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMaskingReportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2233,12 +2818,75 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteOnPremConnectorResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteOnPremConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeletePeerTargetDatabaseResponse deletePeerTargetDatabase(
+            DeletePeerTargetDatabaseRequest request) {
+
+        Validate.notBlank(request.getTargetDatabaseId(), "targetDatabaseId must not be blank");
+
+        return clientCall(request, DeletePeerTargetDatabaseResponse::builder)
+                .logger(LOG, "deletePeerTargetDatabase")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeletePeerTargetDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/DeletePeerTargetDatabase")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePeerTargetDatabaseRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("targetDatabases")
+                .appendPathParam(request.getTargetDatabaseId())
+                .appendPathParam("peerTargetDatabases")
+                .appendPathParam(request.getPeerTargetDatabaseId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeletePeerTargetDatabaseResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePeerTargetDatabaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteReferentialRelationResponse deleteReferentialRelation(
+            DeleteReferentialRelationRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveDataModelId(), "sensitiveDataModelId must not be blank");
+
+        Validate.notBlank(
+                request.getReferentialRelationKey(), "referentialRelationKey must not be blank");
+
+        return clientCall(request, DeleteReferentialRelationResponse::builder)
+                .logger(LOG, "deleteReferentialRelation")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteReferentialRelation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReferentialRelation/DeleteReferentialRelation")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteReferentialRelationRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveDataModels")
+                .appendPathParam(request.getSensitiveDataModelId())
+                .appendPathParam("referentialRelations")
+                .appendPathParam(request.getReferentialRelationKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteReferentialRelationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2262,12 +2910,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteReportDefinitionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteReportDefinitionResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2293,13 +2941,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteSdmMaskingPolicyDifferenceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteSdmMaskingPolicyDifferenceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2324,12 +2972,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteSecurityAssessmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSecurityAssessmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2358,9 +3006,9 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSensitiveColumnResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2385,12 +3033,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteSensitiveDataModelResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSensitiveDataModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2413,9 +3061,66 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSensitiveTypeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSensitiveTypeGroupResponse deleteSensitiveTypeGroup(
+            DeleteSensitiveTypeGroupRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypeGroupId(), "sensitiveTypeGroupId must not be blank");
+
+        return clientCall(request, DeleteSensitiveTypeGroupResponse::builder)
+                .logger(LOG, "deleteSensitiveTypeGroup")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSensitiveTypeGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/DeleteSensitiveTypeGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSensitiveTypeGroupRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendPathParam(request.getSensitiveTypeGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSensitiveTypeGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSensitiveTypeGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSensitiveTypesExportResponse deleteSensitiveTypesExport(
+            DeleteSensitiveTypesExportRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypesExportId(), "sensitiveTypesExportId must not be blank");
+
+        return clientCall(request, DeleteSensitiveTypesExportResponse::builder)
+                .logger(LOG, "deleteSensitiveTypesExport")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSensitiveTypesExport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExport/DeleteSensitiveTypesExport")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSensitiveTypesExportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .appendPathParam(request.getSensitiveTypesExportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSensitiveTypesExportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2438,12 +3143,42 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteSqlCollectionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSqlCollectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSqlFirewallAllowedSqlResponse deleteSqlFirewallAllowedSql(
+            DeleteSqlFirewallAllowedSqlRequest request) {
+
+        Validate.notBlank(
+                request.getSqlFirewallAllowedSqlId(), "sqlFirewallAllowedSqlId must not be blank");
+
+        return clientCall(request, DeleteSqlFirewallAllowedSqlResponse::builder)
+                .logger(LOG, "deleteSqlFirewallAllowedSql")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSqlFirewallAllowedSql",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSql/DeleteSqlFirewallAllowedSql")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSqlFirewallAllowedSqlRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallAllowedSqls")
+                .appendPathParam(request.getSqlFirewallAllowedSqlId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSqlFirewallAllowedSqlResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSqlFirewallAllowedSqlResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2468,12 +3203,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteSqlFirewallPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSqlFirewallPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2499,13 +3234,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteTargetAlertPolicyAssociationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteTargetAlertPolicyAssociationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2528,12 +3263,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteTargetDatabaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteTargetDatabaseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2556,12 +3291,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteUserAssessmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteUserAssessmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2587,12 +3322,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DiscoverAuditTrailsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DiscoverAuditTrailsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2621,6 +3356,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("downloadReport")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class,
@@ -2630,7 +3366,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", DownloadDiscoveryReportResponse.Builder::etag)
                 .handleResponseHeaderLong(
                         "content-length", DownloadDiscoveryReportResponse.Builder::contentLength)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2656,6 +3391,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("downloadLog")
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class, DownloadMaskingLogResponse.Builder::inputStream)
@@ -2664,7 +3400,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", DownloadMaskingLogResponse.Builder::opcRequestId)
                 .handleResponseHeaderLong(
                         "content-length", DownloadMaskingLogResponse.Builder::contentLength)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2692,6 +3427,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("download")
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class,
@@ -2701,7 +3437,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", DownloadMaskingPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderLong(
                         "content-length", DownloadMaskingPolicyResponse.Builder::contentLength)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2729,6 +3464,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("downloadReport")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class,
@@ -2738,7 +3474,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", DownloadMaskingReportResponse.Builder::opcRequestId)
                 .handleResponseHeaderLong(
                         "content-length", DownloadMaskingReportResponse.Builder::contentLength)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2761,6 +3496,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         DownloadPrivilegeScriptResponse.Builder::inputStream)
@@ -2769,7 +3505,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", DownloadPrivilegeScriptResponse.Builder::etag)
                 .handleResponseHeaderLong(
                         "content-length", DownloadPrivilegeScriptResponse.Builder::contentLength)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2800,6 +3535,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class,
@@ -2812,7 +3548,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderLong(
                         "content-length",
                         DownloadSecurityAssessmentReportResponse.Builder::contentLength)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2841,6 +3576,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("download")
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class,
@@ -2851,7 +3587,47 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "etag", DownloadSensitiveDataModelResponse.Builder::etag)
                 .handleResponseHeaderLong(
                         "content-length", DownloadSensitiveDataModelResponse.Builder::contentLength)
+                .callSync();
+    }
+
+    @Override
+    public DownloadSensitiveTypesExportResponse downloadSensitiveTypesExport(
+            DownloadSensitiveTypesExportRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypesExportId(), "sensitiveTypesExportId must not be blank");
+        Objects.requireNonNull(
+                request.getDownloadSensitiveTypesExportDetails(),
+                "downloadSensitiveTypesExportDetails is required");
+
+        return clientCall(request, DownloadSensitiveTypesExportResponse::builder)
+                .logger(LOG, "downloadSensitiveTypesExport")
+                .serviceDetails(
+                        "DataSafe",
+                        "DownloadSensitiveTypesExport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExport/DownloadSensitiveTypesExport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DownloadSensitiveTypesExportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .appendPathParam(request.getSensitiveTypesExportId())
+                .appendPathParam("actions")
+                .appendPathParam("download")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        java.io.InputStream.class,
+                        DownloadSensitiveTypesExportResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DownloadSensitiveTypesExportResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", DownloadSensitiveTypesExportResponse.Builder::etag)
+                .handleResponseHeaderLong(
+                        "content-length",
+                        DownloadSensitiveTypesExportResponse.Builder::contentLength)
                 .callSync();
     }
 
@@ -2881,6 +3657,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class,
@@ -2893,7 +3670,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderLong(
                         "content-length",
                         DownloadUserAssessmentReportResponse.Builder::contentLength)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2918,13 +3694,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         EnableDataSafeConfigurationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", EnableDataSafeConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2953,6 +3729,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("generateReportForDownload")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -2960,7 +3737,40 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GenerateDiscoveryReportForDownloadResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GenerateHealthReportResponse generateHealthReport(GenerateHealthReportRequest request) {
+
+        Validate.notBlank(request.getMaskingPolicyId(), "maskingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getGenerateHealthReportDetails(),
+                "generateHealthReportDetails is required");
+
+        return clientCall(request, GenerateHealthReportResponse::builder)
+                .logger(LOG, "generateHealthReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "GenerateHealthReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/GenerateHealthReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateHealthReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicies")
+                .appendPathParam(request.getMaskingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("generateHealthReport")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        GenerateHealthReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", GenerateHealthReportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2988,6 +3798,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("generatePolicyForDownload")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -2995,7 +3806,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GenerateMaskingPolicyForDownloadResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3023,6 +3833,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("generateReportForDownload")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -3030,7 +3841,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GenerateMaskingReportForDownloadResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3060,6 +3870,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class,
@@ -3073,7 +3884,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderDate(
                         "last-modified",
                         GenerateOnPremConnectorConfigurationResponse.Builder::lastModified)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3102,12 +3912,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", GenerateReportResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", GenerateReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3138,6 +3948,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -3145,7 +3956,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GenerateSecurityAssessmentReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3174,6 +3984,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("generateDataModelForDownload")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -3181,7 +3992,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GenerateSensitiveDataModelForDownloadResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3208,12 +4018,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         GenerateSqlFirewallPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", GenerateSqlFirewallPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3243,6 +4053,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -3250,7 +4061,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GenerateUserAssessmentReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3272,12 +4082,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getAlertId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.Alert.class, GetAlertResponse.Builder::alert)
                 .handleResponseHeaderString("etag", GetAlertResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAlertResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3299,13 +4109,45 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getAlertPolicyId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AlertPolicy.class,
                         GetAlertPolicyResponse.Builder::alertPolicy)
                 .handleResponseHeaderString("etag", GetAlertPolicyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAlertPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetAlertPolicyRuleResponse getAlertPolicyRule(GetAlertPolicyRuleRequest request) {
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+
+        Validate.notBlank(request.getRuleKey(), "ruleKey must not be blank");
+
+        return clientCall(request, GetAlertPolicyRuleResponse::builder)
+                .logger(LOG, "getAlertPolicyRule")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetAlertPolicyRule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicyRule/GetAlertPolicyRule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAlertPolicyRuleRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .appendPathParam("rules")
+                .appendPathParam(request.getRuleKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.AlertPolicyRule.class,
+                        GetAlertPolicyRuleResponse.Builder::alertPolicyRule)
+                .handleResponseHeaderString("etag", GetAlertPolicyRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAlertPolicyRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3330,13 +4172,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditArchiveRetrieval.class,
                         GetAuditArchiveRetrievalResponse.Builder::auditArchiveRetrieval)
                 .handleResponseHeaderString("etag", GetAuditArchiveRetrievalResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAuditArchiveRetrievalResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3358,13 +4200,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getAuditPolicyId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditPolicy.class,
                         GetAuditPolicyResponse.Builder::auditPolicy)
                 .handleResponseHeaderString("etag", GetAuditPolicyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAuditPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3386,13 +4228,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getAuditProfileId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditProfile.class,
                         GetAuditProfileResponse.Builder::auditProfile)
                 .handleResponseHeaderString("etag", GetAuditProfileResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAuditProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3414,13 +4256,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getAuditTrailId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditTrail.class,
                         GetAuditTrailResponse.Builder::auditTrail)
                 .handleResponseHeaderString("etag", GetAuditTrailResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAuditTrailResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3442,6 +4284,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.CompatibleFormatsForDataTypes.class,
                         GetCompatibleFormatsForDataTypesResponse.Builder
@@ -3455,7 +4298,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-prev-page",
                         GetCompatibleFormatsForDataTypesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3481,6 +4323,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.CompatibleFormatsForSensitiveTypes.class,
                         GetCompatibleFormatsForSensitiveTypesResponse.Builder
@@ -3494,7 +4337,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-prev-page",
                         GetCompatibleFormatsForSensitiveTypesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3515,13 +4357,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.DataSafeConfiguration.class,
                         GetDataSafeConfigurationResponse.Builder::dataSafeConfiguration)
                 .handleResponseHeaderString("etag", GetDataSafeConfigurationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDataSafeConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3546,6 +4388,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getDataSafePrivateEndpointId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.DataSafePrivateEndpoint.class,
                         GetDataSafePrivateEndpointResponse.Builder::dataSafePrivateEndpoint)
@@ -3553,7 +4396,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "etag", GetDataSafePrivateEndpointResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDataSafePrivateEndpointResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3578,13 +4420,87 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getDatabaseSecurityConfigId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.DatabaseSecurityConfig.class,
                         GetDatabaseSecurityConfigResponse.Builder::databaseSecurityConfig)
                 .handleResponseHeaderString("etag", GetDatabaseSecurityConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDatabaseSecurityConfigResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetDatabaseTableAccessEntryResponse getDatabaseTableAccessEntry(
+            GetDatabaseTableAccessEntryRequest request) {
+
+        Validate.notBlank(
+                request.getSecurityPolicyReportId(), "securityPolicyReportId must not be blank");
+
+        Validate.notBlank(
+                request.getDatabaseTableAccessEntryKey(),
+                "databaseTableAccessEntryKey must not be blank");
+
+        return clientCall(request, GetDatabaseTableAccessEntryResponse::builder)
+                .logger(LOG, "getDatabaseTableAccessEntry")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetDatabaseTableAccessEntry",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseTableAccessEntry/GetDatabaseTableAccessEntry")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseTableAccessEntryRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicyReports")
+                .appendPathParam(request.getSecurityPolicyReportId())
+                .appendPathParam("databaseTableAccessEntries")
+                .appendPathParam(request.getDatabaseTableAccessEntryKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.DatabaseTableAccessEntry.class,
+                        GetDatabaseTableAccessEntryResponse.Builder::databaseTableAccessEntry)
+                .handleResponseHeaderString(
+                        "etag", GetDatabaseTableAccessEntryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDatabaseTableAccessEntryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetDatabaseViewAccessEntryResponse getDatabaseViewAccessEntry(
+            GetDatabaseViewAccessEntryRequest request) {
+
+        Validate.notBlank(
+                request.getSecurityPolicyReportId(), "securityPolicyReportId must not be blank");
+
+        Validate.notBlank(
+                request.getDatabaseViewAccessEntryKey(),
+                "databaseViewAccessEntryKey must not be blank");
+
+        return clientCall(request, GetDatabaseViewAccessEntryResponse::builder)
+                .logger(LOG, "getDatabaseViewAccessEntry")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetDatabaseViewAccessEntry",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseViewAccessEntry/GetDatabaseViewAccessEntry")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseViewAccessEntryRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicyReports")
+                .appendPathParam(request.getSecurityPolicyReportId())
+                .appendPathParam("databaseViewAccessEntries")
+                .appendPathParam(request.getDatabaseViewAccessEntryKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.DatabaseViewAccessEntry.class,
+                        GetDatabaseViewAccessEntryResponse.Builder::databaseViewAccessEntry)
+                .handleResponseHeaderString(
+                        "etag", GetDatabaseViewAccessEntryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDatabaseViewAccessEntryResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3613,13 +4529,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getDifferenceColumnKey())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.DifferenceColumn.class,
                         GetDifferenceColumnResponse.Builder::differenceColumn)
                 .handleResponseHeaderString("etag", GetDifferenceColumnResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDifferenceColumnResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3641,13 +4557,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getDiscoveryJobId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.DiscoveryJob.class,
                         GetDiscoveryJobResponse.Builder::discoveryJob)
                 .handleResponseHeaderString("etag", GetDiscoveryJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDiscoveryJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3674,13 +4590,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getResultKey())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.DiscoveryJobResult.class,
                         GetDiscoveryJobResultResponse.Builder::discoveryJobResult)
                 .handleResponseHeaderString("etag", GetDiscoveryJobResultResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDiscoveryJobResultResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3704,13 +4620,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getLibraryMaskingFormatId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.LibraryMaskingFormat.class,
                         GetLibraryMaskingFormatResponse.Builder::libraryMaskingFormat)
                 .handleResponseHeaderString("etag", GetLibraryMaskingFormatResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetLibraryMaskingFormatResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3736,13 +4652,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getMaskingColumnKey())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.MaskingColumn.class,
                         GetMaskingColumnResponse.Builder::maskingColumn)
                 .handleResponseHeaderString("etag", GetMaskingColumnResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMaskingColumnResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3764,13 +4680,46 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getMaskingPolicyId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.MaskingPolicy.class,
                         GetMaskingPolicyResponse.Builder::maskingPolicy)
                 .handleResponseHeaderString("etag", GetMaskingPolicyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMaskingPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMaskingPolicyHealthReportResponse getMaskingPolicyHealthReport(
+            GetMaskingPolicyHealthReportRequest request) {
+
+        Validate.notBlank(
+                request.getMaskingPolicyHealthReportId(),
+                "maskingPolicyHealthReportId must not be blank");
+
+        return clientCall(request, GetMaskingPolicyHealthReportResponse::builder)
+                .logger(LOG, "getMaskingPolicyHealthReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetMaskingPolicyHealthReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/GetMaskingPolicyHealthReport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMaskingPolicyHealthReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicyHealthReports")
+                .appendPathParam(request.getMaskingPolicyHealthReportId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.MaskingPolicyHealthReport.class,
+                        GetMaskingPolicyHealthReportResponse.Builder::maskingPolicyHealthReport)
+                .handleResponseHeaderString(
+                        "etag", GetMaskingPolicyHealthReportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMaskingPolicyHealthReportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3792,13 +4741,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getMaskingReportId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.MaskingReport.class,
                         GetMaskingReportResponse.Builder::maskingReport)
                 .handleResponseHeaderString("etag", GetMaskingReportResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMaskingReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3820,13 +4769,44 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getOnPremConnectorId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.OnPremConnector.class,
                         GetOnPremConnectorResponse.Builder::onPremConnector)
                 .handleResponseHeaderString("etag", GetOnPremConnectorResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOnPremConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetPeerTargetDatabaseResponse getPeerTargetDatabase(
+            GetPeerTargetDatabaseRequest request) {
+
+        Validate.notBlank(request.getTargetDatabaseId(), "targetDatabaseId must not be blank");
+
+        return clientCall(request, GetPeerTargetDatabaseResponse::builder)
+                .logger(LOG, "getPeerTargetDatabase")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetPeerTargetDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/GetPeerTargetDatabase")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPeerTargetDatabaseRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("targetDatabases")
+                .appendPathParam(request.getTargetDatabaseId())
+                .appendPathParam("peerTargetDatabases")
+                .appendPathParam(request.getPeerTargetDatabaseId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.PeerTargetDatabase.class,
+                        GetPeerTargetDatabaseResponse.Builder::peerTargetDatabase)
+                .handleResponseHeaderString("etag", GetPeerTargetDatabaseResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPeerTargetDatabaseResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3852,6 +4832,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getProfileName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.Profile.class,
                         GetProfileResponse.Builder::items)
@@ -3861,7 +4842,41 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", GetProfileResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", GetProfileResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public GetReferentialRelationResponse getReferentialRelation(
+            GetReferentialRelationRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveDataModelId(), "sensitiveDataModelId must not be blank");
+
+        Validate.notBlank(
+                request.getReferentialRelationKey(), "referentialRelationKey must not be blank");
+
+        return clientCall(request, GetReferentialRelationResponse::builder)
+                .logger(LOG, "getReferentialRelation")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetReferentialRelation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReferentialRelation/GetReferentialRelation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetReferentialRelationRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveDataModels")
+                .appendPathParam(request.getSensitiveDataModelId())
+                .appendPathParam("referentialRelations")
+                .appendPathParam(request.getReferentialRelationKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.ReferentialRelation.class,
+                        GetReferentialRelationResponse.Builder::referentialRelation)
+                .handleResponseHeaderString("etag", GetReferentialRelationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetReferentialRelationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3883,13 +4898,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getReportId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.Report.class,
                         GetReportResponse.Builder::report)
                 .handleResponseHeaderString("etag", GetReportResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3912,6 +4927,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("content")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class, GetReportContentResponse.Builder::inputStream)
                 .handleResponseHeaderString("etag", GetReportContentResponse.Builder::etag)
@@ -3921,7 +4937,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "content-length", GetReportContentResponse.Builder::contentLength)
                 .handleResponseHeaderDate(
                         "last-modified", GetReportContentResponse.Builder::lastModified)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3943,13 +4958,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getReportDefinitionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.ReportDefinition.class,
                         GetReportDefinitionResponse.Builder::reportDefinition)
                 .handleResponseHeaderString("etag", GetReportDefinitionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetReportDefinitionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3974,6 +4989,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSdmMaskingPolicyDifferenceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifference.class,
                         GetSdmMaskingPolicyDifferenceResponse.Builder::sdmMaskingPolicyDifference)
@@ -3982,7 +4998,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetSdmMaskingPolicyDifferenceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4006,13 +5021,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSecurityAssessmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SecurityAssessment.class,
                         GetSecurityAssessmentResponse.Builder::securityAssessment)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSecurityAssessmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetSecurityAssessmentResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4042,6 +5057,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getComparisonSecurityAssessmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SecurityAssessmentComparison.class,
                         GetSecurityAssessmentComparisonResponse.Builder
@@ -4051,7 +5067,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         GetSecurityAssessmentComparisonResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", GetSecurityAssessmentComparisonResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4073,13 +5088,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSecurityPolicyId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SecurityPolicy.class,
                         GetSecurityPolicyResponse.Builder::securityPolicy)
                 .handleResponseHeaderString("etag", GetSecurityPolicyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSecurityPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4104,6 +5119,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSecurityPolicyDeploymentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SecurityPolicyDeployment.class,
                         GetSecurityPolicyDeploymentResponse.Builder::securityPolicyDeployment)
@@ -4111,7 +5127,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "etag", GetSecurityPolicyDeploymentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSecurityPolicyDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4142,6 +5157,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSecurityPolicyEntryStateId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SecurityPolicyEntryState.class,
                         GetSecurityPolicyEntryStateResponse.Builder::securityPolicyEntryState)
@@ -4149,7 +5165,36 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "etag", GetSecurityPolicyEntryStateResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSecurityPolicyEntryStateResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSecurityPolicyReportResponse getSecurityPolicyReport(
+            GetSecurityPolicyReportRequest request) {
+
+        Validate.notBlank(
+                request.getSecurityPolicyReportId(), "securityPolicyReportId must not be blank");
+
+        return clientCall(request, GetSecurityPolicyReportResponse::builder)
+                .logger(LOG, "getSecurityPolicyReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSecurityPolicyReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyReport/GetSecurityPolicyReport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSecurityPolicyReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicyReports")
+                .appendPathParam(request.getSecurityPolicyReportId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SecurityPolicyReport.class,
+                        GetSecurityPolicyReportResponse.Builder::securityPolicyReport)
+                .handleResponseHeaderString("etag", GetSecurityPolicyReportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSecurityPolicyReportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -4176,13 +5221,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSensitiveColumnKey())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SensitiveColumn.class,
                         GetSensitiveColumnResponse.Builder::sensitiveColumn)
                 .handleResponseHeaderString("etag", GetSensitiveColumnResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSensitiveColumnResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4206,13 +5251,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSensitiveDataModelId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SensitiveDataModel.class,
                         GetSensitiveDataModelResponse.Builder::sensitiveDataModel)
                 .handleResponseHeaderString("etag", GetSensitiveDataModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSensitiveDataModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4234,13 +5279,73 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSensitiveTypeId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SensitiveType.class,
                         GetSensitiveTypeResponse.Builder::sensitiveType)
                 .handleResponseHeaderString("etag", GetSensitiveTypeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSensitiveTypeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSensitiveTypeGroupResponse getSensitiveTypeGroup(
+            GetSensitiveTypeGroupRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypeGroupId(), "sensitiveTypeGroupId must not be blank");
+
+        return clientCall(request, GetSensitiveTypeGroupResponse::builder)
+                .logger(LOG, "getSensitiveTypeGroup")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSensitiveTypeGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/GetSensitiveTypeGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSensitiveTypeGroupRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendPathParam(request.getSensitiveTypeGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveTypeGroup.class,
+                        GetSensitiveTypeGroupResponse.Builder::sensitiveTypeGroup)
+                .handleResponseHeaderString("etag", GetSensitiveTypeGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSensitiveTypeGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSensitiveTypesExportResponse getSensitiveTypesExport(
+            GetSensitiveTypesExportRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypesExportId(), "sensitiveTypesExportId must not be blank");
+
+        return clientCall(request, GetSensitiveTypesExportResponse::builder)
+                .logger(LOG, "getSensitiveTypesExport")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSensitiveTypesExport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExport/GetSensitiveTypesExport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSensitiveTypesExportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .appendPathParam(request.getSensitiveTypesExportId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveTypesExport.class,
+                        GetSensitiveTypesExportResponse.Builder::sensitiveTypesExport)
+                .handleResponseHeaderString("etag", GetSensitiveTypesExportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSensitiveTypesExportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -4262,13 +5367,43 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSqlCollectionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SqlCollection.class,
                         GetSqlCollectionResponse.Builder::sqlCollection)
                 .handleResponseHeaderString("etag", GetSqlCollectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSqlCollectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSqlFirewallAllowedSqlResponse getSqlFirewallAllowedSql(
+            GetSqlFirewallAllowedSqlRequest request) {
+
+        Validate.notBlank(
+                request.getSqlFirewallAllowedSqlId(), "sqlFirewallAllowedSqlId must not be blank");
+
+        return clientCall(request, GetSqlFirewallAllowedSqlResponse::builder)
+                .logger(LOG, "getSqlFirewallAllowedSql")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSqlFirewallAllowedSql",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSql/GetSqlFirewallAllowedSql")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSqlFirewallAllowedSqlRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallAllowedSqls")
+                .appendPathParam(request.getSqlFirewallAllowedSqlId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlFirewallAllowedSql.class,
+                        GetSqlFirewallAllowedSqlResponse.Builder::sqlFirewallAllowedSql)
+                .handleResponseHeaderString("etag", GetSqlFirewallAllowedSqlResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSqlFirewallAllowedSqlResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -4291,13 +5426,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSqlFirewallPolicyId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SqlFirewallPolicy.class,
                         GetSqlFirewallPolicyResponse.Builder::sqlFirewallPolicy)
                 .handleResponseHeaderString("etag", GetSqlFirewallPolicyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSqlFirewallPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4322,6 +5457,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getTargetAlertPolicyAssociationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation.class,
                         GetTargetAlertPolicyAssociationResponse.Builder
@@ -4331,7 +5467,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetTargetAlertPolicyAssociationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4353,13 +5488,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getTargetDatabaseId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.TargetDatabase.class,
                         GetTargetDatabaseResponse.Builder::targetDatabase)
                 .handleResponseHeaderString("etag", GetTargetDatabaseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTargetDatabaseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4381,13 +5516,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getUserAssessmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.UserAssessment.class,
                         GetUserAssessmentResponse.Builder::userAssessment)
                 .handleResponseHeaderString("etag", GetUserAssessmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetUserAssessmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4416,12 +5551,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getComparisonUserAssessmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.UserAssessmentComparison.class,
                         GetUserAssessmentComparisonResponse.Builder::userAssessmentComparison)
                 .handleResponseHeaderString(
                         "opc-request-id", GetUserAssessmentComparisonResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4443,6 +5578,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -4451,7 +5587,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4492,6 +5627,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AlertAnalyticsCollection.class,
                         ListAlertAnalyticsResponse.Builder::alertAnalyticsCollection)
@@ -4499,7 +5635,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListAlertAnalyticsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAlertAnalyticsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4535,6 +5670,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("accessLevel", request.getAccessLevel())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AlertPolicyCollection.class,
                         ListAlertPoliciesResponse.Builder::alertPolicyCollection)
@@ -4545,7 +5681,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAlertPoliciesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListAlertPoliciesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4570,6 +5705,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AlertPolicyRuleCollection.class,
                         ListAlertPolicyRulesResponse.Builder::alertPolicyRuleCollection)
@@ -4580,7 +5716,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAlertPolicyRulesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListAlertPolicyRulesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4613,6 +5748,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AlertCollection.class,
                         ListAlertsResponse.Builder::alertCollection)
@@ -4622,7 +5758,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAlertsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListAlertsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4655,6 +5790,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditArchiveRetrievalCollection.class,
                         ListAuditArchiveRetrievalsResponse.Builder::auditArchiveRetrievalCollection)
@@ -4664,7 +5800,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAuditArchiveRetrievalsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListAuditArchiveRetrievalsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4706,6 +5841,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditEventAnalyticsCollection.class,
                         ListAuditEventAnalyticsResponse.Builder::auditEventAnalyticsCollection)
@@ -4715,7 +5851,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAuditEventAnalyticsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListAuditEventAnalyticsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4743,6 +5878,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json, application/xml")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditEventCollection.class,
                         ListAuditEventsResponse.Builder::auditEventCollection)
@@ -4752,7 +5888,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAuditEventsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListAuditEventsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4783,6 +5918,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditPolicyCollection.class,
                         ListAuditPoliciesResponse.Builder::auditPolicyCollection)
@@ -4792,7 +5928,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAuditPoliciesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListAuditPoliciesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4826,6 +5961,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditPolicyAnalyticCollection.class,
                         ListAuditPolicyAnalyticsResponse.Builder::auditPolicyAnalyticCollection)
@@ -4835,7 +5971,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAuditPolicyAnalyticsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListAuditPolicyAnalyticsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4865,6 +6000,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditProfileAnalyticCollection.class,
                         ListAuditProfileAnalyticsResponse.Builder::auditProfileAnalyticCollection)
@@ -4874,7 +6010,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAuditProfileAnalyticsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListAuditProfileAnalyticsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4912,6 +6047,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditProfileCollection.class,
                         ListAuditProfilesResponse.Builder::auditProfileCollection)
@@ -4921,7 +6057,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAuditProfilesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListAuditProfilesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4952,6 +6087,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("targetId", request.getTargetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditTrailAnalyticCollection.class,
                         ListAuditTrailAnalyticsResponse.Builder::auditTrailAnalyticCollection)
@@ -4961,7 +6097,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAuditTrailAnalyticsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListAuditTrailAnalyticsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4993,6 +6128,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AuditTrailCollection.class,
                         ListAuditTrailsResponse.Builder::auditTrailCollection)
@@ -5002,7 +6138,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAuditTrailsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListAuditTrailsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5038,6 +6173,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.AvailableAuditVolumeCollection.class,
                         ListAvailableAuditVolumesResponse.Builder::availableAuditVolumeCollection)
@@ -5047,7 +6183,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAvailableAuditVolumesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListAvailableAuditVolumesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5082,6 +6217,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.CollectedAuditVolumeCollection.class,
                         ListCollectedAuditVolumesResponse.Builder::collectedAuditVolumeCollection)
@@ -5091,7 +6227,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListCollectedAuditVolumesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListCollectedAuditVolumesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5137,6 +6272,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("columnNameContains", request.getColumnNameContains())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.ColumnSummary.class,
                         ListColumnsResponse.Builder::items)
@@ -5146,7 +6282,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListColumnsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListColumnsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5177,6 +6312,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("accessLevel", request.getAccessLevel())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary.class,
                         ListDataSafePrivateEndpointsResponse.Builder::items)
@@ -5185,7 +6321,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         ListDataSafePrivateEndpointsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDataSafePrivateEndpointsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5221,6 +6356,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.DatabaseSecurityConfigCollection.class,
                         ListDatabaseSecurityConfigsResponse.Builder
@@ -5231,7 +6367,91 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListDatabaseSecurityConfigsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListDatabaseSecurityConfigsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListDatabaseTableAccessEntriesResponse listDatabaseTableAccessEntries(
+            ListDatabaseTableAccessEntriesRequest request) {
+
+        Validate.notBlank(
+                request.getSecurityPolicyReportId(), "securityPolicyReportId must not be blank");
+
+        return clientCall(request, ListDatabaseTableAccessEntriesResponse::builder)
+                .logger(LOG, "listDatabaseTableAccessEntries")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListDatabaseTableAccessEntries",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseTableAccessEntryCollection/ListDatabaseTableAccessEntries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDatabaseTableAccessEntriesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicyReports")
+                .appendPathParam(request.getSecurityPolicyReportId())
+                .appendPathParam("databaseTableAccessEntries")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("scimQuery", request.getScimQuery())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.DatabaseTableAccessEntryCollection.class,
+                        ListDatabaseTableAccessEntriesResponse.Builder
+                                ::databaseTableAccessEntryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDatabaseTableAccessEntriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDatabaseTableAccessEntriesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListDatabaseTableAccessEntriesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListDatabaseViewAccessEntriesResponse listDatabaseViewAccessEntries(
+            ListDatabaseViewAccessEntriesRequest request) {
+
+        Validate.notBlank(
+                request.getSecurityPolicyReportId(), "securityPolicyReportId must not be blank");
+
+        return clientCall(request, ListDatabaseViewAccessEntriesResponse::builder)
+                .logger(LOG, "listDatabaseViewAccessEntries")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListDatabaseViewAccessEntries",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseViewAccessEntryCollection/ListDatabaseViewAccessEntries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDatabaseViewAccessEntriesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicyReports")
+                .appendPathParam(request.getSecurityPolicyReportId())
+                .appendPathParam("databaseViewAccessEntries")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("scimQuery", request.getScimQuery())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.DatabaseViewAccessEntryCollection.class,
+                        ListDatabaseViewAccessEntriesResponse.Builder
+                                ::databaseViewAccessEntryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDatabaseViewAccessEntriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDatabaseViewAccessEntriesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListDatabaseViewAccessEntriesResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -5276,6 +6496,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceColumnCollection
                                 .class,
@@ -5287,7 +6508,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListDifferenceColumnsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListDifferenceColumnsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5311,10 +6531,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("groupBy", request.getGroupBy())
                 .appendQueryParam("targetId", request.getTargetId())
                 .appendQueryParam("sensitiveDataModelId", request.getSensitiveDataModelId())
+                .appendQueryParam("sensitiveTypeId", request.getSensitiveTypeId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("isCommon", request.getIsCommon())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.DiscoveryAnalyticsCollection.class,
                         ListDiscoveryAnalyticsResponse.Builder::discoveryAnalyticsCollection)
@@ -5324,7 +6547,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListDiscoveryAnalyticsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListDiscoveryAnalyticsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5367,6 +6589,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.DiscoveryJobResultCollection.class,
                         ListDiscoveryJobResultsResponse.Builder::discoveryJobResultCollection)
@@ -5376,7 +6599,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListDiscoveryJobResultsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListDiscoveryJobResultsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5408,6 +6630,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.DiscoveryJobCollection.class,
                         ListDiscoveryJobsResponse.Builder::discoveryJobCollection)
@@ -5417,7 +6640,46 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListDiscoveryJobsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListDiscoveryJobsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListFindingAnalyticsResponse listFindingAnalytics(ListFindingAnalyticsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListFindingAnalyticsResponse::builder)
+                .logger(LOG, "listFindingAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListFindingAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListFindingAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFindingAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityAssessments")
+                .appendPathParam("findingAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("isTopFinding", request.getIsTopFinding())
+                .appendEnumQueryParam("groupBy", request.getGroupBy())
+                .appendEnumQueryParam("topFindingStatus", request.getTopFindingStatus())
+                .appendEnumQueryParam("severity", request.getSeverity())
+                .appendQueryParam("findingKey", request.getFindingKey())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.FindingAnalyticsCollection.class,
+                        ListFindingAnalyticsResponse.Builder::findingAnalyticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListFindingAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListFindingAnalyticsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListFindingAnalyticsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -5439,15 +6701,25 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("securityAssessments")
                 .appendPathParam(request.getSecurityAssessmentId())
                 .appendPathParam("findings")
+                .appendQueryParam("isTopFinding", request.getIsTopFinding())
                 .appendEnumQueryParam("severity", request.getSeverity())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendEnumQueryParam("references", request.getReferences())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("scimQuery", request.getScimQuery())
+                .appendListQueryParam(
+                        "field",
+                        request.getField(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("findingKey", request.getFindingKey())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.FindingSummary.class,
                         ListFindingsResponse.Builder::items)
@@ -5457,7 +6729,58 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListFindingsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListFindingsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListFindingsChangeAuditLogsResponse listFindingsChangeAuditLogs(
+            ListFindingsChangeAuditLogsRequest request) {
+
+        Validate.notBlank(
+                request.getSecurityAssessmentId(), "securityAssessmentId must not be blank");
+
+        return clientCall(request, ListFindingsChangeAuditLogsResponse::builder)
+                .logger(LOG, "listFindingsChangeAuditLogs")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListFindingsChangeAuditLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListFindingsChangeAuditLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFindingsChangeAuditLogsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityAssessments")
+                .appendPathParam(request.getSecurityAssessmentId())
+                .appendPathParam("findingsChangeAuditLogs")
+                .appendEnumQueryParam("severity", request.getSeverity())
+                .appendQueryParam("findingKey", request.getFindingKey())
+                .appendQueryParam("findingTitle", request.getFindingTitle())
+                .appendQueryParam("isRiskDeferred", request.getIsRiskDeferred())
+                .appendQueryParam("modifiedBy", request.getModifiedBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam(
+                        "timeValidUntilGreaterThanOrEqualTo",
+                        request.getTimeValidUntilGreaterThanOrEqualTo())
+                .appendQueryParam("timeValidUntilLessThan", request.getTimeValidUntilLessThan())
+                .appendQueryParam(
+                        "timeUpdatedGreaterThanOrEqualTo",
+                        request.getTimeUpdatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeUpdatedLessThan", request.getTimeUpdatedLessThan())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.FindingsChangeAuditLogCollection.class,
+                        ListFindingsChangeAuditLogsResponse.Builder
+                                ::findingsChangeAuditLogCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListFindingsChangeAuditLogsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListFindingsChangeAuditLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListFindingsChangeAuditLogsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -5497,6 +6820,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.GrantSummary.class,
                         ListGrantsResponse.Builder::items)
@@ -5506,7 +6830,44 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListGrantsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListGrantsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListGroupedSensitiveTypesResponse listGroupedSensitiveTypes(
+            ListGroupedSensitiveTypesRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypeGroupId(), "sensitiveTypeGroupId must not be blank");
+
+        return clientCall(request, ListGroupedSensitiveTypesResponse::builder)
+                .logger(LOG, "listGroupedSensitiveTypes")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListGroupedSensitiveTypes",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/ListGroupedSensitiveTypes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListGroupedSensitiveTypesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendPathParam(request.getSensitiveTypeGroupId())
+                .appendPathParam("groupedSensitiveTypes")
+                .appendQueryParam("sensitiveTypeId", request.getSensitiveTypeId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.GroupedSensitiveTypeCollection.class,
+                        ListGroupedSensitiveTypesResponse.Builder::groupedSensitiveTypeCollection)
+                .handleResponseHeaderString("etag", ListGroupedSensitiveTypesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListGroupedSensitiveTypesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListGroupedSensitiveTypesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListGroupedSensitiveTypesResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -5543,6 +6904,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.LibraryMaskingFormatCollection.class,
                         ListLibraryMaskingFormatsResponse.Builder::libraryMaskingFormatCollection)
@@ -5552,7 +6914,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListLibraryMaskingFormatsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListLibraryMaskingFormatsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5600,6 +6961,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("sensitiveTypeId", request.getSensitiveTypeId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.MaskedColumnCollection.class,
                         ListMaskedColumnsResponse.Builder::maskedColumnCollection)
@@ -5609,7 +6971,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListMaskedColumnsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListMaskedColumnsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5636,6 +6997,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.MaskingAnalyticsCollection.class,
                         ListMaskingAnalyticsResponse.Builder::maskingAnalyticsCollection)
@@ -5645,7 +7007,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListMaskingAnalyticsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListMaskingAnalyticsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5709,6 +7070,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("timeUpdatedLessThan", request.getTimeUpdatedLessThan())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.MaskingColumnCollection.class,
                         ListMaskingColumnsResponse.Builder::maskingColumnCollection)
@@ -5718,7 +7080,43 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListMaskingColumnsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListMaskingColumnsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMaskingErrorsResponse listMaskingErrors(ListMaskingErrorsRequest request) {
+
+        Validate.notBlank(request.getMaskingReportId(), "maskingReportId must not be blank");
+
+        return clientCall(request, ListMaskingErrorsResponse::builder)
+                .logger(LOG, "listMaskingErrors")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListMaskingErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingErrorSummary/ListMaskingErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMaskingErrorsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingReports")
+                .appendPathParam(request.getMaskingReportId())
+                .appendPathParam("maskingErrors")
+                .appendEnumQueryParam("stepName", request.getStepName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.MaskingErrorCollection.class,
+                        ListMaskingErrorsResponse.Builder::maskingErrorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMaskingErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMaskingErrorsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListMaskingErrorsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -5757,6 +7155,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.MaskingObjectCollection.class,
                         ListMaskingObjectsResponse.Builder::maskingObjectCollection)
@@ -5766,7 +7165,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListMaskingObjectsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListMaskingObjectsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5802,6 +7200,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("accessLevel", request.getAccessLevel())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.MaskingPolicyCollection.class,
                         ListMaskingPoliciesResponse.Builder::maskingPolicyCollection)
@@ -5811,7 +7210,155 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListMaskingPoliciesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListMaskingPoliciesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMaskingPolicyHealthReportLogsResponse listMaskingPolicyHealthReportLogs(
+            ListMaskingPolicyHealthReportLogsRequest request) {
+
+        Validate.notBlank(
+                request.getMaskingPolicyHealthReportId(),
+                "maskingPolicyHealthReportId must not be blank");
+
+        return clientCall(request, ListMaskingPolicyHealthReportLogsResponse::builder)
+                .logger(LOG, "listMaskingPolicyHealthReportLogs")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListMaskingPolicyHealthReportLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/ListMaskingPolicyHealthReportLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMaskingPolicyHealthReportLogsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicyHealthReports")
+                .appendPathParam(request.getMaskingPolicyHealthReportId())
+                .appendPathParam("logs")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("messageType", request.getMessageType())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportLogCollection.class,
+                        ListMaskingPolicyHealthReportLogsResponse.Builder
+                                ::maskingPolicyHealthReportLogCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMaskingPolicyHealthReportLogsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMaskingPolicyHealthReportLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListMaskingPolicyHealthReportLogsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMaskingPolicyHealthReportsResponse listMaskingPolicyHealthReports(
+            ListMaskingPolicyHealthReportsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMaskingPolicyHealthReportsResponse::builder)
+                .logger(LOG, "listMaskingPolicyHealthReports")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListMaskingPolicyHealthReports",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/ListMaskingPolicyHealthReports")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMaskingPolicyHealthReportsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicyHealthReports")
+                .appendQueryParam(
+                        "maskingPolicyHealthReportId", request.getMaskingPolicyHealthReportId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("maskingPolicyId", request.getMaskingPolicyId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportCollection.class,
+                        ListMaskingPolicyHealthReportsResponse.Builder
+                                ::maskingPolicyHealthReportCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMaskingPolicyHealthReportsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMaskingPolicyHealthReportsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListMaskingPolicyHealthReportsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMaskingPolicyReferentialRelationsResponse listMaskingPolicyReferentialRelations(
+            ListMaskingPolicyReferentialRelationsRequest request) {
+
+        Validate.notBlank(request.getMaskingPolicyId(), "maskingPolicyId must not be blank");
+
+        return clientCall(request, ListMaskingPolicyReferentialRelationsResponse::builder)
+                .logger(LOG, "listMaskingPolicyReferentialRelations")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListMaskingPolicyReferentialRelations",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyReferentialRelationSummary/ListMaskingPolicyReferentialRelations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMaskingPolicyReferentialRelationsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicies")
+                .appendPathParam(request.getMaskingPolicyId())
+                .appendPathParam("referentialRelations")
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "columnName",
+                        request.getColumnName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "relationType",
+                        request.getRelationType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.MaskingPolicyReferentialRelationCollection
+                                .class,
+                        ListMaskingPolicyReferentialRelationsResponse.Builder
+                                ::maskingPolicyReferentialRelationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMaskingPolicyReferentialRelationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMaskingPolicyReferentialRelationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListMaskingPolicyReferentialRelationsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -5840,6 +7387,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("accessLevel", request.getAccessLevel())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.MaskingReportCollection.class,
                         ListMaskingReportsResponse.Builder::maskingReportCollection)
@@ -5849,7 +7397,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListMaskingReportsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListMaskingReportsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5880,6 +7427,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.MaskingSchemaCollection.class,
                         ListMaskingSchemasResponse.Builder::maskingSchemaCollection)
@@ -5889,7 +7437,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListMaskingSchemasResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListMaskingSchemasResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5920,6 +7467,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("accessLevel", request.getAccessLevel())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.OnPremConnectorSummary.class,
                         ListOnPremConnectorsResponse.Builder::items)
@@ -5927,7 +7475,82 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListOnPremConnectorsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOnPremConnectorsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListPasswordExpiryDateAnalyticsResponse listPasswordExpiryDateAnalytics(
+            ListPasswordExpiryDateAnalyticsRequest request) {
+
+        Validate.notBlank(request.getUserAssessmentId(), "userAssessmentId must not be blank");
+
+        return clientCall(request, ListPasswordExpiryDateAnalyticsResponse::builder)
+                .logger(LOG, "listPasswordExpiryDateAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListPasswordExpiryDateAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListPasswordExpiryDateAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPasswordExpiryDateAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("userAssessments")
+                .appendPathParam(request.getUserAssessmentId())
+                .appendPathParam("passwordExpiryDateAnalytics")
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("userCategory", request.getUserCategory())
+                .appendQueryParam(
+                        "timePasswordExpiryLessThan", request.getTimePasswordExpiryLessThan())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.datasafe.model.UserAggregation.class,
+                        ListPasswordExpiryDateAnalyticsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListPasswordExpiryDateAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListPasswordExpiryDateAnalyticsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListPeerTargetDatabasesResponse listPeerTargetDatabases(
+            ListPeerTargetDatabasesRequest request) {
+
+        Validate.notBlank(request.getTargetDatabaseId(), "targetDatabaseId must not be blank");
+
+        return clientCall(request, ListPeerTargetDatabasesResponse::builder)
+                .logger(LOG, "listPeerTargetDatabases")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListPeerTargetDatabases",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/ListPeerTargetDatabases")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPeerTargetDatabasesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("targetDatabases")
+                .appendPathParam(request.getTargetDatabaseId())
+                .appendPathParam("peerTargetDatabases")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.PeerTargetDatabaseCollection.class,
+                        ListPeerTargetDatabasesResponse.Builder::peerTargetDatabaseCollection)
+                .handleResponseHeaderString("etag", ListPeerTargetDatabasesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPeerTargetDatabasesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPeerTargetDatabasesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListPeerTargetDatabasesResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -5960,6 +7583,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.ProfileAggregation.class,
                         ListProfileAnalyticsResponse.Builder::items)
@@ -5969,7 +7593,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListProfileAnalyticsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListProfileAnalyticsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6026,6 +7649,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.ProfileSummary.class,
                         ListProfileSummariesResponse.Builder::items)
@@ -6035,7 +7659,61 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListProfileSummariesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListProfileSummariesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListReferentialRelationsResponse listReferentialRelations(
+            ListReferentialRelationsRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveDataModelId(), "sensitiveDataModelId must not be blank");
+
+        return clientCall(request, ListReferentialRelationsResponse::builder)
+                .logger(LOG, "listReferentialRelations")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListReferentialRelations",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReferentialRelation/ListReferentialRelations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListReferentialRelationsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveDataModels")
+                .appendPathParam(request.getSensitiveDataModelId())
+                .appendPathParam("referentialRelations")
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "columnName",
+                        request.getColumnName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isSensitive", request.getIsSensitive())
+                .appendListQueryParam(
+                        "relationType",
+                        request.getRelationType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.ReferentialRelationCollection.class,
+                        ListReferentialRelationsResponse.Builder::referentialRelationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListReferentialRelationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListReferentialRelationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListReferentialRelationsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -6068,6 +7746,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("category", request.getCategory())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.ReportDefinitionCollection.class,
                         ListReportDefinitionsResponse.Builder::reportDefinitionCollection)
@@ -6075,7 +7754,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListReportDefinitionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListReportDefinitionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6101,11 +7779,17 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("mimeType", request.getMimeType())
                 .appendQueryParam("reportDefinitionId", request.getReportDefinitionId())
+                .appendQueryParam(
+                        "timeGeneratedGreaterThanOrEqualTo",
+                        request.getTimeGeneratedGreaterThanOrEqualTo())
+                .appendQueryParam("timeGeneratedLessThan", request.getTimeGeneratedLessThan())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendEnumQueryParam("type", request.getType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.ReportCollection.class,
                         ListReportsResponse.Builder::reportCollection)
@@ -6113,7 +7797,46 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListReportsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListReportsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListRoleGrantPathsResponse listRoleGrantPaths(ListRoleGrantPathsRequest request) {
+
+        Validate.notBlank(
+                request.getSecurityPolicyReportId(), "securityPolicyReportId must not be blank");
+        Objects.requireNonNull(request.getGrantee(), "grantee is required");
+
+        Objects.requireNonNull(request.getGrantedRole(), "grantedRole is required");
+
+        return clientCall(request, ListRoleGrantPathsResponse::builder)
+                .logger(LOG, "listRoleGrantPaths")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListRoleGrantPaths",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/RoleGrantPathCollection/ListRoleGrantPaths")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRoleGrantPathsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicyReports")
+                .appendPathParam(request.getSecurityPolicyReportId())
+                .appendPathParam("roleGrantPaths")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("grantee", request.getGrantee())
+                .appendQueryParam("grantedRole", request.getGrantedRole())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.RoleGrantPathCollection.class,
+                        ListRoleGrantPathsResponse.Builder::roleGrantPathCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRoleGrantPathsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRoleGrantPathsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListRoleGrantPathsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -6147,6 +7870,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("roleNameContains", request.getRoleNameContains())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.RoleSummary.class,
                         ListRolesResponse.Builder::items)
@@ -6154,7 +7878,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListRolesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListRolesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString("opc-prev-page", ListRolesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6187,6 +7910,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("schemaNameContains", request.getSchemaNameContains())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.SchemaSummary.class,
                         ListSchemasResponse.Builder::items)
@@ -6196,7 +7920,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSchemasResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSchemasResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6228,6 +7951,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceCollection.class,
                         ListSdmMaskingPolicyDifferencesResponse.Builder
@@ -6241,7 +7965,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-prev-page",
                         ListSdmMaskingPolicyDifferencesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6281,6 +8004,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.SecurityAssessmentSummary.class,
                         ListSecurityAssessmentsResponse.Builder::items)
@@ -6290,7 +8014,101 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSecurityAssessmentsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSecurityAssessmentsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSecurityFeatureAnalyticsResponse listSecurityFeatureAnalytics(
+            ListSecurityFeatureAnalyticsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSecurityFeatureAnalyticsResponse::builder)
+                .logger(LOG, "listSecurityFeatureAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSecurityFeatureAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListSecurityFeatureAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSecurityFeatureAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityAssessments")
+                .appendPathParam("securityFeatureAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("targetId", request.getTargetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SecurityFeatureAnalyticsCollection.class,
+                        ListSecurityFeatureAnalyticsResponse.Builder
+                                ::securityFeatureAnalyticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSecurityFeatureAnalyticsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListSecurityFeaturesResponse listSecurityFeatures(ListSecurityFeaturesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSecurityFeaturesResponse::builder)
+                .logger(LOG, "listSecurityFeatures")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSecurityFeatures",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListSecurityFeatures")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSecurityFeaturesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityAssessments")
+                .appendPathParam("securityFeatures")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendEnumQueryParam(
+                        "targetsWithUnifiedAudit", request.getTargetsWithUnifiedAudit())
+                .appendEnumQueryParam(
+                        "targetsWithFineGrainedAudit", request.getTargetsWithFineGrainedAudit())
+                .appendEnumQueryParam(
+                        "targetsWithTraditionalAudit", request.getTargetsWithTraditionalAudit())
+                .appendEnumQueryParam(
+                        "targetsWithDatabaseVault", request.getTargetsWithDatabaseVault())
+                .appendEnumQueryParam(
+                        "targetsWithPrivilegeAnalysis", request.getTargetsWithPrivilegeAnalysis())
+                .appendEnumQueryParam(
+                        "targetsWithTablespaceEncryption",
+                        request.getTargetsWithTablespaceEncryption())
+                .appendEnumQueryParam(
+                        "targetsWithColumnEncryption", request.getTargetsWithColumnEncryption())
+                .appendEnumQueryParam(
+                        "targetsWithNetworkEncryption", request.getTargetsWithNetworkEncryption())
+                .appendEnumQueryParam(
+                        "targetsWithPasswordAuthentication",
+                        request.getTargetsWithPasswordAuthentication())
+                .appendEnumQueryParam(
+                        "targetsWithGlobalAuthentication",
+                        request.getTargetsWithGlobalAuthentication())
+                .appendEnumQueryParam(
+                        "targetsWithExternalAuthentication",
+                        request.getTargetsWithExternalAuthentication())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SecurityFeatureCollection.class,
+                        ListSecurityFeaturesResponse.Builder::securityFeatureCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSecurityFeaturesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSecurityFeaturesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSecurityFeaturesResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -6320,6 +8138,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SecurityPolicyCollection.class,
                         ListSecurityPoliciesResponse.Builder::securityPolicyCollection)
@@ -6329,7 +8148,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSecurityPoliciesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSecurityPoliciesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6363,6 +8181,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SecurityPolicyDeploymentCollection.class,
                         ListSecurityPolicyDeploymentsResponse.Builder
@@ -6374,7 +8193,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSecurityPolicyDeploymentsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSecurityPolicyDeploymentsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6404,6 +8222,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("securityPolicyEntryId", request.getSecurityPolicyEntryId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateCollection.class,
                         ListSecurityPolicyEntryStatesResponse.Builder
@@ -6415,7 +8234,107 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSecurityPolicyEntryStatesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSecurityPolicyEntryStatesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSecurityPolicyReportsResponse listSecurityPolicyReports(
+            ListSecurityPolicyReportsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSecurityPolicyReportsResponse::builder)
+                .logger(LOG, "listSecurityPolicyReports")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSecurityPolicyReports",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyReportCollection/ListSecurityPolicyReports")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSecurityPolicyReportsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicyReports")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("securityPolicyReportId", request.getSecurityPolicyReportId())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SecurityPolicyReportCollection.class,
+                        ListSecurityPolicyReportsResponse.Builder::securityPolicyReportCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSecurityPolicyReportsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSecurityPolicyReportsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSecurityPolicyReportsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSensitiveColumnAnalyticsResponse listSensitiveColumnAnalytics(
+            ListSensitiveColumnAnalyticsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSensitiveColumnAnalyticsResponse::builder)
+                .logger(LOG, "listSensitiveColumnAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSensitiveColumnAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ListSensitiveColumnAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSensitiveColumnAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveColumnAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendListQueryParam(
+                        "sensitiveTypeId",
+                        request.getSensitiveTypeId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("sensitiveTypeGroupId", request.getSensitiveTypeGroupId())
+                .appendQueryParam("sensitiveDataModelId", request.getSensitiveDataModelId())
+                .appendListQueryParam(
+                        "groupBy",
+                        request.getGroupBy(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "columnName",
+                        request.getColumnName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsCollection.class,
+                        ListSensitiveColumnAnalyticsResponse.Builder
+                                ::sensitiveColumnAnalyticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSensitiveColumnAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSensitiveColumnAnalyticsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSensitiveColumnAnalyticsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -6491,6 +8410,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("isCaseInSensitive", request.getIsCaseInSensitive())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SensitiveColumnCollection.class,
                         ListSensitiveColumnsResponse.Builder::sensitiveColumnCollection)
@@ -6500,7 +8420,50 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSensitiveColumnsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSensitiveColumnsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSensitiveDataModelSensitiveTypesResponse listSensitiveDataModelSensitiveTypes(
+            ListSensitiveDataModelSensitiveTypesRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveDataModelId(), "sensitiveDataModelId must not be blank");
+
+        return clientCall(request, ListSensitiveDataModelSensitiveTypesResponse::builder)
+                .logger(LOG, "listSensitiveDataModelSensitiveTypes")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSensitiveDataModelSensitiveTypes",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModelSensitiveTypeCollection/ListSensitiveDataModelSensitiveTypes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSensitiveDataModelSensitiveTypesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveDataModels")
+                .appendPathParam(request.getSensitiveDataModelId())
+                .appendPathParam("sensitiveTypes")
+                .appendQueryParam("sensitiveTypeId", request.getSensitiveTypeId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveDataModelSensitiveTypeCollection
+                                .class,
+                        ListSensitiveDataModelSensitiveTypesResponse.Builder
+                                ::sensitiveDataModelSensitiveTypeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSensitiveDataModelSensitiveTypesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListSensitiveDataModelSensitiveTypesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListSensitiveDataModelSensitiveTypesResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -6536,6 +8499,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SensitiveDataModelCollection.class,
                         ListSensitiveDataModelsResponse.Builder::sensitiveDataModelCollection)
@@ -6545,7 +8509,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSensitiveDataModelsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSensitiveDataModelsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6585,6 +8548,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SensitiveObjectCollection.class,
                         ListSensitiveObjectsResponse.Builder::sensitiveObjectCollection)
@@ -6594,7 +8558,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSensitiveObjectsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSensitiveObjectsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6626,6 +8589,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SensitiveSchemaCollection.class,
                         ListSensitiveSchemasResponse.Builder::sensitiveSchemaCollection)
@@ -6635,7 +8599,50 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSensitiveSchemasResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSensitiveSchemasResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSensitiveTypeGroupsResponse listSensitiveTypeGroups(
+            ListSensitiveTypeGroupsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSensitiveTypeGroupsResponse::builder)
+                .logger(LOG, "listSensitiveTypeGroups")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSensitiveTypeGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroupSummary/ListSensitiveTypeGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSensitiveTypeGroupsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("sensitiveTypeGroupId", request.getSensitiveTypeGroupId())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveTypeGroupCollection.class,
+                        ListSensitiveTypeGroupsResponse.Builder::sensitiveTypeGroupCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSensitiveTypeGroupsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSensitiveTypeGroupsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSensitiveTypeGroupsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -6671,8 +8678,10 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("isCommon", request.getIsCommon())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SensitiveTypeCollection.class,
                         ListSensitiveTypesResponse.Builder::sensitiveTypeCollection)
@@ -6682,7 +8691,50 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSensitiveTypesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSensitiveTypesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSensitiveTypesExportsResponse listSensitiveTypesExports(
+            ListSensitiveTypesExportsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSensitiveTypesExportsResponse::builder)
+                .logger(LOG, "listSensitiveTypesExports")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSensitiveTypesExports",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExportCollection/ListSensitiveTypesExports")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSensitiveTypesExportsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("sensitiveTypesExportId", request.getSensitiveTypesExportId())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveTypesExportCollection.class,
+                        ListSensitiveTypesExportsResponse.Builder::sensitiveTypesExportCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSensitiveTypesExportsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSensitiveTypesExportsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSensitiveTypesExportsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -6716,6 +8768,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("timeEnded", request.getTimeEnded())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SqlCollectionAnalyticsCollection.class,
                         ListSqlCollectionAnalyticsResponse.Builder
@@ -6726,7 +8779,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSqlCollectionAnalyticsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSqlCollectionAnalyticsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6758,6 +8810,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("groupBy", request.getGroupBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SqlCollectionLogInsightsCollection.class,
                         ListSqlCollectionLogInsightsResponse.Builder
@@ -6769,7 +8822,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSqlCollectionLogInsightsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSqlCollectionLogInsightsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6805,6 +8857,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SqlCollectionCollection.class,
                         ListSqlCollectionsResponse.Builder::sqlCollectionCollection)
@@ -6814,7 +8867,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSqlCollectionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSqlCollectionsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6845,6 +8897,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlAnalyticsCollection
                                 .class,
@@ -6859,7 +8912,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-prev-page",
                         ListSqlFirewallAllowedSqlAnalyticsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6888,6 +8940,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlCollection.class,
                         ListSqlFirewallAllowedSqlsResponse.Builder::sqlFirewallAllowedSqlCollection)
@@ -6897,7 +8950,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSqlFirewallAllowedSqlsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSqlFirewallAllowedSqlsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6935,6 +8987,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SqlFirewallPolicyCollection.class,
                         ListSqlFirewallPoliciesResponse.Builder::sqlFirewallPolicyCollection)
@@ -6944,7 +8997,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSqlFirewallPoliciesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSqlFirewallPoliciesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6978,6 +9030,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("timeEnded", request.getTimeEnded())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SqlFirewallPolicyAnalyticsCollection.class,
                         ListSqlFirewallPolicyAnalyticsResponse.Builder
@@ -6991,7 +9044,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-prev-page",
                         ListSqlFirewallPolicyAnalyticsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7032,6 +9084,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SqlFirewallViolationAnalyticsCollection.class,
                         ListSqlFirewallViolationAnalyticsResponse.Builder
@@ -7045,7 +9098,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-prev-page",
                         ListSqlFirewallViolationAnalyticsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7074,6 +9126,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("scimQuery", request.getScimQuery())
                 .accept("application/json, application/xml")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.SqlFirewallViolationsCollection.class,
                         ListSqlFirewallViolationsResponse.Builder::sqlFirewallViolationsCollection)
@@ -7083,7 +9136,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSqlFirewallViolationsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSqlFirewallViolationsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7120,6 +9172,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("schemaNameContains", request.getSchemaNameContains())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.TableSummary.class,
                         ListTablesResponse.Builder::items)
@@ -7129,7 +9182,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListTablesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListTablesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7167,6 +9219,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("accessLevel", request.getAccessLevel())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociationCollection.class,
                         ListTargetAlertPolicyAssociationsResponse.Builder
@@ -7182,7 +9235,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-prev-page",
                         ListTargetAlertPolicyAssociationsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7215,6 +9267,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.TargetDatabaseSummary.class,
                         ListTargetDatabasesResponse.Builder::items)
@@ -7224,7 +9277,43 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListTargetDatabasesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListTargetDatabasesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListUserAccessAnalyticsResponse listUserAccessAnalytics(
+            ListUserAccessAnalyticsRequest request) {
+
+        Validate.notBlank(request.getUserAssessmentId(), "userAssessmentId must not be blank");
+
+        return clientCall(request, ListUserAccessAnalyticsResponse::builder)
+                .logger(LOG, "listUserAccessAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListUserAccessAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListUserAccessAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListUserAccessAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("userAssessments")
+                .appendPathParam(request.getUserAssessmentId())
+                .appendPathParam("userAccessAnalytics")
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.UserAccessAnalyticsCollection.class,
+                        ListUserAccessAnalyticsResponse.Builder::userAccessAnalyticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListUserAccessAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListUserAccessAnalyticsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListUserAccessAnalyticsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -7268,11 +9357,17 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam(
                         "timePasswordLastChangedLessThan",
                         request.getTimePasswordLastChangedLessThan())
+                .appendQueryParam(
+                        "timePasswordExpiryGreaterThanOrEqualTo",
+                        request.getTimePasswordExpiryGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timePasswordExpiryLessThan", request.getTimePasswordExpiryLessThan())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.UserAggregation.class,
                         ListUserAnalyticsResponse.Builder::items)
@@ -7280,7 +9375,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListUserAnalyticsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListUserAnalyticsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7319,6 +9413,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.UserAssessmentSummary.class,
                         ListUserAssessmentsResponse.Builder::items)
@@ -7328,7 +9423,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListUserAssessmentsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListUserAssessmentsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7375,11 +9469,22 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam(
                         "timePasswordLastChangedLessThan",
                         request.getTimePasswordLastChangedLessThan())
+                .appendQueryParam(
+                        "timePasswordExpiryGreaterThanOrEqualTo",
+                        request.getTimePasswordExpiryGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timePasswordExpiryLessThan", request.getTimePasswordExpiryLessThan())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "schemaList",
+                        request.getSchemaList(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("areAllSchemasAccessible", request.getAreAllSchemasAccessible())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.UserSummary.class,
                         ListUsersResponse.Builder::items)
@@ -7387,7 +9492,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListUsersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListUsersResponse.Builder::opcNextPage)
                 .handleResponseHeaderString("opc-prev-page", ListUsersResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7413,6 +9517,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.WorkRequestError.class,
                         ListWorkRequestErrorsResponse.Builder::items)
@@ -7420,7 +9525,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7445,6 +9549,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.WorkRequestLogEntry.class,
                         ListWorkRequestLogsResponse.Builder::items)
@@ -7452,7 +9557,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7482,6 +9586,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("accessLevel", request.getAccessLevel())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datasafe.model.WorkRequestSummary.class,
                         ListWorkRequestsResponse.Builder::items)
@@ -7489,7 +9594,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7513,13 +9617,14 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("actions")
                 .appendPathParam("mask")
                 .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", MaskDataResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", MaskDataResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7548,13 +9653,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ModifyGlobalSettingsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ModifyGlobalSettingsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7577,12 +9682,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", PatchAlertsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PatchAlertsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7610,13 +9715,48 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         PatchDiscoveryJobResultsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PatchDiscoveryJobResultsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public PatchGroupedSensitiveTypesResponse patchGroupedSensitiveTypes(
+            PatchGroupedSensitiveTypesRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypeGroupId(), "sensitiveTypeGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getPatchGroupedSensitiveTypesDetails(),
+                "patchGroupedSensitiveTypesDetails is required");
+
+        return clientCall(request, PatchGroupedSensitiveTypesResponse::builder)
+                .logger(LOG, "patchGroupedSensitiveTypes")
+                .serviceDetails(
+                        "DataSafe",
+                        "PatchGroupedSensitiveTypes",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/PatchGroupedSensitiveTypes")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchGroupedSensitiveTypesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendPathParam(request.getSensitiveTypeGroupId())
+                .appendPathParam("groupedSensitiveTypes")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        PatchGroupedSensitiveTypesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchGroupedSensitiveTypesResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -7642,13 +9782,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         PatchMaskingColumnsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PatchMaskingColumnsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7678,6 +9818,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -7685,7 +9826,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         PatchSdmMaskingPolicyDifferenceColumnsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7714,13 +9854,43 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         PatchSensitiveColumnsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PatchSensitiveColumnsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public PatchSqlFirewallAllowedSqlResponse patchSqlFirewallAllowedSql(
+            PatchSqlFirewallAllowedSqlRequest request) {
+        Objects.requireNonNull(
+                request.getPatchSqlFirewallAllowedSqlDetails(),
+                "patchSqlFirewallAllowedSqlDetails is required");
+
+        return clientCall(request, PatchSqlFirewallAllowedSqlResponse::builder)
+                .logger(LOG, "patchSqlFirewallAllowedSql")
+                .serviceDetails(
+                        "DataSafe",
+                        "PatchSqlFirewallAllowedSql",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSql/PatchSqlFirewallAllowedSql")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchSqlFirewallAllowedSqlRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallAllowedSqls")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        PatchSqlFirewallAllowedSqlResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchSqlFirewallAllowedSqlResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -7744,6 +9914,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -7751,7 +9922,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         PatchTargetAlertPolicyAssociationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7780,13 +9950,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ProvisionAuditPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ProvisionAuditPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7813,12 +9983,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         PurgeSqlCollectionLogsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PurgeSqlCollectionLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7847,13 +10017,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RefreshDatabaseSecurityConfigurationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RefreshDatabaseSecurityConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7884,13 +10054,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RefreshSecurityAssessmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RefreshSecurityAssessmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7917,13 +10087,45 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RefreshSqlCollectionLogInsightsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RefreshSqlCollectionLogInsightsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RefreshTargetDatabaseResponse refreshTargetDatabase(
+            RefreshTargetDatabaseRequest request) {
+
+        Validate.notBlank(request.getTargetDatabaseId(), "targetDatabaseId must not be blank");
+
+        return clientCall(request, RefreshTargetDatabaseResponse::builder)
+                .logger(LOG, "refreshTargetDatabase")
+                .serviceDetails(
+                        "DataSafe",
+                        "RefreshTargetDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/RefreshTargetDatabase")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshTargetDatabaseRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("targetDatabases")
+                .appendPathParam(request.getTargetDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshTargetDatabaseResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RefreshTargetDatabaseResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -7952,13 +10154,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RefreshUserAssessmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RefreshUserAssessmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7984,12 +10186,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RemoveScheduleReportResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveScheduleReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8014,11 +10216,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", ResumeAuditTrailResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ResumeAuditTrailResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8044,11 +10246,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", ResumeWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", ResumeWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8075,12 +10277,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RetrieveAuditPoliciesResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RetrieveAuditPoliciesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8108,12 +10310,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", ScheduleReportResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ScheduleReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8141,6 +10343,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -8148,7 +10351,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         SetSecurityAssessmentBaselineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8175,13 +10377,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         SetUserAssessmentBaselineResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", SetUserAssessmentBaselineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8209,12 +10411,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", StartAuditTrailResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", StartAuditTrailResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8240,11 +10442,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", StartSqlCollectionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", StartSqlCollectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8269,11 +10471,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", StopAuditTrailResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", StopAuditTrailResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8299,11 +10501,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", StopSqlCollectionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", StopSqlCollectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8329,11 +10531,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", SuspendWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", SuspendWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8361,13 +10563,14 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UnsetSecurityAssessmentBaselineResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UnsetSecurityAssessmentBaselineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8394,12 +10597,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UnsetUserAssessmentBaselineResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UnsetUserAssessmentBaselineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8423,6 +10627,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datasafe.model.Alert.class,
@@ -8430,7 +10635,73 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateAlertResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAlertResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateAlertPolicyResponse updateAlertPolicy(UpdateAlertPolicyRequest request) {
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateAlertPolicyDetails(), "updateAlertPolicyDetails is required");
+
+        return clientCall(request, UpdateAlertPolicyResponse::builder)
+                .logger(LOG, "updateAlertPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateAlertPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/UpdateAlertPolicy")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAlertPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAlertPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateAlertPolicyResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateAlertPolicyRuleResponse updateAlertPolicyRule(
+            UpdateAlertPolicyRuleRequest request) {
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+
+        Validate.notBlank(request.getRuleKey(), "ruleKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateAlertPolicyRuleDetails(),
+                "updateAlertPolicyRuleDetails is required");
+
+        return clientCall(request, UpdateAlertPolicyRuleResponse::builder)
+                .logger(LOG, "updateAlertPolicyRule")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateAlertPolicyRule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicyRule/UpdateAlertPolicyRule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAlertPolicyRuleRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .appendPathParam("rules")
+                .appendPathParam(request.getRuleKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAlertPolicyRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateAlertPolicyRuleResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -8458,13 +10729,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAuditArchiveRetrievalResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateAuditArchiveRetrievalResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8489,12 +10760,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAuditPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateAuditPolicyResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8519,12 +10790,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateAuditProfileResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAuditProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8549,12 +10820,12 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateAuditTrailResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAuditTrailResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8583,6 +10854,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -8590,7 +10862,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateDataSafePrivateEndpointResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8619,6 +10890,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -8626,7 +10898,42 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateDatabaseSecurityConfigResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateFindingResponse updateFinding(UpdateFindingRequest request) {
+
+        Validate.notBlank(
+                request.getSecurityAssessmentId(), "securityAssessmentId must not be blank");
+
+        Validate.notBlank(request.getFindingKey(), "findingKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateFindingDetails(), "updateFindingDetails is required");
+
+        return clientCall(request, UpdateFindingResponse::builder)
+                .logger(LOG, "updateFinding")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateFinding",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Finding/UpdateFinding")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateFindingRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityAssessments")
+                .appendPathParam(request.getSecurityAssessmentId())
+                .appendPathParam("findings")
+                .appendPathParam(request.getFindingKey())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateFindingResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateFindingResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -8654,13 +10961,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateLibraryMaskingFormatResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateLibraryMaskingFormatResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8689,13 +10996,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateMaskingColumnResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMaskingColumnResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8720,13 +11027,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateMaskingPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMaskingPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8753,13 +11060,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateOnPremConnectorResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateOnPremConnectorResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8788,13 +11095,80 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateOnPremConnectorWalletResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateOnPremConnectorWalletResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdatePeerTargetDatabaseResponse updatePeerTargetDatabase(
+            UpdatePeerTargetDatabaseRequest request) {
+
+        Validate.notBlank(request.getTargetDatabaseId(), "targetDatabaseId must not be blank");
+
+        Objects.requireNonNull(
+                request.getUpdatePeerTargetDatabaseDetails(),
+                "updatePeerTargetDatabaseDetails is required");
+
+        return clientCall(request, UpdatePeerTargetDatabaseResponse::builder)
+                .logger(LOG, "updatePeerTargetDatabase")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdatePeerTargetDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/UpdatePeerTargetDatabase")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePeerTargetDatabaseRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("targetDatabases")
+                .appendPathParam(request.getTargetDatabaseId())
+                .appendPathParam("peerTargetDatabases")
+                .appendPathParam(request.getPeerTargetDatabaseId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdatePeerTargetDatabaseResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePeerTargetDatabaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateReportResponse updateReport(UpdateReportRequest request) {
+
+        Validate.notBlank(request.getReportId(), "reportId must not be blank");
+        Objects.requireNonNull(request.getUpdateReportDetails(), "updateReportDetails is required");
+
+        return clientCall(request, UpdateReportResponse::builder)
+                .logger(LOG, "updateReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Report/UpdateReport")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("reports")
+                .appendPathParam(request.getReportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateReportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -8822,13 +11196,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateReportDefinitionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateReportDefinitionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8857,6 +11231,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -8864,7 +11239,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateSdmMaskingPolicyDifferenceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8892,13 +11266,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateSecurityAssessmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSecurityAssessmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8924,13 +11298,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSecurityPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateSecurityPolicyResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8959,6 +11333,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -8966,7 +11341,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateSecurityPolicyDeploymentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -8998,13 +11372,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateSensitiveColumnResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSensitiveColumnResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -9032,13 +11406,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateSensitiveDataModelResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSensitiveDataModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -9063,13 +11437,81 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateSensitiveTypeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSensitiveTypeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateSensitiveTypeGroupResponse updateSensitiveTypeGroup(
+            UpdateSensitiveTypeGroupRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypeGroupId(), "sensitiveTypeGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSensitiveTypeGroupDetails(),
+                "updateSensitiveTypeGroupDetails is required");
+
+        return clientCall(request, UpdateSensitiveTypeGroupResponse::builder)
+                .logger(LOG, "updateSensitiveTypeGroup")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateSensitiveTypeGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/UpdateSensitiveTypeGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSensitiveTypeGroupRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendPathParam(request.getSensitiveTypeGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSensitiveTypeGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSensitiveTypeGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateSensitiveTypesExportResponse updateSensitiveTypesExport(
+            UpdateSensitiveTypesExportRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypesExportId(), "sensitiveTypesExportId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSensitiveTypesExportDetails(),
+                "updateSensitiveTypesExportDetails is required");
+
+        return clientCall(request, UpdateSensitiveTypesExportResponse::builder)
+                .logger(LOG, "updateSensitiveTypesExport")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateSensitiveTypesExport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExport/UpdateSensitiveTypesExport")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSensitiveTypesExportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .appendPathParam(request.getSensitiveTypesExportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSensitiveTypesExportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSensitiveTypesExportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -9094,13 +11536,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSqlCollectionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateSqlCollectionResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -9128,13 +11570,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSqlFirewallPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateSqlFirewallPolicyResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -9163,6 +11605,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -9170,7 +11613,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateTargetAlertPolicyAssociationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -9197,13 +11639,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateTargetDatabaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateTargetDatabaseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -9229,13 +11671,13 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateUserAssessmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateUserAssessmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -9262,6 +11704,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -9269,7 +11712,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         UploadMaskingPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UploadMaskingPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -9299,6 +11741,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -9306,7 +11749,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         UploadSensitiveDataModelResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UploadSensitiveDataModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

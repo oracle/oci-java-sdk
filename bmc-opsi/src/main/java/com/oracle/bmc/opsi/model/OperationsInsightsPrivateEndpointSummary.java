@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -148,12 +148,16 @@ public final class OperationsInsightsPrivateEndpointSummary
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** The flag to identify if private endpoint is used for rac database or not */
+        /**
+         * The flag to identify if private endpoint is used for rac database or not. This flag is
+         * deprecated and no longer is used.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isUsedForRacDbs")
         private Boolean isUsedForRacDbs;
 
         /**
-         * The flag to identify if private endpoint is used for rac database or not
+         * The flag to identify if private endpoint is used for rac database or not. This flag is
+         * deprecated and no longer is used.
          *
          * @param isUsedForRacDbs the value to set
          * @return this builder
@@ -460,12 +464,16 @@ public final class OperationsInsightsPrivateEndpointSummary
         return subnetId;
     }
 
-    /** The flag to identify if private endpoint is used for rac database or not */
+    /**
+     * The flag to identify if private endpoint is used for rac database or not. This flag is
+     * deprecated and no longer is used.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isUsedForRacDbs")
     private final Boolean isUsedForRacDbs;
 
     /**
-     * The flag to identify if private endpoint is used for rac database or not
+     * The flag to identify if private endpoint is used for rac database or not. This flag is
+     * deprecated and no longer is used.
      *
      * @return the value
      */

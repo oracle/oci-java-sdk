@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -27,6 +27,7 @@ public final class AppExtensionRadiusAppApp
         "clientIP",
         "port",
         "secretKey",
+        "secretKeyTemporary",
         "includeGroupInResponse",
         "captureClientIp",
         "typeOfRadiusApp",
@@ -44,6 +45,7 @@ public final class AppExtensionRadiusAppApp
             String clientIP,
             String port,
             String secretKey,
+            String secretKeyTemporary,
             Boolean includeGroupInResponse,
             Boolean captureClientIp,
             String typeOfRadiusApp,
@@ -60,6 +62,7 @@ public final class AppExtensionRadiusAppApp
         this.clientIP = clientIP;
         this.port = port;
         this.secretKey = secretKey;
+        this.secretKeyTemporary = secretKeyTemporary;
         this.includeGroupInResponse = includeGroupInResponse;
         this.captureClientIp = captureClientIp;
         this.typeOfRadiusApp = typeOfRadiusApp;
@@ -157,6 +160,39 @@ public final class AppExtensionRadiusAppApp
         public Builder secretKey(String secretKey) {
             this.secretKey = secretKey;
             this.__explicitlySet__.add("secretKey");
+            return this;
+        }
+        /**
+         * Secret key used to secure communication between RADIUS Proxy and RADIUS client. This will
+         * be available only for few releases for an internal migration requirement. Use secretKey
+         * attribute instead of this attribute for all other requirements.
+         *
+         * <p>*Added In:** 2306131901
+         *
+         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - idcsSensitive:
+         * encrypt - multiValued: false - mutability: readWrite - required: false - returned: never
+         * - type: string
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretKeyTemporary")
+        private String secretKeyTemporary;
+
+        /**
+         * Secret key used to secure communication between RADIUS Proxy and RADIUS client. This will
+         * be available only for few releases for an internal migration requirement. Use secretKey
+         * attribute instead of this attribute for all other requirements.
+         *
+         * <p>*Added In:** 2306131901
+         *
+         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - idcsSensitive:
+         * encrypt - multiValued: false - mutability: readWrite - required: false - returned: never
+         * - type: string
+         *
+         * @param secretKeyTemporary the value to set
+         * @return this builder
+         */
+        public Builder secretKeyTemporary(String secretKeyTemporary) {
+            this.secretKeyTemporary = secretKeyTemporary;
+            this.__explicitlySet__.add("secretKeyTemporary");
             return this;
         }
         /**
@@ -506,6 +542,7 @@ public final class AppExtensionRadiusAppApp
                             this.clientIP,
                             this.port,
                             this.secretKey,
+                            this.secretKeyTemporary,
                             this.includeGroupInResponse,
                             this.captureClientIp,
                             this.typeOfRadiusApp,
@@ -534,6 +571,9 @@ public final class AppExtensionRadiusAppApp
             }
             if (model.wasPropertyExplicitlySet("secretKey")) {
                 this.secretKey(model.getSecretKey());
+            }
+            if (model.wasPropertyExplicitlySet("secretKeyTemporary")) {
+                this.secretKeyTemporary(model.getSecretKeyTemporary());
             }
             if (model.wasPropertyExplicitlySet("includeGroupInResponse")) {
                 this.includeGroupInResponse(model.getIncludeGroupInResponse());
@@ -659,6 +699,35 @@ public final class AppExtensionRadiusAppApp
      */
     public String getSecretKey() {
         return secretKey;
+    }
+
+    /**
+     * Secret key used to secure communication between RADIUS Proxy and RADIUS client. This will be
+     * available only for few releases for an internal migration requirement. Use secretKey
+     * attribute instead of this attribute for all other requirements.
+     *
+     * <p>*Added In:** 2306131901
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - idcsSensitive: encrypt -
+     * multiValued: false - mutability: readWrite - required: false - returned: never - type: string
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretKeyTemporary")
+    private final String secretKeyTemporary;
+
+    /**
+     * Secret key used to secure communication between RADIUS Proxy and RADIUS client. This will be
+     * available only for few releases for an internal migration requirement. Use secretKey
+     * attribute instead of this attribute for all other requirements.
+     *
+     * <p>*Added In:** 2306131901
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - idcsSensitive: encrypt -
+     * multiValued: false - mutability: readWrite - required: false - returned: never - type: string
+     *
+     * @return the value
+     */
+    public String getSecretKeyTemporary() {
+        return secretKeyTemporary;
     }
 
     /**
@@ -991,6 +1060,7 @@ public final class AppExtensionRadiusAppApp
         sb.append("clientIP=").append(String.valueOf(this.clientIP));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", secretKey=").append(String.valueOf(this.secretKey));
+        sb.append(", secretKeyTemporary=").append(String.valueOf(this.secretKeyTemporary));
         sb.append(", includeGroupInResponse=").append(String.valueOf(this.includeGroupInResponse));
         sb.append(", captureClientIp=").append(String.valueOf(this.captureClientIp));
         sb.append(", typeOfRadiusApp=").append(String.valueOf(this.typeOfRadiusApp));
@@ -1024,6 +1094,7 @@ public final class AppExtensionRadiusAppApp
         return java.util.Objects.equals(this.clientIP, other.clientIP)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.secretKey, other.secretKey)
+                && java.util.Objects.equals(this.secretKeyTemporary, other.secretKeyTemporary)
                 && java.util.Objects.equals(
                         this.includeGroupInResponse, other.includeGroupInResponse)
                 && java.util.Objects.equals(this.captureClientIp, other.captureClientIp)
@@ -1053,6 +1124,11 @@ public final class AppExtensionRadiusAppApp
         result = (result * PRIME) + (this.clientIP == null ? 43 : this.clientIP.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.secretKey == null ? 43 : this.secretKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secretKeyTemporary == null
+                                ? 43
+                                : this.secretKeyTemporary.hashCode());
         result =
                 (result * PRIME)
                         + (this.includeGroupInResponse == null

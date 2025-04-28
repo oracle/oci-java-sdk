@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage;
@@ -273,6 +273,119 @@ public class AIServiceLanguagePaginators {
                     public java.util.List<com.oracle.bmc.ailanguage.model.EvaluationResultSummary>
                             apply(ListEvaluationResultsResponse response) {
                         return response.getEvaluationResultCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listJobs
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListJobsResponse> listJobsResponseIterator(final ListJobsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListJobsRequest.Builder, ListJobsRequest, ListJobsResponse>(
+                new java.util.function.Supplier<ListJobsRequest.Builder>() {
+                    @Override
+                    public ListJobsRequest.Builder get() {
+                        return ListJobsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListJobsResponse, String>() {
+                    @Override
+                    public String apply(ListJobsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJobsRequest.Builder>,
+                        ListJobsRequest>() {
+                    @Override
+                    public ListJobsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJobsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListJobsRequest, ListJobsResponse>() {
+                    @Override
+                    public ListJobsResponse apply(ListJobsRequest request) {
+                        return client.listJobs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.ailanguage.model.JobSummary} objects contained in responses from the listJobs
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.ailanguage.model.JobSummary} objects contained in responses received from
+     *     the service.
+     */
+    public Iterable<com.oracle.bmc.ailanguage.model.JobSummary> listJobsRecordIterator(
+            final ListJobsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListJobsRequest.Builder,
+                ListJobsRequest,
+                ListJobsResponse,
+                com.oracle.bmc.ailanguage.model.JobSummary>(
+                new java.util.function.Supplier<ListJobsRequest.Builder>() {
+                    @Override
+                    public ListJobsRequest.Builder get() {
+                        return ListJobsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListJobsResponse, String>() {
+                    @Override
+                    public String apply(ListJobsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJobsRequest.Builder>,
+                        ListJobsRequest>() {
+                    @Override
+                    public ListJobsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJobsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListJobsRequest, ListJobsResponse>() {
+                    @Override
+                    public ListJobsResponse apply(ListJobsRequest request) {
+                        return client.listJobs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListJobsResponse,
+                        java.util.List<com.oracle.bmc.ailanguage.model.JobSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.ailanguage.model.JobSummary> apply(
+                            ListJobsResponse response) {
+                        return response.getJobCollection().getItems();
                     }
                 });
     }

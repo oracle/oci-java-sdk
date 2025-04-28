@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * List of problem ids to be passed in to update the Problem status. <br>
+ * List of problem IDs to be passed in to update problem status. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -49,12 +49,12 @@ public final class UpdateBulkProblemStatusDetails
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** List of ProblemIds to be passed in to update the Problem status. */
+        /** List of problem IDs to be passed in to update the problem status */
         @com.fasterxml.jackson.annotation.JsonProperty("problemIds")
         private java.util.List<String> problemIds;
 
         /**
-         * List of ProblemIds to be passed in to update the Problem status.
+         * List of problem IDs to be passed in to update the problem status
          *
          * @param problemIds the value to set
          * @return this builder
@@ -64,12 +64,12 @@ public final class UpdateBulkProblemStatusDetails
             this.__explicitlySet__.add("problemIds");
             return this;
         }
-        /** User defined comment to be passed in to update the problem. */
+        /** User-defined comment to be passed in to update the problem */
         @com.fasterxml.jackson.annotation.JsonProperty("comment")
         private String comment;
 
         /**
-         * User defined comment to be passed in to update the problem.
+         * User-defined comment to be passed in to update the problem
          *
          * @param comment the value to set
          * @return this builder
@@ -129,12 +129,12 @@ public final class UpdateBulkProblemStatusDetails
         return status;
     }
 
-    /** List of ProblemIds to be passed in to update the Problem status. */
+    /** List of problem IDs to be passed in to update the problem status */
     @com.fasterxml.jackson.annotation.JsonProperty("problemIds")
     private final java.util.List<String> problemIds;
 
     /**
-     * List of ProblemIds to be passed in to update the Problem status.
+     * List of problem IDs to be passed in to update the problem status
      *
      * @return the value
      */
@@ -142,12 +142,12 @@ public final class UpdateBulkProblemStatusDetails
         return problemIds;
     }
 
-    /** User defined comment to be passed in to update the problem. */
+    /** User-defined comment to be passed in to update the problem */
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
     private final String comment;
 
     /**
-     * User defined comment to be passed in to update the problem.
+     * User-defined comment to be passed in to update the problem
      *
      * @return the value
      */

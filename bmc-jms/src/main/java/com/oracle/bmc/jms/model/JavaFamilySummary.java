@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -29,20 +29,29 @@ public final class JavaFamilySummary
         "displayName",
         "supportType",
         "endOfSupportLifeDate",
-        "docUrl"
+        "docUrl",
+        "latestReleaseVersion",
+        "isSupportedVersion",
+        "releaseDate"
     })
     public JavaFamilySummary(
             String familyVersion,
             String displayName,
             SupportType supportType,
             java.util.Date endOfSupportLifeDate,
-            String docUrl) {
+            String docUrl,
+            String latestReleaseVersion,
+            Boolean isSupportedVersion,
+            java.util.Date releaseDate) {
         super();
         this.familyVersion = familyVersion;
         this.displayName = displayName;
         this.supportType = supportType;
         this.endOfSupportLifeDate = endOfSupportLifeDate;
         this.docUrl = docUrl;
+        this.latestReleaseVersion = latestReleaseVersion;
+        this.isSupportedVersion = isSupportedVersion;
+        this.releaseDate = releaseDate;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -126,6 +135,61 @@ public final class JavaFamilySummary
             this.__explicitlySet__.add("docUrl");
             return this;
         }
+        /** Latest Java release version in the family. */
+        @com.fasterxml.jackson.annotation.JsonProperty("latestReleaseVersion")
+        private String latestReleaseVersion;
+
+        /**
+         * Latest Java release version in the family.
+         *
+         * @param latestReleaseVersion the value to set
+         * @return this builder
+         */
+        public Builder latestReleaseVersion(String latestReleaseVersion) {
+            this.latestReleaseVersion = latestReleaseVersion;
+            this.__explicitlySet__.add("latestReleaseVersion");
+            return this;
+        }
+        /**
+         * Whether or not this Java release family is under active support. Refer [Java Support
+         * Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more
+         * details.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSupportedVersion")
+        private Boolean isSupportedVersion;
+
+        /**
+         * Whether or not this Java release family is under active support. Refer [Java Support
+         * Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more
+         * details.
+         *
+         * @param isSupportedVersion the value to set
+         * @return this builder
+         */
+        public Builder isSupportedVersion(Boolean isSupportedVersion) {
+            this.isSupportedVersion = isSupportedVersion;
+            this.__explicitlySet__.add("isSupportedVersion");
+            return this;
+        }
+        /**
+         * The date on which the Java release family was first made available (formatted according
+         * to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
+        private java.util.Date releaseDate;
+
+        /**
+         * The date on which the Java release family was first made available (formatted according
+         * to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         * @param releaseDate the value to set
+         * @return this builder
+         */
+        public Builder releaseDate(java.util.Date releaseDate) {
+            this.releaseDate = releaseDate;
+            this.__explicitlySet__.add("releaseDate");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -137,7 +201,10 @@ public final class JavaFamilySummary
                             this.displayName,
                             this.supportType,
                             this.endOfSupportLifeDate,
-                            this.docUrl);
+                            this.docUrl,
+                            this.latestReleaseVersion,
+                            this.isSupportedVersion,
+                            this.releaseDate);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -160,6 +227,15 @@ public final class JavaFamilySummary
             }
             if (model.wasPropertyExplicitlySet("docUrl")) {
                 this.docUrl(model.getDocUrl());
+            }
+            if (model.wasPropertyExplicitlySet("latestReleaseVersion")) {
+                this.latestReleaseVersion(model.getLatestReleaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isSupportedVersion")) {
+                this.isSupportedVersion(model.getIsSupportedVersion());
+            }
+            if (model.wasPropertyExplicitlySet("releaseDate")) {
+                this.releaseDate(model.getReleaseDate());
             }
             return this;
         }
@@ -243,6 +319,55 @@ public final class JavaFamilySummary
         return docUrl;
     }
 
+    /** Latest Java release version in the family. */
+    @com.fasterxml.jackson.annotation.JsonProperty("latestReleaseVersion")
+    private final String latestReleaseVersion;
+
+    /**
+     * Latest Java release version in the family.
+     *
+     * @return the value
+     */
+    public String getLatestReleaseVersion() {
+        return latestReleaseVersion;
+    }
+
+    /**
+     * Whether or not this Java release family is under active support. Refer [Java Support
+     * Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more
+     * details.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSupportedVersion")
+    private final Boolean isSupportedVersion;
+
+    /**
+     * Whether or not this Java release family is under active support. Refer [Java Support
+     * Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more
+     * details.
+     *
+     * @return the value
+     */
+    public Boolean getIsSupportedVersion() {
+        return isSupportedVersion;
+    }
+
+    /**
+     * The date on which the Java release family was first made available (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
+    private final java.util.Date releaseDate;
+
+    /**
+     * The date on which the Java release family was first made available (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     * @return the value
+     */
+    public java.util.Date getReleaseDate() {
+        return releaseDate;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -263,6 +388,9 @@ public final class JavaFamilySummary
         sb.append(", supportType=").append(String.valueOf(this.supportType));
         sb.append(", endOfSupportLifeDate=").append(String.valueOf(this.endOfSupportLifeDate));
         sb.append(", docUrl=").append(String.valueOf(this.docUrl));
+        sb.append(", latestReleaseVersion=").append(String.valueOf(this.latestReleaseVersion));
+        sb.append(", isSupportedVersion=").append(String.valueOf(this.isSupportedVersion));
+        sb.append(", releaseDate=").append(String.valueOf(this.releaseDate));
         sb.append(")");
         return sb.toString();
     }
@@ -282,6 +410,9 @@ public final class JavaFamilySummary
                 && java.util.Objects.equals(this.supportType, other.supportType)
                 && java.util.Objects.equals(this.endOfSupportLifeDate, other.endOfSupportLifeDate)
                 && java.util.Objects.equals(this.docUrl, other.docUrl)
+                && java.util.Objects.equals(this.latestReleaseVersion, other.latestReleaseVersion)
+                && java.util.Objects.equals(this.isSupportedVersion, other.isSupportedVersion)
+                && java.util.Objects.equals(this.releaseDate, other.releaseDate)
                 && super.equals(other);
     }
 
@@ -300,6 +431,17 @@ public final class JavaFamilySummary
                                 ? 43
                                 : this.endOfSupportLifeDate.hashCode());
         result = (result * PRIME) + (this.docUrl == null ? 43 : this.docUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.latestReleaseVersion == null
+                                ? 43
+                                : this.latestReleaseVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSupportedVersion == null
+                                ? 43
+                                : this.isSupportedVersion.hashCode());
+        result = (result * PRIME) + (this.releaseDate == null ? 43 : this.releaseDate.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

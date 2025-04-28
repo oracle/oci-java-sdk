@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -23,14 +23,25 @@ package com.oracle.bmc.bds.model;
 public final class CreateBdsApiKeyDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"userId", "passphrase", "defaultRegion", "keyAlias"})
+    @java.beans.ConstructorProperties({
+        "userId",
+        "passphrase",
+        "defaultRegion",
+        "keyAlias",
+        "domainOcid"
+    })
     public CreateBdsApiKeyDetails(
-            String userId, String passphrase, String defaultRegion, String keyAlias) {
+            String userId,
+            String passphrase,
+            String defaultRegion,
+            String keyAlias,
+            String domainOcid) {
         super();
         this.userId = userId;
         this.passphrase = passphrase;
         this.defaultRegion = defaultRegion;
         this.keyAlias = keyAlias;
+        this.domainOcid = domainOcid;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -109,6 +120,25 @@ public final class CreateBdsApiKeyDetails
             this.__explicitlySet__.add("keyAlias");
             return this;
         }
+        /**
+         * Identity domain OCID , where user is present. For default domain , this field will be
+         * optional.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
+        private String domainOcid;
+
+        /**
+         * Identity domain OCID , where user is present. For default domain , this field will be
+         * optional.
+         *
+         * @param domainOcid the value to set
+         * @return this builder
+         */
+        public Builder domainOcid(String domainOcid) {
+            this.domainOcid = domainOcid;
+            this.__explicitlySet__.add("domainOcid");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -116,7 +146,11 @@ public final class CreateBdsApiKeyDetails
         public CreateBdsApiKeyDetails build() {
             CreateBdsApiKeyDetails model =
                     new CreateBdsApiKeyDetails(
-                            this.userId, this.passphrase, this.defaultRegion, this.keyAlias);
+                            this.userId,
+                            this.passphrase,
+                            this.defaultRegion,
+                            this.keyAlias,
+                            this.domainOcid);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -136,6 +170,9 @@ public final class CreateBdsApiKeyDetails
             }
             if (model.wasPropertyExplicitlySet("keyAlias")) {
                 this.keyAlias(model.getKeyAlias());
+            }
+            if (model.wasPropertyExplicitlySet("domainOcid")) {
+                this.domainOcid(model.getDomainOcid());
             }
             return this;
         }
@@ -214,6 +251,23 @@ public final class CreateBdsApiKeyDetails
         return keyAlias;
     }
 
+    /**
+     * Identity domain OCID , where user is present. For default domain , this field will be
+     * optional.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
+    private final String domainOcid;
+
+    /**
+     * Identity domain OCID , where user is present. For default domain , this field will be
+     * optional.
+     *
+     * @return the value
+     */
+    public String getDomainOcid() {
+        return domainOcid;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -233,6 +287,7 @@ public final class CreateBdsApiKeyDetails
         sb.append(", passphrase=").append("<redacted>");
         sb.append(", defaultRegion=").append(String.valueOf(this.defaultRegion));
         sb.append(", keyAlias=").append(String.valueOf(this.keyAlias));
+        sb.append(", domainOcid=").append(String.valueOf(this.domainOcid));
         sb.append(")");
         return sb.toString();
     }
@@ -251,6 +306,7 @@ public final class CreateBdsApiKeyDetails
                 && java.util.Objects.equals(this.passphrase, other.passphrase)
                 && java.util.Objects.equals(this.defaultRegion, other.defaultRegion)
                 && java.util.Objects.equals(this.keyAlias, other.keyAlias)
+                && java.util.Objects.equals(this.domainOcid, other.domainOcid)
                 && super.equals(other);
     }
 
@@ -264,6 +320,7 @@ public final class CreateBdsApiKeyDetails
                 (result * PRIME)
                         + (this.defaultRegion == null ? 43 : this.defaultRegion.hashCode());
         result = (result * PRIME) + (this.keyAlias == null ? 43 : this.keyAlias.hashCode());
+        result = (result * PRIME) + (this.domainOcid == null ? 43 : this.domainOcid.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

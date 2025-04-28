@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp;
@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements EsxiHost {
     /** Service instance for EsxiHost. */
@@ -132,20 +132,20 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .serviceDetails(
                         "EsxiHost",
                         "CreateEsxiHost",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/CreateEsxiHost")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateEsxiHostRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("esxiHosts")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateEsxiHostResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateEsxiHostResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -159,20 +159,20 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .serviceDetails(
                         "EsxiHost",
                         "DeleteEsxiHost",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/DeleteEsxiHost")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/DeleteEsxiHost")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteEsxiHostRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("esxiHosts")
                 .appendPathParam(request.getEsxiHostId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteEsxiHostResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteEsxiHostResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -186,21 +186,51 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .serviceDetails(
                         "EsxiHost",
                         "GetEsxiHost",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/GetEsxiHost")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/GetEsxiHost")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetEsxiHostRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("esxiHosts")
                 .appendPathParam(request.getEsxiHostId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ocvp.model.EsxiHost.class,
                         GetEsxiHostResponse.Builder::esxiHost)
                 .handleResponseHeaderString("etag", GetEsxiHostResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetEsxiHostResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public InplaceUpgradeResponse inplaceUpgrade(InplaceUpgradeRequest request) {
+
+        Validate.notBlank(request.getEsxiHostId(), "esxiHostId must not be blank");
+
+        return clientCall(request, InplaceUpgradeResponse::builder)
+                .logger(LOG, "inplaceUpgrade")
+                .serviceDetails(
+                        "EsxiHost",
+                        "InplaceUpgrade",
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/InplaceUpgrade")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InplaceUpgradeRequest::builder)
+                .basePath("/20230701")
+                .appendPathParam("esxiHosts")
+                .appendPathParam(request.getEsxiHostId())
+                .appendPathParam("actions")
+                .appendPathParam("inplaceUpgrade")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", InplaceUpgradeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", InplaceUpgradeResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -212,12 +242,13 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .serviceDetails(
                         "EsxiHost",
                         "ListEsxiHosts",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHostSummary/ListEsxiHosts")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHostSummary/ListEsxiHosts")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListEsxiHostsRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("esxiHosts")
                 .appendQueryParam("sddcId", request.getSddcId())
+                .appendQueryParam("clusterId", request.getClusterId())
                 .appendQueryParam("computeInstanceId", request.getComputeInstanceId())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("limit", request.getLimit())
@@ -230,6 +261,7 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ocvp.model.EsxiHostCollection.class,
                         ListEsxiHostsResponse.Builder::esxiHostCollection)
@@ -237,7 +269,38 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListEsxiHostsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListEsxiHostsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ReplaceHostResponse replaceHost(ReplaceHostRequest request) {
+
+        Validate.notBlank(request.getEsxiHostId(), "esxiHostId must not be blank");
+        Objects.requireNonNull(request.getReplaceHostDetails(), "replaceHostDetails is required");
+
+        return clientCall(request, ReplaceHostResponse::builder)
+                .logger(LOG, "replaceHost")
+                .serviceDetails(
+                        "EsxiHost",
+                        "ReplaceHost",
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/ReplaceHost")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReplaceHostRequest::builder)
+                .basePath("/20230701")
+                .appendPathParam("esxiHosts")
+                .appendPathParam(request.getEsxiHostId())
+                .appendPathParam("actions")
+                .appendPathParam("replaceHost")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ReplaceHostResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ReplaceHostResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -252,10 +315,10 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .serviceDetails(
                         "EsxiHost",
                         "SwapBilling",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/SwapBilling")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SwapBillingRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("esxiHosts")
                 .appendPathParam(request.getEsxiHostId())
                 .appendPathParam("actions")
@@ -265,11 +328,11 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", SwapBillingResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", SwapBillingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -285,15 +348,16 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .serviceDetails(
                         "EsxiHost",
                         "UpdateEsxiHost",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/UpdateEsxiHost")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/UpdateEsxiHost")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateEsxiHostRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("esxiHosts")
                 .appendPathParam(request.getEsxiHostId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.ocvp.model.EsxiHost.class,
@@ -301,7 +365,6 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateEsxiHostResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateEsxiHostResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

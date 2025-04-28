@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.containerengine.requests;
 import com.oracle.bmc.containerengine.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/DeleteVirtualNodePoolExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/DeleteVirtualNodePoolExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteVirtualNodePoolRequest.
  */
@@ -53,14 +53,14 @@ public class DeleteVirtualNodePoolRequest
         return opcRequestId;
     }
     /**
-     * Duration after which Sk8s will give up eviction of the pods on the node. PT0M will indicate
+     * Duration after which SKE will give up eviction of the pods on the node. PT0M will indicate
      * you want to delete the virtual node without cordon and drain. Default PT60M, Min PT0M, Max:
      * PT60M. Format ISO 8601 e.g PT30M
      */
     private String overrideEvictionGraceDurationVnp;
 
     /**
-     * Duration after which Sk8s will give up eviction of the pods on the node. PT0M will indicate
+     * Duration after which SKE will give up eviction of the pods on the node. PT0M will indicate
      * you want to delete the virtual node without cordon and drain. Default PT60M, Min PT0M, Max:
      * PT60M. Format ISO 8601 e.g PT30M
      */
@@ -68,14 +68,14 @@ public class DeleteVirtualNodePoolRequest
         return overrideEvictionGraceDurationVnp;
     }
     /**
-     * If the underlying compute instance should be deleted if you cannot evict all the pods in
-     * grace period
+     * If the underlying virtual node should be force deleted if all the pods are not evicted in the
+     * evictionGraceDuration.
      */
     private Boolean isForceDeletionAfterOverrideGraceDurationVnp;
 
     /**
-     * If the underlying compute instance should be deleted if you cannot evict all the pods in
-     * grace period
+     * If the underlying virtual node should be force deleted if all the pods are not evicted in the
+     * evictionGraceDuration.
      */
     public Boolean getIsForceDeletionAfterOverrideGraceDurationVnp() {
         return isForceDeletionAfterOverrideGraceDurationVnp;
@@ -142,14 +142,14 @@ public class DeleteVirtualNodePoolRequest
         }
 
         /**
-         * Duration after which Sk8s will give up eviction of the pods on the node. PT0M will
+         * Duration after which SKE will give up eviction of the pods on the node. PT0M will
          * indicate you want to delete the virtual node without cordon and drain. Default PT60M, Min
          * PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
          */
         private String overrideEvictionGraceDurationVnp = null;
 
         /**
-         * Duration after which Sk8s will give up eviction of the pods on the node. PT0M will
+         * Duration after which SKE will give up eviction of the pods on the node. PT0M will
          * indicate you want to delete the virtual node without cordon and drain. Default PT60M, Min
          * PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
          *
@@ -162,14 +162,14 @@ public class DeleteVirtualNodePoolRequest
         }
 
         /**
-         * If the underlying compute instance should be deleted if you cannot evict all the pods in
-         * grace period
+         * If the underlying virtual node should be force deleted if all the pods are not evicted in
+         * the evictionGraceDuration.
          */
         private Boolean isForceDeletionAfterOverrideGraceDurationVnp = null;
 
         /**
-         * If the underlying compute instance should be deleted if you cannot evict all the pods in
-         * grace period
+         * If the underlying virtual node should be force deleted if all the pods are not evicted in
+         * the evictionGraceDuration.
          *
          * @param isForceDeletionAfterOverrideGraceDurationVnp the value to set
          * @return this builder instance

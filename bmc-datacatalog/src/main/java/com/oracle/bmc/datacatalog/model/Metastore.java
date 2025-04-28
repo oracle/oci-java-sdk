@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.model;
@@ -33,7 +33,9 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
         "lifecycleState",
         "lifecycleDetails",
         "freeformTags",
-        "definedTags"
+        "systemTags",
+        "definedTags",
+        "locks"
     })
     public Metastore(
             String id,
@@ -46,7 +48,9 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
             LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -58,7 +62,9 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
+        this.systemTags = systemTags;
         this.definedTags = definedTags;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -238,6 +244,33 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
+         * tags can be viewed by users, but can only be created by the system.
+         *
+         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
+         * tags can be viewed by users, but can only be created by the system.
+         *
+         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
          * {@code {"foo-namespace": {"bar-key": "value"}}}
          */
@@ -257,6 +290,21 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -274,7 +322,9 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.freeformTags,
-                            this.definedTags);
+                            this.systemTags,
+                            this.definedTags,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -313,8 +363,14 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -484,6 +540,31 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
+     * can be viewed by users, but can only be created by the system.
+     *
+     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
+     * can be viewed by users, but can only be created by the system.
+     *
+     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
      * {"foo-namespace": {"bar-key": "value"}}}
      */
@@ -498,6 +579,19 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -527,7 +621,9 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -554,7 +650,9 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -586,7 +684,9 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

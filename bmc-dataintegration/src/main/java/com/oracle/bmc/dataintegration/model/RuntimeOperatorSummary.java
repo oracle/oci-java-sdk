@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -157,12 +157,16 @@ public final class RuntimeOperatorSummary
             this.__explicitlySet__.add("endTimeInMillis");
             return this;
         }
-        /** status */
+        /**
+         * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
+         * field instead.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * status
+         * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
+         * field instead.
          *
          * @param status the value to set
          * @return this builder
@@ -589,7 +593,10 @@ public final class RuntimeOperatorSummary
         return endTimeInMillis;
     }
 
-    /** status */
+    /**
+     * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
+     * field instead.
+     */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         NotStarted("NOT_STARTED"),
         Queued("QUEUED"),
@@ -639,12 +646,16 @@ public final class RuntimeOperatorSummary
             return UnknownEnumValue;
         }
     };
-    /** status */
+    /**
+     * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
+     * field instead.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * status
+     * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
+     * field instead.
      *
      * @return the value
      */

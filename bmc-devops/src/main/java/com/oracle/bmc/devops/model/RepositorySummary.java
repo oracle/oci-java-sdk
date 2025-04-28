@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -28,6 +28,7 @@ public final class RepositorySummary
         "name",
         "compartmentId",
         "projectId",
+        "parentRepositoryId",
         "namespace",
         "projectName",
         "description",
@@ -49,6 +50,7 @@ public final class RepositorySummary
             String name,
             String compartmentId,
             String projectId,
+            String parentRepositoryId,
             String namespace,
             String projectName,
             String description,
@@ -69,6 +71,7 @@ public final class RepositorySummary
         this.name = name;
         this.compartmentId = compartmentId;
         this.projectId = projectId;
+        this.parentRepositoryId = parentRepositoryId;
         this.namespace = namespace;
         this.projectName = projectName;
         this.description = description;
@@ -103,12 +106,12 @@ public final class RepositorySummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Unique name of a repository. This value is mutable. */
+        /** Name of the repository. Should be unique within the project. This value is mutable. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique name of a repository. This value is mutable.
+         * Name of the repository. Should be unique within the project. This value is mutable.
          *
          * @param name the value to set
          * @return this builder
@@ -146,6 +149,21 @@ public final class RepositorySummary
         public Builder projectId(String projectId) {
             this.projectId = projectId;
             this.__explicitlySet__.add("projectId");
+            return this;
+        }
+        /** The OCID of the parent repository. */
+        @com.fasterxml.jackson.annotation.JsonProperty("parentRepositoryId")
+        private String parentRepositoryId;
+
+        /**
+         * The OCID of the parent repository.
+         *
+         * @param parentRepositoryId the value to set
+         * @return this builder
+         */
+        public Builder parentRepositoryId(String parentRepositoryId) {
+            this.parentRepositoryId = parentRepositoryId;
+            this.__explicitlySet__.add("parentRepositoryId");
             return this;
         }
         /** Tenancy unique namespace. */
@@ -208,12 +226,12 @@ public final class RepositorySummary
             this.__explicitlySet__.add("defaultBranch");
             return this;
         }
-        /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} */
+        /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED} */
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
         private Repository.RepositoryType repositoryType;
 
         /**
-         * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED}
+         * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED}
          *
          * @param repositoryType the value to set
          * @return this builder
@@ -337,7 +355,7 @@ public final class RepositorySummary
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"bar-key": "value"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -346,7 +364,7 @@ public final class RepositorySummary
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -359,7 +377,7 @@ public final class RepositorySummary
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -367,7 +385,7 @@ public final class RepositorySummary
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
@@ -381,7 +399,7 @@ public final class RepositorySummary
         }
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -389,7 +407,7 @@ public final class RepositorySummary
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
@@ -411,6 +429,7 @@ public final class RepositorySummary
                             this.name,
                             this.compartmentId,
                             this.projectId,
+                            this.parentRepositoryId,
                             this.namespace,
                             this.projectName,
                             this.description,
@@ -445,6 +464,9 @@ public final class RepositorySummary
             }
             if (model.wasPropertyExplicitlySet("projectId")) {
                 this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("parentRepositoryId")) {
+                this.parentRepositoryId(model.getParentRepositoryId());
             }
             if (model.wasPropertyExplicitlySet("namespace")) {
                 this.namespace(model.getNamespace());
@@ -517,12 +539,12 @@ public final class RepositorySummary
         return id;
     }
 
-    /** Unique name of a repository. This value is mutable. */
+    /** Name of the repository. Should be unique within the project. This value is mutable. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique name of a repository. This value is mutable.
+     * Name of the repository. Should be unique within the project. This value is mutable.
      *
      * @return the value
      */
@@ -554,6 +576,19 @@ public final class RepositorySummary
      */
     public String getProjectId() {
         return projectId;
+    }
+
+    /** The OCID of the parent repository. */
+    @com.fasterxml.jackson.annotation.JsonProperty("parentRepositoryId")
+    private final String parentRepositoryId;
+
+    /**
+     * The OCID of the parent repository.
+     *
+     * @return the value
+     */
+    public String getParentRepositoryId() {
+        return parentRepositoryId;
     }
 
     /** Tenancy unique namespace. */
@@ -608,12 +643,12 @@ public final class RepositorySummary
         return defaultBranch;
     }
 
-    /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} */
+    /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED} */
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
     private final Repository.RepositoryType repositoryType;
 
     /**
-     * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED}
+     * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED}
      *
      * @return the value
      */
@@ -721,7 +756,7 @@ public final class RepositorySummary
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"bar-key": "value"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -730,7 +765,7 @@ public final class RepositorySummary
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -741,7 +776,7 @@ public final class RepositorySummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -749,7 +784,7 @@ public final class RepositorySummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
@@ -760,7 +795,7 @@ public final class RepositorySummary
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -768,7 +803,7 @@ public final class RepositorySummary
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
@@ -796,6 +831,7 @@ public final class RepositorySummary
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", projectId=").append(String.valueOf(this.projectId));
+        sb.append(", parentRepositoryId=").append(String.valueOf(this.parentRepositoryId));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", projectName=").append(String.valueOf(this.projectName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -829,6 +865,7 @@ public final class RepositorySummary
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.projectId, other.projectId)
+                && java.util.Objects.equals(this.parentRepositoryId, other.parentRepositoryId)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.projectName, other.projectName)
                 && java.util.Objects.equals(this.description, other.description)
@@ -858,6 +895,11 @@ public final class RepositorySummary
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentRepositoryId == null
+                                ? 43
+                                : this.parentRepositoryId.hashCode());
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         result = (result * PRIME) + (this.projectName == null ? 43 : this.projectName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());

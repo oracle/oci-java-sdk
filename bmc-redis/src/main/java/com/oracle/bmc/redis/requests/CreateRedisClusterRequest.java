@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.redis.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.redis.requests;
 import com.oracle.bmc.redis.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/redis/CreateRedisClusterExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/redis/CreateRedisClusterExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateRedisClusterRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220315")
@@ -15,10 +15,10 @@ public class CreateRedisClusterRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.redis.model.CreateRedisClusterDetails> {
 
-    /** Details for the new RedisCluster. */
+    /** Details for the new cluster. */
     private com.oracle.bmc.redis.model.CreateRedisClusterDetails createRedisClusterDetails;
 
-    /** Details for the new RedisCluster. */
+    /** Details for the new cluster. */
     public com.oracle.bmc.redis.model.CreateRedisClusterDetails getCreateRedisClusterDetails() {
         return createRedisClusterDetails;
     }
@@ -67,12 +67,12 @@ public class CreateRedisClusterRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new RedisCluster. */
+        /** Details for the new cluster. */
         private com.oracle.bmc.redis.model.CreateRedisClusterDetails createRedisClusterDetails =
                 null;
 
         /**
-         * Details for the new RedisCluster.
+         * Details for the new cluster.
          *
          * @param createRedisClusterDetails the value to set
          * @return this builder instance

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -11,7 +11,7 @@ package com.oracle.bmc.database.model;
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -213,7 +213,15 @@ public final class InfrastructureTargetVersionSummary
         ExadataDbSystem("EXADATA_DB_SYSTEM"),
         CloudExadataInfrastructure("CLOUD_EXADATA_INFRASTRUCTURE"),
         ExaccInfrastructure("EXACC_INFRASTRUCTURE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TargetResourceType.class);
 
         private final String value;
         private static java.util.Map<String, TargetResourceType> map;
@@ -221,7 +229,9 @@ public final class InfrastructureTargetVersionSummary
         static {
             map = new java.util.HashMap<>();
             for (TargetResourceType v : TargetResourceType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -239,7 +249,10 @@ public final class InfrastructureTargetVersionSummary
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid TargetResourceType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TargetResourceType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**

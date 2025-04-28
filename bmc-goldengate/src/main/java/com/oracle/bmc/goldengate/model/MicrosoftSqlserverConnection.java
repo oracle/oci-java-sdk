@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -127,6 +127,15 @@ public final class MicrosoftSqlserverConnection extends Connection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
@@ -169,6 +178,24 @@ public final class MicrosoftSqlserverConnection extends Connection {
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
         /** The Microsoft SQL Server technology type. */
@@ -285,15 +312,15 @@ public final class MicrosoftSqlserverConnection extends Connection {
             return this;
         }
         /**
-         * Database Certificate - The base64 encoded content of pem file containing the server
-         * public key (for 1-way SSL).
+         * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+         * server public key (for 1-way SSL).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
         private String sslCa;
 
         /**
-         * Database Certificate - The base64 encoded content of pem file containing the server
-         * public key (for 1-way SSL).
+         * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+         * server public key (for 1-way SSL).
          *
          * @param sslCa the value to set
          * @return this builder
@@ -321,7 +348,11 @@ public final class MicrosoftSqlserverConnection extends Connection {
             return this;
         }
         /**
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * Deprecated: this field will be removed in future versions. Either specify the private IP
+         * in the connectionString or host field, or make sure the host name is resolvable in the
+         * target VCN.
+         *
+         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
          * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
          * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
@@ -332,7 +363,11 @@ public final class MicrosoftSqlserverConnection extends Connection {
         private String privateIp;
 
         /**
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * Deprecated: this field will be removed in future versions. Either specify the private IP
+         * in the connectionString or host field, or make sure the host name is resolvable in the
+         * target VCN.
+         *
+         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
          * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
          * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
@@ -345,6 +380,27 @@ public final class MicrosoftSqlserverConnection extends Connection {
         public Builder privateIp(String privateIp) {
             this.privateIp = privateIp;
             this.__explicitlySet__.add("privateIp");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the password Oracle GoldenGate uses to connect the associated
+         * Microsoft SQL Server. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the password Oracle GoldenGate uses to connect the associated
+         * Microsoft SQL Server. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
 
@@ -365,11 +421,14 @@ public final class MicrosoftSqlserverConnection extends Connection {
                             this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.locks,
                             this.vaultId,
                             this.keyId,
                             this.ingressIps,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.username,
                             this.host,
@@ -379,7 +438,8 @@ public final class MicrosoftSqlserverConnection extends Connection {
                             this.securityProtocol,
                             this.sslCa,
                             this.shouldValidateServerCertificate,
-                            this.privateIp);
+                            this.privateIp,
+                            this.passwordSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -421,6 +481,9 @@ public final class MicrosoftSqlserverConnection extends Connection {
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
@@ -435,6 +498,12 @@ public final class MicrosoftSqlserverConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -466,6 +535,9 @@ public final class MicrosoftSqlserverConnection extends Connection {
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
             }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
             return this;
         }
     }
@@ -492,11 +564,14 @@ public final class MicrosoftSqlserverConnection extends Connection {
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.List<ResourceLock> locks,
             String vaultId,
             String keyId,
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             TechnologyType technologyType,
             String username,
             String host,
@@ -506,7 +581,8 @@ public final class MicrosoftSqlserverConnection extends Connection {
             SecurityProtocol securityProtocol,
             String sslCa,
             Boolean shouldValidateServerCertificate,
-            String privateIp) {
+            String privateIp,
+            String passwordSecretId) {
         super(
                 id,
                 displayName,
@@ -519,11 +595,14 @@ public final class MicrosoftSqlserverConnection extends Connection {
                 lifecycleDetails,
                 timeCreated,
                 timeUpdated,
+                locks,
                 vaultId,
                 keyId,
                 ingressIps,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.username = username;
         this.host = host;
@@ -534,6 +613,7 @@ public final class MicrosoftSqlserverConnection extends Connection {
         this.sslCa = sslCa;
         this.shouldValidateServerCertificate = shouldValidateServerCertificate;
         this.privateIp = privateIp;
+        this.passwordSecretId = passwordSecretId;
     }
 
     /** The Microsoft SQL Server technology type. */
@@ -731,15 +811,15 @@ public final class MicrosoftSqlserverConnection extends Connection {
     }
 
     /**
-     * Database Certificate - The base64 encoded content of pem file containing the server public
-     * key (for 1-way SSL).
+     * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+     * server public key (for 1-way SSL).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
     private final String sslCa;
 
     /**
-     * Database Certificate - The base64 encoded content of pem file containing the server public
-     * key (for 1-way SSL).
+     * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+     * server public key (for 1-way SSL).
      *
      * @return the value
      */
@@ -761,7 +841,11 @@ public final class MicrosoftSqlserverConnection extends Connection {
     }
 
     /**
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in
+     * the connectionString or host field, or make sure the host name is resolvable in the target
+     * VCN.
+     *
+     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
      * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
      * not provided it is assumed the datasource is publicly accessible. In case the connection is
@@ -772,7 +856,11 @@ public final class MicrosoftSqlserverConnection extends Connection {
     private final String privateIp;
 
     /**
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in
+     * the connectionString or host field, or make sure the host name is resolvable in the target
+     * VCN.
+     *
+     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
      * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
      * not provided it is assumed the datasource is publicly accessible. In case the connection is
@@ -783,6 +871,25 @@ public final class MicrosoftSqlserverConnection extends Connection {
      */
     public String getPrivateIp() {
         return privateIp;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft
+     * SQL Server. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft
+     * SQL Server. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
     }
 
     @Override
@@ -811,6 +918,7 @@ public final class MicrosoftSqlserverConnection extends Connection {
         sb.append(", shouldValidateServerCertificate=")
                 .append(String.valueOf(this.shouldValidateServerCertificate));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -836,6 +944,7 @@ public final class MicrosoftSqlserverConnection extends Connection {
                 && java.util.Objects.equals(
                         this.shouldValidateServerCertificate, other.shouldValidateServerCertificate)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && super.equals(other);
     }
 
@@ -865,6 +974,9 @@ public final class MicrosoftSqlserverConnection extends Connection {
                                 ? 43
                                 : this.shouldValidateServerCertificate.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         return result;
     }
 }

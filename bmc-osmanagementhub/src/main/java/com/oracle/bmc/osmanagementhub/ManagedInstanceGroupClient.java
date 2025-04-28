@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -152,6 +152,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -160,7 +161,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         AttachManagedInstancesToManagedInstanceGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -192,11 +192,50 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AttachSoftwareSourcesToManagedInstanceGroupResponse.Builder
+                                ::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         AttachSoftwareSourcesToManagedInstanceGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeManagedInstanceGroupCompartmentResponse changeManagedInstanceGroupCompartment(
+            ChangeManagedInstanceGroupCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeManagedInstanceGroupCompartmentDetails(),
+                "changeManagedInstanceGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeManagedInstanceGroupCompartmentResponse::builder)
+                .logger(LOG, "changeManagedInstanceGroupCompartment")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "ChangeManagedInstanceGroupCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeManagedInstanceGroupCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstanceGroups")
+                .appendPathParam(request.getManagedInstanceGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeManagedInstanceGroupCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -220,6 +259,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroup.class,
@@ -228,7 +268,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                         "etag", CreateManagedInstanceGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateManagedInstanceGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -253,9 +292,9 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteManagedInstanceGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -287,12 +326,12 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DetachManagedInstancesFromManagedInstanceGroupResponse.Builder
                                 ::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -324,11 +363,11 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DetachSoftwareSourcesFromManagedInstanceGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -360,6 +399,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -367,7 +407,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DisableModuleStreamOnManagedInstanceGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -399,6 +438,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -406,7 +446,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         EnableModuleStreamOnManagedInstanceGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -430,13 +469,13 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getManagedInstanceGroupId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroup.class,
                         GetManagedInstanceGroupResponse.Builder::managedInstanceGroup)
                 .handleResponseHeaderString("etag", GetManagedInstanceGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetManagedInstanceGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -469,6 +508,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -478,7 +518,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id",
                         InstallModuleStreamProfileOnManagedInstanceGroupResponse.Builder
                                 ::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -509,6 +548,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -516,7 +556,46 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         InstallPackagesOnManagedInstanceGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public InstallWindowsUpdatesOnManagedInstanceGroupResponse
+            installWindowsUpdatesOnManagedInstanceGroup(
+                    InstallWindowsUpdatesOnManagedInstanceGroupRequest request) {
+
+        Validate.notBlank(
+                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getInstallWindowsUpdatesOnManagedInstanceGroupDetails(),
+                "installWindowsUpdatesOnManagedInstanceGroupDetails is required");
+
+        return clientCall(request, InstallWindowsUpdatesOnManagedInstanceGroupResponse::builder)
+                .logger(LOG, "installWindowsUpdatesOnManagedInstanceGroup")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "InstallWindowsUpdatesOnManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallWindowsUpdatesOnManagedInstanceGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InstallWindowsUpdatesOnManagedInstanceGroupRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstanceGroups")
+                .appendPathParam(request.getManagedInstanceGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("installWindowsUpdates")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        InstallWindowsUpdatesOnManagedInstanceGroupResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        InstallWindowsUpdatesOnManagedInstanceGroupResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -549,6 +628,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model
                                 .ManagedInstanceGroupAvailableModuleCollection.class,
@@ -560,7 +640,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListManagedInstanceGroupAvailableModulesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -597,6 +676,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("isLatest", request.getIsLatest())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model
                                 .ManagedInstanceGroupAvailablePackageCollection.class,
@@ -608,7 +688,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListManagedInstanceGroupAvailablePackagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -645,6 +724,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.AvailableSoftwareSourceCollection
                                 .class,
@@ -658,7 +738,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                         "opc-next-page",
                         ListManagedInstanceGroupAvailableSoftwareSourcesResponse.Builder
                                 ::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -696,6 +775,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model
                                 .ManagedInstanceGroupInstalledPackageCollection.class,
@@ -707,7 +787,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListManagedInstanceGroupInstalledPackagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -740,6 +819,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroupModuleCollection
                                 .class,
@@ -754,7 +834,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListManagedInstanceGroupModulesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -785,10 +864,21 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroupCollection.class,
                         ListManagedInstanceGroupsResponse.Builder::managedInstanceGroupCollection)
@@ -796,7 +886,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListManagedInstanceGroupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListManagedInstanceGroupsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -828,6 +917,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -835,7 +925,43 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ManageModuleStreamsOnManagedInstanceGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RebootManagedInstanceGroupResponse rebootManagedInstanceGroup(
+            RebootManagedInstanceGroupRequest request) {
+
+        Validate.notBlank(
+                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getRebootManagedInstanceGroupDetails(),
+                "rebootManagedInstanceGroupDetails is required");
+
+        return clientCall(request, RebootManagedInstanceGroupResponse::builder)
+                .logger(LOG, "rebootManagedInstanceGroup")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "RebootManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RebootManagedInstanceGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RebootManagedInstanceGroupRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstanceGroups")
+                .appendPathParam(request.getManagedInstanceGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("reboot")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RebootManagedInstanceGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RebootManagedInstanceGroupResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -868,6 +994,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -877,7 +1004,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id",
                         RemoveModuleStreamProfileFromManagedInstanceGroupResponse.Builder
                                 ::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -908,6 +1034,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -915,7 +1042,46 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RemovePackagesFromManagedInstanceGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public SwitchModuleStreamOnManagedInstanceGroupResponse
+            switchModuleStreamOnManagedInstanceGroup(
+                    SwitchModuleStreamOnManagedInstanceGroupRequest request) {
+
+        Validate.notBlank(
+                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getSwitchModuleStreamOnManagedInstanceGroupDetails(),
+                "switchModuleStreamOnManagedInstanceGroupDetails is required");
+
+        return clientCall(request, SwitchModuleStreamOnManagedInstanceGroupResponse::builder)
+                .logger(LOG, "switchModuleStreamOnManagedInstanceGroup")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "SwitchModuleStreamOnManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/SwitchModuleStreamOnManagedInstanceGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SwitchModuleStreamOnManagedInstanceGroupRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstanceGroups")
+                .appendPathParam(request.getManagedInstanceGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("moduleStreams")
+                .appendPathParam("switchModuleStream")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        SwitchModuleStreamOnManagedInstanceGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SwitchModuleStreamOnManagedInstanceGroupResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -946,6 +1112,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -953,7 +1120,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateAllPackagesOnManagedInstanceGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -981,6 +1147,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroup.class,
@@ -989,7 +1156,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                         "etag", UpdateManagedInstanceGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateManagedInstanceGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

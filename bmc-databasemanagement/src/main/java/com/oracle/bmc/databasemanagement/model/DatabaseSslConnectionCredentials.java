@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -80,14 +80,14 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the user password.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the user password.
          *
          * @param passwordSecretId the value to set
@@ -114,14 +114,14 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the SSL keystore and truststore details.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
         private String sslSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the SSL keystore and truststore details.
          *
          * @param sslSecretId the value to set
@@ -242,14 +242,14 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the user password.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the user password.
      *
      * @return the value
@@ -262,6 +262,7 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
     public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
         Sysdba("SYSDBA"),
         Normal("NORMAL"),
+        Sysdg("SYSDG"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -316,14 +317,14 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the SSL keystore and truststore details.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
     private final String sslSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the SSL keystore and truststore details.
      *
      * @return the value

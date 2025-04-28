@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -52,12 +52,12 @@ public final class UpdateRepositoryDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique name of a repository. */
+        /** Name of the repository. Should be unique within the project. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique name of a repository.
+         * Name of the repository. Should be unique within the project.
          *
          * @param name the value to set
          * @return this builder
@@ -97,12 +97,12 @@ public final class UpdateRepositoryDetails
             this.__explicitlySet__.add("defaultBranch");
             return this;
         }
-        /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} */
+        /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED} */
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
         private Repository.RepositoryType repositoryType;
 
         /**
-         * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED}
+         * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED}
          *
          * @param repositoryType the value to set
          * @return this builder
@@ -124,7 +124,7 @@ public final class UpdateRepositoryDetails
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"bar-key": "value"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -133,7 +133,7 @@ public final class UpdateRepositoryDetails
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -146,7 +146,7 @@ public final class UpdateRepositoryDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -154,7 +154,7 @@ public final class UpdateRepositoryDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
@@ -222,12 +222,12 @@ public final class UpdateRepositoryDetails
         return new Builder().copy(this);
     }
 
-    /** Unique name of a repository. */
+    /** Name of the repository. Should be unique within the project. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique name of a repository.
+     * Name of the repository. Should be unique within the project.
      *
      * @return the value
      */
@@ -261,12 +261,12 @@ public final class UpdateRepositoryDetails
         return defaultBranch;
     }
 
-    /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} */
+    /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED} */
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
     private final Repository.RepositoryType repositoryType;
 
     /**
-     * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED}
+     * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED}
      *
      * @return the value
      */
@@ -284,7 +284,7 @@ public final class UpdateRepositoryDetails
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"bar-key": "value"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -293,7 +293,7 @@ public final class UpdateRepositoryDetails
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -304,7 +304,7 @@ public final class UpdateRepositoryDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -312,7 +312,7 @@ public final class UpdateRepositoryDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value

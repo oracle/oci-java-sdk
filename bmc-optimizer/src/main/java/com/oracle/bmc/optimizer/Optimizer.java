@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.optimizer;
@@ -11,7 +11,7 @@ import com.oracle.bmc.optimizer.responses.*;
  * Use the Cloud Advisor API to find potential inefficiencies in your tenancy and address them.
  * Cloud Advisor can help you save money, improve performance, strengthen system resilience, and
  * improve security. For more information, see [Cloud
- * Advisor](https://docs.cloud.oracle.com/Content/CloudAdvisor/Concepts/cloudadvisoroverview.htm).
+ * Advisor](https://docs.oracle.com/iaas/Content/CloudAdvisor/Concepts/cloudadvisoroverview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -72,12 +72,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/BulkApplyRecommendationsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/BulkApplyRecommendationsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     BulkApplyRecommendations API.
      */
@@ -89,12 +89,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/CreateProfileExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/CreateProfileExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProfile API.
      */
     CreateProfileResponse createProfile(CreateProfileRequest request);
@@ -104,12 +104,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/DeleteProfileExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/DeleteProfileExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProfile API.
      */
     DeleteProfileResponse deleteProfile(DeleteProfileRequest request);
@@ -119,12 +119,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/FilterResourceActionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/FilterResourceActionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     FilterResourceActions API.
      */
@@ -135,12 +135,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetCategoryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetCategoryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCategory API.
      */
     GetCategoryResponse getCategory(GetCategoryRequest request);
@@ -150,12 +150,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetEnrollmentStatusExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetEnrollmentStatusExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEnrollmentStatus
      *     API.
      */
@@ -167,12 +167,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetProfileExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetProfileExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProfile API.
      */
     GetProfileResponse getProfile(GetProfileRequest request);
@@ -182,12 +182,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetRecommendationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetRecommendationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRecommendation
      *     API.
      */
@@ -198,12 +198,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetResourceActionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetResourceActionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResourceAction
      *     API.
      */
@@ -214,12 +214,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
@@ -229,12 +229,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListCategoriesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListCategoriesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCategories API.
      */
     ListCategoriesResponse listCategories(ListCategoriesRequest request);
@@ -244,12 +244,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListEnrollmentStatusesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListEnrollmentStatusesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListEnrollmentStatuses API.
      */
@@ -261,12 +261,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListHistoriesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListHistoriesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListHistories API.
      */
     ListHistoriesResponse listHistories(ListHistoriesRequest request);
@@ -276,12 +276,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListProfileLevelsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListProfileLevelsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProfileLevels
      *     API.
      */
@@ -292,12 +292,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListProfilesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListProfilesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProfiles API.
      */
     ListProfilesResponse listProfiles(ListProfilesRequest request);
@@ -307,12 +307,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListRecommendationStrategiesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListRecommendationStrategiesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListRecommendationStrategies API.
      */
@@ -324,12 +324,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListRecommendationsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListRecommendationsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecommendations
      *     API.
      */
@@ -340,12 +340,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListResourceActionQueryableFieldsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListResourceActionQueryableFieldsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListResourceActionQueryableFields API.
      */
@@ -357,12 +357,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListResourceActionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListResourceActionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceActions
      *     API.
      */
@@ -373,12 +373,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListWorkRequestErrors API.
      */
@@ -389,12 +389,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
      *     API.
      */
@@ -405,12 +405,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
@@ -421,12 +421,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateEnrollmentStatusExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateEnrollmentStatusExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateEnrollmentStatus API.
      */
@@ -437,12 +437,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateProfileExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateProfileExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProfile API.
      */
     UpdateProfileResponse updateProfile(UpdateProfileRequest request);
@@ -460,7 +460,7 @@ public interface Optimizer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateRecommendationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateRecommendationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateRecommendation API.
      */
@@ -474,12 +474,12 @@ public interface Optimizer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateResourceActionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateResourceActionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateResourceAction API.
      */

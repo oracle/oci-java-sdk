@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -28,6 +28,7 @@ public final class OperationsInsightsWarehouseSummary
         "compartmentId",
         "displayName",
         "cpuAllocated",
+        "computeModel",
         "cpuUsed",
         "storageAllocatedInGBs",
         "storageUsedInGBs",
@@ -47,6 +48,7 @@ public final class OperationsInsightsWarehouseSummary
             String compartmentId,
             String displayName,
             Double cpuAllocated,
+            OperationsInsightsWarehouse.ComputeModel computeModel,
             Double cpuUsed,
             Double storageAllocatedInGBs,
             Double storageUsedInGBs,
@@ -65,6 +67,7 @@ public final class OperationsInsightsWarehouseSummary
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.cpuAllocated = cpuAllocated;
+        this.computeModel = computeModel;
         this.cpuUsed = cpuUsed;
         this.storageAllocatedInGBs = storageAllocatedInGBs;
         this.storageUsedInGBs = storageUsedInGBs;
@@ -98,15 +101,15 @@ public final class OperationsInsightsWarehouseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -116,12 +119,12 @@ public final class OperationsInsightsWarehouseSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** User-friedly name of Operations Insights Warehouse that does not have to be unique. */
+        /** User-friedly name of Ops Insights Warehouse that does not have to be unique. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+         * User-friedly name of Ops Insights Warehouse that does not have to be unique.
          *
          * @param displayName the value to set
          * @return this builder
@@ -131,12 +134,12 @@ public final class OperationsInsightsWarehouseSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Number of OCPUs allocated to OPSI Warehouse ADW. */
+        /** Number of CPUs allocated to OPSI Warehouse ADW. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuAllocated")
         private Double cpuAllocated;
 
         /**
-         * Number of OCPUs allocated to OPSI Warehouse ADW.
+         * Number of CPUs allocated to OPSI Warehouse ADW.
          *
          * @param cpuAllocated the value to set
          * @return this builder
@@ -144,6 +147,21 @@ public final class OperationsInsightsWarehouseSummary
         public Builder cpuAllocated(Double cpuAllocated) {
             this.cpuAllocated = cpuAllocated;
             this.__explicitlySet__.add("cpuAllocated");
+            return this;
+        }
+        /** The compute model for the OPSI warehouse ADW (OCPU or ECPU) */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private OperationsInsightsWarehouse.ComputeModel computeModel;
+
+        /**
+         * The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+         *
+         * @param computeModel the value to set
+         * @return this builder
+         */
+        public Builder computeModel(OperationsInsightsWarehouse.ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
             return this;
         }
         /** Number of OCPUs used by OPSI Warehouse ADW. Can be fractional. */
@@ -206,12 +224,12 @@ public final class OperationsInsightsWarehouseSummary
             this.__explicitlySet__.add("dynamicGroupId");
             return this;
         }
-        /** Tenancy Identifier of Operations Insights service */
+        /** Tenancy Identifier of Ops Insights service */
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsTenancyId")
         private String operationsInsightsTenancyId;
 
         /**
-         * Tenancy Identifier of Operations Insights service
+         * Tenancy Identifier of Ops Insights service
          *
          * @param operationsInsightsTenancyId the value to set
          * @return this builder
@@ -222,15 +240,15 @@ public final class OperationsInsightsWarehouseSummary
             return this;
         }
         /**
-         * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse.
-         * An RFC3339 formatted datetime string
+         * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An
+         * RFC3339 formatted datetime string
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastWalletRotated")
         private java.util.Date timeLastWalletRotated;
 
         /**
-         * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse.
-         * An RFC3339 formatted datetime string
+         * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An
+         * RFC3339 formatted datetime string
          *
          * @param timeLastWalletRotated the value to set
          * @return this builder
@@ -375,6 +393,7 @@ public final class OperationsInsightsWarehouseSummary
                             this.compartmentId,
                             this.displayName,
                             this.cpuAllocated,
+                            this.computeModel,
                             this.cpuUsed,
                             this.storageAllocatedInGBs,
                             this.storageUsedInGBs,
@@ -407,6 +426,9 @@ public final class OperationsInsightsWarehouseSummary
             }
             if (model.wasPropertyExplicitlySet("cpuAllocated")) {
                 this.cpuAllocated(model.getCpuAllocated());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
             }
             if (model.wasPropertyExplicitlySet("cpuUsed")) {
                 this.cpuUsed(model.getCpuUsed());
@@ -474,15 +496,15 @@ public final class OperationsInsightsWarehouseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      *
      * @return the value
      */
@@ -490,12 +512,12 @@ public final class OperationsInsightsWarehouseSummary
         return compartmentId;
     }
 
-    /** User-friedly name of Operations Insights Warehouse that does not have to be unique. */
+    /** User-friedly name of Ops Insights Warehouse that does not have to be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * User-friedly name of Ops Insights Warehouse that does not have to be unique.
      *
      * @return the value
      */
@@ -503,17 +525,30 @@ public final class OperationsInsightsWarehouseSummary
         return displayName;
     }
 
-    /** Number of OCPUs allocated to OPSI Warehouse ADW. */
+    /** Number of CPUs allocated to OPSI Warehouse ADW. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuAllocated")
     private final Double cpuAllocated;
 
     /**
-     * Number of OCPUs allocated to OPSI Warehouse ADW.
+     * Number of CPUs allocated to OPSI Warehouse ADW.
      *
      * @return the value
      */
     public Double getCpuAllocated() {
         return cpuAllocated;
+    }
+
+    /** The compute model for the OPSI warehouse ADW (OCPU or ECPU) */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final OperationsInsightsWarehouse.ComputeModel computeModel;
+
+    /**
+     * The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+     *
+     * @return the value
+     */
+    public OperationsInsightsWarehouse.ComputeModel getComputeModel() {
+        return computeModel;
     }
 
     /** Number of OCPUs used by OPSI Warehouse ADW. Can be fractional. */
@@ -568,12 +603,12 @@ public final class OperationsInsightsWarehouseSummary
         return dynamicGroupId;
     }
 
-    /** Tenancy Identifier of Operations Insights service */
+    /** Tenancy Identifier of Ops Insights service */
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsTenancyId")
     private final String operationsInsightsTenancyId;
 
     /**
-     * Tenancy Identifier of Operations Insights service
+     * Tenancy Identifier of Ops Insights service
      *
      * @return the value
      */
@@ -582,15 +617,15 @@ public final class OperationsInsightsWarehouseSummary
     }
 
     /**
-     * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An
-     * RFC3339 formatted datetime string
+     * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339
+     * formatted datetime string
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastWalletRotated")
     private final java.util.Date timeLastWalletRotated;
 
     /**
-     * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An
-     * RFC3339 formatted datetime string
+     * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339
+     * formatted datetime string
      *
      * @return the value
      */
@@ -724,6 +759,7 @@ public final class OperationsInsightsWarehouseSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", cpuAllocated=").append(String.valueOf(this.cpuAllocated));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", cpuUsed=").append(String.valueOf(this.cpuUsed));
         sb.append(", storageAllocatedInGBs=").append(String.valueOf(this.storageAllocatedInGBs));
         sb.append(", storageUsedInGBs=").append(String.valueOf(this.storageUsedInGBs));
@@ -756,6 +792,7 @@ public final class OperationsInsightsWarehouseSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.cpuAllocated, other.cpuAllocated)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(this.cpuUsed, other.cpuUsed)
                 && java.util.Objects.equals(this.storageAllocatedInGBs, other.storageAllocatedInGBs)
                 && java.util.Objects.equals(this.storageUsedInGBs, other.storageUsedInGBs)
@@ -783,6 +820,7 @@ public final class OperationsInsightsWarehouseSummary
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.cpuAllocated == null ? 43 : this.cpuAllocated.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + (this.cpuUsed == null ? 43 : this.cpuUsed.hashCode());
         result =
                 (result * PRIME)

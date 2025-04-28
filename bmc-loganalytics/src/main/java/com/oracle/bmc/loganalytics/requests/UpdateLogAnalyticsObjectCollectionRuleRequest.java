@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.loganalytics.requests;
 import com.oracle.bmc.loganalytics.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsObjectCollectionRuleExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsObjectCollectionRuleExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateLogAnalyticsObjectCollectionRuleRequest.
  */
@@ -25,13 +25,13 @@ public class UpdateLogAnalyticsObjectCollectionRuleRequest
     }
     /**
      * The Logging Analytics Object Collection Rule
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String logAnalyticsObjectCollectionRuleId;
 
     /**
      * The Logging Analytics Object Collection Rule
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getLogAnalyticsObjectCollectionRuleId() {
         return logAnalyticsObjectCollectionRuleId;
@@ -111,13 +111,13 @@ public class UpdateLogAnalyticsObjectCollectionRuleRequest
 
         /**
          * The Logging Analytics Object Collection Rule
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String logAnalyticsObjectCollectionRuleId = null;
 
         /**
          * The Logging Analytics Object Collection Rule
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param logAnalyticsObjectCollectionRuleId the value to set
          * @return this builder instance

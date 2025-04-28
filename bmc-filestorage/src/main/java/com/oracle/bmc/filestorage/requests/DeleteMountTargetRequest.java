@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.requests;
@@ -7,20 +7,20 @@ package com.oracle.bmc.filestorage.requests;
 import com.oracle.bmc.filestorage.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteMountTargetExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteMountTargetExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteMountTargetRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class DeleteMountTargetRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * mount target.
      */
     private String mountTargetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * mount target.
      */
     public String getMountTargetId() {
@@ -56,6 +56,13 @@ public class DeleteMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -64,13 +71,13 @@ public class DeleteMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * mount target.
          */
         private String mountTargetId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * mount target.
          *
          * @param mountTargetId the value to set
@@ -121,6 +128,20 @@ public class DeleteMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -154,6 +175,7 @@ public class DeleteMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
             mountTargetId(o.getMountTargetId());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -191,8 +213,9 @@ public class DeleteMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
             request.mountTargetId = mountTargetId;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new DeleteMountTargetRequest(mountTargetId, ifMatch, opcRequestId);
+            // new DeleteMountTargetRequest(mountTargetId, ifMatch, opcRequestId, isLockOverride);
         }
     }
 
@@ -205,7 +228,8 @@ public class DeleteMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
         return new Builder()
                 .mountTargetId(mountTargetId)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -225,6 +249,7 @@ public class DeleteMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append(",mountTargetId=").append(String.valueOf(this.mountTargetId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -242,7 +267,8 @@ public class DeleteMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.mountTargetId, other.mountTargetId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -254,6 +280,9 @@ public class DeleteMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
                         + (this.mountTargetId == null ? 43 : this.mountTargetId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

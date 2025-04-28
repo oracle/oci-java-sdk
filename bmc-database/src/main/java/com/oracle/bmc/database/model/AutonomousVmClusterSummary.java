@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -70,7 +70,10 @@ public final class AutonomousVmClusterSummary
         "scanListenerPortNonTls",
         "isMtlsEnabled",
         "timeDatabaseSslCertificateExpires",
-        "timeOrdsCertificateExpires"
+        "timeOrdsCertificateExpires",
+        "exadataStorageInTBsLowestScaledValue",
+        "cpusLowestScaledValue",
+        "maxAcdsLowestScaledValue"
     })
     public AutonomousVmClusterSummary(
             String id,
@@ -119,7 +122,10 @@ public final class AutonomousVmClusterSummary
             Integer scanListenerPortNonTls,
             Boolean isMtlsEnabled,
             java.util.Date timeDatabaseSslCertificateExpires,
-            java.util.Date timeOrdsCertificateExpires) {
+            java.util.Date timeOrdsCertificateExpires,
+            Double exadataStorageInTBsLowestScaledValue,
+            Integer cpusLowestScaledValue,
+            Integer maxAcdsLowestScaledValue) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -169,19 +175,22 @@ public final class AutonomousVmClusterSummary
         this.isMtlsEnabled = isMtlsEnabled;
         this.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
         this.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
+        this.exadataStorageInTBsLowestScaledValue = exadataStorageInTBsLowestScaledValue;
+        this.cpusLowestScaledValue = cpusLowestScaledValue;
+        this.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous VM cluster.
          *
          * @param id the value to set
@@ -193,14 +202,14 @@ public final class AutonomousVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -277,14 +286,14 @@ public final class AutonomousVmClusterSummary
         }
         /**
          * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
          * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
@@ -295,14 +304,14 @@ public final class AutonomousVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          *
          * @param exadataInfrastructureId the value to set
@@ -314,14 +323,14 @@ public final class AutonomousVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster network.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterNetworkId")
         private String vmClusterNetworkId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster network.
          *
          * @param vmClusterNetworkId the value to set
@@ -368,12 +377,22 @@ public final class AutonomousVmClusterSummary
             this.__explicitlySet__.add("cpusEnabled");
             return this;
         }
-        /** The compute model of the Autonomous VM Cluster. */
+        /**
+         * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended
+         * model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on
+         * Dedicated Exadata
+         * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous VM Cluster.
+         * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended
+         * model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on
+         * Dedicated Exadata
+         * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
          *
          * @param computeModel the value to set
          * @return this builder
@@ -483,14 +502,14 @@ public final class AutonomousVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last maintenance run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
         private String lastMaintenanceRunId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last maintenance run.
          *
          * @param lastMaintenanceRunId the value to set
@@ -502,14 +521,14 @@ public final class AutonomousVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * next maintenance run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
         private String nextMaintenanceRunId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * next maintenance run.
          *
          * @param nextMaintenanceRunId the value to set
@@ -599,14 +618,12 @@ public final class AutonomousVmClusterSummary
             this.__explicitlySet__.add("reservedCpus");
             return this;
         }
-        /**
-         * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
-         */
+        /** **Deprecated.** Use field totalContainerDatabases. */
         @com.fasterxml.jackson.annotation.JsonProperty("provisionableAutonomousContainerDatabases")
         private Integer provisionableAutonomousContainerDatabases;
 
         /**
-         * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+         * **Deprecated.** Use field totalContainerDatabases.
          *
          * @param provisionableAutonomousContainerDatabases the value to set
          * @return this builder
@@ -772,7 +789,7 @@ public final class AutonomousVmClusterSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -782,7 +799,7 @@ public final class AutonomousVmClusterSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -797,7 +814,7 @@ public final class AutonomousVmClusterSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -805,7 +822,7 @@ public final class AutonomousVmClusterSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -818,7 +835,7 @@ public final class AutonomousVmClusterSummary
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
          * servers.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
@@ -826,7 +843,7 @@ public final class AutonomousVmClusterSummary
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
          * servers.
          *
          * @param dbServers the value to set
@@ -838,23 +855,19 @@ public final class AutonomousVmClusterSummary
             return this;
         }
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-         * continue to be included in the count of CPUs available to the Autonomous Container
-         * Database even after one of its Autonomous Database is terminated or scaled down. You can
-         * release them to the available CPUs at its parent Autonomous VM Cluster level by
-         * restarting the Autonomous Container Database. - The CPU type (OCPUs or ECPUs) is
-         * determined by the parent Autonomous Exadata VM Cluster's compute model.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous
+         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
+         * level by restarting the Autonomous Container Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Integer reclaimableCpus;
 
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-         * continue to be included in the count of CPUs available to the Autonomous Container
-         * Database even after one of its Autonomous Database is terminated or scaled down. You can
-         * release them to the available CPUs at its parent Autonomous VM Cluster level by
-         * restarting the Autonomous Container Database. - The CPU type (OCPUs or ECPUs) is
-         * determined by the parent Autonomous Exadata VM Cluster's compute model.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous
+         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
+         * level by restarting the Autonomous Container Database.
          *
          * @param reclaimableCpus the value to set
          * @return this builder
@@ -979,6 +992,52 @@ public final class AutonomousVmClusterSummary
             this.__explicitlySet__.add("timeOrdsCertificateExpires");
             return this;
         }
+        /** The lowest value to which exadataStorage(in TBs) can be scaled down. */
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBsLowestScaledValue")
+        private Double exadataStorageInTBsLowestScaledValue;
+
+        /**
+         * The lowest value to which exadataStorage(in TBs) can be scaled down.
+         *
+         * @param exadataStorageInTBsLowestScaledValue the value to set
+         * @return this builder
+         */
+        public Builder exadataStorageInTBsLowestScaledValue(
+                Double exadataStorageInTBsLowestScaledValue) {
+            this.exadataStorageInTBsLowestScaledValue = exadataStorageInTBsLowestScaledValue;
+            this.__explicitlySet__.add("exadataStorageInTBsLowestScaledValue");
+            return this;
+        }
+        /** The lowest value to which cpus can be scaled down. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cpusLowestScaledValue")
+        private Integer cpusLowestScaledValue;
+
+        /**
+         * The lowest value to which cpus can be scaled down.
+         *
+         * @param cpusLowestScaledValue the value to set
+         * @return this builder
+         */
+        public Builder cpusLowestScaledValue(Integer cpusLowestScaledValue) {
+            this.cpusLowestScaledValue = cpusLowestScaledValue;
+            this.__explicitlySet__.add("cpusLowestScaledValue");
+            return this;
+        }
+        /** The lowest value to which maximum number of ACDs can be scaled down. */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxAcdsLowestScaledValue")
+        private Integer maxAcdsLowestScaledValue;
+
+        /**
+         * The lowest value to which maximum number of ACDs can be scaled down.
+         *
+         * @param maxAcdsLowestScaledValue the value to set
+         * @return this builder
+         */
+        public Builder maxAcdsLowestScaledValue(Integer maxAcdsLowestScaledValue) {
+            this.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
+            this.__explicitlySet__.add("maxAcdsLowestScaledValue");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1032,7 +1091,10 @@ public final class AutonomousVmClusterSummary
                             this.scanListenerPortNonTls,
                             this.isMtlsEnabled,
                             this.timeDatabaseSslCertificateExpires,
-                            this.timeOrdsCertificateExpires);
+                            this.timeOrdsCertificateExpires,
+                            this.exadataStorageInTBsLowestScaledValue,
+                            this.cpusLowestScaledValue,
+                            this.maxAcdsLowestScaledValue);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1187,6 +1249,16 @@ public final class AutonomousVmClusterSummary
             if (model.wasPropertyExplicitlySet("timeOrdsCertificateExpires")) {
                 this.timeOrdsCertificateExpires(model.getTimeOrdsCertificateExpires());
             }
+            if (model.wasPropertyExplicitlySet("exadataStorageInTBsLowestScaledValue")) {
+                this.exadataStorageInTBsLowestScaledValue(
+                        model.getExadataStorageInTBsLowestScaledValue());
+            }
+            if (model.wasPropertyExplicitlySet("cpusLowestScaledValue")) {
+                this.cpusLowestScaledValue(model.getCpusLowestScaledValue());
+            }
+            if (model.wasPropertyExplicitlySet("maxAcdsLowestScaledValue")) {
+                this.maxAcdsLowestScaledValue(model.getMaxAcdsLowestScaledValue());
+            }
             return this;
         }
     }
@@ -1201,14 +1273,14 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous VM cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous VM cluster.
      *
      * @return the value
@@ -1218,14 +1290,14 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -1341,14 +1413,14 @@ public final class AutonomousVmClusterSummary
 
     /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
      */
@@ -1357,14 +1429,14 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      *
      * @return the value
@@ -1374,14 +1446,14 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster network.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterNetworkId")
     private final String vmClusterNetworkId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster network.
      *
      * @return the value
@@ -1422,7 +1494,13 @@ public final class AutonomousVmClusterSummary
         return cpusEnabled;
     }
 
-    /** The compute model of the Autonomous VM Cluster. */
+    /**
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model
+     * and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated
+     * Exadata
+     * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
+     */
     public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
         Ecpu("ECPU"),
         Ocpu("OCPU"),
@@ -1468,12 +1546,22 @@ public final class AutonomousVmClusterSummary
             return UnknownEnumValue;
         }
     };
-    /** The compute model of the Autonomous VM Cluster. */
+    /**
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model
+     * and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated
+     * Exadata
+     * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model
+     * and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated
+     * Exadata
+     * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
      *
      * @return the value
      */
@@ -1567,15 +1655,15 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last maintenance run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * maintenance run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
     private final String lastMaintenanceRunId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last maintenance run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * maintenance run.
      *
      * @return the value
      */
@@ -1584,15 +1672,15 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * next maintenance run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next
+     * maintenance run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
     private final String nextMaintenanceRunId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * next maintenance run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next
+     * maintenance run.
      *
      * @return the value
      */
@@ -1669,12 +1757,12 @@ public final class AutonomousVmClusterSummary
         return reservedCpus;
     }
 
-    /** The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster. */
+    /** **Deprecated.** Use field totalContainerDatabases. */
     @com.fasterxml.jackson.annotation.JsonProperty("provisionableAutonomousContainerDatabases")
     private final Integer provisionableAutonomousContainerDatabases;
 
     /**
-     * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     * **Deprecated.** Use field totalContainerDatabases.
      *
      * @return the value
      */
@@ -1861,7 +1949,7 @@ public final class AutonomousVmClusterSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1871,7 +1959,7 @@ public final class AutonomousVmClusterSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1884,7 +1972,7 @@ public final class AutonomousVmClusterSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -1892,7 +1980,7 @@ public final class AutonomousVmClusterSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -1901,15 +1989,15 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Db servers.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Db servers.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
     private final java.util.List<String> dbServers;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Db servers.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Db servers.
      *
      * @return the value
      */
@@ -1918,23 +2006,19 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-     * continue to be included in the count of CPUs available to the Autonomous Container Database
-     * even after one of its Autonomous Database is terminated or scaled down. You can release them
-     * to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous
-     * Container Database. - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous
-     * Exadata VM Cluster's compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
+     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
+     * the Autonomous Container Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Integer reclaimableCpus;
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-     * continue to be included in the count of CPUs available to the Autonomous Container Database
-     * even after one of its Autonomous Database is terminated or scaled down. You can release them
-     * to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous
-     * Container Database. - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous
-     * Exadata VM Cluster's compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
+     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
+     * the Autonomous Container Database.
      *
      * @return the value
      */
@@ -2041,6 +2125,45 @@ public final class AutonomousVmClusterSummary
         return timeOrdsCertificateExpires;
     }
 
+    /** The lowest value to which exadataStorage(in TBs) can be scaled down. */
+    @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBsLowestScaledValue")
+    private final Double exadataStorageInTBsLowestScaledValue;
+
+    /**
+     * The lowest value to which exadataStorage(in TBs) can be scaled down.
+     *
+     * @return the value
+     */
+    public Double getExadataStorageInTBsLowestScaledValue() {
+        return exadataStorageInTBsLowestScaledValue;
+    }
+
+    /** The lowest value to which cpus can be scaled down. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cpusLowestScaledValue")
+    private final Integer cpusLowestScaledValue;
+
+    /**
+     * The lowest value to which cpus can be scaled down.
+     *
+     * @return the value
+     */
+    public Integer getCpusLowestScaledValue() {
+        return cpusLowestScaledValue;
+    }
+
+    /** The lowest value to which maximum number of ACDs can be scaled down. */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxAcdsLowestScaledValue")
+    private final Integer maxAcdsLowestScaledValue;
+
+    /**
+     * The lowest value to which maximum number of ACDs can be scaled down.
+     *
+     * @return the value
+     */
+    public Integer getMaxAcdsLowestScaledValue() {
+        return maxAcdsLowestScaledValue;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2117,6 +2240,11 @@ public final class AutonomousVmClusterSummary
                 .append(String.valueOf(this.timeDatabaseSslCertificateExpires));
         sb.append(", timeOrdsCertificateExpires=")
                 .append(String.valueOf(this.timeOrdsCertificateExpires));
+        sb.append(", exadataStorageInTBsLowestScaledValue=")
+                .append(String.valueOf(this.exadataStorageInTBsLowestScaledValue));
+        sb.append(", cpusLowestScaledValue=").append(String.valueOf(this.cpusLowestScaledValue));
+        sb.append(", maxAcdsLowestScaledValue=")
+                .append(String.valueOf(this.maxAcdsLowestScaledValue));
         sb.append(")");
         return sb.toString();
     }
@@ -2199,6 +2327,12 @@ public final class AutonomousVmClusterSummary
                         other.timeDatabaseSslCertificateExpires)
                 && java.util.Objects.equals(
                         this.timeOrdsCertificateExpires, other.timeOrdsCertificateExpires)
+                && java.util.Objects.equals(
+                        this.exadataStorageInTBsLowestScaledValue,
+                        other.exadataStorageInTBsLowestScaledValue)
+                && java.util.Objects.equals(this.cpusLowestScaledValue, other.cpusLowestScaledValue)
+                && java.util.Objects.equals(
+                        this.maxAcdsLowestScaledValue, other.maxAcdsLowestScaledValue)
                 && super.equals(other);
     }
 
@@ -2369,6 +2503,21 @@ public final class AutonomousVmClusterSummary
                         + (this.timeOrdsCertificateExpires == null
                                 ? 43
                                 : this.timeOrdsCertificateExpires.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataStorageInTBsLowestScaledValue == null
+                                ? 43
+                                : this.exadataStorageInTBsLowestScaledValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpusLowestScaledValue == null
+                                ? 43
+                                : this.cpusLowestScaledValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxAcdsLowestScaledValue == null
+                                ? 43
+                                : this.maxAcdsLowestScaledValue.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

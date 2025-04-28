@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceInstalledPackagesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceInstalledPackagesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListManagedInstanceInstalledPackagesRequest.
  */
@@ -15,10 +15,16 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class ListManagedInstanceInstalledPackagesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the managed instance. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance.
+     */
     private String managedInstanceId;
 
-    /** The OCID of the managed instance. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance.
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -52,31 +58,39 @@ public class ListManagedInstanceInstalledPackagesRequest
         return timeInstallDateStart;
     }
     /**
-     * The install date before which to list all packages, in ISO 8601 format.
+     * A filter to return only packages that were installed on or before the date provided, in ISO
+     * 8601 format.
      *
      * <p>Example: 2017-07-14T02:40:00.000Z
      */
     private java.util.Date timeInstallDateEnd;
 
     /**
-     * The install date before which to list all packages, in ISO 8601 format.
+     * A filter to return only packages that were installed on or before the date provided, in ISO
+     * 8601 format.
      *
      * <p>Example: 2017-07-14T02:40:00.000Z
      */
     public java.util.Date getTimeInstallDateEnd() {
         return timeInstallDateEnd;
     }
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -85,7 +99,7 @@ public class ListManagedInstanceInstalledPackagesRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -95,7 +109,7 @@ public class ListManagedInstanceInstalledPackagesRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -104,7 +118,7 @@ public class ListManagedInstanceInstalledPackagesRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -189,11 +203,15 @@ public class ListManagedInstanceInstalledPackagesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the managed instance. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance.
+         */
         private String managedInstanceId = null;
 
         /**
-         * The OCID of the managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance.
          *
          * @param managedInstanceId the value to set
          * @return this builder instance
@@ -262,14 +280,16 @@ public class ListManagedInstanceInstalledPackagesRequest
         }
 
         /**
-         * The install date before which to list all packages, in ISO 8601 format.
+         * A filter to return only packages that were installed on or before the date provided, in
+         * ISO 8601 format.
          *
          * <p>Example: 2017-07-14T02:40:00.000Z
          */
         private java.util.Date timeInstallDateEnd = null;
 
         /**
-         * The install date before which to list all packages, in ISO 8601 format.
+         * A filter to return only packages that were installed on or before the date provided, in
+         * ISO 8601 format.
          *
          * <p>Example: 2017-07-14T02:40:00.000Z
          *
@@ -281,11 +301,15 @@ public class ListManagedInstanceInstalledPackagesRequest
             return this;
         }
 
-        /** The OCID of the compartment that contains the resources to list. */
+        /**
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
+         */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -298,7 +322,7 @@ public class ListManagedInstanceInstalledPackagesRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -307,7 +331,7 @@ public class ListManagedInstanceInstalledPackagesRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -322,7 +346,7 @@ public class ListManagedInstanceInstalledPackagesRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          */
@@ -331,7 +355,7 @@ public class ListManagedInstanceInstalledPackagesRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          *

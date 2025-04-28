@@ -1,11 +1,17 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Definition of ResponderRule. <br>
+ * A ResponderRule resource contains the default settings for a single responder rule that Cloud
+ * Guard provides.
+ *
+ * <p>A ResponderRule resource: * Is used as the original source for a rule in an Oracle-managed
+ * responder of the specified type. * Is not directly visible in the Cloud Guard UI. * Can\u2019t be
+ * modified by users, programmatically or through the UI. * May be modified from time to time by
+ * Cloud Guard. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,7 +38,8 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "locks"
     })
     public ResponderRule(
             String id,
@@ -45,7 +52,8 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
-            String lifecycleDetails) {
+            String lifecycleDetails,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -58,16 +66,17 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Identifier for ResponderRule. */
+        /** Unique identifier for the responder rule */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Identifier for ResponderRule.
+         * Unique identifier for the responder rule
          *
          * @param id the value to set
          * @return this builder
@@ -77,12 +86,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** ResponderRule Display Name */
+        /** Responder rule display name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * ResponderRule Display Name
+         * Responder rule display name
          *
          * @param displayName the value to set
          * @return this builder
@@ -92,12 +101,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** ResponderRule Description */
+        /** Responder rule description */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * ResponderRule Description
+         * Responder rule description
          *
          * @param description the value to set
          * @return this builder
@@ -107,12 +116,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Type of Responder */
+        /** Type of responder */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private ResponderType type;
 
         /**
-         * Type of Responder
+         * Type of responder
          *
          * @param type the value to set
          * @return this builder
@@ -122,12 +131,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** List of Policy */
+        /** List of policies */
         @com.fasterxml.jackson.annotation.JsonProperty("policies")
         private java.util.List<String> policies;
 
         /**
-         * List of Policy
+         * List of policies
          *
          * @param policies the value to set
          * @return this builder
@@ -137,12 +146,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("policies");
             return this;
         }
-        /** Supported Execution Modes */
+        /** Supported execution modes for the responder rule */
         @com.fasterxml.jackson.annotation.JsonProperty("supportedModes")
         private java.util.List<SupportedModes> supportedModes;
 
         /**
-         * Supported Execution Modes
+         * Supported execution modes for the responder rule
          *
          * @param supportedModes the value to set
          * @return this builder
@@ -176,12 +185,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time the responder rule was updated. Format defined by RFC3339. */
+        /** The date and time the responder rule was last updated. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the responder rule was updated. Format defined by RFC3339.
+         * The date and time the responder rule was last updated. Format defined by RFC3339.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -191,12 +200,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the ResponderRule. */
+        /** The current lifecycle state of the responder rule. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the ResponderRule.
+         * The current lifecycle state of the responder rule.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -225,6 +234,21 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -242,7 +266,8 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
-                            this.lifecycleDetails);
+                            this.lifecycleDetails,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -284,6 +309,9 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -297,12 +325,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Identifier for ResponderRule. */
+    /** Unique identifier for the responder rule */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Identifier for ResponderRule.
+     * Unique identifier for the responder rule
      *
      * @return the value
      */
@@ -310,12 +338,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
         return id;
     }
 
-    /** ResponderRule Display Name */
+    /** Responder rule display name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * ResponderRule Display Name
+     * Responder rule display name
      *
      * @return the value
      */
@@ -323,12 +351,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
         return displayName;
     }
 
-    /** ResponderRule Description */
+    /** Responder rule description */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * ResponderRule Description
+     * Responder rule description
      *
      * @return the value
      */
@@ -336,12 +364,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
         return description;
     }
 
-    /** Type of Responder */
+    /** Type of responder */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final ResponderType type;
 
     /**
-     * Type of Responder
+     * Type of responder
      *
      * @return the value
      */
@@ -349,12 +377,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
         return type;
     }
 
-    /** List of Policy */
+    /** List of policies */
     @com.fasterxml.jackson.annotation.JsonProperty("policies")
     private final java.util.List<String> policies;
 
     /**
-     * List of Policy
+     * List of policies
      *
      * @return the value
      */
@@ -408,12 +436,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** Supported Execution Modes */
+    /** Supported execution modes for the responder rule */
     @com.fasterxml.jackson.annotation.JsonProperty("supportedModes")
     private final java.util.List<SupportedModes> supportedModes;
 
     /**
-     * Supported Execution Modes
+     * Supported execution modes for the responder rule
      *
      * @return the value
      */
@@ -441,12 +469,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
         return timeCreated;
     }
 
-    /** The date and time the responder rule was updated. Format defined by RFC3339. */
+    /** The date and time the responder rule was last updated. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the responder rule was updated. Format defined by RFC3339.
+     * The date and time the responder rule was last updated. Format defined by RFC3339.
      *
      * @return the value
      */
@@ -454,12 +482,12 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
         return timeUpdated;
     }
 
-    /** The current state of the ResponderRule. */
+    /** The current lifecycle state of the responder rule. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the ResponderRule.
+     * The current lifecycle state of the responder rule.
      *
      * @return the value
      */
@@ -482,6 +510,19 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
      */
     public String getLifecycleDetails() {
         return lifecycleDetails;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -510,6 +551,7 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -535,6 +577,7 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -559,6 +602,7 @@ public final class ResponderRule extends com.oracle.bmc.http.client.internal.Exp
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -34,7 +34,11 @@ public final class CreateCloudExadataInfrastructureDetails
         "maintenanceWindow",
         "freeformTags",
         "definedTags",
-        "customerContacts"
+        "clusterPlacementGroupId",
+        "subscriptionId",
+        "customerContacts",
+        "databaseServerType",
+        "storageServerType"
     })
     public CreateCloudExadataInfrastructureDetails(
             String availabilityDomain,
@@ -46,7 +50,11 @@ public final class CreateCloudExadataInfrastructureDetails
             MaintenanceWindow maintenanceWindow,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.List<CustomerContact> customerContacts) {
+            String clusterPlacementGroupId,
+            String subscriptionId,
+            java.util.List<CustomerContact> customerContacts,
+            String databaseServerType,
+            String storageServerType) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -57,7 +65,11 @@ public final class CreateCloudExadataInfrastructureDetails
         this.maintenanceWindow = maintenanceWindow;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.subscriptionId = subscriptionId;
         this.customerContacts = customerContacts;
+        this.databaseServerType = databaseServerType;
+        this.storageServerType = storageServerType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -78,14 +90,14 @@ public final class CreateCloudExadataInfrastructureDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -172,7 +184,7 @@ public final class CreateCloudExadataInfrastructureDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -182,7 +194,7 @@ public final class CreateCloudExadataInfrastructureDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -197,7 +209,7 @@ public final class CreateCloudExadataInfrastructureDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -205,7 +217,7 @@ public final class CreateCloudExadataInfrastructureDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -214,6 +226,44 @@ public final class CreateCloudExadataInfrastructureDetails
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * cluster placement group of the Exadata Infrastructure.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * cluster placement group of the Exadata Infrastructure.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
             return this;
         }
         /** Customer contacts. */
@@ -229,6 +279,36 @@ public final class CreateCloudExadataInfrastructureDetails
         public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
             this.customerContacts = customerContacts;
             this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+        /** The database server type of the Exadata infrastructure. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseServerType")
+        private String databaseServerType;
+
+        /**
+         * The database server type of the Exadata infrastructure.
+         *
+         * @param databaseServerType the value to set
+         * @return this builder
+         */
+        public Builder databaseServerType(String databaseServerType) {
+            this.databaseServerType = databaseServerType;
+            this.__explicitlySet__.add("databaseServerType");
+            return this;
+        }
+        /** The storage server type of the Exadata infrastructure. */
+        @com.fasterxml.jackson.annotation.JsonProperty("storageServerType")
+        private String storageServerType;
+
+        /**
+         * The storage server type of the Exadata infrastructure.
+         *
+         * @param storageServerType the value to set
+         * @return this builder
+         */
+        public Builder storageServerType(String storageServerType) {
+            this.storageServerType = storageServerType;
+            this.__explicitlySet__.add("storageServerType");
             return this;
         }
 
@@ -247,7 +327,11 @@ public final class CreateCloudExadataInfrastructureDetails
                             this.maintenanceWindow,
                             this.freeformTags,
                             this.definedTags,
-                            this.customerContacts);
+                            this.clusterPlacementGroupId,
+                            this.subscriptionId,
+                            this.customerContacts,
+                            this.databaseServerType,
+                            this.storageServerType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -283,8 +367,20 @@ public final class CreateCloudExadataInfrastructureDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("databaseServerType")) {
+                this.databaseServerType(model.getDatabaseServerType());
+            }
+            if (model.wasPropertyExplicitlySet("storageServerType")) {
+                this.storageServerType(model.getStorageServerType());
             }
             return this;
         }
@@ -313,14 +409,14 @@ public final class CreateCloudExadataInfrastructureDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -395,7 +491,7 @@ public final class CreateCloudExadataInfrastructureDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -405,7 +501,7 @@ public final class CreateCloudExadataInfrastructureDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -418,7 +514,7 @@ public final class CreateCloudExadataInfrastructureDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -426,12 +522,46 @@ public final class CreateCloudExadataInfrastructureDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * cluster placement group of the Exadata Infrastructure.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * cluster placement group of the Exadata Infrastructure.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     /** Customer contacts. */
@@ -445,6 +575,32 @@ public final class CreateCloudExadataInfrastructureDetails
      */
     public java.util.List<CustomerContact> getCustomerContacts() {
         return customerContacts;
+    }
+
+    /** The database server type of the Exadata infrastructure. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseServerType")
+    private final String databaseServerType;
+
+    /**
+     * The database server type of the Exadata infrastructure.
+     *
+     * @return the value
+     */
+    public String getDatabaseServerType() {
+        return databaseServerType;
+    }
+
+    /** The storage server type of the Exadata infrastructure. */
+    @com.fasterxml.jackson.annotation.JsonProperty("storageServerType")
+    private final String storageServerType;
+
+    /**
+     * The storage server type of the Exadata infrastructure.
+     *
+     * @return the value
+     */
+    public String getStorageServerType() {
+        return storageServerType;
     }
 
     @Override
@@ -471,7 +627,12 @@ public final class CreateCloudExadataInfrastructureDetails
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
+        sb.append(", databaseServerType=").append(String.valueOf(this.databaseServerType));
+        sb.append(", storageServerType=").append(String.valueOf(this.storageServerType));
         sb.append(")");
         return sb.toString();
     }
@@ -495,7 +656,12 @@ public final class CreateCloudExadataInfrastructureDetails
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
+                && java.util.Objects.equals(this.databaseServerType, other.databaseServerType)
+                && java.util.Objects.equals(this.storageServerType, other.storageServerType)
                 && super.equals(other);
     }
 
@@ -522,7 +688,23 @@ public final class CreateCloudExadataInfrastructureDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =
                 (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseServerType == null
+                                ? 43
+                                : this.databaseServerType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageServerType == null ? 43 : this.storageServerType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

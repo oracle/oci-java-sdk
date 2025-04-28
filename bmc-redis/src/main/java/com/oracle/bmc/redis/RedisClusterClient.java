@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.redis;
@@ -132,7 +132,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "RedisCluster",
                         "CancelWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequest/CancelWorkRequest")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20220315")
@@ -141,9 +141,9 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -161,7 +161,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "RedisCluster",
                         "ChangeRedisClusterCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/ChangeRedisClusterCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/ChangeRedisClusterCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeRedisClusterCompartmentRequest::builder)
                 .basePath("/20220315")
@@ -173,6 +173,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -180,7 +181,6 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeRedisClusterCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -194,7 +194,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "RedisCluster",
                         "CreateRedisCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/CreateRedisCluster")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/CreateRedisCluster")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateRedisClusterRequest::builder)
                 .basePath("/20220315")
@@ -202,6 +202,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.redis.model.RedisCluster.class,
@@ -211,7 +212,6 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-work-request-id", CreateRedisClusterResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateRedisClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -225,7 +225,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "RedisCluster",
                         "DeleteRedisCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/DeleteRedisCluster")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/DeleteRedisCluster")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteRedisClusterRequest::builder)
                 .basePath("/20220315")
@@ -234,11 +234,11 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteRedisClusterResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRedisClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -252,7 +252,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "RedisCluster",
                         "GetRedisCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/GetRedisCluster")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/GetRedisCluster")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetRedisClusterRequest::builder)
                 .basePath("/20220315")
@@ -260,13 +260,13 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getRedisClusterId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.redis.model.RedisCluster.class,
                         GetRedisClusterResponse.Builder::redisCluster)
                 .handleResponseHeaderString("etag", GetRedisClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRedisClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -280,7 +280,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "RedisCluster",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequest/GetWorkRequest")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20220315")
@@ -288,6 +288,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.redis.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -296,7 +297,42 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callSync();
+    }
+
+    @Override
+    public ListRedisClusterNodesResponse listRedisClusterNodes(
+            ListRedisClusterNodesRequest request) {
+
+        Validate.notBlank(request.getRedisClusterId(), "redisClusterId must not be blank");
+
+        return clientCall(request, ListRedisClusterNodesResponse::builder)
+                .logger(LOG, "listRedisClusterNodes")
+                .serviceDetails(
+                        "RedisCluster",
+                        "ListRedisClusterNodes",
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/NodeSummary/ListRedisClusterNodes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRedisClusterNodesRequest::builder)
+                .basePath("/20220315")
+                .appendPathParam("redisClusters")
+                .appendPathParam(request.getRedisClusterId())
+                .appendPathParam("nodes")
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.redis.model.RedisNodeCollection.class,
+                        ListRedisClusterNodesResponse.Builder::redisNodeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRedisClusterNodesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRedisClusterNodesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -308,7 +344,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "RedisCluster",
                         "ListRedisClusters",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisClusterSummary/ListRedisClusters")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisClusterSummary/ListRedisClusters")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRedisClustersRequest::builder)
                 .basePath("/20220315")
@@ -323,6 +359,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.redis.model.RedisClusterCollection.class,
                         ListRedisClustersResponse.Builder::redisClusterCollection)
@@ -330,7 +367,6 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListRedisClustersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListRedisClustersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -345,7 +381,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "RedisCluster",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequestError/ListWorkRequestErrors")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20220315")
@@ -358,6 +394,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.redis.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -365,7 +402,6 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -379,7 +415,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "RedisCluster",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequestLogEntry/ListWorkRequestLogs")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20220315")
@@ -392,6 +428,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.redis.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -399,7 +436,6 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -411,7 +447,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "RedisCluster",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequest/ListWorkRequests")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20220315")
@@ -426,6 +462,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.redis.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -433,7 +470,6 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -449,7 +485,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "RedisCluster",
                         "UpdateRedisCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/UpdateRedisCluster")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/UpdateRedisCluster")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateRedisClusterRequest::builder)
                 .basePath("/20220315")
@@ -458,12 +494,12 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateRedisClusterResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRedisClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

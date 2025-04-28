@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage;
@@ -151,6 +151,35 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                                 ::batchDetectDominantLanguageResult)
                 .handleResponseHeaderString(
                         "opc-request-id", BatchDetectDominantLanguageResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public BatchDetectHealthEntityResponse batchDetectHealthEntity(
+            BatchDetectHealthEntityRequest request) {
+        Objects.requireNonNull(
+                request.getBatchDetectHealthEntityDetails(),
+                "batchDetectHealthEntityDetails is required");
+
+        return clientCall(request, BatchDetectHealthEntityResponse::builder)
+                .logger(LOG, "batchDetectHealthEntity")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectHealthEntity",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectHealthEntityDetails/BatchDetectHealthEntity")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BatchDetectHealthEntityRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("batchDetectHealthEntities")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.BatchDetectHealthEntityResult.class,
+                        BatchDetectHealthEntityResponse.Builder::batchDetectHealthEntityResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", BatchDetectHealthEntityResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -343,6 +372,34 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public CancelJobResponse cancelJob(CancelJobRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, CancelJobResponse::builder)
+                .logger(LOG, "cancelJob")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "CancelJob",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/CancelJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelJobRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelJobResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeEndpointCompartmentResponse changeEndpointCompartment(
             ChangeEndpointCompartmentRequest request) {
 
@@ -368,10 +425,42 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeEndpointCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeJobCompartmentResponse changeJobCompartment(ChangeJobCompartmentRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeJobCompartmentDetails(),
+                "changeJobCompartmentDetails is required");
+
+        return clientCall(request, ChangeJobCompartmentResponse::builder)
+                .logger(LOG, "changeJobCompartment")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ChangeJobCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/ChangeJobCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeJobCompartmentRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeJobCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -401,10 +490,10 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeModelCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -434,10 +523,10 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeProjectCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -459,6 +548,7 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.Endpoint.class,
@@ -469,7 +559,35 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-work-request-id", CreateEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateEndpointResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateJobResponse createJob(CreateJobRequest request) {
+        Objects.requireNonNull(request.getCreateJobDetails(), "createJobDetails is required");
+
+        return clientCall(request, CreateJobResponse::builder)
+                .logger(LOG, "createJob")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "CreateJob",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/CreateJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateJobRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.Job.class, CreateJobResponse.Builder::job)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateJobResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateJobResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -490,6 +608,7 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.Model.class,
@@ -500,7 +619,6 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-work-request-id", CreateModelResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -522,6 +640,7 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.Project.class,
@@ -531,7 +650,6 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", CreateProjectResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateProjectResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -554,11 +672,38 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteEndpointResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteJobResponse deleteJob(DeleteJobRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, DeleteJobResponse::builder)
+                .logger(LOG, "deleteJob")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "DeleteJob",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/DeleteJob")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteJobRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteJobResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteJobResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -581,11 +726,11 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteModelResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -608,11 +753,11 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteProjectResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -794,13 +939,38 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getEndpointId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.Endpoint.class,
                         GetEndpointResponse.Builder::endpoint)
                 .handleResponseHeaderString("etag", GetEndpointResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetEndpointResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetJobResponse getJob(GetJobRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, GetJobResponse::builder)
+                .logger(LOG, "getJob")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "GetJob",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/GetJob")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetJobRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(com.oracle.bmc.ailanguage.model.Job.class, GetJobResponse.Builder::job)
+                .handleResponseHeaderString("etag", GetJobResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetJobResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -822,13 +992,13 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getModelId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.Model.class,
                         GetModelResponse.Builder::model)
                 .handleResponseHeaderString("etag", GetModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -850,12 +1020,12 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getModelType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.ModelTypeInfo.class,
                         GetModelTypeResponse.Builder::modelTypeInfo)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelTypeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -877,13 +1047,13 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getProjectId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.Project.class,
                         GetProjectResponse.Builder::project)
                 .handleResponseHeaderString("etag", GetProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -905,13 +1075,13 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
                 .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -941,6 +1111,7 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.EndpointCollection.class,
                         ListEndpointsResponse.Builder::endpointCollection)
@@ -948,7 +1119,6 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListEndpointsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListEndpointsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -974,6 +1144,7 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.EvaluationResultCollection.class,
                         ListEvaluationResultsResponse.Builder::evaluationResultCollection)
@@ -981,7 +1152,40 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListEvaluationResultsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListEvaluationResultsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListJobsResponse listJobs(ListJobsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListJobsResponse::builder)
+                .logger(LOG, "listJobs")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ListJobs",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/ListJobs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListJobsRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.JobCollection.class,
+                        ListJobsResponse.Builder::jobCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListJobsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("opc-next-page", ListJobsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1010,6 +1214,7 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.ModelCollection.class,
                         ListModelsResponse.Builder::modelCollection)
@@ -1017,7 +1222,6 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListModelsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListModelsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1045,6 +1249,7 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.ProjectCollection.class,
                         ListProjectsResponse.Builder::projectCollection)
@@ -1052,7 +1257,6 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListProjectsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListProjectsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1080,6 +1284,7 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -1087,7 +1292,6 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1114,6 +1318,7 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.WorkRequestLogCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogCollection)
@@ -1121,7 +1326,6 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1148,6 +1352,7 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ailanguage.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -1155,7 +1360,6 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1180,12 +1384,42 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateEndpointResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateEndpointResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateJobResponse updateJob(UpdateJobRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+        Objects.requireNonNull(request.getUpdateJobDetails(), "updateJobDetails is required");
+
+        return clientCall(request, UpdateJobResponse::builder)
+                .logger(LOG, "updateJob")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "UpdateJob",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/UpdateJob")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateJobRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.Job.class, UpdateJobResponse.Builder::job)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateJobResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateJobResponse.Builder::etag)
                 .callSync();
     }
 
@@ -1209,12 +1443,12 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateModelResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1239,12 +1473,12 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateProjectResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateProjectResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

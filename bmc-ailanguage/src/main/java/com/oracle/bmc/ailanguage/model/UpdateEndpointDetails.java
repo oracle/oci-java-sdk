@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage.model;
@@ -25,6 +25,7 @@ public final class UpdateEndpointDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
+        "alias",
         "description",
         "modelId",
         "inferenceUnits",
@@ -33,6 +34,7 @@ public final class UpdateEndpointDetails
     })
     public UpdateEndpointDetails(
             String displayName,
+            String alias,
             String description,
             String modelId,
             Integer inferenceUnits,
@@ -40,6 +42,7 @@ public final class UpdateEndpointDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
+        this.alias = alias;
         this.description = description;
         this.modelId = modelId;
         this.inferenceUnits = inferenceUnits;
@@ -68,6 +71,25 @@ public final class UpdateEndpointDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
+        /**
+         * Unique name across user tenancy in a region to identify an endpoint to be used for
+         * inferencing.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("alias")
+        private String alias;
+
+        /**
+         * Unique name across user tenancy in a region to identify an endpoint to be used for
+         * inferencing.
+         *
+         * @param alias the value to set
+         * @return this builder
+         */
+        public Builder alias(String alias) {
+            this.alias = alias;
+            this.__explicitlySet__.add("alias");
+            return this;
+        }
         /** A short description of the endpoint. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -84,15 +106,15 @@ public final class UpdateEndpointDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model to associate with the endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model to associate with the endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model to associate with the endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model to associate with the endpoint.
          *
          * @param modelId the value to set
          * @return this builder
@@ -164,6 +186,7 @@ public final class UpdateEndpointDetails
             UpdateEndpointDetails model =
                     new UpdateEndpointDetails(
                             this.displayName,
+                            this.alias,
                             this.description,
                             this.modelId,
                             this.inferenceUnits,
@@ -179,6 +202,9 @@ public final class UpdateEndpointDetails
         public Builder copy(UpdateEndpointDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -225,6 +251,23 @@ public final class UpdateEndpointDetails
         return displayName;
     }
 
+    /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for
+     * inferencing.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("alias")
+    private final String alias;
+
+    /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for
+     * inferencing.
+     *
+     * @return the value
+     */
+    public String getAlias() {
+        return alias;
+    }
+
     /** A short description of the endpoint. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
@@ -239,15 +282,15 @@ public final class UpdateEndpointDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model to associate with the endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model to associate with the endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model to associate with the endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model to associate with the endpoint.
      *
      * @return the value
      */
@@ -318,6 +361,7 @@ public final class UpdateEndpointDetails
         sb.append("UpdateEndpointDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", alias=").append(String.valueOf(this.alias));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", modelId=").append(String.valueOf(this.modelId));
         sb.append(", inferenceUnits=").append(String.valueOf(this.inferenceUnits));
@@ -338,6 +382,7 @@ public final class UpdateEndpointDetails
 
         UpdateEndpointDetails other = (UpdateEndpointDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.alias, other.alias)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.modelId, other.modelId)
                 && java.util.Objects.equals(this.inferenceUnits, other.inferenceUnits)
@@ -351,6 +396,7 @@ public final class UpdateEndpointDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
         result =

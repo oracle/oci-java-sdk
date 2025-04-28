@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
@@ -273,16 +273,16 @@ public final class CreateContainerDetails
         }
         /**
          * list of container health checks to check container status and take appropriate action if
-         * container status is failed. There are three types of health checks that we currently
-         * support HTTP, TCP, and Command.
+         * container status is failed. There are two types of health checks that we currently
+         * support HTTP and TCP.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("healthChecks")
         private java.util.List<CreateContainerHealthCheckDetails> healthChecks;
 
         /**
          * list of container health checks to check container status and take appropriate action if
-         * container status is failed. There are three types of health checks that we currently
-         * support HTTP, TCP, and Command.
+         * container status is failed. There are two types of health checks that we currently
+         * support HTTP and TCP.
          *
          * @param healthChecks the value to set
          * @return this builder
@@ -598,16 +598,16 @@ public final class CreateContainerDetails
 
     /**
      * list of container health checks to check container status and take appropriate action if
-     * container status is failed. There are three types of health checks that we currently support
-     * HTTP, TCP, and Command.
+     * container status is failed. There are two types of health checks that we currently support
+     * HTTP and TCP.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("healthChecks")
     private final java.util.List<CreateContainerHealthCheckDetails> healthChecks;
 
     /**
      * list of container health checks to check container status and take appropriate action if
-     * container status is failed. There are three types of health checks that we currently support
-     * HTTP, TCP, and Command.
+     * container status is failed. There are two types of health checks that we currently support
+     * HTTP and TCP.
      *
      * @return the value
      */

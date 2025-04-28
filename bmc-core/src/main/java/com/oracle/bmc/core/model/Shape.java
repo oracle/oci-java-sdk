@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -7,9 +7,8 @@ package com.oracle.bmc.core.model;
 /**
  * A compute instance shape that can be used in {@link #launchInstance(LaunchInstanceRequest)
  * launchInstance}. For more information, see [Overview of the Compute
- * Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm) and
- * [Compute
- * Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm). <br>
+ * Service](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm) and [Compute
+ * Shapes](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -517,7 +516,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * Whether the shape supports creating subcore or burstable instances. A [burstable
-         * instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
+         * instance](https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
          * is a virtual machine (VM) instance that provides a baseline level of CPU performance with
          * the ability to burst to a higher level to support occasional spikes in usage.
          */
@@ -526,7 +525,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
         /**
          * Whether the shape supports creating subcore or burstable instances. A [burstable
-         * instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
+         * instance](https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
          * is a virtual machine (VM) instance that provides a baseline level of CPU performance with
          * the ability to burst to a higher level to support occasional spikes in usage.
          *
@@ -540,7 +539,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * Whether the shape supports creating flexible instances. A [flexible
-         * shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
+         * shape](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
          * is a shape that lets you customize the number of OCPUs and the amount of memory when
          * launching or resizing your instance.
          */
@@ -549,7 +548,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
         /**
          * Whether the shape supports creating flexible instances. A [flexible
-         * shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
+         * shape](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
          * is a shape that lets you customize the number of OCPUs and the amount of memory when
          * launching or resizing your instance.
          *
@@ -564,7 +563,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The list of compatible shapes that this shape can be changed to. For more information,
          * see [Changing the Shape of an
-         * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+         * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("resizeCompatibleShapes")
         private java.util.List<String> resizeCompatibleShapes;
@@ -572,7 +571,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The list of compatible shapes that this shape can be changed to. For more information,
          * see [Changing the Shape of an
-         * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+         * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
          *
          * @param resizeCompatibleShapes the value to set
          * @return this builder
@@ -1179,8 +1178,8 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Whether the shape supports creating subcore or burstable instances. A [burstable
-     * instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
-     * is a virtual machine (VM) instance that provides a baseline level of CPU performance with the
+     * instance](https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm) is
+     * a virtual machine (VM) instance that provides a baseline level of CPU performance with the
      * ability to burst to a higher level to support occasional spikes in usage.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isSubcore")
@@ -1188,8 +1187,8 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Whether the shape supports creating subcore or burstable instances. A [burstable
-     * instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
-     * is a virtual machine (VM) instance that provides a baseline level of CPU performance with the
+     * instance](https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm) is
+     * a virtual machine (VM) instance that provides a baseline level of CPU performance with the
      * ability to burst to a higher level to support occasional spikes in usage.
      *
      * @return the value
@@ -1200,18 +1199,18 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Whether the shape supports creating flexible instances. A [flexible
-     * shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
-     * is a shape that lets you customize the number of OCPUs and the amount of memory when
-     * launching or resizing your instance.
+     * shape](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is
+     * a shape that lets you customize the number of OCPUs and the amount of memory when launching
+     * or resizing your instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
     private final Boolean isFlexible;
 
     /**
      * Whether the shape supports creating flexible instances. A [flexible
-     * shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
-     * is a shape that lets you customize the number of OCPUs and the amount of memory when
-     * launching or resizing your instance.
+     * shape](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is
+     * a shape that lets you customize the number of OCPUs and the amount of memory when launching
+     * or resizing your instance.
      *
      * @return the value
      */
@@ -1222,7 +1221,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * The list of compatible shapes that this shape can be changed to. For more information, see
      * [Changing the Shape of an
-     * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+     * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("resizeCompatibleShapes")
     private final java.util.List<String> resizeCompatibleShapes;
@@ -1230,7 +1229,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * The list of compatible shapes that this shape can be changed to. For more information, see
      * [Changing the Shape of an
-     * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+     * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
      *
      * @return the value
      */

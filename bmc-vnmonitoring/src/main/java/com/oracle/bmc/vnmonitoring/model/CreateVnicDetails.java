@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -8,7 +8,7 @@ package com.oracle.bmc.vnmonitoring.model;
  * Contains properties for a VNIC. You use this object when creating the primary VNIC during
  * instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual
  * Network Interface Cards
- * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). <br>
+ * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -77,13 +77,13 @@ public final class CreateVnicDetails
          *
          * <p>*Note:** This public IP address is associated with the primary private IP on the VNIC.
          * For more information, see [IP
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
          *
          * <p>*Note:** There's a limit to the number of {@link PublicIp} a VNIC or instance can
          * have. If you try to create a secondary VNIC with an assigned public IP for an instance
          * that has already reached its public IP limit, an error is returned. For information about
          * the public IP limits, see [Public IP
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          *
          * <p>Example: {@code false}
          *
@@ -103,13 +103,13 @@ public final class CreateVnicDetails
          *
          * <p>*Note:** This public IP address is associated with the primary private IP on the VNIC.
          * For more information, see [IP
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
          *
          * <p>*Note:** There's a limit to the number of {@link PublicIp} a VNIC or instance can
          * have. If you try to create a secondary VNIC with an assigned public IP for an instance
          * that has already reached its public IP limit, an error is returned. For information about
          * the public IP limits, see [Public IP
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          *
          * <p>Example: {@code false}
          *
@@ -221,7 +221,7 @@ public final class CreateVnicDetails
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>When launching an instance, use this {@code hostnameLabel} instead of the deprecated
          * {@code hostnameLabel} in {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
@@ -247,7 +247,7 @@ public final class CreateVnicDetails
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>When launching an instance, use this {@code hostnameLabel} instead of the deprecated
          * {@code hostnameLabel} in {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
@@ -336,7 +336,7 @@ public final class CreateVnicDetails
          * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
-         * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
          * <p>If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified
          * because the source/destination check is always disabled for VNICs in a VLAN. See {@link
@@ -351,7 +351,7 @@ public final class CreateVnicDetails
          * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
-         * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
          * <p>If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified
          * because the source/destination check is always disabled for VNICs in a VLAN. See {@link
@@ -368,9 +368,9 @@ public final class CreateVnicDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet to create the VNIC in. When launching an instance, use this {@code
-         * subnetId} instead of the deprecated {@code subnetId} in {@link
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet to create the VNIC in. When launching an instance, use this {@code subnetId}
+         * instead of the deprecated {@code subnetId} in {@link
          * #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}. At least one
          * of them is required; if you provide both, the values must match.
          *
@@ -382,9 +382,9 @@ public final class CreateVnicDetails
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet to create the VNIC in. When launching an instance, use this {@code
-         * subnetId} instead of the deprecated {@code subnetId} in {@link
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet to create the VNIC in. When launching an instance, use this {@code subnetId}
+         * instead of the deprecated {@code subnetId} in {@link
          * #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}. At least one
          * of them is required; if you provide both, the values must match.
          *
@@ -403,8 +403,8 @@ public final class CreateVnicDetails
         /**
          * Provide this attribute only if you are an Oracle Cloud VMware Solution customer and
          * creating a secondary VNIC in a VLAN. The value is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the VLAN. See {@link Vlan}.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VLAN. See {@link Vlan}.
          *
          * <p>Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a {@code
          * vlanId} and {@code subnetId}, the request fails.
@@ -415,8 +415,8 @@ public final class CreateVnicDetails
         /**
          * Provide this attribute only if you are an Oracle Cloud VMware Solution customer and
          * creating a secondary VNIC in a VLAN. The value is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the VLAN. See {@link Vlan}.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VLAN. See {@link Vlan}.
          *
          * <p>Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a {@code
          * vlanId} and {@code subnetId}, the request fails.
@@ -511,13 +511,13 @@ public final class CreateVnicDetails
      *
      * <p>*Note:** This public IP address is associated with the primary private IP on the VNIC. For
      * more information, see [IP
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
      *
      * <p>*Note:** There's a limit to the number of {@link PublicIp} a VNIC or instance can have. If
      * you try to create a secondary VNIC with an assigned public IP for an instance that has
      * already reached its public IP limit, an error is returned. For information about the public
      * IP limits, see [Public IP
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      * <p>Example: {@code false}
      *
@@ -537,13 +537,13 @@ public final class CreateVnicDetails
      *
      * <p>*Note:** This public IP address is associated with the primary private IP on the VNIC. For
      * more information, see [IP
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
      *
      * <p>*Note:** There's a limit to the number of {@link PublicIp} a VNIC or instance can have. If
      * you try to create a secondary VNIC with an assigned public IP for an instance that has
      * already reached its public IP limit, an error is returned. For information about the public
      * IP limits, see [Public IP
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      * <p>Example: {@code false}
      *
@@ -643,7 +643,7 @@ public final class CreateVnicDetails
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>When launching an instance, use this {@code hostnameLabel} instead of the deprecated
      * {@code hostnameLabel} in {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
@@ -668,7 +668,7 @@ public final class CreateVnicDetails
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>When launching an instance, use this {@code hostnameLabel} instead of the deprecated
      * {@code hostnameLabel} in {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
@@ -749,7 +749,7 @@ public final class CreateVnicDetails
      * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
-     * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      *
      * <p>If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified
      * because the source/destination check is always disabled for VNICs in a VLAN. See {@link
@@ -764,7 +764,7 @@ public final class CreateVnicDetails
      * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
-     * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      *
      * <p>If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified
      * because the source/destination check is always disabled for VNICs in a VLAN. See {@link
@@ -779,9 +779,9 @@ public final class CreateVnicDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet to create the VNIC in. When launching an instance, use this {@code subnetId}
-     * instead of the deprecated {@code subnetId} in {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet to create the VNIC in. When launching an instance, use this {@code subnetId} instead
+     * of the deprecated {@code subnetId} in {@link
      * #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}. At least one of
      * them is required; if you provide both, the values must match.
      *
@@ -793,9 +793,9 @@ public final class CreateVnicDetails
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet to create the VNIC in. When launching an instance, use this {@code subnetId}
-     * instead of the deprecated {@code subnetId} in {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet to create the VNIC in. When launching an instance, use this {@code subnetId} instead
+     * of the deprecated {@code subnetId} in {@link
      * #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}. At least one of
      * them is required; if you provide both, the values must match.
      *
@@ -812,8 +812,8 @@ public final class CreateVnicDetails
     /**
      * Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating
      * a secondary VNIC in a VLAN. The value is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VLAN. See {@link Vlan}.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+     * See {@link Vlan}.
      *
      * <p>Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a {@code
      * vlanId} and {@code subnetId}, the request fails.
@@ -824,8 +824,8 @@ public final class CreateVnicDetails
     /**
      * Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating
      * a secondary VNIC in a VLAN. The value is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VLAN. See {@link Vlan}.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+     * See {@link Vlan}.
      *
      * <p>Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a {@code
      * vlanId} and {@code subnetId}, the request fails.

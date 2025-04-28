@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vault.model;
@@ -32,12 +32,18 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         "lifecycleDetails",
         "lifecycleState",
         "metadata",
+        "rotationConfig",
+        "rotationStatus",
+        "lastRotationTime",
+        "nextRotationTime",
         "secretName",
         "secretRules",
         "timeCreated",
         "timeOfCurrentVersionExpiry",
         "timeOfDeletion",
-        "vaultId"
+        "vaultId",
+        "secretGenerationContext",
+        "isAutoGenerationEnabled"
     })
     public Secret(
             String compartmentId,
@@ -50,12 +56,18 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
             String lifecycleDetails,
             LifecycleState lifecycleState,
             java.util.Map<String, Object> metadata,
+            RotationConfig rotationConfig,
+            RotationStatus rotationStatus,
+            java.util.Date lastRotationTime,
+            java.util.Date nextRotationTime,
             String secretName,
             java.util.List<SecretRule> secretRules,
             java.util.Date timeCreated,
             java.util.Date timeOfCurrentVersionExpiry,
             java.util.Date timeOfDeletion,
-            String vaultId) {
+            String vaultId,
+            SecretGenerationContext secretGenerationContext,
+            Boolean isAutoGenerationEnabled) {
         super();
         this.compartmentId = compartmentId;
         this.currentVersionNumber = currentVersionNumber;
@@ -67,12 +79,18 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         this.lifecycleDetails = lifecycleDetails;
         this.lifecycleState = lifecycleState;
         this.metadata = metadata;
+        this.rotationConfig = rotationConfig;
+        this.rotationStatus = rotationStatus;
+        this.lastRotationTime = lastRotationTime;
+        this.nextRotationTime = nextRotationTime;
         this.secretName = secretName;
         this.secretRules = secretRules;
         this.timeCreated = timeCreated;
         this.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
         this.timeOfDeletion = timeOfDeletion;
         this.vaultId = vaultId;
+        this.secretGenerationContext = secretGenerationContext;
+        this.isAutoGenerationEnabled = isAutoGenerationEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -110,7 +128,7 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -119,7 +137,7 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -149,7 +167,7 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -158,7 +176,7 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -258,6 +276,72 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder metadata(java.util.Map<String, Object> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
+        private RotationConfig rotationConfig;
+
+        public Builder rotationConfig(RotationConfig rotationConfig) {
+            this.rotationConfig = rotationConfig;
+            this.__explicitlySet__.add("rotationConfig");
+            return this;
+        }
+        /** Additional information about the status of the secret rotation */
+        @com.fasterxml.jackson.annotation.JsonProperty("rotationStatus")
+        private RotationStatus rotationStatus;
+
+        /**
+         * Additional information about the status of the secret rotation
+         *
+         * @param rotationStatus the value to set
+         * @return this builder
+         */
+        public Builder rotationStatus(RotationStatus rotationStatus) {
+            this.rotationStatus = rotationStatus;
+            this.__explicitlySet__.add("rotationStatus");
+            return this;
+        }
+        /**
+         * A property indicating when the secret was last rotated successfully, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2019-04-03T21:10:29.600Z}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("lastRotationTime")
+        private java.util.Date lastRotationTime;
+
+        /**
+         * A property indicating when the secret was last rotated successfully, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2019-04-03T21:10:29.600Z}
+         *
+         * @param lastRotationTime the value to set
+         * @return this builder
+         */
+        public Builder lastRotationTime(java.util.Date lastRotationTime) {
+            this.lastRotationTime = lastRotationTime;
+            this.__explicitlySet__.add("lastRotationTime");
+            return this;
+        }
+        /**
+         * A property indicating when the secret is scheduled to be rotated, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2019-04-03T21:10:29.600Z}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("nextRotationTime")
+        private java.util.Date nextRotationTime;
+
+        /**
+         * A property indicating when the secret is scheduled to be rotated, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2019-04-03T21:10:29.600Z}
+         *
+         * @param nextRotationTime the value to set
+         * @return this builder
+         */
+        public Builder nextRotationTime(java.util.Date nextRotationTime) {
+            this.nextRotationTime = nextRotationTime;
+            this.__explicitlySet__.add("nextRotationTime");
             return this;
         }
         /** The user-friendly name of the secret. Avoid entering confidential information. */
@@ -369,6 +453,34 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("secretGenerationContext")
+        private SecretGenerationContext secretGenerationContext;
+
+        public Builder secretGenerationContext(SecretGenerationContext secretGenerationContext) {
+            this.secretGenerationContext = secretGenerationContext;
+            this.__explicitlySet__.add("secretGenerationContext");
+            return this;
+        }
+        /**
+         * The value of this flag determines whether or not secret content will be generated
+         * automatically.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoGenerationEnabled")
+        private Boolean isAutoGenerationEnabled;
+
+        /**
+         * The value of this flag determines whether or not secret content will be generated
+         * automatically.
+         *
+         * @param isAutoGenerationEnabled the value to set
+         * @return this builder
+         */
+        public Builder isAutoGenerationEnabled(Boolean isAutoGenerationEnabled) {
+            this.isAutoGenerationEnabled = isAutoGenerationEnabled;
+            this.__explicitlySet__.add("isAutoGenerationEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -385,12 +497,18 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
                             this.lifecycleDetails,
                             this.lifecycleState,
                             this.metadata,
+                            this.rotationConfig,
+                            this.rotationStatus,
+                            this.lastRotationTime,
+                            this.nextRotationTime,
                             this.secretName,
                             this.secretRules,
                             this.timeCreated,
                             this.timeOfCurrentVersionExpiry,
                             this.timeOfDeletion,
-                            this.vaultId);
+                            this.vaultId,
+                            this.secretGenerationContext,
+                            this.isAutoGenerationEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -429,6 +547,18 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
             }
+            if (model.wasPropertyExplicitlySet("rotationConfig")) {
+                this.rotationConfig(model.getRotationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("rotationStatus")) {
+                this.rotationStatus(model.getRotationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("lastRotationTime")) {
+                this.lastRotationTime(model.getLastRotationTime());
+            }
+            if (model.wasPropertyExplicitlySet("nextRotationTime")) {
+                this.nextRotationTime(model.getNextRotationTime());
+            }
             if (model.wasPropertyExplicitlySet("secretName")) {
                 this.secretName(model.getSecretName());
             }
@@ -446,6 +576,12 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("secretGenerationContext")) {
+                this.secretGenerationContext(model.getSecretGenerationContext());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoGenerationEnabled")) {
+                this.isAutoGenerationEnabled(model.getIsAutoGenerationEnabled());
             }
             return this;
         }
@@ -489,7 +625,7 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -498,7 +634,7 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -523,7 +659,7 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -532,7 +668,7 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -673,6 +809,112 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         return metadata;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
+    private final RotationConfig rotationConfig;
+
+    public RotationConfig getRotationConfig() {
+        return rotationConfig;
+    }
+
+    /** Additional information about the status of the secret rotation */
+    public enum RotationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+        InProgress("IN_PROGRESS"),
+        Scheduled("SCHEDULED"),
+        NotEnabled("NOT_ENABLED"),
+        Cancelling("CANCELLING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RotationStatus.class);
+
+        private final String value;
+        private static java.util.Map<String, RotationStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (RotationStatus v : RotationStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        RotationStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static RotationStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'RotationStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Additional information about the status of the secret rotation */
+    @com.fasterxml.jackson.annotation.JsonProperty("rotationStatus")
+    private final RotationStatus rotationStatus;
+
+    /**
+     * Additional information about the status of the secret rotation
+     *
+     * @return the value
+     */
+    public RotationStatus getRotationStatus() {
+        return rotationStatus;
+    }
+
+    /**
+     * A property indicating when the secret was last rotated successfully, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2019-04-03T21:10:29.600Z}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("lastRotationTime")
+    private final java.util.Date lastRotationTime;
+
+    /**
+     * A property indicating when the secret was last rotated successfully, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     */
+    public java.util.Date getLastRotationTime() {
+        return lastRotationTime;
+    }
+
+    /**
+     * A property indicating when the secret is scheduled to be rotated, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2019-04-03T21:10:29.600Z}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("nextRotationTime")
+    private final java.util.Date nextRotationTime;
+
+    /**
+     * A property indicating when the secret is scheduled to be rotated, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     */
+    public java.util.Date getNextRotationTime() {
+        return nextRotationTime;
+    }
+
     /** The user-friendly name of the secret. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("secretName")
     private final String secretName;
@@ -769,6 +1011,30 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         return vaultId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("secretGenerationContext")
+    private final SecretGenerationContext secretGenerationContext;
+
+    public SecretGenerationContext getSecretGenerationContext() {
+        return secretGenerationContext;
+    }
+
+    /**
+     * The value of this flag determines whether or not secret content will be generated
+     * automatically.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoGenerationEnabled")
+    private final Boolean isAutoGenerationEnabled;
+
+    /**
+     * The value of this flag determines whether or not secret content will be generated
+     * automatically.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoGenerationEnabled() {
+        return isAutoGenerationEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -794,6 +1060,10 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", rotationConfig=").append(String.valueOf(this.rotationConfig));
+        sb.append(", rotationStatus=").append(String.valueOf(this.rotationStatus));
+        sb.append(", lastRotationTime=").append(String.valueOf(this.lastRotationTime));
+        sb.append(", nextRotationTime=").append(String.valueOf(this.nextRotationTime));
         sb.append(", secretName=").append(String.valueOf(this.secretName));
         sb.append(", secretRules=").append(String.valueOf(this.secretRules));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -801,6 +1071,10 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
                 .append(String.valueOf(this.timeOfCurrentVersionExpiry));
         sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", secretGenerationContext=")
+                .append(String.valueOf(this.secretGenerationContext));
+        sb.append(", isAutoGenerationEnabled=")
+                .append(String.valueOf(this.isAutoGenerationEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -825,6 +1099,10 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.rotationConfig, other.rotationConfig)
+                && java.util.Objects.equals(this.rotationStatus, other.rotationStatus)
+                && java.util.Objects.equals(this.lastRotationTime, other.lastRotationTime)
+                && java.util.Objects.equals(this.nextRotationTime, other.nextRotationTime)
                 && java.util.Objects.equals(this.secretName, other.secretName)
                 && java.util.Objects.equals(this.secretRules, other.secretRules)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -832,6 +1110,10 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
                         this.timeOfCurrentVersionExpiry, other.timeOfCurrentVersionExpiry)
                 && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(
+                        this.secretGenerationContext, other.secretGenerationContext)
+                && java.util.Objects.equals(
+                        this.isAutoGenerationEnabled, other.isAutoGenerationEnabled)
                 && super.equals(other);
     }
 
@@ -859,6 +1141,18 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rotationConfig == null ? 43 : this.rotationConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rotationStatus == null ? 43 : this.rotationStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastRotationTime == null ? 43 : this.lastRotationTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextRotationTime == null ? 43 : this.nextRotationTime.hashCode());
         result = (result * PRIME) + (this.secretName == null ? 43 : this.secretName.hashCode());
         result = (result * PRIME) + (this.secretRules == null ? 43 : this.secretRules.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
@@ -871,6 +1165,16 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
                 (result * PRIME)
                         + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secretGenerationContext == null
+                                ? 43
+                                : this.secretGenerationContext.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoGenerationEnabled == null
+                                ? 43
+                                : this.isAutoGenerationEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

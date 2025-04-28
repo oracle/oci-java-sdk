@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Information for updating a registration profile <br>
+ * Provides the information used to update a registration profile. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,15 +23,23 @@ package com.oracle.bmc.osmanagementhub.model;
 public final class UpdateProfileDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "description", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "isDefaultProfile",
+        "freeformTags",
+        "definedTags"
+    })
     public UpdateProfileDetails(
             String displayName,
             String description,
+            Boolean isDefaultProfile,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
+        this.isDefaultProfile = isDefaultProfile;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -39,14 +47,14 @@ public final class UpdateProfileDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * A user-friendly name for the profile. Does not have to be unique. Avoid entering
          * confidential information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * A user-friendly name for the profile. Does not have to be unique. Avoid entering
          * confidential information.
          *
          * @param displayName the value to set
@@ -57,12 +65,12 @@ public final class UpdateProfileDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Details describing the scheduled job. */
+        /** User-specified description of the profile. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Details describing the scheduled job.
+         * User-specified description of the profile.
          *
          * @param description the value to set
          * @return this builder
@@ -73,10 +81,33 @@ public final class UpdateProfileDetails
             return this;
         }
         /**
+         * Indicates if the profile is set as the default. There is exactly one default profile for
+         * a specified architecture, OS family, registration type, and vendor. When registering an
+         * instance with the corresonding characteristics, the default profile is used, unless
+         * another profile is specified.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefaultProfile")
+        private Boolean isDefaultProfile;
+
+        /**
+         * Indicates if the profile is set as the default. There is exactly one default profile for
+         * a specified architecture, OS family, registration type, and vendor. When registering an
+         * instance with the corresonding characteristics, the default profile is used, unless
+         * another profile is specified.
+         *
+         * @param isDefaultProfile the value to set
+         * @return this builder
+         */
+        public Builder isDefaultProfile(Boolean isDefaultProfile) {
+            this.isDefaultProfile = isDefaultProfile;
+            this.__explicitlySet__.add("isDefaultProfile");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -84,8 +115,8 @@ public final class UpdateProfileDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -98,8 +129,8 @@ public final class UpdateProfileDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -107,8 +138,8 @@ public final class UpdateProfileDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -128,6 +159,7 @@ public final class UpdateProfileDetails
                     new UpdateProfileDetails(
                             this.displayName,
                             this.description,
+                            this.isDefaultProfile,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -143,6 +175,9 @@ public final class UpdateProfileDetails
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isDefaultProfile")) {
+                this.isDefaultProfile(model.getIsDefaultProfile());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -164,15 +199,15 @@ public final class UpdateProfileDetails
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name for the profile. Does not have to be unique. Avoid entering confidential
+     * information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name for the profile. Does not have to be unique. Avoid entering confidential
+     * information.
      *
      * @return the value
      */
@@ -180,12 +215,12 @@ public final class UpdateProfileDetails
         return displayName;
     }
 
-    /** Details describing the scheduled job. */
+    /** User-specified description of the profile. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Details describing the scheduled job.
+     * User-specified description of the profile.
      *
      * @return the value
      */
@@ -194,9 +229,30 @@ public final class UpdateProfileDetails
     }
 
     /**
+     * Indicates if the profile is set as the default. There is exactly one default profile for a
+     * specified architecture, OS family, registration type, and vendor. When registering an
+     * instance with the corresonding characteristics, the default profile is used, unless another
+     * profile is specified.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDefaultProfile")
+    private final Boolean isDefaultProfile;
+
+    /**
+     * Indicates if the profile is set as the default. There is exactly one default profile for a
+     * specified architecture, OS family, registration type, and vendor. When registering an
+     * instance with the corresonding characteristics, the default profile is used, unless another
+     * profile is specified.
+     *
+     * @return the value
+     */
+    public Boolean getIsDefaultProfile() {
+        return isDefaultProfile;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -205,7 +261,7 @@ public final class UpdateProfileDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -217,7 +273,7 @@ public final class UpdateProfileDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -226,7 +282,7 @@ public final class UpdateProfileDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -252,6 +308,7 @@ public final class UpdateProfileDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isDefaultProfile=").append(String.valueOf(this.isDefaultProfile));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -270,6 +327,7 @@ public final class UpdateProfileDetails
         UpdateProfileDetails other = (UpdateProfileDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.isDefaultProfile, other.isDefaultProfile)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -281,6 +339,9 @@ public final class UpdateProfileDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDefaultProfile == null ? 43 : this.isDefaultProfile.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

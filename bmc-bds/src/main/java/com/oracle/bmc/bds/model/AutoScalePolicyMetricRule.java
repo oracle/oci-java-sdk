@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -32,12 +32,12 @@ public final class AutoScalePolicyMetricRule
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Allowed value is CPU_UTILIZATION. */
+        /** Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION. */
         @com.fasterxml.jackson.annotation.JsonProperty("metricType")
         private MetricType metricType;
 
         /**
-         * Allowed value is CPU_UTILIZATION.
+         * Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
          *
          * @param metricType the value to set
          * @return this builder
@@ -90,9 +90,10 @@ public final class AutoScalePolicyMetricRule
         return new Builder().copy(this);
     }
 
-    /** Allowed value is CPU_UTILIZATION. */
+    /** Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION. */
     public enum MetricType implements com.oracle.bmc.http.internal.BmcEnum {
         CpuUtilization("CPU_UTILIZATION"),
+        MemoryUtilization("MEMORY_UTILIZATION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -135,12 +136,12 @@ public final class AutoScalePolicyMetricRule
             return UnknownEnumValue;
         }
     };
-    /** Allowed value is CPU_UTILIZATION. */
+    /** Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION. */
     @com.fasterxml.jackson.annotation.JsonProperty("metricType")
     private final MetricType metricType;
 
     /**
-     * Allowed value is CPU_UTILIZATION.
+     * Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      *
      * @return the value
      */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmtraces.requests;
@@ -7,16 +7,16 @@ package com.oracle.bmc.apmtraces.requests;
 import com.oracle.bmc.apmtraces.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/ListQuickPicksExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/ListQuickPicksExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListQuickPicksRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The APM Domain ID the request is intended for. */
+    /** The APM Domain ID for the intended request. */
     private String apmDomainId;
 
-    /** The APM Domain ID the request is intended for. */
+    /** The APM Domain ID for the intended request. */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -41,13 +41,13 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
+     * The page token representing the page where to start retrieving results. This is usually
      * retrieved from a previous response.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
+     * The page token representing the page where to start retrieving results. This is usually
      * retrieved from a previous response.
      */
     public String getPage() {
@@ -60,11 +60,11 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The APM Domain ID the request is intended for. */
+        /** The APM Domain ID for the intended request. */
         private String apmDomainId = null;
 
         /**
-         * The APM Domain ID the request is intended for.
+         * The APM Domain ID for the intended request.
          *
          * @param apmDomainId the value to set
          * @return this builder instance
@@ -107,14 +107,14 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous response.
+         * The page token representing the page where to start retrieving results. This is usually
+         * retrieved from a previous response.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous response.
+         * The page token representing the page where to start retrieving results. This is usually
+         * retrieved from a previous response.
          *
          * @param page the value to set
          * @return this builder instance

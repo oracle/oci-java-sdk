@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
@@ -39,8 +39,8 @@ public final class UpdateBackendDetails
          * The load balancing policy weight assigned to the server. Backend servers with a higher
          * weight receive a larger proportion of incoming traffic. For example, a server weighted
          * '3' receives three times the number of new connections as a server weighted '1'. For more
-         * information about load balancing policies, see [How Load Balancing Policies
-         * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+         * information about network load balancer policies, see [Network Load Balancer
+         * Policies](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).
          *
          * <p>Example: {@code 3}
          */
@@ -51,8 +51,8 @@ public final class UpdateBackendDetails
          * The load balancing policy weight assigned to the server. Backend servers with a higher
          * weight receive a larger proportion of incoming traffic. For example, a server weighted
          * '3' receives three times the number of new connections as a server weighted '1'. For more
-         * information about load balancing policies, see [How Load Balancing Policies
-         * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+         * information about network load balancer policies, see [Network Load Balancer
+         * Policies](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).
          *
          * <p>Example: {@code 3}
          *
@@ -180,8 +180,8 @@ public final class UpdateBackendDetails
      * The load balancing policy weight assigned to the server. Backend servers with a higher weight
      * receive a larger proportion of incoming traffic. For example, a server weighted '3' receives
      * three times the number of new connections as a server weighted '1'. For more information
-     * about load balancing policies, see [How Load Balancing Policies
-     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+     * about network load balancer policies, see [Network Load Balancer
+     * Policies](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).
      *
      * <p>Example: {@code 3}
      */
@@ -192,8 +192,8 @@ public final class UpdateBackendDetails
      * The load balancing policy weight assigned to the server. Backend servers with a higher weight
      * receive a larger proportion of incoming traffic. For example, a server weighted '3' receives
      * three times the number of new connections as a server weighted '1'. For more information
-     * about load balancing policies, see [How Load Balancing Policies
-     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+     * about network load balancer policies, see [Network Load Balancer
+     * Policies](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).
      *
      * <p>Example: {@code 3}
      *

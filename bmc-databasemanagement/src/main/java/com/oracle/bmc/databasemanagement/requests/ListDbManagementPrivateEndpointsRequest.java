@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListDbManagementPrivateEndpointsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListDbManagementPrivateEndpointsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListDbManagementPrivateEndpointsRequest.
  */
@@ -16,13 +16,13 @@ public class ListDbManagementPrivateEndpointsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     public String getCompartmentId() {
@@ -36,14 +36,12 @@ public class ListDbManagementPrivateEndpointsRequest
         return name;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * VCN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
     private String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * VCN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
     public String getVcnId() {
         return vcnId;
@@ -60,6 +58,21 @@ public class ListDbManagementPrivateEndpointsRequest
      */
     public Boolean getIsCluster() {
         return isCluster;
+    }
+    /**
+     * The option to filter Database Management private endpoints which are endbled with DNS proxy
+     * server. This should be used along with the vcnId query parameter. Only one of this parameter
+     * and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+     */
+    private Boolean isDnsResolutionEnabled;
+
+    /**
+     * The option to filter Database Management private endpoints which are endbled with DNS proxy
+     * server. This should be used along with the vcnId query parameter. Only one of this parameter
+     * and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
+     */
+    public Boolean getIsDnsResolutionEnabled() {
+        return isDnsResolutionEnabled;
     }
     /** The lifecycle state of a resource. */
     private com.oracle.bmc.databasemanagement.model.LifecycleStates lifecycleState;
@@ -169,13 +182,13 @@ public class ListDbManagementPrivateEndpointsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -201,13 +214,13 @@ public class ListDbManagementPrivateEndpointsRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VCN.
          */
         private String vcnId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VCN.
          *
          * @param vcnId the value to set
@@ -233,6 +246,28 @@ public class ListDbManagementPrivateEndpointsRequest
          */
         public Builder isCluster(Boolean isCluster) {
             this.isCluster = isCluster;
+            return this;
+        }
+
+        /**
+         * The option to filter Database Management private endpoints which are endbled with DNS
+         * proxy server. This should be used along with the vcnId query parameter. Only one of this
+         * parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one
+         * time.
+         */
+        private Boolean isDnsResolutionEnabled = null;
+
+        /**
+         * The option to filter Database Management private endpoints which are endbled with DNS
+         * proxy server. This should be used along with the vcnId query parameter. Only one of this
+         * parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one
+         * time.
+         *
+         * @param isDnsResolutionEnabled the value to set
+         * @return this builder instance
+         */
+        public Builder isDnsResolutionEnabled(Boolean isDnsResolutionEnabled) {
+            this.isDnsResolutionEnabled = isDnsResolutionEnabled;
             return this;
         }
 
@@ -369,6 +404,7 @@ public class ListDbManagementPrivateEndpointsRequest
             name(o.getName());
             vcnId(o.getVcnId());
             isCluster(o.getIsCluster());
+            isDnsResolutionEnabled(o.getIsDnsResolutionEnabled());
             lifecycleState(o.getLifecycleState());
             limit(o.getLimit());
             page(o.getPage());
@@ -416,6 +452,7 @@ public class ListDbManagementPrivateEndpointsRequest
             request.name = name;
             request.vcnId = vcnId;
             request.isCluster = isCluster;
+            request.isDnsResolutionEnabled = isDnsResolutionEnabled;
             request.lifecycleState = lifecycleState;
             request.limit = limit;
             request.page = page;
@@ -424,7 +461,8 @@ public class ListDbManagementPrivateEndpointsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListDbManagementPrivateEndpointsRequest(compartmentId, name, vcnId, isCluster,
-            // lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
+            // isDnsResolutionEnabled, lifecycleState, limit, page, sortOrder, sortBy,
+            // opcRequestId);
         }
     }
 
@@ -439,6 +477,7 @@ public class ListDbManagementPrivateEndpointsRequest
                 .name(name)
                 .vcnId(vcnId)
                 .isCluster(isCluster)
+                .isDnsResolutionEnabled(isDnsResolutionEnabled)
                 .lifecycleState(lifecycleState)
                 .limit(limit)
                 .page(page)
@@ -465,6 +504,7 @@ public class ListDbManagementPrivateEndpointsRequest
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",vcnId=").append(String.valueOf(this.vcnId));
         sb.append(",isCluster=").append(String.valueOf(this.isCluster));
+        sb.append(",isDnsResolutionEnabled=").append(String.valueOf(this.isDnsResolutionEnabled));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -490,6 +530,8 @@ public class ListDbManagementPrivateEndpointsRequest
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && java.util.Objects.equals(this.isCluster, other.isCluster)
+                && java.util.Objects.equals(
+                        this.isDnsResolutionEnabled, other.isDnsResolutionEnabled)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -508,6 +550,11 @@ public class ListDbManagementPrivateEndpointsRequest
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result = (result * PRIME) + (this.isCluster == null ? 43 : this.isCluster.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDnsResolutionEnabled == null
+                                ? 43
+                                : this.isDnsResolutionEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

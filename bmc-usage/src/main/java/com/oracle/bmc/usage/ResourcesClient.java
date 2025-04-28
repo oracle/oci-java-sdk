@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usage;
@@ -114,6 +114,7 @@ public class ResourcesClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.usage.model.ResourceQuotumCollection.class,
                         ListResourceQuotaResponse.Builder::resourceQuotumCollection)
@@ -121,7 +122,6 @@ public class ResourcesClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListResourceQuotaResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListResourceQuotaResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -150,6 +150,7 @@ public class ResourcesClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.usage.model.ResourcesCollection.class,
                         ListResourcesResponse.Builder::resourcesCollection)
@@ -157,7 +158,6 @@ public class ResourcesClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListResourcesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListResourcesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -27,42 +27,76 @@ public final class FindingSummary
         "assessmentId",
         "targetId",
         "key",
+        "isTopFinding",
         "title",
         "remarks",
         "details",
         "summary",
-        "references"
+        "oneline",
+        "references",
+        "oracleDefinedSeverity",
+        "isRiskModified",
+        "hasTargetDbRiskLevelChanged",
+        "justification",
+        "timeValidUntil",
+        "timeUpdated",
+        "lifecycleState",
+        "lifecycleDetails"
     })
     public FindingSummary(
             Severity severity,
             String assessmentId,
             String targetId,
             String key,
+            Boolean isTopFinding,
             String title,
             String remarks,
             Object details,
             String summary,
-            References references) {
+            String oneline,
+            References references,
+            Finding.Severity oracleDefinedSeverity,
+            Boolean isRiskModified,
+            Boolean hasTargetDbRiskLevelChanged,
+            String justification,
+            java.util.Date timeValidUntil,
+            java.util.Date timeUpdated,
+            FindingLifecycleState lifecycleState,
+            String lifecycleDetails) {
         super();
         this.severity = severity;
         this.assessmentId = assessmentId;
         this.targetId = targetId;
         this.key = key;
+        this.isTopFinding = isTopFinding;
         this.title = title;
         this.remarks = remarks;
         this.details = details;
         this.summary = summary;
+        this.oneline = oneline;
         this.references = references;
+        this.oracleDefinedSeverity = oracleDefinedSeverity;
+        this.isRiskModified = isRiskModified;
+        this.hasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;
+        this.justification = justification;
+        this.timeValidUntil = timeValidUntil;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The severity of the finding. */
+        /**
+         * The severity of the finding as determined by security assessment and is same as
+         * oracleDefinedSeverity, unless modified by user.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
         /**
-         * The severity of the finding.
+         * The severity of the finding as determined by security assessment and is same as
+         * oracleDefinedSeverity, unless modified by user.
          *
          * @param severity the value to set
          * @return this builder
@@ -119,6 +153,21 @@ public final class FindingSummary
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
+            return this;
+        }
+        /** Indicates whether a given finding is marked as topFinding or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isTopFinding")
+        private Boolean isTopFinding;
+
+        /**
+         * Indicates whether a given finding is marked as topFinding or not.
+         *
+         * @param isTopFinding the value to set
+         * @return this builder
+         */
+        public Builder isTopFinding(Boolean isTopFinding) {
+            this.isTopFinding = isTopFinding;
+            this.__explicitlySet__.add("isTopFinding");
             return this;
         }
         /** The short title for the finding. */
@@ -195,6 +244,21 @@ public final class FindingSummary
             this.__explicitlySet__.add("summary");
             return this;
         }
+        /** Provides a recommended approach to take to remediate the finding reported. */
+        @com.fasterxml.jackson.annotation.JsonProperty("oneline")
+        private String oneline;
+
+        /**
+         * Provides a recommended approach to take to remediate the finding reported.
+         *
+         * @param oneline the value to set
+         * @return this builder
+         */
+        public Builder oneline(String oneline) {
+            this.oneline = oneline;
+            this.__explicitlySet__.add("oneline");
+            return this;
+        }
         /**
          * Provides information on whether the finding is related to a CIS Oracle Database Benchmark
          * recommendation, a STIG rule, or a GDPR Article/Recital.
@@ -214,6 +278,142 @@ public final class FindingSummary
             this.__explicitlySet__.add("references");
             return this;
         }
+        /**
+         * The severity of the finding as determined by security assessment. This cannot be modified
+         * by user.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleDefinedSeverity")
+        private Finding.Severity oracleDefinedSeverity;
+
+        /**
+         * The severity of the finding as determined by security assessment. This cannot be modified
+         * by user.
+         *
+         * @param oracleDefinedSeverity the value to set
+         * @return this builder
+         */
+        public Builder oracleDefinedSeverity(Finding.Severity oracleDefinedSeverity) {
+            this.oracleDefinedSeverity = oracleDefinedSeverity;
+            this.__explicitlySet__.add("oracleDefinedSeverity");
+            return this;
+        }
+        /** Determines if this risk level was modified by user. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isRiskModified")
+        private Boolean isRiskModified;
+
+        /**
+         * Determines if this risk level was modified by user.
+         *
+         * @param isRiskModified the value to set
+         * @return this builder
+         */
+        public Builder isRiskModified(Boolean isRiskModified) {
+            this.isRiskModified = isRiskModified;
+            this.__explicitlySet__.add("isRiskModified");
+            return this;
+        }
+        /**
+         * Determines if this risk level has changed on the target database since the last time
+         * 'severity' was modified by user.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("hasTargetDbRiskLevelChanged")
+        private Boolean hasTargetDbRiskLevelChanged;
+
+        /**
+         * Determines if this risk level has changed on the target database since the last time
+         * 'severity' was modified by user.
+         *
+         * @param hasTargetDbRiskLevelChanged the value to set
+         * @return this builder
+         */
+        public Builder hasTargetDbRiskLevelChanged(Boolean hasTargetDbRiskLevelChanged) {
+            this.hasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;
+            this.__explicitlySet__.add("hasTargetDbRiskLevelChanged");
+            return this;
+        }
+        /** User provided reason for accepting or modifying this finding if they choose to do so. */
+        @com.fasterxml.jackson.annotation.JsonProperty("justification")
+        private String justification;
+
+        /**
+         * User provided reason for accepting or modifying this finding if they choose to do so.
+         *
+         * @param justification the value to set
+         * @return this builder
+         */
+        public Builder justification(String justification) {
+            this.justification = justification;
+            this.__explicitlySet__.add("justification");
+            return this;
+        }
+        /**
+         * The time until which the change in severity(deferred / modified) of this finding is
+         * valid.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeValidUntil")
+        private java.util.Date timeValidUntil;
+
+        /**
+         * The time until which the change in severity(deferred / modified) of this finding is
+         * valid.
+         *
+         * @param timeValidUntil the value to set
+         * @return this builder
+         */
+        public Builder timeValidUntil(java.util.Date timeValidUntil) {
+            this.timeValidUntil = timeValidUntil;
+            this.__explicitlySet__.add("timeValidUntil");
+            return this;
+        }
+        /**
+         * The date and time the risk level of finding was last updated, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        /**
+         * The date and time the risk level of finding was last updated, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         */
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+        /** The current state of the finding. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private FindingLifecycleState lifecycleState;
+
+        /**
+         * The current state of the finding.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         */
+        public Builder lifecycleState(FindingLifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /** Details about the current state of the finding. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Details about the current state of the finding.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -225,11 +425,21 @@ public final class FindingSummary
                             this.assessmentId,
                             this.targetId,
                             this.key,
+                            this.isTopFinding,
                             this.title,
                             this.remarks,
                             this.details,
                             this.summary,
-                            this.references);
+                            this.oneline,
+                            this.references,
+                            this.oracleDefinedSeverity,
+                            this.isRiskModified,
+                            this.hasTargetDbRiskLevelChanged,
+                            this.justification,
+                            this.timeValidUntil,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -250,6 +460,9 @@ public final class FindingSummary
             if (model.wasPropertyExplicitlySet("key")) {
                 this.key(model.getKey());
             }
+            if (model.wasPropertyExplicitlySet("isTopFinding")) {
+                this.isTopFinding(model.getIsTopFinding());
+            }
             if (model.wasPropertyExplicitlySet("title")) {
                 this.title(model.getTitle());
             }
@@ -262,8 +475,35 @@ public final class FindingSummary
             if (model.wasPropertyExplicitlySet("summary")) {
                 this.summary(model.getSummary());
             }
+            if (model.wasPropertyExplicitlySet("oneline")) {
+                this.oneline(model.getOneline());
+            }
             if (model.wasPropertyExplicitlySet("references")) {
                 this.references(model.getReferences());
+            }
+            if (model.wasPropertyExplicitlySet("oracleDefinedSeverity")) {
+                this.oracleDefinedSeverity(model.getOracleDefinedSeverity());
+            }
+            if (model.wasPropertyExplicitlySet("isRiskModified")) {
+                this.isRiskModified(model.getIsRiskModified());
+            }
+            if (model.wasPropertyExplicitlySet("hasTargetDbRiskLevelChanged")) {
+                this.hasTargetDbRiskLevelChanged(model.getHasTargetDbRiskLevelChanged());
+            }
+            if (model.wasPropertyExplicitlySet("justification")) {
+                this.justification(model.getJustification());
+            }
+            if (model.wasPropertyExplicitlySet("timeValidUntil")) {
+                this.timeValidUntil(model.getTimeValidUntil());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             return this;
         }
@@ -278,7 +518,10 @@ public final class FindingSummary
         return new Builder().copy(this);
     }
 
-    /** The severity of the finding. */
+    /**
+     * The severity of the finding as determined by security assessment and is same as
+     * oracleDefinedSeverity, unless modified by user.
+     */
     public enum Severity implements com.oracle.bmc.http.internal.BmcEnum {
         High("HIGH"),
         Medium("MEDIUM"),
@@ -286,6 +529,7 @@ public final class FindingSummary
         Evaluate("EVALUATE"),
         Advisory("ADVISORY"),
         Pass("PASS"),
+        Deferred("DEFERRED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -328,12 +572,16 @@ public final class FindingSummary
             return UnknownEnumValue;
         }
     };
-    /** The severity of the finding. */
+    /**
+     * The severity of the finding as determined by security assessment and is same as
+     * oracleDefinedSeverity, unless modified by user.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
     /**
-     * The severity of the finding.
+     * The severity of the finding as determined by security assessment and is same as
+     * oracleDefinedSeverity, unless modified by user.
      *
      * @return the value
      */
@@ -382,6 +630,19 @@ public final class FindingSummary
      */
     public String getKey() {
         return key;
+    }
+
+    /** Indicates whether a given finding is marked as topFinding or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isTopFinding")
+    private final Boolean isTopFinding;
+
+    /**
+     * Indicates whether a given finding is marked as topFinding or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsTopFinding() {
+        return isTopFinding;
     }
 
     /** The short title for the finding. */
@@ -448,6 +709,19 @@ public final class FindingSummary
         return summary;
     }
 
+    /** Provides a recommended approach to take to remediate the finding reported. */
+    @com.fasterxml.jackson.annotation.JsonProperty("oneline")
+    private final String oneline;
+
+    /**
+     * Provides a recommended approach to take to remediate the finding reported.
+     *
+     * @return the value
+     */
+    public String getOneline() {
+        return oneline;
+    }
+
     /**
      * Provides information on whether the finding is related to a CIS Oracle Database Benchmark
      * recommendation, a STIG rule, or a GDPR Article/Recital.
@@ -463,6 +737,124 @@ public final class FindingSummary
      */
     public References getReferences() {
         return references;
+    }
+
+    /**
+     * The severity of the finding as determined by security assessment. This cannot be modified by
+     * user.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleDefinedSeverity")
+    private final Finding.Severity oracleDefinedSeverity;
+
+    /**
+     * The severity of the finding as determined by security assessment. This cannot be modified by
+     * user.
+     *
+     * @return the value
+     */
+    public Finding.Severity getOracleDefinedSeverity() {
+        return oracleDefinedSeverity;
+    }
+
+    /** Determines if this risk level was modified by user. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isRiskModified")
+    private final Boolean isRiskModified;
+
+    /**
+     * Determines if this risk level was modified by user.
+     *
+     * @return the value
+     */
+    public Boolean getIsRiskModified() {
+        return isRiskModified;
+    }
+
+    /**
+     * Determines if this risk level has changed on the target database since the last time
+     * 'severity' was modified by user.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("hasTargetDbRiskLevelChanged")
+    private final Boolean hasTargetDbRiskLevelChanged;
+
+    /**
+     * Determines if this risk level has changed on the target database since the last time
+     * 'severity' was modified by user.
+     *
+     * @return the value
+     */
+    public Boolean getHasTargetDbRiskLevelChanged() {
+        return hasTargetDbRiskLevelChanged;
+    }
+
+    /** User provided reason for accepting or modifying this finding if they choose to do so. */
+    @com.fasterxml.jackson.annotation.JsonProperty("justification")
+    private final String justification;
+
+    /**
+     * User provided reason for accepting or modifying this finding if they choose to do so.
+     *
+     * @return the value
+     */
+    public String getJustification() {
+        return justification;
+    }
+
+    /**
+     * The time until which the change in severity(deferred / modified) of this finding is valid.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeValidUntil")
+    private final java.util.Date timeValidUntil;
+
+    /**
+     * The time until which the change in severity(deferred / modified) of this finding is valid.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeValidUntil() {
+        return timeValidUntil;
+    }
+
+    /**
+     * The date and time the risk level of finding was last updated, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The date and time the risk level of finding was last updated, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    /** The current state of the finding. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final FindingLifecycleState lifecycleState;
+
+    /**
+     * The current state of the finding.
+     *
+     * @return the value
+     */
+    public FindingLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    /** Details about the current state of the finding. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Details about the current state of the finding.
+     *
+     * @return the value
+     */
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     @Override
@@ -484,11 +876,22 @@ public final class FindingSummary
         sb.append(", assessmentId=").append(String.valueOf(this.assessmentId));
         sb.append(", targetId=").append(String.valueOf(this.targetId));
         sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", isTopFinding=").append(String.valueOf(this.isTopFinding));
         sb.append(", title=").append(String.valueOf(this.title));
         sb.append(", remarks=").append(String.valueOf(this.remarks));
         sb.append(", details=").append(String.valueOf(this.details));
         sb.append(", summary=").append(String.valueOf(this.summary));
+        sb.append(", oneline=").append(String.valueOf(this.oneline));
         sb.append(", references=").append(String.valueOf(this.references));
+        sb.append(", oracleDefinedSeverity=").append(String.valueOf(this.oracleDefinedSeverity));
+        sb.append(", isRiskModified=").append(String.valueOf(this.isRiskModified));
+        sb.append(", hasTargetDbRiskLevelChanged=")
+                .append(String.valueOf(this.hasTargetDbRiskLevelChanged));
+        sb.append(", justification=").append(String.valueOf(this.justification));
+        sb.append(", timeValidUntil=").append(String.valueOf(this.timeValidUntil));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -507,11 +910,22 @@ public final class FindingSummary
                 && java.util.Objects.equals(this.assessmentId, other.assessmentId)
                 && java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.isTopFinding, other.isTopFinding)
                 && java.util.Objects.equals(this.title, other.title)
                 && java.util.Objects.equals(this.remarks, other.remarks)
                 && java.util.Objects.equals(this.details, other.details)
                 && java.util.Objects.equals(this.summary, other.summary)
+                && java.util.Objects.equals(this.oneline, other.oneline)
                 && java.util.Objects.equals(this.references, other.references)
+                && java.util.Objects.equals(this.oracleDefinedSeverity, other.oracleDefinedSeverity)
+                && java.util.Objects.equals(this.isRiskModified, other.isRiskModified)
+                && java.util.Objects.equals(
+                        this.hasTargetDbRiskLevelChanged, other.hasTargetDbRiskLevelChanged)
+                && java.util.Objects.equals(this.justification, other.justification)
+                && java.util.Objects.equals(this.timeValidUntil, other.timeValidUntil)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && super.equals(other);
     }
 
@@ -523,11 +937,39 @@ public final class FindingSummary
         result = (result * PRIME) + (this.assessmentId == null ? 43 : this.assessmentId.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.isTopFinding == null ? 43 : this.isTopFinding.hashCode());
         result = (result * PRIME) + (this.title == null ? 43 : this.title.hashCode());
         result = (result * PRIME) + (this.remarks == null ? 43 : this.remarks.hashCode());
         result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
         result = (result * PRIME) + (this.summary == null ? 43 : this.summary.hashCode());
+        result = (result * PRIME) + (this.oneline == null ? 43 : this.oneline.hashCode());
         result = (result * PRIME) + (this.references == null ? 43 : this.references.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleDefinedSeverity == null
+                                ? 43
+                                : this.oracleDefinedSeverity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRiskModified == null ? 43 : this.isRiskModified.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hasTargetDbRiskLevelChanged == null
+                                ? 43
+                                : this.hasTargetDbRiskLevelChanged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.justification == null ? 43 : this.justification.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeValidUntil == null ? 43 : this.timeValidUntil.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

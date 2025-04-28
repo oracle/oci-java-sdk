@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -7,11 +7,11 @@ package com.oracle.bmc.core.model;
 /**
  * An asynchronous replica of a boot volume that can then be used to create a new boot volume or
  * recover a boot volume. For more information, see [Overview of Cross-Region Volume
- * Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumereplication.htm) To
- * use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * Replication](https://docs.oracle.com/iaas/Content/Block/Concepts/volumereplication.htm) To use
+ * any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users
  * access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
@@ -46,7 +46,8 @@ public final class BootVolumeReplica
         "bootVolumeId",
         "imageId",
         "totalDataTransferredInGBs",
-        "volumeGroupReplicaId"
+        "volumeGroupReplicaId",
+        "kmsKeyId"
     })
     public BootVolumeReplica(
             String availabilityDomain,
@@ -62,7 +63,8 @@ public final class BootVolumeReplica
             String bootVolumeId,
             String imageId,
             Long totalDataTransferredInGBs,
-            String volumeGroupReplicaId) {
+            String volumeGroupReplicaId,
+            String kmsKeyId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -78,6 +80,7 @@ public final class BootVolumeReplica
         this.imageId = imageId;
         this.totalDataTransferredInGBs = totalDataTransferredInGBs;
         this.volumeGroupReplicaId = volumeGroupReplicaId;
+        this.kmsKeyId = kmsKeyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -121,7 +124,7 @@ public final class BootVolumeReplica
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -131,7 +134,7 @@ public final class BootVolumeReplica
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -166,7 +169,7 @@ public final class BootVolumeReplica
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -176,7 +179,7 @@ public final class BootVolumeReplica
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -335,6 +338,29 @@ public final class BootVolumeReplica
             this.__explicitlySet__.add("volumeGroupReplicaId");
             return this;
         }
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the boot
+         * volume replica, see [Overview of Vault
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the boot
+         * volume replica, see [Overview of Vault
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         */
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -355,7 +381,8 @@ public final class BootVolumeReplica
                             this.bootVolumeId,
                             this.imageId,
                             this.totalDataTransferredInGBs,
-                            this.volumeGroupReplicaId);
+                            this.volumeGroupReplicaId,
+                            this.kmsKeyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -406,6 +433,9 @@ public final class BootVolumeReplica
             if (model.wasPropertyExplicitlySet("volumeGroupReplicaId")) {
                 this.volumeGroupReplicaId(model.getVolumeGroupReplicaId());
             }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
             return this;
         }
     }
@@ -454,7 +484,7 @@ public final class BootVolumeReplica
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -464,7 +494,7 @@ public final class BootVolumeReplica
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -494,7 +524,7 @@ public final class BootVolumeReplica
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -504,7 +534,7 @@ public final class BootVolumeReplica
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -693,6 +723,27 @@ public final class BootVolumeReplica
         return volumeGroupReplicaId;
     }
 
+    /**
+     * The OCID of the Vault service key to assign as the master encryption key for the boot volume
+     * replica, see [Overview of Vault
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    private final String kmsKeyId;
+
+    /**
+     * The OCID of the Vault service key to assign as the master encryption key for the boot volume
+     * replica, see [Overview of Vault
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     * @return the value
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -723,6 +774,7 @@ public final class BootVolumeReplica
         sb.append(", totalDataTransferredInGBs=")
                 .append(String.valueOf(this.totalDataTransferredInGBs));
         sb.append(", volumeGroupReplicaId=").append(String.valueOf(this.volumeGroupReplicaId));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(")");
         return sb.toString();
     }
@@ -752,6 +804,7 @@ public final class BootVolumeReplica
                 && java.util.Objects.equals(
                         this.totalDataTransferredInGBs, other.totalDataTransferredInGBs)
                 && java.util.Objects.equals(this.volumeGroupReplicaId, other.volumeGroupReplicaId)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && super.equals(other);
     }
 
@@ -791,6 +844,7 @@ public final class BootVolumeReplica
                         + (this.volumeGroupReplicaId == null
                                 ? 43
                                 : this.volumeGroupReplicaId.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

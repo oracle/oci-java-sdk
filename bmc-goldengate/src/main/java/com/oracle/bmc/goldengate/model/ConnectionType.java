@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -25,11 +25,15 @@ public enum ConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
     Mongodb("MONGODB"),
     AmazonKinesis("AMAZON_KINESIS"),
     AmazonRedshift("AMAZON_REDSHIFT"),
+    Db2("DB2"),
     Redis("REDIS"),
     Elasticsearch("ELASTICSEARCH"),
     Generic("GENERIC"),
     GoogleCloudStorage("GOOGLE_CLOUD_STORAGE"),
     GoogleBigquery("GOOGLE_BIGQUERY"),
+    Databricks("DATABRICKS"),
+    GooglePubsub("GOOGLE_PUBSUB"),
+    MicrosoftFabric("MICROSOFT_FABRIC"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

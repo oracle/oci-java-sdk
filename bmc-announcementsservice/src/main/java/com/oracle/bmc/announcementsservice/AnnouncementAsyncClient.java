@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.announcementsservice;
@@ -122,6 +122,41 @@ public class AnnouncementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-request-id", GetAnnouncementResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetAnnouncementResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAnnouncementCompartmentResponse>
+            getAnnouncementCompartment(
+                    GetAnnouncementCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAnnouncementCompartmentRequest,
+                                    GetAnnouncementCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getAnnouncementId(), "announcementId must not be blank");
+
+        return clientCall(request, GetAnnouncementCompartmentResponse::builder)
+                .logger(LOG, "getAnnouncementCompartment")
+                .serviceDetails(
+                        "Announcement",
+                        "GetAnnouncementCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementCompartment/GetAnnouncementCompartment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAnnouncementCompartmentRequest::builder)
+                .basePath("/20180904")
+                .appendPathParam("announcements")
+                .appendPathParam(request.getAnnouncementId())
+                .appendPathParam("compartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.announcementsservice.model.AnnouncementCompartment.class,
+                        GetAnnouncementCompartmentResponse.Builder::announcementCompartment)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAnnouncementCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetAnnouncementCompartmentResponse.Builder::etag)
                 .callAsync(handler);
     }
 

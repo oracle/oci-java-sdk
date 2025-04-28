@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns;
@@ -24,6 +24,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
     private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(DnsClient.class);
 
+    protected final java.util.concurrent.ExecutorService executorService;
     private final DnsWaiters waiters;
 
     private final DnsPaginators paginators;
@@ -62,6 +63,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
             executorService = threadPoolExecutor;
         }
+        this.executorService = executorService;
         this.waiters = new DnsWaiters(executorService, this);
 
         this.paginators = new DnsPaginators(this);
@@ -173,13 +175,13 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeResolverCompartmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeResolverCompartmentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -210,11 +212,14 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeSteeringPolicyCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSteeringPolicyCompartmentResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -245,10 +250,10 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeTsigKeyCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -279,13 +284,13 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeViewCompartmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeViewCompartmentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -316,13 +321,13 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeZoneCompartmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeZoneCompartmentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -348,6 +353,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.ResolverEndpoint.class,
@@ -360,7 +366,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateResolverEndpointResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -381,6 +386,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.SteeringPolicy.class,
@@ -390,7 +396,9 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "Location", CreateSteeringPolicyResponse.Builder::location)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSteeringPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSteeringPolicyResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -412,6 +420,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.SteeringPolicyAttachment.class,
@@ -423,7 +432,9 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateSteeringPolicyAttachmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSteeringPolicyAttachmentResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -442,6 +453,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendEnumQueryParam("scope", request.getScope())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.TsigKey.class,
@@ -452,7 +464,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", CreateTsigKeyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateTsigKeyResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -471,6 +482,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(com.oracle.bmc.dns.model.View.class, CreateViewResponse.Builder::view)
                 .handleResponseHeaderString("etag", CreateViewResponse.Builder::etag)
@@ -479,7 +491,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", CreateViewResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateViewResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -578,9 +589,9 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDomainRecordsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -611,9 +622,9 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRRSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -649,7 +660,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteResolverEndpointResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -673,7 +683,9 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSteeringPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSteeringPolicyResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -701,7 +713,9 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteSteeringPolicyAttachmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSteeringPolicyAttachmentResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -727,7 +741,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", DeleteTsigKeyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteTsigKeyResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -756,7 +769,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", DeleteViewResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteViewResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -820,6 +832,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-None-Match", request.getIfNoneMatch())
                 .appendHeader("If-Modified-Since", request.getIfModifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dns.model.RecordCollection.class,
                         GetDomainRecordsResponse.Builder::recordCollection)
@@ -830,7 +843,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id", GetDomainRecordsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", GetDomainRecordsResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -867,6 +879,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-None-Match", request.getIfNoneMatch())
                 .appendHeader("If-Modified-Since", request.getIfModifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.dns.model.RRSet.class, GetRRSetResponse.Builder::rRSet)
                 .handleResponseHeaderString("opc-next-page", GetRRSetResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
@@ -874,7 +887,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id", GetRRSetResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", GetRRSetResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -899,13 +911,13 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Modified-Since", request.getIfModifiedSince())
                 .appendHeader("If-None-Match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dns.model.Resolver.class,
                         GetResolverResponse.Builder::resolver)
                 .handleResponseHeaderString("etag", GetResolverResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetResolverResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -935,13 +947,13 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Modified-Since", request.getIfModifiedSince())
                 .appendHeader("If-None-Match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dns.model.ResolverEndpoint.class,
                         GetResolverEndpointResponse.Builder::resolverEndpoint)
                 .handleResponseHeaderString("etag", GetResolverEndpointResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetResolverEndpointResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -966,13 +978,13 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-None-Match", request.getIfNoneMatch())
                 .appendHeader("If-Modified-Since", request.getIfModifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dns.model.SteeringPolicy.class,
                         GetSteeringPolicyResponse.Builder::steeringPolicy)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSteeringPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", GetSteeringPolicyResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1000,6 +1012,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-None-Match", request.getIfNoneMatch())
                 .appendHeader("If-Modified-Since", request.getIfModifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dns.model.SteeringPolicyAttachment.class,
                         GetSteeringPolicyAttachmentResponse.Builder::steeringPolicyAttachment)
@@ -1007,7 +1020,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", GetSteeringPolicyAttachmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "ETag", GetSteeringPolicyAttachmentResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1032,12 +1044,12 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-None-Match", request.getIfNoneMatch())
                 .appendHeader("If-Modified-Since", request.getIfModifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dns.model.TsigKey.class, GetTsigKeyResponse.Builder::tsigKey)
                 .handleResponseHeaderString("ETag", GetTsigKeyResponse.Builder::eTag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTsigKeyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1062,10 +1074,10 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Modified-Since", request.getIfModifiedSince())
                 .appendHeader("If-None-Match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.dns.model.View.class, GetViewResponse.Builder::view)
                 .handleResponseHeaderString("etag", GetViewResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetViewResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1092,10 +1104,10 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-None-Match", request.getIfNoneMatch())
                 .appendHeader("If-Modified-Since", request.getIfModifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.dns.model.Zone.class, GetZoneResponse.Builder::zone)
                 .handleResponseHeaderString("opc-request-id", GetZoneResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", GetZoneResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1122,11 +1134,11 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-None-Match", request.getIfNoneMatch())
                 .appendHeader("If-Modified-Since", request.getIfModifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(java.io.InputStream.class, GetZoneContentResponse.Builder::inputStream)
                 .handleResponseHeaderString("etag", GetZoneContentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetZoneContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1162,6 +1174,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-None-Match", request.getIfNoneMatch())
                 .appendHeader("If-Modified-Since", request.getIfModifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dns.model.RecordCollection.class,
                         GetZoneRecordsResponse.Builder::recordCollection)
@@ -1172,7 +1185,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id", GetZoneRecordsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", GetZoneRecordsResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1203,6 +1215,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendEnumQueryParam("scope", request.getScope())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.dns.model.ResolverEndpointSummary.class,
                         ListResolverEndpointsResponse.Builder::items)
@@ -1210,7 +1223,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", ListResolverEndpointsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListResolverEndpointsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1239,6 +1251,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendEnumQueryParam("scope", request.getScope())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.dns.model.ResolverSummary.class,
                         ListResolversResponse.Builder::items)
@@ -1246,7 +1259,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", ListResolversResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListResolversResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1282,6 +1294,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendEnumQueryParam("scope", request.getScope())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.dns.model.SteeringPolicySummary.class,
                         ListSteeringPoliciesResponse.Builder::items)
@@ -1291,7 +1304,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-total-items", ListSteeringPoliciesResponse.Builder::opcTotalItems)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSteeringPoliciesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1329,6 +1341,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendEnumQueryParam("scope", request.getScope())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary.class,
                         ListSteeringPolicyAttachmentsResponse.Builder::items)
@@ -1340,7 +1353,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListSteeringPolicyAttachmentsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1369,6 +1381,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendEnumQueryParam("scope", request.getScope())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.dns.model.TsigKeySummary.class,
                         ListTsigKeysResponse.Builder::items)
@@ -1376,7 +1389,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-next-page", ListTsigKeysResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListTsigKeysResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1405,13 +1417,13 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendEnumQueryParam("scope", request.getScope())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.dns.model.ViewSummary.class,
                         ListViewsResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-request-id", ListViewsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListViewsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1435,6 +1447,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.dns.model.ZoneTransferServer.class,
                         ListZoneTransferServersResponse.Builder::items)
@@ -1442,7 +1455,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", ListZoneTransferServersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListZoneTransferServersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1476,8 +1488,10 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendEnumQueryParam("scope", request.getScope())
                 .appendQueryParam("viewId", request.getViewId())
                 .appendQueryParam("tsigKeyId", request.getTsigKeyId())
+                .appendEnumQueryParam("dnssecState", request.getDnssecState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.dns.model.ZoneSummary.class,
                         ListZonesResponse.Builder::items)
@@ -1486,7 +1500,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-total-items", ListZonesResponse.Builder::opcTotalItems)
                 .handleResponseHeaderString(
                         "opc-request-id", ListZonesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1519,6 +1532,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.RecordCollection.class,
@@ -1530,7 +1544,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id", PatchDomainRecordsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", PatchDomainRecordsResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1565,6 +1578,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.RecordCollection.class,
@@ -1576,7 +1590,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id", PatchRRSetResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", PatchRRSetResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1606,6 +1619,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.RecordCollection.class,
@@ -1617,7 +1631,82 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id", PatchZoneRecordsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", PatchZoneRecordsResponse.Builder::eTag)
+                .callSync();
+    }
+
+    @Override
+    public PromoteZoneDnssecKeyVersionResponse promoteZoneDnssecKeyVersion(
+            PromoteZoneDnssecKeyVersionRequest request) {
+
+        Validate.notBlank(request.getZoneId(), "zoneId must not be blank");
+        Objects.requireNonNull(
+                request.getPromoteZoneDnssecKeyVersionDetails(),
+                "promoteZoneDnssecKeyVersionDetails is required");
+
+        return clientCall(request, PromoteZoneDnssecKeyVersionResponse::builder)
+                .logger(LOG, "promoteZoneDnssecKeyVersion")
+                .serviceDetails(
+                        "Dns",
+                        "PromoteZoneDnssecKeyVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/PromoteZoneDnssecKeyVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(PromoteZoneDnssecKeyVersionRequest::builder)
+                .basePath("/20180115")
+                .appendPathParam("zones")
+                .appendPathParam(request.getZoneId())
+                .appendPathParam("actions")
+                .appendPathParam("promoteDnssecKeyVersion")
+                .appendEnumQueryParam("scope", request.getScope())
+                .accept("application/json")
+                .appendHeader("If-Match", request.getIfMatch())
+                .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", PromoteZoneDnssecKeyVersionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        PromoteZoneDnssecKeyVersionResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public StageZoneDnssecKeyVersionResponse stageZoneDnssecKeyVersion(
+            StageZoneDnssecKeyVersionRequest request) {
+
+        Validate.notBlank(request.getZoneId(), "zoneId must not be blank");
+        Objects.requireNonNull(
+                request.getStageZoneDnssecKeyVersionDetails(),
+                "stageZoneDnssecKeyVersionDetails is required");
+
+        return clientCall(request, StageZoneDnssecKeyVersionResponse::builder)
+                .logger(LOG, "stageZoneDnssecKeyVersion")
+                .serviceDetails(
+                        "Dns",
+                        "StageZoneDnssecKeyVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/StageZoneDnssecKeyVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StageZoneDnssecKeyVersionRequest::builder)
+                .basePath("/20180115")
+                .appendPathParam("zones")
+                .appendPathParam(request.getZoneId())
+                .appendPathParam("actions")
+                .appendPathParam("stageDnssecKeyVersion")
+                .appendEnumQueryParam("scope", request.getScope())
+                .accept("application/json")
+                .appendHeader("If-Match", request.getIfMatch())
+                .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", StageZoneDnssecKeyVersionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        StageZoneDnssecKeyVersionResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1650,6 +1739,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.RecordCollection.class,
@@ -1661,7 +1751,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDomainRecordsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", UpdateDomainRecordsResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1696,6 +1785,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.RecordCollection.class,
@@ -1707,7 +1797,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRRSetResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", UpdateRRSetResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1734,6 +1823,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.Resolver.class,
@@ -1743,7 +1833,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", UpdateResolverResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateResolverResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1777,6 +1866,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.ResolverEndpoint.class,
@@ -1787,7 +1877,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateResolverEndpointResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1815,14 +1904,17 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.SteeringPolicy.class,
                         UpdateSteeringPolicyResponse.Builder::steeringPolicy)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSteeringPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSteeringPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("ETag", UpdateSteeringPolicyResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1853,6 +1945,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.SteeringPolicyAttachment.class,
@@ -1861,8 +1954,10 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id",
                         UpdateSteeringPolicyAttachmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSteeringPolicyAttachmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
                         "ETag", UpdateSteeringPolicyAttachmentResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1889,6 +1984,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.TsigKey.class,
@@ -1898,7 +1994,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", UpdateTsigKeyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateTsigKeyResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1924,6 +2019,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(com.oracle.bmc.dns.model.View.class, UpdateViewResponse.Builder::view)
                 .handleResponseHeaderString("etag", UpdateViewResponse.Builder::etag)
@@ -1931,7 +2027,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", UpdateViewResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateViewResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1959,6 +2054,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(com.oracle.bmc.dns.model.Zone.class, UpdateZoneResponse.Builder::zone)
                 .handleResponseHeaderString("ETag", UpdateZoneResponse.Builder::eTag)
@@ -1966,7 +2062,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", UpdateZoneResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateZoneResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1996,6 +2091,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dns.model.RecordCollection.class,
@@ -2007,13 +2103,17 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateZoneRecordsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", UpdateZoneRecordsResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
     @Override
     public DnsWaiters getWaiters() {
         return waiters;
+    }
+
+    @Override
+    public DnsWaiters newWaiters(com.oracle.bmc.workrequests.WorkRequest workRequestClient) {
+        return new DnsWaiters(executorService, this, workRequestClient);
     }
 
     @Override

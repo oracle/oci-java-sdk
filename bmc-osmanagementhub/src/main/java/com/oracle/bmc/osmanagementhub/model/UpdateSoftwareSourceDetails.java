@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Information for updating a software source. <br>
+ * Provides the information used to update a software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -26,8 +26,17 @@ package com.oracle.bmc.osmanagementhub.model;
             value = UpdateCustomSoftwareSourceDetails.class,
             name = "CUSTOM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdatePrivateSoftwareSourceDetails.class,
+            name = "PRIVATE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateVersionedCustomSoftwareSourceDetails.class,
+            name = "VERSIONED"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateVendorSoftwareSourceDetails.class,
-            name = "VENDOR")
+            name = "VENDOR"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateThirdPartySoftwareSourceDetails.class,
+            name = "THIRD_PARTY")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -55,12 +64,16 @@ public class UpdateSoftwareSourceDetails
         this.definedTags = definedTags;
     }
 
-    /** The OCID of the tenancy containing the software source. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the software source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the software source.
      *
      * @return the value
      */
@@ -68,12 +81,12 @@ public class UpdateSoftwareSourceDetails
         return compartmentId;
     }
 
-    /** User friendly name for the software source. */
+    /** User-friendly name for the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * User friendly name for the software source.
+     * User-friendly name for the software source.
      *
      * @return the value
      */
@@ -81,12 +94,12 @@ public class UpdateSoftwareSourceDetails
         return displayName;
     }
 
-    /** Information specified by the user about the software source. */
+    /** User-specified description of the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Information specified by the user about the software source.
+     * User-specified description of the software source.
      *
      * @return the value
      */
@@ -97,7 +110,7 @@ public class UpdateSoftwareSourceDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -106,7 +119,7 @@ public class UpdateSoftwareSourceDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -118,7 +131,7 @@ public class UpdateSoftwareSourceDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -127,7 +140,7 @@ public class UpdateSoftwareSourceDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataflow;
@@ -149,6 +149,36 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CascadingDeleteApplicationResponse cascadingDeleteApplication(
+            CascadingDeleteApplicationRequest request) {
+
+        Validate.notBlank(request.getApplicationId(), "applicationId must not be blank");
+
+        return clientCall(request, CascadingDeleteApplicationResponse::builder)
+                .logger(LOG, "cascadingDeleteApplication")
+                .serviceDetails(
+                        "DataFlow",
+                        "CascadingDeleteApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/CascadingDeleteApplication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CascadingDeleteApplicationRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationId())
+                .appendPathParam("actions")
+                .appendPathParam("cascadingDeleteApplication")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CascadingDeleteApplicationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CascadingDeleteApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeApplicationCompartmentResponse changeApplicationCompartment(
             ChangeApplicationCompartmentRequest request) {
 
@@ -207,10 +237,10 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangePoolCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -358,6 +388,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.dataflow.model.Pool.class, CreatePoolResponse.Builder::pool)
@@ -367,7 +398,6 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreatePoolResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("Location", CreatePoolResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -420,6 +450,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-parent-rpt-url", request.getOpcParentRptUrl())
                 .hasBody()
                 .handleBody(com.oracle.bmc.dataflow.model.Run.class, CreateRunResponse.Builder::run)
                 .handleResponseHeaderString("etag", CreateRunResponse.Builder::etag)
@@ -635,9 +666,9 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteStatementResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -659,13 +690,13 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getApplicationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dataflow.model.Application.class,
                         GetApplicationResponse.Builder::application)
                 .handleResponseHeaderString("etag", GetApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetApplicationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -687,10 +718,10 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getPoolId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.dataflow.model.Pool.class, GetPoolResponse.Builder::pool)
                 .handleResponseHeaderString("etag", GetPoolResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetPoolResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -712,13 +743,13 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getPrivateEndpointId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dataflow.model.PrivateEndpoint.class,
                         GetPrivateEndpointResponse.Builder::privateEndpoint)
                 .handleResponseHeaderString("etag", GetPrivateEndpointResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPrivateEndpointResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -740,10 +771,10 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getRunId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.dataflow.model.Run.class, GetRunResponse.Builder::run)
                 .handleResponseHeaderString("etag", GetRunResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -769,6 +800,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getName())
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(java.io.InputStream.class, GetRunLogResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRunLogResponse.Builder::opcRequestId)
@@ -779,7 +811,6 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "content-encoding", GetRunLogResponse.Builder::contentEncoding)
                 .handleResponseHeadersMap("opc-meta-", GetRunLogResponse.Builder::opcMeta)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -801,13 +832,13 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSqlEndpointId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dataflow.model.SqlEndpoint.class,
                         GetSqlEndpointResponse.Builder::sqlEndpoint)
                 .handleResponseHeaderString("etag", GetSqlEndpointResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSqlEndpointResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -833,13 +864,13 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getStatementId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dataflow.model.Statement.class,
                         GetStatementResponse.Builder::statement)
                 .handleResponseHeaderString("etag", GetStatementResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetStatementResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -861,12 +892,12 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dataflow.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
                 .handleResponseHeaderString(
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -895,6 +926,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("sparkVersion", request.getSparkVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.dataflow.model.ApplicationSummary.class,
                         ListApplicationsResponse.Builder::items)
@@ -904,7 +936,6 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListApplicationsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListApplicationsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -933,6 +964,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("displayNameStartsWith", request.getDisplayNameStartsWith())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dataflow.model.PoolCollection.class,
                         ListPoolsResponse.Builder::poolCollection)
@@ -940,7 +972,6 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("opc-next-page", ListPoolsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListPoolsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -969,6 +1000,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("displayNameStartsWith", request.getDisplayNameStartsWith())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dataflow.model.PrivateEndpointCollection.class,
                         ListPrivateEndpointsResponse.Builder::privateEndpointCollection)
@@ -978,7 +1010,6 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListPrivateEndpointsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListPrivateEndpointsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1003,6 +1034,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.dataflow.model.RunLogSummary.class,
                         ListRunLogsResponse.Builder::items)
@@ -1012,7 +1044,6 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-prev-page", ListRunLogsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-next-page", ListRunLogsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1044,6 +1075,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.dataflow.model.RunSummary.class,
                         ListRunsResponse.Builder::items)
@@ -1051,7 +1083,6 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("opc-next-page", ListRunsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListRunsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1078,6 +1109,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dataflow.model.SqlEndpointCollection.class,
                         ListSqlEndpointsResponse.Builder::sqlEndpointCollection)
@@ -1085,7 +1117,6 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSqlEndpointsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSqlEndpointsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1113,6 +1144,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dataflow.model.StatementCollection.class,
                         ListStatementsResponse.Builder::statementCollection)
@@ -1122,7 +1154,6 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListStatementsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListStatementsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1148,6 +1179,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dataflow.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -1157,7 +1189,6 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1182,6 +1213,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dataflow.model.WorkRequestLogCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogCollection)
@@ -1191,7 +1223,6 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1214,6 +1245,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.dataflow.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -1223,7 +1255,6 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1249,11 +1280,41 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", StartPoolResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", StartPoolResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public StartSqlEndpointResponse startSqlEndpoint(StartSqlEndpointRequest request) {
+
+        Validate.notBlank(request.getSqlEndpointId(), "sqlEndpointId must not be blank");
+
+        return clientCall(request, StartSqlEndpointResponse::builder)
+                .logger(LOG, "startSqlEndpoint")
+                .serviceDetails(
+                        "DataFlow",
+                        "StartSqlEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/SqlEndpoint/StartSqlEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartSqlEndpointRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("sqlEndpoints")
+                .appendPathParam(request.getSqlEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("start")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", StartSqlEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StartSqlEndpointResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1279,11 +1340,41 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", StopPoolResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", StopPoolResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public StopSqlEndpointResponse stopSqlEndpoint(StopSqlEndpointRequest request) {
+
+        Validate.notBlank(request.getSqlEndpointId(), "sqlEndpointId must not be blank");
+
+        return clientCall(request, StopSqlEndpointResponse::builder)
+                .logger(LOG, "stopSqlEndpoint")
+                .serviceDetails(
+                        "DataFlow",
+                        "StopSqlEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/SqlEndpoint/StopSqlEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopSqlEndpointRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("sqlEndpoints")
+                .appendPathParam(request.getSqlEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", StopSqlEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StopSqlEndpointResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

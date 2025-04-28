@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds;
@@ -137,6 +137,95 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ActivateBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ActivateIamUserSyncConfigurationResponse>
+            activateIamUserSyncConfiguration(
+                    ActivateIamUserSyncConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ActivateIamUserSyncConfigurationRequest,
+                                    ActivateIamUserSyncConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getActivateIamUserSyncConfigurationDetails(),
+                "activateIamUserSyncConfigurationDetails is required");
+
+        return clientCall(request, ActivateIamUserSyncConfigurationResponse::builder)
+                .logger(LOG, "activateIamUserSyncConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "ActivateIamUserSyncConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/ActivateIamUserSyncConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateIamUserSyncConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("activateIamUserSyncConfiguration")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ActivateIamUserSyncConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ActivateIamUserSyncConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ActivateUpstConfigurationResponse> activateUpstConfiguration(
+            ActivateUpstConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ActivateUpstConfigurationRequest, ActivateUpstConfigurationResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getActivateUpstConfigurationDetails(),
+                "activateUpstConfigurationDetails is required");
+
+        return clientCall(request, ActivateUpstConfigurationResponse::builder)
+                .logger(LOG, "activateUpstConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "ActivateUpstConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/ActivateUpstConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateUpstConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("activateUpstConfiguration")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ActivateUpstConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ActivateUpstConfigurationResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -392,6 +481,79 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<BackupNodeResponse> backupNode(
+            BackupNodeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<BackupNodeRequest, BackupNodeResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getBackupNodeDetails(), "backupNodeDetails is required");
+
+        return clientCall(request, BackupNodeResponse::builder)
+                .logger(LOG, "backupNode")
+                .serviceDetails(
+                        "Bds",
+                        "BackupNode",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/BackupNode")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BackupNodeRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("backupNodes")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", BackupNodeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", BackupNodeResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CertificateServiceInfoResponse> certificateServiceInfo(
+            CertificateServiceInfoRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CertificateServiceInfoRequest, CertificateServiceInfoResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCertificateServiceInfoDetails(),
+                "certificateServiceInfoDetails is required");
+
+        return clientCall(request, CertificateServiceInfoResponse::builder)
+                .logger(LOG, "certificateServiceInfo")
+                .serviceDetails(
+                        "Bds",
+                        "CertificateServiceInfo",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CertificateServiceInfo")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CertificateServiceInfoRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("fetchOdhServiceCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.CertificateServiceInfoSummary.class,
+                        CertificateServiceInfoResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", CertificateServiceInfoResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CertificateServiceInfoResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeBdsInstanceCompartmentResponse>
             changeBdsInstanceCompartment(
                     ChangeBdsInstanceCompartmentRequest request,
@@ -570,6 +732,252 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<CreateIdentityConfigurationResponse>
+            createIdentityConfiguration(
+                    CreateIdentityConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateIdentityConfigurationRequest,
+                                    CreateIdentityConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateIdentityConfigurationDetails(),
+                "createIdentityConfigurationDetails is required");
+
+        return clientCall(request, CreateIdentityConfigurationResponse::builder)
+                .logger(LOG, "createIdentityConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "CreateIdentityConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/CreateIdentityConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateIdentityConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateIdentityConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateIdentityConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNodeBackupConfigurationResponse>
+            createNodeBackupConfiguration(
+                    CreateNodeBackupConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateNodeBackupConfigurationRequest,
+                                    CreateNodeBackupConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateNodeBackupConfigurationDetails(),
+                "createNodeBackupConfigurationDetails is required");
+
+        return clientCall(request, CreateNodeBackupConfigurationResponse::builder)
+                .logger(LOG, "createNodeBackupConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "CreateNodeBackupConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CreateNodeBackupConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNodeBackupConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackupConfigurations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateNodeBackupConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateNodeBackupConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNodeReplaceConfigurationResponse>
+            createNodeReplaceConfiguration(
+                    CreateNodeReplaceConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateNodeReplaceConfigurationRequest,
+                                    CreateNodeReplaceConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateNodeReplaceConfigurationDetails(),
+                "createNodeReplaceConfigurationDetails is required");
+
+        return clientCall(request, CreateNodeReplaceConfigurationResponse::builder)
+                .logger(LOG, "createNodeReplaceConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "CreateNodeReplaceConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CreateNodeReplaceConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNodeReplaceConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeReplaceConfigurations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateNodeReplaceConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateNodeReplaceConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateResourcePrincipalConfigurationResponse>
+            createResourcePrincipalConfiguration(
+                    CreateResourcePrincipalConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateResourcePrincipalConfigurationRequest,
+                                    CreateResourcePrincipalConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateResourcePrincipalConfigurationDetails(),
+                "createResourcePrincipalConfigurationDetails is required");
+
+        return clientCall(request, CreateResourcePrincipalConfigurationResponse::builder)
+                .logger(LOG, "createResourcePrincipalConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "CreateResourcePrincipalConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CreateResourcePrincipalConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateResourcePrincipalConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("resourcePrincipalConfigurations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateResourcePrincipalConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateResourcePrincipalConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeactivateIamUserSyncConfigurationResponse>
+            deactivateIamUserSyncConfiguration(
+                    DeactivateIamUserSyncConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeactivateIamUserSyncConfigurationRequest,
+                                    DeactivateIamUserSyncConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getDeactivateIamUserSyncConfigurationDetails(),
+                "deactivateIamUserSyncConfigurationDetails is required");
+
+        return clientCall(request, DeactivateIamUserSyncConfigurationResponse::builder)
+                .logger(LOG, "deactivateIamUserSyncConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "DeactivateIamUserSyncConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/DeactivateIamUserSyncConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateIamUserSyncConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivateIamUserSyncConfiguration")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeactivateIamUserSyncConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeactivateIamUserSyncConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeactivateUpstConfigurationResponse>
+            deactivateUpstConfiguration(
+                    DeactivateUpstConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeactivateUpstConfigurationRequest,
+                                    DeactivateUpstConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getDeactivateUpstConfigurationDetails(),
+                "deactivateUpstConfigurationDetails is required");
+
+        return clientCall(request, DeactivateUpstConfigurationResponse::builder)
+                .logger(LOG, "deactivateUpstConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "DeactivateUpstConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/DeactivateUpstConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateUpstConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivateUpstConfiguration")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeactivateUpstConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeactivateUpstConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteBdsApiKeyResponse> deleteBdsApiKey(
             DeleteBdsApiKeyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -672,6 +1080,190 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteIdentityConfigurationResponse>
+            deleteIdentityConfiguration(
+                    DeleteIdentityConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteIdentityConfigurationRequest,
+                                    DeleteIdentityConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+
+        return clientCall(request, DeleteIdentityConfigurationResponse::builder)
+                .logger(LOG, "deleteIdentityConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "DeleteIdentityConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/DeleteIdentityConfiguration")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteIdentityConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteIdentityConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteIdentityConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNodeBackupResponse> deleteNodeBackup(
+            DeleteNodeBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteNodeBackupRequest, DeleteNodeBackupResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(request.getNodeBackupId(), "nodeBackupId must not be blank");
+
+        return clientCall(request, DeleteNodeBackupResponse::builder)
+                .logger(LOG, "deleteNodeBackup")
+                .serviceDetails(
+                        "Bds",
+                        "DeleteNodeBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/NodeBackup/DeleteNodeBackup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNodeBackupRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackups")
+                .appendPathParam(request.getNodeBackupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNodeBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteNodeBackupResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNodeBackupConfigurationResponse>
+            deleteNodeBackupConfiguration(
+                    DeleteNodeBackupConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteNodeBackupConfigurationRequest,
+                                    DeleteNodeBackupConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getNodeBackupConfigurationId(),
+                "nodeBackupConfigurationId must not be blank");
+
+        return clientCall(request, DeleteNodeBackupConfigurationResponse::builder)
+                .logger(LOG, "deleteNodeBackupConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "DeleteNodeBackupConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/NodeBackupConfiguration/DeleteNodeBackupConfiguration")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNodeBackupConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackupConfigurations")
+                .appendPathParam(request.getNodeBackupConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteNodeBackupConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteNodeBackupConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableCertificateResponse> disableCertificate(
+            DisableCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DisableCertificateRequest, DisableCertificateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableCertificateDetails(), "disableCertificateDetails is required");
+
+        return clientCall(request, DisableCertificateResponse::builder)
+                .logger(LOG, "disableCertificate")
+                .serviceDetails(
+                        "Bds",
+                        "DisableCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/DisableCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableCertificateRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("disableOdhServiceCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", DisableCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DisableCertificateResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableCertificateResponse> enableCertificate(
+            EnableCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            EnableCertificateRequest, EnableCertificateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableCertificateDetails(), "enableCertificateDetails is required");
+
+        return clientCall(request, EnableCertificateResponse::builder)
+                .logger(LOG, "enableCertificate")
+                .serviceDetails(
+                        "Bds",
+                        "EnableCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/EnableCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableCertificateRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("enableOdhServiceCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", EnableCertificateResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ExecuteBootstrapScriptResponse> executeBootstrapScript(
             ExecuteBootstrapScriptRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -706,6 +1298,53 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ExecuteBootstrapScriptResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ForceRefreshResourcePrincipalResponse>
+            forceRefreshResourcePrincipal(
+                    ForceRefreshResourcePrincipalRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ForceRefreshResourcePrincipalRequest,
+                                    ForceRefreshResourcePrincipalResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getResourcePrincipalConfigurationId(),
+                "resourcePrincipalConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getForceRefreshResourcePrincipalDetails(),
+                "forceRefreshResourcePrincipalDetails is required");
+
+        return clientCall(request, ForceRefreshResourcePrincipalResponse::builder)
+                .logger(LOG, "forceRefreshResourcePrincipal")
+                .serviceDetails(
+                        "Bds",
+                        "ForceRefreshResourcePrincipal",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ForceRefreshResourcePrincipal")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ForceRefreshResourcePrincipalRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("resourcePrincipalConfigurations")
+                .appendPathParam(request.getResourcePrincipalConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("forceRefreshResourcePrincipal")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ForceRefreshResourcePrincipalResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ForceRefreshResourcePrincipalResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -854,6 +1493,160 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<GetIdentityConfigurationResponse> getIdentityConfiguration(
+            GetIdentityConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetIdentityConfigurationRequest, GetIdentityConfigurationResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+
+        return clientCall(request, GetIdentityConfigurationResponse::builder)
+                .logger(LOG, "getIdentityConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "GetIdentityConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/GetIdentityConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIdentityConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.IdentityConfiguration.class,
+                        GetIdentityConfigurationResponse.Builder::identityConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetIdentityConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetIdentityConfigurationResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNodeBackupResponse> getNodeBackup(
+            GetNodeBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetNodeBackupRequest, GetNodeBackupResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(request.getNodeBackupId(), "nodeBackupId must not be blank");
+
+        return clientCall(request, GetNodeBackupResponse::builder)
+                .logger(LOG, "getNodeBackup")
+                .serviceDetails(
+                        "Bds",
+                        "GetNodeBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetNodeBackup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNodeBackupRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackups")
+                .appendPathParam(request.getNodeBackupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.NodeBackup.class,
+                        GetNodeBackupResponse.Builder::nodeBackup)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNodeBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetNodeBackupResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNodeBackupConfigurationResponse>
+            getNodeBackupConfiguration(
+                    GetNodeBackupConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetNodeBackupConfigurationRequest,
+                                    GetNodeBackupConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getNodeBackupConfigurationId(),
+                "nodeBackupConfigurationId must not be blank");
+
+        return clientCall(request, GetNodeBackupConfigurationResponse::builder)
+                .logger(LOG, "getNodeBackupConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "GetNodeBackupConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetNodeBackupConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNodeBackupConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackupConfigurations")
+                .appendPathParam(request.getNodeBackupConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.NodeBackupConfiguration.class,
+                        GetNodeBackupConfigurationResponse.Builder::nodeBackupConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNodeBackupConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetNodeBackupConfigurationResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNodeReplaceConfigurationResponse>
+            getNodeReplaceConfiguration(
+                    GetNodeReplaceConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetNodeReplaceConfigurationRequest,
+                                    GetNodeReplaceConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getNodeReplaceConfigurationId(),
+                "nodeReplaceConfigurationId must not be blank");
+
+        return clientCall(request, GetNodeReplaceConfigurationResponse::builder)
+                .logger(LOG, "getNodeReplaceConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "GetNodeReplaceConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetNodeReplaceConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNodeReplaceConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeReplaceConfigurations")
+                .appendPathParam(request.getNodeReplaceConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.NodeReplaceConfiguration.class,
+                        GetNodeReplaceConfigurationResponse.Builder::nodeReplaceConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNodeReplaceConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetNodeReplaceConfigurationResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOsPatchDetailsResponse> getOsPatchDetails(
             GetOsPatchDetailsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -887,6 +1680,48 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", GetOsPatchDetailsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetOsPatchDetailsResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePrincipalConfigurationResponse>
+            getResourcePrincipalConfiguration(
+                    GetResourcePrincipalConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetResourcePrincipalConfigurationRequest,
+                                    GetResourcePrincipalConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getResourcePrincipalConfigurationId(),
+                "resourcePrincipalConfigurationId must not be blank");
+
+        return clientCall(request, GetResourcePrincipalConfigurationResponse::builder)
+                .logger(LOG, "getResourcePrincipalConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "GetResourcePrincipalConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetResourcePrincipalConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetResourcePrincipalConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("resourcePrincipalConfigurations")
+                .appendPathParam(request.getResourcePrincipalConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.ResourcePrincipalConfiguration.class,
+                        GetResourcePrincipalConfigurationResponse.Builder
+                                ::resourcePrincipalConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetResourcePrincipalConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetResourcePrincipalConfigurationResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -1077,6 +1912,39 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ListBdsClusterVersionsResponse> listBdsClusterVersions(
+            ListBdsClusterVersionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListBdsClusterVersionsRequest, ListBdsClusterVersionsResponse>
+                    handler) {
+
+        return clientCall(request, ListBdsClusterVersionsResponse::builder)
+                .logger(LOG, "listBdsClusterVersions")
+                .serviceDetails(
+                        "Bds",
+                        "ListBdsClusterVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsClusterVersionSummary/ListBdsClusterVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBdsClusterVersionsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsClusterVersions")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.BdsClusterVersionSummary.class,
+                        ListBdsClusterVersionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBdsClusterVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListBdsClusterVersionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListBdsInstancesResponse> listBdsInstances(
             ListBdsInstancesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1160,6 +2028,173 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ListIdentityConfigurationsResponse>
+            listIdentityConfigurations(
+                    ListIdentityConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListIdentityConfigurationsRequest,
+                                    ListIdentityConfigurationsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListIdentityConfigurationsResponse::builder)
+                .logger(LOG, "listIdentityConfigurations")
+                .serviceDetails(
+                        "Bds",
+                        "ListIdentityConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/ListIdentityConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIdentityConfigurationsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.IdentityConfigurationSummary.class,
+                        ListIdentityConfigurationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListIdentityConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListIdentityConfigurationsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNodeBackupConfigurationsResponse>
+            listNodeBackupConfigurations(
+                    ListNodeBackupConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListNodeBackupConfigurationsRequest,
+                                    ListNodeBackupConfigurationsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListNodeBackupConfigurationsResponse::builder)
+                .logger(LOG, "listNodeBackupConfigurations")
+                .serviceDetails(
+                        "Bds",
+                        "ListNodeBackupConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListNodeBackupConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNodeBackupConfigurationsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackupConfigurations")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.NodeBackupConfigurationSummary.class,
+                        ListNodeBackupConfigurationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListNodeBackupConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNodeBackupConfigurationsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNodeBackupsResponse> listNodeBackups(
+            ListNodeBackupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListNodeBackupsRequest, ListNodeBackupsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListNodeBackupsResponse::builder)
+                .logger(LOG, "listNodeBackups")
+                .serviceDetails(
+                        "Bds",
+                        "ListNodeBackups",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListNodeBackups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNodeBackupsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackups")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("nodeHostName", request.getNodeHostName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.NodeBackupSummary.class,
+                        ListNodeBackupsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNodeBackupsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNodeBackupsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNodeReplaceConfigurationsResponse>
+            listNodeReplaceConfigurations(
+                    ListNodeReplaceConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListNodeReplaceConfigurationsRequest,
+                                    ListNodeReplaceConfigurationsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListNodeReplaceConfigurationsResponse::builder)
+                .logger(LOG, "listNodeReplaceConfigurations")
+                .serviceDetails(
+                        "Bds",
+                        "ListNodeReplaceConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListNodeReplaceConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNodeReplaceConfigurationsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeReplaceConfigurations")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary.class,
+                        ListNodeReplaceConfigurationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListNodeReplaceConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNodeReplaceConfigurationsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOsPatchesResponse> listOsPatches(
             ListOsPatchesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListOsPatchesRequest, ListOsPatchesResponse>
@@ -1221,8 +2256,8 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .appendPathParam(request.getBdsInstanceId())
                 .appendPathParam("patchHistory")
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("patchVersion", request.getPatchVersion())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
@@ -1270,6 +2305,49 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                         "opc-next-page", ListPatchesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListPatchesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourcePrincipalConfigurationsResponse>
+            listResourcePrincipalConfigurations(
+                    ListResourcePrincipalConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListResourcePrincipalConfigurationsRequest,
+                                    ListResourcePrincipalConfigurationsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListResourcePrincipalConfigurationsResponse::builder)
+                .logger(LOG, "listResourcePrincipalConfigurations")
+                .serviceDetails(
+                        "Bds",
+                        "ListResourcePrincipalConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListResourcePrincipalConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListResourcePrincipalConfigurationsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("resourcePrincipalConfigurations")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.ResourcePrincipalConfigurationSummary.class,
+                        ListResourcePrincipalConfigurationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListResourcePrincipalConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListResourcePrincipalConfigurationsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -1380,6 +2458,98 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshConfidentialApplicationResponse>
+            refreshConfidentialApplication(
+                    RefreshConfidentialApplicationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshConfidentialApplicationRequest,
+                                    RefreshConfidentialApplicationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getRefreshConfidentialApplicationDetails(),
+                "refreshConfidentialApplicationDetails is required");
+
+        return clientCall(request, RefreshConfidentialApplicationResponse::builder)
+                .logger(LOG, "refreshConfidentialApplication")
+                .serviceDetails(
+                        "Bds",
+                        "RefreshConfidentialApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/RefreshConfidentialApplication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshConfidentialApplicationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("refreshConfidentialApplication")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RefreshConfidentialApplicationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshConfidentialApplicationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshUpstTokenExchangeKeytabResponse>
+            refreshUpstTokenExchangeKeytab(
+                    RefreshUpstTokenExchangeKeytabRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshUpstTokenExchangeKeytabRequest,
+                                    RefreshUpstTokenExchangeKeytabResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getRefreshUpstTokenExchangeKeytabDetails(),
+                "refreshUpstTokenExchangeKeytabDetails is required");
+
+        return clientCall(request, RefreshUpstTokenExchangeKeytabResponse::builder)
+                .logger(LOG, "refreshUpstTokenExchangeKeytab")
+                .serviceDetails(
+                        "Bds",
+                        "RefreshUpstTokenExchangeKeytab",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/RefreshUpstTokenExchangeKeytab")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshUpstTokenExchangeKeytabRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("refreshUpstTokenExchangeKeytab")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RefreshUpstTokenExchangeKeytabResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshUpstTokenExchangeKeytabResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1530,6 +2700,169 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                         "opc-request-id", RemoveNodeResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", RemoveNodeResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveNodeReplaceConfigurationResponse>
+            removeNodeReplaceConfiguration(
+                    RemoveNodeReplaceConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveNodeReplaceConfigurationRequest,
+                                    RemoveNodeReplaceConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getNodeReplaceConfigurationId(),
+                "nodeReplaceConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveNodeReplaceConfigurationDetails(),
+                "removeNodeReplaceConfigurationDetails is required");
+
+        return clientCall(request, RemoveNodeReplaceConfigurationResponse::builder)
+                .logger(LOG, "removeNodeReplaceConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "RemoveNodeReplaceConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/NodeReplaceConfiguration/RemoveNodeReplaceConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveNodeReplaceConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeReplaceConfigurations")
+                .appendPathParam(request.getNodeReplaceConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("remove")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveNodeReplaceConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveNodeReplaceConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveResourcePrincipalConfigurationResponse>
+            removeResourcePrincipalConfiguration(
+                    RemoveResourcePrincipalConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveResourcePrincipalConfigurationRequest,
+                                    RemoveResourcePrincipalConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getResourcePrincipalConfigurationId(),
+                "resourcePrincipalConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourcePrincipalConfigurationDetails(),
+                "removeResourcePrincipalConfigurationDetails is required");
+
+        return clientCall(request, RemoveResourcePrincipalConfigurationResponse::builder)
+                .logger(LOG, "removeResourcePrincipalConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "RemoveResourcePrincipalConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/ResourcePrincipalConfiguration/RemoveResourcePrincipalConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveResourcePrincipalConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("resourcePrincipalConfigurations")
+                .appendPathParam(request.getResourcePrincipalConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("remove")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveResourcePrincipalConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveResourcePrincipalConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RenewCertificateResponse> renewCertificate(
+            RenewCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RenewCertificateRequest, RenewCertificateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getRenewCertificateDetails(), "renewCertificateDetails is required");
+
+        return clientCall(request, RenewCertificateResponse::builder)
+                .logger(LOG, "renewCertificate")
+                .serviceDetails(
+                        "Bds",
+                        "RenewCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RenewCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RenewCertificateRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("renewOdhServiceCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RenewCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RenewCertificateResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplaceNodeResponse> replaceNode(
+            ReplaceNodeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ReplaceNodeRequest, ReplaceNodeResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getReplaceNodeDetails(), "replaceNodeDetails is required");
+
+        return clientCall(request, ReplaceNodeResponse::builder)
+                .logger(LOG, "replaceNode")
+                .serviceDetails(
+                        "Bds",
+                        "ReplaceNode",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ReplaceNode")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReplaceNodeRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("replaceNode")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ReplaceNodeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ReplaceNodeResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1841,6 +3174,184 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateIdentityConfigurationResponse>
+            updateIdentityConfiguration(
+                    UpdateIdentityConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateIdentityConfigurationRequest,
+                                    UpdateIdentityConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateIdentityConfigurationDetails(),
+                "updateIdentityConfigurationDetails is required");
+
+        return clientCall(request, UpdateIdentityConfigurationResponse::builder)
+                .logger(LOG, "updateIdentityConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "UpdateIdentityConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/UpdateIdentityConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIdentityConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateIdentityConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateIdentityConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNodeBackupConfigurationResponse>
+            updateNodeBackupConfiguration(
+                    UpdateNodeBackupConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateNodeBackupConfigurationRequest,
+                                    UpdateNodeBackupConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getNodeBackupConfigurationId(),
+                "nodeBackupConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNodeBackupConfigurationDetails(),
+                "updateNodeBackupConfigurationDetails is required");
+
+        return clientCall(request, UpdateNodeBackupConfigurationResponse::builder)
+                .logger(LOG, "updateNodeBackupConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "UpdateNodeBackupConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateNodeBackupConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNodeBackupConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackupConfigurations")
+                .appendPathParam(request.getNodeBackupConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateNodeBackupConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateNodeBackupConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNodeReplaceConfigurationResponse>
+            updateNodeReplaceConfiguration(
+                    UpdateNodeReplaceConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateNodeReplaceConfigurationRequest,
+                                    UpdateNodeReplaceConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getNodeReplaceConfigurationId(),
+                "nodeReplaceConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNodeReplaceConfigurationDetails(),
+                "updateNodeReplaceConfigurationDetails is required");
+
+        return clientCall(request, UpdateNodeReplaceConfigurationResponse::builder)
+                .logger(LOG, "updateNodeReplaceConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "UpdateNodeReplaceConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateNodeReplaceConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNodeReplaceConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeReplaceConfigurations")
+                .appendPathParam(request.getNodeReplaceConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateNodeReplaceConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateNodeReplaceConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourcePrincipalConfigurationResponse>
+            updateResourcePrincipalConfiguration(
+                    UpdateResourcePrincipalConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateResourcePrincipalConfigurationRequest,
+                                    UpdateResourcePrincipalConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getResourcePrincipalConfigurationId(),
+                "resourcePrincipalConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateResourcePrincipalConfigurationDetails(),
+                "updateResourcePrincipalConfigurationDetails is required");
+
+        return clientCall(request, UpdateResourcePrincipalConfigurationResponse::builder)
+                .logger(LOG, "updateResourcePrincipalConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "UpdateResourcePrincipalConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateResourcePrincipalConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateResourcePrincipalConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("resourcePrincipalConfigurations")
+                .appendPathParam(request.getResourcePrincipalConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateResourcePrincipalConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateResourcePrincipalConfigurationResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

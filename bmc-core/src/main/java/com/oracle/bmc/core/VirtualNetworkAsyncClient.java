@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -505,6 +505,41 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam("bulkDeletePublicPrefixes")
                 .accept("application/json")
                 .hasBody()
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeByoasnCompartmentResponse> changeByoasnCompartment(
+            ChangeByoasnCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeByoasnCompartmentRequest, ChangeByoasnCompartmentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getByoasnId(), "byoasnId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeByoasnCompartmentDetails(),
+                "changeByoasnCompartmentDetails is required");
+
+        return clientCall(request, ChangeByoasnCompartmentResponse::builder)
+                .logger(LOG, "changeByoasnCompartment")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "ChangeByoasnCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/ChangeByoasnCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeByoasnCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoasns")
+                .appendPathParam(request.getByoasnId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeByoasnCompartmentResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1468,6 +1503,36 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<CreateByoasnResponse> createByoasn(
+            CreateByoasnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateByoasnRequest, CreateByoasnResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCreateByoasnDetails(), "createByoasnDetails is required");
+
+        return clientCall(request, CreateByoasnResponse::builder)
+                .logger(LOG, "createByoasn")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "CreateByoasn",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/CreateByoasn")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateByoasnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoasns")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.Byoasn.class,
+                        CreateByoasnResponse.Builder::byoasn)
+                .handleResponseHeaderString("etag", CreateByoasnResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateByoasnResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateByoipRangeResponse> createByoipRange(
             CreateByoipRangeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2333,6 +2398,33 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteByoasnResponse> deleteByoasn(
+            DeleteByoasnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteByoasnRequest, DeleteByoasnResponse>
+                    handler) {
+
+        Validate.notBlank(request.getByoasnId(), "byoasnId must not be blank");
+
+        return clientCall(request, DeleteByoasnResponse::builder)
+                .logger(LOG, "deleteByoasn")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "DeleteByoasn",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/DeleteByoasn")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteByoasnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoasns")
+                .appendPathParam(request.getByoasnId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteByoasnResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteByoipRangeResponse> deleteByoipRange(
             DeleteByoipRangeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3144,6 +3236,35 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetAllowedIkeIPSecParametersResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetByoasnResponse> getByoasn(
+            GetByoasnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetByoasnRequest, GetByoasnResponse>
+                    handler) {
+
+        Validate.notBlank(request.getByoasnId(), "byoasnId must not be blank");
+
+        return clientCall(request, GetByoasnResponse::builder)
+                .logger(LOG, "getByoasn")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "GetByoasn",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/GetByoasn")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetByoasnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoasns")
+                .appendPathParam(request.getByoasnId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.Byoasn.class, GetByoasnResponse.Builder::byoasn)
+                .handleResponseHeaderString("etag", GetByoasnResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetByoasnResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -4283,6 +4404,42 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourceIpInventoryResponse> getResourceIpInventory(
+            GetResourceIpInventoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetResourceIpInventoryRequest, GetResourceIpInventoryResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDataRequestId(), "dataRequestId must not be blank");
+
+        return clientCall(request, GetResourceIpInventoryResponse::builder)
+                .logger(LOG, "getResourceIpInventory")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "GetResourceIpInventory",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCollection/GetResourceIpInventory")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetResourceIpInventoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipinventory")
+                .appendPathParam("DataRequestId")
+                .appendPathParam(request.getDataRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.IpInventoryCollection.class,
+                        GetResourceIpInventoryResponse.Builder::ipInventoryCollection)
+                .handleResponseHeaderString("etag", GetResourceIpInventoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetResourceIpInventoryResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetResourceIpInventoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", GetResourceIpInventoryResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRouteTableResponse> getRouteTable(
             GetRouteTableRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetRouteTableRequest, GetRouteTableResponse>
@@ -4425,6 +4582,74 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", GetSubnetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSubnetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubnetCidrUtilizationResponse> getSubnetCidrUtilization(
+            GetSubnetCidrUtilizationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSubnetCidrUtilizationRequest, GetSubnetCidrUtilizationResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+
+        return clientCall(request, GetSubnetCidrUtilizationResponse::builder)
+                .logger(LOG, "getSubnetCidrUtilization")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "GetSubnetCidrUtilization",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCidrUtilizationCollection/GetSubnetCidrUtilization")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubnetCidrUtilizationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipInventory")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .appendPathParam("cidrs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.IpInventoryCidrUtilizationCollection.class,
+                        GetSubnetCidrUtilizationResponse.Builder
+                                ::ipInventoryCidrUtilizationCollection)
+                .handleResponseHeaderString("etag", GetSubnetCidrUtilizationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubnetCidrUtilizationResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", GetSubnetCidrUtilizationResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubnetIpInventoryResponse> getSubnetIpInventory(
+            GetSubnetIpInventoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSubnetIpInventoryRequest, GetSubnetIpInventoryResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+
+        return clientCall(request, GetSubnetIpInventoryResponse::builder)
+                .logger(LOG, "getSubnetIpInventory")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "GetSubnetIpInventory",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventorySubnetResourceCollection/GetSubnetIpInventory")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubnetIpInventoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipInventory")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.IpInventorySubnetResourceCollection.class,
+                        GetSubnetIpInventoryResponse.Builder::ipInventorySubnetResourceCollection)
+                .handleResponseHeaderString("etag", GetSubnetIpInventoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubnetIpInventoryResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -4634,6 +4859,52 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<GetVcnOverlapResponse> getVcnOverlap(
+            GetVcnOverlapRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetVcnOverlapRequest, GetVcnOverlapResponse>
+                    handler) {
+
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+        Objects.requireNonNull(
+                request.getGetVcnOverlapDetails(), "getVcnOverlapDetails is required");
+
+        return clientCall(request, GetVcnOverlapResponse::builder)
+                .logger(LOG, "getVcnOverlap")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "GetVcnOverlap",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryVcnOverlapCollection/GetVcnOverlap")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GetVcnOverlapRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipInventory")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("overlaps")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.IpInventoryVcnOverlapCollection.class,
+                        GetVcnOverlapResponse.Builder::ipInventoryVcnOverlapCollection)
+                .handleResponseHeaderString("etag", GetVcnOverlapResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVcnOverlapResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", GetVcnOverlapResponse.Builder::opcTotalItems)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", GetVcnOverlapResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderEnum(
+                        "lifecycle-state",
+                        com.oracle.bmc.core.responses.GetVcnOverlapResponse.LifecycleState::create,
+                        GetVcnOverlapResponse.Builder::lifecycleState)
+                .handleResponseHeaderString(
+                        "data-request-id", GetVcnOverlapResponse.Builder::dataRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetVcnTopologyResponse> getVcnTopology(
             GetVcnTopologyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4778,6 +5049,40 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<Ipv6VnicDetachResponse> ipv6VnicDetach(
+            Ipv6VnicDetachRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            Ipv6VnicDetachRequest, Ipv6VnicDetachResponse>
+                    handler) {
+
+        Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
+
+        return clientCall(request, Ipv6VnicDetachResponse::builder)
+                .logger(LOG, "ipv6VnicDetach")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "Ipv6VnicDetach",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/Ipv6VnicDetach")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(Ipv6VnicDetachRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipv6")
+                .appendPathParam(request.getIpv6Id())
+                .appendPathParam("actions")
+                .appendPathParam("detach")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.core.model.Ipv6.class, Ipv6VnicDetachResponse.Builder::ipv6)
+                .handleResponseHeaderString("etag", Ipv6VnicDetachResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", Ipv6VnicDetachResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAllowedPeerRegionsForRemotePeeringResponse>
             listAllowedPeerRegionsForRemotePeering(
                     ListAllowedPeerRegionsForRemotePeeringRequest request,
@@ -4803,6 +5108,42 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListAllowedPeerRegionsForRemotePeeringResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListByoasnsResponse> listByoasns(
+            ListByoasnsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListByoasnsRequest, ListByoasnsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListByoasnsResponse::builder)
+                .logger(LOG, "listByoasns")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "ListByoasns",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/ListByoasns")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListByoasnsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoasns")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ByoasnCollection.class,
+                        ListByoasnsResponse.Builder::byoasnCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListByoasnsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListByoasnsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -5685,6 +6026,50 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<ListIpInventoryResponse> listIpInventory(
+            ListIpInventoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListIpInventoryRequest, ListIpInventoryResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getListIpInventoryDetails(), "listIpInventoryDetails is required");
+
+        return clientCall(request, ListIpInventoryResponse::builder)
+                .logger(LOG, "listIpInventory")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "ListIpInventory",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCollection/ListIpInventory")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ListIpInventoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipInventory")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.IpInventoryCollection.class,
+                        ListIpInventoryResponse.Builder::ipInventoryCollection)
+                .handleResponseHeaderString("etag", ListIpInventoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListIpInventoryResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListIpInventoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListIpInventoryResponse.Builder::opcTotalItems)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ListIpInventoryResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderEnum(
+                        "lifecycle-state",
+                        com.oracle.bmc.core.responses.ListIpInventoryResponse.LifecycleState
+                                ::create,
+                        ListIpInventoryResponse.Builder::lifecycleState)
+                .handleResponseHeaderString(
+                        "data-request-id", ListIpInventoryResponse.Builder::dataRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListIpv6sResponse> listIpv6s(
             ListIpv6sRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListIpv6sRequest, ListIpv6sResponse>
@@ -5705,6 +6090,8 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("ipAddress", request.getIpAddress())
                 .appendQueryParam("subnetId", request.getSubnetId())
                 .appendQueryParam("vnicId", request.getVnicId())
+                .appendQueryParam("ipState", request.getIpState())
+                .appendQueryParam("lifetime", request.getLifetime())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -5926,6 +6313,8 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("ipAddress", request.getIpAddress())
                 .appendQueryParam("subnetId", request.getSubnetId())
                 .appendQueryParam("vnicId", request.getVnicId())
+                .appendQueryParam("ipState", request.getIpState())
+                .appendQueryParam("lifetime", request.getLifetime())
                 .appendQueryParam("vlanId", request.getVlanId())
                 .accept("application/json")
                 .handleBodyList(
@@ -6511,6 +6900,41 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<PrivateIpVnicDetachResponse> privateIpVnicDetach(
+            PrivateIpVnicDetachRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PrivateIpVnicDetachRequest, PrivateIpVnicDetachResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPrivateIpId(), "privateIpId must not be blank");
+
+        return clientCall(request, PrivateIpVnicDetachResponse::builder)
+                .logger(LOG, "privateIpVnicDetach")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "PrivateIpVnicDetach",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/PrivateIpVnicDetach")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(PrivateIpVnicDetachRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("privateIps")
+                .appendPathParam(request.getPrivateIpId())
+                .appendPathParam("actions")
+                .appendPathParam("detach")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.core.model.PrivateIp.class,
+                        PrivateIpVnicDetachResponse.Builder::privateIp)
+                .handleResponseHeaderString("etag", PrivateIpVnicDetachResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", PrivateIpVnicDetachResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveDrgRouteDistributionStatementsResponse>
             removeDrgRouteDistributionStatements(
                     RemoveDrgRouteDistributionStatementsRequest request,
@@ -6836,6 +7260,105 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", RemoveVcnCidrResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", RemoveVcnCidrResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetOriginAsnResponse> setOriginAsn(
+            SetOriginAsnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<SetOriginAsnRequest, SetOriginAsnResponse>
+                    handler) {
+
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+        Objects.requireNonNull(request.getSetOriginAsnDetails(), "setOriginAsnDetails is required");
+
+        return clientCall(request, SetOriginAsnResponse::builder)
+                .logger(LOG, "setOriginAsn")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "SetOriginAsn",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/SetOriginAsn")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SetOriginAsnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .appendPathParam("actions")
+                .appendPathParam("setOrigin")
+                .appendPathParam("byoasn")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", SetOriginAsnResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", SetOriginAsnResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetOriginAsnToOracleResponse> setOriginAsnToOracle(
+            SetOriginAsnToOracleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SetOriginAsnToOracleRequest, SetOriginAsnToOracleResponse>
+                    handler) {
+
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+
+        return clientCall(request, SetOriginAsnToOracleResponse::builder)
+                .logger(LOG, "setOriginAsnToOracle")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "SetOriginAsnToOracle",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/SetOriginAsnToOracle")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SetOriginAsnToOracleRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .appendPathParam("actions")
+                .appendPathParam("setOrigin")
+                .appendPathParam("oracleAsn")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", SetOriginAsnToOracleResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateByoasnResponse> updateByoasn(
+            UpdateByoasnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateByoasnRequest, UpdateByoasnResponse>
+                    handler) {
+
+        Validate.notBlank(request.getByoasnId(), "byoasnId must not be blank");
+        Objects.requireNonNull(request.getUpdateByoasnDetails(), "updateByoasnDetails is required");
+
+        return clientCall(request, UpdateByoasnResponse::builder)
+                .logger(LOG, "updateByoasn")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "UpdateByoasn",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/UpdateByoasn")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateByoasnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoasns")
+                .appendPathParam(request.getByoasnId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.Byoasn.class,
+                        UpdateByoasnResponse.Builder::byoasn)
+                .handleResponseHeaderString("etag", UpdateByoasnResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateByoasnResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -8098,6 +8621,39 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", UpgradeDrgResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpgradeDrgResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateByoasnResponse> validateByoasn(
+            ValidateByoasnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ValidateByoasnRequest, ValidateByoasnResponse>
+                    handler) {
+
+        Validate.notBlank(request.getByoasnId(), "byoasnId must not be blank");
+
+        return clientCall(request, ValidateByoasnResponse::builder)
+                .logger(LOG, "validateByoasn")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "ValidateByoasn",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/ValidateByoasn")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ValidateByoasnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoasns")
+                .appendPathParam(request.getByoasnId())
+                .appendPathParam("actions")
+                .appendPathParam("validate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", ValidateByoasnResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ValidateByoasnResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

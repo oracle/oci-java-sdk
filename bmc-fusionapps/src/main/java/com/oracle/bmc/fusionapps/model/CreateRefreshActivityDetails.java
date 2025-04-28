@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fusionapps.model;
@@ -23,26 +23,33 @@ package com.oracle.bmc.fusionapps.model;
 public final class CreateRefreshActivityDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"sourceFusionEnvironmentId", "timeScheduledStart"})
+    @java.beans.ConstructorProperties({
+        "sourceFusionEnvironmentId",
+        "isDataMaskingOpted",
+        "timeScheduledStart"
+    })
     public CreateRefreshActivityDetails(
-            String sourceFusionEnvironmentId, java.util.Date timeScheduledStart) {
+            String sourceFusionEnvironmentId,
+            Boolean isDataMaskingOpted,
+            java.util.Date timeScheduledStart) {
         super();
         this.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
+        this.isDataMaskingOpted = isDataMaskingOpted;
         this.timeScheduledStart = timeScheduledStart;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the source environment
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * source environment
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceFusionEnvironmentId")
         private String sourceFusionEnvironmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the source environment
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * source environment
          *
          * @param sourceFusionEnvironmentId the value to set
          * @return this builder
@@ -50,6 +57,21 @@ public final class CreateRefreshActivityDetails
         public Builder sourceFusionEnvironmentId(String sourceFusionEnvironmentId) {
             this.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
             this.__explicitlySet__.add("sourceFusionEnvironmentId");
+            return this;
+        }
+        /** Represents if the customer opted for Data Masking or not during refreshActivity. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDataMaskingOpted")
+        private Boolean isDataMaskingOpted;
+
+        /**
+         * Represents if the customer opted for Data Masking or not during refreshActivity.
+         *
+         * @param isDataMaskingOpted the value to set
+         * @return this builder
+         */
+        public Builder isDataMaskingOpted(Boolean isDataMaskingOpted) {
+            this.isDataMaskingOpted = isDataMaskingOpted;
+            this.__explicitlySet__.add("isDataMaskingOpted");
             return this;
         }
         /**
@@ -78,7 +100,9 @@ public final class CreateRefreshActivityDetails
         public CreateRefreshActivityDetails build() {
             CreateRefreshActivityDetails model =
                     new CreateRefreshActivityDetails(
-                            this.sourceFusionEnvironmentId, this.timeScheduledStart);
+                            this.sourceFusionEnvironmentId,
+                            this.isDataMaskingOpted,
+                            this.timeScheduledStart);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -89,6 +113,9 @@ public final class CreateRefreshActivityDetails
         public Builder copy(CreateRefreshActivityDetails model) {
             if (model.wasPropertyExplicitlySet("sourceFusionEnvironmentId")) {
                 this.sourceFusionEnvironmentId(model.getSourceFusionEnvironmentId());
+            }
+            if (model.wasPropertyExplicitlySet("isDataMaskingOpted")) {
+                this.isDataMaskingOpted(model.getIsDataMaskingOpted());
             }
             if (model.wasPropertyExplicitlySet("timeScheduledStart")) {
                 this.timeScheduledStart(model.getTimeScheduledStart());
@@ -107,20 +134,33 @@ public final class CreateRefreshActivityDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the source environment
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * source environment
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceFusionEnvironmentId")
     private final String sourceFusionEnvironmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the source environment
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * source environment
      *
      * @return the value
      */
     public String getSourceFusionEnvironmentId() {
         return sourceFusionEnvironmentId;
+    }
+
+    /** Represents if the customer opted for Data Masking or not during refreshActivity. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDataMaskingOpted")
+    private final Boolean isDataMaskingOpted;
+
+    /**
+     * Represents if the customer opted for Data Masking or not during refreshActivity.
+     *
+     * @return the value
+     */
+    public Boolean getIsDataMaskingOpted() {
+        return isDataMaskingOpted;
     }
 
     /**
@@ -157,6 +197,7 @@ public final class CreateRefreshActivityDetails
         sb.append("super=").append(super.toString());
         sb.append("sourceFusionEnvironmentId=")
                 .append(String.valueOf(this.sourceFusionEnvironmentId));
+        sb.append(", isDataMaskingOpted=").append(String.valueOf(this.isDataMaskingOpted));
         sb.append(", timeScheduledStart=").append(String.valueOf(this.timeScheduledStart));
         sb.append(")");
         return sb.toString();
@@ -174,6 +215,7 @@ public final class CreateRefreshActivityDetails
         CreateRefreshActivityDetails other = (CreateRefreshActivityDetails) o;
         return java.util.Objects.equals(
                         this.sourceFusionEnvironmentId, other.sourceFusionEnvironmentId)
+                && java.util.Objects.equals(this.isDataMaskingOpted, other.isDataMaskingOpted)
                 && java.util.Objects.equals(this.timeScheduledStart, other.timeScheduledStart)
                 && super.equals(other);
     }
@@ -187,6 +229,11 @@ public final class CreateRefreshActivityDetails
                         + (this.sourceFusionEnvironmentId == null
                                 ? 43
                                 : this.sourceFusionEnvironmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDataMaskingOpted == null
+                                ? 43
+                                : this.isDataMaskingOpted.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeScheduledStart == null

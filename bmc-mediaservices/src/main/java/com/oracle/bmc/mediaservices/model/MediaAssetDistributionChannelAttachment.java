@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.model;
@@ -29,7 +29,8 @@ public final class MediaAssetDistributionChannelAttachment
         "version",
         "lifecycleState",
         "metadataRef",
-        "mediaWorkflowJobId"
+        "mediaWorkflowJobId",
+        "locks"
     })
     public MediaAssetDistributionChannelAttachment(
             String distributionChannelId,
@@ -37,7 +38,8 @@ public final class MediaAssetDistributionChannelAttachment
             Long version,
             LifecycleState lifecycleState,
             String metadataRef,
-            String mediaWorkflowJobId) {
+            String mediaWorkflowJobId,
+            java.util.List<ResourceLock> locks) {
         super();
         this.distributionChannelId = distributionChannelId;
         this.displayName = displayName;
@@ -45,6 +47,7 @@ public final class MediaAssetDistributionChannelAttachment
         this.lifecycleState = lifecycleState;
         this.metadataRef = metadataRef;
         this.mediaWorkflowJobId = mediaWorkflowJobId;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -143,6 +146,21 @@ public final class MediaAssetDistributionChannelAttachment
             this.__explicitlySet__.add("mediaWorkflowJobId");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -155,7 +173,8 @@ public final class MediaAssetDistributionChannelAttachment
                             this.version,
                             this.lifecycleState,
                             this.metadataRef,
-                            this.mediaWorkflowJobId);
+                            this.mediaWorkflowJobId,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -181,6 +200,9 @@ public final class MediaAssetDistributionChannelAttachment
             }
             if (model.wasPropertyExplicitlySet("mediaWorkflowJobId")) {
                 this.mediaWorkflowJobId(model.getMediaWorkflowJobId());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -325,6 +347,19 @@ public final class MediaAssetDistributionChannelAttachment
         return mediaWorkflowJobId;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -346,6 +381,7 @@ public final class MediaAssetDistributionChannelAttachment
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", metadataRef=").append(String.valueOf(this.metadataRef));
         sb.append(", mediaWorkflowJobId=").append(String.valueOf(this.mediaWorkflowJobId));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -366,6 +402,7 @@ public final class MediaAssetDistributionChannelAttachment
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.metadataRef, other.metadataRef)
                 && java.util.Objects.equals(this.mediaWorkflowJobId, other.mediaWorkflowJobId)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -389,6 +426,7 @@ public final class MediaAssetDistributionChannelAttachment
                         + (this.mediaWorkflowJobId == null
                                 ? 43
                                 : this.mediaWorkflowJobId.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

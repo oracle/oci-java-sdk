@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Resource profile summary. <br>
+ * Summary information for a resource profile. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,6 +33,8 @@ public final class ResourceProfileSummary
         "tactics",
         "timeFirstDetected",
         "timeLastDetected",
+        "timeFirstOccurred",
+        "timeLastOccurred",
         "problemsCount"
     })
     public ResourceProfileSummary(
@@ -45,6 +47,8 @@ public final class ResourceProfileSummary
             java.util.List<TacticSummary> tactics,
             java.util.Date timeFirstDetected,
             java.util.Date timeLastDetected,
+            java.util.Date timeFirstOccurred,
+            java.util.Date timeLastOccurred,
             Integer problemsCount) {
         super();
         this.sightingsCount = sightingsCount;
@@ -56,17 +60,19 @@ public final class ResourceProfileSummary
         this.tactics = tactics;
         this.timeFirstDetected = timeFirstDetected;
         this.timeLastDetected = timeLastDetected;
+        this.timeFirstOccurred = timeFirstOccurred;
+        this.timeLastOccurred = timeLastOccurred;
         this.problemsCount = problemsCount;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Number of sightings associated with this resource profile */
+        /** Number of sightings associated with the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("sightingsCount")
         private Integer sightingsCount;
 
         /**
-         * Number of sightings associated with this resource profile
+         * Number of sightings associated with the resource profile
          *
          * @param sightingsCount the value to set
          * @return this builder
@@ -76,12 +82,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("sightingsCount");
             return this;
         }
-        /** Unique identifier for resource profile */
+        /** Unique identifier for the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for resource profile
+         * Unique identifier for the resource profile
          *
          * @param id the value to set
          * @return this builder
@@ -91,12 +97,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Unique identifier for resource profile */
+        /** Unique identifier for the resource associated with the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * Unique identifier for resource profile
+         * Unique identifier for the resource associated with the resource profile
          *
          * @param resourceId the value to set
          * @return this builder
@@ -106,12 +112,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Resource name for resource profile */
+        /** Display name for the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Resource name for resource profile
+         * Display name for the resource profile
          *
          * @param displayName the value to set
          * @return this builder
@@ -121,12 +127,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Resource type for resource profile */
+        /** Resource type for the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * Resource type for resource profile
+         * Resource type for the resource profile
          *
          * @param type the value to set
          * @return this builder
@@ -136,12 +142,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Risk Score for the resource profile */
+        /** Risk score for the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
         private Double riskScore;
 
         /**
-         * Risk Score for the resource profile
+         * Risk score for the resource profile
          *
          * @param riskScore the value to set
          * @return this builder
@@ -151,12 +157,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("riskScore");
             return this;
         }
-        /** List of tactic summary associated with the resource profile. */
+        /** List of tactic summaries associated with the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("tactics")
         private java.util.List<TacticSummary> tactics;
 
         /**
-         * List of tactic summary associated with the resource profile.
+         * List of tactic summaries associated with the resource profile
          *
          * @param tactics the value to set
          * @return this builder
@@ -166,12 +172,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("tactics");
             return this;
         }
-        /** The date and time the resource profile was first detected. Format defined by RFC3339. */
+        /** Time the activities were first detected. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
         private java.util.Date timeFirstDetected;
 
         /**
-         * The date and time the resource profile was first detected. Format defined by RFC3339.
+         * Time the activities were first detected. Format defined by RFC3339.
          *
          * @param timeFirstDetected the value to set
          * @return this builder
@@ -181,12 +187,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("timeFirstDetected");
             return this;
         }
-        /** The date and time the resource profile was last detected. Format defined by RFC3339. */
+        /** Time the activities were last detected. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
         private java.util.Date timeLastDetected;
 
         /**
-         * The date and time the resource profile was last detected. Format defined by RFC3339.
+         * Time the activities were last detected. Format defined by RFC3339.
          *
          * @param timeLastDetected the value to set
          * @return this builder
@@ -194,6 +200,36 @@ public final class ResourceProfileSummary
         public Builder timeLastDetected(java.util.Date timeLastDetected) {
             this.timeLastDetected = timeLastDetected;
             this.__explicitlySet__.add("timeLastDetected");
+            return this;
+        }
+        /** Time the activities were first performed. Format defined by RFC3339. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
+        private java.util.Date timeFirstOccurred;
+
+        /**
+         * Time the activities were first performed. Format defined by RFC3339.
+         *
+         * @param timeFirstOccurred the value to set
+         * @return this builder
+         */
+        public Builder timeFirstOccurred(java.util.Date timeFirstOccurred) {
+            this.timeFirstOccurred = timeFirstOccurred;
+            this.__explicitlySet__.add("timeFirstOccurred");
+            return this;
+        }
+        /** Time the activities were last performed. Format defined by RFC3339. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastOccurred")
+        private java.util.Date timeLastOccurred;
+
+        /**
+         * Time the activities were last performed. Format defined by RFC3339.
+         *
+         * @param timeLastOccurred the value to set
+         * @return this builder
+         */
+        public Builder timeLastOccurred(java.util.Date timeLastOccurred) {
+            this.timeLastOccurred = timeLastOccurred;
+            this.__explicitlySet__.add("timeLastOccurred");
             return this;
         }
         /** Number of problems associated with this resource profile */
@@ -227,6 +263,8 @@ public final class ResourceProfileSummary
                             this.tactics,
                             this.timeFirstDetected,
                             this.timeLastDetected,
+                            this.timeFirstOccurred,
+                            this.timeLastOccurred,
                             this.problemsCount);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -263,6 +301,12 @@ public final class ResourceProfileSummary
             if (model.wasPropertyExplicitlySet("timeLastDetected")) {
                 this.timeLastDetected(model.getTimeLastDetected());
             }
+            if (model.wasPropertyExplicitlySet("timeFirstOccurred")) {
+                this.timeFirstOccurred(model.getTimeFirstOccurred());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastOccurred")) {
+                this.timeLastOccurred(model.getTimeLastOccurred());
+            }
             if (model.wasPropertyExplicitlySet("problemsCount")) {
                 this.problemsCount(model.getProblemsCount());
             }
@@ -279,12 +323,12 @@ public final class ResourceProfileSummary
         return new Builder().copy(this);
     }
 
-    /** Number of sightings associated with this resource profile */
+    /** Number of sightings associated with the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("sightingsCount")
     private final Integer sightingsCount;
 
     /**
-     * Number of sightings associated with this resource profile
+     * Number of sightings associated with the resource profile
      *
      * @return the value
      */
@@ -292,12 +336,12 @@ public final class ResourceProfileSummary
         return sightingsCount;
     }
 
-    /** Unique identifier for resource profile */
+    /** Unique identifier for the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for resource profile
+     * Unique identifier for the resource profile
      *
      * @return the value
      */
@@ -305,12 +349,12 @@ public final class ResourceProfileSummary
         return id;
     }
 
-    /** Unique identifier for resource profile */
+    /** Unique identifier for the resource associated with the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * Unique identifier for resource profile
+     * Unique identifier for the resource associated with the resource profile
      *
      * @return the value
      */
@@ -318,12 +362,12 @@ public final class ResourceProfileSummary
         return resourceId;
     }
 
-    /** Resource name for resource profile */
+    /** Display name for the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Resource name for resource profile
+     * Display name for the resource profile
      *
      * @return the value
      */
@@ -331,12 +375,12 @@ public final class ResourceProfileSummary
         return displayName;
     }
 
-    /** Resource type for resource profile */
+    /** Resource type for the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * Resource type for resource profile
+     * Resource type for the resource profile
      *
      * @return the value
      */
@@ -344,12 +388,12 @@ public final class ResourceProfileSummary
         return type;
     }
 
-    /** Risk Score for the resource profile */
+    /** Risk score for the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
     private final Double riskScore;
 
     /**
-     * Risk Score for the resource profile
+     * Risk score for the resource profile
      *
      * @return the value
      */
@@ -357,12 +401,12 @@ public final class ResourceProfileSummary
         return riskScore;
     }
 
-    /** List of tactic summary associated with the resource profile. */
+    /** List of tactic summaries associated with the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("tactics")
     private final java.util.List<TacticSummary> tactics;
 
     /**
-     * List of tactic summary associated with the resource profile.
+     * List of tactic summaries associated with the resource profile
      *
      * @return the value
      */
@@ -370,12 +414,12 @@ public final class ResourceProfileSummary
         return tactics;
     }
 
-    /** The date and time the resource profile was first detected. Format defined by RFC3339. */
+    /** Time the activities were first detected. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
     private final java.util.Date timeFirstDetected;
 
     /**
-     * The date and time the resource profile was first detected. Format defined by RFC3339.
+     * Time the activities were first detected. Format defined by RFC3339.
      *
      * @return the value
      */
@@ -383,17 +427,43 @@ public final class ResourceProfileSummary
         return timeFirstDetected;
     }
 
-    /** The date and time the resource profile was last detected. Format defined by RFC3339. */
+    /** Time the activities were last detected. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
     private final java.util.Date timeLastDetected;
 
     /**
-     * The date and time the resource profile was last detected. Format defined by RFC3339.
+     * Time the activities were last detected. Format defined by RFC3339.
      *
      * @return the value
      */
     public java.util.Date getTimeLastDetected() {
         return timeLastDetected;
+    }
+
+    /** Time the activities were first performed. Format defined by RFC3339. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
+    private final java.util.Date timeFirstOccurred;
+
+    /**
+     * Time the activities were first performed. Format defined by RFC3339.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeFirstOccurred() {
+        return timeFirstOccurred;
+    }
+
+    /** Time the activities were last performed. Format defined by RFC3339. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastOccurred")
+    private final java.util.Date timeLastOccurred;
+
+    /**
+     * Time the activities were last performed. Format defined by RFC3339.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastOccurred() {
+        return timeLastOccurred;
     }
 
     /** Number of problems associated with this resource profile */
@@ -433,6 +503,8 @@ public final class ResourceProfileSummary
         sb.append(", tactics=").append(String.valueOf(this.tactics));
         sb.append(", timeFirstDetected=").append(String.valueOf(this.timeFirstDetected));
         sb.append(", timeLastDetected=").append(String.valueOf(this.timeLastDetected));
+        sb.append(", timeFirstOccurred=").append(String.valueOf(this.timeFirstOccurred));
+        sb.append(", timeLastOccurred=").append(String.valueOf(this.timeLastOccurred));
         sb.append(", problemsCount=").append(String.valueOf(this.problemsCount));
         sb.append(")");
         return sb.toString();
@@ -457,6 +529,8 @@ public final class ResourceProfileSummary
                 && java.util.Objects.equals(this.tactics, other.tactics)
                 && java.util.Objects.equals(this.timeFirstDetected, other.timeFirstDetected)
                 && java.util.Objects.equals(this.timeLastDetected, other.timeLastDetected)
+                && java.util.Objects.equals(this.timeFirstOccurred, other.timeFirstOccurred)
+                && java.util.Objects.equals(this.timeLastOccurred, other.timeLastOccurred)
                 && java.util.Objects.equals(this.problemsCount, other.problemsCount)
                 && super.equals(other);
     }
@@ -480,6 +554,12 @@ public final class ResourceProfileSummary
         result =
                 (result * PRIME)
                         + (this.timeLastDetected == null ? 43 : this.timeLastDetected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstOccurred == null ? 43 : this.timeFirstOccurred.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastOccurred == null ? 43 : this.timeLastOccurred.hashCode());
         result =
                 (result * PRIME)
                         + (this.problemsCount == null ? 43 : this.problemsCount.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.dns.requests;
 import com.oracle.bmc.dns.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetZoneRecordsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetZoneRecordsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetZoneRecordsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
@@ -200,10 +200,16 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
-    /** The OCID of the view the resource is associated with. */
+    /**
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by
+     * name.
+     */
     private String viewId;
 
-    /** The OCID of the view the resource is associated with. */
+    /**
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by
+     * name.
+     */
     public String getViewId() {
         return viewId;
     }
@@ -450,11 +456,15 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The OCID of the view the resource is associated with. */
+        /**
+         * The OCID of the view the zone is associated with. Required when accessing a private zone
+         * by name.
+         */
         private String viewId = null;
 
         /**
-         * The OCID of the view the resource is associated with.
+         * The OCID of the view the zone is associated with. Required when accessing a private zone
+         * by name.
          *
          * @param viewId the value to set
          * @return this builder instance

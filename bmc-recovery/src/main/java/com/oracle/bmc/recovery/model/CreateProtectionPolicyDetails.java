@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.recovery.model;
@@ -27,6 +27,8 @@ public final class CreateProtectionPolicyDetails
         "displayName",
         "backupRetentionPeriodInDays",
         "compartmentId",
+        "mustEnforceCloudLocality",
+        "policyLockedDateTime",
         "freeformTags",
         "definedTags"
     })
@@ -34,12 +36,16 @@ public final class CreateProtectionPolicyDetails
             String displayName,
             Integer backupRetentionPeriodInDays,
             String compartmentId,
+            Boolean mustEnforceCloudLocality,
+            String policyLockedDateTime,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
         this.compartmentId = compartmentId;
+        this.mustEnforceCloudLocality = mustEnforceCloudLocality;
+        this.policyLockedDateTime = policyLockedDateTime;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -96,6 +102,84 @@ public final class CreateProtectionPolicyDetails
             return this;
         }
         /**
+         * Indicates whether the protection policy enforces Recovery Service to retain backups in
+         * the same cloud service environment where your Oracle Database is provisioned. This
+         * parameter is applicable if your Oracle Database runs in a different cloud service
+         * environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter
+         * to TRUE, then Recovery Service stores the database backups locally in the same cloud
+         * service environment where the database resides. For example, if your Oracle Database is
+         * provisioned on Microsoft Azure, then Recovery Service stores the database backups in
+         * Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection
+         * policy after you create it.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("mustEnforceCloudLocality")
+        private Boolean mustEnforceCloudLocality;
+
+        /**
+         * Indicates whether the protection policy enforces Recovery Service to retain backups in
+         * the same cloud service environment where your Oracle Database is provisioned. This
+         * parameter is applicable if your Oracle Database runs in a different cloud service
+         * environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter
+         * to TRUE, then Recovery Service stores the database backups locally in the same cloud
+         * service environment where the database resides. For example, if your Oracle Database is
+         * provisioned on Microsoft Azure, then Recovery Service stores the database backups in
+         * Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection
+         * policy after you create it.
+         *
+         * @param mustEnforceCloudLocality the value to set
+         * @return this builder
+         */
+        public Builder mustEnforceCloudLocality(Boolean mustEnforceCloudLocality) {
+            this.mustEnforceCloudLocality = mustEnforceCloudLocality;
+            this.__explicitlySet__.add("mustEnforceCloudLocality");
+            return this;
+        }
+        /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the
+         * retention lock to take effect and permanently lock the retention period defined in the
+         * policy.
+         *
+         * <p>The retention lock feature controls whether Recovery Service strictly preserves
+         * backups for the duration defined in a policy. Retention lock is useful to enforce
+         * recovery window compliance and to prevent unintentional modifications to protected
+         * database backups. * Recovery Service enforces a 14-day delay before the retention lock
+         * set for a policy can take effect. Therefore, you must set policyLockedDateTime to a date
+         * that occurs 14 days after the current date. * For example, assuming that the current date
+         * is Aug 1, 2023 9 pm, you can set policyLockedDateTime to '2023-08-15T21:00:00.600Z' (Aug
+         * 15, 2023, 9:00 pm), or greater. * During the 14-day delay period, you can either increase
+         * or decrease the retention period in the policy. * However, you are only allowed to
+         * increase the retention period on or after the retention lock date. * You cannot change
+         * the value of policyLockedDateTime if the retention lock is already in effect.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+        private String policyLockedDateTime;
+
+        /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the
+         * retention lock to take effect and permanently lock the retention period defined in the
+         * policy.
+         *
+         * <p>The retention lock feature controls whether Recovery Service strictly preserves
+         * backups for the duration defined in a policy. Retention lock is useful to enforce
+         * recovery window compliance and to prevent unintentional modifications to protected
+         * database backups. * Recovery Service enforces a 14-day delay before the retention lock
+         * set for a policy can take effect. Therefore, you must set policyLockedDateTime to a date
+         * that occurs 14 days after the current date. * For example, assuming that the current date
+         * is Aug 1, 2023 9 pm, you can set policyLockedDateTime to '2023-08-15T21:00:00.600Z' (Aug
+         * 15, 2023, 9:00 pm), or greater. * During the 14-day delay period, you can either increase
+         * or decrease the retention period in the policy. * However, you are only allowed to
+         * increase the retention period on or after the retention lock date. * You cannot change
+         * the value of policyLockedDateTime if the retention lock is already in effect.
+         *
+         * @param policyLockedDateTime the value to set
+         * @return this builder
+         */
+        public Builder policyLockedDateTime(String policyLockedDateTime) {
+            this.policyLockedDateTime = policyLockedDateTime;
+            this.__explicitlySet__.add("policyLockedDateTime");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          */
@@ -148,6 +232,8 @@ public final class CreateProtectionPolicyDetails
                             this.displayName,
                             this.backupRetentionPeriodInDays,
                             this.compartmentId,
+                            this.mustEnforceCloudLocality,
+                            this.policyLockedDateTime,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -166,6 +252,12 @@ public final class CreateProtectionPolicyDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("mustEnforceCloudLocality")) {
+                this.mustEnforceCloudLocality(model.getMustEnforceCloudLocality());
+            }
+            if (model.wasPropertyExplicitlySet("policyLockedDateTime")) {
+                this.policyLockedDateTime(model.getPolicyLockedDateTime());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -230,6 +322,76 @@ public final class CreateProtectionPolicyDetails
     }
 
     /**
+     * Indicates whether the protection policy enforces Recovery Service to retain backups in the
+     * same cloud service environment where your Oracle Database is provisioned. This parameter is
+     * applicable if your Oracle Database runs in a different cloud service environment, such as
+     * Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery
+     * Service stores the database backups locally in the same cloud service environment where the
+     * database resides. For example, if your Oracle Database is provisioned on Microsoft Azure,
+     * then Recovery Service stores the database backups in Azure. Note: You cannot change the
+     * mustEnforceCloudLocality setting for a protection policy after you create it.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("mustEnforceCloudLocality")
+    private final Boolean mustEnforceCloudLocality;
+
+    /**
+     * Indicates whether the protection policy enforces Recovery Service to retain backups in the
+     * same cloud service environment where your Oracle Database is provisioned. This parameter is
+     * applicable if your Oracle Database runs in a different cloud service environment, such as
+     * Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery
+     * Service stores the database backups locally in the same cloud service environment where the
+     * database resides. For example, if your Oracle Database is provisioned on Microsoft Azure,
+     * then Recovery Service stores the database backups in Azure. Note: You cannot change the
+     * mustEnforceCloudLocality setting for a protection policy after you create it.
+     *
+     * @return the value
+     */
+    public Boolean getMustEnforceCloudLocality() {
+        return mustEnforceCloudLocality;
+    }
+
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
+     * lock to take effect and permanently lock the retention period defined in the policy.
+     *
+     * <p>The retention lock feature controls whether Recovery Service strictly preserves backups
+     * for the duration defined in a policy. Retention lock is useful to enforce recovery window
+     * compliance and to prevent unintentional modifications to protected database backups. *
+     * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take
+     * effect. Therefore, you must set policyLockedDateTime to a date that occurs 14 days after the
+     * current date. * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set
+     * policyLockedDateTime to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater. *
+     * During the 14-day delay period, you can either increase or decrease the retention period in
+     * the policy. * However, you are only allowed to increase the retention period on or after the
+     * retention lock date. * You cannot change the value of policyLockedDateTime if the retention
+     * lock is already in effect.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+    private final String policyLockedDateTime;
+
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
+     * lock to take effect and permanently lock the retention period defined in the policy.
+     *
+     * <p>The retention lock feature controls whether Recovery Service strictly preserves backups
+     * for the duration defined in a policy. Retention lock is useful to enforce recovery window
+     * compliance and to prevent unintentional modifications to protected database backups. *
+     * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take
+     * effect. Therefore, you must set policyLockedDateTime to a date that occurs 14 days after the
+     * current date. * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set
+     * policyLockedDateTime to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater. *
+     * During the 14-day delay period, you can either increase or decrease the retention period in
+     * the policy. * However, you are only allowed to increase the retention period on or after the
+     * retention lock date. * You cannot change the value of policyLockedDateTime if the retention
+     * lock is already in effect.
+     *
+     * @return the value
+     */
+    public String getPolicyLockedDateTime() {
+        return policyLockedDateTime;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      */
@@ -284,6 +446,9 @@ public final class CreateProtectionPolicyDetails
         sb.append(", backupRetentionPeriodInDays=")
                 .append(String.valueOf(this.backupRetentionPeriodInDays));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", mustEnforceCloudLocality=")
+                .append(String.valueOf(this.mustEnforceCloudLocality));
+        sb.append(", policyLockedDateTime=").append(String.valueOf(this.policyLockedDateTime));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -304,6 +469,9 @@ public final class CreateProtectionPolicyDetails
                 && java.util.Objects.equals(
                         this.backupRetentionPeriodInDays, other.backupRetentionPeriodInDays)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.mustEnforceCloudLocality, other.mustEnforceCloudLocality)
+                && java.util.Objects.equals(this.policyLockedDateTime, other.policyLockedDateTime)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -322,6 +490,16 @@ public final class CreateProtectionPolicyDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mustEnforceCloudLocality == null
+                                ? 43
+                                : this.mustEnforceCloudLocality.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.policyLockedDateTime == null
+                                ? 43
+                                : this.policyLockedDateTime.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

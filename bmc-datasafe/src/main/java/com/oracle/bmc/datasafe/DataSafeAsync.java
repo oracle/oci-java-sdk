@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe;
@@ -156,6 +156,58 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Uploads a sensitive types xml file (also called template) to create new sensitive types.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<BulkCreateSensitiveTypesResponse> bulkCreateSensitiveTypes(
+            BulkCreateSensitiveTypesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            BulkCreateSensitiveTypesRequest, BulkCreateSensitiveTypesResponse>
+                    handler);
+
+    /**
+     * Appends the allowedSqls with entries from the logs.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<BulkCreateSqlFirewallAllowedSqlsResponse>
+            bulkCreateSqlFirewallAllowedSqls(
+                    BulkCreateSqlFirewallAllowedSqlsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    BulkCreateSqlFirewallAllowedSqlsRequest,
+                                    BulkCreateSqlFirewallAllowedSqlsResponse>
+                            handler);
+
+    /**
+     * Delete multiple allowed sqls from the SQL firewall policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<BulkDeleteSqlFirewallAllowedSqlsResponse>
+            bulkDeleteSqlFirewallAllowedSqls(
+                    BulkDeleteSqlFirewallAllowedSqlsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    BulkDeleteSqlFirewallAllowedSqlsRequest,
+                                    BulkDeleteSqlFirewallAllowedSqlsResponse>
+                            handler);
+
+    /**
      * Calculates the volume of audit events available on the target database to be collected.
      * Measurable up to the defined retention period of the audit target resource.
      *
@@ -222,6 +274,23 @@ public interface DataSafeAsync extends AutoCloseable {
             ChangeAlertCompartmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeAlertCompartmentRequest, ChangeAlertCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves the specified alert policy into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAlertPolicyCompartmentResponse> changeAlertPolicyCompartment(
+            ChangeAlertPolicyCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeAlertPolicyCompartmentRequest,
+                            ChangeAlertPolicyCompartmentResponse>
                     handler);
 
     /**
@@ -368,6 +437,25 @@ public interface DataSafeAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeMaskingPolicyCompartmentRequest,
                                     ChangeMaskingPolicyCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves the specified masking policy health report and its dependent resources into a different
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeMaskingPolicyHealthReportCompartmentResponse>
+            changeMaskingPolicyHealthReportCompartment(
+                    ChangeMaskingPolicyHealthReportCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMaskingPolicyHealthReportCompartmentRequest,
+                                    ChangeMaskingPolicyHealthReportCompartmentResponse>
                             handler);
 
     /**
@@ -558,6 +646,42 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the sensitive type group to the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSensitiveTypeGroupCompartmentResponse>
+            changeSensitiveTypeGroupCompartment(
+                    ChangeSensitiveTypeGroupCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSensitiveTypeGroupCompartmentRequest,
+                                    ChangeSensitiveTypeGroupCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves the specified sensitive types export into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSensitiveTypesExportCompartmentResponse>
+            changeSensitiveTypesExportCompartment(
+                    ChangeSensitiveTypesExportCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSensitiveTypesExportCompartmentRequest,
+                                    ChangeSensitiveTypesExportCompartmentResponse>
+                            handler);
+
+    /**
      * Moves the specified SQL collection and its dependent resources into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -576,7 +700,7 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the specified SQL firewall policy and its dependent resources into a different
+     * Moves the specified SQL Firewall policy and its dependent resources into a different
      * compartment.
      *
      * @param request The request object containing the details to send
@@ -687,6 +811,38 @@ public interface DataSafeAsync extends AutoCloseable {
             CompareUserAssessmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CompareUserAssessmentRequest, CompareUserAssessmentResponse>
+                    handler);
+
+    /**
+     * Creates a new user-defined alert policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAlertPolicyResponse> createAlertPolicy(
+            CreateAlertPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateAlertPolicyRequest, CreateAlertPolicyResponse>
+                    handler);
+
+    /**
+     * Creates a new rule for the alert policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAlertPolicyRuleResponse> createAlertPolicyRule(
+            CreateAlertPolicyRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateAlertPolicyRuleRequest, CreateAlertPolicyRuleResponse>
                     handler);
 
     /**
@@ -854,6 +1010,38 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates the peer target database under the primary target database in Data Safe.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePeerTargetDatabaseResponse> createPeerTargetDatabase(
+            CreatePeerTargetDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePeerTargetDatabaseRequest, CreatePeerTargetDatabaseResponse>
+                    handler);
+
+    /**
+     * Creates a new referential relation in the specified sensitive data model.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateReferentialRelationResponse> createReferentialRelation(
+            CreateReferentialRelationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateReferentialRelationRequest, CreateReferentialRelationResponse>
+                    handler);
+
+    /**
      * Creates a new report definition with parameters specified in the body. The report definition
      * is stored in the specified compartment.
      *
@@ -965,6 +1153,41 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new sensitive type group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSensitiveTypeGroupResponse> createSensitiveTypeGroup(
+            CreateSensitiveTypeGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSensitiveTypeGroupRequest, CreateSensitiveTypeGroupResponse>
+                    handler);
+
+    /**
+     * Generates a downloadable file corresponding to the specified list of sensitive types. It's a
+     * prerequisite for the DownloadSensitiveTypesExport operation. Use this endpoint to generate a
+     * sensitive Types Export file and then use DownloadSensitiveTypesExport to download the
+     * generated file.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSensitiveTypesExportResponse> createSensitiveTypesExport(
+            CreateSensitiveTypesExportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSensitiveTypesExportRequest, CreateSensitiveTypesExportResponse>
+                    handler);
+
+    /**
      * Creates a new SQL collection resource.
      *
      * @param request The request object containing the details to send
@@ -1048,6 +1271,38 @@ public interface DataSafeAsync extends AutoCloseable {
             DeactivateTargetDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeactivateTargetDatabaseRequest, DeactivateTargetDatabaseResponse>
+                    handler);
+
+    /**
+     * Deletes the specified user-defined alert policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAlertPolicyResponse> deleteAlertPolicy(
+            DeleteAlertPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAlertPolicyRequest, DeleteAlertPolicyResponse>
+                    handler);
+
+    /**
+     * Deletes the specified user-defined alert policy rule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAlertPolicyRuleResponse> deleteAlertPolicyRule(
+            DeleteAlertPolicyRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAlertPolicyRuleRequest, DeleteAlertPolicyRuleResponse>
                     handler);
 
     /**
@@ -1182,6 +1437,40 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified masking policy health report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteMaskingPolicyHealthReportResponse>
+            deleteMaskingPolicyHealthReport(
+                    DeleteMaskingPolicyHealthReportRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteMaskingPolicyHealthReportRequest,
+                                    DeleteMaskingPolicyHealthReportResponse>
+                            handler);
+
+    /**
+     * Deletes the specified masking report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteMaskingReportResponse> deleteMaskingReport(
+            DeleteMaskingReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMaskingReportRequest, DeleteMaskingReportResponse>
+                    handler);
+
+    /**
      * Deletes the specified on-premises connector.
      *
      * @param request The request object containing the details to send
@@ -1195,6 +1484,38 @@ public interface DataSafeAsync extends AutoCloseable {
             DeleteOnPremConnectorRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteOnPremConnectorRequest, DeleteOnPremConnectorResponse>
+                    handler);
+
+    /**
+     * Removes the specified peer target database from Data Safe.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePeerTargetDatabaseResponse> deletePeerTargetDatabase(
+            DeletePeerTargetDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePeerTargetDatabaseRequest, DeletePeerTargetDatabaseResponse>
+                    handler);
+
+    /**
+     * Deletes the specified referential relation.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteReferentialRelationResponse> deleteReferentialRelation(
+            DeleteReferentialRelationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteReferentialRelationRequest, DeleteReferentialRelationResponse>
                     handler);
 
     /**
@@ -1301,6 +1622,38 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified sensitive type group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSensitiveTypeGroupResponse> deleteSensitiveTypeGroup(
+            DeleteSensitiveTypeGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSensitiveTypeGroupRequest, DeleteSensitiveTypeGroupResponse>
+                    handler);
+
+    /**
+     * Deletes the specified sensitive types export.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSensitiveTypesExportResponse> deleteSensitiveTypesExport(
+            DeleteSensitiveTypesExportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSensitiveTypesExportRequest, DeleteSensitiveTypesExportResponse>
+                    handler);
+
+    /**
      * Deletes the specified SQL collection.
      *
      * @param request The request object containing the details to send
@@ -1317,7 +1670,23 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the SQL firewall policy resource.
+     * Deletes the specified allowed sql.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSqlFirewallAllowedSqlResponse> deleteSqlFirewallAllowedSql(
+            DeleteSqlFirewallAllowedSqlRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSqlFirewallAllowedSqlRequest, DeleteSqlFirewallAllowedSqlResponse>
+                    handler);
+
+    /**
+     * Deletes the SQL Firewall policy resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1540,6 +1909,25 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Downloads an already-generated file corresponding to the specified sensitive types export.
+     * Use CreateSensitiveTypesExport to generate an XML file and then use
+     * DownloadSensitiveTypesExport to download the generated file.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DownloadSensitiveTypesExportResponse> downloadSensitiveTypesExport(
+            DownloadSensitiveTypesExportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DownloadSensitiveTypesExportRequest,
+                            DownloadSensitiveTypesExportResponse>
+                    handler);
+
+    /**
      * Downloads the report of the specified user assessment. To download the user assessment
      * report, it needs to be generated first. Please use GenerateUserAssessmentReport to generate a
      * downloadable report in the preferred format (PDF, XLS).
@@ -1595,6 +1983,22 @@ public interface DataSafeAsync extends AutoCloseable {
                                     GenerateDiscoveryReportForDownloadRequest,
                                     GenerateDiscoveryReportForDownloadResponse>
                             handler);
+
+    /**
+     * Performs health check on the masking policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateHealthReportResponse> generateHealthReport(
+            GenerateHealthReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GenerateHealthReportRequest, GenerateHealthReportResponse>
+                    handler);
 
     /**
      * Generates a downloadable file corresponding to the specified masking policy. It's a
@@ -1657,7 +2061,7 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Generates a PDF or XLS report based on parameters and report definition.
+     * Generates a .xls or .pdf report based on parameters and report definition.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1714,7 +2118,7 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Generates or appends to the SQL firewall policy using the specified SQL collection.
+     * Generates or appends to the SQL Firewall policy using the specified SQL collection.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1775,6 +2179,22 @@ public interface DataSafeAsync extends AutoCloseable {
     java.util.concurrent.Future<GetAlertPolicyResponse> getAlertPolicy(
             GetAlertPolicyRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetAlertPolicyRequest, GetAlertPolicyResponse>
+                    handler);
+
+    /**
+     * Gets the details of a policy rule by its key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAlertPolicyRuleResponse> getAlertPolicyRule(
+            GetAlertPolicyRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAlertPolicyRuleRequest, GetAlertPolicyRuleResponse>
                     handler);
 
     /**
@@ -1930,6 +2350,38 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a database table access entry object by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseTableAccessEntryResponse> getDatabaseTableAccessEntry(
+            GetDatabaseTableAccessEntryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDatabaseTableAccessEntryRequest, GetDatabaseTableAccessEntryResponse>
+                    handler);
+
+    /**
+     * Gets a database view access object by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseViewAccessEntryResponse> getDatabaseViewAccessEntry(
+            GetDatabaseViewAccessEntryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDatabaseViewAccessEntryRequest, GetDatabaseViewAccessEntryResponse>
+                    handler);
+
+    /**
      * Gets the details of the specified SDM Masking policy difference column.
      *
      * @param request The request object containing the details to send
@@ -2023,6 +2475,23 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the details of the specified masking policy health report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMaskingPolicyHealthReportResponse> getMaskingPolicyHealthReport(
+            GetMaskingPolicyHealthReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetMaskingPolicyHealthReportRequest,
+                            GetMaskingPolicyHealthReportResponse>
+                    handler);
+
+    /**
      * Gets the details of the specified masking report.
      *
      * @param request The request object containing the details to send
@@ -2054,6 +2523,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns the details of the specified Data Safe peer target database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPeerTargetDatabaseResponse> getPeerTargetDatabase(
+            GetPeerTargetDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPeerTargetDatabaseRequest, GetPeerTargetDatabaseResponse>
+                    handler);
+
+    /**
      * Lists the details of given profile available on the target.
      *
      * <p>The GetProfile operation returns only the profiles in the specified 'userAssessmentId'.
@@ -2071,6 +2556,22 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetProfileRequest, GetProfileResponse> handler);
 
     /**
+     * Gets the details of the specified referential relation.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetReferentialRelationResponse> getReferentialRelation(
+            GetReferentialRelationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetReferentialRelationRequest, GetReferentialRelationResponse>
+                    handler);
+
+    /**
      * Gets a report by identifier
      *
      * @param request The request object containing the details to send
@@ -2085,7 +2586,7 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetReportRequest, GetReportResponse> handler);
 
     /**
-     * Downloads the specified report in the form of PDF or XLXS.
+     * Downloads the specified report in the form of .xls or .pdf.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2217,6 +2718,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a security policy report by the specified OCID of the security policy report resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSecurityPolicyReportResponse> getSecurityPolicyReport(
+            GetSecurityPolicyReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSecurityPolicyReportRequest, GetSecurityPolicyReportResponse>
+                    handler);
+
+    /**
      * Gets the details of the specified sensitive column.
      *
      * @param request The request object containing the details to send
@@ -2264,6 +2781,38 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the details of the specified sensitive type group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSensitiveTypeGroupResponse> getSensitiveTypeGroup(
+            GetSensitiveTypeGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSensitiveTypeGroupRequest, GetSensitiveTypeGroupResponse>
+                    handler);
+
+    /**
+     * Gets the details of the specified sensitive types export by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSensitiveTypesExportResponse> getSensitiveTypesExport(
+            GetSensitiveTypesExportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSensitiveTypesExportRequest, GetSensitiveTypesExportResponse>
+                    handler);
+
+    /**
      * Gets a SQL collection by identifier.
      *
      * @param request The request object containing the details to send
@@ -2279,7 +2828,23 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a SQL firewall policy by identifier.
+     * Gets a SQL firewall allowed SQL by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSqlFirewallAllowedSqlResponse> getSqlFirewallAllowedSql(
+            GetSqlFirewallAllowedSqlRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSqlFirewallAllowedSqlRequest, GetSqlFirewallAllowedSqlResponse>
+                    handler);
+
+    /**
+     * Gets a SQL Firewall policy by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2460,15 +3025,15 @@ public interface DataSafeAsync extends AutoCloseable {
      * filter for a specific summary column, specify it in the `summaryField` query parameter.
      *
      * <p>*Example:**
-     * /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostname
+     * /auditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostname
      * &summaryField=dmls&summaryField=privilegeChanges&summaryField=ddls&summaryField=loginFailure&summaryField=loginSuccess
-     * &summaryField=allRecord&q=(auditEventTime ge \"2021-06-13T23:49:14\")
+     * &summaryField=allRecord&scimQuery=(auditEventTime ge \"2021-06-13T23:49:14\")
      *
-     * <p>/ListAuditEventAnalytics?timeStarted=2022-08-18T11:02:26.000Z&timeEnded=2022-08-24T11:02:26.000Z
+     * <p>/auditEventAnalytics?timeStarted=2022-08-18T11:02:26.000Z&timeEnded=2022-08-24T11:02:26.000Z
      * This will give number of events grouped by periods. Period can be 1 day, 1 week, etc.
      *
-     * <p>/ListAuditEventAnalytics?summaryField=targetName&groupBy=targetName This will give the
-     * number of events group by targetName. Only targetName summary column would be returned.
+     * <p>/auditEventAnalytics?summaryField=targetName&groupBy=targetName This will give the number
+     * of events group by targetName. Only targetName summary column would be returned.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2793,6 +3358,48 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves a list of all database table access entries in Data Safe.
+     *
+     * <p>The ListDatabaseTableAccessEntries operation returns only the database table access
+     * reports for the specified security policy report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDatabaseTableAccessEntriesResponse>
+            listDatabaseTableAccessEntries(
+                    ListDatabaseTableAccessEntriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDatabaseTableAccessEntriesRequest,
+                                    ListDatabaseTableAccessEntriesResponse>
+                            handler);
+
+    /**
+     * Retrieves a list of all database view access entries in Data Safe.
+     *
+     * <p>The ListDatabaseViewAccessEntries operation returns only the database view access objects
+     * for the specified security policy report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDatabaseViewAccessEntriesResponse>
+            listDatabaseViewAccessEntries(
+                    ListDatabaseViewAccessEntriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDatabaseViewAccessEntriesRequest,
+                                    ListDatabaseViewAccessEntriesResponse>
+                            handler);
+
+    /**
      * Gets a list of columns of a SDM masking policy difference resource based on the specified
      * query parameters.
      *
@@ -2860,6 +3467,34 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of findings aggregated details in the specified compartment. This provides
+     * information about the overall state of security assessment findings. You can use groupBy to
+     * get the count of findings under a certain risk level and with a certain findingKey, and as
+     * well as get the list of the targets that match the condition. This data is especially useful
+     * content for the statistic chart or to support analytics.
+     *
+     * <p>When you perform the ListFindingAnalytics operation, if the parameter
+     * compartmentIdInSubtree is set to \"true,\" and if the parameter accessLevel is set to
+     * ACCESSIBLE, then the operation returns statistics from the compartments in which the
+     * requestor has INSPECT permissions on at least one resource, directly or indirectly (in
+     * subcompartments). If the operation is performed at the root compartment and the requestor
+     * does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then \"Not Authorized\" is returned.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListFindingAnalyticsResponse> listFindingAnalytics(
+            ListFindingAnalyticsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListFindingAnalyticsRequest, ListFindingAnalyticsResponse>
+                    handler);
+
+    /**
      * List all the findings from all the targets in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -2872,6 +3507,22 @@ public interface DataSafeAsync extends AutoCloseable {
     java.util.concurrent.Future<ListFindingsResponse> listFindings(
             ListFindingsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListFindingsRequest, ListFindingsResponse>
+                    handler);
+
+    /**
+     * List all changes made by user to risk level of findings of the specified assessment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListFindingsChangeAuditLogsResponse> listFindingsChangeAuditLogs(
+            ListFindingsChangeAuditLogsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListFindingsChangeAuditLogsRequest, ListFindingsChangeAuditLogsResponse>
                     handler);
 
     /**
@@ -2891,6 +3542,22 @@ public interface DataSafeAsync extends AutoCloseable {
     java.util.concurrent.Future<ListGrantsResponse> listGrants(
             ListGrantsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListGrantsRequest, ListGrantsResponse> handler);
+
+    /**
+     * Gets the list of sensitive type Ids present in the specified sensitive type group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListGroupedSensitiveTypesResponse> listGroupedSensitiveTypes(
+            ListGroupedSensitiveTypesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListGroupedSensitiveTypesRequest, ListGroupedSensitiveTypesResponse>
+                    handler);
 
     /**
      * Gets a list of library masking formats based on the specified query parameters.
@@ -2961,6 +3628,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of masking errors in a masking run based on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMaskingErrorsResponse> listMaskingErrors(
+            ListMaskingErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMaskingErrorsRequest, ListMaskingErrorsResponse>
+                    handler);
+
+    /**
      * Gets a list of masking objects present in the specified masking policy and based on the
      * specified query parameters.
      *
@@ -2992,6 +3675,61 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListMaskingPoliciesRequest, ListMaskingPoliciesResponse>
                     handler);
+
+    /**
+     * Gets a list of errors and warnings from a masking policy health check.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMaskingPolicyHealthReportLogsResponse>
+            listMaskingPolicyHealthReportLogs(
+                    ListMaskingPolicyHealthReportLogsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListMaskingPolicyHealthReportLogsRequest,
+                                    ListMaskingPolicyHealthReportLogsResponse>
+                            handler);
+
+    /**
+     * Gets a list of masking policy health reports based on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMaskingPolicyHealthReportsResponse>
+            listMaskingPolicyHealthReports(
+                    ListMaskingPolicyHealthReportsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListMaskingPolicyHealthReportsRequest,
+                                    ListMaskingPolicyHealthReportsResponse>
+                            handler);
+
+    /**
+     * Gets a list of referential relations present in the specified masking policy based on the
+     * specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMaskingPolicyReferentialRelationsResponse>
+            listMaskingPolicyReferentialRelations(
+                    ListMaskingPolicyReferentialRelationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListMaskingPolicyReferentialRelationsRequest,
+                                    ListMaskingPolicyReferentialRelationsResponse>
+                            handler);
 
     /**
      * Gets a list of masking reports based on the specified query parameters.
@@ -3043,6 +3781,55 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of count of the users with password expiry dates in next 30 days, between next
+     * 30-90 days, and beyond 90 days based on specified user assessment. It internally uses the
+     * aforementioned userAnalytics api.
+     *
+     * <p>When you perform the ListPasswordExpiryDateAnalytics operation, if the parameter
+     * compartmentIdInSubtree is set to \"true,\" and if the parameter accessLevel is set to
+     * ACCESSIBLE, then the operation returns compartments in which the requestor has READ
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the
+     * operation is performed at the root compartment and the requestor does not have access to at
+     * least one subcompartment of the compartment specified by compartmentId, then \"Not
+     * Authorized\" is returned.
+     *
+     * <p>To use ListPasswordExpiryDateAnalytics to get a full list of all compartments and
+     * subcompartments in the tenancy from the root compartment, set the parameter
+     * compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPasswordExpiryDateAnalyticsResponse>
+            listPasswordExpiryDateAnalytics(
+                    ListPasswordExpiryDateAnalyticsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListPasswordExpiryDateAnalyticsRequest,
+                                    ListPasswordExpiryDateAnalyticsResponse>
+                            handler);
+
+    /**
+     * Lists all the peer target databases under the primary target database identified by the OCID
+     * passed as path parameter.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPeerTargetDatabasesResponse> listPeerTargetDatabases(
+            ListPeerTargetDatabasesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPeerTargetDatabasesRequest, ListPeerTargetDatabasesResponse>
+                    handler);
+
+    /**
      * Gets a list of aggregated user profile details in the specified compartment. This provides
      * information about the overall profiles available. For example, the user profile details
      * include how many users have the profile assigned and do how many use password verification
@@ -3052,7 +3839,7 @@ public interface DataSafeAsync extends AutoCloseable {
      * compartmentIdInSubtree is set to \"true,\" and if the parameter accessLevel is set to
      * ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the
-     * operation is performed at the root compartment. If the requestor does not have access to at
+     * operation is performed at the root compartment and the requestor does not have access to at
      * least one subcompartment of the compartment specified by compartmentId, then \"Not
      * Authorized\" is returned.
      *
@@ -3112,6 +3899,23 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of referential relations present in the specified sensitive data model based on
+     * the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListReferentialRelationsResponse> listReferentialRelations(
+            ListReferentialRelationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListReferentialRelationsRequest, ListReferentialRelationsResponse>
+                    handler);
+
+    /**
      * Gets a list of report definitions. The ListReportDefinitions operation returns only the
      * report definitions in the specified `compartmentId`. It also returns the seeded report
      * definitions which are available to all the compartments.
@@ -3143,6 +3947,25 @@ public interface DataSafeAsync extends AutoCloseable {
     java.util.concurrent.Future<ListReportsResponse> listReports(
             ListReportsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListReportsRequest, ListReportsResponse> handler);
+
+    /**
+     * Retrieves a list of all role grant paths for a particular user.
+     *
+     * <p>The ListRoleGrantPaths operation returns only the role grant paths for the specified
+     * security policy report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRoleGrantPathsResponse> listRoleGrantPaths(
+            ListRoleGrantPathsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRoleGrantPathsRequest, ListRoleGrantPathsResponse>
+                    handler);
 
     /**
      * Returns a list of role metadata objects.
@@ -3220,6 +4043,50 @@ public interface DataSafeAsync extends AutoCloseable {
             ListSecurityAssessmentsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListSecurityAssessmentsRequest, ListSecurityAssessmentsResponse>
+                    handler);
+
+    /**
+     * Gets a list of Database security feature usage aggregated details in the specified
+     * compartment. This provides information about the overall security controls, by returning the
+     * counting number of the target databases using the security features.
+     *
+     * <p>When you perform the ListSecurityFeatureAnalytics operation, if the parameter
+     * compartmentIdInSubtree is set to \"true,\" and if the parameter accessLevel is set to
+     * ACCESSIBLE, then the operation returns statistics from the compartments in which the
+     * requestor has INSPECT permissions on at least one resource, directly or indirectly (in
+     * subcompartments). If the operation is performed at the root compartment and the requestor
+     * does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then \"Not Authorized\" is returned.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSecurityFeatureAnalyticsResponse> listSecurityFeatureAnalytics(
+            ListSecurityFeatureAnalyticsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityFeatureAnalyticsRequest,
+                            ListSecurityFeatureAnalyticsResponse>
+                    handler);
+
+    /**
+     * Lists the usage of Database security features for a given compartment or a target level,
+     * based on the filters provided.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSecurityFeaturesResponse> listSecurityFeatures(
+            ListSecurityFeaturesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityFeaturesRequest, ListSecurityFeaturesResponse>
                     handler);
 
     /**
@@ -3308,6 +4175,66 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Retrieves a list of all security policy reports in Data Safe.
+     *
+     * <p>The ListSecurityPolicyReports operation returns only the security policy reports in the
+     * specified `compartmentId`.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyReports
+     * on the `compartmentId` passed and when it is set to true, the entire hierarchy of
+     * compartments can be returned. To get a full list of all compartments and subcompartments in
+     * the tenancy (root compartment), set the parameter `compartmentIdInSubtree` to true and
+     * `accessLevel` to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSecurityPolicyReportsResponse> listSecurityPolicyReports(
+            ListSecurityPolicyReportsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityPolicyReportsRequest, ListSecurityPolicyReportsResponse>
+                    handler);
+
+    /**
+     * Gets consolidated sensitive columns analytics data based on the specified query parameters.
+     *
+     * <p>When you perform the ListSensitiveColumnAnalytics operation, if the parameter
+     * compartmentIdInSubtree is set to \"true,\" and if the parameter accessLevel is set to
+     * ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the
+     * operation is performed at the root compartment and the requestor does not have access to at
+     * least one subcompartment of the compartment specified by compartmentId, then \"Not
+     * Authorized\" is returned.
+     *
+     * <p>To use ListSensitiveColumnAnalytics to get a full list of all compartments and
+     * subcompartments in the tenancy from the root compartment, set the parameter
+     * compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSensitiveColumnAnalyticsResponse> listSensitiveColumnAnalytics(
+            ListSensitiveColumnAnalyticsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSensitiveColumnAnalyticsRequest,
+                            ListSensitiveColumnAnalyticsResponse>
+                    handler);
+
+    /**
      * Gets a list of sensitive columns present in the specified sensitive data model based on the
      * specified query parameters.
      *
@@ -3323,6 +4250,24 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListSensitiveColumnsRequest, ListSensitiveColumnsResponse>
                     handler);
+
+    /**
+     * Gets a list of sensitive type Ids present in the specified sensitive data model.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSensitiveDataModelSensitiveTypesResponse>
+            listSensitiveDataModelSensitiveTypes(
+                    ListSensitiveDataModelSensitiveTypesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListSensitiveDataModelSensitiveTypesRequest,
+                                    ListSensitiveDataModelSensitiveTypesResponse>
+                            handler);
 
     /**
      * Gets a list of sensitive data models based on the specified query parameters.
@@ -3375,6 +4320,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of sensitive type groups based on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSensitiveTypeGroupsResponse> listSensitiveTypeGroups(
+            ListSensitiveTypeGroupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSensitiveTypeGroupsRequest, ListSensitiveTypeGroupsResponse>
+                    handler);
+
+    /**
      * Gets a list of sensitive types based on the specified query parameters.
      *
      * @param request The request object containing the details to send
@@ -3388,6 +4349,24 @@ public interface DataSafeAsync extends AutoCloseable {
             ListSensitiveTypesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListSensitiveTypesRequest, ListSensitiveTypesResponse>
+                    handler);
+
+    /**
+     * Retrieves a list of all sensitive types export in Data Safe based on the specified query
+     * parameters. The ListSensitiveTypesExports operation returns only the sensitive types export
+     * in the specified `compartmentId`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSensitiveTypesExportsResponse> listSensitiveTypesExports(
+            ListSensitiveTypesExportsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSensitiveTypesExportsRequest, ListSensitiveTypesExportsResponse>
                     handler);
 
     /**
@@ -3470,10 +4449,10 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the aggregation details of all SQL firewall allowed SQL statements.
+     * Returns the aggregation details of all SQL Firewall allowed SQL statements.
      *
      * <p>The ListSqlFirewallAllowedSqlAnalytics operation returns the aggregates of the SQL
-     * firewall allowed SQL statements in the specified `compartmentId`.
+     * Firewall allowed SQL statements in the specified `compartmentId`.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
      * the requestor has INSPECT permissions on at least one resource directly or indirectly
@@ -3503,9 +4482,9 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Retrieves a list of all SQL firewall allowed SQL statements.
+     * Retrieves a list of all SQL Firewall allowed SQL statements.
      *
-     * <p>The ListSqlFirewallAllowedSqls operation returns only the SQL firewall allowed SQL
+     * <p>The ListSqlFirewallAllowedSqls operation returns only the SQL Firewall allowed SQL
      * statements in the specified `compartmentId`.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
@@ -3534,9 +4513,9 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieves a list of all SQL firewall policies.
+     * Retrieves a list of all SQL Firewall policies.
      *
-     * <p>The ListSqlFirewallPolicies operation returns only the SQL firewall policies in the
+     * <p>The ListSqlFirewallPolicies operation returns only the SQL Firewall policies in the
      * specified `compartmentId`.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
@@ -3565,7 +4544,7 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of aggregated SQL firewall policy details.
+     * Gets a list of aggregated SQL Firewall policy details.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
      * the requestor has INSPECT permissions on at least one resource directly or indirectly
@@ -3595,7 +4574,7 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns the aggregation details of the SQL firewall violations.
+     * Returns the aggregation details of the SQL Firewall violations.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3613,7 +4592,7 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of all the SQL firewall violations captured by the firewall.
+     * Gets a list of all the SQL Firewall violations captured by the firewall.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3677,6 +4656,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of aggregated user access analytics in the specified target in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListUserAccessAnalyticsResponse> listUserAccessAnalytics(
+            ListUserAccessAnalyticsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListUserAccessAnalyticsRequest, ListUserAccessAnalyticsResponse>
+                    handler);
+
+    /**
      * Gets a list of aggregated user details from the specified user assessment. This provides
      * information about the overall state. of database user security. For example, the user details
      * include how many users have the DBA role and how many users are in the critical category.
@@ -3684,9 +4679,9 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * <p>When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree
      * is set to \"true,\" and if the parameter accessLevel is set to ACCESSIBLE, then the operation
-     * returns compartments in which the requestor has INSPECT permissions on at least one resource,
+     * returns compartments in which the requestor has READ permissions on at least one resource,
      * directly or indirectly (in subcompartments). If the operation is performed at the root
-     * compartment. If the requestor does not have access to at least one subcompartment of the
+     * compartment and the requestor does not have access to at least one subcompartment of the
      * compartment specified by compartmentId, then \"Not Authorized\" is returned.
      *
      * <p>The parameter compartmentIdInSubtree applies when you perform ListUserAnalytics on the
@@ -3869,6 +4864,23 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Patches one or more sensitive types in a sensitive type group. You can use this operation to
+     * add or remove sensitive type ids in a sensitive type group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchGroupedSensitiveTypesResponse> patchGroupedSensitiveTypes(
+            PatchGroupedSensitiveTypesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchGroupedSensitiveTypesRequest, PatchGroupedSensitiveTypesResponse>
+                    handler);
+
+    /**
      * Patches one or more columns in the specified masking policy. Use it to create, or update
      * masking columns. To create masking columns, use CreateMaskingColumnDetails as the patch
      * value. And to update masking columns, use UpdateMaskingColumnDetails as the patch value.
@@ -3923,6 +4935,23 @@ public interface DataSafeAsync extends AutoCloseable {
             PatchSensitiveColumnsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             PatchSensitiveColumnsRequest, PatchSensitiveColumnsResponse>
+                    handler);
+
+    /**
+     * Delete multiple allowed sqls. You can use this operation to delete one or more allowed sqls.
+     * Create and update of multiple allowed sqls is not supported.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchSqlFirewallAllowedSqlResponse> patchSqlFirewallAllowedSql(
+            PatchSqlFirewallAllowedSqlRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchSqlFirewallAllowedSqlRequest, PatchSqlFirewallAllowedSqlResponse>
                     handler);
 
     /**
@@ -4031,6 +5060,22 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Refreshes the Data Safe target database to update it's state.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RefreshTargetDatabaseResponse> refreshTargetDatabase(
+            RefreshTargetDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RefreshTargetDatabaseRequest, RefreshTargetDatabaseResponse>
+                    handler);
+
+    /**
      * Refreshes the latest assessment and saves it for future reference. This operation runs with a
      * userAssessmentId of type LATEST. Before you start, first call the ListUserAssessments
      * operation with filter \"type = latest\" to get the user assessment ID for the target's latest
@@ -4050,7 +5095,7 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the schedule of a PDF or XLS report.
+     * Deletes the schedule of a .xls or .pdf report.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4114,7 +5159,7 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Schedules a PDF or XLS report based on parameters and report definition.
+     * Schedules a .xls or .pdf report based on parameters and report definition.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4244,9 +5289,11 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Removes the baseline setting for the saved security assessment. The saved security assessment
-     * is no longer considered a baseline. Sets the if-match parameter to the value of the etag from
-     * a previous GET or POST response for that resource.
+     * Removes the baseline setting for the saved security assessment associated with the targetId
+     * passed via body. If no body or empty body is passed then the baseline settings of all the
+     * saved security assessments pertaining to the baseline assessment OCID provided in the path
+     * will be removed. Sets the if-match parameter to the value of the etag from a previous GET or
+     * POST response for that resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4264,9 +5311,11 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Removes the baseline setting for the saved user assessment. The saved user assessment is no
-     * longer considered a baseline. Sets the if-match parameter to the value of the etag from a
-     * previous GET or POST response for that resource.
+     * Removes the baseline setting for the saved user assessment associated with the targetId
+     * passed via body. If no body or empty body is passed then the baseline settings of all the
+     * saved user assessments pertaining to the baseline assessment OCID provided in the path will
+     * be removed. Sets the if-match parameter to the value of the etag from a previous GET or POST
+     * response for that resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4294,6 +5343,38 @@ public interface DataSafeAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateAlertResponse> updateAlert(
             UpdateAlertRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateAlertRequest, UpdateAlertResponse> handler);
+
+    /**
+     * Updates the specified alert policy .
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAlertPolicyResponse> updateAlertPolicy(
+            UpdateAlertPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAlertPolicyRequest, UpdateAlertPolicyResponse>
+                    handler);
+
+    /**
+     * Updates the specified alert policy rule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAlertPolicyRuleResponse> updateAlertPolicyRule(
+            UpdateAlertPolicyRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAlertPolicyRuleRequest, UpdateAlertPolicyRuleResponse>
+                    handler);
 
     /**
      * Updates the audit archive retrieval.
@@ -4394,6 +5475,21 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates one or more attributes of the specified finding.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateFindingResponse> updateFinding(
+            UpdateFindingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateFindingRequest, UpdateFindingResponse>
+                    handler);
+
+    /**
      * Updates one or more attributes of the specified library masking format. Note that updating
      * the formatEntries attribute replaces all the existing masking format entries with the
      * specified format entries.
@@ -4475,6 +5571,37 @@ public interface DataSafeAsync extends AutoCloseable {
             UpdateOnPremConnectorWalletRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateOnPremConnectorWalletRequest, UpdateOnPremConnectorWalletResponse>
+                    handler);
+
+    /**
+     * Updates one or more attributes of the specified Data Safe peer target database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePeerTargetDatabaseResponse> updatePeerTargetDatabase(
+            UpdatePeerTargetDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePeerTargetDatabaseRequest, UpdatePeerTargetDatabaseResponse>
+                    handler);
+
+    /**
+     * Updates the specified report. Only tags can be updated.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateReportResponse> updateReport(
+            UpdateReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateReportRequest, UpdateReportResponse>
                     handler);
 
     /**
@@ -4613,6 +5740,38 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates one or more attributes of the specified sensitive type group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSensitiveTypeGroupResponse> updateSensitiveTypeGroup(
+            UpdateSensitiveTypeGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSensitiveTypeGroupRequest, UpdateSensitiveTypeGroupResponse>
+                    handler);
+
+    /**
+     * Updates one or more attributes of the specified sensitive types export.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSensitiveTypesExportResponse> updateSensitiveTypesExport(
+            UpdateSensitiveTypesExportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSensitiveTypesExportRequest, UpdateSensitiveTypesExportResponse>
+                    handler);
+
+    /**
      * Updates the SQL collection.
      *
      * @param request The request object containing the details to send
@@ -4629,7 +5788,7 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the SQL firewall policy.
+     * Updates the SQL Firewall policy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

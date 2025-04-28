@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -31,6 +31,9 @@ public final class MySqlDataSummary
         "minTimerWait",
         "avgTimerWait",
         "maxTimerWait",
+        "maxControlledMemory",
+        "maxTotalMemory",
+        "sumCpuTime",
         "sumLockTime",
         "sumErrors",
         "sumWarnings",
@@ -54,7 +57,9 @@ public final class MySqlDataSummary
         "lastSeen",
         "quantile95",
         "quantile99",
-        "quantile999"
+        "quantile999",
+        "heatWaveOffloaded",
+        "heatWaveOutOfMemory"
     })
     public MySqlDataSummary(
             String schemaName,
@@ -65,6 +70,9 @@ public final class MySqlDataSummary
             java.math.BigDecimal minTimerWait,
             java.math.BigDecimal avgTimerWait,
             java.math.BigDecimal maxTimerWait,
+            Long maxControlledMemory,
+            Long maxTotalMemory,
+            Long sumCpuTime,
             java.math.BigDecimal sumLockTime,
             java.math.BigDecimal sumErrors,
             java.math.BigDecimal sumWarnings,
@@ -88,7 +96,9 @@ public final class MySqlDataSummary
             java.util.Date lastSeen,
             java.math.BigDecimal quantile95,
             java.math.BigDecimal quantile99,
-            java.math.BigDecimal quantile999) {
+            java.math.BigDecimal quantile999,
+            java.math.BigDecimal heatWaveOffloaded,
+            java.math.BigDecimal heatWaveOutOfMemory) {
         super();
         this.schemaName = schemaName;
         this.digest = digest;
@@ -98,6 +108,9 @@ public final class MySqlDataSummary
         this.minTimerWait = minTimerWait;
         this.avgTimerWait = avgTimerWait;
         this.maxTimerWait = maxTimerWait;
+        this.maxControlledMemory = maxControlledMemory;
+        this.maxTotalMemory = maxTotalMemory;
+        this.sumCpuTime = sumCpuTime;
         this.sumLockTime = sumLockTime;
         this.sumErrors = sumErrors;
         this.sumWarnings = sumWarnings;
@@ -122,6 +135,8 @@ public final class MySqlDataSummary
         this.quantile95 = quantile95;
         this.quantile99 = quantile99;
         this.quantile999 = quantile999;
+        this.heatWaveOffloaded = heatWaveOffloaded;
+        this.heatWaveOutOfMemory = heatWaveOutOfMemory;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -248,6 +263,51 @@ public final class MySqlDataSummary
         public Builder maxTimerWait(java.math.BigDecimal maxTimerWait) {
             this.maxTimerWait = maxTimerWait;
             this.__explicitlySet__.add("maxTimerWait");
+            return this;
+        }
+        /** The maximum amount of controlled memory used by a statement during execution. */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxControlledMemory")
+        private Long maxControlledMemory;
+
+        /**
+         * The maximum amount of controlled memory used by a statement during execution.
+         *
+         * @param maxControlledMemory the value to set
+         * @return this builder
+         */
+        public Builder maxControlledMemory(Long maxControlledMemory) {
+            this.maxControlledMemory = maxControlledMemory;
+            this.__explicitlySet__.add("maxControlledMemory");
+            return this;
+        }
+        /** The maximum amount of memory used by a statement during execution. */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxTotalMemory")
+        private Long maxTotalMemory;
+
+        /**
+         * The maximum amount of memory used by a statement during execution.
+         *
+         * @param maxTotalMemory the value to set
+         * @return this builder
+         */
+        public Builder maxTotalMemory(Long maxTotalMemory) {
+            this.maxTotalMemory = maxTotalMemory;
+            this.__explicitlySet__.add("maxTotalMemory");
+            return this;
+        }
+        /** The total amount of time spent on CPU for this statement. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sumCpuTime")
+        private Long sumCpuTime;
+
+        /**
+         * The total amount of time spent on CPU for this statement.
+         *
+         * @param sumCpuTime the value to set
+         * @return this builder
+         */
+        public Builder sumCpuTime(Long sumCpuTime) {
+            this.sumCpuTime = sumCpuTime;
+            this.__explicitlySet__.add("sumCpuTime");
             return this;
         }
         /** The total amount of time that has been spent waiting for table locks. */
@@ -666,6 +726,36 @@ public final class MySqlDataSummary
             this.__explicitlySet__.add("quantile999");
             return this;
         }
+        /** The number of query executions offloaded to HeatWave. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveOffloaded")
+        private java.math.BigDecimal heatWaveOffloaded;
+
+        /**
+         * The number of query executions offloaded to HeatWave.
+         *
+         * @param heatWaveOffloaded the value to set
+         * @return this builder
+         */
+        public Builder heatWaveOffloaded(java.math.BigDecimal heatWaveOffloaded) {
+            this.heatWaveOffloaded = heatWaveOffloaded;
+            this.__explicitlySet__.add("heatWaveOffloaded");
+            return this;
+        }
+        /** The number of query executions with HeatWave out-of-memory errors. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveOutOfMemory")
+        private java.math.BigDecimal heatWaveOutOfMemory;
+
+        /**
+         * The number of query executions with HeatWave out-of-memory errors.
+         *
+         * @param heatWaveOutOfMemory the value to set
+         * @return this builder
+         */
+        public Builder heatWaveOutOfMemory(java.math.BigDecimal heatWaveOutOfMemory) {
+            this.heatWaveOutOfMemory = heatWaveOutOfMemory;
+            this.__explicitlySet__.add("heatWaveOutOfMemory");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -681,6 +771,9 @@ public final class MySqlDataSummary
                             this.minTimerWait,
                             this.avgTimerWait,
                             this.maxTimerWait,
+                            this.maxControlledMemory,
+                            this.maxTotalMemory,
+                            this.sumCpuTime,
                             this.sumLockTime,
                             this.sumErrors,
                             this.sumWarnings,
@@ -704,7 +797,9 @@ public final class MySqlDataSummary
                             this.lastSeen,
                             this.quantile95,
                             this.quantile99,
-                            this.quantile999);
+                            this.quantile999,
+                            this.heatWaveOffloaded,
+                            this.heatWaveOutOfMemory);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -736,6 +831,15 @@ public final class MySqlDataSummary
             }
             if (model.wasPropertyExplicitlySet("maxTimerWait")) {
                 this.maxTimerWait(model.getMaxTimerWait());
+            }
+            if (model.wasPropertyExplicitlySet("maxControlledMemory")) {
+                this.maxControlledMemory(model.getMaxControlledMemory());
+            }
+            if (model.wasPropertyExplicitlySet("maxTotalMemory")) {
+                this.maxTotalMemory(model.getMaxTotalMemory());
+            }
+            if (model.wasPropertyExplicitlySet("sumCpuTime")) {
+                this.sumCpuTime(model.getSumCpuTime());
             }
             if (model.wasPropertyExplicitlySet("sumLockTime")) {
                 this.sumLockTime(model.getSumLockTime());
@@ -808,6 +912,12 @@ public final class MySqlDataSummary
             }
             if (model.wasPropertyExplicitlySet("quantile999")) {
                 this.quantile999(model.getQuantile999());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveOffloaded")) {
+                this.heatWaveOffloaded(model.getHeatWaveOffloaded());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveOutOfMemory")) {
+                this.heatWaveOutOfMemory(model.getHeatWaveOutOfMemory());
             }
             return this;
         }
@@ -928,6 +1038,45 @@ public final class MySqlDataSummary
      */
     public java.math.BigDecimal getMaxTimerWait() {
         return maxTimerWait;
+    }
+
+    /** The maximum amount of controlled memory used by a statement during execution. */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxControlledMemory")
+    private final Long maxControlledMemory;
+
+    /**
+     * The maximum amount of controlled memory used by a statement during execution.
+     *
+     * @return the value
+     */
+    public Long getMaxControlledMemory() {
+        return maxControlledMemory;
+    }
+
+    /** The maximum amount of memory used by a statement during execution. */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxTotalMemory")
+    private final Long maxTotalMemory;
+
+    /**
+     * The maximum amount of memory used by a statement during execution.
+     *
+     * @return the value
+     */
+    public Long getMaxTotalMemory() {
+        return maxTotalMemory;
+    }
+
+    /** The total amount of time spent on CPU for this statement. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sumCpuTime")
+    private final Long sumCpuTime;
+
+    /**
+     * The total amount of time spent on CPU for this statement.
+     *
+     * @return the value
+     */
+    public Long getSumCpuTime() {
+        return sumCpuTime;
     }
 
     /** The total amount of time that has been spent waiting for table locks. */
@@ -1292,6 +1441,32 @@ public final class MySqlDataSummary
         return quantile999;
     }
 
+    /** The number of query executions offloaded to HeatWave. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveOffloaded")
+    private final java.math.BigDecimal heatWaveOffloaded;
+
+    /**
+     * The number of query executions offloaded to HeatWave.
+     *
+     * @return the value
+     */
+    public java.math.BigDecimal getHeatWaveOffloaded() {
+        return heatWaveOffloaded;
+    }
+
+    /** The number of query executions with HeatWave out-of-memory errors. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveOutOfMemory")
+    private final java.math.BigDecimal heatWaveOutOfMemory;
+
+    /**
+     * The number of query executions with HeatWave out-of-memory errors.
+     *
+     * @return the value
+     */
+    public java.math.BigDecimal getHeatWaveOutOfMemory() {
+        return heatWaveOutOfMemory;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1315,6 +1490,9 @@ public final class MySqlDataSummary
         sb.append(", minTimerWait=").append(String.valueOf(this.minTimerWait));
         sb.append(", avgTimerWait=").append(String.valueOf(this.avgTimerWait));
         sb.append(", maxTimerWait=").append(String.valueOf(this.maxTimerWait));
+        sb.append(", maxControlledMemory=").append(String.valueOf(this.maxControlledMemory));
+        sb.append(", maxTotalMemory=").append(String.valueOf(this.maxTotalMemory));
+        sb.append(", sumCpuTime=").append(String.valueOf(this.sumCpuTime));
         sb.append(", sumLockTime=").append(String.valueOf(this.sumLockTime));
         sb.append(", sumErrors=").append(String.valueOf(this.sumErrors));
         sb.append(", sumWarnings=").append(String.valueOf(this.sumWarnings));
@@ -1340,6 +1518,8 @@ public final class MySqlDataSummary
         sb.append(", quantile95=").append(String.valueOf(this.quantile95));
         sb.append(", quantile99=").append(String.valueOf(this.quantile99));
         sb.append(", quantile999=").append(String.valueOf(this.quantile999));
+        sb.append(", heatWaveOffloaded=").append(String.valueOf(this.heatWaveOffloaded));
+        sb.append(", heatWaveOutOfMemory=").append(String.valueOf(this.heatWaveOutOfMemory));
         sb.append(")");
         return sb.toString();
     }
@@ -1362,6 +1542,9 @@ public final class MySqlDataSummary
                 && java.util.Objects.equals(this.minTimerWait, other.minTimerWait)
                 && java.util.Objects.equals(this.avgTimerWait, other.avgTimerWait)
                 && java.util.Objects.equals(this.maxTimerWait, other.maxTimerWait)
+                && java.util.Objects.equals(this.maxControlledMemory, other.maxControlledMemory)
+                && java.util.Objects.equals(this.maxTotalMemory, other.maxTotalMemory)
+                && java.util.Objects.equals(this.sumCpuTime, other.sumCpuTime)
                 && java.util.Objects.equals(this.sumLockTime, other.sumLockTime)
                 && java.util.Objects.equals(this.sumErrors, other.sumErrors)
                 && java.util.Objects.equals(this.sumWarnings, other.sumWarnings)
@@ -1388,6 +1571,8 @@ public final class MySqlDataSummary
                 && java.util.Objects.equals(this.quantile95, other.quantile95)
                 && java.util.Objects.equals(this.quantile99, other.quantile99)
                 && java.util.Objects.equals(this.quantile999, other.quantile999)
+                && java.util.Objects.equals(this.heatWaveOffloaded, other.heatWaveOffloaded)
+                && java.util.Objects.equals(this.heatWaveOutOfMemory, other.heatWaveOutOfMemory)
                 && super.equals(other);
     }
 
@@ -1403,6 +1588,15 @@ public final class MySqlDataSummary
         result = (result * PRIME) + (this.minTimerWait == null ? 43 : this.minTimerWait.hashCode());
         result = (result * PRIME) + (this.avgTimerWait == null ? 43 : this.avgTimerWait.hashCode());
         result = (result * PRIME) + (this.maxTimerWait == null ? 43 : this.maxTimerWait.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxControlledMemory == null
+                                ? 43
+                                : this.maxControlledMemory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxTotalMemory == null ? 43 : this.maxTotalMemory.hashCode());
+        result = (result * PRIME) + (this.sumCpuTime == null ? 43 : this.sumCpuTime.hashCode());
         result = (result * PRIME) + (this.sumLockTime == null ? 43 : this.sumLockTime.hashCode());
         result = (result * PRIME) + (this.sumErrors == null ? 43 : this.sumErrors.hashCode());
         result = (result * PRIME) + (this.sumWarnings == null ? 43 : this.sumWarnings.hashCode());
@@ -1463,6 +1657,14 @@ public final class MySqlDataSummary
         result = (result * PRIME) + (this.quantile95 == null ? 43 : this.quantile95.hashCode());
         result = (result * PRIME) + (this.quantile99 == null ? 43 : this.quantile99.hashCode());
         result = (result * PRIME) + (this.quantile999 == null ? 43 : this.quantile999.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveOffloaded == null ? 43 : this.heatWaveOffloaded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveOutOfMemory == null
+                                ? 43
+                                : this.heatWaveOutOfMemory.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

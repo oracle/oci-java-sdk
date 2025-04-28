@@ -1,12 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Creates a lifecycle environment. A lifecycle environment is a user-defined pipeline to deliver
- * curated, versioned content in a prescribed, methodical manner. <br>
+ * Provides the information used to create a lifecycle environment. A lifecycle environment is a
+ * user-defined pipeline to deliver curated, versioned content in a prescribed, methodical manner.
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,6 +33,7 @@ public final class CreateLifecycleEnvironmentDetails
         "archType",
         "osFamily",
         "vendorName",
+        "location",
         "freeformTags",
         "definedTags"
     })
@@ -43,6 +45,7 @@ public final class CreateLifecycleEnvironmentDetails
             ArchType archType,
             OsFamily osFamily,
             VendorName vendorName,
+            ManagedInstanceLocation location,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -53,18 +56,23 @@ public final class CreateLifecycleEnvironmentDetails
         this.archType = archType;
         this.osFamily = osFamily;
         this.vendorName = vendorName;
+        this.location = location;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the tenancy containing the lifecycle environment. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the lifecycle environment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the tenancy containing the lifecycle environment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the lifecycle environment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -75,15 +83,15 @@ public final class CreateLifecycleEnvironmentDetails
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name for the lifecycle environment. Does not have to be unique and you
+         * can change the name later. Avoid entering confidential information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name for the lifecycle environment. Does not have to be unique and you
+         * can change the name later. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -93,12 +101,16 @@ public final class CreateLifecycleEnvironmentDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** User specified information about the lifecycle environment. */
+        /**
+         * User-specified information about the lifecycle environment. Avoid entering confidential
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * User specified information about the lifecycle environment.
+         * User-specified information about the lifecycle environment. Avoid entering confidential
+         * information.
          *
          * @param description the value to set
          * @return this builder
@@ -108,16 +120,12 @@ public final class CreateLifecycleEnvironmentDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * User specified list of ranked lifecycle stages to be created for the lifecycle
-         * environment.
-         */
+        /** User-specified list of ranked lifecycle stages used within the lifecycle environment. */
         @com.fasterxml.jackson.annotation.JsonProperty("stages")
         private java.util.List<CreateLifecycleStageDetails> stages;
 
         /**
-         * User specified list of ranked lifecycle stages to be created for the lifecycle
-         * environment.
+         * User-specified list of ranked lifecycle stages used within the lifecycle environment.
          *
          * @param stages the value to set
          * @return this builder
@@ -127,12 +135,12 @@ public final class CreateLifecycleEnvironmentDetails
             this.__explicitlySet__.add("stages");
             return this;
         }
-        /** The CPU architecture of the managed instance(s) in the lifecycle environment. */
+        /** The CPU architecture of the managed instances in the lifecycle environment. */
         @com.fasterxml.jackson.annotation.JsonProperty("archType")
         private ArchType archType;
 
         /**
-         * The CPU architecture of the managed instance(s) in the lifecycle environment.
+         * The CPU architecture of the managed instances in the lifecycle environment.
          *
          * @param archType the value to set
          * @return this builder
@@ -142,12 +150,12 @@ public final class CreateLifecycleEnvironmentDetails
             this.__explicitlySet__.add("archType");
             return this;
         }
-        /** The operating system type of the managed instance(s) in the lifecycle environment. */
+        /** The operating system of the managed instances in the lifecycle environment. */
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamily osFamily;
 
         /**
-         * The operating system type of the managed instance(s) in the lifecycle environment.
+         * The operating system of the managed instances in the lifecycle environment.
          *
          * @param osFamily the value to set
          * @return this builder
@@ -157,12 +165,16 @@ public final class CreateLifecycleEnvironmentDetails
             this.__explicitlySet__.add("osFamily");
             return this;
         }
-        /** The software source vendor name. */
+        /**
+         * The vendor of the operating system used by the managed instances in the lifecycle
+         * environment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
         private VendorName vendorName;
 
         /**
-         * The software source vendor name.
+         * The vendor of the operating system used by the managed instances in the lifecycle
+         * environment.
          *
          * @param vendorName the value to set
          * @return this builder
@@ -173,10 +185,29 @@ public final class CreateLifecycleEnvironmentDetails
             return this;
         }
         /**
+         * The location of managed instances attached to the lifecycle environment. If no location
+         * is provided, the default is 'ON_PREMISE.'
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("location")
+        private ManagedInstanceLocation location;
+
+        /**
+         * The location of managed instances attached to the lifecycle environment. If no location
+         * is provided, the default is 'ON_PREMISE.'
+         *
+         * @param location the value to set
+         * @return this builder
+         */
+        public Builder location(ManagedInstanceLocation location) {
+            this.location = location;
+            this.__explicitlySet__.add("location");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -184,8 +215,8 @@ public final class CreateLifecycleEnvironmentDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -198,8 +229,8 @@ public final class CreateLifecycleEnvironmentDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -207,8 +238,8 @@ public final class CreateLifecycleEnvironmentDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -233,6 +264,7 @@ public final class CreateLifecycleEnvironmentDetails
                             this.archType,
                             this.osFamily,
                             this.vendorName,
+                            this.location,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -264,6 +296,9 @@ public final class CreateLifecycleEnvironmentDetails
             if (model.wasPropertyExplicitlySet("vendorName")) {
                 this.vendorName(model.getVendorName());
             }
+            if (model.wasPropertyExplicitlySet("location")) {
+                this.location(model.getLocation());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -283,12 +318,16 @@ public final class CreateLifecycleEnvironmentDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the tenancy containing the lifecycle environment. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the lifecycle environment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the lifecycle environment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the lifecycle environment.
      *
      * @return the value
      */
@@ -297,15 +336,15 @@ public final class CreateLifecycleEnvironmentDetails
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name for the lifecycle environment. Does not have to be unique and you can
+     * change the name later. Avoid entering confidential information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name for the lifecycle environment. Does not have to be unique and you can
+     * change the name later. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -313,12 +352,16 @@ public final class CreateLifecycleEnvironmentDetails
         return displayName;
     }
 
-    /** User specified information about the lifecycle environment. */
+    /**
+     * User-specified information about the lifecycle environment. Avoid entering confidential
+     * information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * User specified information about the lifecycle environment.
+     * User-specified information about the lifecycle environment. Avoid entering confidential
+     * information.
      *
      * @return the value
      */
@@ -326,14 +369,12 @@ public final class CreateLifecycleEnvironmentDetails
         return description;
     }
 
-    /**
-     * User specified list of ranked lifecycle stages to be created for the lifecycle environment.
-     */
+    /** User-specified list of ranked lifecycle stages used within the lifecycle environment. */
     @com.fasterxml.jackson.annotation.JsonProperty("stages")
     private final java.util.List<CreateLifecycleStageDetails> stages;
 
     /**
-     * User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+     * User-specified list of ranked lifecycle stages used within the lifecycle environment.
      *
      * @return the value
      */
@@ -341,12 +382,12 @@ public final class CreateLifecycleEnvironmentDetails
         return stages;
     }
 
-    /** The CPU architecture of the managed instance(s) in the lifecycle environment. */
+    /** The CPU architecture of the managed instances in the lifecycle environment. */
     @com.fasterxml.jackson.annotation.JsonProperty("archType")
     private final ArchType archType;
 
     /**
-     * The CPU architecture of the managed instance(s) in the lifecycle environment.
+     * The CPU architecture of the managed instances in the lifecycle environment.
      *
      * @return the value
      */
@@ -354,12 +395,12 @@ public final class CreateLifecycleEnvironmentDetails
         return archType;
     }
 
-    /** The operating system type of the managed instance(s) in the lifecycle environment. */
+    /** The operating system of the managed instances in the lifecycle environment. */
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
-     * The operating system type of the managed instance(s) in the lifecycle environment.
+     * The operating system of the managed instances in the lifecycle environment.
      *
      * @return the value
      */
@@ -367,12 +408,16 @@ public final class CreateLifecycleEnvironmentDetails
         return osFamily;
     }
 
-    /** The software source vendor name. */
+    /**
+     * The vendor of the operating system used by the managed instances in the lifecycle
+     * environment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
     private final VendorName vendorName;
 
     /**
-     * The software source vendor name.
+     * The vendor of the operating system used by the managed instances in the lifecycle
+     * environment.
      *
      * @return the value
      */
@@ -381,9 +426,26 @@ public final class CreateLifecycleEnvironmentDetails
     }
 
     /**
+     * The location of managed instances attached to the lifecycle environment. If no location is
+     * provided, the default is 'ON_PREMISE.'
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("location")
+    private final ManagedInstanceLocation location;
+
+    /**
+     * The location of managed instances attached to the lifecycle environment. If no location is
+     * provided, the default is 'ON_PREMISE.'
+     *
+     * @return the value
+     */
+    public ManagedInstanceLocation getLocation() {
+        return location;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -392,7 +454,7 @@ public final class CreateLifecycleEnvironmentDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -404,7 +466,7 @@ public final class CreateLifecycleEnvironmentDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -413,7 +475,7 @@ public final class CreateLifecycleEnvironmentDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -444,6 +506,7 @@ public final class CreateLifecycleEnvironmentDetails
         sb.append(", archType=").append(String.valueOf(this.archType));
         sb.append(", osFamily=").append(String.valueOf(this.osFamily));
         sb.append(", vendorName=").append(String.valueOf(this.vendorName));
+        sb.append(", location=").append(String.valueOf(this.location));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -467,6 +530,7 @@ public final class CreateLifecycleEnvironmentDetails
                 && java.util.Objects.equals(this.archType, other.archType)
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
                 && java.util.Objects.equals(this.vendorName, other.vendorName)
+                && java.util.Objects.equals(this.location, other.location)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -485,6 +549,7 @@ public final class CreateLifecycleEnvironmentDetails
         result = (result * PRIME) + (this.archType == null ? 43 : this.archType.hashCode());
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
         result = (result * PRIME) + (this.vendorName == null ? 43 : this.vendorName.hashCode());
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

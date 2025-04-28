@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
@@ -26,6 +26,7 @@ public final class CreateIncident
         "compartmentId",
         "ticket",
         "csi",
+        "userGroupId",
         "problemType",
         "contacts",
         "referrer"
@@ -34,6 +35,7 @@ public final class CreateIncident
             String compartmentId,
             CreateTicketDetails ticket,
             String csi,
+            String userGroupId,
             ProblemType problemType,
             java.util.List<Contact> contacts,
             String referrer) {
@@ -41,6 +43,7 @@ public final class CreateIncident
         this.compartmentId = compartmentId;
         this.ticket = ticket;
         this.csi = csi;
+        this.userGroupId = userGroupId;
         this.problemType = problemType;
         this.contacts = contacts;
         this.referrer = referrer;
@@ -74,14 +77,14 @@ public final class CreateIncident
         }
         /**
          * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is required for technical support tickets and optional for limits and billing tickets.
+         * is optional for all support request types.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("csi")
         private String csi;
 
         /**
          * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is required for technical support tickets and optional for limits and billing tickets.
+         * is optional for all support request types.
          *
          * @param csi the value to set
          * @return this builder
@@ -92,15 +95,46 @@ public final class CreateIncident
             return this;
         }
         /**
-         * The kind of support ticket, such as a technical support request or a limit increase
-         * request.
+         * Technical support type ({@code TECH}) only: The identifier of the support request's user
+         * group in My Oracle Cloud Support portal.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
+        private String userGroupId;
+
+        /**
+         * Technical support type ({@code TECH}) only: The identifier of the support request's user
+         * group in My Oracle Cloud Support portal.
+         *
+         * @param userGroupId the value to set
+         * @return this builder
+         */
+        public Builder userGroupId(String userGroupId) {
+            this.userGroupId = userGroupId;
+            this.__explicitlySet__.add("userGroupId");
+            return this;
+        }
+        /**
+         * The kind of support ticket (type of support request). For information about {@code
+         * ACCOUNT} support tickets, see [Creating a Billing Support
+         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
+         * For information about {@code LIMIT} support tickets, see [Creating a Service Limit
+         * Increase
+         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
+         * information about {@code TECH} support tickets, see [Creating a Technical Support
+         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
         /**
-         * The kind of support ticket, such as a technical support request or a limit increase
-         * request.
+         * The kind of support ticket (type of support request). For information about {@code
+         * ACCOUNT} support tickets, see [Creating a Billing Support
+         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
+         * For information about {@code LIMIT} support tickets, see [Creating a Service Limit
+         * Increase
+         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
+         * information about {@code TECH} support tickets, see [Creating a Technical Support
+         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          *
          * @param problemType the value to set
          * @return this builder
@@ -154,6 +188,7 @@ public final class CreateIncident
                             this.compartmentId,
                             this.ticket,
                             this.csi,
+                            this.userGroupId,
                             this.problemType,
                             this.contacts,
                             this.referrer);
@@ -173,6 +208,9 @@ public final class CreateIncident
             }
             if (model.wasPropertyExplicitlySet("csi")) {
                 this.csi(model.getCsi());
+            }
+            if (model.wasPropertyExplicitlySet("userGroupId")) {
+                this.userGroupId(model.getUserGroupId());
             }
             if (model.wasPropertyExplicitlySet("problemType")) {
                 this.problemType(model.getProblemType());
@@ -218,14 +256,14 @@ public final class CreateIncident
 
     /**
      * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * required for technical support tickets and optional for limits and billing tickets.
+     * optional for all support request types.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
     private final String csi;
 
     /**
      * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * required for technical support tickets and optional for limits and billing tickets.
+     * optional for all support request types.
      *
      * @return the value
      */
@@ -234,13 +272,42 @@ public final class CreateIncident
     }
 
     /**
-     * The kind of support ticket, such as a technical support request or a limit increase request.
+     * Technical support type ({@code TECH}) only: The identifier of the support request's user
+     * group in My Oracle Cloud Support portal.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
+    private final String userGroupId;
+
+    /**
+     * Technical support type ({@code TECH}) only: The identifier of the support request's user
+     * group in My Oracle Cloud Support portal.
+     *
+     * @return the value
+     */
+    public String getUserGroupId() {
+        return userGroupId;
+    }
+
+    /**
+     * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
+     * support tickets, see [Creating a Billing Support
+     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm). For
+     * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
+     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
+     * information about {@code TECH} support tickets, see [Creating a Technical Support
+     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
     /**
-     * The kind of support ticket, such as a technical support request or a limit increase request.
+     * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
+     * support tickets, see [Creating a Billing Support
+     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm). For
+     * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
+     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
+     * information about {@code TECH} support tickets, see [Creating a Technical Support
+     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      *
      * @return the value
      */
@@ -296,6 +363,7 @@ public final class CreateIncident
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", ticket=").append(String.valueOf(this.ticket));
         sb.append(", csi=").append(String.valueOf(this.csi));
+        sb.append(", userGroupId=").append(String.valueOf(this.userGroupId));
         sb.append(", problemType=").append(String.valueOf(this.problemType));
         sb.append(", contacts=").append(String.valueOf(this.contacts));
         sb.append(", referrer=").append(String.valueOf(this.referrer));
@@ -316,6 +384,7 @@ public final class CreateIncident
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.ticket, other.ticket)
                 && java.util.Objects.equals(this.csi, other.csi)
+                && java.util.Objects.equals(this.userGroupId, other.userGroupId)
                 && java.util.Objects.equals(this.problemType, other.problemType)
                 && java.util.Objects.equals(this.contacts, other.contacts)
                 && java.util.Objects.equals(this.referrer, other.referrer)
@@ -331,6 +400,7 @@ public final class CreateIncident
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.ticket == null ? 43 : this.ticket.hashCode());
         result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
+        result = (result * PRIME) + (this.userGroupId == null ? 43 : this.userGroupId.hashCode());
         result = (result * PRIME) + (this.problemType == null ? 43 : this.problemType.hashCode());
         result = (result * PRIME) + (this.contacts == null ? 43 : this.contacts.hashCode());
         result = (result * PRIME) + (this.referrer == null ? 43 : this.referrer.hashCode());

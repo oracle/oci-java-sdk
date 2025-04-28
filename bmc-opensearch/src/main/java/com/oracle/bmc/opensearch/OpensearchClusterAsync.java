@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opensearch;
@@ -73,6 +73,22 @@ public interface OpensearchClusterAsync extends AutoCloseable {
             BackupOpensearchClusterRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             BackupOpensearchClusterRequest, BackupOpensearchClusterResponse>
+                    handler);
+
+    /**
+     * Configure Outbound cluster for cross-cluster operations
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConfigureOutboundClusterResponse> configureOutboundCluster(
+            ConfigureOutboundClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ConfigureOutboundClusterRequest, ConfigureOutboundClusterResponse>
                     handler);
 
     /**
@@ -283,5 +299,21 @@ public interface OpensearchClusterAsync extends AutoCloseable {
             UpdateOpensearchClusterRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateOpensearchClusterRequest, UpdateOpensearchClusterResponse>
+                    handler);
+
+    /**
+     * Upgrade or clone the opensearch cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpgradeOpenSearchClusterResponse> upgradeOpenSearchCluster(
+            UpgradeOpenSearchClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpgradeOpenSearchClusterRequest, UpgradeOpenSearchClusterResponse>
                     handler);
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DetachSoftwareSourcesFromManagedInstanceGroupExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DetachSoftwareSourcesFromManagedInstanceGroupExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DetachSoftwareSourcesFromManagedInstanceGroupRequest.
  */
@@ -17,19 +17,33 @@ public class DetachSoftwareSourcesFromManagedInstanceGroupRequest
                 com.oracle.bmc.osmanagementhub.model
                         .DetachSoftwareSourcesFromManagedInstanceGroupDetails> {
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group.
+     */
     private String managedInstanceGroupId;
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group.
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
-    /** Details for software sources to attach to the specified managed instance group. */
+    /**
+     * The software source
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from
+     * the managed instance group.
+     */
     private com.oracle.bmc.osmanagementhub.model
                     .DetachSoftwareSourcesFromManagedInstanceGroupDetails
             detachSoftwareSourcesFromManagedInstanceGroupDetails;
 
-    /** Details for software sources to attach to the specified managed instance group. */
+    /**
+     * The software source
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from
+     * the managed instance group.
+     */
     public com.oracle.bmc.osmanagementhub.model.DetachSoftwareSourcesFromManagedInstanceGroupDetails
             getDetachSoftwareSourcesFromManagedInstanceGroupDetails() {
         return detachSoftwareSourcesFromManagedInstanceGroupDetails;
@@ -104,11 +118,15 @@ public class DetachSoftwareSourcesFromManagedInstanceGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The managed instance group OCID. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group.
+         */
         private String managedInstanceGroupId = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
@@ -118,13 +136,19 @@ public class DetachSoftwareSourcesFromManagedInstanceGroupRequest
             return this;
         }
 
-        /** Details for software sources to attach to the specified managed instance group. */
+        /**
+         * The software source
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach
+         * from the managed instance group.
+         */
         private com.oracle.bmc.osmanagementhub.model
                         .DetachSoftwareSourcesFromManagedInstanceGroupDetails
                 detachSoftwareSourcesFromManagedInstanceGroupDetails = null;
 
         /**
-         * Details for software sources to attach to the specified managed instance group.
+         * The software source
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach
+         * from the managed instance group.
          *
          * @param detachSoftwareSourcesFromManagedInstanceGroupDetails the value to set
          * @return this builder instance

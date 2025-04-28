@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.adm;
@@ -480,9 +480,6 @@ public class ApplicationDependencyManagementAsyncClient
                         CreateVulnerabilityAuditResponse.Builder::vulnerabilityAudit)
                 .handleResponseHeaderString("etag", CreateVulnerabilityAuditResponse.Builder::etag)
                 .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateVulnerabilityAuditResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
                         "opc-request-id", CreateVulnerabilityAuditResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
@@ -851,7 +848,7 @@ public class ApplicationDependencyManagementAsyncClient
                 .serviceDetails(
                         "ApplicationDependencyManagement",
                         "ListApplicationDependencyRecommendations",
-                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/ApplicationDependencyRecommendationCollection/ListApplicationDependencyRecommendations")
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/ListApplicationDependencyRecommendations")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListApplicationDependencyRecommendationsRequest::builder)
                 .basePath("/20220421")
@@ -862,6 +859,7 @@ public class ApplicationDependencyManagementAsyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("gav", request.getGav())
+                .appendQueryParam("purl", request.getPurl())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -906,6 +904,8 @@ public class ApplicationDependencyManagementAsyncClient
                 .appendQueryParam("vulnerabilityId", request.getVulnerabilityId())
                 .appendQueryParam("cvssV3GreaterThanOrEqual", request.getCvssV3GreaterThanOrEqual())
                 .appendQueryParam("cvssV2GreaterThanOrEqual", request.getCvssV2GreaterThanOrEqual())
+                .appendEnumQueryParam(
+                        "severityGreaterThanOrEqual", request.getSeverityGreaterThanOrEqual())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -913,6 +913,7 @@ public class ApplicationDependencyManagementAsyncClient
                 .appendQueryParam("rootNodeId", request.getRootNodeId())
                 .appendQueryParam("depth", request.getDepth())
                 .appendQueryParam("gav", request.getGav())
+                .appendQueryParam("purl", request.getPurl())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -977,7 +978,7 @@ public class ApplicationDependencyManagementAsyncClient
                 .serviceDetails(
                         "ApplicationDependencyManagement",
                         "ListRemediationRecipes",
-                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipeCollection/ListRemediationRecipes")
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/ListRemediationRecipes")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRemediationRecipesRequest::builder)
                 .basePath("/20220421")
@@ -1014,7 +1015,7 @@ public class ApplicationDependencyManagementAsyncClient
                 .serviceDetails(
                         "ApplicationDependencyManagement",
                         "ListRemediationRuns",
-                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunCollection/ListRemediationRuns")
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/ListRemediationRuns")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRemediationRunsRequest::builder)
                 .basePath("/20220421")
@@ -1053,7 +1054,7 @@ public class ApplicationDependencyManagementAsyncClient
                 .serviceDetails(
                         "ApplicationDependencyManagement",
                         "ListStages",
-                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStageCollection/ListStages")
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStage/ListStages")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListStagesRequest::builder)
                 .basePath("/20220421")
@@ -1105,6 +1106,14 @@ public class ApplicationDependencyManagementAsyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timeCreatedLessThanOrEqualTo", request.getTimeCreatedLessThanOrEqualTo())
+                .appendEnumQueryParam(
+                        "maxObservedSeverityGreaterThanOrEqualTo",
+                        request.getMaxObservedSeverityGreaterThanOrEqualTo())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

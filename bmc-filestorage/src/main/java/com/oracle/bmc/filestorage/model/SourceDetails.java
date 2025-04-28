@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -31,17 +31,17 @@ public final class SourceDetails extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system that contains the source snapshot of a cloned file system. See [Cloning a
-         * File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * File System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("parentFileSystemId")
         private String parentFileSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system that contains the source snapshot of a cloned file system. See [Cloning a
-         * File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * File System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          * @param parentFileSystemId the value to set
          * @return this builder
@@ -52,17 +52,17 @@ public final class SourceDetails extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source snapshot used to create a cloned file system. See [Cloning a File
-         * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceSnapshotId")
         private String sourceSnapshotId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source snapshot used to create a cloned file system. See [Cloning a File
-         * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          * @param sourceSnapshotId the value to set
          * @return this builder
@@ -106,17 +106,17 @@ public final class SourceDetails extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system that contains the source snapshot of a cloned file system. See [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system that contains the source snapshot of a cloned file system. See [Cloning a File
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("parentFileSystemId")
     private final String parentFileSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system that contains the source snapshot of a cloned file system. See [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system that contains the source snapshot of a cloned file system. See [Cloning a File
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      * @return the value
      */
@@ -125,17 +125,17 @@ public final class SourceDetails extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source snapshot used to create a cloned file system. See [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceSnapshotId")
     private final String sourceSnapshotId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source snapshot used to create a cloned file system. See [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      * @return the value
      */

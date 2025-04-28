@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -12,25 +12,14 @@ package com.oracle.bmc.database.model;
  * API endpoint of the region in which the standby will be located. For example, if the primary
  * database is in the IAD region, and you want to create the standby in the PHX region, make the API
  * call using the PHX endpoint (https://database.us-phoenix-1.oraclecloud.com). See [API
- * Endpoints](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#REST_APIs) for
- * the list of Database Service API endpoints. - In the request to create the standby database, the
- * {@code sourceId} value should be the OCID of the primary database. The following parameters are
- * optional for the cross-region standby database. If included in the request, these parameters
- * contain the same values as the source Autonomous Database: - customerContacts -
- * scheduledOperations - isAutoScalingForStorageEnabled - definedTags - freeformTags - licenseModel
- * - whitelistedIps - isMtlsConnectionRequired - dbName - adminPassword - cpuCoreCount -
- * dataStorageSizeInTB - dbVersion Example I - Creating a cross-region standby with required
- * parameters only, with OCPU: {@code { "compartmentId":
- * "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>", "cpuCoreCount": 1, "dbName":
- * "adatabasedb1", "sourceId": "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>",
- * "dataStorageSizeInTBs": 1, "source": "CROSS_REGION_DATAGUARD", "adminPassword" :
- * "<var>&lt;password&gt;</var>", }} Example II - Creating a cross-region standby that specifies
- * optional parameters in addition to the required parameters, with ECPU: {@code { "compartmentId":
- * "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>", "computeModel": "ECPU", "computeCount": 2,
- * "dbName": "adatabasedb1", "sourceId":
- * "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>", "dataStorageSizeInTBs": 1,
- * "source": "CROSS_REGION_DATAGUARD", "adminPassword" : "<var>&lt;password&gt;</var>", "dbVersion":
- * "19c", "licenseModel": "LICENSE_INCLUDED", "isAutoScalingForStorageEnabled": "true" }} <br>
+ * Endpoints](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#REST_APIs) for the list
+ * of Database Service API endpoints. - In the request to create the standby database, the {@code
+ * sourceId} value should be the OCID of the primary database. The following parameters are optional
+ * for the cross-region standby database. If included in the request, these parameters contain the
+ * same values as the source Autonomous Database: - customerContacts - scheduledOperations -
+ * isAutoScalingForStorageEnabled - definedTags - freeformTags - licenseModel - whitelistedIps -
+ * isMtlsConnectionRequired - dbName - adminPassword - cpuCoreCount - dataStorageSizeInTB -
+ * dbVersion <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -53,6 +42,15 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
         extends CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -188,6 +186,15 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKey")
+        private AutonomousDatabaseEncryptionKeyDetails encryptionKey;
+
+        public Builder encryptionKey(AutonomousDatabaseEncryptionKeyDetails encryptionKey) {
+            this.encryptionKey = encryptionKey;
+            this.__explicitlySet__.add("encryptionKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
@@ -215,6 +222,15 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("byolComputeCountLimit")
+        private Float byolComputeCountLimit;
+
+        public Builder byolComputeCountLimit(Float byolComputeCountLimit) {
+            this.byolComputeCountLimit = byolComputeCountLimit;
+            this.__explicitlySet__.add("byolComputeCountLimit");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isPreviewVersionWithServiceTermsAccepted")
         private Boolean isPreviewVersionWithServiceTermsAccepted;
 
@@ -232,6 +248,15 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             this.isAutoScalingEnabled = isAutoScalingEnabled;
             this.__explicitlySet__.add("isAutoScalingEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
+        private Boolean isDevTier;
+
+        public Builder isDevTier(Boolean isDevTier) {
+            this.isDevTier = isDevTier;
+            this.__explicitlySet__.add("isDevTier");
             return this;
         }
 
@@ -362,6 +387,16 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
         private String privateEndpointIp;
 
@@ -445,15 +480,6 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
-        private Integer maxCpuCoreCount;
-
-        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
-            this.maxCpuCoreCount = maxCpuCoreCount;
-            this.__explicitlySet__.add("maxCpuCoreCount");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
         private AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
 
@@ -469,6 +495,15 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
         public Builder dbToolsDetails(java.util.List<DatabaseTool> dbToolsDetails) {
             this.dbToolsDetails = dbToolsDetails;
             this.__explicitlySet__.add("dbToolsDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+        private Boolean isBackupRetentionLocked;
+
+        public Builder isBackupRetentionLocked(Boolean isBackupRetentionLocked) {
+            this.isBackupRetentionLocked = isBackupRetentionLocked;
+            this.__explicitlySet__.add("isBackupRetentionLocked");
             return this;
         }
 
@@ -490,17 +525,17 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new standby database for the
-         * Data Guard association.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * source Autonomous Database that will be used to create a new peer database for the Data
+         * Guard association.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new standby database for the
-         * Data Guard association.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * source Autonomous Database that will be used to create a new peer database for the Data
+         * Guard association.
          *
          * @param sourceId the value to set
          * @return this builder
@@ -517,6 +552,7 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
         public CreateCrossRegionAutonomousDatabaseDataGuardDetails build() {
             CreateCrossRegionAutonomousDatabaseDataGuardDetails model =
                     new CreateCrossRegionAutonomousDatabaseDataGuardDetails(
+                            this.subscriptionId,
                             this.compartmentId,
                             this.characterSet,
                             this.ncharacterSet,
@@ -532,11 +568,14 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             this.isFreeTier,
                             this.kmsKeyId,
                             this.vaultId,
+                            this.encryptionKey,
                             this.adminPassword,
                             this.displayName,
                             this.licenseModel,
+                            this.byolComputeCountLimit,
                             this.isPreviewVersionWithServiceTermsAccepted,
                             this.isAutoScalingEnabled,
+                            this.isDevTier,
                             this.isDedicated,
                             this.autonomousContainerDatabaseId,
                             this.inMemoryPercentage,
@@ -551,6 +590,7 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             this.privateEndpointLabel,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.privateEndpointIp,
                             this.dbVersion,
                             this.customerContacts,
@@ -560,9 +600,9 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             this.autonomousMaintenanceScheduleType,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
-                            this.maxCpuCoreCount,
                             this.databaseEdition,
                             this.dbToolsDetails,
+                            this.isBackupRetentionLocked,
                             this.secretId,
                             this.secretVersionNumber,
                             this.sourceId);
@@ -574,6 +614,9 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateCrossRegionAutonomousDatabaseDataGuardDetails model) {
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -619,6 +662,9 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
+            if (model.wasPropertyExplicitlySet("encryptionKey")) {
+                this.encryptionKey(model.getEncryptionKey());
+            }
             if (model.wasPropertyExplicitlySet("adminPassword")) {
                 this.adminPassword(model.getAdminPassword());
             }
@@ -628,12 +674,18 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
             }
+            if (model.wasPropertyExplicitlySet("byolComputeCountLimit")) {
+                this.byolComputeCountLimit(model.getByolComputeCountLimit());
+            }
             if (model.wasPropertyExplicitlySet("isPreviewVersionWithServiceTermsAccepted")) {
                 this.isPreviewVersionWithServiceTermsAccepted(
                         model.getIsPreviewVersionWithServiceTermsAccepted());
             }
             if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
                 this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isDevTier")) {
+                this.isDevTier(model.getIsDevTier());
             }
             if (model.wasPropertyExplicitlySet("isDedicated")) {
                 this.isDedicated(model.getIsDedicated());
@@ -677,6 +729,9 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("privateEndpointIp")) {
                 this.privateEndpointIp(model.getPrivateEndpointIp());
             }
@@ -705,14 +760,14 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             if (model.wasPropertyExplicitlySet("isAutoScalingForStorageEnabled")) {
                 this.isAutoScalingForStorageEnabled(model.getIsAutoScalingForStorageEnabled());
             }
-            if (model.wasPropertyExplicitlySet("maxCpuCoreCount")) {
-                this.maxCpuCoreCount(model.getMaxCpuCoreCount());
-            }
             if (model.wasPropertyExplicitlySet("databaseEdition")) {
                 this.databaseEdition(model.getDatabaseEdition());
             }
             if (model.wasPropertyExplicitlySet("dbToolsDetails")) {
                 this.dbToolsDetails(model.getDbToolsDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
+                this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
             }
             if (model.wasPropertyExplicitlySet("secretId")) {
                 this.secretId(model.getSecretId());
@@ -738,6 +793,7 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
 
     @Deprecated
     public CreateCrossRegionAutonomousDatabaseDataGuardDetails(
+            String subscriptionId,
             String compartmentId,
             String characterSet,
             String ncharacterSet,
@@ -753,11 +809,14 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             Boolean isFreeTier,
             String kmsKeyId,
             String vaultId,
+            AutonomousDatabaseEncryptionKeyDetails encryptionKey,
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
+            Float byolComputeCountLimit,
             Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
+            Boolean isDevTier,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
             Integer inMemoryPercentage,
@@ -772,6 +831,7 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             String privateEndpointLabel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateEndpointIp,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
@@ -781,13 +841,14 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
-            Integer maxCpuCoreCount,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
+            Boolean isBackupRetentionLocked,
             String secretId,
             Integer secretVersionNumber,
             String sourceId) {
         super(
+                subscriptionId,
                 compartmentId,
                 characterSet,
                 ncharacterSet,
@@ -803,11 +864,14 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                 isFreeTier,
                 kmsKeyId,
                 vaultId,
+                encryptionKey,
                 adminPassword,
                 displayName,
                 licenseModel,
+                byolComputeCountLimit,
                 isPreviewVersionWithServiceTermsAccepted,
                 isAutoScalingEnabled,
+                isDevTier,
                 isDedicated,
                 autonomousContainerDatabaseId,
                 inMemoryPercentage,
@@ -822,6 +886,7 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                 privateEndpointLabel,
                 freeformTags,
                 definedTags,
+                securityAttributes,
                 privateEndpointIp,
                 dbVersion,
                 customerContacts,
@@ -831,26 +896,26 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                 autonomousMaintenanceScheduleType,
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
-                maxCpuCoreCount,
                 databaseEdition,
                 dbToolsDetails,
+                isBackupRetentionLocked,
                 secretId,
                 secretVersionNumber);
         this.sourceId = sourceId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new standby database for the Data
-     * Guard association.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * source Autonomous Database that will be used to create a new peer database for the Data Guard
+     * association.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new standby database for the Data
-     * Guard association.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * source Autonomous Database that will be used to create a new peer database for the Data Guard
+     * association.
      *
      * @return the value
      */

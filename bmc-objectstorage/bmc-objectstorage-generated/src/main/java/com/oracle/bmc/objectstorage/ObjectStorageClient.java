@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage;
@@ -192,12 +192,12 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("uploadId", request.getUploadId())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-client-request-id",
                         AbortMultipartUploadResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", AbortMultipartUploadResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -223,12 +223,12 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-client-request-id",
                         CancelWorkRequestResponse.Builder::opcClientRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -274,6 +274,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-client-request-id",
@@ -282,12 +283,20 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", CommitMultipartUploadResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-multipart-md5", CommitMultipartUploadResponse.Builder::opcMultipartMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c",
+                        CommitMultipartUploadResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha256",
+                        CommitMultipartUploadResponse.Builder::opcMultipartSha256)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha384",
+                        CommitMultipartUploadResponse.Builder::opcMultipartSha384)
                 .handleResponseHeaderString("ETag", CommitMultipartUploadResponse.Builder::eTag)
                 .handleResponseHeaderDate(
                         "last-modified", CommitMultipartUploadResponse.Builder::lastModified)
                 .handleResponseHeaderString(
                         "version-id", CommitMultipartUploadResponse.Builder::versionId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -335,6 +344,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-source-sse-customer-key-sha256",
                         request.getOpcSourceSseCustomerKeySha256())
                 .appendHeader("opc-sse-kms-key-id", request.getOpcSseKmsKeyId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CopyObjectResponse.Builder::opcWorkRequestId)
@@ -342,7 +352,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", CopyObjectResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-client-request-id", CopyObjectResponse.Builder::opcClientRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -370,6 +379,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam("b")
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.Bucket.class,
@@ -380,7 +390,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", CreateBucketResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", CreateBucketResponse.Builder::eTag)
                 .handleResponseHeaderString("Location", CreateBucketResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -425,6 +434,8 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("opc-sse-customer-key", request.getOpcSseCustomerKey())
                 .appendHeader("opc-sse-customer-key-sha256", request.getOpcSseCustomerKeySha256())
                 .appendHeader("opc-sse-kms-key-id", request.getOpcSseKmsKeyId())
+                .appendEnumHeader("opc-checksum-algorithm", request.getOpcChecksumAlgorithm())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.MultipartUpload.class,
@@ -436,7 +447,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", CreateMultipartUploadResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "Location", CreateMultipartUploadResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -472,6 +482,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam("p")
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.PreauthenticatedRequest.class,
@@ -482,7 +493,46 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreatePreauthenticatedRequestResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreatePrivateEndpointResponse createPrivateEndpoint(
+            CreatePrivateEndpointRequest request) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+        Objects.requireNonNull(
+                request.getCreatePrivateEndpointDetails(),
+                "createPrivateEndpointDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
+        return clientCall(request, CreatePrivateEndpointResponse::builder)
+                .logger(LOG, "createPrivateEndpoint")
+                .serviceDetails(
+                        "ObjectStorage",
+                        "CreatePrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/CreatePrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePrivateEndpointRequest::builder)
+                .basePath("/")
+                .appendPathParam("n")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("pe")
+                .accept("application/json")
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreatePrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        CreatePrivateEndpointResponse.Builder::opcClientRequestId)
                 .callSync();
     }
 
@@ -518,6 +568,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam("replicationPolicies")
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.ReplicationPolicy.class,
@@ -527,7 +578,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-client-request-id",
                         CreateReplicationPolicyResponse.Builder::opcClientRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -561,6 +611,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam("retentionRules")
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.RetentionRule.class,
@@ -571,7 +622,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-client-request-id",
                         CreateRetentionRuleResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString("etag", CreateRetentionRuleResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -603,11 +653,11 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-client-request-id", DeleteBucketResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteBucketResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -645,6 +695,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-client-request-id", DeleteObjectResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
@@ -654,7 +705,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString("version-id", DeleteObjectResponse.Builder::versionId)
                 .handleResponseHeaderBoolean(
                         "is-delete-marker", DeleteObjectResponse.Builder::isDeleteMarker)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -688,12 +738,12 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteObjectLifecyclePolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-client-request-id",
                         DeleteObjectLifecyclePolicyResponse.Builder::opcClientRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -730,13 +780,54 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getParId())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-client-request-id",
                         DeletePreauthenticatedRequestResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeletePreauthenticatedRequestResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeletePrivateEndpointResponse deletePrivateEndpoint(
+            DeletePrivateEndpointRequest request) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        Validate.notBlank(request.getPeName(), "peName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("peName", request.getPeName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
+        return clientCall(request, DeletePrivateEndpointResponse::builder)
+                .logger(LOG, "deletePrivateEndpoint")
+                .serviceDetails(
+                        "ObjectStorage",
+                        "DeletePrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/DeletePrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePrivateEndpointRequest::builder)
+                .basePath("/")
+                .appendPathParam("n")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("pe")
+                .appendPathParam(request.getPeName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeletePrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        DeletePrivateEndpointResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePrivateEndpointResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -773,12 +864,12 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getReplicationId())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteReplicationPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-client-request-id",
                         DeleteReplicationPolicyResponse.Builder::opcClientRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -815,12 +906,12 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-client-request-id",
                         DeleteRetentionRuleResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRetentionRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -857,6 +948,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.Bucket.class,
                         GetBucketResponse.Builder::bucket)
@@ -865,7 +957,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id", GetBucketResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", GetBucketResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -888,8 +979,8 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
-                .handleBody(String.class, GetNamespaceResponse.Builder::value)
                 .operationUsesDefaultRetries()
+                .handleBody(String.class, GetNamespaceResponse.Builder::value)
                 .callSync();
     }
 
@@ -915,6 +1006,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getNamespaceName())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.NamespaceMetadata.class,
                         GetNamespaceMetadataResponse.Builder::namespaceMetadata)
@@ -923,7 +1015,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         GetNamespaceMetadataResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", GetNamespaceMetadataResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -979,6 +1070,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("opc-sse-customer-algorithm", request.getOpcSseCustomerAlgorithm())
                 .appendHeader("opc-sse-customer-key", request.getOpcSseCustomerKey())
                 .appendHeader("opc-sse-customer-key-sha256", request.getOpcSseCustomerKeySha256())
+                .operationUsesDefaultRetries()
                 .handleBody(java.io.InputStream.class, GetObjectResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-client-request-id", GetObjectResponse.Builder::opcClientRequestId)
@@ -992,6 +1084,16 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString("content-md5", GetObjectResponse.Builder::contentMd5)
                 .handleResponseHeaderString(
                         "opc-multipart-md5", GetObjectResponse.Builder::opcMultipartMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c", GetObjectResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-content-sha256", GetObjectResponse.Builder::opcContentSha256)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha256", GetObjectResponse.Builder::opcMultipartSha256)
+                .handleResponseHeaderString(
+                        "opc-content-sha384", GetObjectResponse.Builder::opcContentSha384)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha384", GetObjectResponse.Builder::opcMultipartSha384)
                 .handleResponseHeaderString("content-type", GetObjectResponse.Builder::contentType)
                 .handleResponseHeaderString(
                         "content-language", GetObjectResponse.Builder::contentLanguage)
@@ -1014,7 +1116,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "time-of-archival", GetObjectResponse.Builder::timeOfArchival)
                 .handleResponseHeaderString("version-id", GetObjectResponse.Builder::versionId)
                 .handleResponseHeaderDate("expires", GetObjectResponse.Builder::expires)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1047,6 +1148,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam("l")
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.ObjectLifecyclePolicy.class,
                         GetObjectLifecyclePolicyResponse.Builder::objectLifecyclePolicy)
@@ -1056,7 +1158,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-client-request-id",
                         GetObjectLifecyclePolicyResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString("ETag", GetObjectLifecyclePolicyResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1093,6 +1194,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getParId())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary.class,
                         GetPreauthenticatedRequestResponse.Builder::preauthenticatedRequestSummary)
@@ -1101,7 +1203,48 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         GetPreauthenticatedRequestResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPreauthenticatedRequestResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetPrivateEndpointResponse getPrivateEndpoint(GetPrivateEndpointRequest request) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        Validate.notBlank(request.getPeName(), "peName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("peName", request.getPeName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
+        return clientCall(request, GetPrivateEndpointResponse::builder)
+                .logger(LOG, "getPrivateEndpoint")
+                .serviceDetails(
+                        "ObjectStorage",
+                        "GetPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/GetPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPrivateEndpointRequest::builder)
+                .basePath("/")
+                .appendPathParam("n")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("pe")
+                .appendPathParam(request.getPeName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("if-none-match", request.getIfNoneMatch())
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.objectstorage.model.PrivateEndpoint.class,
+                        GetPrivateEndpointResponse.Builder::privateEndpoint)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        GetPrivateEndpointResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("eTag", GetPrivateEndpointResponse.Builder::eTag)
                 .callSync();
     }
 
@@ -1137,6 +1280,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getReplicationId())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.ReplicationPolicy.class,
                         GetReplicationPolicyResponse.Builder::replicationPolicy)
@@ -1145,7 +1289,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-client-request-id",
                         GetReplicationPolicyResponse.Builder::opcClientRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1181,6 +1324,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getRetentionRuleId())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.RetentionRule.class,
                         GetRetentionRuleResponse.Builder::retentionRule)
@@ -1192,7 +1336,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString("etag", GetRetentionRuleResponse.Builder::etag)
                 .handleResponseHeaderDate(
                         "last-modified", GetRetentionRuleResponse.Builder::lastModified)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1218,6 +1361,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -1227,7 +1371,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-client-request-id", GetWorkRequestResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1260,12 +1403,12 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-client-request-id", HeadBucketResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", HeadBucketResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", HeadBucketResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1310,6 +1453,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("opc-sse-customer-algorithm", request.getOpcSseCustomerAlgorithm())
                 .appendHeader("opc-sse-customer-key", request.getOpcSseCustomerKey())
                 .appendHeader("opc-sse-customer-key-sha256", request.getOpcSseCustomerKeySha256())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-client-request-id", HeadObjectResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
@@ -1321,6 +1465,16 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString("content-md5", HeadObjectResponse.Builder::contentMd5)
                 .handleResponseHeaderString(
                         "opc-multipart-md5", HeadObjectResponse.Builder::opcMultipartMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c", HeadObjectResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-content-sha256", HeadObjectResponse.Builder::opcContentSha256)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha256", HeadObjectResponse.Builder::opcMultipartSha256)
+                .handleResponseHeaderString(
+                        "opc-content-sha384", HeadObjectResponse.Builder::opcContentSha384)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha384", HeadObjectResponse.Builder::opcMultipartSha384)
                 .handleResponseHeaderString("content-type", HeadObjectResponse.Builder::contentType)
                 .handleResponseHeaderString(
                         "content-language", HeadObjectResponse.Builder::contentLanguage)
@@ -1342,7 +1496,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderDate(
                         "time-of-archival", HeadObjectResponse.Builder::timeOfArchival)
                 .handleResponseHeaderString("version-id", HeadObjectResponse.Builder::versionId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1378,6 +1531,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         com.oracle.bmc.util.internal.CollectionFormatType.CommaSeparated)
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.objectstorage.model.BucketSummary.class,
                         ListBucketsResponse.Builder::items)
@@ -1387,7 +1541,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", ListBucketsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListBucketsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1429,6 +1582,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary.class,
                         ListMultipartUploadPartsResponse.Builder::items)
@@ -1439,7 +1593,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", ListMultipartUploadPartsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMultipartUploadPartsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1473,6 +1626,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.objectstorage.model.MultipartUpload.class,
                         ListMultipartUploadsResponse.Builder::items)
@@ -1483,7 +1637,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", ListMultipartUploadsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMultipartUploadsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1523,6 +1676,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.ObjectVersionCollection.class,
                         ListObjectVersionsResponse.Builder::objectVersionCollection)
@@ -1533,7 +1687,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", ListObjectVersionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListObjectVersionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1572,6 +1725,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("startAfter", request.getStartAfter())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.ListObjects.class,
                         ListObjectsResponse.Builder::listObjects)
@@ -1579,7 +1733,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-client-request-id", ListObjectsResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ListObjectsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1615,6 +1768,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary.class,
                         ListPreauthenticatedRequestsResponse.Builder::items)
@@ -1626,7 +1780,53 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         ListPreauthenticatedRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPreauthenticatedRequestsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListPrivateEndpointsResponse listPrivateEndpoints(ListPrivateEndpointsRequest request) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
+        return clientCall(request, ListPrivateEndpointsResponse::builder)
+                .logger(LOG, "listPrivateEndpoints")
+                .serviceDetails(
+                        "ObjectStorage",
+                        "ListPrivateEndpoints",
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpointSummary/ListPrivateEndpoints")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPrivateEndpointsRequest::builder)
+                .basePath("/")
+                .appendPathParam("n")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("pe")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.CommaSeparated)
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
                 .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.objectstorage.model.PrivateEndpointSummary.class,
+                        ListPrivateEndpointsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        ListPrivateEndpointsResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPrivateEndpointsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPrivateEndpointsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1661,6 +1861,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.objectstorage.model.ReplicationPolicySummary.class,
                         ListReplicationPoliciesResponse.Builder::items)
@@ -1671,7 +1872,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         ListReplicationPoliciesResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListReplicationPoliciesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1706,6 +1906,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.objectstorage.model.ReplicationSource.class,
                         ListReplicationSourcesResponse.Builder::items)
@@ -1716,7 +1917,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         ListReplicationSourcesResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListReplicationSourcesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1748,6 +1948,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam("retentionRules")
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.RetentionRuleCollection.class,
                         ListRetentionRulesResponse.Builder::retentionRuleCollection)
@@ -1758,7 +1959,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         ListRetentionRulesResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListRetentionRulesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1788,6 +1988,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.objectstorage.model.WorkRequestError.class,
                         ListWorkRequestErrorsResponse.Builder::items)
@@ -1798,7 +1999,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-client-request-id",
                         ListWorkRequestErrorsResponse.Builder::opcClientRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1827,6 +2027,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.objectstorage.model.WorkRequestLogEntry.class,
                         ListWorkRequestLogsResponse.Builder::items)
@@ -1837,7 +2038,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         ListWorkRequestLogsResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1860,10 +2060,12 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .basePath("/")
                 .appendPathParam("workRequests")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("privateEndpointName", request.getPrivateEndpointName())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.objectstorage.model.WorkRequestSummary.class,
                         ListWorkRequestsResponse.Builder::items)
@@ -1874,7 +2076,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-client-request-id",
                         ListWorkRequestsResponse.Builder::opcClientRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1907,12 +2108,12 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam("makeBucketWritable")
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-client-request-id",
                         MakeBucketWritableResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", MakeBucketWritableResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1958,6 +2159,10 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("Expect", request.getExpect())
                 .appendHeader("Content-Length", request.getContentLength())
                 .appendHeader("Content-MD5", request.getContentMD5())
+                .appendEnumHeader("opc-checksum-algorithm", request.getOpcChecksumAlgorithm())
+                .appendHeader("opc-content-crc32c", request.getOpcContentCrc32c())
+                .appendHeader("opc-content-sha256", request.getOpcContentSha256())
+                .appendHeader("opc-content-sha384", request.getOpcContentSha384())
                 .appendHeader("Content-Type", request.getContentType())
                 .appendHeader("Content-Language", request.getContentLanguage())
                 .appendHeader("Content-Encoding", request.getContentEncoding())
@@ -1969,6 +2174,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("opc-sse-kms-key-id", request.getOpcSseKmsKeyId())
                 .appendEnumHeader("storage-tier", request.getStorageTier())
                 .appendHeaders(request.getOpcMeta())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -1977,10 +2183,15 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", PutObjectResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-content-md5", PutObjectResponse.Builder::opcContentMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c", PutObjectResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-content-sha256", PutObjectResponse.Builder::opcContentSha256)
+                .handleResponseHeaderString(
+                        "opc-content-sha384", PutObjectResponse.Builder::opcContentSha384)
                 .handleResponseHeaderString("ETag", PutObjectResponse.Builder::eTag)
                 .handleResponseHeaderDate("last-modified", PutObjectResponse.Builder::lastModified)
                 .handleResponseHeaderString("version-id", PutObjectResponse.Builder::versionId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2018,6 +2229,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.ObjectLifecyclePolicy.class,
@@ -2028,7 +2240,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-client-request-id",
                         PutObjectLifecyclePolicyResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString("ETag", PutObjectLifecyclePolicyResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2061,6 +2272,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam("reencrypt")
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", ReencryptBucketResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
@@ -2068,7 +2280,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         ReencryptBucketResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ReencryptBucketResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2108,13 +2319,13 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("versionId", request.getVersionId())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-client-request-id",
                         ReencryptObjectResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ReencryptObjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2148,6 +2359,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam("renameObject")
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-client-request-id", RenameObjectResponse.Builder::opcClientRequestId)
@@ -2157,7 +2369,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderDate(
                         "last-modified", RenameObjectResponse.Builder::lastModified)
                 .handleResponseHeaderString("version-id", RenameObjectResponse.Builder::versionId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2192,12 +2403,12 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam("restoreObjects")
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-client-request-id", RestoreObjectsResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RestoreObjectsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2230,6 +2441,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.Bucket.class,
@@ -2239,7 +2451,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateBucketResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("ETag", UpdateBucketResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2269,6 +2480,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getNamespaceName())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.NamespaceMetadata.class,
@@ -2278,7 +2490,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         UpdateNamespaceMetadataResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateNamespaceMetadataResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2315,13 +2526,58 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam("updateObjectStorageTier")
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-client-request-id",
                         UpdateObjectStorageTierResponse.Builder::opcClientRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateObjectStorageTierResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdatePrivateEndpointResponse updatePrivateEndpoint(
+            UpdatePrivateEndpointRequest request) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        Validate.notBlank(request.getPeName(), "peName must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePrivateEndpointDetails(),
+                "updatePrivateEndpointDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("peName", request.getPeName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
+        return clientCall(request, UpdatePrivateEndpointResponse::builder)
+                .logger(LOG, "updatePrivateEndpoint")
+                .serviceDetails(
+                        "ObjectStorage",
+                        "UpdatePrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/UpdatePrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpdatePrivateEndpointRequest::builder)
+                .basePath("/")
+                .appendPathParam("n")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("pe")
+                .appendPathParam(request.getPeName())
+                .accept("application/json")
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdatePrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        UpdatePrivateEndpointResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePrivateEndpointResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2360,6 +2616,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.RetentionRule.class,
@@ -2370,7 +2627,6 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRetentionRuleResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateRetentionRuleResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2421,10 +2677,15 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("Expect", request.getExpect())
                 .appendHeader("Content-Length", request.getContentLength())
                 .appendHeader("Content-MD5", request.getContentMD5())
+                .appendEnumHeader("opc-checksum-algorithm", request.getOpcChecksumAlgorithm())
+                .appendHeader("opc-content-crc32c", request.getOpcContentCrc32c())
+                .appendHeader("opc-content-sha256", request.getOpcContentSha256())
+                .appendHeader("opc-content-sha384", request.getOpcContentSha384())
                 .appendHeader("opc-sse-customer-algorithm", request.getOpcSseCustomerAlgorithm())
                 .appendHeader("opc-sse-customer-key", request.getOpcSseCustomerKey())
                 .appendHeader("opc-sse-customer-key-sha256", request.getOpcSseCustomerKeySha256())
                 .appendHeader("opc-sse-kms-key-id", request.getOpcSseKmsKeyId())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -2433,8 +2694,13 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", UploadPartResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-content-md5", UploadPartResponse.Builder::opcContentMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c", UploadPartResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-content-sha256", UploadPartResponse.Builder::opcContentSha256)
+                .handleResponseHeaderString(
+                        "opc-content-sha384", UploadPartResponse.Builder::opcContentSha384)
                 .handleResponseHeaderString("ETag", UploadPartResponse.Builder::eTag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

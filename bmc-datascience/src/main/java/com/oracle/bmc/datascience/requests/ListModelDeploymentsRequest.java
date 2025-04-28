@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.datascience.requests;
 import com.oracle.bmc.datascience.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelDeploymentsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelDeploymentsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListModelDeploymentsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
@@ -16,14 +16,14 @@ public class ListModelDeploymentsRequest
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     private String compartmentId;
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     public String getCompartmentId() {
@@ -31,30 +31,28 @@ public class ListModelDeploymentsRequest
     }
     /**
      * <b>Filter</b> results by
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be
-     * an OCID of the correct type for the resource type.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+     * OCID of the correct type for the resource type.
      */
     private String id;
 
     /**
      * <b>Filter</b> results by
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be
-     * an OCID of the correct type for the resource type.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+     * OCID of the correct type for the resource type.
      */
     public String getId() {
         return id;
     }
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * project.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
     private String projectId;
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * project.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
     public String getProjectId() {
         return projectId;
@@ -81,15 +79,15 @@ public class ListModelDeploymentsRequest
     }
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * user who created the resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who
+     * created the resource.
      */
     private String createdBy;
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * user who created the resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who
+     * created the resource.
      */
     public String getCreatedBy() {
         return createdBy;
@@ -97,7 +95,7 @@ public class ListModelDeploymentsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -106,7 +104,7 @@ public class ListModelDeploymentsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -118,7 +116,7 @@ public class ListModelDeploymentsRequest
      * "List" call.
      *
      * <p>See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      */
     private String page;
 
@@ -127,7 +125,7 @@ public class ListModelDeploymentsRequest
      * "List" call.
      *
      * <p>See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -251,15 +249,15 @@ public class ListModelDeploymentsRequest
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the compartment.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the compartment.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -271,15 +269,15 @@ public class ListModelDeploymentsRequest
 
         /**
          * <b>Filter</b> results by
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must
-         * be an OCID of the correct type for the resource type.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resource type.
          */
         private String id = null;
 
         /**
          * <b>Filter</b> results by
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must
-         * be an OCID of the correct type for the resource type.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resource type.
          *
          * @param id the value to set
          * @return this builder instance
@@ -291,15 +289,15 @@ public class ListModelDeploymentsRequest
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the project.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project.
          */
         private String projectId = null;
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the project.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project.
          *
          * @param projectId the value to set
          * @return this builder instance
@@ -345,15 +343,15 @@ public class ListModelDeploymentsRequest
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the user who created the resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+         * who created the resource.
          */
         private String createdBy = null;
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the user who created the resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+         * who created the resource.
          *
          * @param createdBy the value to set
          * @return this builder instance
@@ -366,7 +364,7 @@ public class ListModelDeploymentsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -375,7 +373,7 @@ public class ListModelDeploymentsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -392,7 +390,7 @@ public class ListModelDeploymentsRequest
          * previous "List" call.
          *
          * <p>See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
@@ -401,7 +399,7 @@ public class ListModelDeploymentsRequest
          * previous "List" call.
          *
          * <p>See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance

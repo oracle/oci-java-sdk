@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms;
@@ -71,7 +71,8 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
-                            "JavaManagementServiceClient", "generateAgentDeployScript"));
+                            "JavaManagementServiceClient",
+                            "generateAgentDeployScript,generateAgentInstallerConfiguration,generateLoadPipelineScript"));
         }
     }
 
@@ -176,13 +177,13 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         AddFleetInstallationSitesResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", AddFleetInstallationSitesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -205,9 +206,9 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -237,13 +238,13 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeFleetCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeFleetCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -269,6 +270,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.jms.model.Blocklist.class,
@@ -276,7 +278,38 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-request-id", CreateBlocklistResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateBlocklistResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateDrsFileResponse createDrsFile(CreateDrsFileRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateDrsFileDetails(), "createDrsFileDetails is required");
+
+        return clientCall(request, CreateDrsFileResponse::builder)
+                .logger(LOG, "createDrsFile")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "CreateDrsFile",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateDrsFile")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDrsFileRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("drsFiles")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateDrsFileResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDrsFileResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -297,12 +330,41 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateFleetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateFleetResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateJmsPluginResponse createJmsPlugin(CreateJmsPluginRequest request) {
+        Objects.requireNonNull(
+                request.getCreateJmsPluginDetails(), "createJmsPluginDetails is required");
+
+        return clientCall(request, CreateJmsPluginResponse::builder)
+                .logger(LOG, "createJmsPlugin")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "CreateJmsPlugin",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/CreateJmsPlugin")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateJmsPluginRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("jmsPlugins")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.jms.model.JmsPlugin.class,
+                        CreateJmsPluginResponse.Builder::jmsPlugin)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateJmsPluginResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateJmsPluginResponse.Builder::etag)
                 .callSync();
     }
 
@@ -329,9 +391,9 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteBlocklistResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -360,12 +422,43 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteCryptoAnalysisResultResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteCryptoAnalysisResultResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteDrsFileResponse deleteDrsFile(DeleteDrsFileRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        Validate.notBlank(request.getDrsFileKey(), "drsFileKey must not be blank");
+
+        return clientCall(request, DeleteDrsFileResponse::builder)
+                .logger(LOG, "deleteDrsFile")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DeleteDrsFile",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/DeleteDrsFile")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDrsFileRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("drsFiles")
+                .appendPathParam(request.getDrsFileKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteDrsFileResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDrsFileResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -388,11 +481,11 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteFleetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteFleetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -422,13 +515,38 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteJavaMigrationAnalysisResultResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteJavaMigrationAnalysisResultResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteJmsPluginResponse deleteJmsPlugin(DeleteJmsPluginRequest request) {
+
+        Validate.notBlank(request.getJmsPluginId(), "jmsPluginId must not be blank");
+
+        return clientCall(request, DeleteJmsPluginResponse::builder)
+                .logger(LOG, "deleteJmsPlugin")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DeleteJmsPlugin",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/DeleteJmsPlugin")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteJmsPluginRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("jmsPlugins")
+                .appendPathParam(request.getJmsPluginId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteJmsPluginResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -458,13 +576,77 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeletePerformanceTuningAnalysisResultResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeletePerformanceTuningAnalysisResultResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisableDrsResponse disableDrs(DisableDrsRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(request.getDisableDrsDetails(), "disableDrsDetails is required");
+
+        return clientCall(request, DisableDrsResponse::builder)
+                .logger(LOG, "disableDrs")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DisableDrs",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DisableDrs")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableDrsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDrs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DisableDrsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DisableDrsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableDrsResponse enableDrs(EnableDrsRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(request.getEnableDrsDetails(), "enableDrsDetails is required");
+
+        return clientCall(request, EnableDrsResponse::builder)
+                .logger(LOG, "enableDrs")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "EnableDrs",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/EnableDrs")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableDrsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDrs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", EnableDrsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableDrsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -492,6 +674,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam("generateAgentDeployScript")
                 .accept("text/plain")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class,
@@ -502,7 +685,82 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "content-length", GenerateAgentDeployScriptResponse.Builder::contentLength)
                 .handleResponseHeaderString(
                         "content-type", GenerateAgentDeployScriptResponse.Builder::contentType)
+                .callSync();
+    }
+
+    @Override
+    public GenerateAgentInstallerConfigurationResponse generateAgentInstallerConfiguration(
+            GenerateAgentInstallerConfigurationRequest request) {
+        Objects.requireNonNull(
+                request.getGenerateAgentInstallerConfigurationDetails(),
+                "generateAgentInstallerConfigurationDetails is required");
+
+        return clientCall(request, GenerateAgentInstallerConfigurationResponse::builder)
+                .logger(LOG, "generateAgentInstallerConfiguration")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GenerateAgentInstallerConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AgentInstallerSummary/GenerateAgentInstallerConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateAgentInstallerConfigurationRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("agentInstallers")
+                .appendPathParam("actions")
+                .appendPathParam("generateAgentInstallerConfiguration")
+                .accept("text/plain")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        java.io.InputStream.class,
+                        GenerateAgentInstallerConfigurationResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GenerateAgentInstallerConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length",
+                        GenerateAgentInstallerConfigurationResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-type",
+                        GenerateAgentInstallerConfigurationResponse.Builder::contentType)
+                .callSync();
+    }
+
+    @Override
+    public GenerateLoadPipelineScriptResponse generateLoadPipelineScript(
+            GenerateLoadPipelineScriptRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getGenerateLoadPipelineScriptDetails(),
+                "generateLoadPipelineScriptDetails is required");
+
+        return clientCall(request, GenerateLoadPipelineScriptResponse::builder)
+                .logger(LOG, "generateLoadPipelineScript")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GenerateLoadPipelineScript",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GenerateLoadPipelineScript")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateLoadPipelineScriptRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("generateLoadPipelineScript")
+                .accept("text/plain")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        java.io.InputStream.class,
+                        GenerateLoadPipelineScriptResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id", GenerateLoadPipelineScriptResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length", GenerateLoadPipelineScriptResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-type", GenerateLoadPipelineScriptResponse.Builder::contentType)
                 .callSync();
     }
 
@@ -530,13 +788,103 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam(request.getCryptoAnalysisResultId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.CryptoAnalysisResult.class,
                         GetCryptoAnalysisResultResponse.Builder::cryptoAnalysisResult)
                 .handleResponseHeaderString("etag", GetCryptoAnalysisResultResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCryptoAnalysisResultResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetDrsFileResponse getDrsFile(GetDrsFileRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        Validate.notBlank(request.getDrsFileKey(), "drsFileKey must not be blank");
+
+        return clientCall(request, GetDrsFileResponse::builder)
+                .logger(LOG, "getDrsFile")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetDrsFile",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/GetDrsFile")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDrsFileRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("drsFiles")
+                .appendPathParam(request.getDrsFileKey())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.DrsFile.class, GetDrsFileResponse.Builder::drsFile)
+                .handleResponseHeaderString("etag", GetDrsFileResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDrsFileResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetExportSettingResponse getExportSetting(GetExportSettingRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, GetExportSettingResponse::builder)
+                .logger(LOG, "getExportSetting")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetExportSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/GetExportSetting")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExportSettingRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("exportSetting")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.ExportSetting.class,
+                        GetExportSettingResponse.Builder::exportSetting)
+                .handleResponseHeaderString("etag", GetExportSettingResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExportSettingResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetExportStatusResponse getExportStatus(GetExportStatusRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, GetExportStatusResponse::builder)
+                .logger(LOG, "getExportStatus")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetExportStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportStatus/GetExportStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExportStatusRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("exportStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.ExportStatus.class,
+                        GetExportStatusResponse.Builder::exportStatus)
+                .handleResponseHeaderString("etag", GetExportStatusResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExportStatusResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -558,11 +906,11 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam(request.getFleetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.jms.model.Fleet.class, GetFleetResponse.Builder::fleet)
                 .handleResponseHeaderString("etag", GetFleetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFleetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -587,6 +935,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.FleetAdvancedFeatureConfiguration.class,
                         GetFleetAdvancedFeatureConfigurationResponse.Builder
@@ -596,7 +945,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         GetFleetAdvancedFeatureConfigurationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", GetFleetAdvancedFeatureConfigurationResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -620,6 +968,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam("agentConfiguration")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.FleetAgentConfiguration.class,
                         GetFleetAgentConfigurationResponse.Builder::fleetAgentConfiguration)
@@ -627,7 +976,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "etag", GetFleetAgentConfigurationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFleetAgentConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -649,12 +997,12 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam(request.getFamilyVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.JavaFamily.class,
                         GetJavaFamilyResponse.Builder::javaFamily)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJavaFamilyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -683,6 +1031,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam(request.getJavaMigrationAnalysisResultId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.JavaMigrationAnalysisResult.class,
                         GetJavaMigrationAnalysisResultResponse.Builder::javaMigrationAnalysisResult)
@@ -691,7 +1040,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetJavaMigrationAnalysisResultResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -713,12 +1061,41 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam(request.getReleaseVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.JavaRelease.class,
                         GetJavaReleaseResponse.Builder::javaRelease)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJavaReleaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetJmsPluginResponse getJmsPlugin(GetJmsPluginRequest request) {
+
+        Validate.notBlank(request.getJmsPluginId(), "jmsPluginId must not be blank");
+
+        return clientCall(request, GetJmsPluginResponse::builder)
+                .logger(LOG, "getJmsPlugin")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetJmsPlugin",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/GetJmsPlugin")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetJmsPluginRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("jmsPlugins")
+                .appendPathParam(request.getJmsPluginId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.JmsPlugin.class,
+                        GetJmsPluginResponse.Builder::jmsPlugin)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetJmsPluginResponse.Builder::opcRequestId)
+                .handleResponseHeaderFloat("retry-after", GetJmsPluginResponse.Builder::retryAfter)
+                .handleResponseHeaderString("etag", GetJmsPluginResponse.Builder::etag)
                 .callSync();
     }
 
@@ -747,6 +1124,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam(request.getPerformanceTuningAnalysisResultId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.PerformanceTuningAnalysisResult.class,
                         GetPerformanceTuningAnalysisResultResponse.Builder
@@ -756,7 +1134,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetPerformanceTuningAnalysisResultResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -778,6 +1155,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -786,7 +1164,40 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
                 .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public ListAgentInstallersResponse listAgentInstallers(ListAgentInstallersRequest request) {
+
+        return clientCall(request, ListAgentInstallersResponse::builder)
+                .logger(LOG, "listAgentInstallers")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListAgentInstallers",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AgentInstallerSummary/ListAgentInstallers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAgentInstallersRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("agentInstallers")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("fleetId", request.getFleetId())
+                .appendEnumQueryParam("platformArchitecture", request.getPlatformArchitecture())
+                .appendEnumQueryParam("osFamily", request.getOsFamily())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.AgentInstallerCollection.class,
+                        ListAgentInstallersResponse.Builder::agentInstallerCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAgentInstallersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAgentInstallersResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -812,6 +1223,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.AnnouncementCollection.class,
                         ListAnnouncementsResponse.Builder::announcementCollection)
@@ -819,7 +1231,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListAnnouncementsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAnnouncementsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -848,6 +1259,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.BlocklistCollection.class,
                         ListBlocklistsResponse.Builder::blocklistCollection)
@@ -855,7 +1267,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListBlocklistsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListBlocklistsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -879,14 +1290,22 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam("cryptoAnalysisResults")
                 .appendEnumQueryParam("aggregationMode", request.getAggregationMode())
                 .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("hostName", request.getHostName())
+                .appendQueryParam("nonCompliantFindingCount", request.getNonCompliantFindingCount())
+                .appendQueryParam(
+                        "nonCompliantFindingCountGreaterThan",
+                        request.getNonCompliantFindingCountGreaterThan())
+                .appendQueryParam("findingCount", request.getFindingCount())
+                .appendQueryParam("findingCountGreaterThan", request.getFindingCountGreaterThan())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("timeStart", request.getTimeStart())
-                .appendQueryParam("timeEnd", request.getTimeEnd())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.CryptoAnalysisResultCollection.class,
                         ListCryptoAnalysisResultsResponse.Builder::cryptoAnalysisResultCollection)
@@ -894,7 +1313,40 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListCryptoAnalysisResultsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListCryptoAnalysisResultsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListDrsFilesResponse listDrsFiles(ListDrsFilesRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, ListDrsFilesResponse::builder)
+                .logger(LOG, "listDrsFiles")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListDrsFiles",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFileCollection/ListDrsFiles")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrsFilesRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("drsFiles")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.DrsFileCollection.class,
+                        ListDrsFilesResponse.Builder::drsFileCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrsFilesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDrsFilesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -919,6 +1371,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.FleetDiagnosisCollection.class,
                         ListFleetDiagnosesResponse.Builder::fleetDiagnosisCollection)
@@ -926,7 +1379,50 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListFleetDiagnosesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFleetDiagnosesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListFleetErrorsResponse listFleetErrors(ListFleetErrorsRequest request) {
+
+        return clientCall(request, ListFleetErrorsResponse::builder)
+                .logger(LOG, "listFleetErrors")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListFleetErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetErrorSummary/ListFleetErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFleetErrorsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleetErrors")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("fleetId", request.getFleetId())
+                .appendQueryParam(
+                        "timeFirstSeenLessThanOrEqualTo",
+                        request.getTimeFirstSeenLessThanOrEqualTo())
+                .appendQueryParam(
+                        "timeFirstSeenGreaterThanOrEqualTo",
+                        request.getTimeFirstSeenGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timeLastSeenLessThanOrEqualTo", request.getTimeLastSeenLessThanOrEqualTo())
+                .appendQueryParam(
+                        "timeLastSeenGreaterThanOrEqualTo",
+                        request.getTimeLastSeenGreaterThanOrEqualTo())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.FleetErrorCollection.class,
+                        ListFleetErrorsResponse.Builder::fleetErrorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListFleetErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListFleetErrorsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -954,6 +1450,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("displayNameContains", request.getDisplayNameContains())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.FleetCollection.class,
                         ListFleetsResponse.Builder::fleetCollection)
@@ -961,7 +1458,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListFleetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFleetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1003,6 +1499,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("timeEnd", request.getTimeEnd())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.InstallationSiteCollection.class,
                         ListInstallationSitesResponse.Builder::installationSiteCollection)
@@ -1010,7 +1507,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListInstallationSitesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListInstallationSitesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1029,12 +1525,14 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam("javaFamilies")
                 .appendQueryParam("familyVersion", request.getFamilyVersion())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("isSupportedVersion", request.getIsSupportedVersion())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.JavaFamilyCollection.class,
                         ListJavaFamiliesResponse.Builder::javaFamilyCollection)
@@ -1042,7 +1540,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListJavaFamiliesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListJavaFamiliesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1065,14 +1562,17 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("javaMigrationAnalysisResults")
                 .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("hostName", request.getHostName())
+                .appendQueryParam("applicationName", request.getApplicationName())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("timeStart", request.getTimeStart())
-                .appendQueryParam("timeEnd", request.getTimeEnd())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.JavaMigrationAnalysisResultCollection.class,
                         ListJavaMigrationAnalysisResultsResponse.Builder
@@ -1083,7 +1583,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListJavaMigrationAnalysisResultsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1111,6 +1610,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.JavaReleaseCollection.class,
                         ListJavaReleasesResponse.Builder::javaReleaseCollection)
@@ -1118,7 +1618,50 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListJavaReleasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListJavaReleasesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListJmsPluginsResponse listJmsPlugins(ListJmsPluginsRequest request) {
+
+        return clientCall(request, ListJmsPluginsResponse::builder)
+                .logger(LOG, "listJmsPlugins")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListJmsPlugins",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/ListJmsPlugins")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListJmsPluginsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("jmsPlugins")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("fleetId", request.getFleetId())
+                .appendQueryParam("agentId", request.getAgentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("availabilityStatus", request.getAvailabilityStatus())
+                .appendEnumQueryParam("agentType", request.getAgentType())
+                .appendQueryParam(
+                        "timeRegisteredLessThanOrEqualTo",
+                        request.getTimeRegisteredLessThanOrEqualTo())
+                .appendQueryParam(
+                        "timeLastSeenLessThanOrEqualTo", request.getTimeLastSeenLessThanOrEqualTo())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("hostnameContains", request.getHostnameContains())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.JmsPluginCollection.class,
+                        ListJmsPluginsResponse.Builder::jmsPluginCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListJmsPluginsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListJmsPluginsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1147,6 +1690,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.JreUsageCollection.class,
                         ListJreUsageResponse.Builder::jreUsageCollection)
@@ -1154,7 +1698,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListJreUsageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListJreUsageResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1178,14 +1721,17 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam("performanceTuningAnalysisResults")
                 .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
                 .appendQueryParam("applicationId", request.getApplicationId())
+                .appendQueryParam("applicationName", request.getApplicationName())
+                .appendQueryParam("hostName", request.getHostName())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("timeStart", request.getTimeStart())
-                .appendQueryParam("timeEnd", request.getTimeEnd())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.PerformanceTuningAnalysisResultCollection.class,
                         ListPerformanceTuningAnalysisResultsResponse.Builder
@@ -1196,7 +1742,50 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListPerformanceTuningAnalysisResultsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListPluginErrorsResponse listPluginErrors(ListPluginErrorsRequest request) {
+
+        return clientCall(request, ListPluginErrorsResponse::builder)
+                .logger(LOG, "listPluginErrors")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListPluginErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PluginErrorSummary/ListPluginErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPluginErrorsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("pluginErrors")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam(
+                        "timeFirstSeenLessThanOrEqualTo",
+                        request.getTimeFirstSeenLessThanOrEqualTo())
+                .appendQueryParam(
+                        "timeFirstSeenGreaterThanOrEqualTo",
+                        request.getTimeFirstSeenGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timeLastSeenLessThanOrEqualTo", request.getTimeLastSeenLessThanOrEqualTo())
+                .appendQueryParam(
+                        "timeLastSeenGreaterThanOrEqualTo",
+                        request.getTimeLastSeenGreaterThanOrEqualTo())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.PluginErrorCollection.class,
+                        ListPluginErrorsResponse.Builder::pluginErrorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPluginErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPluginErrorsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1221,6 +1810,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.WorkItemCollection.class,
                         ListWorkItemsResponse.Builder::workItemCollection)
@@ -1228,7 +1818,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-next-page", ListWorkItemsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkItemsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1254,6 +1843,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -1261,7 +1851,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1286,6 +1875,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -1293,7 +1883,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1315,8 +1904,15 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("fleetId", request.getFleetId())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendEnumQueryParam("operationType", request.getOperationType())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -1324,7 +1920,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1354,6 +1949,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1361,7 +1957,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RemoveFleetInstallationSitesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1389,13 +1984,50 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam("requestCryptoAnalyses")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RequestCryptoAnalysesResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RequestCryptoAnalysesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RequestDeployedApplicationMigrationAnalysesResponse
+            requestDeployedApplicationMigrationAnalyses(
+                    RequestDeployedApplicationMigrationAnalysesRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getRequestDeployedApplicationMigrationAnalysesDetails(),
+                "requestDeployedApplicationMigrationAnalysesDetails is required");
+
+        return clientCall(request, RequestDeployedApplicationMigrationAnalysesResponse::builder)
+                .logger(LOG, "requestDeployedApplicationMigrationAnalyses")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "RequestDeployedApplicationMigrationAnalyses",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestDeployedApplicationMigrationAnalyses")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RequestDeployedApplicationMigrationAnalysesRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("requestDeployedApplicationMigrationAnalyses")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RequestDeployedApplicationMigrationAnalysesResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RequestDeployedApplicationMigrationAnalysesResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1423,6 +2055,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam("requestJavaMigrationAnalyses")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1430,7 +2063,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RequestJavaMigrationAnalysesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1457,13 +2089,13 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam("requestJfrRecordings")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RequestJfrRecordingsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RequestJfrRecordingsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1491,6 +2123,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam("requestPerformanceTuningAnalyses")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1498,7 +2131,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RequestPerformanceTuningAnalysesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1526,13 +2158,13 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ScanJavaServerUsageResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ScanJavaServerUsageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1560,12 +2192,12 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", ScanLibraryUsageResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ScanLibraryUsageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1614,6 +2246,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.ApplicationInstallationUsageSummaryCollection
                                 .class,
@@ -1625,7 +2258,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeApplicationInstallationUsageResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1674,6 +2306,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("libraryKey", request.getLibraryKey())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.ApplicationUsageCollection.class,
                         SummarizeApplicationUsageResponse.Builder::applicationUsageCollection)
@@ -1681,7 +2314,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", SummarizeApplicationUsageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeApplicationUsageResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1724,6 +2356,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model
                                 .DeployedApplicationInstallationUsageSummaryCollection.class,
@@ -1735,7 +2368,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeDeployedApplicationInstallationUsageResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1773,6 +2405,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.DeployedApplicationUsageCollection.class,
                         SummarizeDeployedApplicationUsageResponse.Builder
@@ -1783,7 +2416,36 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeDeployedApplicationUsageResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SummarizeFleetErrorsResponse summarizeFleetErrors(SummarizeFleetErrorsRequest request) {
+
+        return clientCall(request, SummarizeFleetErrorsResponse::builder)
+                .logger(LOG, "summarizeFleetErrors")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeFleetErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetErrorAggregation/SummarizeFleetErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeFleetErrorsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleetErrorAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.FleetErrorAggregationCollection.class,
+                        SummarizeFleetErrorsResponse.Builder::fleetErrorAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeFleetErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeFleetErrorsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1829,6 +2491,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("pathContains", request.getPathContains())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.InstallationUsageCollection.class,
                         SummarizeInstallationUsageResponse.Builder::installationUsageCollection)
@@ -1836,7 +2499,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", SummarizeInstallationUsageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeInstallationUsageResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1875,6 +2537,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.JavaServerInstanceUsageCollection.class,
                         SummarizeJavaServerInstanceUsageResponse.Builder
@@ -1885,7 +2548,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeJavaServerInstanceUsageResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1920,6 +2582,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.JavaServerUsageCollection.class,
                         SummarizeJavaServerUsageResponse.Builder::javaServerUsageCollection)
@@ -1927,7 +2590,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", SummarizeJavaServerUsageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeJavaServerUsageResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1972,6 +2634,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("jreSecurityStatus", request.getJreSecurityStatus())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.JreUsageCollection.class,
                         SummarizeJreUsageResponse.Builder::jreUsageCollection)
@@ -1979,7 +2642,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", SummarizeJreUsageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeJreUsageResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2008,6 +2670,8 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("libraryKey", request.getLibraryKey())
                 .appendQueryParam("libraryNameContains", request.getLibraryNameContains())
                 .appendQueryParam("libraryName", request.getLibraryName())
+                .appendQueryParam("cvssScoreGreaterThan", request.getCvssScoreGreaterThan())
+                .appendQueryParam("cvssScoreLessThan", request.getCvssScoreLessThan())
                 .appendQueryParam("timeStart", request.getTimeStart())
                 .appendQueryParam("timeEnd", request.getTimeEnd())
                 .appendQueryParam("limit", request.getLimit())
@@ -2016,6 +2680,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.LibraryUsageCollection.class,
                         SummarizeLibraryUsageResponse.Builder::libraryUsageCollection)
@@ -2023,7 +2688,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", SummarizeLibraryUsageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeLibraryUsageResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2071,6 +2735,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("libraryKey", request.getLibraryKey())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.ManagedInstanceUsageCollection.class,
                         SummarizeManagedInstanceUsageResponse.Builder
@@ -2080,7 +2745,37 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         SummarizeManagedInstanceUsageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeManagedInstanceUsageResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SummarizePluginErrorsResponse summarizePluginErrors(
+            SummarizePluginErrorsRequest request) {
+
+        return clientCall(request, SummarizePluginErrorsResponse::builder)
+                .logger(LOG, "summarizePluginErrors")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizePluginErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PluginErrorAggregation/SummarizePluginErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizePluginErrorsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("pluginErrorAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.jms.model.PluginErrorAggregationCollection.class,
+                        SummarizePluginErrorsResponse.Builder::pluginErrorAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizePluginErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizePluginErrorsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -2099,16 +2794,85 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .basePath("/20210610")
                 .appendPathParam("summarizeResourceInventory")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("timeStart", request.getTimeStart())
                 .appendQueryParam("timeEnd", request.getTimeEnd())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jms.model.ResourceInventory.class,
                         SummarizeResourceInventoryResponse.Builder::resourceInventory)
                 .handleResponseHeaderString(
                         "opc-request-id", SummarizeResourceInventoryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateDrsFileResponse updateDrsFile(UpdateDrsFileRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrsFileDetails(), "updateDrsFileDetails is required");
+
+        Validate.notBlank(request.getDrsFileKey(), "drsFileKey must not be blank");
+
+        return clientCall(request, UpdateDrsFileResponse::builder)
+                .logger(LOG, "updateDrsFile")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "UpdateDrsFile",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateDrsFile")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDrsFileRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("drsFiles")
+                .appendPathParam(request.getDrsFileKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateDrsFileResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrsFileResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExportSettingResponse updateExportSetting(UpdateExportSettingRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExportSettingDetails(), "updateExportSettingDetails is required");
+
+        return clientCall(request, UpdateExportSettingResponse::builder)
+                .logger(LOG, "updateExportSetting")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "UpdateExportSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/UpdateExportSetting")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExportSettingRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("exportSetting")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.jms.model.ExportSetting.class,
+                        UpdateExportSettingResponse.Builder::exportSetting)
+                .handleResponseHeaderString("etag", UpdateExportSettingResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExportSettingResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2132,12 +2896,12 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateFleetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateFleetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2166,6 +2930,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.jms.model.FleetAdvancedFeatureConfiguration.class,
@@ -2176,7 +2941,6 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         UpdateFleetAdvancedFeatureConfigurationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateFleetAdvancedFeatureConfigurationResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2204,6 +2968,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -2211,7 +2976,38 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateFleetAgentConfigurationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateJmsPluginResponse updateJmsPlugin(UpdateJmsPluginRequest request) {
+
+        Validate.notBlank(request.getJmsPluginId(), "jmsPluginId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateJmsPluginDetails(), "updateJmsPluginDetails is required");
+
+        return clientCall(request, UpdateJmsPluginResponse::builder)
+                .logger(LOG, "updateJmsPlugin")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "UpdateJmsPlugin",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/UpdateJmsPlugin")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateJmsPluginRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("jmsPlugins")
+                .appendPathParam(request.getJmsPluginId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.jms.model.JmsPlugin.class,
+                        UpdateJmsPluginResponse.Builder::jmsPlugin)
+                .handleResponseHeaderString("etag", UpdateJmsPluginResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateJmsPluginResponse.Builder::opcRequestId)
                 .callSync();
     }
 

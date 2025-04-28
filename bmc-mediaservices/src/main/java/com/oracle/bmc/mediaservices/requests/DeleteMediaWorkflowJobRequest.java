@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.mediaservices.requests;
 import com.oracle.bmc.mediaservices.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaWorkflowJobExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaWorkflowJobExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteMediaWorkflowJobRequest.
  */
@@ -21,6 +21,13 @@ public class DeleteMediaWorkflowJobRequest
     /** Unique MediaWorkflowJob identifier. */
     public String getMediaWorkflowJobId() {
         return mediaWorkflowJobId;
+    }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
     /** The client request ID for tracing. */
     private String opcRequestId;
@@ -64,6 +71,20 @@ public class DeleteMediaWorkflowJobRequest
          */
         public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
             this.mediaWorkflowJobId = mediaWorkflowJobId;
+            return this;
+        }
+
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -134,6 +155,7 @@ public class DeleteMediaWorkflowJobRequest
          */
         public Builder copy(DeleteMediaWorkflowJobRequest o) {
             mediaWorkflowJobId(o.getMediaWorkflowJobId());
+            isLockOverride(o.getIsLockOverride());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
             invocationCallback(o.getInvocationCallback());
@@ -171,10 +193,12 @@ public class DeleteMediaWorkflowJobRequest
         public DeleteMediaWorkflowJobRequest buildWithoutInvocationCallback() {
             DeleteMediaWorkflowJobRequest request = new DeleteMediaWorkflowJobRequest();
             request.mediaWorkflowJobId = mediaWorkflowJobId;
+            request.isLockOverride = isLockOverride;
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new DeleteMediaWorkflowJobRequest(mediaWorkflowJobId, opcRequestId, ifMatch);
+            // new DeleteMediaWorkflowJobRequest(mediaWorkflowJobId, isLockOverride, opcRequestId,
+            // ifMatch);
         }
     }
 
@@ -186,6 +210,7 @@ public class DeleteMediaWorkflowJobRequest
     public Builder toBuilder() {
         return new Builder()
                 .mediaWorkflowJobId(mediaWorkflowJobId)
+                .isLockOverride(isLockOverride)
                 .opcRequestId(opcRequestId)
                 .ifMatch(ifMatch);
     }
@@ -205,6 +230,7 @@ public class DeleteMediaWorkflowJobRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",mediaWorkflowJobId=").append(String.valueOf(this.mediaWorkflowJobId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(")");
@@ -223,6 +249,7 @@ public class DeleteMediaWorkflowJobRequest
         DeleteMediaWorkflowJobRequest other = (DeleteMediaWorkflowJobRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.mediaWorkflowJobId, other.mediaWorkflowJobId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch);
     }
@@ -236,6 +263,9 @@ public class DeleteMediaWorkflowJobRequest
                         + (this.mediaWorkflowJobId == null
                                 ? 43
                                 : this.mediaWorkflowJobId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         return result;

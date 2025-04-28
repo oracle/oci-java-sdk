@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information about new Target. <br>
+ * Parameters used to create a new target. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -62,7 +62,7 @@ public final class CreateTargetDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * DetectorTemplate identifier.
+         * Display name for the target.
          *
          * <p>Avoid entering confidential information.
          */
@@ -70,7 +70,7 @@ public final class CreateTargetDetails
         private String displayName;
 
         /**
-         * DetectorTemplate identifier.
+         * Display name for the target.
          *
          * <p>Avoid entering confidential information.
          *
@@ -82,12 +82,12 @@ public final class CreateTargetDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier where the resource is created */
+        /** Compartment OCID where the resource is created */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -118,12 +118,12 @@ public final class CreateTargetDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** possible type of targets(COMPARTMENT/FACLOUD) */
+        /** Type of resource that target support (COMPARTMENT/FACLOUD) */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
         private TargetResourceType targetResourceType;
 
         /**
-         * possible type of targets(COMPARTMENT/FACLOUD)
+         * Type of resource that target support (COMPARTMENT/FACLOUD)
          *
          * @param targetResourceType the value to set
          * @return this builder
@@ -148,12 +148,12 @@ public final class CreateTargetDetails
             this.__explicitlySet__.add("targetResourceId");
             return this;
         }
-        /** List of detector recipes to associate with target */
+        /** List of detector recipes to attach to target */
         @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipes")
         private java.util.List<CreateTargetDetectorRecipeDetails> targetDetectorRecipes;
 
         /**
-         * List of detector recipes to associate with target
+         * List of detector recipes to attach to target
          *
          * @param targetDetectorRecipes the value to set
          * @return this builder
@@ -164,12 +164,12 @@ public final class CreateTargetDetails
             this.__explicitlySet__.add("targetDetectorRecipes");
             return this;
         }
-        /** List of responder recipes to associate with target */
+        /** List of responder recipes to attach to target */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipes")
         private java.util.List<CreateTargetResponderRecipeDetails> targetResponderRecipes;
 
         /**
-         * List of responder recipes to associate with target
+         * List of responder recipes to attach to target
          *
          * @param targetResponderRecipes the value to set
          * @return this builder
@@ -180,12 +180,12 @@ public final class CreateTargetDetails
             this.__explicitlySet__.add("targetResponderRecipes");
             return this;
         }
-        /** The current state of the DetectorRule. */
+        /** The enablement state of the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the DetectorRule.
+         * The enablement state of the detector rule
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -307,7 +307,7 @@ public final class CreateTargetDetails
     }
 
     /**
-     * DetectorTemplate identifier.
+     * Display name for the target.
      *
      * <p>Avoid entering confidential information.
      */
@@ -315,7 +315,7 @@ public final class CreateTargetDetails
     private final String displayName;
 
     /**
-     * DetectorTemplate identifier.
+     * Display name for the target.
      *
      * <p>Avoid entering confidential information.
      *
@@ -325,12 +325,12 @@ public final class CreateTargetDetails
         return displayName;
     }
 
-    /** Compartment Identifier where the resource is created */
+    /** Compartment OCID where the resource is created */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      *
      * @return the value
      */
@@ -357,12 +357,12 @@ public final class CreateTargetDetails
         return description;
     }
 
-    /** possible type of targets(COMPARTMENT/FACLOUD) */
+    /** Type of resource that target support (COMPARTMENT/FACLOUD) */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
     private final TargetResourceType targetResourceType;
 
     /**
-     * possible type of targets(COMPARTMENT/FACLOUD)
+     * Type of resource that target support (COMPARTMENT/FACLOUD)
      *
      * @return the value
      */
@@ -383,12 +383,12 @@ public final class CreateTargetDetails
         return targetResourceId;
     }
 
-    /** List of detector recipes to associate with target */
+    /** List of detector recipes to attach to target */
     @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipes")
     private final java.util.List<CreateTargetDetectorRecipeDetails> targetDetectorRecipes;
 
     /**
-     * List of detector recipes to associate with target
+     * List of detector recipes to attach to target
      *
      * @return the value
      */
@@ -396,12 +396,12 @@ public final class CreateTargetDetails
         return targetDetectorRecipes;
     }
 
-    /** List of responder recipes to associate with target */
+    /** List of responder recipes to attach to target */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipes")
     private final java.util.List<CreateTargetResponderRecipeDetails> targetResponderRecipes;
 
     /**
-     * List of responder recipes to associate with target
+     * List of responder recipes to attach to target
      *
      * @return the value
      */
@@ -409,12 +409,12 @@ public final class CreateTargetDetails
         return targetResponderRecipes;
     }
 
-    /** The current state of the DetectorRule. */
+    /** The enablement state of the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the DetectorRule.
+     * The enablement state of the detector rule
      *
      * @return the value
      */

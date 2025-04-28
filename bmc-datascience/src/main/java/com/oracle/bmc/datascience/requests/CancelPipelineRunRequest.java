@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.requests;
@@ -7,21 +7,21 @@ package com.oracle.bmc.datascience.requests;
 import com.oracle.bmc.datascience.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CancelPipelineRunExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CancelPipelineRunExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CancelPipelineRunRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the pipeline run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * pipeline run.
      */
     private String pipelineRunId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the pipeline run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * pipeline run.
      */
     public String getPipelineRunId() {
         return pipelineRunId;
@@ -75,6 +75,13 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
     public String getIfMatch() {
         return ifMatch;
     }
+    /** A boolean value to specify whether to terminate pipeline run gracefully. */
+    private Boolean terminateGracefully;
+
+    /** A boolean value to specify whether to terminate pipeline run gracefully. */
+    public Boolean getTerminateGracefully() {
+        return terminateGracefully;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -83,14 +90,14 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the pipeline run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * pipeline run.
          */
         private String pipelineRunId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the pipeline run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * pipeline run.
          *
          * @param pipelineRunId the value to set
          * @return this builder instance
@@ -164,6 +171,20 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /** A boolean value to specify whether to terminate pipeline run gracefully. */
+        private Boolean terminateGracefully = null;
+
+        /**
+         * A boolean value to specify whether to terminate pipeline run gracefully.
+         *
+         * @param terminateGracefully the value to set
+         * @return this builder instance
+         */
+        public Builder terminateGracefully(Boolean terminateGracefully) {
+            this.terminateGracefully = terminateGracefully;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -198,6 +219,7 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
+            terminateGracefully(o.getTerminateGracefully());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -236,8 +258,10 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
+            request.terminateGracefully = terminateGracefully;
             return request;
-            // new CancelPipelineRunRequest(pipelineRunId, opcRequestId, opcRetryToken, ifMatch);
+            // new CancelPipelineRunRequest(pipelineRunId, opcRequestId, opcRetryToken, ifMatch,
+            // terminateGracefully);
         }
     }
 
@@ -251,7 +275,8 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
                 .pipelineRunId(pipelineRunId)
                 .opcRequestId(opcRequestId)
                 .opcRetryToken(opcRetryToken)
-                .ifMatch(ifMatch);
+                .ifMatch(ifMatch)
+                .terminateGracefully(terminateGracefully);
     }
 
     /**
@@ -272,6 +297,7 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",terminateGracefully=").append(String.valueOf(this.terminateGracefully));
         sb.append(")");
         return sb.toString();
     }
@@ -290,7 +316,8 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
                 && java.util.Objects.equals(this.pipelineRunId, other.pipelineRunId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.terminateGracefully, other.terminateGracefully);
     }
 
     @Override
@@ -305,6 +332,11 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.terminateGracefully == null
+                                ? 43
+                                : this.terminateGracefully.hashCode());
         return result;
     }
 }

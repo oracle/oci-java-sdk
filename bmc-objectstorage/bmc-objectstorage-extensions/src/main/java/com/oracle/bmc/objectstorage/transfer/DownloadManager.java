@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.transfer;
@@ -9,9 +9,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.security.NoSuchAlgorithmException;
+
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
 import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
+import com.oracle.bmc.objectstorage.transfer.internal.ChecksumInfo;
+import com.oracle.bmc.objectstorage.transfer.internal.ChecksumInputStream;
+import com.oracle.bmc.objectstorage.transfer.internal.ChecksumUtils;
 import com.oracle.bmc.objectstorage.transfer.internal.download.DownloadExecution;
 import com.oracle.bmc.objectstorage.transfer.internal.download.MultithreadStream;
 import com.oracle.bmc.objectstorage.transfer.internal.download.RetryingStream;
@@ -54,12 +59,10 @@ public class DownloadManager {
      */
     public GetObjectResponse getObject(GetObjectRequest request) {
         // The retries in the download manager are smarter than the retries built into the client:
-        // The download
-        // manager modifies the request to only retry the parts that haven't been read yet. The
-        // client would retry
-        // the entire request, and re-download parts that have already been downloaded.
-        // We need to make sure we don't get (download manager) retries on top of (client) retries,
-        // though.
+        // The download manager modifies the request to only retry the parts that haven't been
+        // read yet. The client would retry the entire request, and re-download parts that have
+        // already been downloaded. We need to make sure we don't get (download manager) retries
+        // on top of (client) retries, though.
         request =
                 GetObjectRequest.builder()
                         .copy(request)
@@ -146,11 +149,9 @@ public class DownloadManager {
             assert numThreads > 0;
 
             // In cache, some requests set if-none-match to get an unchanged response back if the
-            // object hasn't changed.
-            // For parallel downloads, the download manager adds the if-match header to ensure all
-            // parts are from the same
-            // object version. But it is illegal to have both if-match and if-none-match in the same
-            // request. Therefore,
+            // object hasn't changed. For parallel downloads, the download manager adds the
+            // if-match header to ensure all parts are from the same object version. But it is
+            // illegal to have both if-match and if-none-match in the same request. Therefore,
             // we need to set if-none-match to null for the following parts to allow downloads using
             // download manager.
             if (request.getIfNoneMatch() != null) {
@@ -171,9 +172,31 @@ public class DownloadManager {
             stream = retryingStream;
         }
 
-        final GetObjectResponse retryingResponse =
-                GetObjectResponse.builder().copy(response).inputStream(stream).build();
-        return retryingResponse;
+        // Wrap the stream with ChecksumInputStream for data integrity verification
+        InputStream resultStream;
+        if (this.config.isEnforceDataIntegrityForDownload() && request.getRange() == null) {
+            try {
+                ChecksumInfo checksumInfo = ChecksumUtils.getExpectedChecksumAndAlgorithm(response);
+                if (checksumInfo.getChecksum() != null) {
+                    resultStream =
+                            new ChecksumInputStream(
+                                    stream,
+                                    checksumInfo.getAlgorithm(),
+                                    checksumInfo.getChecksum(),
+                                    response.getContentLength());
+                } else {
+                    resultStream = stream;
+                }
+            } catch (NoSuchAlgorithmException e) {
+                throw new RuntimeException(
+                        "Checksum initialization error: The specified algorithm is not available",
+                        e);
+            }
+        } else {
+            resultStream = stream;
+        }
+
+        return GetObjectResponse.builder().copy(response).inputStream(resultStream).build();
     }
 
     /**

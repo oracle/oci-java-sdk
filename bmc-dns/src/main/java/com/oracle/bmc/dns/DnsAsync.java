@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns;
@@ -10,7 +10,7 @@ import com.oracle.bmc.dns.responses.*;
 /**
  * API for the DNS service. Use this API to manage DNS zones, records, and other DNS resources. For
  * more information, see [Overview of the DNS
- * Service](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnszonemanagement.htm).
+ * Service](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnszonemanagement.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public interface DnsAsync extends AutoCloseable {
@@ -179,7 +179,7 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Creates a new steering policy in the specified compartment. For more information on creating
      * policies with templates, see [Traffic Management API
-     * Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+     * Guide](https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -821,6 +821,54 @@ public interface DnsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Promotes a specified `DnssecKeyVersion` on the zone.
+     *
+     * <p>If the `DnssecKeyVersion` identified in the request body is a key signing key (KSK) that
+     * is replacing another `DnssecKeyVersion`, then the old `DnssecKeyVersion` is scheduled for
+     * removal from the zone.
+     *
+     * <p>For key signing keys (KSKs), you must create the DS record with the new key information
+     * **before** promoting the new key to establish a chain of trust. To avoid a service
+     * disruption, remove the old DS record as soon as its TTL (time to live) expires.
+     *
+     * <p>For more information, see
+     * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PromoteZoneDnssecKeyVersionResponse> promoteZoneDnssecKeyVersion(
+            PromoteZoneDnssecKeyVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PromoteZoneDnssecKeyVersionRequest, PromoteZoneDnssecKeyVersionResponse>
+                    handler);
+
+    /**
+     * Stages a new `DnssecKeyVersion` on the zone. Staging is a process that generates a new
+     * \"successor\" key version that replaces an existing \"predecessor\" key version. **Note:** A
+     * new key-signing key (KSK) version is inert until you update the parent zone DS records.
+     *
+     * <p>For more information, see the
+     * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm) documentation.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StageZoneDnssecKeyVersionResponse> stageZoneDnssecKeyVersion(
+            StageZoneDnssecKeyVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            StageZoneDnssecKeyVersionRequest, StageZoneDnssecKeyVersionResponse>
+                    handler);
+
+    /**
      * Replaces records in the specified zone at a domain with the records specified in the request
      * body.
      *
@@ -959,9 +1007,9 @@ public interface DnsAsync extends AutoCloseable {
      *
      * <p>Global secondary zones may have their external masters updated. For more information about
      * secondary zones, see [Manage DNS Service
-     * Zone](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm). When the
-     * zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
-     * then the viewId query parameter is required.
+     * Zone](https://docs.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm). When the zone
+     * name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+     * the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

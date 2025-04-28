@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -32,8 +32,17 @@ package com.oracle.bmc.opsi.model;
             value = HostCpuUsage.class,
             name = "HOST_CPU_USAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = HostGpuUsage.class,
+            name = "HOST_GPU_USAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = HostGpuProcesses.class,
+            name = "HOST_GPU_PROCESSES"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = HostFilesystemUsage.class,
             name = "HOST_FILESYSTEM_USAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = HostIoUsage.class,
+            name = "HOST_IO_USAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = HostNetworkActivitySummary.class,
             name = "HOST_NETWORK_ACTIVITY_SUMMARY")
@@ -114,6 +123,9 @@ public class HostPerformanceMetricGroup
         HostNetworkActivitySummary("HOST_NETWORK_ACTIVITY_SUMMARY"),
         HostTopProcesses("HOST_TOP_PROCESSES"),
         HostFilesystemUsage("HOST_FILESYSTEM_USAGE"),
+        HostGpuUsage("HOST_GPU_USAGE"),
+        HostGpuProcesses("HOST_GPU_PROCESSES"),
+        HostIoUsage("HOST_IO_USAGE"),
         ;
 
         private final String value;

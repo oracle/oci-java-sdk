@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.transfer;
@@ -56,6 +56,9 @@ public class DownloadConfiguration {
     /** Executor service for parallel downloads. */
     private final ExecutorService executorService;
 
+    /** Flag to indicate whether download integrity verification should be enabled. */
+    private final boolean enforceDataIntegrityForDownload;
+
     /**
      * Create a configuration for the {@link DownloadManager}.
      *
@@ -77,6 +80,42 @@ public class DownloadConfiguration {
             long multipartDownloadThresholdInBytes,
             int parallelDownloads,
             ExecutorService executorService) {
+        this(
+                maxRetries,
+                initialBackoff,
+                maxBackoff,
+                partSizeInBytes,
+                multipartDownloadThresholdInBytes,
+                parallelDownloads,
+                executorService,
+                false);
+    }
+
+    /**
+     * Create a configuration for the {@link DownloadManager} with a flag to enforce data integrity
+     * for downloads.
+     *
+     * @param maxRetries maximum number of retries, not including the initial attempt.
+     * @param initialBackoff initial backoff, before a retry is performed.
+     * @param maxBackoff maximum backoff between retries
+     * @param partSizeInBytes the size in bytes of the individual parts as which the object is
+     *     downloaded.
+     * @param multipartDownloadThresholdInBytes the threshold size in bytes at which we will start
+     *     splitting the object into parts
+     * @param parallelDownloads maximum number of parallel downloads
+     * @param executorService executor service for parallel downloads
+     * @param enforceDataIntegrityForDownload flag to enable or disable data integrity verification
+     *     for downloads
+     */
+    public DownloadConfiguration(
+            int maxRetries,
+            Duration initialBackoff,
+            Duration maxBackoff,
+            int partSizeInBytes,
+            long multipartDownloadThresholdInBytes,
+            int parallelDownloads,
+            ExecutorService executorService,
+            boolean enforceDataIntegrityForDownload) {
         Validate.isTrue(
                 maxRetries >= 0,
                 "maxRetries [%s] must be greater than or equal to %s",
@@ -124,6 +163,7 @@ public class DownloadConfiguration {
         this.multipartDownloadThresholdInBytes = multipartDownloadThresholdInBytes;
         this.parallelDownloads = parallelDownloads;
         this.executorService = executorService;
+        this.enforceDataIntegrityForDownload = enforceDataIntegrityForDownload;
     }
 
     /**
@@ -144,6 +184,7 @@ public class DownloadConfiguration {
         private long multipartDownloadThresholdInBytes;
         private int parallelDownloads;
         private ExecutorService executorService;
+        private boolean enforceDataIntegrityForDownload;
 
         private Builder() {
             this.maxRetries = 10;
@@ -154,6 +195,7 @@ public class DownloadConfiguration {
                     DownloadConfiguration.MIN_PART_SIZE_IN_BYTES * 2;
             this.parallelDownloads = 3;
             this.executorService = null;
+            this.enforceDataIntegrityForDownload = false;
         }
 
         /**
@@ -169,7 +211,8 @@ public class DownloadConfiguration {
                     this.partSizeInBytes,
                     this.multipartDownloadThresholdInBytes,
                     this.parallelDownloads,
-                    this.executorService);
+                    this.executorService,
+                    this.enforceDataIntegrityForDownload);
         }
 
         /**
@@ -186,6 +229,7 @@ public class DownloadConfiguration {
             this.multipartDownloadThresholdInBytes = that.multipartDownloadThresholdInBytes;
             this.parallelDownloads = that.parallelDownloads;
             this.executorService = that.executorService;
+            this.enforceDataIntegrityForDownload = that.enforceDataIntegrityForDownload;
             return this;
         }
 
@@ -290,6 +334,17 @@ public class DownloadConfiguration {
             this.executorService = value;
             return this;
         }
+
+        /**
+         * Set whether download integrity verification should be enabled.
+         *
+         * @param value true to enable data integrity verification for downloads, false otherwise
+         * @return this builder
+         */
+        public Builder enforceDataIntegrityForDownload(boolean value) {
+            this.enforceDataIntegrityForDownload = value;
+            return this;
+        }
     }
 
     /** Maximum number of retries, not including the initial attempt. */
@@ -336,5 +391,10 @@ public class DownloadConfiguration {
     /** Executor service for parallel downloads. */
     public ExecutorService getExecutorService() {
         return this.executorService;
+    }
+
+    /** Flag to indicate whether download integrity verification should be enabled. */
+    public boolean isEnforceDataIntegrityForDownload() {
+        return this.enforceDataIntegrityForDownload;
     }
 }

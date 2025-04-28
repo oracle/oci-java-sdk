@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -312,12 +312,12 @@ public final class PerformanceTuningAnalysisResult
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the JFR capture started. */
+        /** The time the JFR recording has started. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The time the JFR capture started.
+         * The time the JFR recording has started.
          *
          * @param timeStarted the value to set
          * @return this builder
@@ -327,12 +327,12 @@ public final class PerformanceTuningAnalysisResult
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The time the JFR capture finished. */
+        /** The time the JFR recording has finished. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The time the JFR capture finished.
+         * The time the JFR recording has finished.
          *
          * @param timeFinished the value to set
          * @return this builder
@@ -637,12 +637,12 @@ public final class PerformanceTuningAnalysisResult
         return timeCreated;
     }
 
-    /** The time the JFR capture started. */
+    /** The time the JFR recording has started. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The time the JFR capture started.
+     * The time the JFR recording has started.
      *
      * @return the value
      */
@@ -650,12 +650,12 @@ public final class PerformanceTuningAnalysisResult
         return timeStarted;
     }
 
-    /** The time the JFR capture finished. */
+    /** The time the JFR recording has finished. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The time the JFR capture finished.
+     * The time the JFR recording has finished.
      *
      * @return the value
      */

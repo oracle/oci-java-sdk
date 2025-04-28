@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
@@ -150,9 +150,6 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateSubscriptionMappingResponse.Builder::subscriptionMapping)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSubscriptionMappingResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateSubscriptionMappingResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", CreateSubscriptionMappingResponse.Builder::etag)
                 .callSync();
     }
@@ -293,6 +290,7 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.tenantmanagercontrolplane.model
                                 .AssignedSubscriptionLineItemCollection.class,
@@ -304,7 +302,6 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListAssignedSubscriptionLineItemsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -398,6 +395,7 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.tenantmanagercontrolplane.model
                                 .SubscriptionLineItemCollection.class,
@@ -406,7 +404,6 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListSubscriptionLineItemsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSubscriptionLineItemsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.requests;
@@ -7,33 +7,46 @@ package com.oracle.bmc.ocvp.requests;
 import com.oracle.bmc.ocvp.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListEsxiHostsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListEsxiHostsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListEsxiHostsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * SDDC.
      */
     private String sddcId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * SDDC.
      */
     public String getSddcId() {
         return sddcId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC
+     * Cluster.
+     */
+    private String clusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC
+     * Cluster.
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Compute instance.
      */
     private String computeInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Compute instance.
      */
     public String getComputeInstanceId() {
@@ -49,14 +62,14 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -64,14 +77,14 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -196,13 +209,13 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return isSwapBillingOnly;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment as optional parameter.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment as optional parameter.
      */
     public String getCompartmentId() {
@@ -216,13 +229,13 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * SDDC.
          */
         private String sddcId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * SDDC.
          *
          * @param sddcId the value to set
@@ -234,13 +247,31 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * SDDC Cluster.
+         */
+        private String clusterId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * SDDC Cluster.
+         *
+         * @param clusterId the value to set
+         * @return this builder instance
+         */
+        public Builder clusterId(String clusterId) {
+            this.clusterId = clusterId;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Compute instance.
          */
         private String computeInstanceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Compute instance.
          *
          * @param computeInstanceId the value to set
@@ -268,14 +299,14 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -288,14 +319,14 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -420,13 +451,13 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment as optional parameter.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment as optional parameter.
          *
          * @param compartmentId the value to set
@@ -468,6 +499,7 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          */
         public Builder copy(ListEsxiHostsRequest o) {
             sddcId(o.getSddcId());
+            clusterId(o.getClusterId());
             computeInstanceId(o.getComputeInstanceId());
             displayName(o.getDisplayName());
             limit(o.getLimit());
@@ -514,6 +546,7 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         public ListEsxiHostsRequest buildWithoutInvocationCallback() {
             ListEsxiHostsRequest request = new ListEsxiHostsRequest();
             request.sddcId = sddcId;
+            request.clusterId = clusterId;
             request.computeInstanceId = computeInstanceId;
             request.displayName = displayName;
             request.limit = limit;
@@ -526,8 +559,8 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.isSwapBillingOnly = isSwapBillingOnly;
             request.compartmentId = compartmentId;
             return request;
-            // new ListEsxiHostsRequest(sddcId, computeInstanceId, displayName, limit, page,
-            // sortOrder, sortBy, opcRequestId, lifecycleState, isBillingDonorsOnly,
+            // new ListEsxiHostsRequest(sddcId, clusterId, computeInstanceId, displayName, limit,
+            // page, sortOrder, sortBy, opcRequestId, lifecycleState, isBillingDonorsOnly,
             // isSwapBillingOnly, compartmentId);
         }
     }
@@ -540,6 +573,7 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public Builder toBuilder() {
         return new Builder()
                 .sddcId(sddcId)
+                .clusterId(clusterId)
                 .computeInstanceId(computeInstanceId)
                 .displayName(displayName)
                 .limit(limit)
@@ -568,6 +602,7 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",sddcId=").append(String.valueOf(this.sddcId));
+        sb.append(",clusterId=").append(String.valueOf(this.clusterId));
         sb.append(",computeInstanceId=").append(String.valueOf(this.computeInstanceId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -595,6 +630,7 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         ListEsxiHostsRequest other = (ListEsxiHostsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.sddcId, other.sddcId)
+                && java.util.Objects.equals(this.clusterId, other.clusterId)
                 && java.util.Objects.equals(this.computeInstanceId, other.computeInstanceId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -613,6 +649,7 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.sddcId == null ? 43 : this.sddcId.hashCode());
+        result = (result * PRIME) + (this.clusterId == null ? 43 : this.clusterId.hashCode());
         result =
                 (result * PRIME)
                         + (this.computeInstanceId == null ? 43 : this.computeInstanceId.hashCode());

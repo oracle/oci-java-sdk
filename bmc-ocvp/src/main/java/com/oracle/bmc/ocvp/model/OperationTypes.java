@@ -1,14 +1,16 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.model;
 
 /** Possible asynchronous operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     CreateSddc("CREATE_SDDC"),
     DeleteSddc("DELETE_SDDC"),
+    CreateCluster("CREATE_CLUSTER"),
+    DeleteCluster("DELETE_CLUSTER"),
     CreateEsxiHost("CREATE_ESXI_HOST"),
     DeleteEsxiHost("DELETE_ESXI_HOST"),
     UpgradeHcx("UPGRADE_HCX"),
@@ -16,6 +18,21 @@ public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     CancelDowngradeHcx("CANCEL_DOWNGRADE_HCX"),
     RefreshHcxLicenseStatus("REFRESH_HCX_LICENSE_STATUS"),
     SwapBilling("SWAP_BILLING"),
+    ReplaceHost("REPLACE_HOST"),
+    InPlaceUpgrade("IN_PLACE_UPGRADE"),
+    CreateDatastore("CREATE_DATASTORE"),
+    UpdateDatastore("UPDATE_DATASTORE"),
+    AddBlockVolumeToDatastore("ADD_BLOCK_VOLUME_TO_DATASTORE"),
+    DeleteDatastore("DELETE_DATASTORE"),
+    CreateDatastoreCluster("CREATE_DATASTORE_CLUSTER"),
+    UpdateDatastoreCluster("UPDATE_DATASTORE_CLUSTER"),
+    AttachDatastoreClusterToEsxiHost("ATTACH_DATASTORE_CLUSTER_TO_ESXI_HOST"),
+    AttachDatastoreClusterToCluster("ATTACH_DATASTORE_CLUSTER_TO_CLUSTER"),
+    DetachDatastoreClusterFromEsxiHost("DETACH_DATASTORE_CLUSTER_FROM_ESXI_HOST"),
+    DetachDatastoreClusterFromCluster("DETACH_DATASTORE_CLUSTER_FROM_CLUSTER"),
+    DeleteDatastoreCluster("DELETE_DATASTORE_CLUSTER"),
+    AddDatastoreToDatastoreCluster("ADD_DATASTORE_TO_DATASTORE_CLUSTER"),
+    RemoveDatastoreFromDatastoreCluster("REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

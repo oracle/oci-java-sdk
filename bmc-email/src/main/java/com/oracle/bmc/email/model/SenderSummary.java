@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.model;
@@ -28,16 +28,18 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         "lifecycleState",
         "timeCreated",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags"
     })
     public SenderSummary(
             String compartmentId,
             String emailAddress,
             String id,
-            LifecycleState lifecycleState,
+            Sender.LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.compartmentId = compartmentId;
         this.emailAddress = emailAddress;
@@ -46,6 +48,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         this.timeCreated = timeCreated;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -97,7 +100,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         }
         /** The current status of the approved sender. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
+        private Sender.LifecycleState lifecycleState;
 
         /**
          * The current status of the approved sender.
@@ -105,21 +108,21 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
          * @param lifecycleState the value to set
          * @return this builder
          */
-        public Builder lifecycleState(LifecycleState lifecycleState) {
+        public Builder lifecycleState(Sender.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
          * Date time the approved sender was added, in "YYYY-MM-ddThh:mmZ" format with a Z offset,
-         * as defined by RFC 3339.
+         * as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Date time the approved sender was added, in "YYYY-MM-ddThh:mmZ" format with a Z offset,
-         * as defined by RFC 3339.
+         * as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -132,7 +135,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -142,7 +145,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -157,7 +160,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -167,7 +170,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -178,6 +181,25 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
             return this;
         }
 
@@ -193,7 +215,8 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.lifecycleState,
                             this.timeCreated,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -222,6 +245,9 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -276,76 +302,28 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /** The current status of the approved sender. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
-        Creating("CREATING"),
-        Active("ACTIVE"),
-        Deleting("DELETING"),
-        Deleted("DELETED"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
-
-        private final String value;
-        private static java.util.Map<String, LifecycleState> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (LifecycleState v : LifecycleState.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        LifecycleState(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static LifecycleState create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /** The current status of the approved sender. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    private final LifecycleState lifecycleState;
+    private final Sender.LifecycleState lifecycleState;
 
     /**
      * The current status of the approved sender.
      *
      * @return the value
      */
-    public LifecycleState getLifecycleState() {
+    public Sender.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
      * Date time the approved sender was added, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
-     * defined by RFC 3339.
+     * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date time the approved sender was added, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
-     * defined by RFC 3339.
+     * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
      */
@@ -356,7 +334,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -366,7 +344,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -379,7 +357,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -389,7 +367,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -397,6 +375,23 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
     }
 
     @Override
@@ -421,6 +416,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -442,6 +438,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -460,6 +457,7 @@ public final class SenderSummary extends com.oracle.bmc.http.client.internal.Exp
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

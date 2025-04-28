@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fusionapps.model;
@@ -21,16 +21,27 @@ package com.oracle.bmc.fusionapps.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class Subscription extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "classicSubscriptionId", "serviceName", "skus"})
+    @java.beans.ConstructorProperties({
+        "id",
+        "classicSubscriptionId",
+        "serviceName",
+        "lifecycleState",
+        "lifecycleDetails",
+        "skus"
+    })
     public Subscription(
             String id,
             String classicSubscriptionId,
             String serviceName,
+            LifecycleState lifecycleState,
+            LifecycleDetails lifecycleDetails,
             java.util.List<SubscriptionSku> skus) {
         super();
         this.id = id;
         this.classicSubscriptionId = classicSubscriptionId;
         this.serviceName = serviceName;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.skus = skus;
     }
 
@@ -81,6 +92,36 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("serviceName");
             return this;
         }
+        /** Lifecycle state of the subscription. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        /**
+         * Lifecycle state of the subscription.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         */
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /** Subscription resource intermediate states. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private LifecycleDetails lifecycleDetails;
+
+        /**
+         * Subscription resource intermediate states.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         */
+        public Builder lifecycleDetails(LifecycleDetails lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
         /** Stock keeping unit. */
         @com.fasterxml.jackson.annotation.JsonProperty("skus")
         private java.util.List<SubscriptionSku> skus;
@@ -103,7 +144,12 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
         public Subscription build() {
             Subscription model =
                     new Subscription(
-                            this.id, this.classicSubscriptionId, this.serviceName, this.skus);
+                            this.id,
+                            this.classicSubscriptionId,
+                            this.serviceName,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.skus);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -120,6 +166,12 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("serviceName")) {
                 this.serviceName(model.getServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("skus")) {
                 this.skus(model.getSkus());
@@ -176,6 +228,154 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
         return serviceName;
     }
 
+    /** Lifecycle state of the subscription. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+        Creating("CREATING"),
+        Active("ACTIVE"),
+        Inactive("INACTIVE"),
+        Updating("UPDATING"),
+        Deleting("DELETING"),
+        Deleted("DELETED"),
+        Failed("FAILED"),
+        NeedsAttention("NEEDS_ATTENTION"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Lifecycle state of the subscription. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final LifecycleState lifecycleState;
+
+    /**
+     * Lifecycle state of the subscription.
+     *
+     * @return the value
+     */
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    /** Subscription resource intermediate states. */
+    public enum LifecycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
+        Active("ACTIVE"),
+        Purged("PURGED"),
+        Canceled("CANCELED"),
+        PaidPurged("PAID_PURGED"),
+        Initialized("INITIALIZED"),
+        SoftTerminated("SOFT_TERMINATED"),
+        Disabled("DISABLED"),
+        BeginTermination("BEGIN_TERMINATION"),
+        Migrated("MIGRATED"),
+        PendingCancelation("PENDING_CANCELATION"),
+        Archived("ARCHIVED"),
+        NonRecoverable("NON_RECOVERABLE"),
+        BeginSoftTermination("BEGIN_SOFT_TERMINATION"),
+        Activated("ACTIVATED"),
+        AccessDisabled("ACCESS_DISABLED"),
+        PendingRegistration("PENDING_REGISTRATION"),
+        Terminated("TERMINATED"),
+        Relocating("RELOCATING"),
+        Deprovisioned("DEPROVISIONED"),
+        Provisioned("PROVISIONED"),
+        BeginTerminationPassive("BEGIN_TERMINATION_PASSIVE"),
+        Locked("LOCKED"),
+        PendingDeprovisioning("PENDING_DEPROVISIONING"),
+        Registered("REGISTERED"),
+        Cancelled("CANCELLED"),
+        Expired("EXPIRED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleDetails.class);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleDetails> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleDetails v : LifecycleDetails.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleDetails(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleDetails create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleDetails', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Subscription resource intermediate states. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final LifecycleDetails lifecycleDetails;
+
+    /**
+     * Subscription resource intermediate states.
+     *
+     * @return the value
+     */
+    public LifecycleDetails getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     /** Stock keeping unit. */
     @com.fasterxml.jackson.annotation.JsonProperty("skus")
     private final java.util.List<SubscriptionSku> skus;
@@ -207,6 +407,8 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", classicSubscriptionId=").append(String.valueOf(this.classicSubscriptionId));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", skus=").append(String.valueOf(this.skus));
         sb.append(")");
         return sb.toString();
@@ -225,6 +427,8 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.classicSubscriptionId, other.classicSubscriptionId)
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.skus, other.skus)
                 && super.equals(other);
     }
@@ -240,6 +444,12 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
                                 ? 43
                                 : this.classicSubscriptionId.hashCode());
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.skus == null ? 43 : this.skus.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

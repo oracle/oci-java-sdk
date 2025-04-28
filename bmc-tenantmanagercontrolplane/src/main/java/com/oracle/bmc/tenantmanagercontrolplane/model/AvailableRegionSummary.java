@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
@@ -23,10 +23,12 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
 public final class AvailableRegionSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"regionName"})
-    public AvailableRegionSummary(String regionName) {
+    @java.beans.ConstructorProperties({"regionName", "systemTags"})
+    public AvailableRegionSummary(
+            String regionName, java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.regionName = regionName;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,12 +48,32 @@ public final class AvailableRegionSummary
             this.__explicitlySet__.add("regionName");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AvailableRegionSummary build() {
-            AvailableRegionSummary model = new AvailableRegionSummary(this.regionName);
+            AvailableRegionSummary model =
+                    new AvailableRegionSummary(this.regionName, this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +84,9 @@ public final class AvailableRegionSummary
         public Builder copy(AvailableRegionSummary model) {
             if (model.wasPropertyExplicitlySet("regionName")) {
                 this.regionName(model.getRegionName());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -89,6 +114,23 @@ public final class AvailableRegionSummary
         return regionName;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -105,6 +147,7 @@ public final class AvailableRegionSummary
         sb.append("AvailableRegionSummary(");
         sb.append("super=").append(super.toString());
         sb.append("regionName=").append(String.valueOf(this.regionName));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +162,9 @@ public final class AvailableRegionSummary
         }
 
         AvailableRegionSummary other = (AvailableRegionSummary) o;
-        return java.util.Objects.equals(this.regionName, other.regionName) && super.equals(other);
+        return java.util.Objects.equals(this.regionName, other.regionName)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && super.equals(other);
     }
 
     @Override
@@ -127,6 +172,7 @@ public final class AvailableRegionSummary
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.regionName == null ? 43 : this.regionName.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

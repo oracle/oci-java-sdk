@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -22,6 +22,18 @@ package com.oracle.bmc.opsi.model;
         property = "entitySource",
         defaultImpl = CreateDatabaseInsightDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateMacsManagedCloudDatabaseInsightDetails.class,
+            name = "MACS_MANAGED_CLOUD_DATABASE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateExternalMysqlDatabaseInsightDetails.class,
+            name = "EXTERNAL_MYSQL_DATABASE_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateAutonomousDatabaseInsightDetails.class,
+            name = "AUTONOMOUS_DATABASE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateMdsMySqlDatabaseInsightDetails.class,
+            name = "MDS_MYSQL_DATABASE_SYSTEM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateEmManagedExternalDatabaseInsightDetails.class,
             name = "EM_MANAGED_EXTERNAL_DATABASE"),

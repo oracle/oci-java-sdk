@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataflow;
@@ -61,6 +61,23 @@ public interface DataFlowAsync extends AutoCloseable {
      *     template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
+     * Deletes an application using an `applicationId` and terminates related runs. This operation
+     * will timeout in approximate 30 minutes if any related Runs are not terminated successfully.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CascadingDeleteApplicationResponse> cascadingDeleteApplication(
+            CascadingDeleteApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CascadingDeleteApplicationRequest, CascadingDeleteApplicationResponse>
+                    handler);
 
     /**
      * Moves an application into a different compartment. When provided, If-Match is checked against
@@ -637,6 +654,22 @@ public interface DataFlowAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<StartPoolRequest, StartPoolResponse> handler);
 
     /**
+     * Starts the SqlEndpoint for a given `SqlEndpointId`. When provided, If-Match is checked
+     * against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StartSqlEndpointResponse> startSqlEndpoint(
+            StartSqlEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StartSqlEndpointRequest, StartSqlEndpointResponse>
+                    handler);
+
+    /**
      * Stops the dataflow pool for a given `poolId`. When provided, If-Match is checked against ETag
      * values of the resource.
      *
@@ -650,6 +683,22 @@ public interface DataFlowAsync extends AutoCloseable {
     java.util.concurrent.Future<StopPoolResponse> stopPool(
             StopPoolRequest request,
             com.oracle.bmc.responses.AsyncHandler<StopPoolRequest, StopPoolResponse> handler);
+
+    /**
+     * Stops the SqlEndpoint for a given `SqlEndpointId`. When provided, If-Match is checked against
+     * ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StopSqlEndpointResponse> stopSqlEndpoint(
+            StopSqlEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StopSqlEndpointRequest, StopSqlEndpointResponse>
+                    handler);
 
     /**
      * Updates an application using an `applicationId`.

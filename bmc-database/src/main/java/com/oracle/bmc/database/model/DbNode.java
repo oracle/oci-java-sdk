@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -28,6 +28,8 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         "backupVnicId",
         "hostIpId",
         "backupIpId",
+        "hostIpv6Id",
+        "backupIpv6Id",
         "vnic2Id",
         "backupVnic2Id",
         "lifecycleState",
@@ -45,6 +47,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         "cpuCoreCount",
         "memorySizeInGBs",
         "dbNodeStorageSizeInGBs",
+        "totalCpuCoreCount",
         "dbServerId"
     })
     public DbNode(
@@ -54,6 +57,8 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             String backupVnicId,
             String hostIpId,
             String backupIpId,
+            String hostIpv6Id,
+            String backupIpv6Id,
             String vnic2Id,
             String backupVnic2Id,
             LifecycleState lifecycleState,
@@ -71,6 +76,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             Integer cpuCoreCount,
             Integer memorySizeInGBs,
             Integer dbNodeStorageSizeInGBs,
+            Integer totalCpuCoreCount,
             String dbServerId) {
         super();
         this.id = id;
@@ -79,6 +85,8 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         this.backupVnicId = backupVnicId;
         this.hostIpId = hostIpId;
         this.backupIpId = backupIpId;
+        this.hostIpv6Id = hostIpv6Id;
+        this.backupIpv6Id = backupIpv6Id;
         this.vnic2Id = vnic2Id;
         this.backupVnic2Id = backupVnic2Id;
         this.lifecycleState = lifecycleState;
@@ -96,20 +104,21 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         this.cpuCoreCount = cpuCoreCount;
         this.memorySizeInGBs = memorySizeInGBs;
         this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+        this.totalCpuCoreCount = totalCpuCoreCount;
         this.dbServerId = dbServerId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database node.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database node.
          *
          * @param id the value to set
@@ -121,14 +130,14 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          *
          * @param dbSystemId the value to set
@@ -140,14 +149,14 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VNIC.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VNIC.
          *
          * @param vnicId the value to set
@@ -159,14 +168,14 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup VNIC.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("backupVnicId")
         private String backupVnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup VNIC.
          *
          * @param backupVnicId the value to set
@@ -178,11 +187,11 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * host IP address associated with the database node. Use this OCID with either the {@link
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * host IPv4 address associated with the database node. Use this OCID with either the {@link
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
          * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API
-         * to get the IP address needed to make a database connection.
+         * to get the IPv4 address needed to make a database connection.
          *
          * <p>*Note:** Applies only to Exadata Cloud Service.
          */
@@ -190,11 +199,11 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         private String hostIpId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * host IP address associated with the database node. Use this OCID with either the {@link
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * host IPv4 address associated with the database node. Use this OCID with either the {@link
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
          * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API
-         * to get the IP address needed to make a database connection.
+         * to get the IPv4 address needed to make a database connection.
          *
          * <p>*Note:** Applies only to Exadata Cloud Service.
          *
@@ -207,11 +216,11 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * backup IP address associated with the database node. Use this OCID with either the {@link
-         * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * backup IPv4 address associated with the database node. Use this OCID with either the
+         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
          * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API
-         * to get the IP address needed to make a database connection.
+         * to get the IPv4 address needed to make a database connection.
          *
          * <p>*Note:** Applies only to Exadata Cloud Service.
          */
@@ -219,11 +228,11 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         private String backupIpId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * backup IP address associated with the database node. Use this OCID with either the {@link
-         * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * backup IPv4 address associated with the database node. Use this OCID with either the
+         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
          * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API
-         * to get the IP address needed to make a database connection.
+         * to get the IPv4 address needed to make a database connection.
          *
          * <p>*Note:** Applies only to Exadata Cloud Service.
          *
@@ -236,7 +245,61 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * host IPv6 address associated with the database node. Use this OCID with the {@link
+         * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+         * connection.
+         *
+         * <p>*Note:** Applies only to Exadata Cloud Service.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("hostIpv6Id")
+        private String hostIpv6Id;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * host IPv6 address associated with the database node. Use this OCID with the {@link
+         * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+         * connection.
+         *
+         * <p>*Note:** Applies only to Exadata Cloud Service.
+         *
+         * @param hostIpv6Id the value to set
+         * @return this builder
+         */
+        public Builder hostIpv6Id(String hostIpv6Id) {
+            this.hostIpv6Id = hostIpv6Id;
+            this.__explicitlySet__.add("hostIpv6Id");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * backup IPv6 address associated with the database node. Use this OCID with the {@link
+         * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+         * connection.
+         *
+         * <p>*Note:** Applies only to Exadata Cloud Service.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("backupIpv6Id")
+        private String backupIpv6Id;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * backup IPv6 address associated with the database node. Use this OCID with the {@link
+         * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+         * connection.
+         *
+         * <p>*Note:** Applies only to Exadata Cloud Service.
+         *
+         * @param backupIpv6Id the value to set
+         * @return this builder
+         */
+        public Builder backupIpv6Id(String backupIpv6Id) {
+            this.backupIpv6Id = backupIpv6Id;
+            this.__explicitlySet__.add("backupIpv6Id");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * second VNIC.
          *
          * <p>*Note:** Applies only to Exadata Cloud Service.
@@ -245,7 +308,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         private String vnic2Id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * second VNIC.
          *
          * <p>*Note:** Applies only to Exadata Cloud Service.
@@ -259,7 +322,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * second backup VNIC.
          *
          * <p>*Note:** Applies only to Exadata Cloud Service.
@@ -268,7 +331,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         private String backupVnic2Id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * second backup VNIC.
          *
          * <p>*Note:** Applies only to Exadata Cloud Service.
@@ -423,7 +486,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -433,7 +496,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -448,7 +511,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -456,7 +519,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -527,15 +590,30 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
             return this;
         }
+        /** The total number of CPU cores reserved on the Db node. */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalCpuCoreCount")
+        private Integer totalCpuCoreCount;
+
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The total number of CPU cores reserved on the Db node.
+         *
+         * @param totalCpuCoreCount the value to set
+         * @return this builder
+         */
+        public Builder totalCpuCoreCount(Integer totalCpuCoreCount) {
+            this.totalCpuCoreCount = totalCpuCoreCount;
+            this.__explicitlySet__.add("totalCpuCoreCount");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exacc Db server associated with the database node.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
         private String dbServerId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exacc Db server associated with the database node.
          *
          * @param dbServerId the value to set
@@ -559,6 +637,8 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
                             this.backupVnicId,
                             this.hostIpId,
                             this.backupIpId,
+                            this.hostIpv6Id,
+                            this.backupIpv6Id,
                             this.vnic2Id,
                             this.backupVnic2Id,
                             this.lifecycleState,
@@ -576,6 +656,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
                             this.cpuCoreCount,
                             this.memorySizeInGBs,
                             this.dbNodeStorageSizeInGBs,
+                            this.totalCpuCoreCount,
                             this.dbServerId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -602,6 +683,12 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("backupIpId")) {
                 this.backupIpId(model.getBackupIpId());
+            }
+            if (model.wasPropertyExplicitlySet("hostIpv6Id")) {
+                this.hostIpv6Id(model.getHostIpv6Id());
+            }
+            if (model.wasPropertyExplicitlySet("backupIpv6Id")) {
+                this.backupIpv6Id(model.getBackupIpv6Id());
             }
             if (model.wasPropertyExplicitlySet("vnic2Id")) {
                 this.vnic2Id(model.getVnic2Id());
@@ -654,6 +741,9 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
             if (model.wasPropertyExplicitlySet("dbNodeStorageSizeInGBs")) {
                 this.dbNodeStorageSizeInGBs(model.getDbNodeStorageSizeInGBs());
             }
+            if (model.wasPropertyExplicitlySet("totalCpuCoreCount")) {
+                this.totalCpuCoreCount(model.getTotalCpuCoreCount());
+            }
             if (model.wasPropertyExplicitlySet("dbServerId")) {
                 this.dbServerId(model.getDbServerId());
             }
@@ -671,14 +761,14 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database node.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database node.
      *
      * @return the value
@@ -688,14 +778,14 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      *
      * @return the value
@@ -705,14 +795,14 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * VNIC.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * VNIC.
      *
      * @return the value
@@ -722,14 +812,14 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup VNIC.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("backupVnicId")
     private final String backupVnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup VNIC.
      *
      * @return the value
@@ -739,11 +829,11 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * host IP address associated with the database node. Use this OCID with either the {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
+     * IPv4 address associated with the database node. Use this OCID with either the {@link
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
      * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to
-     * get the IP address needed to make a database connection.
+     * get the IPv4 address needed to make a database connection.
      *
      * <p>*Note:** Applies only to Exadata Cloud Service.
      */
@@ -751,11 +841,11 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     private final String hostIpId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * host IP address associated with the database node. Use this OCID with either the {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
+     * IPv4 address associated with the database node. Use this OCID with either the {@link
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
      * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to
-     * get the IP address needed to make a database connection.
+     * get the IPv4 address needed to make a database connection.
      *
      * <p>*Note:** Applies only to Exadata Cloud Service.
      *
@@ -766,11 +856,11 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * backup IP address associated with the database node. Use this OCID with either the {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * backup IPv4 address associated with the database node. Use this OCID with either the {@link
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
      * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to
-     * get the IP address needed to make a database connection.
+     * get the IPv4 address needed to make a database connection.
      *
      * <p>*Note:** Applies only to Exadata Cloud Service.
      */
@@ -778,11 +868,11 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     private final String backupIpId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * backup IP address associated with the database node. Use this OCID with either the {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * backup IPv4 address associated with the database node. Use this OCID with either the {@link
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
      * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to
-     * get the IP address needed to make a database connection.
+     * get the IPv4 address needed to make a database connection.
      *
      * <p>*Note:** Applies only to Exadata Cloud Service.
      *
@@ -793,7 +883,57 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
+     * IPv6 address associated with the database node. Use this OCID with the {@link
+     * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+     * connection.
+     *
+     * <p>*Note:** Applies only to Exadata Cloud Service.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("hostIpv6Id")
+    private final String hostIpv6Id;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
+     * IPv6 address associated with the database node. Use this OCID with the {@link
+     * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+     * connection.
+     *
+     * <p>*Note:** Applies only to Exadata Cloud Service.
+     *
+     * @return the value
+     */
+    public String getHostIpv6Id() {
+        return hostIpv6Id;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * backup IPv6 address associated with the database node. Use this OCID with the {@link
+     * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+     * connection.
+     *
+     * <p>*Note:** Applies only to Exadata Cloud Service.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupIpv6Id")
+    private final String backupIpv6Id;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * backup IPv6 address associated with the database node. Use this OCID with the {@link
+     * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+     * connection.
+     *
+     * <p>*Note:** Applies only to Exadata Cloud Service.
+     *
+     * @return the value
+     */
+    public String getBackupIpv6Id() {
+        return backupIpv6Id;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * second VNIC.
      *
      * <p>*Note:** Applies only to Exadata Cloud Service.
@@ -802,7 +942,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     private final String vnic2Id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * second VNIC.
      *
      * <p>*Note:** Applies only to Exadata Cloud Service.
@@ -814,7 +954,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * second backup VNIC.
      *
      * <p>*Note:** Applies only to Exadata Cloud Service.
@@ -823,7 +963,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     private final String backupVnic2Id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * second backup VNIC.
      *
      * <p>*Note:** Applies only to Exadata Cloud Service.
@@ -959,6 +1099,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     /** The type of database node maintenance. */
     public enum MaintenanceType implements com.oracle.bmc.http.internal.BmcEnum {
         VmdbRebootMigration("VMDB_REBOOT_MIGRATION"),
+        ExadbxsRebootMigration("EXADBXS_REBOOT_MIGRATION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -1056,7 +1197,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1066,7 +1207,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1079,7 +1220,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -1087,7 +1228,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -1147,15 +1288,28 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         return dbNodeStorageSizeInGBs;
     }
 
+    /** The total number of CPU cores reserved on the Db node. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalCpuCoreCount")
+    private final Integer totalCpuCoreCount;
+
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The total number of CPU cores reserved on the Db node.
+     *
+     * @return the value
+     */
+    public Integer getTotalCpuCoreCount() {
+        return totalCpuCoreCount;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exacc Db server associated with the database node.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
     private final String dbServerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exacc Db server associated with the database node.
      *
      * @return the value
@@ -1185,6 +1339,8 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", backupVnicId=").append(String.valueOf(this.backupVnicId));
         sb.append(", hostIpId=").append(String.valueOf(this.hostIpId));
         sb.append(", backupIpId=").append(String.valueOf(this.backupIpId));
+        sb.append(", hostIpv6Id=").append(String.valueOf(this.hostIpv6Id));
+        sb.append(", backupIpv6Id=").append(String.valueOf(this.backupIpv6Id));
         sb.append(", vnic2Id=").append(String.valueOf(this.vnic2Id));
         sb.append(", backupVnic2Id=").append(String.valueOf(this.backupVnic2Id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -1205,6 +1361,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
         sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
+        sb.append(", totalCpuCoreCount=").append(String.valueOf(this.totalCpuCoreCount));
         sb.append(", dbServerId=").append(String.valueOf(this.dbServerId));
         sb.append(")");
         return sb.toString();
@@ -1226,6 +1383,8 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.backupVnicId, other.backupVnicId)
                 && java.util.Objects.equals(this.hostIpId, other.hostIpId)
                 && java.util.Objects.equals(this.backupIpId, other.backupIpId)
+                && java.util.Objects.equals(this.hostIpv6Id, other.hostIpv6Id)
+                && java.util.Objects.equals(this.backupIpv6Id, other.backupIpv6Id)
                 && java.util.Objects.equals(this.vnic2Id, other.vnic2Id)
                 && java.util.Objects.equals(this.backupVnic2Id, other.backupVnic2Id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -1247,6 +1406,7 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
                 && java.util.Objects.equals(
                         this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
+                && java.util.Objects.equals(this.totalCpuCoreCount, other.totalCpuCoreCount)
                 && java.util.Objects.equals(this.dbServerId, other.dbServerId)
                 && super.equals(other);
     }
@@ -1261,6 +1421,8 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
         result = (result * PRIME) + (this.backupVnicId == null ? 43 : this.backupVnicId.hashCode());
         result = (result * PRIME) + (this.hostIpId == null ? 43 : this.hostIpId.hashCode());
         result = (result * PRIME) + (this.backupIpId == null ? 43 : this.backupIpId.hashCode());
+        result = (result * PRIME) + (this.hostIpv6Id == null ? 43 : this.hostIpv6Id.hashCode());
+        result = (result * PRIME) + (this.backupIpv6Id == null ? 43 : this.backupIpv6Id.hashCode());
         result = (result * PRIME) + (this.vnic2Id == null ? 43 : this.vnic2Id.hashCode());
         result =
                 (result * PRIME)
@@ -1306,6 +1468,9 @@ public final class DbNode extends com.oracle.bmc.http.client.internal.Explicitly
                         + (this.dbNodeStorageSizeInGBs == null
                                 ? 43
                                 : this.dbNodeStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalCpuCoreCount == null ? 43 : this.totalCpuCoreCount.hashCode());
         result = (result * PRIME) + (this.dbServerId == null ? 43 : this.dbServerId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

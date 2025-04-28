@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -254,12 +254,31 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
         public Builder privateIp(String privateIp) {
             this.privateIp = privateIp;
             this.__explicitlySet__.add("privateIp");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateIpV6")
+        private String privateIpV6;
+
+        public Builder privateIpV6(String privateIpV6) {
+            this.privateIpV6 = privateIpV6;
+            this.__explicitlySet__.add("privateIpV6");
             return this;
         }
 
@@ -371,7 +390,9 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
                             this.nodeCount,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.privateIp,
+                            this.privateIpV6,
                             this.dataCollectionOptions,
                             this.dbHome,
                             this.databaseEdition,
@@ -460,8 +481,14 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
+            }
+            if (model.wasPropertyExplicitlySet("privateIpV6")) {
+                this.privateIpV6(model.getPrivateIpV6());
             }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
@@ -518,7 +545,9 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
             Integer nodeCount,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateIp,
+            String privateIpV6,
             DataCollectionOptions dataCollectionOptions,
             CreateDbHomeFromDatabaseDetails dbHome,
             DatabaseEdition databaseEdition,
@@ -550,7 +579,9 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
                 nodeCount,
                 freeformTags,
                 definedTags,
+                securityAttributes,
                 privateIp,
+                privateIpV6,
                 dataCollectionOptions);
         this.dbHome = dbHome;
         this.databaseEdition = databaseEdition;

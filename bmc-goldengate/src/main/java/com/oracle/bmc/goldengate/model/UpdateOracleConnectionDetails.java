@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -90,6 +90,33 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The username Oracle GoldenGate uses to connect the associated system of the given
          * technology. This username must already exist and be available by the system/application
@@ -114,7 +141,8 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on.
+         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
+         * "passwordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
@@ -122,7 +150,8 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on.
+         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
+         * "passwordSecretId". This field will be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -130,6 +159,31 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /** Connect descriptor or Easy Connect Naming method used to connect to a database. */
@@ -148,15 +202,36 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             return this;
         }
         /**
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database
+         * Serverless connections, when a databaseId is provided. The default value is MTLS.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
+        private OracleConnection.AuthenticationMode authenticationMode;
+
+        /**
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database
+         * Serverless connections, when a databaseId is provided. The default value is MTLS.
+         *
+         * @param authenticationMode the value to set
+         * @return this builder
+         */
+        public Builder authenticationMode(OracleConnection.AuthenticationMode authenticationMode) {
+            this.authenticationMode = authenticationMode;
+            this.__explicitlySet__.add("authenticationMode");
+            return this;
+        }
+        /**
          * The wallet contents Oracle GoldenGate uses to make connections to a database. This
-         * attribute is expected to be base64 encoded.
+         * attribute is expected to be base64 encoded. Deprecated: This field is deprecated and
+         * replaced by "walletSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("wallet")
         private String wallet;
 
         /**
          * The wallet contents Oracle GoldenGate uses to make connections to a database. This
-         * attribute is expected to be base64 encoded.
+         * attribute is expected to be base64 encoded. Deprecated: This field is deprecated and
+         * replaced by "walletSecretId". This field will be removed after February 15 2026.
          *
          * @param wallet the value to set
          * @return this builder
@@ -164,6 +239,27 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         public Builder wallet(String wallet) {
             this.wallet = wallet;
             this.__explicitlySet__.add("wallet");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the wallet file is stored. The wallet contents Oracle GoldenGate uses to
+         * make connections to a database. Note: When provided, 'wallet' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
+        private String walletSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the wallet file is stored. The wallet contents Oracle GoldenGate uses to
+         * make connections to a database. Note: When provided, 'wallet' field must not be provided.
+         *
+         * @param walletSecretId the value to set
+         * @return this builder
+         */
+        public Builder walletSecretId(String walletSecretId) {
+            this.walletSecretId = walletSecretId;
+            this.__explicitlySet__.add("walletSecretId");
             return this;
         }
         /**
@@ -190,7 +286,11 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             return this;
         }
         /**
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * Deprecated: this field will be removed in future versions. Either specify the private IP
+         * in the connectionString or host field, or make sure the host name is resolvable in the
+         * target VCN.
+         *
+         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
          * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
          * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
@@ -201,7 +301,11 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         private String privateIp;
 
         /**
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * Deprecated: this field will be removed in future versions. Either specify the private IP
+         * in the connectionString or host field, or make sure the host name is resolvable in the
+         * target VCN.
+         *
+         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
          * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
          * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
@@ -217,14 +321,14 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database being referenced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database being referenced.
          *
          * @param databaseId the value to set
@@ -249,10 +353,16 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
+                            this.doesUseSecretIds,
                             this.username,
                             this.password,
+                            this.passwordSecretId,
                             this.connectionString,
+                            this.authenticationMode,
                             this.wallet,
+                            this.walletSecretId,
                             this.sessionMode,
                             this.privateIp,
                             this.databaseId);
@@ -285,17 +395,35 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
             }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("username")) {
                 this.username(model.getUsername());
             }
             if (model.wasPropertyExplicitlySet("password")) {
                 this.password(model.getPassword());
             }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
             if (model.wasPropertyExplicitlySet("connectionString")) {
                 this.connectionString(model.getConnectionString());
             }
+            if (model.wasPropertyExplicitlySet("authenticationMode")) {
+                this.authenticationMode(model.getAuthenticationMode());
+            }
             if (model.wasPropertyExplicitlySet("wallet")) {
                 this.wallet(model.getWallet());
+            }
+            if (model.wasPropertyExplicitlySet("walletSecretId")) {
+                this.walletSecretId(model.getWalletSecretId());
             }
             if (model.wasPropertyExplicitlySet("sessionMode")) {
                 this.sessionMode(model.getSessionMode());
@@ -328,18 +456,37 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             String username,
             String password,
+            String passwordSecretId,
             String connectionString,
+            OracleConnection.AuthenticationMode authenticationMode,
             String wallet,
+            String walletSecretId,
             OracleConnection.SessionMode sessionMode,
             String privateIp,
             String databaseId) {
-        super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds);
         this.username = username;
         this.password = password;
+        this.passwordSecretId = passwordSecretId;
         this.connectionString = connectionString;
+        this.authenticationMode = authenticationMode;
         this.wallet = wallet;
+        this.walletSecretId = walletSecretId;
         this.sessionMode = sessionMode;
         this.privateIp = privateIp;
         this.databaseId = databaseId;
@@ -367,7 +514,8 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
+     * will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
@@ -375,12 +523,36 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
+     * will be removed after February 15 2026.
      *
      * @return the value
      */
     public String getPassword() {
         return password;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
     }
 
     /** Connect descriptor or Easy Connect Naming method used to connect to a database. */
@@ -397,20 +569,58 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
     }
 
     /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
+     * connections, when a databaseId is provided. The default value is MTLS.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
+    private final OracleConnection.AuthenticationMode authenticationMode;
+
+    /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
+     * connections, when a databaseId is provided. The default value is MTLS.
+     *
+     * @return the value
+     */
+    public OracleConnection.AuthenticationMode getAuthenticationMode() {
+        return authenticationMode;
+    }
+
+    /**
      * The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute
-     * is expected to be base64 encoded.
+     * is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by
+     * "walletSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("wallet")
     private final String wallet;
 
     /**
      * The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute
-     * is expected to be base64 encoded.
+     * is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by
+     * "walletSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
     public String getWallet() {
         return wallet;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the wallet file is stored. The wallet contents Oracle GoldenGate uses to make
+     * connections to a database. Note: When provided, 'wallet' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
+    private final String walletSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the wallet file is stored. The wallet contents Oracle GoldenGate uses to make
+     * connections to a database. Note: When provided, 'wallet' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getWalletSecretId() {
+        return walletSecretId;
     }
 
     /**
@@ -435,7 +645,11 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
     }
 
     /**
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in
+     * the connectionString or host field, or make sure the host name is resolvable in the target
+     * VCN.
+     *
+     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
      * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
      * not provided it is assumed the datasource is publicly accessible. In case the connection is
@@ -446,7 +660,11 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
     private final String privateIp;
 
     /**
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in
+     * the connectionString or host field, or make sure the host name is resolvable in the target
+     * VCN.
+     *
+     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
      * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
      * not provided it is assumed the datasource is publicly accessible. In case the connection is
@@ -460,14 +678,14 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database being referenced.
      *
      * @return the value
@@ -493,8 +711,11 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
+        sb.append(", authenticationMode=").append(String.valueOf(this.authenticationMode));
         sb.append(", wallet=").append(String.valueOf(this.wallet));
+        sb.append(", walletSecretId=").append(String.valueOf(this.walletSecretId));
         sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
@@ -514,8 +735,11 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         UpdateOracleConnectionDetails other = (UpdateOracleConnectionDetails) o;
         return java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.connectionString, other.connectionString)
+                && java.util.Objects.equals(this.authenticationMode, other.authenticationMode)
                 && java.util.Objects.equals(this.wallet, other.wallet)
+                && java.util.Objects.equals(this.walletSecretId, other.walletSecretId)
                 && java.util.Objects.equals(this.sessionMode, other.sessionMode)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.databaseId, other.databaseId)
@@ -530,8 +754,19 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
         result =
                 (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.connectionString == null ? 43 : this.connectionString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationMode == null
+                                ? 43
+                                : this.authenticationMode.hashCode());
         result = (result * PRIME) + (this.wallet == null ? 43 : this.wallet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.walletSecretId == null ? 43 : this.walletSecretId.hashCode());
         result = (result * PRIME) + (this.sessionMode == null ? 43 : this.sessionMode.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());

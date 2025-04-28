@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -43,6 +43,7 @@ public class CreateDataGuardAssociationDetails
     @java.beans.ConstructorProperties({
         "databaseSoftwareImageId",
         "databaseAdminPassword",
+        "sourceEncryptionKeyLocationDetails",
         "protectionMode",
         "transportType",
         "isActiveDataGuardEnabled",
@@ -52,6 +53,7 @@ public class CreateDataGuardAssociationDetails
     protected CreateDataGuardAssociationDetails(
             String databaseSoftwareImageId,
             String databaseAdminPassword,
+            EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
             ProtectionMode protectionMode,
             TransportType transportType,
             Boolean isActiveDataGuardEnabled,
@@ -60,6 +62,7 @@ public class CreateDataGuardAssociationDetails
         super();
         this.databaseSoftwareImageId = databaseSoftwareImageId;
         this.databaseAdminPassword = databaseAdminPassword;
+        this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
         this.protectionMode = protectionMode;
         this.transportType = transportType;
         this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
@@ -69,14 +72,14 @@ public class CreateDataGuardAssociationDetails
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      *
      * @return the value
      */
@@ -123,6 +126,13 @@ public class CreateDataGuardAssociationDetails
      */
     public String getDatabaseAdminPassword() {
         return databaseAdminPassword;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceEncryptionKeyLocationDetails")
+    private final EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
+
+    public EncryptionKeyLocationDetails getSourceEncryptionKeyLocationDetails() {
+        return sourceEncryptionKeyLocationDetails;
     }
 
     /**
@@ -334,6 +344,8 @@ public class CreateDataGuardAssociationDetails
         sb.append("super=").append(super.toString());
         sb.append("databaseSoftwareImageId=").append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(", databaseAdminPassword=").append(String.valueOf(this.databaseAdminPassword));
+        sb.append(", sourceEncryptionKeyLocationDetails=")
+                .append(String.valueOf(this.sourceEncryptionKeyLocationDetails));
         sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
         sb.append(", transportType=").append(String.valueOf(this.transportType));
         sb.append(", isActiveDataGuardEnabled=")
@@ -356,6 +368,9 @@ public class CreateDataGuardAssociationDetails
         CreateDataGuardAssociationDetails other = (CreateDataGuardAssociationDetails) o;
         return java.util.Objects.equals(this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && java.util.Objects.equals(this.databaseAdminPassword, other.databaseAdminPassword)
+                && java.util.Objects.equals(
+                        this.sourceEncryptionKeyLocationDetails,
+                        other.sourceEncryptionKeyLocationDetails)
                 && java.util.Objects.equals(this.protectionMode, other.protectionMode)
                 && java.util.Objects.equals(this.transportType, other.transportType)
                 && java.util.Objects.equals(
@@ -379,6 +394,11 @@ public class CreateDataGuardAssociationDetails
                         + (this.databaseAdminPassword == null
                                 ? 43
                                 : this.databaseAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceEncryptionKeyLocationDetails == null
+                                ? 43
+                                : this.sourceEncryptionKeyLocationDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -219,6 +219,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AddmTasksCollection.class,
                         AddmTasksResponse.Builder::addmTasksCollection)
@@ -325,6 +326,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -332,7 +334,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeExternalDbSystemCompartmentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -365,6 +366,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -374,7 +376,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-work-request-id",
                         ChangeExternalExadataInfrastructureCompartmentResponse.Builder
                                 ::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -440,6 +441,39 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeManagedDatabaseGroupCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeNamedCredentialCompartmentResponse changeNamedCredentialCompartment(
+            ChangeNamedCredentialCompartmentRequest request) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeNamedCredentialCompartmentDetails(),
+                "changeNamedCredentialCompartmentDetails is required");
+
+        return clientCall(request, ChangeNamedCredentialCompartmentResponse::builder)
+                .logger(LOG, "changeNamedCredentialCompartment")
+                .serviceDetails(
+                        "DbManagement",
+                        "ChangeNamedCredentialCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/ChangeNamedCredentialCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeNamedCredentialCompartmentRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeNamedCredentialCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -559,6 +593,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnector.class,
                         CheckExternalDbSystemConnectorConnectionStatusResponse.Builder
@@ -571,7 +606,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "content-location",
                         CheckExternalDbSystemConnectorConnectionStatusResponse.Builder
                                 ::contentLocation)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -600,6 +634,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .ExternalExadataStorageConnectorStatus.class,
@@ -610,7 +645,46 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CheckExternalExadataStorageConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CheckExternalMySqlDatabaseConnectorConnectionStatusResponse
+            checkExternalMySqlDatabaseConnectorConnectionStatus(
+                    CheckExternalMySqlDatabaseConnectorConnectionStatusRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseConnectorId(),
+                "externalMySqlDatabaseConnectorId must not be blank");
+
+        return clientCall(
+                        request,
+                        CheckExternalMySqlDatabaseConnectorConnectionStatusResponse::builder)
+                .logger(LOG, "checkExternalMySqlDatabaseConnectorConnectionStatus")
+                .serviceDetails(
+                        "DbManagement",
+                        "CheckExternalMySqlDatabaseConnectorConnectionStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/CheckExternalMySqlDatabaseConnectorConnectionStatus")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CheckExternalMySqlDatabaseConnectorConnectionStatusRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendPathParam(request.getExternalMySqlDatabaseConnectorId())
+                .appendPathParam("actions")
+                .appendPathParam("checkConnectionStatus")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CheckExternalMySqlDatabaseConnectorConnectionStatusResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CheckExternalMySqlDatabaseConnectorConnectionStatusResponse.Builder
+                                ::opcRequestId)
                 .callSync();
     }
 
@@ -736,6 +810,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystem.class,
@@ -750,7 +825,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "location", CreateExternalDbSystemResponse.Builder::location)
                 .handleResponseHeaderString(
                         "content-location", CreateExternalDbSystemResponse.Builder::contentLocation)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -774,6 +848,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnector.class,
@@ -783,7 +858,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateExternalDbSystemConnectorResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateExternalDbSystemConnectorResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -807,6 +881,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscovery.class,
@@ -824,7 +899,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "content-location",
                         CreateExternalDbSystemDiscoveryResponse.Builder::contentLocation)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -848,6 +922,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructure.class,
@@ -858,7 +933,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateExternalExadataInfrastructureResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateExternalExadataInfrastructureResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -882,6 +956,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnector
@@ -893,7 +968,87 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateExternalExadataStorageConnectorResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateExternalExadataStorageConnectorResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateExternalMySqlDatabaseResponse createExternalMySqlDatabase(
+            CreateExternalMySqlDatabaseRequest request) {
+        Objects.requireNonNull(
+                request.getCreateExternalMySqlDatabaseDetails(),
+                "createExternalMySqlDatabaseDetails is required");
+
+        return clientCall(request, CreateExternalMySqlDatabaseResponse::builder)
+                .logger(LOG, "createExternalMySqlDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateExternalMySqlDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/CreateExternalMySqlDatabase")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExternalMySqlDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabase.class,
+                        CreateExternalMySqlDatabaseResponse.Builder::externalMySqlDatabase)
+                .handleResponseHeaderString(
+                        "etag", CreateExternalMySqlDatabaseResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateExternalMySqlDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateExternalMySqlDatabaseResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateExternalMySqlDatabaseResponse.Builder::contentLocation)
+                .callSync();
+    }
+
+    @Override
+    public CreateExternalMySqlDatabaseConnectorResponse createExternalMySqlDatabaseConnector(
+            CreateExternalMySqlDatabaseConnectorRequest request) {
+        Objects.requireNonNull(
+                request.getCreateExternalMySqlDatabaseConnectorDetails(),
+                "createExternalMySqlDatabaseConnectorDetails is required");
+
+        Objects.requireNonNull(
+                request.getIsTestConnectionParam(), "isTestConnectionParam is required");
+
+        return clientCall(request, CreateExternalMySqlDatabaseConnectorResponse::builder)
+                .logger(LOG, "createExternalMySqlDatabaseConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateExternalMySqlDatabaseConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/CreateExternalMySqlDatabaseConnector")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExternalMySqlDatabaseConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendQueryParam("isTestConnectionParam", request.getIsTestConnectionParam())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseConnector
+                                .class,
+                        CreateExternalMySqlDatabaseConnectorResponse.Builder
+                                ::externalMySqlDatabaseConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateExternalMySqlDatabaseConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateExternalMySqlDatabaseConnectorResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateExternalMySqlDatabaseConnectorResponse.Builder::contentLocation)
+                .handleResponseHeaderString(
+                        "etag", CreateExternalMySqlDatabaseConnectorResponse.Builder::etag)
                 .callSync();
     }
 
@@ -955,6 +1110,38 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", CreateManagedDatabaseGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateManagedDatabaseGroupResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateNamedCredentialResponse createNamedCredential(
+            CreateNamedCredentialRequest request) {
+        Objects.requireNonNull(
+                request.getCreateNamedCredentialDetails(),
+                "createNamedCredentialDetails is required");
+
+        return clientCall(request, CreateNamedCredentialResponse::builder)
+                .logger(LOG, "createNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/CreateNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.NamedCredential.class,
+                        CreateNamedCredentialResponse.Builder::namedCredential)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateNamedCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateNamedCredentialResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CreateNamedCredentialResponse.Builder::location)
                 .callSync();
     }
 
@@ -1164,6 +1351,66 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public DeleteExternalMySqlDatabaseResponse deleteExternalMySqlDatabase(
+            DeleteExternalMySqlDatabaseRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+
+        return clientCall(request, DeleteExternalMySqlDatabaseResponse::builder)
+                .logger(LOG, "deleteExternalMySqlDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteExternalMySqlDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DeleteExternalMySqlDatabase")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExternalMySqlDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteExternalMySqlDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExternalMySqlDatabaseResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteExternalMySqlDatabaseConnectorResponse deleteExternalMySqlDatabaseConnector(
+            DeleteExternalMySqlDatabaseConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseConnectorId(),
+                "externalMySqlDatabaseConnectorId must not be blank");
+
+        return clientCall(request, DeleteExternalMySqlDatabaseConnectorResponse::builder)
+                .logger(LOG, "deleteExternalMySqlDatabaseConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteExternalMySqlDatabaseConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/DeleteExternalMySqlDatabaseConnector")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExternalMySqlDatabaseConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendPathParam(request.getExternalMySqlDatabaseConnectorId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExternalMySqlDatabaseConnectorResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteExternalMySqlDatabaseConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteJobResponse deleteJob(DeleteJobRequest request) {
 
         Validate.notBlank(request.getJobId(), "jobId must not be blank");
@@ -1210,6 +1457,31 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteManagedDatabaseGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteNamedCredentialResponse deleteNamedCredential(
+            DeleteNamedCredentialRequest request) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+
+        return clientCall(request, DeleteNamedCredentialResponse::builder)
+                .logger(LOG, "deleteNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/DeleteNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNamedCredentialResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1306,6 +1578,126 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public DisableAutonomousDatabaseManagementFeatureResponse
+            disableAutonomousDatabaseManagementFeature(
+                    DisableAutonomousDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableAutonomousDatabaseManagementFeatureDetails(),
+                "disableAutonomousDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, DisableAutonomousDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "disableAutonomousDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableAutonomousDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableAutonomousDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableAutonomousDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableAutonomousDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableAutonomousDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisableDatabaseManagementFeatureResponse disableDatabaseManagementFeature(
+            DisableDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableDatabaseManagementFeatureDetails(),
+                "disableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, DisableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "disableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisableExternalContainerDatabaseManagementFeatureResponse
+            disableExternalContainerDatabaseManagementFeature(
+                    DisableExternalContainerDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getExternalContainerDatabaseId(),
+                "externalContainerDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableExternalContainerDatabaseManagementFeatureDetails(),
+                "disableExternalContainerDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request, DisableExternalContainerDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "disableExternalContainerDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableExternalContainerDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableExternalContainerDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableExternalContainerDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalcontainerdatabases")
+                .appendPathParam(request.getExternalContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableExternalContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public DisableExternalDbSystemDatabaseManagementResponse
             disableExternalDbSystemDatabaseManagement(
                     DisableExternalDbSystemDatabaseManagementRequest request) {
@@ -1329,13 +1721,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DisableExternalDbSystemDatabaseManagementResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DisableExternalDbSystemDatabaseManagementResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1362,13 +1754,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DisableExternalDbSystemStackMonitoringResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DisableExternalDbSystemStackMonitoringResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1398,6 +1790,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DisableExternalExadataInfrastructureManagementResponse.Builder
@@ -1406,7 +1799,128 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-work-request-id",
                         DisableExternalExadataInfrastructureManagementResponse.Builder
                                 ::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisableExternalMySqlDatabaseManagementResponse disableExternalMySqlDatabaseManagement(
+            DisableExternalMySqlDatabaseManagementRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+
+        return clientCall(request, DisableExternalMySqlDatabaseManagementResponse::builder)
+                .logger(LOG, "disableExternalMySqlDatabaseManagement")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableExternalMySqlDatabaseManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DisableExternalMySqlDatabaseManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableExternalMySqlDatabaseManagementRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableExternalMySqlDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalMySqlDatabaseManagementResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisableExternalNonContainerDatabaseManagementFeatureResponse
+            disableExternalNonContainerDatabaseManagementFeature(
+                    DisableExternalNonContainerDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getExternalNonContainerDatabaseId(),
+                "externalNonContainerDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableExternalNonContainerDatabaseManagementFeatureDetails(),
+                "disableExternalNonContainerDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request,
+                        DisableExternalNonContainerDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "disableExternalNonContainerDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableExternalNonContainerDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableExternalNonContainerDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(
+                        DisableExternalNonContainerDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalnoncontainerdatabases")
+                .appendPathParam(request.getExternalNonContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalNonContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableExternalNonContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisableExternalPluggableDatabaseManagementFeatureResponse
+            disableExternalPluggableDatabaseManagementFeature(
+                    DisableExternalPluggableDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getExternalPluggableDatabaseId(),
+                "externalPluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableExternalPluggableDatabaseManagementFeatureDetails(),
+                "disableExternalPluggableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request, DisableExternalPluggableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "disableExternalPluggableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableExternalPluggableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableExternalPluggableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableExternalPluggableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalpluggabledatabases")
+                .appendPathParam(request.getExternalPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalPluggableDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableExternalPluggableDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1442,6 +1956,45 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id",
                         DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse.Builder
                                 ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisablePluggableDatabaseManagementFeatureResponse
+            disablePluggableDatabaseManagementFeature(
+                    DisablePluggableDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisablePluggableDatabaseManagementFeatureDetails(),
+                "disablePluggableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, DisablePluggableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "disablePluggableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisablePluggableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisablePluggableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisablePluggableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("pluggabledatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisablePluggableDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisablePluggableDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1500,6 +2053,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
@@ -1511,7 +2065,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DiscoverExternalExadataInfrastructureResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1646,6 +2199,125 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public EnableAutonomousDatabaseManagementFeatureResponse
+            enableAutonomousDatabaseManagementFeature(
+                    EnableAutonomousDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableAutonomousDatabaseManagementFeatureDetails(),
+                "enableAutonomousDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, EnableAutonomousDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "enableAutonomousDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableAutonomousDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableAutonomousDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableAutonomousDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableAutonomousDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableAutonomousDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableDatabaseManagementFeatureResponse enableDatabaseManagementFeature(
+            EnableDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableDatabaseManagementFeatureDetails(),
+                "enableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, EnableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "enableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableExternalContainerDatabaseManagementFeatureResponse
+            enableExternalContainerDatabaseManagementFeature(
+                    EnableExternalContainerDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getExternalContainerDatabaseId(),
+                "externalContainerDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalContainerDatabaseManagementFeatureDetails(),
+                "enableExternalContainerDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request, EnableExternalContainerDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "enableExternalContainerDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableExternalContainerDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableExternalContainerDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalContainerDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalcontainerdatabases")
+                .appendPathParam(request.getExternalContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableExternalContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public EnableExternalDbSystemDatabaseManagementResponse
             enableExternalDbSystemDatabaseManagement(
                     EnableExternalDbSystemDatabaseManagementRequest request) {
@@ -1672,6 +2344,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -1679,7 +2352,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         EnableExternalDbSystemDatabaseManagementResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1709,6 +2381,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -1716,7 +2389,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         EnableExternalDbSystemStackMonitoringResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1749,6 +2421,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -1757,7 +2430,131 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-work-request-id",
                         EnableExternalExadataInfrastructureManagementResponse.Builder
                                 ::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableExternalMySqlDatabaseManagementResponse enableExternalMySqlDatabaseManagement(
+            EnableExternalMySqlDatabaseManagementRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalDatabaseManagementDetails(),
+                "enableExternalDatabaseManagementDetails is required");
+
+        return clientCall(request, EnableExternalMySqlDatabaseManagementResponse::builder)
+                .logger(LOG, "enableExternalMySqlDatabaseManagement")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableExternalMySqlDatabaseManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/EnableExternalMySqlDatabaseManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalMySqlDatabaseManagementRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableExternalMySqlDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalMySqlDatabaseManagementResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableExternalNonContainerDatabaseManagementFeatureResponse
+            enableExternalNonContainerDatabaseManagementFeature(
+                    EnableExternalNonContainerDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getExternalNonContainerDatabaseId(),
+                "externalNonContainerDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalNonContainerDatabaseManagementFeatureDetails(),
+                "enableExternalNonContainerDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request,
+                        EnableExternalNonContainerDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "enableExternalNonContainerDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableExternalNonContainerDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableExternalNonContainerDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalNonContainerDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalnoncontainerdatabases")
+                .appendPathParam(request.getExternalNonContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalNonContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableExternalNonContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableExternalPluggableDatabaseManagementFeatureResponse
+            enableExternalPluggableDatabaseManagementFeature(
+                    EnableExternalPluggableDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getExternalPluggableDatabaseId(),
+                "externalPluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalPluggableDatabaseManagementFeatureDetails(),
+                "enableExternalPluggableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request, EnableExternalPluggableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "enableExternalPluggableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableExternalPluggableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableExternalPluggableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalPluggableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalpluggabledatabases")
+                .appendPathParam(request.getExternalPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalPluggableDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableExternalPluggableDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1793,6 +2590,45 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id",
                         EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse.Builder
                                 ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnablePluggableDatabaseManagementFeatureResponse
+            enablePluggableDatabaseManagementFeature(
+                    EnablePluggableDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnablePluggableDatabaseManagementFeatureDetails(),
+                "enablePluggableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, EnablePluggableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "enablePluggableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnablePluggableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnablePluggableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnablePluggableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("pluggabledatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnablePluggableDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnablePluggableDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1848,6 +2684,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SnapshotDetails.class,
                         GenerateAwrSnapshotResponse.Builder::snapshotDetails)
@@ -1892,6 +2729,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbReport.class,
                         GetAwrDbReportResponse.Builder::awrDbReport)
@@ -1934,6 +2772,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbSqlReport.class,
                         GetAwrDbSqlReportResponse.Builder::awrDbSqlReport)
@@ -1976,6 +2815,172 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public GetDatabaseFleetBackupMetricsResponse getDatabaseFleetBackupMetrics(
+            GetDatabaseFleetBackupMetricsRequest request) {
+        Objects.requireNonNull(request.getDatabaseHostedIn(), "databaseHostedIn is required");
+
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetDatabaseFleetBackupMetricsResponse::builder)
+                .logger(LOG, "getDatabaseFleetBackupMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDatabaseFleetBackupMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetBackupMetrics/GetDatabaseFleetBackupMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseFleetBackupMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databaseFleetBackupMetrics")
+                .appendEnumQueryParam("databaseHostedIn", request.getDatabaseHostedIn())
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseFleetBackupMetrics.class,
+                        GetDatabaseFleetBackupMetricsResponse.Builder::databaseFleetBackupMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDatabaseFleetBackupMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetDatabaseFleetBackupMetricsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public GetDatabaseFleetDataguardMetricsResponse getDatabaseFleetDataguardMetrics(
+            GetDatabaseFleetDataguardMetricsRequest request) {
+
+        return clientCall(request, GetDatabaseFleetDataguardMetricsResponse::builder)
+                .logger(LOG, "getDatabaseFleetDataguardMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDatabaseFleetDataguardMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetDataguardMetrics/GetDatabaseFleetDataguardMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseFleetDataguardMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databaseFleetDataguardMetrics")
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseFleetDataguardMetrics.class,
+                        GetDatabaseFleetDataguardMetricsResponse.Builder
+                                ::databaseFleetDataguardMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDatabaseFleetDataguardMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        GetDatabaseFleetDataguardMetricsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public GetDatabaseFleetHaOverviewMetricsResponse getDatabaseFleetHaOverviewMetrics(
+            GetDatabaseFleetHaOverviewMetricsRequest request) {
+
+        return clientCall(request, GetDatabaseFleetHaOverviewMetricsResponse::builder)
+                .logger(LOG, "getDatabaseFleetHaOverviewMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDatabaseFleetHaOverviewMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetHaOverviewMetrics/GetDatabaseFleetHaOverviewMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseFleetHaOverviewMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databaseFleetHaOverviewMetrics")
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseFleetHaOverviewMetrics
+                                .class,
+                        GetDatabaseFleetHaOverviewMetricsResponse.Builder
+                                ::databaseFleetHaOverviewMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDatabaseFleetHaOverviewMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        GetDatabaseFleetHaOverviewMetricsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public GetDatabaseFleetHealthMetricsResponse getDatabaseFleetHealthMetrics(
             GetDatabaseFleetHealthMetricsRequest request) {
         Objects.requireNonNull(request.getCompareBaselineTime(), "compareBaselineTime is required");
@@ -2000,10 +3005,30 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
                 .appendQueryParam("filterByDatabaseType", request.getFilterByDatabaseType())
                 .appendQueryParam("filterByDatabaseSubType", request.getFilterByDatabaseSubType())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam(
                         "filterByDatabaseDeploymentType",
                         request.getFilterByDatabaseDeploymentType())
                 .appendQueryParam("filterByDatabaseVersion", request.getFilterByDatabaseVersion())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -2012,6 +3037,38 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetDatabaseFleetHealthMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetDatabaseFleetHealthMetricsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public GetDatabaseHaBackupDetailsResponse getDatabaseHaBackupDetails(
+            GetDatabaseHaBackupDetailsRequest request) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, GetDatabaseHaBackupDetailsResponse::builder)
+                .logger(LOG, "getDatabaseHaBackupDetails")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDatabaseHaBackupDetails",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseHaBackupDetails/GetDatabaseHaBackupDetails")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseHaBackupDetailsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("haBackupDetails")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseHaBackupDetails.class,
+                        GetDatabaseHaBackupDetailsResponse.Builder::databaseHaBackupDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDatabaseHaBackupDetailsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2044,6 +3101,43 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         GetDatabaseHomeMetricsResponse.Builder::databaseHomeMetrics)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDatabaseHomeMetricsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetDataguardPerformanceMetricsResponse getDataguardPerformanceMetrics(
+            GetDataguardPerformanceMetricsRequest request) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetDataguardPerformanceMetricsResponse::builder)
+                .logger(LOG, "getDataguardPerformanceMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDataguardPerformanceMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DataguardPerformanceMetrics/GetDataguardPerformanceMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDataguardPerformanceMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("dataguardPerformanceMetrics")
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam(
+                        "peerDatabaseCompartmentId", request.getPeerDatabaseCompartmentId())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DataguardPerformanceMetrics.class,
+                        GetDataguardPerformanceMetricsResponse.Builder::dataguardPerformanceMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDataguardPerformanceMetricsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2097,13 +3191,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalAsmId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsm.class,
                         GetExternalAsmResponse.Builder::externalAsm)
                 .handleResponseHeaderString("etag", GetExternalAsmResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalAsmResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2127,12 +3221,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("configuration")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmConfiguration.class,
                         GetExternalAsmConfigurationResponse.Builder::externalAsmConfiguration)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalAsmConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2156,12 +3251,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalAsmInstanceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmInstance.class,
                         GetExternalAsmInstanceResponse.Builder::externalAsmInstance)
+                .handleResponseHeaderString("etag", GetExternalAsmInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalAsmInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2183,13 +3279,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalClusterId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalCluster.class,
                         GetExternalClusterResponse.Builder::externalCluster)
                 .handleResponseHeaderString("etag", GetExternalClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2214,6 +3310,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalClusterInstanceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalClusterInstance.class,
                         GetExternalClusterInstanceResponse.Builder::externalClusterInstance)
@@ -2221,7 +3318,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "etag", GetExternalClusterInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalClusterInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2243,12 +3339,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalDbHomeId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbHome.class,
                         GetExternalDbHomeResponse.Builder::externalDbHome)
+                .handleResponseHeaderString("etag", GetExternalDbHomeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalDbHomeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2270,13 +3367,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalDbNodeId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbNode.class,
                         GetExternalDbNodeResponse.Builder::externalDbNode)
                 .handleResponseHeaderString("etag", GetExternalDbNodeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalDbNodeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2298,13 +3395,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalDbSystemId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystem.class,
                         GetExternalDbSystemResponse.Builder::externalDbSystem)
                 .handleResponseHeaderString("etag", GetExternalDbSystemResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalDbSystemResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2329,6 +3426,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalDbSystemConnectorId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnector.class,
                         GetExternalDbSystemConnectorResponse.Builder::externalDbSystemConnector)
@@ -2337,7 +3435,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetExternalDbSystemConnectorResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2362,6 +3459,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalDbSystemDiscoveryId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscovery.class,
                         GetExternalDbSystemDiscoveryResponse.Builder::externalDbSystemDiscovery)
@@ -2370,7 +3468,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetExternalDbSystemDiscoveryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2395,6 +3492,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalExadataInfrastructureId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructure.class,
                         GetExternalExadataInfrastructureResponse.Builder
@@ -2404,7 +3502,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         GetExternalExadataInfrastructureResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", GetExternalExadataInfrastructureResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2429,6 +3526,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalExadataStorageConnectorId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnector
                                 .class,
@@ -2439,7 +3537,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetExternalExadataStorageConnectorResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2464,6 +3561,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalExadataStorageGridId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataStorageGrid.class,
                         GetExternalExadataStorageGridResponse.Builder::externalExadataStorageGrid)
@@ -2472,7 +3570,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetExternalExadataStorageGridResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2497,6 +3594,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalExadataStorageServerId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServer.class,
                         GetExternalExadataStorageServerResponse.Builder
@@ -2506,7 +3604,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetExternalExadataStorageServerResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2528,13 +3625,78 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalListenerId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalListener.class,
                         GetExternalListenerResponse.Builder::externalListener)
                 .handleResponseHeaderString("etag", GetExternalListenerResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalListenerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetExternalMySqlDatabaseResponse getExternalMySqlDatabase(
+            GetExternalMySqlDatabaseRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+
+        return clientCall(request, GetExternalMySqlDatabaseResponse::builder)
+                .logger(LOG, "getExternalMySqlDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalMySqlDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/GetExternalMySqlDatabase")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalMySqlDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabase.class,
+                        GetExternalMySqlDatabaseResponse.Builder::externalMySqlDatabase)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExternalMySqlDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetExternalMySqlDatabaseResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetExternalMySqlDatabaseConnectorResponse getExternalMySqlDatabaseConnector(
+            GetExternalMySqlDatabaseConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseConnectorId(),
+                "externalMySqlDatabaseConnectorId must not be blank");
+
+        return clientCall(request, GetExternalMySqlDatabaseConnectorResponse::builder)
+                .logger(LOG, "getExternalMySqlDatabaseConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalMySqlDatabaseConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/GetExternalMySqlDatabaseConnector")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalMySqlDatabaseConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendPathParam(request.getExternalMySqlDatabaseConnectorId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseConnector
+                                .class,
+                        GetExternalMySqlDatabaseConnectorResponse.Builder
+                                ::externalMySqlDatabaseConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetExternalMySqlDatabaseConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetExternalMySqlDatabaseConnectorResponse.Builder::etag)
                 .callSync();
     }
 
@@ -2559,12 +3721,12 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("iormPlan")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.IormPlan.class,
                         GetIormPlanResponse.Builder::iormPlan)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIormPlanResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2670,6 +3832,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         GetManagedDatabaseResponse.Builder::managedDatabase)
                 .handleResponseHeaderString(
                         "opc-request-id", GetManagedDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetManagedDatabaseResponse.Builder::etag)
                 .callSync();
     }
 
@@ -2703,6 +3866,33 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public GetNamedCredentialResponse getNamedCredential(GetNamedCredentialRequest request) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+
+        return clientCall(request, GetNamedCredentialResponse::builder)
+                .logger(LOG, "getNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/GetNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.NamedCredential.class,
+                        GetNamedCredentialResponse.Builder::namedCredential)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNamedCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetNamedCredentialResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public GetOpenAlertHistoryResponse getOpenAlertHistory(GetOpenAlertHistoryRequest request) {
 
         Validate.notBlank(
@@ -2723,12 +3913,12 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("openAlertHistory")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.OpenAlertHistory.class,
                         GetOpenAlertHistoryResponse.Builder::openAlertHistory)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOpenAlertHistoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2757,6 +3947,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("taskName", request.getTaskName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.OptimizerStatisticsAdvisorExecution
                                 .class,
@@ -2795,6 +3986,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("taskName", request.getTaskName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsAdvisorExecutionScript.class,
@@ -2828,6 +4020,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getOptimizerStatisticsCollectionOperationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsCollectionOperation.class,
@@ -2871,6 +4064,43 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         GetPdbMetricsResponse.Builder::pdbMetrics)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPdbMetricsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetPeerDatabaseMetricsResponse getPeerDatabaseMetrics(
+            GetPeerDatabaseMetricsRequest request) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetPeerDatabaseMetricsResponse::builder)
+                .logger(LOG, "getPeerDatabaseMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetPeerDatabaseMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PeerDatabaseMetrics/GetPeerDatabaseMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPeerDatabaseMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("peerDatabaseMetrics")
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam(
+                        "peerDatabaseCompartmentId", request.getPeerDatabaseCompartmentId())
+                .appendEnumQueryParam("compareType", request.getCompareType())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.PeerDatabaseMetrics.class,
+                        GetPeerDatabaseMetricsResponse.Builder::peerDatabaseMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPeerDatabaseMetricsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2928,12 +4158,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getPlanName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaseline.class,
                         GetSqlPlanBaselineResponse.Builder::sqlPlanBaseline)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSqlPlanBaselineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2957,6 +4188,8 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("sqlPlanBaselineConfiguration")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineConfiguration.class,
                         GetSqlPlanBaselineConfigurationResponse.Builder
@@ -2964,7 +4197,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetSqlPlanBaselineConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2990,6 +4222,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getTablespaceName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.Tablespace.class,
                         GetTablespaceResponse.Builder::tablespace)
@@ -3019,12 +4252,12 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("topSqlCpuActivity")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.TopSqlCpuActivity.class,
                         GetTopSqlCpuActivityResponse.Builder::topSqlCpuActivity)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTopSqlCpuActivityResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3050,6 +4283,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getUserName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.User.class,
                         GetUserResponse.Builder::user)
@@ -3234,6 +4468,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbSnapshotCollection.class,
                         ListAwrDbSnapshotsResponse.Builder::awrDbSnapshotCollection)
@@ -3271,6 +4506,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbCollection.class,
                         ListAwrDbsResponse.Builder::awrDbCollection)
@@ -3310,6 +4546,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ConsumerGroupPrivilegeCollection
                                 .class,
@@ -3347,6 +4584,8 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.CursorCacheStatementCollection
                                 .class,
@@ -3355,7 +4594,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListCursorCacheStatementsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListCursorCacheStatementsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3388,6 +4626,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.DataAccessContainerCollection.class,
                         ListDataAccessContainersResponse.Builder::dataAccessContainerCollection)
@@ -3423,6 +4662,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.DatabaseParametersCollection.class,
                         ListDatabaseParametersResponse.Builder::databaseParametersCollection)
@@ -3450,6 +4690,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("name", request.getName())
                 .appendQueryParam("vcnId", request.getVcnId())
                 .appendQueryParam("isCluster", request.getIsCluster())
+                .appendQueryParam("isDnsResolutionEnabled", request.getIsDnsResolutionEnabled())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -3495,6 +4736,8 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmDiskGroupCollection
                                 .class,
@@ -3503,7 +4746,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalAsmDiskGroupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalAsmDiskGroupsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3530,6 +4772,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmInstanceCollection.class,
                         ListExternalAsmInstancesResponse.Builder::externalAsmInstanceCollection)
@@ -3537,7 +4780,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalAsmInstancesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalAsmInstancesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3564,6 +4806,8 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmUserCollection.class,
                         ListExternalAsmUsersResponse.Builder::externalAsmUserCollection)
@@ -3571,7 +4815,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalAsmUsersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalAsmUsersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3597,6 +4840,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmCollection.class,
                         ListExternalAsmsResponse.Builder::externalAsmCollection)
@@ -3604,7 +4848,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalAsmsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalAsmsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3631,6 +4874,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalClusterInstanceCollection
                                 .class,
@@ -3641,7 +4885,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         ListExternalClusterInstancesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalClusterInstancesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3667,6 +4910,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalClusterCollection.class,
                         ListExternalClustersResponse.Builder::externalClusterCollection)
@@ -3674,7 +4918,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalClustersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalClustersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3694,6 +4937,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("externalDatabases")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("externalDbSystemId", request.getExternalDbSystemId())
+                .appendQueryParam("externalDatabaseId", request.getExternalDatabaseId())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
@@ -3701,6 +4945,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDatabaseCollection.class,
                         ListExternalDatabasesResponse.Builder::externalDatabaseCollection)
@@ -3708,7 +4953,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalDatabasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalDatabasesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3734,6 +4978,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbHomeCollection.class,
                         ListExternalDbHomesResponse.Builder::externalDbHomeCollection)
@@ -3741,7 +4986,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalDbHomesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalDbHomesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3767,6 +5011,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbNodeCollection.class,
                         ListExternalDbNodesResponse.Builder::externalDbNodeCollection)
@@ -3774,7 +5019,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalDbNodesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalDbNodesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3801,6 +5045,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnectorCollection
                                 .class,
@@ -3812,7 +5057,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListExternalDbSystemConnectorsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3839,6 +5083,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscoveryCollection
                                 .class,
@@ -3850,7 +5095,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListExternalDbSystemDiscoveriesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3877,6 +5121,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemCollection.class,
                         ListExternalDbSystemsResponse.Builder::externalDbSystemCollection)
@@ -3884,7 +5129,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalDbSystemsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalDbSystemsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3911,6 +5155,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .ExternalExadataInfrastructureCollection.class,
@@ -3922,7 +5167,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListExternalExadataInfrastructuresResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3956,6 +5200,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .ExternalExadataStorageConnectorCollection.class,
@@ -3967,7 +5212,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListExternalExadataStorageConnectorsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4001,6 +5245,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .ExternalExadataStorageServerCollection.class,
@@ -4012,7 +5257,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListExternalExadataStorageServersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4042,6 +5286,8 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalListenerServiceCollection
                                 .class,
@@ -4052,7 +5298,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         ListExternalListenerServicesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalListenerServicesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4079,6 +5324,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalListenerCollection.class,
                         ListExternalListenersResponse.Builder::externalListenerCollection)
@@ -4086,7 +5332,40 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalListenersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalListenersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalMySqlDatabasesResponse listExternalMySqlDatabases(
+            ListExternalMySqlDatabasesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExternalMySqlDatabasesResponse::builder)
+                .logger(LOG, "listExternalMySqlDatabases")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalMySqlDatabases",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseCollection/ListExternalMySqlDatabases")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalMySqlDatabasesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseCollection
+                                .class,
+                        ListExternalMySqlDatabasesResponse.Builder::externalMySqlDatabaseCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalMySqlDatabasesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalMySqlDatabasesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -4275,6 +5554,75 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public ListMySqlDatabaseConnectorsResponse listMySqlDatabaseConnectors(
+            ListMySqlDatabaseConnectorsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMySqlDatabaseConnectorsResponse::builder)
+                .logger(LOG, "listMySqlDatabaseConnectors")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListMySqlDatabaseConnectors",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/MySqlConnectorCollection/ListMySqlDatabaseConnectors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMySqlDatabaseConnectorsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendQueryParam("externalDatabaseId", request.getExternalDatabaseId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MySqlConnectorCollection.class,
+                        ListMySqlDatabaseConnectorsResponse.Builder::mySqlConnectorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMySqlDatabaseConnectorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMySqlDatabaseConnectorsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListNamedCredentialsResponse listNamedCredentials(ListNamedCredentialsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListNamedCredentialsResponse::builder)
+                .logger(LOG, "listNamedCredentials")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListNamedCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/ListNamedCredentials")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNamedCredentialsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("associatedResource", request.getAssociatedResource())
+                .appendEnumQueryParam("type", request.getType())
+                .appendEnumQueryParam("scope", request.getScope())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.NamedCredentialCollection.class,
+                        ListNamedCredentialsResponse.Builder::namedCredentialCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNamedCredentialsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNamedCredentialsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListObjectPrivilegesResponse listObjectPrivileges(ListObjectPrivilegesRequest request) {
 
         Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
@@ -4302,6 +5650,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ObjectPrivilegeCollection.class,
                         ListObjectPrivilegesResponse.Builder::objectPrivilegeCollection)
@@ -4336,6 +5685,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("endTimeLessThanOrEqualTo", request.getEndTimeLessThanOrEqualTo())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsAdvisorExecutionsCollection.class,
@@ -4376,6 +5726,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsCollectionAggregationsCollection.class,
@@ -4420,6 +5771,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsCollectionOperationsCollection.class,
@@ -4492,6 +5844,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ProxiedForUserCollection.class,
                         ListProxiedForUsersResponse.Builder::proxiedForUserCollection)
@@ -4530,6 +5883,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ProxyUserCollection.class,
                         ListProxyUsersResponse.Builder::proxyUserCollection)
@@ -4568,6 +5922,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.RoleCollection.class,
                         ListRolesResponse.Builder::roleCollection)
@@ -4602,6 +5957,8 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJobCollection.class,
                         ListSqlPlanBaselineJobsResponse.Builder::sqlPlanBaselineJobCollection)
@@ -4609,7 +5966,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListSqlPlanBaselineJobsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSqlPlanBaselineJobsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4643,8 +5999,15 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("isAutoPurged", request.getIsAutoPurged())
+                .appendQueryParam(
+                        "timeLastExecutedGreaterThan", request.getTimeLastExecutedGreaterThan())
+                .appendQueryParam("timeLastExecutedLessThan", request.getTimeLastExecutedLessThan())
+                .appendQueryParam("isNeverExecuted", request.getIsNeverExecuted())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineCollection.class,
                         ListSqlPlanBaselinesResponse.Builder::sqlPlanBaselineCollection)
@@ -4652,7 +6015,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListSqlPlanBaselinesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSqlPlanBaselinesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4684,6 +6046,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SystemPrivilegeCollection.class,
                         ListSystemPrivilegesResponse.Builder::systemPrivilegeCollection)
@@ -4713,6 +6076,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("tableStatistics")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.TableStatisticsCollection.class,
                         ListTableStatisticsResponse.Builder::tableStatisticsCollection)
@@ -4745,6 +6109,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.TablespaceCollection.class,
                         ListTablespacesResponse.Builder::tablespaceCollection)
@@ -4779,6 +6144,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.UserCollection.class,
                         ListUsersResponse.Builder::userCollection)
@@ -4955,6 +6321,121 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         LoadSqlPlanBaselinesFromCursorCacheResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ModifyAutonomousDatabaseManagementFeatureResponse
+            modifyAutonomousDatabaseManagementFeature(
+                    ModifyAutonomousDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getModifyAutonomousDatabaseManagementFeatureDetails(),
+                "modifyAutonomousDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, ModifyAutonomousDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "modifyAutonomousDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "ModifyAutonomousDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ModifyAutonomousDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ModifyAutonomousDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("modifyDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ModifyAutonomousDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ModifyAutonomousDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ModifyDatabaseManagementFeatureResponse modifyDatabaseManagementFeature(
+            ModifyDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getModifyDatabaseManagementFeatureDetails(),
+                "modifyDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, ModifyDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "modifyDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "ModifyDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ModifyDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ModifyDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("modifyDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ModifyDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ModifyDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ModifyPluggableDatabaseManagementFeatureResponse
+            modifyPluggableDatabaseManagementFeature(
+                    ModifyPluggableDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getModifyPluggableDatabaseManagementFeatureDetails(),
+                "modifyPluggableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, ModifyPluggableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "modifyPluggableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "ModifyPluggableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ModifyPluggableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ModifyPluggableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("pluggabledatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("modifyDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ModifyPluggableDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ModifyPluggableDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -5159,6 +6640,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.HistoricAddmResult.class,
@@ -5205,6 +6687,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbCpuUsageCollection.class,
                         SummarizeAwrDbCpuUsagesResponse.Builder::awrDbCpuUsageCollection)
@@ -5256,6 +6739,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbMetricCollection.class,
                         SummarizeAwrDbMetricsResponse.Builder::awrDbMetricCollection)
@@ -5304,6 +6788,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbParameterChangeCollection
                                 .class,
@@ -5362,6 +6847,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbParameterCollection.class,
                         SummarizeAwrDbParametersResponse.Builder::awrDbParameterCollection)
@@ -5400,6 +6886,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbSnapshotRangeCollection.class,
                         SummarizeAwrDbSnapshotRangesResponse.Builder::awrDbSnapshotRangeCollection)
@@ -5452,6 +6939,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbSysstatCollection.class,
                         SummarizeAwrDbSysstatsResponse.Builder::awrDbSysstatCollection)
@@ -5498,6 +6986,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbTopWaitEventCollection.class,
                         SummarizeAwrDbTopWaitEventsResponse.Builder::awrDbTopWaitEventCollection)
@@ -5549,6 +7038,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbWaitEventBucketCollection
                                 .class,
@@ -5604,6 +7094,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbWaitEventCollection.class,
                         SummarizeAwrDbWaitEventsResponse.Builder::awrDbWaitEventCollection)
@@ -5642,6 +7133,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                                 .class,
@@ -5651,7 +7143,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", SummarizeExternalAsmMetricsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeExternalAsmMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5683,6 +7174,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                                 .class,
@@ -5694,7 +7186,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeExternalClusterMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5726,6 +7217,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                                 .class,
@@ -5737,7 +7229,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeExternalDbNodeMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5770,6 +7261,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("endTime", request.getEndTime())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                                 .class,
@@ -5781,7 +7273,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeExternalDbSystemAvailabilityMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5813,6 +7304,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                                 .class,
@@ -5824,7 +7316,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeExternalListenerMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5897,6 +7388,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("endTime", request.getEndTime())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                                 .class,
@@ -5908,7 +7400,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeManagedDatabaseAvailabilityMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5933,6 +7424,8 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
                                 .class,
@@ -5942,7 +7435,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", SummarizeSqlPlanBaselinesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeSqlPlanBaselinesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5968,6 +7460,8 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
                                 .class,
@@ -5979,7 +7473,37 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeSqlPlanBaselinesByLastExecutionResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public TestNamedCredentialResponse testNamedCredential(TestNamedCredentialRequest request) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+        Objects.requireNonNull(
+                request.getTestNamedCredentialDetails(), "testNamedCredentialDetails is required");
+
+        return clientCall(request, TestNamedCredentialResponse::builder)
+                .logger(LOG, "testNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "TestNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/TestNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .appendPathParam("actions")
+                .appendPathParam("test")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.TestNamedCredentialStatus.class,
+                        TestNamedCredentialResponse.Builder::testNamedCredentialStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", TestNamedCredentialResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -6085,6 +7609,40 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public UpdateExternalAsmInstanceResponse updateExternalAsmInstance(
+            UpdateExternalAsmInstanceRequest request) {
+
+        Validate.notBlank(
+                request.getExternalAsmInstanceId(), "externalAsmInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalAsmInstanceDetails(),
+                "updateExternalAsmInstanceDetails is required");
+
+        return clientCall(request, UpdateExternalAsmInstanceResponse::builder)
+                .logger(LOG, "updateExternalAsmInstance")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalAsmInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalAsmInstance/UpdateExternalAsmInstance")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalAsmInstanceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalAsmInstances")
+                .appendPathParam(request.getExternalAsmInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalAsmInstance.class,
+                        UpdateExternalAsmInstanceResponse.Builder::externalAsmInstance)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalAsmInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateExternalAsmInstanceResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public UpdateExternalClusterResponse updateExternalCluster(
             UpdateExternalClusterRequest request) {
 
@@ -6148,6 +7706,38 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateExternalClusterInstanceResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalDbHomeResponse updateExternalDbHome(UpdateExternalDbHomeRequest request) {
+
+        Validate.notBlank(request.getExternalDbHomeId(), "externalDbHomeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalDbHomeDetails(),
+                "updateExternalDbHomeDetails is required");
+
+        return clientCall(request, UpdateExternalDbHomeResponse::builder)
+                .logger(LOG, "updateExternalDbHome")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalDbHome",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbHome/UpdateExternalDbHome")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalDbHomeRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbHomes")
+                .appendPathParam(request.getExternalDbHomeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbHome.class,
+                        UpdateExternalDbHomeResponse.Builder::externalDbHome)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalDbHomeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateExternalDbHomeResponse.Builder::etag)
                 .callSync();
     }
 
@@ -6313,6 +7903,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructure.class,
@@ -6323,7 +7914,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         UpdateExternalExadataInfrastructureResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateExternalExadataInfrastructureResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6367,6 +7957,82 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public UpdateExternalExadataStorageGridResponse updateExternalExadataStorageGrid(
+            UpdateExternalExadataStorageGridRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageGridId(),
+                "externalExadataStorageGridId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalExadataStorageGridDetails(),
+                "updateExternalExadataStorageGridDetails is required");
+
+        return clientCall(request, UpdateExternalExadataStorageGridResponse::builder)
+                .logger(LOG, "updateExternalExadataStorageGrid")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalExadataStorageGrid",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageGrid/UpdateExternalExadataStorageGrid")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalExadataStorageGridRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageGrids")
+                .appendPathParam(request.getExternalExadataStorageGridId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataStorageGrid.class,
+                        UpdateExternalExadataStorageGridResponse.Builder
+                                ::externalExadataStorageGrid)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalExadataStorageGridResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalExadataStorageGridResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalExadataStorageServerResponse updateExternalExadataStorageServer(
+            UpdateExternalExadataStorageServerRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageServerId(),
+                "externalExadataStorageServerId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalExadataStorageServerDetails(),
+                "updateExternalExadataStorageServerDetails is required");
+
+        return clientCall(request, UpdateExternalExadataStorageServerResponse::builder)
+                .logger(LOG, "updateExternalExadataStorageServer")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalExadataStorageServer",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/UpdateExternalExadataStorageServer")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalExadataStorageServerRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageServers")
+                .appendPathParam(request.getExternalExadataStorageServerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServer.class,
+                        UpdateExternalExadataStorageServerResponse.Builder
+                                ::externalExadataStorageServer)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalExadataStorageServerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalExadataStorageServerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateExternalListenerResponse updateExternalListener(
             UpdateExternalListenerRequest request) {
 
@@ -6399,6 +8065,83 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public UpdateExternalMysqlDatabaseResponse updateExternalMysqlDatabase(
+            UpdateExternalMysqlDatabaseRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalMySqlDatabaseDetails(),
+                "updateExternalMySqlDatabaseDetails is required");
+
+        return clientCall(request, UpdateExternalMysqlDatabaseResponse::builder)
+                .logger(LOG, "updateExternalMysqlDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalMysqlDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/UpdateExternalMysqlDatabase")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalMysqlDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabase.class,
+                        UpdateExternalMysqlDatabaseResponse.Builder::externalMySqlDatabase)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalMysqlDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalMysqlDatabaseResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalMysqlDatabaseConnectorResponse updateExternalMysqlDatabaseConnector(
+            UpdateExternalMysqlDatabaseConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseConnectorId(),
+                "externalMySqlDatabaseConnectorId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalMySqlDatabaseConnectorDetails(),
+                "updateExternalMySqlDatabaseConnectorDetails is required");
+
+        return clientCall(request, UpdateExternalMysqlDatabaseConnectorResponse::builder)
+                .logger(LOG, "updateExternalMysqlDatabaseConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalMysqlDatabaseConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/UpdateExternalMysqlDatabaseConnector")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalMysqlDatabaseConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendPathParam(request.getExternalMySqlDatabaseConnectorId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseConnector
+                                .class,
+                        UpdateExternalMysqlDatabaseConnectorResponse.Builder
+                                ::externalMySqlDatabaseConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalMysqlDatabaseConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExternalMysqlDatabaseConnectorResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalMysqlDatabaseConnectorResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public UpdateJobResponse updateJob(UpdateJobRequest request) {
 
         Validate.notBlank(request.getJobId(), "jobId must not be blank");
@@ -6425,6 +8168,39 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateJobResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateManagedDatabaseResponse updateManagedDatabase(
+            UpdateManagedDatabaseRequest request) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateManagedDatabaseDetails(),
+                "updateManagedDatabaseDetails is required");
+
+        return clientCall(request, UpdateManagedDatabaseResponse::builder)
+                .logger(LOG, "updateManagedDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateManagedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/UpdateManagedDatabase")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateManagedDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ManagedDatabase.class,
+                        UpdateManagedDatabaseResponse.Builder::managedDatabase)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateManagedDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateManagedDatabaseResponse.Builder::etag)
                 .callSync();
     }
 
@@ -6460,6 +8236,39 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", UpdateManagedDatabaseGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateManagedDatabaseGroupResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateNamedCredentialResponse updateNamedCredential(
+            UpdateNamedCredentialRequest request) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNamedCredentialDetails(),
+                "updateNamedCredentialDetails is required");
+
+        return clientCall(request, UpdateNamedCredentialResponse::builder)
+                .logger(LOG, "updateNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/UpdateNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.NamedCredential.class,
+                        UpdateNamedCredentialResponse.Builder::namedCredential)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateNamedCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateNamedCredentialResponse.Builder::etag)
                 .callSync();
     }
 

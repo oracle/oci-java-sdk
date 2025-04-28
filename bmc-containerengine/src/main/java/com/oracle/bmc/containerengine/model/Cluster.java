@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.model;
@@ -40,7 +40,8 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         "availableKubernetesUpgrades",
         "imagePolicyConfig",
         "clusterPodNetworkOptions",
-        "type"
+        "type",
+        "openIdConnectDiscoveryEndpoint"
     })
     public Cluster(
             String id,
@@ -61,7 +62,8 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
             java.util.List<String> availableKubernetesUpgrades,
             ImagePolicyConfig imagePolicyConfig,
             java.util.List<ClusterPodNetworkOptionDetails> clusterPodNetworkOptions,
-            ClusterType type) {
+            ClusterType type,
+            String openIdConnectDiscoveryEndpoint) {
         super();
         this.id = id;
         this.name = name;
@@ -82,6 +84,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         this.imagePolicyConfig = imagePolicyConfig;
         this.clusterPodNetworkOptions = clusterPodNetworkOptions;
         this.type = type;
+        this.openIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -198,7 +201,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -207,7 +210,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -221,7 +224,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -230,7 +233,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -291,12 +294,16 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("metadata");
             return this;
         }
-        /** The state of the cluster masters. */
+        /**
+         * The state of the cluster masters. For more information, see [Monitoring
+         * Clusters](https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ClusterLifecycleState lifecycleState;
 
         /**
-         * The state of the cluster masters.
+         * The state of the cluster masters. For more information, see [Monitoring
+         * Clusters](https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -398,6 +405,21 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("type");
             return this;
         }
+        /** The cluster-specific OpenID Connect Discovery endpoint */
+        @com.fasterxml.jackson.annotation.JsonProperty("openIdConnectDiscoveryEndpoint")
+        private String openIdConnectDiscoveryEndpoint;
+
+        /**
+         * The cluster-specific OpenID Connect Discovery endpoint
+         *
+         * @param openIdConnectDiscoveryEndpoint the value to set
+         * @return this builder
+         */
+        public Builder openIdConnectDiscoveryEndpoint(String openIdConnectDiscoveryEndpoint) {
+            this.openIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
+            this.__explicitlySet__.add("openIdConnectDiscoveryEndpoint");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -423,7 +445,8 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
                             this.availableKubernetesUpgrades,
                             this.imagePolicyConfig,
                             this.clusterPodNetworkOptions,
-                            this.type);
+                            this.type,
+                            this.openIdConnectDiscoveryEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -488,6 +511,9 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("openIdConnectDiscoveryEndpoint")) {
+                this.openIdConnectDiscoveryEndpoint(model.getOpenIdConnectDiscoveryEndpoint());
             }
             return this;
         }
@@ -600,7 +626,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -609,7 +635,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -621,7 +647,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -630,7 +656,7 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -682,12 +708,16 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         return metadata;
     }
 
-    /** The state of the cluster masters. */
+    /**
+     * The state of the cluster masters. For more information, see [Monitoring
+     * Clusters](https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ClusterLifecycleState lifecycleState;
 
     /**
-     * The state of the cluster masters.
+     * The state of the cluster masters. For more information, see [Monitoring
+     * Clusters](https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      *
      * @return the value
      */
@@ -773,6 +803,19 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         return type;
     }
 
+    /** The cluster-specific OpenID Connect Discovery endpoint */
+    @com.fasterxml.jackson.annotation.JsonProperty("openIdConnectDiscoveryEndpoint")
+    private final String openIdConnectDiscoveryEndpoint;
+
+    /**
+     * The cluster-specific OpenID Connect Discovery endpoint
+     *
+     * @return the value
+     */
+    public String getOpenIdConnectDiscoveryEndpoint() {
+        return openIdConnectDiscoveryEndpoint;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -809,6 +852,8 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append(", clusterPodNetworkOptions=")
                 .append(String.valueOf(this.clusterPodNetworkOptions));
         sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", openIdConnectDiscoveryEndpoint=")
+                .append(String.valueOf(this.openIdConnectDiscoveryEndpoint));
         sb.append(")");
         return sb.toString();
     }
@@ -844,6 +889,8 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
                 && java.util.Objects.equals(
                         this.clusterPodNetworkOptions, other.clusterPodNetworkOptions)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(
+                        this.openIdConnectDiscoveryEndpoint, other.openIdConnectDiscoveryEndpoint)
                 && super.equals(other);
     }
 
@@ -890,6 +937,11 @@ public final class Cluster extends com.oracle.bmc.http.client.internal.Explicitl
                                 ? 43
                                 : this.clusterPodNetworkOptions.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.openIdConnectDiscoveryEndpoint == null
+                                ? 43
+                                : this.openIdConnectDiscoveryEndpoint.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

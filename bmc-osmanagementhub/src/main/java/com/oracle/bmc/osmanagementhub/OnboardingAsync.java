@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -8,10 +8,9 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for the operating system
- * environments in your private data centers through a single management console. For more
- * information, see [Overview of OS Management
- * Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
+ * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
+ * Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public interface OnboardingAsync extends AutoCloseable {
@@ -65,8 +64,96 @@ public interface OnboardingAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Creates a registration profile. A profile is a supplementary file for the OS Management Hub
-     * agentry that dictates the content for a managed instance at registration time.
+     * Attaches the specified lifecycle stage to a profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AttachLifecycleStageToProfileResponse>
+            attachLifecycleStageToProfile(
+                    AttachLifecycleStageToProfileRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AttachLifecycleStageToProfileRequest,
+                                    AttachLifecycleStageToProfileResponse>
+                            handler);
+
+    /**
+     * Attaches the specified managed instance group to a profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AttachManagedInstanceGroupToProfileResponse>
+            attachManagedInstanceGroupToProfile(
+                    AttachManagedInstanceGroupToProfileRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AttachManagedInstanceGroupToProfileRequest,
+                                    AttachManagedInstanceGroupToProfileResponse>
+                            handler);
+
+    /**
+     * Attaches the specified management station to a profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AttachManagementStationToProfileResponse>
+            attachManagementStationToProfile(
+                    AttachManagementStationToProfileRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AttachManagementStationToProfileRequest,
+                                    AttachManagementStationToProfileResponse>
+                            handler);
+
+    /**
+     * Attaches the specified software sources to a profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AttachSoftwareSourcesToProfileResponse>
+            attachSoftwareSourcesToProfile(
+                    AttachSoftwareSourcesToProfileRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AttachSoftwareSourcesToProfileRequest,
+                                    AttachSoftwareSourcesToProfileResponse>
+                            handler);
+
+    /**
+     * Moves the profile to a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeProfileCompartmentResponse> changeProfileCompartment(
+            ChangeProfileCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeProfileCompartmentRequest, ChangeProfileCompartmentResponse>
+                    handler);
+
+    /**
+     * Creates a registration profile. A profile defines the content applied to the instance when
+     * registering it with the service.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -96,7 +183,25 @@ public interface OnboardingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified registration profile.
+     * Detaches the specified software sources from a profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DetachSoftwareSourcesFromProfileResponse>
+            detachSoftwareSourcesFromProfile(
+                    DetachSoftwareSourcesFromProfileRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DetachSoftwareSourcesFromProfileRequest,
+                                    DetachSoftwareSourcesFromProfileResponse>
+                            handler);
+
+    /**
+     * Returns information about the specified registration profile.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -108,6 +213,42 @@ public interface OnboardingAsync extends AutoCloseable {
     java.util.concurrent.Future<GetProfileResponse> getProfile(
             GetProfileRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetProfileRequest, GetProfileResponse> handler);
+
+    /**
+     * Returns information about the version of the specified registration profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetProfileVersionResponse> getProfileVersion(
+            GetProfileVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetProfileVersionRequest, GetProfileVersionResponse>
+                    handler);
+
+    /**
+     * Lists available software sources for a specified profile. Filter the list against a variety
+     * of criteria including but not limited to the software source name. The results list only
+     * software sources that have not already been added to the profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListProfileAvailableSoftwareSourcesResponse>
+            listProfileAvailableSoftwareSources(
+                    ListProfileAvailableSoftwareSourcesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListProfileAvailableSoftwareSourcesRequest,
+                                    ListProfileAvailableSoftwareSourcesResponse>
+                            handler);
 
     /**
      * Lists registration profiles that match the specified compartment or profile OCID. Filter the

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -96,8 +96,9 @@ public final class DefinedTags extends com.oracle.bmc.http.client.internal.Expli
          *
          * <p>*Added In:** 2011192329
          *
-         * <p>*SCIM++ Properties:** - caseExact: false - required: true - mutability: readWrite -
-         * returned: default - type: string - idcsSearchable: true - uniqueness: none
+         * <p>*SCIM++ Properties:** - caseExact: false - required: true - idcsReturnEmptyWhenNull:
+         * true - mutability: readWrite - returned: default - type: string - idcsSearchable: true -
+         * uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
@@ -107,8 +108,9 @@ public final class DefinedTags extends com.oracle.bmc.http.client.internal.Expli
          *
          * <p>*Added In:** 2011192329
          *
-         * <p>*SCIM++ Properties:** - caseExact: false - required: true - mutability: readWrite -
-         * returned: default - type: string - idcsSearchable: true - uniqueness: none
+         * <p>*SCIM++ Properties:** - caseExact: false - required: true - idcsReturnEmptyWhenNull:
+         * true - mutability: readWrite - returned: default - type: string - idcsSearchable: true -
+         * uniqueness: none
          *
          * @param value the value to set
          * @return this builder
@@ -209,8 +211,9 @@ public final class DefinedTags extends com.oracle.bmc.http.client.internal.Expli
      *
      * <p>*Added In:** 2011192329
      *
-     * <p>*SCIM++ Properties:** - caseExact: false - required: true - mutability: readWrite -
-     * returned: default - type: string - idcsSearchable: true - uniqueness: none
+     * <p>*SCIM++ Properties:** - caseExact: false - required: true - idcsReturnEmptyWhenNull: true
+     * - mutability: readWrite - returned: default - type: string - idcsSearchable: true -
+     * uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
@@ -220,8 +223,9 @@ public final class DefinedTags extends com.oracle.bmc.http.client.internal.Expli
      *
      * <p>*Added In:** 2011192329
      *
-     * <p>*SCIM++ Properties:** - caseExact: false - required: true - mutability: readWrite -
-     * returned: default - type: string - idcsSearchable: true - uniqueness: none
+     * <p>*SCIM++ Properties:** - caseExact: false - required: true - idcsReturnEmptyWhenNull: true
+     * - mutability: readWrite - returned: default - type: string - idcsSearchable: true -
+     * uniqueness: none
      *
      * @return the value
      */

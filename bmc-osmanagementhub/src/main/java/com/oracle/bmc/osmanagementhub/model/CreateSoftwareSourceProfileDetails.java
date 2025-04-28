@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Description of a software source registration profile to be created. <br>
+ * Provides the information used to create the software source registration profile. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -63,6 +63,24 @@ public final class CreateSoftwareSourceProfileDetails extends CreateProfileDetai
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("registrationType")
+        private Profile.RegistrationType registrationType;
+
+        public Builder registrationType(Profile.RegistrationType registrationType) {
+            this.registrationType = registrationType;
+            this.__explicitlySet__.add("registrationType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefaultProfile")
+        private Boolean isDefaultProfile;
+
+        public Builder isDefaultProfile(Boolean isDefaultProfile) {
+            this.isDefaultProfile = isDefaultProfile;
+            this.__explicitlySet__.add("isDefaultProfile");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -81,12 +99,12 @@ public final class CreateSoftwareSourceProfileDetails extends CreateProfileDetai
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** The software source vendor name. */
+        /** The vendor of the operating system for the instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
         private VendorName vendorName;
 
         /**
-         * The software source vendor name.
+         * The vendor of the operating system for the instance.
          *
          * @param vendorName the value to set
          * @return this builder
@@ -126,12 +144,18 @@ public final class CreateSoftwareSourceProfileDetails extends CreateProfileDetai
             this.__explicitlySet__.add("archType");
             return this;
         }
-        /** The list of software source OCIDs that the registration profile will use. */
+        /**
+         * The list of software source
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
+         * registration profile will use.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
         private java.util.List<String> softwareSourceIds;
 
         /**
-         * The list of software source OCIDs that the registration profile will use.
+         * The list of software source
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
+         * registration profile will use.
          *
          * @param softwareSourceIds the value to set
          * @return this builder
@@ -152,6 +176,8 @@ public final class CreateSoftwareSourceProfileDetails extends CreateProfileDetai
                             this.compartmentId,
                             this.description,
                             this.managementStationId,
+                            this.registrationType,
+                            this.isDefaultProfile,
                             this.freeformTags,
                             this.definedTags,
                             this.vendorName,
@@ -177,6 +203,12 @@ public final class CreateSoftwareSourceProfileDetails extends CreateProfileDetai
             }
             if (model.wasPropertyExplicitlySet("managementStationId")) {
                 this.managementStationId(model.getManagementStationId());
+            }
+            if (model.wasPropertyExplicitlySet("registrationType")) {
+                this.registrationType(model.getRegistrationType());
+            }
+            if (model.wasPropertyExplicitlySet("isDefaultProfile")) {
+                this.isDefaultProfile(model.getIsDefaultProfile());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -215,6 +247,8 @@ public final class CreateSoftwareSourceProfileDetails extends CreateProfileDetai
             String compartmentId,
             String description,
             String managementStationId,
+            Profile.RegistrationType registrationType,
+            Boolean isDefaultProfile,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             VendorName vendorName,
@@ -226,6 +260,8 @@ public final class CreateSoftwareSourceProfileDetails extends CreateProfileDetai
                 compartmentId,
                 description,
                 managementStationId,
+                registrationType,
+                isDefaultProfile,
                 freeformTags,
                 definedTags);
         this.vendorName = vendorName;
@@ -234,12 +270,12 @@ public final class CreateSoftwareSourceProfileDetails extends CreateProfileDetai
         this.softwareSourceIds = softwareSourceIds;
     }
 
-    /** The software source vendor name. */
+    /** The vendor of the operating system for the instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
     private final VendorName vendorName;
 
     /**
-     * The software source vendor name.
+     * The vendor of the operating system for the instance.
      *
      * @return the value
      */
@@ -273,12 +309,18 @@ public final class CreateSoftwareSourceProfileDetails extends CreateProfileDetai
         return archType;
     }
 
-    /** The list of software source OCIDs that the registration profile will use. */
+    /**
+     * The list of software source
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
+     * registration profile will use.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
     private final java.util.List<String> softwareSourceIds;
 
     /**
-     * The list of software source OCIDs that the registration profile will use.
+     * The list of software source
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
+     * registration profile will use.
      *
      * @return the value
      */

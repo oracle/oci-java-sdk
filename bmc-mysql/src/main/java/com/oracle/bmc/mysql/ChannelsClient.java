@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql;
@@ -137,6 +137,7 @@ public class ChannelsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mysql.model.Channel.class,
@@ -146,7 +147,6 @@ public class ChannelsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateChannelResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateChannelResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -169,11 +169,11 @@ public class ChannelsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteChannelResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteChannelResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -196,13 +196,13 @@ public class ChannelsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mysql.model.Channel.class,
                         GetChannelResponse.Builder::channel)
                 .handleResponseHeaderString("etag", GetChannelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetChannelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -232,6 +232,7 @@ public class ChannelsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.mysql.model.ChannelSummary.class,
                         ListChannelsResponse.Builder::items)
@@ -239,7 +240,6 @@ public class ChannelsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListChannelsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListChannelsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -265,11 +265,11 @@ public class ChannelsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", ResetChannelResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", ResetChannelResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -295,11 +295,11 @@ public class ChannelsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", ResumeChannelResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", ResumeChannelResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -325,12 +325,12 @@ public class ChannelsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateChannelResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateChannelResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

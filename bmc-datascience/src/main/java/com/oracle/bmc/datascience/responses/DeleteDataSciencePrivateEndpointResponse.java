@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.responses;
@@ -25,17 +25,17 @@ public class DeleteDataSciencePrivateEndpointResponse extends com.oracle.bmc.res
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the
-     * work request. Use
-     * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
+     * request. Use
+     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the
-     * work request. Use
-     * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
+     * request. Use
+     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
      *
      * @return the value
@@ -98,17 +98,17 @@ public class DeleteDataSciencePrivateEndpointResponse extends com.oracle.bmc.res
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of
-         * the work request. Use
-         * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
+         * request. Use
+         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of
-         * the work request. Use
-         * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
+         * request. Use
+         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
          *
          * @param opcWorkRequestId the value to set

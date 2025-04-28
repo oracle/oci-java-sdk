@@ -1,35 +1,18 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.signing.internal;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.security.interfaces.RSAPrivateKey;
+import com.oracle.bmc.http.client.InternalSdk;
+
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.Nullable;
 
-import com.oracle.bmc.InternalSdk;
-import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
-import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
-import org.bouncycastle.openssl.EncryptionException;
-import org.bouncycastle.openssl.PEMDecryptorProvider;
-import org.bouncycastle.openssl.PEMEncryptedKeyPair;
-import org.bouncycastle.openssl.PEMKeyPair;
-import org.bouncycastle.openssl.PEMParser;
-import org.bouncycastle.openssl.jcajce.JcaPEMKeyConverter;
-import org.bouncycastle.openssl.jcajce.JceOpenSSLPKCS8DecryptorProviderBuilder;
-import org.bouncycastle.openssl.jcajce.JcePEMDecryptorProviderBuilder;
-
+import java.io.IOException;
+import java.io.InputStream;
+import java.security.interfaces.RSAPrivateKey;
 import java.util.Optional;
-import com.oracle.bmc.util.internal.Validate;
-import org.bouncycastle.operator.InputDecryptorProvider;
-import org.bouncycastle.operator.OperatorCreationException;
-import org.bouncycastle.pkcs.PKCS8EncryptedPrivateKeyInfo;
-import org.bouncycastle.pkcs.PKCSException;
 
 /**
  * An implementation of {@link KeySupplier} that supplies a RSA private key from a PEM file.
@@ -47,9 +30,7 @@ import org.bouncycastle.pkcs.PKCSException;
 public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(PEMFileRSAPrivateKeySupplier.class);
-    private final JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
-
-    private final RSAPrivateKey key;
+    private final PEMStreamRSAPrivateKeySupplier delegate;
 
     /**
      * Constructs a new file key supplier which reads the private key from the specified file. The
@@ -63,82 +44,8 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
         try {
             LOG.debug("Initializing private key");
 
-            try (PEMParser keyReader =
-                    new PEMParser(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
-                Object object = keyReader.readObject();
-
-                final PrivateKeyInfo keyInfo;
-
-                if (object instanceof PEMEncryptedKeyPair) {
-                    Validate.notNull(
-                            passphraseCharacters, "The provided private key requires a passphrase");
-
-                    JcePEMDecryptorProviderBuilder decryptorProviderBuilder =
-                            new JcePEMDecryptorProviderBuilder();
-
-                    // If either of BouncyCastle or BouncyCastleFIPS provider is installed, then
-                    // irrespective of the
-                    // version of the library used, decryption of passphrase protected PEM files are
-                    // supported. Else,
-                    // for versions of BouncyCastle > 1.52 (or BC-FIPS), need to add the provider to
-                    // be able to read
-                    // passphrase protected PEM files. Adding the provider to the
-                    // PEMDecryptorProvider instead of
-                    // modifying the application's security environment (by calling
-                    // Security.addProvider) to maintain
-                    // backward compatibility. Details at
-                    // https://github.com/bcgit/bc-java/issues/156
-                    if (!BouncyCastleHelper.getInstance().isProviderInstalled()) {
-                        decryptorProviderBuilder.setProvider(
-                                BouncyCastleHelper.getInstance().getBouncyCastleProvider());
-                    }
-
-                    PEMDecryptorProvider decProv =
-                            decryptorProviderBuilder.build(passphraseCharacters);
-                    try {
-                        keyInfo =
-                                ((PEMEncryptedKeyPair) object)
-                                        .decryptKeyPair(decProv)
-                                        .getPrivateKeyInfo();
-                    } catch (EncryptionException ex) {
-                        throw new IllegalArgumentException(
-                                "The provided passphrase is incorrect.", ex);
-                    }
-                } else if (object instanceof PKCS8EncryptedPrivateKeyInfo) {
-                    Validate.notNull(
-                            passphraseCharacters, "The provided private key requires a passphrase");
-
-                    JceOpenSSLPKCS8DecryptorProviderBuilder decryptorProviderBuilder =
-                            new JceOpenSSLPKCS8DecryptorProviderBuilder();
-
-                    if (!BouncyCastleHelper.getInstance().isProviderInstalled()) {
-                        decryptorProviderBuilder.setProvider(
-                                BouncyCastleHelper.getInstance().getBouncyCastleProvider());
-                    }
-                    InputDecryptorProvider decProv =
-                            decryptorProviderBuilder.build(passphraseCharacters);
-                    try {
-                        keyInfo =
-                                ((PKCS8EncryptedPrivateKeyInfo) object)
-                                        .decryptPrivateKeyInfo(decProv);
-                    } catch (PKCSException ex) {
-                        throw new IllegalArgumentException(
-                                "The provided passphrase is incorrect.", ex);
-                    }
-                } else if (object instanceof PrivateKeyInfo) {
-                    keyInfo = (PrivateKeyInfo) object;
-                } else if (object instanceof PEMKeyPair) {
-                    keyInfo = ((PEMKeyPair) object).getPrivateKeyInfo();
-                } else if (object instanceof SubjectPublicKeyInfo) {
-                    throw new IllegalArgumentException(
-                            "Public key provided instead of private key");
-                } else {
-                    throw new IllegalArgumentException("Private key must be in PEM format");
-                }
-
-                this.key = (RSAPrivateKey) converter.getPrivateKey(keyInfo);
-            }
-        } catch (IOException | OperatorCreationException ex) {
+            delegate = new PEMStreamRSAPrivateKeySupplier(inputStream, passphraseCharacters);
+        } catch (IOException ex) {
             LOG.debug("Failed to read RSA private key from file ", ex);
             throw new PEMFileRSAPrivateKeySupplierException(
                     "Failed to read RSA private key from file ", ex);
@@ -155,7 +62,7 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
     @InternalSdk(backwardCompatibilityRequired = true)
     @Override
     public Optional<RSAPrivateKey> supplyKey(@Nonnull String ignored) {
-        return supplyKey();
+        return delegate.supplyKey(ignored);
     }
 
     /**
@@ -166,7 +73,7 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
     @InternalSdk(backwardCompatibilityRequired = true)
     @Nonnull
     public Optional<RSAPrivateKey> supplyKey() {
-        return Optional.of(key);
+        return supplyKey(null);
     }
 
     /** An exception in the {@link PEMFileRSAPrivateKeySupplier}. */

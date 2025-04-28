@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -46,7 +46,12 @@ public final class CreateVmClusterDetails
         "dbServers",
         "freeformTags",
         "definedTags",
-        "dataCollectionOptions"
+        "dataCollectionOptions",
+        "systemVersion",
+        "fileSystemConfigurationDetails",
+        "vmClusterType",
+        "cloudAutomationUpdateDetails",
+        "exascaleDbStorageVaultId"
     })
     public CreateVmClusterDetails(
             String compartmentId,
@@ -68,7 +73,12 @@ public final class CreateVmClusterDetails
             java.util.List<String> dbServers,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            String systemVersion,
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
+            VmClusterType vmClusterType,
+            CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
+            String exascaleDbStorageVaultId) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
@@ -90,19 +100,24 @@ public final class CreateVmClusterDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.systemVersion = systemVersion;
+        this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+        this.vmClusterType = vmClusterType;
+        this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+        this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -129,14 +144,14 @@ public final class CreateVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          *
          * @param exadataInfrastructureId the value to set
@@ -259,14 +274,14 @@ public final class CreateVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster network.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterNetworkId")
         private String vmClusterNetworkId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster network.
          *
          * @param vmClusterNetworkId the value to set
@@ -336,14 +351,14 @@ public final class CreateVmClusterDetails
         }
         /**
          * The time zone to use for the VM cluster. For details, see [DB System Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
          * The time zone to use for the VM cluster. For details, see [DB System Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
@@ -386,7 +401,7 @@ public final class CreateVmClusterDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -396,7 +411,7 @@ public final class CreateVmClusterDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -411,7 +426,7 @@ public final class CreateVmClusterDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -419,7 +434,7 @@ public final class CreateVmClusterDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -437,6 +452,81 @@ public final class CreateVmClusterDetails
         public Builder dataCollectionOptions(DataCollectionOptions dataCollectionOptions) {
             this.dataCollectionOptions = dataCollectionOptions;
             this.__explicitlySet__.add("dataCollectionOptions");
+            return this;
+        }
+        /** Operating system version of the image. */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+        private String systemVersion;
+
+        /**
+         * Operating system version of the image.
+         *
+         * @param systemVersion the value to set
+         * @return this builder
+         */
+        public Builder systemVersion(String systemVersion) {
+            this.systemVersion = systemVersion;
+            this.__explicitlySet__.add("systemVersion");
+            return this;
+        }
+        /** Details of the file system configuration of the VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+        private java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+        /**
+         * Details of the file system configuration of the VM cluster.
+         *
+         * @param fileSystemConfigurationDetails the value to set
+         * @return this builder
+         */
+        public Builder fileSystemConfigurationDetails(
+                java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            this.__explicitlySet__.add("fileSystemConfigurationDetails");
+            return this;
+        }
+        /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+        private VmClusterType vmClusterType;
+
+        /**
+         * The vmcluster type for the VM cluster/Cloud VM cluster.
+         *
+         * @param vmClusterType the value to set
+         * @return this builder
+         */
+        public Builder vmClusterType(VmClusterType vmClusterType) {
+            this.vmClusterType = vmClusterType;
+            this.__explicitlySet__.add("vmClusterType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+        private CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+        public Builder cloudAutomationUpdateDetails(
+                CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
+            this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            this.__explicitlySet__.add("cloudAutomationUpdateDetails");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Database Storage Vault.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+        private String exascaleDbStorageVaultId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Database Storage Vault.
+         *
+         * @param exascaleDbStorageVaultId the value to set
+         * @return this builder
+         */
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+            this.__explicitlySet__.add("exascaleDbStorageVaultId");
             return this;
         }
 
@@ -465,7 +555,12 @@ public final class CreateVmClusterDetails
                             this.dbServers,
                             this.freeformTags,
                             this.definedTags,
-                            this.dataCollectionOptions);
+                            this.dataCollectionOptions,
+                            this.systemVersion,
+                            this.fileSystemConfigurationDetails,
+                            this.vmClusterType,
+                            this.cloudAutomationUpdateDetails,
+                            this.exascaleDbStorageVaultId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -534,6 +629,21 @@ public final class CreateVmClusterDetails
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
             }
+            if (model.wasPropertyExplicitlySet("systemVersion")) {
+                this.systemVersion(model.getSystemVersion());
+            }
+            if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
+                this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterType")) {
+                this.vmClusterType(model.getVmClusterType());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
+                this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("exascaleDbStorageVaultId")) {
+                this.exascaleDbStorageVaultId(model.getExascaleDbStorageVaultId());
+            }
             return this;
         }
     }
@@ -548,14 +658,14 @@ public final class CreateVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -578,14 +688,14 @@ public final class CreateVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      *
      * @return the value
@@ -690,14 +800,14 @@ public final class CreateVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster network.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterNetworkId")
     private final String vmClusterNetworkId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster network.
      *
      * @return the value
@@ -795,14 +905,14 @@ public final class CreateVmClusterDetails
 
     /**
      * The time zone to use for the VM cluster. For details, see [DB System Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
      * The time zone to use for the VM cluster. For details, see [DB System Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
      */
@@ -839,7 +949,7 @@ public final class CreateVmClusterDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -849,7 +959,7 @@ public final class CreateVmClusterDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -862,7 +972,7 @@ public final class CreateVmClusterDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -870,7 +980,7 @@ public final class CreateVmClusterDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -883,6 +993,102 @@ public final class CreateVmClusterDetails
 
     public DataCollectionOptions getDataCollectionOptions() {
         return dataCollectionOptions;
+    }
+
+    /** Operating system version of the image. */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+    private final String systemVersion;
+
+    /**
+     * Operating system version of the image.
+     *
+     * @return the value
+     */
+    public String getSystemVersion() {
+        return systemVersion;
+    }
+
+    /** Details of the file system configuration of the VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+    private final java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+    /**
+     * Details of the file system configuration of the VM cluster.
+     *
+     * @return the value
+     */
+    public java.util.List<FileSystemConfigurationDetail> getFileSystemConfigurationDetails() {
+        return fileSystemConfigurationDetails;
+    }
+
+    /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+    public enum VmClusterType implements com.oracle.bmc.http.internal.BmcEnum {
+        Regular("REGULAR"),
+        Developer("DEVELOPER"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, VmClusterType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VmClusterType v : VmClusterType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        VmClusterType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VmClusterType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid VmClusterType: " + key);
+        }
+    };
+    /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+    private final VmClusterType vmClusterType;
+
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     *
+     * @return the value
+     */
+    public VmClusterType getVmClusterType() {
+        return vmClusterType;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+    private final CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+    public CloudAutomationUpdateDetails getCloudAutomationUpdateDetails() {
+        return cloudAutomationUpdateDetails;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Database Storage Vault.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+    private final String exascaleDbStorageVaultId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Database Storage Vault.
+     *
+     * @return the value
+     */
+    public String getExascaleDbStorageVaultId() {
+        return exascaleDbStorageVaultId;
     }
 
     @Override
@@ -922,6 +1128,14 @@ public final class CreateVmClusterDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
+        sb.append(", fileSystemConfigurationDetails=")
+                .append(String.valueOf(this.fileSystemConfigurationDetails));
+        sb.append(", vmClusterType=").append(String.valueOf(this.vmClusterType));
+        sb.append(", cloudAutomationUpdateDetails=")
+                .append(String.valueOf(this.cloudAutomationUpdateDetails));
+        sb.append(", exascaleDbStorageVaultId=")
+                .append(String.valueOf(this.exascaleDbStorageVaultId));
         sb.append(")");
         return sb.toString();
     }
@@ -959,6 +1173,14 @@ public final class CreateVmClusterDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.systemVersion, other.systemVersion)
+                && java.util.Objects.equals(
+                        this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
+                && java.util.Objects.equals(this.vmClusterType, other.vmClusterType)
+                && java.util.Objects.equals(
+                        this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
+                && java.util.Objects.equals(
+                        this.exascaleDbStorageVaultId, other.exascaleDbStorageVaultId)
                 && super.equals(other);
     }
 
@@ -1024,6 +1246,27 @@ public final class CreateVmClusterDetails
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemVersion == null ? 43 : this.systemVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileSystemConfigurationDetails == null
+                                ? 43
+                                : this.fileSystemConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmClusterType == null ? 43 : this.vmClusterType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAutomationUpdateDetails == null
+                                ? 43
+                                : this.cloudAutomationUpdateDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exascaleDbStorageVaultId == null
+                                ? 43
+                                : this.exascaleDbStorageVaultId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

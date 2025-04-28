@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -421,7 +421,7 @@ public final class MePasswordChanger
             return this;
         }
         /**
-         * Password attribute. Max length for password is controlled via Password Policy.
+         * Password attribute. The maximum length for a password is controlled by a password policy.
          *
          * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true -
          * mutability: writeOnly - returned: never - uniqueness: none - caseExact: false -
@@ -431,7 +431,7 @@ public final class MePasswordChanger
         private String password;
 
         /**
-         * Password attribute. Max length for password is controlled via Password Policy.
+         * Password attribute. The maximum length for a password is controlled by a password policy.
          *
          * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true -
          * mutability: writeOnly - returned: never - uniqueness: none - caseExact: false -
@@ -861,7 +861,7 @@ public final class MePasswordChanger
     }
 
     /**
-     * Password attribute. Max length for password is controlled via Password Policy.
+     * Password attribute. The maximum length for a password is controlled by a password policy.
      *
      * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true - mutability:
      * writeOnly - returned: never - uniqueness: none - caseExact: false - idcsSensitive: hash -
@@ -871,7 +871,7 @@ public final class MePasswordChanger
     private final String password;
 
     /**
-     * Password attribute. Max length for password is controlled via Password Policy.
+     * Password attribute. The maximum length for a password is controlled by a password policy.
      *
      * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true - mutability:
      * writeOnly - returned: never - uniqueness: none - caseExact: false - idcsSensitive: hash -

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
@@ -9,6 +9,9 @@ import java.util.Queue;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Executor;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Helper class that can wait for the result of {@link #listenForResult(CompletionStage) some
@@ -18,12 +21,20 @@ import java.util.concurrent.Executor;
  * stack traces should actually contain the caller.
  */
 public final class SyncFutureWaiter implements Executor {
+    // use ReentrantLock to avoid carrier thread pinning
+    private final Lock lock = new ReentrantLock();
+    private final Condition condition = lock.newCondition();
     private final Queue<Runnable> tasks = new ArrayDeque<>();
 
     @Override
-    public synchronized void execute(Runnable command) {
-        tasks.add(command);
-        notifyAll();
+    public void execute(Runnable command) {
+        lock.lock();
+        try {
+            tasks.add(command);
+            condition.signalAll();
+        } finally {
+            lock.unlock();
+        }
     }
 
     public <R> R listenForResult(CompletionStage<R> stage) throws Throwable {
@@ -44,21 +55,25 @@ public final class SyncFutureWaiter implements Executor {
                             t = t.getCause();
                         }
 
-                        synchronized (SyncFutureWaiter.this) {
+                        lock.lock();
+                        try {
                             complete = true;
                             failure = t;
                             result = r;
-                            SyncFutureWaiter.this.notifyAll();
+                            condition.signalAll();
+                        } finally {
+                            lock.unlock();
                         }
                     });
         }
 
         public R waitAndWork() throws InterruptedException, Throwable {
-            synchronized (SyncFutureWaiter.this) {
+            lock.lock();
+            try {
                 while (!complete) {
                     Runnable task = tasks.poll();
                     if (task == null) {
-                        SyncFutureWaiter.this.wait();
+                        condition.await();
                     } else {
                         task.run();
                     }
@@ -68,6 +83,8 @@ public final class SyncFutureWaiter implements Executor {
                 } else {
                     return result;
                 }
+            } finally {
+                lock.unlock();
             }
         }
     }

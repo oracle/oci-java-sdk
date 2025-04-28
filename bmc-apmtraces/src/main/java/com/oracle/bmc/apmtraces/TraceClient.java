@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmtraces;
@@ -103,6 +103,10 @@ public class TraceClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendPathParam(request.getTraceKey())
                 .appendPathParam("aggregatedSnapshotData")
                 .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("serviceName", request.getServiceName())
+                .appendQueryParam("serverName", request.getServerName())
+                .appendQueryParam("spanKey", request.getSpanKey())
+                .appendQueryParam("spanName", request.getSpanName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -134,6 +138,11 @@ public class TraceClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendPathParam(request.getTraceKey())
                 .appendPathParam(request.getSpanKey())
                 .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam(
+                        "timeSpanStartedGreaterThanOrEqualTo",
+                        request.getTimeSpanStartedGreaterThanOrEqualTo())
+                .appendQueryParam("timeSpanStartedLessThan", request.getTimeSpanStartedLessThan())
+                .appendEnumQueryParam("spanNamespace", request.getSpanNamespace())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -160,6 +169,11 @@ public class TraceClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendPathParam("traces")
                 .appendPathParam(request.getTraceKey())
                 .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam(
+                        "timeTraceStartedGreaterThanOrEqualTo",
+                        request.getTimeTraceStartedGreaterThanOrEqualTo())
+                .appendQueryParam("timeTraceStartedLessThan", request.getTimeTraceStartedLessThan())
+                .appendEnumQueryParam("traceNamespace", request.getTraceNamespace())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

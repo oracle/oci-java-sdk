@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ModifySnapshotSettingsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ModifySnapshotSettingsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ModifySnapshotSettingsRequest.
  */
@@ -17,13 +17,13 @@ public class ModifySnapshotSettingsRequest
                 com.oracle.bmc.databasemanagement.model.ModifySnapshotSettingsDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     public String getManagedDatabaseId() {
@@ -45,6 +45,13 @@ public class ModifySnapshotSettingsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -65,13 +72,13 @@ public class ModifySnapshotSettingsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          *
          * @param managedDatabaseId the value to set
@@ -113,6 +120,20 @@ public class ModifySnapshotSettingsRequest
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -146,6 +167,7 @@ public class ModifySnapshotSettingsRequest
             managedDatabaseId(o.getManagedDatabaseId());
             modifySnapshotSettingsDetails(o.getModifySnapshotSettingsDetails());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -196,9 +218,10 @@ public class ModifySnapshotSettingsRequest
             request.managedDatabaseId = managedDatabaseId;
             request.modifySnapshotSettingsDetails = modifySnapshotSettingsDetails;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new ModifySnapshotSettingsRequest(managedDatabaseId, modifySnapshotSettingsDetails,
-            // opcRequestId);
+            // opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -211,7 +234,8 @@ public class ModifySnapshotSettingsRequest
         return new Builder()
                 .managedDatabaseId(managedDatabaseId)
                 .modifySnapshotSettingsDetails(modifySnapshotSettingsDetails)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -232,6 +256,7 @@ public class ModifySnapshotSettingsRequest
         sb.append(",modifySnapshotSettingsDetails=")
                 .append(String.valueOf(this.modifySnapshotSettingsDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -250,7 +275,8 @@ public class ModifySnapshotSettingsRequest
                 && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
                 && java.util.Objects.equals(
                         this.modifySnapshotSettingsDetails, other.modifySnapshotSettingsDetails)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -266,6 +292,11 @@ public class ModifySnapshotSettingsRequest
                                 ? 43
                                 : this.modifySnapshotSettingsDetails.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

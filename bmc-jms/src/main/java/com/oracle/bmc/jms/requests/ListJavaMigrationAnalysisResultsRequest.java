@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.jms.requests;
 import com.oracle.bmc.jms.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaMigrationAnalysisResultsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaMigrationAnalysisResultsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListJavaMigrationAnalysisResultsRequest.
  */
@@ -16,13 +16,13 @@ public class ListJavaMigrationAnalysisResultsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Fleet.
      */
     private String fleetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Fleet.
      */
     public String getFleetId() {
@@ -34,6 +34,52 @@ public class ListJavaMigrationAnalysisResultsRequest
     /** The Fleet-unique identifier of the related managed instance. */
     public String getManagedInstanceId() {
         return managedInstanceId;
+    }
+    /**
+     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance.
+     */
+    private String hostName;
+
+    /**
+     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance.
+     */
+    public String getHostName() {
+        return hostName;
+    }
+    /** The name of the application. */
+    private String applicationName;
+
+    /** The name of the application. */
+    public String getApplicationName() {
+        return applicationName;
+    }
+    /**
+     * The start of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    private java.util.Date timeStart;
+
+    /**
+     * The start of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
+    /**
+     * The end of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    private java.util.Date timeEnd;
+
+    /**
+     * The end of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
     }
     /** The maximum number of items to return. */
     private Integer limit;
@@ -84,32 +130,6 @@ public class ListJavaMigrationAnalysisResultsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The start of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
-    private java.util.Date timeStart;
-
-    /**
-     * The start of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
-    public java.util.Date getTimeStart() {
-        return timeStart;
-    }
-    /**
-     * The end of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
-    private java.util.Date timeEnd;
-
-    /**
-     * The end of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
-    public java.util.Date getTimeEnd() {
-        return timeEnd;
-    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -118,13 +138,13 @@ public class ListJavaMigrationAnalysisResultsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Fleet.
          */
         private String fleetId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Fleet.
          *
          * @param fleetId the value to set
@@ -146,6 +166,74 @@ public class ListJavaMigrationAnalysisResultsRequest
          */
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = managedInstanceId;
+            return this;
+        }
+
+        /**
+         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the managed instance.
+         */
+        private String hostName = null;
+
+        /**
+         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the managed instance.
+         *
+         * @param hostName the value to set
+         * @return this builder instance
+         */
+        public Builder hostName(String hostName) {
+            this.hostName = hostName;
+            return this;
+        }
+
+        /** The name of the application. */
+        private String applicationName = null;
+
+        /**
+         * The name of the application.
+         *
+         * @param applicationName the value to set
+         * @return this builder instance
+         */
+        public Builder applicationName(String applicationName) {
+            this.applicationName = applicationName;
+            return this;
+        }
+
+        /**
+         * The start of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        private java.util.Date timeStart = null;
+
+        /**
+         * The start of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         * @param timeStart the value to set
+         * @return this builder instance
+         */
+        public Builder timeStart(java.util.Date timeStart) {
+            this.timeStart = timeStart;
+            return this;
+        }
+
+        /**
+         * The end of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        private java.util.Date timeEnd = null;
+
+        /**
+         * The end of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         * @param timeEnd the value to set
+         * @return this builder instance
+         */
+        public Builder timeEnd(java.util.Date timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
 
@@ -230,42 +318,6 @@ public class ListJavaMigrationAnalysisResultsRequest
         }
 
         /**
-         * The start of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
-        private java.util.Date timeStart = null;
-
-        /**
-         * The start of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         *
-         * @param timeStart the value to set
-         * @return this builder instance
-         */
-        public Builder timeStart(java.util.Date timeStart) {
-            this.timeStart = timeStart;
-            return this;
-        }
-
-        /**
-         * The end of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
-        private java.util.Date timeEnd = null;
-
-        /**
-         * The end of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         *
-         * @param timeEnd the value to set
-         * @return this builder instance
-         */
-        public Builder timeEnd(java.util.Date timeEnd) {
-            this.timeEnd = timeEnd;
-            return this;
-        }
-
-        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -297,13 +349,15 @@ public class ListJavaMigrationAnalysisResultsRequest
         public Builder copy(ListJavaMigrationAnalysisResultsRequest o) {
             fleetId(o.getFleetId());
             managedInstanceId(o.getManagedInstanceId());
+            hostName(o.getHostName());
+            applicationName(o.getApplicationName());
+            timeStart(o.getTimeStart());
+            timeEnd(o.getTimeEnd());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
-            timeStart(o.getTimeStart());
-            timeEnd(o.getTimeEnd());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -343,16 +397,18 @@ public class ListJavaMigrationAnalysisResultsRequest
                     new ListJavaMigrationAnalysisResultsRequest();
             request.fleetId = fleetId;
             request.managedInstanceId = managedInstanceId;
+            request.hostName = hostName;
+            request.applicationName = applicationName;
+            request.timeStart = timeStart;
+            request.timeEnd = timeEnd;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
-            request.timeStart = timeStart;
-            request.timeEnd = timeEnd;
             return request;
-            // new ListJavaMigrationAnalysisResultsRequest(fleetId, managedInstanceId, limit, page,
-            // sortOrder, sortBy, opcRequestId, timeStart, timeEnd);
+            // new ListJavaMigrationAnalysisResultsRequest(fleetId, managedInstanceId, hostName,
+            // applicationName, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -365,13 +421,15 @@ public class ListJavaMigrationAnalysisResultsRequest
         return new Builder()
                 .fleetId(fleetId)
                 .managedInstanceId(managedInstanceId)
+                .hostName(hostName)
+                .applicationName(applicationName)
+                .timeStart(timeStart)
+                .timeEnd(timeEnd)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId)
-                .timeStart(timeStart)
-                .timeEnd(timeEnd);
+                .opcRequestId(opcRequestId);
     }
 
     /**
@@ -390,13 +448,15 @@ public class ListJavaMigrationAnalysisResultsRequest
         sb.append("super=").append(super.toString());
         sb.append(",fleetId=").append(String.valueOf(this.fleetId));
         sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
+        sb.append(",hostName=").append(String.valueOf(this.hostName));
+        sb.append(",applicationName=").append(String.valueOf(this.applicationName));
+        sb.append(",timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(",timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
-        sb.append(",timeStart=").append(String.valueOf(this.timeStart));
-        sb.append(",timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(")");
         return sb.toString();
     }
@@ -414,13 +474,15 @@ public class ListJavaMigrationAnalysisResultsRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
                 && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
+                && java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.applicationName, other.applicationName)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.timeStart, other.timeStart)
-                && java.util.Objects.equals(this.timeEnd, other.timeEnd);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
     @Override
@@ -431,13 +493,17 @@ public class ListJavaMigrationAnalysisResultsRequest
         result =
                 (result * PRIME)
                         + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
+        result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationName == null ? 43 : this.applicationName.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
-        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         return result;
     }
 }

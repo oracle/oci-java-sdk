@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The dimensions available for SQL firewall policy analytics. <br>
+ * The dimensions available for SQL Firewall policy analytics. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -43,12 +43,12 @@ public final class SqlFirewallPolicyDimensions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the security policy corresponding to the SQL firewall policy. */
+        /** The OCID of the security policy corresponding to the SQL Firewall policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("securityPolicyId")
         private String securityPolicyId;
 
         /**
-         * The OCID of the security policy corresponding to the SQL firewall policy.
+         * The OCID of the security policy corresponding to the SQL Firewall policy.
          *
          * @param securityPolicyId the value to set
          * @return this builder
@@ -58,12 +58,12 @@ public final class SqlFirewallPolicyDimensions
             this.__explicitlySet__.add("securityPolicyId");
             return this;
         }
-        /** Specifies the SQL firewall policy enforcement option. */
+        /** Specifies the SQL Firewall policy enforcement option. */
         @com.fasterxml.jackson.annotation.JsonProperty("enforcementScope")
         private EnforcementScope enforcementScope;
 
         /**
-         * Specifies the SQL firewall policy enforcement option.
+         * Specifies the SQL Firewall policy enforcement option.
          *
          * @param enforcementScope the value to set
          * @return this builder
@@ -73,12 +73,12 @@ public final class SqlFirewallPolicyDimensions
             this.__explicitlySet__.add("enforcementScope");
             return this;
         }
-        /** Specifies the mode in which the SQL firewall policy is enabled. */
+        /** Specifies the mode in which the SQL Firewall policy is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("violationAction")
         private ViolationAction violationAction;
 
         /**
-         * Specifies the mode in which the SQL firewall policy is enabled.
+         * Specifies the mode in which the SQL Firewall policy is enabled.
          *
          * @param violationAction the value to set
          * @return this builder
@@ -88,12 +88,12 @@ public final class SqlFirewallPolicyDimensions
             this.__explicitlySet__.add("violationAction");
             return this;
         }
-        /** The current state of the SQL firewall policy. */
+        /** The current state of the SQL Firewall policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private SqlFirewallPolicyLifecycleState lifecycleState;
 
         /**
-         * The current state of the SQL firewall policy.
+         * The current state of the SQL Firewall policy.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -147,12 +147,12 @@ public final class SqlFirewallPolicyDimensions
         return new Builder().copy(this);
     }
 
-    /** The OCID of the security policy corresponding to the SQL firewall policy. */
+    /** The OCID of the security policy corresponding to the SQL Firewall policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("securityPolicyId")
     private final String securityPolicyId;
 
     /**
-     * The OCID of the security policy corresponding to the SQL firewall policy.
+     * The OCID of the security policy corresponding to the SQL Firewall policy.
      *
      * @return the value
      */
@@ -160,7 +160,7 @@ public final class SqlFirewallPolicyDimensions
         return securityPolicyId;
     }
 
-    /** Specifies the SQL firewall policy enforcement option. */
+    /** Specifies the SQL Firewall policy enforcement option. */
     public enum EnforcementScope implements com.oracle.bmc.http.internal.BmcEnum {
         EnforceContext("ENFORCE_CONTEXT"),
         EnforceSql("ENFORCE_SQL"),
@@ -207,12 +207,12 @@ public final class SqlFirewallPolicyDimensions
             return UnknownEnumValue;
         }
     };
-    /** Specifies the SQL firewall policy enforcement option. */
+    /** Specifies the SQL Firewall policy enforcement option. */
     @com.fasterxml.jackson.annotation.JsonProperty("enforcementScope")
     private final EnforcementScope enforcementScope;
 
     /**
-     * Specifies the SQL firewall policy enforcement option.
+     * Specifies the SQL Firewall policy enforcement option.
      *
      * @return the value
      */
@@ -220,7 +220,7 @@ public final class SqlFirewallPolicyDimensions
         return enforcementScope;
     }
 
-    /** Specifies the mode in which the SQL firewall policy is enabled. */
+    /** Specifies the mode in which the SQL Firewall policy is enabled. */
     public enum ViolationAction implements com.oracle.bmc.http.internal.BmcEnum {
         Block("BLOCK"),
         Observe("OBSERVE"),
@@ -266,12 +266,12 @@ public final class SqlFirewallPolicyDimensions
             return UnknownEnumValue;
         }
     };
-    /** Specifies the mode in which the SQL firewall policy is enabled. */
+    /** Specifies the mode in which the SQL Firewall policy is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("violationAction")
     private final ViolationAction violationAction;
 
     /**
-     * Specifies the mode in which the SQL firewall policy is enabled.
+     * Specifies the mode in which the SQL Firewall policy is enabled.
      *
      * @return the value
      */
@@ -279,12 +279,12 @@ public final class SqlFirewallPolicyDimensions
         return violationAction;
     }
 
-    /** The current state of the SQL firewall policy. */
+    /** The current state of the SQL Firewall policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final SqlFirewallPolicyLifecycleState lifecycleState;
 
     /**
-     * The current state of the SQL firewall policy.
+     * The current state of the SQL Firewall policy.
      *
      * @return the value
      */

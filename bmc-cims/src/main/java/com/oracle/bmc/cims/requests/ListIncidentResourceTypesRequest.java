@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.cims.requests;
 import com.oracle.bmc.cims.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ListIncidentResourceTypesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ListIncidentResourceTypesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListIncidentResourceTypesRequest.
  */
@@ -45,14 +45,14 @@ public class ListIncidentResourceTypesRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -60,14 +60,14 @@ public class ListIncidentResourceTypesRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -93,22 +93,30 @@ public class ListIncidentResourceTypesRequest
     public String getName() {
         return name;
     }
-    /** The Customer Support Identifier (CSI) associated with the support account. */
+    /**
+     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
+     * optional for all support request types.
+     */
     private String csi;
 
-    /** The Customer Support Identifier (CSI) associated with the support account. */
+    /**
+     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
+     * optional for all support request types.
+     */
     public String getCsi() {
         return csi;
     }
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-     * Cloud Infrastructure account.
+     * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+     * Multicloud users.
      */
     private String ocid;
 
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-     * Cloud Infrastructure account.
+     * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+     * Multicloud users.
      */
     public String getOcid() {
         return ocid;
@@ -120,10 +128,16 @@ public class ListIncidentResourceTypesRequest
     public String getHomeregion() {
         return homeregion;
     }
-    /** The OCID of identity domain. */
+    /**
+     * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+     * Identity domain.
+     */
     private String domainid;
 
-    /** The OCID of identity domain. */
+    /**
+     * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+     * Identity domain.
+     */
     public String getDomainid() {
         return domainid;
     }
@@ -183,14 +197,14 @@ public class ListIncidentResourceTypesRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -203,14 +217,14 @@ public class ListIncidentResourceTypesRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -262,11 +276,15 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
-        /** The Customer Support Identifier (CSI) associated with the support account. */
+        /**
+         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
+         * is optional for all support request types.
+         */
         private String csi = null;
 
         /**
-         * The Customer Support Identifier (CSI) associated with the support account.
+         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
+         * is optional for all support request types.
          *
          * @param csi the value to set
          * @return this builder instance
@@ -278,13 +296,15 @@ public class ListIncidentResourceTypesRequest
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-         * Cloud Infrastructure account.
+         * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+         * Multicloud users.
          */
         private String ocid = null;
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-         * Cloud Infrastructure account.
+         * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+         * Multicloud users.
          *
          * @param ocid the value to set
          * @return this builder instance
@@ -308,11 +328,15 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
-        /** The OCID of identity domain. */
+        /**
+         * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+         * Identity domain.
+         */
         private String domainid = null;
 
         /**
-         * The OCID of identity domain.
+         * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+         * Identity domain.
          *
          * @param domainid the value to set
          * @return this builder instance

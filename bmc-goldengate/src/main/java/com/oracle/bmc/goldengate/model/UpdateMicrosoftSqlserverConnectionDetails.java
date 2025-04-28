@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -90,6 +90,33 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /** The name of the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
@@ -154,12 +181,18 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             this.__explicitlySet__.add("username");
             return this;
         }
-        /** The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server. */
+        /**
+         * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will
+         * be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will
+         * be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -167,6 +200,27 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the password Oracle GoldenGate uses to connect the associated
+         * Microsoft SQL Server. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the password Oracle GoldenGate uses to connect the associated
+         * Microsoft SQL Server. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
@@ -205,15 +259,15 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             return this;
         }
         /**
-         * Database Certificate - The base64 encoded content of pem file containing the server
-         * public key (for 1-way SSL).
+         * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+         * server public key (for 1-way SSL).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
         private String sslCa;
 
         /**
-         * Database Certificate - The base64 encoded content of pem file containing the server
-         * public key (for 1-way SSL).
+         * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+         * server public key (for 1-way SSL).
          *
          * @param sslCa the value to set
          * @return this builder
@@ -241,7 +295,11 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             return this;
         }
         /**
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * Deprecated: this field will be removed in future versions. Either specify the private IP
+         * in the connectionString or host field, or make sure the host name is resolvable in the
+         * target VCN.
+         *
+         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
          * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
          * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
@@ -252,7 +310,11 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         private String privateIp;
 
         /**
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * Deprecated: this field will be removed in future versions. Either specify the private IP
+         * in the connectionString or host field, or make sure the host name is resolvable in the
+         * target VCN.
+         *
+         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
          * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
          * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
@@ -281,11 +343,15 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
+                            this.doesUseSecretIds,
                             this.databaseName,
                             this.host,
                             this.port,
                             this.username,
                             this.password,
+                            this.passwordSecretId,
                             this.additionalAttributes,
                             this.securityProtocol,
                             this.sslCa,
@@ -320,6 +386,15 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
             }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("databaseName")) {
                 this.databaseName(model.getDatabaseName());
             }
@@ -334,6 +409,9 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             }
             if (model.wasPropertyExplicitlySet("password")) {
                 this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
             }
             if (model.wasPropertyExplicitlySet("additionalAttributes")) {
                 this.additionalAttributes(model.getAdditionalAttributes());
@@ -372,22 +450,37 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             String databaseName,
             String host,
             Integer port,
             String username,
             String password,
+            String passwordSecretId,
             java.util.List<NameValuePair> additionalAttributes,
             MicrosoftSqlserverConnection.SecurityProtocol securityProtocol,
             String sslCa,
             Boolean shouldValidateServerCertificate,
             String privateIp) {
-        super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds);
         this.databaseName = databaseName;
         this.host = host;
         this.port = port;
         this.username = username;
         this.password = password;
+        this.passwordSecretId = passwordSecretId;
         this.additionalAttributes = additionalAttributes;
         this.securityProtocol = securityProtocol;
         this.sslCa = sslCa;
@@ -451,17 +544,42 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         return username;
     }
 
-    /** The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server. */
+    /**
+     * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be
+     * removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be
+     * removed after February 15 2026.
      *
      * @return the value
      */
     public String getPassword() {
         return password;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft
+     * SQL Server. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft
+     * SQL Server. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
     }
 
     /**
@@ -495,15 +613,15 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
     }
 
     /**
-     * Database Certificate - The base64 encoded content of pem file containing the server public
-     * key (for 1-way SSL).
+     * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+     * server public key (for 1-way SSL).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
     private final String sslCa;
 
     /**
-     * Database Certificate - The base64 encoded content of pem file containing the server public
-     * key (for 1-way SSL).
+     * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+     * server public key (for 1-way SSL).
      *
      * @return the value
      */
@@ -525,7 +643,11 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
     }
 
     /**
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in
+     * the connectionString or host field, or make sure the host name is resolvable in the target
+     * VCN.
+     *
+     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
      * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
      * not provided it is assumed the datasource is publicly accessible. In case the connection is
@@ -536,7 +658,11 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
     private final String privateIp;
 
     /**
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in
+     * the connectionString or host field, or make sure the host name is resolvable in the target
+     * VCN.
+     *
+     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
      * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
      * not provided it is assumed the datasource is publicly accessible. In case the connection is
@@ -569,6 +695,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", additionalAttributes=").append(String.valueOf(this.additionalAttributes));
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", sslCa=").append(String.valueOf(this.sslCa));
@@ -595,6 +722,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.additionalAttributes, other.additionalAttributes)
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.sslCa, other.sslCa)
@@ -613,6 +741,9 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.additionalAttributes == null

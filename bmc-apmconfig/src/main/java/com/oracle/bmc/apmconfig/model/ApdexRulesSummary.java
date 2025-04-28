@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmconfig.model;
@@ -100,6 +100,15 @@ public final class ApdexRulesSummary extends ConfigSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<Apdex> rules;
 
@@ -138,6 +147,7 @@ public final class ApdexRulesSummary extends ConfigSummary {
                             this.etag,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.rules,
                             this.displayName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -172,6 +182,9 @@ public final class ApdexRulesSummary extends ConfigSummary {
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("rules")) {
                 this.rules(model.getRules());
             }
@@ -201,9 +214,19 @@ public final class ApdexRulesSummary extends ConfigSummary {
             String etag,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<Apdex> rules,
             String displayName) {
-        super(id, timeCreated, timeUpdated, createdBy, updatedBy, etag, freeformTags, definedTags);
+        super(
+                id,
+                timeCreated,
+                timeUpdated,
+                createdBy,
+                updatedBy,
+                etag,
+                freeformTags,
+                definedTags,
+                systemTags);
         this.rules = rules;
         this.displayName = displayName;
     }

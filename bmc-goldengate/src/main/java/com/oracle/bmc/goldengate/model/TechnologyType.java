@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -11,11 +11,20 @@ public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
     Generic("GENERIC"),
     OciAutonomousDatabase("OCI_AUTONOMOUS_DATABASE"),
     OciAutonomousJsonDatabase("OCI_AUTONOMOUS_JSON_DATABASE"),
+    OciCacheWithRedis("OCI_CACHE_WITH_REDIS"),
     OciMysql("OCI_MYSQL"),
     OciObjectStorage("OCI_OBJECT_STORAGE"),
+    OciPostgresql("OCI_POSTGRESQL"),
     OciStreaming("OCI_STREAMING"),
     OracleDatabase("ORACLE_DATABASE"),
     OracleExadata("ORACLE_EXADATA"),
+    OracleExadataDatabaseAtAzure("ORACLE_EXADATA_DATABASE_AT_AZURE"),
+    OracleAutonomousDatabaseAtAzure("ORACLE_AUTONOMOUS_DATABASE_AT_AZURE"),
+    OracleJsonCollection("ORACLE_JSON_COLLECTION"),
+    OracleExadataDatabaseAtGoogleCloud("ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD"),
+    OracleAutonomousDatabaseAtGoogleCloud("ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD"),
+    OracleExadataDatabaseAtAws("ORACLE_EXADATA_DATABASE_AT_AWS"),
+    OracleAutonomousDatabaseAtAws("ORACLE_AUTONOMOUS_DATABASE_AT_AWS"),
     OracleNosql("ORACLE_NOSQL"),
     OracleWeblogicJms("ORACLE_WEBLOGIC_JMS"),
     AmazonRdsOracle("AMAZON_RDS_ORACLE"),
@@ -23,6 +32,7 @@ public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
     AmazonS3("AMAZON_S3"),
     AmazonAuroraMysql("AMAZON_AURORA_MYSQL"),
     AmazonAuroraPostgresql("AMAZON_AURORA_POSTGRESQL"),
+    AmazonDocumentDb("AMAZON_DOCUMENT_DB"),
     AmazonKinesis("AMAZON_KINESIS"),
     AmazonRedshift("AMAZON_REDSHIFT"),
     AmazonRdsMariadb("AMAZON_RDS_MARIADB"),
@@ -30,6 +40,7 @@ public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
     AmazonRdsPostgresql("AMAZON_RDS_POSTGRESQL"),
     ApacheKafka("APACHE_KAFKA"),
     AzureCosmosDbForMongodb("AZURE_COSMOS_DB_FOR_MONGODB"),
+    AzureCosmosDbForPostgresql("AZURE_COSMOS_DB_FOR_POSTGRESQL"),
     AzureDataLakeStorage("AZURE_DATA_LAKE_STORAGE"),
     AzureEventHubs("AZURE_EVENT_HUBS"),
     AzureMysql("AZURE_MYSQL"),
@@ -39,23 +50,39 @@ public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
     AzureSynapseAnalytics("AZURE_SYNAPSE_ANALYTICS"),
     ConfluentKafka("CONFLUENT_KAFKA"),
     ConfluentSchemaRegistry("CONFLUENT_SCHEMA_REGISTRY"),
+    Databricks("DATABRICKS"),
+    Db2Zos("DB2_ZOS"),
     Elasticsearch("ELASTICSEARCH"),
+    GoogleAlloyDbForPostgresql("GOOGLE_ALLOY_DB_FOR_POSTGRESQL"),
     GoogleBigquery("GOOGLE_BIGQUERY"),
     GoogleCloudStorage("GOOGLE_CLOUD_STORAGE"),
     GoogleCloudSqlMysql("GOOGLE_CLOUD_SQL_MYSQL"),
     GoogleCloudSqlPostgresql("GOOGLE_CLOUD_SQL_POSTGRESQL"),
     GoogleCloudSqlSqlserver("GOOGLE_CLOUD_SQL_SQLSERVER"),
+    GooglePubsub("GOOGLE_PUBSUB"),
     Hdfs("HDFS"),
     Mariadb("MARIADB"),
     MicrosoftSqlserver("MICROSOFT_SQLSERVER"),
+    MicrosoftFabricLakehouse("MICROSOFT_FABRIC_LAKEHOUSE"),
+    MicrosoftFabricMirror("MICROSOFT_FABRIC_MIRROR"),
     Mongodb("MONGODB"),
     MysqlServer("MYSQL_SERVER"),
+    MysqlHeatwaveOnAzure("MYSQL_HEATWAVE_ON_AZURE"),
+    MysqlHeatwaveOnAws("MYSQL_HEATWAVE_ON_AWS"),
     PostgresqlServer("POSTGRESQL_SERVER"),
     Redis("REDIS"),
     Singlestoredb("SINGLESTOREDB"),
     SinglestoredbCloud("SINGLESTOREDB_CLOUD"),
     Snowflake("SNOWFLAKE"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(TechnologyType.class);
 
     private final String value;
     private static java.util.Map<String, TechnologyType> map;
@@ -63,7 +90,9 @@ public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
     static {
         map = new java.util.HashMap<>();
         for (TechnologyType v : TechnologyType.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -81,6 +110,9 @@ public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid TechnologyType: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'TechnologyType', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

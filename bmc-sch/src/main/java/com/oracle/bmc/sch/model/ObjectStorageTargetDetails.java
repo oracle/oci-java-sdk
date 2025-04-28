@@ -1,14 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch.model;
 
 /**
- * The bucket used for the Object Storage target. For configuration instructions, see [To create a
- * service
- * connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
- * <br>
+ * The destination bucket for data transferred from the source. For configuration instructions, see
+ * [Creating a
+ * Connector](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -45,12 +44,20 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** The name of the bucket. Avoid entering confidential information. */
+        /**
+         * The name of the bucket. Valid characters are letters (upper or lower case), numbers,
+         * hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an
+         * Object Storage namespace. Avoid entering confidential information. Example:
+         * my-new-bucket1
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
-         * The name of the bucket. Avoid entering confidential information.
+         * The name of the bucket. Valid characters are letters (upper or lower case), numbers,
+         * hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an
+         * Object Storage namespace. Avoid entering confidential information. Example:
+         * my-new-bucket1
          *
          * @param bucketName the value to set
          * @return this builder
@@ -181,12 +188,18 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
         return namespace;
     }
 
-    /** The name of the bucket. Avoid entering confidential information. */
+    /**
+     * The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens
+     * (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage
+     * namespace. Avoid entering confidential information. Example: my-new-bucket1
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
-     * The name of the bucket. Avoid entering confidential information.
+     * The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens
+     * (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage
+     * namespace. Avoid entering confidential information. Example: my-new-bucket1
      *
      * @return the value
      */

@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.28.0</version>
+    <version>3.63.2</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -18,7 +18,7 @@
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK - Choices for HTTP clients</name>
   <description>This project contains add-on modules for Oracle Cloud Infrastructure</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
   <modules>
     <module>bmc-common-httpclient-jersey</module>

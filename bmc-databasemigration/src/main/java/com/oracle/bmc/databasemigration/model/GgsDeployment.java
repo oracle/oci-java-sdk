@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -15,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GgsDeployment.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -30,12 +30,12 @@ public final class GgsDeployment extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of a GoldenGate Deployment */
+        /** The OCID of the resource being referenced. */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
         private String deploymentId;
 
         /**
-         * OCID of a GoldenGate Deployment
+         * The OCID of the resource being referenced.
          *
          * @param deploymentId the value to set
          * @return this builder
@@ -45,12 +45,12 @@ public final class GgsDeployment extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("deploymentId");
             return this;
         }
-        /** OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment */
+        /** The OCID of the resource being referenced. */
         @com.fasterxml.jackson.annotation.JsonProperty("ggsAdminCredentialsSecretId")
         private String ggsAdminCredentialsSecretId;
 
         /**
-         * OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+         * The OCID of the resource being referenced.
          *
          * @param ggsAdminCredentialsSecretId the value to set
          * @return this builder
@@ -94,12 +94,12 @@ public final class GgsDeployment extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** OCID of a GoldenGate Deployment */
+    /** The OCID of the resource being referenced. */
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
     private final String deploymentId;
 
     /**
-     * OCID of a GoldenGate Deployment
+     * The OCID of the resource being referenced.
      *
      * @return the value
      */
@@ -107,12 +107,12 @@ public final class GgsDeployment extends com.oracle.bmc.http.client.internal.Exp
         return deploymentId;
     }
 
-    /** OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment */
+    /** The OCID of the resource being referenced. */
     @com.fasterxml.jackson.annotation.JsonProperty("ggsAdminCredentialsSecretId")
     private final String ggsAdminCredentialsSecretId;
 
     /**
-     * OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
+     * The OCID of the resource being referenced.
      *
      * @return the value
      */

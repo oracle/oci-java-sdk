@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql;
@@ -158,6 +158,38 @@ public class DbBackupsClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CopyBackupResponse copyBackup(CopyBackupRequest request) {
+        Objects.requireNonNull(request.getCopyBackupDetails(), "copyBackupDetails is required");
+
+        return clientCall(request, CopyBackupResponse::builder)
+                .logger(LOG, "copyBackup")
+                .serviceDetails(
+                        "DbBackups",
+                        "CopyBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/CopyBackup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CopyBackupRequest::builder)
+                .basePath("/20190415")
+                .appendPathParam("backups")
+                .appendPathParam("actions")
+                .appendPathParam("copy")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mysql.model.Backup.class, CopyBackupResponse.Builder::backup)
+                .handleResponseHeaderString("etag", CopyBackupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CopyBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CopyBackupResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateBackupResponse createBackup(CreateBackupRequest request) {
         Objects.requireNonNull(request.getCreateBackupDetails(), "createBackupDetails is required");
 
@@ -174,6 +206,7 @@ public class DbBackupsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mysql.model.Backup.class,
@@ -183,7 +216,6 @@ public class DbBackupsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateBackupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateBackupResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -206,11 +238,11 @@ public class DbBackupsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteBackupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteBackupResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -233,12 +265,12 @@ public class DbBackupsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mysql.model.Backup.class, GetBackupResponse.Builder::backup)
                 .handleResponseHeaderString("etag", GetBackupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetBackupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -268,6 +300,7 @@ public class DbBackupsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.mysql.model.BackupSummary.class,
                         ListBackupsResponse.Builder::items)
@@ -275,7 +308,6 @@ public class DbBackupsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListBackupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListBackupsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -299,6 +331,7 @@ public class DbBackupsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mysql.model.Backup.class,
@@ -306,7 +339,6 @@ public class DbBackupsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateBackupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateBackupResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

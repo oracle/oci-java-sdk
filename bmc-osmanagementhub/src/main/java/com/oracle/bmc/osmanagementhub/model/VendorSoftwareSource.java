@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A vendor software source contains a collection of packages. <br>
+ * The object that defines a vendor software source. A software source is a collection of packages.
+ * For more information, see [Managing Software
+ * Sources](https://docs.oracle.com/iaas/osmh/doc/software-sources.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -78,6 +80,15 @@ public final class VendorSoftwareSource extends SoftwareSource {
         public Builder availability(Availability availability) {
             this.availability = availability;
             this.__explicitlySet__.add("availability");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
+        private Availability availabilityAtOci;
+
+        public Builder availabilityAtOci(Availability availabilityAtOci) {
+            this.availabilityAtOci = availabilityAtOci;
+            this.__explicitlySet__.add("availabilityAtOci");
             return this;
         }
 
@@ -171,6 +182,15 @@ public final class VendorSoftwareSource extends SoftwareSource {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("size")
+        private Double size;
+
+        public Builder size(Double size) {
+            this.size = size;
+            this.__explicitlySet__.add("size");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -213,6 +233,42 @@ public final class VendorSoftwareSource extends SoftwareSource {
             this.__explicitlySet__.add("vendorName");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * vendor software source in the root compartment. This property applies only to replicated
+         * vendor software sources.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("originSoftwareSourceId")
+        private String originSoftwareSourceId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * vendor software source in the root compartment. This property applies only to replicated
+         * vendor software sources.
+         *
+         * @param originSoftwareSourceId the value to set
+         * @return this builder
+         */
+        public Builder originSoftwareSourceId(String originSoftwareSourceId) {
+            this.originSoftwareSourceId = originSoftwareSourceId;
+            this.__explicitlySet__.add("originSoftwareSourceId");
+            return this;
+        }
+        /** Indicates whether the software source is required for the Autonomous Linux service. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMandatoryForAutonomousLinux")
+        private Boolean isMandatoryForAutonomousLinux;
+
+        /**
+         * Indicates whether the software source is required for the Autonomous Linux service.
+         *
+         * @param isMandatoryForAutonomousLinux the value to set
+         * @return this builder
+         */
+        public Builder isMandatoryForAutonomousLinux(Boolean isMandatoryForAutonomousLinux) {
+            this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            this.__explicitlySet__.add("isMandatoryForAutonomousLinux");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -226,6 +282,7 @@ public final class VendorSoftwareSource extends SoftwareSource {
                             this.timeCreated,
                             this.description,
                             this.availability,
+                            this.availabilityAtOci,
                             this.repoId,
                             this.osFamily,
                             this.archType,
@@ -236,10 +293,13 @@ public final class VendorSoftwareSource extends SoftwareSource {
                             this.gpgKeyUrl,
                             this.gpgKeyId,
                             this.gpgKeyFingerprint,
+                            this.size,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
-                            this.vendorName);
+                            this.vendorName,
+                            this.originSoftwareSourceId,
+                            this.isMandatoryForAutonomousLinux);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -265,6 +325,9 @@ public final class VendorSoftwareSource extends SoftwareSource {
             }
             if (model.wasPropertyExplicitlySet("availability")) {
                 this.availability(model.getAvailability());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityAtOci")) {
+                this.availabilityAtOci(model.getAvailabilityAtOci());
             }
             if (model.wasPropertyExplicitlySet("repoId")) {
                 this.repoId(model.getRepoId());
@@ -296,6 +359,9 @@ public final class VendorSoftwareSource extends SoftwareSource {
             if (model.wasPropertyExplicitlySet("gpgKeyFingerprint")) {
                 this.gpgKeyFingerprint(model.getGpgKeyFingerprint());
             }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -307,6 +373,12 @@ public final class VendorSoftwareSource extends SoftwareSource {
             }
             if (model.wasPropertyExplicitlySet("vendorName")) {
                 this.vendorName(model.getVendorName());
+            }
+            if (model.wasPropertyExplicitlySet("originSoftwareSourceId")) {
+                this.originSoftwareSourceId(model.getOriginSoftwareSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("isMandatoryForAutonomousLinux")) {
+                this.isMandatoryForAutonomousLinux(model.getIsMandatoryForAutonomousLinux());
             }
             return this;
         }
@@ -329,6 +401,7 @@ public final class VendorSoftwareSource extends SoftwareSource {
             java.util.Date timeCreated,
             String description,
             Availability availability,
+            Availability availabilityAtOci,
             String repoId,
             OsFamily osFamily,
             ArchType archType,
@@ -339,10 +412,13 @@ public final class VendorSoftwareSource extends SoftwareSource {
             String gpgKeyUrl,
             String gpgKeyId,
             String gpgKeyFingerprint,
+            Double size,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
-            VendorName vendorName) {
+            VendorName vendorName,
+            String originSoftwareSourceId,
+            Boolean isMandatoryForAutonomousLinux) {
         super(
                 id,
                 compartmentId,
@@ -350,6 +426,7 @@ public final class VendorSoftwareSource extends SoftwareSource {
                 timeCreated,
                 description,
                 availability,
+                availabilityAtOci,
                 repoId,
                 osFamily,
                 archType,
@@ -360,10 +437,13 @@ public final class VendorSoftwareSource extends SoftwareSource {
                 gpgKeyUrl,
                 gpgKeyId,
                 gpgKeyFingerprint,
+                size,
                 freeformTags,
                 definedTags,
                 systemTags);
         this.vendorName = vendorName;
+        this.originSoftwareSourceId = originSoftwareSourceId;
+        this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
     }
 
     /** Name of the vendor providing the software source. */
@@ -377,6 +457,38 @@ public final class VendorSoftwareSource extends SoftwareSource {
      */
     public VendorName getVendorName() {
         return vendorName;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * vendor software source in the root compartment. This property applies only to replicated
+     * vendor software sources.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("originSoftwareSourceId")
+    private final String originSoftwareSourceId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * vendor software source in the root compartment. This property applies only to replicated
+     * vendor software sources.
+     *
+     * @return the value
+     */
+    public String getOriginSoftwareSourceId() {
+        return originSoftwareSourceId;
+    }
+
+    /** Indicates whether the software source is required for the Autonomous Linux service. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMandatoryForAutonomousLinux")
+    private final Boolean isMandatoryForAutonomousLinux;
+
+    /**
+     * Indicates whether the software source is required for the Autonomous Linux service.
+     *
+     * @return the value
+     */
+    public Boolean getIsMandatoryForAutonomousLinux() {
+        return isMandatoryForAutonomousLinux;
     }
 
     @Override
@@ -395,6 +507,9 @@ public final class VendorSoftwareSource extends SoftwareSource {
         sb.append("VendorSoftwareSource(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", vendorName=").append(String.valueOf(this.vendorName));
+        sb.append(", originSoftwareSourceId=").append(String.valueOf(this.originSoftwareSourceId));
+        sb.append(", isMandatoryForAutonomousLinux=")
+                .append(String.valueOf(this.isMandatoryForAutonomousLinux));
         sb.append(")");
         return sb.toString();
     }
@@ -409,7 +524,12 @@ public final class VendorSoftwareSource extends SoftwareSource {
         }
 
         VendorSoftwareSource other = (VendorSoftwareSource) o;
-        return java.util.Objects.equals(this.vendorName, other.vendorName) && super.equals(other);
+        return java.util.Objects.equals(this.vendorName, other.vendorName)
+                && java.util.Objects.equals(
+                        this.originSoftwareSourceId, other.originSoftwareSourceId)
+                && java.util.Objects.equals(
+                        this.isMandatoryForAutonomousLinux, other.isMandatoryForAutonomousLinux)
+                && super.equals(other);
     }
 
     @Override
@@ -417,6 +537,16 @@ public final class VendorSoftwareSource extends SoftwareSource {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.vendorName == null ? 43 : this.vendorName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.originSoftwareSourceId == null
+                                ? 43
+                                : this.originSoftwareSourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMandatoryForAutonomousLinux == null
+                                ? 43
+                                : this.isMandatoryForAutonomousLinux.hashCode());
         return result;
     }
 }

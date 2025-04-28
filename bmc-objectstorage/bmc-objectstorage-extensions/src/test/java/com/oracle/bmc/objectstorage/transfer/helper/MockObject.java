@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.transfer.helper;
@@ -7,6 +7,7 @@ package com.oracle.bmc.objectstorage.transfer.helper;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
 import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
+import com.oracle.bmc.objectstorage.transfer.internal.ChecksumUtils;
 import org.junit.Assert;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
@@ -26,6 +27,9 @@ public final class MockObject implements Answer<GetObjectResponse> {
     private final byte[] data;
     private final String etag;
     private final FailureInjector failureInjector;
+    private final String contentCrc32c;
+    private final String contentSha256;
+    private final String contentSha384;
 
     public MockObject(
             Map<String, String> metadata,
@@ -40,6 +44,13 @@ public final class MockObject implements Answer<GetObjectResponse> {
         this.metadata = metadata;
         this.etag = UUID.randomUUID().toString();
         this.failureInjector = failureInjector;
+        this.contentCrc32c = ChecksumUtils.calculateCrc32cChecksum(data);
+        this.contentSha256 =
+                ChecksumUtils.calculateSha256(new ByteArrayInputStream(data), (long) data.length)
+                        .getSha256();
+        this.contentSha384 =
+                ChecksumUtils.calculateSha384(new ByteArrayInputStream(data), (long) data.length)
+                        .getSha384();
     }
 
     public String getNamespaceName() {
@@ -68,6 +79,18 @@ public final class MockObject implements Answer<GetObjectResponse> {
 
     public String getEtag() {
         return etag;
+    }
+
+    public String getContentCrc32c() {
+        return contentCrc32c;
+    }
+
+    public String getContentSha256() {
+        return contentSha256;
+    }
+
+    public String getContentSha384() {
+        return contentSha384;
     }
 
     @Override
@@ -136,6 +159,9 @@ public final class MockObject implements Answer<GetObjectResponse> {
                 .opcMeta(getMetadata())
                 .inputStream(new FailingInputStream(failureInjector, inputStream))
                 .contentLength(contentLength)
+                .opcContentCrc32c(getContentCrc32c())
+                .opcContentSha256(getContentSha256())
+                .opcContentSha384(getContentSha384())
                 .build();
     }
 

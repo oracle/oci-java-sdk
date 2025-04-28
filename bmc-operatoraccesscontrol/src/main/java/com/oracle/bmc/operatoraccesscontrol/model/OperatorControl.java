@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol.model;
@@ -40,6 +40,7 @@ public final class OperatorControl
         "lifecycleState",
         "timeOfCreation",
         "timeOfModification",
+        "numberOfApprovers",
         "isDefaultOperatorControl",
         "timeOfDeletion",
         "lastModifiedInfo",
@@ -62,6 +63,7 @@ public final class OperatorControl
             OperatorControlLifecycleStates lifecycleState,
             java.util.Date timeOfCreation,
             java.util.Date timeOfModification,
+            Integer numberOfApprovers,
             Boolean isDefaultOperatorControl,
             java.util.Date timeOfDeletion,
             String lastModifiedInfo,
@@ -83,6 +85,7 @@ public final class OperatorControl
         this.lifecycleState = lifecycleState;
         this.timeOfCreation = timeOfCreation;
         this.timeOfModification = timeOfModification;
+        this.numberOfApprovers = numberOfApprovers;
         this.isDefaultOperatorControl = isDefaultOperatorControl;
         this.timeOfDeletion = timeOfDeletion;
         this.lastModifiedInfo = lastModifiedInfo;
@@ -360,6 +363,21 @@ public final class OperatorControl
             this.__explicitlySet__.add("timeOfModification");
             return this;
         }
+        /** Number of approvers required to approve an access request. */
+        @com.fasterxml.jackson.annotation.JsonProperty("numberOfApprovers")
+        private Integer numberOfApprovers;
+
+        /**
+         * Number of approvers required to approve an access request.
+         *
+         * @param numberOfApprovers the value to set
+         * @return this builder
+         */
+        public Builder numberOfApprovers(Integer numberOfApprovers) {
+            this.numberOfApprovers = numberOfApprovers;
+            this.__explicitlySet__.add("numberOfApprovers");
+            return this;
+        }
         /** Whether the operator control is a default Operator Control. */
         @com.fasterxml.jackson.annotation.JsonProperty("isDefaultOperatorControl")
         private Boolean isDefaultOperatorControl;
@@ -470,6 +488,7 @@ public final class OperatorControl
                             this.lifecycleState,
                             this.timeOfCreation,
                             this.timeOfModification,
+                            this.numberOfApprovers,
                             this.isDefaultOperatorControl,
                             this.timeOfDeletion,
                             this.lastModifiedInfo,
@@ -527,6 +546,9 @@ public final class OperatorControl
             }
             if (model.wasPropertyExplicitlySet("timeOfModification")) {
                 this.timeOfModification(model.getTimeOfModification());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfApprovers")) {
+                this.numberOfApprovers(model.getNumberOfApprovers());
             }
             if (model.wasPropertyExplicitlySet("isDefaultOperatorControl")) {
                 this.isDefaultOperatorControl(model.getIsDefaultOperatorControl());
@@ -793,6 +815,19 @@ public final class OperatorControl
         return timeOfModification;
     }
 
+    /** Number of approvers required to approve an access request. */
+    @com.fasterxml.jackson.annotation.JsonProperty("numberOfApprovers")
+    private final Integer numberOfApprovers;
+
+    /**
+     * Number of approvers required to approve an access request.
+     *
+     * @return the value
+     */
+    public Integer getNumberOfApprovers() {
+        return numberOfApprovers;
+    }
+
     /** Whether the operator control is a default Operator Control. */
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultOperatorControl")
     private final Boolean isDefaultOperatorControl;
@@ -902,6 +937,7 @@ public final class OperatorControl
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeOfCreation=").append(String.valueOf(this.timeOfCreation));
         sb.append(", timeOfModification=").append(String.valueOf(this.timeOfModification));
+        sb.append(", numberOfApprovers=").append(String.valueOf(this.numberOfApprovers));
         sb.append(", isDefaultOperatorControl=")
                 .append(String.valueOf(this.isDefaultOperatorControl));
         sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
@@ -939,6 +975,7 @@ public final class OperatorControl
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeOfCreation, other.timeOfCreation)
                 && java.util.Objects.equals(this.timeOfModification, other.timeOfModification)
+                && java.util.Objects.equals(this.numberOfApprovers, other.numberOfApprovers)
                 && java.util.Objects.equals(
                         this.isDefaultOperatorControl, other.isDefaultOperatorControl)
                 && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
@@ -1001,6 +1038,9 @@ public final class OperatorControl
                         + (this.timeOfModification == null
                                 ? 43
                                 : this.timeOfModification.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfApprovers == null ? 43 : this.numberOfApprovers.hashCode());
         result =
                 (result * PRIME)
                         + (this.isDefaultOperatorControl == null

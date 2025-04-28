@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -25,6 +25,7 @@ public final class TopProcessesUsage
     @Deprecated
     @java.beans.ConstructorProperties({
         "command",
+        "containerId",
         "processHash",
         "cpuUsage",
         "cpuUtilization",
@@ -35,6 +36,7 @@ public final class TopProcessesUsage
     })
     public TopProcessesUsage(
             String command,
+            String containerId,
             String processHash,
             Double cpuUsage,
             Double cpuUtilization,
@@ -44,6 +46,7 @@ public final class TopProcessesUsage
             Integer maxProcessCount) {
         super();
         this.command = command;
+        this.containerId = containerId;
         this.processHash = processHash;
         this.cpuUsage = cpuUsage;
         this.cpuUtilization = cpuUtilization;
@@ -68,6 +71,21 @@ public final class TopProcessesUsage
         public Builder command(String command) {
             this.command = command;
             this.__explicitlySet__.add("command");
+            return this;
+        }
+        /** Container id if this process corresponds to a running container in the host. */
+        @com.fasterxml.jackson.annotation.JsonProperty("containerId")
+        private String containerId;
+
+        /**
+         * Container id if this process corresponds to a running container in the host.
+         *
+         * @param containerId the value to set
+         * @return this builder
+         */
+        public Builder containerId(String containerId) {
+            this.containerId = containerId;
+            this.__explicitlySet__.add("containerId");
             return this;
         }
         /** Unique identifier for a process. */
@@ -183,6 +201,7 @@ public final class TopProcessesUsage
             TopProcessesUsage model =
                     new TopProcessesUsage(
                             this.command,
+                            this.containerId,
                             this.processHash,
                             this.cpuUsage,
                             this.cpuUtilization,
@@ -200,6 +219,9 @@ public final class TopProcessesUsage
         public Builder copy(TopProcessesUsage model) {
             if (model.wasPropertyExplicitlySet("command")) {
                 this.command(model.getCommand());
+            }
+            if (model.wasPropertyExplicitlySet("containerId")) {
+                this.containerId(model.getContainerId());
             }
             if (model.wasPropertyExplicitlySet("processHash")) {
                 this.processHash(model.getProcessHash());
@@ -246,6 +268,19 @@ public final class TopProcessesUsage
      */
     public String getCommand() {
         return command;
+    }
+
+    /** Container id if this process corresponds to a running container in the host. */
+    @com.fasterxml.jackson.annotation.JsonProperty("containerId")
+    private final String containerId;
+
+    /**
+     * Container id if this process corresponds to a running container in the host.
+     *
+     * @return the value
+     */
+    public String getContainerId() {
+        return containerId;
     }
 
     /** Unique identifier for a process. */
@@ -355,6 +390,7 @@ public final class TopProcessesUsage
         sb.append("TopProcessesUsage(");
         sb.append("super=").append(super.toString());
         sb.append("command=").append(String.valueOf(this.command));
+        sb.append(", containerId=").append(String.valueOf(this.containerId));
         sb.append(", processHash=").append(String.valueOf(this.processHash));
         sb.append(", cpuUsage=").append(String.valueOf(this.cpuUsage));
         sb.append(", cpuUtilization=").append(String.valueOf(this.cpuUtilization));
@@ -377,6 +413,7 @@ public final class TopProcessesUsage
 
         TopProcessesUsage other = (TopProcessesUsage) o;
         return java.util.Objects.equals(this.command, other.command)
+                && java.util.Objects.equals(this.containerId, other.containerId)
                 && java.util.Objects.equals(this.processHash, other.processHash)
                 && java.util.Objects.equals(this.cpuUsage, other.cpuUsage)
                 && java.util.Objects.equals(this.cpuUtilization, other.cpuUtilization)
@@ -392,6 +429,7 @@ public final class TopProcessesUsage
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.command == null ? 43 : this.command.hashCode());
+        result = (result * PRIME) + (this.containerId == null ? 43 : this.containerId.hashCode());
         result = (result * PRIME) + (this.processHash == null ? 43 : this.processHash.hashCode());
         result = (result * PRIME) + (this.cpuUsage == null ? 43 : this.cpuUsage.hashCode());
         result =

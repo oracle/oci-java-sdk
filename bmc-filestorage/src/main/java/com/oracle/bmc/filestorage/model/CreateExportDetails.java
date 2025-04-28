@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -28,6 +28,7 @@ public final class CreateExportDetails
         "exportSetId",
         "fileSystemId",
         "path",
+        "locks",
         "isIdmapGroupsForSysAuth"
     })
     public CreateExportDetails(
@@ -35,23 +36,30 @@ public final class CreateExportDetails
             String exportSetId,
             String fileSystemId,
             String path,
+            java.util.List<ResourceLock> locks,
             Boolean isIdmapGroupsForSysAuth) {
         super();
         this.exportOptions = exportOptions;
         this.exportSetId = exportSetId;
         this.fileSystemId = fileSystemId;
         this.path = path;
+        this.locks = locks;
         this.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Export options for the new export. If left unspecified, defaults to:
+         * Export options for the new export. For exports of mount targets with IPv4 address, if
+         * client options are left unspecified, client options would default to:
          *
          * <p>[ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access":
          * "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534,
          * "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
+         *
+         * <p>For exports of mount targets with IPv6 address, if client options are left
+         * unspecified, client options would be an empty array, i.e. export would not be visible to
+         * any clients.
          *
          * <p>*Note:** Mount targets do not have Internet-routable IP addresses. Therefore they will
          * not be reachable from the Internet, even if an associated {@code ClientOptions} item has
@@ -66,11 +74,16 @@ public final class CreateExportDetails
         private java.util.List<ClientOptions> exportOptions;
 
         /**
-         * Export options for the new export. If left unspecified, defaults to:
+         * Export options for the new export. For exports of mount targets with IPv4 address, if
+         * client options are left unspecified, client options would default to:
          *
          * <p>[ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access":
          * "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534,
          * "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
+         *
+         * <p>For exports of mount targets with IPv6 address, if client options are left
+         * unspecified, client options would be an empty array, i.e. export would not be visible to
+         * any clients.
          *
          * <p>*Note:** Mount targets do not have Internet-routable IP addresses. Therefore they will
          * not be reachable from the Internet, even if an associated {@code ClientOptions} item has
@@ -90,15 +103,15 @@ public final class CreateExportDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export's export set.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export's export set.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
         private String exportSetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export's export set.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export's export set.
          *
          * @param exportSetId the value to set
          * @return this builder
@@ -109,15 +122,15 @@ public final class CreateExportDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export's file system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export's file system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
         private String fileSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export's file system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export's file system.
          *
          * @param fileSystemId the value to set
          * @return this builder
@@ -150,6 +163,21 @@ public final class CreateExportDetails
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
+            return this;
+        }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
         /**
@@ -194,6 +222,7 @@ public final class CreateExportDetails
                             this.exportSetId,
                             this.fileSystemId,
                             this.path,
+                            this.locks,
                             this.isIdmapGroupsForSysAuth);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -215,6 +244,9 @@ public final class CreateExportDetails
             if (model.wasPropertyExplicitlySet("path")) {
                 this.path(model.getPath());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("isIdmapGroupsForSysAuth")) {
                 this.isIdmapGroupsForSysAuth(model.getIsIdmapGroupsForSysAuth());
             }
@@ -232,11 +264,15 @@ public final class CreateExportDetails
     }
 
     /**
-     * Export options for the new export. If left unspecified, defaults to:
+     * Export options for the new export. For exports of mount targets with IPv4 address, if client
+     * options are left unspecified, client options would default to:
      *
      * <p>[ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE",
      * "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534,
      * "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
+     *
+     * <p>For exports of mount targets with IPv6 address, if client options are left unspecified,
+     * client options would be an empty array, i.e. export would not be visible to any clients.
      *
      * <p>*Note:** Mount targets do not have Internet-routable IP addresses. Therefore they will not
      * be reachable from the Internet, even if an associated {@code ClientOptions} item has a source
@@ -251,11 +287,15 @@ public final class CreateExportDetails
     private final java.util.List<ClientOptions> exportOptions;
 
     /**
-     * Export options for the new export. If left unspecified, defaults to:
+     * Export options for the new export. For exports of mount targets with IPv4 address, if client
+     * options are left unspecified, client options would default to:
      *
      * <p>[ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE",
      * "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534,
      * "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
+     *
+     * <p>For exports of mount targets with IPv6 address, if client options are left unspecified,
+     * client options would be an empty array, i.e. export would not be visible to any clients.
      *
      * <p>*Note:** Mount targets do not have Internet-routable IP addresses. Therefore they will not
      * be reachable from the Internet, even if an associated {@code ClientOptions} item has a source
@@ -273,14 +313,14 @@ public final class CreateExportDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export's export set.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
     private final String exportSetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export's export set.
      *
      * @return the value
@@ -290,14 +330,14 @@ public final class CreateExportDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export's file system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
     private final String fileSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export's file system.
      *
      * @return the value
@@ -327,6 +367,19 @@ public final class CreateExportDetails
      */
     public String getPath() {
         return path;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     /**
@@ -375,6 +428,7 @@ public final class CreateExportDetails
         sb.append(", exportSetId=").append(String.valueOf(this.exportSetId));
         sb.append(", fileSystemId=").append(String.valueOf(this.fileSystemId));
         sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", isIdmapGroupsForSysAuth=")
                 .append(String.valueOf(this.isIdmapGroupsForSysAuth));
         sb.append(")");
@@ -395,6 +449,7 @@ public final class CreateExportDetails
                 && java.util.Objects.equals(this.exportSetId, other.exportSetId)
                 && java.util.Objects.equals(this.fileSystemId, other.fileSystemId)
                 && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(
                         this.isIdmapGroupsForSysAuth, other.isIdmapGroupsForSysAuth)
                 && super.equals(other);
@@ -410,6 +465,7 @@ public final class CreateExportDetails
         result = (result * PRIME) + (this.exportSetId == null ? 43 : this.exportSetId.hashCode());
         result = (result * PRIME) + (this.fileSystemId == null ? 43 : this.fileSystemId.hashCode());
         result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result =
                 (result * PRIME)
                         + (this.isIdmapGroupsForSysAuth == null

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -29,7 +29,19 @@ public final class ManagedMySqlDatabase
         "dbName",
         "dbVersion",
         "timeCreated",
-        "name"
+        "name",
+        "heatWaveClusterDisplayName",
+        "isHeatWaveEnabled",
+        "isLakehouseEnabled",
+        "heatWaveNodeShape",
+        "heatWaveMemorySize",
+        "heatWaveNodes",
+        "isHeatWaveActive",
+        "timeCreatedHeatWave",
+        "databaseType",
+        "managementState",
+        "lifecycleState",
+        "timeUpdated"
     })
     public ManagedMySqlDatabase(
             String id,
@@ -37,7 +49,19 @@ public final class ManagedMySqlDatabase
             String dbName,
             String dbVersion,
             java.util.Date timeCreated,
-            String name) {
+            String name,
+            String heatWaveClusterDisplayName,
+            Boolean isHeatWaveEnabled,
+            Boolean isLakehouseEnabled,
+            String heatWaveNodeShape,
+            Integer heatWaveMemorySize,
+            java.util.List<HeatWaveNode> heatWaveNodes,
+            Boolean isHeatWaveActive,
+            java.util.Date timeCreatedHeatWave,
+            MySqlType databaseType,
+            ManagementState managementState,
+            LifecycleStates lifecycleState,
+            java.util.Date timeUpdated) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -45,6 +69,18 @@ public final class ManagedMySqlDatabase
         this.dbVersion = dbVersion;
         this.timeCreated = timeCreated;
         this.name = name;
+        this.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
+        this.isHeatWaveEnabled = isHeatWaveEnabled;
+        this.isLakehouseEnabled = isLakehouseEnabled;
+        this.heatWaveNodeShape = heatWaveNodeShape;
+        this.heatWaveMemorySize = heatWaveMemorySize;
+        this.heatWaveNodes = heatWaveNodes;
+        this.isHeatWaveActive = isHeatWaveActive;
+        this.timeCreatedHeatWave = timeCreatedHeatWave;
+        this.databaseType = databaseType;
+        this.managementState = managementState;
+        this.lifecycleState = lifecycleState;
+        this.timeUpdated = timeUpdated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -139,6 +175,186 @@ public final class ManagedMySqlDatabase
             this.__explicitlySet__.add("name");
             return this;
         }
+        /** The name of the HeatWave cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveClusterDisplayName")
+        private String heatWaveClusterDisplayName;
+
+        /**
+         * The name of the HeatWave cluster.
+         *
+         * @param heatWaveClusterDisplayName the value to set
+         * @return this builder
+         */
+        public Builder heatWaveClusterDisplayName(String heatWaveClusterDisplayName) {
+            this.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
+            this.__explicitlySet__.add("heatWaveClusterDisplayName");
+            return this;
+        }
+        /** Indicates whether HeatWave is enabled for the MySQL Database System or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
+        private Boolean isHeatWaveEnabled;
+
+        /**
+         * Indicates whether HeatWave is enabled for the MySQL Database System or not.
+         *
+         * @param isHeatWaveEnabled the value to set
+         * @return this builder
+         */
+        public Builder isHeatWaveEnabled(Boolean isHeatWaveEnabled) {
+            this.isHeatWaveEnabled = isHeatWaveEnabled;
+            this.__explicitlySet__.add("isHeatWaveEnabled");
+            return this;
+        }
+        /** Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
+        private Boolean isLakehouseEnabled;
+
+        /**
+         * Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
+         *
+         * @param isLakehouseEnabled the value to set
+         * @return this builder
+         */
+        public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
+            this.isLakehouseEnabled = isLakehouseEnabled;
+            this.__explicitlySet__.add("isLakehouseEnabled");
+            return this;
+        }
+        /** The shape of the nodes in the HeatWave cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeShape")
+        private String heatWaveNodeShape;
+
+        /**
+         * The shape of the nodes in the HeatWave cluster.
+         *
+         * @param heatWaveNodeShape the value to set
+         * @return this builder
+         */
+        public Builder heatWaveNodeShape(String heatWaveNodeShape) {
+            this.heatWaveNodeShape = heatWaveNodeShape;
+            this.__explicitlySet__.add("heatWaveNodeShape");
+            return this;
+        }
+        /** The total memory belonging to the HeatWave cluster in GBs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveMemorySize")
+        private Integer heatWaveMemorySize;
+
+        /**
+         * The total memory belonging to the HeatWave cluster in GBs.
+         *
+         * @param heatWaveMemorySize the value to set
+         * @return this builder
+         */
+        public Builder heatWaveMemorySize(Integer heatWaveMemorySize) {
+            this.heatWaveMemorySize = heatWaveMemorySize;
+            this.__explicitlySet__.add("heatWaveMemorySize");
+            return this;
+        }
+        /** The information about individual HeatWave nodes in the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodes")
+        private java.util.List<HeatWaveNode> heatWaveNodes;
+
+        /**
+         * The information about individual HeatWave nodes in the cluster.
+         *
+         * @param heatWaveNodes the value to set
+         * @return this builder
+         */
+        public Builder heatWaveNodes(java.util.List<HeatWaveNode> heatWaveNodes) {
+            this.heatWaveNodes = heatWaveNodes;
+            this.__explicitlySet__.add("heatWaveNodes");
+            return this;
+        }
+        /** Indicates whether the HeatWave cluster is active or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveActive")
+        private Boolean isHeatWaveActive;
+
+        /**
+         * Indicates whether the HeatWave cluster is active or not.
+         *
+         * @param isHeatWaveActive the value to set
+         * @return this builder
+         */
+        public Builder isHeatWaveActive(Boolean isHeatWaveActive) {
+            this.isHeatWaveActive = isHeatWaveActive;
+            this.__explicitlySet__.add("isHeatWaveActive");
+            return this;
+        }
+        /** The date and time the Managed MySQL Database was created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedHeatWave")
+        private java.util.Date timeCreatedHeatWave;
+
+        /**
+         * The date and time the Managed MySQL Database was created.
+         *
+         * @param timeCreatedHeatWave the value to set
+         * @return this builder
+         */
+        public Builder timeCreatedHeatWave(java.util.Date timeCreatedHeatWave) {
+            this.timeCreatedHeatWave = timeCreatedHeatWave;
+            this.__explicitlySet__.add("timeCreatedHeatWave");
+            return this;
+        }
+        /** The type of the MySQL Database. Indicates whether the database is external or MDS. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+        private MySqlType databaseType;
+
+        /**
+         * The type of the MySQL Database. Indicates whether the database is external or MDS.
+         *
+         * @param databaseType the value to set
+         * @return this builder
+         */
+        public Builder databaseType(MySqlType databaseType) {
+            this.databaseType = databaseType;
+            this.__explicitlySet__.add("databaseType");
+            return this;
+        }
+        /** Indicates database management status. */
+        @com.fasterxml.jackson.annotation.JsonProperty("managementState")
+        private ManagementState managementState;
+
+        /**
+         * Indicates database management status.
+         *
+         * @param managementState the value to set
+         * @return this builder
+         */
+        public Builder managementState(ManagementState managementState) {
+            this.managementState = managementState;
+            this.__explicitlySet__.add("managementState");
+            return this;
+        }
+        /** Indicates lifecycle state of the resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleStates lifecycleState;
+
+        /**
+         * Indicates lifecycle state of the resource.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         */
+        public Builder lifecycleState(LifecycleStates lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /** The date and time the Managed MySQL Database was updated. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        /**
+         * The date and time the Managed MySQL Database was updated.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         */
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -151,7 +367,19 @@ public final class ManagedMySqlDatabase
                             this.dbName,
                             this.dbVersion,
                             this.timeCreated,
-                            this.name);
+                            this.name,
+                            this.heatWaveClusterDisplayName,
+                            this.isHeatWaveEnabled,
+                            this.isLakehouseEnabled,
+                            this.heatWaveNodeShape,
+                            this.heatWaveMemorySize,
+                            this.heatWaveNodes,
+                            this.isHeatWaveActive,
+                            this.timeCreatedHeatWave,
+                            this.databaseType,
+                            this.managementState,
+                            this.lifecycleState,
+                            this.timeUpdated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -177,6 +405,42 @@ public final class ManagedMySqlDatabase
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveClusterDisplayName")) {
+                this.heatWaveClusterDisplayName(model.getHeatWaveClusterDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isHeatWaveEnabled")) {
+                this.isHeatWaveEnabled(model.getIsHeatWaveEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isLakehouseEnabled")) {
+                this.isLakehouseEnabled(model.getIsLakehouseEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveNodeShape")) {
+                this.heatWaveNodeShape(model.getHeatWaveNodeShape());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveMemorySize")) {
+                this.heatWaveMemorySize(model.getHeatWaveMemorySize());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveNodes")) {
+                this.heatWaveNodes(model.getHeatWaveNodes());
+            }
+            if (model.wasPropertyExplicitlySet("isHeatWaveActive")) {
+                this.isHeatWaveActive(model.getIsHeatWaveActive());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreatedHeatWave")) {
+                this.timeCreatedHeatWave(model.getTimeCreatedHeatWave());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("managementState")) {
+                this.managementState(model.getManagementState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
             }
             return this;
         }
@@ -269,6 +533,162 @@ public final class ManagedMySqlDatabase
         return name;
     }
 
+    /** The name of the HeatWave cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveClusterDisplayName")
+    private final String heatWaveClusterDisplayName;
+
+    /**
+     * The name of the HeatWave cluster.
+     *
+     * @return the value
+     */
+    public String getHeatWaveClusterDisplayName() {
+        return heatWaveClusterDisplayName;
+    }
+
+    /** Indicates whether HeatWave is enabled for the MySQL Database System or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
+    private final Boolean isHeatWaveEnabled;
+
+    /**
+     * Indicates whether HeatWave is enabled for the MySQL Database System or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsHeatWaveEnabled() {
+        return isHeatWaveEnabled;
+    }
+
+    /** Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
+    private final Boolean isLakehouseEnabled;
+
+    /**
+     * Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsLakehouseEnabled() {
+        return isLakehouseEnabled;
+    }
+
+    /** The shape of the nodes in the HeatWave cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeShape")
+    private final String heatWaveNodeShape;
+
+    /**
+     * The shape of the nodes in the HeatWave cluster.
+     *
+     * @return the value
+     */
+    public String getHeatWaveNodeShape() {
+        return heatWaveNodeShape;
+    }
+
+    /** The total memory belonging to the HeatWave cluster in GBs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveMemorySize")
+    private final Integer heatWaveMemorySize;
+
+    /**
+     * The total memory belonging to the HeatWave cluster in GBs.
+     *
+     * @return the value
+     */
+    public Integer getHeatWaveMemorySize() {
+        return heatWaveMemorySize;
+    }
+
+    /** The information about individual HeatWave nodes in the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodes")
+    private final java.util.List<HeatWaveNode> heatWaveNodes;
+
+    /**
+     * The information about individual HeatWave nodes in the cluster.
+     *
+     * @return the value
+     */
+    public java.util.List<HeatWaveNode> getHeatWaveNodes() {
+        return heatWaveNodes;
+    }
+
+    /** Indicates whether the HeatWave cluster is active or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveActive")
+    private final Boolean isHeatWaveActive;
+
+    /**
+     * Indicates whether the HeatWave cluster is active or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsHeatWaveActive() {
+        return isHeatWaveActive;
+    }
+
+    /** The date and time the Managed MySQL Database was created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedHeatWave")
+    private final java.util.Date timeCreatedHeatWave;
+
+    /**
+     * The date and time the Managed MySQL Database was created.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeCreatedHeatWave() {
+        return timeCreatedHeatWave;
+    }
+
+    /** The type of the MySQL Database. Indicates whether the database is external or MDS. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+    private final MySqlType databaseType;
+
+    /**
+     * The type of the MySQL Database. Indicates whether the database is external or MDS.
+     *
+     * @return the value
+     */
+    public MySqlType getDatabaseType() {
+        return databaseType;
+    }
+
+    /** Indicates database management status. */
+    @com.fasterxml.jackson.annotation.JsonProperty("managementState")
+    private final ManagementState managementState;
+
+    /**
+     * Indicates database management status.
+     *
+     * @return the value
+     */
+    public ManagementState getManagementState() {
+        return managementState;
+    }
+
+    /** Indicates lifecycle state of the resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final LifecycleStates lifecycleState;
+
+    /**
+     * Indicates lifecycle state of the resource.
+     *
+     * @return the value
+     */
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
+
+    /** The date and time the Managed MySQL Database was updated. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The date and time the Managed MySQL Database was updated.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -290,6 +710,19 @@ public final class ManagedMySqlDatabase
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", heatWaveClusterDisplayName=")
+                .append(String.valueOf(this.heatWaveClusterDisplayName));
+        sb.append(", isHeatWaveEnabled=").append(String.valueOf(this.isHeatWaveEnabled));
+        sb.append(", isLakehouseEnabled=").append(String.valueOf(this.isLakehouseEnabled));
+        sb.append(", heatWaveNodeShape=").append(String.valueOf(this.heatWaveNodeShape));
+        sb.append(", heatWaveMemorySize=").append(String.valueOf(this.heatWaveMemorySize));
+        sb.append(", heatWaveNodes=").append(String.valueOf(this.heatWaveNodes));
+        sb.append(", isHeatWaveActive=").append(String.valueOf(this.isHeatWaveActive));
+        sb.append(", timeCreatedHeatWave=").append(String.valueOf(this.timeCreatedHeatWave));
+        sb.append(", databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(", managementState=").append(String.valueOf(this.managementState));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(")");
         return sb.toString();
     }
@@ -310,6 +743,19 @@ public final class ManagedMySqlDatabase
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(
+                        this.heatWaveClusterDisplayName, other.heatWaveClusterDisplayName)
+                && java.util.Objects.equals(this.isHeatWaveEnabled, other.isHeatWaveEnabled)
+                && java.util.Objects.equals(this.isLakehouseEnabled, other.isLakehouseEnabled)
+                && java.util.Objects.equals(this.heatWaveNodeShape, other.heatWaveNodeShape)
+                && java.util.Objects.equals(this.heatWaveMemorySize, other.heatWaveMemorySize)
+                && java.util.Objects.equals(this.heatWaveNodes, other.heatWaveNodes)
+                && java.util.Objects.equals(this.isHeatWaveActive, other.isHeatWaveActive)
+                && java.util.Objects.equals(this.timeCreatedHeatWave, other.timeCreatedHeatWave)
+                && java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.managementState, other.managementState)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && super.equals(other);
     }
 
@@ -325,6 +771,46 @@ public final class ManagedMySqlDatabase
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveClusterDisplayName == null
+                                ? 43
+                                : this.heatWaveClusterDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHeatWaveEnabled == null ? 43 : this.isHeatWaveEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLakehouseEnabled == null
+                                ? 43
+                                : this.isLakehouseEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveNodeShape == null ? 43 : this.heatWaveNodeShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveMemorySize == null
+                                ? 43
+                                : this.heatWaveMemorySize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveNodes == null ? 43 : this.heatWaveNodes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHeatWaveActive == null ? 43 : this.isHeatWaveActive.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedHeatWave == null
+                                ? 43
+                                : this.timeCreatedHeatWave.hashCode());
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementState == null ? 43 : this.managementState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

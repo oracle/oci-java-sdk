@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fusionapps.model;
@@ -7,7 +7,7 @@ package com.oracle.bmc.fusionapps.model;
 /**
  * The policy that specifies the maintenance and upgrade preferences for an environment. For more
  * information about the options, see [Understanding Environment
- * Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+ * Maintenance](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -122,7 +122,15 @@ public final class MaintenancePolicy
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         None("NONE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MonthlyPatchingOverride.class);
 
         private final String value;
         private static java.util.Map<String, MonthlyPatchingOverride> map;
@@ -130,7 +138,9 @@ public final class MaintenancePolicy
         static {
             map = new java.util.HashMap<>();
             for (MonthlyPatchingOverride v : MonthlyPatchingOverride.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -148,7 +158,10 @@ public final class MaintenancePolicy
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid MonthlyPatchingOverride: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'MonthlyPatchingOverride', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -178,7 +191,15 @@ public final class MaintenancePolicy
         Prod("PROD"),
         NonProd("NON_PROD"),
         None("NONE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EnvironmentMaintenanceOverride.class);
 
         private final String value;
         private static java.util.Map<String, EnvironmentMaintenanceOverride> map;
@@ -186,7 +207,9 @@ public final class MaintenancePolicy
         static {
             map = new java.util.HashMap<>();
             for (EnvironmentMaintenanceOverride v : EnvironmentMaintenanceOverride.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -204,7 +227,10 @@ public final class MaintenancePolicy
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid EnvironmentMaintenanceOverride: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'EnvironmentMaintenanceOverride', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**

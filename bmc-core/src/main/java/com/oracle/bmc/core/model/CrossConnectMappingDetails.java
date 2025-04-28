@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -89,18 +89,18 @@ public final class CrossConnectMappingDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the cross-connect or cross-connect group for this mapping. Specified by the owner of
-         * the cross-connect or cross-connect group (the customer if the customer is colocated with
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * cross-connect or cross-connect group for this mapping. Specified by the owner of the
+         * cross-connect or cross-connect group (the customer if the customer is colocated with
          * Oracle, or the provider if the customer is connecting via provider).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectOrCrossConnectGroupId")
         private String crossConnectOrCrossConnectGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the cross-connect or cross-connect group for this mapping. Specified by the owner of
-         * the cross-connect or cross-connect group (the customer if the customer is colocated with
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * cross-connect or cross-connect group for this mapping. Specified by the owner of the
+         * cross-connect or cross-connect group (the customer if the customer is colocated with
          * Oracle, or the provider if the customer is connecting via provider).
          *
          * @param crossConnectOrCrossConnectGroupId the value to set
@@ -406,8 +406,8 @@ public final class CrossConnectMappingDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the cross-connect or cross-connect group for this mapping. Specified by the owner of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * cross-connect or cross-connect group for this mapping. Specified by the owner of the
      * cross-connect or cross-connect group (the customer if the customer is colocated with Oracle,
      * or the provider if the customer is connecting via provider).
      */
@@ -415,8 +415,8 @@ public final class CrossConnectMappingDetails
     private final String crossConnectOrCrossConnectGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the cross-connect or cross-connect group for this mapping. Specified by the owner of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * cross-connect or cross-connect group for this mapping. Specified by the owner of the
      * cross-connect or cross-connect group (the customer if the customer is colocated with Oracle,
      * or the provider if the customer is connecting via provider).
      *

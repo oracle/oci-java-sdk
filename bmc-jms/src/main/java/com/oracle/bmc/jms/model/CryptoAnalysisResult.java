@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -38,6 +38,8 @@ public final class CryptoAnalysisResult
         "findingCount",
         "nonCompliantFindingCount",
         "timeCreated",
+        "timeStarted",
+        "timeFinished",
         "cryptoRoadmapVersion",
         "namespace",
         "bucketName",
@@ -57,6 +59,8 @@ public final class CryptoAnalysisResult
             Integer findingCount,
             Integer nonCompliantFindingCount,
             java.util.Date timeCreated,
+            java.util.Date timeStarted,
+            java.util.Date timeFinished,
             String cryptoRoadmapVersion,
             String namespace,
             String bucketName,
@@ -75,6 +79,8 @@ public final class CryptoAnalysisResult
         this.findingCount = findingCount;
         this.nonCompliantFindingCount = nonCompliantFindingCount;
         this.timeCreated = timeCreated;
+        this.timeStarted = timeStarted;
+        this.timeFinished = timeFinished;
         this.cryptoRoadmapVersion = cryptoRoadmapVersion;
         this.namespace = namespace;
         this.bucketName = bucketName;
@@ -286,6 +292,36 @@ public final class CryptoAnalysisResult
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /** The time the JFR recording has started. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
+        private java.util.Date timeStarted;
+
+        /**
+         * The time the JFR recording has started.
+         *
+         * @param timeStarted the value to set
+         * @return this builder
+         */
+        public Builder timeStarted(java.util.Date timeStarted) {
+            this.timeStarted = timeStarted;
+            this.__explicitlySet__.add("timeStarted");
+            return this;
+        }
+        /** The time the JFR recording has finished. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
+        private java.util.Date timeFinished;
+
+        /**
+         * The time the JFR recording has finished.
+         *
+         * @param timeFinished the value to set
+         * @return this builder
+         */
+        public Builder timeFinished(java.util.Date timeFinished) {
+            this.timeFinished = timeFinished;
+            this.__explicitlySet__.add("timeFinished");
+            return this;
+        }
         /** The Crypto Roadmap version used to perform the analysis. */
         @com.fasterxml.jackson.annotation.JsonProperty("cryptoRoadmapVersion")
         private String cryptoRoadmapVersion;
@@ -366,6 +402,8 @@ public final class CryptoAnalysisResult
                             this.findingCount,
                             this.nonCompliantFindingCount,
                             this.timeCreated,
+                            this.timeStarted,
+                            this.timeFinished,
                             this.cryptoRoadmapVersion,
                             this.namespace,
                             this.bucketName,
@@ -416,6 +454,12 @@ public final class CryptoAnalysisResult
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
             }
             if (model.wasPropertyExplicitlySet("cryptoRoadmapVersion")) {
                 this.cryptoRoadmapVersion(model.getCryptoRoadmapVersion());
@@ -617,6 +661,32 @@ public final class CryptoAnalysisResult
         return timeCreated;
     }
 
+    /** The time the JFR recording has started. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
+    private final java.util.Date timeStarted;
+
+    /**
+     * The time the JFR recording has started.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
+
+    /** The time the JFR recording has finished. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
+    private final java.util.Date timeFinished;
+
+    /**
+     * The time the JFR recording has finished.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeFinished() {
+        return timeFinished;
+    }
+
     /** The Crypto Roadmap version used to perform the analysis. */
     @com.fasterxml.jackson.annotation.JsonProperty("cryptoRoadmapVersion")
     private final String cryptoRoadmapVersion;
@@ -698,6 +768,8 @@ public final class CryptoAnalysisResult
         sb.append(", nonCompliantFindingCount=")
                 .append(String.valueOf(this.nonCompliantFindingCount));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
         sb.append(", cryptoRoadmapVersion=").append(String.valueOf(this.cryptoRoadmapVersion));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", bucketName=").append(String.valueOf(this.bucketName));
@@ -730,6 +802,8 @@ public final class CryptoAnalysisResult
                 && java.util.Objects.equals(
                         this.nonCompliantFindingCount, other.nonCompliantFindingCount)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeFinished, other.timeFinished)
                 && java.util.Objects.equals(this.cryptoRoadmapVersion, other.cryptoRoadmapVersion)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.bucketName, other.bucketName)
@@ -774,6 +848,8 @@ public final class CryptoAnalysisResult
                                 ? 43
                                 : this.nonCompliantFindingCount.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
         result =
                 (result * PRIME)
                         + (this.cryptoRoadmapVersion == null

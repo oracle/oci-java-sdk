@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -29,9 +29,12 @@ public final class CreateFileSystemDetails
         "displayName",
         "freeformTags",
         "definedTags",
+        "locks",
         "kmsKeyId",
         "sourceSnapshotId",
-        "filesystemSnapshotPolicyId"
+        "cloneAttachStatus",
+        "filesystemSnapshotPolicyId",
+        "areQuotaRulesEnabled"
     })
     public CreateFileSystemDetails(
             String availabilityDomain,
@@ -39,18 +42,24 @@ public final class CreateFileSystemDetails
             String displayName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<ResourceLock> locks,
             String kmsKeyId,
             String sourceSnapshotId,
-            String filesystemSnapshotPolicyId) {
+            CloneAttachStatus cloneAttachStatus,
+            String filesystemSnapshotPolicyId,
+            Boolean areQuotaRulesEnabled) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.locks = locks;
         this.kmsKeyId = kmsKeyId;
         this.sourceSnapshotId = sourceSnapshotId;
+        this.cloneAttachStatus = cloneAttachStatus;
         this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+        this.areQuotaRulesEnabled = areQuotaRulesEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -77,14 +86,14 @@ public final class CreateFileSystemDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment to create the file system in.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment to create the file system in.
          *
          * @param compartmentId the value to set
@@ -121,7 +130,7 @@ public final class CreateFileSystemDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -130,7 +139,7 @@ public final class CreateFileSystemDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -144,7 +153,7 @@ public final class CreateFileSystemDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -153,7 +162,7 @@ public final class CreateFileSystemDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -165,15 +174,30 @@ public final class CreateFileSystemDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * KMS key used to encrypt the encryption keys associated with this file system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * KMS key used to encrypt the encryption keys associated with this file system.
          *
          * @param kmsKeyId the value to set
@@ -185,17 +209,17 @@ public final class CreateFileSystemDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * snapshot used to create a cloned file system. See [Cloning a File
-         * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceSnapshotId")
         private String sourceSnapshotId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * snapshot used to create a cloned file system. See [Cloning a File
-         * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          * @param sourceSnapshotId the value to set
          * @return this builder
@@ -206,7 +230,28 @@ public final class CreateFileSystemDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Specifies whether the clone file system is attached to its parent file system. If the
+         * value is set to 'DETACH', then the file system will be created, which is deep copied from
+         * the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneAttachStatus")
+        private CloneAttachStatus cloneAttachStatus;
+
+        /**
+         * Specifies whether the clone file system is attached to its parent file system. If the
+         * value is set to 'DETACH', then the file system will be created, which is deep copied from
+         * the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+         *
+         * @param cloneAttachStatus the value to set
+         * @return this builder
+         */
+        public Builder cloneAttachStatus(CloneAttachStatus cloneAttachStatus) {
+            this.cloneAttachStatus = cloneAttachStatus;
+            this.__explicitlySet__.add("cloneAttachStatus");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * associated file system snapshot policy, which controls the frequency of snapshot creation
          * and retention period of the taken snapshots.
          *
@@ -216,7 +261,7 @@ public final class CreateFileSystemDetails
         private String filesystemSnapshotPolicyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * associated file system snapshot policy, which controls the frequency of snapshot creation
          * and retention period of the taken snapshots.
          *
@@ -228,6 +273,21 @@ public final class CreateFileSystemDetails
         public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
             this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             this.__explicitlySet__.add("filesystemSnapshotPolicyId");
+            return this;
+        }
+        /** Specifies the enforcement of quota rules on the file system. */
+        @com.fasterxml.jackson.annotation.JsonProperty("areQuotaRulesEnabled")
+        private Boolean areQuotaRulesEnabled;
+
+        /**
+         * Specifies the enforcement of quota rules on the file system.
+         *
+         * @param areQuotaRulesEnabled the value to set
+         * @return this builder
+         */
+        public Builder areQuotaRulesEnabled(Boolean areQuotaRulesEnabled) {
+            this.areQuotaRulesEnabled = areQuotaRulesEnabled;
+            this.__explicitlySet__.add("areQuotaRulesEnabled");
             return this;
         }
 
@@ -242,9 +302,12 @@ public final class CreateFileSystemDetails
                             this.displayName,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.kmsKeyId,
                             this.sourceSnapshotId,
-                            this.filesystemSnapshotPolicyId);
+                            this.cloneAttachStatus,
+                            this.filesystemSnapshotPolicyId,
+                            this.areQuotaRulesEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -268,14 +331,23 @@ public final class CreateFileSystemDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
             }
             if (model.wasPropertyExplicitlySet("sourceSnapshotId")) {
                 this.sourceSnapshotId(model.getSourceSnapshotId());
             }
+            if (model.wasPropertyExplicitlySet("cloneAttachStatus")) {
+                this.cloneAttachStatus(model.getCloneAttachStatus());
+            }
             if (model.wasPropertyExplicitlySet("filesystemSnapshotPolicyId")) {
                 this.filesystemSnapshotPolicyId(model.getFilesystemSnapshotPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("areQuotaRulesEnabled")) {
+                this.areQuotaRulesEnabled(model.getAreQuotaRulesEnabled());
             }
             return this;
         }
@@ -310,14 +382,14 @@ public final class CreateFileSystemDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment to create the file system in.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment to create the file system in.
      *
      * @return the value
@@ -350,7 +422,7 @@ public final class CreateFileSystemDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -359,7 +431,7 @@ public final class CreateFileSystemDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -371,7 +443,7 @@ public final class CreateFileSystemDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -380,7 +452,7 @@ public final class CreateFileSystemDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -389,15 +461,28 @@ public final class CreateFileSystemDetails
         return definedTags;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS
      * key used to encrypt the encryption keys associated with this file system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS
      * key used to encrypt the encryption keys associated with this file system.
      *
      * @return the value
@@ -407,17 +492,17 @@ public final class CreateFileSystemDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * snapshot used to create a cloned file system. See [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceSnapshotId")
     private final String sourceSnapshotId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * snapshot used to create a cloned file system. See [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      * @return the value
      */
@@ -426,7 +511,63 @@ public final class CreateFileSystemDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Specifies whether the clone file system is attached to its parent file system. If the value
+     * is set to 'DETACH', then the file system will be created, which is deep copied from the
+     * snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+     */
+    public enum CloneAttachStatus implements com.oracle.bmc.http.internal.BmcEnum {
+        Detach("DETACH"),
+        Attach("ATTACH"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, CloneAttachStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CloneAttachStatus v : CloneAttachStatus.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        CloneAttachStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CloneAttachStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid CloneAttachStatus: " + key);
+        }
+    };
+    /**
+     * Specifies whether the clone file system is attached to its parent file system. If the value
+     * is set to 'DETACH', then the file system will be created, which is deep copied from the
+     * snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneAttachStatus")
+    private final CloneAttachStatus cloneAttachStatus;
+
+    /**
+     * Specifies whether the clone file system is attached to its parent file system. If the value
+     * is set to 'DETACH', then the file system will be created, which is deep copied from the
+     * snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+     *
+     * @return the value
+     */
+    public CloneAttachStatus getCloneAttachStatus() {
+        return cloneAttachStatus;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * associated file system snapshot policy, which controls the frequency of snapshot creation and
      * retention period of the taken snapshots.
      *
@@ -436,7 +577,7 @@ public final class CreateFileSystemDetails
     private final String filesystemSnapshotPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * associated file system snapshot policy, which controls the frequency of snapshot creation and
      * retention period of the taken snapshots.
      *
@@ -446,6 +587,19 @@ public final class CreateFileSystemDetails
      */
     public String getFilesystemSnapshotPolicyId() {
         return filesystemSnapshotPolicyId;
+    }
+
+    /** Specifies the enforcement of quota rules on the file system. */
+    @com.fasterxml.jackson.annotation.JsonProperty("areQuotaRulesEnabled")
+    private final Boolean areQuotaRulesEnabled;
+
+    /**
+     * Specifies the enforcement of quota rules on the file system.
+     *
+     * @return the value
+     */
+    public Boolean getAreQuotaRulesEnabled() {
+        return areQuotaRulesEnabled;
     }
 
     @Override
@@ -468,10 +622,13 @@ public final class CreateFileSystemDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", sourceSnapshotId=").append(String.valueOf(this.sourceSnapshotId));
+        sb.append(", cloneAttachStatus=").append(String.valueOf(this.cloneAttachStatus));
         sb.append(", filesystemSnapshotPolicyId=")
                 .append(String.valueOf(this.filesystemSnapshotPolicyId));
+        sb.append(", areQuotaRulesEnabled=").append(String.valueOf(this.areQuotaRulesEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -491,10 +648,13 @@ public final class CreateFileSystemDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.sourceSnapshotId, other.sourceSnapshotId)
+                && java.util.Objects.equals(this.cloneAttachStatus, other.cloneAttachStatus)
                 && java.util.Objects.equals(
                         this.filesystemSnapshotPolicyId, other.filesystemSnapshotPolicyId)
+                && java.util.Objects.equals(this.areQuotaRulesEnabled, other.areQuotaRulesEnabled)
                 && super.equals(other);
     }
 
@@ -513,15 +673,24 @@ public final class CreateFileSystemDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result =
                 (result * PRIME)
                         + (this.sourceSnapshotId == null ? 43 : this.sourceSnapshotId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.cloneAttachStatus == null ? 43 : this.cloneAttachStatus.hashCode());
+        result =
+                (result * PRIME)
                         + (this.filesystemSnapshotPolicyId == null
                                 ? 43
                                 : this.filesystemSnapshotPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areQuotaRulesEnabled == null
+                                ? 43
+                                : this.areQuotaRulesEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

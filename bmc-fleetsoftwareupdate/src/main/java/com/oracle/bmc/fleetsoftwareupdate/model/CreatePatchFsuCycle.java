@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
@@ -87,6 +87,15 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
         public Builder applyActionSchedule(CreateScheduleDetails applyActionSchedule) {
             this.applyActionSchedule = applyActionSchedule;
             this.__explicitlySet__.add("applyActionSchedule");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("diagnosticsCollection")
+        private DiagnosticsCollectionDetails diagnosticsCollection;
+
+        public Builder diagnosticsCollection(DiagnosticsCollectionDetails diagnosticsCollection) {
+            this.diagnosticsCollection = diagnosticsCollection;
+            this.__explicitlySet__.add("diagnosticsCollection");
             return this;
         }
 
@@ -186,6 +195,7 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
                             this.batchingStrategy,
                             this.stageActionSchedule,
                             this.applyActionSchedule,
+                            this.diagnosticsCollection,
                             this.freeformTags,
                             this.definedTags,
                             this.isIgnorePatches,
@@ -220,6 +230,9 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
             }
             if (model.wasPropertyExplicitlySet("applyActionSchedule")) {
                 this.applyActionSchedule(model.getApplyActionSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("diagnosticsCollection")) {
+                this.diagnosticsCollection(model.getDiagnosticsCollection());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -261,6 +274,7 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
             CreateBatchingStrategyDetails batchingStrategy,
             CreateScheduleDetails stageActionSchedule,
             CreateScheduleDetails applyActionSchedule,
+            DiagnosticsCollectionDetails diagnosticsCollection,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Boolean isIgnorePatches,
@@ -275,6 +289,7 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
                 batchingStrategy,
                 stageActionSchedule,
                 applyActionSchedule,
+                diagnosticsCollection,
                 freeformTags,
                 definedTags);
         this.isIgnorePatches = isIgnorePatches;

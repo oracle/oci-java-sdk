@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument.model;
@@ -23,11 +23,10 @@ package com.oracle.bmc.aidocument.model;
 public final class DetectedDocumentType
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"documentType", "documentId", "confidence"})
-    public DetectedDocumentType(String documentType, String documentId, Float confidence) {
+    @java.beans.ConstructorProperties({"documentType", "confidence"})
+    public DetectedDocumentType(String documentType, Float confidence) {
         super();
         this.documentType = documentType;
-        this.documentId = documentId;
         this.confidence = confidence;
     }
 
@@ -46,25 +45,6 @@ public final class DetectedDocumentType
         public Builder documentType(String documentType) {
             this.documentType = documentType;
             this.__explicitlySet__.add("documentType");
-            return this;
-        }
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Key-Value Extraction model that was used to extract the key-value pairs.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("documentId")
-        private String documentId;
-
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Key-Value Extraction model that was used to extract the key-value pairs.
-         *
-         * @param documentId the value to set
-         * @return this builder
-         */
-        public Builder documentId(String documentId) {
-            this.documentId = documentId;
-            this.__explicitlySet__.add("documentId");
             return this;
         }
         /** The confidence score between 0 and 1. */
@@ -88,7 +68,7 @@ public final class DetectedDocumentType
 
         public DetectedDocumentType build() {
             DetectedDocumentType model =
-                    new DetectedDocumentType(this.documentType, this.documentId, this.confidence);
+                    new DetectedDocumentType(this.documentType, this.confidence);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -99,9 +79,6 @@ public final class DetectedDocumentType
         public Builder copy(DetectedDocumentType model) {
             if (model.wasPropertyExplicitlySet("documentType")) {
                 this.documentType(model.getDocumentType());
-            }
-            if (model.wasPropertyExplicitlySet("documentId")) {
-                this.documentId(model.getDocumentId());
             }
             if (model.wasPropertyExplicitlySet("confidence")) {
                 this.confidence(model.getConfidence());
@@ -130,23 +107,6 @@ public final class DetectedDocumentType
      */
     public String getDocumentType() {
         return documentType;
-    }
-
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Key-Value Extraction model that was used to extract the key-value pairs.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("documentId")
-    private final String documentId;
-
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Key-Value Extraction model that was used to extract the key-value pairs.
-     *
-     * @return the value
-     */
-    public String getDocumentId() {
-        return documentId;
     }
 
     /** The confidence score between 0 and 1. */
@@ -178,7 +138,6 @@ public final class DetectedDocumentType
         sb.append("DetectedDocumentType(");
         sb.append("super=").append(super.toString());
         sb.append("documentType=").append(String.valueOf(this.documentType));
-        sb.append(", documentId=").append(String.valueOf(this.documentId));
         sb.append(", confidence=").append(String.valueOf(this.confidence));
         sb.append(")");
         return sb.toString();
@@ -195,7 +154,6 @@ public final class DetectedDocumentType
 
         DetectedDocumentType other = (DetectedDocumentType) o;
         return java.util.Objects.equals(this.documentType, other.documentType)
-                && java.util.Objects.equals(this.documentId, other.documentId)
                 && java.util.Objects.equals(this.confidence, other.confidence)
                 && super.equals(other);
     }
@@ -205,7 +163,6 @@ public final class DetectedDocumentType
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.documentType == null ? 43 : this.documentType.hashCode());
-        result = (result * PRIME) + (this.documentId == null ? 43 : this.documentId.hashCode());
         result = (result * PRIME) + (this.confidence == null ? 43 : this.confidence.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

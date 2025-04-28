@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.cloudguard.requests;
 import com.oracle.bmc.cloudguard.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateDataSourceExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateDataSourceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDataSourceRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
@@ -15,17 +15,17 @@ public class UpdateDataSourceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateDataSourceDetails> {
 
-    /** DataSource OCID */
+    /** Data source OCID. */
     private String dataSourceId;
 
-    /** DataSource OCID */
+    /** Data source OCID. */
     public String getDataSourceId() {
         return dataSourceId;
     }
-    /** Details for the DataSource to be updated */
+    /** Details for the DataSource resource to be updated */
     private com.oracle.bmc.cloudguard.model.UpdateDataSourceDetails updateDataSourceDetails;
 
-    /** Details for the DataSource to be updated */
+    /** Details for the DataSource resource to be updated */
     public com.oracle.bmc.cloudguard.model.UpdateDataSourceDetails getUpdateDataSourceDetails() {
         return updateDataSourceDetails;
     }
@@ -91,11 +91,11 @@ public class UpdateDataSourceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** DataSource OCID */
+        /** Data source OCID. */
         private String dataSourceId = null;
 
         /**
-         * DataSource OCID
+         * Data source OCID.
          *
          * @param dataSourceId the value to set
          * @return this builder instance
@@ -105,12 +105,12 @@ public class UpdateDataSourceRequest
             return this;
         }
 
-        /** Details for the DataSource to be updated */
+        /** Details for the DataSource resource to be updated */
         private com.oracle.bmc.cloudguard.model.UpdateDataSourceDetails updateDataSourceDetails =
                 null;
 
         /**
-         * Details for the DataSource to be updated
+         * Details for the DataSource resource to be updated
          *
          * @param updateDataSourceDetails the value to set
          * @return this builder instance

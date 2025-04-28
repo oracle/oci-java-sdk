@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -142,7 +142,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "OperatorControlAssignment",
                         "ChangeOperatorControlAssignmentCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ChangeOperatorControlAssignmentCompartment")
+                        "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOperatorControlAssignmentCompartmentRequest::builder)
                 .basePath("/20200630")
@@ -154,11 +154,11 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeOperatorControlAssignmentCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -171,10 +171,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, CreateOperatorControlAssignmentResponse::builder)
                 .logger(LOG, "createOperatorControlAssignment")
-                .serviceDetails(
-                        "OperatorControlAssignment",
-                        "CreateOperatorControlAssignment",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/CreateOperatorControlAssignment")
+                .serviceDetails("OperatorControlAssignment", "CreateOperatorControlAssignment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOperatorControlAssignmentRequest::builder)
                 .basePath("/20200630")
@@ -182,6 +179,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment.class,
@@ -194,7 +192,6 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateOperatorControlAssignmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -208,10 +205,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, DeleteOperatorControlAssignmentResponse::builder)
                 .logger(LOG, "deleteOperatorControlAssignment")
-                .serviceDetails(
-                        "OperatorControlAssignment",
-                        "DeleteOperatorControlAssignment",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/DeleteOperatorControlAssignment")
+                .serviceDetails("OperatorControlAssignment", "DeleteOperatorControlAssignment", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOperatorControlAssignmentRequest::builder)
                 .basePath("/20200630")
@@ -221,10 +215,42 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteOperatorControlAssignmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetAssignmentValidationStatusResponse getAssignmentValidationStatus(
+            GetAssignmentValidationStatusRequest request) {
+
+        Validate.notBlank(
+                request.getOperatorControlAssignmentId(),
+                "operatorControlAssignmentId must not be blank");
+
+        return clientCall(request, GetAssignmentValidationStatusResponse::builder)
+                .logger(LOG, "getAssignmentValidationStatus")
+                .serviceDetails("OperatorControlAssignment", "GetAssignmentValidationStatus", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAssignmentValidationStatusRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("operatorControlAssignments")
+                .appendPathParam(request.getOperatorControlAssignmentId())
+                .appendPathParam("actions")
+                .appendPathParam("getAssignmentValidationStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.operatoraccesscontrol.model.AssignmentValidationStatus.class,
+                        GetAssignmentValidationStatusResponse.Builder::assignmentValidationStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetAssignmentValidationStatusResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetAssignmentValidationStatusResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -238,10 +264,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetOperatorControlAssignmentResponse::builder)
                 .logger(LOG, "getOperatorControlAssignment")
-                .serviceDetails(
-                        "OperatorControlAssignment",
-                        "GetOperatorControlAssignment",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetOperatorControlAssignment")
+                .serviceDetails("OperatorControlAssignment", "GetOperatorControlAssignment", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOperatorControlAssignmentRequest::builder)
                 .basePath("/20200630")
@@ -249,6 +272,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .appendPathParam(request.getOperatorControlAssignmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment.class,
                         GetOperatorControlAssignmentResponse.Builder::operatorControlAssignment)
@@ -257,7 +281,6 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetOperatorControlAssignmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -268,10 +291,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListOperatorControlAssignmentsResponse::builder)
                 .logger(LOG, "listOperatorControlAssignments")
-                .serviceDetails(
-                        "OperatorControlAssignment",
-                        "ListOperatorControlAssignments",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ListOperatorControlAssignments")
+                .serviceDetails("OperatorControlAssignment", "ListOperatorControlAssignments", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOperatorControlAssignmentsRequest::builder)
                 .basePath("/20200630")
@@ -287,6 +307,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model
                                 .OperatorControlAssignmentCollection.class,
@@ -298,7 +319,6 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListOperatorControlAssignmentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -315,10 +335,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, UpdateOperatorControlAssignmentResponse::builder)
                 .logger(LOG, "updateOperatorControlAssignment")
-                .serviceDetails(
-                        "OperatorControlAssignment",
-                        "UpdateOperatorControlAssignment",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/UpdateOperatorControlAssignment")
+                .serviceDetails("OperatorControlAssignment", "UpdateOperatorControlAssignment", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOperatorControlAssignmentRequest::builder)
                 .basePath("/20200630")
@@ -327,6 +344,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment.class,
@@ -336,7 +354,41 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateOperatorControlAssignmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ValidateOperatorAssignmentResponse validateOperatorAssignment(
+            ValidateOperatorAssignmentRequest request) {
+
+        Validate.notBlank(
+                request.getOperatorControlAssignmentId(),
+                "operatorControlAssignmentId must not be blank");
+        Objects.requireNonNull(
+                request.getValidateOperatorAssignmentDetails(),
+                "validateOperatorAssignmentDetails is required");
+
+        return clientCall(request, ValidateOperatorAssignmentResponse::builder)
+                .logger(LOG, "validateOperatorAssignment")
+                .serviceDetails("OperatorControlAssignment", "ValidateOperatorAssignment", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ValidateOperatorAssignmentRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("operatorControlAssignments")
+                .appendPathParam(request.getOperatorControlAssignmentId())
+                .appendPathParam("actions")
+                .appendPathParam("validateAssignment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ValidateOperatorAssignmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ValidateOperatorAssignmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 

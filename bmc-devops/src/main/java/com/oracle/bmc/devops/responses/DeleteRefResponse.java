@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.responses;
@@ -40,20 +40,41 @@ public class DeleteRefResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
+    /**
+     * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized
+     * when refName has '/'. This will be replaced by
+     * "/repositories/{repositoryId}/actions/deleteGitRef".
+     */
+    private String sunset;
+
+    /**
+     * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized
+     * when refName has '/'. This will be replaced by
+     * "/repositories/{repositoryId}/actions/deleteGitRef".
+     *
+     * @return the value
+     */
+    public String getSunset() {
+        return sunset;
+    }
+
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
         "opcWorkRequestId",
-        "opcRequestId"
+        "opcRequestId",
+        "sunset"
     })
     private DeleteRefResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String opcWorkRequestId,
-            String opcRequestId) {
+            String opcRequestId,
+            String sunset) {
         super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
+        this.sunset = sunset;
     }
 
     public static class Builder
@@ -111,6 +132,26 @@ public class DeleteRefResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
+         * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get
+         * recognized when refName has '/'. This will be replaced by
+         * "/repositories/{repositoryId}/actions/deleteGitRef".
+         */
+        private String sunset;
+
+        /**
+         * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get
+         * recognized when refName has '/'. This will be replaced by
+         * "/repositories/{repositoryId}/actions/deleteGitRef".
+         *
+         * @param sunset the value to set
+         * @return this builder
+         */
+        public Builder sunset(String sunset) {
+            this.sunset = sunset;
+            return this;
+        }
+
+        /**
          * Copy method to populate the builder with values from the given instance.
          *
          * @return this builder instance
@@ -121,6 +162,7 @@ public class DeleteRefResponse extends com.oracle.bmc.responses.BmcResponse {
             headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
+            sunset(o.getSunset());
 
             return this;
         }
@@ -133,7 +175,7 @@ public class DeleteRefResponse extends com.oracle.bmc.responses.BmcResponse {
         @Override
         public DeleteRefResponse build() {
             return new DeleteRefResponse(
-                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
+                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId, sunset);
         }
     }
 
@@ -153,6 +195,7 @@ public class DeleteRefResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append("super=").append(super.toString());
         sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",sunset=").append(String.valueOf(sunset));
         sb.append(")");
         return sb.toString();
     }
@@ -169,7 +212,8 @@ public class DeleteRefResponse extends com.oracle.bmc.responses.BmcResponse {
         DeleteRefResponse other = (DeleteRefResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.sunset, other.sunset);
     }
 
     @Override
@@ -180,6 +224,7 @@ public class DeleteRefResponse extends com.oracle.bmc.responses.BmcResponse {
                 (result * PRIME)
                         + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.sunset == null ? 43 : this.sunset.hashCode());
         return result;
     }
 }

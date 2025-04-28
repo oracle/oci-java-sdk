@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Information to update in an existing security zone recipe <br>
+ * Parameters to be used to update a Security Zones security recipe. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -46,12 +46,12 @@ public final class UpdateSecurityRecipeDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The recipe's name */
+        /** The recipe's display name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The recipe's name
+         * The recipe's display name
          *
          * @param displayName the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class UpdateSecurityRecipeDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The list of {@code SecurityPolicy} ids to include in the recipe */
+        /** The list of security policy IDs to include in the recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("securityPolicies")
         private java.util.List<String> securityPolicies;
 
         /**
-         * The list of {@code SecurityPolicy} ids to include in the recipe
+         * The list of security policy IDs to include in the recipe
          *
          * @param securityPolicies the value to set
          * @return this builder
@@ -182,12 +182,12 @@ public final class UpdateSecurityRecipeDetails
         return new Builder().copy(this);
     }
 
-    /** The recipe's name */
+    /** The recipe's display name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The recipe's name
+     * The recipe's display name
      *
      * @return the value
      */
@@ -208,12 +208,12 @@ public final class UpdateSecurityRecipeDetails
         return description;
     }
 
-    /** The list of {@code SecurityPolicy} ids to include in the recipe */
+    /** The list of security policy IDs to include in the recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("securityPolicies")
     private final java.util.List<String> securityPolicies;
 
     /**
-     * The list of {@code SecurityPolicy} ids to include in the recipe
+     * The list of security policy IDs to include in the recipe
      *
      * @return the value
      */

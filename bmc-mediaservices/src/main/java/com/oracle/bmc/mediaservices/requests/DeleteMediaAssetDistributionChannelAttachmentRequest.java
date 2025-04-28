@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.mediaservices.requests;
 import com.oracle.bmc.mediaservices.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaAssetDistributionChannelAttachmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaAssetDistributionChannelAttachmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteMediaAssetDistributionChannelAttachmentRequest.
  */
@@ -28,6 +28,13 @@ public class DeleteMediaAssetDistributionChannelAttachmentRequest
     /** Unique DistributionChannel identifier. */
     public String getDistributionChannelId() {
         return distributionChannelId;
+    }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
@@ -92,6 +99,20 @@ public class DeleteMediaAssetDistributionChannelAttachmentRequest
          */
         public Builder distributionChannelId(String distributionChannelId) {
             this.distributionChannelId = distributionChannelId;
+            return this;
+        }
+
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -177,6 +198,7 @@ public class DeleteMediaAssetDistributionChannelAttachmentRequest
         public Builder copy(DeleteMediaAssetDistributionChannelAttachmentRequest o) {
             mediaAssetId(o.getMediaAssetId());
             distributionChannelId(o.getDistributionChannelId());
+            isLockOverride(o.getIsLockOverride());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             version(o.getVersion());
@@ -221,12 +243,13 @@ public class DeleteMediaAssetDistributionChannelAttachmentRequest
                     new DeleteMediaAssetDistributionChannelAttachmentRequest();
             request.mediaAssetId = mediaAssetId;
             request.distributionChannelId = distributionChannelId;
+            request.isLockOverride = isLockOverride;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             request.version = version;
             return request;
             // new DeleteMediaAssetDistributionChannelAttachmentRequest(mediaAssetId,
-            // distributionChannelId, ifMatch, opcRequestId, version);
+            // distributionChannelId, isLockOverride, ifMatch, opcRequestId, version);
         }
     }
 
@@ -239,6 +262,7 @@ public class DeleteMediaAssetDistributionChannelAttachmentRequest
         return new Builder()
                 .mediaAssetId(mediaAssetId)
                 .distributionChannelId(distributionChannelId)
+                .isLockOverride(isLockOverride)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId)
                 .version(version);
@@ -260,6 +284,7 @@ public class DeleteMediaAssetDistributionChannelAttachmentRequest
         sb.append("super=").append(super.toString());
         sb.append(",mediaAssetId=").append(String.valueOf(this.mediaAssetId));
         sb.append(",distributionChannelId=").append(String.valueOf(this.distributionChannelId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",version=").append(String.valueOf(this.version));
@@ -281,6 +306,7 @@ public class DeleteMediaAssetDistributionChannelAttachmentRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.mediaAssetId, other.mediaAssetId)
                 && java.util.Objects.equals(this.distributionChannelId, other.distributionChannelId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.version, other.version);
@@ -296,6 +322,9 @@ public class DeleteMediaAssetDistributionChannelAttachmentRequest
                         + (this.distributionChannelId == null
                                 ? 43
                                 : this.distributionChannelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());

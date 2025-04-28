@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -7,12 +7,12 @@ package com.oracle.bmc.core.model;
 /**
  * A detachable block volume device that allows you to dynamically expand the storage capacity of an
  * instance. For more information, see [Overview of Cloud Volume
- * Storage](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm).
+ * Storage](https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
@@ -43,6 +43,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         "kmsKeyId",
         "lifecycleState",
         "vpusPerGB",
+        "clusterPlacementGroupId",
         "sizeInGBs",
         "sizeInMBs",
         "sourceDetails",
@@ -51,7 +52,8 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         "isAutoTuneEnabled",
         "autoTunedVpusPerGB",
         "blockVolumeReplicas",
-        "autotunePolicies"
+        "autotunePolicies",
+        "isReservationsEnabled"
     })
     public Volume(
             String availabilityDomain,
@@ -65,6 +67,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
             String kmsKeyId,
             LifecycleState lifecycleState,
             Long vpusPerGB,
+            String clusterPlacementGroupId,
             Long sizeInGBs,
             Long sizeInMBs,
             VolumeSourceDetails sourceDetails,
@@ -73,7 +76,8 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
             Boolean isAutoTuneEnabled,
             Long autoTunedVpusPerGB,
             java.util.List<BlockVolumeReplicaInfo> blockVolumeReplicas,
-            java.util.List<AutotunePolicy> autotunePolicies) {
+            java.util.List<AutotunePolicy> autotunePolicies,
+            Boolean isReservationsEnabled) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -86,6 +90,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         this.kmsKeyId = kmsKeyId;
         this.lifecycleState = lifecycleState;
         this.vpusPerGB = vpusPerGB;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.sizeInGBs = sizeInGBs;
         this.sizeInMBs = sizeInMBs;
         this.sourceDetails = sourceDetails;
@@ -95,6 +100,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         this.autoTunedVpusPerGB = autoTunedVpusPerGB;
         this.blockVolumeReplicas = blockVolumeReplicas;
         this.autotunePolicies = autotunePolicies;
+        this.isReservationsEnabled = isReservationsEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -138,7 +144,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -148,7 +154,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -183,7 +189,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -193,7 +199,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -292,7 +298,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
          * The number of volume performance units (VPUs) that will be applied to this volume per GB,
          * representing the Block Volume service's elastic performance options. See [Block Volume
          * Performance
-         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
          * for more information.
          *
          * <p>Allowed values:
@@ -314,7 +320,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
          * The number of volume performance units (VPUs) that will be applied to this volume per GB,
          * representing the Block Volume service's elastic performance options. See [Block Volume
          * Performance
-         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
          * for more information.
          *
          * <p>Allowed values:
@@ -335,6 +341,21 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder vpusPerGB(Long vpusPerGB) {
             this.vpusPerGB = vpusPerGB;
             this.__explicitlySet__.add("vpusPerGB");
+            return this;
+        }
+        /** The clusterPlacementGroup Id of the volume for volume placement. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The clusterPlacementGroup Id of the volume for volume placement.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
         /** The size of the volume in GBs. */
@@ -479,6 +500,25 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("autotunePolicies");
             return this;
         }
+        /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation)
+         * on a volume.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isReservationsEnabled")
+        private Boolean isReservationsEnabled;
+
+        /**
+         * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation)
+         * on a volume.
+         *
+         * @param isReservationsEnabled the value to set
+         * @return this builder
+         */
+        public Builder isReservationsEnabled(Boolean isReservationsEnabled) {
+            this.isReservationsEnabled = isReservationsEnabled;
+            this.__explicitlySet__.add("isReservationsEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -497,6 +537,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
                             this.kmsKeyId,
                             this.lifecycleState,
                             this.vpusPerGB,
+                            this.clusterPlacementGroupId,
                             this.sizeInGBs,
                             this.sizeInMBs,
                             this.sourceDetails,
@@ -505,7 +546,8 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
                             this.isAutoTuneEnabled,
                             this.autoTunedVpusPerGB,
                             this.blockVolumeReplicas,
-                            this.autotunePolicies);
+                            this.autotunePolicies,
+                            this.isReservationsEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -547,6 +589,9 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
             if (model.wasPropertyExplicitlySet("vpusPerGB")) {
                 this.vpusPerGB(model.getVpusPerGB());
             }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
             if (model.wasPropertyExplicitlySet("sizeInGBs")) {
                 this.sizeInGBs(model.getSizeInGBs());
             }
@@ -573,6 +618,9 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("autotunePolicies")) {
                 this.autotunePolicies(model.getAutotunePolicies());
+            }
+            if (model.wasPropertyExplicitlySet("isReservationsEnabled")) {
+                this.isReservationsEnabled(model.getIsReservationsEnabled());
             }
             return this;
         }
@@ -622,7 +670,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -632,7 +680,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -662,7 +710,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -672,7 +720,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -809,7 +857,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
      * The number of volume performance units (VPUs) that will be applied to this volume per GB,
      * representing the Block Volume service's elastic performance options. See [Block Volume
      * Performance
-     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
      * for more information.
      *
      * <p>Allowed values:
@@ -831,7 +879,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
      * The number of volume performance units (VPUs) that will be applied to this volume per GB,
      * representing the Block Volume service's elastic performance options. See [Block Volume
      * Performance
-     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
      * for more information.
      *
      * <p>Allowed values:
@@ -850,6 +898,19 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
      */
     public Long getVpusPerGB() {
         return vpusPerGB;
+    }
+
+    /** The clusterPlacementGroup Id of the volume for volume placement. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
     }
 
     /** The size of the volume in GBs. */
@@ -973,6 +1034,23 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         return autotunePolicies;
     }
 
+    /**
+     * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on
+     * a volume.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isReservationsEnabled")
+    private final Boolean isReservationsEnabled;
+
+    /**
+     * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on
+     * a volume.
+     *
+     * @return the value
+     */
+    public Boolean getIsReservationsEnabled() {
+        return isReservationsEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -999,6 +1077,8 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", vpusPerGB=").append(String.valueOf(this.vpusPerGB));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
         sb.append(", sizeInMBs=").append(String.valueOf(this.sizeInMBs));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
@@ -1008,6 +1088,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", autoTunedVpusPerGB=").append(String.valueOf(this.autoTunedVpusPerGB));
         sb.append(", blockVolumeReplicas=").append(String.valueOf(this.blockVolumeReplicas));
         sb.append(", autotunePolicies=").append(String.valueOf(this.autotunePolicies));
+        sb.append(", isReservationsEnabled=").append(String.valueOf(this.isReservationsEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -1033,6 +1114,8 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.vpusPerGB, other.vpusPerGB)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
                 && java.util.Objects.equals(this.sizeInMBs, other.sizeInMBs)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
@@ -1042,6 +1125,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.autoTunedVpusPerGB, other.autoTunedVpusPerGB)
                 && java.util.Objects.equals(this.blockVolumeReplicas, other.blockVolumeReplicas)
                 && java.util.Objects.equals(this.autotunePolicies, other.autotunePolicies)
+                && java.util.Objects.equals(this.isReservationsEnabled, other.isReservationsEnabled)
                 && super.equals(other);
     }
 
@@ -1068,6 +1152,11 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.vpusPerGB == null ? 43 : this.vpusPerGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.sizeInGBs == null ? 43 : this.sizeInGBs.hashCode());
         result = (result * PRIME) + (this.sizeInMBs == null ? 43 : this.sizeInMBs.hashCode());
         result =
@@ -1093,6 +1182,11 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.autotunePolicies == null ? 43 : this.autotunePolicies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isReservationsEnabled == null
+                                ? 43
+                                : this.isReservationsEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

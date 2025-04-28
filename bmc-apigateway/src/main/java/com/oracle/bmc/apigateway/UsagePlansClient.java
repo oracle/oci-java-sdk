@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apigateway;
@@ -172,6 +172,7 @@ public class UsagePlansClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.UsagePlan.class,
@@ -182,7 +183,6 @@ public class UsagePlansClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id", CreateUsagePlanResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("location", CreateUsagePlanResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -230,13 +230,13 @@ public class UsagePlansClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getUsagePlanId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.UsagePlan.class,
                         GetUsagePlanResponse.Builder::usagePlan)
                 .handleResponseHeaderString("etag", GetUsagePlanResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetUsagePlanResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -263,6 +263,7 @@ public class UsagePlansClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.UsagePlanCollection.class,
                         ListUsagePlansResponse.Builder::usagePlanCollection)
@@ -272,7 +273,6 @@ public class UsagePlansClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListUsagePlansResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListUsagePlansResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

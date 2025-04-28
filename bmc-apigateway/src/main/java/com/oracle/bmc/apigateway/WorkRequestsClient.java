@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apigateway;
@@ -165,6 +165,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -173,7 +174,6 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderBigDecimal(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -201,6 +201,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -210,7 +211,6 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-prev-page", ListWorkRequestErrorsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -237,6 +237,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.WorkRequestLogCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogCollection)
@@ -246,7 +247,6 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-prev-page", ListWorkRequestLogsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -272,6 +272,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -281,7 +282,6 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListWorkRequestsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

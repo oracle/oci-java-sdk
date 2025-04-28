@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagementStationsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagementStationsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListManagementStationsRequest.
  */
@@ -15,25 +15,23 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class ListManagementStationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     *
-     * <p>Example: {@code My new resource}
-     */
+    /** A filter to return resources that match the given user-friendly name. */
     private String displayName;
 
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     *
-     * <p>Example: {@code My new resource}
-     */
+    /** A filter to return resources that match the given user-friendly name. */
     public String getDisplayName() {
         return displayName;
     }
@@ -44,25 +42,31 @@ public class ListManagementStationsRequest
     public String getDisplayNameContains() {
         return displayNameContains;
     }
-    /** The current lifecycle state for the object. */
+    /** A filter that returns information for management stations in the specified state. */
     private com.oracle.bmc.osmanagementhub.model.ManagementStation.LifecycleState lifecycleState;
 
-    /** The current lifecycle state for the object. */
+    /** A filter that returns information for management stations in the specified state. */
     public com.oracle.bmc.osmanagementhub.model.ManagementStation.LifecycleState
             getLifecycleState() {
         return lifecycleState;
     }
-    /** The OCID of the managed instance for which to list resources. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance. This filter returns resources associated with this managed instance.
+     */
     private String managedInstanceId;
 
-    /** The OCID of the managed instance for which to list resources. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance. This filter returns resources associated with this managed instance.
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -71,7 +75,7 @@ public class ListManagementStationsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -81,7 +85,7 @@ public class ListManagementStationsRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -90,12 +94,29 @@ public class ListManagementStationsRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
     public String getPage() {
         return page;
+    }
+    /** A filter to return only resources whose location matches the given value. */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation> location;
+
+    /** A filter to return only resources whose location matches the given value. */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+            getLocation() {
+        return location;
+    }
+    /** A filter to return only resources whose location does not match the given value. */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+            locationNotEqualTo;
+
+    /** A filter to return only resources whose location does not match the given value. */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+            getLocationNotEqualTo() {
+        return locationNotEqualTo;
     }
     /** The sort order to use, either 'ASC' or 'DESC'. */
     private com.oracle.bmc.osmanagementhub.model.SortOrder sortOrder;
@@ -170,10 +191,16 @@ public class ListManagementStationsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The OCID of the management station. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station. A filter that returns information about the specified management station.
+     */
     private String id;
 
-    /** The OCID of the management station. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station. A filter that returns information about the specified management station.
+     */
     public String getId() {
         return id;
     }
@@ -184,11 +211,15 @@ public class ListManagementStationsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment that contains the resources to list. */
+        /**
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
+         */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -198,17 +229,11 @@ public class ListManagementStationsRequest
             return this;
         }
 
-        /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         *
-         * <p>Example: {@code My new resource}
-         */
+        /** A filter to return resources that match the given user-friendly name. */
         private String displayName = null;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         *
-         * <p>Example: {@code My new resource}
+         * A filter to return resources that match the given user-friendly name.
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -232,12 +257,12 @@ public class ListManagementStationsRequest
             return this;
         }
 
-        /** The current lifecycle state for the object. */
+        /** A filter that returns information for management stations in the specified state. */
         private com.oracle.bmc.osmanagementhub.model.ManagementStation.LifecycleState
                 lifecycleState = null;
 
         /**
-         * The current lifecycle state for the object.
+         * A filter that returns information for management stations in the specified state.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -249,11 +274,15 @@ public class ListManagementStationsRequest
             return this;
         }
 
-        /** The OCID of the managed instance for which to list resources. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance. This filter returns resources associated with this managed instance.
+         */
         private String managedInstanceId = null;
 
         /**
-         * The OCID of the managed instance for which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance. This filter returns resources associated with this managed instance.
          *
          * @param managedInstanceId the value to set
          * @return this builder instance
@@ -266,7 +295,7 @@ public class ListManagementStationsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -275,7 +304,7 @@ public class ListManagementStationsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -290,7 +319,7 @@ public class ListManagementStationsRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          */
@@ -299,7 +328,7 @@ public class ListManagementStationsRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          *
@@ -309,6 +338,62 @@ public class ListManagementStationsRequest
         public Builder page(String page) {
             this.page = page;
             return this;
+        }
+
+        /** A filter to return only resources whose location matches the given value. */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                location = null;
+
+        /**
+         * A filter to return only resources whose location matches the given value.
+         *
+         * @param location the value to set
+         * @return this builder instance
+         */
+        public Builder location(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                        location) {
+            this.location = location;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources whose location matches the given
+         * value.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder location(ManagedInstanceLocation singularValue) {
+            return this.location(java.util.Arrays.asList(singularValue));
+        }
+
+        /** A filter to return only resources whose location does not match the given value. */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                locationNotEqualTo = null;
+
+        /**
+         * A filter to return only resources whose location does not match the given value.
+         *
+         * @param locationNotEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder locationNotEqualTo(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                        locationNotEqualTo) {
+            this.locationNotEqualTo = locationNotEqualTo;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources whose location does not match the
+         * given value.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder locationNotEqualTo(ManagedInstanceLocation singularValue) {
+            return this.locationNotEqualTo(java.util.Arrays.asList(singularValue));
         }
 
         /** The sort order to use, either 'ASC' or 'DESC'. */
@@ -363,11 +448,17 @@ public class ListManagementStationsRequest
             return this;
         }
 
-        /** The OCID of the management station. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * management station. A filter that returns information about the specified management
+         * station.
+         */
         private String id = null;
 
         /**
-         * The OCID of the management station.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * management station. A filter that returns information about the specified management
+         * station.
          *
          * @param id the value to set
          * @return this builder instance
@@ -414,6 +505,8 @@ public class ListManagementStationsRequest
             managedInstanceId(o.getManagedInstanceId());
             limit(o.getLimit());
             page(o.getPage());
+            location(o.getLocation());
+            locationNotEqualTo(o.getLocationNotEqualTo());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
@@ -459,13 +552,16 @@ public class ListManagementStationsRequest
             request.managedInstanceId = managedInstanceId;
             request.limit = limit;
             request.page = page;
+            request.location = location;
+            request.locationNotEqualTo = locationNotEqualTo;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             request.id = id;
             return request;
             // new ListManagementStationsRequest(compartmentId, displayName, displayNameContains,
-            // lifecycleState, managedInstanceId, limit, page, sortOrder, sortBy, opcRequestId, id);
+            // lifecycleState, managedInstanceId, limit, page, location, locationNotEqualTo,
+            // sortOrder, sortBy, opcRequestId, id);
         }
     }
 
@@ -483,6 +579,8 @@ public class ListManagementStationsRequest
                 .managedInstanceId(managedInstanceId)
                 .limit(limit)
                 .page(page)
+                .location(location)
+                .locationNotEqualTo(locationNotEqualTo)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
@@ -510,6 +608,8 @@ public class ListManagementStationsRequest
         sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",location=").append(String.valueOf(this.location));
+        sb.append(",locationNotEqualTo=").append(String.valueOf(this.locationNotEqualTo));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -536,6 +636,8 @@ public class ListManagementStationsRequest
                 && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.location, other.location)
+                && java.util.Objects.equals(this.locationNotEqualTo, other.locationNotEqualTo)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
@@ -563,6 +665,12 @@ public class ListManagementStationsRequest
                         + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.locationNotEqualTo == null
+                                ? 43
+                                : this.locationNotEqualTo.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

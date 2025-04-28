@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -39,6 +39,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "source",
         "configurationId",
         "dataStorageSizeInGBs",
+        "dataStorage",
         "hostnameLabel",
         "ipAddress",
         "port",
@@ -53,9 +54,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "timeUpdated",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "crashRecovery",
         "pointInTimeRecoveryDetails",
-        "databaseManagement"
+        "databaseManagement",
+        "secureConnections",
+        "databaseMode",
+        "accessMode",
+        "customerContacts",
+        "readEndpoint"
     })
     public DbSystem(
             String id,
@@ -75,6 +82,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             DbSystemSource source,
             String configurationId,
             Integer dataStorageSizeInGBs,
+            DataStorage dataStorage,
             String hostnameLabel,
             String ipAddress,
             Integer port,
@@ -89,9 +97,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             CrashRecoveryStatus crashRecovery,
             PointInTimeRecoveryDetails pointInTimeRecoveryDetails,
-            DatabaseManagementStatus databaseManagement) {
+            DatabaseManagementStatus databaseManagement,
+            SecureConnectionDetails secureConnections,
+            DatabaseMode databaseMode,
+            AccessMode accessMode,
+            java.util.List<CustomerContact> customerContacts,
+            ReadEndpointDetails readEndpoint) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -110,6 +124,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.source = source;
         this.configurationId = configurationId;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.dataStorage = dataStorage;
         this.hostnameLabel = hostnameLabel;
         this.ipAddress = ipAddress;
         this.port = port;
@@ -124,9 +139,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.timeUpdated = timeUpdated;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.crashRecovery = crashRecovery;
         this.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
         this.databaseManagement = databaseManagement;
+        this.secureConnections = secureConnections;
+        this.databaseMode = databaseMode;
+        this.accessMode = accessMode;
+        this.customerContacts = customerContacts;
+        this.readEndpoint = readEndpoint;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -391,12 +412,16 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("configurationId");
             return this;
         }
-        /** Initial size of the data volume in GiBs that will be created and attached. */
+        /**
+         * DEPRECATED: User specified size of the data volume. May be less than current
+         * allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
         private Integer dataStorageSizeInGBs;
 
         /**
-         * Initial size of the data volume in GiBs that will be created and attached.
+         * DEPRECATED: User specified size of the data volume. May be less than current
+         * allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
          *
          * @param dataStorageSizeInGBs the value to set
          * @return this builder
@@ -404,6 +429,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         public Builder dataStorageSizeInGBs(Integer dataStorageSizeInGBs) {
             this.dataStorageSizeInGBs = dataStorageSizeInGBs;
             this.__explicitlySet__.add("dataStorageSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorage")
+        private DataStorage dataStorage;
+
+        public Builder dataStorage(DataStorage dataStorage) {
+            this.dataStorage = dataStorage;
+            this.__explicitlySet__.add("dataStorage");
             return this;
         }
         /**
@@ -632,6 +666,25 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or
          * disabled, and whether to enable or disable syncing of the Binary Logs.
          */
@@ -676,6 +729,103 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+        private SecureConnectionDetails secureConnections;
+
+        public Builder secureConnections(SecureConnectionDetails secureConnections) {
+            this.secureConnections = secureConnections;
+            this.__explicitlySet__.add("secureConnections");
+            return this;
+        }
+        /**
+         * The database mode indicating the types of statements that are allowed to run in the the
+         * DB system. This mode applies only to statements run by user connections. Replicated write
+         * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow
+         * running read and write statements on the DB system; - READ_ONLY: only allow running read
+         * statements on the DB system.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+        private DatabaseMode databaseMode;
+
+        /**
+         * The database mode indicating the types of statements that are allowed to run in the the
+         * DB system. This mode applies only to statements run by user connections. Replicated write
+         * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow
+         * running read and write statements on the DB system; - READ_ONLY: only allow running read
+         * statements on the DB system.
+         *
+         * @param databaseMode the value to set
+         * @return this builder
+         */
+        public Builder databaseMode(DatabaseMode databaseMode) {
+            this.databaseMode = databaseMode;
+            this.__explicitlySet__.add("databaseMode");
+            return this;
+        }
+        /**
+         * The access mode indicating if the database access is unrestricted (to all MySQL user
+         * accounts), or restricted (to only certain users with specific privileges): -
+         * UNRESTRICTED: the access to the database is not restricted; - RESTRICTED: access allowed
+         * only to users with specific privileges; RESTRICTED will correspond to setting the MySQL
+         * system variable
+         * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+         * to ON.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+        private AccessMode accessMode;
+
+        /**
+         * The access mode indicating if the database access is unrestricted (to all MySQL user
+         * accounts), or restricted (to only certain users with specific privileges): -
+         * UNRESTRICTED: the access to the database is not restricted; - RESTRICTED: access allowed
+         * only to users with specific privileges; RESTRICTED will correspond to setting the MySQL
+         * system variable
+         * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+         * to ON.
+         *
+         * @param accessMode the value to set
+         * @return this builder
+         */
+        public Builder accessMode(AccessMode accessMode) {
+            this.accessMode = accessMode;
+            this.__explicitlySet__.add("accessMode");
+            return this;
+        }
+        /**
+         * The list of customer email addresses that receive information from Oracle about the
+         * specified OCI DB System resource. Oracle uses these email addresses to send notifications
+         * about planned and unplanned software maintenance updates, information about system
+         * hardware, and other information needed by administrators. Up to 10 email addresses can be
+         * added to the customer contacts for a DB System.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+        private java.util.List<CustomerContact> customerContacts;
+
+        /**
+         * The list of customer email addresses that receive information from Oracle about the
+         * specified OCI DB System resource. Oracle uses these email addresses to send notifications
+         * about planned and unplanned software maintenance updates, information about system
+         * hardware, and other information needed by administrators. Up to 10 email addresses can be
+         * added to the customer contacts for a DB System.
+         *
+         * @param customerContacts the value to set
+         * @return this builder
+         */
+        public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
+            this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+        private ReadEndpointDetails readEndpoint;
+
+        public Builder readEndpoint(ReadEndpointDetails readEndpoint) {
+            this.readEndpoint = readEndpoint;
+            this.__explicitlySet__.add("readEndpoint");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -699,6 +849,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.source,
                             this.configurationId,
                             this.dataStorageSizeInGBs,
+                            this.dataStorage,
                             this.hostnameLabel,
                             this.ipAddress,
                             this.port,
@@ -713,9 +864,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.timeUpdated,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.crashRecovery,
                             this.pointInTimeRecoveryDetails,
-                            this.databaseManagement);
+                            this.databaseManagement,
+                            this.secureConnections,
+                            this.databaseMode,
+                            this.accessMode,
+                            this.customerContacts,
+                            this.readEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -775,6 +932,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
                 this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
             }
+            if (model.wasPropertyExplicitlySet("dataStorage")) {
+                this.dataStorage(model.getDataStorage());
+            }
             if (model.wasPropertyExplicitlySet("hostnameLabel")) {
                 this.hostnameLabel(model.getHostnameLabel());
             }
@@ -817,6 +977,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("crashRecovery")) {
                 this.crashRecovery(model.getCrashRecovery());
             }
@@ -825,6 +988,21 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("databaseManagement")) {
                 this.databaseManagement(model.getDatabaseManagement());
+            }
+            if (model.wasPropertyExplicitlySet("secureConnections")) {
+                this.secureConnections(model.getSecureConnections());
+            }
+            if (model.wasPropertyExplicitlySet("databaseMode")) {
+                this.databaseMode(model.getDatabaseMode());
+            }
+            if (model.wasPropertyExplicitlySet("accessMode")) {
+                this.accessMode(model.getAccessMode());
+            }
+            if (model.wasPropertyExplicitlySet("customerContacts")) {
+                this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("readEndpoint")) {
+                this.readEndpoint(model.getReadEndpoint());
             }
             return this;
         }
@@ -1067,17 +1245,28 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return configurationId;
     }
 
-    /** Initial size of the data volume in GiBs that will be created and attached. */
+    /**
+     * DEPRECATED: User specified size of the data volume. May be less than current
+     * allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     private final Integer dataStorageSizeInGBs;
 
     /**
-     * Initial size of the data volume in GiBs that will be created and attached.
+     * DEPRECATED: User specified size of the data volume. May be less than current
+     * allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      *
      * @return the value
      */
     public Integer getDataStorageSizeInGBs() {
         return dataStorageSizeInGBs;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorage")
+    private final DataStorage dataStorage;
+
+    public DataStorage getDataStorage() {
+        return dataStorage;
     }
 
     /**
@@ -1328,6 +1517,23 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or
      * disabled, and whether to enable or disable syncing of the Binary Logs.
      */
@@ -1364,6 +1570,196 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return databaseManagement;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+    private final SecureConnectionDetails secureConnections;
+
+    public SecureConnectionDetails getSecureConnections() {
+        return secureConnections;
+    }
+
+    /**
+     * The database mode indicating the types of statements that are allowed to run in the the DB
+     * system. This mode applies only to statements run by user connections. Replicated write
+     * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow running
+     * read and write statements on the DB system; - READ_ONLY: only allow running read statements
+     * on the DB system.
+     */
+    public enum DatabaseMode implements com.oracle.bmc.http.internal.BmcEnum {
+        ReadWrite("READ_WRITE"),
+        ReadOnly("READ_ONLY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DatabaseMode.class);
+
+        private final String value;
+        private static java.util.Map<String, DatabaseMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DatabaseMode v : DatabaseMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DatabaseMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DatabaseMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DatabaseMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The database mode indicating the types of statements that are allowed to run in the the DB
+     * system. This mode applies only to statements run by user connections. Replicated write
+     * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow running
+     * read and write statements on the DB system; - READ_ONLY: only allow running read statements
+     * on the DB system.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+    private final DatabaseMode databaseMode;
+
+    /**
+     * The database mode indicating the types of statements that are allowed to run in the the DB
+     * system. This mode applies only to statements run by user connections. Replicated write
+     * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow running
+     * read and write statements on the DB system; - READ_ONLY: only allow running read statements
+     * on the DB system.
+     *
+     * @return the value
+     */
+    public DatabaseMode getDatabaseMode() {
+        return databaseMode;
+    }
+
+    /**
+     * The access mode indicating if the database access is unrestricted (to all MySQL user
+     * accounts), or restricted (to only certain users with specific privileges): - UNRESTRICTED:
+     * the access to the database is not restricted; - RESTRICTED: access allowed only to users with
+     * specific privileges; RESTRICTED will correspond to setting the MySQL system variable
+     * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+     * to ON.
+     */
+    public enum AccessMode implements com.oracle.bmc.http.internal.BmcEnum {
+        Unrestricted("UNRESTRICTED"),
+        Restricted("RESTRICTED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AccessMode.class);
+
+        private final String value;
+        private static java.util.Map<String, AccessMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AccessMode v : AccessMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AccessMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AccessMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AccessMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The access mode indicating if the database access is unrestricted (to all MySQL user
+     * accounts), or restricted (to only certain users with specific privileges): - UNRESTRICTED:
+     * the access to the database is not restricted; - RESTRICTED: access allowed only to users with
+     * specific privileges; RESTRICTED will correspond to setting the MySQL system variable
+     * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+     * to ON.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+    private final AccessMode accessMode;
+
+    /**
+     * The access mode indicating if the database access is unrestricted (to all MySQL user
+     * accounts), or restricted (to only certain users with specific privileges): - UNRESTRICTED:
+     * the access to the database is not restricted; - RESTRICTED: access allowed only to users with
+     * specific privileges; RESTRICTED will correspond to setting the MySQL system variable
+     * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+     * to ON.
+     *
+     * @return the value
+     */
+    public AccessMode getAccessMode() {
+        return accessMode;
+    }
+
+    /**
+     * The list of customer email addresses that receive information from Oracle about the specified
+     * OCI DB System resource. Oracle uses these email addresses to send notifications about planned
+     * and unplanned software maintenance updates, information about system hardware, and other
+     * information needed by administrators. Up to 10 email addresses can be added to the customer
+     * contacts for a DB System.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+    private final java.util.List<CustomerContact> customerContacts;
+
+    /**
+     * The list of customer email addresses that receive information from Oracle about the specified
+     * OCI DB System resource. Oracle uses these email addresses to send notifications about planned
+     * and unplanned software maintenance updates, information about system hardware, and other
+     * information needed by administrators. Up to 10 email addresses can be added to the customer
+     * contacts for a DB System.
+     *
+     * @return the value
+     */
+    public java.util.List<CustomerContact> getCustomerContacts() {
+        return customerContacts;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+    private final ReadEndpointDetails readEndpoint;
+
+    public ReadEndpointDetails getReadEndpoint() {
+        return readEndpoint;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1397,6 +1793,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", source=").append(String.valueOf(this.source));
         sb.append(", configurationId=").append(String.valueOf(this.configurationId));
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", dataStorage=").append(String.valueOf(this.dataStorage));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", port=").append(String.valueOf(this.port));
@@ -1411,10 +1808,16 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", pointInTimeRecoveryDetails=")
                 .append(String.valueOf(this.pointInTimeRecoveryDetails));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
+        sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
+        sb.append(", accessMode=").append(String.valueOf(this.accessMode));
+        sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
+        sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
         sb.append(")");
         return sb.toString();
     }
@@ -1447,6 +1850,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.source, other.source)
                 && java.util.Objects.equals(this.configurationId, other.configurationId)
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(this.dataStorage, other.dataStorage)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.port, other.port)
@@ -1461,10 +1865,16 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(
                         this.pointInTimeRecoveryDetails, other.pointInTimeRecoveryDetails)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
+                && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.databaseMode, other.databaseMode)
+                && java.util.Objects.equals(this.accessMode, other.accessMode)
+                && java.util.Objects.equals(this.customerContacts, other.customerContacts)
+                && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
                 && super.equals(other);
     }
 
@@ -1511,6 +1921,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.dataStorageSizeInGBs == null
                                 ? 43
                                 : this.dataStorageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.dataStorage == null ? 43 : this.dataStorage.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
@@ -1533,6 +1944,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.crashRecovery == null ? 43 : this.crashRecovery.hashCode());
@@ -1546,6 +1958,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.databaseManagement == null
                                 ? 43
                                 : this.databaseManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result = (result * PRIME) + (this.databaseMode == null ? 43 : this.databaseMode.hashCode());
+        result = (result * PRIME) + (this.accessMode == null ? 43 : this.accessMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
+        result = (result * PRIME) + (this.readEndpoint == null ? 43 : this.readEndpoint.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

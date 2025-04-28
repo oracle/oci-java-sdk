@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -8,8 +8,8 @@ package com.oracle.bmc.database.model;
  * Autonomous Database configuration details for storing [manual
  * backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809)
  * in the [Object
- * Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm)
- * service. <br>
+ * Storage](https://docs.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -39,7 +39,7 @@ public final class AutonomousDatabaseBackupConfig
     public static class Builder {
         /**
          * Name of [Object
-         * Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm)
+         * Storage](https://docs.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm)
          * bucket to use for storing manual backups.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("manualBackupBucketName")
@@ -47,7 +47,7 @@ public final class AutonomousDatabaseBackupConfig
 
         /**
          * Name of [Object
-         * Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm)
+         * Storage](https://docs.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm)
          * bucket to use for storing manual backups.
          *
          * @param manualBackupBucketName the value to set
@@ -110,7 +110,7 @@ public final class AutonomousDatabaseBackupConfig
 
     /**
      * Name of [Object
-     * Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm)
+     * Storage](https://docs.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm)
      * bucket to use for storing manual backups.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("manualBackupBucketName")
@@ -118,7 +118,7 @@ public final class AutonomousDatabaseBackupConfig
 
     /**
      * Name of [Object
-     * Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm)
+     * Storage](https://docs.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm)
      * bucket to use for storing manual backups.
      *
      * @return the value

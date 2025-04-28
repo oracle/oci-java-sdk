@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -23,6 +23,9 @@ package com.oracle.bmc.stackmonitoring.model;
         defaultImpl = UpdateConfigDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateComputeAutoActivatePluginConfigDetails.class,
+            name = "COMPUTE_AUTO_ACTIVATE_PLUGIN"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateLicenseEnterpriseExtensibilityConfigDetails.class,
             name = "LICENSE_ENTERPRISE_EXTENSIBILITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -30,7 +33,10 @@ package com.oracle.bmc.stackmonitoring.model;
             name = "AUTO_PROMOTE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateLicenseAutoAssignConfigDetails.class,
-            name = "LICENSE_AUTO_ASSIGN")
+            name = "LICENSE_AUTO_ASSIGN"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateOnboardConfigDetails.class,
+            name = "ONBOARD")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

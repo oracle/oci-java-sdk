@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.computecloudatcustomer;
@@ -8,9 +8,9 @@ import com.oracle.bmc.computecloudatcustomer.requests.*;
 import com.oracle.bmc.computecloudatcustomer.responses.*;
 
 /**
- * Use the Compute Cloud@Customer API to manage Compute Cloud@Customer Infrastructure deployments
- * and scheduled upgrades. For more information see [Compute Cloud@Customer
- * documentation](https://docs.cloud.oracle.com/iaas/Content/compute-cloud-at-customer/home.htm).
+ * Use the Compute Cloud@Customer API to manage Compute Cloud@Customer infrastructures and upgrade
+ * schedules. For more information see [Compute Cloud@Customer
+ * documentation](https://docs.oracle.com/iaas/compute-cloud-at-customer/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
 public interface ComputeCloudAtCustomerAsync extends AutoCloseable {
@@ -83,8 +83,7 @@ public interface ComputeCloudAtCustomerAsync extends AutoCloseable {
 
     /**
      * Moves a Compute Cloud@Customer upgrade schedule from one compartment to another using the
-     * specified
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * specified [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -136,7 +135,7 @@ public interface ComputeCloudAtCustomerAsync extends AutoCloseable {
 
     /**
      * Deletes a Compute Cloud@Customer infrastructure resource specified by the resource
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -153,7 +152,7 @@ public interface ComputeCloudAtCustomerAsync extends AutoCloseable {
 
     /**
      * Deletes a Compute Cloud@Customer upgrade schedule by the specified
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -170,7 +169,7 @@ public interface ComputeCloudAtCustomerAsync extends AutoCloseable {
 
     /**
      * Gets a Compute Cloud@Customer infrastructure using the infrastructure
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -187,7 +186,7 @@ public interface ComputeCloudAtCustomerAsync extends AutoCloseable {
 
     /**
      * Gets a Compute Cloud@Customer upgrade schedule by the specified
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

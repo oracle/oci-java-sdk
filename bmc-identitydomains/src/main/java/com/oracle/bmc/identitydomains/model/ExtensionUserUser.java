@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -39,6 +39,7 @@ public final class ExtensionUserUser
         "isGroupMembershipNormalized",
         "isGroupMembershipSyncedToUsersGroups",
         "notificationEmailTemplateId",
+        "serviceUser",
         "supportAccounts",
         "idcsAppRolesLimitedToGroups",
         "userToken",
@@ -65,6 +66,7 @@ public final class ExtensionUserUser
             Boolean isGroupMembershipNormalized,
             Boolean isGroupMembershipSyncedToUsersGroups,
             String notificationEmailTemplateId,
+            Boolean serviceUser,
             java.util.List<UserExtSupportAccounts> supportAccounts,
             java.util.List<UserExtIdcsAppRolesLimitedToGroups> idcsAppRolesLimitedToGroups,
             UserExtUserToken userToken,
@@ -90,6 +92,7 @@ public final class ExtensionUserUser
         this.isGroupMembershipNormalized = isGroupMembershipNormalized;
         this.isGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
         this.notificationEmailTemplateId = notificationEmailTemplateId;
+        this.serviceUser = serviceUser;
         this.supportAccounts = supportAccounts;
         this.idcsAppRolesLimitedToGroups = idcsAppRolesLimitedToGroups;
         this.userToken = userToken;
@@ -527,6 +530,37 @@ public final class ExtensionUserUser
             return this;
         }
         /**
+         * Indicates if User is a Service User
+         *
+         * <p>*Added In:** 2306131901
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Service User -
+         * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]] - idcsSearchable: true -
+         * multiValued: false - mutability: immutable - required: false - returned: default - type:
+         * boolean - uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceUser")
+        private Boolean serviceUser;
+
+        /**
+         * Indicates if User is a Service User
+         *
+         * <p>*Added In:** 2306131901
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Service User -
+         * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]] - idcsSearchable: true -
+         * multiValued: false - mutability: immutable - required: false - returned: default - type:
+         * boolean - uniqueness: none
+         *
+         * @param serviceUser the value to set
+         * @return this builder
+         */
+        public Builder serviceUser(Boolean serviceUser) {
+            this.serviceUser = serviceUser;
+            this.__explicitlySet__.add("serviceUser");
+            return this;
+        }
+        /**
          * A list of Support Accounts corresponding to user.
          *
          * <p>*Added In:** 2103141444
@@ -730,6 +764,7 @@ public final class ExtensionUserUser
                             this.isGroupMembershipNormalized,
                             this.isGroupMembershipSyncedToUsersGroups,
                             this.notificationEmailTemplateId,
+                            this.serviceUser,
                             this.supportAccounts,
                             this.idcsAppRolesLimitedToGroups,
                             this.userToken,
@@ -793,6 +828,9 @@ public final class ExtensionUserUser
             }
             if (model.wasPropertyExplicitlySet("notificationEmailTemplateId")) {
                 this.notificationEmailTemplateId(model.getNotificationEmailTemplateId());
+            }
+            if (model.wasPropertyExplicitlySet("serviceUser")) {
+                this.serviceUser(model.getServiceUser());
             }
             if (model.wasPropertyExplicitlySet("supportAccounts")) {
                 this.supportAccounts(model.getSupportAccounts());
@@ -1425,6 +1463,35 @@ public final class ExtensionUserUser
     }
 
     /**
+     * Indicates if User is a Service User
+     *
+     * <p>*Added In:** 2306131901
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Service User -
+     * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]] - idcsSearchable: true -
+     * multiValued: false - mutability: immutable - required: false - returned: default - type:
+     * boolean - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceUser")
+    private final Boolean serviceUser;
+
+    /**
+     * Indicates if User is a Service User
+     *
+     * <p>*Added In:** 2306131901
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Service User -
+     * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]] - idcsSearchable: true -
+     * multiValued: false - mutability: immutable - required: false - returned: default - type:
+     * boolean - uniqueness: none
+     *
+     * @return the value
+     */
+    public Boolean getServiceUser() {
+        return serviceUser;
+    }
+
+    /**
      * A list of Support Accounts corresponding to user.
      *
      * <p>*Added In:** 2103141444
@@ -1622,6 +1689,7 @@ public final class ExtensionUserUser
                 .append(String.valueOf(this.isGroupMembershipSyncedToUsersGroups));
         sb.append(", notificationEmailTemplateId=")
                 .append(String.valueOf(this.notificationEmailTemplateId));
+        sb.append(", serviceUser=").append(String.valueOf(this.serviceUser));
         sb.append(", supportAccounts=").append(String.valueOf(this.supportAccounts));
         sb.append(", idcsAppRolesLimitedToGroups=")
                 .append(String.valueOf(this.idcsAppRolesLimitedToGroups));
@@ -1675,6 +1743,7 @@ public final class ExtensionUserUser
                         other.isGroupMembershipSyncedToUsersGroups)
                 && java.util.Objects.equals(
                         this.notificationEmailTemplateId, other.notificationEmailTemplateId)
+                && java.util.Objects.equals(this.serviceUser, other.serviceUser)
                 && java.util.Objects.equals(this.supportAccounts, other.supportAccounts)
                 && java.util.Objects.equals(
                         this.idcsAppRolesLimitedToGroups, other.idcsAppRolesLimitedToGroups)
@@ -1759,6 +1828,7 @@ public final class ExtensionUserUser
                         + (this.notificationEmailTemplateId == null
                                 ? 43
                                 : this.notificationEmailTemplateId.hashCode());
+        result = (result * PRIME) + (this.serviceUser == null ? 43 : this.serviceUser.hashCode());
         result =
                 (result * PRIME)
                         + (this.supportAccounts == null ? 43 : this.supportAccounts.hashCode());

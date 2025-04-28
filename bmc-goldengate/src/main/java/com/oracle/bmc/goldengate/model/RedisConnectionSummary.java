@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -171,6 +171,33 @@ public final class RedisConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /** The Redis technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private RedisConnection.TechnologyType technologyType;
@@ -260,6 +287,134 @@ public final class RedisConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("username");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Redis cluster.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
+        private String redisClusterId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Redis cluster.
+         *
+         * @param redisClusterId the value to set
+         * @return this builder
+         */
+        public Builder redisClusterId(String redisClusterId) {
+            this.redisClusterId = redisClusterId;
+            this.__explicitlySet__.add("redisClusterId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
+         * field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
+        private String trustStoreSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
+         * field must not be provided.
+         *
+         * @param trustStoreSecretId the value to set
+         * @return this builder
+         */
+        public Builder trustStoreSecretId(String trustStoreSecretId) {
+            this.trustStoreSecretId = trustStoreSecretId;
+            this.__explicitlySet__.add("trustStoreSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the Redis TrustStore password is stored. Note: When provided,
+         * 'trustStorePassword' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
+        private String trustStorePasswordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the Redis TrustStore password is stored. Note: When provided,
+         * 'trustStorePassword' field must not be provided.
+         *
+         * @param trustStorePasswordSecretId the value to set
+         * @return this builder
+         */
+        public Builder trustStorePasswordSecretId(String trustStorePasswordSecretId) {
+            this.trustStorePasswordSecretId = trustStorePasswordSecretId;
+            this.__explicitlySet__.add("trustStorePasswordSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore'
+         * field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
+        private String keyStoreSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore'
+         * field must not be provided.
+         *
+         * @param keyStoreSecretId the value to set
+         * @return this builder
+         */
+        public Builder keyStoreSecretId(String keyStoreSecretId) {
+            this.keyStoreSecretId = keyStoreSecretId;
+            this.__explicitlySet__.add("keyStoreSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the Redis KeyStore password is stored. Note: When provided,
+         * 'keyStorePassword' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
+        private String keyStorePasswordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the Redis KeyStore password is stored. Note: When provided,
+         * 'keyStorePassword' field must not be provided.
+         *
+         * @param keyStorePasswordSecretId the value to set
+         * @return this builder
+         */
+        public Builder keyStorePasswordSecretId(String keyStorePasswordSecretId) {
+            this.keyStorePasswordSecretId = keyStorePasswordSecretId;
+            this.__explicitlySet__.add("keyStorePasswordSecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -283,11 +438,20 @@ public final class RedisConnectionSummary extends ConnectionSummary {
                             this.ingressIps,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
+                            this.locks,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.servers,
                             this.securityProtocol,
                             this.authenticationType,
-                            this.username);
+                            this.username,
+                            this.redisClusterId,
+                            this.passwordSecretId,
+                            this.trustStoreSecretId,
+                            this.trustStorePasswordSecretId,
+                            this.keyStoreSecretId,
+                            this.keyStorePasswordSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -344,6 +508,15 @@ public final class RedisConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -358,6 +531,24 @@ public final class RedisConnectionSummary extends ConnectionSummary {
             }
             if (model.wasPropertyExplicitlySet("username")) {
                 this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("redisClusterId")) {
+                this.redisClusterId(model.getRedisClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("trustStoreSecretId")) {
+                this.trustStoreSecretId(model.getTrustStoreSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("trustStorePasswordSecretId")) {
+                this.trustStorePasswordSecretId(model.getTrustStorePasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreSecretId")) {
+                this.keyStoreSecretId(model.getKeyStoreSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("keyStorePasswordSecretId")) {
+                this.keyStorePasswordSecretId(model.getKeyStorePasswordSecretId());
             }
             return this;
         }
@@ -390,11 +581,20 @@ public final class RedisConnectionSummary extends ConnectionSummary {
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
+            java.util.List<ResourceLock> locks,
+            Boolean doesUseSecretIds,
             RedisConnection.TechnologyType technologyType,
             String servers,
             RedisConnection.SecurityProtocol securityProtocol,
             RedisConnection.AuthenticationType authenticationType,
-            String username) {
+            String username,
+            String redisClusterId,
+            String passwordSecretId,
+            String trustStoreSecretId,
+            String trustStorePasswordSecretId,
+            String keyStoreSecretId,
+            String keyStorePasswordSecretId) {
         super(
                 id,
                 displayName,
@@ -411,12 +611,21 @@ public final class RedisConnectionSummary extends ConnectionSummary {
                 keyId,
                 ingressIps,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod,
+                locks,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.servers = servers;
         this.securityProtocol = securityProtocol;
         this.authenticationType = authenticationType;
         this.username = username;
+        this.redisClusterId = redisClusterId;
+        this.passwordSecretId = passwordSecretId;
+        this.trustStoreSecretId = trustStoreSecretId;
+        this.trustStorePasswordSecretId = trustStorePasswordSecretId;
+        this.keyStoreSecretId = keyStoreSecretId;
+        this.keyStorePasswordSecretId = keyStorePasswordSecretId;
     }
 
     /** The Redis technology type. */
@@ -498,6 +707,122 @@ public final class RedisConnectionSummary extends ConnectionSummary {
         return username;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Redis cluster.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
+    private final String redisClusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Redis cluster.
+     *
+     * @return the value
+     */
+    public String getRedisClusterId() {
+        return redisClusterId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
+     * field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
+    private final String trustStoreSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
+     * field must not be provided.
+     *
+     * @return the value
+     */
+    public String getTrustStoreSecretId() {
+        return trustStoreSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the Redis TrustStore password is stored. Note: When provided,
+     * 'trustStorePassword' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
+    private final String trustStorePasswordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the Redis TrustStore password is stored. Note: When provided,
+     * 'trustStorePassword' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getTrustStorePasswordSecretId() {
+        return trustStorePasswordSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore' field
+     * must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
+    private final String keyStoreSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore' field
+     * must not be provided.
+     *
+     * @return the value
+     */
+    public String getKeyStoreSecretId() {
+        return keyStoreSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the Redis KeyStore password is stored. Note: When provided, 'keyStorePassword'
+     * field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
+    private final String keyStorePasswordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the Redis KeyStore password is stored. Note: When provided, 'keyStorePassword'
+     * field must not be provided.
+     *
+     * @return the value
+     */
+    public String getKeyStorePasswordSecretId() {
+        return keyStorePasswordSecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -518,6 +843,14 @@ public final class RedisConnectionSummary extends ConnectionSummary {
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", redisClusterId=").append(String.valueOf(this.redisClusterId));
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", trustStoreSecretId=").append(String.valueOf(this.trustStoreSecretId));
+        sb.append(", trustStorePasswordSecretId=")
+                .append(String.valueOf(this.trustStorePasswordSecretId));
+        sb.append(", keyStoreSecretId=").append(String.valueOf(this.keyStoreSecretId));
+        sb.append(", keyStorePasswordSecretId=")
+                .append(String.valueOf(this.keyStorePasswordSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -537,6 +870,14 @@ public final class RedisConnectionSummary extends ConnectionSummary {
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.redisClusterId, other.redisClusterId)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(this.trustStoreSecretId, other.trustStoreSecretId)
+                && java.util.Objects.equals(
+                        this.trustStorePasswordSecretId, other.trustStorePasswordSecretId)
+                && java.util.Objects.equals(this.keyStoreSecretId, other.keyStoreSecretId)
+                && java.util.Objects.equals(
+                        this.keyStorePasswordSecretId, other.keyStorePasswordSecretId)
                 && super.equals(other);
     }
 
@@ -557,6 +898,30 @@ public final class RedisConnectionSummary extends ConnectionSummary {
                                 ? 43
                                 : this.authenticationType.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.redisClusterId == null ? 43 : this.redisClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trustStoreSecretId == null
+                                ? 43
+                                : this.trustStoreSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trustStorePasswordSecretId == null
+                                ? 43
+                                : this.trustStorePasswordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStoreSecretId == null ? 43 : this.keyStoreSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStorePasswordSecretId == null
+                                ? 43
+                                : this.keyStorePasswordSecretId.hashCode());
         return result;
     }
 }

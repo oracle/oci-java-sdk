@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupModulesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupModulesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListManagedInstanceGroupModulesRequest.
  */
@@ -15,17 +15,29 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class ListManagedInstanceGroupModulesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group.
+     */
     private String managedInstanceGroupId;
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group.
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -43,23 +55,17 @@ public class ListManagedInstanceGroupModulesRequest
     public String getNameContains() {
         return nameContains;
     }
-    /**
-     * The name of the stream of the containing module. This parameter is required if a profileName
-     * is specified.
-     */
+    /** The name of the module stream. This parameter is required if a profile name is specified. */
     private String streamName;
 
-    /**
-     * The name of the stream of the containing module. This parameter is required if a profileName
-     * is specified.
-     */
+    /** The name of the module stream. This parameter is required if a profile name is specified. */
     public String getStreamName() {
         return streamName;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -68,7 +74,7 @@ public class ListManagedInstanceGroupModulesRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -78,7 +84,7 @@ public class ListManagedInstanceGroupModulesRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -87,7 +93,7 @@ public class ListManagedInstanceGroupModulesRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -170,11 +176,15 @@ public class ListManagedInstanceGroupModulesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The managed instance group OCID. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group.
+         */
         private String managedInstanceGroupId = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
@@ -184,11 +194,15 @@ public class ListManagedInstanceGroupModulesRequest
             return this;
         }
 
-        /** The OCID of the compartment that contains the resources to list. */
+        /**
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
+         */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -227,14 +241,12 @@ public class ListManagedInstanceGroupModulesRequest
         }
 
         /**
-         * The name of the stream of the containing module. This parameter is required if a
-         * profileName is specified.
+         * The name of the module stream. This parameter is required if a profile name is specified.
          */
         private String streamName = null;
 
         /**
-         * The name of the stream of the containing module. This parameter is required if a
-         * profileName is specified.
+         * The name of the module stream. This parameter is required if a profile name is specified.
          *
          * @param streamName the value to set
          * @return this builder instance
@@ -247,7 +259,7 @@ public class ListManagedInstanceGroupModulesRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -256,7 +268,7 @@ public class ListManagedInstanceGroupModulesRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -271,7 +283,7 @@ public class ListManagedInstanceGroupModulesRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          */
@@ -280,7 +292,7 @@ public class ListManagedInstanceGroupModulesRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          *

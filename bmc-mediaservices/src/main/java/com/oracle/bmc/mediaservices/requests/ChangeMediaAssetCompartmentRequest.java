@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.mediaservices.requests;
 import com.oracle.bmc.mediaservices.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeMediaAssetCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeMediaAssetCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeMediaAssetCompartmentRequest.
  */
@@ -31,6 +31,13 @@ public class ChangeMediaAssetCompartmentRequest
     public com.oracle.bmc.mediaservices.model.ChangeMediaAssetCompartmentDetails
             getChangeMediaAssetCompartmentDetails() {
         return changeMediaAssetCompartmentDetails;
+    }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -122,6 +129,20 @@ public class ChangeMediaAssetCompartmentRequest
                 com.oracle.bmc.mediaservices.model.ChangeMediaAssetCompartmentDetails
                         changeMediaAssetCompartmentDetails) {
             this.changeMediaAssetCompartmentDetails = changeMediaAssetCompartmentDetails;
+            return this;
+        }
+
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -217,6 +238,7 @@ public class ChangeMediaAssetCompartmentRequest
         public Builder copy(ChangeMediaAssetCompartmentRequest o) {
             mediaAssetId(o.getMediaAssetId());
             changeMediaAssetCompartmentDetails(o.getChangeMediaAssetCompartmentDetails());
+            isLockOverride(o.getIsLockOverride());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
@@ -269,12 +291,14 @@ public class ChangeMediaAssetCompartmentRequest
             ChangeMediaAssetCompartmentRequest request = new ChangeMediaAssetCompartmentRequest();
             request.mediaAssetId = mediaAssetId;
             request.changeMediaAssetCompartmentDetails = changeMediaAssetCompartmentDetails;
+            request.isLockOverride = isLockOverride;
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
             // new ChangeMediaAssetCompartmentRequest(mediaAssetId,
-            // changeMediaAssetCompartmentDetails, opcRetryToken, ifMatch, opcRequestId);
+            // changeMediaAssetCompartmentDetails, isLockOverride, opcRetryToken, ifMatch,
+            // opcRequestId);
         }
     }
 
@@ -287,6 +311,7 @@ public class ChangeMediaAssetCompartmentRequest
         return new Builder()
                 .mediaAssetId(mediaAssetId)
                 .changeMediaAssetCompartmentDetails(changeMediaAssetCompartmentDetails)
+                .isLockOverride(isLockOverride)
                 .opcRetryToken(opcRetryToken)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
@@ -309,6 +334,7 @@ public class ChangeMediaAssetCompartmentRequest
         sb.append(",mediaAssetId=").append(String.valueOf(this.mediaAssetId));
         sb.append(",changeMediaAssetCompartmentDetails=")
                 .append(String.valueOf(this.changeMediaAssetCompartmentDetails));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -331,6 +357,7 @@ public class ChangeMediaAssetCompartmentRequest
                 && java.util.Objects.equals(
                         this.changeMediaAssetCompartmentDetails,
                         other.changeMediaAssetCompartmentDetails)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -346,6 +373,9 @@ public class ChangeMediaAssetCompartmentRequest
                         + (this.changeMediaAssetCompartmentDetails == null
                                 ? 43
                                 : this.changeMediaAssetCompartmentDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());

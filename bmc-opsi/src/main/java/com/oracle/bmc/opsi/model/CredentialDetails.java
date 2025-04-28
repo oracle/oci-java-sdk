@@ -1,12 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
 
 /**
- * User credential details to connect to the database. This is supplied via the External Database
- * Service. <br>
+ * User credential details to connect to the database. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -28,7 +27,10 @@ package com.oracle.bmc.opsi.model;
             name = "CREDENTIALS_BY_SOURCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CredentialByVault.class,
-            name = "CREDENTIALS_BY_VAULT")
+            name = "CREDENTIALS_BY_VAULT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CredentialByIam.class,
+            name = "CREDENTIALS_BY_IAM")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -104,10 +106,15 @@ public class CredentialDetails extends com.oracle.bmc.http.client.internal.Expli
         return result;
     }
 
-    /** Credential type. */
+    /**
+     * CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is
+     * supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well.
+     * CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+     */
     public enum CredentialType implements com.oracle.bmc.http.internal.BmcEnum {
         CredentialsBySource("CREDENTIALS_BY_SOURCE"),
         CredentialsByVault("CREDENTIALS_BY_VAULT"),
+        CredentialsByIam("CREDENTIALS_BY_IAM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

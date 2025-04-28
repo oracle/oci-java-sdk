@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.oda;
@@ -93,6 +93,88 @@ public class ManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     @Override
     public void setRegion(String regionId) {
         super.setRegion(regionId);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkCreateSkillEntitiesResponse> bulkCreateSkillEntities(
+            BulkCreateSkillEntitiesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkCreateSkillEntitiesRequest, BulkCreateSkillEntitiesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getOdaInstanceId(), "odaInstanceId must not be blank");
+
+        Validate.notBlank(request.getSkillId(), "skillId must not be blank");
+        Objects.requireNonNull(
+                request.getBulkCreateSkillEntitiesDetails(),
+                "bulkCreateSkillEntitiesDetails is required");
+
+        return clientCall(request, BulkCreateSkillEntitiesResponse::builder)
+                .logger(LOG, "bulkCreateSkillEntities")
+                .serviceDetails(
+                        "Management",
+                        "BulkCreateSkillEntities",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/BulkCreateSkillEntities")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkCreateSkillEntitiesRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaInstances")
+                .appendPathParam(request.getOdaInstanceId())
+                .appendPathParam("skills")
+                .appendPathParam(request.getSkillId())
+                .appendPathParam("actions")
+                .appendPathParam("bulkCreateEntities")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        BulkCreateSkillEntitiesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", BulkCreateSkillEntitiesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CascadingDeleteSkillCustomEntitiesResponse>
+            cascadingDeleteSkillCustomEntities(
+                    CascadingDeleteSkillCustomEntitiesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CascadingDeleteSkillCustomEntitiesRequest,
+                                    CascadingDeleteSkillCustomEntitiesResponse>
+                            handler) {
+
+        Validate.notBlank(request.getOdaInstanceId(), "odaInstanceId must not be blank");
+
+        Validate.notBlank(request.getSkillId(), "skillId must not be blank");
+
+        return clientCall(request, CascadingDeleteSkillCustomEntitiesResponse::builder)
+                .logger(LOG, "cascadingDeleteSkillCustomEntities")
+                .serviceDetails(
+                        "Management",
+                        "CascadingDeleteSkillCustomEntities",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/CascadingDeleteSkillCustomEntities")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CascadingDeleteSkillCustomEntitiesRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaInstances")
+                .appendPathParam(request.getOdaInstanceId())
+                .appendPathParam("skills")
+                .appendPathParam(request.getSkillId())
+                .appendPathParam("actions")
+                .appendPathParam("cascadingDeleteCustomEntities")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CascadingDeleteSkillCustomEntitiesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CascadingDeleteSkillCustomEntitiesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1948,6 +2030,44 @@ public class ManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .handleResponseHeaderString("etag", StopChannelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", StopChannelResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TrainSkillResponse> trainSkill(
+            TrainSkillRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<TrainSkillRequest, TrainSkillResponse>
+                    handler) {
+
+        Validate.notBlank(request.getOdaInstanceId(), "odaInstanceId must not be blank");
+
+        Validate.notBlank(request.getSkillId(), "skillId must not be blank");
+        Objects.requireNonNull(request.getTrainSkillDetails(), "trainSkillDetails is required");
+
+        return clientCall(request, TrainSkillResponse::builder)
+                .logger(LOG, "trainSkill")
+                .serviceDetails(
+                        "Management",
+                        "TrainSkill",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/TrainSkill")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TrainSkillRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaInstances")
+                .appendPathParam(request.getOdaInstanceId())
+                .appendPathParam("skills")
+                .appendPathParam(request.getSkillId())
+                .appendPathParam("actions")
+                .appendPathParam("train")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", TrainSkillResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", TrainSkillResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

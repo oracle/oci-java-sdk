@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql;
@@ -137,6 +137,7 @@ public class ReplicasClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mysql.model.Replica.class,
@@ -147,7 +148,6 @@ public class ReplicasClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateReplicaResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateReplicaResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -170,11 +170,11 @@ public class ReplicasClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteReplicaResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteReplicaResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -197,13 +197,13 @@ public class ReplicasClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mysql.model.Replica.class,
                         GetReplicaResponse.Builder::replica)
                 .handleResponseHeaderString("etag", GetReplicaResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetReplicaResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -234,6 +234,7 @@ public class ReplicasClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.mysql.model.ReplicaSummary.class,
                         ListReplicasResponse.Builder::items)
@@ -241,7 +242,6 @@ public class ReplicasClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListReplicasResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListReplicasResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -266,12 +266,12 @@ public class ReplicasClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateReplicaResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateReplicaResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

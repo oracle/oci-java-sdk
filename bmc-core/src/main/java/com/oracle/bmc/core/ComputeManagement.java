@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -10,11 +10,11 @@ import com.oracle.bmc.core.responses.*;
 /**
  * Use the Core Services API to manage resources such as virtual cloud networks (VCNs), compute
  * instances, and block storage volumes. For more information, see the console documentation for the
- * [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
- * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
- * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
- * The required permissions are documented in the [Details for the Core
- * Services](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
+ * [Networking](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm),
+ * [Compute](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and [Block
+ * Volume](https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm) services. The required
+ * permissions are documented in the [Details for the Core
+ * Services](https://docs.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
  * article.
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
@@ -75,7 +75,7 @@ public interface ComputeManagement extends AutoCloseable {
      * Attaches an instance to an instance pool. For information about the prerequisites that an
      * instance must meet before you can attach it to a pool, see [Attaching an Instance to an
      * Instance
-     * Pool](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).
+     * Pool](https://docs.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -84,7 +84,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachInstancePoolInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachInstancePoolInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     AttachInstancePoolInstance API.
      */
@@ -101,7 +101,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachLoadBalancerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachLoadBalancerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachLoadBalancer
      *     API.
      */
@@ -109,10 +109,10 @@ public interface ComputeManagement extends AutoCloseable {
 
     /**
      * Moves a [cluster network with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
-     * into a different compartment within the same tenancy. For information about moving resources
-     * between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm) into a
+     * different compartment within the same tenancy. For information about moving resources between
+     * compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When you move a cluster network to a different compartment, associated resources such as
      * the instances in the cluster network, boot volumes, and VNICs are not moved.
@@ -124,7 +124,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeClusterNetworkCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeClusterNetworkCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeClusterNetworkCompartment API.
      */
@@ -134,7 +134,7 @@ public interface ComputeManagement extends AutoCloseable {
     /**
      * Moves an instance configuration into a different compartment within the same tenancy. For
      * information about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When you move an instance configuration to a different compartment, associated resources
      * such as instance pools are not moved.
@@ -145,7 +145,7 @@ public interface ComputeManagement extends AutoCloseable {
      * instance configuration to manage instance pools in the new compartment. If you want to update
      * an instance configuration to point to a different compartment, you should instead create a
      * new instance configuration in the target compartment using
-     * [CreateInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration).
+     * [CreateInstanceConfiguration](https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -154,7 +154,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInstanceConfigurationCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInstanceConfigurationCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeInstanceConfigurationCompartment API.
      */
@@ -164,7 +164,7 @@ public interface ComputeManagement extends AutoCloseable {
     /**
      * Moves an instance pool into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When you move an instance pool to a different compartment, associated resources such as
      * the instances in the pool, boot volumes, VNICs, and autoscaling configurations are not moved.
@@ -176,7 +176,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInstancePoolCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInstancePoolCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeInstancePoolCompartment API.
      */
@@ -185,10 +185,10 @@ public interface ComputeManagement extends AutoCloseable {
 
     /**
      * Creates a [cluster network with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
-     * A cluster network is a group of high performance computing (HPC), GPU, or optimized bare
-     * metal instances that are connected with an ultra low-latency remote direct memory access
-     * (RDMA) network. Cluster networks with instance pools use instance pools to manage groups of
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm). A
+     * cluster network is a group of high performance computing (HPC), GPU, or optimized bare metal
+     * instances that are connected with an ultra low-latency remote direct memory access (RDMA)
+     * network. Cluster networks with instance pools use instance pools to manage groups of
      * identical instances.
      *
      * <p>Use cluster networks with instance pools when you want predictable capacity for a specific
@@ -210,7 +210,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateClusterNetworkExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateClusterNetworkExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateClusterNetwork API.
      */
@@ -227,7 +227,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInstanceConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInstanceConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateInstanceConfiguration API.
      */
@@ -249,7 +249,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInstancePoolExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInstancePoolExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateInstancePool
      *     API.
      */
@@ -265,7 +265,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteInstanceConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteInstanceConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteInstanceConfiguration API.
      */
@@ -282,7 +282,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachInstancePoolInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachInstancePoolInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DetachInstancePoolInstance API.
      */
@@ -299,7 +299,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachLoadBalancerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachLoadBalancerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachLoadBalancer
      *     API.
      */
@@ -307,7 +307,7 @@ public interface ComputeManagement extends AutoCloseable {
 
     /**
      * Gets information about a [cluster network with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -316,7 +316,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetClusterNetworkExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetClusterNetworkExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetClusterNetwork
      *     API.
      */
@@ -332,7 +332,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetInstanceConfiguration API.
      */
@@ -349,7 +349,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstancePool
      *     API.
      */
@@ -365,7 +365,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetInstancePoolInstance API.
      */
@@ -381,7 +381,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolLoadBalancerAttachmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolLoadBalancerAttachmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetInstancePoolLoadBalancerAttachment API.
      */
@@ -407,7 +407,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/LaunchInstanceConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/LaunchInstanceConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     LaunchInstanceConfiguration API.
      */
@@ -416,7 +416,7 @@ public interface ComputeManagement extends AutoCloseable {
 
     /**
      * Lists the instances in a [cluster network with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -425,7 +425,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListClusterNetworkInstancesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListClusterNetworkInstancesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListClusterNetworkInstances API.
      */
@@ -434,8 +434,8 @@ public interface ComputeManagement extends AutoCloseable {
 
     /**
      * Lists the [cluster networks with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
-     * in the specified compartment.
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm) in the
+     * specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -444,7 +444,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListClusterNetworksExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListClusterNetworksExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListClusterNetworks
      *     API.
      */
@@ -460,7 +460,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceConfigurationsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceConfigurationsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListInstanceConfigurations API.
      */
@@ -477,7 +477,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstancePoolInstancesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstancePoolInstancesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListInstancePoolInstances API.
      */
@@ -494,7 +494,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstancePoolsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstancePoolsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstancePools
      *     API.
      */
@@ -511,7 +511,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ResetInstancePoolExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ResetInstancePoolExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResetInstancePool
      *     API.
      */
@@ -532,7 +532,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/SoftresetInstancePoolExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/SoftresetInstancePoolExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SoftresetInstancePool API.
      */
@@ -553,7 +553,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/SoftstopInstancePoolExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/SoftstopInstancePoolExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SoftstopInstancePool API.
      */
@@ -570,7 +570,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/StartInstancePoolExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/StartInstancePoolExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartInstancePool
      *     API.
      */
@@ -587,7 +587,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/StopInstancePoolExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/StopInstancePoolExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopInstancePool
      *     API.
      */
@@ -595,7 +595,7 @@ public interface ComputeManagement extends AutoCloseable {
 
     /**
      * Deletes (terminates) a [cluster network with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      *
      * <p>When you delete a cluster network, all of its resources are permanently deleted, including
      * associated instances and instance pools.
@@ -607,7 +607,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/TerminateClusterNetworkExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/TerminateClusterNetworkExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     TerminateClusterNetwork API.
      */
@@ -632,7 +632,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/TerminateInstancePoolExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/TerminateInstancePoolExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     TerminateInstancePool API.
      */
@@ -640,8 +640,8 @@ public interface ComputeManagement extends AutoCloseable {
 
     /**
      * Updates a [cluster network with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
-     * The OCID of the cluster network remains the same.
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm). The
+     * OCID of the cluster network remains the same.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -650,7 +650,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateClusterNetworkExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateClusterNetworkExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateClusterNetwork API.
      */
@@ -666,7 +666,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateInstanceConfiguration API.
      */
@@ -685,7 +685,7 @@ public interface ComputeManagement extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstancePoolExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstancePoolExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInstancePool
      *     API.
      */

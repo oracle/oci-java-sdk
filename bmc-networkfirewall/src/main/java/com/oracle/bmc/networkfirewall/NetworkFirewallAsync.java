@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall;
@@ -223,6 +223,24 @@ public interface NetworkFirewallAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             BulkUploadServicesRequest, BulkUploadServicesResponse>
                     handler);
+
+    /**
+     * Creates a new Tunnel Inspection Rule at bulk for the Network Firewall Policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<BulkUploadTunnelInspectionRulesResponse>
+            bulkUploadTunnelInspectionRules(
+                    BulkUploadTunnelInspectionRulesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    BulkUploadTunnelInspectionRulesRequest,
+                                    BulkUploadTunnelInspectionRulesResponse>
+                            handler);
 
     /**
      * Creates a new Url Lists at bulk for the Network Firewall Policy.
@@ -487,6 +505,22 @@ public interface NetworkFirewallAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new tunnel inspection rule for the network firewall policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateTunnelInspectionRuleResponse> createTunnelInspectionRule(
+            CreateTunnelInspectionRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateTunnelInspectionRuleRequest, CreateTunnelInspectionRuleResponse>
+                    handler);
+
+    /**
      * Creates a new Url List for the Network Firewall Policy.
      *
      * @param request The request object containing the details to send
@@ -677,6 +711,22 @@ public interface NetworkFirewallAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a tunnel inspection rule resource with the given identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteTunnelInspectionRuleResponse> deleteTunnelInspectionRule(
+            DeleteTunnelInspectionRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteTunnelInspectionRuleRequest, DeleteTunnelInspectionRuleResponse>
+                    handler);
+
+    /**
      * Deletes a Url List resource with the given identifier.
      *
      * @param request The request object containing the details to send
@@ -858,6 +908,22 @@ public interface NetworkFirewallAsync extends AutoCloseable {
     java.util.concurrent.Future<GetServiceListResponse> getServiceList(
             GetServiceListRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetServiceListRequest, GetServiceListResponse>
+                    handler);
+
+    /**
+     * Get tunnel inspection rule by the given name in the context of network firewall policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTunnelInspectionRuleResponse> getTunnelInspectionRule(
+            GetTunnelInspectionRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetTunnelInspectionRuleRequest, GetTunnelInspectionRuleResponse>
                     handler);
 
     /**
@@ -1059,6 +1125,22 @@ public interface NetworkFirewallAsync extends AutoCloseable {
     java.util.concurrent.Future<ListServicesResponse> listServices(
             ListServicesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListServicesRequest, ListServicesResponse>
+                    handler);
+
+    /**
+     * Returns a list of tunnel inspection rules for the network firewall policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTunnelInspectionRulesResponse> listTunnelInspectionRules(
+            ListTunnelInspectionRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTunnelInspectionRulesRequest, ListTunnelInspectionRulesResponse>
                     handler);
 
     /**
@@ -1314,6 +1396,22 @@ public interface NetworkFirewallAsync extends AutoCloseable {
             UpdateServiceListRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateServiceListRequest, UpdateServiceListResponse>
+                    handler);
+
+    /**
+     * Updates the tunnel inspection rule with the given name in the network firewall policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateTunnelInspectionRuleResponse> updateTunnelInspectionRule(
+            UpdateTunnelInspectionRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTunnelInspectionRuleRequest, UpdateTunnelInspectionRuleResponse>
                     handler);
 
     /**

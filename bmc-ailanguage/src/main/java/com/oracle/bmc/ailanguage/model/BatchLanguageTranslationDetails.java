@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage.model;
@@ -23,12 +23,25 @@ package com.oracle.bmc.ailanguage.model;
 public final class BatchLanguageTranslationDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"compartmentId", "targetLanguageCode", "documents"})
+    @java.beans.ConstructorProperties({
+        "alias",
+        "endpointId",
+        "noTranslate",
+        "compartmentId",
+        "targetLanguageCode",
+        "documents"
+    })
     public BatchLanguageTranslationDetails(
+            String alias,
+            String endpointId,
+            java.util.List<String> noTranslate,
             String compartmentId,
             String targetLanguageCode,
             java.util.List<TextDocument> documents) {
         super();
+        this.alias = alias;
+        this.endpointId = endpointId;
+        this.noTranslate = noTranslate;
         this.compartmentId = compartmentId;
         this.targetLanguageCode = targetLanguageCode;
         this.documents = documents;
@@ -36,15 +49,60 @@ public final class BatchLanguageTranslationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /** Unique name to identify an endpoint to be used for inferencing */
+        @com.fasterxml.jackson.annotation.JsonProperty("alias")
+        private String alias;
+
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Unique name to identify an endpoint to be used for inferencing
+         *
+         * @param alias the value to set
+         * @return this builder
+         */
+        public Builder alias(String alias) {
+            this.alias = alias;
+            this.__explicitlySet__.add("alias");
+            return this;
+        }
+        /** The endpoint that has to be used for inferencing. */
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+        private String endpointId;
+
+        /**
+         * The endpoint that has to be used for inferencing.
+         *
+         * @param endpointId the value to set
+         * @return this builder
+         */
+        public Builder endpointId(String endpointId) {
+            this.endpointId = endpointId;
+            this.__explicitlySet__.add("endpointId");
+            return this;
+        }
+        /** List of words not to be translated */
+        @com.fasterxml.jackson.annotation.JsonProperty("noTranslate")
+        private java.util.List<String> noTranslate;
+
+        /**
+         * List of words not to be translated
+         *
+         * @param noTranslate the value to set
+         * @return this builder
+         */
+        public Builder noTranslate(java.util.List<String> noTranslate) {
+            this.noTranslate = noTranslate;
+            this.__explicitlySet__.add("noTranslate");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that calls the API, inference will be served from pre trained model
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that calls the API, inference will be served from pre trained model
          *
          * @param compartmentId the value to set
@@ -56,23 +114,23 @@ public final class BatchLanguageTranslationDetails
             return this;
         }
         /**
-         * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
-         * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi :
-         * Finnish - fr : French - fr-CA : Canadian French - de : German - it : Italian - ja :
-         * Japanese - ko : Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN :
-         * Simplified Chinese - es : Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr :
-         * Turkish - el : Greek - he : Hebrew
+         * Language code supported Arabic - ar Brazilian Portuguese - pt-BR Canadian French - fr-CA
+         * Croatian - hr Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr
+         * German - de Greek - el Hebrew - he Hungarian - hu Italian - it Japanese - ja Korean - ko
+         * Norwegian - no Polish - pl Portuguese - pt Romanian - ro Russian - ru Simplified Chinese
+         * - zh-CN Slovak - sk Slovenian - sl Spanish - es Swedish - sv Thai - th Traditional
+         * Chinese - zh-TW Turkish - tr Vietnamese - vi
          */
         @com.fasterxml.jackson.annotation.JsonProperty("targetLanguageCode")
         private String targetLanguageCode;
 
         /**
-         * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
-         * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi :
-         * Finnish - fr : French - fr-CA : Canadian French - de : German - it : Italian - ja :
-         * Japanese - ko : Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN :
-         * Simplified Chinese - es : Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr :
-         * Turkish - el : Greek - he : Hebrew
+         * Language code supported Arabic - ar Brazilian Portuguese - pt-BR Canadian French - fr-CA
+         * Croatian - hr Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr
+         * German - de Greek - el Hebrew - he Hungarian - hu Italian - it Japanese - ja Korean - ko
+         * Norwegian - no Polish - pl Portuguese - pt Romanian - ro Russian - ru Simplified Chinese
+         * - zh-CN Slovak - sk Slovenian - sl Spanish - es Swedish - sv Thai - th Traditional
+         * Chinese - zh-TW Turkish - tr Vietnamese - vi
          *
          * @param targetLanguageCode the value to set
          * @return this builder
@@ -104,7 +162,12 @@ public final class BatchLanguageTranslationDetails
         public BatchLanguageTranslationDetails build() {
             BatchLanguageTranslationDetails model =
                     new BatchLanguageTranslationDetails(
-                            this.compartmentId, this.targetLanguageCode, this.documents);
+                            this.alias,
+                            this.endpointId,
+                            this.noTranslate,
+                            this.compartmentId,
+                            this.targetLanguageCode,
+                            this.documents);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -113,6 +176,15 @@ public final class BatchLanguageTranslationDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BatchLanguageTranslationDetails model) {
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
+            }
+            if (model.wasPropertyExplicitlySet("endpointId")) {
+                this.endpointId(model.getEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("noTranslate")) {
+                this.noTranslate(model.getNoTranslate());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -135,15 +207,54 @@ public final class BatchLanguageTranslationDetails
         return new Builder().copy(this);
     }
 
+    /** Unique name to identify an endpoint to be used for inferencing */
+    @com.fasterxml.jackson.annotation.JsonProperty("alias")
+    private final String alias;
+
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Unique name to identify an endpoint to be used for inferencing
+     *
+     * @return the value
+     */
+    public String getAlias() {
+        return alias;
+    }
+
+    /** The endpoint that has to be used for inferencing. */
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+    private final String endpointId;
+
+    /**
+     * The endpoint that has to be used for inferencing.
+     *
+     * @return the value
+     */
+    public String getEndpointId() {
+        return endpointId;
+    }
+
+    /** List of words not to be translated */
+    @com.fasterxml.jackson.annotation.JsonProperty("noTranslate")
+    private final java.util.List<String> noTranslate;
+
+    /**
+     * List of words not to be translated
+     *
+     * @return the value
+     */
+    public java.util.List<String> getNoTranslate() {
+        return noTranslate;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that calls the API, inference will be served from pre trained model
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that calls the API, inference will be served from pre trained model
      *
      * @return the value
@@ -153,23 +264,23 @@ public final class BatchLanguageTranslationDetails
     }
 
     /**
-     * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
-     * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi : Finnish -
-     * fr : French - fr-CA : Canadian French - de : German - it : Italian - ja : Japanese - ko :
-     * Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN : Simplified Chinese - es :
-     * Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr : Turkish - el : Greek - he :
-     * Hebrew
+     * Language code supported Arabic - ar Brazilian Portuguese - pt-BR Canadian French - fr-CA
+     * Croatian - hr Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr German
+     * - de Greek - el Hebrew - he Hungarian - hu Italian - it Japanese - ja Korean - ko Norwegian -
+     * no Polish - pl Portuguese - pt Romanian - ro Russian - ru Simplified Chinese - zh-CN Slovak -
+     * sk Slovenian - sl Spanish - es Swedish - sv Thai - th Traditional Chinese - zh-TW Turkish -
+     * tr Vietnamese - vi
      */
     @com.fasterxml.jackson.annotation.JsonProperty("targetLanguageCode")
     private final String targetLanguageCode;
 
     /**
-     * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
-     * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi : Finnish -
-     * fr : French - fr-CA : Canadian French - de : German - it : Italian - ja : Japanese - ko :
-     * Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN : Simplified Chinese - es :
-     * Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr : Turkish - el : Greek - he :
-     * Hebrew
+     * Language code supported Arabic - ar Brazilian Portuguese - pt-BR Canadian French - fr-CA
+     * Croatian - hr Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr German
+     * - de Greek - el Hebrew - he Hungarian - hu Italian - it Japanese - ja Korean - ko Norwegian -
+     * no Polish - pl Portuguese - pt Romanian - ro Russian - ru Simplified Chinese - zh-CN Slovak -
+     * sk Slovenian - sl Spanish - es Swedish - sv Thai - th Traditional Chinese - zh-TW Turkish -
+     * tr Vietnamese - vi
      *
      * @return the value
      */
@@ -205,7 +316,10 @@ public final class BatchLanguageTranslationDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BatchLanguageTranslationDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append("alias=").append(String.valueOf(this.alias));
+        sb.append(", endpointId=").append(String.valueOf(this.endpointId));
+        sb.append(", noTranslate=").append(String.valueOf(this.noTranslate));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", targetLanguageCode=").append(String.valueOf(this.targetLanguageCode));
         sb.append(", documents=").append(String.valueOf(this.documents));
         sb.append(")");
@@ -222,7 +336,10 @@ public final class BatchLanguageTranslationDetails
         }
 
         BatchLanguageTranslationDetails other = (BatchLanguageTranslationDetails) o;
-        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+        return java.util.Objects.equals(this.alias, other.alias)
+                && java.util.Objects.equals(this.endpointId, other.endpointId)
+                && java.util.Objects.equals(this.noTranslate, other.noTranslate)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.targetLanguageCode, other.targetLanguageCode)
                 && java.util.Objects.equals(this.documents, other.documents)
                 && super.equals(other);
@@ -232,6 +349,9 @@ public final class BatchLanguageTranslationDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
+        result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
+        result = (result * PRIME) + (this.noTranslate == null ? 43 : this.noTranslate.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

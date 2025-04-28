@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Summary information for a software package. <br>
+ * Provides summary information for a software package. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,18 +32,20 @@ public final class SoftwarePackageSummary
         "checksum",
         "checksumType",
         "isLatest",
-        "softwareSources"
+        "softwareSources",
+        "osFamilies"
     })
     public SoftwarePackageSummary(
             String displayName,
             String name,
             String type,
             String version,
-            String architecture,
+            SoftwarePackageArchitecture architecture,
             String checksum,
             String checksumType,
             Boolean isLatest,
-            java.util.List<SoftwareSourceDetails> softwareSources) {
+            java.util.List<SoftwareSourceDetails> softwareSources,
+            java.util.List<OsFamily> osFamilies) {
         super();
         this.displayName = displayName;
         this.name = name;
@@ -54,6 +56,7 @@ public final class SoftwarePackageSummary
         this.checksumType = checksumType;
         this.isLatest = isLatest;
         this.softwareSources = softwareSources;
+        this.osFamilies = osFamilies;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -73,12 +76,12 @@ public final class SoftwarePackageSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Unique identifier for the package. NOTE - This is not an OCID. */
+        /** Unique identifier for the package. Note that this is not an OCID. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique identifier for the package. NOTE - This is not an OCID.
+         * Unique identifier for the package. Note that this is not an OCID.
          *
          * @param name the value to set
          * @return this builder
@@ -120,7 +123,7 @@ public final class SoftwarePackageSummary
         }
         /** The architecture for which this software was built. */
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
-        private String architecture;
+        private SoftwarePackageArchitecture architecture;
 
         /**
          * The architecture for which this software was built.
@@ -128,7 +131,7 @@ public final class SoftwarePackageSummary
          * @param architecture the value to set
          * @return this builder
          */
-        public Builder architecture(String architecture) {
+        public Builder architecture(SoftwarePackageArchitecture architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
@@ -178,12 +181,16 @@ public final class SoftwarePackageSummary
             this.__explicitlySet__.add("isLatest");
             return this;
         }
-        /** List of software sources that provide the software package. */
+        /**
+         * List of software sources that provide the software package. This property is deprecated
+         * and it will be removed in a future API release.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
         private java.util.List<SoftwareSourceDetails> softwareSources;
 
         /**
-         * List of software sources that provide the software package.
+         * List of software sources that provide the software package. This property is deprecated
+         * and it will be removed in a future API release.
          *
          * @param softwareSources the value to set
          * @return this builder
@@ -191,6 +198,21 @@ public final class SoftwarePackageSummary
         public Builder softwareSources(java.util.List<SoftwareSourceDetails> softwareSources) {
             this.softwareSources = softwareSources;
             this.__explicitlySet__.add("softwareSources");
+            return this;
+        }
+        /** The OS families the package belongs to. */
+        @com.fasterxml.jackson.annotation.JsonProperty("osFamilies")
+        private java.util.List<OsFamily> osFamilies;
+
+        /**
+         * The OS families the package belongs to.
+         *
+         * @param osFamilies the value to set
+         * @return this builder
+         */
+        public Builder osFamilies(java.util.List<OsFamily> osFamilies) {
+            this.osFamilies = osFamilies;
+            this.__explicitlySet__.add("osFamilies");
             return this;
         }
 
@@ -208,7 +230,8 @@ public final class SoftwarePackageSummary
                             this.checksum,
                             this.checksumType,
                             this.isLatest,
-                            this.softwareSources);
+                            this.softwareSources,
+                            this.osFamilies);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -244,6 +267,9 @@ public final class SoftwarePackageSummary
             if (model.wasPropertyExplicitlySet("softwareSources")) {
                 this.softwareSources(model.getSoftwareSources());
             }
+            if (model.wasPropertyExplicitlySet("osFamilies")) {
+                this.osFamilies(model.getOsFamilies());
+            }
             return this;
         }
     }
@@ -270,12 +296,12 @@ public final class SoftwarePackageSummary
         return displayName;
     }
 
-    /** Unique identifier for the package. NOTE - This is not an OCID. */
+    /** Unique identifier for the package. Note that this is not an OCID. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique identifier for the package. NOTE - This is not an OCID.
+     * Unique identifier for the package. Note that this is not an OCID.
      *
      * @return the value
      */
@@ -311,14 +337,14 @@ public final class SoftwarePackageSummary
 
     /** The architecture for which this software was built. */
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
-    private final String architecture;
+    private final SoftwarePackageArchitecture architecture;
 
     /**
      * The architecture for which this software was built.
      *
      * @return the value
      */
-    public String getArchitecture() {
+    public SoftwarePackageArchitecture getArchitecture() {
         return architecture;
     }
 
@@ -361,17 +387,34 @@ public final class SoftwarePackageSummary
         return isLatest;
     }
 
-    /** List of software sources that provide the software package. */
+    /**
+     * List of software sources that provide the software package. This property is deprecated and
+     * it will be removed in a future API release.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
     private final java.util.List<SoftwareSourceDetails> softwareSources;
 
     /**
-     * List of software sources that provide the software package.
+     * List of software sources that provide the software package. This property is deprecated and
+     * it will be removed in a future API release.
      *
      * @return the value
      */
     public java.util.List<SoftwareSourceDetails> getSoftwareSources() {
         return softwareSources;
+    }
+
+    /** The OS families the package belongs to. */
+    @com.fasterxml.jackson.annotation.JsonProperty("osFamilies")
+    private final java.util.List<OsFamily> osFamilies;
+
+    /**
+     * The OS families the package belongs to.
+     *
+     * @return the value
+     */
+    public java.util.List<OsFamily> getOsFamilies() {
+        return osFamilies;
     }
 
     @Override
@@ -398,6 +441,7 @@ public final class SoftwarePackageSummary
         sb.append(", checksumType=").append(String.valueOf(this.checksumType));
         sb.append(", isLatest=").append(String.valueOf(this.isLatest));
         sb.append(", softwareSources=").append(String.valueOf(this.softwareSources));
+        sb.append(", osFamilies=").append(String.valueOf(this.osFamilies));
         sb.append(")");
         return sb.toString();
     }
@@ -421,6 +465,7 @@ public final class SoftwarePackageSummary
                 && java.util.Objects.equals(this.checksumType, other.checksumType)
                 && java.util.Objects.equals(this.isLatest, other.isLatest)
                 && java.util.Objects.equals(this.softwareSources, other.softwareSources)
+                && java.util.Objects.equals(this.osFamilies, other.osFamilies)
                 && super.equals(other);
     }
 
@@ -439,6 +484,7 @@ public final class SoftwarePackageSummary
         result =
                 (result * PRIME)
                         + (this.softwareSources == null ? 43 : this.softwareSources.hashCode());
+        result = (result * PRIME) + (this.osFamilies == null ? 43 : this.osFamilies.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

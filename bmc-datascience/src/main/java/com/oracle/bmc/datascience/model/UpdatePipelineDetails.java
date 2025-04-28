@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -27,7 +27,9 @@ public final class UpdatePipelineDetails
         "displayName",
         "description",
         "configurationDetails",
+        "infrastructureConfigurationDetails",
         "logConfigurationDetails",
+        "storageMountConfigurationDetailsList",
         "stepDetails",
         "freeformTags",
         "definedTags"
@@ -36,7 +38,9 @@ public final class UpdatePipelineDetails
             String displayName,
             String description,
             PipelineConfigurationDetails configurationDetails,
+            PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails,
             PipelineLogConfigurationDetails logConfigurationDetails,
+            java.util.List<StorageMountConfigurationDetails> storageMountConfigurationDetailsList,
             java.util.List<PipelineStepUpdateDetails> stepDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -44,7 +48,9 @@ public final class UpdatePipelineDetails
         this.displayName = displayName;
         this.description = description;
         this.configurationDetails = configurationDetails;
+        this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
         this.logConfigurationDetails = logConfigurationDetails;
+        this.storageMountConfigurationDetailsList = storageMountConfigurationDetailsList;
         this.stepDetails = stepDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -92,6 +98,16 @@ public final class UpdatePipelineDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("infrastructureConfigurationDetails")
+        private PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails;
+
+        public Builder infrastructureConfigurationDetails(
+                PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails) {
+            this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
+            this.__explicitlySet__.add("infrastructureConfigurationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("logConfigurationDetails")
         private PipelineLogConfigurationDetails logConfigurationDetails;
 
@@ -101,16 +117,34 @@ public final class UpdatePipelineDetails
             this.__explicitlySet__.add("logConfigurationDetails");
             return this;
         }
+        /** The storage mount details to mount to the instance running the pipeline step. */
+        @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                storageMountConfigurationDetailsList;
+
         /**
-         * Array of update details for each step. Only step configurations are allowed to be
-         * updated.
+         * The storage mount details to mount to the instance running the pipeline step.
+         *
+         * @param storageMountConfigurationDetailsList the value to set
+         * @return this builder
+         */
+        public Builder storageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        storageMountConfigurationDetailsList) {
+            this.storageMountConfigurationDetailsList = storageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("storageMountConfigurationDetailsList");
+            return this;
+        }
+        /**
+         * Array of update details for each step. Only step configurations and step infrastructure
+         * configurations are allowed to be updated.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
         private java.util.List<PipelineStepUpdateDetails> stepDetails;
 
         /**
-         * Array of update details for each step. Only step configurations are allowed to be
-         * updated.
+         * Array of update details for each step. Only step configurations and step infrastructure
+         * configurations are allowed to be updated.
          *
          * @param stepDetails the value to set
          * @return this builder
@@ -123,7 +157,7 @@ public final class UpdatePipelineDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -132,7 +166,7 @@ public final class UpdatePipelineDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -145,7 +179,7 @@ public final class UpdatePipelineDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -153,7 +187,7 @@ public final class UpdatePipelineDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -175,7 +209,9 @@ public final class UpdatePipelineDetails
                             this.displayName,
                             this.description,
                             this.configurationDetails,
+                            this.infrastructureConfigurationDetails,
                             this.logConfigurationDetails,
+                            this.storageMountConfigurationDetailsList,
                             this.stepDetails,
                             this.freeformTags,
                             this.definedTags);
@@ -196,8 +232,16 @@ public final class UpdatePipelineDetails
             if (model.wasPropertyExplicitlySet("configurationDetails")) {
                 this.configurationDetails(model.getConfigurationDetails());
             }
+            if (model.wasPropertyExplicitlySet("infrastructureConfigurationDetails")) {
+                this.infrastructureConfigurationDetails(
+                        model.getInfrastructureConfigurationDetails());
+            }
             if (model.wasPropertyExplicitlySet("logConfigurationDetails")) {
                 this.logConfigurationDetails(model.getLogConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("storageMountConfigurationDetailsList")) {
+                this.storageMountConfigurationDetailsList(
+                        model.getStorageMountConfigurationDetailsList());
             }
             if (model.wasPropertyExplicitlySet("stepDetails")) {
                 this.stepDetails(model.getStepDetails());
@@ -254,6 +298,13 @@ public final class UpdatePipelineDetails
         return configurationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("infrastructureConfigurationDetails")
+    private final PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails;
+
+    public PipelineInfrastructureConfigurationDetails getInfrastructureConfigurationDetails() {
+        return infrastructureConfigurationDetails;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("logConfigurationDetails")
     private final PipelineLogConfigurationDetails logConfigurationDetails;
 
@@ -261,14 +312,31 @@ public final class UpdatePipelineDetails
         return logConfigurationDetails;
     }
 
+    /** The storage mount details to mount to the instance running the pipeline step. */
+    @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            storageMountConfigurationDetailsList;
+
     /**
-     * Array of update details for each step. Only step configurations are allowed to be updated.
+     * The storage mount details to mount to the instance running the pipeline step.
+     *
+     * @return the value
+     */
+    public java.util.List<StorageMountConfigurationDetails>
+            getStorageMountConfigurationDetailsList() {
+        return storageMountConfigurationDetailsList;
+    }
+
+    /**
+     * Array of update details for each step. Only step configurations and step infrastructure
+     * configurations are allowed to be updated.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
     private final java.util.List<PipelineStepUpdateDetails> stepDetails;
 
     /**
-     * Array of update details for each step. Only step configurations are allowed to be updated.
+     * Array of update details for each step. Only step configurations and step infrastructure
+     * configurations are allowed to be updated.
      *
      * @return the value
      */
@@ -279,7 +347,7 @@ public final class UpdatePipelineDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -288,7 +356,7 @@ public final class UpdatePipelineDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -299,7 +367,7 @@ public final class UpdatePipelineDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -307,7 +375,7 @@ public final class UpdatePipelineDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -334,8 +402,12 @@ public final class UpdatePipelineDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", configurationDetails=").append(String.valueOf(this.configurationDetails));
+        sb.append(", infrastructureConfigurationDetails=")
+                .append(String.valueOf(this.infrastructureConfigurationDetails));
         sb.append(", logConfigurationDetails=")
                 .append(String.valueOf(this.logConfigurationDetails));
+        sb.append(", storageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.storageMountConfigurationDetailsList));
         sb.append(", stepDetails=").append(String.valueOf(this.stepDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -357,7 +429,13 @@ public final class UpdatePipelineDetails
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.configurationDetails, other.configurationDetails)
                 && java.util.Objects.equals(
+                        this.infrastructureConfigurationDetails,
+                        other.infrastructureConfigurationDetails)
+                && java.util.Objects.equals(
                         this.logConfigurationDetails, other.logConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.storageMountConfigurationDetailsList,
+                        other.storageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.stepDetails, other.stepDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -377,9 +455,19 @@ public final class UpdatePipelineDetails
                                 : this.configurationDetails.hashCode());
         result =
                 (result * PRIME)
+                        + (this.infrastructureConfigurationDetails == null
+                                ? 43
+                                : this.infrastructureConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
                         + (this.logConfigurationDetails == null
                                 ? 43
                                 : this.logConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.storageMountConfigurationDetailsList.hashCode());
         result = (result * PRIME) + (this.stepDetails == null ? 43 : this.stepDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

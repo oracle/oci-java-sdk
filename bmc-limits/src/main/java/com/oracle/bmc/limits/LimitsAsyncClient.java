@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.limits;
@@ -123,6 +123,7 @@ public class LimitsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .appendPathParam("resourceAvailability")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("subscriptionId", request.getSubscriptionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -153,6 +154,7 @@ public class LimitsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .appendPathParam("20190729")
                 .appendPathParam("limitDefinitions")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("subscriptionId", request.getSubscriptionId())
                 .appendQueryParam("serviceName", request.getServiceName())
                 .appendQueryParam("name", request.getName())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
@@ -193,6 +195,7 @@ public class LimitsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .appendPathParam("20190729")
                 .appendPathParam("limitValues")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("subscriptionId", request.getSubscriptionId())
                 .appendQueryParam("serviceName", request.getServiceName())
                 .appendEnumQueryParam("scopeType", request.getScopeType())
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
@@ -236,6 +239,7 @@ public class LimitsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("subscriptionId", request.getSubscriptionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(

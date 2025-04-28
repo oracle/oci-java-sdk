@@ -1,11 +1,16 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The meta-data specific on particular deployment type represented by deploymentType field. <br>
+ * The meta-data specific on particular deployment type represented by deploymentType field.
+ *
+ * <p>Deprecated properties: {@code sourceTechnologies} and {@code targetTechnologies} are not
+ * populated. They will be removed after September 15 2025. The list of supported source and target
+ * technologies can be accessed using the url provided in {@code supportedTechnologiesUrl} property.
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,10 +37,11 @@ public final class DeploymentTypeSummary
         "targetTechnologies",
         "oggVersion",
         "supportedTechnologiesUrl",
-        "defaultUsername"
+        "defaultUsername",
+        "supportedCapabilities"
     })
     public DeploymentTypeSummary(
-            Category category,
+            DeploymentCategory category,
             String displayName,
             DeploymentType deploymentType,
             java.util.List<ConnectionType> connectionTypes,
@@ -43,7 +49,8 @@ public final class DeploymentTypeSummary
             java.util.List<String> targetTechnologies,
             String oggVersion,
             String supportedTechnologiesUrl,
-            String defaultUsername) {
+            String defaultUsername,
+            java.util.List<SupportedCapabilities> supportedCapabilities) {
         super();
         this.category = category;
         this.displayName = displayName;
@@ -54,6 +61,7 @@ public final class DeploymentTypeSummary
         this.oggVersion = oggVersion;
         this.supportedTechnologiesUrl = supportedTechnologiesUrl;
         this.defaultUsername = defaultUsername;
+        this.supportedCapabilities = supportedCapabilities;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -64,7 +72,7 @@ public final class DeploymentTypeSummary
          * 'DATA_TRANSFORMS'.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
-        private Category category;
+        private DeploymentCategory category;
 
         /**
          * The deployment category defines the broad separation of the deployment type into three
@@ -74,7 +82,7 @@ public final class DeploymentTypeSummary
          * @param category the value to set
          * @return this builder
          */
-        public Builder category(Category category) {
+        public Builder category(DeploymentCategory category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
@@ -221,6 +229,22 @@ public final class DeploymentTypeSummary
             this.__explicitlySet__.add("defaultUsername");
             return this;
         }
+        /** Specifies supported capabilities or features by a deployment type . */
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedCapabilities")
+        private java.util.List<SupportedCapabilities> supportedCapabilities;
+
+        /**
+         * Specifies supported capabilities or features by a deployment type .
+         *
+         * @param supportedCapabilities the value to set
+         * @return this builder
+         */
+        public Builder supportedCapabilities(
+                java.util.List<SupportedCapabilities> supportedCapabilities) {
+            this.supportedCapabilities = supportedCapabilities;
+            this.__explicitlySet__.add("supportedCapabilities");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -236,7 +260,8 @@ public final class DeploymentTypeSummary
                             this.targetTechnologies,
                             this.oggVersion,
                             this.supportedTechnologiesUrl,
-                            this.defaultUsername);
+                            this.defaultUsername,
+                            this.supportedCapabilities);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -272,6 +297,9 @@ public final class DeploymentTypeSummary
             if (model.wasPropertyExplicitlySet("defaultUsername")) {
                 this.defaultUsername(model.getDefaultUsername());
             }
+            if (model.wasPropertyExplicitlySet("supportedCapabilities")) {
+                this.supportedCapabilities(model.getSupportedCapabilities());
+            }
             return this;
         }
     }
@@ -290,59 +318,8 @@ public final class DeploymentTypeSummary
      * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
      * 'DATA_TRANSFORMS'.
      */
-    public enum Category implements com.oracle.bmc.http.internal.BmcEnum {
-        DataReplication("DATA_REPLICATION"),
-        StreamAnalytics("STREAM_ANALYTICS"),
-        DataTransforms("DATA_TRANSFORMS"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(Category.class);
-
-        private final String value;
-        private static java.util.Map<String, Category> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (Category v : Category.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        Category(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static Category create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Category', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * The deployment category defines the broad separation of the deployment type into three
-     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-     * 'DATA_TRANSFORMS'.
-     */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
-    private final Category category;
+    private final DeploymentCategory category;
 
     /**
      * The deployment category defines the broad separation of the deployment type into three
@@ -351,7 +328,7 @@ public final class DeploymentTypeSummary
      *
      * @return the value
      */
-    public Category getCategory() {
+    public DeploymentCategory getCategory() {
         return category;
     }
 
@@ -477,6 +454,19 @@ public final class DeploymentTypeSummary
         return defaultUsername;
     }
 
+    /** Specifies supported capabilities or features by a deployment type . */
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedCapabilities")
+    private final java.util.List<SupportedCapabilities> supportedCapabilities;
+
+    /**
+     * Specifies supported capabilities or features by a deployment type .
+     *
+     * @return the value
+     */
+    public java.util.List<SupportedCapabilities> getSupportedCapabilities() {
+        return supportedCapabilities;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -502,6 +492,7 @@ public final class DeploymentTypeSummary
         sb.append(", supportedTechnologiesUrl=")
                 .append(String.valueOf(this.supportedTechnologiesUrl));
         sb.append(", defaultUsername=").append(String.valueOf(this.defaultUsername));
+        sb.append(", supportedCapabilities=").append(String.valueOf(this.supportedCapabilities));
         sb.append(")");
         return sb.toString();
     }
@@ -526,6 +517,7 @@ public final class DeploymentTypeSummary
                 && java.util.Objects.equals(
                         this.supportedTechnologiesUrl, other.supportedTechnologiesUrl)
                 && java.util.Objects.equals(this.defaultUsername, other.defaultUsername)
+                && java.util.Objects.equals(this.supportedCapabilities, other.supportedCapabilities)
                 && super.equals(other);
     }
 
@@ -560,6 +552,11 @@ public final class DeploymentTypeSummary
         result =
                 (result * PRIME)
                         + (this.defaultUsername == null ? 43 : this.defaultUsername.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedCapabilities == null
+                                ? 43
+                                : this.supportedCapabilities.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

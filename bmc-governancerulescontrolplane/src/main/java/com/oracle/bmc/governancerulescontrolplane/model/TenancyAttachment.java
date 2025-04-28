@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.governancerulescontrolplane.model;
@@ -57,7 +57,7 @@ public final class TenancyAttachment
     public static class Builder {
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * tenancy attachment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -65,7 +65,7 @@ public final class TenancyAttachment
 
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * tenancy attachment.
          *
          * @param id the value to set
@@ -78,7 +78,7 @@ public final class TenancyAttachment
         }
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * root compartment containing the tenancy attachment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -86,7 +86,7 @@ public final class TenancyAttachment
 
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * root compartment containing the tenancy attachment.
          *
          * @param compartmentId the value to set
@@ -99,7 +99,7 @@ public final class TenancyAttachment
         }
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * governance rule. Every tenancy attachment is associated with a governance rule.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("governanceRuleId")
@@ -107,7 +107,7 @@ public final class TenancyAttachment
 
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * governance rule. Every tenancy attachment is associated with a governance rule.
          *
          * @param governanceRuleId the value to set
@@ -120,7 +120,7 @@ public final class TenancyAttachment
         }
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * tenancy to which the governance rule is attached.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
@@ -128,7 +128,7 @@ public final class TenancyAttachment
 
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * tenancy to which the governance rule is attached.
          *
          * @param tenancyId the value to set
@@ -280,17 +280,15 @@ public final class TenancyAttachment
     }
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * tenancy attachment.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the tenancy attachment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * tenancy attachment.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the tenancy attachment.
      *
      * @return the value
      */
@@ -299,17 +297,15 @@ public final class TenancyAttachment
     }
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the root
-     * compartment containing the tenancy attachment.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the root compartment containing the tenancy attachment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the root
-     * compartment containing the tenancy attachment.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the root compartment containing the tenancy attachment.
      *
      * @return the value
      */
@@ -318,17 +314,15 @@ public final class TenancyAttachment
     }
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * governance rule. Every tenancy attachment is associated with a governance rule.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the governance rule. Every tenancy attachment is associated with a governance rule.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("governanceRuleId")
     private final String governanceRuleId;
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * governance rule. Every tenancy attachment is associated with a governance rule.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the governance rule. Every tenancy attachment is associated with a governance rule.
      *
      * @return the value
      */
@@ -337,17 +331,15 @@ public final class TenancyAttachment
     }
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * tenancy to which the governance rule is attached.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the tenancy to which the governance rule is attached.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * tenancy to which the governance rule is attached.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the tenancy to which the governance rule is attached.
      *
      * @return the value
      */

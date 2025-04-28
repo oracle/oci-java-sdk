@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -171,6 +171,33 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /** The Elasticsearch technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private ElasticsearchConnection.TechnologyType technologyType;
@@ -261,6 +288,31 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("username");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -284,11 +336,15 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
                             this.ingressIps,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
+                            this.locks,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.servers,
                             this.securityProtocol,
                             this.authenticationType,
-                            this.username);
+                            this.username,
+                            this.passwordSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -345,6 +401,15 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -359,6 +424,9 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
             }
             if (model.wasPropertyExplicitlySet("username")) {
                 this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
             }
             return this;
         }
@@ -391,11 +459,15 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
+            java.util.List<ResourceLock> locks,
+            Boolean doesUseSecretIds,
             ElasticsearchConnection.TechnologyType technologyType,
             String servers,
             ElasticsearchConnection.SecurityProtocol securityProtocol,
             ElasticsearchConnection.AuthenticationType authenticationType,
-            String username) {
+            String username,
+            String passwordSecretId) {
         super(
                 id,
                 displayName,
@@ -412,12 +484,16 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
                 keyId,
                 ingressIps,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod,
+                locks,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.servers = servers;
         this.securityProtocol = securityProtocol;
         this.authenticationType = authenticationType;
         this.username = username;
+        this.passwordSecretId = passwordSecretId;
     }
 
     /** The Elasticsearch technology type. */
@@ -499,6 +575,29 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
         return username;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -519,6 +618,7 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -538,6 +638,7 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && super.equals(other);
     }
 
@@ -558,6 +659,9 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
                                 ? 43
                                 : this.authenticationType.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.accessgovernancecp;
@@ -151,11 +151,11 @@ public class AccessGovernanceCPClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeGovernanceInstanceCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -179,6 +179,7 @@ public class AccessGovernanceCPClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.accessgovernancecp.model.GovernanceInstance.class,
@@ -189,7 +190,6 @@ public class AccessGovernanceCPClient extends com.oracle.bmc.http.internal.BaseS
                         CreateGovernanceInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateGovernanceInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -215,12 +215,12 @@ public class AccessGovernanceCPClient extends com.oracle.bmc.http.internal.BaseS
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteGovernanceInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteGovernanceInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -244,13 +244,13 @@ public class AccessGovernanceCPClient extends com.oracle.bmc.http.internal.BaseS
                 .appendPathParam(request.getGovernanceInstanceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.accessgovernancecp.model.GovernanceInstance.class,
                         GetGovernanceInstanceResponse.Builder::governanceInstance)
                 .handleResponseHeaderString("etag", GetGovernanceInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetGovernanceInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -273,6 +273,7 @@ public class AccessGovernanceCPClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.accessgovernancecp.model.GovernanceInstanceConfiguration
                                 .class,
@@ -283,7 +284,6 @@ public class AccessGovernanceCPClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetGovernanceInstanceConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -312,6 +312,7 @@ public class AccessGovernanceCPClient extends com.oracle.bmc.http.internal.BaseS
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.accessgovernancecp.model.GovernanceInstanceCollection.class,
                         ListGovernanceInstancesResponse.Builder::governanceInstanceCollection)
@@ -319,7 +320,6 @@ public class AccessGovernanceCPClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListGovernanceInstancesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListGovernanceInstancesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -347,6 +347,7 @@ public class AccessGovernanceCPClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.accessgovernancecp.model.GovernanceInstance.class,
@@ -357,7 +358,6 @@ public class AccessGovernanceCPClient extends com.oracle.bmc.http.internal.BaseS
                         UpdateGovernanceInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateGovernanceInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -385,6 +385,7 @@ public class AccessGovernanceCPClient extends com.oracle.bmc.http.internal.BaseS
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.accessgovernancecp.model.GovernanceInstanceConfiguration
@@ -399,7 +400,6 @@ public class AccessGovernanceCPClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateGovernanceInstanceConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

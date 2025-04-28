@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.recovery.model;
@@ -42,6 +42,7 @@ public final class ProtectedDatabaseSummary
         "vpcUserName",
         "databaseSize",
         "protectionPolicyId",
+        "policyLockedDateTime",
         "recoveryServiceSubnets",
         "databaseId",
         "timeCreated",
@@ -52,6 +53,7 @@ public final class ProtectedDatabaseSummary
         "healthDetails",
         "isReadOnlyResource",
         "metrics",
+        "subscriptionId",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -64,6 +66,7 @@ public final class ProtectedDatabaseSummary
             String vpcUserName,
             DatabaseSizes databaseSize,
             String protectionPolicyId,
+            String policyLockedDateTime,
             java.util.List<RecoveryServiceSubnetDetails> recoveryServiceSubnets,
             String databaseId,
             java.util.Date timeCreated,
@@ -74,6 +77,7 @@ public final class ProtectedDatabaseSummary
             String healthDetails,
             Boolean isReadOnlyResource,
             MetricsSummary metrics,
+            String subscriptionId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -85,6 +89,7 @@ public final class ProtectedDatabaseSummary
         this.vpcUserName = vpcUserName;
         this.databaseSize = databaseSize;
         this.protectionPolicyId = protectionPolicyId;
+        this.policyLockedDateTime = policyLockedDateTime;
         this.recoveryServiceSubnets = recoveryServiceSubnets;
         this.databaseId = databaseId;
         this.timeCreated = timeCreated;
@@ -95,6 +100,7 @@ public final class ProtectedDatabaseSummary
         this.healthDetails = healthDetails;
         this.isReadOnlyResource = isReadOnlyResource;
         this.metrics = metrics;
+        this.subscriptionId = subscriptionId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -221,6 +227,39 @@ public final class ProtectedDatabaseSummary
         public Builder protectionPolicyId(String protectionPolicyId) {
             this.protectionPolicyId = protectionPolicyId;
             this.__explicitlySet__.add("protectionPolicyId");
+            return this;
+        }
+        /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the
+         * retention lock to take effect and permanently lock the retention period defined in the
+         * policy.
+         *
+         * <p>The retention lock feature controls whether Recovery Service strictly preserves
+         * backups for the duration defined in a policy. Retention lock is useful to enforce
+         * recovery window compliance and to prevent unintentional modifications to protected
+         * database backups. Recovery Service enforces a 14-day delay before the retention lock set
+         * for a policy can take effect.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+        private String policyLockedDateTime;
+
+        /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the
+         * retention lock to take effect and permanently lock the retention period defined in the
+         * policy.
+         *
+         * <p>The retention lock feature controls whether Recovery Service strictly preserves
+         * backups for the duration defined in a policy. Retention lock is useful to enforce
+         * recovery window compliance and to prevent unintentional modifications to protected
+         * database backups. Recovery Service enforces a 14-day delay before the retention lock set
+         * for a policy can take effect.
+         *
+         * @param policyLockedDateTime the value to set
+         * @return this builder
+         */
+        public Builder policyLockedDateTime(String policyLockedDateTime) {
+            this.policyLockedDateTime = policyLockedDateTime;
+            this.__explicitlySet__.add("policyLockedDateTime");
             return this;
         }
         /** List of recovery service subnet resources associated with the protected database. */
@@ -392,6 +431,21 @@ public final class ProtectedDatabaseSummary
             this.__explicitlySet__.add("metrics");
             return this;
         }
+        /** The OCID of the cloud service subscription to which the protected database is linked. */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The OCID of the cloud service subscription to which the protected database is linked.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -470,6 +524,7 @@ public final class ProtectedDatabaseSummary
                             this.vpcUserName,
                             this.databaseSize,
                             this.protectionPolicyId,
+                            this.policyLockedDateTime,
                             this.recoveryServiceSubnets,
                             this.databaseId,
                             this.timeCreated,
@@ -480,6 +535,7 @@ public final class ProtectedDatabaseSummary
                             this.healthDetails,
                             this.isReadOnlyResource,
                             this.metrics,
+                            this.subscriptionId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -512,6 +568,9 @@ public final class ProtectedDatabaseSummary
             if (model.wasPropertyExplicitlySet("protectionPolicyId")) {
                 this.protectionPolicyId(model.getProtectionPolicyId());
             }
+            if (model.wasPropertyExplicitlySet("policyLockedDateTime")) {
+                this.policyLockedDateTime(model.getPolicyLockedDateTime());
+            }
             if (model.wasPropertyExplicitlySet("recoveryServiceSubnets")) {
                 this.recoveryServiceSubnets(model.getRecoveryServiceSubnets());
             }
@@ -541,6 +600,9 @@ public final class ProtectedDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("metrics")) {
                 this.metrics(model.getMetrics());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -669,6 +731,33 @@ public final class ProtectedDatabaseSummary
      */
     public String getProtectionPolicyId() {
         return protectionPolicyId;
+    }
+
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
+     * lock to take effect and permanently lock the retention period defined in the policy.
+     *
+     * <p>The retention lock feature controls whether Recovery Service strictly preserves backups
+     * for the duration defined in a policy. Retention lock is useful to enforce recovery window
+     * compliance and to prevent unintentional modifications to protected database backups. Recovery
+     * Service enforces a 14-day delay before the retention lock set for a policy can take effect.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+    private final String policyLockedDateTime;
+
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
+     * lock to take effect and permanently lock the retention period defined in the policy.
+     *
+     * <p>The retention lock feature controls whether Recovery Service strictly preserves backups
+     * for the duration defined in a policy. Retention lock is useful to enforce recovery window
+     * compliance and to prevent unintentional modifications to protected database backups. Recovery
+     * Service enforces a 14-day delay before the retention lock set for a policy can take effect.
+     *
+     * @return the value
+     */
+    public String getPolicyLockedDateTime() {
+        return policyLockedDateTime;
     }
 
     /** List of recovery service subnet resources associated with the protected database. */
@@ -817,6 +906,19 @@ public final class ProtectedDatabaseSummary
         return metrics;
     }
 
+    /** The OCID of the cloud service subscription to which the protected database is linked. */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The OCID of the cloud service subscription to which the protected database is linked.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -894,6 +996,7 @@ public final class ProtectedDatabaseSummary
         sb.append(", vpcUserName=").append(String.valueOf(this.vpcUserName));
         sb.append(", databaseSize=").append(String.valueOf(this.databaseSize));
         sb.append(", protectionPolicyId=").append(String.valueOf(this.protectionPolicyId));
+        sb.append(", policyLockedDateTime=").append(String.valueOf(this.policyLockedDateTime));
         sb.append(", recoveryServiceSubnets=").append(String.valueOf(this.recoveryServiceSubnets));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -904,6 +1007,7 @@ public final class ProtectedDatabaseSummary
         sb.append(", healthDetails=").append(String.valueOf(this.healthDetails));
         sb.append(", isReadOnlyResource=").append(String.valueOf(this.isReadOnlyResource));
         sb.append(", metrics=").append(String.valueOf(this.metrics));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -928,6 +1032,7 @@ public final class ProtectedDatabaseSummary
                 && java.util.Objects.equals(this.vpcUserName, other.vpcUserName)
                 && java.util.Objects.equals(this.databaseSize, other.databaseSize)
                 && java.util.Objects.equals(this.protectionPolicyId, other.protectionPolicyId)
+                && java.util.Objects.equals(this.policyLockedDateTime, other.policyLockedDateTime)
                 && java.util.Objects.equals(
                         this.recoveryServiceSubnets, other.recoveryServiceSubnets)
                 && java.util.Objects.equals(this.databaseId, other.databaseId)
@@ -939,6 +1044,7 @@ public final class ProtectedDatabaseSummary
                 && java.util.Objects.equals(this.healthDetails, other.healthDetails)
                 && java.util.Objects.equals(this.isReadOnlyResource, other.isReadOnlyResource)
                 && java.util.Objects.equals(this.metrics, other.metrics)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -964,6 +1070,11 @@ public final class ProtectedDatabaseSummary
                                 : this.protectionPolicyId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.policyLockedDateTime == null
+                                ? 43
+                                : this.policyLockedDateTime.hashCode());
+        result =
+                (result * PRIME)
                         + (this.recoveryServiceSubnets == null
                                 ? 43
                                 : this.recoveryServiceSubnets.hashCode());
@@ -986,6 +1097,9 @@ public final class ProtectedDatabaseSummary
                                 ? 43
                                 : this.isReadOnlyResource.hashCode());
         result = (result * PRIME) + (this.metrics == null ? 43 : this.metrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

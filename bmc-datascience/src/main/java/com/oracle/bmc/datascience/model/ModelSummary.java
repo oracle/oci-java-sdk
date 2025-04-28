@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -29,10 +29,13 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         "createdBy",
         "timeCreated",
         "lifecycleState",
+        "lifecycleDetails",
         "modelVersionSetId",
         "modelVersionSetName",
         "versionId",
         "versionLabel",
+        "category",
+        "isModelByReference",
         "freeformTags",
         "definedTags"
     })
@@ -44,10 +47,13 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             String createdBy,
             java.util.Date timeCreated,
             ModelLifecycleState lifecycleState,
+            String lifecycleDetails,
             String modelVersionSetId,
             String modelVersionSetName,
             Long versionId,
             String versionLabel,
+            ModelCategory category,
+            Boolean isModelByReference,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -58,10 +64,13 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         this.createdBy = createdBy;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.modelVersionSetId = modelVersionSetId;
         this.modelVersionSetName = modelVersionSetName;
         this.versionId = versionId;
         this.versionLabel = versionLabel;
+        this.category = category;
+        this.isModelByReference = isModelByReference;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -69,15 +78,15 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model's compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model's compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model's compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model's compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -88,15 +97,15 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project associated with the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project associated with the model.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project associated with the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project associated with the model.
          *
          * @param projectId the value to set
          * @return this builder
@@ -107,15 +116,15 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model.
          *
          * @param id the value to set
          * @return this builder
@@ -145,15 +154,15 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the user who created the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * user who created the model.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the user who created the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * user who created the model.
          *
          * @param createdBy the value to set
          * @return this builder
@@ -195,6 +204,21 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         public Builder lifecycleState(ModelLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /** Details about the lifecycle state of the model. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Details about the lifecycle state of the model.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /** The OCID of the model version set that the model is associated to. */
@@ -261,10 +285,44 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("versionLabel");
             return this;
         }
+        /** The category of the model. */
+        @com.fasterxml.jackson.annotation.JsonProperty("category")
+        private ModelCategory category;
+
+        /**
+         * The category of the model.
+         *
+         * @param category the value to set
+         * @return this builder
+         */
+        public Builder category(ModelCategory category) {
+            this.category = category;
+            this.__explicitlySet__.add("category");
+            return this;
+        }
+        /**
+         * Identifier to indicate whether a model artifact resides in the Service Tenancy or
+         * Customer Tenancy.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isModelByReference")
+        private Boolean isModelByReference;
+
+        /**
+         * Identifier to indicate whether a model artifact resides in the Service Tenancy or
+         * Customer Tenancy.
+         *
+         * @param isModelByReference the value to set
+         * @return this builder
+         */
+        public Builder isModelByReference(Boolean isModelByReference) {
+            this.isModelByReference = isModelByReference;
+            this.__explicitlySet__.add("isModelByReference");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -273,7 +331,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -286,7 +344,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -294,7 +352,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -320,10 +378,13 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
                             this.createdBy,
                             this.timeCreated,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.modelVersionSetId,
                             this.modelVersionSetName,
                             this.versionId,
                             this.versionLabel,
+                            this.category,
+                            this.isModelByReference,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -355,6 +416,9 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
             if (model.wasPropertyExplicitlySet("modelVersionSetId")) {
                 this.modelVersionSetId(model.getModelVersionSetId());
             }
@@ -366,6 +430,12 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("versionLabel")) {
                 this.versionLabel(model.getVersionLabel());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("isModelByReference")) {
+                this.isModelByReference(model.getIsModelByReference());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -387,15 +457,15 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model's compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model's compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model's compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model's compartment.
      *
      * @return the value
      */
@@ -404,15 +474,15 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project associated with the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project associated with the model.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project associated with the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project associated with the model.
      *
      * @return the value
      */
@@ -421,15 +491,15 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model.
      *
      * @return the value
      */
@@ -455,15 +525,15 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the user who created the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+     * who created the model.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the user who created the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+     * who created the model.
      *
      * @return the value
      */
@@ -499,6 +569,19 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
      */
     public ModelLifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /** Details about the lifecycle state of the model. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Details about the lifecycle state of the model.
+     *
+     * @return the value
+     */
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /** The OCID of the model version set that the model is associated to. */
@@ -557,10 +640,40 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         return versionLabel;
     }
 
+    /** The category of the model. */
+    @com.fasterxml.jackson.annotation.JsonProperty("category")
+    private final ModelCategory category;
+
+    /**
+     * The category of the model.
+     *
+     * @return the value
+     */
+    public ModelCategory getCategory() {
+        return category;
+    }
+
+    /**
+     * Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer
+     * Tenancy.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isModelByReference")
+    private final Boolean isModelByReference;
+
+    /**
+     * Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer
+     * Tenancy.
+     *
+     * @return the value
+     */
+    public Boolean getIsModelByReference() {
+        return isModelByReference;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -569,7 +682,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -580,7 +693,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -588,7 +701,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -619,10 +732,13 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", createdBy=").append(String.valueOf(this.createdBy));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", modelVersionSetId=").append(String.valueOf(this.modelVersionSetId));
         sb.append(", modelVersionSetName=").append(String.valueOf(this.modelVersionSetName));
         sb.append(", versionId=").append(String.valueOf(this.versionId));
         sb.append(", versionLabel=").append(String.valueOf(this.versionLabel));
+        sb.append(", category=").append(String.valueOf(this.category));
+        sb.append(", isModelByReference=").append(String.valueOf(this.isModelByReference));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -646,10 +762,13 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.createdBy, other.createdBy)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.modelVersionSetId, other.modelVersionSetId)
                 && java.util.Objects.equals(this.modelVersionSetName, other.modelVersionSetName)
                 && java.util.Objects.equals(this.versionId, other.versionId)
                 && java.util.Objects.equals(this.versionLabel, other.versionLabel)
+                && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.isModelByReference, other.isModelByReference)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -672,6 +791,9 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result =
                 (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
                         + (this.modelVersionSetId == null ? 43 : this.modelVersionSetId.hashCode());
         result =
                 (result * PRIME)
@@ -680,6 +802,12 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
                                 : this.modelVersionSetName.hashCode());
         result = (result * PRIME) + (this.versionId == null ? 43 : this.versionId.hashCode());
         result = (result * PRIME) + (this.versionLabel == null ? 43 : this.versionLabel.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isModelByReference == null
+                                ? 43
+                                : this.isModelByReference.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

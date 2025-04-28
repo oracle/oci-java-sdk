@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.model;
@@ -39,6 +39,7 @@ public final class MediaWorkflowJob
         "outputs",
         "timeStarted",
         "timeEnded",
+        "locks",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -59,6 +60,7 @@ public final class MediaWorkflowJob
             java.util.List<JobOutput> outputs,
             java.util.Date timeStarted,
             java.util.Date timeEnded,
+            java.util.List<ResourceLock> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -78,6 +80,7 @@ public final class MediaWorkflowJob
         this.outputs = outputs;
         this.timeStarted = timeStarted;
         this.timeEnded = timeEnded;
+        this.locks = locks;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -332,6 +335,21 @@ public final class MediaWorkflowJob
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -412,6 +430,7 @@ public final class MediaWorkflowJob
                             this.outputs,
                             this.timeStarted,
                             this.timeEnded,
+                            this.locks,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -467,6 +486,9 @@ public final class MediaWorkflowJob
             }
             if (model.wasPropertyExplicitlySet("timeEnded")) {
                 this.timeEnded(model.getTimeEnded());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -564,6 +586,7 @@ public final class MediaWorkflowJob
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Waiting("WAITING"),
+        Rejected("REJECTED"),
         Failed("FAILED"),
         Succeeded("SUCCEEDED"),
         Canceling("CANCELING"),
@@ -754,6 +777,19 @@ public final class MediaWorkflowJob
         return timeEnded;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -836,6 +872,7 @@ public final class MediaWorkflowJob
         sb.append(", outputs=").append(String.valueOf(this.outputs));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -869,6 +906,7 @@ public final class MediaWorkflowJob
                 && java.util.Objects.equals(this.outputs, other.outputs)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -910,6 +948,7 @@ public final class MediaWorkflowJob
         result = (result * PRIME) + (this.outputs == null ? 43 : this.outputs.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

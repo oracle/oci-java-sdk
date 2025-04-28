@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Summary information pertaining to an available package for a managed instance group. <br>
+ * Provides summary information for an available package for a managed instance group. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -67,12 +67,12 @@ public final class ManagedInstanceGroupAvailablePackageSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Unique identifier for the package. NOTE - This is not an OCID. */
+        /** Unique identifier for the package. Note that this is not an OCID. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique identifier for the package. NOTE - This is not an OCID.
+         * Unique identifier for the package. Note that this is not an OCID.
          *
          * @param name the value to set
          * @return this builder
@@ -97,12 +97,12 @@ public final class ManagedInstanceGroupAvailablePackageSummary
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Version of the installed package. */
+        /** Version of the available package. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * Version of the installed package.
+         * Version of the available package.
          *
          * @param version the value to set
          * @return this builder
@@ -142,12 +142,12 @@ public final class ManagedInstanceGroupAvailablePackageSummary
             this.__explicitlySet__.add("softwareSources");
             return this;
         }
-        /** Flag to return only latest package versions. */
+        /** Indicates whether this is the latest package version. */
         @com.fasterxml.jackson.annotation.JsonProperty("isLatest")
         private Boolean isLatest;
 
         /**
-         * Flag to return only latest package versions.
+         * Indicates whether this is the latest package version.
          *
          * @param isLatest the value to set
          * @return this builder
@@ -226,12 +226,12 @@ public final class ManagedInstanceGroupAvailablePackageSummary
         return displayName;
     }
 
-    /** Unique identifier for the package. NOTE - This is not an OCID. */
+    /** Unique identifier for the package. Note that this is not an OCID. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique identifier for the package. NOTE - This is not an OCID.
+     * Unique identifier for the package. Note that this is not an OCID.
      *
      * @return the value
      */
@@ -252,12 +252,12 @@ public final class ManagedInstanceGroupAvailablePackageSummary
         return type;
     }
 
-    /** Version of the installed package. */
+    /** Version of the available package. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * Version of the installed package.
+     * Version of the available package.
      *
      * @return the value
      */
@@ -291,12 +291,12 @@ public final class ManagedInstanceGroupAvailablePackageSummary
         return softwareSources;
     }
 
-    /** Flag to return only latest package versions. */
+    /** Indicates whether this is the latest package version. */
     @com.fasterxml.jackson.annotation.JsonProperty("isLatest")
     private final Boolean isLatest;
 
     /**
-     * Flag to return only latest package versions.
+     * Indicates whether this is the latest package version.
      *
      * @return the value
      */

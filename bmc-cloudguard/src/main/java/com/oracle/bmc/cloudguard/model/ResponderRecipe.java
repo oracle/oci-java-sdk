@@ -1,11 +1,22 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of ResponderRecipe. <br>
+ * A ResponderRecipe resource contains a specific instance of one of the supported detector types
+ * (for example, activity, configuration, or threat).
+ *
+ * <p>A ResponderRecipe resource: * Is effectively a copy of a Responder resource in which users can
+ * make very limited changes if it\u2019s Oracle-managed, and more changes if it\u2019s
+ * user-managed. * Can also be created by cloning an existing ResponderRecipe resource, either
+ * user-managed or Oracle-managed. * Is visible on Cloud Guard\u2019s Responder Recipes page. * Is
+ * located in a specific OCI compartment. * Can be modified by users, programmatically or through
+ * the UI. * Changes that can be made here apply globally, to resources in all OCI compartments
+ * mapped to a target that attaches the responder recipe, but are overridden by any changes made in
+ * the corresponding TargetResponderRecipe resource (effectively created when the responder recipe
+ * is attached to the target). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -75,12 +86,12 @@ public final class ResponderRecipe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Identifier for ResponderRecipe. */
+        /** Unique identifier for the responder recip */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Identifier for ResponderRecipe.
+         * Unique identifier for the responder recip
          *
          * @param id the value to set
          * @return this builder
@@ -90,12 +101,12 @@ public final class ResponderRecipe
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** ResponderRecipe display name. */
+        /** Responder recipe display name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * ResponderRecipe display name.
+         * Responder recipe display name
          *
          * @param displayName the value to set
          * @return this builder
@@ -105,12 +116,12 @@ public final class ResponderRecipe
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** ResponderRecipe description. */
+        /** Responder recipe description */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * ResponderRecipe description.
+         * Responder recipe description
          *
          * @param description the value to set
          * @return this builder
@@ -120,12 +131,12 @@ public final class ResponderRecipe
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Owner of ResponderRecipe */
+        /** Owner of responder recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private OwnerType owner;
 
         /**
-         * Owner of ResponderRecipe
+         * Owner of responder recipe
          *
          * @param owner the value to set
          * @return this builder
@@ -150,12 +161,16 @@ public final class ResponderRecipe
             this.__explicitlySet__.add("responderRules");
             return this;
         }
-        /** List of responder rules associated with the recipe */
+        /**
+         * List of currently enabled responder rules for the responder type, for recipe after
+         * applying defaults
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("effectiveResponderRules")
         private java.util.List<ResponderRecipeResponderRule> effectiveResponderRules;
 
         /**
-         * List of responder rules associated with the recipe
+         * List of currently enabled responder rules for the responder type, for recipe after
+         * applying defaults
          *
          * @param effectiveResponderRules the value to set
          * @return this builder
@@ -166,12 +181,12 @@ public final class ResponderRecipe
             this.__explicitlySet__.add("effectiveResponderRules");
             return this;
         }
-        /** The id of the source responder recipe. */
+        /** The unique identifier of the source responder recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResponderRecipeId")
         private String sourceResponderRecipeId;
 
         /**
-         * The id of the source responder recipe.
+         * The unique identifier of the source responder recipe
          *
          * @param sourceResponderRecipeId the value to set
          * @return this builder
@@ -181,12 +196,12 @@ public final class ResponderRecipe
             this.__explicitlySet__.add("sourceResponderRecipeId");
             return this;
         }
-        /** Compartment Identifier */
+        /** Compartment OCID */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * Compartment OCID
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -211,12 +226,12 @@ public final class ResponderRecipe
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time the responder recipe was updated. Format defined by RFC3339. */
+        /** The date and time the responder recipe was last updated. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the responder recipe was updated. Format defined by RFC3339.
+         * The date and time the responder recipe was last updated. Format defined by RFC3339.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -226,12 +241,12 @@ public final class ResponderRecipe
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the Example. */
+        /** The current lifecycle state of the example */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Example.
+         * The current lifecycle state of the example
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -306,7 +321,7 @@ public final class ResponderRecipe
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -317,7 +332,7 @@ public final class ResponderRecipe
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -418,12 +433,12 @@ public final class ResponderRecipe
         return new Builder().copy(this);
     }
 
-    /** Identifier for ResponderRecipe. */
+    /** Unique identifier for the responder recip */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Identifier for ResponderRecipe.
+     * Unique identifier for the responder recip
      *
      * @return the value
      */
@@ -431,12 +446,12 @@ public final class ResponderRecipe
         return id;
     }
 
-    /** ResponderRecipe display name. */
+    /** Responder recipe display name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * ResponderRecipe display name.
+     * Responder recipe display name
      *
      * @return the value
      */
@@ -444,12 +459,12 @@ public final class ResponderRecipe
         return displayName;
     }
 
-    /** ResponderRecipe description. */
+    /** Responder recipe description */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * ResponderRecipe description.
+     * Responder recipe description
      *
      * @return the value
      */
@@ -457,12 +472,12 @@ public final class ResponderRecipe
         return description;
     }
 
-    /** Owner of ResponderRecipe */
+    /** Owner of responder recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final OwnerType owner;
 
     /**
-     * Owner of ResponderRecipe
+     * Owner of responder recipe
      *
      * @return the value
      */
@@ -483,12 +498,16 @@ public final class ResponderRecipe
         return responderRules;
     }
 
-    /** List of responder rules associated with the recipe */
+    /**
+     * List of currently enabled responder rules for the responder type, for recipe after applying
+     * defaults
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("effectiveResponderRules")
     private final java.util.List<ResponderRecipeResponderRule> effectiveResponderRules;
 
     /**
-     * List of responder rules associated with the recipe
+     * List of currently enabled responder rules for the responder type, for recipe after applying
+     * defaults
      *
      * @return the value
      */
@@ -496,12 +515,12 @@ public final class ResponderRecipe
         return effectiveResponderRules;
     }
 
-    /** The id of the source responder recipe. */
+    /** The unique identifier of the source responder recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResponderRecipeId")
     private final String sourceResponderRecipeId;
 
     /**
-     * The id of the source responder recipe.
+     * The unique identifier of the source responder recipe
      *
      * @return the value
      */
@@ -509,12 +528,12 @@ public final class ResponderRecipe
         return sourceResponderRecipeId;
     }
 
-    /** Compartment Identifier */
+    /** Compartment OCID */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      *
      * @return the value
      */
@@ -535,12 +554,12 @@ public final class ResponderRecipe
         return timeCreated;
     }
 
-    /** The date and time the responder recipe was updated. Format defined by RFC3339. */
+    /** The date and time the responder recipe was last updated. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the responder recipe was updated. Format defined by RFC3339.
+     * The date and time the responder recipe was last updated. Format defined by RFC3339.
      *
      * @return the value
      */
@@ -548,12 +567,12 @@ public final class ResponderRecipe
         return timeUpdated;
     }
 
-    /** The current state of the Example. */
+    /** The current lifecycle state of the example */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Example.
+     * The current lifecycle state of the example
      *
      * @return the value
      */
@@ -619,7 +638,7 @@ public final class ResponderRecipe
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -630,7 +649,7 @@ public final class ResponderRecipe
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}

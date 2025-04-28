@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataflow.model;
@@ -46,6 +46,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
         "definedTags",
         "systemTags",
         "sparkAdvancedConfigurations",
+        "bannerMessage",
         "networkConfiguration"
     })
     public SqlEndpoint(
@@ -73,6 +74,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Map<String, String> sparkAdvancedConfigurations,
+            String bannerMessage,
             SqlEndpointNetworkConfiguration networkConfiguration) {
         super();
         this.id = id;
@@ -99,6 +101,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
         this.definedTags = definedTags;
         this.systemTags = systemTags;
         this.sparkAdvancedConfigurations = sparkAdvancedConfigurations;
+        this.bannerMessage = bannerMessage;
         this.networkConfiguration = networkConfiguration;
     }
 
@@ -415,8 +418,8 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -424,8 +427,8 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -438,8 +441,8 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -447,8 +450,8 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -463,8 +466,8 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {orcl-cloud: {free-tier-retain: true}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
@@ -473,8 +476,8 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          * @param systemTags the value to set
          * @return this builder
@@ -508,6 +511,25 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
                 java.util.Map<String, String> sparkAdvancedConfigurations) {
             this.sparkAdvancedConfigurations = sparkAdvancedConfigurations;
             this.__explicitlySet__.add("sparkAdvancedConfigurations");
+            return this;
+        }
+        /**
+         * The SQL Endpoint message displayed as a banner to provide user with any action items
+         * required on the resource.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("bannerMessage")
+        private String bannerMessage;
+
+        /**
+         * The SQL Endpoint message displayed as a banner to provide user with any action items
+         * required on the resource.
+         *
+         * @param bannerMessage the value to set
+         * @return this builder
+         */
+        public Builder bannerMessage(String bannerMessage) {
+            this.bannerMessage = bannerMessage;
+            this.__explicitlySet__.add("bannerMessage");
             return this;
         }
 
@@ -550,6 +572,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
                             this.definedTags,
                             this.systemTags,
                             this.sparkAdvancedConfigurations,
+                            this.bannerMessage,
                             this.networkConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -630,6 +653,9 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("sparkAdvancedConfigurations")) {
                 this.sparkAdvancedConfigurations(model.getSparkAdvancedConfigurations());
+            }
+            if (model.wasPropertyExplicitlySet("bannerMessage")) {
+                this.bannerMessage(model.getBannerMessage());
             }
             if (model.wasPropertyExplicitlySet("networkConfiguration")) {
                 this.networkConfiguration(model.getNetworkConfiguration());
@@ -914,7 +940,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -923,7 +949,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -935,7 +961,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -944,7 +970,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -957,7 +983,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -967,7 +993,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value
@@ -997,6 +1023,23 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
      */
     public java.util.Map<String, String> getSparkAdvancedConfigurations() {
         return sparkAdvancedConfigurations;
+    }
+
+    /**
+     * The SQL Endpoint message displayed as a banner to provide user with any action items required
+     * on the resource.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("bannerMessage")
+    private final String bannerMessage;
+
+    /**
+     * The SQL Endpoint message displayed as a banner to provide user with any action items required
+     * on the resource.
+     *
+     * @return the value
+     */
+    public String getBannerMessage() {
+        return bannerMessage;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
@@ -1047,6 +1090,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", sparkAdvancedConfigurations=")
                 .append(String.valueOf(this.sparkAdvancedConfigurations));
+        sb.append(", bannerMessage=").append(String.valueOf(this.bannerMessage));
         sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
         sb.append(")");
         return sb.toString();
@@ -1088,6 +1132,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.sparkAdvancedConfigurations, other.sparkAdvancedConfigurations)
+                && java.util.Objects.equals(this.bannerMessage, other.bannerMessage)
                 && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
                 && super.equals(other);
     }
@@ -1154,6 +1199,9 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
                         + (this.sparkAdvancedConfigurations == null
                                 ? 43
                                 : this.sparkAdvancedConfigurations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bannerMessage == null ? 43 : this.bannerMessage.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkConfiguration == null

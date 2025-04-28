@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usage;
@@ -10,7 +10,7 @@ import com.oracle.bmc.usage.responses.*;
 /**
  * Use the Usage Proxy API to list Oracle Support Rewards, view related detailed usage information,
  * and manage users who redeem rewards. For more information, see [Oracle Support Rewards
- * Overview](https://docs.cloud.oracle.com/iaas/Content/Billing/Concepts/supportrewardsoverview.htm).
+ * Overview](https://docs.oracle.com/iaas/Content/Billing/Concepts/supportrewardsoverview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public interface ResourcesAsync extends AutoCloseable {

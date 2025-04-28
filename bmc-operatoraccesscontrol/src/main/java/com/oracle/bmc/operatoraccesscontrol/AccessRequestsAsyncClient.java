@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -110,10 +110,7 @@ public class AccessRequestsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ApproveAccessRequestResponse::builder)
                 .logger(LOG, "approveAccessRequest")
-                .serviceDetails(
-                        "AccessRequests",
-                        "ApproveAccessRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ApproveAccessRequest")
+                .serviceDetails("AccessRequests", "ApproveAccessRequest", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ApproveAccessRequestRequest::builder)
                 .basePath("/20200630")
@@ -145,10 +142,7 @@ public class AccessRequestsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, GetAccessRequestResponse::builder)
                 .logger(LOG, "getAccessRequest")
-                .serviceDetails(
-                        "AccessRequests",
-                        "GetAccessRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/GetAccessRequest")
+                .serviceDetails("AccessRequests", "GetAccessRequest", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAccessRequestRequest::builder)
                 .basePath("/20200630")
@@ -165,6 +159,35 @@ public class AccessRequestsAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<GetAuditLogReportResponse> getAuditLogReport(
+            GetAuditLogReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAuditLogReportRequest, GetAuditLogReportResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAccessRequestId(), "accessRequestId must not be blank");
+
+        return clientCall(request, GetAuditLogReportResponse::builder)
+                .logger(LOG, "getAuditLogReport")
+                .serviceDetails("AccessRequests", "GetAuditLogReport", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAuditLogReportRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("accessRequests")
+                .appendPathParam(request.getAccessRequestId())
+                .appendPathParam("auditLogReport")
+                .appendQueryParam("enableProcessTree", request.getEnableProcessTree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.operatoraccesscontrol.model.AuditLogReport.class,
+                        GetAuditLogReportResponse.Builder::auditLogReport)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAuditLogReportResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<InteractionRequestResponse> interactionRequest(
             InteractionRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -177,10 +200,7 @@ public class AccessRequestsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, InteractionRequestResponse::builder)
                 .logger(LOG, "interactionRequest")
-                .serviceDetails(
-                        "AccessRequests",
-                        "InteractionRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/InteractionRequest")
+                .serviceDetails("AccessRequests", "InteractionRequest", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InteractionRequestRequest::builder)
                 .basePath("/20200630")
@@ -215,10 +235,7 @@ public class AccessRequestsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListAccessRequestHistoriesResponse::builder)
                 .logger(LOG, "listAccessRequestHistories")
-                .serviceDetails(
-                        "AccessRequests",
-                        "ListAccessRequestHistories",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequestHistories")
+                .serviceDetails("AccessRequests", "ListAccessRequestHistories", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAccessRequestHistoriesRequest::builder)
                 .basePath("/20200630")
@@ -250,10 +267,7 @@ public class AccessRequestsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListAccessRequestsResponse::builder)
                 .logger(LOG, "listAccessRequests")
-                .serviceDetails(
-                        "AccessRequests",
-                        "ListAccessRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequests")
+                .serviceDetails("AccessRequests", "ListAccessRequests", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAccessRequestsRequest::builder)
                 .basePath("/20200630")
@@ -291,10 +305,7 @@ public class AccessRequestsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListInteractionsResponse::builder)
                 .logger(LOG, "listInteractions")
-                .serviceDetails(
-                        "AccessRequests",
-                        "ListInteractions",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListInteractions")
+                .serviceDetails("AccessRequests", "ListInteractions", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInteractionsRequest::builder)
                 .basePath("/20200630")
@@ -328,10 +339,7 @@ public class AccessRequestsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, RejectAccessRequestResponse::builder)
                 .logger(LOG, "rejectAccessRequest")
-                .serviceDetails(
-                        "AccessRequests",
-                        "RejectAccessRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RejectAccessRequest")
+                .serviceDetails("AccessRequests", "RejectAccessRequest", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RejectAccessRequestRequest::builder)
                 .basePath("/20200630")
@@ -365,10 +373,7 @@ public class AccessRequestsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ReviewAccessRequestResponse::builder)
                 .logger(LOG, "reviewAccessRequest")
-                .serviceDetails(
-                        "AccessRequests",
-                        "ReviewAccessRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ReviewAccessRequest")
+                .serviceDetails("AccessRequests", "ReviewAccessRequest", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ReviewAccessRequestRequest::builder)
                 .basePath("/20200630")
@@ -403,10 +408,7 @@ public class AccessRequestsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, RevokeAccessRequestResponse::builder)
                 .logger(LOG, "revokeAccessRequest")
-                .serviceDetails(
-                        "AccessRequests",
-                        "RevokeAccessRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RevokeAccessRequest")
+                .serviceDetails("AccessRequests", "RevokeAccessRequest", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RevokeAccessRequestRequest::builder)
                 .basePath("/20200630")

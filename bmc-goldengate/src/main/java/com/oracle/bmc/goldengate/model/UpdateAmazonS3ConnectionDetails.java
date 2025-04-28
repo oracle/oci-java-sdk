@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -90,6 +90,33 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /** Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" */
         @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
         private String accessKeyId;
@@ -105,12 +132,18 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
             this.__explicitlySet__.add("accessKeyId");
             return this;
         }
-        /** Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" */
+        /**
+         * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This
+         * field will be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
         private String secretAccessKey;
 
         /**
          * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This
+         * field will be removed after February 15 2026.
          *
          * @param secretAccessKey the value to set
          * @return this builder
@@ -118,6 +151,27 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
         public Builder secretAccessKey(String secretAccessKey) {
             this.secretAccessKey = secretAccessKey;
             this.__explicitlySet__.add("secretAccessKey");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey'
+         * field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
+        private String secretAccessKeySecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey'
+         * field must not be provided.
+         *
+         * @param secretAccessKeySecretId the value to set
+         * @return this builder
+         */
+        public Builder secretAccessKeySecretId(String secretAccessKeySecretId) {
+            this.secretAccessKeySecretId = secretAccessKeySecretId;
+            this.__explicitlySet__.add("secretAccessKeySecretId");
             return this;
         }
 
@@ -134,8 +188,12 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
+                            this.doesUseSecretIds,
                             this.accessKeyId,
-                            this.secretAccessKey);
+                            this.secretAccessKey,
+                            this.secretAccessKeySecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -165,11 +223,23 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
             }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("accessKeyId")) {
                 this.accessKeyId(model.getAccessKeyId());
             }
             if (model.wasPropertyExplicitlySet("secretAccessKey")) {
                 this.secretAccessKey(model.getSecretAccessKey());
+            }
+            if (model.wasPropertyExplicitlySet("secretAccessKeySecretId")) {
+                this.secretAccessKeySecretId(model.getSecretAccessKeySecretId());
             }
             return this;
         }
@@ -193,11 +263,26 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             String accessKeyId,
-            String secretAccessKey) {
-        super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
+            String secretAccessKey,
+            String secretAccessKeySecretId) {
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds);
         this.accessKeyId = accessKeyId;
         this.secretAccessKey = secretAccessKey;
+        this.secretAccessKeySecretId = secretAccessKeySecretId;
     }
 
     /** Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" */
@@ -213,17 +298,42 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
         return accessKeyId;
     }
 
-    /** Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" */
+    /**
+     * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated:
+     * This field is deprecated and replaced by "secretAccessKeySecretId". This field will be
+     * removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
     private final String secretAccessKey;
 
     /**
-     * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+     * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated:
+     * This field is deprecated and replaced by "secretAccessKeySecretId". This field will be
+     * removed after February 15 2026.
      *
      * @return the value
      */
     public String getSecretAccessKey() {
         return secretAccessKey;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey' field
+     * must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
+    private final String secretAccessKeySecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey' field
+     * must not be provided.
+     *
+     * @return the value
+     */
+    public String getSecretAccessKeySecretId() {
+        return secretAccessKeySecretId;
     }
 
     @Override
@@ -243,6 +353,8 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", accessKeyId=").append(String.valueOf(this.accessKeyId));
         sb.append(", secretAccessKey=").append("<redacted>");
+        sb.append(", secretAccessKeySecretId=")
+                .append(String.valueOf(this.secretAccessKeySecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -259,6 +371,8 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
         UpdateAmazonS3ConnectionDetails other = (UpdateAmazonS3ConnectionDetails) o;
         return java.util.Objects.equals(this.accessKeyId, other.accessKeyId)
                 && java.util.Objects.equals(this.secretAccessKey, other.secretAccessKey)
+                && java.util.Objects.equals(
+                        this.secretAccessKeySecretId, other.secretAccessKeySecretId)
                 && super.equals(other);
     }
 
@@ -270,6 +384,11 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
         result =
                 (result * PRIME)
                         + (this.secretAccessKey == null ? 43 : this.secretAccessKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secretAccessKeySecretId == null
+                                ? 43
+                                : this.secretAccessKeySecretId.hashCode());
         return result;
     }
 }

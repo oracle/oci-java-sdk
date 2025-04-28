@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -8,10 +8,9 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for the operating system
- * environments in your private data centers through a single management console. For more
- * information, see [Overview of OS Management
- * Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
+ * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
+ * Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -68,7 +67,8 @@ public interface ReportingManagedInstance extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Returns a CSV format report of managed instances matching the given filters.
+     * Returns a report of managed instances matching the given filters. You can select CSV, XML, or
+     * JSON format.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -77,7 +77,7 @@ public interface ReportingManagedInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetManagedInstanceAnalyticContentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetManagedInstanceAnalyticContentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetManagedInstanceAnalyticContent API.
      */
@@ -85,8 +85,8 @@ public interface ReportingManagedInstance extends AutoCloseable {
             GetManagedInstanceAnalyticContentRequest request);
 
     /**
-     * Returns a CSV format report of a single managed instance whose associated Erratas match the
-     * given filters.
+     * Returns a report for a single managed instance whose associated erratas match the given
+     * filters. You can select CSV, XML, or JSON format.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -95,7 +95,7 @@ public interface ReportingManagedInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetManagedInstanceContentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetManagedInstanceContentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetManagedInstanceContent API.
      */
@@ -112,7 +112,7 @@ public interface ReportingManagedInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SummarizeManagedInstanceAnalyticsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SummarizeManagedInstanceAnalyticsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeManagedInstanceAnalytics API.
      */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.waf;
@@ -146,6 +146,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -153,7 +154,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeNetworkAddressListCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -182,6 +182,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -189,7 +190,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeWebAppFirewallCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -219,6 +219,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -226,7 +227,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeWebAppFirewallPolicyCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -250,6 +250,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.waf.model.NetworkAddressList.class,
@@ -265,7 +266,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "content-location",
                         CreateNetworkAddressListResponse.Builder::contentLocation)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -288,6 +288,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.waf.model.WebAppFirewall.class,
@@ -302,7 +303,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "location", CreateWebAppFirewallResponse.Builder::location)
                 .handleResponseHeaderString(
                         "content-location", CreateWebAppFirewallResponse.Builder::contentLocation)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -326,6 +326,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.waf.model.WebAppFirewallPolicy.class,
@@ -342,7 +343,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "content-location",
                         CreateWebAppFirewallPolicyResponse.Builder::contentLocation)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -367,12 +367,12 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteNetworkAddressListResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteNetworkAddressListResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -395,12 +395,12 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteWebAppFirewallResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteWebAppFirewallResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -425,12 +425,12 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteWebAppFirewallPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteWebAppFirewallPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -454,13 +454,13 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendPathParam(request.getNetworkAddressListId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waf.model.NetworkAddressList.class,
                         GetNetworkAddressListResponse.Builder::networkAddressList)
                 .handleResponseHeaderString("etag", GetNetworkAddressListResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetNetworkAddressListResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -482,13 +482,13 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendPathParam(request.getWebAppFirewallId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waf.model.WebAppFirewall.class,
                         GetWebAppFirewallResponse.Builder::webAppFirewall)
                 .handleResponseHeaderString("etag", GetWebAppFirewallResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetWebAppFirewallResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -512,13 +512,13 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendPathParam(request.getWebAppFirewallPolicyId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waf.model.WebAppFirewallPolicy.class,
                         GetWebAppFirewallPolicyResponse.Builder::webAppFirewallPolicy)
                 .handleResponseHeaderString("etag", GetWebAppFirewallPolicyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetWebAppFirewallPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -540,6 +540,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waf.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -547,7 +548,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -579,6 +579,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waf.model.NetworkAddressListCollection.class,
                         ListNetworkAddressListsResponse.Builder::networkAddressListCollection)
@@ -586,7 +587,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", ListNetworkAddressListsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListNetworkAddressListsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -623,6 +623,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waf.model.ProtectionCapabilityCollection.class,
                         ListProtectionCapabilitiesResponse.Builder::protectionCapabilityCollection)
@@ -630,7 +631,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", ListProtectionCapabilitiesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListProtectionCapabilitiesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -659,6 +659,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendQueryParam("name", request.getName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waf.model.ProtectionCapabilityGroupTagCollection.class,
                         ListProtectionCapabilityGroupTagsResponse.Builder
@@ -669,7 +670,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListProtectionCapabilityGroupTagsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -701,6 +701,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waf.model.WebAppFirewallPolicyCollection.class,
                         ListWebAppFirewallPoliciesResponse.Builder::webAppFirewallPolicyCollection)
@@ -708,7 +709,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", ListWebAppFirewallPoliciesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWebAppFirewallPoliciesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -740,6 +740,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waf.model.WebAppFirewallCollection.class,
                         ListWebAppFirewallsResponse.Builder::webAppFirewallCollection)
@@ -747,7 +748,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", ListWebAppFirewallsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWebAppFirewallsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -773,6 +773,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waf.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -780,7 +781,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -805,6 +805,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waf.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -812,7 +813,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -836,6 +836,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waf.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -843,7 +844,6 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -871,13 +871,13 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateNetworkAddressListResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateNetworkAddressListResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -903,13 +903,13 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateWebAppFirewallResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateWebAppFirewallResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -937,13 +937,13 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateWebAppFirewallPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateWebAppFirewallPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

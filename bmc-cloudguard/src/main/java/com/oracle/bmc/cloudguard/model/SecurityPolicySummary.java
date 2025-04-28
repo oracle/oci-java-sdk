@@ -1,13 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary information for a security zone policy. A security policy defines a security requirement
- * for resources in a security zone. If a security zone enables a policy (using a recipe), then any
- * action that attempts to violate that policy is denied. <br>
+ * Summary information for a Security Zones policy. A security policy defines a security requirement
+ * for resources in a security zone. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -78,12 +77,12 @@ public final class SecurityPolicySummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /** Unique identifier that can\u2019t be changed after creation */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can\u2019t be changed after creation
          *
          * @param id the value to set
          * @return this builder
@@ -108,12 +107,12 @@ public final class SecurityPolicySummary
             this.__explicitlySet__.add("friendlyName");
             return this;
         }
-        /** The security policy's full name */
+        /** The security policy's display name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The security policy's full name
+         * The security policy's display name
          *
          * @param displayName the value to set
          * @return this builder
@@ -138,12 +137,12 @@ public final class SecurityPolicySummary
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The id of the security policy's compartment */
+        /** The OCID of the security policy's compartment */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The id of the security policy's compartment
+         * The OCID of the security policy's compartment
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -168,12 +167,12 @@ public final class SecurityPolicySummary
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /** The category of security policy */
+        /** The category of the security policy */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
         /**
-         * The category of security policy
+         * The category of the security policy
          *
          * @param category the value to set
          * @return this builder
@@ -198,12 +197,14 @@ public final class SecurityPolicySummary
             this.__explicitlySet__.add("services");
             return this;
         }
-        /** The time the security policy was created. An RFC3339 formatted datetime string. */
+        /**
+         * The date and time the security policy was created. An RFC3339 formatted datetime string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the security policy was created. An RFC3339 formatted datetime string.
+         * The date and time the security policy was created. An RFC3339 formatted datetime string.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -213,12 +214,16 @@ public final class SecurityPolicySummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the security policy was last updated. An RFC3339 formatted datetime string. */
+        /**
+         * The date and time the security policy was last updated. An RFC3339 formatted datetime
+         * string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the security policy was last updated. An RFC3339 formatted datetime string.
+         * The date and time the security policy was last updated. An RFC3339 formatted datetime
+         * string.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -228,12 +233,12 @@ public final class SecurityPolicySummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the security policy */
+        /** The current lifecycle state of the security policy */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the security policy
+         * The current lifecycle state of the security policy
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -308,7 +313,7 @@ public final class SecurityPolicySummary
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -319,7 +324,7 @@ public final class SecurityPolicySummary
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -420,12 +425,12 @@ public final class SecurityPolicySummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /** Unique identifier that can\u2019t be changed after creation */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can\u2019t be changed after creation
      *
      * @return the value
      */
@@ -446,12 +451,12 @@ public final class SecurityPolicySummary
         return friendlyName;
     }
 
-    /** The security policy's full name */
+    /** The security policy's display name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The security policy's full name
+     * The security policy's display name
      *
      * @return the value
      */
@@ -472,12 +477,12 @@ public final class SecurityPolicySummary
         return description;
     }
 
-    /** The id of the security policy's compartment */
+    /** The OCID of the security policy's compartment */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The id of the security policy's compartment
+     * The OCID of the security policy's compartment
      *
      * @return the value
      */
@@ -498,12 +503,12 @@ public final class SecurityPolicySummary
         return owner;
     }
 
-    /** The category of security policy */
+    /** The category of the security policy */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
     /**
-     * The category of security policy
+     * The category of the security policy
      *
      * @return the value
      */
@@ -524,12 +529,12 @@ public final class SecurityPolicySummary
         return services;
     }
 
-    /** The time the security policy was created. An RFC3339 formatted datetime string. */
+    /** The date and time the security policy was created. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the security policy was created. An RFC3339 formatted datetime string.
+     * The date and time the security policy was created. An RFC3339 formatted datetime string.
      *
      * @return the value
      */
@@ -537,12 +542,14 @@ public final class SecurityPolicySummary
         return timeCreated;
     }
 
-    /** The time the security policy was last updated. An RFC3339 formatted datetime string. */
+    /**
+     * The date and time the security policy was last updated. An RFC3339 formatted datetime string.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the security policy was last updated. An RFC3339 formatted datetime string.
+     * The date and time the security policy was last updated. An RFC3339 formatted datetime string.
      *
      * @return the value
      */
@@ -550,12 +557,12 @@ public final class SecurityPolicySummary
         return timeUpdated;
     }
 
-    /** The current state of the security policy */
+    /** The current lifecycle state of the security policy */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the security policy
+     * The current lifecycle state of the security policy
      *
      * @return the value
      */
@@ -621,7 +628,7 @@ public final class SecurityPolicySummary
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -632,7 +639,7 @@ public final class SecurityPolicySummary
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * Details of the Exacc Db server resource. Applies to Exadata Cloud@Customer instances only. <br>
+ * Details of the Db server resource. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -42,7 +42,8 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
         "timeCreated",
         "dbServerPatchingDetails",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "computeModel"
     })
     public DbServer(
             String id,
@@ -65,7 +66,8 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
             java.util.Date timeCreated,
             DbServerPatchingDetails dbServerPatchingDetails,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            ComputeModel computeModel) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -88,20 +90,21 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
         this.dbServerPatchingDetails = dbServerPatchingDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.computeModel = computeModel;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * Exacc Db server.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Db server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * Exacc Db server.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Db server.
          *
          * @param id the value to set
          * @return this builder
@@ -127,14 +130,14 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -146,14 +149,14 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          *
          * @param exadataInfrastructureId the value to set
@@ -210,14 +213,14 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM Clusters associated with the Db server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterIds")
         private java.util.List<String> vmClusterIds;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM Clusters associated with the Db server.
          *
          * @param vmClusterIds the value to set
@@ -230,7 +233,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous VM Clusters associated with the Db server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterIds")
@@ -238,7 +241,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous VM Clusters associated with the Db server.
          *
          * @param autonomousVmClusterIds the value to set
@@ -251,7 +254,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Virtual Machines associated with the Db server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousVirtualMachineIds")
@@ -259,7 +262,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Virtual Machines associated with the Db server.
          *
          * @param autonomousVirtualMachineIds the value to set
@@ -272,14 +275,14 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Db nodes associated with the Db server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeIds")
         private java.util.List<String> dbNodeIds;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Db nodes associated with the Db server.
          *
          * @param dbNodeIds the value to set
@@ -411,7 +414,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -421,7 +424,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -436,7 +439,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -444,7 +447,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -453,6 +456,29 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
+         * OCPU compute model is legacy.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
+         * OCPU compute model is legacy.
+         *
+         * @param computeModel the value to set
+         * @return this builder
+         */
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
             return this;
         }
 
@@ -482,7 +508,8 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
                             this.timeCreated,
                             this.dbServerPatchingDetails,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.computeModel);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -554,6 +581,9 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
             return this;
         }
     }
@@ -568,15 +598,15 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * Exacc Db server.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
+     * server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * Exacc Db server.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
+     * server.
      *
      * @return the value
      */
@@ -598,14 +628,14 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -615,14 +645,14 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      *
      * @return the value
@@ -671,14 +701,14 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * Clusters associated with the Db server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterIds")
     private final java.util.List<String> vmClusterIds;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * Clusters associated with the Db server.
      *
      * @return the value
@@ -688,15 +718,15 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Autonomous VM Clusters associated with the Db server.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Autonomous VM Clusters associated with the Db server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterIds")
     private final java.util.List<String> autonomousVmClusterIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Autonomous VM Clusters associated with the Db server.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Autonomous VM Clusters associated with the Db server.
      *
      * @return the value
      */
@@ -705,15 +735,15 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Autonomous Virtual Machines associated with the Db server.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Autonomous Virtual Machines associated with the Db server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousVirtualMachineIds")
     private final java.util.List<String> autonomousVirtualMachineIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Autonomous Virtual Machines associated with the Db server.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Autonomous Virtual Machines associated with the Db server.
      *
      * @return the value
      */
@@ -722,14 +752,14 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
      * nodes associated with the Db server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeIds")
     private final java.util.List<String> dbNodeIds;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
      * nodes associated with the Db server.
      *
      * @return the value
@@ -893,7 +923,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -903,7 +933,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -916,7 +946,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -924,12 +954,84 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy.
+     */
+    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeModel.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy.
+     *
+     * @return the value
+     */
+    public ComputeModel getComputeModel() {
+        return computeModel;
     }
 
     @Override
@@ -971,6 +1073,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
                 .append(String.valueOf(this.dbServerPatchingDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(")");
         return sb.toString();
     }
@@ -1011,6 +1114,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
                         this.dbServerPatchingDetails, other.dbServerPatchingDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && super.equals(other);
     }
 
@@ -1073,6 +1177,7 @@ public final class DbServer extends com.oracle.bmc.http.client.internal.Explicit
                                 : this.dbServerPatchingDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

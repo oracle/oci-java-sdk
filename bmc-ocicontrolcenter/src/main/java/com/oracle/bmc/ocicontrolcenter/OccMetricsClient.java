@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocicontrolcenter;
@@ -111,6 +111,7 @@ public class OccMetricsClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ocicontrolcenter.model.MetricPropertyCollection.class,
                         ListMetricPropertiesResponse.Builder::metricPropertyCollection)
@@ -118,7 +119,6 @@ public class OccMetricsClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListMetricPropertiesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMetricPropertiesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -141,6 +141,7 @@ public class OccMetricsClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ocicontrolcenter.model.NamespaceCollection.class,
                         ListNamespacesResponse.Builder::namespaceCollection)
@@ -148,7 +149,6 @@ public class OccMetricsClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListNamespacesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListNamespacesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -173,6 +173,7 @@ public class OccMetricsClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.ocicontrolcenter.model.SummarizedMetricDataCollection.class,
@@ -181,7 +182,6 @@ public class OccMetricsClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", RequestSummarizedMetricDataResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", RequestSummarizedMetricDataResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

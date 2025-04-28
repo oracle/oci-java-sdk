@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices;
@@ -14,8 +14,8 @@ import com.oracle.bmc.mediaservices.responses.*;
  *
  * <p>Use the Media Services API to configure media workflows and run Media Flow jobs, create
  * distribution channels, ingest assets, create Preview URLs and play assets. For more information,
- * see [Media Flow](https://docs.cloud.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media
- * Streams](https://docs.cloud.oracle.com/iaas/Content/dms-mediastream/home.htm).
+ * see [Media Flow](https://docs.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media
+ * Streams](https://docs.oracle.com/iaas/Content/dms-mediastream/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public interface MediaServicesAsync extends AutoCloseable {
@@ -67,6 +67,123 @@ public interface MediaServicesAsync extends AutoCloseable {
      *     template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
+     * Add a lock to an MediaAsset.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddMediaAssetLockResponse> addMediaAssetLock(
+            AddMediaAssetLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddMediaAssetLockRequest, AddMediaAssetLockResponse>
+                    handler);
+
+    /**
+     * Add a lock to a MediaWorkflowConfiguration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddMediaWorkflowConfigurationLockResponse>
+            addMediaWorkflowConfigurationLock(
+                    AddMediaWorkflowConfigurationLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddMediaWorkflowConfigurationLockRequest,
+                                    AddMediaWorkflowConfigurationLockResponse>
+                            handler);
+
+    /**
+     * Add a lock to a MediaWorkflowJob.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddMediaWorkflowJobLockResponse> addMediaWorkflowJobLock(
+            AddMediaWorkflowJobLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddMediaWorkflowJobLockRequest, AddMediaWorkflowJobLockResponse>
+                    handler);
+
+    /**
+     * Add a lock to a MediaWorkflow.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddMediaWorkflowLockResponse> addMediaWorkflowLock(
+            AddMediaWorkflowLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddMediaWorkflowLockRequest, AddMediaWorkflowLockResponse>
+                    handler);
+
+    /**
+     * Add a lock to a StreamCdnConfig.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddStreamCdnConfigLockResponse> addStreamCdnConfigLock(
+            AddStreamCdnConfigLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddStreamCdnConfigLockRequest, AddStreamCdnConfigLockResponse>
+                    handler);
+
+    /**
+     * Add a lock to a StreamDistributionChannel.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddStreamDistributionChannelLockResponse>
+            addStreamDistributionChannelLock(
+                    AddStreamDistributionChannelLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddStreamDistributionChannelLockRequest,
+                                    AddStreamDistributionChannelLockResponse>
+                            handler);
+
+    /**
+     * Add a lock to a StreamPackagingConfig.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddStreamPackagingConfigLockResponse> addStreamPackagingConfigLock(
+            AddStreamPackagingConfigLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddStreamPackagingConfigLockRequest,
+                            AddStreamPackagingConfigLockResponse>
+                    handler);
 
     /**
      * Moves a MediaAsset resource from one compartment identifier to another.
@@ -492,22 +609,6 @@ public interface MediaServicesAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<GetMediaWorkflowJobFactResponse> getMediaWorkflowJobFact(
-            GetMediaWorkflowJobFactRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            GetMediaWorkflowJobFactRequest, GetMediaWorkflowJobFactResponse>
-                    handler);
-
-    /**
      * Gets a StreamCdnConfig by identifier.
      *
      * @param request The request object containing the details to send
@@ -626,22 +727,6 @@ public interface MediaServicesAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<ListMediaWorkflowJobFactsResponse> listMediaWorkflowJobFacts(
-            ListMediaWorkflowJobFactsRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            ListMediaWorkflowJobFactsRequest, ListMediaWorkflowJobFactsResponse>
-                    handler);
-
-    /**
      * Lists the MediaWorkflowJobs.
      *
      * @param request The request object containing the details to send
@@ -757,6 +842,124 @@ public interface MediaServicesAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListSystemMediaWorkflowsRequest, ListSystemMediaWorkflowsResponse>
                     handler);
+
+    /**
+     * Remove a lock to an MediaAsset.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveMediaAssetLockResponse> removeMediaAssetLock(
+            RemoveMediaAssetLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveMediaAssetLockRequest, RemoveMediaAssetLockResponse>
+                    handler);
+
+    /**
+     * Remove a lock from a MediaWorkflowConfiguration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveMediaWorkflowConfigurationLockResponse>
+            removeMediaWorkflowConfigurationLock(
+                    RemoveMediaWorkflowConfigurationLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveMediaWorkflowConfigurationLockRequest,
+                                    RemoveMediaWorkflowConfigurationLockResponse>
+                            handler);
+
+    /**
+     * Remove a lock from a MediaWorkflowJob.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveMediaWorkflowJobLockResponse> removeMediaWorkflowJobLock(
+            RemoveMediaWorkflowJobLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveMediaWorkflowJobLockRequest, RemoveMediaWorkflowJobLockResponse>
+                    handler);
+
+    /**
+     * Remove a lock from a MediaWorkflow.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveMediaWorkflowLockResponse> removeMediaWorkflowLock(
+            RemoveMediaWorkflowLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveMediaWorkflowLockRequest, RemoveMediaWorkflowLockResponse>
+                    handler);
+
+    /**
+     * Remove a lock from a StreamCdnConfig.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveStreamCdnConfigLockResponse> removeStreamCdnConfigLock(
+            RemoveStreamCdnConfigLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveStreamCdnConfigLockRequest, RemoveStreamCdnConfigLockResponse>
+                    handler);
+
+    /**
+     * Remove a lock to a StreamDistributionChannel.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveStreamDistributionChannelLockResponse>
+            removeStreamDistributionChannelLock(
+                    RemoveStreamDistributionChannelLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveStreamDistributionChannelLockRequest,
+                                    RemoveStreamDistributionChannelLockResponse>
+                            handler);
+
+    /**
+     * Remove a lock from a StreamPackagingConfig.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveStreamPackagingConfigLockResponse>
+            removeStreamPackagingConfigLock(
+                    RemoveStreamPackagingConfigLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveStreamPackagingConfigLockRequest,
+                                    RemoveStreamPackagingConfigLockResponse>
+                            handler);
 
     /**
      * Updates the MediaAsset.

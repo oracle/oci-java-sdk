@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -127,6 +127,15 @@ public final class PostgresqlConnection extends Connection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
@@ -169,6 +178,24 @@ public final class PostgresqlConnection extends Connection {
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
         /** The PostgreSQL technology type. */
@@ -302,7 +329,11 @@ public final class PostgresqlConnection extends Connection {
             return this;
         }
         /**
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * Deprecated: this field will be removed in future versions. Either specify the private IP
+         * in the connectionString or host field, or make sure the host name is resolvable in the
+         * target VCN.
+         *
+         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
          * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
          * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
@@ -313,7 +344,11 @@ public final class PostgresqlConnection extends Connection {
         private String privateIp;
 
         /**
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * Deprecated: this field will be removed in future versions. Either specify the private IP
+         * in the connectionString or host field, or make sure the host name is resolvable in the
+         * target VCN.
+         *
+         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
          * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
          * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
@@ -326,6 +361,71 @@ public final class PostgresqlConnection extends Connection {
         public Builder privateIp(String privateIp) {
             this.privateIp = privateIp;
             this.__explicitlySet__.add("privateIp");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database system being referenced.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+        private String dbSystemId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database system being referenced.
+         *
+         * @param dbSystemId the value to set
+         * @return this builder
+         */
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            this.__explicitlySet__.add("dbSystemId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the private key of the PostgreSQL server. The supported file formats
+         * are .pem and .crt. Note: When provided, 'sslKey' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sslKeySecretId")
+        private String sslKeySecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the private key of the PostgreSQL server. The supported file formats
+         * are .pem and .crt. Note: When provided, 'sslKey' field must not be provided.
+         *
+         * @param sslKeySecretId the value to set
+         * @return this builder
+         */
+        public Builder sslKeySecretId(String sslKeySecretId) {
+            this.sslKeySecretId = sslKeySecretId;
+            this.__explicitlySet__.add("sslKeySecretId");
             return this;
         }
 
@@ -346,11 +446,14 @@ public final class PostgresqlConnection extends Connection {
                             this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.locks,
                             this.vaultId,
                             this.keyId,
                             this.ingressIps,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.databaseName,
                             this.host,
@@ -359,7 +462,10 @@ public final class PostgresqlConnection extends Connection {
                             this.additionalAttributes,
                             this.securityProtocol,
                             this.sslMode,
-                            this.privateIp);
+                            this.privateIp,
+                            this.dbSystemId,
+                            this.passwordSecretId,
+                            this.sslKeySecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -401,6 +507,9 @@ public final class PostgresqlConnection extends Connection {
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
@@ -415,6 +524,12 @@ public final class PostgresqlConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -443,6 +558,15 @@ public final class PostgresqlConnection extends Connection {
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
             }
+            if (model.wasPropertyExplicitlySet("dbSystemId")) {
+                this.dbSystemId(model.getDbSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("sslKeySecretId")) {
+                this.sslKeySecretId(model.getSslKeySecretId());
+            }
             return this;
         }
     }
@@ -469,11 +593,14 @@ public final class PostgresqlConnection extends Connection {
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.List<ResourceLock> locks,
             String vaultId,
             String keyId,
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             TechnologyType technologyType,
             String databaseName,
             String host,
@@ -482,7 +609,10 @@ public final class PostgresqlConnection extends Connection {
             java.util.List<NameValuePair> additionalAttributes,
             SecurityProtocol securityProtocol,
             SslMode sslMode,
-            String privateIp) {
+            String privateIp,
+            String dbSystemId,
+            String passwordSecretId,
+            String sslKeySecretId) {
         super(
                 id,
                 displayName,
@@ -495,11 +625,14 @@ public final class PostgresqlConnection extends Connection {
                 lifecycleDetails,
                 timeCreated,
                 timeUpdated,
+                locks,
                 vaultId,
                 keyId,
                 ingressIps,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.databaseName = databaseName;
         this.host = host;
@@ -509,15 +642,21 @@ public final class PostgresqlConnection extends Connection {
         this.securityProtocol = securityProtocol;
         this.sslMode = sslMode;
         this.privateIp = privateIp;
+        this.dbSystemId = dbSystemId;
+        this.passwordSecretId = passwordSecretId;
+        this.sslKeySecretId = sslKeySecretId;
     }
 
     /** The PostgreSQL technology type. */
     public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+        OciPostgresql("OCI_POSTGRESQL"),
         PostgresqlServer("POSTGRESQL_SERVER"),
         AmazonAuroraPostgresql("AMAZON_AURORA_POSTGRESQL"),
         AmazonRdsPostgresql("AMAZON_RDS_POSTGRESQL"),
         AzurePostgresql("AZURE_POSTGRESQL"),
+        AzureCosmosDbForPostgresql("AZURE_COSMOS_DB_FOR_POSTGRESQL"),
         GoogleCloudSqlPostgresql("GOOGLE_CLOUD_SQL_POSTGRESQL"),
+        GoogleAlloyDbForPostgresql("GOOGLE_ALLOY_DB_FOR_POSTGRESQL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -770,7 +909,11 @@ public final class PostgresqlConnection extends Connection {
     }
 
     /**
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in
+     * the connectionString or host field, or make sure the host name is resolvable in the target
+     * VCN.
+     *
+     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
      * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
      * not provided it is assumed the datasource is publicly accessible. In case the connection is
@@ -781,7 +924,11 @@ public final class PostgresqlConnection extends Connection {
     private final String privateIp;
 
     /**
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in
+     * the connectionString or host field, or make sure the host name is resolvable in the target
+     * VCN.
+     *
+     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
      * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
      * not provided it is assumed the datasource is publicly accessible. In case the connection is
@@ -792,6 +939,65 @@ public final class PostgresqlConnection extends Connection {
      */
     public String getPrivateIp() {
         return privateIp;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database system being referenced.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+    private final String dbSystemId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database system being referenced.
+     *
+     * @return the value
+     */
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the private key of the PostgreSQL server. The supported file formats are
+     * .pem and .crt. Note: When provided, 'sslKey' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sslKeySecretId")
+    private final String sslKeySecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the private key of the PostgreSQL server. The supported file formats are
+     * .pem and .crt. Note: When provided, 'sslKey' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getSslKeySecretId() {
+        return sslKeySecretId;
     }
 
     @Override
@@ -818,6 +1024,9 @@ public final class PostgresqlConnection extends Connection {
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", sslMode=").append(String.valueOf(this.sslMode));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", sslKeySecretId=").append(String.valueOf(this.sslKeySecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -841,6 +1050,9 @@ public final class PostgresqlConnection extends Connection {
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.sslMode, other.sslMode)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
+                && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(this.sslKeySecretId, other.sslKeySecretId)
                 && super.equals(other);
     }
 
@@ -865,6 +1077,13 @@ public final class PostgresqlConnection extends Connection {
                         + (this.securityProtocol == null ? 43 : this.securityProtocol.hashCode());
         result = (result * PRIME) + (this.sslMode == null ? 43 : this.sslMode.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslKeySecretId == null ? 43 : this.sslKeySecretId.hashCode());
         return result;
     }
 }

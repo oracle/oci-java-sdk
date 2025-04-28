@@ -1,13 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.redis.model;
 
 /**
- * The configuration details for a new Redis cluster. A Redis cluster is a memory-based storage
- * solution. For more information, see [OCI Caching Service with
- * Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm). <br>
+ * The configuration details for a new OCI Cache cluster. An OCI Cache cluster is a memory-based
+ * storage solution. For more information, see [OCI
+ * Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -26,37 +26,76 @@ public final class CreateRedisClusterDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "clusterMode",
+        "shardCount",
         "displayName",
         "compartmentId",
         "nodeCount",
         "softwareVersion",
         "nodeMemoryInGBs",
         "subnetId",
+        "nsgIds",
         "freeformTags",
         "definedTags"
     })
     public CreateRedisClusterDetails(
+            RedisCluster.ClusterMode clusterMode,
+            Integer shardCount,
             String displayName,
             String compartmentId,
             Integer nodeCount,
             RedisCluster.SoftwareVersion softwareVersion,
             Float nodeMemoryInGBs,
             String subnetId,
+            java.util.List<String> nsgIds,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.clusterMode = clusterMode;
+        this.shardCount = shardCount;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.nodeCount = nodeCount;
         this.softwareVersion = softwareVersion;
         this.nodeMemoryInGBs = nodeMemoryInGBs;
         this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /** Specifies whether the cluster is sharded or non-sharded. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
+        private RedisCluster.ClusterMode clusterMode;
+
+        /**
+         * Specifies whether the cluster is sharded or non-sharded.
+         *
+         * @param clusterMode the value to set
+         * @return this builder
+         */
+        public Builder clusterMode(RedisCluster.ClusterMode clusterMode) {
+            this.clusterMode = clusterMode;
+            this.__explicitlySet__.add("clusterMode");
+            return this;
+        }
+        /** The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED. */
+        @com.fasterxml.jackson.annotation.JsonProperty("shardCount")
+        private Integer shardCount;
+
+        /**
+         * The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+         *
+         * @param shardCount the value to set
+         * @return this builder
+         */
+        public Builder shardCount(Integer shardCount) {
+            this.shardCount = shardCount;
+            this.__explicitlySet__.add("shardCount");
+            return this;
+        }
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
          * confidential information.
@@ -77,17 +116,15 @@ public final class CreateRedisClusterDetails
             return this;
         }
         /**
-         * The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the compartment that contains the Redis cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * of the compartment that contains the cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the compartment that contains the Redis cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * of the compartment that contains the cluster.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -97,12 +134,16 @@ public final class CreateRedisClusterDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The number of nodes in the Redis cluster. */
+        /**
+         * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the
+         * total number of nodes when clusterMode is NONSHARDED.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
         private Integer nodeCount;
 
         /**
-         * The number of nodes in the Redis cluster.
+         * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the
+         * total number of nodes when clusterMode is NONSHARDED.
          *
          * @param nodeCount the value to set
          * @return this builder
@@ -112,12 +153,12 @@ public final class CreateRedisClusterDetails
             this.__explicitlySet__.add("nodeCount");
             return this;
         }
-        /** The Redis version that the cluster is running. */
+        /** The OCI Cache engine version that the cluster is running. */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
         private RedisCluster.SoftwareVersion softwareVersion;
 
         /**
-         * The Redis version that the cluster is running.
+         * The OCI Cache engine version that the cluster is running.
          *
          * @param softwareVersion the value to set
          * @return this builder
@@ -127,12 +168,12 @@ public final class CreateRedisClusterDetails
             this.__explicitlySet__.add("softwareVersion");
             return this;
         }
-        /** The amount of memory allocated to the Redis cluster's nodes, in gigabytes. */
+        /** The amount of memory allocated to the cluster's nodes, in gigabytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeMemoryInGBs")
         private Float nodeMemoryInGBs;
 
         /**
-         * The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+         * The amount of memory allocated to the cluster's nodes, in gigabytes.
          *
          * @param nodeMemoryInGBs the value to set
          * @return this builder
@@ -143,17 +184,15 @@ public final class CreateRedisClusterDetails
             return this;
         }
         /**
-         * The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the Redis cluster's subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * of the cluster's subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the Redis cluster's subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * of the cluster's subnet.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -161,6 +200,29 @@ public final class CreateRedisClusterDetails
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * A list of Network Security Group (NSG)
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with this cluster. For more information, see [Using an NSG for
+         * Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * A list of Network Security Group (NSG)
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with this cluster. For more information, see [Using an NSG for
+         * Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         */
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
@@ -209,12 +271,15 @@ public final class CreateRedisClusterDetails
         public CreateRedisClusterDetails build() {
             CreateRedisClusterDetails model =
                     new CreateRedisClusterDetails(
+                            this.clusterMode,
+                            this.shardCount,
                             this.displayName,
                             this.compartmentId,
                             this.nodeCount,
                             this.softwareVersion,
                             this.nodeMemoryInGBs,
                             this.subnetId,
+                            this.nsgIds,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -225,6 +290,12 @@ public final class CreateRedisClusterDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateRedisClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("clusterMode")) {
+                this.clusterMode(model.getClusterMode());
+            }
+            if (model.wasPropertyExplicitlySet("shardCount")) {
+                this.shardCount(model.getShardCount());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
@@ -242,6 +313,9 @@ public final class CreateRedisClusterDetails
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -262,6 +336,32 @@ public final class CreateRedisClusterDetails
         return new Builder().copy(this);
     }
 
+    /** Specifies whether the cluster is sharded or non-sharded. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
+    private final RedisCluster.ClusterMode clusterMode;
+
+    /**
+     * Specifies whether the cluster is sharded or non-sharded.
+     *
+     * @return the value
+     */
+    public RedisCluster.ClusterMode getClusterMode() {
+        return clusterMode;
+    }
+
+    /** The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED. */
+    @com.fasterxml.jackson.annotation.JsonProperty("shardCount")
+    private final Integer shardCount;
+
+    /**
+     * The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     *
+     * @return the value
+     */
+    public Integer getShardCount() {
+        return shardCount;
+    }
+
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
      * confidential information.
@@ -280,17 +380,15 @@ public final class CreateRedisClusterDetails
     }
 
     /**
-     * The
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the compartment that contains the Redis cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * the compartment that contains the cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the compartment that contains the Redis cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * the compartment that contains the cluster.
      *
      * @return the value
      */
@@ -298,12 +396,16 @@ public final class CreateRedisClusterDetails
         return compartmentId;
     }
 
-    /** The number of nodes in the Redis cluster. */
+    /**
+     * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total
+     * number of nodes when clusterMode is NONSHARDED.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
     private final Integer nodeCount;
 
     /**
-     * The number of nodes in the Redis cluster.
+     * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total
+     * number of nodes when clusterMode is NONSHARDED.
      *
      * @return the value
      */
@@ -311,12 +413,12 @@ public final class CreateRedisClusterDetails
         return nodeCount;
     }
 
-    /** The Redis version that the cluster is running. */
+    /** The OCI Cache engine version that the cluster is running. */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
     private final RedisCluster.SoftwareVersion softwareVersion;
 
     /**
-     * The Redis version that the cluster is running.
+     * The OCI Cache engine version that the cluster is running.
      *
      * @return the value
      */
@@ -324,12 +426,12 @@ public final class CreateRedisClusterDetails
         return softwareVersion;
     }
 
-    /** The amount of memory allocated to the Redis cluster's nodes, in gigabytes. */
+    /** The amount of memory allocated to the cluster's nodes, in gigabytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeMemoryInGBs")
     private final Float nodeMemoryInGBs;
 
     /**
-     * The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+     * The amount of memory allocated to the cluster's nodes, in gigabytes.
      *
      * @return the value
      */
@@ -338,22 +440,41 @@ public final class CreateRedisClusterDetails
     }
 
     /**
-     * The
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the Redis cluster's subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * the cluster's subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the Redis cluster's subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * the cluster's subnet.
      *
      * @return the value
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * A list of Network Security Group (NSG)
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+     * with this cluster. For more information, see [Using an NSG for
+     * Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * A list of Network Security Group (NSG)
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+     * with this cluster. For more information, see [Using an NSG for
+     * Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+     *
+     * @return the value
+     */
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
     }
 
     /**
@@ -405,12 +526,15 @@ public final class CreateRedisClusterDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateRedisClusterDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append("clusterMode=").append(String.valueOf(this.clusterMode));
+        sb.append(", shardCount=").append(String.valueOf(this.shardCount));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
         sb.append(", softwareVersion=").append(String.valueOf(this.softwareVersion));
         sb.append(", nodeMemoryInGBs=").append(String.valueOf(this.nodeMemoryInGBs));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -427,12 +551,15 @@ public final class CreateRedisClusterDetails
         }
 
         CreateRedisClusterDetails other = (CreateRedisClusterDetails) o;
-        return java.util.Objects.equals(this.displayName, other.displayName)
+        return java.util.Objects.equals(this.clusterMode, other.clusterMode)
+                && java.util.Objects.equals(this.shardCount, other.shardCount)
+                && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.nodeCount, other.nodeCount)
                 && java.util.Objects.equals(this.softwareVersion, other.softwareVersion)
                 && java.util.Objects.equals(this.nodeMemoryInGBs, other.nodeMemoryInGBs)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -442,6 +569,8 @@ public final class CreateRedisClusterDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.clusterMode == null ? 43 : this.clusterMode.hashCode());
+        result = (result * PRIME) + (this.shardCount == null ? 43 : this.shardCount.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
@@ -454,6 +583,7 @@ public final class CreateRedisClusterDetails
                 (result * PRIME)
                         + (this.nodeMemoryInGBs == null ? 43 : this.nodeMemoryInGBs.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

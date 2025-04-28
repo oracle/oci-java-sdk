@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.recovery;
@@ -123,6 +123,40 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public java.util.concurrent.Future<CancelProtectedDatabaseDeletionResponse>
+            cancelProtectedDatabaseDeletion(
+                    CancelProtectedDatabaseDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CancelProtectedDatabaseDeletionRequest,
+                                    CancelProtectedDatabaseDeletionResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getProtectedDatabaseId(), "protectedDatabaseId must not be blank");
+
+        return clientCall(request, CancelProtectedDatabaseDeletionResponse::builder)
+                .logger(LOG, "cancelProtectedDatabaseDeletion")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "CancelProtectedDatabaseDeletion",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/CancelProtectedDatabaseDeletion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelProtectedDatabaseDeletionRequest::builder)
+                .basePath("/20210216")
+                .appendPathParam("protectedDatabases")
+                .appendPathParam(request.getProtectedDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("cancelDeletion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CancelProtectedDatabaseDeletionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeProtectedDatabaseCompartmentResponse>
             changeProtectedDatabaseCompartment(
                     ChangeProtectedDatabaseCompartmentRequest request,
@@ -160,6 +194,47 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeProtectedDatabaseCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeProtectedDatabaseSubscriptionResponse>
+            changeProtectedDatabaseSubscription(
+                    ChangeProtectedDatabaseSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeProtectedDatabaseSubscriptionRequest,
+                                    ChangeProtectedDatabaseSubscriptionResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getProtectedDatabaseId(), "protectedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeProtectedDatabaseSubscriptionDetails(),
+                "changeProtectedDatabaseSubscriptionDetails is required");
+
+        return clientCall(request, ChangeProtectedDatabaseSubscriptionResponse::builder)
+                .logger(LOG, "changeProtectedDatabaseSubscription")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ChangeProtectedDatabaseSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/ChangeProtectedDatabaseSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeProtectedDatabaseSubscriptionRequest::builder)
+                .basePath("/20210216")
+                .appendPathParam("protectedDatabases")
+                .appendPathParam(request.getProtectedDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeProtectedDatabaseSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeProtectedDatabaseSubscriptionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -267,6 +342,7 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.recovery.model.ProtectedDatabase.class,
@@ -382,6 +458,7 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
                 .basePath("/20210216")
                 .appendPathParam("protectedDatabases")
                 .appendPathParam(request.getProtectedDatabaseId())
+                .appendEnumQueryParam("deletionSchedule", request.getDeletionSchedule())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -495,6 +572,12 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-request-id",
                         FetchProtectedDatabaseConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-filename",
+                        FetchProtectedDatabaseConfigurationResponse.Builder::opcFilename)
+                .handleResponseHeaderString(
+                        "opc-checksum",
+                        FetchProtectedDatabaseConfigurationResponse.Builder::opcChecksum)
                 .callAsync(handler);
     }
 
@@ -854,6 +937,44 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScheduleProtectedDatabaseDeletionResponse>
+            scheduleProtectedDatabaseDeletion(
+                    ScheduleProtectedDatabaseDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ScheduleProtectedDatabaseDeletionRequest,
+                                    ScheduleProtectedDatabaseDeletionResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getProtectedDatabaseId(), "protectedDatabaseId must not be blank");
+
+        return clientCall(request, ScheduleProtectedDatabaseDeletionResponse::builder)
+                .logger(LOG, "scheduleProtectedDatabaseDeletion")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ScheduleProtectedDatabaseDeletion",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/ScheduleProtectedDatabaseDeletion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ScheduleProtectedDatabaseDeletionRequest::builder)
+                .basePath("/20210216")
+                .appendPathParam("protectedDatabases")
+                .appendPathParam(request.getProtectedDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("scheduleDeletion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ScheduleProtectedDatabaseDeletionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ScheduleProtectedDatabaseDeletionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -22,6 +22,7 @@ package com.oracle.bmc.mysql.model;
 public final class Replica extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "secureConnections",
         "id",
         "dbSystemId",
         "compartmentId",
@@ -45,6 +46,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         "replicaOverrides"
     })
     public Replica(
+            SecureConnectionDetails secureConnections,
             String id,
             String dbSystemId,
             String compartmentId,
@@ -67,6 +69,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
             String configurationId,
             ReplicaOverrides replicaOverrides) {
         super();
+        this.secureConnections = secureConnections;
         this.id = id;
         this.dbSystemId = dbSystemId;
         this.compartmentId = compartmentId;
@@ -92,6 +95,15 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
+        @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+        private SecureConnectionDetails secureConnections;
+
+        public Builder secureConnections(SecureConnectionDetails secureConnections) {
+            this.secureConnections = secureConnections;
+            this.__explicitlySet__.add("secureConnections");
+            return this;
+        }
         /** The OCID of the read replica. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -445,6 +457,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         public Replica build() {
             Replica model =
                     new Replica(
+                            this.secureConnections,
                             this.id,
                             this.dbSystemId,
                             this.compartmentId,
@@ -474,6 +487,9 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Replica model) {
+            if (model.wasPropertyExplicitlySet("secureConnections")) {
+                this.secureConnections(model.getSecureConnections());
+            }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
             }
@@ -548,6 +564,13 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+    private final SecureConnectionDetails secureConnections;
+
+    public SecureConnectionDetails getSecureConnections() {
+        return secureConnections;
     }
 
     /** The OCID of the read replica. */
@@ -920,7 +943,8 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Replica(");
         sb.append("super=").append(super.toString());
-        sb.append("id=").append(String.valueOf(this.id));
+        sb.append("secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -955,7 +979,8 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         }
 
         Replica other = (Replica) o;
-        return java.util.Objects.equals(this.id, other.id)
+        return java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -983,6 +1008,9 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         result =

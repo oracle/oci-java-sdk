@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -37,6 +37,7 @@ public final class CreateDbSystemDetails
         "adminUsername",
         "adminPassword",
         "dataStorageSizeInGBs",
+        "dataStorage",
         "hostnameLabel",
         "ipAddress",
         "port",
@@ -48,7 +49,12 @@ public final class CreateDbSystemDetails
         "definedTags",
         "deletionPolicy",
         "crashRecovery",
-        "databaseManagement"
+        "databaseManagement",
+        "secureConnections",
+        "databaseMode",
+        "accessMode",
+        "customerContacts",
+        "readEndpoint"
     })
     public CreateDbSystemDetails(
             String displayName,
@@ -64,6 +70,7 @@ public final class CreateDbSystemDetails
             String adminUsername,
             String adminPassword,
             Integer dataStorageSizeInGBs,
+            DataStorageDetails dataStorage,
             String hostnameLabel,
             String ipAddress,
             Integer port,
@@ -75,7 +82,12 @@ public final class CreateDbSystemDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             CreateDeletionPolicyDetails deletionPolicy,
             CrashRecoveryStatus crashRecovery,
-            DatabaseManagementStatus databaseManagement) {
+            DatabaseManagementStatus databaseManagement,
+            SecureConnectionDetails secureConnections,
+            DbSystem.DatabaseMode databaseMode,
+            DbSystem.AccessMode accessMode,
+            java.util.List<CustomerContact> customerContacts,
+            CreateReadEndpointDetails readEndpoint) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -90,6 +102,7 @@ public final class CreateDbSystemDetails
         this.adminUsername = adminUsername;
         this.adminPassword = adminPassword;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.dataStorage = dataStorage;
         this.hostnameLabel = hostnameLabel;
         this.ipAddress = ipAddress;
         this.port = port;
@@ -102,6 +115,11 @@ public final class CreateDbSystemDetails
         this.deletionPolicy = deletionPolicy;
         this.crashRecovery = crashRecovery;
         this.databaseManagement = databaseManagement;
+        this.secureConnections = secureConnections;
+        this.databaseMode = databaseMode;
+        this.accessMode = accessMode;
+        this.customerContacts = customerContacts;
+        this.readEndpoint = readEndpoint;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -369,6 +387,15 @@ public final class CreateDbSystemDetails
             this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorage")
+        private DataStorageDetails dataStorage;
+
+        public Builder dataStorage(DataStorageDetails dataStorage) {
+            this.dataStorage = dataStorage;
+            this.__explicitlySet__.add("dataStorage");
+            return this;
+        }
         /**
          * The hostname for the primary endpoint of the DB System. Used for DNS.
          *
@@ -567,6 +594,101 @@ public final class CreateDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+        private SecureConnectionDetails secureConnections;
+
+        public Builder secureConnections(SecureConnectionDetails secureConnections) {
+            this.secureConnections = secureConnections;
+            this.__explicitlySet__.add("secureConnections");
+            return this;
+        }
+        /**
+         * The database mode indicating the types of statements that will be allowed to run in the
+         * DB system. This mode will apply only to statements run by user connections. Replicated
+         * write statements will continue to be allowed regardless of the DatabaseMode. - READ_WRITE
+         * (default): allow running read and write statements on the DB system; - READ_ONLY: only
+         * allow running read statements on the DB system.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+        private DbSystem.DatabaseMode databaseMode;
+
+        /**
+         * The database mode indicating the types of statements that will be allowed to run in the
+         * DB system. This mode will apply only to statements run by user connections. Replicated
+         * write statements will continue to be allowed regardless of the DatabaseMode. - READ_WRITE
+         * (default): allow running read and write statements on the DB system; - READ_ONLY: only
+         * allow running read statements on the DB system.
+         *
+         * @param databaseMode the value to set
+         * @return this builder
+         */
+        public Builder databaseMode(DbSystem.DatabaseMode databaseMode) {
+            this.databaseMode = databaseMode;
+            this.__explicitlySet__.add("databaseMode");
+            return this;
+        }
+        /**
+         * The access mode indicating if the database access will be restricted only to
+         * administrators or not: - UNRESTRICTED (default): the access to the database is not
+         * restricted; - RESTRICTED: the access will be allowed only to users with specific
+         * privileges; RESTRICTED will correspond to setting the MySQL system variable
+         * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+         * to ON.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+        private DbSystem.AccessMode accessMode;
+
+        /**
+         * The access mode indicating if the database access will be restricted only to
+         * administrators or not: - UNRESTRICTED (default): the access to the database is not
+         * restricted; - RESTRICTED: the access will be allowed only to users with specific
+         * privileges; RESTRICTED will correspond to setting the MySQL system variable
+         * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+         * to ON.
+         *
+         * @param accessMode the value to set
+         * @return this builder
+         */
+        public Builder accessMode(DbSystem.AccessMode accessMode) {
+            this.accessMode = accessMode;
+            this.__explicitlySet__.add("accessMode");
+            return this;
+        }
+        /**
+         * The list of customer email addresses that receive information from Oracle about the
+         * specified OCI DB System resource. Oracle uses these email addresses to send notifications
+         * about planned and unplanned software maintenance updates, information about system
+         * hardware, and other information needed by administrators. Up to 10 email addresses can be
+         * added to the customer contacts for a DB System.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+        private java.util.List<CustomerContact> customerContacts;
+
+        /**
+         * The list of customer email addresses that receive information from Oracle about the
+         * specified OCI DB System resource. Oracle uses these email addresses to send notifications
+         * about planned and unplanned software maintenance updates, information about system
+         * hardware, and other information needed by administrators. Up to 10 email addresses can be
+         * added to the customer contacts for a DB System.
+         *
+         * @param customerContacts the value to set
+         * @return this builder
+         */
+        public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
+            this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+        private CreateReadEndpointDetails readEndpoint;
+
+        public Builder readEndpoint(CreateReadEndpointDetails readEndpoint) {
+            this.readEndpoint = readEndpoint;
+            this.__explicitlySet__.add("readEndpoint");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -586,6 +708,7 @@ public final class CreateDbSystemDetails
                             this.adminUsername,
                             this.adminPassword,
                             this.dataStorageSizeInGBs,
+                            this.dataStorage,
                             this.hostnameLabel,
                             this.ipAddress,
                             this.port,
@@ -597,7 +720,12 @@ public final class CreateDbSystemDetails
                             this.definedTags,
                             this.deletionPolicy,
                             this.crashRecovery,
-                            this.databaseManagement);
+                            this.databaseManagement,
+                            this.secureConnections,
+                            this.databaseMode,
+                            this.accessMode,
+                            this.customerContacts,
+                            this.readEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -645,6 +773,9 @@ public final class CreateDbSystemDetails
             if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
                 this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
             }
+            if (model.wasPropertyExplicitlySet("dataStorage")) {
+                this.dataStorage(model.getDataStorage());
+            }
             if (model.wasPropertyExplicitlySet("hostnameLabel")) {
                 this.hostnameLabel(model.getHostnameLabel());
             }
@@ -680,6 +811,21 @@ public final class CreateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("databaseManagement")) {
                 this.databaseManagement(model.getDatabaseManagement());
+            }
+            if (model.wasPropertyExplicitlySet("secureConnections")) {
+                this.secureConnections(model.getSecureConnections());
+            }
+            if (model.wasPropertyExplicitlySet("databaseMode")) {
+                this.databaseMode(model.getDatabaseMode());
+            }
+            if (model.wasPropertyExplicitlySet("accessMode")) {
+                this.accessMode(model.getAccessMode());
+            }
+            if (model.wasPropertyExplicitlySet("customerContacts")) {
+                this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("readEndpoint")) {
+                this.readEndpoint(model.getReadEndpoint());
             }
             return this;
         }
@@ -929,6 +1075,13 @@ public final class CreateDbSystemDetails
         return dataStorageSizeInGBs;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorage")
+    private final DataStorageDetails dataStorage;
+
+    public DataStorageDetails getDataStorage() {
+        return dataStorage;
+    }
+
     /**
      * The hostname for the primary endpoint of the DB System. Used for DNS.
      *
@@ -1097,6 +1250,91 @@ public final class CreateDbSystemDetails
         return databaseManagement;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+    private final SecureConnectionDetails secureConnections;
+
+    public SecureConnectionDetails getSecureConnections() {
+        return secureConnections;
+    }
+
+    /**
+     * The database mode indicating the types of statements that will be allowed to run in the DB
+     * system. This mode will apply only to statements run by user connections. Replicated write
+     * statements will continue to be allowed regardless of the DatabaseMode. - READ_WRITE
+     * (default): allow running read and write statements on the DB system; - READ_ONLY: only allow
+     * running read statements on the DB system.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+    private final DbSystem.DatabaseMode databaseMode;
+
+    /**
+     * The database mode indicating the types of statements that will be allowed to run in the DB
+     * system. This mode will apply only to statements run by user connections. Replicated write
+     * statements will continue to be allowed regardless of the DatabaseMode. - READ_WRITE
+     * (default): allow running read and write statements on the DB system; - READ_ONLY: only allow
+     * running read statements on the DB system.
+     *
+     * @return the value
+     */
+    public DbSystem.DatabaseMode getDatabaseMode() {
+        return databaseMode;
+    }
+
+    /**
+     * The access mode indicating if the database access will be restricted only to administrators
+     * or not: - UNRESTRICTED (default): the access to the database is not restricted; - RESTRICTED:
+     * the access will be allowed only to users with specific privileges; RESTRICTED will correspond
+     * to setting the MySQL system variable
+     * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+     * to ON.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+    private final DbSystem.AccessMode accessMode;
+
+    /**
+     * The access mode indicating if the database access will be restricted only to administrators
+     * or not: - UNRESTRICTED (default): the access to the database is not restricted; - RESTRICTED:
+     * the access will be allowed only to users with specific privileges; RESTRICTED will correspond
+     * to setting the MySQL system variable
+     * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+     * to ON.
+     *
+     * @return the value
+     */
+    public DbSystem.AccessMode getAccessMode() {
+        return accessMode;
+    }
+
+    /**
+     * The list of customer email addresses that receive information from Oracle about the specified
+     * OCI DB System resource. Oracle uses these email addresses to send notifications about planned
+     * and unplanned software maintenance updates, information about system hardware, and other
+     * information needed by administrators. Up to 10 email addresses can be added to the customer
+     * contacts for a DB System.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+    private final java.util.List<CustomerContact> customerContacts;
+
+    /**
+     * The list of customer email addresses that receive information from Oracle about the specified
+     * OCI DB System resource. Oracle uses these email addresses to send notifications about planned
+     * and unplanned software maintenance updates, information about system hardware, and other
+     * information needed by administrators. Up to 10 email addresses can be added to the customer
+     * contacts for a DB System.
+     *
+     * @return the value
+     */
+    public java.util.List<CustomerContact> getCustomerContacts() {
+        return customerContacts;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+    private final CreateReadEndpointDetails readEndpoint;
+
+    public CreateReadEndpointDetails getReadEndpoint() {
+        return readEndpoint;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1125,6 +1363,7 @@ public final class CreateDbSystemDetails
         sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
         sb.append(", adminPassword=").append("<redacted>");
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", dataStorage=").append(String.valueOf(this.dataStorage));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", port=").append(String.valueOf(this.port));
@@ -1137,6 +1376,11 @@ public final class CreateDbSystemDetails
         sb.append(", deletionPolicy=").append(String.valueOf(this.deletionPolicy));
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
+        sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
+        sb.append(", accessMode=").append(String.valueOf(this.accessMode));
+        sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
+        sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
         sb.append(")");
         return sb.toString();
     }
@@ -1164,6 +1408,7 @@ public final class CreateDbSystemDetails
                 && java.util.Objects.equals(this.adminUsername, other.adminUsername)
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(this.dataStorage, other.dataStorage)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.port, other.port)
@@ -1176,6 +1421,11 @@ public final class CreateDbSystemDetails
                 && java.util.Objects.equals(this.deletionPolicy, other.deletionPolicy)
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
+                && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.databaseMode, other.databaseMode)
+                && java.util.Objects.equals(this.accessMode, other.accessMode)
+                && java.util.Objects.equals(this.customerContacts, other.customerContacts)
+                && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
                 && super.equals(other);
     }
 
@@ -1214,6 +1464,7 @@ public final class CreateDbSystemDetails
                         + (this.dataStorageSizeInGBs == null
                                 ? 43
                                 : this.dataStorageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.dataStorage == null ? 43 : this.dataStorage.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
@@ -1236,6 +1487,15 @@ public final class CreateDbSystemDetails
                         + (this.databaseManagement == null
                                 ? 43
                                 : this.databaseManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result = (result * PRIME) + (this.databaseMode == null ? 43 : this.databaseMode.hashCode());
+        result = (result * PRIME) + (this.accessMode == null ? 43 : this.accessMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
+        result = (result * PRIME) + (this.readEndpoint == null ? 43 : this.readEndpoint.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

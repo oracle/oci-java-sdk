@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -26,12 +26,14 @@ package com.oracle.bmc.identitydomains.model;
 public final class MyRequestRequesting
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"value", "ref", "display", "type"})
-    public MyRequestRequesting(String value, String ref, String display, Type type) {
+    @java.beans.ConstructorProperties({"value", "ref", "display", "description", "type"})
+    public MyRequestRequesting(
+            String value, String ref, String display, String description, Type type) {
         super();
         this.value = value;
         this.ref = ref;
         this.display = display;
+        this.description = description;
         this.type = type;
     }
 
@@ -109,6 +111,33 @@ public final class MyRequestRequesting
             return this;
         }
         /**
+         * Resource description
+         *
+         * <p>*Added In:** 2307071836
+         *
+         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
+         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * Resource description
+         *
+         * <p>*Added In:** 2307071836
+         *
+         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
+         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         *
+         * @param description the value to set
+         * @return this builder
+         */
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
          * Requestable type. Allowed values are Group and App.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsCsvAttributeName: Requestable Type -
@@ -139,7 +168,8 @@ public final class MyRequestRequesting
 
         public MyRequestRequesting build() {
             MyRequestRequesting model =
-                    new MyRequestRequesting(this.value, this.ref, this.display, this.type);
+                    new MyRequestRequesting(
+                            this.value, this.ref, this.display, this.description, this.type);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -156,6 +186,9 @@ public final class MyRequestRequesting
             }
             if (model.wasPropertyExplicitlySet("display")) {
                 this.display(model.getDisplay());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
@@ -236,6 +269,31 @@ public final class MyRequestRequesting
      */
     public String getDisplay() {
         return display;
+    }
+
+    /**
+     * Resource description
+     *
+     * <p>*Added In:** 2307071836
+     *
+     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
+     * required: false - returned: default - type: string - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * Resource description
+     *
+     * <p>*Added In:** 2307071836
+     *
+     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
+     * required: false - returned: default - type: string - uniqueness: none
+     *
+     * @return the value
+     */
+    public String getDescription() {
+        return description;
     }
 
     /**
@@ -329,6 +387,7 @@ public final class MyRequestRequesting
         sb.append("value=").append(String.valueOf(this.value));
         sb.append(", ref=").append(String.valueOf(this.ref));
         sb.append(", display=").append(String.valueOf(this.display));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(")");
         return sb.toString();
@@ -347,6 +406,7 @@ public final class MyRequestRequesting
         return java.util.Objects.equals(this.value, other.value)
                 && java.util.Objects.equals(this.ref, other.ref)
                 && java.util.Objects.equals(this.display, other.display)
+                && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.type, other.type)
                 && super.equals(other);
     }
@@ -358,6 +418,7 @@ public final class MyRequestRequesting
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
         result = (result * PRIME) + (this.ref == null ? 43 : this.ref.hashCode());
         result = (result * PRIME) + (this.display == null ? 43 : this.display.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

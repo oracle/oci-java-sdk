@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -8,10 +8,9 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for the operating system
- * environments in your private data centers through a single management console. For more
- * information, see [Overview of OS Management
- * Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
+ * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
+ * Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public interface WorkRequestAsync extends AutoCloseable {
@@ -65,7 +64,7 @@ public interface WorkRequestAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Gets information about the specified work request.
+     * Returns information about the specified work request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -80,7 +79,7 @@ public interface WorkRequestAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the errors for the specified work request.
+     * Returns the errors for the specified work request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -96,7 +95,7 @@ public interface WorkRequestAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the logs for the specified work request.
+     * Returns the logs for the specified work request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -126,5 +125,22 @@ public interface WorkRequestAsync extends AutoCloseable {
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
+     * Reruns a failed work for the specified work request
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Rerunning
+     * restarts the work on failed targets.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RerunWorkRequestResponse> rerunWorkRequest(
+            RerunWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RerunWorkRequestRequest, RerunWorkRequestResponse>
                     handler);
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -26,6 +26,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
         "fleetId",
         "libraryName",
         "libraryVersion",
+        "cveId",
         "cvssScore",
         "approximateApplicationCount",
         "approximateJavaServerInstanceCount",
@@ -34,13 +35,15 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
         "timeStart",
         "timeEnd",
         "timeFirstSeen",
-        "timeLastSeen"
+        "timeLastSeen",
+        "timeLastCveRefreshed"
     })
     public LibraryUsage(
             String libraryKey,
             String fleetId,
             String libraryName,
             String libraryVersion,
+            String cveId,
             Float cvssScore,
             Integer approximateApplicationCount,
             Integer approximateJavaServerInstanceCount,
@@ -49,12 +52,14 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
             java.util.Date timeStart,
             java.util.Date timeEnd,
             java.util.Date timeFirstSeen,
-            java.util.Date timeLastSeen) {
+            java.util.Date timeLastSeen,
+            java.util.Date timeLastCveRefreshed) {
         super();
         this.libraryKey = libraryKey;
         this.fleetId = fleetId;
         this.libraryName = libraryName;
         this.libraryVersion = libraryVersion;
+        this.cveId = cveId;
         this.cvssScore = cvssScore;
         this.approximateApplicationCount = approximateApplicationCount;
         this.approximateJavaServerInstanceCount = approximateJavaServerInstanceCount;
@@ -64,6 +69,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
         this.timeEnd = timeEnd;
         this.timeFirstSeen = timeFirstSeen;
         this.timeLastSeen = timeLastSeen;
+        this.timeLastCveRefreshed = timeLastCveRefreshed;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -84,14 +90,14 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related fleet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related fleet.
          *
          * @param fleetId the value to set
@@ -130,6 +136,21 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
         public Builder libraryVersion(String libraryVersion) {
             this.libraryVersion = libraryVersion;
             this.__explicitlySet__.add("libraryVersion");
+            return this;
+        }
+        /** The Common Vulnerabilities and Exposures (CVE) ID. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cveId")
+        private String cveId;
+
+        /**
+         * The Common Vulnerabilities and Exposures (CVE) ID.
+         *
+         * @param cveId the value to set
+         * @return this builder
+         */
+        public Builder cveId(String cveId) {
+            this.cveId = cveId;
+            this.__explicitlySet__.add("cveId");
             return this;
         }
         /** The Common Vulnerability Scoring System (CVSS) score. */
@@ -293,6 +314,21 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("timeLastSeen");
             return this;
         }
+        /** The date and time of the last CVEs refresh was completed. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastCveRefreshed")
+        private java.util.Date timeLastCveRefreshed;
+
+        /**
+         * The date and time of the last CVEs refresh was completed.
+         *
+         * @param timeLastCveRefreshed the value to set
+         * @return this builder
+         */
+        public Builder timeLastCveRefreshed(java.util.Date timeLastCveRefreshed) {
+            this.timeLastCveRefreshed = timeLastCveRefreshed;
+            this.__explicitlySet__.add("timeLastCveRefreshed");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -304,6 +340,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
                             this.fleetId,
                             this.libraryName,
                             this.libraryVersion,
+                            this.cveId,
                             this.cvssScore,
                             this.approximateApplicationCount,
                             this.approximateJavaServerInstanceCount,
@@ -312,7 +349,8 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
                             this.timeStart,
                             this.timeEnd,
                             this.timeFirstSeen,
-                            this.timeLastSeen);
+                            this.timeLastSeen,
+                            this.timeLastCveRefreshed);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -332,6 +370,9 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("libraryVersion")) {
                 this.libraryVersion(model.getLibraryVersion());
+            }
+            if (model.wasPropertyExplicitlySet("cveId")) {
+                this.cveId(model.getCveId());
             }
             if (model.wasPropertyExplicitlySet("cvssScore")) {
                 this.cvssScore(model.getCvssScore());
@@ -362,6 +403,9 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
             if (model.wasPropertyExplicitlySet("timeLastSeen")) {
                 this.timeLastSeen(model.getTimeLastSeen());
             }
+            if (model.wasPropertyExplicitlySet("timeLastCveRefreshed")) {
+                this.timeLastCveRefreshed(model.getTimeLastCveRefreshed());
+            }
             return this;
         }
     }
@@ -389,14 +433,14 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * related fleet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
     private final String fleetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * related fleet.
      *
      * @return the value
@@ -429,6 +473,19 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
      */
     public String getLibraryVersion() {
         return libraryVersion;
+    }
+
+    /** The Common Vulnerabilities and Exposures (CVE) ID. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cveId")
+    private final String cveId;
+
+    /**
+     * The Common Vulnerabilities and Exposures (CVE) ID.
+     *
+     * @return the value
+     */
+    public String getCveId() {
+        return cveId;
     }
 
     /** The Common Vulnerability Scoring System (CVSS) score. */
@@ -572,6 +629,19 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
         return timeLastSeen;
     }
 
+    /** The date and time of the last CVEs refresh was completed. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastCveRefreshed")
+    private final java.util.Date timeLastCveRefreshed;
+
+    /**
+     * The date and time of the last CVEs refresh was completed.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastCveRefreshed() {
+        return timeLastCveRefreshed;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -591,6 +661,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", fleetId=").append(String.valueOf(this.fleetId));
         sb.append(", libraryName=").append(String.valueOf(this.libraryName));
         sb.append(", libraryVersion=").append(String.valueOf(this.libraryVersion));
+        sb.append(", cveId=").append(String.valueOf(this.cveId));
         sb.append(", cvssScore=").append(String.valueOf(this.cvssScore));
         sb.append(", approximateApplicationCount=")
                 .append(String.valueOf(this.approximateApplicationCount));
@@ -604,6 +675,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
         sb.append(", timeLastSeen=").append(String.valueOf(this.timeLastSeen));
+        sb.append(", timeLastCveRefreshed=").append(String.valueOf(this.timeLastCveRefreshed));
         sb.append(")");
         return sb.toString();
     }
@@ -622,6 +694,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
                 && java.util.Objects.equals(this.libraryName, other.libraryName)
                 && java.util.Objects.equals(this.libraryVersion, other.libraryVersion)
+                && java.util.Objects.equals(this.cveId, other.cveId)
                 && java.util.Objects.equals(this.cvssScore, other.cvssScore)
                 && java.util.Objects.equals(
                         this.approximateApplicationCount, other.approximateApplicationCount)
@@ -637,6 +710,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
                 && java.util.Objects.equals(this.timeLastSeen, other.timeLastSeen)
+                && java.util.Objects.equals(this.timeLastCveRefreshed, other.timeLastCveRefreshed)
                 && super.equals(other);
     }
 
@@ -650,6 +724,7 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
         result =
                 (result * PRIME)
                         + (this.libraryVersion == null ? 43 : this.libraryVersion.hashCode());
+        result = (result * PRIME) + (this.cveId == null ? 43 : this.cveId.hashCode());
         result = (result * PRIME) + (this.cvssScore == null ? 43 : this.cvssScore.hashCode());
         result =
                 (result * PRIME)
@@ -677,6 +752,11 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
                 (result * PRIME)
                         + (this.timeFirstSeen == null ? 43 : this.timeFirstSeen.hashCode());
         result = (result * PRIME) + (this.timeLastSeen == null ? 43 : this.timeLastSeen.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastCveRefreshed == null
+                                ? 43
+                                : this.timeLastCveRefreshed.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

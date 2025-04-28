@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.devops.requests;
 import com.oracle.bmc.devops.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListCommitDiffsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListCommitDiffsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCommitDiffsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
@@ -33,6 +33,13 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
     /** The commit or reference name where changes are coming from. */
     public String getTargetVersion() {
         return targetVersion;
+    }
+    /** The target repository identifier */
+    private String targetRepositoryId;
+
+    /** The target repository identifier */
+    public String getTargetRepositoryId() {
+        return targetRepositoryId;
     }
     /** Boolean value to indicate whether to use merge base or most recent revision. */
     private Boolean isComparisonFromMergeBase;
@@ -120,6 +127,20 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
          */
         public Builder targetVersion(String targetVersion) {
             this.targetVersion = targetVersion;
+            return this;
+        }
+
+        /** The target repository identifier */
+        private String targetRepositoryId = null;
+
+        /**
+         * The target repository identifier
+         *
+         * @param targetRepositoryId the value to set
+         * @return this builder instance
+         */
+        public Builder targetRepositoryId(String targetRepositoryId) {
+            this.targetRepositoryId = targetRepositoryId;
             return this;
         }
 
@@ -220,6 +241,7 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
             repositoryId(o.getRepositoryId());
             baseVersion(o.getBaseVersion());
             targetVersion(o.getTargetVersion());
+            targetRepositoryId(o.getTargetRepositoryId());
             isComparisonFromMergeBase(o.getIsComparisonFromMergeBase());
             limit(o.getLimit());
             page(o.getPage());
@@ -261,13 +283,14 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.repositoryId = repositoryId;
             request.baseVersion = baseVersion;
             request.targetVersion = targetVersion;
+            request.targetRepositoryId = targetRepositoryId;
             request.isComparisonFromMergeBase = isComparisonFromMergeBase;
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
             // new ListCommitDiffsRequest(repositoryId, baseVersion, targetVersion,
-            // isComparisonFromMergeBase, limit, page, opcRequestId);
+            // targetRepositoryId, isComparisonFromMergeBase, limit, page, opcRequestId);
         }
     }
 
@@ -281,6 +304,7 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .repositoryId(repositoryId)
                 .baseVersion(baseVersion)
                 .targetVersion(targetVersion)
+                .targetRepositoryId(targetRepositoryId)
                 .isComparisonFromMergeBase(isComparisonFromMergeBase)
                 .limit(limit)
                 .page(page)
@@ -304,6 +328,7 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
         sb.append(",repositoryId=").append(String.valueOf(this.repositoryId));
         sb.append(",baseVersion=").append(String.valueOf(this.baseVersion));
         sb.append(",targetVersion=").append(String.valueOf(this.targetVersion));
+        sb.append(",targetRepositoryId=").append(String.valueOf(this.targetRepositoryId));
         sb.append(",isComparisonFromMergeBase=")
                 .append(String.valueOf(this.isComparisonFromMergeBase));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -327,6 +352,7 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 && java.util.Objects.equals(this.repositoryId, other.repositoryId)
                 && java.util.Objects.equals(this.baseVersion, other.baseVersion)
                 && java.util.Objects.equals(this.targetVersion, other.targetVersion)
+                && java.util.Objects.equals(this.targetRepositoryId, other.targetRepositoryId)
                 && java.util.Objects.equals(
                         this.isComparisonFromMergeBase, other.isComparisonFromMergeBase)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -343,6 +369,11 @@ public class ListCommitDiffsRequest extends com.oracle.bmc.requests.BmcRequest<j
         result =
                 (result * PRIME)
                         + (this.targetVersion == null ? 43 : this.targetVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetRepositoryId == null
+                                ? 43
+                                : this.targetRepositoryId.hashCode());
         result =
                 (result * PRIME)
                         + (this.isComparisonFromMergeBase == null

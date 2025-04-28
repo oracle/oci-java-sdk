@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -32,11 +32,13 @@ public final class CreateBootVolumeDetails
         "freeformTags",
         "kmsKeyId",
         "sizeInGBs",
+        "clusterPlacementGroupId",
         "vpusPerGB",
         "sourceDetails",
         "isAutoTuneEnabled",
         "bootVolumeReplicas",
-        "autotunePolicies"
+        "autotunePolicies",
+        "xrcKmsKeyId"
     })
     public CreateBootVolumeDetails(
             String availabilityDomain,
@@ -47,11 +49,13 @@ public final class CreateBootVolumeDetails
             java.util.Map<String, String> freeformTags,
             String kmsKeyId,
             Long sizeInGBs,
+            String clusterPlacementGroupId,
             Long vpusPerGB,
             BootVolumeSourceDetails sourceDetails,
             Boolean isAutoTuneEnabled,
             java.util.List<BootVolumeReplicaDetails> bootVolumeReplicas,
-            java.util.List<AutotunePolicy> autotunePolicies) {
+            java.util.List<AutotunePolicy> autotunePolicies,
+            String xrcKmsKeyId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.backupPolicyId = backupPolicyId;
@@ -61,11 +65,13 @@ public final class CreateBootVolumeDetails
         this.freeformTags = freeformTags;
         this.kmsKeyId = kmsKeyId;
         this.sizeInGBs = sizeInGBs;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.vpusPerGB = vpusPerGB;
         this.sourceDetails = sourceDetails;
         this.isAutoTuneEnabled = isAutoTuneEnabled;
         this.bootVolumeReplicas = bootVolumeReplicas;
         this.autotunePolicies = autotunePolicies;
+        this.xrcKmsKeyId = xrcKmsKeyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -130,7 +136,7 @@ public final class CreateBootVolumeDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -140,7 +146,7 @@ public final class CreateBootVolumeDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -175,7 +181,7 @@ public final class CreateBootVolumeDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -185,7 +191,7 @@ public final class CreateBootVolumeDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -231,11 +237,26 @@ public final class CreateBootVolumeDetails
             this.__explicitlySet__.add("sizeInGBs");
             return this;
         }
+        /** The clusterPlacementGroup Id of the volume for volume placement. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The clusterPlacementGroup Id of the volume for volume placement.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
         /**
          * The number of volume performance units (VPUs) that will be applied to this volume per GB,
          * representing the Block Volume service's elastic performance options. See [Block Volume
          * Performance
-         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
          * for more information.
          *
          * <p>Allowed values:
@@ -255,7 +276,7 @@ public final class CreateBootVolumeDetails
          * The number of volume performance units (VPUs) that will be applied to this volume per GB,
          * representing the Block Volume service's elastic performance options. See [Block Volume
          * Performance
-         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
          * for more information.
          *
          * <p>Allowed values:
@@ -341,6 +362,33 @@ public final class CreateBootVolumeDetails
             this.__explicitlySet__.add("autotunePolicies");
             return this;
         }
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the boot volume
+         * cross region backups, which will be used in the destination region to encrypt the
+         * backup's encryption keys. For more information about the Vault service and encryption
+         * keys, see [Overview of Vault
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
+        private String xrcKmsKeyId;
+
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the boot volume
+         * cross region backups, which will be used in the destination region to encrypt the
+         * backup's encryption keys. For more information about the Vault service and encryption
+         * keys, see [Overview of Vault
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         * @param xrcKmsKeyId the value to set
+         * @return this builder
+         */
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            this.xrcKmsKeyId = xrcKmsKeyId;
+            this.__explicitlySet__.add("xrcKmsKeyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -356,11 +404,13 @@ public final class CreateBootVolumeDetails
                             this.freeformTags,
                             this.kmsKeyId,
                             this.sizeInGBs,
+                            this.clusterPlacementGroupId,
                             this.vpusPerGB,
                             this.sourceDetails,
                             this.isAutoTuneEnabled,
                             this.bootVolumeReplicas,
-                            this.autotunePolicies);
+                            this.autotunePolicies,
+                            this.xrcKmsKeyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -393,6 +443,9 @@ public final class CreateBootVolumeDetails
             if (model.wasPropertyExplicitlySet("sizeInGBs")) {
                 this.sizeInGBs(model.getSizeInGBs());
             }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
             if (model.wasPropertyExplicitlySet("vpusPerGB")) {
                 this.vpusPerGB(model.getVpusPerGB());
             }
@@ -407,6 +460,9 @@ public final class CreateBootVolumeDetails
             }
             if (model.wasPropertyExplicitlySet("autotunePolicies")) {
                 this.autotunePolicies(model.getAutotunePolicies());
+            }
+            if (model.wasPropertyExplicitlySet("xrcKmsKeyId")) {
+                this.xrcKmsKeyId(model.getXrcKmsKeyId());
             }
             return this;
         }
@@ -475,7 +531,7 @@ public final class CreateBootVolumeDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -485,7 +541,7 @@ public final class CreateBootVolumeDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -515,7 +571,7 @@ public final class CreateBootVolumeDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -525,7 +581,7 @@ public final class CreateBootVolumeDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -563,11 +619,24 @@ public final class CreateBootVolumeDetails
         return sizeInGBs;
     }
 
+    /** The clusterPlacementGroup Id of the volume for volume placement. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     /**
      * The number of volume performance units (VPUs) that will be applied to this volume per GB,
      * representing the Block Volume service's elastic performance options. See [Block Volume
      * Performance
-     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
      * for more information.
      *
      * <p>Allowed values:
@@ -587,7 +656,7 @@ public final class CreateBootVolumeDetails
      * The number of volume performance units (VPUs) that will be applied to this volume per GB,
      * representing the Block Volume service's elastic performance options. See [Block Volume
      * Performance
-     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
      * for more information.
      *
      * <p>Allowed values:
@@ -662,6 +731,31 @@ public final class CreateBootVolumeDetails
         return autotunePolicies;
     }
 
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the boot volume
+     * cross region backups, which will be used in the destination region to encrypt the backup's
+     * encryption keys. For more information about the Vault service and encryption keys, see
+     * [Overview of Vault
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
+    private final String xrcKmsKeyId;
+
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the boot volume
+     * cross region backups, which will be used in the destination region to encrypt the backup's
+     * encryption keys. For more information about the Vault service and encryption keys, see
+     * [Overview of Vault
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     * @return the value
+     */
+    public String getXrcKmsKeyId() {
+        return xrcKmsKeyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -685,11 +779,14 @@ public final class CreateBootVolumeDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", vpusPerGB=").append(String.valueOf(this.vpusPerGB));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", isAutoTuneEnabled=").append(String.valueOf(this.isAutoTuneEnabled));
         sb.append(", bootVolumeReplicas=").append(String.valueOf(this.bootVolumeReplicas));
         sb.append(", autotunePolicies=").append(String.valueOf(this.autotunePolicies));
+        sb.append(", xrcKmsKeyId=").append(String.valueOf(this.xrcKmsKeyId));
         sb.append(")");
         return sb.toString();
     }
@@ -712,11 +809,14 @@ public final class CreateBootVolumeDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.vpusPerGB, other.vpusPerGB)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.isAutoTuneEnabled, other.isAutoTuneEnabled)
                 && java.util.Objects.equals(this.bootVolumeReplicas, other.bootVolumeReplicas)
                 && java.util.Objects.equals(this.autotunePolicies, other.autotunePolicies)
+                && java.util.Objects.equals(this.xrcKmsKeyId, other.xrcKmsKeyId)
                 && super.equals(other);
     }
 
@@ -740,6 +840,11 @@ public final class CreateBootVolumeDetails
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + (this.sizeInGBs == null ? 43 : this.sizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.vpusPerGB == null ? 43 : this.vpusPerGB.hashCode());
         result =
                 (result * PRIME)
@@ -755,6 +860,7 @@ public final class CreateBootVolumeDetails
         result =
                 (result * PRIME)
                         + (this.autotunePolicies == null ? 43 : this.autotunePolicies.hashCode());
+        result = (result * PRIME) + (this.xrcKmsKeyId == null ? 43 : this.xrcKmsKeyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

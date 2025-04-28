@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -41,7 +41,7 @@ public final class UpdatePublicIpDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -51,7 +51,7 @@ public final class UpdatePublicIpDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -86,7 +86,7 @@ public final class UpdatePublicIpDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -96,7 +96,7 @@ public final class UpdatePublicIpDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -109,8 +109,8 @@ public final class UpdatePublicIpDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the private IP to assign the public IP to. * If the public IP is already assigned to a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * private IP to assign the public IP to. * If the public IP is already assigned to a
          * different private IP, it will be unassigned and then reassigned to the specified private
          * IP. * If you set this field to an empty string, the public IP will be unassigned from the
          * private IP it is currently assigned to.
@@ -119,8 +119,8 @@ public final class UpdatePublicIpDetails
         private String privateIpId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the private IP to assign the public IP to. * If the public IP is already assigned to a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * private IP to assign the public IP to. * If the public IP is already assigned to a
          * different private IP, it will be unassigned and then reassigned to the specified private
          * IP. * If you set this field to an empty string, the public IP will be unassigned from the
          * private IP it is currently assigned to.
@@ -180,7 +180,7 @@ public final class UpdatePublicIpDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -190,7 +190,7 @@ public final class UpdatePublicIpDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -220,7 +220,7 @@ public final class UpdatePublicIpDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -230,7 +230,7 @@ public final class UpdatePublicIpDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -241,21 +241,21 @@ public final class UpdatePublicIpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the private IP to assign the public IP to. * If the public IP is already assigned to a
-     * different private IP, it will be unassigned and then reassigned to the specified private IP.
-     * * If you set this field to an empty string, the public IP will be unassigned from the private
-     * IP it is currently assigned to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * private IP to assign the public IP to. * If the public IP is already assigned to a different
+     * private IP, it will be unassigned and then reassigned to the specified private IP. * If you
+     * set this field to an empty string, the public IP will be unassigned from the private IP it is
+     * currently assigned to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
     private final String privateIpId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the private IP to assign the public IP to. * If the public IP is already assigned to a
-     * different private IP, it will be unassigned and then reassigned to the specified private IP.
-     * * If you set this field to an empty string, the public IP will be unassigned from the private
-     * IP it is currently assigned to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * private IP to assign the public IP to. * If the public IP is already assigned to a different
+     * private IP, it will be unassigned and then reassigned to the specified private IP. * If you
+     * set this field to an empty string, the public IP will be unassigned from the private IP it is
+     * currently assigned to.
      *
      * @return the value
      */

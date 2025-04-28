@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -40,6 +40,7 @@ public final class MaintenanceRunSummary
         "maintenanceSubtype",
         "isDstFileUpdateEnabled",
         "peerMaintenanceRunId",
+        "peerMaintenanceRunIds",
         "patchingMode",
         "patchFailureCount",
         "targetDbServerVersion",
@@ -52,7 +53,10 @@ public final class MaintenanceRunSummary
         "patchingEndTime",
         "estimatedPatchingTime",
         "currentPatchingComponent",
-        "estimatedComponentPatchingStartTime"
+        "estimatedComponentPatchingStartTime",
+        "isMaintenanceRunGranular",
+        "totalTimeTakenInMins",
+        "databaseSoftwareImageId"
     })
     public MaintenanceRunSummary(
             String id,
@@ -71,6 +75,7 @@ public final class MaintenanceRunSummary
             MaintenanceSubtype maintenanceSubtype,
             Boolean isDstFileUpdateEnabled,
             String peerMaintenanceRunId,
+            java.util.List<String> peerMaintenanceRunIds,
             PatchingMode patchingMode,
             Integer patchFailureCount,
             String targetDbServerVersion,
@@ -83,7 +88,10 @@ public final class MaintenanceRunSummary
             java.util.Date patchingEndTime,
             EstimatedPatchingTime estimatedPatchingTime,
             String currentPatchingComponent,
-            java.util.Date estimatedComponentPatchingStartTime) {
+            java.util.Date estimatedComponentPatchingStartTime,
+            Boolean isMaintenanceRunGranular,
+            Integer totalTimeTakenInMins,
+            String databaseSoftwareImageId) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -101,6 +109,7 @@ public final class MaintenanceRunSummary
         this.maintenanceSubtype = maintenanceSubtype;
         this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
         this.peerMaintenanceRunId = peerMaintenanceRunId;
+        this.peerMaintenanceRunIds = peerMaintenanceRunIds;
         this.patchingMode = patchingMode;
         this.patchFailureCount = patchFailureCount;
         this.targetDbServerVersion = targetDbServerVersion;
@@ -114,6 +123,9 @@ public final class MaintenanceRunSummary
         this.estimatedPatchingTime = estimatedPatchingTime;
         this.currentPatchingComponent = currentPatchingComponent;
         this.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;
+        this.isMaintenanceRunGranular = isMaintenanceRunGranular;
+        this.totalTimeTakenInMins = totalTimeTakenInMins;
+        this.databaseSoftwareImageId = databaseSoftwareImageId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -362,14 +374,14 @@ public final class MaintenanceRunSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * maintenance run for the Autonomous Data Guard association's peer container database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunId")
         private String peerMaintenanceRunId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * maintenance run for the Autonomous Data Guard association's peer container database.
          *
          * @param peerMaintenanceRunId the value to set
@@ -381,12 +393,31 @@ public final class MaintenanceRunSummary
             return this;
         }
         /**
+         * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard
+         * peer container databases.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunIds")
+        private java.util.List<String> peerMaintenanceRunIds;
+
+        /**
+         * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard
+         * peer container databases.
+         *
+         * @param peerMaintenanceRunIds the value to set
+         * @return this builder
+         */
+        public Builder peerMaintenanceRunIds(java.util.List<String> peerMaintenanceRunIds) {
+            this.peerMaintenanceRunIds = peerMaintenanceRunIds;
+            this.__explicitlySet__.add("peerMaintenanceRunIds");
+            return this;
+        }
+        /**
          * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING".
          * Default value is ROLLING.
          *
          * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
          * [Oracle-Managed Infrastructure Maintenance
-         * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+         * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
          * for more information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
@@ -398,7 +429,7 @@ public final class MaintenanceRunSummary
          *
          * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
          * [Oracle-Managed Infrastructure Maintenance
-         * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+         * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
          * for more information.
          *
          * @param patchingMode the value to set
@@ -596,6 +627,55 @@ public final class MaintenanceRunSummary
             this.__explicitlySet__.add("estimatedComponentPatchingStartTime");
             return this;
         }
+        /** If {@code FALSE}, the maintenance run doesn't support granular maintenance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceRunGranular")
+        private Boolean isMaintenanceRunGranular;
+
+        /**
+         * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
+         *
+         * @param isMaintenanceRunGranular the value to set
+         * @return this builder
+         */
+        public Builder isMaintenanceRunGranular(Boolean isMaintenanceRunGranular) {
+            this.isMaintenanceRunGranular = isMaintenanceRunGranular;
+            this.__explicitlySet__.add("isMaintenanceRunGranular");
+            return this;
+        }
+        /** The total time taken by corresponding resource activity in minutes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalTimeTakenInMins")
+        private Integer totalTimeTakenInMins;
+
+        /**
+         * The total time taken by corresponding resource activity in minutes.
+         *
+         * @param totalTimeTakenInMins the value to set
+         * @return this builder
+         */
+        public Builder totalTimeTakenInMins(Integer totalTimeTakenInMins) {
+            this.totalTimeTakenInMins = totalTimeTakenInMins;
+            this.__explicitlySet__.add("totalTimeTakenInMins");
+            return this;
+        }
+        /**
+         * The Autonomous Database Software Image
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        /**
+         * The Autonomous Database Software Image
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         *
+         * @param databaseSoftwareImageId the value to set
+         * @return this builder
+         */
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -619,6 +699,7 @@ public final class MaintenanceRunSummary
                             this.maintenanceSubtype,
                             this.isDstFileUpdateEnabled,
                             this.peerMaintenanceRunId,
+                            this.peerMaintenanceRunIds,
                             this.patchingMode,
                             this.patchFailureCount,
                             this.targetDbServerVersion,
@@ -631,7 +712,10 @@ public final class MaintenanceRunSummary
                             this.patchingEndTime,
                             this.estimatedPatchingTime,
                             this.currentPatchingComponent,
-                            this.estimatedComponentPatchingStartTime);
+                            this.estimatedComponentPatchingStartTime,
+                            this.isMaintenanceRunGranular,
+                            this.totalTimeTakenInMins,
+                            this.databaseSoftwareImageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -688,6 +772,9 @@ public final class MaintenanceRunSummary
             if (model.wasPropertyExplicitlySet("peerMaintenanceRunId")) {
                 this.peerMaintenanceRunId(model.getPeerMaintenanceRunId());
             }
+            if (model.wasPropertyExplicitlySet("peerMaintenanceRunIds")) {
+                this.peerMaintenanceRunIds(model.getPeerMaintenanceRunIds());
+            }
             if (model.wasPropertyExplicitlySet("patchingMode")) {
                 this.patchingMode(model.getPatchingMode());
             }
@@ -727,6 +814,15 @@ public final class MaintenanceRunSummary
             if (model.wasPropertyExplicitlySet("estimatedComponentPatchingStartTime")) {
                 this.estimatedComponentPatchingStartTime(
                         model.getEstimatedComponentPatchingStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("isMaintenanceRunGranular")) {
+                this.isMaintenanceRunGranular(model.getIsMaintenanceRunGranular());
+            }
+            if (model.wasPropertyExplicitlySet("totalTimeTakenInMins")) {
+                this.totalTimeTakenInMins(model.getTotalTimeTakenInMins());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
+                this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
             }
             return this;
         }
@@ -1086,6 +1182,7 @@ public final class MaintenanceRunSummary
         Oneoff("ONEOFF"),
         SecurityMonthly("SECURITY_MONTHLY"),
         Timezone("TIMEZONE"),
+        CustomDatabaseSoftwareImage("CUSTOM_DATABASE_SOFTWARE_IMAGE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -1161,14 +1258,14 @@ public final class MaintenanceRunSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * maintenance run for the Autonomous Data Guard association's peer container database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunId")
     private final String peerMaintenanceRunId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * maintenance run for the Autonomous Data Guard association's peer container database.
      *
      * @return the value
@@ -1178,12 +1275,29 @@ public final class MaintenanceRunSummary
     }
 
     /**
+     * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer
+     * container databases.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunIds")
+    private final java.util.List<String> peerMaintenanceRunIds;
+
+    /**
+     * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer
+     * container databases.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getPeerMaintenanceRunIds() {
+        return peerMaintenanceRunIds;
+    }
+
+    /**
      * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default
      * value is ROLLING.
      *
      * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
      * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
      * for more information.
      */
     public enum PatchingMode implements com.oracle.bmc.http.internal.BmcEnum {
@@ -1237,7 +1351,7 @@ public final class MaintenanceRunSummary
      *
      * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
      * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
      * for more information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
@@ -1249,7 +1363,7 @@ public final class MaintenanceRunSummary
      *
      * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
      * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
      * for more information.
      *
      * @return the value
@@ -1467,6 +1581,49 @@ public final class MaintenanceRunSummary
         return estimatedComponentPatchingStartTime;
     }
 
+    /** If {@code FALSE}, the maintenance run doesn't support granular maintenance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceRunGranular")
+    private final Boolean isMaintenanceRunGranular;
+
+    /**
+     * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
+     *
+     * @return the value
+     */
+    public Boolean getIsMaintenanceRunGranular() {
+        return isMaintenanceRunGranular;
+    }
+
+    /** The total time taken by corresponding resource activity in minutes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalTimeTakenInMins")
+    private final Integer totalTimeTakenInMins;
+
+    /**
+     * The total time taken by corresponding resource activity in minutes.
+     *
+     * @return the value
+     */
+    public Integer getTotalTimeTakenInMins() {
+        return totalTimeTakenInMins;
+    }
+
+    /**
+     * The Autonomous Database Software Image
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+    private final String databaseSoftwareImageId;
+
+    /**
+     * The Autonomous Database Software Image
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     *
+     * @return the value
+     */
+    public String getDatabaseSoftwareImageId() {
+        return databaseSoftwareImageId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1498,6 +1655,7 @@ public final class MaintenanceRunSummary
         sb.append(", maintenanceSubtype=").append(String.valueOf(this.maintenanceSubtype));
         sb.append(", isDstFileUpdateEnabled=").append(String.valueOf(this.isDstFileUpdateEnabled));
         sb.append(", peerMaintenanceRunId=").append(String.valueOf(this.peerMaintenanceRunId));
+        sb.append(", peerMaintenanceRunIds=").append(String.valueOf(this.peerMaintenanceRunIds));
         sb.append(", patchingMode=").append(String.valueOf(this.patchingMode));
         sb.append(", patchFailureCount=").append(String.valueOf(this.patchFailureCount));
         sb.append(", targetDbServerVersion=").append(String.valueOf(this.targetDbServerVersion));
@@ -1517,6 +1675,11 @@ public final class MaintenanceRunSummary
                 .append(String.valueOf(this.currentPatchingComponent));
         sb.append(", estimatedComponentPatchingStartTime=")
                 .append(String.valueOf(this.estimatedComponentPatchingStartTime));
+        sb.append(", isMaintenanceRunGranular=")
+                .append(String.valueOf(this.isMaintenanceRunGranular));
+        sb.append(", totalTimeTakenInMins=").append(String.valueOf(this.totalTimeTakenInMins));
+        sb.append(", databaseSoftwareImageId=")
+                .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(")");
         return sb.toString();
     }
@@ -1548,6 +1711,7 @@ public final class MaintenanceRunSummary
                 && java.util.Objects.equals(
                         this.isDstFileUpdateEnabled, other.isDstFileUpdateEnabled)
                 && java.util.Objects.equals(this.peerMaintenanceRunId, other.peerMaintenanceRunId)
+                && java.util.Objects.equals(this.peerMaintenanceRunIds, other.peerMaintenanceRunIds)
                 && java.util.Objects.equals(this.patchingMode, other.patchingMode)
                 && java.util.Objects.equals(this.patchFailureCount, other.patchFailureCount)
                 && java.util.Objects.equals(this.targetDbServerVersion, other.targetDbServerVersion)
@@ -1569,6 +1733,11 @@ public final class MaintenanceRunSummary
                 && java.util.Objects.equals(
                         this.estimatedComponentPatchingStartTime,
                         other.estimatedComponentPatchingStartTime)
+                && java.util.Objects.equals(
+                        this.isMaintenanceRunGranular, other.isMaintenanceRunGranular)
+                && java.util.Objects.equals(this.totalTimeTakenInMins, other.totalTimeTakenInMins)
+                && java.util.Objects.equals(
+                        this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && super.equals(other);
     }
 
@@ -1620,6 +1789,11 @@ public final class MaintenanceRunSummary
                         + (this.peerMaintenanceRunId == null
                                 ? 43
                                 : this.peerMaintenanceRunId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerMaintenanceRunIds == null
+                                ? 43
+                                : this.peerMaintenanceRunIds.hashCode());
         result = (result * PRIME) + (this.patchingMode == null ? 43 : this.patchingMode.hashCode());
         result =
                 (result * PRIME)
@@ -1673,6 +1847,21 @@ public final class MaintenanceRunSummary
                         + (this.estimatedComponentPatchingStartTime == null
                                 ? 43
                                 : this.estimatedComponentPatchingStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMaintenanceRunGranular == null
+                                ? 43
+                                : this.isMaintenanceRunGranular.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalTimeTakenInMins == null
+                                ? 43
+                                : this.totalTimeTakenInMins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSoftwareImageId == null
+                                ? 43
+                                : this.databaseSoftwareImageId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Information for a mirror configuration <br>
+ * Mirror information used for the management station configuration. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,23 +23,39 @@ package com.oracle.bmc.osmanagementhub.model;
 public final class MirrorConfiguration
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"directory", "port", "sslport", "sslcert"})
-    public MirrorConfiguration(String directory, String port, String sslport, String sslcert) {
+    @java.beans.ConstructorProperties({
+        "directory",
+        "port",
+        "sslport",
+        "sslcert",
+        "isSslverifyEnabled"
+    })
+    public MirrorConfiguration(
+            String directory,
+            String port,
+            String sslport,
+            String sslcert,
+            Boolean isSslverifyEnabled) {
         super();
         this.directory = directory;
         this.port = port;
         this.sslport = sslport;
         this.sslcert = sslcert;
+        this.isSslverifyEnabled = isSslverifyEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Directory for the mirroring */
+        /**
+         * Path to the data volume on the management station where software source mirrors are
+         * stored.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("directory")
         private String directory;
 
         /**
-         * Directory for the mirroring
+         * Path to the data volume on the management station where software source mirrors are
+         * stored.
          *
          * @param directory the value to set
          * @return this builder
@@ -49,12 +65,12 @@ public final class MirrorConfiguration
             this.__explicitlySet__.add("directory");
             return this;
         }
-        /** Default port for the mirror */
+        /** Default mirror listening port for http. */
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private String port;
 
         /**
-         * Default port for the mirror
+         * Default mirror listening port for http.
          *
          * @param port the value to set
          * @return this builder
@@ -64,12 +80,12 @@ public final class MirrorConfiguration
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** Default sslport for the mirror */
+        /** Default mirror listening port for https. */
         @com.fasterxml.jackson.annotation.JsonProperty("sslport")
         private String sslport;
 
         /**
-         * Default sslport for the mirror
+         * Default mirror listening port for https.
          *
          * @param sslport the value to set
          * @return this builder
@@ -79,12 +95,12 @@ public final class MirrorConfiguration
             this.__explicitlySet__.add("sslport");
             return this;
         }
-        /** Local path for the sslcert */
+        /** Path to the SSL cerfificate. */
         @com.fasterxml.jackson.annotation.JsonProperty("sslcert")
         private String sslcert;
 
         /**
-         * Local path for the sslcert
+         * Path to the SSL cerfificate.
          *
          * @param sslcert the value to set
          * @return this builder
@@ -94,13 +110,37 @@ public final class MirrorConfiguration
             this.__explicitlySet__.add("sslcert");
             return this;
         }
+        /**
+         * When enabled, the SSL certificate is verified whenever an instance installs or updates a
+         * package from a software source that is mirrored on the management station.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSslverifyEnabled")
+        private Boolean isSslverifyEnabled;
+
+        /**
+         * When enabled, the SSL certificate is verified whenever an instance installs or updates a
+         * package from a software source that is mirrored on the management station.
+         *
+         * @param isSslverifyEnabled the value to set
+         * @return this builder
+         */
+        public Builder isSslverifyEnabled(Boolean isSslverifyEnabled) {
+            this.isSslverifyEnabled = isSslverifyEnabled;
+            this.__explicitlySet__.add("isSslverifyEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MirrorConfiguration build() {
             MirrorConfiguration model =
-                    new MirrorConfiguration(this.directory, this.port, this.sslport, this.sslcert);
+                    new MirrorConfiguration(
+                            this.directory,
+                            this.port,
+                            this.sslport,
+                            this.sslcert,
+                            this.isSslverifyEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -121,6 +161,9 @@ public final class MirrorConfiguration
             if (model.wasPropertyExplicitlySet("sslcert")) {
                 this.sslcert(model.getSslcert());
             }
+            if (model.wasPropertyExplicitlySet("isSslverifyEnabled")) {
+                this.isSslverifyEnabled(model.getIsSslverifyEnabled());
+            }
             return this;
         }
     }
@@ -134,12 +177,14 @@ public final class MirrorConfiguration
         return new Builder().copy(this);
     }
 
-    /** Directory for the mirroring */
+    /**
+     * Path to the data volume on the management station where software source mirrors are stored.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("directory")
     private final String directory;
 
     /**
-     * Directory for the mirroring
+     * Path to the data volume on the management station where software source mirrors are stored.
      *
      * @return the value
      */
@@ -147,12 +192,12 @@ public final class MirrorConfiguration
         return directory;
     }
 
-    /** Default port for the mirror */
+    /** Default mirror listening port for http. */
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final String port;
 
     /**
-     * Default port for the mirror
+     * Default mirror listening port for http.
      *
      * @return the value
      */
@@ -160,12 +205,12 @@ public final class MirrorConfiguration
         return port;
     }
 
-    /** Default sslport for the mirror */
+    /** Default mirror listening port for https. */
     @com.fasterxml.jackson.annotation.JsonProperty("sslport")
     private final String sslport;
 
     /**
-     * Default sslport for the mirror
+     * Default mirror listening port for https.
      *
      * @return the value
      */
@@ -173,17 +218,34 @@ public final class MirrorConfiguration
         return sslport;
     }
 
-    /** Local path for the sslcert */
+    /** Path to the SSL cerfificate. */
     @com.fasterxml.jackson.annotation.JsonProperty("sslcert")
     private final String sslcert;
 
     /**
-     * Local path for the sslcert
+     * Path to the SSL cerfificate.
      *
      * @return the value
      */
     public String getSslcert() {
         return sslcert;
+    }
+
+    /**
+     * When enabled, the SSL certificate is verified whenever an instance installs or updates a
+     * package from a software source that is mirrored on the management station.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSslverifyEnabled")
+    private final Boolean isSslverifyEnabled;
+
+    /**
+     * When enabled, the SSL certificate is verified whenever an instance installs or updates a
+     * package from a software source that is mirrored on the management station.
+     *
+     * @return the value
+     */
+    public Boolean getIsSslverifyEnabled() {
+        return isSslverifyEnabled;
     }
 
     @Override
@@ -205,6 +267,7 @@ public final class MirrorConfiguration
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", sslport=").append(String.valueOf(this.sslport));
         sb.append(", sslcert=").append(String.valueOf(this.sslcert));
+        sb.append(", isSslverifyEnabled=").append(String.valueOf(this.isSslverifyEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -223,6 +286,7 @@ public final class MirrorConfiguration
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.sslport, other.sslport)
                 && java.util.Objects.equals(this.sslcert, other.sslcert)
+                && java.util.Objects.equals(this.isSslverifyEnabled, other.isSslverifyEnabled)
                 && super.equals(other);
     }
 
@@ -234,6 +298,11 @@ public final class MirrorConfiguration
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.sslport == null ? 43 : this.sslport.hashCode());
         result = (result * PRIME) + (this.sslcert == null ? 43 : this.sslcert.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSslverifyEnabled == null
+                                ? 43
+                                : this.isSslverifyEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

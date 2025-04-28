@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -73,6 +73,15 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<AddResourceLockDetails> locks;
+
+        public Builder locks(java.util.List<AddResourceLockDetails> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
@@ -106,6 +115,24 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
         /** The Elasticsearch technology type. */
@@ -201,7 +228,8 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on.
+         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
+         * "passwordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
@@ -209,7 +237,8 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on.
+         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
+         * "passwordSecretId". This field will be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -217,6 +246,31 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
@@ -250,16 +304,20 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.servers,
                             this.securityProtocol,
                             this.authenticationType,
                             this.username,
                             this.password,
+                            this.passwordSecretId,
                             this.fingerprint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -284,6 +342,9 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
@@ -295,6 +356,12 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -313,6 +380,9 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
             }
             if (model.wasPropertyExplicitlySet("password")) {
                 this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
             }
             if (model.wasPropertyExplicitlySet("fingerprint")) {
                 this.fingerprint(model.getFingerprint());
@@ -337,16 +407,20 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             ElasticsearchConnection.TechnologyType technologyType,
             String servers,
             ElasticsearchConnection.SecurityProtocol securityProtocol,
             ElasticsearchConnection.AuthenticationType authenticationType,
             String username,
             String password,
+            String passwordSecretId,
             String fingerprint) {
         super(
                 displayName,
@@ -354,16 +428,20 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
                 compartmentId,
                 freeformTags,
                 definedTags,
+                locks,
                 vaultId,
                 keyId,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.servers = servers;
         this.securityProtocol = securityProtocol;
         this.authenticationType = authenticationType;
         this.username = username;
         this.password = password;
+        this.passwordSecretId = passwordSecretId;
         this.fingerprint = fingerprint;
     }
 
@@ -449,7 +527,8 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
+     * will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
@@ -457,12 +536,36 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
+     * will be removed after February 15 2026.
      *
      * @return the value
      */
     public String getPassword() {
         return password;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
     }
 
     /**
@@ -503,6 +606,7 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", fingerprint=").append(String.valueOf(this.fingerprint));
         sb.append(")");
         return sb.toString();
@@ -524,6 +628,7 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
                 && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.fingerprint, other.fingerprint)
                 && super.equals(other);
     }
@@ -546,6 +651,9 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
                                 : this.authenticationType.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         result = (result * PRIME) + (this.fingerprint == null ? 43 : this.fingerprint.hashCode());
         return result;
     }

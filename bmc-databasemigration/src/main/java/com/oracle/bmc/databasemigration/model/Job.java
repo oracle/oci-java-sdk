@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -15,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Job.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -32,6 +32,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         "unsupportedObjects",
         "lifecycleState",
         "lifecycleDetails",
+        "parameterFileVersions",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -47,6 +48,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             java.util.List<UnsupportedDatabaseObject> unsupportedObjects,
             JobLifecycleStates lifecycleState,
             String lifecycleDetails,
+            java.util.List<ParameterFileVersionSummary> parameterFileVersions,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -61,6 +63,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         this.unsupportedObjects = unsupportedObjects;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.parameterFileVersions = parameterFileVersions;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -217,16 +220,34 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /** A list of parameter file versions that can be viewed or edited for the current job. */
+        @com.fasterxml.jackson.annotation.JsonProperty("parameterFileVersions")
+        private java.util.List<ParameterFileVersionSummary> parameterFileVersions;
+
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * A list of parameter file versions that can be viewed or edited for the current job.
+         *
+         * @param parameterFileVersions the value to set
+         * @return this builder
+         */
+        public Builder parameterFileVersions(
+                java.util.List<ParameterFileVersionSummary> parameterFileVersions) {
+            this.parameterFileVersions = parameterFileVersions;
+            this.__explicitlySet__.add("parameterFileVersions");
+            return this;
+        }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see Resource Tags. Example:
+         * {"Department": "Finance"}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see Resource Tags. Example:
+         * {"Department": "Finance"}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -292,6 +313,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.unsupportedObjects,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.parameterFileVersions,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -332,6 +354,9 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("parameterFileVersions")) {
+                this.parameterFileVersions(model.getParameterFileVersions());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -483,16 +508,31 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return lifecycleDetails;
     }
 
+    /** A list of parameter file versions that can be viewed or edited for the current job. */
+    @com.fasterxml.jackson.annotation.JsonProperty("parameterFileVersions")
+    private final java.util.List<ParameterFileVersionSummary> parameterFileVersions;
+
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * A list of parameter file versions that can be viewed or edited for the current job.
+     *
+     * @return the value
+     */
+    public java.util.List<ParameterFileVersionSummary> getParameterFileVersions() {
+        return parameterFileVersions;
+    }
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see Resource Tags. Example: {"Department":
+     * "Finance"}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see Resource Tags. Example: {"Department":
+     * "Finance"}
      *
      * @return the value
      */
@@ -559,6 +599,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append(", unsupportedObjects=").append(String.valueOf(this.unsupportedObjects));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", parameterFileVersions=").append(String.valueOf(this.parameterFileVersions));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -586,6 +627,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 && java.util.Objects.equals(this.unsupportedObjects, other.unsupportedObjects)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.parameterFileVersions, other.parameterFileVersions)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -614,6 +656,11 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parameterFileVersions == null
+                                ? 43
+                                : this.parameterFileVersions.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

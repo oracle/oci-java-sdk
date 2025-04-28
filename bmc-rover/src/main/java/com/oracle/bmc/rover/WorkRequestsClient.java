@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.rover;
@@ -142,9 +142,9 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -166,6 +166,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -174,7 +175,6 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -202,6 +202,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -211,7 +212,6 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -238,6 +238,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.WorkRequestLogCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogCollection)
@@ -247,7 +248,6 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-prev-page", ListWorkRequestLogsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -275,6 +275,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -284,7 +285,6 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListWorkRequestsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

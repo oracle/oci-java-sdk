@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -27,24 +27,30 @@ public final class UpdateVnicDetails
         "definedTags",
         "displayName",
         "freeformTags",
+        "securityAttributes",
         "hostnameLabel",
         "nsgIds",
-        "skipSourceDestCheck"
+        "skipSourceDestCheck",
+        "routeTableId"
     })
     public UpdateVnicDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String hostnameLabel,
             java.util.List<String> nsgIds,
-            Boolean skipSourceDestCheck) {
+            Boolean skipSourceDestCheck,
+            String routeTableId) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
+        this.securityAttributes = securityAttributes;
         this.hostnameLabel = hostnameLabel;
         this.nsgIds = nsgIds;
         this.skipSourceDestCheck = skipSourceDestCheck;
+        this.routeTableId = routeTableId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -52,7 +58,7 @@ public final class UpdateVnicDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -62,7 +68,7 @@ public final class UpdateVnicDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -97,7 +103,7 @@ public final class UpdateVnicDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -107,7 +113,7 @@ public final class UpdateVnicDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -117,6 +123,38 @@ public final class UpdateVnicDetails
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -131,7 +169,7 @@ public final class UpdateVnicDetails
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
@@ -148,7 +186,7 @@ public final class UpdateVnicDetails
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * @param hostnameLabel the value to set
          * @return this builder
@@ -193,7 +231,7 @@ public final class UpdateVnicDetails
          * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
-         * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
          * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is
@@ -207,7 +245,7 @@ public final class UpdateVnicDetails
          * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
-         * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
          * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is
@@ -222,6 +260,27 @@ public final class UpdateVnicDetails
             this.__explicitlySet__.add("skipSourceDestCheck");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
+         * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
+         * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+         *
+         * @param routeTableId the value to set
+         * @return this builder
+         */
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -232,9 +291,11 @@ public final class UpdateVnicDetails
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
+                            this.securityAttributes,
                             this.hostnameLabel,
                             this.nsgIds,
-                            this.skipSourceDestCheck);
+                            this.skipSourceDestCheck,
+                            this.routeTableId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -252,6 +313,9 @@ public final class UpdateVnicDetails
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("hostnameLabel")) {
                 this.hostnameLabel(model.getHostnameLabel());
             }
@@ -260,6 +324,9 @@ public final class UpdateVnicDetails
             }
             if (model.wasPropertyExplicitlySet("skipSourceDestCheck")) {
                 this.skipSourceDestCheck(model.getSkipSourceDestCheck());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
             }
             return this;
         }
@@ -277,7 +344,7 @@ public final class UpdateVnicDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -287,7 +354,7 @@ public final class UpdateVnicDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -317,7 +384,7 @@ public final class UpdateVnicDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -327,7 +394,7 @@ public final class UpdateVnicDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -335,6 +402,35 @@ public final class UpdateVnicDetails
      */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
+    }
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -348,7 +444,7 @@ public final class UpdateVnicDetails
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     private final String hostnameLabel;
@@ -364,7 +460,7 @@ public final class UpdateVnicDetails
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * @return the value
      */
@@ -405,7 +501,7 @@ public final class UpdateVnicDetails
      * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
-     * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      *
      * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
@@ -419,7 +515,7 @@ public final class UpdateVnicDetails
      * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
-     * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      *
      * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
@@ -430,6 +526,25 @@ public final class UpdateVnicDetails
      */
     public Boolean getSkipSourceDestCheck() {
         return skipSourceDestCheck;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
+     * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    private final String routeTableId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
+     * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     *
+     * @return the value
+     */
+    public String getRouteTableId() {
+        return routeTableId;
     }
 
     @Override
@@ -450,9 +565,11 @@ public final class UpdateVnicDetails
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", skipSourceDestCheck=").append(String.valueOf(this.skipSourceDestCheck));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(")");
         return sb.toString();
     }
@@ -470,9 +587,11 @@ public final class UpdateVnicDetails
         return java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.skipSourceDestCheck, other.skipSourceDestCheck)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && super.equals(other);
     }
 
@@ -485,6 +604,11 @@ public final class UpdateVnicDetails
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result =
                 (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
+        result =
+                (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result =
@@ -492,6 +616,7 @@ public final class UpdateVnicDetails
                         + (this.skipSourceDestCheck == null
                                 ? 43
                                 : this.skipSourceDestCheck.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

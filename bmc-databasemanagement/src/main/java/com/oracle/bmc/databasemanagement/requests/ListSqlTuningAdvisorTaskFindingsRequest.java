@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTaskFindingsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTaskFindingsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListSqlTuningAdvisorTaskFindingsRequest.
  */
@@ -16,13 +16,13 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     public String getManagedDatabaseId() {
@@ -30,13 +30,13 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
     }
     /**
      * The SQL tuning task identifier. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private Long sqlTuningAdvisorTaskId;
 
     /**
      * The SQL tuning task identifier. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public Long getSqlTuningAdvisorTaskId() {
         return sqlTuningAdvisorTaskId;
@@ -276,6 +276,13 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -284,13 +291,13 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          *
          * @param managedDatabaseId the value to set
@@ -303,13 +310,13 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
 
         /**
          * The SQL tuning task identifier. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private Long sqlTuningAdvisorTaskId = null;
 
         /**
          * The SQL tuning task identifier. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param sqlTuningAdvisorTaskId the value to set
          * @return this builder instance
@@ -493,6 +500,20 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -536,6 +557,7 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
             page(o.getPage());
             limit(o.getLimit());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -586,10 +608,12 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
             request.page = page;
             request.limit = limit;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new ListSqlTuningAdvisorTaskFindingsRequest(managedDatabaseId,
             // sqlTuningAdvisorTaskId, beginExecId, endExecId, searchPeriod, findingFilter,
-            // statsHashFilter, indexHashFilter, sortBy, sortOrder, page, limit, opcRequestId);
+            // statsHashFilter, indexHashFilter, sortBy, sortOrder, page, limit, opcRequestId,
+            // opcNamedCredentialId);
         }
     }
 
@@ -612,7 +636,8 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
                 .sortOrder(sortOrder)
                 .page(page)
                 .limit(limit)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -642,6 +667,7 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -670,7 +696,8 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -702,6 +729,11 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudbridge;
@@ -146,6 +146,7 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Environment.class,
@@ -153,7 +154,6 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", AddAgentDependencyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", AddAgentDependencyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -183,13 +183,13 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeAgentCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeAgentCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -219,11 +219,11 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeAgentDependencyCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -253,6 +253,7 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -260,7 +261,6 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeEnvironmentCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -281,6 +281,7 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Agent.class,
@@ -288,7 +289,6 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreateAgentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateAgentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -312,6 +312,7 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.AgentDependency.class,
@@ -322,7 +323,6 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateAgentDependencyResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -344,6 +344,7 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Environment.class,
@@ -351,7 +352,6 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreateEnvironmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateEnvironmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -375,9 +375,9 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAgentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -401,9 +401,9 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAgentDependencyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -426,9 +426,9 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteEnvironmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -450,13 +450,13 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getAgentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Agent.class,
                         GetAgentResponse.Builder::agent)
                 .handleResponseHeaderString("etag", GetAgentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAgentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -478,13 +478,13 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getAgentDependencyId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.AgentDependency.class,
                         GetAgentDependencyResponse.Builder::agentDependency)
                 .handleResponseHeaderString("etag", GetAgentDependencyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAgentDependencyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -506,13 +506,13 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getEnvironmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Environment.class,
                         GetEnvironmentResponse.Builder::environment)
                 .handleResponseHeaderString("etag", GetEnvironmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetEnvironmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -538,13 +538,13 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getPluginName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Plugin.class,
                         GetPluginResponse.Builder::plugin)
                 .handleResponseHeaderString("etag", GetPluginResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPluginResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -574,6 +574,7 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.AgentDependencyCollection.class,
                         ListAgentDependenciesResponse.Builder::agentDependencyCollection)
@@ -581,7 +582,6 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListAgentDependenciesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAgentDependenciesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -610,6 +610,7 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.AgentCollection.class,
                         ListAgentsResponse.Builder::agentCollection)
@@ -617,7 +618,6 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListAgentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAgentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -643,6 +643,7 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.ApplianceImageCollection.class,
                         ListApplianceImagesResponse.Builder::applianceImageCollection)
@@ -650,7 +651,6 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListApplianceImagesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListApplianceImagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -678,6 +678,7 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.EnvironmentCollection.class,
                         ListEnvironmentsResponse.Builder::environmentCollection)
@@ -685,7 +686,6 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListEnvironmentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListEnvironmentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -715,6 +715,7 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Environment.class,
@@ -722,7 +723,6 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", RemoveAgentDependencyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveAgentDependencyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -747,6 +747,7 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Agent.class,
@@ -754,7 +755,6 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateAgentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAgentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -782,13 +782,13 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateAgentDependencyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAgentDependencyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -814,6 +814,7 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Environment.class,
@@ -821,7 +822,6 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateEnvironmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateEnvironmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -849,14 +849,12 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
-                .handleBody(
-                        com.oracle.bmc.cloudbridge.model.Plugin.class,
-                        UpdatePluginResponse.Builder::plugin)
-                .handleResponseHeaderString("etag", UpdatePluginResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdatePluginResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdatePluginResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

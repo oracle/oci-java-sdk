@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateOperationsInsightsWarehouseExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateOperationsInsightsWarehouseExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateOperationsInsightsWarehouseRequest.
  */
@@ -16,17 +16,11 @@ public class CreateOperationsInsightsWarehouseRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opsi.model.CreateOperationsInsightsWarehouseDetails> {
 
-    /**
-     * Details using which an Operations Insights Warehouse resource will be created in Operations
-     * Insights.
-     */
+    /** Details using which an Ops Insights Warehouse resource will be created in Ops Insights. */
     private com.oracle.bmc.opsi.model.CreateOperationsInsightsWarehouseDetails
             createOperationsInsightsWarehouseDetails;
 
-    /**
-     * Details using which an Operations Insights Warehouse resource will be created in Operations
-     * Insights.
-     */
+    /** Details using which an Ops Insights Warehouse resource will be created in Ops Insights. */
     public com.oracle.bmc.opsi.model.CreateOperationsInsightsWarehouseDetails
             getCreateOperationsInsightsWarehouseDetails() {
         return createOperationsInsightsWarehouseDetails;
@@ -83,15 +77,13 @@ public class CreateOperationsInsightsWarehouseRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details using which an Operations Insights Warehouse resource will be created in
-         * Operations Insights.
+         * Details using which an Ops Insights Warehouse resource will be created in Ops Insights.
          */
         private com.oracle.bmc.opsi.model.CreateOperationsInsightsWarehouseDetails
                 createOperationsInsightsWarehouseDetails = null;
 
         /**
-         * Details using which an Operations Insights Warehouse resource will be created in
-         * Operations Insights.
+         * Details using which an Ops Insights Warehouse resource will be created in Ops Insights.
          *
          * @param createOperationsInsightsWarehouseDetails the value to set
          * @return this builder instance

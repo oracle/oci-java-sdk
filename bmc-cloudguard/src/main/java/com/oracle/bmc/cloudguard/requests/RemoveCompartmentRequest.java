@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.cloudguard.requests;
 import com.oracle.bmc.cloudguard.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RemoveCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RemoveCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use RemoveCompartmentRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
@@ -15,17 +15,17 @@ public class RemoveCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.RemoveCompartmentDetails> {
 
-    /** The unique identifier of the security zone ({@code SecurityZone}) */
+    /** The unique identifier of the security zone ({@code SecurityZone} resource). */
     private String securityZoneId;
 
-    /** The unique identifier of the security zone ({@code SecurityZone}) */
+    /** The unique identifier of the security zone ({@code SecurityZone} resource). */
     public String getSecurityZoneId() {
         return securityZoneId;
     }
-    /** The compartment to remove from the security zone. */
+    /** The compartment to remove from the security zone */
     private com.oracle.bmc.cloudguard.model.RemoveCompartmentDetails removeCompartmentDetails;
 
-    /** The compartment to remove from the security zone. */
+    /** The compartment to remove from the security zone */
     public com.oracle.bmc.cloudguard.model.RemoveCompartmentDetails getRemoveCompartmentDetails() {
         return removeCompartmentDetails;
     }
@@ -91,11 +91,11 @@ public class RemoveCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique identifier of the security zone ({@code SecurityZone}) */
+        /** The unique identifier of the security zone ({@code SecurityZone} resource). */
         private String securityZoneId = null;
 
         /**
-         * The unique identifier of the security zone ({@code SecurityZone})
+         * The unique identifier of the security zone ({@code SecurityZone} resource).
          *
          * @param securityZoneId the value to set
          * @return this builder instance
@@ -105,12 +105,12 @@ public class RemoveCompartmentRequest
             return this;
         }
 
-        /** The compartment to remove from the security zone. */
+        /** The compartment to remove from the security zone */
         private com.oracle.bmc.cloudguard.model.RemoveCompartmentDetails removeCompartmentDetails =
                 null;
 
         /**
-         * The compartment to remove from the security zone.
+         * The compartment to remove from the security zone
          *
          * @param removeCompartmentDetails the value to set
          * @return this builder instance

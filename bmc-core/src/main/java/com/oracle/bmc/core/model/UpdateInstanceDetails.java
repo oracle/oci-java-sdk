@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -26,6 +26,7 @@ public final class UpdateInstanceDetails
     @java.beans.ConstructorProperties({
         "capacityReservationId",
         "definedTags",
+        "securityAttributes",
         "displayName",
         "freeformTags",
         "agentConfig",
@@ -33,16 +34,21 @@ public final class UpdateInstanceDetails
         "extendedMetadata",
         "shape",
         "shapeConfig",
+        "sourceDetails",
         "updateOperationConstraint",
         "instanceOptions",
         "faultDomain",
         "launchOptions",
         "availabilityConfig",
-        "timeMaintenanceRebootDue"
+        "timeMaintenanceRebootDue",
+        "dedicatedVmHostId",
+        "platformConfig",
+        "licensingConfigs"
     })
     public UpdateInstanceDetails(
             String capacityReservationId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String displayName,
             java.util.Map<String, String> freeformTags,
             UpdateInstanceAgentConfigDetails agentConfig,
@@ -50,15 +56,20 @@ public final class UpdateInstanceDetails
             java.util.Map<String, Object> extendedMetadata,
             String shape,
             UpdateInstanceShapeConfigDetails shapeConfig,
+            UpdateInstanceSourceDetails sourceDetails,
             UpdateOperationConstraint updateOperationConstraint,
             InstanceOptions instanceOptions,
             String faultDomain,
             UpdateLaunchOptions launchOptions,
             UpdateInstanceAvailabilityConfigDetails availabilityConfig,
-            java.util.Date timeMaintenanceRebootDue) {
+            java.util.Date timeMaintenanceRebootDue,
+            String dedicatedVmHostId,
+            UpdateInstancePlatformConfig platformConfig,
+            java.util.List<UpdateInstanceLicensingConfig> licensingConfigs) {
         super();
         this.capacityReservationId = capacityReservationId;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.agentConfig = agentConfig;
@@ -66,12 +77,16 @@ public final class UpdateInstanceDetails
         this.extendedMetadata = extendedMetadata;
         this.shape = shape;
         this.shapeConfig = shapeConfig;
+        this.sourceDetails = sourceDetails;
         this.updateOperationConstraint = updateOperationConstraint;
         this.instanceOptions = instanceOptions;
         this.faultDomain = faultDomain;
         this.launchOptions = launchOptions;
         this.availabilityConfig = availabilityConfig;
         this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
+        this.dedicatedVmHostId = dedicatedVmHostId;
+        this.platformConfig = platformConfig;
+        this.licensingConfigs = licensingConfigs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -80,7 +95,7 @@ public final class UpdateInstanceDetails
          * The OCID of the compute capacity reservation this instance is launched under. You can
          * remove the instance from a reservation by specifying an empty string as input for this
          * field. For more information, see [Capacity
-         * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
         private String capacityReservationId;
@@ -89,7 +104,7 @@ public final class UpdateInstanceDetails
          * The OCID of the compute capacity reservation this instance is launched under. You can
          * remove the instance from a reservation by specifying an empty string as input for this
          * field. For more information, see [Capacity
-         * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          *
          * @param capacityReservationId the value to set
          * @return this builder
@@ -102,7 +117,7 @@ public final class UpdateInstanceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -112,7 +127,7 @@ public final class UpdateInstanceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -123,6 +138,38 @@ public final class UpdateInstanceDetails
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -147,7 +194,7 @@ public final class UpdateInstanceDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -157,7 +204,7 @@ public final class UpdateInstanceDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -260,10 +307,10 @@ public final class UpdateInstanceDetails
          * The shape of the instance. The shape determines the number of CPUs and the amount of
          * memory allocated to the instance. For more information about how to change shapes, and a
          * list of shapes that are supported, see [Editing an
-         * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+         * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
          *
          * <p>For details about the CPUs, memory, and other properties of each shape, see [Compute
-         * Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm).
+         * Shapes](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm).
          *
          * <p>The new shape must be compatible with the image that was used to launch the instance.
          * You can enumerate all available shapes and determine image compatibility by calling
@@ -285,10 +332,10 @@ public final class UpdateInstanceDetails
          * The shape of the instance. The shape determines the number of CPUs and the amount of
          * memory allocated to the instance. For more information about how to change shapes, and a
          * list of shapes that are supported, see [Editing an
-         * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+         * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
          *
          * <p>For details about the CPUs, memory, and other properties of each shape, see [Compute
-         * Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm).
+         * Shapes](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm).
          *
          * <p>The new shape must be compatible with the image that was used to launch the instance.
          * You can enumerate all available shapes and determine image compatibility by calling
@@ -318,6 +365,15 @@ public final class UpdateInstanceDetails
         public Builder shapeConfig(UpdateInstanceShapeConfigDetails shapeConfig) {
             this.shapeConfig = shapeConfig;
             this.__explicitlySet__.add("shapeConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+        private UpdateInstanceSourceDetails sourceDetails;
+
+        public Builder sourceDetails(UpdateInstanceSourceDetails sourceDetails) {
+            this.sourceDetails = sourceDetails;
+            this.__explicitlySet__.add("sourceDetails");
             return this;
         }
         /**
@@ -433,7 +489,7 @@ public final class UpdateInstanceDetails
          * #instanceAction(InstanceActionRequest) instanceAction} operation.
          *
          * <p>For more information, see [Infrastructure
-         * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+         * Maintenance](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
          *
          * <p>Example: {@code 2018-05-25T21:10:29.600Z}
          */
@@ -458,7 +514,7 @@ public final class UpdateInstanceDetails
          * #instanceAction(InstanceActionRequest) instanceAction} operation.
          *
          * <p>For more information, see [Infrastructure
-         * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+         * Maintenance](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
          *
          * <p>Example: {@code 2018-05-25T21:10:29.600Z}
          *
@@ -470,6 +526,54 @@ public final class UpdateInstanceDetails
             this.__explicitlySet__.add("timeMaintenanceRebootDue");
             return this;
         }
+        /**
+         * The OCID of the dedicated virtual machine host to place the instance on. Supported only
+         * if this VM instance was already placed on a dedicated virtual machine host - that is, you
+         * can't move an instance from on-demand capacity to dedicated capacity, nor can you move an
+         * instance from dedicated capacity to on-demand capacity.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
+        private String dedicatedVmHostId;
+
+        /**
+         * The OCID of the dedicated virtual machine host to place the instance on. Supported only
+         * if this VM instance was already placed on a dedicated virtual machine host - that is, you
+         * can't move an instance from on-demand capacity to dedicated capacity, nor can you move an
+         * instance from dedicated capacity to on-demand capacity.
+         *
+         * @param dedicatedVmHostId the value to set
+         * @return this builder
+         */
+        public Builder dedicatedVmHostId(String dedicatedVmHostId) {
+            this.dedicatedVmHostId = dedicatedVmHostId;
+            this.__explicitlySet__.add("dedicatedVmHostId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("platformConfig")
+        private UpdateInstancePlatformConfig platformConfig;
+
+        public Builder platformConfig(UpdateInstancePlatformConfig platformConfig) {
+            this.platformConfig = platformConfig;
+            this.__explicitlySet__.add("platformConfig");
+            return this;
+        }
+        /** The list of liscensing configurations with target update values. */
+        @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+        private java.util.List<UpdateInstanceLicensingConfig> licensingConfigs;
+
+        /**
+         * The list of liscensing configurations with target update values.
+         *
+         * @param licensingConfigs the value to set
+         * @return this builder
+         */
+        public Builder licensingConfigs(
+                java.util.List<UpdateInstanceLicensingConfig> licensingConfigs) {
+            this.licensingConfigs = licensingConfigs;
+            this.__explicitlySet__.add("licensingConfigs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -479,6 +583,7 @@ public final class UpdateInstanceDetails
                     new UpdateInstanceDetails(
                             this.capacityReservationId,
                             this.definedTags,
+                            this.securityAttributes,
                             this.displayName,
                             this.freeformTags,
                             this.agentConfig,
@@ -486,12 +591,16 @@ public final class UpdateInstanceDetails
                             this.extendedMetadata,
                             this.shape,
                             this.shapeConfig,
+                            this.sourceDetails,
                             this.updateOperationConstraint,
                             this.instanceOptions,
                             this.faultDomain,
                             this.launchOptions,
                             this.availabilityConfig,
-                            this.timeMaintenanceRebootDue);
+                            this.timeMaintenanceRebootDue,
+                            this.dedicatedVmHostId,
+                            this.platformConfig,
+                            this.licensingConfigs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -505,6 +614,9 @@ public final class UpdateInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -527,6 +639,9 @@ public final class UpdateInstanceDetails
             if (model.wasPropertyExplicitlySet("shapeConfig")) {
                 this.shapeConfig(model.getShapeConfig());
             }
+            if (model.wasPropertyExplicitlySet("sourceDetails")) {
+                this.sourceDetails(model.getSourceDetails());
+            }
             if (model.wasPropertyExplicitlySet("updateOperationConstraint")) {
                 this.updateOperationConstraint(model.getUpdateOperationConstraint());
             }
@@ -545,6 +660,15 @@ public final class UpdateInstanceDetails
             if (model.wasPropertyExplicitlySet("timeMaintenanceRebootDue")) {
                 this.timeMaintenanceRebootDue(model.getTimeMaintenanceRebootDue());
             }
+            if (model.wasPropertyExplicitlySet("dedicatedVmHostId")) {
+                this.dedicatedVmHostId(model.getDedicatedVmHostId());
+            }
+            if (model.wasPropertyExplicitlySet("platformConfig")) {
+                this.platformConfig(model.getPlatformConfig());
+            }
+            if (model.wasPropertyExplicitlySet("licensingConfigs")) {
+                this.licensingConfigs(model.getLicensingConfigs());
+            }
             return this;
         }
     }
@@ -562,7 +686,7 @@ public final class UpdateInstanceDetails
      * The OCID of the compute capacity reservation this instance is launched under. You can remove
      * the instance from a reservation by specifying an empty string as input for this field. For
      * more information, see [Capacity
-     * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
     private final String capacityReservationId;
@@ -571,7 +695,7 @@ public final class UpdateInstanceDetails
      * The OCID of the compute capacity reservation this instance is launched under. You can remove
      * the instance from a reservation by specifying an empty string as input for this field. For
      * more information, see [Capacity
-     * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      *
      * @return the value
      */
@@ -582,7 +706,7 @@ public final class UpdateInstanceDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -592,7 +716,7 @@ public final class UpdateInstanceDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -600,6 +724,35 @@ public final class UpdateInstanceDetails
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -622,7 +775,7 @@ public final class UpdateInstanceDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -632,7 +785,7 @@ public final class UpdateInstanceDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -727,10 +880,10 @@ public final class UpdateInstanceDetails
      * The shape of the instance. The shape determines the number of CPUs and the amount of memory
      * allocated to the instance. For more information about how to change shapes, and a list of
      * shapes that are supported, see [Editing an
-     * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+     * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
      *
      * <p>For details about the CPUs, memory, and other properties of each shape, see [Compute
-     * Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm).
+     * Shapes](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm).
      *
      * <p>The new shape must be compatible with the image that was used to launch the instance. You
      * can enumerate all available shapes and determine image compatibility by calling {@link
@@ -752,10 +905,10 @@ public final class UpdateInstanceDetails
      * The shape of the instance. The shape determines the number of CPUs and the amount of memory
      * allocated to the instance. For more information about how to change shapes, and a list of
      * shapes that are supported, see [Editing an
-     * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+     * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
      *
      * <p>For details about the CPUs, memory, and other properties of each shape, see [Compute
-     * Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm).
+     * Shapes](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm).
      *
      * <p>The new shape must be compatible with the image that was used to launch the instance. You
      * can enumerate all available shapes and determine image compatibility by calling {@link
@@ -781,6 +934,13 @@ public final class UpdateInstanceDetails
 
     public UpdateInstanceShapeConfigDetails getShapeConfig() {
         return shapeConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+    private final UpdateInstanceSourceDetails sourceDetails;
+
+    public UpdateInstanceSourceDetails getSourceDetails() {
+        return sourceDetails;
     }
 
     /**
@@ -920,7 +1080,7 @@ public final class UpdateInstanceDetails
      * #instanceAction(InstanceActionRequest) instanceAction} operation.
      *
      * <p>For more information, see [Infrastructure
-     * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+     * Maintenance](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      *
      * <p>Example: {@code 2018-05-25T21:10:29.600Z}
      */
@@ -945,7 +1105,7 @@ public final class UpdateInstanceDetails
      * #instanceAction(InstanceActionRequest) instanceAction} operation.
      *
      * <p>For more information, see [Infrastructure
-     * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+     * Maintenance](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      *
      * <p>Example: {@code 2018-05-25T21:10:29.600Z}
      *
@@ -953,6 +1113,47 @@ public final class UpdateInstanceDetails
      */
     public java.util.Date getTimeMaintenanceRebootDue() {
         return timeMaintenanceRebootDue;
+    }
+
+    /**
+     * The OCID of the dedicated virtual machine host to place the instance on. Supported only if
+     * this VM instance was already placed on a dedicated virtual machine host - that is, you can't
+     * move an instance from on-demand capacity to dedicated capacity, nor can you move an instance
+     * from dedicated capacity to on-demand capacity.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
+    private final String dedicatedVmHostId;
+
+    /**
+     * The OCID of the dedicated virtual machine host to place the instance on. Supported only if
+     * this VM instance was already placed on a dedicated virtual machine host - that is, you can't
+     * move an instance from on-demand capacity to dedicated capacity, nor can you move an instance
+     * from dedicated capacity to on-demand capacity.
+     *
+     * @return the value
+     */
+    public String getDedicatedVmHostId() {
+        return dedicatedVmHostId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("platformConfig")
+    private final UpdateInstancePlatformConfig platformConfig;
+
+    public UpdateInstancePlatformConfig getPlatformConfig() {
+        return platformConfig;
+    }
+
+    /** The list of liscensing configurations with target update values. */
+    @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+    private final java.util.List<UpdateInstanceLicensingConfig> licensingConfigs;
+
+    /**
+     * The list of liscensing configurations with target update values.
+     *
+     * @return the value
+     */
+    public java.util.List<UpdateInstanceLicensingConfig> getLicensingConfigs() {
+        return licensingConfigs;
     }
 
     @Override
@@ -972,6 +1173,7 @@ public final class UpdateInstanceDetails
         sb.append("super=").append(super.toString());
         sb.append("capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", agentConfig=").append(String.valueOf(this.agentConfig));
@@ -979,6 +1181,7 @@ public final class UpdateInstanceDetails
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
+        sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", updateOperationConstraint=")
                 .append(String.valueOf(this.updateOperationConstraint));
         sb.append(", instanceOptions=").append(String.valueOf(this.instanceOptions));
@@ -987,6 +1190,9 @@ public final class UpdateInstanceDetails
         sb.append(", availabilityConfig=").append(String.valueOf(this.availabilityConfig));
         sb.append(", timeMaintenanceRebootDue=")
                 .append(String.valueOf(this.timeMaintenanceRebootDue));
+        sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
+        sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
+        sb.append(", licensingConfigs=").append(String.valueOf(this.licensingConfigs));
         sb.append(")");
         return sb.toString();
     }
@@ -1003,6 +1209,7 @@ public final class UpdateInstanceDetails
         UpdateInstanceDetails other = (UpdateInstanceDetails) o;
         return java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.agentConfig, other.agentConfig)
@@ -1010,6 +1217,7 @@ public final class UpdateInstanceDetails
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
+                && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(
                         this.updateOperationConstraint, other.updateOperationConstraint)
                 && java.util.Objects.equals(this.instanceOptions, other.instanceOptions)
@@ -1018,6 +1226,9 @@ public final class UpdateInstanceDetails
                 && java.util.Objects.equals(this.availabilityConfig, other.availabilityConfig)
                 && java.util.Objects.equals(
                         this.timeMaintenanceRebootDue, other.timeMaintenanceRebootDue)
+                && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
+                && java.util.Objects.equals(this.platformConfig, other.platformConfig)
+                && java.util.Objects.equals(this.licensingConfigs, other.licensingConfigs)
                 && super.equals(other);
     }
 
@@ -1031,6 +1242,11 @@ public final class UpdateInstanceDetails
                                 ? 43
                                 : this.capacityReservationId.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.agentConfig == null ? 43 : this.agentConfig.hashCode());
@@ -1040,6 +1256,9 @@ public final class UpdateInstanceDetails
                         + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.shapeConfig == null ? 43 : this.shapeConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.updateOperationConstraint == null
@@ -1062,6 +1281,15 @@ public final class UpdateInstanceDetails
                         + (this.timeMaintenanceRebootDue == null
                                 ? 43
                                 : this.timeMaintenanceRebootDue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dedicatedVmHostId == null ? 43 : this.dedicatedVmHostId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.platformConfig == null ? 43 : this.platformConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.licensingConfigs == null ? 43 : this.licensingConfigs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

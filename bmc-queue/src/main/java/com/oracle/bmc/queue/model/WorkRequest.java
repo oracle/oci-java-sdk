@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.model;
@@ -102,9 +102,9 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains the work request. Work requests should be scoped to the
-         * same compartment as the resource the work request affects. If the work request affects
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the work request. Work requests should be scoped to the same
+         * compartment as the resource the work request affects. If the work request affects
          * multiple resources, and those resources are not in the same compartment, it is up to the
          * service team to pick the primary resource whose compartment should be used
          */
@@ -112,9 +112,9 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains the work request. Work requests should be scoped to the
-         * same compartment as the resource the work request affects. If the work request affects
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the work request. Work requests should be scoped to the same
+         * compartment as the resource the work request affects. If the work request affects
          * multiple resources, and those resources are not in the same compartment, it is up to the
          * service team to pick the primary resource whose compartment should be used
          *
@@ -317,8 +317,8 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains the work request. Work requests should be scoped to the same
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the work request. Work requests should be scoped to the same
      * compartment as the resource the work request affects. If the work request affects multiple
      * resources, and those resources are not in the same compartment, it is up to the service team
      * to pick the primary resource whose compartment should be used
@@ -327,8 +327,8 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains the work request. Work requests should be scoped to the same
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the work request. Work requests should be scoped to the same
      * compartment as the resource the work request affects. If the work request affects multiple
      * resources, and those resources are not in the same compartment, it is up to the service team
      * to pick the primary resource whose compartment should be used

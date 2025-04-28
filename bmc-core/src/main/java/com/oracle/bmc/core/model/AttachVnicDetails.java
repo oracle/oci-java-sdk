@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -91,7 +91,7 @@ public final class AttachVnicDetails
          * bare metal instance shapes have two active physical NICs (0 and 1). If you add a
          * secondary VNIC to one of these instances, you can specify which NIC the VNIC will use.
          * For more information, see [Virtual Network Interface Cards
-         * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
         private Integer nicIndex;
@@ -101,7 +101,7 @@ public final class AttachVnicDetails
          * bare metal instance shapes have two active physical NICs (0 and 1). If you add a
          * secondary VNIC to one of these instances, you can specify which NIC the VNIC will use.
          * For more information, see [Virtual Network Interface Cards
-         * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
          *
          * @param nicIndex the value to set
          * @return this builder
@@ -197,7 +197,7 @@ public final class AttachVnicDetails
      * metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to
      * one of these instances, you can specify which NIC the VNIC will use. For more information,
      * see [Virtual Network Interface Cards
-     * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
     private final Integer nicIndex;
@@ -207,7 +207,7 @@ public final class AttachVnicDetails
      * metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to
      * one of these instances, you can specify which NIC the VNIC will use. For more information,
      * see [Virtual Network Interface Cards
-     * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      *
      * @return the value
      */

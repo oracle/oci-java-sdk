@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.model;
@@ -33,14 +33,14 @@ public final class StartCredentialRotationDetails
     public static class Builder {
         /**
          * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should
-         * be retired. Maximum delay duration is 14 days.
+         * be retired. Maximum delay duration is 90 days.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autoCompletionDelayDuration")
         private String autoCompletionDelayDuration;
 
         /**
          * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should
-         * be retired. Maximum delay duration is 14 days.
+         * be retired. Maximum delay duration is 90 days.
          *
          * @param autoCompletionDelayDuration the value to set
          * @return this builder
@@ -83,14 +83,14 @@ public final class StartCredentialRotationDetails
 
     /**
      * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be
-     * retired. Maximum delay duration is 14 days.
+     * retired. Maximum delay duration is 90 days.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autoCompletionDelayDuration")
     private final String autoCompletionDelayDuration;
 
     /**
      * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be
-     * retired. Maximum delay duration is 14 days.
+     * retired. Maximum delay duration is 90 days.
      *
      * @return the value
      */

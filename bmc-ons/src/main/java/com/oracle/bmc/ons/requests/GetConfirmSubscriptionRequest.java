@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ons.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.ons.requests;
 import com.oracle.bmc.ons.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetConfirmSubscriptionExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetConfirmSubscriptionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetConfirmSubscriptionRequest.
  */
@@ -16,14 +16,14 @@ public class GetConfirmSubscriptionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subscription to get the confirmation details for.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription to get the confirmation details for.
      */
     private String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subscription to get the confirmation details for.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription to get the confirmation details for.
      */
     public String getId() {
         return id;
@@ -43,7 +43,7 @@ public class GetConfirmSubscriptionRequest
      * {@code SLACK} * {@code SMS}
      *
      * <p>For information about subscription protocols, see [To create a
-     * subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
+     * subscription](https://docs.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      */
     private String protocol;
 
@@ -55,7 +55,7 @@ public class GetConfirmSubscriptionRequest
      * {@code SLACK} * {@code SMS}
      *
      * <p>For information about subscription protocols, see [To create a
-     * subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
+     * subscription](https://docs.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      */
     public String getProtocol() {
         return protocol;
@@ -81,14 +81,14 @@ public class GetConfirmSubscriptionRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subscription to get the confirmation details for.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription to get the confirmation details for.
          */
         private String id = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subscription to get the confirmation details for.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription to get the confirmation details for.
          *
          * @param id the value to set
          * @return this builder instance
@@ -120,7 +120,7 @@ public class GetConfirmSubscriptionRequest
          * PAGERDUTY} * {@code SLACK} * {@code SMS}
          *
          * <p>For information about subscription protocols, see [To create a
-         * subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
+         * subscription](https://docs.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
          */
         private String protocol = null;
 
@@ -132,7 +132,7 @@ public class GetConfirmSubscriptionRequest
          * PAGERDUTY} * {@code SLACK} * {@code SMS}
          *
          * <p>For information about subscription protocols, see [To create a
-         * subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
+         * subscription](https://docs.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
          *
          * @param protocol the value to set
          * @return this builder instance

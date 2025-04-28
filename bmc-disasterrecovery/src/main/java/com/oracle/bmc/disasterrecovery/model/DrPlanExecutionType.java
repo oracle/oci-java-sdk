@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -10,8 +10,8 @@ package com.oracle.bmc.disasterrecovery.model;
  * part of the plan, however prechecks can be executed separately from a plan. - SWITCHOVER -
  * Switchover from primary to standby. - SWITCHOVER_PRECHECK - Precheck for switchover DR plan. -
  * FAILOVER - Failover to standby. - FAILOVER_PRECHECK - Precheck for failover DR plan. -
- * START_DRILL - Start DR drill. - START_DRILL_PRECHECK - Precheck for a start drill DR plan. -
- * STOP_DRILL - Stop DR drill. - STOP_DRILL_PRECHECK - Precheck for a stop drill DR plan.
+ * START_DRILL - Start DR Drill. - START_DRILL_PRECHECK - Precheck for a start drill DR plan. -
+ * STOP_DRILL - Stop DR Drill. - STOP_DRILL_PRECHECK - Precheck for a stop drill DR plan.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanExecutionType implements com.oracle.bmc.http.internal.BmcEnum {

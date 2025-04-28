@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -31,7 +31,9 @@ public final class OverlappingRecallSummary
         "purpose",
         "queryString",
         "logSets",
-        "createdBy"
+        "createdBy",
+        "collectionId",
+        "recallId"
     })
     public OverlappingRecallSummary(
             java.util.Date timeDataStarted,
@@ -41,7 +43,9 @@ public final class OverlappingRecallSummary
             String purpose,
             String queryString,
             String logSets,
-            String createdBy) {
+            String createdBy,
+            Long collectionId,
+            Long recallId) {
         super();
         this.timeDataStarted = timeDataStarted;
         this.timeDataEnded = timeDataEnded;
@@ -51,6 +55,8 @@ public final class OverlappingRecallSummary
         this.queryString = queryString;
         this.logSets = logSets;
         this.createdBy = createdBy;
+        this.collectionId = collectionId;
+        this.recallId = recallId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -175,6 +181,36 @@ public final class OverlappingRecallSummary
             this.__explicitlySet__.add("createdBy");
             return this;
         }
+        /** This is the id of the associated recalled data collection */
+        @com.fasterxml.jackson.annotation.JsonProperty("collectionId")
+        private Long collectionId;
+
+        /**
+         * This is the id of the associated recalled data collection
+         *
+         * @param collectionId the value to set
+         * @return this builder
+         */
+        public Builder collectionId(Long collectionId) {
+            this.collectionId = collectionId;
+            this.__explicitlySet__.add("collectionId");
+            return this;
+        }
+        /** This is the id for the recall request */
+        @com.fasterxml.jackson.annotation.JsonProperty("recallId")
+        private Long recallId;
+
+        /**
+         * This is the id for the recall request
+         *
+         * @param recallId the value to set
+         * @return this builder
+         */
+        public Builder recallId(Long recallId) {
+            this.recallId = recallId;
+            this.__explicitlySet__.add("recallId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -189,7 +225,9 @@ public final class OverlappingRecallSummary
                             this.purpose,
                             this.queryString,
                             this.logSets,
-                            this.createdBy);
+                            this.createdBy,
+                            this.collectionId,
+                            this.recallId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -221,6 +259,12 @@ public final class OverlappingRecallSummary
             }
             if (model.wasPropertyExplicitlySet("createdBy")) {
                 this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("collectionId")) {
+                this.collectionId(model.getCollectionId());
+            }
+            if (model.wasPropertyExplicitlySet("recallId")) {
+                this.recallId(model.getRecallId());
             }
             return this;
         }
@@ -339,6 +383,32 @@ public final class OverlappingRecallSummary
         return createdBy;
     }
 
+    /** This is the id of the associated recalled data collection */
+    @com.fasterxml.jackson.annotation.JsonProperty("collectionId")
+    private final Long collectionId;
+
+    /**
+     * This is the id of the associated recalled data collection
+     *
+     * @return the value
+     */
+    public Long getCollectionId() {
+        return collectionId;
+    }
+
+    /** This is the id for the recall request */
+    @com.fasterxml.jackson.annotation.JsonProperty("recallId")
+    private final Long recallId;
+
+    /**
+     * This is the id for the recall request
+     *
+     * @return the value
+     */
+    public Long getRecallId() {
+        return recallId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -362,6 +432,8 @@ public final class OverlappingRecallSummary
         sb.append(", queryString=").append(String.valueOf(this.queryString));
         sb.append(", logSets=").append(String.valueOf(this.logSets));
         sb.append(", createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", collectionId=").append(String.valueOf(this.collectionId));
+        sb.append(", recallId=").append(String.valueOf(this.recallId));
         sb.append(")");
         return sb.toString();
     }
@@ -384,6 +456,8 @@ public final class OverlappingRecallSummary
                 && java.util.Objects.equals(this.queryString, other.queryString)
                 && java.util.Objects.equals(this.logSets, other.logSets)
                 && java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.collectionId, other.collectionId)
+                && java.util.Objects.equals(this.recallId, other.recallId)
                 && super.equals(other);
     }
 
@@ -403,6 +477,8 @@ public final class OverlappingRecallSummary
         result = (result * PRIME) + (this.queryString == null ? 43 : this.queryString.hashCode());
         result = (result * PRIME) + (this.logSets == null ? 43 : this.logSets.hashCode());
         result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result = (result * PRIME) + (this.collectionId == null ? 43 : this.collectionId.hashCode());
+        result = (result * PRIME) + (this.recallId == null ? 43 : this.recallId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

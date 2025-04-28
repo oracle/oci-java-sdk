@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -8,10 +8,9 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for the operating system
- * environments in your private data centers through a single management console. For more
- * information, see [Overview of OS Management
- * Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
+ * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
+ * Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public interface ScheduledJobAsync extends AutoCloseable {
@@ -65,6 +64,24 @@ public interface ScheduledJobAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Moves a scheduled job to another compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeScheduledJobCompartmentResponse>
+            changeScheduledJobCompartment(
+                    ChangeScheduledJobCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeScheduledJobCompartmentRequest,
+                                    ChangeScheduledJobCompartmentResponse>
+                            handler);
+
+    /**
      * Creates a new scheduled job.
      *
      * @param request The request object containing the details to send
@@ -112,9 +129,8 @@ public interface ScheduledJobAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists scheduled jobs that match the specified compartment or scheduled job OCID. Filter the
-     * list against a variety of criteria including but not limited to its display name, lifecycle
-     * state, operation type, and schedule type.
+     * Lists scheduled jobs that match the specified compartment or scheduled job
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -130,8 +146,9 @@ public interface ScheduledJobAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Triggers an already created RECURRING scheduled job to run immediately instead of waiting for
-     * its next regularly scheduled time. This operation does not support ONETIME scheduled job.
+     * Triggers an already created recurring scheduled job to run immediately instead of waiting for
+     * its next regularly scheduled time. This operation only applies to recurring jobs, not
+     * one-time scheduled jobs.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

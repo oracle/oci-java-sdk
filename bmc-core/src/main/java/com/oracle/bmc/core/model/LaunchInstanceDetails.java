@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -31,9 +31,11 @@ public final class LaunchInstanceDetails
         "createVnicDetails",
         "dedicatedVmHostId",
         "definedTags",
+        "securityAttributes",
         "displayName",
         "extendedMetadata",
         "faultDomain",
+        "clusterPlacementGroupId",
         "freeformTags",
         "computeClusterId",
         "hostnameLabel",
@@ -49,9 +51,11 @@ public final class LaunchInstanceDetails
         "shapeConfig",
         "sourceDetails",
         "subnetId",
+        "launchVolumeAttachments",
         "isPvEncryptionInTransitEnabled",
         "platformConfig",
-        "instanceConfigurationId"
+        "instanceConfigurationId",
+        "licensingConfigs"
     })
     public LaunchInstanceDetails(
             String availabilityDomain,
@@ -60,9 +64,11 @@ public final class LaunchInstanceDetails
             CreateVnicDetails createVnicDetails,
             String dedicatedVmHostId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String displayName,
             java.util.Map<String, Object> extendedMetadata,
             String faultDomain,
+            String clusterPlacementGroupId,
             java.util.Map<String, String> freeformTags,
             String computeClusterId,
             String hostnameLabel,
@@ -78,9 +84,11 @@ public final class LaunchInstanceDetails
             LaunchInstanceShapeConfigDetails shapeConfig,
             InstanceSourceDetails sourceDetails,
             String subnetId,
+            java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments,
             Boolean isPvEncryptionInTransitEnabled,
             LaunchInstancePlatformConfig platformConfig,
-            String instanceConfigurationId) {
+            String instanceConfigurationId,
+            java.util.List<LaunchInstanceLicensingConfig> licensingConfigs) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
@@ -88,9 +96,11 @@ public final class LaunchInstanceDetails
         this.createVnicDetails = createVnicDetails;
         this.dedicatedVmHostId = dedicatedVmHostId;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.displayName = displayName;
         this.extendedMetadata = extendedMetadata;
         this.faultDomain = faultDomain;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.freeformTags = freeformTags;
         this.computeClusterId = computeClusterId;
         this.hostnameLabel = hostnameLabel;
@@ -106,9 +116,11 @@ public final class LaunchInstanceDetails
         this.shapeConfig = shapeConfig;
         this.sourceDetails = sourceDetails;
         this.subnetId = subnetId;
+        this.launchVolumeAttachments = launchVolumeAttachments;
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
         this.platformConfig = platformConfig;
         this.instanceConfigurationId = instanceConfigurationId;
+        this.licensingConfigs = licensingConfigs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -138,7 +150,7 @@ public final class LaunchInstanceDetails
          * The OCID of the compute capacity reservation this instance is launched under. You can opt
          * out of all default reservations by specifying an empty string as input for this field.
          * For more information, see [Capacity
-         * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
         private String capacityReservationId;
@@ -147,7 +159,7 @@ public final class LaunchInstanceDetails
          * The OCID of the compute capacity reservation this instance is launched under. You can opt
          * out of all default reservations by specifying an empty string as input for this field.
          * For more information, see [Capacity
-         * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          *
          * @param capacityReservationId the value to set
          * @return this builder
@@ -199,7 +211,7 @@ public final class LaunchInstanceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -209,7 +221,7 @@ public final class LaunchInstanceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -220,6 +232,38 @@ public final class LaunchInstanceDetails
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -313,10 +357,25 @@ public final class LaunchInstanceDetails
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
+        /** The OCID of the cluster placement group of the instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID of the cluster placement group of the instance.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -326,7 +385,7 @@ public final class LaunchInstanceDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -339,19 +398,19 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the [compute
-         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
-         * that the instance will be created in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute
+         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
+         * the instance will be created in.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
         private String computeClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the [compute
-         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
-         * that the instance will be created in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute
+         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
+         * the instance will be created in.
          *
          * @param computeClusterId the value to set
          * @return this builder
@@ -427,7 +486,7 @@ public final class LaunchInstanceDetails
          *
          * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
          * Infrastructure, see [Bring Your Own
-         * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
          *
          * <p>For more information about iPXE, see http://ipxe.org.
          */
@@ -458,7 +517,7 @@ public final class LaunchInstanceDetails
          *
          * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
          * Infrastructure, see [Bring Your Own
-         * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
          *
          * <p>For more information about iPXE, see http://ipxe.org.
          *
@@ -686,6 +745,22 @@ public final class LaunchInstanceDetails
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+        /** Volume attachments to create as part of the launch instance operation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("launchVolumeAttachments")
+        private java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments;
+
+        /**
+         * Volume attachments to create as part of the launch instance operation.
+         *
+         * @param launchVolumeAttachments the value to set
+         * @return this builder
+         */
+        public Builder launchVolumeAttachments(
+                java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments) {
+            this.launchVolumeAttachments = launchVolumeAttachments;
+            this.__explicitlySet__.add("launchVolumeAttachments");
+            return this;
+        }
         /**
          * Whether to enable in-transit encryption for the data volume's paravirtualized attachment.
          * This field applies to both block volumes and boot volumes. The default value is false.
@@ -735,6 +810,22 @@ public final class LaunchInstanceDetails
             this.__explicitlySet__.add("instanceConfigurationId");
             return this;
         }
+        /** List of licensing configurations associated with target launch values. */
+        @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+        private java.util.List<LaunchInstanceLicensingConfig> licensingConfigs;
+
+        /**
+         * List of licensing configurations associated with target launch values.
+         *
+         * @param licensingConfigs the value to set
+         * @return this builder
+         */
+        public Builder licensingConfigs(
+                java.util.List<LaunchInstanceLicensingConfig> licensingConfigs) {
+            this.licensingConfigs = licensingConfigs;
+            this.__explicitlySet__.add("licensingConfigs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -748,9 +839,11 @@ public final class LaunchInstanceDetails
                             this.createVnicDetails,
                             this.dedicatedVmHostId,
                             this.definedTags,
+                            this.securityAttributes,
                             this.displayName,
                             this.extendedMetadata,
                             this.faultDomain,
+                            this.clusterPlacementGroupId,
                             this.freeformTags,
                             this.computeClusterId,
                             this.hostnameLabel,
@@ -766,9 +859,11 @@ public final class LaunchInstanceDetails
                             this.shapeConfig,
                             this.sourceDetails,
                             this.subnetId,
+                            this.launchVolumeAttachments,
                             this.isPvEncryptionInTransitEnabled,
                             this.platformConfig,
-                            this.instanceConfigurationId);
+                            this.instanceConfigurationId,
+                            this.licensingConfigs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -795,6 +890,9 @@ public final class LaunchInstanceDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
@@ -803,6 +901,9 @@ public final class LaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("faultDomain")) {
                 this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -849,6 +950,9 @@ public final class LaunchInstanceDetails
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("launchVolumeAttachments")) {
+                this.launchVolumeAttachments(model.getLaunchVolumeAttachments());
+            }
             if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
                 this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
             }
@@ -857,6 +961,9 @@ public final class LaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
                 this.instanceConfigurationId(model.getInstanceConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("licensingConfigs")) {
+                this.licensingConfigs(model.getLicensingConfigs());
             }
             return this;
         }
@@ -894,7 +1001,7 @@ public final class LaunchInstanceDetails
      * The OCID of the compute capacity reservation this instance is launched under. You can opt out
      * of all default reservations by specifying an empty string as input for this field. For more
      * information, see [Capacity
-     * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
     private final String capacityReservationId;
@@ -903,7 +1010,7 @@ public final class LaunchInstanceDetails
      * The OCID of the compute capacity reservation this instance is launched under. You can opt out
      * of all default reservations by specifying an empty string as input for this field. For more
      * information, see [Capacity
-     * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      *
      * @return the value
      */
@@ -947,7 +1054,7 @@ public final class LaunchInstanceDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -957,7 +1064,7 @@ public final class LaunchInstanceDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -965,6 +1072,35 @@ public final class LaunchInstanceDetails
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -1050,10 +1186,23 @@ public final class LaunchInstanceDetails
         return faultDomain;
     }
 
+    /** The OCID of the cluster placement group of the instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID of the cluster placement group of the instance.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1063,7 +1212,7 @@ public final class LaunchInstanceDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1074,19 +1223,17 @@ public final class LaunchInstanceDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
-     * the instance will be created in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+     * that the instance will be created in.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
     private final String computeClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
-     * the instance will be created in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+     * that the instance will be created in.
      *
      * @return the value
      */
@@ -1155,7 +1302,7 @@ public final class LaunchInstanceDetails
      *
      * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
      * Infrastructure, see [Bring Your Own
-     * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      *
      * <p>For more information about iPXE, see http://ipxe.org.
      */
@@ -1185,7 +1332,7 @@ public final class LaunchInstanceDetails
      *
      * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
      * Infrastructure, see [Bring Your Own
-     * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      *
      * <p>For more information about iPXE, see http://ipxe.org.
      *
@@ -1385,6 +1532,19 @@ public final class LaunchInstanceDetails
         return subnetId;
     }
 
+    /** Volume attachments to create as part of the launch instance operation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("launchVolumeAttachments")
+    private final java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments;
+
+    /**
+     * Volume attachments to create as part of the launch instance operation.
+     *
+     * @return the value
+     */
+    public java.util.List<LaunchAttachVolumeDetails> getLaunchVolumeAttachments() {
+        return launchVolumeAttachments;
+    }
+
     /**
      * Whether to enable in-transit encryption for the data volume's paravirtualized attachment.
      * This field applies to both block volumes and boot volumes. The default value is false.
@@ -1428,6 +1588,19 @@ public final class LaunchInstanceDetails
         return instanceConfigurationId;
     }
 
+    /** List of licensing configurations associated with target launch values. */
+    @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+    private final java.util.List<LaunchInstanceLicensingConfig> licensingConfigs;
+
+    /**
+     * List of licensing configurations associated with target launch values.
+     *
+     * @return the value
+     */
+    public java.util.List<LaunchInstanceLicensingConfig> getLicensingConfigs() {
+        return licensingConfigs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1449,9 +1622,12 @@ public final class LaunchInstanceDetails
         sb.append(", createVnicDetails=").append(String.valueOf(this.createVnicDetails));
         sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", computeClusterId=").append(String.valueOf(this.computeClusterId));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
@@ -1468,11 +1644,14 @@ public final class LaunchInstanceDetails
         sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", launchVolumeAttachments=")
+                .append(String.valueOf(this.launchVolumeAttachments));
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
         sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
         sb.append(", instanceConfigurationId=")
                 .append(String.valueOf(this.instanceConfigurationId));
+        sb.append(", licensingConfigs=").append(String.valueOf(this.licensingConfigs));
         sb.append(")");
         return sb.toString();
     }
@@ -1493,9 +1672,12 @@ public final class LaunchInstanceDetails
                 && java.util.Objects.equals(this.createVnicDetails, other.createVnicDetails)
                 && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.computeClusterId, other.computeClusterId)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
@@ -1513,10 +1695,13 @@ public final class LaunchInstanceDetails
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(
+                        this.launchVolumeAttachments, other.launchVolumeAttachments)
+                && java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
                 && java.util.Objects.equals(this.platformConfig, other.platformConfig)
                 && java.util.Objects.equals(
                         this.instanceConfigurationId, other.instanceConfigurationId)
+                && java.util.Objects.equals(this.licensingConfigs, other.licensingConfigs)
                 && super.equals(other);
     }
 
@@ -1544,11 +1729,21 @@ public final class LaunchInstanceDetails
                 (result * PRIME)
                         + (this.dedicatedVmHostId == null ? 43 : this.dedicatedVmHostId.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
                         + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result =
                 (result * PRIME)
@@ -1584,6 +1779,11 @@ public final class LaunchInstanceDetails
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.launchVolumeAttachments == null
+                                ? 43
+                                : this.launchVolumeAttachments.hashCode());
+        result =
+                (result * PRIME)
                         + (this.isPvEncryptionInTransitEnabled == null
                                 ? 43
                                 : this.isPvEncryptionInTransitEnabled.hashCode());
@@ -1595,6 +1795,9 @@ public final class LaunchInstanceDetails
                         + (this.instanceConfigurationId == null
                                 ? 43
                                 : this.instanceConfigurationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.licensingConfigs == null ? 43 : this.licensingConfigs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

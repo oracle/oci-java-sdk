@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -7,7 +7,7 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * The listener's configuration. For more information on backend set configuration, see [Managing
  * Load Balancer
- * Listeners](https://docs.cloud.oracle.com/Content/Balance/Tasks/managinglisteners.htm). <br>
+ * Listeners](https://docs.oracle.com/iaas/Content/Balance/Tasks/managinglisteners.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -125,8 +125,10 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The protocol on which the listener accepts connection requests. To get a list of valid
-         * protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols} operation.
+         * The protocol on which the listener accepts connection requests. The supported protocols
+         * are HTTP, HTTP2, TCP, and GRPC. You can also use the {@link
+         * #listProtocols(ListProtocolsRequest) listProtocols} operation to get a list of valid
+         * protocols.
          *
          * <p>Example: {@code HTTP}
          */
@@ -134,8 +136,10 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
         private String protocol;
 
         /**
-         * The protocol on which the listener accepts connection requests. To get a list of valid
-         * protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols} operation.
+         * The protocol on which the listener accepts connection requests. The supported protocols
+         * are HTTP, HTTP2, TCP, and GRPC. You can also use the {@link
+         * #listProtocols(ListProtocolsRequest) listProtocols} operation to get a list of valid
+         * protocols.
          *
          * <p>Example: {@code HTTP}
          *
@@ -375,8 +379,9 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The protocol on which the listener accepts connection requests. To get a list of valid
-     * protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols} operation.
+     * The protocol on which the listener accepts connection requests. The supported protocols are
+     * HTTP, HTTP2, TCP, and GRPC. You can also use the {@link #listProtocols(ListProtocolsRequest)
+     * listProtocols} operation to get a list of valid protocols.
      *
      * <p>Example: {@code HTTP}
      */
@@ -384,8 +389,9 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
     private final String protocol;
 
     /**
-     * The protocol on which the listener accepts connection requests. To get a list of valid
-     * protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols} operation.
+     * The protocol on which the listener accepts connection requests. The supported protocols are
+     * HTTP, HTTP2, TCP, and GRPC. You can also use the {@link #listProtocols(ListProtocolsRequest)
+     * listProtocols} operation to get a list of valid protocols.
      *
      * <p>Example: {@code HTTP}
      *

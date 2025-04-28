@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -7,24 +7,24 @@ package com.oracle.bmc.cloudguard.requests;
 import com.oracle.bmc.cloudguard.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDataSourceEventsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDataSourceEventsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDataSourceEventsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class ListDataSourceEventsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** DataSource OCID */
+    /** Data source OCID. */
     private String dataSourceId;
 
-    /** DataSource OCID */
+    /** Data source OCID. */
     public String getDataSourceId() {
         return dataSourceId;
     }
-    /** A filter to return only resource their region matches the given region. */
+    /** A filter to return only resource where their region matches the given region. */
     private String region;
 
-    /** A filter to return only resource their region matches the given region. */
+    /** A filter to return only resource where their region matches the given region. */
     public String getRegion() {
         return region;
     }
@@ -41,17 +41,17 @@ public class ListDataSourceEventsRequest
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     public Integer getLimit() {
         return limit;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /** The sort order to use */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /** The sort order to use */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -118,11 +118,11 @@ public class ListDataSourceEventsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** DataSource OCID */
+        /** Data source OCID. */
         private String dataSourceId = null;
 
         /**
-         * DataSource OCID
+         * Data source OCID.
          *
          * @param dataSourceId the value to set
          * @return this builder instance
@@ -132,11 +132,11 @@ public class ListDataSourceEventsRequest
             return this;
         }
 
-        /** A filter to return only resource their region matches the given region. */
+        /** A filter to return only resource where their region matches the given region. */
         private String region = null;
 
         /**
-         * A filter to return only resource their region matches the given region.
+         * A filter to return only resource where their region matches the given region.
          *
          * @param region the value to set
          * @return this builder instance
@@ -164,11 +164,11 @@ public class ListDataSourceEventsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /** The maximum number of items to return */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return.
+         * The maximum number of items to return
          *
          * @param limit the value to set
          * @return this builder instance
@@ -178,11 +178,11 @@ public class ListDataSourceEventsRequest
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /** The sort order to use */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
-         * The sort order to use, either 'asc' or 'desc'.
+         * The sort order to use
          *
          * @param sortOrder the value to set
          * @return this builder instance

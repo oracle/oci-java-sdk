@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -141,14 +141,14 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the user password.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the user password.
          *
          * @param secretId the value to set
@@ -157,6 +157,25 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
         public Builder secretId(String secretId) {
             this.secretId = secretId;
             this.__explicitlySet__.add("secretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Named Credentials containing password secret.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
+        private String namedCredentialId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Named Credentials containing password secret.
+         *
+         * @param namedCredentialId the value to set
+         * @return this builder
+         */
+        public Builder namedCredentialId(String namedCredentialId) {
+            this.namedCredentialId = namedCredentialId;
+            this.__explicitlySet__.add("namedCredentialId");
             return this;
         }
         /**
@@ -178,6 +197,53 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
             this.__explicitlySet__.add("role");
             return this;
         }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -196,7 +262,10 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
                             this.userName,
                             this.password,
                             this.secretId,
-                            this.role);
+                            this.namedCredentialId,
+                            this.role,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -238,8 +307,17 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
             if (model.wasPropertyExplicitlySet("secretId")) {
                 this.secretId(model.getSecretId());
             }
+            if (model.wasPropertyExplicitlySet("namedCredentialId")) {
+                this.namedCredentialId(model.getNamedCredentialId());
+            }
             if (model.wasPropertyExplicitlySet("role")) {
                 this.role(model.getRole());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
             }
             return this;
         }
@@ -267,7 +345,10 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
             String userName,
             String password,
             String secretId,
-            SqlJob.Role role) {
+            String namedCredentialId,
+            SqlJob.Role role,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super(description, timeout, resultLocation, scheduleDetails);
         this.sqlText = sqlText;
         this.inBinds = inBinds;
@@ -276,7 +357,10 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
         this.userName = userName;
         this.password = password;
         this.secretId = secretId;
+        this.namedCredentialId = namedCredentialId;
         this.role = role;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
     }
 
     /** The SQL text to be executed as part of the job. */
@@ -346,20 +430,37 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the user password.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the user password.
      *
      * @return the value
      */
     public String getSecretId() {
         return secretId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Named Credentials containing password secret.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
+    private final String namedCredentialId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Named Credentials containing password secret.
+     *
+     * @return the value
+     */
+    public String getNamedCredentialId() {
+        return namedCredentialId;
     }
 
     /**
@@ -377,6 +478,48 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
      */
     public SqlJob.Role getRole() {
         return role;
+    }
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
     }
 
     @Override
@@ -401,7 +544,10 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", password=").append(String.valueOf(this.password));
         sb.append(", secretId=").append(String.valueOf(this.secretId));
+        sb.append(", namedCredentialId=").append(String.valueOf(this.namedCredentialId));
         sb.append(", role=").append(String.valueOf(this.role));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -423,7 +569,10 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
                 && java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.secretId, other.secretId)
+                && java.util.Objects.equals(this.namedCredentialId, other.namedCredentialId)
                 && java.util.Objects.equals(this.role, other.role)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
 
@@ -438,7 +587,12 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
         result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
         result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.namedCredentialId == null ? 43 : this.namedCredentialId.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         return result;
     }
 }

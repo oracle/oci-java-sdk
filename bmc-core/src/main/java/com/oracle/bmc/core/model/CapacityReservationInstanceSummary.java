@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -28,6 +28,7 @@ public final class CapacityReservationInstanceSummary
         "availabilityDomain",
         "compartmentId",
         "faultDomain",
+        "clusterPlacementGroupId",
         "shapeConfig",
         "shape"
     })
@@ -36,6 +37,7 @@ public final class CapacityReservationInstanceSummary
             String availabilityDomain,
             String compartmentId,
             String faultDomain,
+            String clusterPlacementGroupId,
             InstanceReservationShapeConfigDetails shapeConfig,
             String shape) {
         super();
@@ -43,6 +45,7 @@ public final class CapacityReservationInstanceSummary
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
         this.faultDomain = faultDomain;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.shapeConfig = shapeConfig;
         this.shape = shape;
     }
@@ -109,6 +112,21 @@ public final class CapacityReservationInstanceSummary
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
+        /** The OCID of the cluster placement group of the instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID of the cluster placement group of the instance.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
         private InstanceReservationShapeConfigDetails shapeConfig;
@@ -156,6 +174,7 @@ public final class CapacityReservationInstanceSummary
                             this.availabilityDomain,
                             this.compartmentId,
                             this.faultDomain,
+                            this.clusterPlacementGroupId,
                             this.shapeConfig,
                             this.shape);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -177,6 +196,9 @@ public final class CapacityReservationInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("faultDomain")) {
                 this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("shapeConfig")) {
                 this.shapeConfig(model.getShapeConfig());
@@ -249,6 +271,19 @@ public final class CapacityReservationInstanceSummary
         return faultDomain;
     }
 
+    /** The OCID of the cluster placement group of the instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID of the cluster placement group of the instance.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
     private final InstanceReservationShapeConfigDetails shapeConfig;
 
@@ -300,6 +335,8 @@ public final class CapacityReservationInstanceSummary
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(")");
@@ -320,6 +357,8 @@ public final class CapacityReservationInstanceSummary
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && super.equals(other);
@@ -339,6 +378,11 @@ public final class CapacityReservationInstanceSummary
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.shapeConfig == null ? 43 : this.shapeConfig.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -36,6 +36,7 @@ public final class UserAssessmentSummary
         "lifecycleState",
         "lifecycleDetails",
         "scheduleAssessmentId",
+        "isAssessmentScheduled",
         "schedule",
         "statistics",
         "targetIds",
@@ -60,6 +61,7 @@ public final class UserAssessmentSummary
             UserAssessmentLifecycleState lifecycleState,
             String lifecycleDetails,
             String scheduleAssessmentId,
+            Boolean isAssessmentScheduled,
             String schedule,
             java.util.Map<String, java.util.Map<String, Object>> statistics,
             java.util.List<String> targetIds,
@@ -83,6 +85,7 @@ public final class UserAssessmentSummary
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.scheduleAssessmentId = scheduleAssessmentId;
+        this.isAssessmentScheduled = isAssessmentScheduled;
         this.schedule = schedule;
         this.statistics = statistics;
         this.targetIds = targetIds;
@@ -293,6 +296,21 @@ public final class UserAssessmentSummary
             this.__explicitlySet__.add("scheduleAssessmentId");
             return this;
         }
+        /** Indicates whether the assessment is scheduled to run. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAssessmentScheduled")
+        private Boolean isAssessmentScheduled;
+
+        /**
+         * Indicates whether the assessment is scheduled to run.
+         *
+         * @param isAssessmentScheduled the value to set
+         * @return this builder
+         */
+        public Builder isAssessmentScheduled(Boolean isAssessmentScheduled) {
+            this.isAssessmentScheduled = isAssessmentScheduled;
+            this.__explicitlySet__.add("isAssessmentScheduled");
+            return this;
+        }
         /**
          * Schedule to save the assessment periodically in the specified format:
          * <version-string>;<version-specific-schedule>
@@ -478,7 +496,7 @@ public final class UserAssessmentSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -488,7 +506,7 @@ public final class UserAssessmentSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -503,9 +521,8 @@ public final class UserAssessmentSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -513,9 +530,8 @@ public final class UserAssessmentSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -545,6 +561,7 @@ public final class UserAssessmentSummary
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.scheduleAssessmentId,
+                            this.isAssessmentScheduled,
                             this.schedule,
                             this.statistics,
                             this.targetIds,
@@ -598,6 +615,9 @@ public final class UserAssessmentSummary
             }
             if (model.wasPropertyExplicitlySet("scheduleAssessmentId")) {
                 this.scheduleAssessmentId(model.getScheduleAssessmentId());
+            }
+            if (model.wasPropertyExplicitlySet("isAssessmentScheduled")) {
+                this.isAssessmentScheduled(model.getIsAssessmentScheduled());
             }
             if (model.wasPropertyExplicitlySet("schedule")) {
                 this.schedule(model.getSchedule());
@@ -808,6 +828,19 @@ public final class UserAssessmentSummary
      */
     public String getScheduleAssessmentId() {
         return scheduleAssessmentId;
+    }
+
+    /** Indicates whether the assessment is scheduled to run. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAssessmentScheduled")
+    private final Boolean isAssessmentScheduled;
+
+    /**
+     * Indicates whether the assessment is scheduled to run.
+     *
+     * @return the value
+     */
+    public Boolean getIsAssessmentScheduled() {
+        return isAssessmentScheduled;
     }
 
     /**
@@ -1079,7 +1112,7 @@ public final class UserAssessmentSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1089,7 +1122,7 @@ public final class UserAssessmentSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1102,9 +1135,8 @@ public final class UserAssessmentSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -1112,9 +1144,8 @@ public final class UserAssessmentSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */
@@ -1149,6 +1180,7 @@ public final class UserAssessmentSummary
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", scheduleAssessmentId=").append(String.valueOf(this.scheduleAssessmentId));
+        sb.append(", isAssessmentScheduled=").append(String.valueOf(this.isAssessmentScheduled));
         sb.append(", schedule=").append(String.valueOf(this.schedule));
         sb.append(", statistics=").append(String.valueOf(this.statistics));
         sb.append(", targetIds=").append(String.valueOf(this.targetIds));
@@ -1187,6 +1219,7 @@ public final class UserAssessmentSummary
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.scheduleAssessmentId, other.scheduleAssessmentId)
+                && java.util.Objects.equals(this.isAssessmentScheduled, other.isAssessmentScheduled)
                 && java.util.Objects.equals(this.schedule, other.schedule)
                 && java.util.Objects.equals(this.statistics, other.statistics)
                 && java.util.Objects.equals(this.targetIds, other.targetIds)
@@ -1240,6 +1273,11 @@ public final class UserAssessmentSummary
                         + (this.scheduleAssessmentId == null
                                 ? 43
                                 : this.scheduleAssessmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAssessmentScheduled == null
+                                ? 43
+                                : this.isAssessmentScheduled.hashCode());
         result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
         result = (result * PRIME) + (this.statistics == null ? 43 : this.statistics.hashCode());
         result = (result * PRIME) + (this.targetIds == null ? 43 : this.targetIds.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -123,6 +123,175 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public AttachLifecycleStageToProfileResponse attachLifecycleStageToProfile(
+            AttachLifecycleStageToProfileRequest request) {
+
+        Validate.notBlank(request.getProfileId(), "profileId must not be blank");
+        Objects.requireNonNull(
+                request.getAttachLifecycleStageToProfileDetails(),
+                "attachLifecycleStageToProfileDetails is required");
+
+        return clientCall(request, AttachLifecycleStageToProfileResponse::builder)
+                .logger(LOG, "attachLifecycleStageToProfile")
+                .serviceDetails(
+                        "Onboarding",
+                        "AttachLifecycleStageToProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/AttachLifecycleStageToProfile")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachLifecycleStageToProfileRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("profiles")
+                .appendPathParam(request.getProfileId())
+                .appendPathParam("actions")
+                .appendPathParam("attachLifecycleStage")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AttachLifecycleStageToProfileResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public AttachManagedInstanceGroupToProfileResponse attachManagedInstanceGroupToProfile(
+            AttachManagedInstanceGroupToProfileRequest request) {
+
+        Validate.notBlank(request.getProfileId(), "profileId must not be blank");
+        Objects.requireNonNull(
+                request.getAttachManagedInstanceGroupToProfileDetails(),
+                "attachManagedInstanceGroupToProfileDetails is required");
+
+        return clientCall(request, AttachManagedInstanceGroupToProfileResponse::builder)
+                .logger(LOG, "attachManagedInstanceGroupToProfile")
+                .serviceDetails(
+                        "Onboarding",
+                        "AttachManagedInstanceGroupToProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/AttachManagedInstanceGroupToProfile")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachManagedInstanceGroupToProfileRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("profiles")
+                .appendPathParam(request.getProfileId())
+                .appendPathParam("actions")
+                .appendPathParam("attachManagedInstanceGroup")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AttachManagedInstanceGroupToProfileResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public AttachManagementStationToProfileResponse attachManagementStationToProfile(
+            AttachManagementStationToProfileRequest request) {
+
+        Validate.notBlank(request.getProfileId(), "profileId must not be blank");
+        Objects.requireNonNull(
+                request.getAttachManagementStationToProfileDetails(),
+                "attachManagementStationToProfileDetails is required");
+
+        return clientCall(request, AttachManagementStationToProfileResponse::builder)
+                .logger(LOG, "attachManagementStationToProfile")
+                .serviceDetails(
+                        "Onboarding",
+                        "AttachManagementStationToProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/AttachManagementStationToProfile")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachManagementStationToProfileRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("profiles")
+                .appendPathParam(request.getProfileId())
+                .appendPathParam("actions")
+                .appendPathParam("attachManagementStation")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AttachManagementStationToProfileResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public AttachSoftwareSourcesToProfileResponse attachSoftwareSourcesToProfile(
+            AttachSoftwareSourcesToProfileRequest request) {
+
+        Validate.notBlank(request.getProfileId(), "profileId must not be blank");
+        Objects.requireNonNull(
+                request.getAttachSoftwareSourcesToProfileDetails(),
+                "attachSoftwareSourcesToProfileDetails is required");
+
+        return clientCall(request, AttachSoftwareSourcesToProfileResponse::builder)
+                .logger(LOG, "attachSoftwareSourcesToProfile")
+                .serviceDetails(
+                        "Onboarding",
+                        "AttachSoftwareSourcesToProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/AttachSoftwareSourcesToProfile")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachSoftwareSourcesToProfileRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("profiles")
+                .appendPathParam(request.getProfileId())
+                .appendPathParam("actions")
+                .appendPathParam("attachSoftwareSources")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AttachSoftwareSourcesToProfileResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeProfileCompartmentResponse changeProfileCompartment(
+            ChangeProfileCompartmentRequest request) {
+
+        Validate.notBlank(request.getProfileId(), "profileId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeProfileCompartmentDetails(),
+                "changeProfileCompartmentDetails is required");
+
+        return clientCall(request, ChangeProfileCompartmentResponse::builder)
+                .logger(LOG, "changeProfileCompartment")
+                .serviceDetails(
+                        "Onboarding",
+                        "ChangeProfileCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/ChangeProfileCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeProfileCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("profiles")
+                .appendPathParam(request.getProfileId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeProfileCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateProfileResponse createProfile(CreateProfileRequest request) {
         Objects.requireNonNull(
                 request.getCreateProfileDetails(), "createProfileDetails is required");
@@ -140,6 +309,7 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.Profile.class,
@@ -147,7 +317,6 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", CreateProfileResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -170,9 +339,43 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteProfileResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DetachSoftwareSourcesFromProfileResponse detachSoftwareSourcesFromProfile(
+            DetachSoftwareSourcesFromProfileRequest request) {
+
+        Validate.notBlank(request.getProfileId(), "profileId must not be blank");
+        Objects.requireNonNull(
+                request.getDetachSoftwareSourcesFromProfileDetails(),
+                "detachSoftwareSourcesFromProfileDetails is required");
+
+        return clientCall(request, DetachSoftwareSourcesFromProfileResponse::builder)
+                .logger(LOG, "detachSoftwareSourcesFromProfile")
+                .serviceDetails(
+                        "Onboarding",
+                        "DetachSoftwareSourcesFromProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/DetachSoftwareSourcesFromProfile")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetachSoftwareSourcesFromProfileRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("profiles")
+                .appendPathParam(request.getProfileId())
+                .appendPathParam("actions")
+                .appendPathParam("detachSoftwareSources")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DetachSoftwareSourcesFromProfileResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -194,13 +397,90 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getProfileId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.Profile.class,
                         GetProfileResponse.Builder::profile)
                 .handleResponseHeaderString("etag", GetProfileResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProfileResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetProfileVersionResponse getProfileVersion(GetProfileVersionRequest request) {
+
+        Validate.notBlank(request.getProfileId(), "profileId must not be blank");
+
+        Validate.notBlank(request.getProfileVersion(), "profileVersion must not be blank");
+
+        return clientCall(request, GetProfileVersionResponse::builder)
+                .logger(LOG, "getProfileVersion")
+                .serviceDetails(
+                        "Onboarding",
+                        "GetProfileVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ProfileVersion/GetProfileVersion")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetProfileVersionRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("profiles")
+                .appendPathParam(request.getProfileId())
+                .appendPathParam("version")
+                .appendPathParam(request.getProfileVersion())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.osmanagementhub.model.ProfileVersion.class,
+                        GetProfileVersionResponse.Builder::profileVersion)
+                .handleResponseHeaderString("etag", GetProfileVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetProfileVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListProfileAvailableSoftwareSourcesResponse listProfileAvailableSoftwareSources(
+            ListProfileAvailableSoftwareSourcesRequest request) {
+
+        Validate.notBlank(request.getProfileId(), "profileId must not be blank");
+
+        return clientCall(request, ListProfileAvailableSoftwareSourcesResponse::builder)
+                .logger(LOG, "listProfileAvailableSoftwareSources")
+                .serviceDetails(
+                        "Onboarding",
+                        "ListProfileAvailableSoftwareSources",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/ListProfileAvailableSoftwareSources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProfileAvailableSoftwareSourcesRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("profiles")
+                .appendPathParam(request.getProfileId())
+                .appendPathParam("availableSoftwareSources")
+                .appendListQueryParam(
+                        "displayName",
+                        request.getDisplayName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.osmanagementhub.model.AvailableSoftwareSourceCollection
+                                .class,
+                        ListProfileAvailableSoftwareSourcesResponse.Builder
+                                ::availableSoftwareSourceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListProfileAvailableSoftwareSourcesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListProfileAvailableSoftwareSourcesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -230,6 +510,21 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("profileId", request.getProfileId())
                 .appendEnumQueryParam("osFamily", request.getOsFamily())
                 .appendEnumQueryParam("archType", request.getArchType())
+                .appendListQueryParam(
+                        "registrationType",
+                        request.getRegistrationType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isDefaultProfile", request.getIsDefaultProfile())
+                .appendQueryParam("isServiceProvidedProfile", request.getIsServiceProvidedProfile())
+                .appendListQueryParam(
+                        "managementStation",
+                        request.getManagementStation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "managementStationNotEqualTo",
+                        request.getManagementStationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("profileVersion", request.getProfileVersion())
                 .appendEnumQueryParam("vendorName", request.getVendorName())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -238,6 +533,7 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ProfileCollection.class,
                         ListProfilesResponse.Builder::profileCollection)
@@ -245,7 +541,8 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListProfilesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListProfilesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListProfilesResponse.Builder::opcTotalItems)
                 .callSync();
     }
 
@@ -270,6 +567,7 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.Profile.class,
@@ -277,7 +575,6 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", UpdateProfileResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

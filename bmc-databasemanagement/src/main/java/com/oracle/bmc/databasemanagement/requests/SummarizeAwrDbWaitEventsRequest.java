@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeAwrDbWaitEventsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeAwrDbWaitEventsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * SummarizeAwrDbWaitEventsRequest.
  */
@@ -16,13 +16,13 @@ public class SummarizeAwrDbWaitEventsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     public String getManagedDatabaseId() {
@@ -242,6 +242,13 @@ public class SummarizeAwrDbWaitEventsRequest
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -250,13 +257,13 @@ public class SummarizeAwrDbWaitEventsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          *
          * @param managedDatabaseId the value to set
@@ -517,6 +524,20 @@ public class SummarizeAwrDbWaitEventsRequest
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -563,6 +584,7 @@ public class SummarizeAwrDbWaitEventsRequest
             sortOrder(o.getSortOrder());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -613,11 +635,12 @@ public class SummarizeAwrDbWaitEventsRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new SummarizeAwrDbWaitEventsRequest(managedDatabaseId, awrDbId, instNum,
             // beginSnIdGreaterThanOrEqualTo, endSnIdLessThanOrEqualTo, timeGreaterThanOrEqualTo,
             // timeLessThanOrEqualTo, name, sessionType, containerId, page, limit, sortBy,
-            // sortOrder, opcRequestId, opcRetryToken);
+            // sortOrder, opcRequestId, opcRetryToken, opcNamedCredentialId);
         }
     }
 
@@ -643,7 +666,8 @@ public class SummarizeAwrDbWaitEventsRequest
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .opcRequestId(opcRequestId)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -679,6 +703,7 @@ public class SummarizeAwrDbWaitEventsRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -712,7 +737,8 @@ public class SummarizeAwrDbWaitEventsRequest
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -755,6 +781,11 @@ public class SummarizeAwrDbWaitEventsRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

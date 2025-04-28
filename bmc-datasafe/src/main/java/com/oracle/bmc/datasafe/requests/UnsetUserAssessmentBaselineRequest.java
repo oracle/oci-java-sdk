@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -7,13 +7,14 @@ package com.oracle.bmc.datasafe.requests;
 import com.oracle.bmc.datasafe.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UnsetUserAssessmentBaselineExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UnsetUserAssessmentBaselineExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UnsetUserAssessmentBaselineRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class UnsetUserAssessmentBaselineRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datasafe.model.UnsetUserAssessmentBaselineDetails> {
 
     /** The OCID of the user assessment. */
     private String userAssessmentId;
@@ -65,10 +66,37 @@ public class UnsetUserAssessmentBaselineRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Details of the target associated with the user assessment for which the user intents to unset
+     * the baseline.
+     */
+    private com.oracle.bmc.datasafe.model.UnsetUserAssessmentBaselineDetails
+            unsetUserAssessmentBaselineDetails;
+
+    /**
+     * Details of the target associated with the user assessment for which the user intents to unset
+     * the baseline.
+     */
+    public com.oracle.bmc.datasafe.model.UnsetUserAssessmentBaselineDetails
+            getUnsetUserAssessmentBaselineDetails() {
+        return unsetUserAssessmentBaselineDetails;
+    }
+
+    /**
+     * Alternative accessor for the body parameter.
+     *
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.datasafe.model.UnsetUserAssessmentBaselineDetails getBody$() {
+        return unsetUserAssessmentBaselineDetails;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UnsetUserAssessmentBaselineRequest, java.lang.Void> {
+                    UnsetUserAssessmentBaselineRequest,
+                    com.oracle.bmc.datasafe.model.UnsetUserAssessmentBaselineDetails> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
@@ -147,6 +175,27 @@ public class UnsetUserAssessmentBaselineRequest
         }
 
         /**
+         * Details of the target associated with the user assessment for which the user intents to
+         * unset the baseline.
+         */
+        private com.oracle.bmc.datasafe.model.UnsetUserAssessmentBaselineDetails
+                unsetUserAssessmentBaselineDetails = null;
+
+        /**
+         * Details of the target associated with the user assessment for which the user intents to
+         * unset the baseline.
+         *
+         * @param unsetUserAssessmentBaselineDetails the value to set
+         * @return this builder instance
+         */
+        public Builder unsetUserAssessmentBaselineDetails(
+                com.oracle.bmc.datasafe.model.UnsetUserAssessmentBaselineDetails
+                        unsetUserAssessmentBaselineDetails) {
+            this.unsetUserAssessmentBaselineDetails = unsetUserAssessmentBaselineDetails;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -180,6 +229,7 @@ public class UnsetUserAssessmentBaselineRequest
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            unsetUserAssessmentBaselineDetails(o.getUnsetUserAssessmentBaselineDetails());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -204,6 +254,19 @@ public class UnsetUserAssessmentBaselineRequest
         }
 
         /**
+         * Alternative setter for the body parameter.
+         *
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(
+                com.oracle.bmc.datasafe.model.UnsetUserAssessmentBaselineDetails body) {
+            unsetUserAssessmentBaselineDetails(body);
+            return this;
+        }
+
+        /**
          * Build the instance of UnsetUserAssessmentBaselineRequest as configured by this builder
          *
          * <p>Note that this method does not take calls to {@link
@@ -218,9 +281,10 @@ public class UnsetUserAssessmentBaselineRequest
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.unsetUserAssessmentBaselineDetails = unsetUserAssessmentBaselineDetails;
             return request;
             // new UnsetUserAssessmentBaselineRequest(userAssessmentId, ifMatch, opcRetryToken,
-            // opcRequestId);
+            // opcRequestId, unsetUserAssessmentBaselineDetails);
         }
     }
 
@@ -234,7 +298,8 @@ public class UnsetUserAssessmentBaselineRequest
                 .userAssessmentId(userAssessmentId)
                 .ifMatch(ifMatch)
                 .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .unsetUserAssessmentBaselineDetails(unsetUserAssessmentBaselineDetails);
     }
 
     /**
@@ -255,6 +320,8 @@ public class UnsetUserAssessmentBaselineRequest
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",unsetUserAssessmentBaselineDetails=")
+                .append(String.valueOf(this.unsetUserAssessmentBaselineDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -273,7 +340,10 @@ public class UnsetUserAssessmentBaselineRequest
                 && java.util.Objects.equals(this.userAssessmentId, other.userAssessmentId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.unsetUserAssessmentBaselineDetails,
+                        other.unsetUserAssessmentBaselineDetails);
     }
 
     @Override
@@ -288,6 +358,11 @@ public class UnsetUserAssessmentBaselineRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.unsetUserAssessmentBaselineDetails == null
+                                ? 43
+                                : this.unsetUserAssessmentBaselineDetails.hashCode());
         return result;
     }
 }

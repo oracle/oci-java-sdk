@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall;
@@ -150,6 +150,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy.class,
@@ -161,7 +162,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         ApplyNetworkFirewallPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ApplyNetworkFirewallPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -193,6 +193,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -200,7 +201,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         BulkUploadAddressListsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", BulkUploadAddressListsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -232,6 +232,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -239,7 +240,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         BulkUploadApplicationGroupsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", BulkUploadApplicationGroupsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -271,6 +271,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -278,7 +279,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         BulkUploadApplicationsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", BulkUploadApplicationsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -310,6 +310,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -318,7 +319,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         BulkUploadDecryptionProfilesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -350,6 +350,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -357,7 +358,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         BulkUploadDecryptionRulesResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", BulkUploadDecryptionRulesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -389,6 +389,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -396,7 +397,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         BulkUploadMappedSecretsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", BulkUploadMappedSecretsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -428,6 +428,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -435,7 +436,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         BulkUploadSecurityRulesResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", BulkUploadSecurityRulesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -467,6 +467,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -474,7 +475,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         BulkUploadServiceListsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", BulkUploadServiceListsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -504,13 +504,53 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", BulkUploadServicesResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", BulkUploadServicesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public BulkUploadTunnelInspectionRulesResponse bulkUploadTunnelInspectionRules(
+            BulkUploadTunnelInspectionRulesRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getBulkUploadTunnelInspectionRulesDetails(),
+                "bulkUploadTunnelInspectionRulesDetails is required");
+
+        return clientCall(request, BulkUploadTunnelInspectionRulesResponse::builder)
+                .logger(LOG, "bulkUploadTunnelInspectionRules")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadTunnelInspectionRules",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/BulkUploadTunnelInspectionRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkUploadTunnelInspectionRulesRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("tunnelInspectionRules")
+                .appendPathParam("actions")
+                .appendPathParam("bulkUpload")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        BulkUploadTunnelInspectionRulesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        BulkUploadTunnelInspectionRulesResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -540,13 +580,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", BulkUploadUrlListsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", BulkUploadUrlListsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -569,9 +609,9 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -601,6 +641,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -608,7 +649,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeNetworkFirewallCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -639,11 +679,11 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeNetworkFirewallPolicyCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -674,6 +714,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy.class,
@@ -685,7 +726,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         CloneNetworkFirewallPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CloneNetworkFirewallPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -712,6 +752,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.AddressList.class,
@@ -719,7 +760,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateAddressListResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateAddressListResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -746,6 +786,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.Application.class,
@@ -753,7 +794,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateApplicationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -782,6 +822,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.ApplicationGroup.class,
@@ -789,7 +830,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateApplicationGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateApplicationGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -818,6 +858,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.DecryptionProfile.class,
@@ -825,7 +866,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateDecryptionProfileResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDecryptionProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -853,6 +893,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.DecryptionRule.class,
@@ -860,7 +901,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateDecryptionRuleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDecryptionRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -887,6 +927,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.MappedSecret.class,
@@ -894,7 +935,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateMappedSecretResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateMappedSecretResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -918,6 +958,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.NetworkFirewall.class,
@@ -928,7 +969,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         CreateNetworkFirewallResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateNetworkFirewallResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -952,6 +992,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy.class,
@@ -963,7 +1004,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         CreateNetworkFirewallPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateNetworkFirewallPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -990,6 +1030,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.SecurityRule.class,
@@ -997,7 +1038,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateSecurityRuleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSecurityRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1024,6 +1064,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.Service.class,
@@ -1031,7 +1072,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateServiceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateServiceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1058,6 +1098,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.ServiceList.class,
@@ -1065,7 +1106,43 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateServiceListResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateServiceListResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateTunnelInspectionRuleResponse createTunnelInspectionRule(
+            CreateTunnelInspectionRuleRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateTunnelInspectionRuleDetails(),
+                "createTunnelInspectionRuleDetails is required");
+
+        return clientCall(request, CreateTunnelInspectionRuleResponse::builder)
+                .logger(LOG, "createTunnelInspectionRule")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "CreateTunnelInspectionRule",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/CreateTunnelInspectionRule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateTunnelInspectionRuleRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("tunnelInspectionRules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.networkfirewall.model.TunnelInspectionRule.class,
+                        CreateTunnelInspectionRuleResponse.Builder::tunnelInspectionRule)
+                .handleResponseHeaderString(
+                        "etag", CreateTunnelInspectionRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateTunnelInspectionRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1092,6 +1169,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.UrlList.class,
@@ -1099,7 +1177,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateUrlListResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateUrlListResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1127,9 +1204,9 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAddressListResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1157,9 +1234,9 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteApplicationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1189,9 +1266,9 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteApplicationGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1221,9 +1298,9 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDecryptionProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1251,9 +1328,9 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDecryptionRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1281,9 +1358,9 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMappedSecretResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1307,12 +1384,12 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteNetworkFirewallResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteNetworkFirewallResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1337,12 +1414,12 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteNetworkFirewallPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteNetworkFirewallPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1370,9 +1447,9 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSecurityRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1400,9 +1477,9 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteServiceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1430,9 +1507,42 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteServiceListResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteTunnelInspectionRuleResponse deleteTunnelInspectionRule(
+            DeleteTunnelInspectionRuleRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+
+        Validate.notBlank(
+                request.getTunnelInspectionRuleName(),
+                "tunnelInspectionRuleName must not be blank");
+
+        return clientCall(request, DeleteTunnelInspectionRuleResponse::builder)
+                .logger(LOG, "deleteTunnelInspectionRule")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "DeleteTunnelInspectionRule",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/DeleteTunnelInspectionRule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteTunnelInspectionRuleRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("tunnelInspectionRules")
+                .appendPathParam(request.getTunnelInspectionRuleName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteTunnelInspectionRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1460,9 +1570,9 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteUrlListResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1489,13 +1599,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getAddressListName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.AddressList.class,
                         GetAddressListResponse.Builder::addressList)
                 .handleResponseHeaderString("etag", GetAddressListResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAddressListResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1524,13 +1634,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.Application.class,
                         GetApplicationResponse.Builder::application)
                 .handleResponseHeaderString("etag", GetApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetApplicationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1558,13 +1668,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getApplicationGroupName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.ApplicationGroup.class,
                         GetApplicationGroupResponse.Builder::applicationGroup)
                 .handleResponseHeaderString("etag", GetApplicationGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetApplicationGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1592,13 +1702,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getDecryptionProfileName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.DecryptionProfile.class,
                         GetDecryptionProfileResponse.Builder::decryptionProfile)
                 .handleResponseHeaderString("etag", GetDecryptionProfileResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDecryptionProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1627,13 +1737,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.DecryptionRule.class,
                         GetDecryptionRuleResponse.Builder::decryptionRule)
                 .handleResponseHeaderString("etag", GetDecryptionRuleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDecryptionRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1662,13 +1772,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.MappedSecret.class,
                         GetMappedSecretResponse.Builder::mappedSecret)
                 .handleResponseHeaderString("etag", GetMappedSecretResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMappedSecretResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1690,13 +1800,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getNetworkFirewallId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.NetworkFirewall.class,
                         GetNetworkFirewallResponse.Builder::networkFirewall)
                 .handleResponseHeaderString("etag", GetNetworkFirewallResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetNetworkFirewallResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1720,13 +1830,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getNetworkFirewallPolicyId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy.class,
                         GetNetworkFirewallPolicyResponse.Builder::networkFirewallPolicy)
                 .handleResponseHeaderString("etag", GetNetworkFirewallPolicyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetNetworkFirewallPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1753,13 +1863,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getSecurityRuleName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.SecurityRule.class,
                         GetSecurityRuleResponse.Builder::securityRule)
                 .handleResponseHeaderString("etag", GetSecurityRuleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSecurityRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1788,13 +1898,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.Service.class,
                         GetServiceResponse.Builder::service)
                 .handleResponseHeaderString("etag", GetServiceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetServiceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1821,13 +1931,49 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getServiceListName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.ServiceList.class,
                         GetServiceListResponse.Builder::serviceList)
                 .handleResponseHeaderString("etag", GetServiceListResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetServiceListResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetTunnelInspectionRuleResponse getTunnelInspectionRule(
+            GetTunnelInspectionRuleRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+
+        Validate.notBlank(
+                request.getTunnelInspectionRuleName(),
+                "tunnelInspectionRuleName must not be blank");
+
+        return clientCall(request, GetTunnelInspectionRuleResponse::builder)
+                .logger(LOG, "getTunnelInspectionRule")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "GetTunnelInspectionRule",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/GetTunnelInspectionRule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTunnelInspectionRuleRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("tunnelInspectionRules")
+                .appendPathParam(request.getTunnelInspectionRuleName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.networkfirewall.model.TunnelInspectionRule.class,
+                        GetTunnelInspectionRuleResponse.Builder::tunnelInspectionRule)
+                .handleResponseHeaderString("etag", GetTunnelInspectionRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTunnelInspectionRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1854,13 +2000,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getUrlListName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.UrlList.class,
                         GetUrlListResponse.Builder::urlList)
                 .handleResponseHeaderString("etag", GetUrlListResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetUrlListResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1882,6 +2028,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -1890,7 +2037,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1919,6 +2065,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.AddressListSummaryCollection.class,
                         ListAddressListsResponse.Builder::addressListSummaryCollection)
@@ -1932,7 +2079,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-page-count", ListAddressListsResponse.Builder::opcPageCount)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListAddressListsResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1962,6 +2108,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.ApplicationGroupSummaryCollection
                                 .class,
@@ -1976,7 +2123,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-page-count", ListApplicationGroupsResponse.Builder::opcPageCount)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListApplicationGroupsResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2005,6 +2151,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.ApplicationSummaryCollection.class,
                         ListApplicationsResponse.Builder::applicationSummaryCollection)
@@ -2018,7 +2165,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-page-count", ListApplicationsResponse.Builder::opcPageCount)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListApplicationsResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2048,6 +2194,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.DecryptionProfileSummaryCollection
                                 .class,
@@ -2062,7 +2209,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-page-count", ListDecryptionProfilesResponse.Builder::opcPageCount)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListDecryptionProfilesResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2093,6 +2239,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "decryptionRulePriorityOrder", request.getDecryptionRulePriorityOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.DecryptionRuleSummaryCollection.class,
                         ListDecryptionRulesResponse.Builder::decryptionRuleSummaryCollection)
@@ -2106,7 +2253,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-page-count", ListDecryptionRulesResponse.Builder::opcPageCount)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListDecryptionRulesResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2135,6 +2281,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.MappedSecretSummaryCollection.class,
                         ListMappedSecretsResponse.Builder::mappedSecretSummaryCollection)
@@ -2148,7 +2295,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-page-count", ListMappedSecretsResponse.Builder::opcPageCount)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListMappedSecretsResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2177,6 +2323,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicySummaryCollection
                                 .class,
@@ -2193,7 +2340,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderInteger(
                         "opc-total-items",
                         ListNetworkFirewallPoliciesResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2223,6 +2369,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.NetworkFirewallCollection.class,
                         ListNetworkFirewallsResponse.Builder::networkFirewallCollection)
@@ -2236,7 +2383,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-page-count", ListNetworkFirewallsResponse.Builder::opcPageCount)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListNetworkFirewallsResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2267,6 +2413,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "securityRulePriorityOrder", request.getSecurityRulePriorityOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.SecurityRuleSummaryCollection.class,
                         ListSecurityRulesResponse.Builder::securityRuleSummaryCollection)
@@ -2280,7 +2427,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-page-count", ListSecurityRulesResponse.Builder::opcPageCount)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListSecurityRulesResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2309,6 +2455,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.ServiceListSummaryCollection.class,
                         ListServiceListsResponse.Builder::serviceListSummaryCollection)
@@ -2322,7 +2469,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-page-count", ListServiceListsResponse.Builder::opcPageCount)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListServiceListsResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2351,6 +2497,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.ServiceSummaryCollection.class,
                         ListServicesResponse.Builder::serviceSummaryCollection)
@@ -2364,7 +2511,54 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-page-count", ListServicesResponse.Builder::opcPageCount)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListServicesResponse.Builder::opcTotalItems)
+                .callSync();
+    }
+
+    @Override
+    public ListTunnelInspectionRulesResponse listTunnelInspectionRules(
+            ListTunnelInspectionRulesRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+
+        return clientCall(request, ListTunnelInspectionRulesResponse::builder)
+                .logger(LOG, "listTunnelInspectionRules")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "ListTunnelInspectionRules",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/ListTunnelInspectionRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTunnelInspectionRulesRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("tunnelInspectionRules")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam(
+                        "tunnelInspectionRulePriorityOrder",
+                        request.getTunnelInspectionRulePriorityOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.networkfirewall.model.TunnelInspectionRuleSummaryCollection
+                                .class,
+                        ListTunnelInspectionRulesResponse.Builder
+                                ::tunnelInspectionRuleSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTunnelInspectionRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTunnelInspectionRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListTunnelInspectionRulesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-page-count", ListTunnelInspectionRulesResponse.Builder::opcPageCount)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListTunnelInspectionRulesResponse.Builder::opcTotalItems)
                 .callSync();
     }
 
@@ -2393,6 +2587,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.UrlListSummaryCollection.class,
                         ListUrlListsResponse.Builder::urlListSummaryCollection)
@@ -2406,7 +2601,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-page-count", ListUrlListsResponse.Builder::opcPageCount)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListUrlListsResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2434,6 +2628,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -2443,7 +2638,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListWorkRequestErrorsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2470,6 +2664,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -2479,7 +2674,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListWorkRequestLogsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2507,6 +2701,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -2516,7 +2711,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListWorkRequestsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2544,13 +2738,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         MigrateNetworkFirewallPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         MigrateNetworkFirewallPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2580,6 +2774,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.AddressList.class,
@@ -2591,7 +2786,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateAddressListResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAddressListResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2621,6 +2815,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.Application.class,
@@ -2632,7 +2827,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateApplicationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2665,6 +2859,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.ApplicationGroup.class,
@@ -2676,7 +2871,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateApplicationGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateApplicationGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2709,6 +2903,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.DecryptionProfile.class,
@@ -2716,7 +2911,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateDecryptionProfileResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDecryptionProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2747,6 +2941,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.DecryptionRule.class,
@@ -2754,7 +2949,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateDecryptionRuleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDecryptionRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2784,6 +2978,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.MappedSecret.class,
@@ -2795,7 +2990,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateMappedSecretResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMappedSecretResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2822,13 +3016,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateNetworkFirewallResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateNetworkFirewallResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2856,13 +3050,13 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateNetworkFirewallPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateNetworkFirewallPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2892,6 +3086,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.SecurityRule.class,
@@ -2899,7 +3094,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateSecurityRuleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSecurityRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2929,6 +3123,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.Service.class,
@@ -2940,7 +3135,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateServiceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateServiceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2970,6 +3164,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.ServiceList.class,
@@ -2977,7 +3172,48 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateServiceListResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateServiceListResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateTunnelInspectionRuleResponse updateTunnelInspectionRule(
+            UpdateTunnelInspectionRuleRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+
+        Validate.notBlank(
+                request.getTunnelInspectionRuleName(),
+                "tunnelInspectionRuleName must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateTunnelInspectionRuleDetails(),
+                "updateTunnelInspectionRuleDetails is required");
+
+        return clientCall(request, UpdateTunnelInspectionRuleResponse::builder)
+                .logger(LOG, "updateTunnelInspectionRule")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "UpdateTunnelInspectionRule",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/UpdateTunnelInspectionRule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateTunnelInspectionRuleRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("tunnelInspectionRules")
+                .appendPathParam(request.getTunnelInspectionRuleName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.networkfirewall.model.TunnelInspectionRule.class,
+                        UpdateTunnelInspectionRuleResponse.Builder::tunnelInspectionRule)
+                .handleResponseHeaderString(
+                        "etag", UpdateTunnelInspectionRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateTunnelInspectionRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3007,6 +3243,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkfirewall.model.UrlList.class,
@@ -3014,7 +3251,6 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateUrlListResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateUrlListResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

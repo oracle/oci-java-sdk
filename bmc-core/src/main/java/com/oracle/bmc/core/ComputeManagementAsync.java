@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -10,11 +10,11 @@ import com.oracle.bmc.core.responses.*;
 /**
  * Use the Core Services API to manage resources such as virtual cloud networks (VCNs), compute
  * instances, and block storage volumes. For more information, see the console documentation for the
- * [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
- * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
- * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
- * The required permissions are documented in the [Details for the Core
- * Services](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
+ * [Networking](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm),
+ * [Compute](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and [Block
+ * Volume](https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm) services. The required
+ * permissions are documented in the [Details for the Core
+ * Services](https://docs.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
  * article.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -72,7 +72,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
      * Attaches an instance to an instance pool. For information about the prerequisites that an
      * instance must meet before you can attach it to a pool, see [Attaching an Instance to an
      * Instance
-     * Pool](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).
+     * Pool](https://docs.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -105,10 +105,10 @@ public interface ComputeManagementAsync extends AutoCloseable {
 
     /**
      * Moves a [cluster network with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
-     * into a different compartment within the same tenancy. For information about moving resources
-     * between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm) into a
+     * different compartment within the same tenancy. For information about moving resources between
+     * compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When you move a cluster network to a different compartment, associated resources such as
      * the instances in the cluster network, boot volumes, and VNICs are not moved.
@@ -131,7 +131,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
     /**
      * Moves an instance configuration into a different compartment within the same tenancy. For
      * information about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When you move an instance configuration to a different compartment, associated resources
      * such as instance pools are not moved.
@@ -142,7 +142,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
      * instance configuration to manage instance pools in the new compartment. If you want to update
      * an instance configuration to point to a different compartment, you should instead create a
      * new instance configuration in the target compartment using
-     * [CreateInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration).
+     * [CreateInstanceConfiguration](https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -162,7 +162,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
     /**
      * Moves an instance pool into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When you move an instance pool to a different compartment, associated resources such as
      * the instances in the pool, boot volumes, VNICs, and autoscaling configurations are not moved.
@@ -184,10 +184,10 @@ public interface ComputeManagementAsync extends AutoCloseable {
 
     /**
      * Creates a [cluster network with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
-     * A cluster network is a group of high performance computing (HPC), GPU, or optimized bare
-     * metal instances that are connected with an ultra low-latency remote direct memory access
-     * (RDMA) network. Cluster networks with instance pools use instance pools to manage groups of
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm). A
+     * cluster network is a group of high performance computing (HPC), GPU, or optimized bare metal
+     * instances that are connected with an ultra low-latency remote direct memory access (RDMA)
+     * network. Cluster networks with instance pools use instance pools to manage groups of
      * identical instances.
      *
      * <p>Use cluster networks with instance pools when you want predictable capacity for a specific
@@ -304,7 +304,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
 
     /**
      * Gets information about a [cluster network with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -411,7 +411,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
 
     /**
      * Lists the instances in a [cluster network with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -428,8 +428,8 @@ public interface ComputeManagementAsync extends AutoCloseable {
 
     /**
      * Lists the [cluster networks with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
-     * in the specified compartment.
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm) in the
+     * specified compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -586,7 +586,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
 
     /**
      * Deletes (terminates) a [cluster network with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      *
      * <p>When you delete a cluster network, all of its resources are permanently deleted, including
      * associated instances and instance pools.
@@ -631,8 +631,8 @@ public interface ComputeManagementAsync extends AutoCloseable {
 
     /**
      * Updates a [cluster network with instance
-     * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
-     * The OCID of the cluster network remains the same.
+     * pools](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm). The
+     * OCID of the cluster network remains the same.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

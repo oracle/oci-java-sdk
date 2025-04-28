@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vault;
@@ -9,8 +9,7 @@ import com.oracle.bmc.vault.responses.*;
 
 /**
  * Use the Secret Management API to manage secrets and secret versions. For more information, see
- * [Managing
- * Secrets](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingsecrets.htm).
+ * [Managing Secrets](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingsecrets.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 public interface VaultsAsync extends AutoCloseable {
@@ -81,6 +80,23 @@ public interface VaultsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Cancels the ongoing secret rotation. The cancellation is contingent on how far the rotation
+     * process has progressed. Upon cancelling a rotation, all future rotations are also disabled.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelSecretRotationResponse> cancelSecretRotation(
+            CancelSecretRotationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelSecretRotationRequest, CancelSecretRotationResponse>
+                    handler);
+
+    /**
      * Cancels the scheduled deletion of a secret version.
      *
      * @param request The request object containing the details to send
@@ -99,7 +115,7 @@ public interface VaultsAsync extends AutoCloseable {
     /**
      * Moves a secret into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When provided, if-match is checked against the ETag values of the secret.
      *
@@ -191,6 +207,22 @@ public interface VaultsAsync extends AutoCloseable {
     java.util.concurrent.Future<ListSecretsResponse> listSecrets(
             ListSecretsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListSecretsRequest, ListSecretsResponse> handler);
+
+    /**
+     * API to force rotation of an existing secret in Vault and the specified target system; expects
+     * secret to have a valid Target System Details object
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RotateSecretResponse> rotateSecret(
+            RotateSecretRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RotateSecretRequest, RotateSecretResponse>
+                    handler);
 
     /**
      * Schedules the deletion of the specified secret. This sets the lifecycle state of the secret

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Simple Condition object. <br>
+ * Information for a simple condition. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -26,12 +26,12 @@ package com.oracle.bmc.cloudguard.model;
 public final class SimpleCondition extends Condition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** parameter Key */
+        /** Parameter key */
         @com.fasterxml.jackson.annotation.JsonProperty("parameter")
         private String parameter;
 
         /**
-         * parameter Key
+         * Parameter key
          *
          * @param parameter the value to set
          * @return this builder
@@ -41,12 +41,12 @@ public final class SimpleCondition extends Condition {
             this.__explicitlySet__.add("parameter");
             return this;
         }
-        /** type of operator */
+        /** Type of operator */
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private OperatorType operator;
 
         /**
-         * type of operator
+         * Type of operator
          *
          * @param operator the value to set
          * @return this builder
@@ -56,12 +56,12 @@ public final class SimpleCondition extends Condition {
             this.__explicitlySet__.add("operator");
             return this;
         }
-        /** type of operator */
+        /** Value of operator in condition */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * type of operator
+         * Value of operator in condition
          *
          * @param value the value to set
          * @return this builder
@@ -71,12 +71,12 @@ public final class SimpleCondition extends Condition {
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** type of value */
+        /** Type of value in condition */
         @com.fasterxml.jackson.annotation.JsonProperty("valueType")
         private ConditionValueType valueType;
 
         /**
-         * type of value
+         * Type of value in condition
          *
          * @param valueType the value to set
          * @return this builder
@@ -136,12 +136,12 @@ public final class SimpleCondition extends Condition {
         this.valueType = valueType;
     }
 
-    /** parameter Key */
+    /** Parameter key */
     @com.fasterxml.jackson.annotation.JsonProperty("parameter")
     private final String parameter;
 
     /**
-     * parameter Key
+     * Parameter key
      *
      * @return the value
      */
@@ -149,12 +149,12 @@ public final class SimpleCondition extends Condition {
         return parameter;
     }
 
-    /** type of operator */
+    /** Type of operator */
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final OperatorType operator;
 
     /**
-     * type of operator
+     * Type of operator
      *
      * @return the value
      */
@@ -162,12 +162,12 @@ public final class SimpleCondition extends Condition {
         return operator;
     }
 
-    /** type of operator */
+    /** Value of operator in condition */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * type of operator
+     * Value of operator in condition
      *
      * @return the value
      */
@@ -175,12 +175,12 @@ public final class SimpleCondition extends Condition {
         return value;
     }
 
-    /** type of value */
+    /** Type of value in condition */
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
     private final ConditionValueType valueType;
 
     /**
-     * type of value
+     * Type of value in condition
      *
      * @return the value
      */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListVolumesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -29,14 +29,14 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return availabilityDomain;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -44,7 +44,7 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -53,7 +53,7 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -63,14 +63,14 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -208,6 +208,17 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return volumeGroupId;
     }
     /**
+     * A filter to return only resources that match the given cluster placement group Id exactly.
+     */
+    private String clusterPlacementGroupId;
+
+    /**
+     * A filter to return only resources that match the given cluster placement group Id exactly.
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+    /**
      * A filter to only return resources that match the given lifecycle state. The state value is
      * case-insensitive.
      */
@@ -248,14 +259,14 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -268,7 +279,7 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -277,7 +288,7 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -292,14 +303,14 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -388,6 +399,24 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
+         * A filter to return only resources that match the given cluster placement group Id
+         * exactly.
+         */
+        private String clusterPlacementGroupId = null;
+
+        /**
+         * A filter to return only resources that match the given cluster placement group Id
+         * exactly.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
          * A filter to only return resources that match the given lifecycle state. The state value
          * is case-insensitive.
          */
@@ -444,6 +473,7 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             volumeGroupId(o.getVolumeGroupId());
+            clusterPlacementGroupId(o.getClusterPlacementGroupId());
             lifecycleState(o.getLifecycleState());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -487,10 +517,11 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.volumeGroupId = volumeGroupId;
+            request.clusterPlacementGroupId = clusterPlacementGroupId;
             request.lifecycleState = lifecycleState;
             return request;
             // new ListVolumesRequest(availabilityDomain, compartmentId, limit, page, displayName,
-            // sortBy, sortOrder, volumeGroupId, lifecycleState);
+            // sortBy, sortOrder, volumeGroupId, clusterPlacementGroupId, lifecycleState);
         }
     }
 
@@ -509,6 +540,7 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .volumeGroupId(volumeGroupId)
+                .clusterPlacementGroupId(clusterPlacementGroupId)
                 .lifecycleState(lifecycleState);
     }
 
@@ -534,6 +566,7 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",volumeGroupId=").append(String.valueOf(this.volumeGroupId));
+        sb.append(",clusterPlacementGroupId=").append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
@@ -558,6 +591,8 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.volumeGroupId, other.volumeGroupId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
     }
 
@@ -581,6 +616,11 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result =
                 (result * PRIME)
                         + (this.volumeGroupId == null ? 43 : this.volumeGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

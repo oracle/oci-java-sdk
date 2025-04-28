@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
@@ -44,7 +44,10 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
         "definedTags",
         "isRunNow",
         "schedulingPolicy",
-        "batchIntervalInSeconds"
+        "batchIntervalInSeconds",
+        "isIPv6",
+        "createdBy",
+        "lastUpdatedBy"
     })
     public Monitor(
             String id,
@@ -69,7 +72,10 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Boolean isRunNow,
             SchedulingPolicy schedulingPolicy,
-            Integer batchIntervalInSeconds) {
+            Integer batchIntervalInSeconds,
+            Boolean isIPv6,
+            String createdBy,
+            String lastUpdatedBy) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -94,19 +100,22 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
         this.isRunNow = isRunNow;
         this.schedulingPolicy = schedulingPolicy;
         this.batchIntervalInSeconds = batchIntervalInSeconds;
+        this.isIPv6 = isIPv6;
+        this.createdBy = createdBy;
+        this.lastUpdatedBy = lastUpdatedBy;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * monitor.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * monitor.
          *
          * @param id the value to set
@@ -149,12 +158,12 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("monitorType");
             return this;
         }
-        /** List of public and dedicated vantage points where the monitor is running. */
+        /** List of public, dedicated and onPremise vantage points where the monitor is running. */
         @com.fasterxml.jackson.annotation.JsonProperty("vantagePoints")
         private java.util.List<VantagePointInfo> vantagePoints;
 
         /**
-         * List of public and dedicated vantage points where the monitor is running.
+         * List of public, dedicated and onPremise vantage points where the monitor is running.
          *
          * @param vantagePoints the value to set
          * @return this builder
@@ -180,7 +189,7 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor
          * types. For other monitor types, it should be set to null.
          */
@@ -188,7 +197,7 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
         private String scriptId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor
          * types. For other monitor types, it should be set to null.
          *
@@ -294,23 +303,25 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
             return this;
         }
         /**
-         * Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types,
-         * target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then
-         * the monitor will run the selected script (specified by scriptId in monitor) against the
-         * specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor
-         * type, then the monitor will run the selected script as it is. For NETWORK monitor with
-         * TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+         * Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP
+         * monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER
+         * monitor type, then the monitor will run the selected script (specified by scriptId in
+         * monitor) against the specified target endpoint. If target is not specified in the
+         * SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+         * For NETWORK monitor with TCP protocol, a port needs to be provided along with target.
+         * Example: 192.168.0.1:80.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private String target;
 
         /**
-         * Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types,
-         * target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then
-         * the monitor will run the selected script (specified by scriptId in monitor) against the
-         * specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor
-         * type, then the monitor will run the selected script as it is. For NETWORK monitor with
-         * TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+         * Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP
+         * monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER
+         * monitor type, then the monitor will run the selected script (specified by scriptId in
+         * monitor) against the specified target endpoint. If target is not specified in the
+         * SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+         * For NETWORK monitor with TCP protocol, a port needs to be provided along with target.
+         * Example: 192.168.0.1:80.
          *
          * @param target the value to set
          * @return this builder
@@ -499,6 +510,51 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("batchIntervalInSeconds");
             return this;
         }
+        /** If enabled, domain name will resolve to an IPv6 address. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isIPv6")
+        private Boolean isIPv6;
+
+        /**
+         * If enabled, domain name will resolve to an IPv6 address.
+         *
+         * @param isIPv6 the value to set
+         * @return this builder
+         */
+        public Builder isIPv6(Boolean isIPv6) {
+            this.isIPv6 = isIPv6;
+            this.__explicitlySet__.add("isIPv6");
+            return this;
+        }
+        /** Name of the user that created the monitor. */
+        @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
+        private String createdBy;
+
+        /**
+         * Name of the user that created the monitor.
+         *
+         * @param createdBy the value to set
+         * @return this builder
+         */
+        public Builder createdBy(String createdBy) {
+            this.createdBy = createdBy;
+            this.__explicitlySet__.add("createdBy");
+            return this;
+        }
+        /** Name of the user that recently updated the monitor. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lastUpdatedBy")
+        private String lastUpdatedBy;
+
+        /**
+         * Name of the user that recently updated the monitor.
+         *
+         * @param lastUpdatedBy the value to set
+         * @return this builder
+         */
+        public Builder lastUpdatedBy(String lastUpdatedBy) {
+            this.lastUpdatedBy = lastUpdatedBy;
+            this.__explicitlySet__.add("lastUpdatedBy");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -528,7 +584,10 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
                             this.definedTags,
                             this.isRunNow,
                             this.schedulingPolicy,
-                            this.batchIntervalInSeconds);
+                            this.batchIntervalInSeconds,
+                            this.isIPv6,
+                            this.createdBy,
+                            this.lastUpdatedBy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -606,6 +665,15 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
             if (model.wasPropertyExplicitlySet("batchIntervalInSeconds")) {
                 this.batchIntervalInSeconds(model.getBatchIntervalInSeconds());
             }
+            if (model.wasPropertyExplicitlySet("isIPv6")) {
+                this.isIPv6(model.getIsIPv6());
+            }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("lastUpdatedBy")) {
+                this.lastUpdatedBy(model.getLastUpdatedBy());
+            }
             return this;
         }
     }
@@ -620,14 +688,14 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * monitor.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * monitor.
      *
      * @return the value
@@ -662,12 +730,12 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
         return monitorType;
     }
 
-    /** List of public and dedicated vantage points where the monitor is running. */
+    /** List of public, dedicated and onPremise vantage points where the monitor is running. */
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePoints")
     private final java.util.List<VantagePointInfo> vantagePoints;
 
     /**
-     * List of public and dedicated vantage points where the monitor is running.
+     * List of public, dedicated and onPremise vantage points where the monitor is running.
      *
      * @return the value
      */
@@ -689,7 +757,7 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor
      * types. For other monitor types, it should be set to null.
      */
@@ -697,7 +765,7 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
     private final String scriptId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor
      * types. For other monitor types, it should be set to null.
      *
@@ -789,23 +857,23 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
     }
 
     /**
-     * Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target
-     * is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor
-     * will run the selected script (specified by scriptId in monitor) against the specified target
-     * endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor
-     * will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to
-     * be provided along with target. Example: 192.168.0.1:80
+     * Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP
+     * monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor
+     * type, then the monitor will run the selected script (specified by scriptId in monitor)
+     * against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER
+     * monitor type, then the monitor will run the selected script as it is. For NETWORK monitor
+     * with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final String target;
 
     /**
-     * Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target
-     * is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor
-     * will run the selected script (specified by scriptId in monitor) against the specified target
-     * endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor
-     * will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to
-     * be provided along with target. Example: 192.168.0.1:80
+     * Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP
+     * monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor
+     * type, then the monitor will run the selected script (specified by scriptId in monitor)
+     * against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER
+     * monitor type, then the monitor will run the selected script as it is. For NETWORK monitor
+     * with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      *
      * @return the value
      */
@@ -966,6 +1034,45 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
         return batchIntervalInSeconds;
     }
 
+    /** If enabled, domain name will resolve to an IPv6 address. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isIPv6")
+    private final Boolean isIPv6;
+
+    /**
+     * If enabled, domain name will resolve to an IPv6 address.
+     *
+     * @return the value
+     */
+    public Boolean getIsIPv6() {
+        return isIPv6;
+    }
+
+    /** Name of the user that created the monitor. */
+    @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
+    private final String createdBy;
+
+    /**
+     * Name of the user that created the monitor.
+     *
+     * @return the value
+     */
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    /** Name of the user that recently updated the monitor. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lastUpdatedBy")
+    private final String lastUpdatedBy;
+
+    /**
+     * Name of the user that recently updated the monitor.
+     *
+     * @return the value
+     */
+    public String getLastUpdatedBy() {
+        return lastUpdatedBy;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1007,6 +1114,9 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append(", isRunNow=").append(String.valueOf(this.isRunNow));
         sb.append(", schedulingPolicy=").append(String.valueOf(this.schedulingPolicy));
         sb.append(", batchIntervalInSeconds=").append(String.valueOf(this.batchIntervalInSeconds));
+        sb.append(", isIPv6=").append(String.valueOf(this.isIPv6));
+        sb.append(", createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", lastUpdatedBy=").append(String.valueOf(this.lastUpdatedBy));
         sb.append(")");
         return sb.toString();
     }
@@ -1048,6 +1158,9 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
                 && java.util.Objects.equals(this.schedulingPolicy, other.schedulingPolicy)
                 && java.util.Objects.equals(
                         this.batchIntervalInSeconds, other.batchIntervalInSeconds)
+                && java.util.Objects.equals(this.isIPv6, other.isIPv6)
+                && java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.lastUpdatedBy, other.lastUpdatedBy)
                 && super.equals(other);
     }
 
@@ -1106,6 +1219,11 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
                         + (this.batchIntervalInSeconds == null
                                 ? 43
                                 : this.batchIntervalInSeconds.hashCode());
+        result = (result * PRIME) + (this.isIPv6 == null ? 43 : this.isIPv6.hashCode());
+        result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastUpdatedBy == null ? 43 : this.lastUpdatedBy.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

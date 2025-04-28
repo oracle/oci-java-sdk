@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.integration;
@@ -122,6 +122,44 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
     @Override
     public void setRegion(String regionId) {
         super.setRegion(regionId);
+    }
+
+    @Override
+    public AddOracleManagedCustomEndpointResponse addOracleManagedCustomEndpoint(
+            AddOracleManagedCustomEndpointRequest request) {
+        Objects.requireNonNull(
+                request.getAddOracleManagedCustomEndpointDetails(),
+                "addOracleManagedCustomEndpointDetails is required");
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+
+        return clientCall(request, AddOracleManagedCustomEndpointResponse::builder)
+                .logger(LOG, "addOracleManagedCustomEndpoint")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "AddOracleManagedCustomEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/AddOracleManagedCustomEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddOracleManagedCustomEndpointRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("addOracleManagedCustomEndpoint")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AddOracleManagedCustomEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddOracleManagedCustomEndpointResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
@@ -256,13 +294,13 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateIntegrationInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateIntegrationInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -296,6 +334,39 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public DisasterRecoveryFailoverResponse disasterRecoveryFailover(
+            DisasterRecoveryFailoverRequest request) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+
+        return clientCall(request, DisasterRecoveryFailoverResponse::builder)
+                .logger(LOG, "disasterRecoveryFailover")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "DisasterRecoveryFailover",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/DisasterRecoveryFailover")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisasterRecoveryFailoverRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("failover")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisasterRecoveryFailoverResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DisasterRecoveryFailoverResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public EnableProcessAutomationResponse enableProcessAutomation(
             EnableProcessAutomationRequest request) {
 
@@ -324,6 +395,41 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
                         EnableProcessAutomationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", EnableProcessAutomationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ExtendDataRetentionResponse extendDataRetention(ExtendDataRetentionRequest request) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getExtendDataRetentionDetails(), "extendDataRetentionDetails is required");
+
+        return clientCall(request, ExtendDataRetentionResponse::builder)
+                .logger(LOG, "extendDataRetention")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "ExtendDataRetention",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ExtendDataRetention")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExtendDataRetentionRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("extendDataRetention")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ExtendDataRetentionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExtendDataRetentionResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -522,6 +628,40 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-previous-page", ListWorkRequestsResponse.Builder::opcPreviousPage)
+                .callSync();
+    }
+
+    @Override
+    public RemoveOracleManagedCustomEndpointResponse removeOracleManagedCustomEndpoint(
+            RemoveOracleManagedCustomEndpointRequest request) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+
+        return clientCall(request, RemoveOracleManagedCustomEndpointResponse::builder)
+                .logger(LOG, "removeOracleManagedCustomEndpoint")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "RemoveOracleManagedCustomEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/RemoveOracleManagedCustomEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveOracleManagedCustomEndpointRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("removeOracleManagedCustomEndpoint")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveOracleManagedCustomEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveOracleManagedCustomEndpointResponse.Builder::opcRequestId)
                 .callSync();
     }
 

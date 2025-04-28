@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -98,6 +98,15 @@ public final class TableColumn extends AbstractColumn {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
+        private Boolean isHidden;
+
+        public Builder isHidden(Boolean isHidden) {
+            this.isHidden = isHidden;
+            this.__explicitlySet__.add("isHidden");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("valueType")
         private ValueType valueType;
 
@@ -154,6 +163,21 @@ public final class TableColumn extends AbstractColumn {
             this.__explicitlySet__.add("result");
             return this;
         }
+        /** True if query did not complete processing all data. */
+        @com.fasterxml.jackson.annotation.JsonProperty("arePartialResults")
+        private Boolean arePartialResults;
+
+        /**
+         * True if query did not complete processing all data.
+         *
+         * @param arePartialResults the value to set
+         * @return this builder
+         */
+        public Builder arePartialResults(Boolean arePartialResults) {
+            this.arePartialResults = arePartialResults;
+            this.__explicitlySet__.add("arePartialResults");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -169,11 +193,13 @@ public final class TableColumn extends AbstractColumn {
                             this.isCaseSensitive,
                             this.isGroupable,
                             this.isEvaluable,
+                            this.isHidden,
                             this.valueType,
                             this.originalDisplayName,
                             this.internalName,
                             this.columns,
-                            this.result);
+                            this.result,
+                            this.arePartialResults);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -206,6 +232,9 @@ public final class TableColumn extends AbstractColumn {
             if (model.wasPropertyExplicitlySet("isEvaluable")) {
                 this.isEvaluable(model.getIsEvaluable());
             }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
+            }
             if (model.wasPropertyExplicitlySet("valueType")) {
                 this.valueType(model.getValueType());
             }
@@ -220,6 +249,9 @@ public final class TableColumn extends AbstractColumn {
             }
             if (model.wasPropertyExplicitlySet("result")) {
                 this.result(model.getResult());
+            }
+            if (model.wasPropertyExplicitlySet("arePartialResults")) {
+                this.arePartialResults(model.getArePartialResults());
             }
             return this;
         }
@@ -244,11 +276,13 @@ public final class TableColumn extends AbstractColumn {
             Boolean isCaseSensitive,
             Boolean isGroupable,
             Boolean isEvaluable,
+            Boolean isHidden,
             ValueType valueType,
             String originalDisplayName,
             String internalName,
             java.util.List<AbstractColumn> columns,
-            java.util.List<java.util.Map<String, Object>> result) {
+            java.util.List<java.util.Map<String, Object>> result,
+            Boolean arePartialResults) {
         super(
                 displayName,
                 subSystem,
@@ -258,11 +292,13 @@ public final class TableColumn extends AbstractColumn {
                 isCaseSensitive,
                 isGroupable,
                 isEvaluable,
+                isHidden,
                 valueType,
                 originalDisplayName,
                 internalName);
         this.columns = columns;
         this.result = result;
+        this.arePartialResults = arePartialResults;
     }
 
     /** Column descriptors for the table result. */
@@ -291,6 +327,19 @@ public final class TableColumn extends AbstractColumn {
         return result;
     }
 
+    /** True if query did not complete processing all data. */
+    @com.fasterxml.jackson.annotation.JsonProperty("arePartialResults")
+    private final Boolean arePartialResults;
+
+    /**
+     * True if query did not complete processing all data.
+     *
+     * @return the value
+     */
+    public Boolean getArePartialResults() {
+        return arePartialResults;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -308,6 +357,7 @@ public final class TableColumn extends AbstractColumn {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", columns=").append(String.valueOf(this.columns));
         sb.append(", result=").append(String.valueOf(this.result));
+        sb.append(", arePartialResults=").append(String.valueOf(this.arePartialResults));
         sb.append(")");
         return sb.toString();
     }
@@ -324,6 +374,7 @@ public final class TableColumn extends AbstractColumn {
         TableColumn other = (TableColumn) o;
         return java.util.Objects.equals(this.columns, other.columns)
                 && java.util.Objects.equals(this.result, other.result)
+                && java.util.Objects.equals(this.arePartialResults, other.arePartialResults)
                 && super.equals(other);
     }
 
@@ -333,6 +384,9 @@ public final class TableColumn extends AbstractColumn {
         int result = super.hashCode();
         result = (result * PRIME) + (this.columns == null ? 43 : this.columns.hashCode());
         result = (result * PRIME) + (this.result == null ? 43 : this.result.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.arePartialResults == null ? 43 : this.arePartialResults.hashCode());
         return result;
     }
 }

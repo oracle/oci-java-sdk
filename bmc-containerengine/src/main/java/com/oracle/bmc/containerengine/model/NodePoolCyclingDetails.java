@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.model;
@@ -26,14 +26,19 @@ public final class NodePoolCyclingDetails
     @java.beans.ConstructorProperties({
         "maximumUnavailable",
         "maximumSurge",
-        "isNodeCyclingEnabled"
+        "isNodeCyclingEnabled",
+        "cycleModes"
     })
     public NodePoolCyclingDetails(
-            String maximumUnavailable, String maximumSurge, Boolean isNodeCyclingEnabled) {
+            String maximumUnavailable,
+            String maximumSurge,
+            Boolean isNodeCyclingEnabled,
+            java.util.List<CycleMode> cycleModes) {
         super();
         this.maximumUnavailable = maximumUnavailable;
         this.maximumSurge = maximumSurge;
         this.isNodeCyclingEnabled = isNodeCyclingEnabled;
+        this.cycleModes = cycleModes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -80,12 +85,12 @@ public final class NodePoolCyclingDetails
             this.__explicitlySet__.add("maximumSurge");
             return this;
         }
-        /** If nodes in the nodepool will be cycled to have new changes. */
+        /** If cycling operation should be performed on the nodes in the node pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("isNodeCyclingEnabled")
         private Boolean isNodeCyclingEnabled;
 
         /**
-         * If nodes in the nodepool will be cycled to have new changes.
+         * If cycling operation should be performed on the nodes in the node pool.
          *
          * @param isNodeCyclingEnabled the value to set
          * @return this builder
@@ -95,6 +100,21 @@ public final class NodePoolCyclingDetails
             this.__explicitlySet__.add("isNodeCyclingEnabled");
             return this;
         }
+        /** An ordered list of cycle modes that should be performed on the OKE nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cycleModes")
+        private java.util.List<CycleMode> cycleModes;
+
+        /**
+         * An ordered list of cycle modes that should be performed on the OKE nodes.
+         *
+         * @param cycleModes the value to set
+         * @return this builder
+         */
+        public Builder cycleModes(java.util.List<CycleMode> cycleModes) {
+            this.cycleModes = cycleModes;
+            this.__explicitlySet__.add("cycleModes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -102,7 +122,10 @@ public final class NodePoolCyclingDetails
         public NodePoolCyclingDetails build() {
             NodePoolCyclingDetails model =
                     new NodePoolCyclingDetails(
-                            this.maximumUnavailable, this.maximumSurge, this.isNodeCyclingEnabled);
+                            this.maximumUnavailable,
+                            this.maximumSurge,
+                            this.isNodeCyclingEnabled,
+                            this.cycleModes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -119,6 +142,9 @@ public final class NodePoolCyclingDetails
             }
             if (model.wasPropertyExplicitlySet("isNodeCyclingEnabled")) {
                 this.isNodeCyclingEnabled(model.getIsNodeCyclingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("cycleModes")) {
+                this.cycleModes(model.getCycleModes());
             }
             return this;
         }
@@ -171,17 +197,30 @@ public final class NodePoolCyclingDetails
         return maximumSurge;
     }
 
-    /** If nodes in the nodepool will be cycled to have new changes. */
+    /** If cycling operation should be performed on the nodes in the node pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("isNodeCyclingEnabled")
     private final Boolean isNodeCyclingEnabled;
 
     /**
-     * If nodes in the nodepool will be cycled to have new changes.
+     * If cycling operation should be performed on the nodes in the node pool.
      *
      * @return the value
      */
     public Boolean getIsNodeCyclingEnabled() {
         return isNodeCyclingEnabled;
+    }
+
+    /** An ordered list of cycle modes that should be performed on the OKE nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cycleModes")
+    private final java.util.List<CycleMode> cycleModes;
+
+    /**
+     * An ordered list of cycle modes that should be performed on the OKE nodes.
+     *
+     * @return the value
+     */
+    public java.util.List<CycleMode> getCycleModes() {
+        return cycleModes;
     }
 
     @Override
@@ -202,6 +241,7 @@ public final class NodePoolCyclingDetails
         sb.append("maximumUnavailable=").append(String.valueOf(this.maximumUnavailable));
         sb.append(", maximumSurge=").append(String.valueOf(this.maximumSurge));
         sb.append(", isNodeCyclingEnabled=").append(String.valueOf(this.isNodeCyclingEnabled));
+        sb.append(", cycleModes=").append(String.valueOf(this.cycleModes));
         sb.append(")");
         return sb.toString();
     }
@@ -219,6 +259,7 @@ public final class NodePoolCyclingDetails
         return java.util.Objects.equals(this.maximumUnavailable, other.maximumUnavailable)
                 && java.util.Objects.equals(this.maximumSurge, other.maximumSurge)
                 && java.util.Objects.equals(this.isNodeCyclingEnabled, other.isNodeCyclingEnabled)
+                && java.util.Objects.equals(this.cycleModes, other.cycleModes)
                 && super.equals(other);
     }
 
@@ -237,6 +278,7 @@ public final class NodePoolCyclingDetails
                         + (this.isNodeCyclingEnabled == null
                                 ? 43
                                 : this.isNodeCyclingEnabled.hashCode());
+        result = (result * PRIME) + (this.cycleModes == null ? 43 : this.cycleModes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

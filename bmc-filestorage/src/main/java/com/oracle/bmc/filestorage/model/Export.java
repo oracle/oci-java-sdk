@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -29,7 +29,7 @@ package com.oracle.bmc.filestorage.model;
  * system.
  *
  * <p>Use {@code exportOptions} to control access to an export. For more information, see [Export
- * Options](https://docs.cloud.oracle.com/Content/File/Tasks/exportoptions.htm). <br>
+ * Options](https://docs.oracle.com/iaas/Content/File/Tasks/exportoptions.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -53,7 +53,8 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
         "lifecycleState",
         "path",
         "isIdmapGroupsForSysAuth",
-        "timeCreated"
+        "timeCreated",
+        "locks"
     })
     public Export(
             java.util.List<ClientOptions> exportOptions,
@@ -63,7 +64,8 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
             LifecycleState lifecycleState,
             String path,
             Boolean isIdmapGroupsForSysAuth,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            java.util.List<ResourceLock> locks) {
         super();
         this.exportOptions = exportOptions;
         this.exportSetId = exportSetId;
@@ -73,6 +75,7 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
         this.path = path;
         this.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
         this.timeCreated = timeCreated;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -129,15 +132,15 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export's export set.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export's export set.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
         private String exportSetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export's export set.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export's export set.
          *
          * @param exportSetId the value to set
          * @return this builder
@@ -148,15 +151,15 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export's file system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export's file system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
         private String fileSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export's file system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export's file system.
          *
          * @param fileSystemId the value to set
          * @return this builder
@@ -167,15 +170,15 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export.
          *
          * @param id the value to set
          * @return this builder
@@ -279,6 +282,21 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -293,7 +311,8 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
                             this.lifecycleState,
                             this.path,
                             this.isIdmapGroupsForSysAuth,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -325,6 +344,9 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -389,14 +411,14 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export's export set.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
     private final String exportSetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export's export set.
      *
      * @return the value
@@ -406,14 +428,14 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export's file system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
     private final String fileSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export's file system.
      *
      * @return the value
@@ -423,14 +445,14 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export.
      *
      * @return the value
@@ -571,6 +593,19 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
         return timeCreated;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -595,6 +630,7 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", isIdmapGroupsForSysAuth=")
                 .append(String.valueOf(this.isIdmapGroupsForSysAuth));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -618,6 +654,7 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(
                         this.isIdmapGroupsForSysAuth, other.isIdmapGroupsForSysAuth)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -641,6 +678,7 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
                                 ? 43
                                 : this.isIdmapGroupsForSysAuth.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

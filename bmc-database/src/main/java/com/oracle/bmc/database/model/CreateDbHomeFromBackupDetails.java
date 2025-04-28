@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -29,6 +29,7 @@ public final class CreateDbHomeFromBackupDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
+        "isUnifiedAuditingEnabled",
         "databaseSoftwareImageId",
         "database",
         "freeformTags",
@@ -36,12 +37,14 @@ public final class CreateDbHomeFromBackupDetails
     })
     public CreateDbHomeFromBackupDetails(
             String displayName,
+            Boolean isUnifiedAuditingEnabled,
             String databaseSoftwareImageId,
             CreateDatabaseFromBackupDetails database,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
+        this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
         this.database = database;
         this.freeformTags = freeformTags;
@@ -65,9 +68,24 @@ public final class CreateDbHomeFromBackupDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
+        /** Indicates whether unified auditing is enabled or not */
+        @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+        private Boolean isUnifiedAuditingEnabled;
+
+        /**
+         * Indicates whether unified auditing is enabled or not
+         *
+         * @param isUnifiedAuditingEnabled the value to set
+         * @return this builder
+         */
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            this.__explicitlySet__.add("isUnifiedAuditingEnabled");
+            return this;
+        }
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * image to be used to restore a database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
@@ -75,7 +93,7 @@ public final class CreateDbHomeFromBackupDetails
 
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * image to be used to restore a database.
          *
          * @param databaseSoftwareImageId the value to set
@@ -98,7 +116,7 @@ public final class CreateDbHomeFromBackupDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -108,7 +126,7 @@ public final class CreateDbHomeFromBackupDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -123,7 +141,7 @@ public final class CreateDbHomeFromBackupDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -131,7 +149,7 @@ public final class CreateDbHomeFromBackupDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -150,6 +168,7 @@ public final class CreateDbHomeFromBackupDetails
             CreateDbHomeFromBackupDetails model =
                     new CreateDbHomeFromBackupDetails(
                             this.displayName,
+                            this.isUnifiedAuditingEnabled,
                             this.databaseSoftwareImageId,
                             this.database,
                             this.freeformTags,
@@ -164,6 +183,9 @@ public final class CreateDbHomeFromBackupDetails
         public Builder copy(CreateDbHomeFromBackupDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isUnifiedAuditingEnabled")) {
+                this.isUnifiedAuditingEnabled(model.getIsUnifiedAuditingEnabled());
             }
             if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
                 this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
@@ -203,18 +225,31 @@ public final class CreateDbHomeFromBackupDetails
         return displayName;
     }
 
+    /** Indicates whether unified auditing is enabled or not */
+    @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+    private final Boolean isUnifiedAuditingEnabled;
+
+    /**
+     * Indicates whether unified auditing is enabled or not
+     *
+     * @return the value
+     */
+    public Boolean getIsUnifiedAuditingEnabled() {
+        return isUnifiedAuditingEnabled;
+    }
+
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the image
-     * to be used to restore a database.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to
+     * be used to restore a database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the image
-     * to be used to restore a database.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to
+     * be used to restore a database.
      *
      * @return the value
      */
@@ -232,7 +267,7 @@ public final class CreateDbHomeFromBackupDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -242,7 +277,7 @@ public final class CreateDbHomeFromBackupDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -255,7 +290,7 @@ public final class CreateDbHomeFromBackupDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -263,7 +298,7 @@ public final class CreateDbHomeFromBackupDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -287,6 +322,8 @@ public final class CreateDbHomeFromBackupDetails
         sb.append("CreateDbHomeFromBackupDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isUnifiedAuditingEnabled=")
+                .append(String.valueOf(this.isUnifiedAuditingEnabled));
         sb.append(", databaseSoftwareImageId=")
                 .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(", database=").append(String.valueOf(this.database));
@@ -308,6 +345,8 @@ public final class CreateDbHomeFromBackupDetails
         CreateDbHomeFromBackupDetails other = (CreateDbHomeFromBackupDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
+                        this.isUnifiedAuditingEnabled, other.isUnifiedAuditingEnabled)
+                && java.util.Objects.equals(
                         this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && java.util.Objects.equals(this.database, other.database)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -320,6 +359,11 @@ public final class CreateDbHomeFromBackupDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUnifiedAuditingEnabled == null
+                                ? 43
+                                : this.isUnifiedAuditingEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseSoftwareImageId == null

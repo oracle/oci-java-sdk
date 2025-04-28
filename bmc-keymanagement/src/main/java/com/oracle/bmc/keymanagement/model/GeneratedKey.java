@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
@@ -49,7 +49,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.client.internal.Expl
         /**
          * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
          * included if the
-         * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
          * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
          */
         @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
@@ -58,7 +58,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.client.internal.Expl
         /**
          * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
          * included if the
-         * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
          * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
          *
          * @param plaintext the value to set
@@ -71,7 +71,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * The checksum of the plaintext data encryption key, which is included if the
-         * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
          * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
          */
         @com.fasterxml.jackson.annotation.JsonProperty("plaintextChecksum")
@@ -79,7 +79,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.client.internal.Expl
 
         /**
          * The checksum of the plaintext data encryption key, which is included if the
-         * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
          * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
          *
          * @param plaintextChecksum the value to set
@@ -143,7 +143,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
      * included if the
-     * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+     * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
      * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
      */
     @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
@@ -152,7 +152,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
      * included if the
-     * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+     * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
      * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
      *
      * @return the value
@@ -163,7 +163,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * The checksum of the plaintext data encryption key, which is included if the
-     * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+     * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
      * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
      */
     @com.fasterxml.jackson.annotation.JsonProperty("plaintextChecksum")
@@ -171,7 +171,7 @@ public final class GeneratedKey extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * The checksum of the plaintext data encryption key, which is included if the
-     * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+     * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
      * request includes the {@code includePlaintextKey} parameter and sets its value to "true".
      *
      * @return the value

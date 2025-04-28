@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplace.model;
@@ -101,7 +101,7 @@ public final class ImageListingPackage extends ListingPackage {
         /**
          * The ID of the listing resource associated with this listing package. For more
          * information, see
-         * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+         * [AppCatalogListing](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
          * in the Core Services API.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingId")
@@ -110,7 +110,7 @@ public final class ImageListingPackage extends ListingPackage {
         /**
          * The ID of the listing resource associated with this listing package. For more
          * information, see
-         * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+         * [AppCatalogListing](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
          * in the Core Services API.
          *
          * @param appCatalogListingId the value to set
@@ -253,7 +253,7 @@ public final class ImageListingPackage extends ListingPackage {
     /**
      * The ID of the listing resource associated with this listing package. For more information,
      * see
-     * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+     * [AppCatalogListing](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
      * in the Core Services API.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingId")
@@ -262,7 +262,7 @@ public final class ImageListingPackage extends ListingPackage {
     /**
      * The ID of the listing resource associated with this listing package. For more information,
      * see
-     * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+     * [AppCatalogListing](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
      * in the Core Services API.
      *
      * @return the value

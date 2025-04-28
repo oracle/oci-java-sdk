@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListLifecycleEnvironmentsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListLifecycleEnvironmentsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListLifecycleEnvironmentsRequest.
  */
@@ -15,10 +15,16 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class ListLifecycleEnvironmentsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -36,10 +42,16 @@ public class ListLifecycleEnvironmentsRequest
     public String getDisplayNameContains() {
         return displayNameContains;
     }
-    /** The OCID of the lifecycle environment. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * lifecycle environment.
+     */
     private String lifecycleEnvironmentId;
 
-    /** The OCID of the lifecycle environment. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * lifecycle environment.
+     */
     public String getLifecycleEnvironmentId() {
         return lifecycleEnvironmentId;
     }
@@ -50,17 +62,34 @@ public class ListLifecycleEnvironmentsRequest
     public com.oracle.bmc.osmanagementhub.model.ArchType getArchType() {
         return archType;
     }
-    /** A filter to return only profiles that match the given osFamily. */
+    /** A filter to return only resources that match the given operating system family. */
     private com.oracle.bmc.osmanagementhub.model.OsFamily osFamily;
 
-    /** A filter to return only profiles that match the given osFamily. */
+    /** A filter to return only resources that match the given operating system family. */
     public com.oracle.bmc.osmanagementhub.model.OsFamily getOsFamily() {
         return osFamily;
+    }
+    /** A filter to return only resources whose location matches the given value. */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation> location;
+
+    /** A filter to return only resources whose location matches the given value. */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+            getLocation() {
+        return location;
+    }
+    /** A filter to return only resources whose location does not match the given value. */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+            locationNotEqualTo;
+
+    /** A filter to return only resources whose location does not match the given value. */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+            getLocationNotEqualTo() {
+        return locationNotEqualTo;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -69,7 +98,7 @@ public class ListLifecycleEnvironmentsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -79,7 +108,7 @@ public class ListLifecycleEnvironmentsRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -88,7 +117,7 @@ public class ListLifecycleEnvironmentsRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -180,11 +209,15 @@ public class ListLifecycleEnvironmentsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment that contains the resources to list. */
+        /**
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
+         */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -232,11 +265,15 @@ public class ListLifecycleEnvironmentsRequest
             return this;
         }
 
-        /** The OCID of the lifecycle environment. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * lifecycle environment.
+         */
         private String lifecycleEnvironmentId = null;
 
         /**
-         * The OCID of the lifecycle environment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * lifecycle environment.
          *
          * @param lifecycleEnvironmentId the value to set
          * @return this builder instance
@@ -260,11 +297,11 @@ public class ListLifecycleEnvironmentsRequest
             return this;
         }
 
-        /** A filter to return only profiles that match the given osFamily. */
+        /** A filter to return only resources that match the given operating system family. */
         private com.oracle.bmc.osmanagementhub.model.OsFamily osFamily = null;
 
         /**
-         * A filter to return only profiles that match the given osFamily.
+         * A filter to return only resources that match the given operating system family.
          *
          * @param osFamily the value to set
          * @return this builder instance
@@ -274,10 +311,66 @@ public class ListLifecycleEnvironmentsRequest
             return this;
         }
 
+        /** A filter to return only resources whose location matches the given value. */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                location = null;
+
+        /**
+         * A filter to return only resources whose location matches the given value.
+         *
+         * @param location the value to set
+         * @return this builder instance
+         */
+        public Builder location(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                        location) {
+            this.location = location;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources whose location matches the given
+         * value.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder location(ManagedInstanceLocation singularValue) {
+            return this.location(java.util.Arrays.asList(singularValue));
+        }
+
+        /** A filter to return only resources whose location does not match the given value. */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                locationNotEqualTo = null;
+
+        /**
+         * A filter to return only resources whose location does not match the given value.
+         *
+         * @param locationNotEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder locationNotEqualTo(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                        locationNotEqualTo) {
+            this.locationNotEqualTo = locationNotEqualTo;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources whose location does not match the
+         * given value.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder locationNotEqualTo(ManagedInstanceLocation singularValue) {
+            return this.locationNotEqualTo(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -286,7 +379,7 @@ public class ListLifecycleEnvironmentsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -301,7 +394,7 @@ public class ListLifecycleEnvironmentsRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          */
@@ -310,7 +403,7 @@ public class ListLifecycleEnvironmentsRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          *
@@ -425,6 +518,8 @@ public class ListLifecycleEnvironmentsRequest
             lifecycleEnvironmentId(o.getLifecycleEnvironmentId());
             archType(o.getArchType());
             osFamily(o.getOsFamily());
+            location(o.getLocation());
+            locationNotEqualTo(o.getLocationNotEqualTo());
             limit(o.getLimit());
             page(o.getPage());
             lifecycleState(o.getLifecycleState());
@@ -471,6 +566,8 @@ public class ListLifecycleEnvironmentsRequest
             request.lifecycleEnvironmentId = lifecycleEnvironmentId;
             request.archType = archType;
             request.osFamily = osFamily;
+            request.location = location;
+            request.locationNotEqualTo = locationNotEqualTo;
             request.limit = limit;
             request.page = page;
             request.lifecycleState = lifecycleState;
@@ -479,8 +576,8 @@ public class ListLifecycleEnvironmentsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListLifecycleEnvironmentsRequest(compartmentId, displayName, displayNameContains,
-            // lifecycleEnvironmentId, archType, osFamily, limit, page, lifecycleState, sortOrder,
-            // sortBy, opcRequestId);
+            // lifecycleEnvironmentId, archType, osFamily, location, locationNotEqualTo, limit,
+            // page, lifecycleState, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -497,6 +594,8 @@ public class ListLifecycleEnvironmentsRequest
                 .lifecycleEnvironmentId(lifecycleEnvironmentId)
                 .archType(archType)
                 .osFamily(osFamily)
+                .location(location)
+                .locationNotEqualTo(locationNotEqualTo)
                 .limit(limit)
                 .page(page)
                 .lifecycleState(lifecycleState)
@@ -525,6 +624,8 @@ public class ListLifecycleEnvironmentsRequest
         sb.append(",lifecycleEnvironmentId=").append(String.valueOf(this.lifecycleEnvironmentId));
         sb.append(",archType=").append(String.valueOf(this.archType));
         sb.append(",osFamily=").append(String.valueOf(this.osFamily));
+        sb.append(",location=").append(String.valueOf(this.location));
+        sb.append(",locationNotEqualTo=").append(String.valueOf(this.locationNotEqualTo));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -553,6 +654,8 @@ public class ListLifecycleEnvironmentsRequest
                         this.lifecycleEnvironmentId, other.lifecycleEnvironmentId)
                 && java.util.Objects.equals(this.archType, other.archType)
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
+                && java.util.Objects.equals(this.location, other.location)
+                && java.util.Objects.equals(this.locationNotEqualTo, other.locationNotEqualTo)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -581,6 +684,12 @@ public class ListLifecycleEnvironmentsRequest
                                 : this.lifecycleEnvironmentId.hashCode());
         result = (result * PRIME) + (this.archType == null ? 43 : this.archType.hashCode());
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.locationNotEqualTo == null
+                                ? 43
+                                : this.locationNotEqualTo.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result =

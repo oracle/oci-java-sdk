@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.redis;
@@ -108,7 +108,7 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "RedisCluster",
                         "CancelWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequest/CancelWorkRequest")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20220315")
@@ -141,7 +141,7 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "RedisCluster",
                         "ChangeRedisClusterCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/ChangeRedisClusterCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/ChangeRedisClusterCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeRedisClusterCompartmentRequest::builder)
                 .basePath("/20220315")
@@ -177,7 +177,7 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "RedisCluster",
                         "CreateRedisCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/CreateRedisCluster")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/CreateRedisCluster")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateRedisClusterRequest::builder)
                 .basePath("/20220315")
@@ -211,7 +211,7 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "RedisCluster",
                         "DeleteRedisCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/DeleteRedisCluster")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/DeleteRedisCluster")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteRedisClusterRequest::builder)
                 .basePath("/20220315")
@@ -241,7 +241,7 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "RedisCluster",
                         "GetRedisCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/GetRedisCluster")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/GetRedisCluster")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetRedisClusterRequest::builder)
                 .basePath("/20220315")
@@ -272,7 +272,7 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "RedisCluster",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequest/GetWorkRequest")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20220315")
@@ -292,6 +292,44 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListRedisClusterNodesResponse> listRedisClusterNodes(
+            ListRedisClusterNodesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListRedisClusterNodesRequest, ListRedisClusterNodesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRedisClusterId(), "redisClusterId must not be blank");
+
+        return clientCall(request, ListRedisClusterNodesResponse::builder)
+                .logger(LOG, "listRedisClusterNodes")
+                .serviceDetails(
+                        "RedisCluster",
+                        "ListRedisClusterNodes",
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/NodeSummary/ListRedisClusterNodes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRedisClusterNodesRequest::builder)
+                .basePath("/20220315")
+                .appendPathParam("redisClusters")
+                .appendPathParam(request.getRedisClusterId())
+                .appendPathParam("nodes")
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.redis.model.RedisNodeCollection.class,
+                        ListRedisClusterNodesResponse.Builder::redisNodeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRedisClusterNodesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRedisClusterNodesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRedisClustersResponse> listRedisClusters(
             ListRedisClustersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -303,7 +341,7 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "RedisCluster",
                         "ListRedisClusters",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisClusterSummary/ListRedisClusters")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisClusterSummary/ListRedisClusters")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRedisClustersRequest::builder)
                 .basePath("/20220315")
@@ -342,7 +380,7 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "RedisCluster",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequestError/ListWorkRequestErrors")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20220315")
@@ -379,7 +417,7 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "RedisCluster",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequestLogEntry/ListWorkRequestLogs")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20220315")
@@ -414,7 +452,7 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "RedisCluster",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequest/ListWorkRequests")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20220315")
@@ -455,7 +493,7 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "RedisCluster",
                         "UpdateRedisCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/UpdateRedisCluster")
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/UpdateRedisCluster")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateRedisClusterRequest::builder)
                 .basePath("/20220315")

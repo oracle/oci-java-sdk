@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -68,7 +68,9 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         "nodeCount",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "privateIp",
+        "privateIpV6",
         "dataCollectionOptions"
     })
     protected LaunchDbSystemBase(
@@ -97,7 +99,9 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
             Integer nodeCount,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateIp,
+            String privateIpV6,
             DataCollectionOptions dataCollectionOptions) {
         super();
         this.compartmentId = compartmentId;
@@ -125,19 +129,21 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         this.nodeCount = nodeCount;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.privateIp = privateIp;
+        this.privateIpV6 = privateIpV6;
         this.dataCollectionOptions = dataCollectionOptions;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment the DB system belongs in.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment the DB system belongs in.
      *
      * @return the value
@@ -220,7 +226,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet the DB system is associated with.
      *
      * <p>*Subnet Restrictions:** - For bare metal DB systems and for single node virtual machine DB
@@ -235,7 +241,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet the DB system is associated with.
      *
      * <p>*Subnet Restrictions:** - For bare metal DB systems and for single node virtual machine DB
@@ -253,7 +259,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup network subnet the DB system is associated with. Applicable only to Exadata DB
      * systems.
      *
@@ -263,7 +269,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     private final String backupSubnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup network subnet the DB system is associated with. Applicable only to Exadata DB
      * systems.
      *
@@ -276,10 +282,10 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      */
@@ -287,10 +293,10 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      *
@@ -301,22 +307,22 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * of the network security groups (NSGs) that the backup network of this DB system belongs to.
      * Setting this to an empty array after the list is created removes the resource from all NSGs.
      * For more information about NSGs, see [Security
-     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
      * only to Exadata systems.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     private final java.util.List<String> backupNetworkNsgIds;
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * of the network security groups (NSGs) that the backup network of this DB system belongs to.
      * Setting this to an empty array after the list is created removes the resource from all NSGs.
      * For more information about NSGs, see [Security
-     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
      * only to Exadata systems.
      *
      * @return the value
@@ -352,14 +358,14 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * The time zone to use for the DB system. For details, see [DB System Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
      * The time zone to use for the DB system. For details, see [DB System Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
      */
@@ -377,7 +383,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The block storage volume performance level. Valid values are {@code BALANCED} and {@code
      * HIGH_PERFORMANCE}. See [Block Volume
-     * Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm)
+     * Performance](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
      * for more information.
      */
     public enum StorageVolumePerformanceMode implements com.oracle.bmc.http.internal.BmcEnum {
@@ -415,7 +421,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The block storage volume performance level. Valid values are {@code BALANCED} and {@code
      * HIGH_PERFORMANCE}. See [Block Volume
-     * Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm)
+     * Performance](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
      * for more information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("storageVolumePerformanceMode")
@@ -424,7 +430,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The block storage volume performance level. Valid values are {@code BALANCED} and {@code
      * HIGH_PERFORMANCE}. See [Block Volume
-     * Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm)
+     * Performance](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
      * for more information.
      *
      * @return the value
@@ -532,7 +538,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
      * <p>This parameter is not used for INTEL virtual machine DB systems because virtual machine DB
      * systems have a set number of cores for each shape. For information about the number of cores
      * for a virtual machine DB system shape, see [Virtual Machine DB
-     * Systems](https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#virtualmachine)
+     * Systems](https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
@@ -552,7 +558,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
      * <p>This parameter is not used for INTEL virtual machine DB systems because virtual machine DB
      * systems have a set number of cores for each shape. For information about the number of cores
      * for a virtual machine DB system shape, see [Virtual Machine DB
-     * Systems](https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#virtualmachine)
+     * Systems](https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
      *
      * @return the value
      */
@@ -641,7 +647,9 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation.
+     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
+     * does not use key versions, hence is not applicable for Autonomous Database Serverless
+     * instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
@@ -649,7 +657,9 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation.
+     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
+     * does not use key versions, hence is not applicable for Autonomous Database Serverless
+     * instances.
      *
      * @return the value
      */
@@ -677,7 +687,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -687,7 +697,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -700,7 +710,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -708,12 +718,33 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -733,6 +764,25 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
      */
     public String getPrivateIp() {
         return privateIp;
+    }
+
+    /**
+     * A private IPv6 address of your choice. Must be an available IP address within the subnet's
+     * CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns
+     * a private IPv6 address from the subnet.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("privateIpV6")
+    private final String privateIpV6;
+
+    /**
+     * A private IPv6 address of your choice. Must be an available IP address within the subnet's
+     * CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns
+     * a private IPv6 address from the subnet.
+     *
+     * @return the value
+     */
+    public String getPrivateIpV6() {
+        return privateIpV6;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
@@ -784,7 +834,9 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(", privateIpV6=").append(String.valueOf(this.privateIpV6));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(")");
         return sb.toString();
@@ -827,7 +879,9 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.nodeCount, other.nodeCount)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
+                && java.util.Objects.equals(this.privateIpV6, other.privateIpV6)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && super.equals(other);
     }
@@ -893,7 +947,13 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        result = (result * PRIME) + (this.privateIpV6 == null ? 43 : this.privateIpV6.hashCode());
         result =
                 (result * PRIME)
                         + (this.dataCollectionOptions == null

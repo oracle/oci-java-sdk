@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -23,21 +23,23 @@ package com.oracle.bmc.devops.model;
 public final class DevopsCodeRepositoryFilterAttributes
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"headRef", "fileFilter"})
-    public DevopsCodeRepositoryFilterAttributes(String headRef, FileFilter fileFilter) {
+    @java.beans.ConstructorProperties({"headRef", "baseRef", "fileFilter"})
+    public DevopsCodeRepositoryFilterAttributes(
+            String headRef, String baseRef, FileFilter fileFilter) {
         super();
         this.headRef = headRef;
+        this.baseRef = baseRef;
         this.fileFilter = fileFilter;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Branch for push event. */
+        /** Branch for push event; source branch for pull requests */
         @com.fasterxml.jackson.annotation.JsonProperty("headRef")
         private String headRef;
 
         /**
-         * Branch for push event.
+         * Branch for push event; source branch for pull requests
          *
          * @param headRef the value to set
          * @return this builder
@@ -45,6 +47,21 @@ public final class DevopsCodeRepositoryFilterAttributes
         public Builder headRef(String headRef) {
             this.headRef = headRef;
             this.__explicitlySet__.add("headRef");
+            return this;
+        }
+        /** The target branch for pull requests; not applicable for push requests. */
+        @com.fasterxml.jackson.annotation.JsonProperty("baseRef")
+        private String baseRef;
+
+        /**
+         * The target branch for pull requests; not applicable for push requests.
+         *
+         * @param baseRef the value to set
+         * @return this builder
+         */
+        public Builder baseRef(String baseRef) {
+            this.baseRef = baseRef;
+            this.__explicitlySet__.add("baseRef");
             return this;
         }
 
@@ -62,7 +79,8 @@ public final class DevopsCodeRepositoryFilterAttributes
 
         public DevopsCodeRepositoryFilterAttributes build() {
             DevopsCodeRepositoryFilterAttributes model =
-                    new DevopsCodeRepositoryFilterAttributes(this.headRef, this.fileFilter);
+                    new DevopsCodeRepositoryFilterAttributes(
+                            this.headRef, this.baseRef, this.fileFilter);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -73,6 +91,9 @@ public final class DevopsCodeRepositoryFilterAttributes
         public Builder copy(DevopsCodeRepositoryFilterAttributes model) {
             if (model.wasPropertyExplicitlySet("headRef")) {
                 this.headRef(model.getHeadRef());
+            }
+            if (model.wasPropertyExplicitlySet("baseRef")) {
+                this.baseRef(model.getBaseRef());
             }
             if (model.wasPropertyExplicitlySet("fileFilter")) {
                 this.fileFilter(model.getFileFilter());
@@ -90,17 +111,30 @@ public final class DevopsCodeRepositoryFilterAttributes
         return new Builder().copy(this);
     }
 
-    /** Branch for push event. */
+    /** Branch for push event; source branch for pull requests */
     @com.fasterxml.jackson.annotation.JsonProperty("headRef")
     private final String headRef;
 
     /**
-     * Branch for push event.
+     * Branch for push event; source branch for pull requests
      *
      * @return the value
      */
     public String getHeadRef() {
         return headRef;
+    }
+
+    /** The target branch for pull requests; not applicable for push requests. */
+    @com.fasterxml.jackson.annotation.JsonProperty("baseRef")
+    private final String baseRef;
+
+    /**
+     * The target branch for pull requests; not applicable for push requests.
+     *
+     * @return the value
+     */
+    public String getBaseRef() {
+        return baseRef;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("fileFilter")
@@ -126,6 +160,7 @@ public final class DevopsCodeRepositoryFilterAttributes
         sb.append("DevopsCodeRepositoryFilterAttributes(");
         sb.append("super=").append(super.toString());
         sb.append("headRef=").append(String.valueOf(this.headRef));
+        sb.append(", baseRef=").append(String.valueOf(this.baseRef));
         sb.append(", fileFilter=").append(String.valueOf(this.fileFilter));
         sb.append(")");
         return sb.toString();
@@ -142,6 +177,7 @@ public final class DevopsCodeRepositoryFilterAttributes
 
         DevopsCodeRepositoryFilterAttributes other = (DevopsCodeRepositoryFilterAttributes) o;
         return java.util.Objects.equals(this.headRef, other.headRef)
+                && java.util.Objects.equals(this.baseRef, other.baseRef)
                 && java.util.Objects.equals(this.fileFilter, other.fileFilter)
                 && super.equals(other);
     }
@@ -151,6 +187,7 @@ public final class DevopsCodeRepositoryFilterAttributes
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.headRef == null ? 43 : this.headRef.hashCode());
+        result = (result * PRIME) + (this.baseRef == null ? 43 : this.baseRef.hashCode());
         result = (result * PRIME) + (this.fileFilter == null ? 43 : this.fileFilter.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -46,7 +46,7 @@ public final class SqlTuningSet extends com.oracle.bmc.http.client.internal.Expl
             SqlTuningSetStatusTypes status,
             String scheduledJobName,
             String errorMessage,
-            String allSqlStatementsFetched,
+            AllSqlStatementsFetched allSqlStatementsFetched,
             java.util.List<SqlInSqlTuningSet> sqlList) {
         super();
         this.id = id;
@@ -223,7 +223,7 @@ public final class SqlTuningSet extends com.oracle.bmc.http.client.internal.Expl
          * criteria. User should fine tune the filter criteria to narrow down the result set.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("allSqlStatementsFetched")
-        private String allSqlStatementsFetched;
+        private AllSqlStatementsFetched allSqlStatementsFetched;
 
         /**
          * In OCI database management, there is a limit to fetch only 2000 rows. This flag indicates
@@ -235,7 +235,7 @@ public final class SqlTuningSet extends com.oracle.bmc.http.client.internal.Expl
          * @param allSqlStatementsFetched the value to set
          * @return this builder
          */
-        public Builder allSqlStatementsFetched(String allSqlStatementsFetched) {
+        public Builder allSqlStatementsFetched(AllSqlStatementsFetched allSqlStatementsFetched) {
             this.allSqlStatementsFetched = allSqlStatementsFetched;
             this.__explicitlySet__.add("allSqlStatementsFetched");
             return this;
@@ -468,8 +468,60 @@ public final class SqlTuningSet extends com.oracle.bmc.http.client.internal.Expl
      * criteria are fetched. - No - There are more Sql statements matching the fitler criteria. User
      * should fine tune the filter criteria to narrow down the result set.
      */
+    public enum AllSqlStatementsFetched implements com.oracle.bmc.http.internal.BmcEnum {
+        Yes("YES"),
+        No("NO"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AllSqlStatementsFetched.class);
+
+        private final String value;
+        private static java.util.Map<String, AllSqlStatementsFetched> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AllSqlStatementsFetched v : AllSqlStatementsFetched.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AllSqlStatementsFetched(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AllSqlStatementsFetched create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AllSqlStatementsFetched', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * In OCI database management, there is a limit to fetch only 2000 rows. This flag indicates
+     * whether all Sql statements of this Sql tuning set matching the filter criteria are fetched or
+     * not. Possible values are 'Yes' or 'No' - Yes - All Sql statements matching the filter
+     * criteria are fetched. - No - There are more Sql statements matching the fitler criteria. User
+     * should fine tune the filter criteria to narrow down the result set.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("allSqlStatementsFetched")
-    private final String allSqlStatementsFetched;
+    private final AllSqlStatementsFetched allSqlStatementsFetched;
 
     /**
      * In OCI database management, there is a limit to fetch only 2000 rows. This flag indicates
@@ -480,7 +532,7 @@ public final class SqlTuningSet extends com.oracle.bmc.http.client.internal.Expl
      *
      * @return the value
      */
-    public String getAllSqlStatementsFetched() {
+    public AllSqlStatementsFetched getAllSqlStatementsFetched() {
         return allSqlStatementsFetched;
     }
 

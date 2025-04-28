@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.adm;
@@ -148,12 +148,12 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ActivateRemediationRecipeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ActivateRemediationRecipeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -179,13 +179,13 @@ public class ApplicationDependencyManagementClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.RemediationRun.class,
                         CancelRemediationRunResponse.Builder::remediationRun)
                 .handleResponseHeaderString(
                         "opc-request-id", CancelRemediationRunResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CancelRemediationRunResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -208,9 +208,9 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -240,6 +240,7 @@ public class ApplicationDependencyManagementClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -247,7 +248,6 @@ public class ApplicationDependencyManagementClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeKnowledgeBaseCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -278,6 +278,7 @@ public class ApplicationDependencyManagementClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -285,7 +286,6 @@ public class ApplicationDependencyManagementClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeRemediationRecipeCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -315,11 +315,11 @@ public class ApplicationDependencyManagementClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeRemediationRunCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -350,11 +350,11 @@ public class ApplicationDependencyManagementClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeVulnerabilityAuditCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -376,13 +376,13 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateKnowledgeBaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateKnowledgeBaseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -406,13 +406,13 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateRemediationRecipeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateRemediationRecipeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -435,6 +435,7 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.adm.model.RemediationRun.class,
@@ -442,7 +443,6 @@ public class ApplicationDependencyManagementClient
                 .handleResponseHeaderString("etag", CreateRemediationRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateRemediationRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -467,17 +467,14 @@ public class ApplicationDependencyManagementClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.adm.model.VulnerabilityAudit.class,
                         CreateVulnerabilityAuditResponse.Builder::vulnerabilityAudit)
                 .handleResponseHeaderString("etag", CreateVulnerabilityAuditResponse.Builder::etag)
                 .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateVulnerabilityAuditResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
                         "opc-request-id", CreateVulnerabilityAuditResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -504,12 +501,12 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeactivateRemediationRecipeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeactivateRemediationRecipeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -532,12 +529,12 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteKnowledgeBaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteKnowledgeBaseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -562,12 +559,12 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteRemediationRecipeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRemediationRecipeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -590,9 +587,9 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRemediationRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -617,9 +614,9 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteVulnerabilityAuditResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -641,13 +638,13 @@ public class ApplicationDependencyManagementClient
                 .appendPathParam(request.getKnowledgeBaseId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.KnowledgeBase.class,
                         GetKnowledgeBaseResponse.Builder::knowledgeBase)
                 .handleResponseHeaderString(
                         "opc-request-id", GetKnowledgeBaseResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetKnowledgeBaseResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -670,13 +667,13 @@ public class ApplicationDependencyManagementClient
                 .appendPathParam(request.getRemediationRecipeId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.RemediationRecipe.class,
                         GetRemediationRecipeResponse.Builder::remediationRecipe)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRemediationRecipeResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetRemediationRecipeResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -698,13 +695,13 @@ public class ApplicationDependencyManagementClient
                 .appendPathParam(request.getRemediationRunId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.RemediationRun.class,
                         GetRemediationRunResponse.Builder::remediationRun)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRemediationRunResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetRemediationRunResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -730,12 +727,12 @@ public class ApplicationDependencyManagementClient
                 .appendPathParam(request.getStageType().getValue())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.RemediationRunStage.class,
                         GetStageResponse.Builder::remediationRunStage)
                 .handleResponseHeaderString(
                         "opc-request-id", GetStageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -759,13 +756,13 @@ public class ApplicationDependencyManagementClient
                 .appendPathParam(request.getVulnerabilityAuditId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.VulnerabilityAudit.class,
                         GetVulnerabilityAuditResponse.Builder::vulnerabilityAudit)
                 .handleResponseHeaderString("etag", GetVulnerabilityAuditResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetVulnerabilityAuditResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -787,6 +784,7 @@ public class ApplicationDependencyManagementClient
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -795,7 +793,6 @@ public class ApplicationDependencyManagementClient
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -811,7 +808,7 @@ public class ApplicationDependencyManagementClient
                 .serviceDetails(
                         "ApplicationDependencyManagement",
                         "ListApplicationDependencyRecommendations",
-                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/ApplicationDependencyRecommendationCollection/ListApplicationDependencyRecommendations")
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/ListApplicationDependencyRecommendations")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListApplicationDependencyRecommendationsRequest::builder)
                 .basePath("/20220421")
@@ -822,9 +819,11 @@ public class ApplicationDependencyManagementClient
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("gav", request.getGav())
+                .appendQueryParam("purl", request.getPurl())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.ApplicationDependencyRecommendationCollection
                                 .class,
@@ -836,7 +835,6 @@ public class ApplicationDependencyManagementClient
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListApplicationDependencyRecommendationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -863,6 +861,8 @@ public class ApplicationDependencyManagementClient
                 .appendQueryParam("vulnerabilityId", request.getVulnerabilityId())
                 .appendQueryParam("cvssV3GreaterThanOrEqual", request.getCvssV3GreaterThanOrEqual())
                 .appendQueryParam("cvssV2GreaterThanOrEqual", request.getCvssV2GreaterThanOrEqual())
+                .appendEnumQueryParam(
+                        "severityGreaterThanOrEqual", request.getSeverityGreaterThanOrEqual())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -870,8 +870,10 @@ public class ApplicationDependencyManagementClient
                 .appendQueryParam("rootNodeId", request.getRootNodeId())
                 .appendQueryParam("depth", request.getDepth())
                 .appendQueryParam("gav", request.getGav())
+                .appendQueryParam("purl", request.getPurl())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.ApplicationDependencyVulnerabilityCollection.class,
                         ListApplicationDependencyVulnerabilitiesResponse.Builder
@@ -882,7 +884,6 @@ public class ApplicationDependencyManagementClient
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListApplicationDependencyVulnerabilitiesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -909,6 +910,7 @@ public class ApplicationDependencyManagementClient
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.KnowledgeBaseCollection.class,
                         ListKnowledgeBasesResponse.Builder::knowledgeBaseCollection)
@@ -916,7 +918,6 @@ public class ApplicationDependencyManagementClient
                         "opc-request-id", ListKnowledgeBasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListKnowledgeBasesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -929,7 +930,7 @@ public class ApplicationDependencyManagementClient
                 .serviceDetails(
                         "ApplicationDependencyManagement",
                         "ListRemediationRecipes",
-                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipeCollection/ListRemediationRecipes")
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/ListRemediationRecipes")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRemediationRecipesRequest::builder)
                 .basePath("/20220421")
@@ -944,6 +945,7 @@ public class ApplicationDependencyManagementClient
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.RemediationRecipeCollection.class,
                         ListRemediationRecipesResponse.Builder::remediationRecipeCollection)
@@ -951,7 +953,6 @@ public class ApplicationDependencyManagementClient
                         "opc-request-id", ListRemediationRecipesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListRemediationRecipesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -963,7 +964,7 @@ public class ApplicationDependencyManagementClient
                 .serviceDetails(
                         "ApplicationDependencyManagement",
                         "ListRemediationRuns",
-                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunCollection/ListRemediationRuns")
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/ListRemediationRuns")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRemediationRunsRequest::builder)
                 .basePath("/20220421")
@@ -979,6 +980,7 @@ public class ApplicationDependencyManagementClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.RemediationRunCollection.class,
                         ListRemediationRunsResponse.Builder::remediationRunCollection)
@@ -986,7 +988,6 @@ public class ApplicationDependencyManagementClient
                         "opc-request-id", ListRemediationRunsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListRemediationRunsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1000,7 +1001,7 @@ public class ApplicationDependencyManagementClient
                 .serviceDetails(
                         "ApplicationDependencyManagement",
                         "ListStages",
-                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStageCollection/ListStages")
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStage/ListStages")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListStagesRequest::builder)
                 .basePath("/20220421")
@@ -1015,6 +1016,7 @@ public class ApplicationDependencyManagementClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.RemediationRunStageCollection.class,
                         ListStagesResponse.Builder::remediationRunStageCollection)
@@ -1022,7 +1024,6 @@ public class ApplicationDependencyManagementClient
                         "opc-request-id", ListStagesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListStagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1050,8 +1051,17 @@ public class ApplicationDependencyManagementClient
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timeCreatedLessThanOrEqualTo", request.getTimeCreatedLessThanOrEqualTo())
+                .appendEnumQueryParam(
+                        "maxObservedSeverityGreaterThanOrEqualTo",
+                        request.getMaxObservedSeverityGreaterThanOrEqualTo())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.VulnerabilityAuditCollection.class,
                         ListVulnerabilityAuditsResponse.Builder::vulnerabilityAuditCollection)
@@ -1059,7 +1069,6 @@ public class ApplicationDependencyManagementClient
                         "opc-request-id", ListVulnerabilityAuditsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListVulnerabilityAuditsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1087,6 +1096,7 @@ public class ApplicationDependencyManagementClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -1094,7 +1104,6 @@ public class ApplicationDependencyManagementClient
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1121,6 +1130,7 @@ public class ApplicationDependencyManagementClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -1128,7 +1138,6 @@ public class ApplicationDependencyManagementClient
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1155,6 +1164,7 @@ public class ApplicationDependencyManagementClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.adm.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -1162,7 +1172,6 @@ public class ApplicationDependencyManagementClient
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1187,13 +1196,13 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateKnowledgeBaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateKnowledgeBaseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1221,13 +1230,13 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateRemediationRecipeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRemediationRecipeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1253,6 +1262,7 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.adm.model.RemediationRun.class,
@@ -1260,7 +1270,6 @@ public class ApplicationDependencyManagementClient
                 .handleResponseHeaderString("etag", UpdateRemediationRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRemediationRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1288,6 +1297,7 @@ public class ApplicationDependencyManagementClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.adm.model.VulnerabilityAudit.class,
@@ -1295,7 +1305,6 @@ public class ApplicationDependencyManagementClient
                 .handleResponseHeaderString("etag", UpdateVulnerabilityAuditResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateVulnerabilityAuditResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

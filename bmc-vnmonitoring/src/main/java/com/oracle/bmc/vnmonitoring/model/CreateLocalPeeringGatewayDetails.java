@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -50,15 +50,15 @@ public final class CreateLocalPeeringGatewayDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the local peering gateway (LPG).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the local peering gateway (LPG).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the local peering gateway (LPG).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the local peering gateway (LPG).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -127,8 +127,8 @@ public final class CreateLocalPeeringGatewayDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the LPG will use.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the LPG will use.
          *
          * <p>If you don't specify a route table here, the LPG is created without an associated
          * route table. The Networking service does NOT automatically associate the attached VCN's
@@ -136,14 +136,14 @@ public final class CreateLocalPeeringGatewayDetails
          *
          * <p>For information about why you would associate a route table with an LPG, see [Transit
          * Routing: Access to Multiple VCNs in Same
-         * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
+         * Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the LPG will use.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the LPG will use.
          *
          * <p>If you don't specify a route table here, the LPG is created without an associated
          * route table. The Networking service does NOT automatically associate the attached VCN's
@@ -151,7 +151,7 @@ public final class CreateLocalPeeringGatewayDetails
          *
          * <p>For information about why you would associate a route table with an LPG, see [Transit
          * Routing: Access to Multiple VCNs in Same
-         * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
+         * Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
          *
          * @param routeTableId the value to set
          * @return this builder
@@ -162,15 +162,15 @@ public final class CreateLocalPeeringGatewayDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN the LPG belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN the LPG belongs to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN the LPG belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN the LPG belongs to.
          *
          * @param vcnId the value to set
          * @return this builder
@@ -233,15 +233,15 @@ public final class CreateLocalPeeringGatewayDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the local peering gateway (LPG).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the local peering gateway (LPG).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the local peering gateway (LPG).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the local peering gateway (LPG).
      *
      * @return the value
      */
@@ -301,8 +301,8 @@ public final class CreateLocalPeeringGatewayDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the LPG will use.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the LPG will use.
      *
      * <p>If you don't specify a route table here, the LPG is created without an associated route
      * table. The Networking service does NOT automatically associate the attached VCN's default
@@ -310,14 +310,14 @@ public final class CreateLocalPeeringGatewayDetails
      *
      * <p>For information about why you would associate a route table with an LPG, see [Transit
      * Routing: Access to Multiple VCNs in Same
-     * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
+     * Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the LPG will use.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the LPG will use.
      *
      * <p>If you don't specify a route table here, the LPG is created without an associated route
      * table. The Networking service does NOT automatically associate the attached VCN's default
@@ -325,7 +325,7 @@ public final class CreateLocalPeeringGatewayDetails
      *
      * <p>For information about why you would associate a route table with an LPG, see [Transit
      * Routing: Access to Multiple VCNs in Same
-     * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
+     * Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
      *
      * @return the value
      */
@@ -334,15 +334,15 @@ public final class CreateLocalPeeringGatewayDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN the LPG belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
+     * the LPG belongs to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN the LPG belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
+     * the LPG belongs to.
      *
      * @return the value
      */

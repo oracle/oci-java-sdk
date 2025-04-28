@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -73,6 +73,15 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<AddResourceLockDetails> locks;
+
+        public Builder locks(java.util.List<AddResourceLockDetails> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
@@ -106,6 +115,24 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
         /** The Azure Data Lake Storage technology type. */
@@ -159,6 +186,8 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
          * Azure storage account key. This property is required when 'authenticationType' is set to
          * 'SHARED_KEY'. e.g.:
          * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field
+         * will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
         private String accountKey;
@@ -167,6 +196,8 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
          * Azure storage account key. This property is required when 'authenticationType' is set to
          * 'SHARED_KEY'. e.g.:
          * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field
+         * will be removed after February 15 2026.
          *
          * @param accountKey the value to set
          * @return this builder
@@ -177,10 +208,33 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             return this;
         }
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the account key is stored. Note: When provided, 'accountKey' field must not
+         * be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("accountKeySecretId")
+        private String accountKeySecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the account key is stored. Note: When provided, 'accountKey' field must not
+         * be provided.
+         *
+         * @param accountKeySecretId the value to set
+         * @return this builder
+         */
+        public Builder accountKeySecretId(String accountKeySecretId) {
+            this.accountKeySecretId = accountKeySecretId;
+            this.__explicitlySet__.add("accountKeySecretId");
+            return this;
+        }
+        /**
          * Credential that uses a shared access signature (SAS) to authenticate to an Azure Service.
          * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
          * e.g.:
          * ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+         * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will
+         * be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sasToken")
         private String sasToken;
@@ -190,6 +244,8 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
          * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
          * e.g.:
          * ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+         * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will
+         * be removed after February 15 2026.
          *
          * @param sasToken the value to set
          * @return this builder
@@ -197,6 +253,27 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         public Builder sasToken(String sasToken) {
             this.sasToken = sasToken;
             this.__explicitlySet__.add("sasToken");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
+         * provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sasTokenSecretId")
+        private String sasTokenSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
+         * provided.
+         *
+         * @param sasTokenSecretId the value to set
+         * @return this builder
+         */
+        public Builder sasTokenSecretId(String sasTokenSecretId) {
+            this.sasTokenSecretId = sasTokenSecretId;
+            this.__explicitlySet__.add("sasTokenSecretId");
             return this;
         }
         /**
@@ -240,7 +317,8 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         /**
          * Azure client secret (aka application password) for authentication. This property is
          * required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.:
-         * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+         * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and
+         * replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
         private String clientSecret;
@@ -248,7 +326,8 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         /**
          * Azure client secret (aka application password) for authentication. This property is
          * required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.:
-         * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+         * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and
+         * replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
          *
          * @param clientSecret the value to set
          * @return this builder
@@ -256,6 +335,27 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         public Builder clientSecret(String clientSecret) {
             this.clientSecret = clientSecret;
             this.__explicitlySet__.add("clientSecret");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
+         * not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
+        private String clientSecretSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
+         * not be provided.
+         *
+         * @param clientSecretSecretId the value to set
+         * @return this builder
+         */
+        public Builder clientSecretSecretId(String clientSecretSecretId) {
+            this.clientSecretSecretId = clientSecretSecretId;
+            this.__explicitlySet__.add("clientSecretSecretId");
             return this;
         }
         /** Azure Storage service endpoint. e.g: https://test.blob.core.windows.net */
@@ -285,18 +385,24 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.authenticationType,
                             this.accountName,
                             this.accountKey,
+                            this.accountKeySecretId,
                             this.sasToken,
+                            this.sasTokenSecretId,
                             this.azureTenantId,
                             this.clientId,
                             this.clientSecret,
+                            this.clientSecretSecretId,
                             this.endpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -321,6 +427,9 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
@@ -332,6 +441,12 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -345,8 +460,14 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             if (model.wasPropertyExplicitlySet("accountKey")) {
                 this.accountKey(model.getAccountKey());
             }
+            if (model.wasPropertyExplicitlySet("accountKeySecretId")) {
+                this.accountKeySecretId(model.getAccountKeySecretId());
+            }
             if (model.wasPropertyExplicitlySet("sasToken")) {
                 this.sasToken(model.getSasToken());
+            }
+            if (model.wasPropertyExplicitlySet("sasTokenSecretId")) {
+                this.sasTokenSecretId(model.getSasTokenSecretId());
             }
             if (model.wasPropertyExplicitlySet("azureTenantId")) {
                 this.azureTenantId(model.getAzureTenantId());
@@ -356,6 +477,9 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             }
             if (model.wasPropertyExplicitlySet("clientSecret")) {
                 this.clientSecret(model.getClientSecret());
+            }
+            if (model.wasPropertyExplicitlySet("clientSecretSecretId")) {
+                this.clientSecretSecretId(model.getClientSecretSecretId());
             }
             if (model.wasPropertyExplicitlySet("endpoint")) {
                 this.endpoint(model.getEndpoint());
@@ -380,18 +504,24 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             AzureDataLakeStorageConnection.TechnologyType technologyType,
             AzureDataLakeStorageConnection.AuthenticationType authenticationType,
             String accountName,
             String accountKey,
+            String accountKeySecretId,
             String sasToken,
+            String sasTokenSecretId,
             String azureTenantId,
             String clientId,
             String clientSecret,
+            String clientSecretSecretId,
             String endpoint) {
         super(
                 displayName,
@@ -399,18 +529,24 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
                 compartmentId,
                 freeformTags,
                 definedTags,
+                locks,
                 vaultId,
                 keyId,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.authenticationType = authenticationType;
         this.accountName = accountName;
         this.accountKey = accountKey;
+        this.accountKeySecretId = accountKeySecretId;
         this.sasToken = sasToken;
+        this.sasTokenSecretId = sasTokenSecretId;
         this.azureTenantId = azureTenantId;
         this.clientId = clientId;
         this.clientSecret = clientSecret;
+        this.clientSecretSecretId = clientSecretSecretId;
         this.endpoint = endpoint;
     }
 
@@ -457,6 +593,8 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
      * Azure storage account key. This property is required when 'authenticationType' is set to
      * 'SHARED_KEY'. e.g.:
      * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be
+     * removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
     private final String accountKey;
@@ -465,6 +603,8 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
      * Azure storage account key. This property is required when 'authenticationType' is set to
      * 'SHARED_KEY'. e.g.:
      * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be
+     * removed after February 15 2026.
      *
      * @return the value
      */
@@ -473,10 +613,31 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
     }
 
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the account key is stored. Note: When provided, 'accountKey' field must not be
+     * provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("accountKeySecretId")
+    private final String accountKeySecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the account key is stored. Note: When provided, 'accountKey' field must not be
+     * provided.
+     *
+     * @return the value
+     */
+    public String getAccountKeySecretId() {
+        return accountKeySecretId;
+    }
+
+    /**
      * Credential that uses a shared access signature (SAS) to authenticate to an Azure Service.
      * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
      * e.g.:
      * ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+     * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be
+     * removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sasToken")
     private final String sasToken;
@@ -486,11 +647,32 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
      * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
      * e.g.:
      * ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+     * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be
+     * removed after February 15 2026.
      *
      * @return the value
      */
     public String getSasToken() {
         return sasToken;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
+     * provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sasTokenSecretId")
+    private final String sasTokenSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
+     * provided.
+     *
+     * @return the value
+     */
+    public String getSasTokenSecretId() {
+        return sasTokenSecretId;
     }
 
     /**
@@ -530,7 +712,8 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
     /**
      * Azure client secret (aka application password) for authentication. This property is required
      * when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.:
-     * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+     * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by
+     * "clientSecretSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
     private final String clientSecret;
@@ -538,12 +721,32 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
     /**
      * Azure client secret (aka application password) for authentication. This property is required
      * when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.:
-     * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+     * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by
+     * "clientSecretSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
     public String getClientSecret() {
         return clientSecret;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
+     * be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
+    private final String clientSecretSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
+     * be provided.
+     *
+     * @return the value
+     */
+    public String getClientSecretSecretId() {
+        return clientSecretSecretId;
     }
 
     /** Azure Storage service endpoint. e.g: https://test.blob.core.windows.net */
@@ -578,10 +781,13 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", accountName=").append(String.valueOf(this.accountName));
         sb.append(", accountKey=").append("<redacted>");
+        sb.append(", accountKeySecretId=").append(String.valueOf(this.accountKeySecretId));
         sb.append(", sasToken=").append("<redacted>");
+        sb.append(", sasTokenSecretId=").append(String.valueOf(this.sasTokenSecretId));
         sb.append(", azureTenantId=").append(String.valueOf(this.azureTenantId));
         sb.append(", clientId=").append(String.valueOf(this.clientId));
         sb.append(", clientSecret=").append("<redacted>");
+        sb.append(", clientSecretSecretId=").append(String.valueOf(this.clientSecretSecretId));
         sb.append(", endpoint=").append(String.valueOf(this.endpoint));
         sb.append(")");
         return sb.toString();
@@ -602,10 +808,13 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
                 && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.accountName, other.accountName)
                 && java.util.Objects.equals(this.accountKey, other.accountKey)
+                && java.util.Objects.equals(this.accountKeySecretId, other.accountKeySecretId)
                 && java.util.Objects.equals(this.sasToken, other.sasToken)
+                && java.util.Objects.equals(this.sasTokenSecretId, other.sasTokenSecretId)
                 && java.util.Objects.equals(this.azureTenantId, other.azureTenantId)
                 && java.util.Objects.equals(this.clientId, other.clientId)
                 && java.util.Objects.equals(this.clientSecret, other.clientSecret)
+                && java.util.Objects.equals(this.clientSecretSecretId, other.clientSecretSecretId)
                 && java.util.Objects.equals(this.endpoint, other.endpoint)
                 && super.equals(other);
     }
@@ -624,12 +833,25 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
                                 : this.authenticationType.hashCode());
         result = (result * PRIME) + (this.accountName == null ? 43 : this.accountName.hashCode());
         result = (result * PRIME) + (this.accountKey == null ? 43 : this.accountKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.accountKeySecretId == null
+                                ? 43
+                                : this.accountKeySecretId.hashCode());
         result = (result * PRIME) + (this.sasToken == null ? 43 : this.sasToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sasTokenSecretId == null ? 43 : this.sasTokenSecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.azureTenantId == null ? 43 : this.azureTenantId.hashCode());
         result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
         result = (result * PRIME) + (this.clientSecret == null ? 43 : this.clientSecret.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientSecretSecretId == null
+                                ? 43
+                                : this.clientSecretSecretId.hashCode());
         result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetModuleStreamProfileExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetModuleStreamProfileExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetModuleStreamProfileRequest.
  */
@@ -15,17 +15,23 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class GetModuleStreamProfileRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * software source.
+     */
     private String softwareSourceId;
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
-    /** The name of the profile of the containing module stream. */
+    /** The name of the module stream profile. */
     private String profileName;
 
-    /** The name of the profile of the containing module stream. */
+    /** The name of the module stream profile. */
     public String getProfileName() {
         return profileName;
     }
@@ -63,11 +69,15 @@ public class GetModuleStreamProfileRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The software source OCID. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * software source.
+         */
         private String softwareSourceId = null;
 
         /**
-         * The software source OCID.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * software source.
          *
          * @param softwareSourceId the value to set
          * @return this builder instance
@@ -77,11 +87,11 @@ public class GetModuleStreamProfileRequest
             return this;
         }
 
-        /** The name of the profile of the containing module stream. */
+        /** The name of the module stream profile. */
         private String profileName = null;
 
         /**
-         * The name of the profile of the containing module stream.
+         * The name of the module stream profile.
          *
          * @param profileName the value to set
          * @return this builder instance

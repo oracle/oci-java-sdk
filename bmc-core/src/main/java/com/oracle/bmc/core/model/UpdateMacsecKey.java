@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -43,16 +43,14 @@ public final class UpdateMacsecKey
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Secret
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * containing the Connectivity Association Key Name (CKN) of this MACsec key.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationNameSecretId")
         private String connectivityAssociationNameSecretId;
 
         /**
-         * Secret
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * containing the Connectivity Association Key Name (CKN) of this MACsec key.
          *
          * @param connectivityAssociationNameSecretId the value to set
@@ -82,16 +80,14 @@ public final class UpdateMacsecKey
             return this;
         }
         /**
-         * Secret
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * containing the Connectivity Association Key (CAK) of this MACsec key.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationKeySecretId")
         private String connectivityAssociationKeySecretId;
 
         /**
-         * Secret
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * containing the Connectivity Association Key (CAK) of this MACsec key.
          *
          * @param connectivityAssociationKeySecretId the value to set
@@ -168,14 +164,14 @@ public final class UpdateMacsecKey
     }
 
     /**
-     * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * containing the Connectivity Association Key Name (CKN) of this MACsec key.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationNameSecretId")
     private final String connectivityAssociationNameSecretId;
 
     /**
-     * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * containing the Connectivity Association Key Name (CKN) of this MACsec key.
      *
      * @return the value
@@ -198,14 +194,14 @@ public final class UpdateMacsecKey
     }
 
     /**
-     * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * containing the Connectivity Association Key (CAK) of this MACsec key.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationKeySecretId")
     private final String connectivityAssociationKeySecretId;
 
     /**
-     * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * containing the Connectivity Association Key (CAK) of this MACsec key.
      *
      * @return the value

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -48,7 +48,8 @@ public final class StorageWorkRequest
         "logSets",
         "purpose",
         "query",
-        "isRecallNewDataOnly"
+        "isRecallNewDataOnly",
+        "isUseRecommendedDataSet"
     })
     public StorageWorkRequest(
             String id,
@@ -75,7 +76,8 @@ public final class StorageWorkRequest
             String logSets,
             String purpose,
             String query,
-            Boolean isRecallNewDataOnly) {
+            Boolean isRecallNewDataOnly,
+            Boolean isUseRecommendedDataSet) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -102,6 +104,7 @@ public final class StorageWorkRequest
         this.purpose = purpose;
         this.query = query;
         this.isRecallNewDataOnly = isRecallNewDataOnly;
+        this.isUseRecommendedDataSet = isUseRecommendedDataSet;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -123,14 +126,14 @@ public final class StorageWorkRequest
         }
         /**
          * Compartment Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -485,6 +488,21 @@ public final class StorageWorkRequest
             this.__explicitlySet__.add("isRecallNewDataOnly");
             return this;
         }
+        /** This indicates if user checked system recommended time range */
+        @com.fasterxml.jackson.annotation.JsonProperty("isUseRecommendedDataSet")
+        private Boolean isUseRecommendedDataSet;
+
+        /**
+         * This indicates if user checked system recommended time range
+         *
+         * @param isUseRecommendedDataSet the value to set
+         * @return this builder
+         */
+        public Builder isUseRecommendedDataSet(Boolean isUseRecommendedDataSet) {
+            this.isUseRecommendedDataSet = isUseRecommendedDataSet;
+            this.__explicitlySet__.add("isUseRecommendedDataSet");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -516,7 +534,8 @@ public final class StorageWorkRequest
                             this.logSets,
                             this.purpose,
                             this.query,
-                            this.isRecallNewDataOnly);
+                            this.isRecallNewDataOnly,
+                            this.isUseRecommendedDataSet);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -600,6 +619,9 @@ public final class StorageWorkRequest
             if (model.wasPropertyExplicitlySet("isRecallNewDataOnly")) {
                 this.isRecallNewDataOnly(model.getIsRecallNewDataOnly());
             }
+            if (model.wasPropertyExplicitlySet("isUseRecommendedDataSet")) {
+                this.isUseRecommendedDataSet(model.getIsUseRecommendedDataSet());
+            }
             return this;
         }
     }
@@ -628,14 +650,14 @@ public final class StorageWorkRequest
 
     /**
      * Compartment Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -942,6 +964,19 @@ public final class StorageWorkRequest
         return isRecallNewDataOnly;
     }
 
+    /** This indicates if user checked system recommended time range */
+    @com.fasterxml.jackson.annotation.JsonProperty("isUseRecommendedDataSet")
+    private final Boolean isUseRecommendedDataSet;
+
+    /**
+     * This indicates if user checked system recommended time range
+     *
+     * @return the value
+     */
+    public Boolean getIsUseRecommendedDataSet() {
+        return isUseRecommendedDataSet;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -982,6 +1017,8 @@ public final class StorageWorkRequest
         sb.append(", purpose=").append(String.valueOf(this.purpose));
         sb.append(", query=").append(String.valueOf(this.query));
         sb.append(", isRecallNewDataOnly=").append(String.valueOf(this.isRecallNewDataOnly));
+        sb.append(", isUseRecommendedDataSet=")
+                .append(String.valueOf(this.isUseRecommendedDataSet));
         sb.append(")");
         return sb.toString();
     }
@@ -1022,6 +1059,8 @@ public final class StorageWorkRequest
                 && java.util.Objects.equals(this.purpose, other.purpose)
                 && java.util.Objects.equals(this.query, other.query)
                 && java.util.Objects.equals(this.isRecallNewDataOnly, other.isRecallNewDataOnly)
+                && java.util.Objects.equals(
+                        this.isUseRecommendedDataSet, other.isUseRecommendedDataSet)
                 && super.equals(other);
     }
 
@@ -1082,6 +1121,11 @@ public final class StorageWorkRequest
                         + (this.isRecallNewDataOnly == null
                                 ? 43
                                 : this.isRecallNewDataOnly.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUseRecommendedDataSet == null
+                                ? 43
+                                : this.isUseRecommendedDataSet.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

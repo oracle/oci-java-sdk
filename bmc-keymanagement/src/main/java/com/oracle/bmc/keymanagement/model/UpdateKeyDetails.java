@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
@@ -22,12 +22,22 @@ package com.oracle.bmc.keymanagement.model;
 public final class UpdateKeyDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"definedTags", "displayName", "freeformTags"})
+    @java.beans.ConstructorProperties({
+        "isAutoRotationEnabled",
+        "autoKeyRotationDetails",
+        "definedTags",
+        "displayName",
+        "freeformTags"
+    })
     public UpdateKeyDetails(
+            Boolean isAutoRotationEnabled,
+            AutoKeyRotationDetails autoKeyRotationDetails,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags) {
         super();
+        this.isAutoRotationEnabled = isAutoRotationEnabled;
+        this.autoKeyRotationDetails = autoKeyRotationDetails;
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
@@ -35,10 +45,34 @@ public final class UpdateKeyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /** A parameter specifying whether the auto key rotation is enabled or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotationEnabled")
+        private Boolean isAutoRotationEnabled;
+
+        /**
+         * A parameter specifying whether the auto key rotation is enabled or not.
+         *
+         * @param isAutoRotationEnabled the value to set
+         * @return this builder
+         */
+        public Builder isAutoRotationEnabled(Boolean isAutoRotationEnabled) {
+            this.isAutoRotationEnabled = isAutoRotationEnabled;
+            this.__explicitlySet__.add("isAutoRotationEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autoKeyRotationDetails")
+        private AutoKeyRotationDetails autoKeyRotationDetails;
+
+        public Builder autoKeyRotationDetails(AutoKeyRotationDetails autoKeyRotationDetails) {
+            this.autoKeyRotationDetails = autoKeyRotationDetails;
+            this.__explicitlySet__.add("autoKeyRotationDetails");
+            return this;
+        }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -47,7 +81,7 @@ public final class UpdateKeyDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -81,7 +115,7 @@ public final class UpdateKeyDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -90,7 +124,7 @@ public final class UpdateKeyDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -107,7 +141,12 @@ public final class UpdateKeyDetails
 
         public UpdateKeyDetails build() {
             UpdateKeyDetails model =
-                    new UpdateKeyDetails(this.definedTags, this.displayName, this.freeformTags);
+                    new UpdateKeyDetails(
+                            this.isAutoRotationEnabled,
+                            this.autoKeyRotationDetails,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -116,6 +155,12 @@ public final class UpdateKeyDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateKeyDetails model) {
+            if (model.wasPropertyExplicitlySet("isAutoRotationEnabled")) {
+                this.isAutoRotationEnabled(model.getIsAutoRotationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("autoKeyRotationDetails")) {
+                this.autoKeyRotationDetails(model.getAutoKeyRotationDetails());
+            }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
@@ -138,10 +183,30 @@ public final class UpdateKeyDetails
         return new Builder().copy(this);
     }
 
+    /** A parameter specifying whether the auto key rotation is enabled or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotationEnabled")
+    private final Boolean isAutoRotationEnabled;
+
+    /**
+     * A parameter specifying whether the auto key rotation is enabled or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoRotationEnabled() {
+        return isAutoRotationEnabled;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("autoKeyRotationDetails")
+    private final AutoKeyRotationDetails autoKeyRotationDetails;
+
+    public AutoKeyRotationDetails getAutoKeyRotationDetails() {
+        return autoKeyRotationDetails;
+    }
+
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -150,7 +215,7 @@ public final class UpdateKeyDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -179,7 +244,7 @@ public final class UpdateKeyDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -188,7 +253,7 @@ public final class UpdateKeyDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -212,7 +277,9 @@ public final class UpdateKeyDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateKeyDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("isAutoRotationEnabled=").append(String.valueOf(this.isAutoRotationEnabled));
+        sb.append(", autoKeyRotationDetails=").append(String.valueOf(this.autoKeyRotationDetails));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(")");
@@ -229,7 +296,10 @@ public final class UpdateKeyDetails
         }
 
         UpdateKeyDetails other = (UpdateKeyDetails) o;
-        return java.util.Objects.equals(this.definedTags, other.definedTags)
+        return java.util.Objects.equals(this.isAutoRotationEnabled, other.isAutoRotationEnabled)
+                && java.util.Objects.equals(
+                        this.autoKeyRotationDetails, other.autoKeyRotationDetails)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && super.equals(other);
@@ -239,6 +309,16 @@ public final class UpdateKeyDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isAutoRotationEnabled == null
+                                ? 43
+                                : this.isAutoRotationEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoKeyRotationDetails == null
+                                ? 43
+                                : this.autoKeyRotationDetails.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

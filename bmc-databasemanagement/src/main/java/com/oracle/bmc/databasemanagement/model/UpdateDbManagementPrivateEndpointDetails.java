@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -23,13 +23,25 @@ package com.oracle.bmc.databasemanagement.model;
 public final class UpdateDbManagementPrivateEndpointDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "description", "nsgIds"})
+    @java.beans.ConstructorProperties({
+        "name",
+        "description",
+        "nsgIds",
+        "freeformTags",
+        "definedTags"
+    })
     public UpdateDbManagementPrivateEndpointDetails(
-            String name, String description, java.util.List<String> nsgIds) {
+            String name,
+            String description,
+            java.util.List<String> nsgIds,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.name = name;
         this.description = description;
         this.nsgIds = nsgIds;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -83,6 +95,53 @@ public final class UpdateDbManagementPrivateEndpointDetails
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -90,7 +149,11 @@ public final class UpdateDbManagementPrivateEndpointDetails
         public UpdateDbManagementPrivateEndpointDetails build() {
             UpdateDbManagementPrivateEndpointDetails model =
                     new UpdateDbManagementPrivateEndpointDetails(
-                            this.name, this.description, this.nsgIds);
+                            this.name,
+                            this.description,
+                            this.nsgIds,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -107,6 +170,12 @@ public final class UpdateDbManagementPrivateEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
             }
             return this;
         }
@@ -164,6 +233,48 @@ public final class UpdateDbManagementPrivateEndpointDetails
         return nsgIds;
     }
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -182,6 +293,8 @@ public final class UpdateDbManagementPrivateEndpointDetails
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -200,6 +313,8 @@ public final class UpdateDbManagementPrivateEndpointDetails
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
 
@@ -210,6 +325,8 @@ public final class UpdateDbManagementPrivateEndpointDetails
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

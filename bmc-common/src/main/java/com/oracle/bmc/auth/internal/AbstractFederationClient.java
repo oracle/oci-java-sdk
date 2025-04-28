@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.auth.internal;
@@ -25,7 +25,11 @@ import com.oracle.bmc.http.internal.LogHeadersFilter;
 import com.oracle.bmc.http.signing.DefaultRequestSigner;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.requests.BmcRequest;
+import com.oracle.bmc.retrier.RetryConfiguration;
+import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+import com.oracle.bmc.waiter.FixedTimeDelayStrategy;
 import org.slf4j.Logger;
 
 import java.net.URI;
@@ -48,7 +52,7 @@ public abstract class AbstractFederationClient
 
     protected final SessionKeySupplier sessionKeySupplier;
 
-    private volatile SecurityTokenAdapter securityTokenAdapter = null;
+    protected volatile SecurityTokenAdapter securityTokenAdapter = null;
 
     protected final ClientConfigurator clientConfigurator;
     protected final List<ClientConfigurator> additionalClientConfigurator;
@@ -103,7 +107,43 @@ public abstract class AbstractFederationClient
             ClientConfigurator clientConfigurator,
             CircuitBreakerConfiguration circuitBreakerConfiguration,
             List<ClientConfigurator> additionalCLientConfigurators) {
-        Objects.requireNonNull(resourcePrincipalTokenEndpoint, "resourcePrincipalTokenEndpoint");
+        this(
+                null,
+                resourcePrincipalTokenEndpoint,
+                federationEndpoint,
+                sessionKeySupplier,
+                basicAuthenticationDetailsProvider,
+                clientConfigurator,
+                circuitBreakerConfiguration,
+                new ArrayList<>());
+    }
+
+    /**
+     * Constructor of AbstractFederationClient.
+     *
+     * @param resourcePrincipalTokenUrl the complete url that can provide the resource principal
+     *     token.
+     * @param resourcePrincipalTokenEndpoint the endpoint that can provide the resource principal
+     *     token.
+     * @param federationEndpoint the endpoint that can provide the resource principal session token.
+     * @param sessionKeySupplier the session key supplier.
+     * @param basicAuthenticationDetailsProvider the instance principals authentication details
+     *     provider.
+     * @param clientConfigurator the reset client configurator.
+     */
+    public AbstractFederationClient(
+            String resourcePrincipalTokenUrl,
+            String resourcePrincipalTokenEndpoint,
+            String federationEndpoint,
+            SessionKeySupplier sessionKeySupplier,
+            BasicAuthenticationDetailsProvider basicAuthenticationDetailsProvider,
+            ClientConfigurator clientConfigurator,
+            CircuitBreakerConfiguration circuitBreakerConfiguration,
+            List<ClientConfigurator> additionalCLientConfigurators) {
+        if (null == resourcePrincipalTokenUrl && null == resourcePrincipalTokenEndpoint) {
+            throw new NullPointerException(
+                    "resourcePrincipalTokenUrl and resourcePrincipalTokenEndpoint cannot both be null");
+        }
         Objects.requireNonNull(federationEndpoint, "federationEndpoint");
         this.sessionKeySupplier =
                 Validate.notNull(sessionKeySupplier, "sessionKeySupplier must not be null");
@@ -122,7 +162,9 @@ public abstract class AbstractFederationClient
         this.additionalClientConfigurator =
                 Collections.unmodifiableList(additionalCLientConfigurators);
         this.resourcePrincipalTokenClient =
-                makeClient(resourcePrincipalTokenEndpoint, requestSigner);
+                !StringUtils.isBlank(resourcePrincipalTokenUrl)
+                        ? makeClient(resourcePrincipalTokenUrl, requestSigner)
+                        : makeClient(resourcePrincipalTokenEndpoint, requestSigner);
         this.federationClient = makeClient(federationEndpoint, requestSigner);
         if (federationClient != null) {
             this.circuitBreaker =
@@ -208,7 +250,7 @@ public abstract class AbstractFederationClient
         return refreshAndGetSecurityTokenInner(true, Optional.of(time), true);
     }
 
-    private String refreshAndGetSecurityTokenInner(
+    protected String refreshAndGetSecurityTokenInner(
             final boolean doFinalTokenValidityCheck, Optional<Duration> time, boolean refreshKeys) {
         // Since this client will be used in a multi-threaded environment (from within a service
         // API),
@@ -271,6 +313,12 @@ public abstract class AbstractFederationClient
                         .appendPathPart("resourcePrincipalSessionToken")
                         .circuitBreaker(circuitBreaker)
                         .hasBody()
+                        .retryConfiguration(
+                                RetryConfiguration.builder()
+                                        .terminationStrategy(new MaxAttemptsTerminationStrategy(5))
+                                        .delayStrategy(new FixedTimeDelayStrategy(250))
+                                        .retryCondition(exception -> true)
+                                        .build())
                         .callSync()
                         .token;
 

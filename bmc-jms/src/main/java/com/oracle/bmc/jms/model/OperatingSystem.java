@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -25,6 +25,7 @@ public final class OperatingSystem
     @java.beans.ConstructorProperties({
         "family",
         "name",
+        "distribution",
         "version",
         "architecture",
         "managedInstanceCount"
@@ -32,12 +33,14 @@ public final class OperatingSystem
     public OperatingSystem(
             OsFamily family,
             String name,
+            String distribution,
             String version,
             String architecture,
             Integer managedInstanceCount) {
         super();
         this.family = family;
         this.name = name;
+        this.distribution = distribution;
         this.version = version;
         this.architecture = architecture;
         this.managedInstanceCount = managedInstanceCount;
@@ -45,12 +48,12 @@ public final class OperatingSystem
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The operating system type, such as Windows or Linux */
+        /** The operating system type, such as Windows, Linux or macOS */
         @com.fasterxml.jackson.annotation.JsonProperty("family")
         private OsFamily family;
 
         /**
-         * The operating system type, such as Windows or Linux
+         * The operating system type, such as Windows, Linux or macOS
          *
          * @param family the value to set
          * @return this builder
@@ -73,6 +76,25 @@ public final class OperatingSystem
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
+            return this;
+        }
+        /**
+         * The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or
+         * macOS X.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("distribution")
+        private String distribution;
+
+        /**
+         * The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or
+         * macOS X.
+         *
+         * @param distribution the value to set
+         * @return this builder
+         */
+        public Builder distribution(String distribution) {
+            this.distribution = distribution;
+            this.__explicitlySet__.add("distribution");
             return this;
         }
         /**
@@ -133,6 +155,7 @@ public final class OperatingSystem
                     new OperatingSystem(
                             this.family,
                             this.name,
+                            this.distribution,
                             this.version,
                             this.architecture,
                             this.managedInstanceCount);
@@ -149,6 +172,9 @@ public final class OperatingSystem
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("distribution")) {
+                this.distribution(model.getDistribution());
             }
             if (model.wasPropertyExplicitlySet("version")) {
                 this.version(model.getVersion());
@@ -172,12 +198,12 @@ public final class OperatingSystem
         return new Builder().copy(this);
     }
 
-    /** The operating system type, such as Windows or Linux */
+    /** The operating system type, such as Windows, Linux or macOS */
     @com.fasterxml.jackson.annotation.JsonProperty("family")
     private final OsFamily family;
 
     /**
-     * The operating system type, such as Windows or Linux
+     * The operating system type, such as Windows, Linux or macOS
      *
      * @return the value
      */
@@ -196,6 +222,23 @@ public final class OperatingSystem
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS
+     * X.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("distribution")
+    private final String distribution;
+
+    /**
+     * The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS
+     * X.
+     *
+     * @return the value
+     */
+    public String getDistribution() {
+        return distribution;
     }
 
     /** The version of the operating system as provided by the Java system property os.version. */
@@ -254,6 +297,7 @@ public final class OperatingSystem
         sb.append("super=").append(super.toString());
         sb.append("family=").append(String.valueOf(this.family));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", distribution=").append(String.valueOf(this.distribution));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", architecture=").append(String.valueOf(this.architecture));
         sb.append(", managedInstanceCount=").append(String.valueOf(this.managedInstanceCount));
@@ -273,6 +317,7 @@ public final class OperatingSystem
         OperatingSystem other = (OperatingSystem) o;
         return java.util.Objects.equals(this.family, other.family)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.distribution, other.distribution)
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.architecture, other.architecture)
                 && java.util.Objects.equals(this.managedInstanceCount, other.managedInstanceCount)
@@ -285,6 +330,7 @@ public final class OperatingSystem
         int result = 1;
         result = (result * PRIME) + (this.family == null ? 43 : this.family.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.distribution == null ? 43 : this.distribution.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.architecture == null ? 43 : this.architecture.hashCode());
         result =

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -10,7 +10,7 @@ package com.oracle.bmc.database.model;
  * be plugged into a CDB. To use any of the API operations, you must be authorized in an IAM policy.
  * If you are not authorized, talk to a tenancy administrator. If you are an administrator who needs
  * to write policies to give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
@@ -45,6 +45,8 @@ public final class PluggableDatabaseSummary
         "freeformTags",
         "definedTags",
         "pluggableDatabaseManagementConfig",
+        "kmsKeyId",
+        "kmsKeyVersionId",
         "refreshableCloneConfig",
         "pdbNodeLevelDetails"
     })
@@ -62,6 +64,8 @@ public final class PluggableDatabaseSummary
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig,
+            String kmsKeyId,
+            String kmsKeyVersionId,
             PluggableDatabaseRefreshableCloneConfig refreshableCloneConfig,
             java.util.List<PluggableDatabaseNodeLevelDetails> pdbNodeLevelDetails) {
         super();
@@ -78,6 +82,8 @@ public final class PluggableDatabaseSummary
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.pluggableDatabaseManagementConfig = pluggableDatabaseManagementConfig;
+        this.kmsKeyId = kmsKeyId;
+        this.kmsKeyVersionId = kmsKeyVersionId;
         this.refreshableCloneConfig = refreshableCloneConfig;
         this.pdbNodeLevelDetails = pdbNodeLevelDetails;
     }
@@ -85,14 +91,14 @@ public final class PluggableDatabaseSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * pluggable database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * pluggable database.
          *
          * @param id the value to set
@@ -104,14 +110,14 @@ public final class PluggableDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * CDB.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseId")
         private String containerDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * CDB.
          *
          * @param containerDatabaseId the value to set
@@ -246,14 +252,14 @@ public final class PluggableDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -267,7 +273,7 @@ public final class PluggableDatabaseSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -277,7 +283,7 @@ public final class PluggableDatabaseSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -292,7 +298,7 @@ public final class PluggableDatabaseSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -300,7 +306,7 @@ public final class PluggableDatabaseSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -319,6 +325,50 @@ public final class PluggableDatabaseSummary
                 PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig) {
             this.pluggableDatabaseManagementConfig = pluggableDatabaseManagementConfig;
             this.__explicitlySet__.add("pluggableDatabaseManagementConfig");
+            return this;
+        }
+        /**
+         * The OCID of the key container that is used as the master encryption key in database
+         * transparent data encryption (TDE) operations.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        /**
+         * The OCID of the key container that is used as the master encryption key in database
+         * transparent data encryption (TDE) operations.
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         */
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+        /**
+         * The OCID of the key container version that is used in database transparent data
+         * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * Database Serverless instances.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+        private String kmsKeyVersionId;
+
+        /**
+         * The OCID of the key container version that is used in database transparent data
+         * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * Database Serverless instances.
+         *
+         * @param kmsKeyVersionId the value to set
+         * @return this builder
+         */
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
+            this.__explicitlySet__.add("kmsKeyVersionId");
             return this;
         }
 
@@ -371,6 +421,8 @@ public final class PluggableDatabaseSummary
                             this.freeformTags,
                             this.definedTags,
                             this.pluggableDatabaseManagementConfig,
+                            this.kmsKeyId,
+                            this.kmsKeyVersionId,
                             this.refreshableCloneConfig,
                             this.pdbNodeLevelDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -421,6 +473,12 @@ public final class PluggableDatabaseSummary
                 this.pluggableDatabaseManagementConfig(
                         model.getPluggableDatabaseManagementConfig());
             }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
+                this.kmsKeyVersionId(model.getKmsKeyVersionId());
+            }
             if (model.wasPropertyExplicitlySet("refreshableCloneConfig")) {
                 this.refreshableCloneConfig(model.getRefreshableCloneConfig());
             }
@@ -441,14 +499,14 @@ public final class PluggableDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * pluggable database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * pluggable database.
      *
      * @return the value
@@ -458,15 +516,13 @@ public final class PluggableDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * CDB.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseId")
     private final String containerDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * CDB.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      *
      * @return the value
      */
@@ -695,14 +751,14 @@ public final class PluggableDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -714,7 +770,7 @@ public final class PluggableDatabaseSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -724,7 +780,7 @@ public final class PluggableDatabaseSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -737,7 +793,7 @@ public final class PluggableDatabaseSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -745,7 +801,7 @@ public final class PluggableDatabaseSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -758,6 +814,46 @@ public final class PluggableDatabaseSummary
 
     public PluggableDatabaseManagementConfig getPluggableDatabaseManagementConfig() {
         return pluggableDatabaseManagementConfig;
+    }
+
+    /**
+     * The OCID of the key container that is used as the master encryption key in database
+     * transparent data encryption (TDE) operations.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    private final String kmsKeyId;
+
+    /**
+     * The OCID of the key container that is used as the master encryption key in database
+     * transparent data encryption (TDE) operations.
+     *
+     * @return the value
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption
+     * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
+     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
+     * does not use key versions, hence is not applicable for Autonomous Database Serverless
+     * instances.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+    private final String kmsKeyVersionId;
+
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption
+     * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
+     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
+     * does not use key versions, hence is not applicable for Autonomous Database Serverless
+     * instances.
+     *
+     * @return the value
+     */
+    public String getKmsKeyVersionId() {
+        return kmsKeyVersionId;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("refreshableCloneConfig")
@@ -813,6 +909,8 @@ public final class PluggableDatabaseSummary
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", pluggableDatabaseManagementConfig=")
                 .append(String.valueOf(this.pluggableDatabaseManagementConfig));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", refreshableCloneConfig=").append(String.valueOf(this.refreshableCloneConfig));
         sb.append(", pdbNodeLevelDetails=").append(String.valueOf(this.pdbNodeLevelDetails));
         sb.append(")");
@@ -844,6 +942,8 @@ public final class PluggableDatabaseSummary
                 && java.util.Objects.equals(
                         this.pluggableDatabaseManagementConfig,
                         other.pluggableDatabaseManagementConfig)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
                 && java.util.Objects.equals(
                         this.refreshableCloneConfig, other.refreshableCloneConfig)
                 && java.util.Objects.equals(this.pdbNodeLevelDetails, other.pdbNodeLevelDetails)
@@ -883,6 +983,10 @@ public final class PluggableDatabaseSummary
                         + (this.pluggableDatabaseManagementConfig == null
                                 ? 43
                                 : this.pluggableDatabaseManagementConfig.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.refreshableCloneConfig == null

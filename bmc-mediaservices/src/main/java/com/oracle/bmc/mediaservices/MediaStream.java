@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices;
@@ -14,8 +14,8 @@ import com.oracle.bmc.mediaservices.responses.*;
  *
  * <p>Use the Media Services API to configure media workflows and run Media Flow jobs, create
  * distribution channels, ingest assets, create Preview URLs and play assets. For more information,
- * see [Media Flow](https://docs.cloud.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media
- * Streams](https://docs.cloud.oracle.com/iaas/Content/dms-mediastream/home.htm).
+ * see [Media Flow](https://docs.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media
+ * Streams](https://docs.oracle.com/iaas/Content/dms-mediastream/home.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -73,7 +73,10 @@ public interface MediaStream extends AutoCloseable {
 
     /**
      * Gets the playlist content for the specified Packaging Configuration and Media Asset
-     * combination.
+     * combination. This API call is made using the MediaStreamsClient, which requires the endpoint
+     * to be set with the value of the distribution channel domain name (for example,
+     * https://example_channel.dc.mediaservices.example_region.oci.oraclecloud.com) to generate a
+     * session token or playlist for a media asset registered in this distribution channel.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -82,14 +85,18 @@ public interface MediaStream extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GeneratePlaylistExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GeneratePlaylistExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GeneratePlaylist
      *     API.
      */
     GeneratePlaylistResponse generatePlaylist(GeneratePlaylistRequest request);
 
     /**
-     * Generate a new streaming session token.
+     * Generate a new streaming session token. This API call is made using the MediaStreamsClient,
+     * which requires the endpoint to be set with the value of the distribution channel domain name
+     * (for example, https://example_channel.dc.mediaservices.example_region.oci.oraclecloud.com) to
+     * generate a session token or playlist for a media asset registered in this distribution
+     * channel.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -98,7 +105,7 @@ public interface MediaStream extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GenerateSessionTokenExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GenerateSessionTokenExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GenerateSessionToken API.
      */

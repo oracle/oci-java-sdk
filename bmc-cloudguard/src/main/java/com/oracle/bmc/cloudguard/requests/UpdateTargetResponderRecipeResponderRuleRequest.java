@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.cloudguard.requests;
 import com.oracle.bmc.cloudguard.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateTargetResponderRecipeResponderRuleExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateTargetResponderRecipeResponderRuleExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateTargetResponderRecipeResponderRuleRequest.
  */
@@ -16,32 +16,32 @@ public class UpdateTargetResponderRecipeResponderRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeResponderRuleDetails> {
 
-    /** OCID of target */
+    /** OCID of the target */
     private String targetId;
 
-    /** OCID of target */
+    /** OCID of the target */
     public String getTargetId() {
         return targetId;
     }
-    /** OCID of TargetResponderRecipe */
+    /** OCID of the target responder recipe. */
     private String targetResponderRecipeId;
 
-    /** OCID of TargetResponderRecipe */
+    /** OCID of the target responder recipe. */
     public String getTargetResponderRecipeId() {
         return targetResponderRecipeId;
     }
-    /** The id of ResponderRule */
+    /** Unique identifier of the responder rule. */
     private String responderRuleId;
 
-    /** The id of ResponderRule */
+    /** Unique identifier of the responder rule. */
     public String getResponderRuleId() {
         return responderRuleId;
     }
-    /** The details to be updated for ResponderRule. */
+    /** The details to be updated for the ResponderRule resource. */
     private com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeResponderRuleDetails
             updateTargetResponderRecipeResponderRuleDetails;
 
-    /** The details to be updated for ResponderRule. */
+    /** The details to be updated for the ResponderRule resource. */
     public com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeResponderRuleDetails
             getUpdateTargetResponderRecipeResponderRuleDetails() {
         return updateTargetResponderRecipeResponderRuleDetails;
@@ -91,11 +91,11 @@ public class UpdateTargetResponderRecipeResponderRuleRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of target */
+        /** OCID of the target */
         private String targetId = null;
 
         /**
-         * OCID of target
+         * OCID of the target
          *
          * @param targetId the value to set
          * @return this builder instance
@@ -105,11 +105,11 @@ public class UpdateTargetResponderRecipeResponderRuleRequest
             return this;
         }
 
-        /** OCID of TargetResponderRecipe */
+        /** OCID of the target responder recipe. */
         private String targetResponderRecipeId = null;
 
         /**
-         * OCID of TargetResponderRecipe
+         * OCID of the target responder recipe.
          *
          * @param targetResponderRecipeId the value to set
          * @return this builder instance
@@ -119,11 +119,11 @@ public class UpdateTargetResponderRecipeResponderRuleRequest
             return this;
         }
 
-        /** The id of ResponderRule */
+        /** Unique identifier of the responder rule. */
         private String responderRuleId = null;
 
         /**
-         * The id of ResponderRule
+         * Unique identifier of the responder rule.
          *
          * @param responderRuleId the value to set
          * @return this builder instance
@@ -133,12 +133,12 @@ public class UpdateTargetResponderRecipeResponderRuleRequest
             return this;
         }
 
-        /** The details to be updated for ResponderRule. */
+        /** The details to be updated for the ResponderRule resource. */
         private com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeResponderRuleDetails
                 updateTargetResponderRecipeResponderRuleDetails = null;
 
         /**
-         * The details to be updated for ResponderRule.
+         * The details to be updated for the ResponderRule resource.
          *
          * @param updateTargetResponderRecipeResponderRuleDetails the value to set
          * @return this builder instance

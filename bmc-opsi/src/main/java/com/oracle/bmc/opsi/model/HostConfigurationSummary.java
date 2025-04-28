@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -28,6 +28,9 @@ package com.oracle.bmc.opsi.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PeComanagedHostConfigurationSummary.class,
             name = "PE_COMANAGED_HOST"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MacsManagedCloudDbHostConfigurationSummary.class,
+            name = "MACS_MANAGED_CLOUD_DB_HOST"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = EmManagedExternalHostConfigurationSummary.class,
             name = "EM_MANAGED_EXTERNAL_HOST"),
@@ -104,15 +107,15 @@ public class HostConfigurationSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the host insight resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
+     * insight resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("hostInsightId")
     private final String hostInsightId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the host insight resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
+     * insight resource.
      *
      * @return the value
      */
@@ -121,15 +124,15 @@ public class HostConfigurationSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      *
      * @return the value
      */
@@ -158,7 +161,7 @@ public class HostConfigurationSummary
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
      * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX].
+     * ZLINUX, WINDOWS, AIX, HP-UX].
      */
     public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Linux("LINUX"),
@@ -167,6 +170,7 @@ public class HostConfigurationSummary
         Zlinux("ZLINUX"),
         Windows("WINDOWS"),
         Aix("AIX"),
+        HpUx("HP_UX"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -213,7 +217,7 @@ public class HostConfigurationSummary
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
      * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX].
+     * ZLINUX, WINDOWS, AIX, HP-UX].
      */
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
@@ -222,7 +226,7 @@ public class HostConfigurationSummary
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
      * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX].
+     * ZLINUX, WINDOWS, AIX, HP-UX].
      *
      * @return the value
      */

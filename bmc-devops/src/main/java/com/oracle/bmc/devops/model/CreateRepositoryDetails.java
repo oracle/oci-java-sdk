@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -26,6 +26,7 @@ public final class CreateRepositoryDetails
     @java.beans.ConstructorProperties({
         "name",
         "projectId",
+        "parentRepositoryId",
         "defaultBranch",
         "repositoryType",
         "mirrorRepositoryConfig",
@@ -36,6 +37,7 @@ public final class CreateRepositoryDetails
     public CreateRepositoryDetails(
             String name,
             String projectId,
+            String parentRepositoryId,
             String defaultBranch,
             Repository.RepositoryType repositoryType,
             MirrorRepositoryConfig mirrorRepositoryConfig,
@@ -45,6 +47,7 @@ public final class CreateRepositoryDetails
         super();
         this.name = name;
         this.projectId = projectId;
+        this.parentRepositoryId = parentRepositoryId;
         this.defaultBranch = defaultBranch;
         this.repositoryType = repositoryType;
         this.mirrorRepositoryConfig = mirrorRepositoryConfig;
@@ -55,12 +58,12 @@ public final class CreateRepositoryDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique name of a repository. */
+        /** Name of the repository. Should be unique within the project. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique name of a repository.
+         * Name of the repository. Should be unique within the project.
          *
          * @param name the value to set
          * @return this builder
@@ -85,6 +88,21 @@ public final class CreateRepositoryDetails
             this.__explicitlySet__.add("projectId");
             return this;
         }
+        /** The OCID of the parent repository. */
+        @com.fasterxml.jackson.annotation.JsonProperty("parentRepositoryId")
+        private String parentRepositoryId;
+
+        /**
+         * The OCID of the parent repository.
+         *
+         * @param parentRepositoryId the value to set
+         * @return this builder
+         */
+        public Builder parentRepositoryId(String parentRepositoryId) {
+            this.parentRepositoryId = parentRepositoryId;
+            this.__explicitlySet__.add("parentRepositoryId");
+            return this;
+        }
         /** The default branch of the repository. */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultBranch")
         private String defaultBranch;
@@ -100,12 +118,12 @@ public final class CreateRepositoryDetails
             this.__explicitlySet__.add("defaultBranch");
             return this;
         }
-        /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} */
+        /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED} */
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
         private Repository.RepositoryType repositoryType;
 
         /**
-         * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED}
+         * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED}
          *
          * @param repositoryType the value to set
          * @return this builder
@@ -142,7 +160,7 @@ public final class CreateRepositoryDetails
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"bar-key": "value"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -151,7 +169,7 @@ public final class CreateRepositoryDetails
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. See [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -164,7 +182,7 @@ public final class CreateRepositoryDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -172,7 +190,7 @@ public final class CreateRepositoryDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
@@ -193,6 +211,7 @@ public final class CreateRepositoryDetails
                     new CreateRepositoryDetails(
                             this.name,
                             this.projectId,
+                            this.parentRepositoryId,
                             this.defaultBranch,
                             this.repositoryType,
                             this.mirrorRepositoryConfig,
@@ -212,6 +231,9 @@ public final class CreateRepositoryDetails
             }
             if (model.wasPropertyExplicitlySet("projectId")) {
                 this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("parentRepositoryId")) {
+                this.parentRepositoryId(model.getParentRepositoryId());
             }
             if (model.wasPropertyExplicitlySet("defaultBranch")) {
                 this.defaultBranch(model.getDefaultBranch());
@@ -244,12 +266,12 @@ public final class CreateRepositoryDetails
         return new Builder().copy(this);
     }
 
-    /** Unique name of a repository. */
+    /** Name of the repository. Should be unique within the project. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique name of a repository.
+     * Name of the repository. Should be unique within the project.
      *
      * @return the value
      */
@@ -270,6 +292,19 @@ public final class CreateRepositoryDetails
         return projectId;
     }
 
+    /** The OCID of the parent repository. */
+    @com.fasterxml.jackson.annotation.JsonProperty("parentRepositoryId")
+    private final String parentRepositoryId;
+
+    /**
+     * The OCID of the parent repository.
+     *
+     * @return the value
+     */
+    public String getParentRepositoryId() {
+        return parentRepositoryId;
+    }
+
     /** The default branch of the repository. */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBranch")
     private final String defaultBranch;
@@ -283,12 +318,12 @@ public final class CreateRepositoryDetails
         return defaultBranch;
     }
 
-    /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} */
+    /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED} */
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
     private final Repository.RepositoryType repositoryType;
 
     /**
-     * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED}
+     * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED}
      *
      * @return the value
      */
@@ -319,7 +354,7 @@ public final class CreateRepositoryDetails
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"bar-key": "value"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -328,7 +363,7 @@ public final class CreateRepositoryDetails
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -339,7 +374,7 @@ public final class CreateRepositoryDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -347,7 +382,7 @@ public final class CreateRepositoryDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
@@ -373,6 +408,7 @@ public final class CreateRepositoryDetails
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", projectId=").append(String.valueOf(this.projectId));
+        sb.append(", parentRepositoryId=").append(String.valueOf(this.parentRepositoryId));
         sb.append(", defaultBranch=").append(String.valueOf(this.defaultBranch));
         sb.append(", repositoryType=").append(String.valueOf(this.repositoryType));
         sb.append(", mirrorRepositoryConfig=").append(String.valueOf(this.mirrorRepositoryConfig));
@@ -395,6 +431,7 @@ public final class CreateRepositoryDetails
         CreateRepositoryDetails other = (CreateRepositoryDetails) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.projectId, other.projectId)
+                && java.util.Objects.equals(this.parentRepositoryId, other.parentRepositoryId)
                 && java.util.Objects.equals(this.defaultBranch, other.defaultBranch)
                 && java.util.Objects.equals(this.repositoryType, other.repositoryType)
                 && java.util.Objects.equals(
@@ -411,6 +448,11 @@ public final class CreateRepositoryDetails
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentRepositoryId == null
+                                ? 43
+                                : this.parentRepositoryId.hashCode());
         result =
                 (result * PRIME)
                         + (this.defaultBranch == null ? 43 : this.defaultBranch.hashCode());

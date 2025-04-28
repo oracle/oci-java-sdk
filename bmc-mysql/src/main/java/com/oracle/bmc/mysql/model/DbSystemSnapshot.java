@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -36,6 +36,7 @@ public final class DbSystemSnapshot
         "backupPolicy",
         "configurationId",
         "dataStorageSizeInGBs",
+        "dataStorage",
         "hostnameLabel",
         "ipAddress",
         "port",
@@ -47,7 +48,10 @@ public final class DbSystemSnapshot
         "freeformTags",
         "definedTags",
         "crashRecovery",
-        "databaseManagement"
+        "databaseManagement",
+        "secureConnections",
+        "region",
+        "readEndpoint"
     })
     public DbSystemSnapshot(
             String id,
@@ -63,6 +67,7 @@ public final class DbSystemSnapshot
             BackupPolicy backupPolicy,
             String configurationId,
             Integer dataStorageSizeInGBs,
+            DataStorage dataStorage,
             String hostnameLabel,
             String ipAddress,
             Integer port,
@@ -74,7 +79,10 @@ public final class DbSystemSnapshot
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             CrashRecoveryStatus crashRecovery,
-            DatabaseManagementStatus databaseManagement) {
+            DatabaseManagementStatus databaseManagement,
+            SecureConnectionDetails secureConnections,
+            String region,
+            ReadEndpointDetails readEndpoint) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -89,6 +97,7 @@ public final class DbSystemSnapshot
         this.backupPolicy = backupPolicy;
         this.configurationId = configurationId;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.dataStorage = dataStorage;
         this.hostnameLabel = hostnameLabel;
         this.ipAddress = ipAddress;
         this.port = port;
@@ -101,6 +110,9 @@ public final class DbSystemSnapshot
         this.definedTags = definedTags;
         this.crashRecovery = crashRecovery;
         this.databaseManagement = databaseManagement;
+        this.secureConnections = secureConnections;
+        this.region = region;
+        this.readEndpoint = readEndpoint;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -287,12 +299,16 @@ public final class DbSystemSnapshot
             this.__explicitlySet__.add("configurationId");
             return this;
         }
-        /** Initial size of the data volume in GiBs that will be created and attached. */
+        /**
+         * DEPRECATED: User specified size of the data volume. May be less than current
+         * allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
         private Integer dataStorageSizeInGBs;
 
         /**
-         * Initial size of the data volume in GiBs that will be created and attached.
+         * DEPRECATED: User specified size of the data volume. May be less than current
+         * allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
          *
          * @param dataStorageSizeInGBs the value to set
          * @return this builder
@@ -300,6 +316,15 @@ public final class DbSystemSnapshot
         public Builder dataStorageSizeInGBs(Integer dataStorageSizeInGBs) {
             this.dataStorageSizeInGBs = dataStorageSizeInGBs;
             this.__explicitlySet__.add("dataStorageSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorage")
+        private DataStorage dataStorage;
+
+        public Builder dataStorage(DataStorage dataStorage) {
+            this.dataStorage = dataStorage;
+            this.__explicitlySet__.add("dataStorage");
             return this;
         }
         /**
@@ -502,6 +527,45 @@ public final class DbSystemSnapshot
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+        private SecureConnectionDetails secureConnections;
+
+        public Builder secureConnections(SecureConnectionDetails secureConnections) {
+            this.secureConnections = secureConnections;
+            this.__explicitlySet__.add("secureConnections");
+            return this;
+        }
+        /**
+         * The region identifier of the region where the DB system exists. For more information,
+         * please see [Regions and Availability
+         * Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("region")
+        private String region;
+
+        /**
+         * The region identifier of the region where the DB system exists. For more information,
+         * please see [Regions and Availability
+         * Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+         *
+         * @param region the value to set
+         * @return this builder
+         */
+        public Builder region(String region) {
+            this.region = region;
+            this.__explicitlySet__.add("region");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+        private ReadEndpointDetails readEndpoint;
+
+        public Builder readEndpoint(ReadEndpointDetails readEndpoint) {
+            this.readEndpoint = readEndpoint;
+            this.__explicitlySet__.add("readEndpoint");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -521,6 +585,7 @@ public final class DbSystemSnapshot
                             this.backupPolicy,
                             this.configurationId,
                             this.dataStorageSizeInGBs,
+                            this.dataStorage,
                             this.hostnameLabel,
                             this.ipAddress,
                             this.port,
@@ -532,7 +597,10 @@ public final class DbSystemSnapshot
                             this.freeformTags,
                             this.definedTags,
                             this.crashRecovery,
-                            this.databaseManagement);
+                            this.databaseManagement,
+                            this.secureConnections,
+                            this.region,
+                            this.readEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -580,6 +648,9 @@ public final class DbSystemSnapshot
             if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
                 this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
             }
+            if (model.wasPropertyExplicitlySet("dataStorage")) {
+                this.dataStorage(model.getDataStorage());
+            }
             if (model.wasPropertyExplicitlySet("hostnameLabel")) {
                 this.hostnameLabel(model.getHostnameLabel());
             }
@@ -615,6 +686,15 @@ public final class DbSystemSnapshot
             }
             if (model.wasPropertyExplicitlySet("databaseManagement")) {
                 this.databaseManagement(model.getDatabaseManagement());
+            }
+            if (model.wasPropertyExplicitlySet("secureConnections")) {
+                this.secureConnections(model.getSecureConnections());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("readEndpoint")) {
+                this.readEndpoint(model.getReadEndpoint());
             }
             return this;
         }
@@ -787,17 +867,28 @@ public final class DbSystemSnapshot
         return configurationId;
     }
 
-    /** Initial size of the data volume in GiBs that will be created and attached. */
+    /**
+     * DEPRECATED: User specified size of the data volume. May be less than current
+     * allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     private final Integer dataStorageSizeInGBs;
 
     /**
-     * Initial size of the data volume in GiBs that will be created and attached.
+     * DEPRECATED: User specified size of the data volume. May be less than current
+     * allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      *
      * @return the value
      */
     public Integer getDataStorageSizeInGBs() {
         return dataStorageSizeInGBs;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorage")
+    private final DataStorage dataStorage;
+
+    public DataStorage getDataStorage() {
+        return dataStorage;
     }
 
     /**
@@ -974,6 +1065,39 @@ public final class DbSystemSnapshot
         return databaseManagement;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+    private final SecureConnectionDetails secureConnections;
+
+    public SecureConnectionDetails getSecureConnections() {
+        return secureConnections;
+    }
+
+    /**
+     * The region identifier of the region where the DB system exists. For more information, please
+     * see [Regions and Availability
+     * Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("region")
+    private final String region;
+
+    /**
+     * The region identifier of the region where the DB system exists. For more information, please
+     * see [Regions and Availability
+     * Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     *
+     * @return the value
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+    private final ReadEndpointDetails readEndpoint;
+
+    public ReadEndpointDetails getReadEndpoint() {
+        return readEndpoint;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1002,6 +1126,7 @@ public final class DbSystemSnapshot
         sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
         sb.append(", configurationId=").append(String.valueOf(this.configurationId));
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", dataStorage=").append(String.valueOf(this.dataStorage));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", port=").append(String.valueOf(this.port));
@@ -1014,6 +1139,9 @@ public final class DbSystemSnapshot
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
+        sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
         sb.append(")");
         return sb.toString();
     }
@@ -1041,6 +1169,7 @@ public final class DbSystemSnapshot
                 && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
                 && java.util.Objects.equals(this.configurationId, other.configurationId)
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(this.dataStorage, other.dataStorage)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.port, other.port)
@@ -1053,6 +1182,9 @@ public final class DbSystemSnapshot
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
+                && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
                 && super.equals(other);
     }
 
@@ -1087,6 +1219,7 @@ public final class DbSystemSnapshot
                         + (this.dataStorageSizeInGBs == null
                                 ? 43
                                 : this.dataStorageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.dataStorage == null ? 43 : this.dataStorage.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
@@ -1111,6 +1244,11 @@ public final class DbSystemSnapshot
                         + (this.databaseManagement == null
                                 ? 43
                                 : this.databaseManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result = (result * PRIME) + (this.readEndpoint == null ? 43 : this.readEndpoint.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

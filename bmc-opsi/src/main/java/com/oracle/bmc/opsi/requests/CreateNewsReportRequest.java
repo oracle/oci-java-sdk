@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateNewsReportExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateNewsReportExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateNewsReportRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
@@ -15,10 +15,10 @@ public class CreateNewsReportRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opsi.model.CreateNewsReportDetails> {
 
-    /** Details for the news report that will be created in Operations Insights. */
+    /** Details for the news report that will be created in Ops Insights. */
     private com.oracle.bmc.opsi.model.CreateNewsReportDetails createNewsReportDetails;
 
-    /** Details for the news report that will be created in Operations Insights. */
+    /** Details for the news report that will be created in Ops Insights. */
     public com.oracle.bmc.opsi.model.CreateNewsReportDetails getCreateNewsReportDetails() {
         return createNewsReportDetails;
     }
@@ -72,11 +72,11 @@ public class CreateNewsReportRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the news report that will be created in Operations Insights. */
+        /** Details for the news report that will be created in Ops Insights. */
         private com.oracle.bmc.opsi.model.CreateNewsReportDetails createNewsReportDetails = null;
 
         /**
-         * Details for the news report that will be created in Operations Insights.
+         * Details for the news report that will be created in Ops Insights.
          *
          * @param createNewsReportDetails the value to set
          * @return this builder instance

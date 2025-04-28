@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -25,6 +25,7 @@ public final class AbstractParserTestResultLogEntry
     @Deprecated
     @java.beans.ConstructorProperties({
         "extraInfoAttributes",
+        "fieldMap",
         "fieldNameValueMap",
         "fieldPositionValueMap",
         "fields",
@@ -34,6 +35,7 @@ public final class AbstractParserTestResultLogEntry
     })
     public AbstractParserTestResultLogEntry(
             java.util.Map<String, String> extraInfoAttributes,
+            java.util.Map<String, String> fieldMap,
             java.util.Map<String, String> fieldNameValueMap,
             java.util.Map<String, String> fieldPositionValueMap,
             java.util.Map<String, String> fields,
@@ -42,6 +44,7 @@ public final class AbstractParserTestResultLogEntry
             String matchStatusDescription) {
         super();
         this.extraInfoAttributes = extraInfoAttributes;
+        this.fieldMap = fieldMap;
         this.fieldNameValueMap = fieldNameValueMap;
         this.fieldPositionValueMap = fieldPositionValueMap;
         this.fields = fields;
@@ -65,6 +68,21 @@ public final class AbstractParserTestResultLogEntry
         public Builder extraInfoAttributes(java.util.Map<String, String> extraInfoAttributes) {
             this.extraInfoAttributes = extraInfoAttributes;
             this.__explicitlySet__.add("extraInfoAttributes");
+            return this;
+        }
+        /** The field map. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fieldMap")
+        private java.util.Map<String, String> fieldMap;
+
+        /**
+         * The field map.
+         *
+         * @param fieldMap the value to set
+         * @return this builder
+         */
+        public Builder fieldMap(java.util.Map<String, String> fieldMap) {
+            this.fieldMap = fieldMap;
+            this.__explicitlySet__.add("fieldMap");
             return this;
         }
         /** The field name value map. */
@@ -165,6 +183,7 @@ public final class AbstractParserTestResultLogEntry
             AbstractParserTestResultLogEntry model =
                     new AbstractParserTestResultLogEntry(
                             this.extraInfoAttributes,
+                            this.fieldMap,
                             this.fieldNameValueMap,
                             this.fieldPositionValueMap,
                             this.fields,
@@ -181,6 +200,9 @@ public final class AbstractParserTestResultLogEntry
         public Builder copy(AbstractParserTestResultLogEntry model) {
             if (model.wasPropertyExplicitlySet("extraInfoAttributes")) {
                 this.extraInfoAttributes(model.getExtraInfoAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("fieldMap")) {
+                this.fieldMap(model.getFieldMap());
             }
             if (model.wasPropertyExplicitlySet("fieldNameValueMap")) {
                 this.fieldNameValueMap(model.getFieldNameValueMap());
@@ -224,6 +246,19 @@ public final class AbstractParserTestResultLogEntry
      */
     public java.util.Map<String, String> getExtraInfoAttributes() {
         return extraInfoAttributes;
+    }
+
+    /** The field map. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fieldMap")
+    private final java.util.Map<String, String> fieldMap;
+
+    /**
+     * The field map.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFieldMap() {
+        return fieldMap;
     }
 
     /** The field name value map. */
@@ -320,6 +355,7 @@ public final class AbstractParserTestResultLogEntry
         sb.append("AbstractParserTestResultLogEntry(");
         sb.append("super=").append(super.toString());
         sb.append("extraInfoAttributes=").append(String.valueOf(this.extraInfoAttributes));
+        sb.append(", fieldMap=").append(String.valueOf(this.fieldMap));
         sb.append(", fieldNameValueMap=").append(String.valueOf(this.fieldNameValueMap));
         sb.append(", fieldPositionValueMap=").append(String.valueOf(this.fieldPositionValueMap));
         sb.append(", fields=").append(String.valueOf(this.fields));
@@ -341,6 +377,7 @@ public final class AbstractParserTestResultLogEntry
 
         AbstractParserTestResultLogEntry other = (AbstractParserTestResultLogEntry) o;
         return java.util.Objects.equals(this.extraInfoAttributes, other.extraInfoAttributes)
+                && java.util.Objects.equals(this.fieldMap, other.fieldMap)
                 && java.util.Objects.equals(this.fieldNameValueMap, other.fieldNameValueMap)
                 && java.util.Objects.equals(this.fieldPositionValueMap, other.fieldPositionValueMap)
                 && java.util.Objects.equals(this.fields, other.fields)
@@ -360,6 +397,7 @@ public final class AbstractParserTestResultLogEntry
                         + (this.extraInfoAttributes == null
                                 ? 43
                                 : this.extraInfoAttributes.hashCode());
+        result = (result * PRIME) + (this.fieldMap == null ? 43 : this.fieldMap.hashCode());
         result =
                 (result * PRIME)
                         + (this.fieldNameValueMap == null ? 43 : this.fieldNameValueMap.hashCode());

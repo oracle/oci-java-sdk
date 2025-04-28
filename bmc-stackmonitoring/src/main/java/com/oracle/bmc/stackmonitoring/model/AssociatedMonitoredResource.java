@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -34,6 +34,8 @@ public final class AssociatedMonitoredResource
         "managementAgentId",
         "lifecycleState",
         "license",
+        "sourceType",
+        "resourceCategory",
         "association"
     })
     public AssociatedMonitoredResource(
@@ -47,6 +49,8 @@ public final class AssociatedMonitoredResource
             String managementAgentId,
             ResourceLifecycleState lifecycleState,
             LicenseType license,
+            SourceType sourceType,
+            ResourceCategory resourceCategory,
             Object association) {
         super();
         this.id = id;
@@ -59,6 +63,8 @@ public final class AssociatedMonitoredResource
         this.managementAgentId = managementAgentId;
         this.lifecycleState = lifecycleState;
         this.license = license;
+        this.sourceType = sourceType;
+        this.resourceCategory = resourceCategory;
         this.association = association;
     }
 
@@ -66,14 +72,14 @@ public final class AssociatedMonitoredResource
     public static class Builder {
         /**
          * Monitored resource identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Monitored resource identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder
@@ -130,14 +136,14 @@ public final class AssociatedMonitoredResource
         }
         /**
          * Compartment Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -164,7 +170,7 @@ public final class AssociatedMonitoredResource
         }
         /**
          * External resource is any OCI resource identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) which is
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is
          * not a Stack Monitoring service resource. Currently supports only following resource types
          * - Container database, non-container database, pluggable database and OCI compute
          * instance.
@@ -174,7 +180,7 @@ public final class AssociatedMonitoredResource
 
         /**
          * External resource is any OCI resource identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) which is
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is
          * not a Stack Monitoring service resource. Currently supports only following resource types
          * - Container database, non-container database, pluggable database and OCI compute
          * instance.
@@ -189,14 +195,14 @@ public final class AssociatedMonitoredResource
         }
         /**
          * Management Agent Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
         /**
          * Management Agent Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param managementAgentId the value to set
          * @return this builder
@@ -236,6 +242,40 @@ public final class AssociatedMonitoredResource
             this.__explicitlySet__.add("license");
             return this;
         }
+        /**
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native
+         * resource, etc.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private SourceType sourceType;
+
+        /**
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native
+         * resource, etc.
+         *
+         * @param sourceType the value to set
+         * @return this builder
+         */
+        public Builder sourceType(SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
+        /** Resource Category to indicate the kind of resource type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+        private ResourceCategory resourceCategory;
+
+        /**
+         * Resource Category to indicate the kind of resource type.
+         *
+         * @param resourceCategory the value to set
+         * @return this builder
+         */
+        public Builder resourceCategory(ResourceCategory resourceCategory) {
+            this.resourceCategory = resourceCategory;
+            this.__explicitlySet__.add("resourceCategory");
+            return this;
+        }
         /** Association details of the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("association")
         private Object association;
@@ -268,6 +308,8 @@ public final class AssociatedMonitoredResource
                             this.managementAgentId,
                             this.lifecycleState,
                             this.license,
+                            this.sourceType,
+                            this.resourceCategory,
                             this.association);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -307,6 +349,12 @@ public final class AssociatedMonitoredResource
             if (model.wasPropertyExplicitlySet("license")) {
                 this.license(model.getLicense());
             }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceCategory")) {
+                this.resourceCategory(model.getResourceCategory());
+            }
             if (model.wasPropertyExplicitlySet("association")) {
                 this.association(model.getAssociation());
             }
@@ -325,14 +373,14 @@ public final class AssociatedMonitoredResource
 
     /**
      * Monitored resource identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Monitored resource identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -381,14 +429,14 @@ public final class AssociatedMonitoredResource
 
     /**
      * Compartment Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -411,7 +459,7 @@ public final class AssociatedMonitoredResource
 
     /**
      * External resource is any OCI resource identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) which is not a
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a
      * Stack Monitoring service resource. Currently supports only following resource types -
      * Container database, non-container database, pluggable database and OCI compute instance.
      */
@@ -420,7 +468,7 @@ public final class AssociatedMonitoredResource
 
     /**
      * External resource is any OCI resource identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) which is not a
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a
      * Stack Monitoring service resource. Currently supports only following resource types -
      * Container database, non-container database, pluggable database and OCI compute instance.
      *
@@ -432,14 +480,14 @@ public final class AssociatedMonitoredResource
 
     /**
      * Management Agent Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
      * Management Agent Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -471,6 +519,36 @@ public final class AssociatedMonitoredResource
      */
     public LicenseType getLicense() {
         return license;
+    }
+
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
+     * etc.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final SourceType sourceType;
+
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
+     * etc.
+     *
+     * @return the value
+     */
+    public SourceType getSourceType() {
+        return sourceType;
+    }
+
+    /** Resource Category to indicate the kind of resource type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+    private final ResourceCategory resourceCategory;
+
+    /**
+     * Resource Category to indicate the kind of resource type.
+     *
+     * @return the value
+     */
+    public ResourceCategory getResourceCategory() {
+        return resourceCategory;
     }
 
     /** Association details of the resource. */
@@ -511,6 +589,8 @@ public final class AssociatedMonitoredResource
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", license=").append(String.valueOf(this.license));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", resourceCategory=").append(String.valueOf(this.resourceCategory));
         sb.append(", association=").append(String.valueOf(this.association));
         sb.append(")");
         return sb.toString();
@@ -536,6 +616,8 @@ public final class AssociatedMonitoredResource
                 && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.license, other.license)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.resourceCategory, other.resourceCategory)
                 && java.util.Objects.equals(this.association, other.association)
                 && super.equals(other);
     }
@@ -560,6 +642,10 @@ public final class AssociatedMonitoredResource
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.license == null ? 43 : this.license.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCategory == null ? 43 : this.resourceCategory.hashCode());
         result = (result * PRIME) + (this.association == null ? 43 : this.association.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

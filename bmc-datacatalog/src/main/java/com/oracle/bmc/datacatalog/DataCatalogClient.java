@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog;
@@ -149,6 +149,77 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public AddCatalogLockResponse addCatalogLock(AddCatalogLockRequest request) {
+
+        Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddCatalogLockResponse::builder)
+                .logger(LOG, "addCatalogLock")
+                .serviceDetails(
+                        "DataCatalog",
+                        "AddCatalogLock",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/AddCatalogLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddCatalogLockRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogs")
+                .appendPathParam(request.getCatalogId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.Catalog.class,
+                        AddCatalogLockResponse.Builder::catalog)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddCatalogLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddCatalogLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public AddCatalogPrivateEndpointLockResponse addCatalogPrivateEndpointLock(
+            AddCatalogPrivateEndpointLockRequest request) {
+
+        Validate.notBlank(
+                request.getCatalogPrivateEndpointId(),
+                "catalogPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddCatalogPrivateEndpointLockResponse::builder)
+                .logger(LOG, "addCatalogPrivateEndpointLock")
+                .serviceDetails(
+                        "DataCatalog",
+                        "AddCatalogPrivateEndpointLock",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/AddCatalogPrivateEndpointLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddCatalogPrivateEndpointLockRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogPrivateEndpoints")
+                .appendPathParam(request.getCatalogPrivateEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.CatalogPrivateEndpoint.class,
+                        AddCatalogPrivateEndpointLockResponse.Builder::catalogPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddCatalogPrivateEndpointLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", AddCatalogPrivateEndpointLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public AddDataSelectorPatternsResponse addDataSelectorPatterns(
             AddDataSelectorPatternsRequest request) {
 
@@ -184,6 +255,39 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", AddDataSelectorPatternsResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", AddDataSelectorPatternsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public AddMetastoreLockResponse addMetastoreLock(AddMetastoreLockRequest request) {
+
+        Validate.notBlank(request.getMetastoreId(), "metastoreId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddMetastoreLockResponse::builder)
+                .logger(LOG, "addMetastoreLock")
+                .serviceDetails(
+                        "DataCatalog",
+                        "AddMetastoreLock",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/AddMetastoreLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddMetastoreLockRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("metastores")
+                .appendPathParam(request.getMetastoreId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.Metastore.class,
+                        AddMetastoreLockResponse.Builder::metastore)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddMetastoreLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", AddMetastoreLockResponse.Builder::etag)
                 .callSync();
     }
 
@@ -224,6 +328,51 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", AssociateCustomPropertyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", AssociateCustomPropertyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public AsynchronousExportDataAssetResponse asynchronousExportDataAsset(
+            AsynchronousExportDataAssetRequest request) {
+
+        Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
+
+        Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
+        Objects.requireNonNull(
+                request.getAsynchronousExportDataAssetDetails(),
+                "asynchronousExportDataAssetDetails is required");
+
+        Objects.requireNonNull(request.getExportType(), "exportType is required");
+
+        return clientCall(request, AsynchronousExportDataAssetResponse::builder)
+                .logger(LOG, "asynchronousExportDataAsset")
+                .serviceDetails(
+                        "DataCatalog",
+                        "AsynchronousExportDataAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/AsynchronousExportDataAsset")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AsynchronousExportDataAssetRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogs")
+                .appendPathParam(request.getCatalogId())
+                .appendPathParam("dataAssets")
+                .appendPathParam(request.getDataAssetKey())
+                .appendPathParam("actions")
+                .appendPathParam("asynchronousExport")
+                .appendListQueryParam(
+                        "exportType",
+                        request.getExportType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.AsynchronousExportDataAssetResult.class,
+                        AsynchronousExportDataAssetResponse.Builder
+                                ::asynchronousExportDataAssetResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", AsynchronousExportDataAssetResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -290,6 +439,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getCatalogId())
                 .appendPathParam("actions")
                 .appendPathParam("attachCatalogPrivateEndpoint")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -326,6 +476,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getCatalogId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -362,6 +513,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getCatalogPrivateEndpointId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -397,6 +549,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getMetastoreId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1229,6 +1382,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20190325")
                 .appendPathParam("catalogs")
                 .appendPathParam(request.getCatalogId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1258,6 +1412,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20190325")
                 .appendPathParam("catalogPrivateEndpoints")
                 .appendPathParam(request.getCatalogPrivateEndpointId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1630,6 +1785,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20190325")
                 .appendPathParam("metastores")
                 .appendPathParam(request.getMetastoreId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1788,6 +1944,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getCatalogId())
                 .appendPathParam("actions")
                 .appendPathParam("detachCatalogPrivateEndpoint")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1868,13 +2025,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datacatalog.model.GlossaryTreeElement.class,
                         ExpandTreeForGlossaryResponse.Builder::items)
                 .handleResponseHeaderString("etag", ExpandTreeForGlossaryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ExpandTreeForGlossaryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1945,6 +2102,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.EntityLineage.class,
@@ -1953,7 +2111,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", FetchEntityLineageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", FetchEntityLineageResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1993,13 +2150,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.Attribute.class,
                         GetAttributeResponse.Builder::attribute)
                 .handleResponseHeaderString("etag", GetAttributeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAttributeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2041,13 +2198,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.AttributeTag.class,
                         GetAttributeTagResponse.Builder::attributeTag)
                 .handleResponseHeaderString("etag", GetAttributeTagResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAttributeTagResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2069,13 +2226,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getCatalogId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.Catalog.class,
                         GetCatalogResponse.Builder::catalog)
                 .handleResponseHeaderString("etag", GetCatalogResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCatalogResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2100,13 +2257,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getCatalogPrivateEndpointId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.CatalogPrivateEndpoint.class,
                         GetCatalogPrivateEndpointResponse.Builder::catalogPrivateEndpoint)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCatalogPrivateEndpointResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetCatalogPrivateEndpointResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2140,13 +2297,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.Connection.class,
                         GetConnectionResponse.Builder::connection)
                 .handleResponseHeaderString("etag", GetConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2180,13 +2337,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.CustomProperty.class,
                         GetCustomPropertyResponse.Builder::customProperty)
                 .handleResponseHeaderString("etag", GetCustomPropertyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCustomPropertyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2216,13 +2373,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.DataAsset.class,
                         GetDataAssetResponse.Builder::dataAsset)
                 .handleResponseHeaderString("etag", GetDataAssetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDataAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2256,13 +2413,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.DataAssetTag.class,
                         GetDataAssetTagResponse.Builder::dataAssetTag)
                 .handleResponseHeaderString("etag", GetDataAssetTagResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDataAssetTagResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2298,13 +2455,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.Entity.class,
                         GetEntityResponse.Builder::entity)
                 .handleResponseHeaderString("etag", GetEntityResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetEntityResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2342,13 +2499,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.EntityTag.class,
                         GetEntityTagResponse.Builder::entityTag)
                 .handleResponseHeaderString("etag", GetEntityTagResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetEntityTagResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2384,13 +2541,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.Folder.class,
                         GetFolderResponse.Builder::folder)
                 .handleResponseHeaderString("etag", GetFolderResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFolderResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2428,13 +2585,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.FolderTag.class,
                         GetFolderTagResponse.Builder::folderTag)
                 .handleResponseHeaderString("etag", GetFolderTagResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFolderTagResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2464,13 +2621,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.Glossary.class,
                         GetGlossaryResponse.Builder::glossary)
                 .handleResponseHeaderString("etag", GetGlossaryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetGlossaryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2500,10 +2657,10 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.datacatalog.model.Job.class, GetJobResponse.Builder::job)
                 .handleResponseHeaderString("etag", GetJobResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2533,13 +2690,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.JobDefinition.class,
                         GetJobDefinitionResponse.Builder::jobDefinition)
                 .handleResponseHeaderString("etag", GetJobDefinitionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJobDefinitionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2573,13 +2730,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.JobExecution.class,
                         GetJobExecutionResponse.Builder::jobExecution)
                 .handleResponseHeaderString("etag", GetJobExecutionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJobExecutionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2617,13 +2774,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.JobLog.class,
                         GetJobLogResponse.Builder::jobLog)
                 .handleResponseHeaderString("etag", GetJobLogResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJobLogResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2661,13 +2818,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.JobMetric.class,
                         GetJobMetricsResponse.Builder::jobMetric)
                 .handleResponseHeaderString("etag", GetJobMetricsResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJobMetricsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2689,13 +2846,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getMetastoreId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.Metastore.class,
                         GetMetastoreResponse.Builder::metastore)
                 .handleResponseHeaderString("etag", GetMetastoreResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMetastoreResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2725,13 +2882,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.Namespace.class,
                         GetNamespaceResponse.Builder::namespace)
                 .handleResponseHeaderString("etag", GetNamespaceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetNamespaceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2761,13 +2918,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.Pattern.class,
                         GetPatternResponse.Builder::pattern)
                 .handleResponseHeaderString("etag", GetPatternResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPatternResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2801,11 +2958,11 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.Term.class, GetTermResponse.Builder::term)
                 .handleResponseHeaderString("etag", GetTermResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetTermResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2844,13 +3001,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.TermRelationship.class,
                         GetTermRelationshipResponse.Builder::termRelationship)
                 .handleResponseHeaderString("etag", GetTermRelationshipResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTermRelationshipResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2880,11 +3037,11 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.Type.class, GetTypeResponse.Builder::type)
                 .handleResponseHeaderString("etag", GetTypeResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetTypeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2906,6 +3063,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -2914,7 +3072,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3035,6 +3192,43 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ImportLineageResponse importLineage(ImportLineageRequest request) {
+
+        Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
+
+        Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
+        Objects.requireNonNull(
+                request.getImportLineageDetails(), "importLineageDetails is required");
+
+        return clientCall(request, ImportLineageResponse::builder)
+                .logger(LOG, "importLineage")
+                .serviceDetails(
+                        "DataCatalog",
+                        "ImportLineage",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ImportLineage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportLineageRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogs")
+                .appendPathParam(request.getCatalogId())
+                .appendPathParam("dataAssets")
+                .appendPathParam(request.getDataAssetKey())
+                .appendPathParam("actions")
+                .appendPathParam("importLineage")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.ImportLineageJobResult.class,
+                        ImportLineageResponse.Builder::importLineageJobResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportLineageResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ListAggregatedPhysicalEntitiesResponse listAggregatedPhysicalEntities(
             ListAggregatedPhysicalEntitiesRequest request) {
 
@@ -3073,13 +3267,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("isIncludeProperties", request.getIsIncludeProperties())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.EntityCollection.class,
                         ListAggregatedPhysicalEntitiesResponse.Builder::entityCollection)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListAggregatedPhysicalEntitiesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3128,6 +3322,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.AttributeTagCollection.class,
                         ListAttributeTagsResponse.Builder::attributeTagCollection)
@@ -3135,7 +3330,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListAttributeTagsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAttributeTagsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3193,6 +3387,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.AttributeCollection.class,
                         ListAttributesResponse.Builder::attributeCollection)
@@ -3200,7 +3395,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListAttributesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAttributesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3228,6 +3422,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary.class,
                         ListCatalogPrivateEndpointsResponse.Builder::items)
@@ -3235,7 +3430,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListCatalogPrivateEndpointsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListCatalogPrivateEndpointsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3262,6 +3456,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datacatalog.model.CatalogSummary.class,
                         ListCatalogsResponse.Builder::items)
@@ -3269,7 +3464,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListCatalogsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListCatalogsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3314,6 +3508,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.ConnectionCollection.class,
                         ListConnectionsResponse.Builder::connectionCollection)
@@ -3321,7 +3516,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListConnectionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListConnectionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3371,6 +3565,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.CustomPropertyCollection.class,
                         ListCustomPropertiesResponse.Builder::customPropertyCollection)
@@ -3378,7 +3573,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListCustomPropertiesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListCustomPropertiesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3419,6 +3613,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.DataAssetTagCollection.class,
                         ListDataAssetTagsResponse.Builder::dataAssetTagCollection)
@@ -3426,7 +3621,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListDataAssetTagsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDataAssetTagsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3466,6 +3660,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.DataAssetCollection.class,
                         ListDataAssetsResponse.Builder::dataAssetCollection)
@@ -3473,7 +3668,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListDataAssetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDataAssetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3509,12 +3703,12 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.EntityCollection.class,
                         ListDerivedLogicalEntitiesResponse.Builder::entityCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListDerivedLogicalEntitiesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3568,8 +3762,10 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("isProcess", request.getIsProcess())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.EntityCollection.class,
                         ListEntitiesResponse.Builder::entityCollection)
@@ -3577,7 +3773,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListEntitiesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListEntitiesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3622,6 +3817,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.EntityTagCollection.class,
                         ListEntityTagsResponse.Builder::entityTagCollection)
@@ -3629,7 +3825,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListEntityTagsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListEntityTagsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3674,6 +3869,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.FolderTagCollection.class,
                         ListFolderTagsResponse.Builder::folderTagCollection)
@@ -3681,7 +3877,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListFolderTagsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFolderTagsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3732,6 +3927,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.FolderCollection.class,
                         ListFoldersResponse.Builder::folderCollection)
@@ -3739,7 +3935,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListFoldersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFoldersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3777,6 +3972,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.GlossaryCollection.class,
                         ListGlossariesResponse.Builder::glossaryCollection)
@@ -3784,7 +3980,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListGlossariesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListGlossariesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3829,6 +4024,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.JobDefinitionCollection.class,
                         ListJobDefinitionsResponse.Builder::jobDefinitionCollection)
@@ -3836,7 +4032,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListJobDefinitionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListJobDefinitionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3887,6 +4082,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.JobExecutionCollection.class,
                         ListJobExecutionsResponse.Builder::jobExecutionCollection)
@@ -3894,7 +4090,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListJobExecutionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListJobExecutionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3939,6 +4134,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.JobLogCollection.class,
                         ListJobLogsResponse.Builder::jobLogCollection)
@@ -3946,7 +4142,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListJobLogsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListJobLogsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3997,6 +4192,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.JobMetricCollection.class,
                         ListJobMetricsResponse.Builder::jobMetricCollection)
@@ -4004,7 +4200,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListJobMetricsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListJobMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4053,13 +4248,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.JobCollection.class,
                         ListJobsResponse.Builder::jobCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListJobsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListJobsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4086,6 +4281,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datacatalog.model.MetastoreSummary.class,
                         ListMetastoresResponse.Builder::items)
@@ -4093,7 +4289,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListMetastoresResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMetastoresResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4131,6 +4326,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.NamespaceCollection.class,
                         ListNamespacesResponse.Builder::namespaceCollection)
@@ -4138,7 +4334,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListNamespacesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListNamespacesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4176,6 +4371,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.PatternCollection.class,
                         ListPatternsResponse.Builder::patternCollection)
@@ -4183,7 +4379,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListPatternsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPatternsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4232,13 +4427,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.RuleCollection.class,
                         ListRulesResponse.Builder::ruleCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListRulesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListRulesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4272,13 +4467,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.TermCollection.class,
                         ListTagsResponse.Builder::termCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListTagsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListTagsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4321,6 +4516,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.TermRelationshipCollection.class,
                         ListTermRelationshipsResponse.Builder::termRelationshipCollection)
@@ -4328,7 +4524,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListTermRelationshipsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTermRelationshipsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4371,13 +4566,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.TermCollection.class,
                         ListTermsResponse.Builder::termCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListTermsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListTermsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4415,13 +4610,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.TypeCollection.class,
                         ListTypesResponse.Builder::typeCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListTypesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListTypesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4449,6 +4644,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datacatalog.model.WorkRequestError.class,
                         ListWorkRequestErrorsResponse.Builder::items)
@@ -4456,7 +4652,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4483,6 +4678,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datacatalog.model.WorkRequestLog.class,
                         ListWorkRequestLogsResponse.Builder::items)
@@ -4490,7 +4686,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4513,6 +4708,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datacatalog.model.WorkRequest.class,
                         ListWorkRequestsResponse.Builder::items)
@@ -4520,7 +4716,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4548,12 +4743,12 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(String.class, ObjectStatsResponse.Builder::value)
                 .handleResponseHeaderString(
                         "opc-request-id", ObjectStatsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ObjectStatsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4671,6 +4866,77 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public RemoveCatalogLockResponse removeCatalogLock(RemoveCatalogLockRequest request) {
+
+        Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveCatalogLockResponse::builder)
+                .logger(LOG, "removeCatalogLock")
+                .serviceDetails(
+                        "DataCatalog",
+                        "RemoveCatalogLock",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/RemoveCatalogLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveCatalogLockRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogs")
+                .appendPathParam(request.getCatalogId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.Catalog.class,
+                        RemoveCatalogLockResponse.Builder::catalog)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveCatalogLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveCatalogLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public RemoveCatalogPrivateEndpointLockResponse removeCatalogPrivateEndpointLock(
+            RemoveCatalogPrivateEndpointLockRequest request) {
+
+        Validate.notBlank(
+                request.getCatalogPrivateEndpointId(),
+                "catalogPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveCatalogPrivateEndpointLockResponse::builder)
+                .logger(LOG, "removeCatalogPrivateEndpointLock")
+                .serviceDetails(
+                        "DataCatalog",
+                        "RemoveCatalogPrivateEndpointLock",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/RemoveCatalogPrivateEndpointLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveCatalogPrivateEndpointLockRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogPrivateEndpoints")
+                .appendPathParam(request.getCatalogPrivateEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.CatalogPrivateEndpoint.class,
+                        RemoveCatalogPrivateEndpointLockResponse.Builder::catalogPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveCatalogPrivateEndpointLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", RemoveCatalogPrivateEndpointLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public RemoveDataSelectorPatternsResponse removeDataSelectorPatterns(
             RemoveDataSelectorPatternsRequest request) {
 
@@ -4711,6 +4977,39 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public RemoveMetastoreLockResponse removeMetastoreLock(RemoveMetastoreLockRequest request) {
+
+        Validate.notBlank(request.getMetastoreId(), "metastoreId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveMetastoreLockResponse::builder)
+                .logger(LOG, "removeMetastoreLock")
+                .serviceDetails(
+                        "DataCatalog",
+                        "RemoveMetastoreLock",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/RemoveMetastoreLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveMetastoreLockRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("metastores")
+                .appendPathParam(request.getMetastoreId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.Metastore.class,
+                        RemoveMetastoreLockResponse.Builder::metastore)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveMetastoreLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RemoveMetastoreLockResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public SearchCriteriaResponse searchCriteria(SearchCriteriaRequest request) {
 
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
@@ -4737,6 +5036,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.SearchResultCollection.class,
@@ -4745,7 +5045,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", SearchCriteriaResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SearchCriteriaResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4773,12 +5072,12 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.SuggestResults.class,
                         SuggestMatchesResponse.Builder::suggestResults)
                 .handleResponseHeaderString(
                         "opc-request-id", SuggestMatchesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4855,13 +5154,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.ValidateConnectionResult.class,
                         TestConnectionResponse.Builder::validateConnectionResult)
                 .handleResponseHeaderString("etag", TestConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", TestConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4926,6 +5225,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20190325")
                 .appendPathParam("catalogs")
                 .appendPathParam(request.getCatalogId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -4961,6 +5261,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20190325")
                 .appendPathParam("catalogPrivateEndpoints")
                 .appendPathParam(request.getCatalogPrivateEndpointId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -5285,6 +5586,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20190325")
                 .appendPathParam("metastores")
                 .appendPathParam(request.getMetastoreId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -5518,10 +5820,10 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(String.class, UsersResponse.Builder::value)
                 .handleResponseHeaderString("opc-request-id", UsersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", UsersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5552,6 +5854,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.ValidateConnectionResult.class,
@@ -5559,7 +5862,6 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", ValidateConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ValidateConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5590,13 +5892,13 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datacatalog.model.ValidatePatternResult.class,
                         ValidatePatternResponse.Builder::validatePatternResult)
                 .handleResponseHeaderString(
                         "opc-request-id", ValidatePatternResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -201,6 +201,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AddmTasksCollection.class,
                         AddmTasksResponse.Builder::addmTasksCollection)
@@ -449,6 +450,44 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeNamedCredentialCompartmentResponse>
+            changeNamedCredentialCompartment(
+                    ChangeNamedCredentialCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeNamedCredentialCompartmentRequest,
+                                    ChangeNamedCredentialCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeNamedCredentialCompartmentDetails(),
+                "changeNamedCredentialCompartmentDetails is required");
+
+        return clientCall(request, ChangeNamedCredentialCompartmentResponse::builder)
+                .logger(LOG, "changeNamedCredentialCompartment")
+                .serviceDetails(
+                        "DbManagement",
+                        "ChangeNamedCredentialCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/ChangeNamedCredentialCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeNamedCredentialCompartmentRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeNamedCredentialCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangePlanRetentionResponse> changePlanRetention(
             ChangePlanRetentionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -636,6 +675,49 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CheckExternalExadataStorageConnectorResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckExternalMySqlDatabaseConnectorConnectionStatusResponse>
+            checkExternalMySqlDatabaseConnectorConnectionStatus(
+                    CheckExternalMySqlDatabaseConnectorConnectionStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CheckExternalMySqlDatabaseConnectorConnectionStatusRequest,
+                                    CheckExternalMySqlDatabaseConnectorConnectionStatusResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseConnectorId(),
+                "externalMySqlDatabaseConnectorId must not be blank");
+
+        return clientCall(
+                        request,
+                        CheckExternalMySqlDatabaseConnectorConnectionStatusResponse::builder)
+                .logger(LOG, "checkExternalMySqlDatabaseConnectorConnectionStatus")
+                .serviceDetails(
+                        "DbManagement",
+                        "CheckExternalMySqlDatabaseConnectorConnectionStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/CheckExternalMySqlDatabaseConnectorConnectionStatus")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CheckExternalMySqlDatabaseConnectorConnectionStatusRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendPathParam(request.getExternalMySqlDatabaseConnectorId())
+                .appendPathParam("actions")
+                .appendPathParam("checkConnectionStatus")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CheckExternalMySqlDatabaseConnectorConnectionStatusResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CheckExternalMySqlDatabaseConnectorConnectionStatusResponse.Builder
+                                ::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -956,6 +1038,95 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateExternalMySqlDatabaseResponse>
+            createExternalMySqlDatabase(
+                    CreateExternalMySqlDatabaseRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalMySqlDatabaseRequest,
+                                    CreateExternalMySqlDatabaseResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getCreateExternalMySqlDatabaseDetails(),
+                "createExternalMySqlDatabaseDetails is required");
+
+        return clientCall(request, CreateExternalMySqlDatabaseResponse::builder)
+                .logger(LOG, "createExternalMySqlDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateExternalMySqlDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/CreateExternalMySqlDatabase")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExternalMySqlDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabase.class,
+                        CreateExternalMySqlDatabaseResponse.Builder::externalMySqlDatabase)
+                .handleResponseHeaderString(
+                        "etag", CreateExternalMySqlDatabaseResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateExternalMySqlDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateExternalMySqlDatabaseResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateExternalMySqlDatabaseResponse.Builder::contentLocation)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExternalMySqlDatabaseConnectorResponse>
+            createExternalMySqlDatabaseConnector(
+                    CreateExternalMySqlDatabaseConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalMySqlDatabaseConnectorRequest,
+                                    CreateExternalMySqlDatabaseConnectorResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getCreateExternalMySqlDatabaseConnectorDetails(),
+                "createExternalMySqlDatabaseConnectorDetails is required");
+
+        Objects.requireNonNull(
+                request.getIsTestConnectionParam(), "isTestConnectionParam is required");
+
+        return clientCall(request, CreateExternalMySqlDatabaseConnectorResponse::builder)
+                .logger(LOG, "createExternalMySqlDatabaseConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateExternalMySqlDatabaseConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/CreateExternalMySqlDatabaseConnector")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExternalMySqlDatabaseConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendQueryParam("isTestConnectionParam", request.getIsTestConnectionParam())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseConnector
+                                .class,
+                        CreateExternalMySqlDatabaseConnectorResponse.Builder
+                                ::externalMySqlDatabaseConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateExternalMySqlDatabaseConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateExternalMySqlDatabaseConnectorResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateExternalMySqlDatabaseConnectorResponse.Builder::contentLocation)
+                .handleResponseHeaderString(
+                        "etag", CreateExternalMySqlDatabaseConnectorResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateJobResponse> createJob(
             CreateJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse>
@@ -1021,6 +1192,41 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-request-id", CreateManagedDatabaseGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateManagedDatabaseGroupResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNamedCredentialResponse> createNamedCredential(
+            CreateNamedCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateNamedCredentialRequest, CreateNamedCredentialResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateNamedCredentialDetails(),
+                "createNamedCredentialDetails is required");
+
+        return clientCall(request, CreateNamedCredentialResponse::builder)
+                .logger(LOG, "createNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/CreateNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.NamedCredential.class,
+                        CreateNamedCredentialResponse.Builder::namedCredential)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateNamedCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateNamedCredentialResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CreateNamedCredentialResponse.Builder::location)
                 .callAsync(handler);
     }
 
@@ -1262,6 +1468,76 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteExternalMySqlDatabaseResponse>
+            deleteExternalMySqlDatabase(
+                    DeleteExternalMySqlDatabaseRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalMySqlDatabaseRequest,
+                                    DeleteExternalMySqlDatabaseResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+
+        return clientCall(request, DeleteExternalMySqlDatabaseResponse::builder)
+                .logger(LOG, "deleteExternalMySqlDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteExternalMySqlDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DeleteExternalMySqlDatabase")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExternalMySqlDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteExternalMySqlDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExternalMySqlDatabaseResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExternalMySqlDatabaseConnectorResponse>
+            deleteExternalMySqlDatabaseConnector(
+                    DeleteExternalMySqlDatabaseConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalMySqlDatabaseConnectorRequest,
+                                    DeleteExternalMySqlDatabaseConnectorResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseConnectorId(),
+                "externalMySqlDatabaseConnectorId must not be blank");
+
+        return clientCall(request, DeleteExternalMySqlDatabaseConnectorResponse::builder)
+                .logger(LOG, "deleteExternalMySqlDatabaseConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteExternalMySqlDatabaseConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/DeleteExternalMySqlDatabaseConnector")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExternalMySqlDatabaseConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendPathParam(request.getExternalMySqlDatabaseConnectorId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExternalMySqlDatabaseConnectorResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteExternalMySqlDatabaseConnectorResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteJobResponse> deleteJob(
             DeleteJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse>
@@ -1316,6 +1592,34 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteManagedDatabaseGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNamedCredentialResponse> deleteNamedCredential(
+            DeleteNamedCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteNamedCredentialRequest, DeleteNamedCredentialResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+
+        return clientCall(request, DeleteNamedCredentialResponse::builder)
+                .logger(LOG, "deleteNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/DeleteNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNamedCredentialResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1421,6 +1725,136 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DisableAutomaticSpmEvolveAdvisorTaskResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableAutonomousDatabaseManagementFeatureResponse>
+            disableAutonomousDatabaseManagementFeature(
+                    DisableAutonomousDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableAutonomousDatabaseManagementFeatureRequest,
+                                    DisableAutonomousDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableAutonomousDatabaseManagementFeatureDetails(),
+                "disableAutonomousDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, DisableAutonomousDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "disableAutonomousDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableAutonomousDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableAutonomousDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableAutonomousDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableAutonomousDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableAutonomousDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableDatabaseManagementFeatureResponse>
+            disableDatabaseManagementFeature(
+                    DisableDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableDatabaseManagementFeatureRequest,
+                                    DisableDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableDatabaseManagementFeatureDetails(),
+                "disableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, DisableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "disableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableExternalContainerDatabaseManagementFeatureResponse>
+            disableExternalContainerDatabaseManagementFeature(
+                    DisableExternalContainerDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalContainerDatabaseManagementFeatureRequest,
+                                    DisableExternalContainerDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalContainerDatabaseId(),
+                "externalContainerDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableExternalContainerDatabaseManagementFeatureDetails(),
+                "disableExternalContainerDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request, DisableExternalContainerDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "disableExternalContainerDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableExternalContainerDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableExternalContainerDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableExternalContainerDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalcontainerdatabases")
+                .appendPathParam(request.getExternalContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableExternalContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1540,6 +1974,138 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<DisableExternalMySqlDatabaseManagementResponse>
+            disableExternalMySqlDatabaseManagement(
+                    DisableExternalMySqlDatabaseManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalMySqlDatabaseManagementRequest,
+                                    DisableExternalMySqlDatabaseManagementResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+
+        return clientCall(request, DisableExternalMySqlDatabaseManagementResponse::builder)
+                .logger(LOG, "disableExternalMySqlDatabaseManagement")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableExternalMySqlDatabaseManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DisableExternalMySqlDatabaseManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableExternalMySqlDatabaseManagementRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableExternalMySqlDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalMySqlDatabaseManagementResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableExternalNonContainerDatabaseManagementFeatureResponse>
+            disableExternalNonContainerDatabaseManagementFeature(
+                    DisableExternalNonContainerDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalNonContainerDatabaseManagementFeatureRequest,
+                                    DisableExternalNonContainerDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalNonContainerDatabaseId(),
+                "externalNonContainerDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableExternalNonContainerDatabaseManagementFeatureDetails(),
+                "disableExternalNonContainerDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request,
+                        DisableExternalNonContainerDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "disableExternalNonContainerDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableExternalNonContainerDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableExternalNonContainerDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(
+                        DisableExternalNonContainerDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalnoncontainerdatabases")
+                .appendPathParam(request.getExternalNonContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalNonContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableExternalNonContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableExternalPluggableDatabaseManagementFeatureResponse>
+            disableExternalPluggableDatabaseManagementFeature(
+                    DisableExternalPluggableDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalPluggableDatabaseManagementFeatureRequest,
+                                    DisableExternalPluggableDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalPluggableDatabaseId(),
+                "externalPluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableExternalPluggableDatabaseManagementFeatureDetails(),
+                "disableExternalPluggableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request, DisableExternalPluggableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "disableExternalPluggableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableExternalPluggableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableExternalPluggableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableExternalPluggableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalpluggabledatabases")
+                .appendPathParam(request.getExternalPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalPluggableDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableExternalPluggableDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
             disableHighFrequencyAutomaticSpmEvolveAdvisorTask(
                     DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request,
@@ -1575,6 +2141,48 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-request-id",
                         DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse.Builder
                                 ::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisablePluggableDatabaseManagementFeatureResponse>
+            disablePluggableDatabaseManagementFeature(
+                    DisablePluggableDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisablePluggableDatabaseManagementFeatureRequest,
+                                    DisablePluggableDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisablePluggableDatabaseManagementFeatureDetails(),
+                "disablePluggableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, DisablePluggableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "disablePluggableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisablePluggableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisablePluggableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisablePluggableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("pluggabledatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisablePluggableDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisablePluggableDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1806,6 +2414,135 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<EnableAutonomousDatabaseManagementFeatureResponse>
+            enableAutonomousDatabaseManagementFeature(
+                    EnableAutonomousDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableAutonomousDatabaseManagementFeatureRequest,
+                                    EnableAutonomousDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableAutonomousDatabaseManagementFeatureDetails(),
+                "enableAutonomousDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, EnableAutonomousDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "enableAutonomousDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableAutonomousDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableAutonomousDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableAutonomousDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableAutonomousDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableAutonomousDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableDatabaseManagementFeatureResponse>
+            enableDatabaseManagementFeature(
+                    EnableDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableDatabaseManagementFeatureRequest,
+                                    EnableDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableDatabaseManagementFeatureDetails(),
+                "enableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, EnableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "enableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableExternalContainerDatabaseManagementFeatureResponse>
+            enableExternalContainerDatabaseManagementFeature(
+                    EnableExternalContainerDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalContainerDatabaseManagementFeatureRequest,
+                                    EnableExternalContainerDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalContainerDatabaseId(),
+                "externalContainerDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalContainerDatabaseManagementFeatureDetails(),
+                "enableExternalContainerDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request, EnableExternalContainerDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "enableExternalContainerDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableExternalContainerDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableExternalContainerDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalContainerDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalcontainerdatabases")
+                .appendPathParam(request.getExternalContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableExternalContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<EnableExternalDbSystemDatabaseManagementResponse>
             enableExternalDbSystemDatabaseManagement(
                     EnableExternalDbSystemDatabaseManagementRequest request,
@@ -1932,6 +2669,141 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<EnableExternalMySqlDatabaseManagementResponse>
+            enableExternalMySqlDatabaseManagement(
+                    EnableExternalMySqlDatabaseManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalMySqlDatabaseManagementRequest,
+                                    EnableExternalMySqlDatabaseManagementResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalDatabaseManagementDetails(),
+                "enableExternalDatabaseManagementDetails is required");
+
+        return clientCall(request, EnableExternalMySqlDatabaseManagementResponse::builder)
+                .logger(LOG, "enableExternalMySqlDatabaseManagement")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableExternalMySqlDatabaseManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/EnableExternalMySqlDatabaseManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalMySqlDatabaseManagementRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableExternalMySqlDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalMySqlDatabaseManagementResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableExternalNonContainerDatabaseManagementFeatureResponse>
+            enableExternalNonContainerDatabaseManagementFeature(
+                    EnableExternalNonContainerDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalNonContainerDatabaseManagementFeatureRequest,
+                                    EnableExternalNonContainerDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalNonContainerDatabaseId(),
+                "externalNonContainerDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalNonContainerDatabaseManagementFeatureDetails(),
+                "enableExternalNonContainerDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request,
+                        EnableExternalNonContainerDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "enableExternalNonContainerDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableExternalNonContainerDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableExternalNonContainerDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalNonContainerDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalnoncontainerdatabases")
+                .appendPathParam(request.getExternalNonContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalNonContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableExternalNonContainerDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableExternalPluggableDatabaseManagementFeatureResponse>
+            enableExternalPluggableDatabaseManagementFeature(
+                    EnableExternalPluggableDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalPluggableDatabaseManagementFeatureRequest,
+                                    EnableExternalPluggableDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalPluggableDatabaseId(),
+                "externalPluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalPluggableDatabaseManagementFeatureDetails(),
+                "enableExternalPluggableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(
+                        request, EnableExternalPluggableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "enableExternalPluggableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableExternalPluggableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableExternalPluggableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalPluggableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalpluggabledatabases")
+                .appendPathParam(request.getExternalPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalPluggableDatabaseManagementFeatureResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableExternalPluggableDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
             enableHighFrequencyAutomaticSpmEvolveAdvisorTask(
                     EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request,
@@ -1967,6 +2839,48 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-request-id",
                         EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse.Builder
                                 ::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnablePluggableDatabaseManagementFeatureResponse>
+            enablePluggableDatabaseManagementFeature(
+                    EnablePluggableDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnablePluggableDatabaseManagementFeatureRequest,
+                                    EnablePluggableDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnablePluggableDatabaseManagementFeatureDetails(),
+                "enablePluggableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, EnablePluggableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "enablePluggableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnablePluggableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnablePluggableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnablePluggableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("pluggabledatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnablePluggableDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnablePluggableDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -2031,6 +2945,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SnapshotDetails.class,
                         GenerateAwrSnapshotResponse.Builder::snapshotDetails)
@@ -2079,6 +2994,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbReport.class,
                         GetAwrDbReportResponse.Builder::awrDbReport)
@@ -2125,6 +3041,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbSqlReport.class,
                         GetAwrDbSqlReportResponse.Builder::awrDbSqlReport)
@@ -2170,6 +3087,184 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetDatabaseFleetBackupMetricsResponse>
+            getDatabaseFleetBackupMetrics(
+                    GetDatabaseFleetBackupMetricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDatabaseFleetBackupMetricsRequest,
+                                    GetDatabaseFleetBackupMetricsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getDatabaseHostedIn(), "databaseHostedIn is required");
+
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetDatabaseFleetBackupMetricsResponse::builder)
+                .logger(LOG, "getDatabaseFleetBackupMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDatabaseFleetBackupMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetBackupMetrics/GetDatabaseFleetBackupMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseFleetBackupMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databaseFleetBackupMetrics")
+                .appendEnumQueryParam("databaseHostedIn", request.getDatabaseHostedIn())
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseFleetBackupMetrics.class,
+                        GetDatabaseFleetBackupMetricsResponse.Builder::databaseFleetBackupMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDatabaseFleetBackupMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetDatabaseFleetBackupMetricsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDatabaseFleetDataguardMetricsResponse>
+            getDatabaseFleetDataguardMetrics(
+                    GetDatabaseFleetDataguardMetricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDatabaseFleetDataguardMetricsRequest,
+                                    GetDatabaseFleetDataguardMetricsResponse>
+                            handler) {
+
+        return clientCall(request, GetDatabaseFleetDataguardMetricsResponse::builder)
+                .logger(LOG, "getDatabaseFleetDataguardMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDatabaseFleetDataguardMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetDataguardMetrics/GetDatabaseFleetDataguardMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseFleetDataguardMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databaseFleetDataguardMetrics")
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseFleetDataguardMetrics.class,
+                        GetDatabaseFleetDataguardMetricsResponse.Builder
+                                ::databaseFleetDataguardMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDatabaseFleetDataguardMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        GetDatabaseFleetDataguardMetricsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDatabaseFleetHaOverviewMetricsResponse>
+            getDatabaseFleetHaOverviewMetrics(
+                    GetDatabaseFleetHaOverviewMetricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDatabaseFleetHaOverviewMetricsRequest,
+                                    GetDatabaseFleetHaOverviewMetricsResponse>
+                            handler) {
+
+        return clientCall(request, GetDatabaseFleetHaOverviewMetricsResponse::builder)
+                .logger(LOG, "getDatabaseFleetHaOverviewMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDatabaseFleetHaOverviewMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetHaOverviewMetrics/GetDatabaseFleetHaOverviewMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseFleetHaOverviewMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databaseFleetHaOverviewMetrics")
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseFleetHaOverviewMetrics
+                                .class,
+                        GetDatabaseFleetHaOverviewMetricsResponse.Builder
+                                ::databaseFleetHaOverviewMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDatabaseFleetHaOverviewMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        GetDatabaseFleetHaOverviewMetricsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDatabaseFleetHealthMetricsResponse>
             getDatabaseFleetHealthMetrics(
                     GetDatabaseFleetHealthMetricsRequest request,
@@ -2199,10 +3294,30 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
                 .appendQueryParam("filterByDatabaseType", request.getFilterByDatabaseType())
                 .appendQueryParam("filterByDatabaseSubType", request.getFilterByDatabaseSubType())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam(
                         "filterByDatabaseDeploymentType",
                         request.getFilterByDatabaseDeploymentType())
                 .appendQueryParam("filterByDatabaseVersion", request.getFilterByDatabaseVersion())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -2211,6 +3326,42 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetDatabaseFleetHealthMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetDatabaseFleetHealthMetricsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDatabaseHaBackupDetailsResponse>
+            getDatabaseHaBackupDetails(
+                    GetDatabaseHaBackupDetailsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDatabaseHaBackupDetailsRequest,
+                                    GetDatabaseHaBackupDetailsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, GetDatabaseHaBackupDetailsResponse::builder)
+                .logger(LOG, "getDatabaseHaBackupDetails")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDatabaseHaBackupDetails",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseHaBackupDetails/GetDatabaseHaBackupDetails")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseHaBackupDetailsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("haBackupDetails")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseHaBackupDetails.class,
+                        GetDatabaseHaBackupDetailsResponse.Builder::databaseHaBackupDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDatabaseHaBackupDetailsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2246,6 +3397,48 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         GetDatabaseHomeMetricsResponse.Builder::databaseHomeMetrics)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDatabaseHomeMetricsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataguardPerformanceMetricsResponse>
+            getDataguardPerformanceMetrics(
+                    GetDataguardPerformanceMetricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDataguardPerformanceMetricsRequest,
+                                    GetDataguardPerformanceMetricsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetDataguardPerformanceMetricsResponse::builder)
+                .logger(LOG, "getDataguardPerformanceMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDataguardPerformanceMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DataguardPerformanceMetrics/GetDataguardPerformanceMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDataguardPerformanceMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("dataguardPerformanceMetrics")
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam(
+                        "peerDatabaseCompartmentId", request.getPeerDatabaseCompartmentId())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DataguardPerformanceMetrics.class,
+                        GetDataguardPerformanceMetricsResponse.Builder::dataguardPerformanceMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDataguardPerformanceMetricsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2342,6 +3535,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendPathParam("configuration")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmConfiguration.class,
                         GetExternalAsmConfigurationResponse.Builder::externalAsmConfiguration)
@@ -2376,6 +3570,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmInstance.class,
                         GetExternalAsmInstanceResponse.Builder::externalAsmInstance)
+                .handleResponseHeaderString("etag", GetExternalAsmInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalAsmInstanceResponse.Builder::opcRequestId)
                 .callAsync(handler);
@@ -2473,6 +3668,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbHome.class,
                         GetExternalDbHomeResponse.Builder::externalDbHome)
+                .handleResponseHeaderString("etag", GetExternalDbHomeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalDbHomeResponse.Builder::opcRequestId)
                 .callAsync(handler);
@@ -2798,6 +3994,77 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetExternalMySqlDatabaseResponse> getExternalMySqlDatabase(
+            GetExternalMySqlDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalMySqlDatabaseRequest, GetExternalMySqlDatabaseResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+
+        return clientCall(request, GetExternalMySqlDatabaseResponse::builder)
+                .logger(LOG, "getExternalMySqlDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalMySqlDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/GetExternalMySqlDatabase")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalMySqlDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabase.class,
+                        GetExternalMySqlDatabaseResponse.Builder::externalMySqlDatabase)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExternalMySqlDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetExternalMySqlDatabaseResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExternalMySqlDatabaseConnectorResponse>
+            getExternalMySqlDatabaseConnector(
+                    GetExternalMySqlDatabaseConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetExternalMySqlDatabaseConnectorRequest,
+                                    GetExternalMySqlDatabaseConnectorResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseConnectorId(),
+                "externalMySqlDatabaseConnectorId must not be blank");
+
+        return clientCall(request, GetExternalMySqlDatabaseConnectorResponse::builder)
+                .logger(LOG, "getExternalMySqlDatabaseConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalMySqlDatabaseConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/GetExternalMySqlDatabaseConnector")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalMySqlDatabaseConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendPathParam(request.getExternalMySqlDatabaseConnectorId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseConnector
+                                .class,
+                        GetExternalMySqlDatabaseConnectorResponse.Builder
+                                ::externalMySqlDatabaseConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetExternalMySqlDatabaseConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetExternalMySqlDatabaseConnectorResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIormPlanResponse> getIormPlan(
             GetIormPlanRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetIormPlanRequest, GetIormPlanResponse>
@@ -2944,6 +4211,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         GetManagedDatabaseResponse.Builder::managedDatabase)
                 .handleResponseHeaderString(
                         "opc-request-id", GetManagedDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetManagedDatabaseResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -2976,6 +4244,37 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-request-id", GetManagedDatabaseGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetManagedDatabaseGroupResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNamedCredentialResponse> getNamedCredential(
+            GetNamedCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetNamedCredentialRequest, GetNamedCredentialResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+
+        return clientCall(request, GetNamedCredentialResponse::builder)
+                .logger(LOG, "getNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/GetNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.NamedCredential.class,
+                        GetNamedCredentialResponse.Builder::namedCredential)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNamedCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetNamedCredentialResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -3042,6 +4341,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("taskName", request.getTaskName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.OptimizerStatisticsAdvisorExecution
                                 .class,
@@ -3084,6 +4384,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("taskName", request.getTaskName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsAdvisorExecutionScript.class,
@@ -3121,6 +4422,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendPathParam(request.getOptimizerStatisticsCollectionOperationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsCollectionOperation.class,
@@ -3167,6 +4469,46 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         GetPdbMetricsResponse.Builder::pdbMetrics)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPdbMetricsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPeerDatabaseMetricsResponse> getPeerDatabaseMetrics(
+            GetPeerDatabaseMetricsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPeerDatabaseMetricsRequest, GetPeerDatabaseMetricsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetPeerDatabaseMetricsResponse::builder)
+                .logger(LOG, "getPeerDatabaseMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetPeerDatabaseMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PeerDatabaseMetrics/GetPeerDatabaseMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPeerDatabaseMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("peerDatabaseMetrics")
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam(
+                        "peerDatabaseCompartmentId", request.getPeerDatabaseCompartmentId())
+                .appendEnumQueryParam("compareType", request.getCompareType())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.PeerDatabaseMetrics.class,
+                        GetPeerDatabaseMetricsResponse.Builder::peerDatabaseMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPeerDatabaseMetricsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -3231,6 +4573,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendPathParam(request.getPlanName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaseline.class,
                         GetSqlPlanBaselineResponse.Builder::sqlPlanBaseline)
@@ -3264,6 +4607,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendPathParam("sqlPlanBaselineConfiguration")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineConfiguration.class,
                         GetSqlPlanBaselineConfigurationResponse.Builder
@@ -3299,6 +4643,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendPathParam(request.getTablespaceName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.Tablespace.class,
                         GetTablespaceResponse.Builder::tablespace)
@@ -3364,6 +4709,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendPathParam(request.getUserName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.User.class,
                         GetUserResponse.Builder::user)
@@ -3567,6 +4913,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbSnapshotCollection.class,
                         ListAwrDbSnapshotsResponse.Builder::awrDbSnapshotCollection)
@@ -3607,6 +4954,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbCollection.class,
                         ListAwrDbsResponse.Builder::awrDbCollection)
@@ -3651,6 +4999,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ConsumerGroupPrivilegeCollection
                                 .class,
@@ -3691,6 +5040,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.CursorCacheStatementCollection
                                 .class,
@@ -3734,6 +5084,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.DataAccessContainerCollection.class,
                         ListDataAccessContainersResponse.Builder::dataAccessContainerCollection)
@@ -3772,6 +5123,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.DatabaseParametersCollection.class,
                         ListDatabaseParametersResponse.Builder::databaseParametersCollection)
@@ -3804,6 +5156,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("name", request.getName())
                 .appendQueryParam("vcnId", request.getVcnId())
                 .appendQueryParam("isCluster", request.getIsCluster())
+                .appendQueryParam("isDnsResolutionEnabled", request.getIsDnsResolutionEnabled())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -3852,6 +5205,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmDiskGroupCollection
                                 .class,
@@ -3926,6 +5280,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmUserCollection.class,
                         ListExternalAsmUsersResponse.Builder::externalAsmUserCollection)
@@ -4068,6 +5423,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendPathParam("externalDatabases")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("externalDbSystemId", request.getExternalDbSystemId())
+                .appendQueryParam("externalDatabaseId", request.getExternalDatabaseId())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
@@ -4448,6 +5804,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalListenerServiceCollection
                                 .class,
@@ -4494,6 +5851,45 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-request-id", ListExternalListenersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalListenersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExternalMySqlDatabasesResponse>
+            listExternalMySqlDatabases(
+                    ListExternalMySqlDatabasesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalMySqlDatabasesRequest,
+                                    ListExternalMySqlDatabasesResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExternalMySqlDatabasesResponse::builder)
+                .logger(LOG, "listExternalMySqlDatabases")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalMySqlDatabases",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseCollection/ListExternalMySqlDatabases")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalMySqlDatabasesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseCollection
+                                .class,
+                        ListExternalMySqlDatabasesResponse.Builder::externalMySqlDatabaseCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalMySqlDatabasesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalMySqlDatabasesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -4699,6 +6095,84 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListMySqlDatabaseConnectorsResponse>
+            listMySqlDatabaseConnectors(
+                    ListMySqlDatabaseConnectorsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListMySqlDatabaseConnectorsRequest,
+                                    ListMySqlDatabaseConnectorsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMySqlDatabaseConnectorsResponse::builder)
+                .logger(LOG, "listMySqlDatabaseConnectors")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListMySqlDatabaseConnectors",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/MySqlConnectorCollection/ListMySqlDatabaseConnectors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMySqlDatabaseConnectorsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendQueryParam("externalDatabaseId", request.getExternalDatabaseId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MySqlConnectorCollection.class,
+                        ListMySqlDatabaseConnectorsResponse.Builder::mySqlConnectorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMySqlDatabaseConnectorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMySqlDatabaseConnectorsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNamedCredentialsResponse> listNamedCredentials(
+            ListNamedCredentialsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListNamedCredentialsRequest, ListNamedCredentialsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListNamedCredentialsResponse::builder)
+                .logger(LOG, "listNamedCredentials")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListNamedCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/ListNamedCredentials")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNamedCredentialsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("associatedResource", request.getAssociatedResource())
+                .appendEnumQueryParam("type", request.getType())
+                .appendEnumQueryParam("scope", request.getScope())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.NamedCredentialCollection.class,
+                        ListNamedCredentialsResponse.Builder::namedCredentialCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNamedCredentialsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNamedCredentialsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListObjectPrivilegesResponse> listObjectPrivileges(
             ListObjectPrivilegesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4730,6 +6204,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ObjectPrivilegeCollection.class,
                         ListObjectPrivilegesResponse.Builder::objectPrivilegeCollection)
@@ -4768,6 +6243,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("endTimeLessThanOrEqualTo", request.getEndTimeLessThanOrEqualTo())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsAdvisorExecutionsCollection.class,
@@ -4812,6 +6288,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsCollectionAggregationsCollection.class,
@@ -4860,6 +6337,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsCollectionOperationsCollection.class,
@@ -4939,6 +6417,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ProxiedForUserCollection.class,
                         ListProxiedForUsersResponse.Builder::proxiedForUserCollection)
@@ -4981,6 +6460,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ProxyUserCollection.class,
                         ListProxyUsersResponse.Builder::proxyUserCollection)
@@ -5022,6 +6502,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.RoleCollection.class,
                         ListRolesResponse.Builder::roleCollection)
@@ -5059,6 +6540,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJobCollection.class,
                         ListSqlPlanBaselineJobsResponse.Builder::sqlPlanBaselineJobCollection)
@@ -5103,8 +6585,14 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("isAutoPurged", request.getIsAutoPurged())
+                .appendQueryParam(
+                        "timeLastExecutedGreaterThan", request.getTimeLastExecutedGreaterThan())
+                .appendQueryParam("timeLastExecutedLessThan", request.getTimeLastExecutedLessThan())
+                .appendQueryParam("isNeverExecuted", request.getIsNeverExecuted())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineCollection.class,
                         ListSqlPlanBaselinesResponse.Builder::sqlPlanBaselineCollection)
@@ -5147,6 +6635,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SystemPrivilegeCollection.class,
                         ListSystemPrivilegesResponse.Builder::systemPrivilegeCollection)
@@ -5180,6 +6669,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendPathParam("tableStatistics")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.TableStatisticsCollection.class,
                         ListTableStatisticsResponse.Builder::tableStatisticsCollection)
@@ -5216,6 +6706,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.TablespaceCollection.class,
                         ListTablespacesResponse.Builder::tablespaceCollection)
@@ -5253,6 +6744,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.UserCollection.class,
                         ListUsersResponse.Builder::userCollection)
@@ -5450,6 +6942,131 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-request-id",
                         LoadSqlPlanBaselinesFromCursorCacheResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyAutonomousDatabaseManagementFeatureResponse>
+            modifyAutonomousDatabaseManagementFeature(
+                    ModifyAutonomousDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ModifyAutonomousDatabaseManagementFeatureRequest,
+                                    ModifyAutonomousDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getModifyAutonomousDatabaseManagementFeatureDetails(),
+                "modifyAutonomousDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, ModifyAutonomousDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "modifyAutonomousDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "ModifyAutonomousDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ModifyAutonomousDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ModifyAutonomousDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("modifyDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ModifyAutonomousDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ModifyAutonomousDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDatabaseManagementFeatureResponse>
+            modifyDatabaseManagementFeature(
+                    ModifyDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ModifyDatabaseManagementFeatureRequest,
+                                    ModifyDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getModifyDatabaseManagementFeatureDetails(),
+                "modifyDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, ModifyDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "modifyDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "ModifyDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ModifyDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ModifyDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("modifyDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ModifyDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ModifyDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyPluggableDatabaseManagementFeatureResponse>
+            modifyPluggableDatabaseManagementFeature(
+                    ModifyPluggableDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ModifyPluggableDatabaseManagementFeatureRequest,
+                                    ModifyPluggableDatabaseManagementFeatureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getModifyPluggableDatabaseManagementFeatureDetails(),
+                "modifyPluggableDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, ModifyPluggableDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "modifyPluggableDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "ModifyPluggableDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ModifyPluggableDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ModifyPluggableDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("pluggabledatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("modifyDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ModifyPluggableDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ModifyPluggableDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -5678,6 +7295,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.HistoricAddmResult.class,
@@ -5727,6 +7345,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbCpuUsageCollection.class,
                         SummarizeAwrDbCpuUsagesResponse.Builder::awrDbCpuUsageCollection)
@@ -5781,6 +7400,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbMetricCollection.class,
                         SummarizeAwrDbMetricsResponse.Builder::awrDbMetricCollection)
@@ -5834,6 +7454,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbParameterChangeCollection
                                 .class,
@@ -5895,6 +7516,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbParameterCollection.class,
                         SummarizeAwrDbParametersResponse.Builder::awrDbParameterCollection)
@@ -5938,6 +7560,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbSnapshotRangeCollection.class,
                         SummarizeAwrDbSnapshotRangesResponse.Builder::awrDbSnapshotRangeCollection)
@@ -5993,6 +7616,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbSysstatCollection.class,
                         SummarizeAwrDbSysstatsResponse.Builder::awrDbSysstatCollection)
@@ -6044,6 +7668,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbTopWaitEventCollection.class,
                         SummarizeAwrDbTopWaitEventsResponse.Builder::awrDbTopWaitEventCollection)
@@ -6100,6 +7725,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbWaitEventBucketCollection
                                 .class,
@@ -6158,6 +7784,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbWaitEventCollection.class,
                         SummarizeAwrDbWaitEventsResponse.Builder::awrDbWaitEventCollection)
@@ -6517,6 +8144,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
                                 .class,
@@ -6555,6 +8183,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
                                 .class,
@@ -6566,6 +8195,41 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeSqlPlanBaselinesByLastExecutionResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestNamedCredentialResponse> testNamedCredential(
+            TestNamedCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            TestNamedCredentialRequest, TestNamedCredentialResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+        Objects.requireNonNull(
+                request.getTestNamedCredentialDetails(), "testNamedCredentialDetails is required");
+
+        return clientCall(request, TestNamedCredentialResponse::builder)
+                .logger(LOG, "testNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "TestNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/TestNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .appendPathParam("actions")
+                .appendPathParam("test")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.TestNamedCredentialStatus.class,
+                        TestNamedCredentialResponse.Builder::testNamedCredentialStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", TestNamedCredentialResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -6683,6 +8347,43 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateExternalAsmInstanceResponse> updateExternalAsmInstance(
+            UpdateExternalAsmInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExternalAsmInstanceRequest, UpdateExternalAsmInstanceResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getExternalAsmInstanceId(), "externalAsmInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalAsmInstanceDetails(),
+                "updateExternalAsmInstanceDetails is required");
+
+        return clientCall(request, UpdateExternalAsmInstanceResponse::builder)
+                .logger(LOG, "updateExternalAsmInstance")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalAsmInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalAsmInstance/UpdateExternalAsmInstance")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalAsmInstanceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalAsmInstances")
+                .appendPathParam(request.getExternalAsmInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalAsmInstance.class,
+                        UpdateExternalAsmInstanceResponse.Builder::externalAsmInstance)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalAsmInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateExternalAsmInstanceResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateExternalClusterResponse> updateExternalCluster(
             UpdateExternalClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6754,6 +8455,42 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateExternalClusterInstanceResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExternalDbHomeResponse> updateExternalDbHome(
+            UpdateExternalDbHomeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExternalDbHomeRequest, UpdateExternalDbHomeResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExternalDbHomeId(), "externalDbHomeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalDbHomeDetails(),
+                "updateExternalDbHomeDetails is required");
+
+        return clientCall(request, UpdateExternalDbHomeResponse::builder)
+                .logger(LOG, "updateExternalDbHome")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalDbHome",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbHome/UpdateExternalDbHome")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalDbHomeRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbHomes")
+                .appendPathParam(request.getExternalDbHomeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbHome.class,
+                        UpdateExternalDbHomeResponse.Builder::externalDbHome)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalDbHomeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateExternalDbHomeResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -6999,6 +8736,92 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateExternalExadataStorageGridResponse>
+            updateExternalExadataStorageGrid(
+                    UpdateExternalExadataStorageGridRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalExadataStorageGridRequest,
+                                    UpdateExternalExadataStorageGridResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageGridId(),
+                "externalExadataStorageGridId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalExadataStorageGridDetails(),
+                "updateExternalExadataStorageGridDetails is required");
+
+        return clientCall(request, UpdateExternalExadataStorageGridResponse::builder)
+                .logger(LOG, "updateExternalExadataStorageGrid")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalExadataStorageGrid",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageGrid/UpdateExternalExadataStorageGrid")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalExadataStorageGridRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageGrids")
+                .appendPathParam(request.getExternalExadataStorageGridId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataStorageGrid.class,
+                        UpdateExternalExadataStorageGridResponse.Builder
+                                ::externalExadataStorageGrid)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalExadataStorageGridResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalExadataStorageGridResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExternalExadataStorageServerResponse>
+            updateExternalExadataStorageServer(
+                    UpdateExternalExadataStorageServerRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalExadataStorageServerRequest,
+                                    UpdateExternalExadataStorageServerResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageServerId(),
+                "externalExadataStorageServerId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalExadataStorageServerDetails(),
+                "updateExternalExadataStorageServerDetails is required");
+
+        return clientCall(request, UpdateExternalExadataStorageServerResponse::builder)
+                .logger(LOG, "updateExternalExadataStorageServer")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalExadataStorageServer",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/UpdateExternalExadataStorageServer")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalExadataStorageServerRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageServers")
+                .appendPathParam(request.getExternalExadataStorageServerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServer.class,
+                        UpdateExternalExadataStorageServerResponse.Builder
+                                ::externalExadataStorageServer)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalExadataStorageServerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalExadataStorageServerResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateExternalListenerResponse> updateExternalListener(
             UpdateExternalListenerRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7034,6 +8857,93 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateExternalMysqlDatabaseResponse>
+            updateExternalMysqlDatabase(
+                    UpdateExternalMysqlDatabaseRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalMysqlDatabaseRequest,
+                                    UpdateExternalMysqlDatabaseResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalMySqlDatabaseDetails(),
+                "updateExternalMySqlDatabaseDetails is required");
+
+        return clientCall(request, UpdateExternalMysqlDatabaseResponse::builder)
+                .logger(LOG, "updateExternalMysqlDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalMysqlDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/UpdateExternalMysqlDatabase")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalMysqlDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabase.class,
+                        UpdateExternalMysqlDatabaseResponse.Builder::externalMySqlDatabase)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalMysqlDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalMysqlDatabaseResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExternalMysqlDatabaseConnectorResponse>
+            updateExternalMysqlDatabaseConnector(
+                    UpdateExternalMysqlDatabaseConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalMysqlDatabaseConnectorRequest,
+                                    UpdateExternalMysqlDatabaseConnectorResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseConnectorId(),
+                "externalMySqlDatabaseConnectorId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalMySqlDatabaseConnectorDetails(),
+                "updateExternalMySqlDatabaseConnectorDetails is required");
+
+        return clientCall(request, UpdateExternalMysqlDatabaseConnectorResponse::builder)
+                .logger(LOG, "updateExternalMysqlDatabaseConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalMysqlDatabaseConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/UpdateExternalMysqlDatabaseConnector")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalMysqlDatabaseConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendPathParam(request.getExternalMySqlDatabaseConnectorId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseConnector
+                                .class,
+                        UpdateExternalMysqlDatabaseConnectorResponse.Builder
+                                ::externalMySqlDatabaseConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalMysqlDatabaseConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExternalMysqlDatabaseConnectorResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalMysqlDatabaseConnectorResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateJobResponse> updateJob(
             UpdateJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse>
@@ -7063,6 +8973,42 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateJobResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateManagedDatabaseResponse> updateManagedDatabase(
+            UpdateManagedDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateManagedDatabaseRequest, UpdateManagedDatabaseResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateManagedDatabaseDetails(),
+                "updateManagedDatabaseDetails is required");
+
+        return clientCall(request, UpdateManagedDatabaseResponse::builder)
+                .logger(LOG, "updateManagedDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateManagedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/UpdateManagedDatabase")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateManagedDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ManagedDatabase.class,
+                        UpdateManagedDatabaseResponse.Builder::managedDatabase)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateManagedDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateManagedDatabaseResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -7103,6 +9049,42 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-request-id", UpdateManagedDatabaseGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateManagedDatabaseGroupResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNamedCredentialResponse> updateNamedCredential(
+            UpdateNamedCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateNamedCredentialRequest, UpdateNamedCredentialResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNamedCredentialDetails(),
+                "updateNamedCredentialDetails is required");
+
+        return clientCall(request, UpdateNamedCredentialResponse::builder)
+                .logger(LOG, "updateNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/UpdateNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.NamedCredential.class,
+                        UpdateNamedCredentialResponse.Builder::namedCredential)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateNamedCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateNamedCredentialResponse.Builder::etag)
                 .callAsync(handler);
     }
 

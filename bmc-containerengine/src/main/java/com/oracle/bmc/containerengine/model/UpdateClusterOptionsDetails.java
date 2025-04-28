@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.model;
@@ -26,16 +26,22 @@ public final class UpdateClusterOptionsDetails
     @java.beans.ConstructorProperties({
         "admissionControllerOptions",
         "persistentVolumeConfig",
-        "serviceLbConfig"
+        "serviceLbConfig",
+        "openIdConnectTokenAuthenticationConfig",
+        "openIdConnectDiscovery"
     })
     public UpdateClusterOptionsDetails(
             AdmissionControllerOptions admissionControllerOptions,
             PersistentVolumeConfigDetails persistentVolumeConfig,
-            ServiceLbConfigDetails serviceLbConfig) {
+            ServiceLbConfigDetails serviceLbConfig,
+            OpenIdConnectTokenAuthenticationConfig openIdConnectTokenAuthenticationConfig,
+            OpenIdConnectDiscovery openIdConnectDiscovery) {
         super();
         this.admissionControllerOptions = admissionControllerOptions;
         this.persistentVolumeConfig = persistentVolumeConfig;
         this.serviceLbConfig = serviceLbConfig;
+        this.openIdConnectTokenAuthenticationConfig = openIdConnectTokenAuthenticationConfig;
+        this.openIdConnectDiscovery = openIdConnectDiscovery;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -76,6 +82,25 @@ public final class UpdateClusterOptionsDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("openIdConnectTokenAuthenticationConfig")
+        private OpenIdConnectTokenAuthenticationConfig openIdConnectTokenAuthenticationConfig;
+
+        public Builder openIdConnectTokenAuthenticationConfig(
+                OpenIdConnectTokenAuthenticationConfig openIdConnectTokenAuthenticationConfig) {
+            this.openIdConnectTokenAuthenticationConfig = openIdConnectTokenAuthenticationConfig;
+            this.__explicitlySet__.add("openIdConnectTokenAuthenticationConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("openIdConnectDiscovery")
+        private OpenIdConnectDiscovery openIdConnectDiscovery;
+
+        public Builder openIdConnectDiscovery(OpenIdConnectDiscovery openIdConnectDiscovery) {
+            this.openIdConnectDiscovery = openIdConnectDiscovery;
+            this.__explicitlySet__.add("openIdConnectDiscovery");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -84,7 +109,9 @@ public final class UpdateClusterOptionsDetails
                     new UpdateClusterOptionsDetails(
                             this.admissionControllerOptions,
                             this.persistentVolumeConfig,
-                            this.serviceLbConfig);
+                            this.serviceLbConfig,
+                            this.openIdConnectTokenAuthenticationConfig,
+                            this.openIdConnectDiscovery);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -101,6 +128,13 @@ public final class UpdateClusterOptionsDetails
             }
             if (model.wasPropertyExplicitlySet("serviceLbConfig")) {
                 this.serviceLbConfig(model.getServiceLbConfig());
+            }
+            if (model.wasPropertyExplicitlySet("openIdConnectTokenAuthenticationConfig")) {
+                this.openIdConnectTokenAuthenticationConfig(
+                        model.getOpenIdConnectTokenAuthenticationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("openIdConnectDiscovery")) {
+                this.openIdConnectDiscovery(model.getOpenIdConnectDiscovery());
             }
             return this;
         }
@@ -142,6 +176,20 @@ public final class UpdateClusterOptionsDetails
         return serviceLbConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("openIdConnectTokenAuthenticationConfig")
+    private final OpenIdConnectTokenAuthenticationConfig openIdConnectTokenAuthenticationConfig;
+
+    public OpenIdConnectTokenAuthenticationConfig getOpenIdConnectTokenAuthenticationConfig() {
+        return openIdConnectTokenAuthenticationConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("openIdConnectDiscovery")
+    private final OpenIdConnectDiscovery openIdConnectDiscovery;
+
+    public OpenIdConnectDiscovery getOpenIdConnectDiscovery() {
+        return openIdConnectDiscovery;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -161,6 +209,9 @@ public final class UpdateClusterOptionsDetails
                 .append(String.valueOf(this.admissionControllerOptions));
         sb.append(", persistentVolumeConfig=").append(String.valueOf(this.persistentVolumeConfig));
         sb.append(", serviceLbConfig=").append(String.valueOf(this.serviceLbConfig));
+        sb.append(", openIdConnectTokenAuthenticationConfig=")
+                .append(String.valueOf(this.openIdConnectTokenAuthenticationConfig));
+        sb.append(", openIdConnectDiscovery=").append(String.valueOf(this.openIdConnectDiscovery));
         sb.append(")");
         return sb.toString();
     }
@@ -180,6 +231,11 @@ public final class UpdateClusterOptionsDetails
                 && java.util.Objects.equals(
                         this.persistentVolumeConfig, other.persistentVolumeConfig)
                 && java.util.Objects.equals(this.serviceLbConfig, other.serviceLbConfig)
+                && java.util.Objects.equals(
+                        this.openIdConnectTokenAuthenticationConfig,
+                        other.openIdConnectTokenAuthenticationConfig)
+                && java.util.Objects.equals(
+                        this.openIdConnectDiscovery, other.openIdConnectDiscovery)
                 && super.equals(other);
     }
 
@@ -200,6 +256,16 @@ public final class UpdateClusterOptionsDetails
         result =
                 (result * PRIME)
                         + (this.serviceLbConfig == null ? 43 : this.serviceLbConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.openIdConnectTokenAuthenticationConfig == null
+                                ? 43
+                                : this.openIdConnectTokenAuthenticationConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.openIdConnectDiscovery == null
+                                ? 43
+                                : this.openIdConnectDiscovery.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

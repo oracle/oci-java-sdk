@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -7,7 +7,7 @@ package com.oracle.bmc.vnmonitoring.model;
 /**
  * An object that represents one or multiple Oracle services that you can enable for a {@link
  * ServiceGateway}. In the User Guide topic [Access to Oracle Services: Service
- * Gateway](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/servicegateway.htm), the term
+ * Gateway](https://docs.oracle.com/iaas/Content/Network/Tasks/servicegateway.htm), the term
  * *service CIDR label* is used to refer to the string that represents the regional public IP
  * address ranges of the Oracle service or services covered by a given {@code Service} object. That
  * unique string is the value of the {@code Service} object's {@code cidrBlock} attribute. <br>
@@ -97,14 +97,14 @@ public final class Service extends com.oracle.bmc.http.client.internal.Explicitl
         }
         /**
          * The {@code Service} object's
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The {@code Service} object's
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder
@@ -232,14 +232,14 @@ public final class Service extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * The {@code Service} object's
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The {@code Service} object's
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

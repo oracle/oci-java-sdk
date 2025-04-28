@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -7,23 +7,35 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListSoftwareSourcesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListSoftwareSourcesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSoftwareSourcesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The OCID for the software source. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * software source.
+     */
     private String softwareSourceId;
 
-    /** The OCID for the software source. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -36,17 +48,17 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             getSoftwareSourceType() {
         return softwareSourceType;
     }
-    /** A filter to return only profiles that match the given vendorName. */
+    /** A filter to return only resources that match the given vendor name. */
     private com.oracle.bmc.osmanagementhub.model.VendorName vendorName;
 
-    /** A filter to return only profiles that match the given vendorName. */
+    /** A filter to return only resources that match the given vendor name. */
     public com.oracle.bmc.osmanagementhub.model.VendorName getVendorName() {
         return vendorName;
     }
-    /** A filter to return only instances whose OS family type matches the given OS family. */
+    /** A filter to return only resources that match the given operating system family. */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.OsFamily> osFamily;
 
-    /** A filter to return only instances whose OS family type matches the given OS family. */
+    /** A filter to return only resources that match the given operating system family. */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.OsFamily> getOsFamily() {
         return osFamily;
     }
@@ -57,25 +69,53 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
     public java.util.List<com.oracle.bmc.osmanagementhub.model.ArchType> getArchType() {
         return archType;
     }
-    /** The availabilities of the software source for a tenant. */
+    /** The availability of the software source in a non-OCI environment for a tenancy. */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> availability;
 
-    /** The availabilities of the software source for a tenant. */
+    /** The availability of the software source in a non-OCI environment for a tenancy. */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> getAvailability() {
         return availability;
     }
+    /** The availability of the software source in an OCI environment for a tenancy. */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> availabilityAtOci;
+
+    /** The availability of the software source in an OCI environment for a tenancy. */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
+            getAvailabilityAtOci() {
+        return availabilityAtOci;
+    }
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     *
-     * <p>Example: {@code My new resource}
+     * The availability of the software source. Use this query parameter to filter across
+     * availabilities in different environments.
      */
-    private String displayName;
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> availabilityAnywhere;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     *
-     * <p>Example: {@code My new resource}
+     * The availability of the software source. Use this query parameter to filter across
+     * availabilities in different environments.
      */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
+            getAvailabilityAnywhere() {
+        return availabilityAnywhere;
+    }
+    /** Indicates whether the software source is mandatory for the Autonomous Linux service. */
+    private Boolean isMandatoryForAutonomousLinux;
+
+    /** Indicates whether the software source is mandatory for the Autonomous Linux service. */
+    public Boolean getIsMandatoryForAutonomousLinux() {
+        return isMandatoryForAutonomousLinux;
+    }
+    /** A filter to return software sources which can be synced to a management station. */
+    private Boolean isMirrorSyncAllowed;
+
+    /** A filter to return software sources which can be synced to a management station. */
+    public Boolean getIsMirrorSyncAllowed() {
+        return isMirrorSyncAllowed;
+    }
+    /** A filter to return resources that match the given user-friendly name. */
+    private String displayName;
+
+    /** A filter to return resources that match the given user-friendly name. */
     public String getDisplayName() {
         return displayName;
     }
@@ -96,7 +136,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -105,7 +145,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -115,7 +155,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -124,7 +164,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -188,11 +228,11 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** A filter to return only resources whose lifecycleState matches the given lifecycleStates. */
+    /** A filter to return only software sources whose state matches the given state. */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.SoftwareSource.LifecycleState>
             lifecycleState;
 
-    /** A filter to return only resources whose lifecycleState matches the given lifecycleStates. */
+    /** A filter to return only software sources whose state matches the given state. */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.SoftwareSource.LifecycleState>
             getLifecycleState() {
         return lifecycleState;
@@ -217,11 +257,15 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment that contains the resources to list. */
+        /**
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
+         */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -231,11 +275,15 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The OCID for the software source. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * software source.
+         */
         private String softwareSourceId = null;
 
         /**
-         * The OCID for the software source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * software source.
          *
          * @param softwareSourceId the value to set
          * @return this builder instance
@@ -272,11 +320,11 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             return this.softwareSourceType(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only profiles that match the given vendorName. */
+        /** A filter to return only resources that match the given vendor name. */
         private com.oracle.bmc.osmanagementhub.model.VendorName vendorName = null;
 
         /**
-         * A filter to return only profiles that match the given vendorName.
+         * A filter to return only resources that match the given vendor name.
          *
          * @param vendorName the value to set
          * @return this builder instance
@@ -286,11 +334,11 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** A filter to return only instances whose OS family type matches the given OS family. */
+        /** A filter to return only resources that match the given operating system family. */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.OsFamily> osFamily = null;
 
         /**
-         * A filter to return only instances whose OS family type matches the given OS family.
+         * A filter to return only resources that match the given operating system family.
          *
          * @param osFamily the value to set
          * @return this builder instance
@@ -302,8 +350,8 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Singular setter. A filter to return only instances whose OS family type matches the given
-         * OS family.
+         * Singular setter. A filter to return only resources that match the given operating system
+         * family.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -340,12 +388,12 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             return this.archType(java.util.Arrays.asList(singularValue));
         }
 
-        /** The availabilities of the software source for a tenant. */
+        /** The availability of the software source in a non-OCI environment for a tenancy. */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> availability =
                 null;
 
         /**
-         * The availabilities of the software source for a tenant.
+         * The availability of the software source in a non-OCI environment for a tenancy.
          *
          * @param availability the value to set
          * @return this builder instance
@@ -357,7 +405,8 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Singular setter. The availabilities of the software source for a tenant.
+         * Singular setter. The availability of the software source in a non-OCI environment for a
+         * tenancy.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -366,17 +415,99 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             return this.availability(java.util.Arrays.asList(singularValue));
         }
 
+        /** The availability of the software source in an OCI environment for a tenancy. */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
+                availabilityAtOci = null;
+
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * The availability of the software source in an OCI environment for a tenancy.
          *
-         * <p>Example: {@code My new resource}
+         * @param availabilityAtOci the value to set
+         * @return this builder instance
          */
+        public Builder availabilityAtOci(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
+                        availabilityAtOci) {
+            this.availabilityAtOci = availabilityAtOci;
+            return this;
+        }
+
+        /**
+         * Singular setter. The availability of the software source in an OCI environment for a
+         * tenancy.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder availabilityAtOci(Availability singularValue) {
+            return this.availabilityAtOci(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * The availability of the software source. Use this query parameter to filter across
+         * availabilities in different environments.
+         */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
+                availabilityAnywhere = null;
+
+        /**
+         * The availability of the software source. Use this query parameter to filter across
+         * availabilities in different environments.
+         *
+         * @param availabilityAnywhere the value to set
+         * @return this builder instance
+         */
+        public Builder availabilityAnywhere(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
+                        availabilityAnywhere) {
+            this.availabilityAnywhere = availabilityAnywhere;
+            return this;
+        }
+
+        /**
+         * Singular setter. The availability of the software source. Use this query parameter to
+         * filter across availabilities in different environments.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder availabilityAnywhere(Availability singularValue) {
+            return this.availabilityAnywhere(java.util.Arrays.asList(singularValue));
+        }
+
+        /** Indicates whether the software source is mandatory for the Autonomous Linux service. */
+        private Boolean isMandatoryForAutonomousLinux = null;
+
+        /**
+         * Indicates whether the software source is mandatory for the Autonomous Linux service.
+         *
+         * @param isMandatoryForAutonomousLinux the value to set
+         * @return this builder instance
+         */
+        public Builder isMandatoryForAutonomousLinux(Boolean isMandatoryForAutonomousLinux) {
+            this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            return this;
+        }
+
+        /** A filter to return software sources which can be synced to a management station. */
+        private Boolean isMirrorSyncAllowed = null;
+
+        /**
+         * A filter to return software sources which can be synced to a management station.
+         *
+         * @param isMirrorSyncAllowed the value to set
+         * @return this builder instance
+         */
+        public Builder isMirrorSyncAllowed(Boolean isMirrorSyncAllowed) {
+            this.isMirrorSyncAllowed = isMirrorSyncAllowed;
+            return this;
+        }
+
+        /** A filter to return resources that match the given user-friendly name. */
         private String displayName = null;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         *
-         * <p>Example: {@code My new resource}
+         * A filter to return resources that match the given user-friendly name.
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -428,7 +559,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -437,7 +568,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -452,7 +583,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          */
@@ -461,7 +592,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          *
@@ -505,14 +636,12 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /**
-         * A filter to return only resources whose lifecycleState matches the given lifecycleStates.
-         */
+        /** A filter to return only software sources whose state matches the given state. */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.SoftwareSource.LifecycleState>
                 lifecycleState = null;
 
         /**
-         * A filter to return only resources whose lifecycleState matches the given lifecycleStates.
+         * A filter to return only software sources whose state matches the given state.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -525,8 +654,8 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Singular setter. A filter to return only resources whose lifecycleState matches the given
-         * lifecycleStates.
+         * Singular setter. A filter to return only software sources whose state matches the given
+         * state.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -591,6 +720,10 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             osFamily(o.getOsFamily());
             archType(o.getArchType());
             availability(o.getAvailability());
+            availabilityAtOci(o.getAvailabilityAtOci());
+            availabilityAnywhere(o.getAvailabilityAnywhere());
+            isMandatoryForAutonomousLinux(o.getIsMandatoryForAutonomousLinux());
+            isMirrorSyncAllowed(o.getIsMirrorSyncAllowed());
             displayName(o.getDisplayName());
             displayNameContains(o.getDisplayNameContains());
             displayNameNotEqualTo(o.getDisplayNameNotEqualTo());
@@ -641,6 +774,10 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             request.osFamily = osFamily;
             request.archType = archType;
             request.availability = availability;
+            request.availabilityAtOci = availabilityAtOci;
+            request.availabilityAnywhere = availabilityAnywhere;
+            request.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            request.isMirrorSyncAllowed = isMirrorSyncAllowed;
             request.displayName = displayName;
             request.displayNameContains = displayNameContains;
             request.displayNameNotEqualTo = displayNameNotEqualTo;
@@ -652,8 +789,10 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             request.opcRequestId = opcRequestId;
             return request;
             // new ListSoftwareSourcesRequest(compartmentId, softwareSourceId, softwareSourceType,
-            // vendorName, osFamily, archType, availability, displayName, displayNameContains,
-            // displayNameNotEqualTo, limit, page, sortOrder, sortBy, lifecycleState, opcRequestId);
+            // vendorName, osFamily, archType, availability, availabilityAtOci,
+            // availabilityAnywhere, isMandatoryForAutonomousLinux, isMirrorSyncAllowed,
+            // displayName, displayNameContains, displayNameNotEqualTo, limit, page, sortOrder,
+            // sortBy, lifecycleState, opcRequestId);
         }
     }
 
@@ -671,6 +810,10 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
                 .osFamily(osFamily)
                 .archType(archType)
                 .availability(availability)
+                .availabilityAtOci(availabilityAtOci)
+                .availabilityAnywhere(availabilityAnywhere)
+                .isMandatoryForAutonomousLinux(isMandatoryForAutonomousLinux)
+                .isMirrorSyncAllowed(isMirrorSyncAllowed)
                 .displayName(displayName)
                 .displayNameContains(displayNameContains)
                 .displayNameNotEqualTo(displayNameNotEqualTo)
@@ -703,6 +846,11 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",osFamily=").append(String.valueOf(this.osFamily));
         sb.append(",archType=").append(String.valueOf(this.archType));
         sb.append(",availability=").append(String.valueOf(this.availability));
+        sb.append(",availabilityAtOci=").append(String.valueOf(this.availabilityAtOci));
+        sb.append(",availabilityAnywhere=").append(String.valueOf(this.availabilityAnywhere));
+        sb.append(",isMandatoryForAutonomousLinux=")
+                .append(String.valueOf(this.isMandatoryForAutonomousLinux));
+        sb.append(",isMirrorSyncAllowed=").append(String.valueOf(this.isMirrorSyncAllowed));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",displayNameContains=").append(String.valueOf(this.displayNameContains));
         sb.append(",displayNameNotEqualTo=").append(String.valueOf(this.displayNameNotEqualTo));
@@ -734,6 +882,11 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
                 && java.util.Objects.equals(this.archType, other.archType)
                 && java.util.Objects.equals(this.availability, other.availability)
+                && java.util.Objects.equals(this.availabilityAtOci, other.availabilityAtOci)
+                && java.util.Objects.equals(this.availabilityAnywhere, other.availabilityAnywhere)
+                && java.util.Objects.equals(
+                        this.isMandatoryForAutonomousLinux, other.isMandatoryForAutonomousLinux)
+                && java.util.Objects.equals(this.isMirrorSyncAllowed, other.isMirrorSyncAllowed)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.displayNameContains, other.displayNameContains)
                 && java.util.Objects.equals(this.displayNameNotEqualTo, other.displayNameNotEqualTo)
@@ -764,6 +917,24 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
         result = (result * PRIME) + (this.archType == null ? 43 : this.archType.hashCode());
         result = (result * PRIME) + (this.availability == null ? 43 : this.availability.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityAtOci == null ? 43 : this.availabilityAtOci.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityAnywhere == null
+                                ? 43
+                                : this.availabilityAnywhere.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMandatoryForAutonomousLinux == null
+                                ? 43
+                                : this.isMandatoryForAutonomousLinux.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMirrorSyncAllowed == null
+                                ? 43
+                                : this.isMirrorSyncAllowed.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)

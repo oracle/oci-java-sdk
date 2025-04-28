@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.cloudguard.requests;
 import com.oracle.bmc.cloudguard.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateDetectorRecipeExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateDetectorRecipeExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDetectorRecipeRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
@@ -15,10 +15,10 @@ public class UpdateDetectorRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateDetectorRecipeDetails> {
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     private String detectorRecipeId;
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
@@ -92,11 +92,11 @@ public class UpdateDetectorRecipeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** DetectorRecipe OCID */
+        /** Detector recipe OCID */
         private String detectorRecipeId = null;
 
         /**
-         * DetectorRecipe OCID
+         * Detector recipe OCID
          *
          * @param detectorRecipeId the value to set
          * @return this builder instance

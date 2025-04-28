@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.requests;
@@ -7,22 +7,22 @@ package com.oracle.bmc.ocvp.requests;
 import com.oracle.bmc.ocvp.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSupportedHostShapesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSupportedHostShapesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListSupportedHostShapesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public class ListSupportedHostShapesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     public String getCompartmentId() {
@@ -31,14 +31,14 @@ public class ListSupportedHostShapesRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -46,14 +46,14 @@ public class ListSupportedHostShapesRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -78,12 +78,19 @@ public class ListSupportedHostShapesRequest
     public String getName() {
         return name;
     }
-    /** A filter to return only resources that match the given SDDC type exactly. */
-    private com.oracle.bmc.ocvp.model.SddcTypes sddcType;
+    /** A filter to return only resources that support single host SDDC. */
+    private Boolean isSingleHostSddcSupported;
 
-    /** A filter to return only resources that match the given SDDC type exactly. */
-    public com.oracle.bmc.ocvp.model.SddcTypes getSddcType() {
-        return sddcType;
+    /** A filter to return only resources that support single host SDDC. */
+    public Boolean getIsSingleHostSddcSupported() {
+        return isSingleHostSddcSupported;
+    }
+    /** A filter to return only the shapes compatible with the initial host shape of the Cluster. */
+    private String initialHostShapeName;
+
+    /** A filter to return only the shapes compatible with the initial host shape of the Cluster. */
+    public String getInitialHostShapeName() {
+        return initialHostShapeName;
     }
 
     public static class Builder
@@ -93,13 +100,13 @@ public class ListSupportedHostShapesRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -113,14 +120,14 @@ public class ListSupportedHostShapesRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -133,14 +140,14 @@ public class ListSupportedHostShapesRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -182,17 +189,33 @@ public class ListSupportedHostShapesRequest
             return this;
         }
 
-        /** A filter to return only resources that match the given SDDC type exactly. */
-        private com.oracle.bmc.ocvp.model.SddcTypes sddcType = null;
+        /** A filter to return only resources that support single host SDDC. */
+        private Boolean isSingleHostSddcSupported = null;
 
         /**
-         * A filter to return only resources that match the given SDDC type exactly.
+         * A filter to return only resources that support single host SDDC.
          *
-         * @param sddcType the value to set
+         * @param isSingleHostSddcSupported the value to set
          * @return this builder instance
          */
-        public Builder sddcType(com.oracle.bmc.ocvp.model.SddcTypes sddcType) {
-            this.sddcType = sddcType;
+        public Builder isSingleHostSddcSupported(Boolean isSingleHostSddcSupported) {
+            this.isSingleHostSddcSupported = isSingleHostSddcSupported;
+            return this;
+        }
+
+        /**
+         * A filter to return only the shapes compatible with the initial host shape of the Cluster.
+         */
+        private String initialHostShapeName = null;
+
+        /**
+         * A filter to return only the shapes compatible with the initial host shape of the Cluster.
+         *
+         * @param initialHostShapeName the value to set
+         * @return this builder instance
+         */
+        public Builder initialHostShapeName(String initialHostShapeName) {
+            this.initialHostShapeName = initialHostShapeName;
             return this;
         }
 
@@ -231,7 +254,8 @@ public class ListSupportedHostShapesRequest
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
             name(o.getName());
-            sddcType(o.getSddcType());
+            isSingleHostSddcSupported(o.getIsSingleHostSddcSupported());
+            initialHostShapeName(o.getInitialHostShapeName());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -271,10 +295,11 @@ public class ListSupportedHostShapesRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             request.name = name;
-            request.sddcType = sddcType;
+            request.isSingleHostSddcSupported = isSingleHostSddcSupported;
+            request.initialHostShapeName = initialHostShapeName;
             return request;
             // new ListSupportedHostShapesRequest(compartmentId, limit, page, opcRequestId, name,
-            // sddcType);
+            // isSingleHostSddcSupported, initialHostShapeName);
         }
     }
 
@@ -290,7 +315,8 @@ public class ListSupportedHostShapesRequest
                 .page(page)
                 .opcRequestId(opcRequestId)
                 .name(name)
-                .sddcType(sddcType);
+                .isSingleHostSddcSupported(isSingleHostSddcSupported)
+                .initialHostShapeName(initialHostShapeName);
     }
 
     /**
@@ -312,7 +338,9 @@ public class ListSupportedHostShapesRequest
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",name=").append(String.valueOf(this.name));
-        sb.append(",sddcType=").append(String.valueOf(this.sddcType));
+        sb.append(",isSingleHostSddcSupported=")
+                .append(String.valueOf(this.isSingleHostSddcSupported));
+        sb.append(",initialHostShapeName=").append(String.valueOf(this.initialHostShapeName));
         sb.append(")");
         return sb.toString();
     }
@@ -333,7 +361,9 @@ public class ListSupportedHostShapesRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.name, other.name)
-                && java.util.Objects.equals(this.sddcType, other.sddcType);
+                && java.util.Objects.equals(
+                        this.isSingleHostSddcSupported, other.isSingleHostSddcSupported)
+                && java.util.Objects.equals(this.initialHostShapeName, other.initialHostShapeName);
     }
 
     @Override
@@ -347,7 +377,16 @@ public class ListSupportedHostShapesRequest
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
-        result = (result * PRIME) + (this.sddcType == null ? 43 : this.sddcType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSingleHostSddcSupported == null
+                                ? 43
+                                : this.isSingleHostSddcSupported.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialHostShapeName == null
+                                ? 43
+                                : this.initialHostShapeName.hashCode());
         return result;
     }
 }

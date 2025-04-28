@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard;
@@ -44,7 +44,20 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {
+        this(builder, authenticationDetailsProvider, true);
+    }
+
+    CloudGuardAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            boolean isStreamWarningEnabled) {
         super(builder, authenticationDetailsProvider);
+
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "CloudGuardAsyncClient", "getAdhocQueryResultContent"));
+        }
     }
 
     /**
@@ -62,6 +75,8 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, CloudGuardAsyncClient> {
+        private boolean isStreamWarningEnabled = true;
+
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "cloudguard";
@@ -69,6 +84,17 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
         }
 
         /**
@@ -81,7 +107,8 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new CloudGuardAsyncClient(this, authenticationDetailsProvider);
+            return new CloudGuardAsyncClient(
+                    this, authenticationDetailsProvider, isStreamWarningEnabled);
         }
     }
 
@@ -316,6 +343,43 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeSavedQueryCompartmentResponse>
+            changeSavedQueryCompartment(
+                    ChangeSavedQueryCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSavedQueryCompartmentRequest,
+                                    ChangeSavedQueryCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getSavedQueryId(), "savedQueryId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSavedQueryCompartmentDetails(),
+                "changeSavedQueryCompartmentDetails is required");
+
+        return clientCall(request, ChangeSavedQueryCompartmentResponse::builder)
+                .logger(LOG, "changeSavedQueryCompartment")
+                .serviceDetails(
+                        "CloudGuard",
+                        "ChangeSavedQueryCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/ChangeSavedQueryCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSavedQueryCompartmentRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("savedQueries")
+                .appendPathParam(request.getSavedQueryId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeSavedQueryCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeSecurityRecipeCompartmentResponse>
             changeSecurityRecipeCompartment(
                     ChangeSecurityRecipeCompartmentRequest request,
@@ -388,6 +452,38 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeSecurityZoneCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAdhocQueryResponse> createAdhocQuery(
+            CreateAdhocQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateAdhocQueryRequest, CreateAdhocQueryResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateAdhocQueryDetails(), "createAdhocQueryDetails is required");
+
+        return clientCall(request, CreateAdhocQueryResponse::builder)
+                .logger(LOG, "createAdhocQuery")
+                .serviceDetails(
+                        "CloudGuard",
+                        "CreateAdhocQuery",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQuery/CreateAdhocQuery")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAdhocQueryRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("adhocQueries")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.AdhocQuery.class,
+                        CreateAdhocQueryResponse.Builder::adhocQuery)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateAdhocQueryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateAdhocQueryResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -594,6 +690,38 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSavedQueryResponse> createSavedQuery(
+            CreateSavedQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSavedQueryRequest, CreateSavedQueryResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateSavedQueryDetails(), "createSavedQueryDetails is required");
+
+        return clientCall(request, CreateSavedQueryResponse::builder)
+                .logger(LOG, "createSavedQuery")
+                .serviceDetails(
+                        "CloudGuard",
+                        "CreateSavedQuery",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/CreateSavedQuery")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSavedQueryRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("savedQueries")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.SavedQuery.class,
+                        CreateSavedQueryResponse.Builder::savedQuery)
+                .handleResponseHeaderString("etag", CreateSavedQueryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSavedQueryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSecurityRecipeResponse> createSecurityRecipe(
             CreateSecurityRecipeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -765,6 +893,67 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "etag", CreateTargetResponderRecipeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateTargetResponderRecipeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWlpAgentResponse> createWlpAgent(
+            CreateWlpAgentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateWlpAgentRequest, CreateWlpAgentResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateWlpAgentDetails(), "createWlpAgentDetails is required");
+
+        return clientCall(request, CreateWlpAgentResponse::builder)
+                .logger(LOG, "createWlpAgent")
+                .serviceDetails(
+                        "CloudGuard",
+                        "CreateWlpAgent",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/CreateWlpAgent")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateWlpAgentRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("wlpAgents")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.WlpAgent.class,
+                        CreateWlpAgentResponse.Builder::wlpAgent)
+                .handleResponseHeaderString("etag", CreateWlpAgentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateWlpAgentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAdhocQueryResponse> deleteAdhocQuery(
+            DeleteAdhocQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAdhocQueryRequest, DeleteAdhocQueryResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAdhocQueryId(), "adhocQueryId must not be blank");
+
+        return clientCall(request, DeleteAdhocQueryResponse::builder)
+                .logger(LOG, "deleteAdhocQuery")
+                .serviceDetails(
+                        "CloudGuard",
+                        "DeleteAdhocQuery",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQuery/DeleteAdhocQuery")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAdhocQueryRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("adhocQueries")
+                .appendPathParam(request.getAdhocQueryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAdhocQueryResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -988,6 +1177,35 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSavedQueryResponse> deleteSavedQuery(
+            DeleteSavedQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSavedQueryRequest, DeleteSavedQueryResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSavedQueryId(), "savedQueryId must not be blank");
+
+        return clientCall(request, DeleteSavedQueryResponse::builder)
+                .logger(LOG, "deleteSavedQuery")
+                .serviceDetails(
+                        "CloudGuard",
+                        "DeleteSavedQuery",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/DeleteSavedQuery")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSavedQueryRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("savedQueries")
+                .appendPathParam(request.getSavedQueryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSavedQueryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSecurityRecipeResponse> deleteSecurityRecipe(
             DeleteSecurityRecipeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1141,6 +1359,35 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteWlpAgentResponse> deleteWlpAgent(
+            DeleteWlpAgentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteWlpAgentRequest, DeleteWlpAgentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWlpAgentId(), "wlpAgentId must not be blank");
+
+        return clientCall(request, DeleteWlpAgentResponse::builder)
+                .logger(LOG, "deleteWlpAgent")
+                .serviceDetails(
+                        "CloudGuard",
+                        "DeleteWlpAgent",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/DeleteWlpAgent")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteWlpAgentRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("wlpAgents")
+                .appendPathParam(request.getWlpAgentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteWlpAgentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ExecuteResponderExecutionResponse> executeResponderExecution(
             ExecuteResponderExecutionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1172,6 +1419,72 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ExecuteResponderExecutionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdhocQueryResponse> getAdhocQuery(
+            GetAdhocQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetAdhocQueryRequest, GetAdhocQueryResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAdhocQueryId(), "adhocQueryId must not be blank");
+
+        return clientCall(request, GetAdhocQueryResponse::builder)
+                .logger(LOG, "getAdhocQuery")
+                .serviceDetails(
+                        "CloudGuard",
+                        "GetAdhocQuery",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQuery/GetAdhocQuery")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAdhocQueryRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("adhocQueries")
+                .appendPathParam(request.getAdhocQueryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.AdhocQuery.class,
+                        GetAdhocQueryResponse.Builder::adhocQuery)
+                .handleResponseHeaderString("etag", GetAdhocQueryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAdhocQueryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdhocQueryResultContentResponse>
+            getAdhocQueryResultContent(
+                    GetAdhocQueryResultContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAdhocQueryResultContentRequest,
+                                    GetAdhocQueryResultContentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getAdhocQueryId(), "adhocQueryId must not be blank");
+
+        return clientCall(request, GetAdhocQueryResultContentResponse::builder)
+                .logger(LOG, "getAdhocQueryResultContent")
+                .serviceDetails(
+                        "CloudGuard",
+                        "GetAdhocQueryResultContent",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQueryResultCollection/GetAdhocQueryResultContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAdhocQueryResultContentRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("adhocQueries")
+                .appendPathParam(request.getAdhocQueryId())
+                .appendPathParam("results")
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetAdhocQueryResultContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "etag", GetAdhocQueryResultContentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAdhocQueryResultContentResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1503,6 +1816,36 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourceResponse> getResource(
+            GetResourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetResourceRequest, GetResourceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getResourceId(), "resourceId must not be blank");
+
+        return clientCall(request, GetResourceResponse::builder)
+                .logger(LOG, "getResource")
+                .serviceDetails(
+                        "CloudGuard",
+                        "GetResource",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Resource/GetResource")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetResourceRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("resources")
+                .appendPathParam(request.getResourceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.Resource.class,
+                        GetResourceResponse.Builder::resource)
+                .handleResponseHeaderString("etag", GetResourceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetResourceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetResourceProfileResponse> getResourceProfile(
             GetResourceProfileRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1530,6 +1873,42 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .handleResponseHeaderString(
                         "opc-request-id", GetResourceProfileResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetResourceProfileResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceVulnerabilityResponse> getResourceVulnerability(
+            GetResourceVulnerabilityRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetResourceVulnerabilityRequest, GetResourceVulnerabilityResponse>
+                    handler) {
+
+        Validate.notBlank(request.getResourceId(), "resourceId must not be blank");
+
+        Validate.notBlank(request.getVulnerabilityKey(), "vulnerabilityKey must not be blank");
+
+        return clientCall(request, GetResourceVulnerabilityResponse::builder)
+                .logger(LOG, "getResourceVulnerability")
+                .serviceDetails(
+                        "CloudGuard",
+                        "GetResourceVulnerability",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceVulnerability/GetResourceVulnerability")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetResourceVulnerabilityRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("resources")
+                .appendPathParam(request.getResourceId())
+                .appendPathParam("vulnerabilities")
+                .appendPathParam(request.getVulnerabilityKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.ResourceVulnerability.class,
+                        GetResourceVulnerabilityResponse.Builder::resourceVulnerability)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetResourceVulnerabilityResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetResourceVulnerabilityResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -1664,6 +2043,36 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .handleResponseHeaderString("etag", GetResponderRuleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetResponderRuleResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSavedQueryResponse> getSavedQuery(
+            GetSavedQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetSavedQueryRequest, GetSavedQueryResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSavedQueryId(), "savedQueryId must not be blank");
+
+        return clientCall(request, GetSavedQueryResponse::builder)
+                .logger(LOG, "getSavedQuery")
+                .serviceDetails(
+                        "CloudGuard",
+                        "GetSavedQuery",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/GetSavedQuery")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSavedQueryRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("savedQueries")
+                .appendPathParam(request.getSavedQueryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.SavedQuery.class,
+                        GetSavedQueryResponse.Builder::savedQuery)
+                .handleResponseHeaderString("etag", GetSavedQueryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSavedQueryResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1983,6 +2392,36 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetWlpAgentResponse> getWlpAgent(
+            GetWlpAgentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetWlpAgentRequest, GetWlpAgentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWlpAgentId(), "wlpAgentId must not be blank");
+
+        return clientCall(request, GetWlpAgentResponse::builder)
+                .logger(LOG, "getWlpAgent")
+                .serviceDetails(
+                        "CloudGuard",
+                        "GetWlpAgent",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/GetWlpAgent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWlpAgentRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("wlpAgents")
+                .appendPathParam(request.getWlpAgentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.WlpAgent.class,
+                        GetWlpAgentResponse.Builder::wlpAgent)
+                .handleResponseHeaderString("etag", GetWlpAgentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWlpAgentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2012,6 +2451,87 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdhocQueriesResponse> listAdhocQueries(
+            ListAdhocQueriesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAdhocQueriesRequest, ListAdhocQueriesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAdhocQueriesResponse::builder)
+                .logger(LOG, "listAdhocQueries")
+                .serviceDetails(
+                        "CloudGuard",
+                        "ListAdhocQueries",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQuery/ListAdhocQueries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAdhocQueriesRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("adhocQueries")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("adhocQueryStatus", request.getAdhocQueryStatus())
+                .appendQueryParam(
+                        "timeStartedFilterQueryParam", request.getTimeStartedFilterQueryParam())
+                .appendQueryParam(
+                        "timeEndedFilterQueryParam", request.getTimeEndedFilterQueryParam())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.AdhocQueryCollection.class,
+                        ListAdhocQueriesResponse.Builder::adhocQueryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAdhocQueriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAdhocQueriesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdhocQueryResultsResponse> listAdhocQueryResults(
+            ListAdhocQueryResultsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAdhocQueryResultsRequest, ListAdhocQueryResultsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAdhocQueryId(), "adhocQueryId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAdhocQueryResultsResponse::builder)
+                .logger(LOG, "listAdhocQueryResults")
+                .serviceDetails(
+                        "CloudGuard",
+                        "ListAdhocQueryResults",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQueryResultCollection/ListAdhocQueryResults")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAdhocQueryResultsRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("adhocQueries")
+                .appendPathParam(request.getAdhocQueryId())
+                .appendPathParam("results")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.AdhocQueryResultCollection.class,
+                        ListAdhocQueryResultsResponse.Builder::adhocQueryResultCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAdhocQueryResultsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAdhocQueryResultsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -2703,6 +3223,44 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ListResourcePortsResponse> listResourcePorts(
+            ListResourcePortsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListResourcePortsRequest, ListResourcePortsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getResourceId(), "resourceId must not be blank");
+
+        return clientCall(request, ListResourcePortsResponse::builder)
+                .logger(LOG, "listResourcePorts")
+                .serviceDetails(
+                        "CloudGuard",
+                        "ListResourcePorts",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourcePortCollection/ListResourcePorts")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListResourcePortsRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("resources")
+                .appendPathParam(request.getResourceId())
+                .appendPathParam("ports")
+                .appendQueryParam("openPort", request.getOpenPort())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.ResourcePortCollection.class,
+                        ListResourcePortsResponse.Builder::resourcePortCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListResourcePortsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListResourcePortsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListResourceProfileEndpointsResponse>
             listResourceProfileEndpoints(
                     ListResourceProfileEndpointsRequest request,
@@ -2885,6 +3443,98 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-request-id", ListResourceTypesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListResourceTypesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceVulnerabilitiesResponse>
+            listResourceVulnerabilities(
+                    ListResourceVulnerabilitiesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListResourceVulnerabilitiesRequest,
+                                    ListResourceVulnerabilitiesResponse>
+                            handler) {
+
+        Validate.notBlank(request.getResourceId(), "resourceId must not be blank");
+
+        return clientCall(request, ListResourceVulnerabilitiesResponse::builder)
+                .logger(LOG, "listResourceVulnerabilities")
+                .serviceDetails(
+                        "CloudGuard",
+                        "ListResourceVulnerabilities",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceVulnerabilityCollection/ListResourceVulnerabilities")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListResourceVulnerabilitiesRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("resources")
+                .appendPathParam(request.getResourceId())
+                .appendPathParam("vulnerabilities")
+                .appendQueryParam("cveId", request.getCveId())
+                .appendQueryParam("riskLevel", request.getRiskLevel())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.ResourceVulnerabilityCollection.class,
+                        ListResourceVulnerabilitiesResponse.Builder
+                                ::resourceVulnerabilityCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListResourceVulnerabilitiesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListResourceVulnerabilitiesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourcesResponse> listResources(
+            ListResourcesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListResourcesRequest, ListResourcesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListResourcesResponse::builder)
+                .logger(LOG, "listResources")
+                .serviceDetails(
+                        "CloudGuard",
+                        "ListResources",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Resource/ListResources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListResourcesRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("resources")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("region", request.getRegion())
+                .appendQueryParam("cvssScore", request.getCvssScore())
+                .appendQueryParam("cvssScoreGreaterThan", request.getCvssScoreGreaterThan())
+                .appendQueryParam("cvssScoreLessThan", request.getCvssScoreLessThan())
+                .appendQueryParam("cveId", request.getCveId())
+                .appendQueryParam("riskLevel", request.getRiskLevel())
+                .appendQueryParam("riskLevelGreaterThan", request.getRiskLevelGreaterThan())
+                .appendQueryParam("riskLevelLessThan", request.getRiskLevelLessThan())
+                .appendListQueryParam(
+                        "detectorRuleIdList",
+                        request.getDetectorRuleIdList(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("detectorType", request.getDetectorType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.ResourceCollection.class,
+                        ListResourcesResponse.Builder::resourceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListResourcesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListResourcesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -3104,6 +3754,44 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-request-id", ListResponderRulesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListResponderRulesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSavedQueriesResponse> listSavedQueries(
+            ListSavedQueriesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSavedQueriesRequest, ListSavedQueriesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSavedQueriesResponse::builder)
+                .logger(LOG, "listSavedQueries")
+                .serviceDetails(
+                        "CloudGuard",
+                        "ListSavedQueries",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/ListSavedQueries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSavedQueriesRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("savedQueries")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.SavedQueryCollection.class,
+                        ListSavedQueriesResponse.Builder::savedQueryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSavedQueriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSavedQueriesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -3648,6 +4336,40 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-request-id", ListTechniquesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTechniquesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWlpAgentsResponse> listWlpAgents(
+            ListWlpAgentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListWlpAgentsRequest, ListWlpAgentsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListWlpAgentsResponse::builder)
+                .logger(LOG, "listWlpAgents")
+                .serviceDetails(
+                        "CloudGuard",
+                        "ListWlpAgents",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/ListWlpAgents")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWlpAgentsRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("wlpAgents")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.WlpAgentCollection.class,
+                        ListWlpAgentsResponse.Builder::wlpAgentCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWlpAgentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWlpAgentsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -4861,6 +5583,42 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateSavedQueryResponse> updateSavedQuery(
+            UpdateSavedQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSavedQueryRequest, UpdateSavedQueryResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSavedQueryId(), "savedQueryId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSavedQueryDetails(), "updateSavedQueryDetails is required");
+
+        return clientCall(request, UpdateSavedQueryResponse::builder)
+                .logger(LOG, "updateSavedQuery")
+                .serviceDetails(
+                        "CloudGuard",
+                        "UpdateSavedQuery",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/UpdateSavedQuery")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSavedQueryRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("savedQueries")
+                .appendPathParam(request.getSavedQueryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.SavedQuery.class,
+                        UpdateSavedQueryResponse.Builder::savedQuery)
+                .handleResponseHeaderString("etag", UpdateSavedQueryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSavedQueryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateSecurityRecipeResponse> updateSecurityRecipe(
             UpdateSecurityRecipeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5149,6 +5907,42 @@ public class CloudGuardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateTargetResponderRecipeResponderRuleResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWlpAgentResponse> updateWlpAgent(
+            UpdateWlpAgentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateWlpAgentRequest, UpdateWlpAgentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWlpAgentId(), "wlpAgentId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateWlpAgentDetails(), "updateWlpAgentDetails is required");
+
+        return clientCall(request, UpdateWlpAgentResponse::builder)
+                .logger(LOG, "updateWlpAgent")
+                .serviceDetails(
+                        "CloudGuard",
+                        "UpdateWlpAgent",
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/UpdateWlpAgent")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateWlpAgentRequest::builder)
+                .basePath("/20200131")
+                .appendPathParam("wlpAgents")
+                .appendPathParam(request.getWlpAgentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.cloudguard.model.WlpAgent.class,
+                        UpdateWlpAgentResponse.Builder::wlpAgent)
+                .handleResponseHeaderString("etag", UpdateWlpAgentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateWlpAgentResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

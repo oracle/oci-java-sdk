@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcemanager.model;
@@ -7,10 +7,9 @@ package com.oracle.bmc.resourcemanager.model;
 /**
  * The properties that define a stack. A stack is the collection of Oracle Cloud Infrastructure
  * resources corresponding to a given Terraform configuration. For instructions on managing stacks,
- * see [Managing
- * Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/stacks.htm). For more
- * information about stacks, see [Key
- * Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__stackdefinition).
+ * see [Managing Stacks](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/stacks.htm). For
+ * more information about stacks, see [Key
+ * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__stackdefinition).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -82,16 +81,16 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
     public static class Builder {
         /**
          * Unique identifier
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for
-         * the stack.
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+         * stack.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for
-         * the stack.
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+         * stack.
          *
          * @param id the value to set
          * @return this builder
@@ -103,16 +102,16 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * Unique identifier
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for
-         * the compartment where the stack is located.
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+         * compartment where the stack is located.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Unique identifier
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for
-         * the compartment where the stack is located.
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+         * compartment where the stack is located.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -174,7 +173,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The current lifecycle state of the stack. For more information about stack lifecycle
          * states in Resource Manager, see [Key
-         * Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
+         * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
@@ -182,7 +181,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The current lifecycle state of the stack. For more information about stack lifecycle
          * states in Resource Manager, see [Key
-         * Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
+         * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -216,7 +215,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
          * #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}. For
          * more information about stack sourcing of third-party Terraform providers, see
          * [Third-party Provider
-         * Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
         private Boolean isThirdPartyProviderExperienceEnabled;
@@ -227,7 +226,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
          * #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}. For
          * more information about stack sourcing of third-party Terraform providers, see
          * [Third-party Provider
-         * Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
          *
          * @param isThirdPartyProviderExperienceEnabled the value to set
          * @return this builder
@@ -315,8 +314,8 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Free-form tags associated with the resource. Each tag is a key-value pair with no
          * predefined name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -324,8 +323,8 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Free-form tags associated with the resource. Each tag is a key-value pair with no
          * predefined name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -338,8 +337,8 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -347,8 +346,8 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -450,7 +449,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Unique identifier
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
      * stack.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -458,7 +457,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Unique identifier
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
      * stack.
      *
      * @return the value
@@ -469,7 +468,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Unique identifier
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
      * compartment where the stack is located.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -477,7 +476,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Unique identifier
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
      * compartment where the stack is located.
      *
      * @return the value
@@ -532,7 +531,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * The current lifecycle state of the stack. For more information about stack lifecycle states
      * in Resource Manager, see [Key
-     * Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
+     * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
@@ -585,7 +584,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * The current lifecycle state of the stack. For more information about stack lifecycle states
      * in Resource Manager, see [Key
-     * Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
+     * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
@@ -593,7 +592,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * The current lifecycle state of the stack. For more information about stack lifecycle states
      * in Resource Manager, see [Key
-     * Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
+     * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      *
      * @return the value
      */
@@ -621,7 +620,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}. For more
      * information about stack sourcing of third-party Terraform providers, see [Third-party
      * Provider
-     * Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
     private final Boolean isThirdPartyProviderExperienceEnabled;
@@ -632,7 +631,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}. For more
      * information about stack sourcing of third-party Terraform providers, see [Third-party
      * Provider
-     * Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
      *
      * @return the value
      */
@@ -759,7 +758,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -768,7 +767,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -780,7 +779,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -789,7 +788,7 @@ public final class Stack extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

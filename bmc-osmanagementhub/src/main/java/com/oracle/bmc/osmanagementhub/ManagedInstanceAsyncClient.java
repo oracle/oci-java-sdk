@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -96,6 +96,88 @@ public class ManagedInstanceAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateManagedInstancesWithManagementStationResponse>
+            associateManagedInstancesWithManagementStation(
+                    AssociateManagedInstancesWithManagementStationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AssociateManagedInstancesWithManagementStationRequest,
+                                    AssociateManagedInstancesWithManagementStationResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getManagementStationId(), "managementStationId must not be blank");
+        Objects.requireNonNull(
+                request.getAssociateManagedInstancesWithManagementStationDetails(),
+                "associateManagedInstancesWithManagementStationDetails is required");
+
+        return clientCall(request, AssociateManagedInstancesWithManagementStationResponse::builder)
+                .logger(LOG, "associateManagedInstancesWithManagementStation")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "AssociateManagedInstancesWithManagementStation",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/AssociateManagedInstancesWithManagementStation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AssociateManagedInstancesWithManagementStationRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managementStations")
+                .appendPathParam(request.getManagementStationId())
+                .appendPathParam("actions")
+                .appendPathParam("associateManagedInstances")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AssociateManagedInstancesWithManagementStationResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AssociateManagedInstancesWithManagementStationResponse.Builder
+                                ::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachProfileToManagedInstanceResponse>
+            attachProfileToManagedInstance(
+                    AttachProfileToManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AttachProfileToManagedInstanceRequest,
+                                    AttachProfileToManagedInstanceResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getAttachProfileToManagedInstanceDetails(),
+                "attachProfileToManagedInstanceDetails is required");
+
+        return clientCall(request, AttachProfileToManagedInstanceResponse::builder)
+                .logger(LOG, "attachProfileToManagedInstance")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "AttachProfileToManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/AttachProfileToManagedInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachProfileToManagedInstanceRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstances")
+                .appendPathParam(request.getManagedInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("attachProfile")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AttachProfileToManagedInstanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachSoftwareSourcesToManagedInstanceResponse>
             attachSoftwareSourcesToManagedInstance(
                     AttachSoftwareSourcesToManagedInstanceRequest request,
@@ -133,6 +215,71 @@ public class ManagedInstanceAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         AttachSoftwareSourcesToManagedInstanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteManagedInstanceResponse> deleteManagedInstance(
+            DeleteManagedInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteManagedInstanceRequest, DeleteManagedInstanceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
+
+        return clientCall(request, DeleteManagedInstanceResponse::builder)
+                .logger(LOG, "deleteManagedInstance")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "DeleteManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DeleteManagedInstance")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteManagedInstanceRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstances")
+                .appendPathParam(request.getManagedInstanceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteManagedInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteManagedInstanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachProfileFromManagedInstanceResponse>
+            detachProfileFromManagedInstance(
+                    DetachProfileFromManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DetachProfileFromManagedInstanceRequest,
+                                    DetachProfileFromManagedInstanceResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
+
+        return clientCall(request, DetachProfileFromManagedInstanceResponse::builder)
+                .logger(LOG, "detachProfileFromManagedInstance")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "DetachProfileFromManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DetachProfileFromManagedInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetachProfileFromManagedInstanceRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstances")
+                .appendPathParam(request.getManagedInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("detachProfile")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DetachProfileFromManagedInstanceResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -293,6 +440,80 @@ public class ManagedInstanceAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetWindowsUpdateResponse> getWindowsUpdate(
+            GetWindowsUpdateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWindowsUpdateRequest, GetWindowsUpdateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWindowsUpdateId(), "windowsUpdateId must not be blank");
+
+        return clientCall(request, GetWindowsUpdateResponse::builder)
+                .logger(LOG, "getWindowsUpdate")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "GetWindowsUpdate",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WindowsUpdate/GetWindowsUpdate")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWindowsUpdateRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("windowsUpdates")
+                .appendPathParam(request.getWindowsUpdateId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.osmanagementhub.model.WindowsUpdate.class,
+                        GetWindowsUpdateResponse.Builder::windowsUpdate)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWindowsUpdateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<
+                    InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse>
+            installAllWindowsUpdatesOnManagedInstancesInCompartment(
+                    InstallAllWindowsUpdatesOnManagedInstancesInCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    InstallAllWindowsUpdatesOnManagedInstancesInCompartmentRequest,
+                                    InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getInstallAllWindowsUpdatesOnManagedInstancesInCompartmentDetails(),
+                "installAllWindowsUpdatesOnManagedInstancesInCompartmentDetails is required");
+
+        return clientCall(
+                        request,
+                        InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse::builder)
+                .logger(LOG, "installAllWindowsUpdatesOnManagedInstancesInCompartment")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "InstallAllWindowsUpdatesOnManagedInstancesInCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallAllWindowsUpdatesOnManagedInstancesInCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(
+                        InstallAllWindowsUpdatesOnManagedInstancesInCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstances")
+                .appendPathParam("actions")
+                .appendPathParam("installWindowsUpdates")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse.Builder
+                                ::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<InstallModuleStreamProfileOnManagedInstanceResponse>
             installModuleStreamProfileOnManagedInstance(
                     InstallModuleStreamProfileOnManagedInstanceRequest request,
@@ -372,6 +593,47 @@ public class ManagedInstanceAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         InstallPackagesOnManagedInstanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InstallWindowsUpdatesOnManagedInstanceResponse>
+            installWindowsUpdatesOnManagedInstance(
+                    InstallWindowsUpdatesOnManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    InstallWindowsUpdatesOnManagedInstanceRequest,
+                                    InstallWindowsUpdatesOnManagedInstanceResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getInstallWindowsUpdatesOnManagedInstanceDetails(),
+                "installWindowsUpdatesOnManagedInstanceDetails is required");
+
+        return clientCall(request, InstallWindowsUpdatesOnManagedInstanceResponse::builder)
+                .logger(LOG, "installWindowsUpdatesOnManagedInstance")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "InstallWindowsUpdatesOnManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallWindowsUpdatesOnManagedInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InstallWindowsUpdatesOnManagedInstanceRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstances")
+                .appendPathParam(request.getManagedInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("installWindowsUpdates")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        InstallWindowsUpdatesOnManagedInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        InstallWindowsUpdatesOnManagedInstanceResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -473,6 +735,60 @@ public class ManagedInstanceAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ListManagedInstanceAvailableWindowsUpdatesResponse>
+            listManagedInstanceAvailableWindowsUpdates(
+                    ListManagedInstanceAvailableWindowsUpdatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListManagedInstanceAvailableWindowsUpdatesRequest,
+                                    ListManagedInstanceAvailableWindowsUpdatesResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
+
+        return clientCall(request, ListManagedInstanceAvailableWindowsUpdatesResponse::builder)
+                .logger(LOG, "listManagedInstanceAvailableWindowsUpdates")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceAvailableWindowsUpdates",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceAvailableWindowsUpdates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListManagedInstanceAvailableWindowsUpdatesRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstances")
+                .appendPathParam(request.getManagedInstanceId())
+                .appendPathParam("availableWindowsUpdates")
+                .appendListQueryParam(
+                        "classificationType",
+                        request.getClassificationType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "name",
+                        request.getName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
+                .appendEnumQueryParam("isInstallable", request.getIsInstallable())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.osmanagementhub.model.AvailableWindowsUpdateCollection.class,
+                        ListManagedInstanceAvailableWindowsUpdatesResponse.Builder
+                                ::availableWindowsUpdateCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListManagedInstanceAvailableWindowsUpdatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListManagedInstanceAvailableWindowsUpdatesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListManagedInstanceErrataResponse> listManagedInstanceErrata(
             ListManagedInstanceErrataRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -494,8 +810,8 @@ public class ManagedInstanceAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getManagedInstanceId())
                 .appendPathParam("errata")
                 .appendListQueryParam(
-                        "advisoryType",
-                        request.getAdvisoryType(),
+                        "classificationType",
+                        request.getClassificationType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendListQueryParam(
                         "name",
@@ -568,6 +884,55 @@ public class ManagedInstanceAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListManagedInstanceInstalledPackagesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedInstanceInstalledWindowsUpdatesResponse>
+            listManagedInstanceInstalledWindowsUpdates(
+                    ListManagedInstanceInstalledWindowsUpdatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListManagedInstanceInstalledWindowsUpdatesRequest,
+                                    ListManagedInstanceInstalledWindowsUpdatesResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
+
+        return clientCall(request, ListManagedInstanceInstalledWindowsUpdatesResponse::builder)
+                .logger(LOG, "listManagedInstanceInstalledWindowsUpdates")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceInstalledWindowsUpdates",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceInstalledWindowsUpdates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListManagedInstanceInstalledWindowsUpdatesRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstances")
+                .appendPathParam(request.getManagedInstanceId())
+                .appendPathParam("installedWindowsUpdates")
+                .appendListQueryParam(
+                        "name",
+                        request.getName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.osmanagementhub.model.InstalledWindowsUpdateCollection.class,
+                        ListManagedInstanceInstalledWindowsUpdatesResponse.Builder
+                                ::installedWindowsUpdateCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListManagedInstanceInstalledWindowsUpdatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListManagedInstanceInstalledWindowsUpdatesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -721,6 +1086,39 @@ public class ManagedInstanceAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "advisoryName",
                         request.getAdvisoryName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("lifecycleEnvironment", request.getLifecycleEnvironment())
+                .appendQueryParam(
+                        "lifecycleEnvironmentNotEqualTo",
+                        request.getLifecycleEnvironmentNotEqualTo())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "profile",
+                        request.getProfile(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "profileNotEqualTo",
+                        request.getProfileNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isProfileAttached", request.getIsProfileAttached())
+                .appendQueryParam(
+                        "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
+                .appendQueryParam("agentVersion", request.getAgentVersion())
+                .appendListQueryParam(
+                        "managementStation",
+                        request.getManagementStation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "managementStationNotEqualTo",
+                        request.getManagementStationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isRebootRequired", request.getIsRebootRequired())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -734,6 +1132,52 @@ public class ManagedInstanceAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListManagedInstancesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListManagedInstancesResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListManagedInstancesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWindowsUpdatesResponse> listWindowsUpdates(
+            ListWindowsUpdatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWindowsUpdatesRequest, ListWindowsUpdatesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListWindowsUpdatesResponse::builder)
+                .logger(LOG, "listWindowsUpdates")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "ListWindowsUpdates",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WindowsUpdateCollection/ListWindowsUpdates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWindowsUpdatesRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("windowsUpdates")
+                .appendListQueryParam(
+                        "classificationType",
+                        request.getClassificationType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "name",
+                        request.getName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.osmanagementhub.model.WindowsUpdateCollection.class,
+                        ListWindowsUpdatesResponse.Builder::windowsUpdateCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWindowsUpdatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWindowsUpdatesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -775,6 +1219,44 @@ public class ManagedInstanceAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ManageModuleStreamsOnManagedInstanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RebootManagedInstanceResponse> rebootManagedInstance(
+            RebootManagedInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RebootManagedInstanceRequest, RebootManagedInstanceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getRebootManagedInstanceDetails(),
+                "rebootManagedInstanceDetails is required");
+
+        return clientCall(request, RebootManagedInstanceResponse::builder)
+                .logger(LOG, "rebootManagedInstance")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "RebootManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RebootManagedInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RebootManagedInstanceRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstances")
+                .appendPathParam(request.getManagedInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("reboot")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RebootManagedInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RebootManagedInstanceResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

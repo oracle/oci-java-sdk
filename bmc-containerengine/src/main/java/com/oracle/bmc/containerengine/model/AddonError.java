@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.model;
@@ -33,16 +33,14 @@ public final class AddonError extends com.oracle.bmc.http.client.internal.Explic
     public static class Builder {
         /**
          * A short error code that defines the upstream error, meant for programmatic parsing. See
-         * [API
-         * Errors](https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
+         * [API Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
          * A short error code that defines the upstream error, meant for programmatic parsing. See
-         * [API
-         * Errors](https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
+         * [API Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
          *
          * @param code the value to set
          * @return this builder
@@ -120,14 +118,14 @@ public final class AddonError extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * A short error code that defines the upstream error, meant for programmatic parsing. See [API
-     * Errors](https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
+     * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
      * A short error code that defines the upstream error, meant for programmatic parsing. See [API
-     * Errors](https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
+     * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
      *
      * @return the value
      */

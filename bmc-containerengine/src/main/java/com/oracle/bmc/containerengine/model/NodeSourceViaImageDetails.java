@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.model;
@@ -44,7 +44,7 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
         }
         /**
          * The size of the boot volume in GBs. Minimum value is 50 GB. See
-         * [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm)
+         * [here](https://docs.oracle.com/iaas/en-us/iaas/Content/Block/Concepts/bootvolumes.htm)
          * for max custom boot volume sizing and OS-specific requirements.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
@@ -52,7 +52,7 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
 
         /**
          * The size of the boot volume in GBs. Minimum value is 50 GB. See
-         * [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm)
+         * [here](https://docs.oracle.com/iaas/en-us/iaas/Content/Block/Concepts/bootvolumes.htm)
          * for max custom boot volume sizing and OS-specific requirements.
          *
          * @param bootVolumeSizeInGBs the value to set
@@ -119,7 +119,7 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
 
     /**
      * The size of the boot volume in GBs. Minimum value is 50 GB. See
-     * [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for
+     * [here](https://docs.oracle.com/iaas/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for
      * max custom boot volume sizing and OS-specific requirements.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
@@ -127,7 +127,7 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
 
     /**
      * The size of the boot volume in GBs. Minimum value is 50 GB. See
-     * [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for
+     * [here](https://docs.oracle.com/iaas/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for
      * max custom boot volume sizing and OS-specific requirements.
      *
      * @return the value

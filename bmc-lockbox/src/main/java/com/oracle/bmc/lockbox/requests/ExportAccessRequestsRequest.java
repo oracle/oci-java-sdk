@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.lockbox.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.lockbox.requests;
 import com.oracle.bmc.lockbox.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ExportAccessRequestsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ExportAccessRequestsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ExportAccessRequestsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
@@ -15,8 +15,10 @@ public class ExportAccessRequestsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.lockbox.model.ExportAccessRequestsDetails> {
 
+    /** Exports the list of access requests for given date range in text format */
     private com.oracle.bmc.lockbox.model.ExportAccessRequestsDetails exportAccessRequestsDetails;
 
+    /** Exports the list of access requests for given date range in text format */
     public com.oracle.bmc.lockbox.model.ExportAccessRequestsDetails
             getExportAccessRequestsDetails() {
         return exportAccessRequestsDetails;
@@ -171,10 +173,13 @@ public class ExportAccessRequestsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /** Exports the list of access requests for given date range in text format */
         private com.oracle.bmc.lockbox.model.ExportAccessRequestsDetails
                 exportAccessRequestsDetails = null;
 
         /**
+         * Exports the list of access requests for given date range in text format
+         *
          * @param exportAccessRequestsDetails the value to set
          * @return this builder instance
          */

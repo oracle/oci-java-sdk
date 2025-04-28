@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.model;
@@ -25,10 +25,19 @@ package com.oracle.bmc.monitoring.model;
 public final class AlarmHistoryEntry
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"summary", "timestamp", "timestampTriggered"})
+    @java.beans.ConstructorProperties({
+        "alarmSummary",
+        "summary",
+        "timestamp",
+        "timestampTriggered"
+    })
     public AlarmHistoryEntry(
-            String summary, java.util.Date timestamp, java.util.Date timestampTriggered) {
+            String alarmSummary,
+            String summary,
+            java.util.Date timestamp,
+            java.util.Date timestampTriggered) {
         super();
+        this.alarmSummary = alarmSummary;
         this.summary = summary;
         this.timestamp = timestamp;
         this.timestampTriggered = timestampTriggered;
@@ -36,6 +45,37 @@ public final class AlarmHistoryEntry
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Customizable alarm summary ({@code alarmSummary} [alarm message
+         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to {@link
+         * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
+         * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
+         * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
+        private String alarmSummary;
+
+        /**
+         * Customizable alarm summary ({@code alarmSummary} [alarm message
+         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to {@link
+         * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
+         * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
+         * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         *
+         * @param alarmSummary the value to set
+         * @return this builder
+         */
+        public Builder alarmSummary(String alarmSummary) {
+            this.alarmSummary = alarmSummary;
+            this.__explicitlySet__.add("alarmSummary");
+            return this;
+        }
         /**
          * Description for this alarm history entry.
          *
@@ -66,7 +106,7 @@ public final class AlarmHistoryEntry
         /**
          * Timestamp for this alarm history entry. Format defined by RFC3339.
          *
-         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
@@ -74,7 +114,7 @@ public final class AlarmHistoryEntry
         /**
          * Timestamp for this alarm history entry. Format defined by RFC3339.
          *
-         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param timestamp the value to set
          * @return this builder
@@ -89,7 +129,7 @@ public final class AlarmHistoryEntry
          * transitioned from OK to Firing. Available for state transition entries only. Note: A
          * three-minute lag for this value accounts for any late-arriving metrics.
          *
-         * <p>Example: {@code 2019-02-01T0:59:00.789Z}
+         * <p>Example: {@code 2023-02-01T0:59:00.789Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
         private java.util.Date timestampTriggered;
@@ -99,7 +139,7 @@ public final class AlarmHistoryEntry
          * transitioned from OK to Firing. Available for state transition entries only. Note: A
          * three-minute lag for this value accounts for any late-arriving metrics.
          *
-         * <p>Example: {@code 2019-02-01T0:59:00.789Z}
+         * <p>Example: {@code 2023-02-01T0:59:00.789Z}
          *
          * @param timestampTriggered the value to set
          * @return this builder
@@ -115,7 +155,11 @@ public final class AlarmHistoryEntry
 
         public AlarmHistoryEntry build() {
             AlarmHistoryEntry model =
-                    new AlarmHistoryEntry(this.summary, this.timestamp, this.timestampTriggered);
+                    new AlarmHistoryEntry(
+                            this.alarmSummary,
+                            this.summary,
+                            this.timestamp,
+                            this.timestampTriggered);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -124,6 +168,9 @@ public final class AlarmHistoryEntry
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AlarmHistoryEntry model) {
+            if (model.wasPropertyExplicitlySet("alarmSummary")) {
+                this.alarmSummary(model.getAlarmSummary());
+            }
             if (model.wasPropertyExplicitlySet("summary")) {
                 this.summary(model.getSummary());
             }
@@ -144,6 +191,35 @@ public final class AlarmHistoryEntry
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Customizable alarm summary ({@code alarmSummary} [alarm message
+     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to {@link
+     * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
+     * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
+    private final String alarmSummary;
+
+    /**
+     * Customizable alarm summary ({@code alarmSummary} [alarm message
+     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to {@link
+     * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
+     * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     *
+     * @return the value
+     */
+    public String getAlarmSummary() {
+        return alarmSummary;
     }
 
     /**
@@ -174,7 +250,7 @@ public final class AlarmHistoryEntry
     /**
      * Timestamp for this alarm history entry. Format defined by RFC3339.
      *
-     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
@@ -182,7 +258,7 @@ public final class AlarmHistoryEntry
     /**
      * Timestamp for this alarm history entry. Format defined by RFC3339.
      *
-     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
      */
@@ -195,7 +271,7 @@ public final class AlarmHistoryEntry
      * transitioned from OK to Firing. Available for state transition entries only. Note: A
      * three-minute lag for this value accounts for any late-arriving metrics.
      *
-     * <p>Example: {@code 2019-02-01T0:59:00.789Z}
+     * <p>Example: {@code 2023-02-01T0:59:00.789Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
     private final java.util.Date timestampTriggered;
@@ -205,7 +281,7 @@ public final class AlarmHistoryEntry
      * transitioned from OK to Firing. Available for state transition entries only. Note: A
      * three-minute lag for this value accounts for any late-arriving metrics.
      *
-     * <p>Example: {@code 2019-02-01T0:59:00.789Z}
+     * <p>Example: {@code 2023-02-01T0:59:00.789Z}
      *
      * @return the value
      */
@@ -228,7 +304,8 @@ public final class AlarmHistoryEntry
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AlarmHistoryEntry(");
         sb.append("super=").append(super.toString());
-        sb.append("summary=").append(String.valueOf(this.summary));
+        sb.append("alarmSummary=").append(String.valueOf(this.alarmSummary));
+        sb.append(", summary=").append(String.valueOf(this.summary));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", timestampTriggered=").append(String.valueOf(this.timestampTriggered));
         sb.append(")");
@@ -245,7 +322,8 @@ public final class AlarmHistoryEntry
         }
 
         AlarmHistoryEntry other = (AlarmHistoryEntry) o;
-        return java.util.Objects.equals(this.summary, other.summary)
+        return java.util.Objects.equals(this.alarmSummary, other.alarmSummary)
+                && java.util.Objects.equals(this.summary, other.summary)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
                 && java.util.Objects.equals(this.timestampTriggered, other.timestampTriggered)
                 && super.equals(other);
@@ -255,6 +333,7 @@ public final class AlarmHistoryEntry
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.alarmSummary == null ? 43 : this.alarmSummary.hashCode());
         result = (result * PRIME) + (this.summary == null ? 43 : this.summary.hashCode());
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
         result =

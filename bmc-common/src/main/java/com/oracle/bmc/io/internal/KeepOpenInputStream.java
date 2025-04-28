@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.io.internal;
@@ -19,8 +19,6 @@ public final class KeepOpenInputStream extends FilterInputStream {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(KeepOpenInputStream.class);
 
-    public volatile InputStream innerStream;
-
     public KeepOpenInputStream(InputStream is) {
         super(is);
         if (!is.markSupported()) {
@@ -29,7 +27,6 @@ public final class KeepOpenInputStream extends FilterInputStream {
                             "Stream '%s' does not support mark/reset, retries won't work",
                             is.getClass().getName()));
         }
-        this.innerStream = is;
     }
 
     @Override
@@ -40,7 +37,7 @@ public final class KeepOpenInputStream extends FilterInputStream {
     /**
      * This method actually closes the stream, what {@code close()} is not doing.
      *
-     * @throws IOException
+     * @throws IOException if actually closing the stream throws an exception
      */
     public void doClose() throws IOException {
         LOG.debug("Closing stream now");

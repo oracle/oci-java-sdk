@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
@@ -23,12 +23,15 @@ package com.oracle.bmc.osmanagementhub.model;
 public final class InstallPackagesOnManagedInstanceGroupDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"packageNames", "workRequestDetails"})
+    @java.beans.ConstructorProperties({"packageNames", "workRequestDetails", "isLatest"})
     public InstallPackagesOnManagedInstanceGroupDetails(
-            java.util.List<String> packageNames, WorkRequestDetails workRequestDetails) {
+            java.util.List<String> packageNames,
+            WorkRequestDetails workRequestDetails,
+            Boolean isLatest) {
         super();
         this.packageNames = packageNames;
         this.workRequestDetails = workRequestDetails;
+        this.isLatest = isLatest;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -57,6 +60,21 @@ public final class InstallPackagesOnManagedInstanceGroupDetails
             this.__explicitlySet__.add("workRequestDetails");
             return this;
         }
+        /** Indicates whether this is the latest package version. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isLatest")
+        private Boolean isLatest;
+
+        /**
+         * Indicates whether this is the latest package version.
+         *
+         * @param isLatest the value to set
+         * @return this builder
+         */
+        public Builder isLatest(Boolean isLatest) {
+            this.isLatest = isLatest;
+            this.__explicitlySet__.add("isLatest");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -64,7 +82,7 @@ public final class InstallPackagesOnManagedInstanceGroupDetails
         public InstallPackagesOnManagedInstanceGroupDetails build() {
             InstallPackagesOnManagedInstanceGroupDetails model =
                     new InstallPackagesOnManagedInstanceGroupDetails(
-                            this.packageNames, this.workRequestDetails);
+                            this.packageNames, this.workRequestDetails, this.isLatest);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +96,9 @@ public final class InstallPackagesOnManagedInstanceGroupDetails
             }
             if (model.wasPropertyExplicitlySet("workRequestDetails")) {
                 this.workRequestDetails(model.getWorkRequestDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isLatest")) {
+                this.isLatest(model.getIsLatest());
             }
             return this;
         }
@@ -112,6 +133,19 @@ public final class InstallPackagesOnManagedInstanceGroupDetails
         return workRequestDetails;
     }
 
+    /** Indicates whether this is the latest package version. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isLatest")
+    private final Boolean isLatest;
+
+    /**
+     * Indicates whether this is the latest package version.
+     *
+     * @return the value
+     */
+    public Boolean getIsLatest() {
+        return isLatest;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -129,6 +163,7 @@ public final class InstallPackagesOnManagedInstanceGroupDetails
         sb.append("super=").append(super.toString());
         sb.append("packageNames=").append(String.valueOf(this.packageNames));
         sb.append(", workRequestDetails=").append(String.valueOf(this.workRequestDetails));
+        sb.append(", isLatest=").append(String.valueOf(this.isLatest));
         sb.append(")");
         return sb.toString();
     }
@@ -146,6 +181,7 @@ public final class InstallPackagesOnManagedInstanceGroupDetails
                 (InstallPackagesOnManagedInstanceGroupDetails) o;
         return java.util.Objects.equals(this.packageNames, other.packageNames)
                 && java.util.Objects.equals(this.workRequestDetails, other.workRequestDetails)
+                && java.util.Objects.equals(this.isLatest, other.isLatest)
                 && super.equals(other);
     }
 
@@ -159,6 +195,7 @@ public final class InstallPackagesOnManagedInstanceGroupDetails
                         + (this.workRequestDetails == null
                                 ? 43
                                 : this.workRequestDetails.hashCode());
+        result = (result * PRIME) + (this.isLatest == null ? 43 : this.isLatest.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

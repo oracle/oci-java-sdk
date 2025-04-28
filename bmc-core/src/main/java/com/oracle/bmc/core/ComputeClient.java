@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -330,6 +330,46 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public ChangeComputeCapacityTopologyCompartmentResponse
+            changeComputeCapacityTopologyCompartment(
+                    ChangeComputeCapacityTopologyCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeComputeCapacityTopologyCompartmentDetails(),
+                "changeComputeCapacityTopologyCompartmentDetails is required");
+
+        return clientCall(request, ChangeComputeCapacityTopologyCompartmentResponse::builder)
+                .logger(LOG, "changeComputeCapacityTopologyCompartment")
+                .serviceDetails(
+                        "Compute",
+                        "ChangeComputeCapacityTopologyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/ChangeComputeCapacityTopologyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeComputeCapacityTopologyCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeComputeCapacityTopologyCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeComputeCapacityTopologyCompartmentResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeComputeClusterCompartmentResponse changeComputeClusterCompartment(
             ChangeComputeClusterCompartmentRequest request) {
 
@@ -363,6 +403,116 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public ChangeComputeGpuMemoryClusterCompartmentResponse
+            changeComputeGpuMemoryClusterCompartment(
+                    ChangeComputeGpuMemoryClusterCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryClusterId(),
+                "computeGpuMemoryClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeComputeGpuMemoryClusterCompartmentDetails(),
+                "changeComputeGpuMemoryClusterCompartmentDetails is required");
+
+        return clientCall(request, ChangeComputeGpuMemoryClusterCompartmentResponse::builder)
+                .logger(LOG, "changeComputeGpuMemoryClusterCompartment")
+                .serviceDetails(
+                        "Compute",
+                        "ChangeComputeGpuMemoryClusterCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/ChangeComputeGpuMemoryClusterCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeComputeGpuMemoryClusterCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .appendPathParam(request.getComputeGpuMemoryClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeComputeGpuMemoryClusterCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeComputeGpuMemoryFabricCompartmentResponse changeComputeGpuMemoryFabricCompartment(
+            ChangeComputeGpuMemoryFabricCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryFabricId(),
+                "computeGpuMemoryFabricId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeComputeGpuMemoryFabricCompartmentDetails(),
+                "changeComputeGpuMemoryFabricCompartmentDetails is required");
+
+        return clientCall(request, ChangeComputeGpuMemoryFabricCompartmentResponse::builder)
+                .logger(LOG, "changeComputeGpuMemoryFabricCompartment")
+                .serviceDetails(
+                        "Compute",
+                        "ChangeComputeGpuMemoryFabricCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/ChangeComputeGpuMemoryFabricCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeComputeGpuMemoryFabricCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryFabrics")
+                .appendPathParam(request.getComputeGpuMemoryFabricId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeComputeGpuMemoryFabricCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeComputeHostCompartmentResponse changeComputeHostCompartment(
+            ChangeComputeHostCompartmentRequest request) {
+
+        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeComputeHostCompartmentDetails(),
+                "changeComputeHostCompartmentDetails is required");
+
+        return clientCall(request, ChangeComputeHostCompartmentResponse::builder)
+                .logger(LOG, "changeComputeHostCompartment")
+                .serviceDetails(
+                        "Compute",
+                        "ChangeComputeHostCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/ChangeComputeHostCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeComputeHostCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendPathParam(request.getComputeHostId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeComputeHostCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeComputeHostCompartmentResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeComputeImageCapabilitySchemaCompartmentResponse
             changeComputeImageCapabilitySchemaCompartment(
                     ChangeComputeImageCapabilitySchemaCompartmentRequest request) {
@@ -391,11 +541,11 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeComputeImageCapabilitySchemaCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -463,11 +613,11 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString("etag", ChangeImageCompartmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeImageCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -526,6 +676,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam("appCatalogSubscriptions")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.AppCatalogSubscription.class,
@@ -535,7 +686,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateAppCatalogSubscriptionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -559,13 +709,13 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.ComputeCapacityReport.class,
                         CreateComputeCapacityReportResponse.Builder::computeCapacityReport)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateComputeCapacityReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -605,6 +755,41 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public CreateComputeCapacityTopologyResponse createComputeCapacityTopology(
+            CreateComputeCapacityTopologyRequest request) {
+        Objects.requireNonNull(
+                request.getCreateComputeCapacityTopologyDetails(),
+                "createComputeCapacityTopologyDetails is required");
+
+        return clientCall(request, CreateComputeCapacityTopologyResponse::builder)
+                .logger(LOG, "createComputeCapacityTopology")
+                .serviceDetails("Compute", "CreateComputeCapacityTopology", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateComputeCapacityTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeCapacityTopology.class,
+                        CreateComputeCapacityTopologyResponse.Builder::computeCapacityTopology)
+                .handleResponseHeaderString(
+                        "etag", CreateComputeCapacityTopologyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CreateComputeCapacityTopologyResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateComputeCapacityTopologyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateComputeCapacityTopologyResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateComputeClusterResponse createComputeCluster(CreateComputeClusterRequest request) {
         Objects.requireNonNull(
                 request.getCreateComputeClusterDetails(),
@@ -634,6 +819,42 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public CreateComputeGpuMemoryClusterResponse createComputeGpuMemoryCluster(
+            CreateComputeGpuMemoryClusterRequest request) {
+        Objects.requireNonNull(
+                request.getCreateComputeGpuMemoryClusterDetails(),
+                "createComputeGpuMemoryClusterDetails is required");
+
+        return clientCall(request, CreateComputeGpuMemoryClusterResponse::builder)
+                .logger(LOG, "createComputeGpuMemoryCluster")
+                .serviceDetails(
+                        "Compute",
+                        "CreateComputeGpuMemoryCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/CreateComputeGpuMemoryCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateComputeGpuMemoryClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryCluster.class,
+                        CreateComputeGpuMemoryClusterResponse.Builder::computeGpuMemoryCluster)
+                .handleResponseHeaderString(
+                        "etag", CreateComputeGpuMemoryClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateComputeGpuMemoryClusterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateComputeGpuMemoryClusterResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateComputeImageCapabilitySchemaResponse createComputeImageCapabilitySchema(
             CreateComputeImageCapabilitySchemaRequest request) {
         Objects.requireNonNull(
@@ -652,6 +873,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam("computeImageCapabilitySchemas")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.ComputeImageCapabilitySchema.class,
@@ -662,7 +884,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateComputeImageCapabilitySchemaResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -715,6 +936,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam("images")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.Image.class, CreateImageResponse.Builder::image)
@@ -723,7 +945,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-request-id", CreateImageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateImageResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -815,6 +1036,38 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public DeleteComputeCapacityTopologyResponse deleteComputeCapacityTopology(
+            DeleteComputeCapacityTopologyRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+
+        return clientCall(request, DeleteComputeCapacityTopologyResponse::builder)
+                .logger(LOG, "deleteComputeCapacityTopology")
+                .serviceDetails(
+                        "Compute",
+                        "DeleteComputeCapacityTopology",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/DeleteComputeCapacityTopology")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteComputeCapacityTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteComputeCapacityTopologyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteComputeCapacityTopologyResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteComputeClusterResponse deleteComputeCluster(DeleteComputeClusterRequest request) {
 
         Validate.notBlank(request.getComputeClusterId(), "computeClusterId must not be blank");
@@ -835,6 +1088,38 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteComputeClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteComputeGpuMemoryClusterResponse deleteComputeGpuMemoryCluster(
+            DeleteComputeGpuMemoryClusterRequest request) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryClusterId(),
+                "computeGpuMemoryClusterId must not be blank");
+
+        return clientCall(request, DeleteComputeGpuMemoryClusterResponse::builder)
+                .logger(LOG, "deleteComputeGpuMemoryCluster")
+                .serviceDetails(
+                        "Compute",
+                        "DeleteComputeGpuMemoryCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/DeleteComputeGpuMemoryCluster")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteComputeGpuMemoryClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .appendPathParam(request.getComputeGpuMemoryClusterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteComputeGpuMemoryClusterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteComputeGpuMemoryClusterResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1053,6 +1338,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.Image.class, ExportImageResponse.Builder::image)
@@ -1061,7 +1347,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-request-id", ExportImageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", ExportImageResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1082,13 +1367,13 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam("appCatalogListings")
                 .appendPathParam(request.getListingId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.AppCatalogListing.class,
                         GetAppCatalogListingResponse.Builder::appCatalogListing)
                 .handleResponseHeaderString("etag", GetAppCatalogListingResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAppCatalogListingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1115,6 +1400,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam(request.getResourceVersion())
                 .appendPathParam("agreements")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.AppCatalogListingResourceVersionAgreements.class,
                         GetAppCatalogListingAgreementsResponse.Builder
@@ -1124,7 +1410,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetAppCatalogListingAgreementsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1150,6 +1435,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam("resourceVersions")
                 .appendPathParam(request.getResourceVersion())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.AppCatalogListingResourceVersion.class,
                         GetAppCatalogListingResourceVersionResponse.Builder
@@ -1159,7 +1445,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetAppCatalogListingResourceVersionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1223,6 +1508,38 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public GetComputeCapacityTopologyResponse getComputeCapacityTopology(
+            GetComputeCapacityTopologyRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+
+        return clientCall(request, GetComputeCapacityTopologyResponse::builder)
+                .logger(LOG, "getComputeCapacityTopology")
+                .serviceDetails(
+                        "Compute",
+                        "GetComputeCapacityTopology",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/GetComputeCapacityTopology")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeCapacityTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeCapacityTopology.class,
+                        GetComputeCapacityTopologyResponse.Builder::computeCapacityTopology)
+                .handleResponseHeaderString(
+                        "etag", GetComputeCapacityTopologyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComputeCapacityTopologyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetComputeClusterResponse getComputeCluster(GetComputeClusterRequest request) {
 
         Validate.notBlank(request.getComputeClusterId(), "computeClusterId must not be blank");
@@ -1269,6 +1586,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam("computeGlobalImageCapabilitySchemas")
                 .appendPathParam(request.getComputeGlobalImageCapabilitySchemaId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchema.class,
                         GetComputeGlobalImageCapabilitySchemaResponse.Builder
@@ -1278,7 +1596,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetComputeGlobalImageCapabilitySchemaResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1309,6 +1626,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam("versions")
                 .appendPathParam(request.getComputeGlobalImageCapabilitySchemaVersionName())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersion.class,
                         GetComputeGlobalImageCapabilitySchemaVersionResponse.Builder
@@ -1318,7 +1636,96 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetComputeGlobalImageCapabilitySchemaVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetComputeGpuMemoryClusterResponse getComputeGpuMemoryCluster(
+            GetComputeGpuMemoryClusterRequest request) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryClusterId(),
+                "computeGpuMemoryClusterId must not be blank");
+
+        return clientCall(request, GetComputeGpuMemoryClusterResponse::builder)
+                .logger(LOG, "getComputeGpuMemoryCluster")
+                .serviceDetails(
+                        "Compute",
+                        "GetComputeGpuMemoryCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/GetComputeGpuMemoryCluster")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeGpuMemoryClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .appendPathParam(request.getComputeGpuMemoryClusterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryCluster.class,
+                        GetComputeGpuMemoryClusterResponse.Builder::computeGpuMemoryCluster)
+                .handleResponseHeaderString(
+                        "etag", GetComputeGpuMemoryClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComputeGpuMemoryClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetComputeGpuMemoryFabricResponse getComputeGpuMemoryFabric(
+            GetComputeGpuMemoryFabricRequest request) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryFabricId(),
+                "computeGpuMemoryFabricId must not be blank");
+
+        return clientCall(request, GetComputeGpuMemoryFabricResponse::builder)
+                .logger(LOG, "getComputeGpuMemoryFabric")
+                .serviceDetails(
+                        "Compute",
+                        "GetComputeGpuMemoryFabric",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/GetComputeGpuMemoryFabric")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeGpuMemoryFabricRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryFabrics")
+                .appendPathParam(request.getComputeGpuMemoryFabricId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryFabric.class,
+                        GetComputeGpuMemoryFabricResponse.Builder::computeGpuMemoryFabric)
+                .handleResponseHeaderString("etag", GetComputeGpuMemoryFabricResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComputeGpuMemoryFabricResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetComputeHostResponse getComputeHost(GetComputeHostRequest request) {
+
+        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
+
+        return clientCall(request, GetComputeHostResponse::builder)
+                .logger(LOG, "getComputeHost")
+                .serviceDetails(
+                        "Compute",
+                        "GetComputeHost",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/GetComputeHost")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeHostRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendPathParam(request.getComputeHostId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHost.class,
+                        GetComputeHostResponse.Builder::computeHost)
+                .handleResponseHeaderString("etag", GetComputeHostResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComputeHostResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1343,6 +1750,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam(request.getComputeImageCapabilitySchemaId())
                 .appendQueryParam("isMergeEnabled", request.getIsMergeEnabled())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.ComputeImageCapabilitySchema.class,
                         GetComputeImageCapabilitySchemaResponse.Builder
@@ -1352,7 +1760,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetComputeImageCapabilitySchemaResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1460,11 +1867,11 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam("images")
                 .appendPathParam(request.getImageId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.core.model.Image.class, GetImageResponse.Builder::image)
                 .handleResponseHeaderString("etag", GetImageResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetImageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1491,6 +1898,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam(request.getShapeName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.ImageShapeCompatibilityEntry.class,
                         GetImageShapeCompatibilityEntryResponse.Builder
@@ -1498,7 +1906,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetImageShapeCompatibilityEntryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1554,6 +1961,37 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetInstanceConsoleConnectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetInstanceMaintenanceEventResponse getInstanceMaintenanceEvent(
+            GetInstanceMaintenanceEventRequest request) {
+
+        Validate.notBlank(
+                request.getInstanceMaintenanceEventId(),
+                "instanceMaintenanceEventId must not be blank");
+
+        return clientCall(request, GetInstanceMaintenanceEventResponse::builder)
+                .logger(LOG, "getInstanceMaintenanceEvent")
+                .serviceDetails(
+                        "Compute",
+                        "GetInstanceMaintenanceEvent",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEvent/GetInstanceMaintenanceEvent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetInstanceMaintenanceEventRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceMaintenanceEvents")
+                .appendPathParam(request.getInstanceMaintenanceEventId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.InstanceMaintenanceEvent.class,
+                        GetInstanceMaintenanceEventResponse.Builder::instanceMaintenanceEvent)
+                .handleResponseHeaderString(
+                        "etag", GetInstanceMaintenanceEventResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetInstanceMaintenanceEventResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1777,6 +2215,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary.class,
                         ListAppCatalogListingResourceVersionsResponse.Builder::items)
@@ -1786,7 +2225,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListAppCatalogListingResourceVersionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1811,6 +2249,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendQueryParam("publisherType", request.getPublisherType())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.AppCatalogListingSummary.class,
                         ListAppCatalogListingsResponse.Builder::items)
@@ -1818,7 +2257,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-next-page", ListAppCatalogListingsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAppCatalogListingsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1844,6 +2282,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("listingId", request.getListingId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.AppCatalogSubscriptionSummary.class,
                         ListAppCatalogSubscriptionsResponse.Builder::items)
@@ -1851,7 +2290,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-next-page", ListAppCatalogSubscriptionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAppCatalogSubscriptionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2004,6 +2442,181 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public ListComputeCapacityTopologiesResponse listComputeCapacityTopologies(
+            ListComputeCapacityTopologiesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeCapacityTopologiesResponse::builder)
+                .logger(LOG, "listComputeCapacityTopologies")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeCapacityTopologies",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/ListComputeCapacityTopologies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeCapacityTopologiesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeCapacityTopologyCollection.class,
+                        ListComputeCapacityTopologiesResponse.Builder
+                                ::computeCapacityTopologyCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListComputeCapacityTopologiesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeCapacityTopologiesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListComputeCapacityTopologyComputeBareMetalHostsResponse
+            listComputeCapacityTopologyComputeBareMetalHosts(
+                    ListComputeCapacityTopologyComputeBareMetalHostsRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+
+        return clientCall(
+                        request, ListComputeCapacityTopologyComputeBareMetalHostsResponse::builder)
+                .logger(LOG, "listComputeCapacityTopologyComputeBareMetalHosts")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeCapacityTopologyComputeBareMetalHosts",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeBareMetalHost/ListComputeCapacityTopologyComputeBareMetalHosts")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeCapacityTopologyComputeBareMetalHostsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .appendPathParam("computeBareMetalHosts")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("computeHpcIslandId", request.getComputeHpcIslandId())
+                .appendQueryParam("computeNetworkBlockId", request.getComputeNetworkBlockId())
+                .appendQueryParam("computeLocalBlockId", request.getComputeLocalBlockId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeBareMetalHostCollection.class,
+                        ListComputeCapacityTopologyComputeBareMetalHostsResponse.Builder
+                                ::computeBareMetalHostCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeCapacityTopologyComputeBareMetalHostsResponse.Builder
+                                ::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeCapacityTopologyComputeBareMetalHostsResponse.Builder
+                                ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListComputeCapacityTopologyComputeHpcIslandsResponse
+            listComputeCapacityTopologyComputeHpcIslands(
+                    ListComputeCapacityTopologyComputeHpcIslandsRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+
+        return clientCall(request, ListComputeCapacityTopologyComputeHpcIslandsResponse::builder)
+                .logger(LOG, "listComputeCapacityTopologyComputeHpcIslands")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeCapacityTopologyComputeHpcIslands",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHpcIsland/ListComputeCapacityTopologyComputeHpcIslands")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeCapacityTopologyComputeHpcIslandsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .appendPathParam("computeHpcIslands")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHpcIslandCollection.class,
+                        ListComputeCapacityTopologyComputeHpcIslandsResponse.Builder
+                                ::computeHpcIslandCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeCapacityTopologyComputeHpcIslandsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeCapacityTopologyComputeHpcIslandsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListComputeCapacityTopologyComputeNetworkBlocksResponse
+            listComputeCapacityTopologyComputeNetworkBlocks(
+                    ListComputeCapacityTopologyComputeNetworkBlocksRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+
+        return clientCall(request, ListComputeCapacityTopologyComputeNetworkBlocksResponse::builder)
+                .logger(LOG, "listComputeCapacityTopologyComputeNetworkBlocks")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeCapacityTopologyComputeNetworkBlocks",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeNetworkBlock/ListComputeCapacityTopologyComputeNetworkBlocks")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeCapacityTopologyComputeNetworkBlocksRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .appendPathParam("computeNetworkBlocks")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("computeHpcIslandId", request.getComputeHpcIslandId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeNetworkBlockCollection.class,
+                        ListComputeCapacityTopologyComputeNetworkBlocksResponse.Builder
+                                ::computeNetworkBlockCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeCapacityTopologyComputeNetworkBlocksResponse.Builder
+                                ::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeCapacityTopologyComputeNetworkBlocksResponse.Builder
+                                ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ListComputeClustersResponse listComputeClusters(ListComputeClustersRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -2063,6 +2676,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary
                                 .class,
@@ -2074,7 +2688,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-request-id",
                         ListComputeGlobalImageCapabilitySchemaVersionsResponse.Builder
                                 ::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2099,6 +2712,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary.class,
                         ListComputeGlobalImageCapabilitySchemasResponse.Builder::items)
@@ -2108,7 +2722,172 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListComputeGlobalImageCapabilitySchemasResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListComputeGpuMemoryClusterInstancesResponse listComputeGpuMemoryClusterInstances(
+            ListComputeGpuMemoryClusterInstancesRequest request) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryClusterId(),
+                "computeGpuMemoryClusterId must not be blank");
+
+        return clientCall(request, ListComputeGpuMemoryClusterInstancesResponse::builder)
+                .logger(LOG, "listComputeGpuMemoryClusterInstances")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeGpuMemoryClusterInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryClusterInstanceSummary/ListComputeGpuMemoryClusterInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeGpuMemoryClusterInstancesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .appendPathParam(request.getComputeGpuMemoryClusterId())
+                .appendPathParam("instances")
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/x-json-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryClusterInstanceCollection.class,
+                        ListComputeGpuMemoryClusterInstancesResponse.Builder
+                                ::computeGpuMemoryClusterInstanceCollection)
+                .handleResponseHeaderString(
+                        "etag", ListComputeGpuMemoryClusterInstancesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeGpuMemoryClusterInstancesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeGpuMemoryClusterInstancesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListComputeGpuMemoryClustersResponse listComputeGpuMemoryClusters(
+            ListComputeGpuMemoryClustersRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeGpuMemoryClustersResponse::builder)
+                .logger(LOG, "listComputeGpuMemoryClusters")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeGpuMemoryClusters",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryClusterCollection/ListComputeGpuMemoryClusters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeGpuMemoryClustersRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .appendQueryParam(
+                        "computeGpuMemoryClusterId", request.getComputeGpuMemoryClusterId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("computeClusterId", request.getComputeClusterId())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/x-json-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryClusterCollection.class,
+                        ListComputeGpuMemoryClustersResponse.Builder
+                                ::computeGpuMemoryClusterCollection)
+                .handleResponseHeaderString(
+                        "etag", ListComputeGpuMemoryClustersResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListComputeGpuMemoryClustersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeGpuMemoryClustersResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListComputeGpuMemoryFabricsResponse listComputeGpuMemoryFabrics(
+            ListComputeGpuMemoryFabricsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeGpuMemoryFabricsResponse::builder)
+                .logger(LOG, "listComputeGpuMemoryFabrics")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeGpuMemoryFabrics",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/ListComputeGpuMemoryFabrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeGpuMemoryFabricsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryFabrics")
+                .appendQueryParam("computeGpuMemoryFabricId", request.getComputeGpuMemoryFabricId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("computeHpcIslandId", request.getComputeHpcIslandId())
+                .appendQueryParam("computeNetworkBlockId", request.getComputeNetworkBlockId())
+                .appendEnumQueryParam(
+                        "computeGpuMemoryFabricLifecycleState",
+                        request.getComputeGpuMemoryFabricLifecycleState())
+                .appendEnumQueryParam(
+                        "computeGpuMemoryFabricHealth", request.getComputeGpuMemoryFabricHealth())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json, application/x-json-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryFabricCollection.class,
+                        ListComputeGpuMemoryFabricsResponse.Builder
+                                ::computeGpuMemoryFabricCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListComputeGpuMemoryFabricsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListComputeGpuMemoryFabricsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListComputeHostsResponse listComputeHosts(ListComputeHostsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeHostsResponse::builder)
+                .logger(LOG, "listComputeHosts")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeHosts",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/ListComputeHosts")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeHostsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("networkResourceId", request.getNetworkResourceId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam(
+                        "computeHostLifecycleState", request.getComputeHostLifecycleState())
+                .appendQueryParam("computeHostHealth", request.getComputeHostHealth())
+                .accept("application/json, application/x-json-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHostCollection.class,
+                        ListComputeHostsResponse.Builder::computeHostCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListComputeHostsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListComputeHostsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2134,6 +2913,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary.class,
                         ListComputeImageCapabilitySchemasResponse.Builder::items)
@@ -2143,7 +2923,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListComputeImageCapabilitySchemasResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2347,6 +3126,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.ImageShapeCompatibilitySummary.class,
                         ListImageShapeCompatibilityEntriesResponse.Builder::items)
@@ -2356,7 +3136,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListImageShapeCompatibilityEntriesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2385,13 +3164,13 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.Image.class, ListImagesResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-next-page", ListImagesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListImagesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2459,6 +3238,49 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-next-page", ListInstanceDevicesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListInstanceDevicesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListInstanceMaintenanceEventsResponse listInstanceMaintenanceEvents(
+            ListInstanceMaintenanceEventsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListInstanceMaintenanceEventsResponse::builder)
+                .logger(LOG, "listInstanceMaintenanceEvents")
+                .serviceDetails(
+                        "Compute",
+                        "ListInstanceMaintenanceEvents",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEventSummary/ListInstanceMaintenanceEvents")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInstanceMaintenanceEventsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceMaintenanceEvents")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("instanceId", request.getInstanceId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("correlationToken", request.getCorrelationToken())
+                .appendQueryParam("instanceAction", request.getInstanceAction())
+                .appendQueryParam(
+                        "timeWindowStartGreaterThanOrEqualTo",
+                        request.getTimeWindowStartGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timeWindowStartLessThanOrEqualTo",
+                        request.getTimeWindowStartLessThanOrEqualTo())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.InstanceMaintenanceEventSummary.class,
+                        ListInstanceMaintenanceEventsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInstanceMaintenanceEventsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListInstanceMaintenanceEventsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2631,6 +3453,9 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam("instances")
                 .appendPathParam(request.getInstanceId())
                 .appendQueryParam("preserveBootVolume", request.getPreserveBootVolume())
+                .appendQueryParam(
+                        "preserveDataVolumesCreatedAtLaunch",
+                        request.getPreserveDataVolumesCreatedAtLaunch())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(
@@ -2673,6 +3498,42 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public UpdateComputeCapacityTopologyResponse updateComputeCapacityTopology(
+            UpdateComputeCapacityTopologyRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeCapacityTopologyDetails(),
+                "updateComputeCapacityTopologyDetails is required");
+
+        return clientCall(request, UpdateComputeCapacityTopologyResponse::builder)
+                .logger(LOG, "updateComputeCapacityTopology")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateComputeCapacityTopology",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/UpdateComputeCapacityTopology")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeCapacityTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateComputeCapacityTopologyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateComputeCapacityTopologyResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateComputeClusterResponse updateComputeCluster(UpdateComputeClusterRequest request) {
 
         Validate.notBlank(request.getComputeClusterId(), "computeClusterId must not be blank");
@@ -2702,6 +3563,118 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString("etag", UpdateComputeClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateComputeClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateComputeGpuMemoryClusterResponse updateComputeGpuMemoryCluster(
+            UpdateComputeGpuMemoryClusterRequest request) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryClusterId(),
+                "computeGpuMemoryClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeGpuMemoryClusterDetails(),
+                "updateComputeGpuMemoryClusterDetails is required");
+
+        return clientCall(request, UpdateComputeGpuMemoryClusterResponse::builder)
+                .logger(LOG, "updateComputeGpuMemoryCluster")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateComputeGpuMemoryCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/UpdateComputeGpuMemoryCluster")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeGpuMemoryClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .appendPathParam(request.getComputeGpuMemoryClusterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryCluster.class,
+                        UpdateComputeGpuMemoryClusterResponse.Builder::computeGpuMemoryCluster)
+                .handleResponseHeaderString(
+                        "etag", UpdateComputeGpuMemoryClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateComputeGpuMemoryClusterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateComputeGpuMemoryClusterResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateComputeGpuMemoryFabricResponse updateComputeGpuMemoryFabric(
+            UpdateComputeGpuMemoryFabricRequest request) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryFabricId(),
+                "computeGpuMemoryFabricId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeGpuMemoryFabricDetails(),
+                "updateComputeGpuMemoryFabricDetails is required");
+
+        return clientCall(request, UpdateComputeGpuMemoryFabricResponse::builder)
+                .logger(LOG, "updateComputeGpuMemoryFabric")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateComputeGpuMemoryFabric",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/UpdateComputeGpuMemoryFabric")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeGpuMemoryFabricRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryFabrics")
+                .appendPathParam(request.getComputeGpuMemoryFabricId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryFabric.class,
+                        UpdateComputeGpuMemoryFabricResponse.Builder::computeGpuMemoryFabric)
+                .handleResponseHeaderString(
+                        "etag", UpdateComputeGpuMemoryFabricResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateComputeGpuMemoryFabricResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateComputeHostResponse updateComputeHost(UpdateComputeHostRequest request) {
+
+        Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeHostDetails(), "updateComputeHostDetails is required");
+
+        return clientCall(request, UpdateComputeHostResponse::builder)
+                .logger(LOG, "updateComputeHost")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateComputeHost",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/UpdateComputeHost")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeHostRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeHosts")
+                .appendPathParam(request.getComputeHostId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString("etag", UpdateComputeHostResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateComputeHostResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateComputeHostResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -2905,6 +3878,43 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateInstanceConsoleConnectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateInstanceMaintenanceEventResponse updateInstanceMaintenanceEvent(
+            UpdateInstanceMaintenanceEventRequest request) {
+
+        Validate.notBlank(
+                request.getInstanceMaintenanceEventId(),
+                "instanceMaintenanceEventId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateInstanceMaintenanceEventDetails(),
+                "updateInstanceMaintenanceEventDetails is required");
+
+        return clientCall(request, UpdateInstanceMaintenanceEventResponse::builder)
+                .logger(LOG, "updateInstanceMaintenanceEvent")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateInstanceMaintenanceEvent",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEvent/UpdateInstanceMaintenanceEvent")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateInstanceMaintenanceEventRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceMaintenanceEvents")
+                .appendPathParam(request.getInstanceMaintenanceEventId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateInstanceMaintenanceEventResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateInstanceMaintenanceEventResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

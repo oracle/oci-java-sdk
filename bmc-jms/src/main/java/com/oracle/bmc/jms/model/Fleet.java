@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -35,6 +35,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "inventoryLog",
         "operationLog",
         "isAdvancedFeaturesEnabled",
+        "isExportSettingEnabled",
         "timeCreated",
         "lifecycleState",
         "definedTags",
@@ -54,6 +55,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             CustomLog inventoryLog,
             CustomLog operationLog,
             Boolean isAdvancedFeaturesEnabled,
+            Boolean isExportSettingEnabled,
             java.util.Date timeCreated,
             LifecycleState lifecycleState,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -72,6 +74,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.inventoryLog = inventoryLog;
         this.operationLog = operationLog;
         this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+        this.isExportSettingEnabled = isExportSettingEnabled;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
         this.definedTags = definedTags;
@@ -82,14 +85,14 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Fleet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Fleet.
          *
          * @param id the value to set
@@ -131,14 +134,14 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment of the Fleet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment of the Fleet.
          *
          * @param compartmentId the value to set
@@ -291,6 +294,21 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("isAdvancedFeaturesEnabled");
             return this;
         }
+        /** Whether or not export setting is enabled in this Fleet. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isExportSettingEnabled")
+        private Boolean isExportSettingEnabled;
+
+        /**
+         * Whether or not export setting is enabled in this Fleet.
+         *
+         * @param isExportSettingEnabled the value to set
+         * @return this builder
+         */
+        public Builder isExportSettingEnabled(Boolean isExportSettingEnabled) {
+            this.isExportSettingEnabled = isExportSettingEnabled;
+            this.__explicitlySet__.add("isExportSettingEnabled");
+            return this;
+        }
         /**
          * The creation date and time of the Fleet (formatted according to
          * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -328,7 +346,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-         * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -336,7 +354,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-         * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -351,7 +369,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
          * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
          * and Tag
-         * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -360,7 +378,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
          * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
          * and Tag
-         * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -373,7 +391,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -384,7 +402,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -416,6 +434,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
                             this.inventoryLog,
                             this.operationLog,
                             this.isAdvancedFeaturesEnabled,
+                            this.isExportSettingEnabled,
                             this.timeCreated,
                             this.lifecycleState,
                             this.definedTags,
@@ -465,6 +484,9 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             if (model.wasPropertyExplicitlySet("isAdvancedFeaturesEnabled")) {
                 this.isAdvancedFeaturesEnabled(model.getIsAdvancedFeaturesEnabled());
             }
+            if (model.wasPropertyExplicitlySet("isExportSettingEnabled")) {
+                this.isExportSettingEnabled(model.getIsExportSettingEnabled());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
@@ -494,14 +516,14 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Fleet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Fleet.
      *
      * @return the value
@@ -537,14 +559,14 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment of the Fleet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment of the Fleet.
      *
      * @return the value
@@ -679,6 +701,19 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return isAdvancedFeaturesEnabled;
     }
 
+    /** Whether or not export setting is enabled in this Fleet. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isExportSettingEnabled")
+    private final Boolean isExportSettingEnabled;
+
+    /**
+     * Whether or not export setting is enabled in this Fleet.
+     *
+     * @return the value
+     */
+    public Boolean getIsExportSettingEnabled() {
+        return isExportSettingEnabled;
+    }
+
     /**
      * The creation date and time of the Fleet (formatted according to
      * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -712,7 +747,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-     * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -720,7 +755,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-     * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      *
      * @return the value
      */
@@ -731,7 +766,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
-     * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
@@ -739,7 +774,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
-     * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      *
      * @return the value
      */
@@ -750,7 +785,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -761,7 +796,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -804,6 +839,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         sb.append(", operationLog=").append(String.valueOf(this.operationLog));
         sb.append(", isAdvancedFeaturesEnabled=")
                 .append(String.valueOf(this.isAdvancedFeaturesEnabled));
+        sb.append(", isExportSettingEnabled=").append(String.valueOf(this.isExportSettingEnabled));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -840,6 +876,8 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 && java.util.Objects.equals(this.operationLog, other.operationLog)
                 && java.util.Objects.equals(
                         this.isAdvancedFeaturesEnabled, other.isAdvancedFeaturesEnabled)
+                && java.util.Objects.equals(
+                        this.isExportSettingEnabled, other.isExportSettingEnabled)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -890,6 +928,11 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
                         + (this.isAdvancedFeaturesEnabled == null
                                 ? 43
                                 : this.isAdvancedFeaturesEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isExportSettingEnabled == null
+                                ? 43
+                                : this.isExportSettingEnabled.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)

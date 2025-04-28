@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -107,15 +107,15 @@ public final class OperationsInsightsWarehouseUserSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -126,15 +126,15 @@ public final class OperationsInsightsWarehouseUserSummary
             return this;
         }
         /**
-         * Username for schema which would have access to AWR Data, Enterprise Manager Data and
-         * Operations Insights OPSI Hub.
+         * Username for schema which would have access to AWR Data, Enterprise Manager Data and Ops
+         * Insights OPSI Hub.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Username for schema which would have access to AWR Data, Enterprise Manager Data and
-         * Operations Insights OPSI Hub.
+         * Username for schema which would have access to AWR Data, Enterprise Manager Data and Ops
+         * Insights OPSI Hub.
          *
          * @param name the value to set
          * @return this builder
@@ -145,15 +145,15 @@ public final class OperationsInsightsWarehouseUserSummary
             return this;
         }
         /**
-         * User provided connection password for the AWR Data, Enterprise Manager Data and
-         * Operations Insights OPSI Hub.
+         * User provided connection password for the AWR Data, Enterprise Manager Data and Ops
+         * Insights OPSI Hub.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionPassword")
         private String connectionPassword;
 
         /**
-         * User provided connection password for the AWR Data, Enterprise Manager Data and
-         * Operations Insights OPSI Hub.
+         * User provided connection password for the AWR Data, Enterprise Manager Data and Ops
+         * Insights OPSI Hub.
          *
          * @param connectionPassword the value to set
          * @return this builder
@@ -448,15 +448,15 @@ public final class OperationsInsightsWarehouseUserSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      *
      * @return the value
      */
@@ -465,15 +465,15 @@ public final class OperationsInsightsWarehouseUserSummary
     }
 
     /**
-     * Username for schema which would have access to AWR Data, Enterprise Manager Data and
-     * Operations Insights OPSI Hub.
+     * Username for schema which would have access to AWR Data, Enterprise Manager Data and Ops
+     * Insights OPSI Hub.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Username for schema which would have access to AWR Data, Enterprise Manager Data and
-     * Operations Insights OPSI Hub.
+     * Username for schema which would have access to AWR Data, Enterprise Manager Data and Ops
+     * Insights OPSI Hub.
      *
      * @return the value
      */
@@ -482,15 +482,15 @@ public final class OperationsInsightsWarehouseUserSummary
     }
 
     /**
-     * User provided connection password for the AWR Data, Enterprise Manager Data and Operations
-     * Insights OPSI Hub.
+     * User provided connection password for the AWR Data, Enterprise Manager Data and Ops Insights
+     * OPSI Hub.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionPassword")
     private final String connectionPassword;
 
     /**
-     * User provided connection password for the AWR Data, Enterprise Manager Data and Operations
-     * Insights OPSI Hub.
+     * User provided connection password for the AWR Data, Enterprise Manager Data and Ops Insights
+     * OPSI Hub.
      *
      * @return the value
      */

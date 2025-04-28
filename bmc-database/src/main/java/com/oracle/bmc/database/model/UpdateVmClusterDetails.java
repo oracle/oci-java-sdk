@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -39,7 +39,9 @@ public final class UpdateVmClusterDetails
         "updateDetails",
         "freeformTags",
         "definedTags",
-        "dataCollectionOptions"
+        "dataCollectionOptions",
+        "fileSystemConfigurationDetails",
+        "cloudAutomationUpdateDetails"
     })
     public UpdateVmClusterDetails(
             Integer cpuCoreCount,
@@ -54,7 +56,9 @@ public final class UpdateVmClusterDetails
             VmClusterUpdateDetails updateDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
+            CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
         super();
         this.cpuCoreCount = cpuCoreCount;
         this.ocpuCount = ocpuCount;
@@ -69,6 +73,8 @@ public final class UpdateVmClusterDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+        this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -224,7 +230,7 @@ public final class UpdateVmClusterDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -234,7 +240,7 @@ public final class UpdateVmClusterDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -249,7 +255,7 @@ public final class UpdateVmClusterDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -257,7 +263,7 @@ public final class UpdateVmClusterDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -275,6 +281,32 @@ public final class UpdateVmClusterDetails
         public Builder dataCollectionOptions(DataCollectionOptions dataCollectionOptions) {
             this.dataCollectionOptions = dataCollectionOptions;
             this.__explicitlySet__.add("dataCollectionOptions");
+            return this;
+        }
+        /** Details of the file system configuration of the VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+        private java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+        /**
+         * Details of the file system configuration of the VM cluster.
+         *
+         * @param fileSystemConfigurationDetails the value to set
+         * @return this builder
+         */
+        public Builder fileSystemConfigurationDetails(
+                java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            this.__explicitlySet__.add("fileSystemConfigurationDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+        private CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+        public Builder cloudAutomationUpdateDetails(
+                CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
+            this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            this.__explicitlySet__.add("cloudAutomationUpdateDetails");
             return this;
         }
 
@@ -296,7 +328,9 @@ public final class UpdateVmClusterDetails
                             this.updateDetails,
                             this.freeformTags,
                             this.definedTags,
-                            this.dataCollectionOptions);
+                            this.dataCollectionOptions,
+                            this.fileSystemConfigurationDetails,
+                            this.cloudAutomationUpdateDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -343,6 +377,12 @@ public final class UpdateVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
+                this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
+                this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
             }
             return this;
         }
@@ -522,7 +562,7 @@ public final class UpdateVmClusterDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -532,7 +572,7 @@ public final class UpdateVmClusterDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -545,7 +585,7 @@ public final class UpdateVmClusterDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -553,7 +593,7 @@ public final class UpdateVmClusterDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -566,6 +606,26 @@ public final class UpdateVmClusterDetails
 
     public DataCollectionOptions getDataCollectionOptions() {
         return dataCollectionOptions;
+    }
+
+    /** Details of the file system configuration of the VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+    private final java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+    /**
+     * Details of the file system configuration of the VM cluster.
+     *
+     * @return the value
+     */
+    public java.util.List<FileSystemConfigurationDetail> getFileSystemConfigurationDetails() {
+        return fileSystemConfigurationDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+    private final CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+    public CloudAutomationUpdateDetails getCloudAutomationUpdateDetails() {
+        return cloudAutomationUpdateDetails;
     }
 
     @Override
@@ -596,6 +656,10 @@ public final class UpdateVmClusterDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", fileSystemConfigurationDetails=")
+                .append(String.valueOf(this.fileSystemConfigurationDetails));
+        sb.append(", cloudAutomationUpdateDetails=")
+                .append(String.valueOf(this.cloudAutomationUpdateDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -624,6 +688,10 @@ public final class UpdateVmClusterDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(
+                        this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
                 && super.equals(other);
     }
 
@@ -666,6 +734,16 @@ public final class UpdateVmClusterDetails
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileSystemConfigurationDetails == null
+                                ? 43
+                                : this.fileSystemConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAutomationUpdateDetails == null
+                                ? 43
+                                : this.cloudAutomationUpdateDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

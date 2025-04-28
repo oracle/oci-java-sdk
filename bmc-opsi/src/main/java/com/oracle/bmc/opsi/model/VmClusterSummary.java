@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -42,12 +42,12 @@ public final class VmClusterSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the vm cluster. */
+        /** The name of the VM Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("vmclusterName")
         private String vmclusterName;
 
         /**
-         * The name of the vm cluster.
+         * The name of the VM Cluster.
          *
          * @param vmclusterName the value to set
          * @return this builder
@@ -57,12 +57,12 @@ public final class VmClusterSummary
             this.__explicitlySet__.add("vmclusterName");
             return this;
         }
-        /** The memory allocated on a vm cluster. */
+        /** The memory allocated on a VM Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryAllocatedInGBs")
         private Integer memoryAllocatedInGBs;
 
         /**
-         * The memory allocated on a vm cluster.
+         * The memory allocated on a VM Cluster.
          *
          * @param memoryAllocatedInGBs the value to set
          * @return this builder
@@ -72,12 +72,12 @@ public final class VmClusterSummary
             this.__explicitlySet__.add("memoryAllocatedInGBs");
             return this;
         }
-        /** The cpu allocated on a vm cluster. */
+        /** The CPU allocated on a VM Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuAllocated")
         private Integer cpuAllocated;
 
         /**
-         * The cpu allocated on a vm cluster.
+         * The CPU allocated on a VM Cluster.
          *
          * @param cpuAllocated the value to set
          * @return this builder
@@ -87,12 +87,12 @@ public final class VmClusterSummary
             this.__explicitlySet__.add("cpuAllocated");
             return this;
         }
-        /** The number of DB nodes on a vm cluster. */
+        /** The number of DB nodes on a VM Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodesCount")
         private Integer dbNodesCount;
 
         /**
-         * The number of DB nodes on a vm cluster.
+         * The number of DB nodes on a VM Cluster.
          *
          * @param dbNodesCount the value to set
          * @return this builder
@@ -146,12 +146,12 @@ public final class VmClusterSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the vm cluster. */
+    /** The name of the VM Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("vmclusterName")
     private final String vmclusterName;
 
     /**
-     * The name of the vm cluster.
+     * The name of the VM Cluster.
      *
      * @return the value
      */
@@ -159,12 +159,12 @@ public final class VmClusterSummary
         return vmclusterName;
     }
 
-    /** The memory allocated on a vm cluster. */
+    /** The memory allocated on a VM Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryAllocatedInGBs")
     private final Integer memoryAllocatedInGBs;
 
     /**
-     * The memory allocated on a vm cluster.
+     * The memory allocated on a VM Cluster.
      *
      * @return the value
      */
@@ -172,12 +172,12 @@ public final class VmClusterSummary
         return memoryAllocatedInGBs;
     }
 
-    /** The cpu allocated on a vm cluster. */
+    /** The CPU allocated on a VM Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuAllocated")
     private final Integer cpuAllocated;
 
     /**
-     * The cpu allocated on a vm cluster.
+     * The CPU allocated on a VM Cluster.
      *
      * @return the value
      */
@@ -185,12 +185,12 @@ public final class VmClusterSummary
         return cpuAllocated;
     }
 
-    /** The number of DB nodes on a vm cluster. */
+    /** The number of DB nodes on a VM Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodesCount")
     private final Integer dbNodesCount;
 
     /**
-     * The number of DB nodes on a vm cluster.
+     * The number of DB nodes on a VM Cluster.
      *
      * @return the value
      */

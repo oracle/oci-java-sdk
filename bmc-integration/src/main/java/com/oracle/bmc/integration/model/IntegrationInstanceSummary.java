@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.integration.model;
@@ -31,9 +31,11 @@ public final class IntegrationInstanceSummary
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
+        "lifecycleDetails",
         "stateMessage",
         "isByol",
         "instanceUrl",
+        "instanceDesignTimeUrl",
         "messagePacks",
         "isFileServerEnabled",
         "isVisualBuilderEnabled",
@@ -43,8 +45,11 @@ public final class IntegrationInstanceSummary
         "networkEndpointDetails",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "shape",
-        "privateEndpointOutboundConnection"
+        "privateEndpointOutboundConnection",
+        "isDisasterRecoveryEnabled",
+        "dataRetentionPeriod"
     })
     public IntegrationInstanceSummary(
             String id,
@@ -54,9 +59,11 @@ public final class IntegrationInstanceSummary
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
+            String lifecycleDetails,
             String stateMessage,
             Boolean isByol,
             String instanceUrl,
+            String instanceDesignTimeUrl,
             Integer messagePacks,
             Boolean isFileServerEnabled,
             Boolean isVisualBuilderEnabled,
@@ -66,8 +73,11 @@ public final class IntegrationInstanceSummary
             NetworkEndpointDetails networkEndpointDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Shape shape,
-            OutboundConnection privateEndpointOutboundConnection) {
+            OutboundConnection privateEndpointOutboundConnection,
+            Boolean isDisasterRecoveryEnabled,
+            DataRetentionPeriod dataRetentionPeriod) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -76,9 +86,11 @@ public final class IntegrationInstanceSummary
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.stateMessage = stateMessage;
         this.isByol = isByol;
         this.instanceUrl = instanceUrl;
+        this.instanceDesignTimeUrl = instanceDesignTimeUrl;
         this.messagePacks = messagePacks;
         this.isFileServerEnabled = isFileServerEnabled;
         this.isVisualBuilderEnabled = isVisualBuilderEnabled;
@@ -88,8 +100,11 @@ public final class IntegrationInstanceSummary
         this.networkEndpointDetails = networkEndpointDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.shape = shape;
         this.privateEndpointOutboundConnection = privateEndpointOutboundConnection;
+        this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
+        this.dataRetentionPeriod = dataRetentionPeriod;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -205,6 +220,21 @@ public final class IntegrationInstanceSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** Additional details of lifecycleState or substates */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Additional details of lifecycleState or substates
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
         /**
          * An message describing the current state in more detail. For example, can be used to
          * provide actionable information for a resource in Failed state.
@@ -252,6 +282,21 @@ public final class IntegrationInstanceSummary
         public Builder instanceUrl(String instanceUrl) {
             this.instanceUrl = instanceUrl;
             this.__explicitlySet__.add("instanceUrl");
+            return this;
+        }
+        /** The Integration Instance Design Time URL */
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceDesignTimeUrl")
+        private String instanceDesignTimeUrl;
+
+        /**
+         * The Integration Instance Design Time URL
+         *
+         * @param instanceDesignTimeUrl the value to set
+         * @return this builder
+         */
+        public Builder instanceDesignTimeUrl(String instanceDesignTimeUrl) {
+            this.instanceDesignTimeUrl = instanceDesignTimeUrl;
+            this.__explicitlySet__.add("instanceDesignTimeUrl");
             return this;
         }
         /** The number of configured message packs (if any) */
@@ -387,6 +432,25 @@ public final class IntegrationInstanceSummary
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** Shape */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private Shape shape;
@@ -412,6 +476,36 @@ public final class IntegrationInstanceSummary
             this.__explicitlySet__.add("privateEndpointOutboundConnection");
             return this;
         }
+        /** Is Disaster Recovery enabled for the integrationInstance */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDisasterRecoveryEnabled")
+        private Boolean isDisasterRecoveryEnabled;
+
+        /**
+         * Is Disaster Recovery enabled for the integrationInstance
+         *
+         * @param isDisasterRecoveryEnabled the value to set
+         * @return this builder
+         */
+        public Builder isDisasterRecoveryEnabled(Boolean isDisasterRecoveryEnabled) {
+            this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
+            this.__explicitlySet__.add("isDisasterRecoveryEnabled");
+            return this;
+        }
+        /** Data retention period set for given integration instance */
+        @com.fasterxml.jackson.annotation.JsonProperty("dataRetentionPeriod")
+        private DataRetentionPeriod dataRetentionPeriod;
+
+        /**
+         * Data retention period set for given integration instance
+         *
+         * @param dataRetentionPeriod the value to set
+         * @return this builder
+         */
+        public Builder dataRetentionPeriod(DataRetentionPeriod dataRetentionPeriod) {
+            this.dataRetentionPeriod = dataRetentionPeriod;
+            this.__explicitlySet__.add("dataRetentionPeriod");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -426,9 +520,11 @@ public final class IntegrationInstanceSummary
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.stateMessage,
                             this.isByol,
                             this.instanceUrl,
+                            this.instanceDesignTimeUrl,
                             this.messagePacks,
                             this.isFileServerEnabled,
                             this.isVisualBuilderEnabled,
@@ -438,8 +534,11 @@ public final class IntegrationInstanceSummary
                             this.networkEndpointDetails,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.shape,
-                            this.privateEndpointOutboundConnection);
+                            this.privateEndpointOutboundConnection,
+                            this.isDisasterRecoveryEnabled,
+                            this.dataRetentionPeriod);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -469,6 +568,9 @@ public final class IntegrationInstanceSummary
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
             if (model.wasPropertyExplicitlySet("stateMessage")) {
                 this.stateMessage(model.getStateMessage());
             }
@@ -477,6 +579,9 @@ public final class IntegrationInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("instanceUrl")) {
                 this.instanceUrl(model.getInstanceUrl());
+            }
+            if (model.wasPropertyExplicitlySet("instanceDesignTimeUrl")) {
+                this.instanceDesignTimeUrl(model.getInstanceDesignTimeUrl());
             }
             if (model.wasPropertyExplicitlySet("messagePacks")) {
                 this.messagePacks(model.getMessagePacks());
@@ -505,12 +610,21 @@ public final class IntegrationInstanceSummary
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("shape")) {
                 this.shape(model.getShape());
             }
             if (model.wasPropertyExplicitlySet("privateEndpointOutboundConnection")) {
                 this.privateEndpointOutboundConnection(
                         model.getPrivateEndpointOutboundConnection());
+            }
+            if (model.wasPropertyExplicitlySet("isDisasterRecoveryEnabled")) {
+                this.isDisasterRecoveryEnabled(model.getIsDisasterRecoveryEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("dataRetentionPeriod")) {
+                this.dataRetentionPeriod(model.getDataRetentionPeriod());
             }
             return this;
         }
@@ -573,6 +687,7 @@ public final class IntegrationInstanceSummary
         Enterprise("ENTERPRISE"),
         Standardx("STANDARDX"),
         Enterprisex("ENTERPRISEX"),
+        Healthcare("HEALTHCARE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -722,6 +837,19 @@ public final class IntegrationInstanceSummary
         return lifecycleState;
     }
 
+    /** Additional details of lifecycleState or substates */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Additional details of lifecycleState or substates
+     *
+     * @return the value
+     */
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     /**
      * An message describing the current state in more detail. For example, can be used to provide
      * actionable information for a resource in Failed state.
@@ -763,6 +891,19 @@ public final class IntegrationInstanceSummary
      */
     public String getInstanceUrl() {
         return instanceUrl;
+    }
+
+    /** The Integration Instance Design Time URL */
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceDesignTimeUrl")
+    private final String instanceDesignTimeUrl;
+
+    /**
+     * The Integration Instance Design Time URL
+     *
+     * @return the value
+     */
+    public String getInstanceDesignTimeUrl() {
+        return instanceDesignTimeUrl;
     }
 
     /** The number of configured message packs (if any) */
@@ -925,6 +1066,23 @@ public final class IntegrationInstanceSummary
         return definedTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     /** Shape */
     public enum Shape implements com.oracle.bmc.http.internal.BmcEnum {
         Development("DEVELOPMENT"),
@@ -990,6 +1148,79 @@ public final class IntegrationInstanceSummary
         return privateEndpointOutboundConnection;
     }
 
+    /** Is Disaster Recovery enabled for the integrationInstance */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDisasterRecoveryEnabled")
+    private final Boolean isDisasterRecoveryEnabled;
+
+    /**
+     * Is Disaster Recovery enabled for the integrationInstance
+     *
+     * @return the value
+     */
+    public Boolean getIsDisasterRecoveryEnabled() {
+        return isDisasterRecoveryEnabled;
+    }
+
+    /** Data retention period set for given integration instance */
+    public enum DataRetentionPeriod implements com.oracle.bmc.http.internal.BmcEnum {
+        Months1("MONTHS_1"),
+        Months3("MONTHS_3"),
+        Months6("MONTHS_6"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DataRetentionPeriod.class);
+
+        private final String value;
+        private static java.util.Map<String, DataRetentionPeriod> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DataRetentionPeriod v : DataRetentionPeriod.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DataRetentionPeriod(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DataRetentionPeriod create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DataRetentionPeriod', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Data retention period set for given integration instance */
+    @com.fasterxml.jackson.annotation.JsonProperty("dataRetentionPeriod")
+    private final DataRetentionPeriod dataRetentionPeriod;
+
+    /**
+     * Data retention period set for given integration instance
+     *
+     * @return the value
+     */
+    public DataRetentionPeriod getDataRetentionPeriod() {
+        return dataRetentionPeriod;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1013,9 +1244,11 @@ public final class IntegrationInstanceSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", stateMessage=").append(String.valueOf(this.stateMessage));
         sb.append(", isByol=").append(String.valueOf(this.isByol));
         sb.append(", instanceUrl=").append(String.valueOf(this.instanceUrl));
+        sb.append(", instanceDesignTimeUrl=").append(String.valueOf(this.instanceDesignTimeUrl));
         sb.append(", messagePacks=").append(String.valueOf(this.messagePacks));
         sb.append(", isFileServerEnabled=").append(String.valueOf(this.isFileServerEnabled));
         sb.append(", isVisualBuilderEnabled=").append(String.valueOf(this.isVisualBuilderEnabled));
@@ -1026,9 +1259,13 @@ public final class IntegrationInstanceSummary
         sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", privateEndpointOutboundConnection=")
                 .append(String.valueOf(this.privateEndpointOutboundConnection));
+        sb.append(", isDisasterRecoveryEnabled=")
+                .append(String.valueOf(this.isDisasterRecoveryEnabled));
+        sb.append(", dataRetentionPeriod=").append(String.valueOf(this.dataRetentionPeriod));
         sb.append(")");
         return sb.toString();
     }
@@ -1051,9 +1288,11 @@ public final class IntegrationInstanceSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.stateMessage, other.stateMessage)
                 && java.util.Objects.equals(this.isByol, other.isByol)
                 && java.util.Objects.equals(this.instanceUrl, other.instanceUrl)
+                && java.util.Objects.equals(this.instanceDesignTimeUrl, other.instanceDesignTimeUrl)
                 && java.util.Objects.equals(this.messagePacks, other.messagePacks)
                 && java.util.Objects.equals(this.isFileServerEnabled, other.isFileServerEnabled)
                 && java.util.Objects.equals(
@@ -1066,10 +1305,14 @@ public final class IntegrationInstanceSummary
                         this.networkEndpointDetails, other.networkEndpointDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(
                         this.privateEndpointOutboundConnection,
                         other.privateEndpointOutboundConnection)
+                && java.util.Objects.equals(
+                        this.isDisasterRecoveryEnabled, other.isDisasterRecoveryEnabled)
+                && java.util.Objects.equals(this.dataRetentionPeriod, other.dataRetentionPeriod)
                 && super.equals(other);
     }
 
@@ -1092,9 +1335,17 @@ public final class IntegrationInstanceSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.stateMessage == null ? 43 : this.stateMessage.hashCode());
         result = (result * PRIME) + (this.isByol == null ? 43 : this.isByol.hashCode());
         result = (result * PRIME) + (this.instanceUrl == null ? 43 : this.instanceUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceDesignTimeUrl == null
+                                ? 43
+                                : this.instanceDesignTimeUrl.hashCode());
         result = (result * PRIME) + (this.messagePacks == null ? 43 : this.messagePacks.hashCode());
         result =
                 (result * PRIME)
@@ -1124,12 +1375,23 @@ public final class IntegrationInstanceSummary
                                 : this.networkEndpointDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result =
                 (result * PRIME)
                         + (this.privateEndpointOutboundConnection == null
                                 ? 43
                                 : this.privateEndpointOutboundConnection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDisasterRecoveryEnabled == null
+                                ? 43
+                                : this.isDisasterRecoveryEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataRetentionPeriod == null
+                                ? 43
+                                : this.dataRetentionPeriod.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

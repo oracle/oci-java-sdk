@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of Data Source <br>
+ * Summary information for a specific data source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -73,12 +73,12 @@ public final class DataSourceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Ocid for Data Source */
+        /** OCID for the data source */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Ocid for Data Source
+         * OCID for the data source
          *
          * @param id the value to set
          * @return this builder
@@ -88,12 +88,12 @@ public final class DataSourceSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** DisplayName of Data Source */
+        /** Display name of the data source */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * DisplayName of Data Source
+         * Display name of the data source
          *
          * @param displayName the value to set
          * @return this builder
@@ -103,12 +103,12 @@ public final class DataSourceSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Possible type of dataSourceFeed Provider(LoggingQuery) */
+        /** Type of data source feed provider(LoggingQuery) */
         @com.fasterxml.jackson.annotation.JsonProperty("dataSourceFeedProvider")
         private DataSourceFeedProvider dataSourceFeedProvider;
 
         /**
-         * Possible type of dataSourceFeed Provider(LoggingQuery)
+         * Type of data source feed provider(LoggingQuery)
          *
          * @param dataSourceFeedProvider the value to set
          * @return this builder
@@ -118,12 +118,12 @@ public final class DataSourceSummary
             this.__explicitlySet__.add("dataSourceFeedProvider");
             return this;
         }
-        /** CompartmentId of Data Source. */
+        /** Compartment OCID of the data source */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * CompartmentId of Data Source.
+         * Compartment OCID of the data source
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -172,12 +172,12 @@ public final class DataSourceSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Status of data Source */
+        /** Status of data source */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private DataSourceStatus status;
 
         /**
-         * Status of data Source
+         * Status of data source
          *
          * @param status the value to set
          * @return this builder
@@ -196,12 +196,12 @@ public final class DataSourceSummary
             this.__explicitlySet__.add("loggingQueryDetails");
             return this;
         }
-        /** The current state of the resource. */
+        /** The current lifecycle state of the resource */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -276,7 +276,7 @@ public final class DataSourceSummary
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -287,7 +287,7 @@ public final class DataSourceSummary
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -384,12 +384,12 @@ public final class DataSourceSummary
         return new Builder().copy(this);
     }
 
-    /** Ocid for Data Source */
+    /** OCID for the data source */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Ocid for Data Source
+     * OCID for the data source
      *
      * @return the value
      */
@@ -397,12 +397,12 @@ public final class DataSourceSummary
         return id;
     }
 
-    /** DisplayName of Data Source */
+    /** Display name of the data source */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * DisplayName of Data Source
+     * Display name of the data source
      *
      * @return the value
      */
@@ -410,12 +410,12 @@ public final class DataSourceSummary
         return displayName;
     }
 
-    /** Possible type of dataSourceFeed Provider(LoggingQuery) */
+    /** Type of data source feed provider(LoggingQuery) */
     @com.fasterxml.jackson.annotation.JsonProperty("dataSourceFeedProvider")
     private final DataSourceFeedProvider dataSourceFeedProvider;
 
     /**
-     * Possible type of dataSourceFeed Provider(LoggingQuery)
+     * Type of data source feed provider(LoggingQuery)
      *
      * @return the value
      */
@@ -423,12 +423,12 @@ public final class DataSourceSummary
         return dataSourceFeedProvider;
     }
 
-    /** CompartmentId of Data Source. */
+    /** Compartment OCID of the data source */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * CompartmentId of Data Source.
+     * Compartment OCID of the data source
      *
      * @return the value
      */
@@ -469,12 +469,12 @@ public final class DataSourceSummary
         return timeUpdated;
     }
 
-    /** Status of data Source */
+    /** Status of data source */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final DataSourceStatus status;
 
     /**
-     * Status of data Source
+     * Status of data source
      *
      * @return the value
      */
@@ -489,12 +489,12 @@ public final class DataSourceSummary
         return loggingQueryDetails;
     }
 
-    /** The current state of the resource. */
+    /** The current lifecycle state of the resource */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      *
      * @return the value
      */
@@ -560,7 +560,7 @@ public final class DataSourceSummary
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -571,7 +571,7 @@ public final class DataSourceSummary
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}

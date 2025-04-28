@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -30,7 +30,8 @@ public final class UpdateOggDeploymentDetails
         "adminUsername",
         "adminPassword",
         "certificate",
-        "key"
+        "key",
+        "groupToRolesMapping"
     })
     public UpdateOggDeploymentDetails(
             CredentialStore credentialStore,
@@ -39,7 +40,8 @@ public final class UpdateOggDeploymentDetails
             String adminUsername,
             String adminPassword,
             String certificate,
-            String key) {
+            String key,
+            UpdateGroupToRolesMappingDetails groupToRolesMapping) {
         super();
         this.credentialStore = credentialStore;
         this.identityDomainId = identityDomainId;
@@ -48,6 +50,7 @@ public final class UpdateOggDeploymentDetails
         this.adminPassword = adminPassword;
         this.certificate = certificate;
         this.key = key;
+        this.groupToRolesMapping = groupToRolesMapping;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -68,14 +71,14 @@ public final class UpdateOggDeploymentDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Identity Domain when IAM credential store is used.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
         private String identityDomainId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Identity Domain when IAM credential store is used.
          *
          * @param identityDomainId the value to set
@@ -87,14 +90,14 @@ public final class UpdateOggDeploymentDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the deployment password is stored.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the deployment password is stored.
          *
          * @param passwordSecretId the value to set
@@ -143,12 +146,12 @@ public final class UpdateOggDeploymentDetails
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
-        /** A PEM-encoded SSL certificate. */
+        /** The base64 encoded content of the PEM file containing the SSL certificate. */
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
 
         /**
-         * A PEM-encoded SSL certificate.
+         * The base64 encoded content of the PEM file containing the SSL certificate.
          *
          * @param certificate the value to set
          * @return this builder
@@ -158,12 +161,12 @@ public final class UpdateOggDeploymentDetails
             this.__explicitlySet__.add("certificate");
             return this;
         }
-        /** A PEM-encoded private key. */
+        /** The base64 encoded content of the PEM file containing the private key. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * A PEM-encoded private key.
+         * The base64 encoded content of the PEM file containing the private key.
          *
          * @param key the value to set
          * @return this builder
@@ -171,6 +174,15 @@ public final class UpdateOggDeploymentDetails
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("groupToRolesMapping")
+        private UpdateGroupToRolesMappingDetails groupToRolesMapping;
+
+        public Builder groupToRolesMapping(UpdateGroupToRolesMappingDetails groupToRolesMapping) {
+            this.groupToRolesMapping = groupToRolesMapping;
+            this.__explicitlySet__.add("groupToRolesMapping");
             return this;
         }
 
@@ -186,7 +198,8 @@ public final class UpdateOggDeploymentDetails
                             this.adminUsername,
                             this.adminPassword,
                             this.certificate,
-                            this.key);
+                            this.key,
+                            this.groupToRolesMapping);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -216,6 +229,9 @@ public final class UpdateOggDeploymentDetails
             if (model.wasPropertyExplicitlySet("key")) {
                 this.key(model.getKey());
             }
+            if (model.wasPropertyExplicitlySet("groupToRolesMapping")) {
+                this.groupToRolesMapping(model.getGroupToRolesMapping());
+            }
             return this;
         }
     }
@@ -243,14 +259,14 @@ public final class UpdateOggDeploymentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Identity Domain when IAM credential store is used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
     private final String identityDomainId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Identity Domain when IAM credential store is used.
      *
      * @return the value
@@ -260,14 +276,14 @@ public final class UpdateOggDeploymentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the deployment password is stored.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the deployment password is stored.
      *
      * @return the value
@@ -310,12 +326,12 @@ public final class UpdateOggDeploymentDetails
         return adminPassword;
     }
 
-    /** A PEM-encoded SSL certificate. */
+    /** The base64 encoded content of the PEM file containing the SSL certificate. */
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
     private final String certificate;
 
     /**
-     * A PEM-encoded SSL certificate.
+     * The base64 encoded content of the PEM file containing the SSL certificate.
      *
      * @return the value
      */
@@ -323,17 +339,24 @@ public final class UpdateOggDeploymentDetails
         return certificate;
     }
 
-    /** A PEM-encoded private key. */
+    /** The base64 encoded content of the PEM file containing the private key. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * A PEM-encoded private key.
+     * The base64 encoded content of the PEM file containing the private key.
      *
      * @return the value
      */
     public String getKey() {
         return key;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("groupToRolesMapping")
+    private final UpdateGroupToRolesMappingDetails groupToRolesMapping;
+
+    public UpdateGroupToRolesMappingDetails getGroupToRolesMapping() {
+        return groupToRolesMapping;
     }
 
     @Override
@@ -358,6 +381,7 @@ public final class UpdateOggDeploymentDetails
         sb.append(", adminPassword=").append("<redacted>");
         sb.append(", certificate=").append(String.valueOf(this.certificate));
         sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", groupToRolesMapping=").append(String.valueOf(this.groupToRolesMapping));
         sb.append(")");
         return sb.toString();
     }
@@ -379,6 +403,7 @@ public final class UpdateOggDeploymentDetails
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.certificate, other.certificate)
                 && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.groupToRolesMapping, other.groupToRolesMapping)
                 && super.equals(other);
     }
 
@@ -403,6 +428,11 @@ public final class UpdateOggDeploymentDetails
                         + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());
         result = (result * PRIME) + (this.certificate == null ? 43 : this.certificate.hashCode());
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupToRolesMapping == null
+                                ? 43
+                                : this.groupToRolesMapping.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

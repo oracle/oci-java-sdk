@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email;
@@ -240,6 +240,46 @@ public class EmailAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     }
 
     @Override
+    public java.util.concurrent.Future<CreateEmailReturnPathResponse> createEmailReturnPath(
+            CreateEmailReturnPathRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateEmailReturnPathRequest, CreateEmailReturnPathResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateEmailReturnPathDetails(),
+                "createEmailReturnPathDetails is required");
+
+        return clientCall(request, CreateEmailReturnPathResponse::builder)
+                .logger(LOG, "createEmailReturnPath")
+                .serviceDetails(
+                        "Email",
+                        "CreateEmailReturnPath",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/CreateEmailReturnPath")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateEmailReturnPathRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailReturnPaths")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.email.model.EmailReturnPath.class,
+                        CreateEmailReturnPathResponse.Builder::emailReturnPath)
+                .handleResponseHeaderString(
+                        "Content-Location", CreateEmailReturnPathResponse.Builder::contentLocation)
+                .handleResponseHeaderString("etag", CreateEmailReturnPathResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "Location", CreateEmailReturnPathResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateEmailReturnPathResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateEmailReturnPathResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSenderResponse> createSender(
             CreateSenderRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateSenderRequest, CreateSenderResponse>
@@ -358,6 +398,37 @@ public class EmailAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteEmailReturnPathResponse> deleteEmailReturnPath(
+            DeleteEmailReturnPathRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteEmailReturnPathRequest, DeleteEmailReturnPathResponse>
+                    handler) {
+
+        Validate.notBlank(request.getEmailReturnPathId(), "emailReturnPathId must not be blank");
+
+        return clientCall(request, DeleteEmailReturnPathResponse::builder)
+                .logger(LOG, "deleteEmailReturnPath")
+                .serviceDetails(
+                        "Email",
+                        "DeleteEmailReturnPath",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/DeleteEmailReturnPath")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteEmailReturnPathRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailReturnPaths")
+                .appendPathParam(request.getEmailReturnPathId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteEmailReturnPathResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteEmailReturnPathResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSenderResponse> deleteSender(
             DeleteSenderRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteSenderRequest, DeleteSenderResponse>
@@ -438,6 +509,35 @@ public class EmailAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     }
 
     @Override
+    public java.util.concurrent.Future<GetEmailConfigurationResponse> getEmailConfiguration(
+            GetEmailConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailConfigurationRequest, GetEmailConfigurationResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, GetEmailConfigurationResponse::builder)
+                .logger(LOG, "getEmailConfiguration")
+                .serviceDetails(
+                        "Email",
+                        "GetEmailConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Configuration/GetEmailConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetEmailConfigurationRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("configuration")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.email.model.Configuration.class,
+                        GetEmailConfigurationResponse.Builder::configuration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetEmailConfigurationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEmailDomainResponse> getEmailDomain(
             GetEmailDomainRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -465,6 +565,37 @@ public class EmailAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
                 .handleResponseHeaderString("etag", GetEmailDomainResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetEmailDomainResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEmailReturnPathResponse> getEmailReturnPath(
+            GetEmailReturnPathRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailReturnPathRequest, GetEmailReturnPathResponse>
+                    handler) {
+
+        Validate.notBlank(request.getEmailReturnPathId(), "emailReturnPathId must not be blank");
+
+        return clientCall(request, GetEmailReturnPathResponse::builder)
+                .logger(LOG, "getEmailReturnPath")
+                .serviceDetails(
+                        "Email",
+                        "GetEmailReturnPath",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/GetEmailReturnPath")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetEmailReturnPathRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailReturnPaths")
+                .appendPathParam(request.getEmailReturnPathId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.email.model.EmailReturnPath.class,
+                        GetEmailReturnPathResponse.Builder::emailReturnPath)
+                .handleResponseHeaderString("etag", GetEmailReturnPathResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetEmailReturnPathResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -630,6 +761,44 @@ public class EmailAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
                         "opc-next-page", ListEmailDomainsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListEmailDomainsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEmailReturnPathsResponse> listEmailReturnPaths(
+            ListEmailReturnPathsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListEmailReturnPathsRequest, ListEmailReturnPathsResponse>
+                    handler) {
+
+        return clientCall(request, ListEmailReturnPathsResponse::builder)
+                .logger(LOG, "listEmailReturnPaths")
+                .serviceDetails(
+                        "Email",
+                        "ListEmailReturnPaths",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/ListEmailReturnPaths")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListEmailReturnPathsRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailReturnPaths")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("parentResourceId", request.getParentResourceId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.email.model.EmailReturnPathCollection.class,
+                        ListEmailReturnPathsResponse.Builder::emailReturnPathCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListEmailReturnPathsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListEmailReturnPathsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -881,6 +1050,41 @@ public class EmailAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
                         "opc-work-request-id", UpdateEmailDomainResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateEmailDomainResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEmailReturnPathResponse> updateEmailReturnPath(
+            UpdateEmailReturnPathRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateEmailReturnPathRequest, UpdateEmailReturnPathResponse>
+                    handler) {
+
+        Validate.notBlank(request.getEmailReturnPathId(), "emailReturnPathId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateEmailReturnPathDetails(),
+                "updateEmailReturnPathDetails is required");
+
+        return clientCall(request, UpdateEmailReturnPathResponse::builder)
+                .logger(LOG, "updateEmailReturnPath")
+                .serviceDetails(
+                        "Email",
+                        "UpdateEmailReturnPath",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/UpdateEmailReturnPath")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateEmailReturnPathRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("emailReturnPaths")
+                .appendPathParam(request.getEmailReturnPathId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateEmailReturnPathResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateEmailReturnPathResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

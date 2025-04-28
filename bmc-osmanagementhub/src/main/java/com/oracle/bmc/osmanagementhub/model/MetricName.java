@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
@@ -15,8 +15,14 @@ public enum MetricName implements com.oracle.bmc.http.internal.BmcEnum {
     WarningInstanceCount("WARNING_INSTANCE_COUNT"),
     UnreachableInstanceCount("UNREACHABLE_INSTANCE_COUNT"),
     RegistrationFailedInstanceCount("REGISTRATION_FAILED_INSTANCE_COUNT"),
+    DeletingInstanceCount("DELETING_INSTANCE_COUNT"),
+    OnboardingInstanceCount("ONBOARDING_INSTANCE_COUNT"),
     InstanceSecurityUpdatesCount("INSTANCE_SECURITY_UPDATES_COUNT"),
     InstanceBugfixUpdatesCount("INSTANCE_BUGFIX_UPDATES_COUNT"),
+    InstanceSecurityAdvisoryCount("INSTANCE_SECURITY_ADVISORY_COUNT"),
+    InstanceBugfixAdvisoryCount("INSTANCE_BUGFIX_ADVISORY_COUNT"),
+    RebootingInstanceCount("REBOOTING_INSTANCE_COUNT"),
+    NeedsRebootingInstanceCount("NEEDS_REBOOTING_INSTANCE_COUNT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

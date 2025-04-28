@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -37,7 +37,8 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
         "oneOffPatches",
         "freeformTags",
         "definedTags",
-        "databaseSoftwareImageId"
+        "databaseSoftwareImageId",
+        "isUnifiedAuditingEnabled"
     })
     public DbHome(
             String id,
@@ -55,7 +56,8 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
             java.util.List<String> oneOffPatches,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String databaseSoftwareImageId) {
+            String databaseSoftwareImageId,
+            Boolean isUnifiedAuditingEnabled) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -73,19 +75,20 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Home.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Home.
          *
          * @param id the value to set
@@ -97,14 +100,14 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -131,14 +134,14 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last patch history. This value is updated as soon as a patch operation is started.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
         private String lastPatchHistoryEntryId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last patch history. This value is updated as soon as a patch operation is started.
          *
          * @param lastPatchHistoryEntryId the value to set
@@ -165,14 +168,14 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          *
          * @param dbSystemId the value to set
@@ -184,14 +187,14 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
         private String vmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster.
          *
          * @param vmClusterId the value to set
@@ -299,7 +302,7 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -309,7 +312,7 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -324,7 +327,7 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -332,7 +335,7 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -345,14 +348,14 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
         }
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          *
          * @param databaseSoftwareImageId the value to set
          * @return this builder
@@ -360,6 +363,21 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
+        /** Indicates whether unified autiding is enabled or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+        private Boolean isUnifiedAuditingEnabled;
+
+        /**
+         * Indicates whether unified autiding is enabled or not.
+         *
+         * @param isUnifiedAuditingEnabled the value to set
+         * @return this builder
+         */
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            this.__explicitlySet__.add("isUnifiedAuditingEnabled");
             return this;
         }
 
@@ -384,7 +402,8 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
                             this.oneOffPatches,
                             this.freeformTags,
                             this.definedTags,
-                            this.databaseSoftwareImageId);
+                            this.databaseSoftwareImageId,
+                            this.isUnifiedAuditingEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -441,6 +460,9 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
             if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
                 this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
             }
+            if (model.wasPropertyExplicitlySet("isUnifiedAuditingEnabled")) {
+                this.isUnifiedAuditingEnabled(model.getIsUnifiedAuditingEnabled());
+            }
             return this;
         }
     }
@@ -455,14 +477,14 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Home.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Home.
      *
      * @return the value
@@ -472,14 +494,14 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -502,15 +524,15 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last patch history. This value is updated as soon as a patch operation is started.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * patch history. This value is updated as soon as a patch operation is started.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
     private final String lastPatchHistoryEntryId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last patch history. This value is updated as soon as a patch operation is started.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * patch history. This value is updated as soon as a patch operation is started.
      *
      * @return the value
      */
@@ -582,14 +604,14 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      *
      * @return the value
@@ -599,14 +621,14 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
     private final String vmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster.
      *
      * @return the value
@@ -700,7 +722,7 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -710,7 +732,7 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -723,7 +745,7 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -731,7 +753,7 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -741,19 +763,32 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      *
      * @return the value
      */
     public String getDatabaseSoftwareImageId() {
         return databaseSoftwareImageId;
+    }
+
+    /** Indicates whether unified autiding is enabled or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+    private final Boolean isUnifiedAuditingEnabled;
+
+    /**
+     * Indicates whether unified autiding is enabled or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsUnifiedAuditingEnabled() {
+        return isUnifiedAuditingEnabled;
     }
 
     @Override
@@ -789,6 +824,8 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", databaseSoftwareImageId=")
                 .append(String.valueOf(this.databaseSoftwareImageId));
+        sb.append(", isUnifiedAuditingEnabled=")
+                .append(String.valueOf(this.isUnifiedAuditingEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -821,6 +858,8 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(
                         this.databaseSoftwareImageId, other.databaseSoftwareImageId)
+                && java.util.Objects.equals(
+                        this.isUnifiedAuditingEnabled, other.isUnifiedAuditingEnabled)
                 && super.equals(other);
     }
 
@@ -862,6 +901,11 @@ public final class DbHome extends com.oracle.bmc.http.client.internal.Explicitly
                         + (this.databaseSoftwareImageId == null
                                 ? 43
                                 : this.databaseSoftwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUnifiedAuditingEnabled == null
+                                ? 43
+                                : this.isUnifiedAuditingEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

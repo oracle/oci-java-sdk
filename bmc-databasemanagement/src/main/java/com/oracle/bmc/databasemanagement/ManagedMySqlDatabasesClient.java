@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -26,16 +26,37 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ManagedMySqlDatabasesClient.class);
 
+    private final ManagedMySqlDatabasesWaiters waiters;
+
     private final ManagedMySqlDatabasesPaginators paginators;
 
     ManagedMySqlDatabasesClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            java.util.concurrent.ExecutorService executorService) {
         super(
                 builder,
                 authenticationDetailsProvider,
                 CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+
+        if (executorService == null) {
+            // up to 50 (core) threads, time out after 60s idle, all daemon
+            java.util.concurrent.ThreadPoolExecutor threadPoolExecutor =
+                    new java.util.concurrent.ThreadPoolExecutor(
+                            50,
+                            50,
+                            60L,
+                            java.util.concurrent.TimeUnit.SECONDS,
+                            new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("ManagedMySqlDatabases-waiters-%d")
+                                    .build());
+            threadPoolExecutor.allowCoreThreadTimeOut(true);
+
+            executorService = threadPoolExecutor;
+        }
+        this.waiters = new ManagedMySqlDatabasesWaiters(executorService, this);
 
         this.paginators = new ManagedMySqlDatabasesPaginators(this);
     }
@@ -56,6 +77,8 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<
                     Builder, ManagedMySqlDatabasesClient> {
+        private java.util.concurrent.ExecutorService executorService;
+
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "databasemanagement";
@@ -63,6 +86,17 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Set the ExecutorService for the client to be created.
+         *
+         * @param executorService executorService
+         * @return this builder
+         */
+        public Builder executorService(java.util.concurrent.ExecutorService executorService) {
+            this.executorService = executorService;
+            return this;
         }
 
         /**
@@ -75,7 +109,8 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new ManagedMySqlDatabasesClient(this, authenticationDetailsProvider);
+            return new ManagedMySqlDatabasesClient(
+                    this, authenticationDetailsProvider, executorService);
         }
     }
 
@@ -87,6 +122,115 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public void setRegion(String regionId) {
         super.setRegion(regionId);
+    }
+
+    @Override
+    public DisableExternalMysqlAssociatedServiceResponse disableExternalMysqlAssociatedService(
+            DisableExternalMysqlAssociatedServiceRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableExternalMysqlAssociatedServiceDetails(),
+                "disableExternalMysqlAssociatedServiceDetails is required");
+
+        return clientCall(request, DisableExternalMysqlAssociatedServiceResponse::builder)
+                .logger(LOG, "disableExternalMysqlAssociatedService")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "DisableExternalMysqlAssociatedService",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DisableExternalMysqlAssociatedService")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableExternalMysqlAssociatedServiceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("internal")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableAssociatedService")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalMysqlAssociatedServiceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableExternalMysqlAssociatedServiceResponse enableExternalMysqlAssociatedService(
+            EnableExternalMysqlAssociatedServiceRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalMysqlAssociatedServiceDetails(),
+                "enableExternalMysqlAssociatedServiceDetails is required");
+
+        return clientCall(request, EnableExternalMysqlAssociatedServiceResponse::builder)
+                .logger(LOG, "enableExternalMysqlAssociatedService")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "EnableExternalMysqlAssociatedService",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/EnableExternalMysqlAssociatedService")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalMysqlAssociatedServiceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("internal")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableAssociatedService")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalMysqlAssociatedServiceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetHeatWaveFleetMetricResponse getHeatWaveFleetMetric(
+            GetHeatWaveFleetMetricRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetHeatWaveFleetMetricResponse::builder)
+                .logger(LOG, "getHeatWaveFleetMetric")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "GetHeatWaveFleetMetric",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/HeatWaveFleetMetrics/GetHeatWaveFleetMetric")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetHeatWaveFleetMetricRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("heatWaveFleetMetrics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendEnumQueryParam("filterByHeatWaveStatus", request.getFilterByHeatWaveStatus())
+                .appendQueryParam("filterByHeatWaveShape", request.getFilterByHeatWaveShape())
+                .appendQueryParam(
+                        "isHeatWaveLakehouseEnabled", request.getIsHeatWaveLakehouseEnabled())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.HeatWaveFleetMetrics.class,
+                        GetHeatWaveFleetMetricResponse.Builder::heatWaveFleetMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetHeatWaveFleetMetricResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
@@ -144,9 +288,13 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                         request.getFilterByMySqlDeploymentTypeParam())
                 .appendEnumQueryParam(
                         "filterByMdsDeploymentType", request.getFilterByMdsDeploymentType())
+                .appendEnumQueryParam(
+                        "filterByMySqlDatabaseTypeParam",
+                        request.getFilterByMySqlDatabaseTypeParam())
                 .appendEnumQueryParam("filterByMySqlStatus", request.getFilterByMySqlStatus())
                 .appendQueryParam(
                         "filterByMySqlDatabaseVersion", request.getFilterByMySqlDatabaseVersion())
+                .appendQueryParam("isHeatWaveEnabled", request.getIsHeatWaveEnabled())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -183,6 +331,7 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MySqlConfigurationDataCollection
                                 .class,
@@ -194,7 +343,6 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListManagedMySqlDatabaseConfigurationDataResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -229,6 +377,7 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MySqlDataCollection.class,
                         ListManagedMySqlDatabaseSqlDataResponse.Builder::mySqlDataCollection)
@@ -238,7 +387,6 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListManagedMySqlDatabaseSqlDataResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -260,6 +408,9 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam(
+                        "filterByMySqlDatabaseTypeParam",
+                        request.getFilterByMySqlDatabaseTypeParam())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
@@ -305,6 +456,7 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("endTime", request.getEndTime())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                                 .class,
@@ -318,8 +470,12 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                         "opc-next-page",
                         SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse.Builder
                                 ::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
+    }
+
+    @Override
+    public ManagedMySqlDatabasesWaiters getWaiters() {
+        return waiters;
     }
 
     @Override
@@ -336,7 +492,7 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
     @Deprecated
     public ManagedMySqlDatabasesClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(builder(), authenticationDetailsProvider, null);
     }
 
     /**
@@ -350,7 +506,7 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
     public ManagedMySqlDatabasesClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(builder().configuration(configuration), authenticationDetailsProvider, null);
     }
 
     /**
@@ -368,7 +524,8 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
                 builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                null);
     }
 
     /**
@@ -391,7 +548,8 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                         .configuration(configuration)
                         .clientConfigurator(clientConfigurator)
                         .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                null);
     }
 
     /**
@@ -417,7 +575,8 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                         .clientConfigurator(clientConfigurator)
                         .requestSignerFactory(defaultRequestSignerFactory)
                         .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                null);
     }
 
     /**
@@ -446,7 +605,8 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                         .requestSignerFactory(defaultRequestSignerFactory)
                         .additionalClientConfigurators(additionalClientConfigurators)
                         .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                null);
     }
 
     /**
@@ -483,6 +643,47 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                         .endpoint(endpoint)
                         .signingStrategyRequestSignerFactories(
                                 signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @param executorService {@link Builder#executorService}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ManagedMySqlDatabasesClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                executorService);
     }
 }

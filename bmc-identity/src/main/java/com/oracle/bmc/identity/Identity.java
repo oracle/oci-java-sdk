@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identity;
@@ -11,15 +11,14 @@ import com.oracle.bmc.identity.responses.*;
  * Use the Identity and Access Management Service API to manage users, groups, identity domains,
  * compartments, policies, tagging, and limits. For information about managing users, groups,
  * compartments, and policies, see [Identity and Access Management (without identity
- * domains)](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For
- * information about tagging and service limits, see
- * [Tagging](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm) and
- * [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
- * For information about creating, modifying, and deleting identity domains, see [Identity and
- * Access Management (with identity
- * domains)](https://docs.cloud.oracle.com/iaas/Content/Identity/home.htm). This service client uses
- * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
- * breaker configuration is defined by the user.
+ * domains)](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information
+ * about tagging and service limits, see
+ * [Tagging](https://docs.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm) and [Service
+ * Limits](https://docs.oracle.com/iaas/Content/General/Concepts/servicelimits.htm). For information
+ * about creating, modifying, and deleting identity domains, see [Identity and Access Management
+ * (with identity domains)](https://docs.oracle.com/iaas/Content/Identity/home.htm). This service
+ * client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no
+ * circuit breaker configuration is defined by the user.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface Identity extends AutoCloseable {
@@ -90,7 +89,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ActivateDomainExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ActivateDomainExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateDomain API.
      */
     ActivateDomainResponse activateDomain(ActivateDomainRequest request);
@@ -106,7 +105,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ActivateMfaTotpDeviceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ActivateMfaTotpDeviceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ActivateMfaTotpDevice API.
      */
@@ -122,7 +121,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/AddTagDefaultLockExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/AddTagDefaultLockExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddTagDefaultLock
      *     API.
      */
@@ -138,7 +137,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/AddTagNamespaceLockExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/AddTagNamespaceLockExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddTagNamespaceLock
      *     API.
      */
@@ -159,7 +158,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/AddUserToGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/AddUserToGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddUserToGroup API.
      */
     AddUserToGroupResponse addUserToGroup(AddUserToGroupRequest request);
@@ -177,7 +176,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/AssembleEffectiveTagSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/AssembleEffectiveTagSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     AssembleEffectiveTagSet API.
      */
@@ -187,8 +186,8 @@ public interface Identity extends AutoCloseable {
      * Deletes multiple resources in the compartment. All resources must be in the same compartment.
      * You must have the appropriate permissions to delete the resources in the request. This API
      * can only be invoked from the tenancy's [home
-     * region](https://docs.cloud.oracle.com/Content/Identity/regions/managingregions.htm#Home).
-     * This operation creates a {@link WorkRequest}. Use the {@link
+     * region](https://docs.oracle.com/iaas/Content/Identity/regions/managingregions.htm#Home). This
+     * operation creates a {@link WorkRequest}. Use the {@link
      * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} API to monitor the status of the bulk
      * action.
      *
@@ -199,7 +198,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/BulkDeleteResourcesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/BulkDeleteResourcesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkDeleteResources
      *     API.
      */
@@ -239,7 +238,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/BulkDeleteTagsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/BulkDeleteTagsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkDeleteTags API.
      */
     BulkDeleteTagsResponse bulkDeleteTags(BulkDeleteTagsRequest request);
@@ -269,7 +268,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/BulkEditTagsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/BulkEditTagsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkEditTags API.
      */
     BulkEditTagsResponse bulkEditTags(BulkEditTagsRequest request);
@@ -277,7 +276,7 @@ public interface Identity extends AutoCloseable {
     /**
      * Moves multiple resources from one compartment to another. All resources must be in the same
      * compartment. This API can only be invoked from the tenancy's [home
-     * region](https://docs.cloud.oracle.com/Content/Identity/regions/managingregions.htm#Home). To
+     * region](https://docs.oracle.com/iaas/Content/Identity/regions/managingregions.htm#Home). To
      * move resources, you must have the appropriate permissions to move the resource in both the
      * source and target compartments. This operation creates a {@link WorkRequest}. Use the {@link
      * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} API to monitor the status of the bulk
@@ -290,7 +289,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/BulkMoveResourcesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/BulkMoveResourcesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkMoveResources
      *     API.
      */
@@ -328,7 +327,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CascadeDeleteTagNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CascadeDeleteTagNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CascadeDeleteTagNamespace API.
      */
@@ -349,7 +348,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ChangeDomainCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ChangeDomainCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeDomainCompartment API.
      */
@@ -376,7 +375,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ChangeDomainLicenseTypeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ChangeDomainLicenseTypeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeDomainLicenseType API.
      */
@@ -387,7 +386,7 @@ public interface Identity extends AutoCloseable {
      *
      * <p>To move the tag namespace, you must have the manage tag-namespaces permission on both
      * compartments. For more information about IAM policies, see [Details for
-     * IAM](https://docs.cloud.oracle.com/Content/Identity/policyreference/iampolicyreference.htm).
+     * IAM](https://docs.oracle.com/iaas/Content/Identity/policyreference/iampolicyreference.htm).
      *
      * <p>Moving a tag namespace moves all the tag key definitions contained in the tag namespace.
      *
@@ -398,7 +397,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ChangeTagNamespaceCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ChangeTagNamespaceCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeTagNamespaceCompartment API.
      */
@@ -408,7 +407,7 @@ public interface Identity extends AutoCloseable {
     /**
      * Creates a new auth token for the specified user. For information about what auth tokens are
      * for, see [Managing User
-     * Credentials](https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm).
+     * Credentials](https://docs.oracle.com/iaas/Content/Identity/access/managing-user-credentials.htm).
      *
      * <p>You must specify a *description* for the auth token (although it can be an empty string).
      * It does not have to be unique, and you can change it anytime with {@link
@@ -426,7 +425,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateAuthTokenExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateAuthTokenExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAuthToken
      *     API.
      */
@@ -438,12 +437,12 @@ public interface Identity extends AutoCloseable {
      * <p>Specify the parent compartment's OCID as the compartment ID in the request object.
      * Remember that the tenancy is simply the root compartment. For information about OCIDs, see
      * [Resource
-     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * <p>You must also specify a *name* for the compartment, which must be unique across all
      * compartments in your tenancy. You can use this name or the OCID when writing policies that
      * apply to the compartment. For more information about policies, see [How Policies
-     * Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm).
+     * Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm).
      *
      * <p>You must also specify a *description* for the compartment (although it can be an empty
      * string). It does not have to be unique, and you can change it anytime with {@link
@@ -460,7 +459,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCompartment
      *     API.
      */
@@ -470,7 +469,7 @@ public interface Identity extends AutoCloseable {
      * Creates a new secret key for the specified user. Secret keys are used for authentication with
      * the Object Storage Service's Amazon S3 compatible API. The secret key consists of an Access
      * Key/Secret Key pair. For information, see [Managing User
-     * Credentials](https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm).
+     * Credentials](https://docs.oracle.com/iaas/Content/Identity/access/managing-user-credentials.htm).
      *
      * <p>You must specify a *description* for the secret key (although it can be an empty string).
      * It does not have to be unique, and you can change it anytime with {@link
@@ -488,7 +487,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateCustomerSecretKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateCustomerSecretKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateCustomerSecretKey API.
      */
@@ -504,7 +503,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateDbCredentialExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateDbCredentialExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDbCredential
      *     API.
      */
@@ -530,7 +529,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateDomainExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateDomainExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDomain API.
      */
     CreateDomainResponse createDomain(CreateDomainRequest request);
@@ -543,14 +542,14 @@ public interface Identity extends AutoCloseable {
      * compartments, and some policies) reside within the tenancy itself, unlike cloud resources
      * such as compute instances, which typically reside within compartments inside the tenancy. For
      * information about OCIDs, see [Resource
-     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * <p>You must also specify a *name* for the dynamic group, which must be unique across all
      * dynamic groups in your tenancy, and cannot be changed. Note that this name has to be also
      * unique across all groups in your tenancy. You can use this name or the OCID when writing
      * policies that apply to the dynamic group. For more information about policies, see [How
      * Policies
-     * Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm).
+     * Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm).
      *
      * <p>You must also specify a *description* for the dynamic group (although it can be an empty
      * string). It does not have to be unique, and you can change it anytime with {@link
@@ -567,7 +566,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateDynamicGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateDynamicGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDynamicGroup
      *     API.
      */
@@ -581,12 +580,12 @@ public interface Identity extends AutoCloseable {
      * compartments, and some policies) reside within the tenancy itself, unlike cloud resources
      * such as compute instances, which typically reside within compartments inside the tenancy. For
      * information about OCIDs, see [Resource
-     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * <p>You must also specify a *name* for the group, which must be unique across all groups in
      * your tenancy and cannot be changed. You can use this name or the OCID when writing policies
      * that apply to the group. For more information about policies, see [How Policies
-     * Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm).
+     * Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm).
      *
      * <p>You must also specify a *description* for the group (although it can be an empty string).
      * It does not have to be unique, and you can change it anytime with {@link
@@ -607,22 +606,22 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateGroup API.
      */
     CreateGroupResponse createGroup(CreateGroupRequest request);
 
     /**
      * **Deprecated.** For more information, see [Deprecated IAM Service
-     * APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      *
      * <p>Creates a new identity provider in your tenancy. For more information, see [Identity
      * Providers and
-     * Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm).
+     * Federation](https://docs.oracle.com/iaas/Content/Identity/Concepts/federation.htm).
      *
      * <p>You must specify your tenancy's OCID as the compartment ID in the request object. Remember
      * that the tenancy is simply the root compartment. For information about OCIDs, see [Resource
-     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * <p>You must also specify a *name* for the `IdentityProvider`, which must be unique across all
      * `IdentityProvider` objects in your tenancy and cannot be changed.
@@ -642,7 +641,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateIdentityProviderExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateIdentityProviderExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateIdentityProvider API.
      */
@@ -650,7 +649,7 @@ public interface Identity extends AutoCloseable {
 
     /**
      * **Deprecated.** For more information, see [Deprecated IAM Service
-     * APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      *
      * <p>Creates a single mapping between an IdP group and an IAM Service {@link Group}.
      *
@@ -661,7 +660,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateIdpGroupMappingExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateIdpGroupMappingExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateIdpGroupMapping API.
      */
@@ -677,7 +676,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateMfaTotpDeviceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateMfaTotpDeviceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMfaTotpDevice
      *     API.
      */
@@ -691,13 +690,13 @@ public interface Identity extends AutoCloseable {
      * compartments, and some policies) reside within the tenancy itself, unlike cloud resources
      * such as compute instances, which typically reside within compartments inside the tenancy. For
      * information about OCIDs, see [Resource
-     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * <p>You must also specify a *name* for the network source, which must be unique across all
      * network sources in your tenancy, and cannot be changed. You can use this name or the OCID
      * when writing policies that apply to the network source. For more information about policies,
      * see [How Policies
-     * Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm).
+     * Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm).
      *
      * <p>You must also specify a *description* for the network source (although it can be an empty
      * string). It does not have to be unique, and you can change it anytime with {@link
@@ -710,7 +709,7 @@ public interface Identity extends AutoCloseable {
      * <p>After your network resource is created, you can use it in policy to restrict access to
      * only requests made from an allowed IP address specified in your network source. For more
      * information, see [Managing Network
-     * Sources](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingnetworksources.htm).
+     * Sources](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingnetworksources.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -719,7 +718,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateNetworkSourceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateNetworkSourceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNetworkSource
      *     API.
      */
@@ -735,7 +734,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateOAuthClientCredentialExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateOAuthClientCredentialExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateOAuthClientCredential API.
      */
@@ -745,7 +744,7 @@ public interface Identity extends AutoCloseable {
     /**
      * Creates a new Console one-time password for the specified user. For more information about
      * user credentials, see [User
-     * Credentials](https://docs.cloud.oracle.com/Content/Identity/usercred/usercredentials.htm).
+     * Credentials](https://docs.oracle.com/iaas/Content/Identity/usercred/usercredentials.htm).
      *
      * <p>Use this operation after creating a new user, or if a user forgets their password. The new
      * one-time password is returned to you in the response, and you must securely deliver it to the
@@ -768,7 +767,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateOrResetUIPasswordExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateOrResetUIPasswordExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateOrResetUIPassword API.
      */
@@ -777,7 +776,7 @@ public interface Identity extends AutoCloseable {
     /**
      * Creates a new policy in the specified compartment (either the tenancy or another of your
      * compartments). If you're new to policies, see [Get Started with
-     * Policies](https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm).
+     * Policies](https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm).
      *
      * <p>You must specify a *name* for the policy, which must be unique across all policies in your
      * tenancy and cannot be changed.
@@ -788,9 +787,9 @@ public interface Identity extends AutoCloseable {
      *
      * <p>You must specify one or more policy statements in the statements array. For information
      * about writing policies, see [How Policies
-     * Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm) and
+     * Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm) and
      * [Common
-     * Policies](https://docs.cloud.oracle.com/Content/Identity/policiescommon/commonpolicies.htm).
+     * Policies](https://docs.oracle.com/iaas/Content/Identity/policiescommon/commonpolicies.htm).
      *
      * <p>After you send your request, the new object's `lifecycleState` will temporarily be
      * CREATING. Before using the object, first make sure its `lifecycleState` has changed to
@@ -805,7 +804,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreatePolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreatePolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePolicy API.
      */
     CreatePolicyResponse createPolicy(CreatePolicyRequest request);
@@ -820,7 +819,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateRegionSubscriptionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateRegionSubscriptionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateRegionSubscription API.
      */
@@ -840,7 +839,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateSmtpCredentialExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateSmtpCredentialExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateSmtpCredential API.
      */
@@ -851,7 +850,7 @@ public interface Identity extends AutoCloseable {
      *
      * <p>Creates a new Swift password for the specified user. For information about what Swift
      * passwords are for, see [Managing User
-     * Credentials](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm).
+     * Credentials](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm).
      *
      * <p>You must specify a *description* for the Swift password (although it can be an empty
      * string). It does not have to be unique, and you can change it anytime with {@link
@@ -869,7 +868,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateSwiftPasswordExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateSwiftPasswordExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSwiftPassword
      *     API.
      */
@@ -907,7 +906,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTag API.
      */
     CreateTagResponse createTag(CreateTagRequest request);
@@ -930,7 +929,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateTagDefaultExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateTagDefaultExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTagDefault
      *     API.
      */
@@ -960,7 +959,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateTagNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateTagNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTagNamespace
      *     API.
      */
@@ -969,14 +968,14 @@ public interface Identity extends AutoCloseable {
     /**
      * Creates a new user in your tenancy. For conceptual information about users, your tenancy, and
      * other IAM Service components, see [Overview of
-     * IAM](https://docs.cloud.oracle.com/Content/Identity/getstarted/identity-domains.htm).
+     * IAM](https://docs.oracle.com/iaas/Content/Identity/getstarted/identity-domains.htm).
      *
      * <p>You must specify your tenancy's OCID as the compartment ID in the request object (remember
      * that the tenancy is simply the root compartment). Notice that IAM resources (users, groups,
      * compartments, and some policies) reside within the tenancy itself, unlike cloud resources
      * such as compute instances, which typically reside within compartments inside the tenancy. For
      * information about OCIDs, see [Resource
-     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * <p>You must also specify a *name* for the user, which must be unique across all users in your
      * tenancy and cannot be changed. Allowed characters: No spaces. Only letters, numerals,
@@ -1001,7 +1000,7 @@ public interface Identity extends AutoCloseable {
      * #createOrResetUIPassword(CreateOrResetUIPasswordRequest) createOrResetUIPassword}). If the
      * user needs to access the Oracle Cloud Infrastructure REST API, you need to upload a public
      * API signing key for that user (see [Required Keys and
-     * OCIDs](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm) and also {@link
+     * OCIDs](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm) and also {@link
      * #uploadApiKey(UploadApiKeyRequest) uploadApiKey}).
      *
      * <p>*Important:** Make sure to inform the new user which compartment(s) they have access to.
@@ -1013,7 +1012,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateUserExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateUserExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateUser API.
      */
     CreateUserResponse createUser(CreateUserRequest request);
@@ -1038,7 +1037,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeactivateDomainExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeactivateDomainExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeactivateDomain
      *     API.
      */
@@ -1059,7 +1058,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteApiKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteApiKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApiKey API.
      */
     DeleteApiKeyResponse deleteApiKey(DeleteApiKeyRequest request);
@@ -1074,7 +1073,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteAuthTokenExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteAuthTokenExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAuthToken
      *     API.
      */
@@ -1090,7 +1089,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCompartment
      *     API.
      */
@@ -1106,7 +1105,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteCustomerSecretKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteCustomerSecretKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteCustomerSecretKey API.
      */
@@ -1122,7 +1121,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteDbCredentialExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteDbCredentialExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDbCredential
      *     API.
      */
@@ -1146,7 +1145,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteDomainExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteDomainExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDomain API.
      */
     DeleteDomainResponse deleteDomain(DeleteDomainRequest request);
@@ -1161,7 +1160,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteDynamicGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteDynamicGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDynamicGroup
      *     API.
      */
@@ -1177,14 +1176,14 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGroup API.
      */
     DeleteGroupResponse deleteGroup(DeleteGroupRequest request);
 
     /**
      * **Deprecated.** For more information, see [Deprecated IAM Service
-     * APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      *
      * <p>Deletes the specified identity provider. The identity provider must not have any group
      * mappings (see {@link IdpGroupMapping}).
@@ -1196,7 +1195,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteIdentityProviderExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteIdentityProviderExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteIdentityProvider API.
      */
@@ -1204,7 +1203,7 @@ public interface Identity extends AutoCloseable {
 
     /**
      * **Deprecated.** For more information, see [Deprecated IAM Service
-     * APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      *
      * <p>Deletes the specified group mapping.
      *
@@ -1215,7 +1214,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteIdpGroupMappingExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteIdpGroupMappingExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteIdpGroupMapping API.
      */
@@ -1231,7 +1230,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteMfaTotpDeviceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteMfaTotpDeviceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMfaTotpDevice
      *     API.
      */
@@ -1247,7 +1246,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteNetworkSourceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteNetworkSourceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNetworkSource
      *     API.
      */
@@ -1263,7 +1262,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteOAuthClientCredentialExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteOAuthClientCredentialExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteOAuthClientCredential API.
      */
@@ -1280,7 +1279,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeletePolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeletePolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePolicy API.
      */
     DeletePolicyResponse deletePolicy(DeletePolicyRequest request);
@@ -1295,7 +1294,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteSmtpCredentialExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteSmtpCredentialExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteSmtpCredential API.
      */
@@ -1313,7 +1312,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteSwiftPasswordExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteSwiftPasswordExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSwiftPassword
      *     API.
      */
@@ -1351,7 +1350,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTag API.
      */
     DeleteTagResponse deleteTag(DeleteTagRequest request);
@@ -1366,7 +1365,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteTagDefaultExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteTagDefaultExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTagDefault
      *     API.
      */
@@ -1390,7 +1389,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteTagNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteTagNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTagNamespace
      *     API.
      */
@@ -1406,7 +1405,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteUserExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteUserExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUser API.
      */
     DeleteUserResponse deleteUser(DeleteUserRequest request);
@@ -1433,7 +1432,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/EnableReplicationToRegionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/EnableReplicationToRegionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     EnableReplicationToRegion API.
      */
@@ -1450,7 +1449,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GenerateTotpSeedExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GenerateTotpSeedExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateTotpSeed
      *     API.
      */
@@ -1467,7 +1466,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetAuthenticationPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetAuthenticationPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetAuthenticationPolicy API.
      */
@@ -1491,7 +1490,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCompartment API.
      */
     GetCompartmentResponse getCompartment(GetCompartmentRequest request);
@@ -1507,7 +1506,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetDomainExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetDomainExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDomain API.
      */
     GetDomainResponse getDomain(GetDomainRequest request);
@@ -1522,7 +1521,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetDynamicGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetDynamicGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDynamicGroup
      *     API.
      */
@@ -1542,7 +1541,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGroup API.
      */
     GetGroupResponse getGroup(GetGroupRequest request);
@@ -1559,7 +1558,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetIamWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetIamWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIamWorkRequest
      *     API.
      */
@@ -1567,7 +1566,7 @@ public interface Identity extends AutoCloseable {
 
     /**
      * **Deprecated.** For more information, see [Deprecated IAM Service
-     * APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      *
      * <p>Gets the specified identity provider's information.
      *
@@ -1578,7 +1577,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetIdentityProviderExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetIdentityProviderExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIdentityProvider
      *     API.
      */
@@ -1586,7 +1585,7 @@ public interface Identity extends AutoCloseable {
 
     /**
      * **Deprecated.** For more information, see [Deprecated IAM Service
-     * APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      *
      * <p>Gets the specified group mapping.
      *
@@ -1597,7 +1596,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetIdpGroupMappingExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetIdpGroupMappingExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIdpGroupMapping
      *     API.
      */
@@ -1613,7 +1612,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetMfaTotpDeviceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetMfaTotpDeviceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMfaTotpDevice
      *     API.
      */
@@ -1629,7 +1628,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetNetworkSourceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetNetworkSourceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkSource
      *     API.
      */
@@ -1645,7 +1644,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPolicy API.
      */
     GetPolicyResponse getPolicy(GetPolicyRequest request);
@@ -1660,7 +1659,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetStandardTagTemplateExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetStandardTagTemplateExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetStandardTagTemplate API.
      */
@@ -1676,7 +1675,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTag API.
      */
     GetTagResponse getTag(GetTagRequest request);
@@ -1691,7 +1690,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetTagDefaultExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetTagDefaultExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTagDefault API.
      */
     GetTagDefaultResponse getTagDefault(GetTagDefaultRequest request);
@@ -1706,7 +1705,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetTagNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetTagNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTagNamespace
      *     API.
      */
@@ -1723,7 +1722,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetTaggingWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetTaggingWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetTaggingWorkRequest API.
      */
@@ -1739,7 +1738,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetTenancyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetTenancyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTenancy API.
      */
     GetTenancyResponse getTenancy(GetTenancyRequest request);
@@ -1754,7 +1753,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetUserExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetUserExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUser API.
      */
     GetUserResponse getUser(GetUserRequest request);
@@ -1769,7 +1768,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetUserGroupMembershipExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetUserGroupMembershipExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetUserGroupMembership API.
      */
@@ -1787,7 +1786,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetUserUIPasswordInformationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetUserUIPasswordInformationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetUserUIPasswordInformation API.
      */
@@ -1805,7 +1804,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
@@ -1821,7 +1820,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ImportStandardTagsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ImportStandardTagsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportStandardTags
      *     API.
      */
@@ -1843,7 +1842,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListAllowedDomainLicenseTypesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListAllowedDomainLicenseTypesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListAllowedDomainLicenseTypes API.
      */
@@ -1863,7 +1862,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListApiKeysExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListApiKeysExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApiKeys API.
      */
     ListApiKeysResponse listApiKeys(ListApiKeysRequest request);
@@ -1879,7 +1878,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListAuthTokensExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListAuthTokensExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAuthTokens API.
      */
     ListAuthTokensResponse listAuthTokens(ListAuthTokensRequest request);
@@ -1888,7 +1887,7 @@ public interface Identity extends AutoCloseable {
      * Lists the availability domains in your tenancy. Specify the OCID of either the tenancy or
      * another of your compartments as the value for the compartment ID (remember that the tenancy
      * is simply the root compartment). See [Where to Get the Tenancy's OCID and User's
-     * OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five). Note that
+     * OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five). Note that
      * the order of the results returned can change if availability domains are added or removed;
      * therefore, do not create a dependency on the list order.
      *
@@ -1899,7 +1898,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListAvailabilityDomainsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListAvailabilityDomainsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListAvailabilityDomains API.
      */
@@ -1913,7 +1912,7 @@ public interface Identity extends AutoCloseable {
      * of resource-types provides the appropriate resource-type names to use with the bulk action
      * operations along with the type of identifying information you'll need to provide for each
      * resource-type. Most resource-types just require an
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) to identify a
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify a
      * specific resource, but some resource-types, such as buckets, require you to provide other
      * identifying information.
      *
@@ -1924,7 +1923,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListBulkActionResourceTypesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListBulkActionResourceTypesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListBulkActionResourceTypes API.
      */
@@ -1941,7 +1940,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListBulkEditTagsResourceTypesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListBulkEditTagsResourceTypesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListBulkEditTagsResourceTypes API.
      */
@@ -1967,7 +1966,7 @@ public interface Identity extends AutoCloseable {
      * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ANY.
      *
      * <p>See [Where to Get the Tenancy's OCID and User's
-     * OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1976,7 +1975,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListCompartmentsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListCompartmentsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCompartments
      *     API.
      */
@@ -1985,7 +1984,7 @@ public interface Identity extends AutoCloseable {
     /**
      * Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
      * cost-tracking tags, see [Using Cost-tracking
-     * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/usingcosttrackingtags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/usingcosttrackingtags.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1994,7 +1993,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListCostTrackingTagsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListCostTrackingTagsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListCostTrackingTags API.
      */
@@ -2011,7 +2010,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListCustomerSecretKeysExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListCustomerSecretKeysExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListCustomerSecretKeys API.
      */
@@ -2028,7 +2027,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListDbCredentialsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListDbCredentialsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbCredentials
      *     API.
      */
@@ -2044,7 +2043,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListDomainsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListDomainsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDomains API.
      */
     ListDomainsResponse listDomains(ListDomainsRequest request);
@@ -2053,7 +2052,7 @@ public interface Identity extends AutoCloseable {
      * Lists the dynamic groups in your tenancy. You must specify your tenancy's OCID as the value
      * for the compartment ID (remember that the tenancy is simply the root compartment). See [Where
      * to Get the Tenancy's OCID and User's
-     * OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2062,7 +2061,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListDynamicGroupsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListDynamicGroupsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDynamicGroups
      *     API.
      */
@@ -2072,7 +2071,7 @@ public interface Identity extends AutoCloseable {
      * Lists the Fault Domains in your tenancy. Specify the OCID of either the tenancy or another of
      * your compartments as the value for the compartment ID (remember that the tenancy is simply
      * the root compartment). See [Where to Get the Tenancy's OCID and User's
-     * OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2081,7 +2080,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListFaultDomainsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListFaultDomainsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFaultDomains
      *     API.
      */
@@ -2091,7 +2090,7 @@ public interface Identity extends AutoCloseable {
      * Lists the groups in your tenancy. You must specify your tenancy's OCID as the value for the
      * compartment ID (remember that the tenancy is simply the root compartment). See [Where to Get
      * the Tenancy's OCID and User's
-     * OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2100,7 +2099,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListGroupsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListGroupsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGroups API.
      */
     ListGroupsResponse listGroups(ListGroupsRequest request);
@@ -2117,7 +2116,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIamWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIamWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListIamWorkRequestErrors API.
      */
@@ -2136,7 +2135,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIamWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIamWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListIamWorkRequestLogs API.
      */
@@ -2154,7 +2153,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIamWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIamWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIamWorkRequests
      *     API.
      */
@@ -2162,7 +2161,7 @@ public interface Identity extends AutoCloseable {
 
     /**
      * **Deprecated.** For more information, see [Deprecated IAM Service
-     * APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      *
      * <p>Lists the identity provider groups.
      *
@@ -2173,7 +2172,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIdentityProviderGroupsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIdentityProviderGroupsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListIdentityProviderGroups API.
      */
@@ -2182,13 +2181,13 @@ public interface Identity extends AutoCloseable {
 
     /**
      * **Deprecated.** For more information, see [Deprecated IAM Service
-     * APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      *
      * <p>Lists all the identity providers in your tenancy. You must specify the identity provider
      * type (e.g., `SAML2` for identity providers using the SAML2.0 protocol). You must specify your
      * tenancy's OCID as the value for the compartment ID (remember that the tenancy is simply the
      * root compartment). See [Where to Get the Tenancy's OCID and User's
-     * OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2197,7 +2196,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIdentityProvidersExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIdentityProvidersExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListIdentityProviders API.
      */
@@ -2205,7 +2204,7 @@ public interface Identity extends AutoCloseable {
 
     /**
      * **Deprecated.** For more information, see [Deprecated IAM Service
-     * APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      *
      * <p>Lists the group mappings for the specified identity provider.
      *
@@ -2216,7 +2215,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIdpGroupMappingsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIdpGroupMappingsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListIdpGroupMappings API.
      */
@@ -2234,7 +2233,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListMfaTotpDevicesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListMfaTotpDevicesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMfaTotpDevices
      *     API.
      */
@@ -2244,7 +2243,7 @@ public interface Identity extends AutoCloseable {
      * Lists the network sources in your tenancy. You must specify your tenancy's OCID as the value
      * for the compartment ID (remember that the tenancy is simply the root compartment). See [Where
      * to Get the Tenancy's OCID and User's
-     * OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2253,7 +2252,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListNetworkSourcesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListNetworkSourcesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkSources
      *     API.
      */
@@ -2269,7 +2268,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListOAuthClientCredentialsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListOAuthClientCredentialsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListOAuthClientCredentials API.
      */
@@ -2279,7 +2278,7 @@ public interface Identity extends AutoCloseable {
     /**
      * Lists the policies in the specified compartment (either the tenancy or another of your
      * compartments). See [Where to Get the Tenancy's OCID and User's
-     * OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      * <p>To determine which policies apply to a particular group or compartment, you must view the
      * individual statements inside all your policies. There isn't a way to automatically obtain
@@ -2292,7 +2291,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListPoliciesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListPoliciesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPolicies API.
      */
     ListPoliciesResponse listPolicies(ListPoliciesRequest request);
@@ -2307,7 +2306,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListRegionSubscriptionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListRegionSubscriptionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListRegionSubscriptions API.
      */
@@ -2323,7 +2322,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListRegionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListRegionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRegions API.
      */
     ListRegionsResponse listRegions(ListRegionsRequest request);
@@ -2340,7 +2339,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListSmtpCredentialsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListSmtpCredentialsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSmtpCredentials
      *     API.
      */
@@ -2356,7 +2355,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListStandardTagNamespacesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListStandardTagNamespacesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListStandardTagNamespaces API.
      */
@@ -2377,7 +2376,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListSwiftPasswordsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListSwiftPasswordsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSwiftPasswords
      *     API.
      */
@@ -2393,7 +2392,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTagDefaultsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTagDefaultsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTagDefaults
      *     API.
      */
@@ -2409,7 +2408,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTagNamespacesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTagNamespacesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTagNamespaces
      *     API.
      */
@@ -2425,7 +2424,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTaggingWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTaggingWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListTaggingWorkRequestErrors API.
      */
@@ -2442,7 +2441,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTaggingWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTaggingWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListTaggingWorkRequestLogs API.
      */
@@ -2459,7 +2458,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTaggingWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTaggingWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListTaggingWorkRequests API.
      */
@@ -2475,7 +2474,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTagsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTagsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTags API.
      */
     ListTagsResponse listTags(ListTagsRequest request);
@@ -2483,7 +2482,7 @@ public interface Identity extends AutoCloseable {
     /**
      * Lists the `UserGroupMembership` objects in your tenancy. You must specify your tenancy's OCID
      * as the value for the compartment ID (see [Where to Get the Tenancy's OCID and User's
-     * OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five)). You must
+     * OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five)). You must
      * also then filter the list in one of these ways:
      *
      * <p>- You can limit the results to just the memberships for a given user by specifying a
@@ -2499,7 +2498,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListUserGroupMembershipsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListUserGroupMembershipsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListUserGroupMemberships API.
      */
@@ -2510,7 +2509,7 @@ public interface Identity extends AutoCloseable {
      * Lists the users in your tenancy. You must specify your tenancy's OCID as the value for the
      * compartment ID (remember that the tenancy is simply the root compartment). See [Where to Get
      * the Tenancy's OCID and User's
-     * OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2519,7 +2518,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListUsersExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListUsersExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUsers API.
      */
     ListUsersResponse listUsers(ListUsersRequest request);
@@ -2534,7 +2533,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
@@ -2549,7 +2548,7 @@ public interface Identity extends AutoCloseable {
      * policies of the new parent take effect and the policies of the previous parent no longer
      * apply. Ensure that you are aware of the implications for the compartment contents before you
      * move it. For more information, see [Moving a
-     * Compartment](https://docs.cloud.oracle.com/Content/Identity/compartments/managingcompartments.htm#MoveCompartment).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/compartments/managingcompartments.htm#MoveCompartment).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2558,7 +2557,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/MoveCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/MoveCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use MoveCompartment
      *     API.
      */
@@ -2574,7 +2573,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/RecoverCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/RecoverCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RecoverCompartment
      *     API.
      */
@@ -2590,7 +2589,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/RemoveTagDefaultLockExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/RemoveTagDefaultLockExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RemoveTagDefaultLock API.
      */
@@ -2606,7 +2605,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/RemoveTagNamespaceLockExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/RemoveTagNamespaceLockExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RemoveTagNamespaceLock API.
      */
@@ -2622,7 +2621,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/RemoveUserFromGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/RemoveUserFromGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveUserFromGroup
      *     API.
      */
@@ -2639,7 +2638,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ResetIdpScimClientExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ResetIdpScimClientExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResetIdpScimClient
      *     API.
      */
@@ -2655,7 +2654,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateAuthTokenExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateAuthTokenExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAuthToken
      *     API.
      */
@@ -2671,7 +2670,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateAuthenticationPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateAuthenticationPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateAuthenticationPolicy API.
      */
@@ -2689,7 +2688,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCompartment
      *     API.
      */
@@ -2705,7 +2704,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateCustomerSecretKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateCustomerSecretKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateCustomerSecretKey API.
      */
@@ -2725,7 +2724,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateDomainExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateDomainExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDomain API.
      */
     UpdateDomainResponse updateDomain(UpdateDomainRequest request);
@@ -2740,7 +2739,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateDynamicGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateDynamicGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDynamicGroup
      *     API.
      */
@@ -2756,14 +2755,14 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGroup API.
      */
     UpdateGroupResponse updateGroup(UpdateGroupRequest request);
 
     /**
      * **Deprecated.** For more information, see [Deprecated IAM Service
-     * APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      *
      * <p>Updates the specified identity provider.
      *
@@ -2774,7 +2773,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateIdentityProviderExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateIdentityProviderExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateIdentityProvider API.
      */
@@ -2782,7 +2781,7 @@ public interface Identity extends AutoCloseable {
 
     /**
      * **Deprecated.** For more information, see [Deprecated IAM Service
-     * APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      *
      * <p>Updates the specified group mapping.
      *
@@ -2793,7 +2792,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateIdpGroupMappingExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateIdpGroupMappingExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateIdpGroupMapping API.
      */
@@ -2809,7 +2808,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateNetworkSourceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateNetworkSourceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNetworkSource
      *     API.
      */
@@ -2825,7 +2824,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateOAuthClientCredentialExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateOAuthClientCredentialExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateOAuthClientCredential API.
      */
@@ -2845,7 +2844,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdatePolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdatePolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePolicy API.
      */
     UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request);
@@ -2860,7 +2859,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateSmtpCredentialExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateSmtpCredentialExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateSmtpCredential API.
      */
@@ -2878,7 +2877,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateSwiftPasswordExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateSwiftPasswordExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSwiftPassword
      *     API.
      */
@@ -2903,7 +2902,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateTagExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateTagExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTag API.
      */
     UpdateTagResponse updateTag(UpdateTagRequest request);
@@ -2924,7 +2923,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateTagDefaultExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateTagDefaultExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTagDefault
      *     API.
      */
@@ -2939,7 +2938,7 @@ public interface Identity extends AutoCloseable {
      * individually *after* you reactivate the namespace, using {@link #updateTag(UpdateTagRequest)
      * updateTag}. For more information about retiring tag namespaces, see [Retiring Key Definitions
      * and Namespace
-     * Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
+     * Definitions](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
      *
      * <p>You can't add a namespace with the same name as a retired namespace in the same tenancy.
      *
@@ -2950,7 +2949,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateTagNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateTagNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTagNamespace
      *     API.
      */
@@ -2966,7 +2965,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateUserExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateUserExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateUser API.
      */
     UpdateUserResponse updateUser(UpdateUserRequest request);
@@ -2981,7 +2980,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateUserCapabilitiesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateUserCapabilitiesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateUserCapabilities API.
      */
@@ -2997,7 +2996,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateUserStateExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateUserStateExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateUserState
      *     API.
      */
@@ -3028,7 +3027,7 @@ public interface Identity extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UploadApiKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UploadApiKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UploadApiKey API.
      */
     UploadApiKeyResponse uploadApiKey(UploadApiKeyRequest request);

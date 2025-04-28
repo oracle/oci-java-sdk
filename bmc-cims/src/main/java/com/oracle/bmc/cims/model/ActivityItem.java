@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
@@ -85,12 +85,12 @@ public final class ActivityItem extends Item {
             this.__explicitlySet__.add("comments");
             return this;
         }
-        /** The time when the activity was created, in milliseconds since epoch time. */
+        /** The time when the activity was created, in seconds since epoch time. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private Integer timeCreated;
 
         /**
-         * The time when the activity was created, in milliseconds since epoch time.
+         * The time when the activity was created, in seconds since epoch time.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -100,12 +100,12 @@ public final class ActivityItem extends Item {
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time when the activity was updated, in milliseconds since epoch time. */
+        /** The time when the activity was updated, in seconds since epoch time. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private Integer timeUpdated;
 
         /**
-         * The time when the activity was updated, in milliseconds since epoch time.
+         * The time when the activity was updated, in seconds since epoch time.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -163,6 +163,21 @@ public final class ActivityItem extends Item {
             this.__explicitlySet__.add("itemStatus");
             return this;
         }
+        /** attachmentID for the ItemType Attachments only for Alloy realm. */
+        @com.fasterxml.jackson.annotation.JsonProperty("attachmentID")
+        private String attachmentID;
+
+        /**
+         * attachmentID for the ItemType Attachments only for Alloy realm.
+         *
+         * @param attachmentID the value to set
+         * @return this builder
+         */
+        public Builder attachmentID(String attachmentID) {
+            this.attachmentID = attachmentID;
+            this.__explicitlySet__.add("attachmentID");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -181,7 +196,8 @@ public final class ActivityItem extends Item {
                             this.activityType,
                             this.activityAuthor,
                             this.itemType,
-                            this.itemStatus);
+                            this.itemStatus,
+                            this.attachmentID);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -226,6 +242,9 @@ public final class ActivityItem extends Item {
             if (model.wasPropertyExplicitlySet("itemStatus")) {
                 this.itemStatus(model.getItemStatus());
             }
+            if (model.wasPropertyExplicitlySet("attachmentID")) {
+                this.attachmentID(model.getAttachmentID());
+            }
             return this;
         }
     }
@@ -252,7 +271,8 @@ public final class ActivityItem extends Item {
             ActivityType activityType,
             ActivityAuthor activityAuthor,
             ItemType itemType,
-            ItemStatus itemStatus) {
+            ItemStatus itemStatus,
+            String attachmentID) {
         super(itemKey, name, category, subCategory, issueType);
         this.comments = comments;
         this.timeCreated = timeCreated;
@@ -261,6 +281,7 @@ public final class ActivityItem extends Item {
         this.activityAuthor = activityAuthor;
         this.itemType = itemType;
         this.itemStatus = itemStatus;
+        this.attachmentID = attachmentID;
     }
 
     /** Comments added with the activity on the support ticket. */
@@ -276,12 +297,12 @@ public final class ActivityItem extends Item {
         return comments;
     }
 
-    /** The time when the activity was created, in milliseconds since epoch time. */
+    /** The time when the activity was created, in seconds since epoch time. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final Integer timeCreated;
 
     /**
-     * The time when the activity was created, in milliseconds since epoch time.
+     * The time when the activity was created, in seconds since epoch time.
      *
      * @return the value
      */
@@ -289,12 +310,12 @@ public final class ActivityItem extends Item {
         return timeCreated;
     }
 
-    /** The time when the activity was updated, in milliseconds since epoch time. */
+    /** The time when the activity was updated, in seconds since epoch time. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final Integer timeUpdated;
 
     /**
-     * The time when the activity was updated, in milliseconds since epoch time.
+     * The time when the activity was updated, in seconds since epoch time.
      *
      * @return the value
      */
@@ -533,6 +554,19 @@ public final class ActivityItem extends Item {
         return itemStatus;
     }
 
+    /** attachmentID for the ItemType Attachments only for Alloy realm. */
+    @com.fasterxml.jackson.annotation.JsonProperty("attachmentID")
+    private final String attachmentID;
+
+    /**
+     * attachmentID for the ItemType Attachments only for Alloy realm.
+     *
+     * @return the value
+     */
+    public String getAttachmentID() {
+        return attachmentID;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -555,6 +589,7 @@ public final class ActivityItem extends Item {
         sb.append(", activityAuthor=").append(String.valueOf(this.activityAuthor));
         sb.append(", itemType=").append(String.valueOf(this.itemType));
         sb.append(", itemStatus=").append(String.valueOf(this.itemStatus));
+        sb.append(", attachmentID=").append(String.valueOf(this.attachmentID));
         sb.append(")");
         return sb.toString();
     }
@@ -576,6 +611,7 @@ public final class ActivityItem extends Item {
                 && java.util.Objects.equals(this.activityAuthor, other.activityAuthor)
                 && java.util.Objects.equals(this.itemType, other.itemType)
                 && java.util.Objects.equals(this.itemStatus, other.itemStatus)
+                && java.util.Objects.equals(this.attachmentID, other.attachmentID)
                 && super.equals(other);
     }
 
@@ -592,6 +628,7 @@ public final class ActivityItem extends Item {
                         + (this.activityAuthor == null ? 43 : this.activityAuthor.hashCode());
         result = (result * PRIME) + (this.itemType == null ? 43 : this.itemType.hashCode());
         result = (result * PRIME) + (this.itemStatus == null ? 43 : this.itemStatus.hashCode());
+        result = (result * PRIME) + (this.attachmentID == null ? 43 : this.attachmentID.hashCode());
         return result;
     }
 }

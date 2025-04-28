@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -26,6 +26,7 @@ public final class CloudVmClusterSummary
     @java.beans.ConstructorProperties({
         "id",
         "compartmentId",
+        "subscriptionId",
         "availabilityDomain",
         "subnetId",
         "backupSubnetId",
@@ -61,18 +62,28 @@ public final class CloudVmClusterSummary
         "diskRedundancy",
         "scanIpIds",
         "vipIds",
+        "scanIpv6Ids",
+        "vipv6Ids",
         "scanDnsRecordId",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
+        "systemTags",
         "scanDnsName",
         "zoneId",
         "scanListenerPortTcp",
         "scanListenerPortTcpSsl",
-        "dataCollectionOptions"
+        "dataCollectionOptions",
+        "giSoftwareImageId",
+        "fileSystemConfigurationDetails",
+        "cloudAutomationUpdateDetails",
+        "vmClusterType",
+        "computeModel"
     })
     public CloudVmClusterSummary(
             String id,
             String compartmentId,
+            String subscriptionId,
             String availabilityDomain,
             String subnetId,
             String backupSubnetId,
@@ -108,17 +119,27 @@ public final class CloudVmClusterSummary
             DiskRedundancy diskRedundancy,
             java.util.List<String> scanIpIds,
             java.util.List<String> vipIds,
+            java.util.List<String> scanIpv6Ids,
+            java.util.List<String> vipv6Ids,
             String scanDnsRecordId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String scanDnsName,
             String zoneId,
             Integer scanListenerPortTcp,
             Integer scanListenerPortTcpSsl,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            String giSoftwareImageId,
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
+            CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
+            VmClusterType vmClusterType,
+            ComputeModel computeModel) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
+        this.subscriptionId = subscriptionId;
         this.availabilityDomain = availabilityDomain;
         this.subnetId = subnetId;
         this.backupSubnetId = backupSubnetId;
@@ -154,27 +175,36 @@ public final class CloudVmClusterSummary
         this.diskRedundancy = diskRedundancy;
         this.scanIpIds = scanIpIds;
         this.vipIds = vipIds;
+        this.scanIpv6Ids = scanIpv6Ids;
+        this.vipv6Ids = vipv6Ids;
         this.scanDnsRecordId = scanDnsRecordId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
+        this.systemTags = systemTags;
         this.scanDnsName = scanDnsName;
         this.zoneId = zoneId;
         this.scanListenerPortTcp = scanListenerPortTcp;
         this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.giSoftwareImageId = giSoftwareImageId;
+        this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+        this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+        this.vmClusterType = vmClusterType;
+        this.computeModel = computeModel;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud VM cluster.
          *
          * @param id the value to set
@@ -186,14 +216,14 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -202,6 +232,25 @@ public final class CloudVmClusterSummary
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
             return this;
         }
         /**
@@ -224,7 +273,7 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet associated with the cloud VM cluster.
          *
          * <p>*Subnet Restrictions:** - For Exadata and virtual machine 2-node RAC systems, do not
@@ -238,7 +287,7 @@ public final class CloudVmClusterSummary
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet associated with the cloud VM cluster.
          *
          * <p>*Subnet Restrictions:** - For Exadata and virtual machine 2-node RAC systems, do not
@@ -257,7 +306,7 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup network subnet associated with the cloud VM cluster.
          *
          * <p>*Subnet Restriction:** See the subnet restrictions information for **subnetId**.
@@ -266,7 +315,7 @@ public final class CloudVmClusterSummary
         private String backupSubnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup network subnet associated with the cloud VM cluster.
          *
          * <p>*Subnet Restriction:** See the subnet restrictions information for **subnetId**.
@@ -281,24 +330,24 @@ public final class CloudVmClusterSummary
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -310,11 +359,11 @@ public final class CloudVmClusterSummary
         }
         /**
          * A list of the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups (NSGs) that the backup network of this DB system belongs to.
          * Setting this to an empty array after the list is created removes the resource from all
          * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * Applicable only to Exadata systems.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
@@ -322,11 +371,11 @@ public final class CloudVmClusterSummary
 
         /**
          * A list of the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups (NSGs) that the backup network of this DB system belongs to.
          * Setting this to an empty array after the list is created removes the resource from all
          * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * Applicable only to Exadata systems.
          *
          * @param backupNetworkNsgIds the value to set
@@ -338,7 +387,7 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last maintenance update history entry. This value is updated when a maintenance update
          * starts.
          */
@@ -346,7 +395,7 @@ public final class CloudVmClusterSummary
         private String lastUpdateHistoryEntryId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last maintenance update history entry. This value is updated when a maintenance update
          * starts.
          *
@@ -480,14 +529,14 @@ public final class CloudVmClusterSummary
         }
         /**
          * The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
          * The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
@@ -647,7 +696,7 @@ public final class CloudVmClusterSummary
          * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
          * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent
          * assigned to DATA storage. See [Storage
-         * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
          * in the Exadata documentation for details on the impact of the configuration settings on
          * storage.
          */
@@ -659,7 +708,7 @@ public final class CloudVmClusterSummary
          * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
          * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent
          * assigned to DATA storage. See [Storage
-         * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
          * in the Exadata documentation for details on the impact of the configuration settings on
          * storage.
          *
@@ -693,14 +742,14 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud Exadata infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
         private String cloudExadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud Exadata infrastructure.
          *
          * @param cloudExadataInfrastructureId the value to set
@@ -818,10 +867,11 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN
-         * IP addresses are typically used for load balancing and are not assigned to any interface.
-         * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster.
+         * SCAN IPv4 addresses are typically used for load balancing and are not assigned to any
+         * interface. Oracle Clusterware directs the requests to the appropriate nodes in the
+         * cluster.
          *
          * <p>*Note:** For a single-node DB system, this list is empty.
          */
@@ -829,10 +879,11 @@ public final class CloudVmClusterSummary
         private java.util.List<String> scanIpIds;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN
-         * IP addresses are typically used for load balancing and are not assigned to any interface.
-         * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster.
+         * SCAN IPv4 addresses are typically used for load balancing and are not assigned to any
+         * interface. Oracle Clusterware directs the requests to the appropriate nodes in the
+         * cluster.
          *
          * <p>*Note:** For a single-node DB system, this list is empty.
          *
@@ -845,11 +896,11 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready
-         * Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud
-         * Service instance to enable failover. If one node fails, the VIP is reassigned to another
-         * active node in the cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready
+         * Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata
+         * Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to
+         * another active node in the cluster.
          *
          * <p>*Note:** For a single-node DB system, this list is empty.
          */
@@ -857,11 +908,11 @@ public final class CloudVmClusterSummary
         private java.util.List<String> vipIds;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready
-         * Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud
-         * Service instance to enable failover. If one node fails, the VIP is reassigned to another
-         * active node in the cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready
+         * Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata
+         * Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to
+         * another active node in the cluster.
          *
          * <p>*Note:** For a single-node DB system, this list is empty.
          *
@@ -874,14 +925,72 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster.
+         * SCAN IPv6 addresses are typically used for load balancing and are not assigned to any
+         * interface. Oracle Clusterware directs the requests to the appropriate nodes in the
+         * cluster.
+         *
+         * <p>*Note:** For a single-node DB system, this list is empty.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("scanIpv6Ids")
+        private java.util.List<String> scanIpv6Ids;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster.
+         * SCAN IPv6 addresses are typically used for load balancing and are not assigned to any
+         * interface. Oracle Clusterware directs the requests to the appropriate nodes in the
+         * cluster.
+         *
+         * <p>*Note:** For a single-node DB system, this list is empty.
+         *
+         * @param scanIpv6Ids the value to set
+         * @return this builder
+         */
+        public Builder scanIpv6Ids(java.util.List<String> scanIpv6Ids) {
+            this.scanIpv6Ids = scanIpv6Ids;
+            this.__explicitlySet__.add("scanIpv6Ids");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready
+         * Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata
+         * Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to
+         * another active node in the cluster.
+         *
+         * <p>*Note:** For a single-node DB system, this list is empty.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vipv6Ids")
+        private java.util.List<String> vipv6Ids;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready
+         * Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata
+         * Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to
+         * another active node in the cluster.
+         *
+         * <p>*Note:** For a single-node DB system, this list is empty.
+         *
+         * @param vipv6Ids the value to set
+         * @return this builder
+         */
+        public Builder vipv6Ids(java.util.List<String> vipv6Ids) {
+            this.vipv6Ids = vipv6Ids;
+            this.__explicitlySet__.add("vipv6Ids");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
         private String scanDnsRecordId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
          *
          * @param scanDnsRecordId the value to set
@@ -895,7 +1004,7 @@ public final class CloudVmClusterSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -905,7 +1014,7 @@ public final class CloudVmClusterSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -920,7 +1029,7 @@ public final class CloudVmClusterSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -928,7 +1037,7 @@ public final class CloudVmClusterSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -937,6 +1046,51 @@ public final class CloudVmClusterSummary
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
             return this;
         }
         /**
@@ -1012,6 +1166,91 @@ public final class CloudVmClusterSummary
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * grid infrastructure software image. This is a database software image of the type {@code
+         * GRID_IMAGE}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+        private String giSoftwareImageId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * grid infrastructure software image. This is a database software image of the type {@code
+         * GRID_IMAGE}.
+         *
+         * @param giSoftwareImageId the value to set
+         * @return this builder
+         */
+        public Builder giSoftwareImageId(String giSoftwareImageId) {
+            this.giSoftwareImageId = giSoftwareImageId;
+            this.__explicitlySet__.add("giSoftwareImageId");
+            return this;
+        }
+        /** Details of the file system configuration of the VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+        private java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+        /**
+         * Details of the file system configuration of the VM cluster.
+         *
+         * @param fileSystemConfigurationDetails the value to set
+         * @return this builder
+         */
+        public Builder fileSystemConfigurationDetails(
+                java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            this.__explicitlySet__.add("fileSystemConfigurationDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+        private CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+        public Builder cloudAutomationUpdateDetails(
+                CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
+            this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            this.__explicitlySet__.add("cloudAutomationUpdateDetails");
+            return this;
+        }
+        /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+        private VmClusterType vmClusterType;
+
+        /**
+         * The vmcluster type for the VM cluster/Cloud VM cluster.
+         *
+         * @param vmClusterType the value to set
+         * @return this builder
+         */
+        public Builder vmClusterType(VmClusterType vmClusterType) {
+            this.vmClusterType = vmClusterType;
+            this.__explicitlySet__.add("vmClusterType");
+            return this;
+        }
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
+         * OCPU compute model is legacy.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
+         * OCPU compute model is legacy.
+         *
+         * @param computeModel the value to set
+         * @return this builder
+         */
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1021,6 +1260,7 @@ public final class CloudVmClusterSummary
                     new CloudVmClusterSummary(
                             this.id,
                             this.compartmentId,
+                            this.subscriptionId,
                             this.availabilityDomain,
                             this.subnetId,
                             this.backupSubnetId,
@@ -1056,14 +1296,23 @@ public final class CloudVmClusterSummary
                             this.diskRedundancy,
                             this.scanIpIds,
                             this.vipIds,
+                            this.scanIpv6Ids,
+                            this.vipv6Ids,
                             this.scanDnsRecordId,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
+                            this.systemTags,
                             this.scanDnsName,
                             this.zoneId,
                             this.scanListenerPortTcp,
                             this.scanListenerPortTcpSsl,
-                            this.dataCollectionOptions);
+                            this.dataCollectionOptions,
+                            this.giSoftwareImageId,
+                            this.fileSystemConfigurationDetails,
+                            this.cloudAutomationUpdateDetails,
+                            this.vmClusterType,
+                            this.computeModel);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1077,6 +1326,9 @@ public final class CloudVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
@@ -1183,6 +1435,12 @@ public final class CloudVmClusterSummary
             if (model.wasPropertyExplicitlySet("vipIds")) {
                 this.vipIds(model.getVipIds());
             }
+            if (model.wasPropertyExplicitlySet("scanIpv6Ids")) {
+                this.scanIpv6Ids(model.getScanIpv6Ids());
+            }
+            if (model.wasPropertyExplicitlySet("vipv6Ids")) {
+                this.vipv6Ids(model.getVipv6Ids());
+            }
             if (model.wasPropertyExplicitlySet("scanDnsRecordId")) {
                 this.scanDnsRecordId(model.getScanDnsRecordId());
             }
@@ -1191,6 +1449,12 @@ public final class CloudVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("scanDnsName")) {
                 this.scanDnsName(model.getScanDnsName());
@@ -1207,6 +1471,21 @@ public final class CloudVmClusterSummary
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
             }
+            if (model.wasPropertyExplicitlySet("giSoftwareImageId")) {
+                this.giSoftwareImageId(model.getGiSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
+                this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
+                this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterType")) {
+                this.vmClusterType(model.getVmClusterType());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
             return this;
         }
     }
@@ -1221,14 +1500,14 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud VM cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud VM cluster.
      *
      * @return the value
@@ -1238,20 +1517,37 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     /**
@@ -1272,7 +1568,7 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet associated with the cloud VM cluster.
      *
      * <p>*Subnet Restrictions:** - For Exadata and virtual machine 2-node RAC systems, do not use a
@@ -1286,7 +1582,7 @@ public final class CloudVmClusterSummary
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet associated with the cloud VM cluster.
      *
      * <p>*Subnet Restrictions:** - For Exadata and virtual machine 2-node RAC systems, do not use a
@@ -1303,7 +1599,7 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup network subnet associated with the cloud VM cluster.
      *
      * <p>*Subnet Restriction:** See the subnet restrictions information for **subnetId**.
@@ -1312,7 +1608,7 @@ public final class CloudVmClusterSummary
     private final String backupSubnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup network subnet associated with the cloud VM cluster.
      *
      * <p>*Subnet Restriction:** See the subnet restrictions information for **subnetId**.
@@ -1324,10 +1620,10 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      */
@@ -1335,10 +1631,10 @@ public final class CloudVmClusterSummary
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      *
@@ -1349,22 +1645,22 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * of the network security groups (NSGs) that the backup network of this DB system belongs to.
      * Setting this to an empty array after the list is created removes the resource from all NSGs.
      * For more information about NSGs, see [Security
-     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
      * only to Exadata systems.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     private final java.util.List<String> backupNetworkNsgIds;
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * of the network security groups (NSGs) that the backup network of this DB system belongs to.
      * Setting this to an empty array after the list is created removes the resource from all NSGs.
      * For more information about NSGs, see [Security
-     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
      * only to Exadata systems.
      *
      * @return the value
@@ -1374,17 +1670,15 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last maintenance update history entry. This value is updated when a maintenance update
-     * starts.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * maintenance update history entry. This value is updated when a maintenance update starts.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastUpdateHistoryEntryId")
     private final String lastUpdateHistoryEntryId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last maintenance update history entry. This value is updated when a maintenance update
-     * starts.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * maintenance update history entry. This value is updated when a maintenance update starts.
      *
      * @return the value
      */
@@ -1549,14 +1843,14 @@ public final class CloudVmClusterSummary
 
     /**
      * The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
      * The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
      */
@@ -1696,7 +1990,7 @@ public final class CloudVmClusterSummary
      * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
      * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned
      * to DATA storage. See [Storage
-     * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
      * in the Exadata documentation for details on the impact of the configuration settings on
      * storage.
      */
@@ -1708,7 +2002,7 @@ public final class CloudVmClusterSummary
      * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
      * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned
      * to DATA storage. See [Storage
-     * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
      * in the Exadata documentation for details on the impact of the configuration settings on
      * storage.
      *
@@ -1736,14 +2030,14 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud Exadata infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
     private final String cloudExadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud Exadata infrastructure.
      *
      * @return the value
@@ -1943,10 +2237,10 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP
-     * addresses are typically used for load balancing and are not assigned to any interface. Oracle
-     * Clusterware directs the requests to the appropriate nodes in the cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN
+     * IPv4 addresses are typically used for load balancing and are not assigned to any interface.
+     * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      *
      * <p>*Note:** For a single-node DB system, this list is empty.
      */
@@ -1954,10 +2248,10 @@ public final class CloudVmClusterSummary
     private final java.util.List<String> scanIpIds;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP
-     * addresses are typically used for load balancing and are not assigned to any interface. Oracle
-     * Clusterware directs the requests to the appropriate nodes in the cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN
+     * IPv4 addresses are typically used for load balancing and are not assigned to any interface.
+     * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      *
      * <p>*Note:** For a single-node DB system, this list is empty.
      *
@@ -1968,11 +2262,11 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services
-     * (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service
-     * instance to enable failover. If one node fails, the VIP is reassigned to another active node
-     * in the cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready
+     * Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud
+     * Service instance to enable failover. If one node fails, the VIP is reassigned to another
+     * active node in the cluster.
      *
      * <p>*Note:** For a single-node DB system, this list is empty.
      */
@@ -1980,11 +2274,11 @@ public final class CloudVmClusterSummary
     private final java.util.List<String> vipIds;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services
-     * (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service
-     * instance to enable failover. If one node fails, the VIP is reassigned to another active node
-     * in the cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready
+     * Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud
+     * Service instance to enable failover. If one node fails, the VIP is reassigned to another
+     * active node in the cluster.
      *
      * <p>*Note:** For a single-node DB system, this list is empty.
      *
@@ -1995,14 +2289,66 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DNS
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN
+     * IPv6 addresses are typically used for load balancing and are not assigned to any interface.
+     * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     *
+     * <p>*Note:** For a single-node DB system, this list is empty.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("scanIpv6Ids")
+    private final java.util.List<String> scanIpv6Ids;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster. SCAN
+     * IPv6 addresses are typically used for load balancing and are not assigned to any interface.
+     * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     *
+     * <p>*Note:** For a single-node DB system, this list is empty.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getScanIpv6Ids() {
+        return scanIpv6Ids;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready
+     * Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud
+     * Service instance to enable failover. If one node fails, the VIP is reassigned to another
+     * active node in the cluster.
+     *
+     * <p>*Note:** For a single-node DB system, this list is empty.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vipv6Ids")
+    private final java.util.List<String> vipv6Ids;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready
+     * Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud
+     * Service instance to enable failover. If one node fails, the VIP is reassigned to another
+     * active node in the cluster.
+     *
+     * <p>*Note:** For a single-node DB system, this list is empty.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getVipv6Ids() {
+        return vipv6Ids;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS
      * record for the SCAN IP addresses that are associated with the cloud VM cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
     private final String scanDnsRecordId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DNS
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS
      * record for the SCAN IP addresses that are associated with the cloud VM cluster.
      *
      * @return the value
@@ -2014,7 +2360,7 @@ public final class CloudVmClusterSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -2024,7 +2370,7 @@ public final class CloudVmClusterSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -2037,7 +2383,7 @@ public final class CloudVmClusterSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -2045,12 +2391,52 @@ public final class CloudVmClusterSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
     }
 
     /**
@@ -2116,6 +2502,176 @@ public final class CloudVmClusterSummary
         return dataCollectionOptions;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid
+     * infrastructure software image. This is a database software image of the type {@code
+     * GRID_IMAGE}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+    private final String giSoftwareImageId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid
+     * infrastructure software image. This is a database software image of the type {@code
+     * GRID_IMAGE}.
+     *
+     * @return the value
+     */
+    public String getGiSoftwareImageId() {
+        return giSoftwareImageId;
+    }
+
+    /** Details of the file system configuration of the VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+    private final java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+    /**
+     * Details of the file system configuration of the VM cluster.
+     *
+     * @return the value
+     */
+    public java.util.List<FileSystemConfigurationDetail> getFileSystemConfigurationDetails() {
+        return fileSystemConfigurationDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+    private final CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+    public CloudAutomationUpdateDetails getCloudAutomationUpdateDetails() {
+        return cloudAutomationUpdateDetails;
+    }
+
+    /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+    public enum VmClusterType implements com.oracle.bmc.http.internal.BmcEnum {
+        Regular("REGULAR"),
+        Developer("DEVELOPER"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(VmClusterType.class);
+
+        private final String value;
+        private static java.util.Map<String, VmClusterType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VmClusterType v : VmClusterType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        VmClusterType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VmClusterType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'VmClusterType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+    private final VmClusterType vmClusterType;
+
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     *
+     * @return the value
+     */
+    public VmClusterType getVmClusterType() {
+        return vmClusterType;
+    }
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy.
+     */
+    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeModel.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy.
+     *
+     * @return the value
+     */
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2133,6 +2689,7 @@ public final class CloudVmClusterSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", backupSubnetId=").append(String.valueOf(this.backupSubnetId));
@@ -2171,14 +2728,25 @@ public final class CloudVmClusterSummary
         sb.append(", diskRedundancy=").append(String.valueOf(this.diskRedundancy));
         sb.append(", scanIpIds=").append(String.valueOf(this.scanIpIds));
         sb.append(", vipIds=").append(String.valueOf(this.vipIds));
+        sb.append(", scanIpv6Ids=").append(String.valueOf(this.scanIpv6Ids));
+        sb.append(", vipv6Ids=").append(String.valueOf(this.vipv6Ids));
         sb.append(", scanDnsRecordId=").append(String.valueOf(this.scanDnsRecordId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", scanDnsName=").append(String.valueOf(this.scanDnsName));
         sb.append(", zoneId=").append(String.valueOf(this.zoneId));
         sb.append(", scanListenerPortTcp=").append(String.valueOf(this.scanListenerPortTcp));
         sb.append(", scanListenerPortTcpSsl=").append(String.valueOf(this.scanListenerPortTcpSsl));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
+        sb.append(", fileSystemConfigurationDetails=")
+                .append(String.valueOf(this.fileSystemConfigurationDetails));
+        sb.append(", cloudAutomationUpdateDetails=")
+                .append(String.valueOf(this.cloudAutomationUpdateDetails));
+        sb.append(", vmClusterType=").append(String.valueOf(this.vmClusterType));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(")");
         return sb.toString();
     }
@@ -2195,6 +2763,7 @@ public final class CloudVmClusterSummary
         CloudVmClusterSummary other = (CloudVmClusterSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.backupSubnetId, other.backupSubnetId)
@@ -2234,15 +2803,26 @@ public final class CloudVmClusterSummary
                 && java.util.Objects.equals(this.diskRedundancy, other.diskRedundancy)
                 && java.util.Objects.equals(this.scanIpIds, other.scanIpIds)
                 && java.util.Objects.equals(this.vipIds, other.vipIds)
+                && java.util.Objects.equals(this.scanIpv6Ids, other.scanIpv6Ids)
+                && java.util.Objects.equals(this.vipv6Ids, other.vipv6Ids)
                 && java.util.Objects.equals(this.scanDnsRecordId, other.scanDnsRecordId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.scanDnsName, other.scanDnsName)
                 && java.util.Objects.equals(this.zoneId, other.zoneId)
                 && java.util.Objects.equals(this.scanListenerPortTcp, other.scanListenerPortTcp)
                 && java.util.Objects.equals(
                         this.scanListenerPortTcpSsl, other.scanListenerPortTcpSsl)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
+                && java.util.Objects.equals(
+                        this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
+                && java.util.Objects.equals(this.vmClusterType, other.vmClusterType)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && super.equals(other);
     }
 
@@ -2254,6 +2834,9 @@ public final class CloudVmClusterSummary
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.availabilityDomain == null
@@ -2341,11 +2924,19 @@ public final class CloudVmClusterSummary
                         + (this.diskRedundancy == null ? 43 : this.diskRedundancy.hashCode());
         result = (result * PRIME) + (this.scanIpIds == null ? 43 : this.scanIpIds.hashCode());
         result = (result * PRIME) + (this.vipIds == null ? 43 : this.vipIds.hashCode());
+        result = (result * PRIME) + (this.scanIpv6Ids == null ? 43 : this.scanIpv6Ids.hashCode());
+        result = (result * PRIME) + (this.vipv6Ids == null ? 43 : this.vipv6Ids.hashCode());
         result =
                 (result * PRIME)
                         + (this.scanDnsRecordId == null ? 43 : this.scanDnsRecordId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.scanDnsName == null ? 43 : this.scanDnsName.hashCode());
         result = (result * PRIME) + (this.zoneId == null ? 43 : this.zoneId.hashCode());
         result =
@@ -2363,6 +2954,23 @@ public final class CloudVmClusterSummary
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.giSoftwareImageId == null ? 43 : this.giSoftwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileSystemConfigurationDetails == null
+                                ? 43
+                                : this.fileSystemConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAutomationUpdateDetails == null
+                                ? 43
+                                : this.cloudAutomationUpdateDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmClusterType == null ? 43 : this.vmClusterType.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,10 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.model;
 
-/** The lifecycle state of a cluster. */
+/**
+ * The lifecycle state of a cluster. For more information, see [Monitoring
+ * Clusters](https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public enum ClusterLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),

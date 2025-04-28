@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -42,6 +42,7 @@ public final class OAuth2ClientCredential
         "status",
         "expiresOn",
         "isResetSecret",
+        "secret",
         "scopes",
         "user",
         "urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser"
@@ -65,6 +66,7 @@ public final class OAuth2ClientCredential
             Status status,
             String expiresOn,
             Boolean isResetSecret,
+            String secret,
             java.util.List<OAuth2ClientCredentialScopes> scopes,
             OAuth2ClientCredentialUser user,
             ExtensionSelfChangeUser urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser) {
@@ -87,6 +89,7 @@ public final class OAuth2ClientCredential
         this.status = status;
         this.expiresOn = expiresOn;
         this.isResetSecret = isResetSecret;
+        this.secret = secret;
         this.scopes = scopes;
         this.user = user;
         this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser =
@@ -537,6 +540,29 @@ public final class OAuth2ClientCredential
             return this;
         }
         /**
+         * Secret
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - type: string - mutability: readOnly -
+         * required: false - returned: default - idcsScimCompliant: false - idcsSensitive: hash_sc
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("secret")
+        private String secret;
+
+        /**
+         * Secret
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - type: string - mutability: readOnly -
+         * required: false - returned: default - idcsScimCompliant: false - idcsSensitive: hash_sc
+         *
+         * @param secret the value to set
+         * @return this builder
+         */
+        public Builder secret(String secret) {
+            this.secret = secret;
+            this.__explicitlySet__.add("secret");
+            return this;
+        }
+        /**
          * Scopes
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [audience, scope] - type:
@@ -605,6 +631,7 @@ public final class OAuth2ClientCredential
                             this.status,
                             this.expiresOn,
                             this.isResetSecret,
+                            this.secret,
                             this.scopes,
                             this.user,
                             this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser);
@@ -669,6 +696,9 @@ public final class OAuth2ClientCredential
             }
             if (model.wasPropertyExplicitlySet("isResetSecret")) {
                 this.isResetSecret(model.getIsResetSecret());
+            }
+            if (model.wasPropertyExplicitlySet("secret")) {
+                this.secret(model.getSecret());
             }
             if (model.wasPropertyExplicitlySet("scopes")) {
                 this.scopes(model.getScopes());
@@ -1135,6 +1165,27 @@ public final class OAuth2ClientCredential
     }
 
     /**
+     * Secret
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - type: string - mutability: readOnly - required:
+     * false - returned: default - idcsScimCompliant: false - idcsSensitive: hash_sc
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("secret")
+    private final String secret;
+
+    /**
+     * Secret
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - type: string - mutability: readOnly - required:
+     * false - returned: default - idcsScimCompliant: false - idcsSensitive: hash_sc
+     *
+     * @return the value
+     */
+    public String getSecret() {
+        return secret;
+    }
+
+    /**
      * Scopes
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [audience, scope] - type:
@@ -1205,6 +1256,7 @@ public final class OAuth2ClientCredential
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", expiresOn=").append(String.valueOf(this.expiresOn));
         sb.append(", isResetSecret=").append(String.valueOf(this.isResetSecret));
+        sb.append(", secret=").append(String.valueOf(this.secret));
         sb.append(", scopes=").append(String.valueOf(this.scopes));
         sb.append(", user=").append(String.valueOf(this.user));
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser=")
@@ -1245,6 +1297,7 @@ public final class OAuth2ClientCredential
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.expiresOn, other.expiresOn)
                 && java.util.Objects.equals(this.isResetSecret, other.isResetSecret)
+                && java.util.Objects.equals(this.secret, other.secret)
                 && java.util.Objects.equals(this.scopes, other.scopes)
                 && java.util.Objects.equals(this.user, other.user)
                 && java.util.Objects.equals(
@@ -1295,6 +1348,7 @@ public final class OAuth2ClientCredential
         result =
                 (result * PRIME)
                         + (this.isResetSecret == null ? 43 : this.isResetSecret.hashCode());
+        result = (result * PRIME) + (this.secret == null ? 43 : this.secret.hashCode());
         result = (result * PRIME) + (this.scopes == null ? 43 : this.scopes.hashCode());
         result = (result * PRIME) + (this.user == null ? 43 : this.user.hashCode());
         result =

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -31,7 +31,9 @@ public final class CreateDeploymentBackupDetails
         "bucketName",
         "objectName",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "isMetadataOnly",
+        "locks"
     })
     public CreateDeploymentBackupDetails(
             String displayName,
@@ -41,7 +43,9 @@ public final class CreateDeploymentBackupDetails
             String bucketName,
             String objectName,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isMetadataOnly,
+            java.util.List<AddResourceLockDetails> locks) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
@@ -51,6 +55,8 @@ public final class CreateDeploymentBackupDetails
         this.objectName = objectName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.isMetadataOnly = isMetadataOnly;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -71,14 +77,14 @@ public final class CreateDeploymentBackupDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment being referenced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment being referenced.
          *
          * @param compartmentId the value to set
@@ -90,14 +96,14 @@ public final class CreateDeploymentBackupDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * deployment being referenced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
         private String deploymentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * deployment being referenced.
          *
          * @param deploymentId the value to set
@@ -198,6 +204,36 @@ public final class CreateDeploymentBackupDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** Parameter to allow users to create backup without trails */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMetadataOnly")
+        private Boolean isMetadataOnly;
+
+        /**
+         * Parameter to allow users to create backup without trails
+         *
+         * @param isMetadataOnly the value to set
+         * @return this builder
+         */
+        public Builder isMetadataOnly(Boolean isMetadataOnly) {
+            this.isMetadataOnly = isMetadataOnly;
+            this.__explicitlySet__.add("isMetadataOnly");
+            return this;
+        }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<AddResourceLockDetails> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<AddResourceLockDetails> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -212,7 +248,9 @@ public final class CreateDeploymentBackupDetails
                             this.bucketName,
                             this.objectName,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.isMetadataOnly,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -245,6 +283,12 @@ public final class CreateDeploymentBackupDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("isMetadataOnly")) {
+                this.isMetadataOnly(model.getIsMetadataOnly());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -272,14 +316,14 @@ public final class CreateDeploymentBackupDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment being referenced.
      *
      * @return the value
@@ -289,14 +333,14 @@ public final class CreateDeploymentBackupDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * deployment being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
     private final String deploymentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * deployment being referenced.
      *
      * @return the value
@@ -384,6 +428,32 @@ public final class CreateDeploymentBackupDetails
         return definedTags;
     }
 
+    /** Parameter to allow users to create backup without trails */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMetadataOnly")
+    private final Boolean isMetadataOnly;
+
+    /**
+     * Parameter to allow users to create backup without trails
+     *
+     * @return the value
+     */
+    public Boolean getIsMetadataOnly() {
+        return isMetadataOnly;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<AddResourceLockDetails> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<AddResourceLockDetails> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -407,6 +477,8 @@ public final class CreateDeploymentBackupDetails
         sb.append(", objectName=").append(String.valueOf(this.objectName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", isMetadataOnly=").append(String.valueOf(this.isMetadataOnly));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -429,6 +501,8 @@ public final class CreateDeploymentBackupDetails
                 && java.util.Objects.equals(this.objectName, other.objectName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.isMetadataOnly, other.isMetadataOnly)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -448,6 +522,10 @@ public final class CreateDeploymentBackupDetails
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMetadataOnly == null ? 43 : this.isMetadataOnly.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

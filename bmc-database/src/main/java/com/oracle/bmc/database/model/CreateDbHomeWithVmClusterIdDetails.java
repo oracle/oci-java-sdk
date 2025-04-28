@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -91,15 +91,24 @@ public final class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
             this.__explicitlySet__.add("isDesupportedVersion");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+        private Boolean isUnifiedAuditingEnabled;
+
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            this.__explicitlySet__.add("isUnifiedAuditingEnabled");
+            return this;
+        }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
         private String vmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster.
          *
          * @param vmClusterId the value to set
@@ -164,6 +173,7 @@ public final class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
                             this.freeformTags,
                             this.definedTags,
                             this.isDesupportedVersion,
+                            this.isUnifiedAuditingEnabled,
                             this.vmClusterId,
                             this.dbVersion,
                             this.database);
@@ -196,6 +206,9 @@ public final class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
             if (model.wasPropertyExplicitlySet("isDesupportedVersion")) {
                 this.isDesupportedVersion(model.getIsDesupportedVersion());
             }
+            if (model.wasPropertyExplicitlySet("isUnifiedAuditingEnabled")) {
+                this.isUnifiedAuditingEnabled(model.getIsUnifiedAuditingEnabled());
+            }
             if (model.wasPropertyExplicitlySet("vmClusterId")) {
                 this.vmClusterId(model.getVmClusterId());
             }
@@ -227,6 +240,7 @@ public final class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Boolean isDesupportedVersion,
+            Boolean isUnifiedAuditingEnabled,
             String vmClusterId,
             String dbVersion,
             CreateDatabaseDetails database) {
@@ -237,21 +251,22 @@ public final class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
                 databaseSoftwareImageId,
                 freeformTags,
                 definedTags,
-                isDesupportedVersion);
+                isDesupportedVersion,
+                isUnifiedAuditingEnabled);
         this.vmClusterId = vmClusterId;
         this.dbVersion = dbVersion;
         this.database = database;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
     private final String vmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster.
      *
      * @return the value

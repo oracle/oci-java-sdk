@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.cloudguard.requests;
 import com.oracle.bmc.cloudguard.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteTargetResponderRecipeExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteTargetResponderRecipeExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteTargetResponderRecipeRequest.
  */
@@ -15,17 +15,17 @@ import com.oracle.bmc.cloudguard.model.*;
 public class DeleteTargetResponderRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** OCID of target */
+    /** OCID of the target */
     private String targetId;
 
-    /** OCID of target */
+    /** OCID of the target */
     public String getTargetId() {
         return targetId;
     }
-    /** OCID of TargetResponderRecipe */
+    /** OCID of the target responder recipe. */
     private String targetResponderRecipeId;
 
-    /** OCID of TargetResponderRecipe */
+    /** OCID of the target responder recipe. */
     public String getTargetResponderRecipeId() {
         return targetResponderRecipeId;
     }
@@ -60,11 +60,11 @@ public class DeleteTargetResponderRecipeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of target */
+        /** OCID of the target */
         private String targetId = null;
 
         /**
-         * OCID of target
+         * OCID of the target
          *
          * @param targetId the value to set
          * @return this builder instance
@@ -74,11 +74,11 @@ public class DeleteTargetResponderRecipeRequest
             return this;
         }
 
-        /** OCID of TargetResponderRecipe */
+        /** OCID of the target responder recipe. */
         private String targetResponderRecipeId = null;
 
         /**
-         * OCID of TargetResponderRecipe
+         * OCID of the target responder recipe.
          *
          * @param targetResponderRecipeId the value to set
          * @return this builder instance

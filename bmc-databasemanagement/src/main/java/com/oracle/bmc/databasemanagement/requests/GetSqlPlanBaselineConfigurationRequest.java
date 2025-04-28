@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetSqlPlanBaselineConfigurationExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetSqlPlanBaselineConfigurationExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetSqlPlanBaselineConfigurationRequest.
  */
@@ -16,13 +16,13 @@ public class GetSqlPlanBaselineConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     public String getManagedDatabaseId() {
@@ -35,6 +35,13 @@ public class GetSqlPlanBaselineConfigurationRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -43,13 +50,13 @@ public class GetSqlPlanBaselineConfigurationRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          *
          * @param managedDatabaseId the value to set
@@ -71,6 +78,20 @@ public class GetSqlPlanBaselineConfigurationRequest
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
             return this;
         }
 
@@ -106,6 +127,7 @@ public class GetSqlPlanBaselineConfigurationRequest
         public Builder copy(GetSqlPlanBaselineConfigurationRequest o) {
             managedDatabaseId(o.getManagedDatabaseId());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -145,8 +167,10 @@ public class GetSqlPlanBaselineConfigurationRequest
                     new GetSqlPlanBaselineConfigurationRequest();
             request.managedDatabaseId = managedDatabaseId;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
-            // new GetSqlPlanBaselineConfigurationRequest(managedDatabaseId, opcRequestId);
+            // new GetSqlPlanBaselineConfigurationRequest(managedDatabaseId, opcRequestId,
+            // opcNamedCredentialId);
         }
     }
 
@@ -156,7 +180,10 @@ public class GetSqlPlanBaselineConfigurationRequest
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().managedDatabaseId(managedDatabaseId).opcRequestId(opcRequestId);
+        return new Builder()
+                .managedDatabaseId(managedDatabaseId)
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -175,6 +202,7 @@ public class GetSqlPlanBaselineConfigurationRequest
         sb.append("super=").append(super.toString());
         sb.append(",managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -191,7 +219,8 @@ public class GetSqlPlanBaselineConfigurationRequest
         GetSqlPlanBaselineConfigurationRequest other = (GetSqlPlanBaselineConfigurationRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -202,6 +231,11 @@ public class GetSqlPlanBaselineConfigurationRequest
                 (result * PRIME)
                         + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

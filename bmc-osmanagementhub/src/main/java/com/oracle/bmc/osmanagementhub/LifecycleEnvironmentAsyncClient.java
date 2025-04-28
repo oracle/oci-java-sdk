@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -133,6 +133,45 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         AttachManagedInstancesToLifecycleStageResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeLifecycleEnvironmentCompartmentResponse>
+            changeLifecycleEnvironmentCompartment(
+                    ChangeLifecycleEnvironmentCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeLifecycleEnvironmentCompartmentRequest,
+                                    ChangeLifecycleEnvironmentCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getLifecycleEnvironmentId(), "lifecycleEnvironmentId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeLifecycleEnvironmentCompartmentDetails(),
+                "changeLifecycleEnvironmentCompartmentDetails is required");
+
+        return clientCall(request, ChangeLifecycleEnvironmentCompartmentResponse::builder)
+                .logger(LOG, "changeLifecycleEnvironmentCompartment")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "ChangeLifecycleEnvironmentCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/ChangeLifecycleEnvironmentCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeLifecycleEnvironmentCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("lifecycleEnvironments")
+                .appendPathParam(request.getLifecycleEnvironmentId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeLifecycleEnvironmentCompartmentResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -333,6 +372,14 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
                 .appendQueryParam("lifecycleEnvironmentId", request.getLifecycleEnvironmentId())
                 .appendEnumQueryParam("archType", request.getArchType())
                 .appendEnumQueryParam("osFamily", request.getOsFamily())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
@@ -426,6 +473,14 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
                 .appendQueryParam("softwareSourceId", request.getSoftwareSourceId())
                 .appendEnumQueryParam("archType", request.getArchType())
                 .appendEnumQueryParam("osFamily", request.getOsFamily())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
@@ -482,6 +537,44 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         PromoteSoftwareSourceToLifecycleStageResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RebootLifecycleStageResponse> rebootLifecycleStage(
+            RebootLifecycleStageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RebootLifecycleStageRequest, RebootLifecycleStageResponse>
+                    handler) {
+
+        Validate.notBlank(request.getLifecycleStageId(), "lifecycleStageId must not be blank");
+        Objects.requireNonNull(
+                request.getRebootLifecycleStageDetails(),
+                "rebootLifecycleStageDetails is required");
+
+        return clientCall(request, RebootLifecycleStageResponse::builder)
+                .logger(LOG, "rebootLifecycleStage")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "RebootLifecycleStage",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/RebootLifecycleStage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RebootLifecycleStageRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("lifecycleStages")
+                .appendPathParam(request.getLifecycleStageId())
+                .appendPathParam("actions")
+                .appendPathParam("reboot")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RebootLifecycleStageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RebootLifecycleStageResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.rover;
@@ -112,6 +112,7 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverBundleRequestCollection.class,
                         ListRoverClusterRoverBundleRequestsResponse.Builder
@@ -122,7 +123,6 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListRoverClusterRoverBundleRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -150,6 +150,7 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverBundleRequestCollection.class,
                         ListRoverNodeRoverBundleRequestsResponse.Builder
@@ -160,7 +161,6 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListRoverNodeRoverBundleRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -187,13 +187,13 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("requestRoverBundle")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", RequestBundleRoverClusterResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RequestBundleRoverClusterResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -220,13 +220,13 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("requestRoverBundle")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", RequestBundleRoverNodeResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RequestBundleRoverNodeResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -254,6 +254,7 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("retrieveAvailableRoverBundleVersion")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverBundleVersion.class,
@@ -264,7 +265,6 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RetrieveAvailableBundleVersionsRoverClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -292,6 +292,7 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("retrieveAvailableRoverBundleVersion")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverBundleVersion.class,
@@ -302,7 +303,6 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RetrieveAvailableBundleVersionsRoverNodeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -329,6 +329,7 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("retrieveRoverBundleStatus")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverBundleStatus.class,
@@ -338,7 +339,6 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RetrieveBundleStatusRoverClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -365,6 +365,7 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("retrieveRoverBundleStatus")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverBundleStatus.class,
@@ -374,7 +375,6 @@ public class RoverBundleClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RetrieveBundleStatusRoverNodeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

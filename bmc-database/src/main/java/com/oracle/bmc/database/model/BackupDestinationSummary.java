@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -39,7 +39,10 @@ public final class BackupDestinationSummary
         "timeCreated",
         "lifecycleDetails",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "totalStorageSizeInGBs",
+        "utilizedStorageSizeInGBs",
+        "timeAtWhichStorageDetailsAreUpdated"
     })
     public BackupDestinationSummary(
             String id,
@@ -57,7 +60,10 @@ public final class BackupDestinationSummary
             java.util.Date timeCreated,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Integer totalStorageSizeInGBs,
+            Integer utilizedStorageSizeInGBs,
+            java.util.Date timeAtWhichStorageDetailsAreUpdated) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -75,19 +81,22 @@ public final class BackupDestinationSummary
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.totalStorageSizeInGBs = totalStorageSizeInGBs;
+        this.utilizedStorageSizeInGBs = utilizedStorageSizeInGBs;
+        this.timeAtWhichStorageDetailsAreUpdated = timeAtWhichStorageDetailsAreUpdated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup destination.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup destination.
          *
          * @param id the value to set
@@ -114,14 +123,14 @@ public final class BackupDestinationSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -321,7 +330,7 @@ public final class BackupDestinationSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -331,7 +340,7 @@ public final class BackupDestinationSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -346,7 +355,7 @@ public final class BackupDestinationSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -354,7 +363,7 @@ public final class BackupDestinationSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -363,6 +372,62 @@ public final class BackupDestinationSummary
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * The total storage size of the backup destination in GBs, rounded to the nearest integer.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalStorageSizeInGBs")
+        private Integer totalStorageSizeInGBs;
+
+        /**
+         * The total storage size of the backup destination in GBs, rounded to the nearest integer.
+         *
+         * @param totalStorageSizeInGBs the value to set
+         * @return this builder
+         */
+        public Builder totalStorageSizeInGBs(Integer totalStorageSizeInGBs) {
+            this.totalStorageSizeInGBs = totalStorageSizeInGBs;
+            this.__explicitlySet__.add("totalStorageSizeInGBs");
+            return this;
+        }
+        /**
+         * The total amount of space utilized on the backup destination (in GBs), rounded to the
+         * nearest integer.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("utilizedStorageSizeInGBs")
+        private Integer utilizedStorageSizeInGBs;
+
+        /**
+         * The total amount of space utilized on the backup destination (in GBs), rounded to the
+         * nearest integer.
+         *
+         * @param utilizedStorageSizeInGBs the value to set
+         * @return this builder
+         */
+        public Builder utilizedStorageSizeInGBs(Integer utilizedStorageSizeInGBs) {
+            this.utilizedStorageSizeInGBs = utilizedStorageSizeInGBs;
+            this.__explicitlySet__.add("utilizedStorageSizeInGBs");
+            return this;
+        }
+        /**
+         * The time when the total storage size and the utilized storage size of the backup
+         * destination are updated.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeAtWhichStorageDetailsAreUpdated")
+        private java.util.Date timeAtWhichStorageDetailsAreUpdated;
+
+        /**
+         * The time when the total storage size and the utilized storage size of the backup
+         * destination are updated.
+         *
+         * @param timeAtWhichStorageDetailsAreUpdated the value to set
+         * @return this builder
+         */
+        public Builder timeAtWhichStorageDetailsAreUpdated(
+                java.util.Date timeAtWhichStorageDetailsAreUpdated) {
+            this.timeAtWhichStorageDetailsAreUpdated = timeAtWhichStorageDetailsAreUpdated;
+            this.__explicitlySet__.add("timeAtWhichStorageDetailsAreUpdated");
             return this;
         }
 
@@ -387,7 +452,10 @@ public final class BackupDestinationSummary
                             this.timeCreated,
                             this.lifecycleDetails,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.totalStorageSizeInGBs,
+                            this.utilizedStorageSizeInGBs,
+                            this.timeAtWhichStorageDetailsAreUpdated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -444,6 +512,16 @@ public final class BackupDestinationSummary
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("totalStorageSizeInGBs")) {
+                this.totalStorageSizeInGBs(model.getTotalStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("utilizedStorageSizeInGBs")) {
+                this.utilizedStorageSizeInGBs(model.getUtilizedStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("timeAtWhichStorageDetailsAreUpdated")) {
+                this.timeAtWhichStorageDetailsAreUpdated(
+                        model.getTimeAtWhichStorageDetailsAreUpdated());
+            }
             return this;
         }
     }
@@ -458,14 +536,14 @@ public final class BackupDestinationSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup destination.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup destination.
      *
      * @return the value
@@ -488,14 +566,14 @@ public final class BackupDestinationSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -807,7 +885,7 @@ public final class BackupDestinationSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -817,7 +895,7 @@ public final class BackupDestinationSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -830,7 +908,7 @@ public final class BackupDestinationSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -838,12 +916,59 @@ public final class BackupDestinationSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /** The total storage size of the backup destination in GBs, rounded to the nearest integer. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalStorageSizeInGBs")
+    private final Integer totalStorageSizeInGBs;
+
+    /**
+     * The total storage size of the backup destination in GBs, rounded to the nearest integer.
+     *
+     * @return the value
+     */
+    public Integer getTotalStorageSizeInGBs() {
+        return totalStorageSizeInGBs;
+    }
+
+    /**
+     * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest
+     * integer.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("utilizedStorageSizeInGBs")
+    private final Integer utilizedStorageSizeInGBs;
+
+    /**
+     * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest
+     * integer.
+     *
+     * @return the value
+     */
+    public Integer getUtilizedStorageSizeInGBs() {
+        return utilizedStorageSizeInGBs;
+    }
+
+    /**
+     * The time when the total storage size and the utilized storage size of the backup destination
+     * are updated.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeAtWhichStorageDetailsAreUpdated")
+    private final java.util.Date timeAtWhichStorageDetailsAreUpdated;
+
+    /**
+     * The time when the total storage size and the utilized storage size of the backup destination
+     * are updated.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeAtWhichStorageDetailsAreUpdated() {
+        return timeAtWhichStorageDetailsAreUpdated;
     }
 
     @Override
@@ -877,6 +1002,11 @@ public final class BackupDestinationSummary
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", totalStorageSizeInGBs=").append(String.valueOf(this.totalStorageSizeInGBs));
+        sb.append(", utilizedStorageSizeInGBs=")
+                .append(String.valueOf(this.utilizedStorageSizeInGBs));
+        sb.append(", timeAtWhichStorageDetailsAreUpdated=")
+                .append(String.valueOf(this.timeAtWhichStorageDetailsAreUpdated));
         sb.append(")");
         return sb.toString();
     }
@@ -907,6 +1037,12 @@ public final class BackupDestinationSummary
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.totalStorageSizeInGBs, other.totalStorageSizeInGBs)
+                && java.util.Objects.equals(
+                        this.utilizedStorageSizeInGBs, other.utilizedStorageSizeInGBs)
+                && java.util.Objects.equals(
+                        this.timeAtWhichStorageDetailsAreUpdated,
+                        other.timeAtWhichStorageDetailsAreUpdated)
                 && super.equals(other);
     }
 
@@ -948,6 +1084,21 @@ public final class BackupDestinationSummary
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalStorageSizeInGBs == null
+                                ? 43
+                                : this.totalStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.utilizedStorageSizeInGBs == null
+                                ? 43
+                                : this.utilizedStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeAtWhichStorageDetailsAreUpdated == null
+                                ? 43
+                                : this.timeAtWhichStorageDetailsAreUpdated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

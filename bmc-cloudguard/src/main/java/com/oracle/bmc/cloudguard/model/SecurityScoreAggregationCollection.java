@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Security Score Aggregation Collection. <br>
+ * Collection of security score aggregation information. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class SecurityScoreAggregationCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The items consist of all the SecurityScoreAggregation objects. */
+        /** List of all the SecurityScoreAggregation resources objects. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SecurityScoreAggregation> items;
 
         /**
-         * The items consist of all the SecurityScoreAggregation objects.
+         * List of all the SecurityScoreAggregation resources objects.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class SecurityScoreAggregationCollection
         return new Builder().copy(this);
     }
 
-    /** The items consist of all the SecurityScoreAggregation objects. */
+    /** List of all the SecurityScoreAggregation resources objects. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SecurityScoreAggregation> items;
 
     /**
-     * The items consist of all the SecurityScoreAggregation objects.
+     * List of all the SecurityScoreAggregation resources objects.
      *
      * @return the value
      */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices;
@@ -96,6 +96,288 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
     }
 
     @Override
+    public java.util.concurrent.Future<AddMediaAssetLockResponse> addMediaAssetLock(
+            AddMediaAssetLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddMediaAssetLockRequest, AddMediaAssetLockResponse>
+                    handler) {
+        Objects.requireNonNull(request.getAddLockDetails(), "addLockDetails is required");
+
+        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
+
+        return clientCall(request, AddMediaAssetLockResponse::builder)
+                .logger(LOG, "addMediaAssetLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "AddMediaAssetLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/AddMediaAssetLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddMediaAssetLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaAssets")
+                .appendPathParam(request.getMediaAssetId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaAsset.class,
+                        AddMediaAssetLockResponse.Builder::mediaAsset)
+                .handleResponseHeaderString("etag", AddMediaAssetLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddMediaAssetLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddMediaWorkflowConfigurationLockResponse>
+            addMediaWorkflowConfigurationLock(
+                    AddMediaWorkflowConfigurationLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddMediaWorkflowConfigurationLockRequest,
+                                    AddMediaWorkflowConfigurationLockResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        Validate.notBlank(
+                request.getMediaWorkflowConfigurationId(),
+                "mediaWorkflowConfigurationId must not be blank");
+
+        return clientCall(request, AddMediaWorkflowConfigurationLockResponse::builder)
+                .logger(LOG, "addMediaWorkflowConfigurationLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "AddMediaWorkflowConfigurationLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/AddMediaWorkflowConfigurationLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddMediaWorkflowConfigurationLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowConfigurations")
+                .appendPathParam(request.getMediaWorkflowConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowConfiguration.class,
+                        AddMediaWorkflowConfigurationLockResponse.Builder
+                                ::mediaWorkflowConfiguration)
+                .handleResponseHeaderString(
+                        "etag", AddMediaWorkflowConfigurationLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddMediaWorkflowConfigurationLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddMediaWorkflowJobLockResponse> addMediaWorkflowJobLock(
+            AddMediaWorkflowJobLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddMediaWorkflowJobLockRequest, AddMediaWorkflowJobLockResponse>
+                    handler) {
+        Objects.requireNonNull(request.getAddLockDetails(), "addLockDetails is required");
+
+        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
+
+        return clientCall(request, AddMediaWorkflowJobLockResponse::builder)
+                .logger(LOG, "addMediaWorkflowJobLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "AddMediaWorkflowJobLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/AddMediaWorkflowJobLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddMediaWorkflowJobLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowJobs")
+                .appendPathParam(request.getMediaWorkflowJobId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowJob.class,
+                        AddMediaWorkflowJobLockResponse.Builder::mediaWorkflowJob)
+                .handleResponseHeaderString("etag", AddMediaWorkflowJobLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddMediaWorkflowJobLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddMediaWorkflowLockResponse> addMediaWorkflowLock(
+            AddMediaWorkflowLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddMediaWorkflowLockRequest, AddMediaWorkflowLockResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        Validate.notBlank(request.getMediaWorkflowId(), "mediaWorkflowId must not be blank");
+
+        return clientCall(request, AddMediaWorkflowLockResponse::builder)
+                .logger(LOG, "addMediaWorkflowLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "AddMediaWorkflowLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/AddMediaWorkflowLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddMediaWorkflowLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflows")
+                .appendPathParam(request.getMediaWorkflowId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflow.class,
+                        AddMediaWorkflowLockResponse.Builder::mediaWorkflow)
+                .handleResponseHeaderString("etag", AddMediaWorkflowLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddMediaWorkflowLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddStreamCdnConfigLockResponse> addStreamCdnConfigLock(
+            AddStreamCdnConfigLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddStreamCdnConfigLockRequest, AddStreamCdnConfigLockResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        Validate.notBlank(request.getStreamCdnConfigId(), "streamCdnConfigId must not be blank");
+
+        return clientCall(request, AddStreamCdnConfigLockResponse::builder)
+                .logger(LOG, "addStreamCdnConfigLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "AddStreamCdnConfigLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/AddStreamCdnConfigLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddStreamCdnConfigLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamCdnConfigs")
+                .appendPathParam(request.getStreamCdnConfigId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamCdnConfig.class,
+                        AddStreamCdnConfigLockResponse.Builder::streamCdnConfig)
+                .handleResponseHeaderString("etag", AddStreamCdnConfigLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddStreamCdnConfigLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddStreamDistributionChannelLockResponse>
+            addStreamDistributionChannelLock(
+                    AddStreamDistributionChannelLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddStreamDistributionChannelLockRequest,
+                                    AddStreamDistributionChannelLockResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        Validate.notBlank(
+                request.getStreamDistributionChannelId(),
+                "streamDistributionChannelId must not be blank");
+
+        return clientCall(request, AddStreamDistributionChannelLockResponse::builder)
+                .logger(LOG, "addStreamDistributionChannelLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "AddStreamDistributionChannelLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/AddStreamDistributionChannelLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddStreamDistributionChannelLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamDistributionChannels")
+                .appendPathParam(request.getStreamDistributionChannelId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamDistributionChannel.class,
+                        AddStreamDistributionChannelLockResponse.Builder::streamDistributionChannel)
+                .handleResponseHeaderString(
+                        "etag", AddStreamDistributionChannelLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddStreamDistributionChannelLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddStreamPackagingConfigLockResponse>
+            addStreamPackagingConfigLock(
+                    AddStreamPackagingConfigLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddStreamPackagingConfigLockRequest,
+                                    AddStreamPackagingConfigLockResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        Validate.notBlank(
+                request.getStreamPackagingConfigId(), "streamPackagingConfigId must not be blank");
+
+        return clientCall(request, AddStreamPackagingConfigLockResponse::builder)
+                .logger(LOG, "addStreamPackagingConfigLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "AddStreamPackagingConfigLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/AddStreamPackagingConfigLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddStreamPackagingConfigLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamPackagingConfigs")
+                .appendPathParam(request.getStreamPackagingConfigId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamPackagingConfig.class,
+                        AddStreamPackagingConfigLockResponse.Builder::streamPackagingConfig)
+                .handleResponseHeaderString(
+                        "etag", AddStreamPackagingConfigLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddStreamPackagingConfigLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeMediaAssetCompartmentResponse>
             changeMediaAssetCompartment(
                     ChangeMediaAssetCompartmentRequest request,
@@ -122,6 +404,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendPathParam(request.getMediaAssetId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
@@ -159,14 +442,12 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendPathParam(request.getMediaWorkflowId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeMediaWorkflowCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeMediaWorkflowCompartmentResponse.Builder::opcRequestId)
@@ -202,15 +483,12 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendPathParam(request.getMediaWorkflowConfigurationId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeMediaWorkflowConfigurationCompartmentResponse.Builder
-                                ::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeMediaWorkflowConfigurationCompartmentResponse.Builder::opcRequestId)
@@ -244,14 +522,12 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendPathParam(request.getMediaWorkflowJobId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeMediaWorkflowJobCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeMediaWorkflowJobCompartmentResponse.Builder::opcRequestId)
@@ -287,15 +563,12 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendPathParam(request.getStreamDistributionChannelId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeStreamDistributionChannelCompartmentResponse.Builder
-                                ::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeStreamDistributionChannelCompartmentResponse.Builder::opcRequestId)
@@ -563,6 +836,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("mediaAssets")
                 .appendPathParam(request.getMediaAssetId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .appendEnumQueryParam("deleteMode", request.getDeleteMode())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
@@ -599,6 +873,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendPathParam(request.getMediaAssetId())
                 .appendPathParam("distributionChannelAttachments")
                 .appendPathParam(request.getDistributionChannelId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .appendQueryParam("version", request.getVersion())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
@@ -629,6 +904,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("mediaWorkflows")
                 .appendPathParam(request.getMediaWorkflowId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
@@ -661,12 +937,10 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("mediaWorkflowConfigurations")
                 .appendPathParam(request.getMediaWorkflowConfigurationId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteMediaWorkflowConfigurationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteMediaWorkflowConfigurationResponse.Builder::opcRequestId)
@@ -693,12 +967,10 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("mediaWorkflowJobs")
                 .appendPathParam(request.getMediaWorkflowJobId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteMediaWorkflowJobResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMediaWorkflowJobResponse.Builder::opcRequestId)
                 .callAsync(handler);
@@ -724,6 +996,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("streamCdnConfigs")
                 .appendPathParam(request.getStreamCdnConfigId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
@@ -756,6 +1029,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("streamDistributionChannels")
                 .appendPathParam(request.getStreamDistributionChannelId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
@@ -788,6 +1062,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("streamPackagingConfigs")
                 .appendPathParam(request.getStreamPackagingConfigId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
@@ -965,39 +1240,6 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .handleResponseHeaderString("etag", GetMediaWorkflowJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMediaWorkflowJobResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetMediaWorkflowJobFactResponse> getMediaWorkflowJobFact(
-            GetMediaWorkflowJobFactRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetMediaWorkflowJobFactRequest, GetMediaWorkflowJobFactResponse>
-                    handler) {
-
-        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
-
-        return clientCall(request, GetMediaWorkflowJobFactResponse::builder)
-                .logger(LOG, "getMediaWorkflowJobFact")
-                .serviceDetails(
-                        "MediaServices",
-                        "GetMediaWorkflowJobFact",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJobFact/GetMediaWorkflowJobFact")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetMediaWorkflowJobFactRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowJobs")
-                .appendPathParam(request.getMediaWorkflowJobId())
-                .appendPathParam("facts")
-                .appendPathParam(request.getKey())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowJobFact.class,
-                        GetMediaWorkflowJobFactResponse.Builder::mediaWorkflowJobFact)
-                .handleResponseHeaderString("etag", GetMediaWorkflowJobFactResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetMediaWorkflowJobFactResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1280,45 +1522,6 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
     }
 
     @Override
-    public java.util.concurrent.Future<ListMediaWorkflowJobFactsResponse> listMediaWorkflowJobFacts(
-            ListMediaWorkflowJobFactsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListMediaWorkflowJobFactsRequest, ListMediaWorkflowJobFactsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
-
-        return clientCall(request, ListMediaWorkflowJobFactsResponse::builder)
-                .logger(LOG, "listMediaWorkflowJobFacts")
-                .serviceDetails(
-                        "MediaServices",
-                        "ListMediaWorkflowJobFacts",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJobFact/ListMediaWorkflowJobFacts")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListMediaWorkflowJobFactsRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowJobs")
-                .appendPathParam(request.getMediaWorkflowJobId())
-                .appendPathParam("facts")
-                .appendQueryParam("key", request.getKey())
-                .appendEnumQueryParam("type", request.getType())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowJobFactCollection.class,
-                        ListMediaWorkflowJobFactsResponse.Builder::mediaWorkflowJobFactCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListMediaWorkflowJobFactsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListMediaWorkflowJobFactsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
     public java.util.concurrent.Future<ListMediaWorkflowJobsResponse> listMediaWorkflowJobs(
             ListMediaWorkflowJobsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1594,6 +1797,292 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveMediaAssetLockResponse> removeMediaAssetLock(
+            RemoveMediaAssetLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveMediaAssetLockRequest, RemoveMediaAssetLockResponse>
+                    handler) {
+        Objects.requireNonNull(request.getRemoveLockDetails(), "removeLockDetails is required");
+
+        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
+
+        return clientCall(request, RemoveMediaAssetLockResponse::builder)
+                .logger(LOG, "removeMediaAssetLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "RemoveMediaAssetLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/RemoveMediaAssetLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveMediaAssetLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaAssets")
+                .appendPathParam(request.getMediaAssetId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaAsset.class,
+                        RemoveMediaAssetLockResponse.Builder::mediaAsset)
+                .handleResponseHeaderString("etag", RemoveMediaAssetLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveMediaAssetLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveMediaWorkflowConfigurationLockResponse>
+            removeMediaWorkflowConfigurationLock(
+                    RemoveMediaWorkflowConfigurationLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveMediaWorkflowConfigurationLockRequest,
+                                    RemoveMediaWorkflowConfigurationLockResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        Validate.notBlank(
+                request.getMediaWorkflowConfigurationId(),
+                "mediaWorkflowConfigurationId must not be blank");
+
+        return clientCall(request, RemoveMediaWorkflowConfigurationLockResponse::builder)
+                .logger(LOG, "removeMediaWorkflowConfigurationLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "RemoveMediaWorkflowConfigurationLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/RemoveMediaWorkflowConfigurationLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveMediaWorkflowConfigurationLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowConfigurations")
+                .appendPathParam(request.getMediaWorkflowConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowConfiguration.class,
+                        RemoveMediaWorkflowConfigurationLockResponse.Builder
+                                ::mediaWorkflowConfiguration)
+                .handleResponseHeaderString(
+                        "etag", RemoveMediaWorkflowConfigurationLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveMediaWorkflowConfigurationLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveMediaWorkflowJobLockResponse>
+            removeMediaWorkflowJobLock(
+                    RemoveMediaWorkflowJobLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveMediaWorkflowJobLockRequest,
+                                    RemoveMediaWorkflowJobLockResponse>
+                            handler) {
+        Objects.requireNonNull(request.getRemoveLockDetails(), "removeLockDetails is required");
+
+        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
+
+        return clientCall(request, RemoveMediaWorkflowJobLockResponse::builder)
+                .logger(LOG, "removeMediaWorkflowJobLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "RemoveMediaWorkflowJobLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/RemoveMediaWorkflowJobLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveMediaWorkflowJobLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowJobs")
+                .appendPathParam(request.getMediaWorkflowJobId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowJob.class,
+                        RemoveMediaWorkflowJobLockResponse.Builder::mediaWorkflowJob)
+                .handleResponseHeaderString(
+                        "etag", RemoveMediaWorkflowJobLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveMediaWorkflowJobLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveMediaWorkflowLockResponse> removeMediaWorkflowLock(
+            RemoveMediaWorkflowLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveMediaWorkflowLockRequest, RemoveMediaWorkflowLockResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        Validate.notBlank(request.getMediaWorkflowId(), "mediaWorkflowId must not be blank");
+
+        return clientCall(request, RemoveMediaWorkflowLockResponse::builder)
+                .logger(LOG, "removeMediaWorkflowLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "RemoveMediaWorkflowLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/RemoveMediaWorkflowLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveMediaWorkflowLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflows")
+                .appendPathParam(request.getMediaWorkflowId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflow.class,
+                        RemoveMediaWorkflowLockResponse.Builder::mediaWorkflow)
+                .handleResponseHeaderString("etag", RemoveMediaWorkflowLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveMediaWorkflowLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveStreamCdnConfigLockResponse> removeStreamCdnConfigLock(
+            RemoveStreamCdnConfigLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveStreamCdnConfigLockRequest, RemoveStreamCdnConfigLockResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        Validate.notBlank(request.getStreamCdnConfigId(), "streamCdnConfigId must not be blank");
+
+        return clientCall(request, RemoveStreamCdnConfigLockResponse::builder)
+                .logger(LOG, "removeStreamCdnConfigLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "RemoveStreamCdnConfigLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/RemoveStreamCdnConfigLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveStreamCdnConfigLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamCdnConfigs")
+                .appendPathParam(request.getStreamCdnConfigId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamCdnConfig.class,
+                        RemoveStreamCdnConfigLockResponse.Builder::streamCdnConfig)
+                .handleResponseHeaderString("etag", RemoveStreamCdnConfigLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveStreamCdnConfigLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveStreamDistributionChannelLockResponse>
+            removeStreamDistributionChannelLock(
+                    RemoveStreamDistributionChannelLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveStreamDistributionChannelLockRequest,
+                                    RemoveStreamDistributionChannelLockResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        Validate.notBlank(
+                request.getStreamDistributionChannelId(),
+                "streamDistributionChannelId must not be blank");
+
+        return clientCall(request, RemoveStreamDistributionChannelLockResponse::builder)
+                .logger(LOG, "removeStreamDistributionChannelLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "RemoveStreamDistributionChannelLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/RemoveStreamDistributionChannelLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveStreamDistributionChannelLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamDistributionChannels")
+                .appendPathParam(request.getStreamDistributionChannelId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamDistributionChannel.class,
+                        RemoveStreamDistributionChannelLockResponse.Builder
+                                ::streamDistributionChannel)
+                .handleResponseHeaderString(
+                        "etag", RemoveStreamDistributionChannelLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveStreamDistributionChannelLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveStreamPackagingConfigLockResponse>
+            removeStreamPackagingConfigLock(
+                    RemoveStreamPackagingConfigLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveStreamPackagingConfigLockRequest,
+                                    RemoveStreamPackagingConfigLockResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        Validate.notBlank(
+                request.getStreamPackagingConfigId(), "streamPackagingConfigId must not be blank");
+
+        return clientCall(request, RemoveStreamPackagingConfigLockResponse::builder)
+                .logger(LOG, "removeStreamPackagingConfigLock")
+                .serviceDetails(
+                        "MediaServices",
+                        "RemoveStreamPackagingConfigLock",
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/RemoveStreamPackagingConfigLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveStreamPackagingConfigLockRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamPackagingConfigs")
+                .appendPathParam(request.getStreamPackagingConfigId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamPackagingConfig.class,
+                        RemoveStreamPackagingConfigLockResponse.Builder::streamPackagingConfig)
+                .handleResponseHeaderString(
+                        "etag", RemoveStreamPackagingConfigLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveStreamPackagingConfigLockResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateMediaAssetResponse> updateMediaAsset(
             UpdateMediaAssetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1615,6 +2104,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("mediaAssets")
                 .appendPathParam(request.getMediaAssetId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1650,6 +2140,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("mediaWorkflows")
                 .appendPathParam(request.getMediaWorkflowId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1690,6 +2181,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("mediaWorkflowConfigurations")
                 .appendPathParam(request.getMediaWorkflowConfigurationId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1729,6 +2221,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("mediaWorkflowJobs")
                 .appendPathParam(request.getMediaWorkflowJobId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1765,6 +2258,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("streamCdnConfigs")
                 .appendPathParam(request.getStreamCdnConfigId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1805,6 +2299,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("streamDistributionChannels")
                 .appendPathParam(request.getStreamDistributionChannelId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1846,6 +2341,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20211101")
                 .appendPathParam("streamPackagingConfigs")
                 .appendPathParam(request.getStreamPackagingConfigId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1855,9 +2351,6 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         UpdateStreamPackagingConfigResponse.Builder::streamPackagingConfig)
                 .handleResponseHeaderString(
                         "etag", UpdateStreamPackagingConfigResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateStreamPackagingConfigResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateStreamPackagingConfigResponse.Builder::opcRequestId)
                 .callAsync(handler);

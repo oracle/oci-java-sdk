@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -23,24 +23,25 @@ package com.oracle.bmc.database.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class UpdateDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"updateId", "updateAction"})
-    public UpdateDetails(String updateId, UpdateAction updateAction) {
+    @java.beans.ConstructorProperties({"updateId", "updateAction", "giSoftwareImageId"})
+    public UpdateDetails(String updateId, UpdateAction updateAction, String giSoftwareImageId) {
         super();
         this.updateId = updateId;
         this.updateAction = updateAction;
+        this.giSoftwareImageId = giSoftwareImageId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * maintenance update.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("updateId")
         private String updateId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * maintenance update.
          *
          * @param updateId the value to set
@@ -66,12 +67,34 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("updateAction");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * grid infrastructure software image. This is a database software image of the type {@code
+         * GRID_IMAGE}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+        private String giSoftwareImageId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * grid infrastructure software image. This is a database software image of the type {@code
+         * GRID_IMAGE}.
+         *
+         * @param giSoftwareImageId the value to set
+         * @return this builder
+         */
+        public Builder giSoftwareImageId(String giSoftwareImageId) {
+            this.giSoftwareImageId = giSoftwareImageId;
+            this.__explicitlySet__.add("giSoftwareImageId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDetails build() {
-            UpdateDetails model = new UpdateDetails(this.updateId, this.updateAction);
+            UpdateDetails model =
+                    new UpdateDetails(this.updateId, this.updateAction, this.giSoftwareImageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -85,6 +108,9 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("updateAction")) {
                 this.updateAction(model.getUpdateAction());
+            }
+            if (model.wasPropertyExplicitlySet("giSoftwareImageId")) {
+                this.giSoftwareImageId(model.getGiSoftwareImageId());
             }
             return this;
         }
@@ -100,14 +126,14 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * maintenance update.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("updateId")
     private final String updateId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * maintenance update.
      *
      * @return the value
@@ -164,6 +190,25 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
         return updateAction;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid
+     * infrastructure software image. This is a database software image of the type {@code
+     * GRID_IMAGE}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+    private final String giSoftwareImageId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid
+     * infrastructure software image. This is a database software image of the type {@code
+     * GRID_IMAGE}.
+     *
+     * @return the value
+     */
+    public String getGiSoftwareImageId() {
+        return giSoftwareImageId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -181,6 +226,7 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
         sb.append("super=").append(super.toString());
         sb.append("updateId=").append(String.valueOf(this.updateId));
         sb.append(", updateAction=").append(String.valueOf(this.updateAction));
+        sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
         sb.append(")");
         return sb.toString();
     }
@@ -197,6 +243,7 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
         UpdateDetails other = (UpdateDetails) o;
         return java.util.Objects.equals(this.updateId, other.updateId)
                 && java.util.Objects.equals(this.updateAction, other.updateAction)
+                && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
                 && super.equals(other);
     }
 
@@ -206,6 +253,9 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
         int result = 1;
         result = (result * PRIME) + (this.updateId == null ? 43 : this.updateId.hashCode());
         result = (result * PRIME) + (this.updateAction == null ? 43 : this.updateAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.giSoftwareImageId == null ? 43 : this.giSoftwareImageId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

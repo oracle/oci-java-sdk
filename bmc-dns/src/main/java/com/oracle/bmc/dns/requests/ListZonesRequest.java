@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.dns.requests;
 import com.oracle.bmc.dns.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListZonesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListZonesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListZonesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
@@ -264,6 +264,13 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public String getTsigKeyId() {
         return tsigKeyId;
     }
+    /** Search for zones that have the given {@code DnssecState}. */
+    private com.oracle.bmc.dns.model.ZoneDnssecState dnssecState;
+
+    /** Search for zones that have the given {@code DnssecState}. */
+    public com.oracle.bmc.dns.model.ZoneDnssecState getDnssecState() {
+        return dnssecState;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -506,6 +513,20 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /** Search for zones that have the given {@code DnssecState}. */
+        private com.oracle.bmc.dns.model.ZoneDnssecState dnssecState = null;
+
+        /**
+         * Search for zones that have the given {@code DnssecState}.
+         *
+         * @param dnssecState the value to set
+         * @return this builder instance
+         */
+        public Builder dnssecState(com.oracle.bmc.dns.model.ZoneDnssecState dnssecState) {
+            this.dnssecState = dnssecState;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -551,6 +572,7 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             scope(o.getScope());
             viewId(o.getViewId());
             tsigKeyId(o.getTsigKeyId());
+            dnssecState(o.getDnssecState());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -600,10 +622,11 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.scope = scope;
             request.viewId = viewId;
             request.tsigKeyId = tsigKeyId;
+            request.dnssecState = dnssecState;
             return request;
             // new ListZonesRequest(compartmentId, opcRequestId, limit, page, name, nameContains,
             // zoneType, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, lifecycleState,
-            // sortBy, sortOrder, scope, viewId, tsigKeyId);
+            // sortBy, sortOrder, scope, viewId, tsigKeyId, dnssecState);
         }
     }
 
@@ -628,7 +651,8 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .sortOrder(sortOrder)
                 .scope(scope)
                 .viewId(viewId)
-                .tsigKeyId(tsigKeyId);
+                .tsigKeyId(tsigKeyId)
+                .dnssecState(dnssecState);
     }
 
     /**
@@ -661,6 +685,7 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         sb.append(",scope=").append(String.valueOf(this.scope));
         sb.append(",viewId=").append(String.valueOf(this.viewId));
         sb.append(",tsigKeyId=").append(String.valueOf(this.tsigKeyId));
+        sb.append(",dnssecState=").append(String.valueOf(this.dnssecState));
         sb.append(")");
         return sb.toString();
     }
@@ -691,7 +716,8 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.viewId, other.viewId)
-                && java.util.Objects.equals(this.tsigKeyId, other.tsigKeyId);
+                && java.util.Objects.equals(this.tsigKeyId, other.tsigKeyId)
+                && java.util.Objects.equals(this.dnssecState, other.dnssecState);
     }
 
     @Override
@@ -725,6 +751,7 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.viewId == null ? 43 : this.viewId.hashCode());
         result = (result * PRIME) + (this.tsigKeyId == null ? 43 : this.tsigKeyId.hashCode());
+        result = (result * PRIME) + (this.dnssecState == null ? 43 : this.dnssecState.hashCode());
         return result;
     }
 }

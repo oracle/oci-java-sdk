@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -11,8 +11,9 @@ package com.oracle.bmc.disasterrecovery.model;
  * COMPUTE_INSTANCE_NON_MOVABLE - A compute instance that does not move across regions or ADs during
  * DR. - VOLUME_GROUP - A volume group. - DATABASE - An Oracle Database instance from Base Database
  * service, or Exadata Database service. - AUTONOMOUS_DATABASE - An Oracle Autonomous Database
- * Serverless instance. - LOAD_BALANCER - A load balancer. - NETWORK_LOAD_BALANCER - A network load
- * balancer. - FILE_SYSTEM - A file system.
+ * Serverless. - AUTONOMOUS_CONTAINER_DATABASE - An Oracle Autonomous Container Database. -
+ * OKE_CLUSTER - OCI Container Engine for Kubernetes(OKE) cluster. - LOAD_BALANCER - A load
+ * balancer. - NETWORK_LOAD_BALANCER - A network load balancer. - FILE_SYSTEM - A file system.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrProtectionGroupMemberType implements com.oracle.bmc.http.internal.BmcEnum {
@@ -22,9 +23,12 @@ public enum DrProtectionGroupMemberType implements com.oracle.bmc.http.internal.
     VolumeGroup("VOLUME_GROUP"),
     Database("DATABASE"),
     AutonomousDatabase("AUTONOMOUS_DATABASE"),
+    AutonomousContainerDatabase("AUTONOMOUS_CONTAINER_DATABASE"),
     LoadBalancer("LOAD_BALANCER"),
     NetworkLoadBalancer("NETWORK_LOAD_BALANCER"),
     FileSystem("FILE_SYSTEM"),
+    OkeCluster("OKE_CLUSTER"),
+    ObjectStorageBucket("OBJECT_STORAGE_BUCKET"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

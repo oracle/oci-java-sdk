@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.datasafe.requests;
 import com.oracle.bmc.datasafe.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListReportsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListReportsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListReportsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
@@ -101,14 +101,14 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List"
      * call. For details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List"
      * call. For details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -117,7 +117,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * For list pagination. The page token representing the page at which to start retrieving
      * results. It is usually retrieved from a previous "List" call. For details about how
      * pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
@@ -125,7 +125,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * For list pagination. The page token representing the page at which to start retrieving
      * results. It is usually retrieved from a previous "List" call. For details about how
      * pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -224,12 +224,96 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public SortBy getSortBy() {
         return sortBy;
     }
+    /** An optional filter to return only resources that match the specified mime type. */
+    private MimeType mimeType;
+
+    /** An optional filter to return only resources that match the specified mime type. */
+    public enum MimeType implements com.oracle.bmc.http.internal.BmcEnum {
+        Pdf("PDF"),
+        Xls("XLS"),
+        Json("JSON"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, MimeType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (MimeType v : MimeType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        MimeType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static MimeType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid MimeType: " + key);
+        }
+    };
+
+    /** An optional filter to return only resources that match the specified mime type. */
+    public MimeType getMimeType() {
+        return mimeType;
+    }
     /** The ID of the report definition to filter the list of reports */
     private String reportDefinitionId;
 
     /** The ID of the report definition to filter the list of reports */
     public String getReportDefinitionId() {
         return reportDefinitionId;
+    }
+    /**
+     * A filter to return only the resources that were generated after the specified date and time,
+     * as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
+     * TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after
+     * that date.
+     *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
+     */
+    private java.util.Date timeGeneratedGreaterThanOrEqualTo;
+
+    /**
+     * A filter to return only the resources that were generated after the specified date and time,
+     * as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
+     * TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after
+     * that date.
+     *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
+     */
+    public java.util.Date getTimeGeneratedGreaterThanOrEqualTo() {
+        return timeGeneratedGreaterThanOrEqualTo;
+    }
+    /**
+     * Search for resources that were generated before a specific date. Specifying this parameter
+     * corresponding {@code timeGeneratedLessThan} parameter will retrieve all resources generated
+     * before the specified generated date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
+     */
+    private java.util.Date timeGeneratedLessThan;
+
+    /**
+     * Search for resources that were generated before a specific date. Specifying this parameter
+     * corresponding {@code timeGeneratedLessThan} parameter will retrieve all resources generated
+     * before the specified generated date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     *
+     * <p>*Example:** 2016-12-19T16:39:57.600Z
+     */
+    public java.util.Date getTimeGeneratedLessThan() {
+        return timeGeneratedLessThan;
     }
     /** Unique identifier for the request. */
     private String opcRequestId;
@@ -332,14 +416,14 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List"
          * call. For details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List"
          * call. For details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -353,7 +437,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * For list pagination. The page token representing the page at which to start retrieving
          * results. It is usually retrieved from a previous "List" call. For details about how
          * pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
@@ -361,7 +445,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * For list pagination. The page token representing the page at which to start retrieving
          * results. It is usually retrieved from a previous "List" call. For details about how
          * pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -405,6 +489,20 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /** An optional filter to return only resources that match the specified mime type. */
+        private MimeType mimeType = null;
+
+        /**
+         * An optional filter to return only resources that match the specified mime type.
+         *
+         * @param mimeType the value to set
+         * @return this builder instance
+         */
+        public Builder mimeType(MimeType mimeType) {
+            this.mimeType = mimeType;
+            return this;
+        }
+
         /** The ID of the report definition to filter the list of reports */
         private String reportDefinitionId = null;
 
@@ -416,6 +514,59 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          */
         public Builder reportDefinitionId(String reportDefinitionId) {
             this.reportDefinitionId = reportDefinitionId;
+            return this;
+        }
+
+        /**
+         * A filter to return only the resources that were generated after the specified date and
+         * time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
+         * TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated
+         * after that date.
+         *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
+         */
+        private java.util.Date timeGeneratedGreaterThanOrEqualTo = null;
+
+        /**
+         * A filter to return only the resources that were generated after the specified date and
+         * time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
+         * TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated
+         * after that date.
+         *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
+         *
+         * @param timeGeneratedGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder timeGeneratedGreaterThanOrEqualTo(
+                java.util.Date timeGeneratedGreaterThanOrEqualTo) {
+            this.timeGeneratedGreaterThanOrEqualTo = timeGeneratedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * Search for resources that were generated before a specific date. Specifying this
+         * parameter corresponding {@code timeGeneratedLessThan} parameter will retrieve all
+         * resources generated before the specified generated date, in "YYYY-MM-ddThh:mmZ" format
+         * with a Z offset, as defined by RFC 3339.
+         *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
+         */
+        private java.util.Date timeGeneratedLessThan = null;
+
+        /**
+         * Search for resources that were generated before a specific date. Specifying this
+         * parameter corresponding {@code timeGeneratedLessThan} parameter will retrieve all
+         * resources generated before the specified generated date, in "YYYY-MM-ddThh:mmZ" format
+         * with a Z offset, as defined by RFC 3339.
+         *
+         * <p>*Example:** 2016-12-19T16:39:57.600Z
+         *
+         * @param timeGeneratedLessThan the value to set
+         * @return this builder instance
+         */
+        public Builder timeGeneratedLessThan(java.util.Date timeGeneratedLessThan) {
+            this.timeGeneratedLessThan = timeGeneratedLessThan;
             return this;
         }
 
@@ -500,7 +651,10 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            mimeType(o.getMimeType());
             reportDefinitionId(o.getReportDefinitionId());
+            timeGeneratedGreaterThanOrEqualTo(o.getTimeGeneratedGreaterThanOrEqualTo());
+            timeGeneratedLessThan(o.getTimeGeneratedLessThan());
             opcRequestId(o.getOpcRequestId());
             lifecycleState(o.getLifecycleState());
             type(o.getType());
@@ -546,13 +700,17 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.mimeType = mimeType;
             request.reportDefinitionId = reportDefinitionId;
+            request.timeGeneratedGreaterThanOrEqualTo = timeGeneratedGreaterThanOrEqualTo;
+            request.timeGeneratedLessThan = timeGeneratedLessThan;
             request.opcRequestId = opcRequestId;
             request.lifecycleState = lifecycleState;
             request.type = type;
             return request;
             // new ListReportsRequest(compartmentId, compartmentIdInSubtree, accessLevel,
-            // displayName, limit, page, sortOrder, sortBy, reportDefinitionId, opcRequestId,
+            // displayName, limit, page, sortOrder, sortBy, mimeType, reportDefinitionId,
+            // timeGeneratedGreaterThanOrEqualTo, timeGeneratedLessThan, opcRequestId,
             // lifecycleState, type);
         }
     }
@@ -572,7 +730,10 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
+                .mimeType(mimeType)
                 .reportDefinitionId(reportDefinitionId)
+                .timeGeneratedGreaterThanOrEqualTo(timeGeneratedGreaterThanOrEqualTo)
+                .timeGeneratedLessThan(timeGeneratedLessThan)
                 .opcRequestId(opcRequestId)
                 .lifecycleState(lifecycleState)
                 .type(type);
@@ -600,7 +761,11 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",mimeType=").append(String.valueOf(this.mimeType));
         sb.append(",reportDefinitionId=").append(String.valueOf(this.reportDefinitionId));
+        sb.append(",timeGeneratedGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeGeneratedGreaterThanOrEqualTo));
+        sb.append(",timeGeneratedLessThan=").append(String.valueOf(this.timeGeneratedLessThan));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",type=").append(String.valueOf(this.type));
@@ -628,7 +793,12 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.mimeType, other.mimeType)
                 && java.util.Objects.equals(this.reportDefinitionId, other.reportDefinitionId)
+                && java.util.Objects.equals(
+                        this.timeGeneratedGreaterThanOrEqualTo,
+                        other.timeGeneratedGreaterThanOrEqualTo)
+                && java.util.Objects.equals(this.timeGeneratedLessThan, other.timeGeneratedLessThan)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.type, other.type);
@@ -652,11 +822,22 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.mimeType == null ? 43 : this.mimeType.hashCode());
         result =
                 (result * PRIME)
                         + (this.reportDefinitionId == null
                                 ? 43
                                 : this.reportDefinitionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeGeneratedGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeGeneratedGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeGeneratedLessThan == null
+                                ? 43
+                                : this.timeGeneratedLessThan.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)

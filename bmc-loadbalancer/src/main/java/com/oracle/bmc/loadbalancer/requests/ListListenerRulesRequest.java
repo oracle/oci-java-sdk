@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.requests;
@@ -7,29 +7,29 @@ package com.oracle.bmc.loadbalancer.requests;
 import com.oracle.bmc.loadbalancer.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListListenerRulesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListListenerRulesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListListenerRulesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class ListListenerRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * load balancer associated with the listener.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
+     * balancer associated with the listener.
      */
     private String loadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * load balancer associated with the listener.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
+     * balancer associated with the listener.
      */
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
-    /** The name of the listener the rules are associated with. */
+    /** The name of the listener the rules are associated with. Example: {@code example_listener} */
     private String listenerName;
 
-    /** The name of the listener the rules are associated with. */
+    /** The name of the listener the rules are associated with. Example: {@code example_listener} */
     public String getListenerName() {
         return listenerName;
     }
@@ -85,13 +85,13 @@ public class ListListenerRulesRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * load balancer associated with the listener.
          */
         private String loadBalancerId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * load balancer associated with the listener.
          *
          * @param loadBalancerId the value to set
@@ -102,11 +102,13 @@ public class ListListenerRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The name of the listener the rules are associated with. */
+        /**
+         * The name of the listener the rules are associated with. Example: {@code example_listener}
+         */
         private String listenerName = null;
 
         /**
-         * The name of the listener the rules are associated with.
+         * The name of the listener the rules are associated with. Example: {@code example_listener}
          *
          * @param listenerName the value to set
          * @return this builder instance

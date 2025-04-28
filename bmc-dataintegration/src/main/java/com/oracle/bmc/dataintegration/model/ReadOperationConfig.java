@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -135,6 +135,15 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
             this.__explicitlySet__.add("readAttribute");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("incrementalReadConfig")
+        private IncrementalReadConfig incrementalReadConfig;
+
+        public Builder incrementalReadConfig(IncrementalReadConfig incrementalReadConfig) {
+            this.incrementalReadConfig = incrementalReadConfig;
+            this.__explicitlySet__.add("incrementalReadConfig");
+            return this;
+        }
         /**
          * The status of an object that can be set to value 1 for shallow references across objects,
          * other values reserved.
@@ -171,6 +180,7 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
                             this.dataFormat,
                             this.partitionConfig,
                             this.readAttribute,
+                            this.incrementalReadConfig,
                             this.objectStatus);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -210,6 +220,9 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
             if (model.wasPropertyExplicitlySet("readAttribute")) {
                 this.readAttribute(model.getReadAttribute());
             }
+            if (model.wasPropertyExplicitlySet("incrementalReadConfig")) {
+                this.incrementalReadConfig(model.getIncrementalReadConfig());
+            }
             if (model.wasPropertyExplicitlySet("objectStatus")) {
                 this.objectStatus(model.getObjectStatus());
             }
@@ -238,6 +251,7 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
             DataFormat dataFormat,
             PartitionConfig partitionConfig,
             AbstractReadAttribute readAttribute,
+            IncrementalReadConfig incrementalReadConfig,
             Integer objectStatus) {
         super(metadataConfigProperties, derivedAttributes, callAttribute);
         this.key = key;
@@ -247,6 +261,7 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
         this.dataFormat = dataFormat;
         this.partitionConfig = partitionConfig;
         this.readAttribute = readAttribute;
+        this.incrementalReadConfig = incrementalReadConfig;
         this.objectStatus = objectStatus;
     }
 
@@ -317,6 +332,13 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
         return readAttribute;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("incrementalReadConfig")
+    private final IncrementalReadConfig incrementalReadConfig;
+
+    public IncrementalReadConfig getIncrementalReadConfig() {
+        return incrementalReadConfig;
+    }
+
     /**
      * The status of an object that can be set to value 1 for shallow references across objects,
      * other values reserved.
@@ -356,6 +378,7 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
         sb.append(", dataFormat=").append(String.valueOf(this.dataFormat));
         sb.append(", partitionConfig=").append(String.valueOf(this.partitionConfig));
         sb.append(", readAttribute=").append(String.valueOf(this.readAttribute));
+        sb.append(", incrementalReadConfig=").append(String.valueOf(this.incrementalReadConfig));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
         sb.append(")");
         return sb.toString();
@@ -378,6 +401,7 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
                 && java.util.Objects.equals(this.dataFormat, other.dataFormat)
                 && java.util.Objects.equals(this.partitionConfig, other.partitionConfig)
                 && java.util.Objects.equals(this.readAttribute, other.readAttribute)
+                && java.util.Objects.equals(this.incrementalReadConfig, other.incrementalReadConfig)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && super.equals(other);
     }
@@ -397,6 +421,11 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
         result =
                 (result * PRIME)
                         + (this.readAttribute == null ? 43 : this.readAttribute.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.incrementalReadConfig == null
+                                ? 43
+                                : this.incrementalReadConfig.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
         return result;
     }

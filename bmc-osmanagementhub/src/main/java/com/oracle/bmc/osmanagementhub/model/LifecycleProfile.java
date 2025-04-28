@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Definition of a registration profile of type LIFECYCLE. <br>
+ * Provides the information for a lifecycle environment registration profile. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -107,12 +107,57 @@ public final class LifecycleProfile extends Profile {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
+        private java.util.Date timeModified;
+
+        public Builder timeModified(java.util.Date timeModified) {
+            this.timeModified = timeModified;
+            this.__explicitlySet__.add("timeModified");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("profileVersion")
+        private String profileVersion;
+
+        public Builder profileVersion(String profileVersion) {
+            this.profileVersion = profileVersion;
+            this.__explicitlySet__.add("profileVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("registrationType")
+        private RegistrationType registrationType;
+
+        public Builder registrationType(RegistrationType registrationType) {
+            this.registrationType = registrationType;
+            this.__explicitlySet__.add("registrationType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefaultProfile")
+        private Boolean isDefaultProfile;
+
+        public Builder isDefaultProfile(Boolean isDefaultProfile) {
+            this.isDefaultProfile = isDefaultProfile;
+            this.__explicitlySet__.add("isDefaultProfile");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isServiceProvidedProfile")
+        private Boolean isServiceProvidedProfile;
+
+        public Builder isServiceProvidedProfile(Boolean isServiceProvidedProfile) {
+            this.isServiceProvidedProfile = isServiceProvidedProfile;
+            this.__explicitlySet__.add("isServiceProvidedProfile");
             return this;
         }
 
@@ -177,7 +222,12 @@ public final class LifecycleProfile extends Profile {
                             this.osFamily,
                             this.archType,
                             this.timeCreated,
+                            this.timeModified,
+                            this.profileVersion,
                             this.lifecycleState,
+                            this.registrationType,
+                            this.isDefaultProfile,
+                            this.isServiceProvidedProfile,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -218,8 +268,23 @@ public final class LifecycleProfile extends Profile {
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
+            if (model.wasPropertyExplicitlySet("timeModified")) {
+                this.timeModified(model.getTimeModified());
+            }
+            if (model.wasPropertyExplicitlySet("profileVersion")) {
+                this.profileVersion(model.getProfileVersion());
+            }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("registrationType")) {
+                this.registrationType(model.getRegistrationType());
+            }
+            if (model.wasPropertyExplicitlySet("isDefaultProfile")) {
+                this.isDefaultProfile(model.getIsDefaultProfile());
+            }
+            if (model.wasPropertyExplicitlySet("isServiceProvidedProfile")) {
+                this.isServiceProvidedProfile(model.getIsServiceProvidedProfile());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -260,7 +325,12 @@ public final class LifecycleProfile extends Profile {
             OsFamily osFamily,
             ArchType archType,
             java.util.Date timeCreated,
+            java.util.Date timeModified,
+            String profileVersion,
             LifecycleState lifecycleState,
+            RegistrationType registrationType,
+            Boolean isDefaultProfile,
+            Boolean isServiceProvidedProfile,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -276,7 +346,12 @@ public final class LifecycleProfile extends Profile {
                 osFamily,
                 archType,
                 timeCreated,
+                timeModified,
+                profileVersion,
                 lifecycleState,
+                registrationType,
+                isDefaultProfile,
+                isServiceProvidedProfile,
                 freeformTags,
                 definedTags,
                 systemTags);

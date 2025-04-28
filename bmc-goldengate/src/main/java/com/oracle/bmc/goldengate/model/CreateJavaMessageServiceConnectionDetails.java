@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -73,6 +73,15 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<AddResourceLockDetails> locks;
+
+        public Builder locks(java.util.List<AddResourceLockDetails> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
@@ -106,6 +115,24 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
         /** The Java Message Service technology type. */
@@ -210,12 +237,18 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             this.__explicitlySet__.add("jndiSecurityPrincipal");
             return this;
         }
-        /** The password associated to the principal. */
+        /**
+         * The password associated to the principal. Deprecated: This field is deprecated and
+         * replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February
+         * 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityCredentials")
         private String jndiSecurityCredentials;
 
         /**
-         * The password associated to the principal.
+         * The password associated to the principal. Deprecated: This field is deprecated and
+         * replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February
+         * 15 2026.
          *
          * @param jndiSecurityCredentials the value to set
          * @return this builder
@@ -223,6 +256,27 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         public Builder jndiSecurityCredentials(String jndiSecurityCredentials) {
             this.jndiSecurityCredentials = jndiSecurityCredentials;
             this.__explicitlySet__.add("jndiSecurityCredentials");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the security credentials are stored associated to the principal. Note: When
+         * provided, 'jndiSecurityCredentials' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityCredentialsSecretId")
+        private String jndiSecurityCredentialsSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the security credentials are stored associated to the principal. Note: When
+         * provided, 'jndiSecurityCredentials' field must not be provided.
+         *
+         * @param jndiSecurityCredentialsSecretId the value to set
+         * @return this builder
+         */
+        public Builder jndiSecurityCredentialsSecretId(String jndiSecurityCredentialsSecretId) {
+            this.jndiSecurityCredentialsSecretId = jndiSecurityCredentialsSecretId;
+            this.__explicitlySet__.add("jndiSecurityCredentialsSecretId");
             return this;
         }
         /**
@@ -282,12 +336,18 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             this.__explicitlySet__.add("username");
             return this;
         }
-        /** The password Oracle GoldenGate uses to connect the associated Java Message Service. */
+        /**
+         * The password Oracle GoldenGate uses to connect the associated Java Message Service.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will
+         * be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated Java Message Service.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will
+         * be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -295,6 +355,29 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored, that Oracle GoldenGate uses to connect the
+         * associated Java Message Service. Note: When provided, 'password' field must not be
+         * provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored, that Oracle GoldenGate uses to connect the
+         * associated Java Message Service. Note: When provided, 'password' field must not be
+         * provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
@@ -337,12 +420,16 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             this.__explicitlySet__.add("authenticationType");
             return this;
         }
-        /** The base64 encoded content of the TrustStore file. */
+        /**
+         * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated
+         * and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
         private String trustStore;
 
         /**
-         * The base64 encoded content of the TrustStore file.
+         * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated
+         * and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
          *
          * @param trustStore the value to set
          * @return this builder
@@ -352,12 +439,37 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             this.__explicitlySet__.add("trustStore");
             return this;
         }
-        /** The TrustStore password. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the content of the TrustStore file is stored. Note: When provided,
+         * 'trustStore' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
+        private String trustStoreSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the content of the TrustStore file is stored. Note: When provided,
+         * 'trustStore' field must not be provided.
+         *
+         * @param trustStoreSecretId the value to set
+         * @return this builder
+         */
+        public Builder trustStoreSecretId(String trustStoreSecretId) {
+            this.trustStoreSecretId = trustStoreSecretId;
+            this.__explicitlySet__.add("trustStoreSecretId");
+            return this;
+        }
+        /**
+         * The TrustStore password. Deprecated: This field is deprecated and replaced by
+         * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
         private String trustStorePassword;
 
         /**
-         * The TrustStore password.
+         * The TrustStore password. Deprecated: This field is deprecated and replaced by
+         * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
          *
          * @param trustStorePassword the value to set
          * @return this builder
@@ -367,12 +479,37 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             this.__explicitlySet__.add("trustStorePassword");
             return this;
         }
-        /** The base64 encoded content of the KeyStore file. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
+         * field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
+        private String trustStorePasswordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
+         * field must not be provided.
+         *
+         * @param trustStorePasswordSecretId the value to set
+         * @return this builder
+         */
+        public Builder trustStorePasswordSecretId(String trustStorePasswordSecretId) {
+            this.trustStorePasswordSecretId = trustStorePasswordSecretId;
+            this.__explicitlySet__.add("trustStorePasswordSecretId");
+            return this;
+        }
+        /**
+         * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
+         * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
         private String keyStore;
 
         /**
-         * The base64 encoded content of the KeyStore file.
+         * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
+         * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
          *
          * @param keyStore the value to set
          * @return this builder
@@ -382,12 +519,37 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             this.__explicitlySet__.add("keyStore");
             return this;
         }
-        /** The KeyStore password. */
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
+         * field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
+        private String keyStoreSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
+         * field must not be provided.
+         *
+         * @param keyStoreSecretId the value to set
+         * @return this builder
+         */
+        public Builder keyStoreSecretId(String keyStoreSecretId) {
+            this.keyStoreSecretId = keyStoreSecretId;
+            this.__explicitlySet__.add("keyStoreSecretId");
+            return this;
+        }
+        /**
+         * The KeyStore password. Deprecated: This field is deprecated and replaced by
+         * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
         private String keyStorePassword;
 
         /**
-         * The KeyStore password.
+         * The KeyStore password. Deprecated: This field is deprecated and replaced by
+         * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
          *
          * @param keyStorePassword the value to set
          * @return this builder
@@ -398,15 +560,38 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             return this;
         }
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword'
+         * field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
+        private String keyStorePasswordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword'
+         * field must not be provided.
+         *
+         * @param keyStorePasswordSecretId the value to set
+         * @return this builder
+         */
+        public Builder keyStorePasswordSecretId(String keyStorePasswordSecretId) {
+            this.keyStorePasswordSecretId = keyStorePasswordSecretId;
+            this.__explicitlySet__.add("keyStorePasswordSecretId");
+            return this;
+        }
+        /**
          * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
-         * password, it should be provided.
+         * password, it should be provided. Deprecated: This field is deprecated and replaced by
+         * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
         private String sslKeyPassword;
 
         /**
          * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
-         * password, it should be provided.
+         * password, it should be provided. Deprecated: This field is deprecated and replaced by
+         * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
          *
          * @param sslKeyPassword the value to set
          * @return this builder
@@ -417,7 +602,34 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             return this;
         }
         /**
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored for the cert inside of the Keystore. In case it
+         * differs from the KeyStore password, it should be provided. Note: When provided,
+         * 'sslKeyPassword' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
+        private String sslKeyPasswordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored for the cert inside of the Keystore. In case it
+         * differs from the KeyStore password, it should be provided. Note: When provided,
+         * 'sslKeyPassword' field must not be provided.
+         *
+         * @param sslKeyPasswordSecretId the value to set
+         * @return this builder
+         */
+        public Builder sslKeyPasswordSecretId(String sslKeyPasswordSecretId) {
+            this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
+            this.__explicitlySet__.add("sslKeyPasswordSecretId");
+            return this;
+        }
+        /**
+         * Deprecated: this field will be removed in future versions. Either specify the private IP
+         * in the connectionString or host field, or make sure the host name is resolvable in the
+         * target VCN.
+         *
+         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
          * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
          * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
@@ -428,7 +640,11 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         private String privateIp;
 
         /**
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * Deprecated: this field will be removed in future versions. Either specify the private IP
+         * in the connectionString or host field, or make sure the host name is resolvable in the
+         * target VCN.
+         *
+         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
          * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
          * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
@@ -455,10 +671,13 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.shouldUseJndi,
                             this.jndiConnectionFactory,
@@ -466,17 +685,24 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
                             this.jndiInitialContextFactory,
                             this.jndiSecurityPrincipal,
                             this.jndiSecurityCredentials,
+                            this.jndiSecurityCredentialsSecretId,
                             this.connectionUrl,
                             this.connectionFactory,
                             this.username,
                             this.password,
+                            this.passwordSecretId,
                             this.securityProtocol,
                             this.authenticationType,
                             this.trustStore,
+                            this.trustStoreSecretId,
                             this.trustStorePassword,
+                            this.trustStorePasswordSecretId,
                             this.keyStore,
+                            this.keyStoreSecretId,
                             this.keyStorePassword,
+                            this.keyStorePasswordSecretId,
                             this.sslKeyPassword,
+                            this.sslKeyPasswordSecretId,
                             this.privateIp);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -501,6 +727,9 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
@@ -512,6 +741,12 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -534,6 +769,9 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             if (model.wasPropertyExplicitlySet("jndiSecurityCredentials")) {
                 this.jndiSecurityCredentials(model.getJndiSecurityCredentials());
             }
+            if (model.wasPropertyExplicitlySet("jndiSecurityCredentialsSecretId")) {
+                this.jndiSecurityCredentialsSecretId(model.getJndiSecurityCredentialsSecretId());
+            }
             if (model.wasPropertyExplicitlySet("connectionUrl")) {
                 this.connectionUrl(model.getConnectionUrl());
             }
@@ -546,6 +784,9 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             if (model.wasPropertyExplicitlySet("password")) {
                 this.password(model.getPassword());
             }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
             if (model.wasPropertyExplicitlySet("securityProtocol")) {
                 this.securityProtocol(model.getSecurityProtocol());
             }
@@ -555,17 +796,32 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             if (model.wasPropertyExplicitlySet("trustStore")) {
                 this.trustStore(model.getTrustStore());
             }
+            if (model.wasPropertyExplicitlySet("trustStoreSecretId")) {
+                this.trustStoreSecretId(model.getTrustStoreSecretId());
+            }
             if (model.wasPropertyExplicitlySet("trustStorePassword")) {
                 this.trustStorePassword(model.getTrustStorePassword());
+            }
+            if (model.wasPropertyExplicitlySet("trustStorePasswordSecretId")) {
+                this.trustStorePasswordSecretId(model.getTrustStorePasswordSecretId());
             }
             if (model.wasPropertyExplicitlySet("keyStore")) {
                 this.keyStore(model.getKeyStore());
             }
+            if (model.wasPropertyExplicitlySet("keyStoreSecretId")) {
+                this.keyStoreSecretId(model.getKeyStoreSecretId());
+            }
             if (model.wasPropertyExplicitlySet("keyStorePassword")) {
                 this.keyStorePassword(model.getKeyStorePassword());
             }
+            if (model.wasPropertyExplicitlySet("keyStorePasswordSecretId")) {
+                this.keyStorePasswordSecretId(model.getKeyStorePasswordSecretId());
+            }
             if (model.wasPropertyExplicitlySet("sslKeyPassword")) {
                 this.sslKeyPassword(model.getSslKeyPassword());
+            }
+            if (model.wasPropertyExplicitlySet("sslKeyPasswordSecretId")) {
+                this.sslKeyPasswordSecretId(model.getSslKeyPasswordSecretId());
             }
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
@@ -590,10 +846,13 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             JavaMessageServiceConnection.TechnologyType technologyType,
             Boolean shouldUseJndi,
             String jndiConnectionFactory,
@@ -601,17 +860,24 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             String jndiInitialContextFactory,
             String jndiSecurityPrincipal,
             String jndiSecurityCredentials,
+            String jndiSecurityCredentialsSecretId,
             String connectionUrl,
             String connectionFactory,
             String username,
             String password,
+            String passwordSecretId,
             JavaMessageServiceConnection.SecurityProtocol securityProtocol,
             JavaMessageServiceConnection.AuthenticationType authenticationType,
             String trustStore,
+            String trustStoreSecretId,
             String trustStorePassword,
+            String trustStorePasswordSecretId,
             String keyStore,
+            String keyStoreSecretId,
             String keyStorePassword,
+            String keyStorePasswordSecretId,
             String sslKeyPassword,
+            String sslKeyPasswordSecretId,
             String privateIp) {
         super(
                 displayName,
@@ -619,10 +885,13 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
                 compartmentId,
                 freeformTags,
                 definedTags,
+                locks,
                 vaultId,
                 keyId,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.shouldUseJndi = shouldUseJndi;
         this.jndiConnectionFactory = jndiConnectionFactory;
@@ -630,17 +899,24 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         this.jndiInitialContextFactory = jndiInitialContextFactory;
         this.jndiSecurityPrincipal = jndiSecurityPrincipal;
         this.jndiSecurityCredentials = jndiSecurityCredentials;
+        this.jndiSecurityCredentialsSecretId = jndiSecurityCredentialsSecretId;
         this.connectionUrl = connectionUrl;
         this.connectionFactory = connectionFactory;
         this.username = username;
         this.password = password;
+        this.passwordSecretId = passwordSecretId;
         this.securityProtocol = securityProtocol;
         this.authenticationType = authenticationType;
         this.trustStore = trustStore;
+        this.trustStoreSecretId = trustStoreSecretId;
         this.trustStorePassword = trustStorePassword;
+        this.trustStorePasswordSecretId = trustStorePasswordSecretId;
         this.keyStore = keyStore;
+        this.keyStoreSecretId = keyStoreSecretId;
         this.keyStorePassword = keyStorePassword;
+        this.keyStorePasswordSecretId = keyStorePasswordSecretId;
         this.sslKeyPassword = sslKeyPassword;
+        this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
         this.privateIp = privateIp;
     }
 
@@ -732,17 +1008,40 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         return jndiSecurityPrincipal;
     }
 
-    /** The password associated to the principal. */
+    /**
+     * The password associated to the principal. Deprecated: This field is deprecated and replaced
+     * by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityCredentials")
     private final String jndiSecurityCredentials;
 
     /**
-     * The password associated to the principal.
+     * The password associated to the principal. Deprecated: This field is deprecated and replaced
+     * by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
     public String getJndiSecurityCredentials() {
         return jndiSecurityCredentials;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the security credentials are stored associated to the principal. Note: When
+     * provided, 'jndiSecurityCredentials' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityCredentialsSecretId")
+    private final String jndiSecurityCredentialsSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the security credentials are stored associated to the principal. Note: When
+     * provided, 'jndiSecurityCredentials' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getJndiSecurityCredentialsSecretId() {
+        return jndiSecurityCredentialsSecretId;
     }
 
     /**
@@ -796,17 +1095,42 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         return username;
     }
 
-    /** The password Oracle GoldenGate uses to connect the associated Java Message Service. */
+    /**
+     * The password Oracle GoldenGate uses to connect the associated Java Message Service.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be
+     * removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * The password Oracle GoldenGate uses to connect the associated Java Message Service.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be
+     * removed after February 15 2026.
      *
      * @return the value
      */
     public String getPassword() {
         return password;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored, that Oracle GoldenGate uses to connect the associated
+     * Java Message Service. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored, that Oracle GoldenGate uses to connect the associated
+     * Java Message Service. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
     }
 
     /**
@@ -843,12 +1167,16 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         return authenticationType;
     }
 
-    /** The base64 encoded content of the TrustStore file. */
+    /**
+     * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and
+     * replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
     private final String trustStore;
 
     /**
-     * The base64 encoded content of the TrustStore file.
+     * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and
+     * replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
@@ -856,12 +1184,35 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         return trustStore;
     }
 
-    /** The TrustStore password. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
+     * field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
+    private final String trustStoreSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
+     * field must not be provided.
+     *
+     * @return the value
+     */
+    public String getTrustStoreSecretId() {
+        return trustStoreSecretId;
+    }
+
+    /**
+     * The TrustStore password. Deprecated: This field is deprecated and replaced by
+     * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
     private final String trustStorePassword;
 
     /**
-     * The TrustStore password.
+     * The TrustStore password. Deprecated: This field is deprecated and replaced by
+     * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
@@ -869,12 +1220,35 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         return trustStorePassword;
     }
 
-    /** The base64 encoded content of the KeyStore file. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
+     * field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
+    private final String trustStorePasswordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
+     * field must not be provided.
+     *
+     * @return the value
+     */
+    public String getTrustStorePasswordSecretId() {
+        return trustStorePasswordSecretId;
+    }
+
+    /**
+     * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
+     * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
     private final String keyStore;
 
     /**
-     * The base64 encoded content of the KeyStore file.
+     * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
+     * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
@@ -882,12 +1256,35 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         return keyStore;
     }
 
-    /** The KeyStore password. */
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
+     * field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
+    private final String keyStoreSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
+     * field must not be provided.
+     *
+     * @return the value
+     */
+    public String getKeyStoreSecretId() {
+        return keyStoreSecretId;
+    }
+
+    /**
+     * The KeyStore password. Deprecated: This field is deprecated and replaced by
+     * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
     private final String keyStorePassword;
 
     /**
-     * The KeyStore password.
+     * The KeyStore password. Deprecated: This field is deprecated and replaced by
+     * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
@@ -896,15 +1293,36 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     }
 
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword' field
+     * must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
+    private final String keyStorePasswordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword' field
+     * must not be provided.
+     *
+     * @return the value
+     */
+    public String getKeyStorePasswordSecretId() {
+        return keyStorePasswordSecretId;
+    }
+
+    /**
      * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
-     * password, it should be provided.
+     * password, it should be provided. Deprecated: This field is deprecated and replaced by
+     * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
     private final String sslKeyPassword;
 
     /**
      * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
-     * password, it should be provided.
+     * password, it should be provided. Deprecated: This field is deprecated and replaced by
+     * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
@@ -913,7 +1331,32 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     }
 
     /**
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored for the cert inside of the Keystore. In case it differs
+     * from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword'
+     * field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
+    private final String sslKeyPasswordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored for the cert inside of the Keystore. In case it differs
+     * from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword'
+     * field must not be provided.
+     *
+     * @return the value
+     */
+    public String getSslKeyPasswordSecretId() {
+        return sslKeyPasswordSecretId;
+    }
+
+    /**
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in
+     * the connectionString or host field, or make sure the host name is resolvable in the target
+     * VCN.
+     *
+     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
      * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
      * not provided it is assumed the datasource is publicly accessible. In case the connection is
@@ -924,7 +1367,11 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     private final String privateIp;
 
     /**
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in
+     * the connectionString or host field, or make sure the host name is resolvable in the target
+     * VCN.
+     *
+     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
      * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
      * not provided it is assumed the datasource is publicly accessible. In case the connection is
@@ -960,17 +1407,27 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
                 .append(String.valueOf(this.jndiInitialContextFactory));
         sb.append(", jndiSecurityPrincipal=").append(String.valueOf(this.jndiSecurityPrincipal));
         sb.append(", jndiSecurityCredentials=").append("<redacted>");
+        sb.append(", jndiSecurityCredentialsSecretId=")
+                .append(String.valueOf(this.jndiSecurityCredentialsSecretId));
         sb.append(", connectionUrl=").append(String.valueOf(this.connectionUrl));
         sb.append(", connectionFactory=").append(String.valueOf(this.connectionFactory));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", trustStore=").append(String.valueOf(this.trustStore));
+        sb.append(", trustStoreSecretId=").append(String.valueOf(this.trustStoreSecretId));
         sb.append(", trustStorePassword=").append("<redacted>");
+        sb.append(", trustStorePasswordSecretId=")
+                .append(String.valueOf(this.trustStorePasswordSecretId));
         sb.append(", keyStore=").append(String.valueOf(this.keyStore));
+        sb.append(", keyStoreSecretId=").append(String.valueOf(this.keyStoreSecretId));
         sb.append(", keyStorePassword=").append("<redacted>");
+        sb.append(", keyStorePasswordSecretId=")
+                .append(String.valueOf(this.keyStorePasswordSecretId));
         sb.append(", sslKeyPassword=").append("<redacted>");
+        sb.append(", sslKeyPasswordSecretId=").append(String.valueOf(this.sslKeyPasswordSecretId));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(")");
         return sb.toString();
@@ -996,17 +1453,28 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
                 && java.util.Objects.equals(this.jndiSecurityPrincipal, other.jndiSecurityPrincipal)
                 && java.util.Objects.equals(
                         this.jndiSecurityCredentials, other.jndiSecurityCredentials)
+                && java.util.Objects.equals(
+                        this.jndiSecurityCredentialsSecretId, other.jndiSecurityCredentialsSecretId)
                 && java.util.Objects.equals(this.connectionUrl, other.connectionUrl)
                 && java.util.Objects.equals(this.connectionFactory, other.connectionFactory)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.trustStore, other.trustStore)
+                && java.util.Objects.equals(this.trustStoreSecretId, other.trustStoreSecretId)
                 && java.util.Objects.equals(this.trustStorePassword, other.trustStorePassword)
+                && java.util.Objects.equals(
+                        this.trustStorePasswordSecretId, other.trustStorePasswordSecretId)
                 && java.util.Objects.equals(this.keyStore, other.keyStore)
+                && java.util.Objects.equals(this.keyStoreSecretId, other.keyStoreSecretId)
                 && java.util.Objects.equals(this.keyStorePassword, other.keyStorePassword)
+                && java.util.Objects.equals(
+                        this.keyStorePasswordSecretId, other.keyStorePasswordSecretId)
                 && java.util.Objects.equals(this.sslKeyPassword, other.sslKeyPassword)
+                && java.util.Objects.equals(
+                        this.sslKeyPasswordSecretId, other.sslKeyPasswordSecretId)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && super.equals(other);
     }
@@ -1046,12 +1514,20 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
                                 : this.jndiSecurityCredentials.hashCode());
         result =
                 (result * PRIME)
+                        + (this.jndiSecurityCredentialsSecretId == null
+                                ? 43
+                                : this.jndiSecurityCredentialsSecretId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.connectionUrl == null ? 43 : this.connectionUrl.hashCode());
         result =
                 (result * PRIME)
                         + (this.connectionFactory == null ? 43 : this.connectionFactory.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.securityProtocol == null ? 43 : this.securityProtocol.hashCode());
@@ -1063,16 +1539,39 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         result = (result * PRIME) + (this.trustStore == null ? 43 : this.trustStore.hashCode());
         result =
                 (result * PRIME)
+                        + (this.trustStoreSecretId == null
+                                ? 43
+                                : this.trustStoreSecretId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.trustStorePassword == null
                                 ? 43
                                 : this.trustStorePassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trustStorePasswordSecretId == null
+                                ? 43
+                                : this.trustStorePasswordSecretId.hashCode());
         result = (result * PRIME) + (this.keyStore == null ? 43 : this.keyStore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStoreSecretId == null ? 43 : this.keyStoreSecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.keyStorePassword == null ? 43 : this.keyStorePassword.hashCode());
         result =
                 (result * PRIME)
+                        + (this.keyStorePasswordSecretId == null
+                                ? 43
+                                : this.keyStorePasswordSecretId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.sslKeyPassword == null ? 43 : this.sslKeyPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslKeyPasswordSecretId == null
+                                ? 43
+                                : this.sslKeyPasswordSecretId.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         return result;
     }

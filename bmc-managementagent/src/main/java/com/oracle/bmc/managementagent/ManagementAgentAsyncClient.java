@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.managementagent;
@@ -124,6 +124,41 @@ public class ManagementAgentAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDataSourceResponse> createDataSource(
+            CreateDataSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateDataSourceRequest, CreateDataSourceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateDataSourceDetails(), "createDataSourceDetails is required");
+
+        return clientCall(request, CreateDataSourceResponse::builder)
+                .logger(LOG, "createDataSource")
+                .serviceDetails(
+                        "ManagementAgent",
+                        "CreateDataSource",
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/CreateDataSource")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDataSourceRequest::builder)
+                .basePath("/20200202")
+                .appendPathParam("managementAgents")
+                .appendPathParam(request.getManagementAgentId())
+                .appendPathParam("dataSources")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateDataSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDataSourceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateManagementAgentInstallKeyResponse>
             createManagementAgentInstallKey(
                     CreateManagementAgentInstallKeyRequest request,
@@ -157,6 +192,40 @@ public class ManagementAgentAsyncClient extends com.oracle.bmc.http.internal.Bas
                         CreateManagementAgentInstallKeyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateManagementAgentInstallKeyResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataSourceResponse> deleteDataSource(
+            DeleteDataSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDataSourceRequest, DeleteDataSourceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
+
+        Validate.notBlank(request.getDataSourceKey(), "dataSourceKey must not be blank");
+
+        return clientCall(request, DeleteDataSourceResponse::builder)
+                .logger(LOG, "deleteDataSource")
+                .serviceDetails(
+                        "ManagementAgent",
+                        "DeleteDataSource",
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteDataSource")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDataSourceRequest::builder)
+                .basePath("/20200202")
+                .appendPathParam("managementAgents")
+                .appendPathParam(request.getManagementAgentId())
+                .appendPathParam("dataSources")
+                .appendPathParam(request.getDataSourceKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDataSourceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteDataSourceResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -308,6 +377,41 @@ public class ManagementAgentAsyncClient extends com.oracle.bmc.http.internal.Bas
                         GetAutoUpgradableConfigResponse.Builder::autoUpgradableConfig)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAutoUpgradableConfigResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataSourceResponse> getDataSource(
+            GetDataSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetDataSourceRequest, GetDataSourceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
+
+        Validate.notBlank(request.getDataSourceKey(), "dataSourceKey must not be blank");
+
+        return clientCall(request, GetDataSourceResponse::builder)
+                .logger(LOG, "getDataSource")
+                .serviceDetails(
+                        "ManagementAgent",
+                        "GetDataSource",
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetDataSource")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDataSourceRequest::builder)
+                .basePath("/20200202")
+                .appendPathParam("managementAgents")
+                .appendPathParam(request.getManagementAgentId())
+                .appendPathParam("dataSources")
+                .appendPathParam(request.getDataSourceKey())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.managementagent.model.DataSource.class,
+                        GetDataSourceResponse.Builder::dataSource)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDataSourceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetDataSourceResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -502,6 +606,47 @@ public class ManagementAgentAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ListDataSourcesResponse> listDataSources(
+            ListDataSourcesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDataSourcesRequest, ListDataSourcesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
+
+        return clientCall(request, ListDataSourcesResponse::builder)
+                .logger(LOG, "listDataSources")
+                .serviceDetails(
+                        "ManagementAgent",
+                        "ListDataSources",
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListDataSources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDataSourcesRequest::builder)
+                .basePath("/20200202")
+                .appendPathParam("managementAgents")
+                .appendPathParam(request.getManagementAgentId())
+                .appendPathParam("dataSources")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "name",
+                        request.getName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.managementagent.model.DataSourceSummary.class,
+                        ListDataSourcesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDataSourcesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDataSourcesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListManagementAgentImagesResponse> listManagementAgentImages(
             ListManagementAgentImagesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -673,6 +818,11 @@ public class ManagementAgentAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("accessLevel", request.getAccessLevel())
+                .appendEnumQueryParam("dataSourceType", request.getDataSourceType())
+                .appendListQueryParam(
+                        "dataSourceName",
+                        request.getDataSourceName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -782,7 +932,10 @@ public class ManagementAgentAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("status", request.getStatus())
-                .appendEnumQueryParam("type", request.getType())
+                .appendListQueryParam(
+                        "type",
+                        request.getType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam(
                         "timeCreatedGreaterThanOrEqualTo",
                         request.getTimeCreatedGreaterThanOrEqualTo())
@@ -920,6 +1073,44 @@ public class ManagementAgentAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeManagementAgentPluginCountsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataSourceResponse> updateDataSource(
+            UpdateDataSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDataSourceRequest, UpdateDataSourceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
+
+        Validate.notBlank(request.getDataSourceKey(), "dataSourceKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDataSourceDetails(), "updateDataSourceDetails is required");
+
+        return clientCall(request, UpdateDataSourceResponse::builder)
+                .logger(LOG, "updateDataSource")
+                .serviceDetails(
+                        "ManagementAgent",
+                        "UpdateDataSource",
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateDataSource")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDataSourceRequest::builder)
+                .basePath("/20200202")
+                .appendPathParam("managementAgents")
+                .appendPathParam(request.getManagementAgentId())
+                .appendPathParam("dataSources")
+                .appendPathParam(request.getDataSourceKey())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateDataSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDataSourceResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

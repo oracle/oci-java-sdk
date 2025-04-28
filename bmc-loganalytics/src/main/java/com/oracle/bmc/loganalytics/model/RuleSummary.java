@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -31,6 +31,7 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
         "definedTags",
         "lifecycleState",
         "kind",
+        "targetService",
         "displayName",
         "isEnabled",
         "lastExecutionStatus",
@@ -46,6 +47,7 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             ConfigLifecycleState lifecycleState,
             RuleKind kind,
+            String targetService,
             String displayName,
             Boolean isEnabled,
             LastExecutionStatus lastExecutionStatus,
@@ -60,6 +62,7 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
         this.definedTags = definedTags;
         this.lifecycleState = lifecycleState;
         this.kind = kind;
+        this.targetService = targetService;
         this.displayName = displayName;
         this.isEnabled = isEnabled;
         this.lastExecutionStatus = lastExecutionStatus;
@@ -106,14 +109,14 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * Compartment Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -222,6 +225,21 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("kind");
             return this;
         }
+        /** The target service. */
+        @com.fasterxml.jackson.annotation.JsonProperty("targetService")
+        private String targetService;
+
+        /**
+         * The target service.
+         *
+         * @param targetService the value to set
+         * @return this builder
+         */
+        public Builder targetService(String targetService) {
+            this.targetService = targetService;
+            this.__explicitlySet__.add("targetService");
+            return this;
+        }
         /** The ingest time rule or scheduled task display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -298,6 +316,7 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
                             this.definedTags,
                             this.lifecycleState,
                             this.kind,
+                            this.targetService,
                             this.displayName,
                             this.isEnabled,
                             this.lastExecutionStatus,
@@ -336,6 +355,9 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("kind")) {
                 this.kind(model.getKind());
+            }
+            if (model.wasPropertyExplicitlySet("targetService")) {
+                this.targetService(model.getTargetService());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -396,14 +418,14 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Compartment Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -495,6 +517,19 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
      */
     public RuleKind getKind() {
         return kind;
+    }
+
+    /** The target service. */
+    @com.fasterxml.jackson.annotation.JsonProperty("targetService")
+    private final String targetService;
+
+    /**
+     * The target service.
+     *
+     * @return the value
+     */
+    public String getTargetService() {
+        return targetService;
     }
 
     /** The ingest time rule or scheduled task display name. */
@@ -619,6 +654,7 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", kind=").append(String.valueOf(this.kind));
+        sb.append(", targetService=").append(String.valueOf(this.targetService));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", lastExecutionStatus=").append(String.valueOf(this.lastExecutionStatus));
@@ -646,6 +682,7 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.kind, other.kind)
+                && java.util.Objects.equals(this.targetService, other.targetService)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.lastExecutionStatus, other.lastExecutionStatus)
@@ -670,6 +707,9 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.kind == null ? 43 : this.kind.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetService == null ? 43 : this.targetService.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result =

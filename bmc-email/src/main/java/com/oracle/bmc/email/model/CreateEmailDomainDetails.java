@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.model;
@@ -26,6 +26,7 @@ public final class CreateEmailDomainDetails
     @java.beans.ConstructorProperties({
         "name",
         "compartmentId",
+        "domainVerificationId",
         "description",
         "freeformTags",
         "definedTags"
@@ -33,12 +34,14 @@ public final class CreateEmailDomainDetails
     public CreateEmailDomainDetails(
             String name,
             String compartmentId,
+            String domainVerificationId,
             String description,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.name = name;
         this.compartmentId = compartmentId;
+        this.domainVerificationId = domainVerificationId;
         this.description = description;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -50,9 +53,9 @@ public final class CreateEmailDomainDetails
          * The name of the email domain in the Internet Domain Name System (DNS). The email domain
          * name must be unique in the region for this tenancy. Domain names limited to ASCII
          * characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are
-         * only allowed between alphanumeric characters. For details, please see:
-         * https://tools.ietf.org/html/rfc5321#section-4.1.2 Non-ASCII domain names should adopt
-         * IDNA2008 normalization (RFC 5891-5892).
+         * only allowed between alphanumeric characters. For details, see [RFC 5321, section
+         * 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should
+         * adopt IDNA2008 normalization (RFC 5891-5892).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -61,9 +64,9 @@ public final class CreateEmailDomainDetails
          * The name of the email domain in the Internet Domain Name System (DNS). The email domain
          * name must be unique in the region for this tenancy. Domain names limited to ASCII
          * characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are
-         * only allowed between alphanumeric characters. For details, please see:
-         * https://tools.ietf.org/html/rfc5321#section-4.1.2 Non-ASCII domain names should adopt
-         * IDNA2008 normalization (RFC 5891-5892).
+         * only allowed between alphanumeric characters. For details, see [RFC 5321, section
+         * 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should
+         * adopt IDNA2008 normalization (RFC 5891-5892).
          *
          * @param name the value to set
          * @return this builder
@@ -74,15 +77,15 @@ public final class CreateEmailDomainDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment for this email domain.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment for this email domain.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment for this email domain.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment for this email domain.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -90,6 +93,25 @@ public final class CreateEmailDomainDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * Id for Domain in Domain Management (under governance) if DOMAINID verification method
+         * used.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("domainVerificationId")
+        private String domainVerificationId;
+
+        /**
+         * Id for Domain in Domain Management (under governance) if DOMAINID verification method
+         * used.
+         *
+         * @param domainVerificationId the value to set
+         * @return this builder
+         */
+        public Builder domainVerificationId(String domainVerificationId) {
+            this.domainVerificationId = domainVerificationId;
+            this.__explicitlySet__.add("domainVerificationId");
             return this;
         }
         /**
@@ -114,7 +136,7 @@ public final class CreateEmailDomainDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -124,7 +146,7 @@ public final class CreateEmailDomainDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -139,7 +161,7 @@ public final class CreateEmailDomainDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -149,7 +171,7 @@ public final class CreateEmailDomainDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -171,6 +193,7 @@ public final class CreateEmailDomainDetails
                     new CreateEmailDomainDetails(
                             this.name,
                             this.compartmentId,
+                            this.domainVerificationId,
                             this.description,
                             this.freeformTags,
                             this.definedTags);
@@ -187,6 +210,9 @@ public final class CreateEmailDomainDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("domainVerificationId")) {
+                this.domainVerificationId(model.getDomainVerificationId());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -214,8 +240,8 @@ public final class CreateEmailDomainDetails
      * The name of the email domain in the Internet Domain Name System (DNS). The email domain name
      * must be unique in the region for this tenancy. Domain names limited to ASCII characters use
      * alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between
-     * alphanumeric characters. For details, please see:
-     * https://tools.ietf.org/html/rfc5321#section-4.1.2 Non-ASCII domain names should adopt
+     * alphanumeric characters. For details, see [RFC 5321, section
+     * 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt
      * IDNA2008 normalization (RFC 5891-5892).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -225,8 +251,8 @@ public final class CreateEmailDomainDetails
      * The name of the email domain in the Internet Domain Name System (DNS). The email domain name
      * must be unique in the region for this tenancy. Domain names limited to ASCII characters use
      * alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between
-     * alphanumeric characters. For details, please see:
-     * https://tools.ietf.org/html/rfc5321#section-4.1.2 Non-ASCII domain names should adopt
+     * alphanumeric characters. For details, see [RFC 5321, section
+     * 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt
      * IDNA2008 normalization (RFC 5891-5892).
      *
      * @return the value
@@ -236,20 +262,35 @@ public final class CreateEmailDomainDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment for this email domain.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment for this email domain.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment for this email domain.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment for this email domain.
      *
      * @return the value
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("domainVerificationId")
+    private final String domainVerificationId;
+
+    /**
+     * Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     *
+     * @return the value
+     */
+    public String getDomainVerificationId() {
+        return domainVerificationId;
     }
 
     /**
@@ -272,7 +313,7 @@ public final class CreateEmailDomainDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -282,7 +323,7 @@ public final class CreateEmailDomainDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -295,7 +336,7 @@ public final class CreateEmailDomainDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -305,7 +346,7 @@ public final class CreateEmailDomainDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -332,6 +373,7 @@ public final class CreateEmailDomainDetails
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", domainVerificationId=").append(String.valueOf(this.domainVerificationId));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -351,6 +393,7 @@ public final class CreateEmailDomainDetails
         CreateEmailDomainDetails other = (CreateEmailDomainDetails) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.domainVerificationId, other.domainVerificationId)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -365,6 +408,11 @@ public final class CreateEmailDomainDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.domainVerificationId == null
+                                ? 43
+                                : this.domainVerificationId.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
@@ -332,6 +332,21 @@ public final class ClassicSubscription extends Subscription {
             this.__explicitlySet__.add("endDate");
             return this;
         }
+        /** This list will contain up to 5 regions where the subscription has a physical presence */
+        @com.fasterxml.jackson.annotation.JsonProperty("regionAssignments")
+        private java.util.List<String> regionAssignments;
+
+        /**
+         * This list will contain up to 5 regions where the subscription has a physical presence
+         *
+         * @param regionAssignments the value to set
+         * @return this builder
+         */
+        public Builder regionAssignments(java.util.List<String> regionAssignments) {
+            this.regionAssignments = regionAssignments;
+            this.__explicitlySet__.add("regionAssignments");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -361,7 +376,8 @@ public final class ClassicSubscription extends Subscription {
                             this.promotion,
                             this.purchaseEntitlementId,
                             this.startDate,
-                            this.endDate);
+                            this.endDate,
+                            this.regionAssignments);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -439,6 +455,9 @@ public final class ClassicSubscription extends Subscription {
             if (model.wasPropertyExplicitlySet("endDate")) {
                 this.endDate(model.getEndDate());
             }
+            if (model.wasPropertyExplicitlySet("regionAssignments")) {
+                this.regionAssignments(model.getRegionAssignments());
+            }
             return this;
         }
     }
@@ -476,7 +495,8 @@ public final class ClassicSubscription extends Subscription {
             java.util.List<Promotion> promotion,
             String purchaseEntitlementId,
             java.util.Date startDate,
-            java.util.Date endDate) {
+            java.util.Date endDate,
+            java.util.List<String> regionAssignments) {
         super(id, compartmentId, serviceName, timeCreated, timeUpdated, freeformTags, definedTags);
         this.classicSubscriptionId = classicSubscriptionId;
         this.isClassicSubscription = isClassicSubscription;
@@ -494,6 +514,7 @@ public final class ClassicSubscription extends Subscription {
         this.purchaseEntitlementId = purchaseEntitlementId;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.regionAssignments = regionAssignments;
     }
 
     /** Classic subscription ID. */
@@ -704,6 +725,19 @@ public final class ClassicSubscription extends Subscription {
         return endDate;
     }
 
+    /** This list will contain up to 5 regions where the subscription has a physical presence */
+    @com.fasterxml.jackson.annotation.JsonProperty("regionAssignments")
+    private final java.util.List<String> regionAssignments;
+
+    /**
+     * This list will contain up to 5 regions where the subscription has a physical presence
+     *
+     * @return the value
+     */
+    public java.util.List<String> getRegionAssignments() {
+        return regionAssignments;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -736,6 +770,7 @@ public final class ClassicSubscription extends Subscription {
         sb.append(", purchaseEntitlementId=").append(String.valueOf(this.purchaseEntitlementId));
         sb.append(", startDate=").append(String.valueOf(this.startDate));
         sb.append(", endDate=").append(String.valueOf(this.endDate));
+        sb.append(", regionAssignments=").append(String.valueOf(this.regionAssignments));
         sb.append(")");
         return sb.toString();
     }
@@ -767,6 +802,7 @@ public final class ClassicSubscription extends Subscription {
                 && java.util.Objects.equals(this.purchaseEntitlementId, other.purchaseEntitlementId)
                 && java.util.Objects.equals(this.startDate, other.startDate)
                 && java.util.Objects.equals(this.endDate, other.endDate)
+                && java.util.Objects.equals(this.regionAssignments, other.regionAssignments)
                 && super.equals(other);
     }
 
@@ -820,6 +856,9 @@ public final class ClassicSubscription extends Subscription {
                                 : this.purchaseEntitlementId.hashCode());
         result = (result * PRIME) + (this.startDate == null ? 43 : this.startDate.hashCode());
         result = (result * PRIME) + (this.endDate == null ? 43 : this.endDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.regionAssignments == null ? 43 : this.regionAssignments.hashCode());
         return result;
     }
 }

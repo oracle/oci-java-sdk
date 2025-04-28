@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
@@ -117,6 +117,15 @@ public final class GiFsuCollectionSummary extends FsuCollectionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lastCompletedFsuCycleId")
+        private String lastCompletedFsuCycleId;
+
+        public Builder lastCompletedFsuCycleId(String lastCompletedFsuCycleId) {
+            this.lastCompletedFsuCycleId = lastCompletedFsuCycleId;
+            this.__explicitlySet__.add("lastCompletedFsuCycleId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -182,6 +191,7 @@ public final class GiFsuCollectionSummary extends FsuCollectionSummary {
                             this.timeUpdated,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.lastCompletedFsuCycleId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -224,6 +234,9 @@ public final class GiFsuCollectionSummary extends FsuCollectionSummary {
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
+            if (model.wasPropertyExplicitlySet("lastCompletedFsuCycleId")) {
+                this.lastCompletedFsuCycleId(model.getLastCompletedFsuCycleId());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -261,6 +274,7 @@ public final class GiFsuCollectionSummary extends FsuCollectionSummary {
             java.util.Date timeUpdated,
             CollectionLifecycleStates lifecycleState,
             String lifecycleDetails,
+            String lastCompletedFsuCycleId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -276,6 +290,7 @@ public final class GiFsuCollectionSummary extends FsuCollectionSummary {
                 timeUpdated,
                 lifecycleState,
                 lifecycleDetails,
+                lastCompletedFsuCycleId,
                 freeformTags,
                 definedTags,
                 systemTags);

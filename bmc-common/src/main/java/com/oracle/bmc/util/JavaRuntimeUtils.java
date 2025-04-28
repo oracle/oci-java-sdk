@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.util;
@@ -34,6 +34,8 @@ public class JavaRuntimeUtils {
         Java_11,
         /** Java 17 */
         Java_17,
+        /** Java 21 */
+        Java_21,
         /** Unknown version, may not be supported. */
         Unknown;
     }
@@ -84,6 +86,8 @@ public class JavaRuntimeUtils {
                     version = JreVersion.Java_11;
                 } else if (majorVersion == 17) {
                     version = JreVersion.Java_17;
+                } else if (majorVersion == 21) {
+                    version = JreVersion.Java_21;
                 }
             }
         }

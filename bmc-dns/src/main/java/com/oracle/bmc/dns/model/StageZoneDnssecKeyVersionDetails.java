@@ -1,0 +1,143 @@
+/**
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.dns.model;
+
+/**
+ * Details for staging a {@code DnssecKeyVersion} on a zone. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
+ * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
+ * fields into account. The constructor, on the other hand, does not take the explicitly set fields
+ * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
+ * null}).
+ */
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+        builder = StageZoneDnssecKeyVersionDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+public final class StageZoneDnssecKeyVersionDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    @Deprecated
+    @java.beans.ConstructorProperties({"predecessorDnssecKeyVersionUuid"})
+    public StageZoneDnssecKeyVersionDetails(String predecessorDnssecKeyVersionUuid) {
+        super();
+        this.predecessorDnssecKeyVersionUuid = predecessorDnssecKeyVersionUuid;
+    }
+
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+        /**
+         * The UUID of the {@code DnssecKeyVersion} for which a new successor should be generated.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("predecessorDnssecKeyVersionUuid")
+        private String predecessorDnssecKeyVersionUuid;
+
+        /**
+         * The UUID of the {@code DnssecKeyVersion} for which a new successor should be generated.
+         *
+         * @param predecessorDnssecKeyVersionUuid the value to set
+         * @return this builder
+         */
+        public Builder predecessorDnssecKeyVersionUuid(String predecessorDnssecKeyVersionUuid) {
+            this.predecessorDnssecKeyVersionUuid = predecessorDnssecKeyVersionUuid;
+            this.__explicitlySet__.add("predecessorDnssecKeyVersionUuid");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public StageZoneDnssecKeyVersionDetails build() {
+            StageZoneDnssecKeyVersionDetails model =
+                    new StageZoneDnssecKeyVersionDetails(this.predecessorDnssecKeyVersionUuid);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(StageZoneDnssecKeyVersionDetails model) {
+            if (model.wasPropertyExplicitlySet("predecessorDnssecKeyVersionUuid")) {
+                this.predecessorDnssecKeyVersionUuid(model.getPredecessorDnssecKeyVersionUuid());
+            }
+            return this;
+        }
+    }
+
+    /** Create a new builder. */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    /** The UUID of the {@code DnssecKeyVersion} for which a new successor should be generated. */
+    @com.fasterxml.jackson.annotation.JsonProperty("predecessorDnssecKeyVersionUuid")
+    private final String predecessorDnssecKeyVersionUuid;
+
+    /**
+     * The UUID of the {@code DnssecKeyVersion} for which a new successor should be generated.
+     *
+     * @return the value
+     */
+    public String getPredecessorDnssecKeyVersionUuid() {
+        return predecessorDnssecKeyVersionUuid;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     *
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("StageZoneDnssecKeyVersionDetails(");
+        sb.append("super=").append(super.toString());
+        sb.append("predecessorDnssecKeyVersionUuid=")
+                .append(String.valueOf(this.predecessorDnssecKeyVersionUuid));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof StageZoneDnssecKeyVersionDetails)) {
+            return false;
+        }
+
+        StageZoneDnssecKeyVersionDetails other = (StageZoneDnssecKeyVersionDetails) o;
+        return java.util.Objects.equals(
+                        this.predecessorDnssecKeyVersionUuid, other.predecessorDnssecKeyVersionUuid)
+                && super.equals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.predecessorDnssecKeyVersionUuid == null
+                                ? 43
+                                : this.predecessorDnssecKeyVersionUuid.hashCode());
+        result = (result * PRIME) + super.hashCode();
+        return result;
+    }
+}

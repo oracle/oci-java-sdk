@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.analytics;
@@ -711,6 +711,43 @@ public class AnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ScaleAnalyticsInstanceResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetFeatureBundleResponse> setFeatureBundle(
+            SetFeatureBundleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SetFeatureBundleRequest, SetFeatureBundleResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getAnalyticsInstanceId(), "analyticsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getSetFeatureBundleDetails(), "setFeatureBundleDetails is required");
+
+        return clientCall(request, SetFeatureBundleResponse::builder)
+                .logger(LOG, "setFeatureBundle")
+                .serviceDetails(
+                        "Analytics",
+                        "SetFeatureBundle",
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/SetFeatureBundle")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SetFeatureBundleRequest::builder)
+                .basePath("/20190331")
+                .appendPathParam("analyticsInstances")
+                .appendPathParam(request.getAnalyticsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("setFeatureBundle")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", SetFeatureBundleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", SetFeatureBundleResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

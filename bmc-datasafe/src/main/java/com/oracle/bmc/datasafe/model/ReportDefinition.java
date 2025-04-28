@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -47,6 +47,7 @@ public final class ReportDefinition
         "scheduledReportCompartmentId",
         "recordTimeSpan",
         "complianceStandards",
+        "lifecycleDetails",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -76,6 +77,7 @@ public final class ReportDefinition
             String scheduledReportCompartmentId,
             String recordTimeSpan,
             java.util.List<String> complianceStandards,
+            String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -104,6 +106,7 @@ public final class ReportDefinition
         this.scheduledReportCompartmentId = scheduledReportCompartmentId;
         this.recordTimeSpan = recordTimeSpan;
         this.complianceStandards = complianceStandards;
+        this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -243,12 +246,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("displayOrder");
             return this;
         }
-        /** Specifies the data and time the report definition was created. */
+        /** Specifies the date and time the report definition was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Specifies the data and time the report definition was created.
+         * Specifies the date and time the report definition was created.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -258,12 +261,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time the report definition was update. */
+        /** The date and time the report definition was updated. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the report definition was update.
+         * The date and time the report definition was updated.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -447,12 +450,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("schedule");
             return this;
         }
-        /** Specifies the format of the report ( either XLS or PDF ) */
+        /** Specifies the format of the report ( either .xls or .pdf or .json) */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
         private ScheduledReportMimeType scheduledReportMimeType;
 
         /**
-         * Specifies the format of the report ( either XLS or PDF )
+         * Specifies the format of the report ( either .xls or .pdf or .json)
          *
          * @param scheduledReportMimeType the value to set
          * @return this builder
@@ -492,12 +495,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("scheduledReportName");
             return this;
         }
-        /** The OCID of the compartment in which the scheduled resource should be created. */
+        /** The OCID of the compartment in which the scheduled resource will be created. */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportCompartmentId")
         private String scheduledReportCompartmentId;
 
         /**
-         * The OCID of the compartment in which the scheduled resource should be created.
+         * The OCID of the compartment in which the scheduled resource will be created.
          *
          * @param scheduledReportCompartmentId the value to set
          * @return this builder
@@ -553,10 +556,25 @@ public final class ReportDefinition
             this.__explicitlySet__.add("complianceStandards");
             return this;
         }
+        /** Details about the current state of the report definition in Data Safe. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Details about the current state of the report definition in Data Safe.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -566,7 +584,7 @@ public final class ReportDefinition
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -581,9 +599,8 @@ public final class ReportDefinition
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -591,9 +608,8 @@ public final class ReportDefinition
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -656,6 +672,7 @@ public final class ReportDefinition
                             this.scheduledReportCompartmentId,
                             this.recordTimeSpan,
                             this.complianceStandards,
+                            this.lifecycleDetails,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -739,6 +756,9 @@ public final class ReportDefinition
             if (model.wasPropertyExplicitlySet("complianceStandards")) {
                 this.complianceStandards(model.getComplianceStandards());
             }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -809,6 +829,7 @@ public final class ReportDefinition
         CustomReports("CUSTOM_REPORTS"),
         Summary("SUMMARY"),
         ActivityAuditing("ACTIVITY_AUDITING"),
+        SecurityAssessment("SECURITY_ASSESSMENT"),
         FirewallViolations("FIREWALL_VIOLATIONS"),
         AllowedSql("ALLOWED_SQL"),
 
@@ -926,12 +947,12 @@ public final class ReportDefinition
         return displayOrder;
     }
 
-    /** Specifies the data and time the report definition was created. */
+    /** Specifies the date and time the report definition was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Specifies the data and time the report definition was created.
+     * Specifies the date and time the report definition was created.
      *
      * @return the value
      */
@@ -939,12 +960,12 @@ public final class ReportDefinition
         return timeCreated;
     }
 
-    /** The date and time the report definition was update. */
+    /** The date and time the report definition was updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the report definition was update.
+     * The date and time the report definition was updated.
      *
      * @return the value
      */
@@ -1108,10 +1129,11 @@ public final class ReportDefinition
         return schedule;
     }
 
-    /** Specifies the format of the report ( either XLS or PDF ) */
+    /** Specifies the format of the report ( either .xls or .pdf or .json) */
     public enum ScheduledReportMimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
+        Json("JSON"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -1154,12 +1176,12 @@ public final class ReportDefinition
             return UnknownEnumValue;
         }
     };
-    /** Specifies the format of the report ( either XLS or PDF ) */
+    /** Specifies the format of the report ( either .xls or .pdf or .json) */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
     private final ScheduledReportMimeType scheduledReportMimeType;
 
     /**
-     * Specifies the format of the report ( either XLS or PDF )
+     * Specifies the format of the report ( either .xls or .pdf or .json)
      *
      * @return the value
      */
@@ -1193,12 +1215,12 @@ public final class ReportDefinition
         return scheduledReportName;
     }
 
-    /** The OCID of the compartment in which the scheduled resource should be created. */
+    /** The OCID of the compartment in which the scheduled resource will be created. */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportCompartmentId")
     private final String scheduledReportCompartmentId;
 
     /**
-     * The OCID of the compartment in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource will be created.
      *
      * @return the value
      */
@@ -1248,10 +1270,23 @@ public final class ReportDefinition
         return complianceStandards;
     }
 
+    /** Details about the current state of the report definition in Data Safe. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Details about the current state of the report definition in Data Safe.
+     *
+     * @return the value
+     */
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1261,7 +1296,7 @@ public final class ReportDefinition
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1274,9 +1309,8 @@ public final class ReportDefinition
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -1284,9 +1318,8 @@ public final class ReportDefinition
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */
@@ -1355,6 +1388,7 @@ public final class ReportDefinition
                 .append(String.valueOf(this.scheduledReportCompartmentId));
         sb.append(", recordTimeSpan=").append(String.valueOf(this.recordTimeSpan));
         sb.append(", complianceStandards=").append(String.valueOf(this.complianceStandards));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1399,6 +1433,7 @@ public final class ReportDefinition
                         this.scheduledReportCompartmentId, other.scheduledReportCompartmentId)
                 && java.util.Objects.equals(this.recordTimeSpan, other.recordTimeSpan)
                 && java.util.Objects.equals(this.complianceStandards, other.complianceStandards)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1463,6 +1498,9 @@ public final class ReportDefinition
                         + (this.complianceStandards == null
                                 ? 43
                                 : this.complianceStandards.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

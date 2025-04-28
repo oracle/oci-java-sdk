@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.loganalytics.requests;
 import com.oracle.bmc.loganalytics.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListScheduledTasksExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListScheduledTasksExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListScheduledTasksRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
@@ -182,6 +182,13 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
     /** A filter to return only resources whose display name contains the substring. */
     public String getDisplayNameContains() {
         return displayNameContains;
+    }
+    /** The target service to use for filtering. */
+    private String targetService;
+
+    /** The target service to use for filtering. */
+    public String getTargetService() {
+        return targetService;
     }
 
     public static class Builder
@@ -358,6 +365,20 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /** The target service to use for filtering. */
+        private String targetService = null;
+
+        /**
+         * The target service to use for filtering.
+         *
+         * @param targetService the value to set
+         * @return this builder instance
+         */
+        public Builder targetService(String targetService) {
+            this.targetService = targetService;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -399,6 +420,7 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             sortBy(o.getSortBy());
             savedSearchId(o.getSavedSearchId());
             displayNameContains(o.getDisplayNameContains());
+            targetService(o.getTargetService());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -444,9 +466,11 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
             request.sortBy = sortBy;
             request.savedSearchId = savedSearchId;
             request.displayNameContains = displayNameContains;
+            request.targetService = targetService;
             return request;
             // new ListScheduledTasksRequest(namespaceName, taskType, compartmentId, opcRequestId,
-            // limit, page, displayName, sortOrder, sortBy, savedSearchId, displayNameContains);
+            // limit, page, displayName, sortOrder, sortBy, savedSearchId, displayNameContains,
+            // targetService);
         }
     }
 
@@ -467,7 +491,8 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .savedSearchId(savedSearchId)
-                .displayNameContains(displayNameContains);
+                .displayNameContains(displayNameContains)
+                .targetService(targetService);
     }
 
     /**
@@ -495,6 +520,7 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",savedSearchId=").append(String.valueOf(this.savedSearchId));
         sb.append(",displayNameContains=").append(String.valueOf(this.displayNameContains));
+        sb.append(",targetService=").append(String.valueOf(this.targetService));
         sb.append(")");
         return sb.toString();
     }
@@ -520,7 +546,8 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.savedSearchId, other.savedSearchId)
-                && java.util.Objects.equals(this.displayNameContains, other.displayNameContains);
+                && java.util.Objects.equals(this.displayNameContains, other.displayNameContains)
+                && java.util.Objects.equals(this.targetService, other.targetService);
     }
 
     @Override
@@ -548,6 +575,9 @@ public class ListScheduledTasksRequest extends com.oracle.bmc.requests.BmcReques
                         + (this.displayNameContains == null
                                 ? 43
                                 : this.displayNameContains.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetService == null ? 43 : this.targetService.hashCode());
         return result;
     }
 }

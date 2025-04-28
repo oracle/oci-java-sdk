@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.requests;
@@ -7,34 +7,34 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListHostInsightsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListHostInsightsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListHostInsightsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * Optional list of host insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> id;
 
     /**
      * Optional list of host insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getId() {
         return id;
@@ -55,13 +55,13 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
     /**
      * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST,
-     * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+     * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
      */
     private java.util.List<String> hostType;
 
     /**
      * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST,
-     * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+     * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
      */
     public java.util.List<String> getHostType() {
         return hostType;
@@ -70,7 +70,7 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
      * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
      * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
      * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
      */
     private java.util.List<PlatformType> platformType;
 
@@ -78,7 +78,7 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
      * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
      * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
      * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
      */
     public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Linux("LINUX"),
@@ -87,6 +87,7 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
         Zlinux("ZLINUX"),
         Windows("WINDOWS"),
         Aix("AIX"),
+        HpUx("HP_UX"),
         ;
 
         private final String value;
@@ -121,7 +122,7 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
      * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
      * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
      * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
      */
     public java.util.List<PlatformType> getPlatformType() {
         return platformType;
@@ -129,7 +130,7 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
      * {@code 50}
      */
     private Integer limit;
@@ -137,7 +138,7 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
      * {@code 50}
      */
     public Integer getLimit() {
@@ -146,14 +147,14 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -223,14 +224,14 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
         return enterpriseManagerBridgeId;
     }
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * exadata insight resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata
+     * insight resource.
      */
     private String exadataInsightId;
 
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * exadata insight resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata
+     * insight resource.
      */
     public String getExadataInsightId() {
         return exadataInsightId;
@@ -263,14 +264,14 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -282,13 +283,13 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Optional list of host insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> id = null;
 
         /**
          * Optional list of host insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder instance
@@ -300,7 +301,7 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Singular setter. Optional list of host insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -360,13 +361,13 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST,
-         * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+         * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
          */
         private java.util.List<String> hostType = null;
 
         /**
          * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST,
-         * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+         * COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
          *
          * @param hostType the value to set
          * @return this builder instance
@@ -378,7 +379,8 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Singular setter. Filter by one or more host types. Possible values are CLOUD-HOST,
-         * EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+         * EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST,
+         * COMANAGED-EXACC-HOST
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -391,7 +393,7 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
          * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
          * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
          * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          */
         private java.util.List<PlatformType> platformType = null;
 
@@ -399,7 +401,7 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
          * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
          * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
          * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          *
          * @param platformType the value to set
          * @return this builder instance
@@ -413,7 +415,7 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
          * Singular setter. Filter by one or more platform types. Supported platformType(s) for
          * MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s)
          * for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed
-         * external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+         * external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -425,7 +427,7 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          */
         private Integer limit = null;
@@ -433,7 +435,7 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -447,14 +449,14 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -511,14 +513,14 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * exadata insight resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata
+         * insight resource.
          */
         private String exadataInsightId = null;
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * exadata insight resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata
+         * insight resource.
          *
          * @param exadataInsightId the value to set
          * @return this builder instance

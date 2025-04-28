@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.cloudguard.requests;
 import com.oracle.bmc.cloudguard.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTrendResourceRiskScoresExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTrendResourceRiskScoresExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * RequestSummarizedTrendResourceRiskScoresRequest.
  */
@@ -16,19 +16,19 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.RequestSummarizedTrendResourceRiskScoresDetails> {
 
-    /** The filter to fetch risk score trend. */
+    /** The filter to fetch risk score trend */
     private com.oracle.bmc.cloudguard.model.RequestSummarizedTrendResourceRiskScoresDetails
             requestSummarizedTrendResourceRiskScoresDetails;
 
-    /** The filter to fetch risk score trend. */
+    /** The filter to fetch risk score trend */
     public com.oracle.bmc.cloudguard.model.RequestSummarizedTrendResourceRiskScoresDetails
             getRequestSummarizedTrendResourceRiskScoresDetails() {
         return requestSummarizedTrendResourceRiskScoresDetails;
     }
-    /** The ID of the compartment in which to list resources. */
+    /** The OCID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /** The OCID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -60,14 +60,14 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
     }
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned depending on the the setting of
+     * compartments and subcompartments in the tenancy are returned depending on the setting of
      * {@code accessLevel}.
      */
     private Boolean compartmentIdInSubtree;
 
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned depending on the the setting of
+     * compartments and subcompartments in the tenancy are returned depending on the setting of
      * {@code accessLevel}.
      */
     public Boolean getCompartmentIdInSubtree() {
@@ -132,10 +132,10 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     public Integer getLimit() {
         return limit;
     }
@@ -180,12 +180,12 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The filter to fetch risk score trend. */
+        /** The filter to fetch risk score trend */
         private com.oracle.bmc.cloudguard.model.RequestSummarizedTrendResourceRiskScoresDetails
                 requestSummarizedTrendResourceRiskScoresDetails = null;
 
         /**
-         * The filter to fetch risk score trend.
+         * The filter to fetch risk score trend
          *
          * @param requestSummarizedTrendResourceRiskScoresDetails the value to set
          * @return this builder instance
@@ -198,11 +198,11 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
             return this;
         }
 
-        /** The ID of the compartment in which to list resources. */
+        /** The OCID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The OCID of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -252,15 +252,15 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
 
         /**
          * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned depending on the the setting
-         * of {@code accessLevel}.
+         * compartments and subcompartments in the tenancy are returned depending on the setting of
+         * {@code accessLevel}.
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned depending on the the setting
-         * of {@code accessLevel}.
+         * compartments and subcompartments in the tenancy are returned depending on the setting of
+         * {@code accessLevel}.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -294,11 +294,11 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /** The maximum number of items to return */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return.
+         * The maximum number of items to return
          *
          * @param limit the value to set
          * @return this builder instance

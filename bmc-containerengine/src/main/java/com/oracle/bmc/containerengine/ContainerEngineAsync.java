@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine;
@@ -8,9 +8,10 @@ import com.oracle.bmc.containerengine.requests.*;
 import com.oracle.bmc.containerengine.responses.*;
 
 /**
- * API for the Container Engine for Kubernetes service. Use this API to build, deploy, and manage
- * cloud-native applications. For more information, see [Overview of Container Engine for
- * Kubernetes](https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm).
+ * API for the Kubernetes Engine service (also known as the Container Engine for Kubernetes
+ * service). Use this API to build, deploy, and manage cloud-native applications. For more
+ * information, see [Overview of Kubernetes
+ * Engine](https://docs.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public interface ContainerEngineAsync extends AutoCloseable {
@@ -630,6 +631,39 @@ public interface ContainerEngineAsync extends AutoCloseable {
             ListWorkloadMappingsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListWorkloadMappingsRequest, ListWorkloadMappingsResponse>
+                    handler);
+
+    /**
+     * perform reboot action to node in cluster
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RebootClusterNodeResponse> rebootClusterNode(
+            RebootClusterNodeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RebootClusterNodeRequest, RebootClusterNodeResponse>
+                    handler);
+
+    /**
+     * perform cycle action to node in cluster
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ReplaceBootVolumeClusterNodeResponse> replaceBootVolumeClusterNode(
+            ReplaceBootVolumeClusterNodeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ReplaceBootVolumeClusterNodeRequest,
+                            ReplaceBootVolumeClusterNodeResponse>
                     handler);
 
     /**

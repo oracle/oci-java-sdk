@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -25,6 +25,8 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
         "version",
         "sqlIdentifier",
         "planHash",
+        "forceMatchingSignature",
+        "timeGenerated",
         "timeCollected",
         "operation",
         "remark",
@@ -64,6 +66,8 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
             Float version,
             String sqlIdentifier,
             Long planHash,
+            String forceMatchingSignature,
+            java.util.Date timeGenerated,
             java.util.Date timeCollected,
             String operation,
             String remark,
@@ -102,6 +106,8 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
         this.version = version;
         this.sqlIdentifier = sqlIdentifier;
         this.planHash = planHash;
+        this.forceMatchingSignature = forceMatchingSignature;
+        this.timeGenerated = timeGenerated;
         this.timeCollected = timeCollected;
         this.operation = operation;
         this.remark = remark;
@@ -183,6 +189,36 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
         public Builder planHash(Long planHash) {
             this.planHash = planHash;
             this.__explicitlySet__.add("planHash");
+            return this;
+        }
+        /** Force matching signature Example: {@code "18067345456756876713"} */
+        @com.fasterxml.jackson.annotation.JsonProperty("forceMatchingSignature")
+        private String forceMatchingSignature;
+
+        /**
+         * Force matching signature Example: {@code "18067345456756876713"}
+         *
+         * @param forceMatchingSignature the value to set
+         * @return this builder
+         */
+        public Builder forceMatchingSignature(String forceMatchingSignature) {
+            this.forceMatchingSignature = forceMatchingSignature;
+            this.__explicitlySet__.add("forceMatchingSignature");
+            return this;
+        }
+        /** Generation time stamp Example: {@code "2020-05-05T02:10:00.000Z"} */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
+        private java.util.Date timeGenerated;
+
+        /**
+         * Generation time stamp Example: {@code "2020-05-05T02:10:00.000Z"}
+         *
+         * @param timeGenerated the value to set
+         * @return this builder
+         */
+        public Builder timeGenerated(java.util.Date timeGenerated) {
+            this.timeGenerated = timeGenerated;
+            this.__explicitlySet__.add("timeGenerated");
             return this;
         }
         /** Collection time stamp Example: {@code "2020-05-06T00:00:00.000Z"} */
@@ -733,6 +769,8 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
                             this.version,
                             this.sqlIdentifier,
                             this.planHash,
+                            this.forceMatchingSignature,
+                            this.timeGenerated,
                             this.timeCollected,
                             this.operation,
                             this.remark,
@@ -783,6 +821,12 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("planHash")) {
                 this.planHash(model.getPlanHash());
+            }
+            if (model.wasPropertyExplicitlySet("forceMatchingSignature")) {
+                this.forceMatchingSignature(model.getForceMatchingSignature());
+            }
+            if (model.wasPropertyExplicitlySet("timeGenerated")) {
+                this.timeGenerated(model.getTimeGenerated());
             }
             if (model.wasPropertyExplicitlySet("timeCollected")) {
                 this.timeCollected(model.getTimeCollected());
@@ -936,6 +980,32 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
      */
     public Long getPlanHash() {
         return planHash;
+    }
+
+    /** Force matching signature Example: {@code "18067345456756876713"} */
+    @com.fasterxml.jackson.annotation.JsonProperty("forceMatchingSignature")
+    private final String forceMatchingSignature;
+
+    /**
+     * Force matching signature Example: {@code "18067345456756876713"}
+     *
+     * @return the value
+     */
+    public String getForceMatchingSignature() {
+        return forceMatchingSignature;
+    }
+
+    /** Generation time stamp Example: {@code "2020-05-05T02:10:00.000Z"} */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
+    private final java.util.Date timeGenerated;
+
+    /**
+     * Generation time stamp Example: {@code "2020-05-05T02:10:00.000Z"}
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeGenerated() {
+        return timeGenerated;
     }
 
     /** Collection time stamp Example: {@code "2020-05-06T00:00:00.000Z"} */
@@ -1422,6 +1492,8 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
         sb.append("version=").append(String.valueOf(this.version));
         sb.append(", sqlIdentifier=").append(String.valueOf(this.sqlIdentifier));
         sb.append(", planHash=").append(String.valueOf(this.planHash));
+        sb.append(", forceMatchingSignature=").append(String.valueOf(this.forceMatchingSignature));
+        sb.append(", timeGenerated=").append(String.valueOf(this.timeGenerated));
         sb.append(", timeCollected=").append(String.valueOf(this.timeCollected));
         sb.append(", operation=").append(String.valueOf(this.operation));
         sb.append(", remark=").append(String.valueOf(this.remark));
@@ -1473,6 +1545,9 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
         return java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.sqlIdentifier, other.sqlIdentifier)
                 && java.util.Objects.equals(this.planHash, other.planHash)
+                && java.util.Objects.equals(
+                        this.forceMatchingSignature, other.forceMatchingSignature)
+                && java.util.Objects.equals(this.timeGenerated, other.timeGenerated)
                 && java.util.Objects.equals(this.timeCollected, other.timeCollected)
                 && java.util.Objects.equals(this.operation, other.operation)
                 && java.util.Objects.equals(this.remark, other.remark)
@@ -1519,6 +1594,14 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
                 (result * PRIME)
                         + (this.sqlIdentifier == null ? 43 : this.sqlIdentifier.hashCode());
         result = (result * PRIME) + (this.planHash == null ? 43 : this.planHash.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.forceMatchingSignature == null
+                                ? 43
+                                : this.forceMatchingSignature.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeGenerated == null ? 43 : this.timeGenerated.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeCollected == null ? 43 : this.timeCollected.hashCode());

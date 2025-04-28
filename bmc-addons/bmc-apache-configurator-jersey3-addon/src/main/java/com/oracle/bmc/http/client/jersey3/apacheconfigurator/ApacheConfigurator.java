@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.client.jersey3.apacheconfigurator;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
+import com.oracle.bmc.http.client.jersey3.Jersey3ClientProperties;
 import jakarta.annotation.Nonnull;
 import javax.net.ssl.SSLContext;
 
@@ -240,6 +242,24 @@ public class ApacheConfigurator implements ClientConfigurator {
         builder.property(
                 ApacheClientProperties.CONNECTION_MANAGER_SHARED,
                 apacheConnectorProperties.isConnectionManagerShared());
+
+        if (!apacheConnectorProperties.isIdleConnectionMonitorThreadEnabled()) {
+            builder.property(
+                    Jersey3ClientProperties.APACHE_IDLE_CONNECTION_MONITOR_THREAD_ENABLED, false);
+        }
+
+        if (apacheConnectorProperties.getIdleConnectionMonitorThreadWaitTimeInSeconds() > 0) {
+            builder.property(
+                    Jersey3ClientProperties.APACHE_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_SECONDS,
+                    apacheConnectorProperties.getIdleConnectionMonitorThreadWaitTimeInSeconds());
+        }
+
+        if (apacheConnectorProperties.getIdleConnectionMonitorThreadIdleTimeoutInSeconds() > 0) {
+            builder.property(
+                    Jersey3ClientProperties
+                            .APACHE_IDLE_CONNECTION_MONITOR_THREAD_IDLE_TIMEOUT_SECONDS,
+                    apacheConnectorProperties.getIdleConnectionMonitorThreadIdleTimeoutInSeconds());
+        }
     }
 
     private Registry<ConnectionSocketFactory> getRegistry() {

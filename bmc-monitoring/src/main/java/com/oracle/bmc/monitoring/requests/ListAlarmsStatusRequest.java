@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.requests;
@@ -7,25 +7,25 @@ package com.oracle.bmc.monitoring.requests;
 import com.oracle.bmc.monitoring.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListAlarmsStatusExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListAlarmsStatusExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAlarmsStatusRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the resources monitored by the metric that you are searching for.
-     * Use tenancyId to search in the root compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the resources monitored by the metric that you are searching for. Use
+     * tenancyId to search in the root compartment.
      *
      * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the resources monitored by the metric that you are searching for.
-     * Use tenancyId to search in the root compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the resources monitored by the metric that you are searching for. Use
+     * tenancyId to search in the root compartment.
      *
      * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      */
@@ -67,14 +67,14 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -82,7 +82,7 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Default: 1000
      *
@@ -93,7 +93,7 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Default: 1000
      *
@@ -227,16 +227,18 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         return sortOrder;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * resource that is monitored by the metric that you are searching for.
+     * A filter to return only the resource with the specified
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The resource
+     * must be monitored by the metric that you are searching for.
      *
      * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
      */
     private String resourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * resource that is monitored by the metric that you are searching for.
+     * A filter to return only the resource with the specified
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The resource
+     * must be monitored by the metric that you are searching for.
      *
      * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
      */
@@ -261,16 +263,18 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         return serviceName;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the entity monitored by the metric that you are searching for.
+     * A filter to return only resources that match the given entity
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) exactly. The
+     * resource (entity) must be monitored by the metric that you are searching for.
      *
      * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
      */
     private String entityId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the entity monitored by the metric that you are searching for.
+     * A filter to return only resources that match the given entity
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) exactly. The
+     * resource (entity) must be monitored by the metric that you are searching for.
      *
      * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
      */
@@ -278,18 +282,16 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         return entityId;
     }
     /**
-     * The status of the metric stream to use for alarm filtering. For example, set {@code
-     * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
-     * status. Default behaviour is to return alarms irrespective of metric streams' status.
+     * A filter to return only metric streams that match the specified status. For example, the
+     * value "FIRING" returns only firing metric streams.
      *
      * <p>Example: {@code FIRING}
      */
     private Status status;
 
     /**
-     * The status of the metric stream to use for alarm filtering. For example, set {@code
-     * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
-     * status. Default behaviour is to return alarms irrespective of metric streams' status.
+     * A filter to return only metric streams that match the specified status. For example, the
+     * value "FIRING" returns only firing metric streams.
      *
      * <p>Example: {@code FIRING}
      */
@@ -327,9 +329,8 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The status of the metric stream to use for alarm filtering. For example, set {@code
-     * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
-     * status. Default behaviour is to return alarms irrespective of metric streams' status.
+     * A filter to return only metric streams that match the specified status. For example, the
+     * value "FIRING" returns only firing metric streams.
      *
      * <p>Example: {@code FIRING}
      */
@@ -344,18 +345,18 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the resources monitored by the metric that you are
-         * searching for. Use tenancyId to search in the root compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the resources monitored by the metric that you are searching for.
+         * Use tenancyId to search in the root compartment.
          *
          * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the resources monitored by the metric that you are
-         * searching for. Use tenancyId to search in the root compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the resources monitored by the metric that you are searching for.
+         * Use tenancyId to search in the root compartment.
          *
          * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
          *
@@ -412,14 +413,14 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -432,7 +433,7 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Default: 1000
          *
@@ -443,7 +444,7 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Default: 1000
          *
@@ -522,16 +523,18 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a resource that is monitored by the metric that you are searching for.
+         * A filter to return only the resource with the specified
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The
+         * resource must be monitored by the metric that you are searching for.
          *
          * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
          */
         private String resourceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a resource that is monitored by the metric that you are searching for.
+         * A filter to return only the resource with the specified
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The
+         * resource must be monitored by the metric that you are searching for.
          *
          * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
          *
@@ -568,16 +571,18 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the entity monitored by the metric that you are searching for.
+         * A filter to return only resources that match the given entity
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) exactly.
+         * The resource (entity) must be monitored by the metric that you are searching for.
          *
          * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
          */
         private String entityId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the entity monitored by the metric that you are searching for.
+         * A filter to return only resources that match the given entity
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) exactly.
+         * The resource (entity) must be monitored by the metric that you are searching for.
          *
          * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
          *
@@ -590,18 +595,16 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The status of the metric stream to use for alarm filtering. For example, set {@code
-         * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
-         * status. Default behaviour is to return alarms irrespective of metric streams' status.
+         * A filter to return only metric streams that match the specified status. For example, the
+         * value "FIRING" returns only firing metric streams.
          *
          * <p>Example: {@code FIRING}
          */
         private Status status = null;
 
         /**
-         * The status of the metric stream to use for alarm filtering. For example, set {@code
-         * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
-         * status. Default behaviour is to return alarms irrespective of metric streams' status.
+         * A filter to return only metric streams that match the specified status. For example, the
+         * value "FIRING" returns only firing metric streams.
          *
          * <p>Example: {@code FIRING}
          *

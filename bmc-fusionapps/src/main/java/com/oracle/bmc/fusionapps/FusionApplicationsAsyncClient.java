@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fusionapps;
@@ -579,6 +579,39 @@ public class FusionApplicationsAsyncClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateExtractDetailsResponse> generateExtractDetails(
+            GenerateExtractDetailsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GenerateExtractDetailsRequest, GenerateExtractDetailsResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        return clientCall(request, GenerateExtractDetailsResponse::builder)
+                .logger(LOG, "generateExtractDetails")
+                .serviceDetails(
+                        "FusionApplications",
+                        "GenerateExtractDetails",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/FusionEnvironment/GenerateExtractDetails")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateExtractDetailsRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("actions")
+                .appendPathParam("generateExtractDetails")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.ExtractDetailsCollection.class,
+                        GenerateExtractDetailsResponse.Builder::extractDetailsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", GenerateExtractDetailsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDataMaskingActivityResponse> getDataMaskingActivity(
             GetDataMaskingActivityRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -934,6 +967,38 @@ public class FusionApplicationsAsyncClient extends com.oracle.bmc.http.internal.
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InitiateExtractResponse> initiateExtract(
+            InitiateExtractRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            InitiateExtractRequest, InitiateExtractResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        return clientCall(request, InitiateExtractResponse::builder)
+                .logger(LOG, "initiateExtract")
+                .serviceDetails(
+                        "FusionApplications",
+                        "InitiateExtract",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/FusionEnvironment/InitiateExtract")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InitiateExtractRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("actions")
+                .appendPathParam("initiateExtract")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", InitiateExtractResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", InitiateExtractResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -28,6 +28,7 @@ public final class ImportRequest extends com.oracle.bmc.http.client.internal.Exp
         "objectStorageTenancyId",
         "objectStorageRegion",
         "objectKeyForImport",
+        "areDataAssetReferencesIncluded",
         "importConflictResolution",
         "status",
         "createdBy",
@@ -45,6 +46,7 @@ public final class ImportRequest extends com.oracle.bmc.http.client.internal.Exp
             String objectStorageTenancyId,
             String objectStorageRegion,
             String objectKeyForImport,
+            Boolean areDataAssetReferencesIncluded,
             ImportConflictResolution importConflictResolution,
             Status status,
             String createdBy,
@@ -61,6 +63,7 @@ public final class ImportRequest extends com.oracle.bmc.http.client.internal.Exp
         this.objectStorageTenancyId = objectStorageTenancyId;
         this.objectStorageRegion = objectStorageRegion;
         this.objectKeyForImport = objectKeyForImport;
+        this.areDataAssetReferencesIncluded = areDataAssetReferencesIncluded;
         this.importConflictResolution = importConflictResolution;
         this.status = status;
         this.createdBy = createdBy;
@@ -166,6 +169,21 @@ public final class ImportRequest extends com.oracle.bmc.http.client.internal.Exp
         public Builder objectKeyForImport(String objectKeyForImport) {
             this.objectKeyForImport = objectKeyForImport;
             this.__explicitlySet__.add("objectKeyForImport");
+            return this;
+        }
+        /** This field controls if the data asset references will be included during import. */
+        @com.fasterxml.jackson.annotation.JsonProperty("areDataAssetReferencesIncluded")
+        private Boolean areDataAssetReferencesIncluded;
+
+        /**
+         * This field controls if the data asset references will be included during import.
+         *
+         * @param areDataAssetReferencesIncluded the value to set
+         * @return this builder
+         */
+        public Builder areDataAssetReferencesIncluded(Boolean areDataAssetReferencesIncluded) {
+            this.areDataAssetReferencesIncluded = areDataAssetReferencesIncluded;
+            this.__explicitlySet__.add("areDataAssetReferencesIncluded");
             return this;
         }
 
@@ -311,6 +329,7 @@ public final class ImportRequest extends com.oracle.bmc.http.client.internal.Exp
                             this.objectStorageTenancyId,
                             this.objectStorageRegion,
                             this.objectKeyForImport,
+                            this.areDataAssetReferencesIncluded,
                             this.importConflictResolution,
                             this.status,
                             this.createdBy,
@@ -345,6 +364,9 @@ public final class ImportRequest extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("objectKeyForImport")) {
                 this.objectKeyForImport(model.getObjectKeyForImport());
+            }
+            if (model.wasPropertyExplicitlySet("areDataAssetReferencesIncluded")) {
+                this.areDataAssetReferencesIncluded(model.getAreDataAssetReferencesIncluded());
             }
             if (model.wasPropertyExplicitlySet("importConflictResolution")) {
                 this.importConflictResolution(model.getImportConflictResolution());
@@ -466,6 +488,19 @@ public final class ImportRequest extends com.oracle.bmc.http.client.internal.Exp
      */
     public String getObjectKeyForImport() {
         return objectKeyForImport;
+    }
+
+    /** This field controls if the data asset references will be included during import. */
+    @com.fasterxml.jackson.annotation.JsonProperty("areDataAssetReferencesIncluded")
+    private final Boolean areDataAssetReferencesIncluded;
+
+    /**
+     * This field controls if the data asset references will be included during import.
+     *
+     * @return the value
+     */
+    public Boolean getAreDataAssetReferencesIncluded() {
+        return areDataAssetReferencesIncluded;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("importConflictResolution")
@@ -649,6 +684,8 @@ public final class ImportRequest extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", objectStorageTenancyId=").append(String.valueOf(this.objectStorageTenancyId));
         sb.append(", objectStorageRegion=").append(String.valueOf(this.objectStorageRegion));
         sb.append(", objectKeyForImport=").append(String.valueOf(this.objectKeyForImport));
+        sb.append(", areDataAssetReferencesIncluded=")
+                .append(String.valueOf(this.areDataAssetReferencesIncluded));
         sb.append(", importConflictResolution=")
                 .append(String.valueOf(this.importConflictResolution));
         sb.append(", status=").append(String.valueOf(this.status));
@@ -681,6 +718,8 @@ public final class ImportRequest extends com.oracle.bmc.http.client.internal.Exp
                         this.objectStorageTenancyId, other.objectStorageTenancyId)
                 && java.util.Objects.equals(this.objectStorageRegion, other.objectStorageRegion)
                 && java.util.Objects.equals(this.objectKeyForImport, other.objectKeyForImport)
+                && java.util.Objects.equals(
+                        this.areDataAssetReferencesIncluded, other.areDataAssetReferencesIncluded)
                 && java.util.Objects.equals(
                         this.importConflictResolution, other.importConflictResolution)
                 && java.util.Objects.equals(this.status, other.status)
@@ -717,6 +756,11 @@ public final class ImportRequest extends com.oracle.bmc.http.client.internal.Exp
                         + (this.objectKeyForImport == null
                                 ? 43
                                 : this.objectKeyForImport.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areDataAssetReferencesIncluded == null
+                                ? 43
+                                : this.areDataAssetReferencesIncluded.hashCode());
         result =
                 (result * PRIME)
                         + (this.importConflictResolution == null

@@ -15,5 +15,5 @@ security_token_file=src/test/resources/token
 fingerprint=fingerprint
 tenancy=tenancy
 user=user
-key_file=key_file
+key_file=src/test/resources/pkcs1_private_key.pem
 security_token_file=src/test/resources/unit_test_token

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.model;
@@ -12,7 +12,7 @@ import com.oracle.bmc.util.internal.StringUtils;
 import java.util.Date;
 import java.util.Map;
 
-public class BmcException extends RuntimeException {
+public class BmcException extends SdkRuntimeException {
     /** Name of the header that contains the request id. */
     public static final String OPC_REQUEST_ID_HEADER = "opc-request-id";
 
@@ -62,6 +62,12 @@ public class BmcException extends RuntimeException {
      * string-to-string map. Optional field in localized error responses.
      */
     private final Map<String, String> messageArguments;
+
+    /**
+     * Map for optional/unknown attributes outside of DEX error codes
+     * https://confluence.oraclecorp.com/confluence/display/DEX/Error+Codes
+     */
+    private final Map<String, String> additionalProperties;
 
     /** Details about the service of the Exception */
     private final ServiceDetails serviceDetails;
@@ -152,7 +158,33 @@ public class BmcException extends RuntimeException {
                 serviceDetails,
                 originalMessage,
                 originalMessageTemplate,
-                messageArguments);
+                messageArguments,
+                null);
+    }
+
+    public BmcException(
+            int statusCode,
+            String serviceCode,
+            String message,
+            String opcRequestId,
+            ServiceDetails serviceDetails,
+            String originalMessage,
+            String originalMessageTemplate,
+            Map<String, String> messageArguments,
+            Map<String, String> additionalProperties) {
+        this(
+                message,
+                null, // cause
+                statusCode,
+                serviceCode,
+                false, // timeout
+                opcRequestId,
+                false, // is client side
+                serviceDetails,
+                originalMessage,
+                originalMessageTemplate,
+                messageArguments,
+                additionalProperties);
     }
 
     public BmcException(boolean timeout, String message, Throwable cause, String opcRequestId) {
@@ -188,8 +220,35 @@ public class BmcException extends RuntimeException {
                 serviceDetails,
                 null, // originalMessage
                 null, // originalMessageTemplate
-                null // messageArguments
+                null, // messageArguments
+                null // additionalProperties
                 );
+    }
+
+    public BmcException(
+            String message,
+            Throwable cause,
+            int statusCode,
+            String serviceCode,
+            boolean timeout,
+            String opcRequestId,
+            boolean isClientSide,
+            ServiceDetails serviceDetails,
+            String originalMessage,
+            String originalMessageTemplate,
+            Map<String, String> messageArguments,
+            Map<String, String> additionalProperties) {
+        super(message, cause);
+        this.statusCode = statusCode;
+        this.serviceCode = serviceCode;
+        this.opcRequestId = opcRequestId;
+        this.timeout = timeout;
+        this.isClientSide = isClientSide;
+        this.serviceDetails = serviceDetails;
+        this.originalMessage = originalMessage;
+        this.originalMessageTemplate = originalMessageTemplate;
+        this.messageArguments = messageArguments;
+        this.additionalProperties = additionalProperties;
     }
 
     public BmcException(
@@ -214,6 +273,7 @@ public class BmcException extends RuntimeException {
         this.originalMessage = originalMessage;
         this.originalMessageTemplate = originalMessageTemplate;
         this.messageArguments = messageArguments;
+        this.additionalProperties = null;
     }
 
     public static BmcException createClientSide(
@@ -240,6 +300,14 @@ public class BmcException extends RuntimeException {
                                 + this.opcRequestId
                                 + ")"
                         : "";
+        String errorStatus =
+                getAdditionalProperties() != null ? getAdditionalProperties().get("status") : "";
+        String errorDetail =
+                getAdditionalProperties() != null ? getAdditionalProperties().get("detail") : "";
+
+        String errorCode = (serviceCode != null) ? serviceCode : errorStatus;
+        String errorMessage = (super.getMessage() != null) ? super.getMessage() : errorDetail;
+
         if (null != serviceDetails) {
             String targetService = serviceDetails.getServiceName();
             String timestamp = HttpDateUtils.formatAlwaysIncludeMillis(new Date());
@@ -249,7 +317,7 @@ public class BmcException extends RuntimeException {
                             "https://docs.oracle.com/en-us/iaas/Content/API/References/apierrors.htm#apierrors_%s__%s_%s",
                             statusCode,
                             statusCode,
-                            StringUtils.isNotBlank(serviceCode) ? serviceCode.toLowerCase() : "");
+                            StringUtils.isNotBlank(errorCode) ? errorCode.toLowerCase() : "");
 
             return String.format(
                     "Error returned by %s operation in %s service."
@@ -257,6 +325,7 @@ public class BmcException extends RuntimeException {
                             + "\nTimestamp: %s"
                             + "\nClient version: %s"
                             + "\nRequest Endpoint: %s"
+                            + "\nAdditional Properties in error response: %s"
                             + "\nTroubleshooting Tips: See %s for more information about resolving this error"
                             + "\nAlso see %s for details on this operation's requirements."
                             + "\nTo get more info on the failing request, you can enable debug level logs as mentioned in `Using SLF4J for Logging section` in https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconfig.htm."
@@ -264,20 +333,20 @@ public class BmcException extends RuntimeException {
                     serviceDetails.getOperationName(),
                     targetService,
                     statusCode,
-                    serviceCode,
+                    errorCode,
                     timeout,
-                    super.getMessage(),
+                    errorMessage,
                     requestId,
                     timestamp,
                     clientVersion,
                     serviceDetails.getRequestEndpoint(),
+                    additionalProperties,
                     errorTroubleshootingLink,
                     serviceDetails.getApiReferenceLink(),
                     targetService);
         } else {
             return String.format(
-                    "(%s, %s, %s) %s%s",
-                    statusCode, serviceCode, timeout, super.getMessage(), requestId);
+                    "(%s, %s, %s) %s%s", statusCode, errorCode, timeout, errorMessage, requestId);
         }
     }
 
@@ -361,5 +430,10 @@ public class BmcException extends RuntimeException {
      */
     public Map<String, String> getMessageArguments() {
         return this.messageArguments;
+    }
+
+    /** Gets the unknown attributes of the failed Exception. */
+    public Map<String, String> getAdditionalProperties() {
+        return this.additionalProperties;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudbridge;
@@ -148,11 +148,11 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeAssetSourceCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -183,11 +183,11 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeDiscoveryScheduleCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -209,6 +209,7 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.AssetSource.class,
@@ -219,7 +220,6 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateAssetSourceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("Location", CreateAssetSourceResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -243,6 +243,7 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.DiscoverySchedule.class,
@@ -250,7 +251,6 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", CreateDiscoveryScheduleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDiscoveryScheduleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -273,11 +273,11 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAssetSourceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteAssetSourceResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -302,9 +302,9 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDiscoveryScheduleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -326,13 +326,13 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getAssetSourceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.AssetSource.class,
                         GetAssetSourceResponse.Builder::assetSource)
                 .handleResponseHeaderString("etag", GetAssetSourceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAssetSourceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -355,13 +355,13 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getDiscoveryScheduleId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.DiscoverySchedule.class,
                         GetDiscoveryScheduleResponse.Builder::discoverySchedule)
                 .handleResponseHeaderString("etag", GetDiscoveryScheduleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDiscoveryScheduleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -388,6 +388,7 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.AssetSourceConnectionCollection.class,
                         ListAssetSourceConnectionsResponse.Builder::assetSourceConnectionCollection)
@@ -395,7 +396,6 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListAssetSourceConnectionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAssetSourceConnectionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -423,6 +423,7 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.AssetSourceCollection.class,
                         ListAssetSourcesResponse.Builder::assetSourceCollection)
@@ -430,7 +431,6 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListAssetSourcesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAssetSourcesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -459,6 +459,7 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.DiscoveryScheduleCollection.class,
                         ListDiscoverySchedulesResponse.Builder::discoveryScheduleCollection)
@@ -466,7 +467,39 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListDiscoverySchedulesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDiscoverySchedulesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSupportedCloudRegionsResponse listSupportedCloudRegions(
+            ListSupportedCloudRegionsRequest request) {
+
+        return clientCall(request, ListSupportedCloudRegionsResponse::builder)
+                .logger(LOG, "listSupportedCloudRegions")
+                .serviceDetails(
+                        "Discovery",
+                        "ListSupportedCloudRegions",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/SupportedCloudRegionSummary/ListSupportedCloudRegions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSupportedCloudRegionsRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("supportedCloudRegions")
+                .appendEnumQueryParam("assetSourceType", request.getAssetSourceType())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.SupportedCloudRegionCollection.class,
+                        ListSupportedCloudRegionsResponse.Builder::supportedCloudRegionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSupportedCloudRegionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSupportedCloudRegionsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -491,11 +524,11 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", RefreshAssetSourceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", RefreshAssetSourceResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -520,12 +553,12 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAssetSourceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateAssetSourceResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -553,6 +586,7 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.DiscoverySchedule.class,
@@ -560,7 +594,6 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateDiscoveryScheduleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDiscoveryScheduleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

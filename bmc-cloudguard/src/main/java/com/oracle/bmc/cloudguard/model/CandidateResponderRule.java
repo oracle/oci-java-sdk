@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Candidate Responder Rule list in Detector rule <br>
+ * Information for a responder rule that can be used to remediate a problem triggered by specific
+ * detector rule. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,12 +34,12 @@ public final class CandidateResponderRule
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier of the Responder rule */
+        /** The unique identifier of the responder rule */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The unique identifier of the Responder rule
+         * The unique identifier of the responder rule
          *
          * @param id the value to set
          * @return this builder
@@ -48,12 +49,12 @@ public final class CandidateResponderRule
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The display name of the Responder rule */
+        /** The display name of the responder rule */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The display name of the Responder rule
+         * The display name of the responder rule
          *
          * @param displayName the value to set
          * @return this builder
@@ -63,12 +64,12 @@ public final class CandidateResponderRule
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Preferred state */
+        /** Is this the preferred state? */
         @com.fasterxml.jackson.annotation.JsonProperty("isPreferred")
         private Boolean isPreferred;
 
         /**
-         * Preferred state
+         * Is this the preferred state?
          *
          * @param isPreferred the value to set
          * @return this builder
@@ -115,12 +116,12 @@ public final class CandidateResponderRule
         return new Builder().copy(this);
     }
 
-    /** The unique identifier of the Responder rule */
+    /** The unique identifier of the responder rule */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The unique identifier of the Responder rule
+     * The unique identifier of the responder rule
      *
      * @return the value
      */
@@ -128,12 +129,12 @@ public final class CandidateResponderRule
         return id;
     }
 
-    /** The display name of the Responder rule */
+    /** The display name of the responder rule */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The display name of the Responder rule
+     * The display name of the responder rule
      *
      * @return the value
      */
@@ -141,12 +142,12 @@ public final class CandidateResponderRule
         return displayName;
     }
 
-    /** Preferred state */
+    /** Is this the preferred state? */
     @com.fasterxml.jackson.annotation.JsonProperty("isPreferred")
     private final Boolean isPreferred;
 
     /**
-     * Preferred state
+     * Is this the preferred state?
      *
      * @return the value
      */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -27,27 +27,39 @@ public final class UpdateCloudAutonomousVmClusterDetails
         "description",
         "displayName",
         "maintenanceWindowDetails",
+        "autonomousDataStorageSizeInTBs",
+        "cpuCoreCountPerNode",
+        "totalContainerDatabases",
         "licenseModel",
         "nsgIds",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "securityAttributes"
     })
     public UpdateCloudAutonomousVmClusterDetails(
             String description,
             String displayName,
             MaintenanceWindow maintenanceWindowDetails,
+            Double autonomousDataStorageSizeInTBs,
+            Integer cpuCoreCountPerNode,
+            Integer totalContainerDatabases,
             LicenseModel licenseModel,
             java.util.List<String> nsgIds,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.description = description;
         this.displayName = displayName;
         this.maintenanceWindowDetails = maintenanceWindowDetails;
+        this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
+        this.cpuCoreCountPerNode = cpuCoreCountPerNode;
+        this.totalContainerDatabases = totalContainerDatabases;
         this.licenseModel = licenseModel;
         this.nsgIds = nsgIds;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -95,6 +107,53 @@ public final class UpdateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("maintenanceWindowDetails");
             return this;
         }
+        /** The new value of autonomous data storage (in TBs) for the Autonomous VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+        private Double autonomousDataStorageSizeInTBs;
+
+        /**
+         * The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
+         *
+         * @param autonomousDataStorageSizeInTBs the value to set
+         * @return this builder
+         */
+        public Builder autonomousDataStorageSizeInTBs(Double autonomousDataStorageSizeInTBs) {
+            this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
+            this.__explicitlySet__.add("autonomousDataStorageSizeInTBs");
+            return this;
+        }
+        /**
+         * The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+        private Integer cpuCoreCountPerNode;
+
+        /**
+         * The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
+         *
+         * @param cpuCoreCountPerNode the value to set
+         * @return this builder
+         */
+        public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
+            this.cpuCoreCountPerNode = cpuCoreCountPerNode;
+            this.__explicitlySet__.add("cpuCoreCountPerNode");
+            return this;
+        }
+        /** The new value of maximum number of ACDs for the Autonomous VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+        private Integer totalContainerDatabases;
+
+        /**
+         * The new value of maximum number of ACDs for the Autonomous VM cluster.
+         *
+         * @param totalContainerDatabases the value to set
+         * @return this builder
+         */
+        public Builder totalContainerDatabases(Integer totalContainerDatabases) {
+            this.totalContainerDatabases = totalContainerDatabases;
+            this.__explicitlySet__.add("totalContainerDatabases");
+            return this;
+        }
         /**
          * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
          * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
@@ -106,11 +165,13 @@ public final class UpdateCloudAutonomousVmClusterDetails
          * level. When provisioning an [Autonomous Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
          * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+         * Bring your own license (BYOL) also allows you to select the DB edition using the optional
+         * parameter.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
-         * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
-         * isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName,
-         * scheduledOperations, dbToolsDetails, or isFreeTier.
+         * computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+         * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+         * isFreeTier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
@@ -126,11 +187,13 @@ public final class UpdateCloudAutonomousVmClusterDetails
          * level. When provisioning an [Autonomous Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
          * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+         * Bring your own license (BYOL) also allows you to select the DB edition using the optional
+         * parameter.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
-         * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
-         * isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName,
-         * scheduledOperations, dbToolsDetails, or isFreeTier.
+         * computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+         * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+         * isFreeTier.
          *
          * @param licenseModel the value to set
          * @return this builder
@@ -142,24 +205,24 @@ public final class UpdateCloudAutonomousVmClusterDetails
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -172,7 +235,7 @@ public final class UpdateCloudAutonomousVmClusterDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -182,7 +245,7 @@ public final class UpdateCloudAutonomousVmClusterDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -197,7 +260,7 @@ public final class UpdateCloudAutonomousVmClusterDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -205,7 +268,7 @@ public final class UpdateCloudAutonomousVmClusterDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -214,6 +277,30 @@ public final class UpdateCloudAutonomousVmClusterDetails
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
 
@@ -226,10 +313,14 @@ public final class UpdateCloudAutonomousVmClusterDetails
                             this.description,
                             this.displayName,
                             this.maintenanceWindowDetails,
+                            this.autonomousDataStorageSizeInTBs,
+                            this.cpuCoreCountPerNode,
+                            this.totalContainerDatabases,
                             this.licenseModel,
                             this.nsgIds,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.securityAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -247,6 +338,15 @@ public final class UpdateCloudAutonomousVmClusterDetails
             if (model.wasPropertyExplicitlySet("maintenanceWindowDetails")) {
                 this.maintenanceWindowDetails(model.getMaintenanceWindowDetails());
             }
+            if (model.wasPropertyExplicitlySet("autonomousDataStorageSizeInTBs")) {
+                this.autonomousDataStorageSizeInTBs(model.getAutonomousDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCountPerNode")) {
+                this.cpuCoreCountPerNode(model.getCpuCoreCountPerNode());
+            }
+            if (model.wasPropertyExplicitlySet("totalContainerDatabases")) {
+                this.totalContainerDatabases(model.getTotalContainerDatabases());
+            }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
             }
@@ -258,6 +358,9 @@ public final class UpdateCloudAutonomousVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             return this;
         }
@@ -309,6 +412,45 @@ public final class UpdateCloudAutonomousVmClusterDetails
         return maintenanceWindowDetails;
     }
 
+    /** The new value of autonomous data storage (in TBs) for the Autonomous VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+    private final Double autonomousDataStorageSizeInTBs;
+
+    /**
+     * The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
+     *
+     * @return the value
+     */
+    public Double getAutonomousDataStorageSizeInTBs() {
+        return autonomousDataStorageSizeInTBs;
+    }
+
+    /** The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+    private final Integer cpuCoreCountPerNode;
+
+    /**
+     * The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
+     *
+     * @return the value
+     */
+    public Integer getCpuCoreCountPerNode() {
+        return cpuCoreCountPerNode;
+    }
+
+    /** The new value of maximum number of ACDs for the Autonomous VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+    private final Integer totalContainerDatabases;
+
+    /**
+     * The new value of maximum number of ACDs for the Autonomous VM cluster.
+     *
+     * @return the value
+     */
+    public Integer getTotalContainerDatabases() {
+        return totalContainerDatabases;
+    }
+
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
@@ -319,10 +461,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
      * When provisioning an [Autonomous Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
-     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
+     * own license (BYOL) also allows you to select the DB edition using the optional parameter.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
-     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
      * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
      * isFreeTier.
      */
@@ -368,10 +511,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
      * When provisioning an [Autonomous Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
-     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
+     * own license (BYOL) also allows you to select the DB edition using the optional parameter.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
-     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
      * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
      * isFreeTier.
      */
@@ -388,10 +532,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
      * When provisioning an [Autonomous Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
-     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
+     * own license (BYOL) also allows you to select the DB edition using the optional parameter.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
-     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
      * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
      * isFreeTier.
      *
@@ -402,10 +547,10 @@ public final class UpdateCloudAutonomousVmClusterDetails
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      */
@@ -413,10 +558,10 @@ public final class UpdateCloudAutonomousVmClusterDetails
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      *
@@ -429,7 +574,7 @@ public final class UpdateCloudAutonomousVmClusterDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -439,7 +584,7 @@ public final class UpdateCloudAutonomousVmClusterDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -452,7 +597,7 @@ public final class UpdateCloudAutonomousVmClusterDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -460,12 +605,33 @@ public final class UpdateCloudAutonomousVmClusterDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     @Override
@@ -487,10 +653,16 @@ public final class UpdateCloudAutonomousVmClusterDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", maintenanceWindowDetails=")
                 .append(String.valueOf(this.maintenanceWindowDetails));
+        sb.append(", autonomousDataStorageSizeInTBs=")
+                .append(String.valueOf(this.autonomousDataStorageSizeInTBs));
+        sb.append(", cpuCoreCountPerNode=").append(String.valueOf(this.cpuCoreCountPerNode));
+        sb.append(", totalContainerDatabases=")
+                .append(String.valueOf(this.totalContainerDatabases));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -509,10 +681,16 @@ public final class UpdateCloudAutonomousVmClusterDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
                         this.maintenanceWindowDetails, other.maintenanceWindowDetails)
+                && java.util.Objects.equals(
+                        this.autonomousDataStorageSizeInTBs, other.autonomousDataStorageSizeInTBs)
+                && java.util.Objects.equals(this.cpuCoreCountPerNode, other.cpuCoreCountPerNode)
+                && java.util.Objects.equals(
+                        this.totalContainerDatabases, other.totalContainerDatabases)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && super.equals(other);
     }
 
@@ -527,10 +705,30 @@ public final class UpdateCloudAutonomousVmClusterDetails
                         + (this.maintenanceWindowDetails == null
                                 ? 43
                                 : this.maintenanceWindowDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousDataStorageSizeInTBs == null
+                                ? 43
+                                : this.autonomousDataStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuCoreCountPerNode == null
+                                ? 43
+                                : this.cpuCoreCountPerNode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalContainerDatabases == null
+                                ? 43
+                                : this.totalContainerDatabases.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch;
@@ -146,6 +146,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ActivateServiceConnectorResponse.Builder::opcWorkRequestId)
@@ -179,6 +180,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -209,6 +211,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -241,6 +244,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeactivateServiceConnectorResponse.Builder::opcWorkRequestId)
@@ -269,6 +273,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteServiceConnectorResponse.Builder::opcWorkRequestId)
@@ -295,6 +300,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam(request.getServiceConnectorId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.sch.model.ServiceConnector.class,
                         GetServiceConnectorResponse.Builder::serviceConnector)
@@ -322,6 +328,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.sch.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -356,6 +363,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.sch.model.ServiceConnectorCollection.class,
                         ListServiceConnectorsResponse.Builder::serviceConnectorCollection)
@@ -390,6 +398,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.sch.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -423,6 +432,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.sch.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -454,6 +464,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.sch.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -489,6 +500,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -23,12 +23,28 @@ package com.oracle.bmc.datasafe.model;
 public final class AlertPolicyRuleSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"key", "description", "expression"})
-    public AlertPolicyRuleSummary(String key, String description, String expression) {
+    @java.beans.ConstructorProperties({
+        "key",
+        "description",
+        "expression",
+        "lifecycleState",
+        "displayName",
+        "timeCreated"
+    })
+    public AlertPolicyRuleSummary(
+            String key,
+            String description,
+            String expression,
+            AlertPolicyRuleLifecycleState lifecycleState,
+            String displayName,
+            java.util.Date timeCreated) {
         super();
         this.key = key;
         this.description = description;
         this.expression = expression;
+        this.lifecycleState = lifecycleState;
+        this.displayName = displayName;
+        this.timeCreated = timeCreated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -78,13 +94,68 @@ public final class AlertPolicyRuleSummary
             this.__explicitlySet__.add("expression");
             return this;
         }
+        /** The current state of the alert policy rule. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private AlertPolicyRuleLifecycleState lifecycleState;
+
+        /**
+         * The current state of the alert policy rule.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         */
+        public Builder lifecycleState(AlertPolicyRuleLifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /** The display name of the alert policy rule. */
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+        private String displayName;
+
+        /**
+         * The display name of the alert policy rule.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         */
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * Creation date and time of the alert policy rule, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
+
+        /**
+         * Creation date and time of the alert policy rule, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         */
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AlertPolicyRuleSummary build() {
             AlertPolicyRuleSummary model =
-                    new AlertPolicyRuleSummary(this.key, this.description, this.expression);
+                    new AlertPolicyRuleSummary(
+                            this.key,
+                            this.description,
+                            this.expression,
+                            this.lifecycleState,
+                            this.displayName,
+                            this.timeCreated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -101,6 +172,15 @@ public final class AlertPolicyRuleSummary
             }
             if (model.wasPropertyExplicitlySet("expression")) {
                 this.expression(model.getExpression());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
             }
             return this;
         }
@@ -154,6 +234,49 @@ public final class AlertPolicyRuleSummary
         return expression;
     }
 
+    /** The current state of the alert policy rule. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final AlertPolicyRuleLifecycleState lifecycleState;
+
+    /**
+     * The current state of the alert policy rule.
+     *
+     * @return the value
+     */
+    public AlertPolicyRuleLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    /** The display name of the alert policy rule. */
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    private final String displayName;
+
+    /**
+     * The display name of the alert policy rule.
+     *
+     * @return the value
+     */
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    /**
+     * Creation date and time of the alert policy rule, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    private final java.util.Date timeCreated;
+
+    /**
+     * Creation date and time of the alert policy rule, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -172,6 +295,9 @@ public final class AlertPolicyRuleSummary
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", expression=").append(String.valueOf(this.expression));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(")");
         return sb.toString();
     }
@@ -189,6 +315,9 @@ public final class AlertPolicyRuleSummary
         return java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.expression, other.expression)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && super.equals(other);
     }
 
@@ -199,6 +328,11 @@ public final class AlertPolicyRuleSummary
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.expression == null ? 43 : this.expression.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

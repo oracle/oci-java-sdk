@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -21,13 +21,27 @@ package com.oracle.bmc.disasterrecovery.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "type", "displayName", "steps"})
+    @java.beans.ConstructorProperties({
+        "id",
+        "type",
+        "refreshStatus",
+        "displayName",
+        "isPauseEnabled",
+        "steps"
+    })
     public DrPlanGroup(
-            String id, DrPlanGroupType type, String displayName, java.util.List<DrPlanStep> steps) {
+            String id,
+            DrPlanGroupType type,
+            DrPlanGroupRefreshStatus refreshStatus,
+            String displayName,
+            Boolean isPauseEnabled,
+            java.util.List<DrPlanStep> steps) {
         super();
         this.id = id;
         this.type = type;
+        this.refreshStatus = refreshStatus;
         this.displayName = displayName;
+        this.isPauseEnabled = isPauseEnabled;
         this.steps = steps;
     }
 
@@ -76,6 +90,27 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
+         * The DR plan group refresh status.
+         *
+         * <p>Example: {@code GROUP_MODIFIED}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("refreshStatus")
+        private DrPlanGroupRefreshStatus refreshStatus;
+
+        /**
+         * The DR plan group refresh status.
+         *
+         * <p>Example: {@code GROUP_MODIFIED}
+         *
+         * @param refreshStatus the value to set
+         * @return this builder
+         */
+        public Builder refreshStatus(DrPlanGroupRefreshStatus refreshStatus) {
+            this.refreshStatus = refreshStatus;
+            this.__explicitlySet__.add("refreshStatus");
+            return this;
+        }
+        /**
          * The display name of the group.
          *
          * <p>Example: {@code DATABASE_SWITCHOVER}
@@ -94,6 +129,31 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * A flag indicating whether this group should be enabled for execution. This flag is only
+         * applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the
+         * remaining group types.
+         *
+         * <p>Example: {@code true}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isPauseEnabled")
+        private Boolean isPauseEnabled;
+
+        /**
+         * A flag indicating whether this group should be enabled for execution. This flag is only
+         * applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the
+         * remaining group types.
+         *
+         * <p>Example: {@code true}
+         *
+         * @param isPauseEnabled the value to set
+         * @return this builder
+         */
+        public Builder isPauseEnabled(Boolean isPauseEnabled) {
+            this.isPauseEnabled = isPauseEnabled;
+            this.__explicitlySet__.add("isPauseEnabled");
             return this;
         }
         /** The list of steps in the group. */
@@ -116,7 +176,14 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DrPlanGroup build() {
-            DrPlanGroup model = new DrPlanGroup(this.id, this.type, this.displayName, this.steps);
+            DrPlanGroup model =
+                    new DrPlanGroup(
+                            this.id,
+                            this.type,
+                            this.refreshStatus,
+                            this.displayName,
+                            this.isPauseEnabled,
+                            this.steps);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -131,8 +198,14 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
             }
+            if (model.wasPropertyExplicitlySet("refreshStatus")) {
+                this.refreshStatus(model.getRefreshStatus());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isPauseEnabled")) {
+                this.isPauseEnabled(model.getIsPauseEnabled());
             }
             if (model.wasPropertyExplicitlySet("steps")) {
                 this.steps(model.getSteps());
@@ -189,6 +262,25 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
+     * The DR plan group refresh status.
+     *
+     * <p>Example: {@code GROUP_MODIFIED}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("refreshStatus")
+    private final DrPlanGroupRefreshStatus refreshStatus;
+
+    /**
+     * The DR plan group refresh status.
+     *
+     * <p>Example: {@code GROUP_MODIFIED}
+     *
+     * @return the value
+     */
+    public DrPlanGroupRefreshStatus getRefreshStatus() {
+        return refreshStatus;
+    }
+
+    /**
      * The display name of the group.
      *
      * <p>Example: {@code DATABASE_SWITCHOVER}
@@ -205,6 +297,29 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * A flag indicating whether this group should be enabled for execution. This flag is only
+     * applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining
+     * group types.
+     *
+     * <p>Example: {@code true}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isPauseEnabled")
+    private final Boolean isPauseEnabled;
+
+    /**
+     * A flag indicating whether this group should be enabled for execution. This flag is only
+     * applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining
+     * group types.
+     *
+     * <p>Example: {@code true}
+     *
+     * @return the value
+     */
+    public Boolean getIsPauseEnabled() {
+        return isPauseEnabled;
     }
 
     /** The list of steps in the group. */
@@ -237,7 +352,9 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", refreshStatus=").append(String.valueOf(this.refreshStatus));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isPauseEnabled=").append(String.valueOf(this.isPauseEnabled));
         sb.append(", steps=").append(String.valueOf(this.steps));
         sb.append(")");
         return sb.toString();
@@ -255,7 +372,9 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         DrPlanGroup other = (DrPlanGroup) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.refreshStatus, other.refreshStatus)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isPauseEnabled, other.isPauseEnabled)
                 && java.util.Objects.equals(this.steps, other.steps)
                 && super.equals(other);
     }
@@ -266,7 +385,13 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.refreshStatus == null ? 43 : this.refreshStatus.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPauseEnabled == null ? 43 : this.isPauseEnabled.hashCode());
         result = (result * PRIME) + (this.steps == null ? 43 : this.steps.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

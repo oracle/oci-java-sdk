@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
@@ -23,10 +23,12 @@ package com.oracle.bmc.keymanagement.model;
 public final class CreateVaultReplicaDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"replicaRegion"})
-    public CreateVaultReplicaDetails(String replicaRegion) {
+    @java.beans.ConstructorProperties({"replicaRegion", "replicaVaultMetadata"})
+    public CreateVaultReplicaDetails(
+            String replicaRegion, ReplicaVaultMetadata replicaVaultMetadata) {
         super();
         this.replicaRegion = replicaRegion;
+        this.replicaVaultMetadata = replicaVaultMetadata;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -47,11 +49,21 @@ public final class CreateVaultReplicaDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicaVaultMetadata")
+        private ReplicaVaultMetadata replicaVaultMetadata;
+
+        public Builder replicaVaultMetadata(ReplicaVaultMetadata replicaVaultMetadata) {
+            this.replicaVaultMetadata = replicaVaultMetadata;
+            this.__explicitlySet__.add("replicaVaultMetadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateVaultReplicaDetails build() {
-            CreateVaultReplicaDetails model = new CreateVaultReplicaDetails(this.replicaRegion);
+            CreateVaultReplicaDetails model =
+                    new CreateVaultReplicaDetails(this.replicaRegion, this.replicaVaultMetadata);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +74,9 @@ public final class CreateVaultReplicaDetails
         public Builder copy(CreateVaultReplicaDetails model) {
             if (model.wasPropertyExplicitlySet("replicaRegion")) {
                 this.replicaRegion(model.getReplicaRegion());
+            }
+            if (model.wasPropertyExplicitlySet("replicaVaultMetadata")) {
+                this.replicaVaultMetadata(model.getReplicaVaultMetadata());
             }
             return this;
         }
@@ -89,6 +104,13 @@ public final class CreateVaultReplicaDetails
         return replicaRegion;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicaVaultMetadata")
+    private final ReplicaVaultMetadata replicaVaultMetadata;
+
+    public ReplicaVaultMetadata getReplicaVaultMetadata() {
+        return replicaVaultMetadata;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -105,6 +127,7 @@ public final class CreateVaultReplicaDetails
         sb.append("CreateVaultReplicaDetails(");
         sb.append("super=").append(super.toString());
         sb.append("replicaRegion=").append(String.valueOf(this.replicaRegion));
+        sb.append(", replicaVaultMetadata=").append(String.valueOf(this.replicaVaultMetadata));
         sb.append(")");
         return sb.toString();
     }
@@ -120,6 +143,7 @@ public final class CreateVaultReplicaDetails
 
         CreateVaultReplicaDetails other = (CreateVaultReplicaDetails) o;
         return java.util.Objects.equals(this.replicaRegion, other.replicaRegion)
+                && java.util.Objects.equals(this.replicaVaultMetadata, other.replicaVaultMetadata)
                 && super.equals(other);
     }
 
@@ -130,6 +154,11 @@ public final class CreateVaultReplicaDetails
         result =
                 (result * PRIME)
                         + (this.replicaRegion == null ? 43 : this.replicaRegion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicaVaultMetadata == null
+                                ? 43
+                                : this.replicaVaultMetadata.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

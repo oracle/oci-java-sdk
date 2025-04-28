@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.requests;
@@ -7,7 +7,7 @@ package com.oracle.bmc.cims.requests;
 import com.oracle.bmc.cims.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/CreateIncidentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/CreateIncidentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateIncidentRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
@@ -36,13 +36,15 @@ public class CreateIncidentRequest
     }
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-     * Cloud Infrastructure account.
+     * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+     * Multicloud users.
      */
     private String ocid;
 
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-     * Cloud Infrastructure account.
+     * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+     * Multicloud users.
      */
     public String getOcid() {
         return ocid;
@@ -75,10 +77,16 @@ public class CreateIncidentRequest
     public String getIdtoken() {
         return idtoken;
     }
-    /** The OCID of identity domain. */
+    /**
+     * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+     * Identity domain.
+     */
     private String domainid;
 
-    /** The OCID of identity domain. */
+    /**
+     * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+     * Identity domain.
+     */
     public String getDomainid() {
         return domainid;
     }
@@ -135,13 +143,15 @@ public class CreateIncidentRequest
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-         * Cloud Infrastructure account.
+         * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+         * Multicloud users.
          */
         private String ocid = null;
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-         * Cloud Infrastructure account.
+         * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+         * Multicloud users.
          *
          * @param ocid the value to set
          * @return this builder instance
@@ -207,11 +217,15 @@ public class CreateIncidentRequest
             return this;
         }
 
-        /** The OCID of identity domain. */
+        /**
+         * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+         * Identity domain.
+         */
         private String domainid = null;
 
         /**
-         * The OCID of identity domain.
+         * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+         * Identity domain.
          *
          * @param domainid the value to set
          * @return this builder instance

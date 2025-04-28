@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.adm.model;
@@ -27,18 +27,21 @@ public final class DetectConfiguration
         "exclusions",
         "upgradePolicy",
         "maxPermissibleCvssV2Score",
-        "maxPermissibleCvssV3Score"
+        "maxPermissibleCvssV3Score",
+        "maxPermissibleSeverity"
     })
     public DetectConfiguration(
             java.util.List<String> exclusions,
             UpgradePolicy upgradePolicy,
             Float maxPermissibleCvssV2Score,
-            Float maxPermissibleCvssV3Score) {
+            Float maxPermissibleCvssV3Score,
+            ConfigSeverity maxPermissibleSeverity) {
         super();
         this.exclusions = exclusions;
         this.upgradePolicy = upgradePolicy;
         this.maxPermissibleCvssV2Score = maxPermissibleCvssV2Score;
         this.maxPermissibleCvssV3Score = maxPermissibleCvssV3Score;
+        this.maxPermissibleSeverity = maxPermissibleSeverity;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -125,6 +128,25 @@ public final class DetectConfiguration
             this.__explicitlySet__.add("maxPermissibleCvssV3Score");
             return this;
         }
+        /**
+         * The maximum ADM Severity. An artifact with an ADM Severity below this value is not
+         * considered for patching.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleSeverity")
+        private ConfigSeverity maxPermissibleSeverity;
+
+        /**
+         * The maximum ADM Severity. An artifact with an ADM Severity below this value is not
+         * considered for patching.
+         *
+         * @param maxPermissibleSeverity the value to set
+         * @return this builder
+         */
+        public Builder maxPermissibleSeverity(ConfigSeverity maxPermissibleSeverity) {
+            this.maxPermissibleSeverity = maxPermissibleSeverity;
+            this.__explicitlySet__.add("maxPermissibleSeverity");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -135,7 +157,8 @@ public final class DetectConfiguration
                             this.exclusions,
                             this.upgradePolicy,
                             this.maxPermissibleCvssV2Score,
-                            this.maxPermissibleCvssV3Score);
+                            this.maxPermissibleCvssV3Score,
+                            this.maxPermissibleSeverity);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -155,6 +178,9 @@ public final class DetectConfiguration
             }
             if (model.wasPropertyExplicitlySet("maxPermissibleCvssV3Score")) {
                 this.maxPermissibleCvssV3Score(model.getMaxPermissibleCvssV3Score());
+            }
+            if (model.wasPropertyExplicitlySet("maxPermissibleSeverity")) {
+                this.maxPermissibleSeverity(model.getMaxPermissibleSeverity());
             }
             return this;
         }
@@ -292,6 +318,23 @@ public final class DetectConfiguration
         return maxPermissibleCvssV3Score;
     }
 
+    /**
+     * The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered
+     * for patching.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleSeverity")
+    private final ConfigSeverity maxPermissibleSeverity;
+
+    /**
+     * The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered
+     * for patching.
+     *
+     * @return the value
+     */
+    public ConfigSeverity getMaxPermissibleSeverity() {
+        return maxPermissibleSeverity;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -313,6 +356,7 @@ public final class DetectConfiguration
                 .append(String.valueOf(this.maxPermissibleCvssV2Score));
         sb.append(", maxPermissibleCvssV3Score=")
                 .append(String.valueOf(this.maxPermissibleCvssV3Score));
+        sb.append(", maxPermissibleSeverity=").append(String.valueOf(this.maxPermissibleSeverity));
         sb.append(")");
         return sb.toString();
     }
@@ -333,6 +377,8 @@ public final class DetectConfiguration
                         this.maxPermissibleCvssV2Score, other.maxPermissibleCvssV2Score)
                 && java.util.Objects.equals(
                         this.maxPermissibleCvssV3Score, other.maxPermissibleCvssV3Score)
+                && java.util.Objects.equals(
+                        this.maxPermissibleSeverity, other.maxPermissibleSeverity)
                 && super.equals(other);
     }
 
@@ -354,6 +400,11 @@ public final class DetectConfiguration
                         + (this.maxPermissibleCvssV3Score == null
                                 ? 43
                                 : this.maxPermissibleCvssV3Score.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxPermissibleSeverity == null
+                                ? 43
+                                : this.maxPermissibleSeverity.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
@@ -29,7 +29,8 @@ public final class CreateChildTenancyDetails
         "homeRegion",
         "adminEmail",
         "policyName",
-        "governanceStatus"
+        "governanceStatus",
+        "subscriptionId"
     })
     public CreateChildTenancyDetails(
             String compartmentId,
@@ -37,7 +38,8 @@ public final class CreateChildTenancyDetails
             String homeRegion,
             String adminEmail,
             String policyName,
-            GovernanceStatus governanceStatus) {
+            GovernanceStatus governanceStatus,
+            String subscriptionId) {
         super();
         this.compartmentId = compartmentId;
         this.tenancyName = tenancyName;
@@ -45,6 +47,7 @@ public final class CreateChildTenancyDetails
         this.adminEmail = adminEmail;
         this.policyName = policyName;
         this.governanceStatus = governanceStatus;
+        this.subscriptionId = subscriptionId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -147,6 +150,21 @@ public final class CreateChildTenancyDetails
             this.__explicitlySet__.add("governanceStatus");
             return this;
         }
+        /** OCID of the subscription that needs to be assigned to the child tenancy. */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * OCID of the subscription that needs to be assigned to the child tenancy.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -159,7 +177,8 @@ public final class CreateChildTenancyDetails
                             this.homeRegion,
                             this.adminEmail,
                             this.policyName,
-                            this.governanceStatus);
+                            this.governanceStatus,
+                            this.subscriptionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -185,6 +204,9 @@ public final class CreateChildTenancyDetails
             }
             if (model.wasPropertyExplicitlySet("governanceStatus")) {
                 this.governanceStatus(model.getGovernanceStatus());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             return this;
         }
@@ -285,6 +307,19 @@ public final class CreateChildTenancyDetails
         return governanceStatus;
     }
 
+    /** OCID of the subscription that needs to be assigned to the child tenancy. */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * OCID of the subscription that needs to be assigned to the child tenancy.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -306,6 +341,7 @@ public final class CreateChildTenancyDetails
         sb.append(", adminEmail=").append(String.valueOf(this.adminEmail));
         sb.append(", policyName=").append(String.valueOf(this.policyName));
         sb.append(", governanceStatus=").append(String.valueOf(this.governanceStatus));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(")");
         return sb.toString();
     }
@@ -326,6 +362,7 @@ public final class CreateChildTenancyDetails
                 && java.util.Objects.equals(this.adminEmail, other.adminEmail)
                 && java.util.Objects.equals(this.policyName, other.policyName)
                 && java.util.Objects.equals(this.governanceStatus, other.governanceStatus)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && super.equals(other);
     }
 
@@ -343,6 +380,9 @@ public final class CreateChildTenancyDetails
         result =
                 (result * PRIME)
                         + (this.governanceStatus == null ? 43 : this.governanceStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

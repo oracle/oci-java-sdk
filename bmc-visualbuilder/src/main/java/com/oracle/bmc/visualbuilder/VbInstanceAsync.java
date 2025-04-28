@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.visualbuilder;
@@ -202,6 +202,28 @@ public interface VbInstanceAsync extends AutoCloseable {
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler);
+
+    /**
+     * Reconfigures the Private Endpoint associated with the private visual builder instance. Use
+     * this action in case the Private Endpoint is not working and needs to be reset. The VB
+     * instance has to be in ACTIVE state and should be a private instance to perform this
+     * operation. If the previous state is not ACTIVE, then the state of the vbInstance will not be
+     * changed and a 409 response returned.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ReconfigurePrivateEndpointVbInstanceResponse>
+            reconfigurePrivateEndpointVbInstance(
+                    ReconfigurePrivateEndpointVbInstanceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ReconfigurePrivateEndpointVbInstanceRequest,
+                                    ReconfigurePrivateEndpointVbInstanceResponse>
+                            handler);
 
     /**
      * Summarizes the applications for a vb instance.

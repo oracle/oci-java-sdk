@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -29,6 +29,7 @@ public final class ApplicationVipSummary
         "compartmentId",
         "subnetId",
         "ipAddress",
+        "ipv6Address",
         "hostnameLabel",
         "lifecycleState",
         "lifecycleDetails",
@@ -42,6 +43,7 @@ public final class ApplicationVipSummary
             String compartmentId,
             String subnetId,
             String ipAddress,
+            String ipv6Address,
             String hostnameLabel,
             LifecycleState lifecycleState,
             String lifecycleDetails,
@@ -54,6 +56,7 @@ public final class ApplicationVipSummary
         this.compartmentId = compartmentId;
         this.subnetId = subnetId;
         this.ipAddress = ipAddress;
+        this.ipv6Address = ipv6Address;
         this.hostnameLabel = hostnameLabel;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -65,14 +68,14 @@ public final class ApplicationVipSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * application virtual IP (VIP) address.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * application virtual IP (VIP) address.
          *
          * @param id the value to set
@@ -84,14 +87,14 @@ public final class ApplicationVipSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud VM cluster associated with the application virtual IP (VIP) address.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudVmClusterId")
         private String cloudVmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud VM cluster associated with the application virtual IP (VIP) address.
          *
          * @param cloudVmClusterId the value to set
@@ -103,14 +106,14 @@ public final class ApplicationVipSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -122,14 +125,14 @@ public final class ApplicationVipSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet associated with the application virtual IP (VIP) address.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet associated with the application virtual IP (VIP) address.
          *
          * @param subnetId the value to set
@@ -140,12 +143,12 @@ public final class ApplicationVipSummary
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** The application virtual IP (VIP) address. */
+        /** The application virtual IP (VIP) IPv4 address. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * The application virtual IP (VIP) address.
+         * The application virtual IP (VIP) IPv4 address.
          *
          * @param ipAddress the value to set
          * @return this builder
@@ -153,6 +156,21 @@ public final class ApplicationVipSummary
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
+            return this;
+        }
+        /** The application virtual IP (VIP) IPv6 address. */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
+        private String ipv6Address;
+
+        /**
+         * The application virtual IP (VIP) IPv6 address.
+         *
+         * @param ipv6Address the value to set
+         * @return this builder
+         */
+        public Builder ipv6Address(String ipv6Address) {
+            this.ipv6Address = ipv6Address;
+            this.__explicitlySet__.add("ipv6Address");
             return this;
         }
         /** The hostname of the application virtual IP (VIP) address. */
@@ -226,7 +244,7 @@ public final class ApplicationVipSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -236,7 +254,7 @@ public final class ApplicationVipSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -251,7 +269,7 @@ public final class ApplicationVipSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -259,7 +277,7 @@ public final class ApplicationVipSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -282,6 +300,7 @@ public final class ApplicationVipSummary
                             this.compartmentId,
                             this.subnetId,
                             this.ipAddress,
+                            this.ipv6Address,
                             this.hostnameLabel,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -310,6 +329,9 @@ public final class ApplicationVipSummary
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6Address")) {
+                this.ipv6Address(model.getIpv6Address());
             }
             if (model.wasPropertyExplicitlySet("hostnameLabel")) {
                 this.hostnameLabel(model.getHostnameLabel());
@@ -343,14 +365,14 @@ public final class ApplicationVipSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * application virtual IP (VIP) address.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * application virtual IP (VIP) address.
      *
      * @return the value
@@ -360,14 +382,14 @@ public final class ApplicationVipSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud VM cluster associated with the application virtual IP (VIP) address.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudVmClusterId")
     private final String cloudVmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud VM cluster associated with the application virtual IP (VIP) address.
      *
      * @return the value
@@ -377,14 +399,14 @@ public final class ApplicationVipSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -394,14 +416,14 @@ public final class ApplicationVipSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet associated with the application virtual IP (VIP) address.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet associated with the application virtual IP (VIP) address.
      *
      * @return the value
@@ -410,17 +432,30 @@ public final class ApplicationVipSummary
         return subnetId;
     }
 
-    /** The application virtual IP (VIP) address. */
+    /** The application virtual IP (VIP) IPv4 address. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * The application virtual IP (VIP) address.
+     * The application virtual IP (VIP) IPv4 address.
      *
      * @return the value
      */
     public String getIpAddress() {
         return ipAddress;
+    }
+
+    /** The application virtual IP (VIP) IPv6 address. */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
+    private final String ipv6Address;
+
+    /**
+     * The application virtual IP (VIP) IPv6 address.
+     *
+     * @return the value
+     */
+    public String getIpv6Address() {
+        return ipv6Address;
     }
 
     /** The hostname of the application virtual IP (VIP) address. */
@@ -535,7 +570,7 @@ public final class ApplicationVipSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -545,7 +580,7 @@ public final class ApplicationVipSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -558,7 +593,7 @@ public final class ApplicationVipSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -566,7 +601,7 @@ public final class ApplicationVipSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -594,6 +629,7 @@ public final class ApplicationVipSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", ipv6Address=").append(String.valueOf(this.ipv6Address));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -619,6 +655,7 @@ public final class ApplicationVipSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.ipv6Address, other.ipv6Address)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -641,6 +678,7 @@ public final class ApplicationVipSummary
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.ipv6Address == null ? 43 : this.ipv6Address.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
@@ -37,6 +37,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "wrappingkeyId",
         "replicaDetails",
         "isPrimary",
+        "isVaultReplicable",
         "externalKeyManagerMetadataSummary"
     })
     public Vault(
@@ -55,6 +56,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
             String wrappingkeyId,
             VaultReplicaDetails replicaDetails,
             Boolean isPrimary,
+            Boolean isVaultReplicable,
             ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary) {
         super();
         this.compartmentId = compartmentId;
@@ -72,6 +74,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.wrappingkeyId = wrappingkeyId;
         this.replicaDetails = replicaDetails;
         this.isPrimary = isPrimary;
+        this.isVaultReplicable = isVaultReplicable;
         this.externalKeyManagerMetadataSummary = externalKeyManagerMetadataSummary;
     }
 
@@ -95,9 +98,9 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The service endpoint to perform cryptographic operations against. Cryptographic
          * operations include
-         * [Encrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/EncryptedData/Encrypt),
-         * [Decrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/DecryptedData/Decrypt), and
-         * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * [Encrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt),
+         * [Decrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and
+         * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
          * operations.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cryptoEndpoint")
@@ -106,9 +109,9 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The service endpoint to perform cryptographic operations against. Cryptographic
          * operations include
-         * [Encrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/EncryptedData/Encrypt),
-         * [Decrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/DecryptedData/Decrypt), and
-         * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * [Encrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt),
+         * [Decrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and
+         * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
          * operations.
          *
          * @param cryptoEndpoint the value to set
@@ -122,7 +125,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -131,7 +134,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -165,7 +168,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -174,7 +177,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -363,6 +366,25 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("isPrimary");
             return this;
         }
+        /**
+         * A Boolean value that indicates whether the Vault has cross region replication capability.
+         * Always true for Virtual Private Vaults.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isVaultReplicable")
+        private Boolean isVaultReplicable;
+
+        /**
+         * A Boolean value that indicates whether the Vault has cross region replication capability.
+         * Always true for Virtual Private Vaults.
+         *
+         * @param isVaultReplicable the value to set
+         * @return this builder
+         */
+        public Builder isVaultReplicable(Boolean isVaultReplicable) {
+            this.isVaultReplicable = isVaultReplicable;
+            this.__explicitlySet__.add("isVaultReplicable");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("externalKeyManagerMetadataSummary")
         private ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary;
@@ -395,6 +417,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
                             this.wrappingkeyId,
                             this.replicaDetails,
                             this.isPrimary,
+                            this.isVaultReplicable,
                             this.externalKeyManagerMetadataSummary);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -449,6 +472,9 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
             if (model.wasPropertyExplicitlySet("isPrimary")) {
                 this.isPrimary(model.getIsPrimary());
             }
+            if (model.wasPropertyExplicitlySet("isVaultReplicable")) {
+                this.isVaultReplicable(model.getIsVaultReplicable());
+            }
             if (model.wasPropertyExplicitlySet("externalKeyManagerMetadataSummary")) {
                 this.externalKeyManagerMetadataSummary(
                         model.getExternalKeyManagerMetadataSummary());
@@ -481,9 +507,9 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations
-     * include [Encrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/EncryptedData/Encrypt),
-     * [Decrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/DecryptedData/Decrypt), and
-     * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+     * include [Encrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt),
+     * [Decrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and
+     * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
      * operations.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cryptoEndpoint")
@@ -491,9 +517,9 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations
-     * include [Encrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/EncryptedData/Encrypt),
-     * [Decrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/DecryptedData/Decrypt), and
-     * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+     * include [Encrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt),
+     * [Decrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and
+     * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
      * operations.
      *
      * @return the value
@@ -505,7 +531,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -514,7 +540,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -543,7 +569,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -552,7 +578,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -827,6 +853,23 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return isPrimary;
     }
 
+    /**
+     * A Boolean value that indicates whether the Vault has cross region replication capability.
+     * Always true for Virtual Private Vaults.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isVaultReplicable")
+    private final Boolean isVaultReplicable;
+
+    /**
+     * A Boolean value that indicates whether the Vault has cross region replication capability.
+     * Always true for Virtual Private Vaults.
+     *
+     * @return the value
+     */
+    public Boolean getIsVaultReplicable() {
+        return isVaultReplicable;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("externalKeyManagerMetadataSummary")
     private final ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary;
 
@@ -864,6 +907,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
         sb.append(", wrappingkeyId=").append(String.valueOf(this.wrappingkeyId));
         sb.append(", replicaDetails=").append(String.valueOf(this.replicaDetails));
         sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
+        sb.append(", isVaultReplicable=").append(String.valueOf(this.isVaultReplicable));
         sb.append(", externalKeyManagerMetadataSummary=")
                 .append(String.valueOf(this.externalKeyManagerMetadataSummary));
         sb.append(")");
@@ -895,6 +939,7 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 && java.util.Objects.equals(this.wrappingkeyId, other.wrappingkeyId)
                 && java.util.Objects.equals(this.replicaDetails, other.replicaDetails)
                 && java.util.Objects.equals(this.isPrimary, other.isPrimary)
+                && java.util.Objects.equals(this.isVaultReplicable, other.isVaultReplicable)
                 && java.util.Objects.equals(
                         this.externalKeyManagerMetadataSummary,
                         other.externalKeyManagerMetadataSummary)
@@ -940,6 +985,9 @@ public final class Vault extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 (result * PRIME)
                         + (this.replicaDetails == null ? 43 : this.replicaDetails.hashCode());
         result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isVaultReplicable == null ? 43 : this.isVaultReplicable.hashCode());
         result =
                 (result * PRIME)
                         + (this.externalKeyManagerMetadataSummary == null
