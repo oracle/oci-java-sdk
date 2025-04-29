@@ -81,20 +81,20 @@ public final class CreateOkeClusterBackupConfigDetails
          * interval bounds are as follows HOURLY - Minimum = 1 - Maximum = 24 DAILY - Minimum = 1 -
          * Maximum = 30 WEEKLY - Minimum = 1 - Maximum = 1 MONTHLY - Minimum = 1 - Maximum = 12
          *
-         * <p>Examples: FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every week on
-         * monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid
-         * configuration (can not specify interval of 2).
+         * <p>Examples: FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every Monday
+         * and Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid
+         * configuration (Cannot specify an interval of 2).
          *
-         * <p>FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (can not specify interval of 25).
-         * FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+         * <p>FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (Cannot specify an interval of 25).
+         * FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
          * FREQ=HOURLY;INTERVAL=24 -> Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 -> Run a
          * backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 -> Run a backup every 15 hours at
          * the 30th minute.
          *
-         * <p>FREQ=DAILY;INTERVAL=31 -> Invalid configuration (can not specify interval of 31).
-         * FREQ=DAILY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+         * <p>FREQ=DAILY;INTERVAL=31 -> Invalid configuration (Cannot specify an interval of 31).
+         * FREQ=DAILY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
          * FREQ=DAILY;INTERVAL=30 -> Run a backup every 30 days at 12:00 midnight.
-         * FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup every day at 05:10 PM.
+         * FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup daily at 05:10 PM.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("backupSchedule")
         private String backupSchedule;
@@ -109,20 +109,20 @@ public final class CreateOkeClusterBackupConfigDetails
          * interval bounds are as follows HOURLY - Minimum = 1 - Maximum = 24 DAILY - Minimum = 1 -
          * Maximum = 30 WEEKLY - Minimum = 1 - Maximum = 1 MONTHLY - Minimum = 1 - Maximum = 12
          *
-         * <p>Examples: FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every week on
-         * monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid
-         * configuration (can not specify interval of 2).
+         * <p>Examples: FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every Monday
+         * and Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid
+         * configuration (Cannot specify an interval of 2).
          *
-         * <p>FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (can not specify interval of 25).
-         * FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+         * <p>FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (Cannot specify an interval of 25).
+         * FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
          * FREQ=HOURLY;INTERVAL=24 -> Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 -> Run a
          * backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 -> Run a backup every 15 hours at
          * the 30th minute.
          *
-         * <p>FREQ=DAILY;INTERVAL=31 -> Invalid configuration (can not specify interval of 31).
-         * FREQ=DAILY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+         * <p>FREQ=DAILY;INTERVAL=31 -> Invalid configuration (Cannot specify an interval of 31).
+         * FREQ=DAILY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
          * FREQ=DAILY;INTERVAL=30 -> Run a backup every 30 days at 12:00 midnight.
-         * FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup every day at 05:10 PM.
+         * FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup daily at 05:10 PM.
          *
          * @param backupSchedule the value to set
          * @return this builder
@@ -272,20 +272,20 @@ public final class CreateOkeClusterBackupConfigDetails
      * interval bounds are as follows HOURLY - Minimum = 1 - Maximum = 24 DAILY - Minimum = 1 -
      * Maximum = 30 WEEKLY - Minimum = 1 - Maximum = 1 MONTHLY - Minimum = 1 - Maximum = 12
      *
-     * <p>Examples: FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every week on
-     * monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid
-     * configuration (can not specify interval of 2).
+     * <p>Examples: FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every Monday and
+     * Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid configuration
+     * (Cannot specify an interval of 2).
      *
-     * <p>FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (can not specify interval of 25).
-     * FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+     * <p>FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (Cannot specify an interval of 25).
+     * FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
      * FREQ=HOURLY;INTERVAL=24 -> Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 -> Run a
      * backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 -> Run a backup every 15 hours at the
      * 30th minute.
      *
-     * <p>FREQ=DAILY;INTERVAL=31 -> Invalid configuration (can not specify interval of 31).
-     * FREQ=DAILY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+     * <p>FREQ=DAILY;INTERVAL=31 -> Invalid configuration (Cannot specify an interval of 31).
+     * FREQ=DAILY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
      * FREQ=DAILY;INTERVAL=30 -> Run a backup every 30 days at 12:00 midnight.
-     * FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup every day at 05:10 PM.
+     * FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup daily at 05:10 PM.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("backupSchedule")
     private final String backupSchedule;
@@ -300,20 +300,20 @@ public final class CreateOkeClusterBackupConfigDetails
      * interval bounds are as follows HOURLY - Minimum = 1 - Maximum = 24 DAILY - Minimum = 1 -
      * Maximum = 30 WEEKLY - Minimum = 1 - Maximum = 1 MONTHLY - Minimum = 1 - Maximum = 12
      *
-     * <p>Examples: FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every week on
-     * monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid
-     * configuration (can not specify interval of 2).
+     * <p>Examples: FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 -> Run a backup every Monday and
+     * Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 -> Invalid configuration
+     * (Cannot specify an interval of 2).
      *
-     * <p>FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (can not specify interval of 25).
-     * FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+     * <p>FREQ=HOURLY;INTERVAL=25 -> Invalid configuration (Cannot specify an interval of 25).
+     * FREQ=HOURLY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
      * FREQ=HOURLY;INTERVAL=24 -> Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 -> Run a
      * backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 -> Run a backup every 15 hours at the
      * 30th minute.
      *
-     * <p>FREQ=DAILY;INTERVAL=31 -> Invalid configuration (can not specify interval of 31).
-     * FREQ=DAILY;INTERVAL=0 -> Invalid configuration (can not specify interval of 0).
+     * <p>FREQ=DAILY;INTERVAL=31 -> Invalid configuration (Cannot specify an interval of 31).
+     * FREQ=DAILY;INTERVAL=0 -> Invalid configuration (Cannot specify an interval of 0).
      * FREQ=DAILY;INTERVAL=30 -> Run a backup every 30 days at 12:00 midnight.
-     * FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup every day at 05:10 PM.
+     * FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 -> Run a backup daily at 05:10 PM.
      *
      * @return the value
      */

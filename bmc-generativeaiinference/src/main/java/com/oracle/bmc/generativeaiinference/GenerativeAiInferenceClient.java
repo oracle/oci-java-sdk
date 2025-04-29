@@ -141,6 +141,8 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
                 .handleEventStream(ChatResponse.Builder::eventStream)
                 .handleResponseHeaderString("etag", ChatResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", ChatResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "model-deprecation-info", ChatResponse.Builder::modelDeprecationInfo)
                 .callSync();
     }
 
@@ -170,6 +172,8 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString("etag", EmbedTextResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", EmbedTextResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "model-deprecation-info", EmbedTextResponse.Builder::modelDeprecationInfo)
                 .callSync();
     }
 
@@ -200,6 +204,9 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString("etag", GenerateTextResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GenerateTextResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "model-deprecation-info",
+                        GenerateTextResponse.Builder::modelDeprecationInfo)
                 .callSync();
     }
 
@@ -229,6 +236,8 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString("etag", RerankTextResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", RerankTextResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "model-deprecation-info", RerankTextResponse.Builder::modelDeprecationInfo)
                 .callSync();
     }
 
@@ -259,6 +268,9 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString("etag", SummarizeTextResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", SummarizeTextResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "model-deprecation-info",
+                        SummarizeTextResponse.Builder::modelDeprecationInfo)
                 .callSync();
     }
 

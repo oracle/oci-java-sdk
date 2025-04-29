@@ -5,7 +5,8 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for creating a mount for a file system on a block volume. <br>
+ * Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeMountOperationDetails' definition
+ * instead of this. The details for creating a mount for a file system on a block volume. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,7 +33,7 @@ public final class CreateBlockVolumeMountDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The physical mount point used for mounting the file system on the block volume.
+         * The physical mount point where the file system is mounted on the block volume.
          *
          * <p>Example: {@code /mnt/yourmountpoint}
          */
@@ -40,7 +41,7 @@ public final class CreateBlockVolumeMountDetails
         private String mountPoint;
 
         /**
-         * The physical mount point used for mounting the file system on the block volume.
+         * The physical mount point where the file system is mounted on the block volume.
          *
          * <p>Example: {@code /mnt/yourmountpoint}
          *
@@ -84,7 +85,7 @@ public final class CreateBlockVolumeMountDetails
     }
 
     /**
-     * The physical mount point used for mounting the file system on the block volume.
+     * The physical mount point where the file system is mounted on the block volume.
      *
      * <p>Example: {@code /mnt/yourmountpoint}
      */
@@ -92,7 +93,7 @@ public final class CreateBlockVolumeMountDetails
     private final String mountPoint;
 
     /**
-     * The physical mount point used for mounting the file system on the block volume.
+     * The physical mount point where the file system is mounted on the block volume.
      *
      * <p>Example: {@code /mnt/yourmountpoint}
      *

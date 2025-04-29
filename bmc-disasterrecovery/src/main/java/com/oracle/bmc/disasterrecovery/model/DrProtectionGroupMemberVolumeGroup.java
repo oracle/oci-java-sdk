@@ -35,13 +35,95 @@ public final class DrProtectionGroupMemberVolumeGroup extends DrProtectionGroupM
             this.__explicitlySet__.add("memberId");
             return this;
         }
+        /**
+         * The OCID of the backup policy to use in the destination region. This policy will be used
+         * to create backups for this volume group after it moves the destination region.
+         *
+         * <p>Example: {@code ocid1.volumebackuppolicy.oc1..uniqueID}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationBackupPolicyId")
+        private String destinationBackupPolicyId;
+
+        /**
+         * The OCID of the backup policy to use in the destination region. This policy will be used
+         * to create backups for this volume group after it moves the destination region.
+         *
+         * <p>Example: {@code ocid1.volumebackuppolicy.oc1..uniqueID}
+         *
+         * @param destinationBackupPolicyId the value to set
+         * @return this builder
+         */
+        public Builder destinationBackupPolicyId(String destinationBackupPolicyId) {
+            this.destinationBackupPolicyId = destinationBackupPolicyId;
+            this.__explicitlySet__.add("destinationBackupPolicyId");
+            return this;
+        }
+        /**
+         * A list of mappings between source volume IDs in the volume group and customer-managed
+         * encryption keys in the destination region which will be used to encrypt the volume after
+         * it moves to the destination region.
+         *
+         * <p>If you add the entry for source volumes and its corresponding vault and encryption
+         * keys here, you can not use 'commonDestinationKey' for encrypting all volumes with common
+         * encryption key. Similarly, if you specify common vault and encryption key using
+         * 'commonDestinationKey', you cannot specify vaults and encryption keys individually for
+         * each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+         *
+         * <p>An entry for each volume in volume group should be added in this list. The encryption
+         * key will not be updated for the volumes that are part of volume group but missing in this
+         * list.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "sourceVolumeToDestinationEncryptionKeyMappings")
+        private java.util.List<SourceVolumeToDestinationEncryptionKeyMapping>
+                sourceVolumeToDestinationEncryptionKeyMappings;
+
+        /**
+         * A list of mappings between source volume IDs in the volume group and customer-managed
+         * encryption keys in the destination region which will be used to encrypt the volume after
+         * it moves to the destination region.
+         *
+         * <p>If you add the entry for source volumes and its corresponding vault and encryption
+         * keys here, you can not use 'commonDestinationKey' for encrypting all volumes with common
+         * encryption key. Similarly, if you specify common vault and encryption key using
+         * 'commonDestinationKey', you cannot specify vaults and encryption keys individually for
+         * each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+         *
+         * <p>An entry for each volume in volume group should be added in this list. The encryption
+         * key will not be updated for the volumes that are part of volume group but missing in this
+         * list.
+         *
+         * @param sourceVolumeToDestinationEncryptionKeyMappings the value to set
+         * @return this builder
+         */
+        public Builder sourceVolumeToDestinationEncryptionKeyMappings(
+                java.util.List<SourceVolumeToDestinationEncryptionKeyMapping>
+                        sourceVolumeToDestinationEncryptionKeyMappings) {
+            this.sourceVolumeToDestinationEncryptionKeyMappings =
+                    sourceVolumeToDestinationEncryptionKeyMappings;
+            this.__explicitlySet__.add("sourceVolumeToDestinationEncryptionKeyMappings");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("commonDestinationKey")
+        private VaultAndEncryptionKey commonDestinationKey;
+
+        public Builder commonDestinationKey(VaultAndEncryptionKey commonDestinationKey) {
+            this.commonDestinationKey = commonDestinationKey;
+            this.__explicitlySet__.add("commonDestinationKey");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DrProtectionGroupMemberVolumeGroup build() {
             DrProtectionGroupMemberVolumeGroup model =
-                    new DrProtectionGroupMemberVolumeGroup(this.memberId);
+                    new DrProtectionGroupMemberVolumeGroup(
+                            this.memberId,
+                            this.destinationBackupPolicyId,
+                            this.sourceVolumeToDestinationEncryptionKeyMappings,
+                            this.commonDestinationKey);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -52,6 +134,16 @@ public final class DrProtectionGroupMemberVolumeGroup extends DrProtectionGroupM
         public Builder copy(DrProtectionGroupMemberVolumeGroup model) {
             if (model.wasPropertyExplicitlySet("memberId")) {
                 this.memberId(model.getMemberId());
+            }
+            if (model.wasPropertyExplicitlySet("destinationBackupPolicyId")) {
+                this.destinationBackupPolicyId(model.getDestinationBackupPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceVolumeToDestinationEncryptionKeyMappings")) {
+                this.sourceVolumeToDestinationEncryptionKeyMappings(
+                        model.getSourceVolumeToDestinationEncryptionKeyMappings());
+            }
+            if (model.wasPropertyExplicitlySet("commonDestinationKey")) {
+                this.commonDestinationKey(model.getCommonDestinationKey());
             }
             return this;
         }
@@ -67,8 +159,84 @@ public final class DrProtectionGroupMemberVolumeGroup extends DrProtectionGroupM
     }
 
     @Deprecated
-    public DrProtectionGroupMemberVolumeGroup(String memberId) {
+    public DrProtectionGroupMemberVolumeGroup(
+            String memberId,
+            String destinationBackupPolicyId,
+            java.util.List<SourceVolumeToDestinationEncryptionKeyMapping>
+                    sourceVolumeToDestinationEncryptionKeyMappings,
+            VaultAndEncryptionKey commonDestinationKey) {
         super(memberId);
+        this.destinationBackupPolicyId = destinationBackupPolicyId;
+        this.sourceVolumeToDestinationEncryptionKeyMappings =
+                sourceVolumeToDestinationEncryptionKeyMappings;
+        this.commonDestinationKey = commonDestinationKey;
+    }
+
+    /**
+     * The OCID of the backup policy to use in the destination region. This policy will be used to
+     * create backups for this volume group after it moves the destination region.
+     *
+     * <p>Example: {@code ocid1.volumebackuppolicy.oc1..uniqueID}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationBackupPolicyId")
+    private final String destinationBackupPolicyId;
+
+    /**
+     * The OCID of the backup policy to use in the destination region. This policy will be used to
+     * create backups for this volume group after it moves the destination region.
+     *
+     * <p>Example: {@code ocid1.volumebackuppolicy.oc1..uniqueID}
+     *
+     * @return the value
+     */
+    public String getDestinationBackupPolicyId() {
+        return destinationBackupPolicyId;
+    }
+
+    /**
+     * A list of mappings between source volume IDs in the volume group and customer-managed
+     * encryption keys in the destination region which will be used to encrypt the volume after it
+     * moves to the destination region.
+     *
+     * <p>If you add the entry for source volumes and its corresponding vault and encryption keys
+     * here, you can not use 'commonDestinationKey' for encrypting all volumes with common
+     * encryption key. Similarly, if you specify common vault and encryption key using
+     * 'commonDestinationKey', you cannot specify vaults and encryption keys individually for each
+     * volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+     *
+     * <p>An entry for each volume in volume group should be added in this list. The encryption key
+     * will not be updated for the volumes that are part of volume group but missing in this list.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceVolumeToDestinationEncryptionKeyMappings")
+    private final java.util.List<SourceVolumeToDestinationEncryptionKeyMapping>
+            sourceVolumeToDestinationEncryptionKeyMappings;
+
+    /**
+     * A list of mappings between source volume IDs in the volume group and customer-managed
+     * encryption keys in the destination region which will be used to encrypt the volume after it
+     * moves to the destination region.
+     *
+     * <p>If you add the entry for source volumes and its corresponding vault and encryption keys
+     * here, you can not use 'commonDestinationKey' for encrypting all volumes with common
+     * encryption key. Similarly, if you specify common vault and encryption key using
+     * 'commonDestinationKey', you cannot specify vaults and encryption keys individually for each
+     * volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+     *
+     * <p>An entry for each volume in volume group should be added in this list. The encryption key
+     * will not be updated for the volumes that are part of volume group but missing in this list.
+     *
+     * @return the value
+     */
+    public java.util.List<SourceVolumeToDestinationEncryptionKeyMapping>
+            getSourceVolumeToDestinationEncryptionKeyMappings() {
+        return sourceVolumeToDestinationEncryptionKeyMappings;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("commonDestinationKey")
+    private final VaultAndEncryptionKey commonDestinationKey;
+
+    public VaultAndEncryptionKey getCommonDestinationKey() {
+        return commonDestinationKey;
     }
 
     @Override
@@ -86,6 +254,11 @@ public final class DrProtectionGroupMemberVolumeGroup extends DrProtectionGroupM
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DrProtectionGroupMemberVolumeGroup(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", destinationBackupPolicyId=")
+                .append(String.valueOf(this.destinationBackupPolicyId));
+        sb.append(", sourceVolumeToDestinationEncryptionKeyMappings=")
+                .append(String.valueOf(this.sourceVolumeToDestinationEncryptionKeyMappings));
+        sb.append(", commonDestinationKey=").append(String.valueOf(this.commonDestinationKey));
         sb.append(")");
         return sb.toString();
     }
@@ -100,13 +273,34 @@ public final class DrProtectionGroupMemberVolumeGroup extends DrProtectionGroupM
         }
 
         DrProtectionGroupMemberVolumeGroup other = (DrProtectionGroupMemberVolumeGroup) o;
-        return super.equals(other);
+        return java.util.Objects.equals(
+                        this.destinationBackupPolicyId, other.destinationBackupPolicyId)
+                && java.util.Objects.equals(
+                        this.sourceVolumeToDestinationEncryptionKeyMappings,
+                        other.sourceVolumeToDestinationEncryptionKeyMappings)
+                && java.util.Objects.equals(this.commonDestinationKey, other.commonDestinationKey)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.destinationBackupPolicyId == null
+                                ? 43
+                                : this.destinationBackupPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceVolumeToDestinationEncryptionKeyMappings == null
+                                ? 43
+                                : this.sourceVolumeToDestinationEncryptionKeyMappings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.commonDestinationKey == null
+                                ? 43
+                                : this.commonDestinationKey.hashCode());
         return result;
     }
 }

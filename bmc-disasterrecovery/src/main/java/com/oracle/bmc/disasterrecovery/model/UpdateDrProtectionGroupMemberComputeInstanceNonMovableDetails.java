@@ -75,13 +75,17 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
             this.__explicitlySet__.add("fileSystemOperations");
             return this;
         }
-        /** A list of operations performed on block volumes used by the compute instance. */
+        /**
+         * Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A
+         * list of operations performed on block volumes used by the compute instance.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeOperations")
         private java.util.List<UpdateComputeInstanceNonMovableBlockVolumeOperationDetails>
                 blockVolumeOperations;
 
         /**
-         * A list of operations performed on block volumes used by the compute instance.
+         * Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A
+         * list of operations performed on block volumes used by the compute instance.
          *
          * @param blockVolumeOperations the value to set
          * @return this builder
@@ -94,6 +98,18 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeAttachAndMountOperations")
+        private UpdateComputeInstanceNonMovableBlockVolumeAttachAndMountOperationsDetails
+                blockVolumeAttachAndMountOperations;
+
+        public Builder blockVolumeAttachAndMountOperations(
+                UpdateComputeInstanceNonMovableBlockVolumeAttachAndMountOperationsDetails
+                        blockVolumeAttachAndMountOperations) {
+            this.blockVolumeAttachAndMountOperations = blockVolumeAttachAndMountOperations;
+            this.__explicitlySet__.add("blockVolumeAttachAndMountOperations");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -103,7 +119,8 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
                             this.memberId,
                             this.isStartStopEnabled,
                             this.fileSystemOperations,
-                            this.blockVolumeOperations);
+                            this.blockVolumeOperations,
+                            this.blockVolumeAttachAndMountOperations);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -123,6 +140,10 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
             }
             if (model.wasPropertyExplicitlySet("blockVolumeOperations")) {
                 this.blockVolumeOperations(model.getBlockVolumeOperations());
+            }
+            if (model.wasPropertyExplicitlySet("blockVolumeAttachAndMountOperations")) {
+                this.blockVolumeAttachAndMountOperations(
+                        model.getBlockVolumeAttachAndMountOperations());
             }
             return this;
         }
@@ -144,11 +165,14 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
             java.util.List<UpdateComputeInstanceNonMovableFileSystemOperationDetails>
                     fileSystemOperations,
             java.util.List<UpdateComputeInstanceNonMovableBlockVolumeOperationDetails>
-                    blockVolumeOperations) {
+                    blockVolumeOperations,
+            UpdateComputeInstanceNonMovableBlockVolumeAttachAndMountOperationsDetails
+                    blockVolumeAttachAndMountOperations) {
         super(memberId);
         this.isStartStopEnabled = isStartStopEnabled;
         this.fileSystemOperations = fileSystemOperations;
         this.blockVolumeOperations = blockVolumeOperations;
+        this.blockVolumeAttachAndMountOperations = blockVolumeAttachAndMountOperations;
     }
 
     /**
@@ -185,19 +209,32 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
         return fileSystemOperations;
     }
 
-    /** A list of operations performed on block volumes used by the compute instance. */
+    /**
+     * Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A list
+     * of operations performed on block volumes used by the compute instance.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeOperations")
     private final java.util.List<UpdateComputeInstanceNonMovableBlockVolumeOperationDetails>
             blockVolumeOperations;
 
     /**
-     * A list of operations performed on block volumes used by the compute instance.
+     * Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A list
+     * of operations performed on block volumes used by the compute instance.
      *
      * @return the value
      */
     public java.util.List<UpdateComputeInstanceNonMovableBlockVolumeOperationDetails>
             getBlockVolumeOperations() {
         return blockVolumeOperations;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeAttachAndMountOperations")
+    private final UpdateComputeInstanceNonMovableBlockVolumeAttachAndMountOperationsDetails
+            blockVolumeAttachAndMountOperations;
+
+    public UpdateComputeInstanceNonMovableBlockVolumeAttachAndMountOperationsDetails
+            getBlockVolumeAttachAndMountOperations() {
+        return blockVolumeAttachAndMountOperations;
     }
 
     @Override
@@ -218,6 +255,8 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
         sb.append(", isStartStopEnabled=").append(String.valueOf(this.isStartStopEnabled));
         sb.append(", fileSystemOperations=").append(String.valueOf(this.fileSystemOperations));
         sb.append(", blockVolumeOperations=").append(String.valueOf(this.blockVolumeOperations));
+        sb.append(", blockVolumeAttachAndMountOperations=")
+                .append(String.valueOf(this.blockVolumeAttachAndMountOperations));
         sb.append(")");
         return sb.toString();
     }
@@ -236,6 +275,9 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
         return java.util.Objects.equals(this.isStartStopEnabled, other.isStartStopEnabled)
                 && java.util.Objects.equals(this.fileSystemOperations, other.fileSystemOperations)
                 && java.util.Objects.equals(this.blockVolumeOperations, other.blockVolumeOperations)
+                && java.util.Objects.equals(
+                        this.blockVolumeAttachAndMountOperations,
+                        other.blockVolumeAttachAndMountOperations)
                 && super.equals(other);
     }
 
@@ -258,6 +300,11 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
                         + (this.blockVolumeOperations == null
                                 ? 43
                                 : this.blockVolumeOperations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockVolumeAttachAndMountOperations == null
+                                ? 43
+                                : this.blockVolumeAttachAndMountOperations.hashCode());
         return result;
     }
 }

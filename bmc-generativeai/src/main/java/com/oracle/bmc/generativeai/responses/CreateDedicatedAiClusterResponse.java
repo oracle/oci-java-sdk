@@ -54,6 +54,18 @@ public class CreateDedicatedAiClusterResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
+    /** Provides deprecation details for models, included only when a model is deprecated. */
+    private String modelDeprecationInfo;
+
+    /**
+     * Provides deprecation details for models, included only when a model is deprecated.
+     *
+     * @return the value
+     */
+    public String getModelDeprecationInfo() {
+        return modelDeprecationInfo;
+    }
+
     /** The returned {@code DedicatedAiCluster} instance. */
     private com.oracle.bmc.generativeai.model.DedicatedAiCluster dedicatedAiCluster;
 
@@ -72,6 +84,7 @@ public class CreateDedicatedAiClusterResponse extends com.oracle.bmc.responses.B
         "etag",
         "opcWorkRequestId",
         "opcRequestId",
+        "modelDeprecationInfo",
         "dedicatedAiCluster"
     })
     private CreateDedicatedAiClusterResponse(
@@ -80,11 +93,13 @@ public class CreateDedicatedAiClusterResponse extends com.oracle.bmc.responses.B
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
+            String modelDeprecationInfo,
             com.oracle.bmc.generativeai.model.DedicatedAiCluster dedicatedAiCluster) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
+        this.modelDeprecationInfo = modelDeprecationInfo;
         this.dedicatedAiCluster = dedicatedAiCluster;
     }
 
@@ -159,6 +174,20 @@ public class CreateDedicatedAiClusterResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /** Provides deprecation details for models, included only when a model is deprecated. */
+        private String modelDeprecationInfo;
+
+        /**
+         * Provides deprecation details for models, included only when a model is deprecated.
+         *
+         * @param modelDeprecationInfo the value to set
+         * @return this builder
+         */
+        public Builder modelDeprecationInfo(String modelDeprecationInfo) {
+            this.modelDeprecationInfo = modelDeprecationInfo;
+            return this;
+        }
+
         /** The returned {@code DedicatedAiCluster} instance. */
         private com.oracle.bmc.generativeai.model.DedicatedAiCluster dedicatedAiCluster;
 
@@ -186,6 +215,7 @@ public class CreateDedicatedAiClusterResponse extends com.oracle.bmc.responses.B
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
+            modelDeprecationInfo(o.getModelDeprecationInfo());
             dedicatedAiCluster(o.getDedicatedAiCluster());
 
             return this;
@@ -204,6 +234,7 @@ public class CreateDedicatedAiClusterResponse extends com.oracle.bmc.responses.B
                     etag,
                     opcWorkRequestId,
                     opcRequestId,
+                    modelDeprecationInfo,
                     dedicatedAiCluster);
         }
     }
@@ -225,6 +256,7 @@ public class CreateDedicatedAiClusterResponse extends com.oracle.bmc.responses.B
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",modelDeprecationInfo=").append(String.valueOf(modelDeprecationInfo));
         sb.append(",dedicatedAiCluster=").append(String.valueOf(dedicatedAiCluster));
         sb.append(")");
         return sb.toString();
@@ -244,6 +276,7 @@ public class CreateDedicatedAiClusterResponse extends com.oracle.bmc.responses.B
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.modelDeprecationInfo, other.modelDeprecationInfo)
                 && java.util.Objects.equals(this.dedicatedAiCluster, other.dedicatedAiCluster);
     }
 
@@ -256,6 +289,11 @@ public class CreateDedicatedAiClusterResponse extends com.oracle.bmc.responses.B
                 (result * PRIME)
                         + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelDeprecationInfo == null
+                                ? 43
+                                : this.modelDeprecationInfo.hashCode());
         result =
                 (result * PRIME)
                         + (this.dedicatedAiCluster == null

@@ -36,6 +36,18 @@ public class RerankTextResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
+    /** Provides deprecation details for models, included only when a model is deprecated. */
+    private String modelDeprecationInfo;
+
+    /**
+     * Provides deprecation details for models, included only when a model is deprecated.
+     *
+     * @return the value
+     */
+    public String getModelDeprecationInfo() {
+        return modelDeprecationInfo;
+    }
+
     /** The returned {@code RerankTextResult} instance. */
     private com.oracle.bmc.generativeaiinference.model.RerankTextResult rerankTextResult;
 
@@ -53,6 +65,7 @@ public class RerankTextResponse extends com.oracle.bmc.responses.BmcResponse {
         "headers",
         "etag",
         "opcRequestId",
+        "modelDeprecationInfo",
         "rerankTextResult"
     })
     private RerankTextResponse(
@@ -60,10 +73,12 @@ public class RerankTextResponse extends com.oracle.bmc.responses.BmcResponse {
             java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
+            String modelDeprecationInfo,
             com.oracle.bmc.generativeaiinference.model.RerankTextResult rerankTextResult) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
+        this.modelDeprecationInfo = modelDeprecationInfo;
         this.rerankTextResult = rerankTextResult;
     }
 
@@ -117,6 +132,20 @@ public class RerankTextResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /** Provides deprecation details for models, included only when a model is deprecated. */
+        private String modelDeprecationInfo;
+
+        /**
+         * Provides deprecation details for models, included only when a model is deprecated.
+         *
+         * @param modelDeprecationInfo the value to set
+         * @return this builder
+         */
+        public Builder modelDeprecationInfo(String modelDeprecationInfo) {
+            this.modelDeprecationInfo = modelDeprecationInfo;
+            return this;
+        }
+
         /** The returned {@code RerankTextResult} instance. */
         private com.oracle.bmc.generativeaiinference.model.RerankTextResult rerankTextResult;
 
@@ -143,6 +172,7 @@ public class RerankTextResponse extends com.oracle.bmc.responses.BmcResponse {
             headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            modelDeprecationInfo(o.getModelDeprecationInfo());
             rerankTextResult(o.getRerankTextResult());
 
             return this;
@@ -156,7 +186,12 @@ public class RerankTextResponse extends com.oracle.bmc.responses.BmcResponse {
         @Override
         public RerankTextResponse build() {
             return new RerankTextResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, rerankTextResult);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    modelDeprecationInfo,
+                    rerankTextResult);
         }
     }
 
@@ -176,6 +211,7 @@ public class RerankTextResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append("super=").append(super.toString());
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",modelDeprecationInfo=").append(String.valueOf(modelDeprecationInfo));
         sb.append(",rerankTextResult=").append(String.valueOf(rerankTextResult));
         sb.append(")");
         return sb.toString();
@@ -194,6 +230,7 @@ public class RerankTextResponse extends com.oracle.bmc.responses.BmcResponse {
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.modelDeprecationInfo, other.modelDeprecationInfo)
                 && java.util.Objects.equals(this.rerankTextResult, other.rerankTextResult);
     }
 
@@ -203,6 +240,11 @@ public class RerankTextResponse extends com.oracle.bmc.responses.BmcResponse {
         int result = super.hashCode();
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelDeprecationInfo == null
+                                ? 43
+                                : this.modelDeprecationInfo.hashCode());
         result =
                 (result * PRIME)
                         + (this.rerankTextResult == null ? 43 : this.rerankTextResult.hashCode());

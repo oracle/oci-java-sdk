@@ -180,6 +180,7 @@ public class SessionTokenAuthenticationDetailsProvider
                 DEFAULT_REFRESH_INTERVAL_MINUTES,
                 TimeUnit.MINUTES,
                 DEFAULT_SESSION_LIFETIME_HOURS);
+
         // optional parameters for session token authentication.
         this.fingerprint = configFile.get("fingerprint");
         this.userId = configFile.get("user");

@@ -47,6 +47,13 @@ package com.oracle.bmc.disasterrecovery.model;
  * autonomous database to a snapshot at standby during a start drill. -
  * AUTONOMOUS_DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY - A DR plan step to convert an
  * autonomous database to a physical instance at standby during a stop drill. -
+ * DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY_PRECHECK - A precheck step for validating the
+ * conversion of a database to a snapshot at standby during a start drill. -
+ * DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY_PRECHECK - A precheck step for validating the
+ * conversion of a database to a physical instance at standby during a stop drill. -
+ * DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY - A DR plan step to convert a database to a
+ * snapshot at standby during a start drill. - DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY - A
+ * DR plan step to convert a database to a physical instance at standby during a stop drill. -
  * USER_DEFINED_PRECHECK - A precheck step for validating a user-defined step. -
  * COMPUTE_INSTANCE_LAUNCH - A DR plan step to launch a compute instance. - COMPUTE_INSTANCE_STOP -
  * A DR plan step to stop a compute instance. - COMPUTE_INSTANCE_TERMINATE - A DR plan step to
@@ -60,14 +67,15 @@ package com.oracle.bmc.disasterrecovery.model;
  * restoration during a failover. - VOLUME_GROUP_REVERSE - A DR plan step to reverse a volume group.
  * - VOLUME_GROUP_DELETE - A DR plan step to delete a volume group. - VOLUME_GROUP_REMOVE - A DR
  * plan step to remove a volume group. - VOLUME_GROUP_TERMINATE - A DR plan step to terminate a
- * volume group. - USER_DEFINED - User-defined step - VOLUME_GROUP_RESTORE_START_DRILL_PRECHECK - A
- * precheck step for validating a volume group restoration during a start drill. -
- * VOLUME_GROUP_REMOVE_PRECHECK - A precheck step for validating a volume group removal. -
- * VOLUME_GROUP_TERMINATE_PRECHECK - A precheck step for validating a volume group termination. -
- * VOLUME_GROUP_RESTORE_START_DRILL - A DR plan step for volume group restoration during a start
- * drill. - AUTONOMOUS_DATABASE_CREATE_CLONE_PRECHECK - A precheck step for validating the creation
- * of an autonomous database clone. - AUTONOMOUS_DATABASE_DELETE_CLONE_PRECHECK - A precheck step
- * for validating the deletion of an autonomous database clone. -
+ * volume group. - USER_DEFINED - User-defined step - USER_DEFINED_CUSTOM_PRECHECK - User-defined
+ * custom precheck step. - VOLUME_GROUP_RESTORE_START_DRILL_PRECHECK - A precheck step for
+ * validating a volume group restoration during a start drill. - VOLUME_GROUP_REMOVE_PRECHECK - A
+ * precheck step for validating a volume group removal. - VOLUME_GROUP_TERMINATE_PRECHECK - A
+ * precheck step for validating a volume group termination. - VOLUME_GROUP_RESTORE_START_DRILL - A
+ * DR plan step for volume group restoration during a start drill. -
+ * AUTONOMOUS_DATABASE_CREATE_CLONE_PRECHECK - A precheck step for validating the creation of an
+ * autonomous database clone. - AUTONOMOUS_DATABASE_DELETE_CLONE_PRECHECK - A precheck step for
+ * validating the deletion of an autonomous database clone. -
  * LOAD_BALANCER_UPDATE_PRIMARY_BACKEND_SET_PRECHECK - A precheck step for validating the update of
  * primary load balancer backend set. - LOAD_BALANCER_UPDATE_STANDBY_BACKEND_SET_PRECHECK - A
  * precheck step for validating the update of standby load balancer backend set. -
@@ -196,6 +204,12 @@ public enum DrPlanStepType implements com.oracle.bmc.http.internal.BmcEnum {
             "AUTONOMOUS_DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY"),
     AutonomousDatabaseStopDrillConvertToPhysicalStandby(
             "AUTONOMOUS_DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY"),
+    DatabaseStartDrillConvertToSnapshotStandbyPrecheck(
+            "DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY_PRECHECK"),
+    DatabaseStopDrillConvertToPhysicalStandbyPrecheck(
+            "DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY_PRECHECK"),
+    DatabaseStartDrillConvertToSnapshotStandby("DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY"),
+    DatabaseStopDrillConvertToPhysicalStandby("DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY"),
     UserDefinedPrecheck("USER_DEFINED_PRECHECK"),
     ComputeInstanceLaunch("COMPUTE_INSTANCE_LAUNCH"),
     ComputeInstanceStop("COMPUTE_INSTANCE_STOP"),
@@ -212,6 +226,7 @@ public enum DrPlanStepType implements com.oracle.bmc.http.internal.BmcEnum {
     VolumeGroupRemove("VOLUME_GROUP_REMOVE"),
     VolumeGroupTerminate("VOLUME_GROUP_TERMINATE"),
     UserDefined("USER_DEFINED"),
+    UserDefinedCustomPrecheck("USER_DEFINED_CUSTOM_PRECHECK"),
     VolumeGroupRestoreStartDrillPrecheck("VOLUME_GROUP_RESTORE_START_DRILL_PRECHECK"),
     VolumeGroupRemovePrecheck("VOLUME_GROUP_REMOVE_PRECHECK"),
     VolumeGroupTerminatePrecheck("VOLUME_GROUP_TERMINATE_PRECHECK"),

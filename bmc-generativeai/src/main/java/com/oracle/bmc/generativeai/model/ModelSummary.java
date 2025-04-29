@@ -37,6 +37,8 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         "modelMetrics",
         "isLongTermSupported",
         "timeDeprecated",
+        "timeOnDemandRetired",
+        "timeDedicatedRetired",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -57,6 +59,8 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             ModelMetrics modelMetrics,
             Boolean isLongTermSupported,
             java.util.Date timeDeprecated,
+            java.util.Date timeOnDemandRetired,
+            java.util.Date timeDedicatedRetired,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -76,6 +80,8 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         this.modelMetrics = modelMetrics;
         this.isLongTermSupported = isLongTermSupported;
         this.timeDeprecated = timeDeprecated;
+        this.timeOnDemandRetired = timeOnDemandRetired;
+        this.timeDedicatedRetired = timeDedicatedRetired;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -327,6 +333,44 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
+         * The timestamp indicating when the base model will no longer be available for on-demand
+         * usage.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOnDemandRetired")
+        private java.util.Date timeOnDemandRetired;
+
+        /**
+         * The timestamp indicating when the base model will no longer be available for on-demand
+         * usage.
+         *
+         * @param timeOnDemandRetired the value to set
+         * @return this builder
+         */
+        public Builder timeOnDemandRetired(java.util.Date timeOnDemandRetired) {
+            this.timeOnDemandRetired = timeOnDemandRetired;
+            this.__explicitlySet__.add("timeOnDemandRetired");
+            return this;
+        }
+        /**
+         * The timestamp indicating when the custom model and its associated foundation model will
+         * be fully retired.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDedicatedRetired")
+        private java.util.Date timeDedicatedRetired;
+
+        /**
+         * The timestamp indicating when the custom model and its associated foundation model will
+         * be fully retired.
+         *
+         * @param timeDedicatedRetired the value to set
+         * @return this builder
+         */
+        public Builder timeDedicatedRetired(java.util.Date timeDedicatedRetired) {
+            this.timeDedicatedRetired = timeDedicatedRetired;
+            this.__explicitlySet__.add("timeDedicatedRetired");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -420,6 +464,8 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
                             this.modelMetrics,
                             this.isLongTermSupported,
                             this.timeDeprecated,
+                            this.timeOnDemandRetired,
+                            this.timeDedicatedRetired,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -475,6 +521,12 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("timeDeprecated")) {
                 this.timeDeprecated(model.getTimeDeprecated());
+            }
+            if (model.wasPropertyExplicitlySet("timeOnDemandRetired")) {
+                this.timeOnDemandRetired(model.getTimeOnDemandRetired());
+            }
+            if (model.wasPropertyExplicitlySet("timeDedicatedRetired")) {
+                this.timeDedicatedRetired(model.getTimeDedicatedRetired());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -708,6 +760,38 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
+     * The timestamp indicating when the base model will no longer be available for on-demand usage.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOnDemandRetired")
+    private final java.util.Date timeOnDemandRetired;
+
+    /**
+     * The timestamp indicating when the base model will no longer be available for on-demand usage.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeOnDemandRetired() {
+        return timeOnDemandRetired;
+    }
+
+    /**
+     * The timestamp indicating when the custom model and its associated foundation model will be
+     * fully retired.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDedicatedRetired")
+    private final java.util.Date timeDedicatedRetired;
+
+    /**
+     * The timestamp indicating when the custom model and its associated foundation model will be
+     * fully retired.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeDedicatedRetired() {
+        return timeDedicatedRetired;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -802,6 +886,8 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", modelMetrics=").append(String.valueOf(this.modelMetrics));
         sb.append(", isLongTermSupported=").append(String.valueOf(this.isLongTermSupported));
         sb.append(", timeDeprecated=").append(String.valueOf(this.timeDeprecated));
+        sb.append(", timeOnDemandRetired=").append(String.valueOf(this.timeOnDemandRetired));
+        sb.append(", timeDedicatedRetired=").append(String.valueOf(this.timeDedicatedRetired));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -834,6 +920,8 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.modelMetrics, other.modelMetrics)
                 && java.util.Objects.equals(this.isLongTermSupported, other.isLongTermSupported)
                 && java.util.Objects.equals(this.timeDeprecated, other.timeDeprecated)
+                && java.util.Objects.equals(this.timeOnDemandRetired, other.timeOnDemandRetired)
+                && java.util.Objects.equals(this.timeDedicatedRetired, other.timeDedicatedRetired)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -873,6 +961,16 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         result =
                 (result * PRIME)
                         + (this.timeDeprecated == null ? 43 : this.timeDeprecated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOnDemandRetired == null
+                                ? 43
+                                : this.timeOnDemandRetired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDedicatedRetired == null
+                                ? 43
+                                : this.timeDedicatedRetired.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

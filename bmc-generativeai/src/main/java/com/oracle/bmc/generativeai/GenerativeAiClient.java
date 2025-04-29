@@ -255,6 +255,9 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateDedicatedAiClusterResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDedicatedAiClusterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "model-deprecation-info",
+                        CreateDedicatedAiClusterResponse.Builder::modelDeprecationInfo)
                 .callSync();
     }
 
@@ -286,6 +289,9 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-work-request-id", CreateEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "model-deprecation-info",
+                        CreateEndpointResponse.Builder::modelDeprecationInfo)
                 .callSync();
     }
 
@@ -316,6 +322,8 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-work-request-id", CreateModelResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "model-deprecation-info", CreateModelResponse.Builder::modelDeprecationInfo)
                 .callSync();
     }
 

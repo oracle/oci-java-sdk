@@ -22,19 +22,28 @@ package com.oracle.bmc.generativeaiinference.model;
 public final class EmbedTextResult
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "inputs", "embeddings", "modelId", "modelVersion"})
+    @java.beans.ConstructorProperties({
+        "id",
+        "inputs",
+        "embeddings",
+        "modelId",
+        "modelVersion",
+        "usage"
+    })
     public EmbedTextResult(
             String id,
             java.util.List<String> inputs,
             java.util.List<java.util.List<Float>> embeddings,
             String modelId,
-            String modelVersion) {
+            String modelVersion,
+            Usage usage) {
         super();
         this.id = id;
         this.inputs = inputs;
         this.embeddings = embeddings;
         this.modelId = modelId;
         this.modelVersion = modelVersion;
+        this.usage = usage;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -115,13 +124,27 @@ public final class EmbedTextResult
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("usage")
+        private Usage usage;
+
+        public Builder usage(Usage usage) {
+            this.usage = usage;
+            this.__explicitlySet__.add("usage");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EmbedTextResult build() {
             EmbedTextResult model =
                     new EmbedTextResult(
-                            this.id, this.inputs, this.embeddings, this.modelId, this.modelVersion);
+                            this.id,
+                            this.inputs,
+                            this.embeddings,
+                            this.modelId,
+                            this.modelVersion,
+                            this.usage);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -144,6 +167,9 @@ public final class EmbedTextResult
             }
             if (model.wasPropertyExplicitlySet("modelVersion")) {
                 this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("usage")) {
+                this.usage(model.getUsage());
             }
             return this;
         }
@@ -223,6 +249,13 @@ public final class EmbedTextResult
         return modelVersion;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("usage")
+    private final Usage usage;
+
+    public Usage getUsage() {
+        return usage;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -243,6 +276,7 @@ public final class EmbedTextResult
         sb.append(", embeddings=").append(String.valueOf(this.embeddings));
         sb.append(", modelId=").append(String.valueOf(this.modelId));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
+        sb.append(", usage=").append(String.valueOf(this.usage));
         sb.append(")");
         return sb.toString();
     }
@@ -262,6 +296,7 @@ public final class EmbedTextResult
                 && java.util.Objects.equals(this.embeddings, other.embeddings)
                 && java.util.Objects.equals(this.modelId, other.modelId)
                 && java.util.Objects.equals(this.modelVersion, other.modelVersion)
+                && java.util.Objects.equals(this.usage, other.usage)
                 && super.equals(other);
     }
 
@@ -274,6 +309,7 @@ public final class EmbedTextResult
         result = (result * PRIME) + (this.embeddings == null ? 43 : this.embeddings.hashCode());
         result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
         result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
+        result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
