@@ -28,6 +28,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         "type",
         "refreshStatus",
         "displayName",
+        "typeDisplayName",
         "errorMode",
         "timeout",
         "isEnabled",
@@ -40,6 +41,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
             DrPlanStepType type,
             DrPlanStepRefreshStatus refreshStatus,
             String displayName,
+            String typeDisplayName,
             DrPlanStepErrorMode errorMode,
             Integer timeout,
             Boolean isEnabled,
@@ -51,6 +53,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         this.type = type;
         this.refreshStatus = refreshStatus;
         this.displayName = displayName;
+        this.typeDisplayName = typeDisplayName;
         this.errorMode = errorMode;
         this.timeout = timeout;
         this.isEnabled = isEnabled;
@@ -179,6 +182,27 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("displayName");
             return this;
         }
+        /**
+         * The display name of the DR Plan step type.
+         *
+         * <p>Example: {@code Database Switchover}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("typeDisplayName")
+        private String typeDisplayName;
+
+        /**
+         * The display name of the DR Plan step type.
+         *
+         * <p>Example: {@code Database Switchover}
+         *
+         * @param typeDisplayName the value to set
+         * @return this builder
+         */
+        public Builder typeDisplayName(String typeDisplayName) {
+            this.typeDisplayName = typeDisplayName;
+            this.__explicitlySet__.add("typeDisplayName");
+            return this;
+        }
         /** The error mode for this step. */
         @com.fasterxml.jackson.annotation.JsonProperty("errorMode")
         private DrPlanStepErrorMode errorMode;
@@ -258,6 +282,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
                             this.type,
                             this.refreshStatus,
                             this.displayName,
+                            this.typeDisplayName,
                             this.errorMode,
                             this.timeout,
                             this.isEnabled,
@@ -287,6 +312,9 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("typeDisplayName")) {
+                this.typeDisplayName(model.getTypeDisplayName());
             }
             if (model.wasPropertyExplicitlySet("errorMode")) {
                 this.errorMode(model.getErrorMode());
@@ -421,6 +449,25 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         return displayName;
     }
 
+    /**
+     * The display name of the DR Plan step type.
+     *
+     * <p>Example: {@code Database Switchover}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("typeDisplayName")
+    private final String typeDisplayName;
+
+    /**
+     * The display name of the DR Plan step type.
+     *
+     * <p>Example: {@code Database Switchover}
+     *
+     * @return the value
+     */
+    public String getTypeDisplayName() {
+        return typeDisplayName;
+    }
+
     /** The error mode for this step. */
     @com.fasterxml.jackson.annotation.JsonProperty("errorMode")
     private final DrPlanStepErrorMode errorMode;
@@ -500,6 +547,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", refreshStatus=").append(String.valueOf(this.refreshStatus));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", typeDisplayName=").append(String.valueOf(this.typeDisplayName));
         sb.append(", errorMode=").append(String.valueOf(this.errorMode));
         sb.append(", timeout=").append(String.valueOf(this.timeout));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
@@ -524,6 +572,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.refreshStatus, other.refreshStatus)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.typeDisplayName, other.typeDisplayName)
                 && java.util.Objects.equals(this.errorMode, other.errorMode)
                 && java.util.Objects.equals(this.timeout, other.timeout)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
@@ -543,6 +592,9 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
                 (result * PRIME)
                         + (this.refreshStatus == null ? 43 : this.refreshStatus.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.typeDisplayName == null ? 43 : this.typeDisplayName.hashCode());
         result = (result * PRIME) + (this.errorMode == null ? 43 : this.errorMode.hashCode());
         result = (result * PRIME) + (this.timeout == null ? 43 : this.timeout.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());

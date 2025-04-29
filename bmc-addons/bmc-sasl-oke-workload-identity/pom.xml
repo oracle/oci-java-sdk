@@ -4,7 +4,7 @@
     <parent>
         <artifactId>oci-java-sdk-addons</artifactId>
         <groupId>com.oracle.oci.sdk</groupId>
-        <version>3.63.2</version>
+        <version>3.63.3</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -25,7 +25,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
+                <version>3.5.3</version>
                 <configuration>
                     <systemPropertyVariables>
                         <java.io.tmpdir>${user.dir}</java.io.tmpdir>
@@ -39,13 +39,13 @@
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-addons-sasl</artifactId>
-            <version>3.63.2</version>
+            <version>3.63.3</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-addons-oke-workload-identity</artifactId>
-            <version>3.63.2</version>
+            <version>3.63.3</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

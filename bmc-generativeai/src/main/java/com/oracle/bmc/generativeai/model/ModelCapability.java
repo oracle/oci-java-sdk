@@ -12,6 +12,7 @@ public enum ModelCapability implements com.oracle.bmc.http.internal.BmcEnum {
     TextEmbeddings("TEXT_EMBEDDINGS"),
     FineTune("FINE_TUNE"),
     Chat("CHAT"),
+    TextRerank("TEXT_RERANK"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

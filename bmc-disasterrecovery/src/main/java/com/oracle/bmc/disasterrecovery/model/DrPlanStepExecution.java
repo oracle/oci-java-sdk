@@ -28,6 +28,7 @@ public final class DrPlanStepExecution
         "type",
         "groupId",
         "displayName",
+        "typeDisplayName",
         "logLocation",
         "status",
         "statusDetails",
@@ -40,6 +41,7 @@ public final class DrPlanStepExecution
             DrPlanStepType type,
             String groupId,
             String displayName,
+            String typeDisplayName,
             ObjectStorageLogLocation logLocation,
             DrPlanStepExecutionStatus status,
             String statusDetails,
@@ -51,6 +53,7 @@ public final class DrPlanStepExecution
         this.type = type;
         this.groupId = groupId;
         this.displayName = displayName;
+        this.typeDisplayName = typeDisplayName;
         this.logLocation = logLocation;
         this.status = status;
         this.statusDetails = statusDetails;
@@ -137,6 +140,27 @@ public final class DrPlanStepExecution
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * The display name of the DR Plan step type.
+         *
+         * <p>Example: {@code Database Switchover}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("typeDisplayName")
+        private String typeDisplayName;
+
+        /**
+         * The display name of the DR Plan step type.
+         *
+         * <p>Example: {@code Database Switchover}
+         *
+         * @param typeDisplayName the value to set
+         * @return this builder
+         */
+        public Builder typeDisplayName(String typeDisplayName) {
+            this.typeDisplayName = typeDisplayName;
+            this.__explicitlySet__.add("typeDisplayName");
             return this;
         }
 
@@ -258,6 +282,7 @@ public final class DrPlanStepExecution
                             this.type,
                             this.groupId,
                             this.displayName,
+                            this.typeDisplayName,
                             this.logLocation,
                             this.status,
                             this.statusDetails,
@@ -283,6 +308,9 @@ public final class DrPlanStepExecution
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("typeDisplayName")) {
+                this.typeDisplayName(model.getTypeDisplayName());
             }
             if (model.wasPropertyExplicitlySet("logLocation")) {
                 this.logLocation(model.getLogLocation());
@@ -383,6 +411,25 @@ public final class DrPlanStepExecution
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * The display name of the DR Plan step type.
+     *
+     * <p>Example: {@code Database Switchover}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("typeDisplayName")
+    private final String typeDisplayName;
+
+    /**
+     * The display name of the DR Plan step type.
+     *
+     * <p>Example: {@code Database Switchover}
+     *
+     * @return the value
+     */
+    public String getTypeDisplayName() {
+        return typeDisplayName;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("logLocation")
@@ -500,6 +547,7 @@ public final class DrPlanStepExecution
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", groupId=").append(String.valueOf(this.groupId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", typeDisplayName=").append(String.valueOf(this.typeDisplayName));
         sb.append(", logLocation=").append(String.valueOf(this.logLocation));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", statusDetails=").append(String.valueOf(this.statusDetails));
@@ -524,6 +572,7 @@ public final class DrPlanStepExecution
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.groupId, other.groupId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.typeDisplayName, other.typeDisplayName)
                 && java.util.Objects.equals(this.logLocation, other.logLocation)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.statusDetails, other.statusDetails)
@@ -542,6 +591,9 @@ public final class DrPlanStepExecution
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.groupId == null ? 43 : this.groupId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.typeDisplayName == null ? 43 : this.typeDisplayName.hashCode());
         result = (result * PRIME) + (this.logLocation == null ? 43 : this.logLocation.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result =

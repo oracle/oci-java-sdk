@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.63.3 - 2025-04-29
+### Added 
+- Support for custom headers for model retirement in the Generative AI service 
+- Support for usage statistics in the responses of Cohere chat and embed APIs in the Generative AI service 
+- Support for custom prechecks in disaster recovery plans in the Disaster Recovery service 
+- Support for retention of automatic backups in the database system deletion policy in the HeatWave service 
+- Support for updating compartment of schedules in the Resource Scheduler service 
+- Support for listing schedules by resource identifier in the Resource Scheduler service 
+- Support for custom parameters when creating schedules in the Resource Scheduler service 
+
+### Changed 
+- Updated the maven-surefire-plugin version from v2.19.1 to v3.5.3
+
 ## 3.63.2 - 2025-04-22
 ### Added 
 - Support for patch management in the Database Lifecycle Management service 

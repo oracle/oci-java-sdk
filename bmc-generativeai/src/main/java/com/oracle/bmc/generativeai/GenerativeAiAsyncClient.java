@@ -237,6 +237,9 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         CreateDedicatedAiClusterResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDedicatedAiClusterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "model-deprecation-info",
+                        CreateDedicatedAiClusterResponse.Builder::modelDeprecationInfo)
                 .callAsync(handler);
     }
 
@@ -271,6 +274,9 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-work-request-id", CreateEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "model-deprecation-info",
+                        CreateEndpointResponse.Builder::modelDeprecationInfo)
                 .callAsync(handler);
     }
 
@@ -303,6 +309,8 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-work-request-id", CreateModelResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "model-deprecation-info", CreateModelResponse.Builder::modelDeprecationInfo)
                 .callAsync(handler);
     }
 

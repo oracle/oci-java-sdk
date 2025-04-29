@@ -159,6 +159,44 @@ public class ScheduleAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeScheduleCompartmentResponse> changeScheduleCompartment(
+            ChangeScheduleCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeScheduleCompartmentRequest, ChangeScheduleCompartmentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeScheduleCompartmentDetails(),
+                "changeScheduleCompartmentDetails is required");
+
+        return clientCall(request, ChangeScheduleCompartmentResponse::builder)
+                .logger(LOG, "changeScheduleCompartment")
+                .serviceDetails(
+                        "Schedule",
+                        "ChangeScheduleCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/ChangeScheduleCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeScheduleCompartmentRequest::builder)
+                .basePath("/20240430")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeScheduleCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeScheduleCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateScheduleResponse> createSchedule(
             CreateScheduleRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -378,6 +416,7 @@ public class ScheduleAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("resourceId", request.getResourceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

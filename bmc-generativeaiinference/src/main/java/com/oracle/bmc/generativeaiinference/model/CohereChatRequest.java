@@ -164,6 +164,15 @@ public final class CohereChatRequest extends BaseChatRequest {
             this.__explicitlySet__.add("isStream");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("streamOptions")
+        private StreamOptions streamOptions;
+
+        public Builder streamOptions(StreamOptions streamOptions) {
+            this.streamOptions = streamOptions;
+            this.__explicitlySet__.add("streamOptions");
+            return this;
+        }
         /** The maximum number of output tokens that the model will generate for the response. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
         private Integer maxTokens;
@@ -511,25 +520,35 @@ public final class CohereChatRequest extends BaseChatRequest {
             return this;
         }
         /**
-         * Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL
-         * mode, It is appropriate for wide-ranging interactions with fewer constraints on output
-         * while maintaining core protections by rejecting harmful or illegal suggestions. When
-         * selected STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual
-         * acts and profanity. When selected OFF, the safety instruction will be omitted. Note: This
-         * parameter is only compatible with models Command R 08-2024, Command R+ 08-2024 and newer.
-         * Also, command-r7b-12-2024 only supports "CONTEXTUAL" and "STRICT" modes.
+         * Safety mode: Adds a safety instruction for the model to use when generating responses.
+         * Contextual: (Default) Puts fewer constraints on the output. It maintains core protections
+         * by aiming to reject harmful or illegal suggestions, but it allows profanity and some
+         * toxic content, sexually explicit and violent content, and content that contains medical,
+         * financial, or legal information. Contextual mode is suited for entertainment, creative,
+         * or academic use. Strict: Aims to avoid sensitive topics, such as violent or sexual acts
+         * and profanity. This mode aims to provide a safer experience by prohibiting responses or
+         * recommendations that it finds inappropriate. Strict mode is suited for corporate use,
+         * such as for corporate communications and customer service. Off: No safety mode is
+         * applied. Note: This parameter is only compatible with models cohere.command-r-08-2024,
+         * cohere.command-r-plus-08-2024 and Cohere models released after these models. See [release
+         * dates](https://docs.oracle.com/iaas/Content/generative-ai/deprecating.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("safetyMode")
         private SafetyMode safetyMode;
 
         /**
-         * Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL
-         * mode, It is appropriate for wide-ranging interactions with fewer constraints on output
-         * while maintaining core protections by rejecting harmful or illegal suggestions. When
-         * selected STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual
-         * acts and profanity. When selected OFF, the safety instruction will be omitted. Note: This
-         * parameter is only compatible with models Command R 08-2024, Command R+ 08-2024 and newer.
-         * Also, command-r7b-12-2024 only supports "CONTEXTUAL" and "STRICT" modes.
+         * Safety mode: Adds a safety instruction for the model to use when generating responses.
+         * Contextual: (Default) Puts fewer constraints on the output. It maintains core protections
+         * by aiming to reject harmful or illegal suggestions, but it allows profanity and some
+         * toxic content, sexually explicit and violent content, and content that contains medical,
+         * financial, or legal information. Contextual mode is suited for entertainment, creative,
+         * or academic use. Strict: Aims to avoid sensitive topics, such as violent or sexual acts
+         * and profanity. This mode aims to provide a safer experience by prohibiting responses or
+         * recommendations that it finds inappropriate. Strict mode is suited for corporate use,
+         * such as for corporate communications and customer service. Off: No safety mode is
+         * applied. Note: This parameter is only compatible with models cohere.command-r-08-2024,
+         * cohere.command-r-plus-08-2024 and Cohere models released after these models. See [release
+         * dates](https://docs.oracle.com/iaas/Content/generative-ai/deprecating.htm).
          *
          * @param safetyMode the value to set
          * @return this builder
@@ -553,6 +572,7 @@ public final class CohereChatRequest extends BaseChatRequest {
                             this.isSearchQueriesOnly,
                             this.preambleOverride,
                             this.isStream,
+                            this.streamOptions,
                             this.maxTokens,
                             this.maxInputTokens,
                             this.temperature,
@@ -598,6 +618,9 @@ public final class CohereChatRequest extends BaseChatRequest {
             }
             if (model.wasPropertyExplicitlySet("isStream")) {
                 this.isStream(model.getIsStream());
+            }
+            if (model.wasPropertyExplicitlySet("streamOptions")) {
+                this.streamOptions(model.getStreamOptions());
             }
             if (model.wasPropertyExplicitlySet("maxTokens")) {
                 this.maxTokens(model.getMaxTokens());
@@ -672,6 +695,7 @@ public final class CohereChatRequest extends BaseChatRequest {
             Boolean isSearchQueriesOnly,
             String preambleOverride,
             Boolean isStream,
+            StreamOptions streamOptions,
             Integer maxTokens,
             Integer maxInputTokens,
             Double temperature,
@@ -697,6 +721,7 @@ public final class CohereChatRequest extends BaseChatRequest {
         this.isSearchQueriesOnly = isSearchQueriesOnly;
         this.preambleOverride = preambleOverride;
         this.isStream = isStream;
+        this.streamOptions = streamOptions;
         this.maxTokens = maxTokens;
         this.maxInputTokens = maxInputTokens;
         this.temperature = temperature;
@@ -837,6 +862,13 @@ public final class CohereChatRequest extends BaseChatRequest {
      */
     public Boolean getIsStream() {
         return isStream;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("streamOptions")
+    private final StreamOptions streamOptions;
+
+    public StreamOptions getStreamOptions() {
+        return streamOptions;
     }
 
     /** The maximum number of output tokens that the model will generate for the response. */
@@ -1219,13 +1251,18 @@ public final class CohereChatRequest extends BaseChatRequest {
     }
 
     /**
-     * Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL
-     * mode, It is appropriate for wide-ranging interactions with fewer constraints on output while
-     * maintaining core protections by rejecting harmful or illegal suggestions. When selected
-     * STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual acts and
-     * profanity. When selected OFF, the safety instruction will be omitted. Note: This parameter is
-     * only compatible with models Command R 08-2024, Command R+ 08-2024 and newer. Also,
-     * command-r7b-12-2024 only supports "CONTEXTUAL" and "STRICT" modes.
+     * Safety mode: Adds a safety instruction for the model to use when generating responses.
+     * Contextual: (Default) Puts fewer constraints on the output. It maintains core protections by
+     * aiming to reject harmful or illegal suggestions, but it allows profanity and some toxic
+     * content, sexually explicit and violent content, and content that contains medical, financial,
+     * or legal information. Contextual mode is suited for entertainment, creative, or academic use.
+     * Strict: Aims to avoid sensitive topics, such as violent or sexual acts and profanity. This
+     * mode aims to provide a safer experience by prohibiting responses or recommendations that it
+     * finds inappropriate. Strict mode is suited for corporate use, such as for corporate
+     * communications and customer service. Off: No safety mode is applied. Note: This parameter is
+     * only compatible with models cohere.command-r-08-2024, cohere.command-r-plus-08-2024 and
+     * Cohere models released after these models. See [release
+     * dates](https://docs.oracle.com/iaas/Content/generative-ai/deprecating.htm).
      */
     public enum SafetyMode implements com.oracle.bmc.http.internal.BmcEnum {
         Contextual("CONTEXTUAL"),
@@ -1261,25 +1298,35 @@ public final class CohereChatRequest extends BaseChatRequest {
         }
     };
     /**
-     * Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL
-     * mode, It is appropriate for wide-ranging interactions with fewer constraints on output while
-     * maintaining core protections by rejecting harmful or illegal suggestions. When selected
-     * STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual acts and
-     * profanity. When selected OFF, the safety instruction will be omitted. Note: This parameter is
-     * only compatible with models Command R 08-2024, Command R+ 08-2024 and newer. Also,
-     * command-r7b-12-2024 only supports "CONTEXTUAL" and "STRICT" modes.
+     * Safety mode: Adds a safety instruction for the model to use when generating responses.
+     * Contextual: (Default) Puts fewer constraints on the output. It maintains core protections by
+     * aiming to reject harmful or illegal suggestions, but it allows profanity and some toxic
+     * content, sexually explicit and violent content, and content that contains medical, financial,
+     * or legal information. Contextual mode is suited for entertainment, creative, or academic use.
+     * Strict: Aims to avoid sensitive topics, such as violent or sexual acts and profanity. This
+     * mode aims to provide a safer experience by prohibiting responses or recommendations that it
+     * finds inappropriate. Strict mode is suited for corporate use, such as for corporate
+     * communications and customer service. Off: No safety mode is applied. Note: This parameter is
+     * only compatible with models cohere.command-r-08-2024, cohere.command-r-plus-08-2024 and
+     * Cohere models released after these models. See [release
+     * dates](https://docs.oracle.com/iaas/Content/generative-ai/deprecating.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("safetyMode")
     private final SafetyMode safetyMode;
 
     /**
-     * Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL
-     * mode, It is appropriate for wide-ranging interactions with fewer constraints on output while
-     * maintaining core protections by rejecting harmful or illegal suggestions. When selected
-     * STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual acts and
-     * profanity. When selected OFF, the safety instruction will be omitted. Note: This parameter is
-     * only compatible with models Command R 08-2024, Command R+ 08-2024 and newer. Also,
-     * command-r7b-12-2024 only supports "CONTEXTUAL" and "STRICT" modes.
+     * Safety mode: Adds a safety instruction for the model to use when generating responses.
+     * Contextual: (Default) Puts fewer constraints on the output. It maintains core protections by
+     * aiming to reject harmful or illegal suggestions, but it allows profanity and some toxic
+     * content, sexually explicit and violent content, and content that contains medical, financial,
+     * or legal information. Contextual mode is suited for entertainment, creative, or academic use.
+     * Strict: Aims to avoid sensitive topics, such as violent or sexual acts and profanity. This
+     * mode aims to provide a safer experience by prohibiting responses or recommendations that it
+     * finds inappropriate. Strict mode is suited for corporate use, such as for corporate
+     * communications and customer service. Off: No safety mode is applied. Note: This parameter is
+     * only compatible with models cohere.command-r-08-2024, cohere.command-r-plus-08-2024 and
+     * Cohere models released after these models. See [release
+     * dates](https://docs.oracle.com/iaas/Content/generative-ai/deprecating.htm).
      *
      * @return the value
      */
@@ -1309,6 +1356,7 @@ public final class CohereChatRequest extends BaseChatRequest {
         sb.append(", isSearchQueriesOnly=").append(String.valueOf(this.isSearchQueriesOnly));
         sb.append(", preambleOverride=").append(String.valueOf(this.preambleOverride));
         sb.append(", isStream=").append(String.valueOf(this.isStream));
+        sb.append(", streamOptions=").append(String.valueOf(this.streamOptions));
         sb.append(", maxTokens=").append(String.valueOf(this.maxTokens));
         sb.append(", maxInputTokens=").append(String.valueOf(this.maxInputTokens));
         sb.append(", temperature=").append(String.valueOf(this.temperature));
@@ -1347,6 +1395,7 @@ public final class CohereChatRequest extends BaseChatRequest {
                 && java.util.Objects.equals(this.isSearchQueriesOnly, other.isSearchQueriesOnly)
                 && java.util.Objects.equals(this.preambleOverride, other.preambleOverride)
                 && java.util.Objects.equals(this.isStream, other.isStream)
+                && java.util.Objects.equals(this.streamOptions, other.streamOptions)
                 && java.util.Objects.equals(this.maxTokens, other.maxTokens)
                 && java.util.Objects.equals(this.maxInputTokens, other.maxInputTokens)
                 && java.util.Objects.equals(this.temperature, other.temperature)
@@ -1386,6 +1435,9 @@ public final class CohereChatRequest extends BaseChatRequest {
                 (result * PRIME)
                         + (this.preambleOverride == null ? 43 : this.preambleOverride.hashCode());
         result = (result * PRIME) + (this.isStream == null ? 43 : this.isStream.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.streamOptions == null ? 43 : this.streamOptions.hashCode());
         result = (result * PRIME) + (this.maxTokens == null ? 43 : this.maxTokens.hashCode());
         result =
                 (result * PRIME)

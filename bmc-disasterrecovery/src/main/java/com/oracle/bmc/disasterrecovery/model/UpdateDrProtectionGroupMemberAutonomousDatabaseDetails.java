@@ -89,6 +89,16 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationEncryptionKey")
+        private UpdateVaultAndEncryptionKeyDetails destinationEncryptionKey;
+
+        public Builder destinationEncryptionKey(
+                UpdateVaultAndEncryptionKeyDetails destinationEncryptionKey) {
+            this.destinationEncryptionKey = destinationEncryptionKey;
+            this.__explicitlySet__.add("destinationEncryptionKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -97,7 +107,8 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
                     new UpdateDrProtectionGroupMemberAutonomousDatabaseDetails(
                             this.memberId,
                             this.autonomousDatabaseStandbyTypeForDrDrills,
-                            this.passwordVaultSecretId);
+                            this.passwordVaultSecretId,
+                            this.destinationEncryptionKey);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -116,6 +127,9 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
             if (model.wasPropertyExplicitlySet("passwordVaultSecretId")) {
                 this.passwordVaultSecretId(model.getPasswordVaultSecretId());
             }
+            if (model.wasPropertyExplicitlySet("destinationEncryptionKey")) {
+                this.destinationEncryptionKey(model.getDestinationEncryptionKey());
+            }
             return this;
         }
     }
@@ -133,10 +147,12 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
     public UpdateDrProtectionGroupMemberAutonomousDatabaseDetails(
             String memberId,
             AutonomousDatabaseStandbyTypeForDrDrills autonomousDatabaseStandbyTypeForDrDrills,
-            String passwordVaultSecretId) {
+            String passwordVaultSecretId,
+            UpdateVaultAndEncryptionKeyDetails destinationEncryptionKey) {
         super(memberId);
         this.autonomousDatabaseStandbyTypeForDrDrills = autonomousDatabaseStandbyTypeForDrDrills;
         this.passwordVaultSecretId = passwordVaultSecretId;
+        this.destinationEncryptionKey = destinationEncryptionKey;
     }
 
     /**
@@ -185,6 +201,13 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
         return passwordVaultSecretId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationEncryptionKey")
+    private final UpdateVaultAndEncryptionKeyDetails destinationEncryptionKey;
+
+    public UpdateVaultAndEncryptionKeyDetails getDestinationEncryptionKey() {
+        return destinationEncryptionKey;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -203,6 +226,8 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
         sb.append(", autonomousDatabaseStandbyTypeForDrDrills=")
                 .append(String.valueOf(this.autonomousDatabaseStandbyTypeForDrDrills));
         sb.append(", passwordVaultSecretId=").append(String.valueOf(this.passwordVaultSecretId));
+        sb.append(", destinationEncryptionKey=")
+                .append(String.valueOf(this.destinationEncryptionKey));
         sb.append(")");
         return sb.toString();
     }
@@ -222,6 +247,8 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
                         this.autonomousDatabaseStandbyTypeForDrDrills,
                         other.autonomousDatabaseStandbyTypeForDrDrills)
                 && java.util.Objects.equals(this.passwordVaultSecretId, other.passwordVaultSecretId)
+                && java.util.Objects.equals(
+                        this.destinationEncryptionKey, other.destinationEncryptionKey)
                 && super.equals(other);
     }
 
@@ -239,6 +266,11 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
                         + (this.passwordVaultSecretId == null
                                 ? 43
                                 : this.passwordVaultSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationEncryptionKey == null
+                                ? 43
+                                : this.destinationEncryptionKey.hashCode());
         return result;
     }
 }
