@@ -4,7 +4,7 @@ When using the Jersey 2 or Jersey 3 HTTP clients (`oci-java-sdk-common-httpclien
 
 ## Memory Consumption due to Buffering by the Apache Connector
 
-The `ApacheConfigurator` buffers requests into memory and can impact memory utilization of your application.  This increased use of memory is especially relavent when using`ObjectStorageClient` to upload large objects to the Object Storage service.
+The `ApacheConfigurator` buffers requests into memory and can impact memory utilization of your application.  This increased use of memory is especially relevant when using`ObjectStorageClient` to upload large objects to the Object Storage service.
 In order to prevent buffering of requests in memory please use `ApacheConfigurator.NonBuffering` and provide the `contentLength` when calling the API. For example, when calling `ObjectStorageClient.putObject()`, pass the content length when creating 
 `PutObjectRequest`. For `ObjectStorageClient`, `ApacheConfigurator.NonBuffering` is the default option. Overriding the 
 `clientConfigurator` will default back to Jersey Default Connector.
@@ -110,7 +110,7 @@ For API calls that return binary/stream response, the SDK will auto-close the st
 
 ## Configure the Connection Pool
 
-The ApacheConfigurator configures a connection pool by default. However, the connnection pool can be configured or disabled. Configure the connection pool as follows:
+The ApacheConfigurator configures a connection pool by default. However, the connection pool can be configured or disabled. Configure the connection pool as follows:
 
     final PoolingHttpClientConnectionManager poolConnectionManager =
             new PoolingHttpClientConnectionManager();
@@ -236,7 +236,7 @@ Note : Disabling connection monitor thread by changing the system property disab
 
 ### Disabling extra logs related to streams
 The SDK emits warnings related to streams when an API that returns streams in its response is called. To disable the logs around streams, you can set 
-the system property `oci.javasdk.extra.stream.logs.enabled` to `false`. This can be done programmitically or by passing a system property in the java command line.
+the system property `oci.javasdk.extra.stream.logs.enabled` to `false`. This can be done programmatically or by passing a system property in the java command line.
 
 More examples related to customizing Apache Connector can be found [here](https://github.com/oracle/oci-java-sdk/tree/master/bmc-examples/src/main/java/ApacheConnectorPropertiesExample.java) 
 
@@ -245,4 +245,4 @@ Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
 This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl
 or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
-See [LICENSE](../../LICENSE.txt) for more details.
+See [LICENSE](LICENSE.txt) for more details.
