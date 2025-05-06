@@ -179,6 +179,17 @@ public class ListLogAnalyticsEntityTopologyRequest
     public java.util.List<String> getMetadataEquals() {
         return metadataEquals;
     }
+    /**
+     * A filter to return log analytics entity toplogy whose context matches the specified string.
+     */
+    private String context;
+
+    /**
+     * A filter to return log analytics entity toplogy whose context matches the specified string.
+     */
+    public String getContext() {
+        return context;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -346,6 +357,24 @@ public class ListLogAnalyticsEntityTopologyRequest
         }
 
         /**
+         * A filter to return log analytics entity toplogy whose context matches the specified
+         * string.
+         */
+        private String context = null;
+
+        /**
+         * A filter to return log analytics entity toplogy whose context matches the specified
+         * string.
+         *
+         * @param context the value to set
+         * @return this builder instance
+         */
+        public Builder context(String context) {
+            this.context = context;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -384,6 +413,7 @@ public class ListLogAnalyticsEntityTopologyRequest
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             metadataEquals(o.getMetadataEquals());
+            context(o.getContext());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -428,9 +458,11 @@ public class ListLogAnalyticsEntityTopologyRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             request.metadataEquals = metadataEquals;
+            request.context = context;
             return request;
             // new ListLogAnalyticsEntityTopologyRequest(namespaceName, logAnalyticsEntityId,
-            // lifecycleState, limit, page, sortOrder, sortBy, opcRequestId, metadataEquals);
+            // lifecycleState, limit, page, sortOrder, sortBy, opcRequestId, metadataEquals,
+            // context);
         }
     }
 
@@ -449,7 +481,8 @@ public class ListLogAnalyticsEntityTopologyRequest
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
-                .metadataEquals(metadataEquals);
+                .metadataEquals(metadataEquals)
+                .context(context);
     }
 
     /**
@@ -475,6 +508,7 @@ public class ListLogAnalyticsEntityTopologyRequest
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",metadataEquals=").append(String.valueOf(this.metadataEquals));
+        sb.append(",context=").append(String.valueOf(this.context));
         sb.append(")");
         return sb.toString();
     }
@@ -498,7 +532,8 @@ public class ListLogAnalyticsEntityTopologyRequest
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.metadataEquals, other.metadataEquals);
+                && java.util.Objects.equals(this.metadataEquals, other.metadataEquals)
+                && java.util.Objects.equals(this.context, other.context);
     }
 
     @Override
@@ -524,6 +559,7 @@ public class ListLogAnalyticsEntityTopologyRequest
         result =
                 (result * PRIME)
                         + (this.metadataEquals == null ? 43 : this.metadataEquals.hashCode());
+        result = (result * PRIME) + (this.context == null ? 43 : this.context.hashCode());
         return result;
     }
 }

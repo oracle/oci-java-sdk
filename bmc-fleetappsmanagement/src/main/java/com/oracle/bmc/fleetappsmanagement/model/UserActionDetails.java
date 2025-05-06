@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -43,6 +43,8 @@ public class UserActionDetails extends com.oracle.bmc.http.client.internal.Expli
     public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
         Retry("RETRY"),
         Resume("RESUME"),
+        Ignore("IGNORE"),
+        Abort("ABORT"),
         ;
 
         private final String value;

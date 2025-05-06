@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = PlatformSpecificArtifact.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -25,7 +25,7 @@ public final class PlatformSpecificArtifact
     @Deprecated
     @java.beans.ConstructorProperties({"content", "osType", "architecture"})
     public PlatformSpecificArtifact(
-            ContentDetails content, OsType osType, Architecture architecture) {
+            PatchFileContentDetails content, OsType osType, Architecture architecture) {
         super();
         this.content = content;
         this.osType = osType;
@@ -36,9 +36,9 @@ public final class PlatformSpecificArtifact
     public static class Builder {
 
         @com.fasterxml.jackson.annotation.JsonProperty("content")
-        private ContentDetails content;
+        private PatchFileContentDetails content;
 
-        public Builder content(ContentDetails content) {
+        public Builder content(PatchFileContentDetails content) {
             this.content = content;
             this.__explicitlySet__.add("content");
             return this;
@@ -111,9 +111,9 @@ public final class PlatformSpecificArtifact
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("content")
-    private final ContentDetails content;
+    private final PatchFileContentDetails content;
 
-    public ContentDetails getContent() {
+    public PatchFileContentDetails getContent() {
         return content;
     }
 

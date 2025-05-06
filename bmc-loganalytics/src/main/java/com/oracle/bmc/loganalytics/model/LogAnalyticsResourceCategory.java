@@ -23,14 +23,28 @@ package com.oracle.bmc.loganalytics.model;
 public final class LogAnalyticsResourceCategory
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"resourceId", "resourceType", "categoryName", "isSystem"})
+    @java.beans.ConstructorProperties({
+        "resourceId",
+        "resourceType",
+        "categoryName",
+        "isSystem",
+        "resourceDisplayName",
+        "compartmentId"
+    })
     public LogAnalyticsResourceCategory(
-            String resourceId, String resourceType, String categoryName, Boolean isSystem) {
+            String resourceId,
+            String resourceType,
+            String categoryName,
+            Boolean isSystem,
+            String resourceDisplayName,
+            String compartmentId) {
         super();
         this.resourceId = resourceId;
         this.resourceType = resourceType;
         this.categoryName = categoryName;
         this.isSystem = isSystem;
+        this.resourceDisplayName = resourceDisplayName;
+        this.compartmentId = compartmentId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -99,6 +113,36 @@ public final class LogAnalyticsResourceCategory
             this.__explicitlySet__.add("isSystem");
             return this;
         }
+        /** The resource display name. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceDisplayName")
+        private String resourceDisplayName;
+
+        /**
+         * The resource display name.
+         *
+         * @param resourceDisplayName the value to set
+         * @return this builder
+         */
+        public Builder resourceDisplayName(String resourceDisplayName) {
+            this.resourceDisplayName = resourceDisplayName;
+            this.__explicitlySet__.add("resourceDisplayName");
+            return this;
+        }
+        /** Compartment ID of the resource */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * Compartment ID of the resource
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -106,7 +150,12 @@ public final class LogAnalyticsResourceCategory
         public LogAnalyticsResourceCategory build() {
             LogAnalyticsResourceCategory model =
                     new LogAnalyticsResourceCategory(
-                            this.resourceId, this.resourceType, this.categoryName, this.isSystem);
+                            this.resourceId,
+                            this.resourceType,
+                            this.categoryName,
+                            this.isSystem,
+                            this.resourceDisplayName,
+                            this.compartmentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -126,6 +175,12 @@ public final class LogAnalyticsResourceCategory
             }
             if (model.wasPropertyExplicitlySet("isSystem")) {
                 this.isSystem(model.getIsSystem());
+            }
+            if (model.wasPropertyExplicitlySet("resourceDisplayName")) {
+                this.resourceDisplayName(model.getResourceDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
             }
             return this;
         }
@@ -196,6 +251,32 @@ public final class LogAnalyticsResourceCategory
         return isSystem;
     }
 
+    /** The resource display name. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceDisplayName")
+    private final String resourceDisplayName;
+
+    /**
+     * The resource display name.
+     *
+     * @return the value
+     */
+    public String getResourceDisplayName() {
+        return resourceDisplayName;
+    }
+
+    /** Compartment ID of the resource */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * Compartment ID of the resource
+     *
+     * @return the value
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -215,6 +296,8 @@ public final class LogAnalyticsResourceCategory
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", categoryName=").append(String.valueOf(this.categoryName));
         sb.append(", isSystem=").append(String.valueOf(this.isSystem));
+        sb.append(", resourceDisplayName=").append(String.valueOf(this.resourceDisplayName));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -233,6 +316,8 @@ public final class LogAnalyticsResourceCategory
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.categoryName, other.categoryName)
                 && java.util.Objects.equals(this.isSystem, other.isSystem)
+                && java.util.Objects.equals(this.resourceDisplayName, other.resourceDisplayName)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && super.equals(other);
     }
 
@@ -244,6 +329,14 @@ public final class LogAnalyticsResourceCategory
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.categoryName == null ? 43 : this.categoryName.hashCode());
         result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceDisplayName == null
+                                ? 43
+                                : this.resourceDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

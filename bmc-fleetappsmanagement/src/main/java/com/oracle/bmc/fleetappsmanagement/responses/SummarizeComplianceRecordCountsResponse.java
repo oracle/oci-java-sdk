@@ -6,7 +6,7 @@ package com.oracle.bmc.fleetappsmanagement.responses;
 
 import com.oracle.bmc.fleetappsmanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class SummarizeComplianceRecordCountsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

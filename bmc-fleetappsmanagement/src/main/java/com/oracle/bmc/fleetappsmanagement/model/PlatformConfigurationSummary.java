@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = PlatformConfigurationSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -88,12 +88,12 @@ public final class PlatformConfigurationSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Tenancy OCID */
+        /** Compartment OCID */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Tenancy OCID
+         * Compartment OCID
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -403,12 +403,12 @@ public final class PlatformConfigurationSummary
         return id;
     }
 
-    /** Tenancy OCID */
+    /** Compartment OCID */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Tenancy OCID
+     * Compartment OCID
      *
      * @return the value
      */

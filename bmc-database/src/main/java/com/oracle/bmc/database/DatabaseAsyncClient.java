@@ -2714,6 +2714,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.CloudExadataInfrastructure.class,
@@ -2753,6 +2754,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.CloudVmCluster.class,
@@ -11508,6 +11510,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("shape", request.getShape())
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("resourceId", request.getResourceId())
                 .accept("application/json")
                 .handleBodyList(
                         com.oracle.bmc.database.model.GiVersionSummary.class,
@@ -11988,14 +11991,61 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ListSystemVersionMinorVersionsResponse>
+            listSystemVersionMinorVersions(
+                    ListSystemVersionMinorVersionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSystemVersionMinorVersionsRequest,
+                                    ListSystemVersionMinorVersionsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getMajorVersion(), "majorVersion must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getGiVersion(), "giVersion is required");
+
+        return clientCall(request, ListSystemVersionMinorVersionsResponse::builder)
+                .logger(LOG, "listSystemVersionMinorVersions")
+                .serviceDetails(
+                        "Database",
+                        "ListSystemVersionMinorVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SystemVersionMinorVersionCollection/ListSystemVersionMinorVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSystemVersionMinorVersionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("systemVersions")
+                .appendPathParam(request.getMajorVersion())
+                .appendPathParam("minorVersions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("giVersion", request.getGiVersion())
+                .appendQueryParam("shape", request.getShape())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .appendQueryParam("isLatest", request.getIsLatest())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.SystemVersionMinorVersionCollection.class,
+                        ListSystemVersionMinorVersionsResponse.Builder
+                                ::systemVersionMinorVersionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSystemVersionMinorVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListSystemVersionMinorVersionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSystemVersionsResponse> listSystemVersions(
             ListSystemVersionsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
                             ListSystemVersionsRequest, ListSystemVersionsResponse>
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Objects.requireNonNull(request.getShape(), "shape is required");
 
         Objects.requireNonNull(request.getGiVersion(), "giVersion is required");
 
@@ -12014,6 +12064,8 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("shape", request.getShape())
+                .appendQueryParam("isLatest", request.getIsLatest())
+                .appendQueryParam("resourceId", request.getResourceId())
                 .appendQueryParam("giVersion", request.getGiVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())

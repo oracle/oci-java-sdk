@@ -28,20 +28,23 @@ public final class UpsertLogAnalyticsFieldDetails
         "isMultiValued",
         "description",
         "displayName",
-        "name"
+        "name",
+        "isKeepDuplicates"
     })
     public UpsertLogAnalyticsFieldDetails(
             String dataType,
             Boolean isMultiValued,
             String description,
             String displayName,
-            String name) {
+            String name,
+            Boolean isKeepDuplicates) {
         super();
         this.dataType = dataType;
         this.isMultiValued = isMultiValued;
         this.description = description;
         this.displayName = displayName;
         this.name = name;
+        this.isKeepDuplicates = isKeepDuplicates;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -121,6 +124,25 @@ public final class UpsertLogAnalyticsFieldDetails
             this.__explicitlySet__.add("name");
             return this;
         }
+        /**
+         * A flag indicating whether duplicates should be retained while processing multi-valued
+         * fields.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isKeepDuplicates")
+        private Boolean isKeepDuplicates;
+
+        /**
+         * A flag indicating whether duplicates should be retained while processing multi-valued
+         * fields.
+         *
+         * @param isKeepDuplicates the value to set
+         * @return this builder
+         */
+        public Builder isKeepDuplicates(Boolean isKeepDuplicates) {
+            this.isKeepDuplicates = isKeepDuplicates;
+            this.__explicitlySet__.add("isKeepDuplicates");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -132,7 +154,8 @@ public final class UpsertLogAnalyticsFieldDetails
                             this.isMultiValued,
                             this.description,
                             this.displayName,
-                            this.name);
+                            this.name,
+                            this.isKeepDuplicates);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -155,6 +178,9 @@ public final class UpsertLogAnalyticsFieldDetails
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("isKeepDuplicates")) {
+                this.isKeepDuplicates(model.getIsKeepDuplicates());
             }
             return this;
         }
@@ -234,6 +260,21 @@ public final class UpsertLogAnalyticsFieldDetails
         return name;
     }
 
+    /**
+     * A flag indicating whether duplicates should be retained while processing multi-valued fields.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isKeepDuplicates")
+    private final Boolean isKeepDuplicates;
+
+    /**
+     * A flag indicating whether duplicates should be retained while processing multi-valued fields.
+     *
+     * @return the value
+     */
+    public Boolean getIsKeepDuplicates() {
+        return isKeepDuplicates;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -254,6 +295,7 @@ public final class UpsertLogAnalyticsFieldDetails
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", isKeepDuplicates=").append(String.valueOf(this.isKeepDuplicates));
         sb.append(")");
         return sb.toString();
     }
@@ -273,6 +315,7 @@ public final class UpsertLogAnalyticsFieldDetails
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.isKeepDuplicates, other.isKeepDuplicates)
                 && super.equals(other);
     }
 
@@ -287,6 +330,9 @@ public final class UpsertLogAnalyticsFieldDetails
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isKeepDuplicates == null ? 43 : this.isKeepDuplicates.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -30,7 +30,9 @@ public final class EstimateRecallDataSizeResult
         "isOverlappingWithExistingRecalls",
         "coreGroupCount",
         "coreGroupCountLimit",
-        "sizeLimitInBytes"
+        "sizeLimitInBytes",
+        "message",
+        "totalBatchSize"
     })
     public EstimateRecallDataSizeResult(
             java.util.Date timeDataEnded,
@@ -39,7 +41,9 @@ public final class EstimateRecallDataSizeResult
             Boolean isOverlappingWithExistingRecalls,
             Integer coreGroupCount,
             Integer coreGroupCountLimit,
-            Long sizeLimitInBytes) {
+            Long sizeLimitInBytes,
+            String message,
+            Integer totalBatchSize) {
         super();
         this.timeDataEnded = timeDataEnded;
         this.timeDataStarted = timeDataStarted;
@@ -48,6 +52,8 @@ public final class EstimateRecallDataSizeResult
         this.coreGroupCount = coreGroupCount;
         this.coreGroupCountLimit = coreGroupCountLimit;
         this.sizeLimitInBytes = sizeLimitInBytes;
+        this.message = message;
+        this.totalBatchSize = totalBatchSize;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -167,6 +173,36 @@ public final class EstimateRecallDataSizeResult
             this.__explicitlySet__.add("sizeLimitInBytes");
             return this;
         }
+        /** This message shows existing recall overlapping details like collection id, purpose */
+        @com.fasterxml.jackson.annotation.JsonProperty("message")
+        private String message;
+
+        /**
+         * This message shows existing recall overlapping details like collection id, purpose
+         *
+         * @param message the value to set
+         * @return this builder
+         */
+        public Builder message(String message) {
+            this.message = message;
+            this.__explicitlySet__.add("message");
+            return this;
+        }
+        /** This is the total number of batches data will be recalled in */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalBatchSize")
+        private Integer totalBatchSize;
+
+        /**
+         * This is the total number of batches data will be recalled in
+         *
+         * @param totalBatchSize the value to set
+         * @return this builder
+         */
+        public Builder totalBatchSize(Integer totalBatchSize) {
+            this.totalBatchSize = totalBatchSize;
+            this.__explicitlySet__.add("totalBatchSize");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -180,7 +216,9 @@ public final class EstimateRecallDataSizeResult
                             this.isOverlappingWithExistingRecalls,
                             this.coreGroupCount,
                             this.coreGroupCountLimit,
-                            this.sizeLimitInBytes);
+                            this.sizeLimitInBytes,
+                            this.message,
+                            this.totalBatchSize);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -209,6 +247,12 @@ public final class EstimateRecallDataSizeResult
             }
             if (model.wasPropertyExplicitlySet("sizeLimitInBytes")) {
                 this.sizeLimitInBytes(model.getSizeLimitInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("totalBatchSize")) {
+                this.totalBatchSize(model.getTotalBatchSize());
             }
             return this;
         }
@@ -322,6 +366,32 @@ public final class EstimateRecallDataSizeResult
         return sizeLimitInBytes;
     }
 
+    /** This message shows existing recall overlapping details like collection id, purpose */
+    @com.fasterxml.jackson.annotation.JsonProperty("message")
+    private final String message;
+
+    /**
+     * This message shows existing recall overlapping details like collection id, purpose
+     *
+     * @return the value
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    /** This is the total number of batches data will be recalled in */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalBatchSize")
+    private final Integer totalBatchSize;
+
+    /**
+     * This is the total number of batches data will be recalled in
+     *
+     * @return the value
+     */
+    public Integer getTotalBatchSize() {
+        return totalBatchSize;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -345,6 +415,8 @@ public final class EstimateRecallDataSizeResult
         sb.append(", coreGroupCount=").append(String.valueOf(this.coreGroupCount));
         sb.append(", coreGroupCountLimit=").append(String.valueOf(this.coreGroupCountLimit));
         sb.append(", sizeLimitInBytes=").append(String.valueOf(this.sizeLimitInBytes));
+        sb.append(", message=").append(String.valueOf(this.message));
+        sb.append(", totalBatchSize=").append(String.valueOf(this.totalBatchSize));
         sb.append(")");
         return sb.toString();
     }
@@ -368,6 +440,8 @@ public final class EstimateRecallDataSizeResult
                 && java.util.Objects.equals(this.coreGroupCount, other.coreGroupCount)
                 && java.util.Objects.equals(this.coreGroupCountLimit, other.coreGroupCountLimit)
                 && java.util.Objects.equals(this.sizeLimitInBytes, other.sizeLimitInBytes)
+                && java.util.Objects.equals(this.message, other.message)
+                && java.util.Objects.equals(this.totalBatchSize, other.totalBatchSize)
                 && super.equals(other);
     }
 
@@ -398,6 +472,10 @@ public final class EstimateRecallDataSizeResult
         result =
                 (result * PRIME)
                         + (this.sizeLimitInBytes == null ? 43 : this.sizeLimitInBytes.hashCode());
+        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalBatchSize == null ? 43 : this.totalBatchSize.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

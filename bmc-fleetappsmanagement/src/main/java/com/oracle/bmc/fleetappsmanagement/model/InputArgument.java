@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -27,7 +27,10 @@ package com.oracle.bmc.fleetappsmanagement.model;
             name = "OUTPUT_VARIABLE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = StringInputArgument.class,
-            name = "STRING")
+            name = "STRING"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = FileInputArgument.class,
+            name = "FILE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -116,6 +119,7 @@ public class InputArgument extends com.oracle.bmc.http.client.internal.Explicitl
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         String("STRING"),
         OutputVariable("OUTPUT_VARIABLE"),
+        File("FILE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

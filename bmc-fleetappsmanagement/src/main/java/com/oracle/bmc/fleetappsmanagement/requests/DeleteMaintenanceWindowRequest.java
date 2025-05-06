@@ -11,7 +11,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteMaintenanceWindowRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class DeleteMaintenanceWindowRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

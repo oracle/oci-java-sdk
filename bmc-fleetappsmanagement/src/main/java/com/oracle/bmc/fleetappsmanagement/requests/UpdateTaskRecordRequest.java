@@ -10,23 +10,23 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateTaskRecordExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTaskRecordRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class UpdateTaskRecordRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails> {
 
-    /** unique TaskDetail identifier */
+    /** The OCID of the task record. */
     private String taskRecordId;
 
-    /** unique TaskDetail identifier */
+    /** The OCID of the task record. */
     public String getTaskRecordId() {
         return taskRecordId;
     }
-    /** The information to be updated. */
+    /** Attributes to update a task record. */
     private com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails
             updateTaskRecordDetails;
 
-    /** The information to be updated. */
+    /** Attributes to update a task record. */
     public com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails
             getUpdateTaskRecordDetails() {
         return updateTaskRecordDetails;
@@ -74,11 +74,11 @@ public class UpdateTaskRecordRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique TaskDetail identifier */
+        /** The OCID of the task record. */
         private String taskRecordId = null;
 
         /**
-         * unique TaskDetail identifier
+         * The OCID of the task record.
          *
          * @param taskRecordId the value to set
          * @return this builder instance
@@ -88,12 +88,12 @@ public class UpdateTaskRecordRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /** Attributes to update a task record. */
         private com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails
                 updateTaskRecordDetails = null;
 
         /**
-         * The information to be updated.
+         * Attributes to update a task record.
          *
          * @param updateTaskRecordDetails the value to set
          * @return this builder instance

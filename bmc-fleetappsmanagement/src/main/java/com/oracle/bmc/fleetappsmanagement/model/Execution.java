@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Execution.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -36,6 +36,7 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         "isRollbackTask",
         "description",
         "resourceId",
+        "isRetryExceeded",
         "systemTags"
     })
     public Execution(
@@ -53,6 +54,7 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
             Boolean isRollbackTask,
             String description,
             String resourceId,
+            Boolean isRetryExceeded,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
@@ -69,6 +71,7 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         this.isRollbackTask = isRollbackTask;
         this.description = description;
         this.resourceId = resourceId;
+        this.isRetryExceeded = isRetryExceeded;
         this.systemTags = systemTags;
     }
 
@@ -286,6 +289,21 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("resourceId");
             return this;
         }
+        /** An attribute which tells if further retries are allowed for the task on failure. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isRetryExceeded")
+        private Boolean isRetryExceeded;
+
+        /**
+         * An attribute which tells if further retries are allowed for the task on failure.
+         *
+         * @param isRetryExceeded the value to set
+         * @return this builder
+         */
+        public Builder isRetryExceeded(Boolean isRetryExceeded) {
+            this.isRetryExceeded = isRetryExceeded;
+            this.__explicitlySet__.add("isRetryExceeded");
+            return this;
+        }
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
          * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -326,6 +344,7 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
                             this.isRollbackTask,
                             this.description,
                             this.resourceId,
+                            this.isRetryExceeded,
                             this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -376,6 +395,9 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("resourceId")) {
                 this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("isRetryExceeded")) {
+                this.isRetryExceeded(model.getIsRetryExceeded());
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
@@ -577,6 +599,19 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         return resourceId;
     }
 
+    /** An attribute which tells if further retries are allowed for the task on failure. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isRetryExceeded")
+    private final Boolean isRetryExceeded;
+
+    /**
+     * An attribute which tells if further retries are allowed for the task on failure.
+     *
+     * @return the value
+     */
+    public Boolean getIsRetryExceeded() {
+        return isRetryExceeded;
+    }
+
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -623,6 +658,7 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", isRollbackTask=").append(String.valueOf(this.isRollbackTask));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(", isRetryExceeded=").append(String.valueOf(this.isRetryExceeded));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
@@ -652,6 +688,7 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.isRollbackTask, other.isRollbackTask)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.isRetryExceeded, other.isRetryExceeded)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
@@ -680,6 +717,9 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
                         + (this.isRollbackTask == null ? 43 : this.isRollbackTask.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRetryExceeded == null ? 43 : this.isRetryExceeded.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

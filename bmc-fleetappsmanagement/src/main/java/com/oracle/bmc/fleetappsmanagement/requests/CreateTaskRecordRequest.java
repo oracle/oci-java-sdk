@@ -10,16 +10,16 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateTaskRecordExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateTaskRecordRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class CreateTaskRecordRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.CreateTaskRecordDetails> {
 
-    /** Details for the new TaskRecord. */
+    /** Attributes to create a task record. */
     private com.oracle.bmc.fleetappsmanagement.model.CreateTaskRecordDetails
             createTaskRecordDetails;
 
-    /** Details for the new TaskRecord. */
+    /** Attributes to create a task record. */
     public com.oracle.bmc.fleetappsmanagement.model.CreateTaskRecordDetails
             getCreateTaskRecordDetails() {
         return createTaskRecordDetails;
@@ -69,12 +69,12 @@ public class CreateTaskRecordRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new TaskRecord. */
+        /** Attributes to create a task record. */
         private com.oracle.bmc.fleetappsmanagement.model.CreateTaskRecordDetails
                 createTaskRecordDetails = null;
 
         /**
-         * Details for the new TaskRecord.
+         * Attributes to create a task record.
          *
          * @param createTaskRecordDetails the value to set
          * @return this builder instance

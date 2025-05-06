@@ -42,6 +42,15 @@ public final class StreamAction extends Action {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("templateDetails")
+        private TemplateDetails templateDetails;
+
+        public Builder templateDetails(TemplateDetails templateDetails) {
+            this.templateDetails = templateDetails;
+            this.__explicitlySet__.add("templateDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metricExtraction")
         private MetricExtraction metricExtraction;
 
@@ -106,7 +115,10 @@ public final class StreamAction extends Action {
         public StreamAction build() {
             StreamAction model =
                     new StreamAction(
-                            this.savedSearchId, this.metricExtraction, this.savedSearchDuration);
+                            this.savedSearchId,
+                            this.templateDetails,
+                            this.metricExtraction,
+                            this.savedSearchDuration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -117,6 +129,9 @@ public final class StreamAction extends Action {
         public Builder copy(StreamAction model) {
             if (model.wasPropertyExplicitlySet("savedSearchId")) {
                 this.savedSearchId(model.getSavedSearchId());
+            }
+            if (model.wasPropertyExplicitlySet("templateDetails")) {
+                this.templateDetails(model.getTemplateDetails());
             }
             if (model.wasPropertyExplicitlySet("metricExtraction")) {
                 this.metricExtraction(model.getMetricExtraction());
@@ -139,9 +154,13 @@ public final class StreamAction extends Action {
 
     @Deprecated
     public StreamAction(
-            String savedSearchId, MetricExtraction metricExtraction, String savedSearchDuration) {
+            String savedSearchId,
+            TemplateDetails templateDetails,
+            MetricExtraction metricExtraction,
+            String savedSearchDuration) {
         super();
         this.savedSearchId = savedSearchId;
+        this.templateDetails = templateDetails;
         this.metricExtraction = metricExtraction;
         this.savedSearchDuration = savedSearchDuration;
     }
@@ -157,6 +176,13 @@ public final class StreamAction extends Action {
      */
     public String getSavedSearchId() {
         return savedSearchId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("templateDetails")
+    private final TemplateDetails templateDetails;
+
+    public TemplateDetails getTemplateDetails() {
+        return templateDetails;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metricExtraction")
@@ -229,6 +255,7 @@ public final class StreamAction extends Action {
         sb.append("StreamAction(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", savedSearchId=").append(String.valueOf(this.savedSearchId));
+        sb.append(", templateDetails=").append(String.valueOf(this.templateDetails));
         sb.append(", metricExtraction=").append(String.valueOf(this.metricExtraction));
         sb.append(", savedSearchDuration=").append(String.valueOf(this.savedSearchDuration));
         sb.append(")");
@@ -246,6 +273,7 @@ public final class StreamAction extends Action {
 
         StreamAction other = (StreamAction) o;
         return java.util.Objects.equals(this.savedSearchId, other.savedSearchId)
+                && java.util.Objects.equals(this.templateDetails, other.templateDetails)
                 && java.util.Objects.equals(this.metricExtraction, other.metricExtraction)
                 && java.util.Objects.equals(this.savedSearchDuration, other.savedSearchDuration)
                 && super.equals(other);
@@ -258,6 +286,9 @@ public final class StreamAction extends Action {
         result =
                 (result * PRIME)
                         + (this.savedSearchId == null ? 43 : this.savedSearchId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.templateDetails == null ? 43 : this.templateDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.metricExtraction == null ? 43 : this.metricExtraction.hashCode());

@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Task.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -23,20 +23,17 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
     @Deprecated
     @java.beans.ConstructorProperties({
         "stepName",
-        "associationType",
         "taskRecordDetails",
         "stepProperties",
         "outputVariableMappings"
     })
     public Task(
             String stepName,
-            AssociationType associationType,
             AssociatedTaskDetails taskRecordDetails,
             ComponentProperties stepProperties,
             java.util.List<OutputVariableMapping> outputVariableMappings) {
         super();
         this.stepName = stepName;
-        this.associationType = associationType;
         this.taskRecordDetails = taskRecordDetails;
         this.stepProperties = stepProperties;
         this.outputVariableMappings = outputVariableMappings;
@@ -57,21 +54,6 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
         public Builder stepName(String stepName) {
             this.stepName = stepName;
             this.__explicitlySet__.add("stepName");
-            return this;
-        }
-        /** The association type of the task */
-        @com.fasterxml.jackson.annotation.JsonProperty("associationType")
-        private AssociationType associationType;
-
-        /**
-         * The association type of the task
-         *
-         * @param associationType the value to set
-         * @return this builder
-         */
-        public Builder associationType(AssociationType associationType) {
-            this.associationType = associationType;
-            this.__explicitlySet__.add("associationType");
             return this;
         }
 
@@ -118,7 +100,6 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
             Task model =
                     new Task(
                             this.stepName,
-                            this.associationType,
                             this.taskRecordDetails,
                             this.stepProperties,
                             this.outputVariableMappings);
@@ -132,9 +113,6 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
         public Builder copy(Task model) {
             if (model.wasPropertyExplicitlySet("stepName")) {
                 this.stepName(model.getStepName());
-            }
-            if (model.wasPropertyExplicitlySet("associationType")) {
-                this.associationType(model.getAssociationType());
             }
             if (model.wasPropertyExplicitlySet("taskRecordDetails")) {
                 this.taskRecordDetails(model.getTaskRecordDetails());
@@ -169,64 +147,6 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
      */
     public String getStepName() {
         return stepName;
-    }
-
-    /** The association type of the task */
-    public enum AssociationType implements com.oracle.bmc.http.internal.BmcEnum {
-        Task("TASK"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(AssociationType.class);
-
-        private final String value;
-        private static java.util.Map<String, AssociationType> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (AssociationType v : AssociationType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        AssociationType(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static AssociationType create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'AssociationType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /** The association type of the task */
-    @com.fasterxml.jackson.annotation.JsonProperty("associationType")
-    private final AssociationType associationType;
-
-    /**
-     * The association type of the task
-     *
-     * @return the value
-     */
-    public AssociationType getAssociationType() {
-        return associationType;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("taskRecordDetails")
@@ -272,7 +192,6 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append("Task(");
         sb.append("super=").append(super.toString());
         sb.append("stepName=").append(String.valueOf(this.stepName));
-        sb.append(", associationType=").append(String.valueOf(this.associationType));
         sb.append(", taskRecordDetails=").append(String.valueOf(this.taskRecordDetails));
         sb.append(", stepProperties=").append(String.valueOf(this.stepProperties));
         sb.append(", outputVariableMappings=").append(String.valueOf(this.outputVariableMappings));
@@ -291,7 +210,6 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
         Task other = (Task) o;
         return java.util.Objects.equals(this.stepName, other.stepName)
-                && java.util.Objects.equals(this.associationType, other.associationType)
                 && java.util.Objects.equals(this.taskRecordDetails, other.taskRecordDetails)
                 && java.util.Objects.equals(this.stepProperties, other.stepProperties)
                 && java.util.Objects.equals(
@@ -304,9 +222,6 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.stepName == null ? 43 : this.stepName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.associationType == null ? 43 : this.associationType.hashCode());
         result =
                 (result * PRIME)
                         + (this.taskRecordDetails == null ? 43 : this.taskRecordDetails.hashCode());

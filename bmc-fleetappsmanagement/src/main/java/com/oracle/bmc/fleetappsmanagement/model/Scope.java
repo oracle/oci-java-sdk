@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /** Possible scopes for Property */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public enum Scope implements com.oracle.bmc.http.internal.BmcEnum {
     Taxonomy("TAXONOMY"),
     PlatformConfig("PLATFORM_CONFIG"),

@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * A variable that holds a value <br>
+ * A Task argument that holds a value. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,108 +15,41 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TaskArgument.Builder.class)
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "kind",
+        defaultImpl = TaskArgument.class)
+@com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = StringTaskArgument.class,
+            name = "STRING"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = FileTaskArgument.class,
+            name = "FILE")
+})
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class TaskArgument extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+public class TaskArgument extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "value"})
-    public TaskArgument(String name, String value) {
+    @java.beans.ConstructorProperties({"name"})
+    protected TaskArgument(String name) {
         super();
         this.name = name;
-        this.value = value;
     }
 
-    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    public static class Builder {
-        /** Name of the output variable */
-        @com.fasterxml.jackson.annotation.JsonProperty("name")
-        private String name;
-
-        /**
-         * Name of the output variable
-         *
-         * @param name the value to set
-         * @return this builder
-         */
-        public Builder name(String name) {
-            this.name = name;
-            this.__explicitlySet__.add("name");
-            return this;
-        }
-        /** The task output */
-        @com.fasterxml.jackson.annotation.JsonProperty("value")
-        private String value;
-
-        /**
-         * The task output
-         *
-         * @param value the value to set
-         * @return this builder
-         */
-        public Builder value(String value) {
-            this.value = value;
-            this.__explicitlySet__.add("value");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonIgnore
-        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-        public TaskArgument build() {
-            TaskArgument model = new TaskArgument(this.name, this.value);
-            for (String explicitlySetProperty : this.__explicitlySet__) {
-                model.markPropertyAsExplicitlySet(explicitlySetProperty);
-            }
-            return model;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TaskArgument model) {
-            if (model.wasPropertyExplicitlySet("name")) {
-                this.name(model.getName());
-            }
-            if (model.wasPropertyExplicitlySet("value")) {
-                this.value(model.getValue());
-            }
-            return this;
-        }
-    }
-
-    /** Create a new builder. */
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public Builder toBuilder() {
-        return new Builder().copy(this);
-    }
-
-    /** Name of the output variable */
+    /** Name of the input variable */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Name of the output variable
+     * Name of the input variable
      *
      * @return the value
      */
     public String getName() {
         return name;
-    }
-
-    /** The task output */
-    @com.fasterxml.jackson.annotation.JsonProperty("value")
-    private final String value;
-
-    /**
-     * The task output
-     *
-     * @return the value
-     */
-    public String getValue() {
-        return value;
     }
 
     @Override
@@ -135,7 +68,6 @@ public final class TaskArgument extends com.oracle.bmc.http.client.internal.Expl
         sb.append("TaskArgument(");
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
-        sb.append(", value=").append(String.valueOf(this.value));
         sb.append(")");
         return sb.toString();
     }
@@ -150,9 +82,7 @@ public final class TaskArgument extends com.oracle.bmc.http.client.internal.Expl
         }
 
         TaskArgument other = (TaskArgument) o;
-        return java.util.Objects.equals(this.name, other.name)
-                && java.util.Objects.equals(this.value, other.value)
-                && super.equals(other);
+        return java.util.Objects.equals(this.name, other.name) && super.equals(other);
     }
 
     @Override
@@ -160,8 +90,52 @@ public final class TaskArgument extends com.oracle.bmc.http.client.internal.Expl
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
-        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
+
+    /** Task argument kind */
+    public enum Kind implements com.oracle.bmc.http.internal.BmcEnum {
+        String("STRING"),
+        File("FILE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Kind.class);
+
+        private final String value;
+        private static java.util.Map<String, Kind> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Kind v : Kind.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Kind(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Kind create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Kind', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
+        }
+    };
 }

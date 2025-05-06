@@ -15,7 +15,7 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public interface FleetAppsManagementOperations extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -67,6 +67,24 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Moves a Patch into a different compartment within the same tenancy. For information about
+     * moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ChangePatchCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangePatchCompartment API.
+     */
+    ChangePatchCompartmentResponse changePatchCompartment(ChangePatchCompartmentRequest request);
+
+    /**
      * Creates a new Patch.
      *
      * @param request The request object containing the details to send
@@ -99,7 +117,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
             CreateSchedulerDefinitionRequest request);
 
     /**
-     * Deletes a Patch resource by identifier
+     * Deletes the patch specified by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -131,7 +149,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
             DeleteSchedulerDefinitionRequest request);
 
     /**
-     * Delete a lifecycle operation schedule in Fleet Application Management.
+     * Deletes the schedule job specified by an identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -193,7 +211,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     GetJobActivityResponse getJobActivity(GetJobActivityRequest request);
 
     /**
-     * Gets a Patch by identifier
+     * Gets a Patch by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -271,7 +289,24 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     ListExecutionsResponse listExecutions(ListExecutionsRequest request);
 
     /**
-     * Returns a list of Patches.
+     * Gets a list of inventoryDetails.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListInventoryRecordsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListInventoryRecords API.
+     */
+    ListInventoryRecordsResponse listInventoryRecords(ListInventoryRecordsRequest request);
+
+    /**
+     * Returns a list of all the Patches in the specified compartment. The query parameter
+     * `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -317,7 +352,8 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     ListScheduledFleetsResponse listScheduledFleets(ListScheduledFleetsRequest request);
 
     /**
-     * List all lifecycle management schedules in Fleet Application Management.
+     * Returns a list of all the Schedule Definitions in the specified compartment. The query
+     * parameter `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -334,7 +370,24 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
             ListSchedulerDefinitionsRequest request);
 
     /**
-     * List scheduled lifecycle operation jobs in Fleet Application Management.
+     * Returns a list of all Fleets that are scheduled.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListSchedulerExecutionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSchedulerExecutions API.
+     */
+    ListSchedulerExecutionsResponse listSchedulerExecutions(ListSchedulerExecutionsRequest request);
+
+    /**
+     * Returns a list of all schedule jobs in the specified compartment. The query parameter
+     * `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -381,7 +434,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     ManageJobExecutionResponse manageJobExecution(ManageJobExecutionRequest request);
 
     /**
-     * Retrieve aggregated summary information of ComplianceRecords within a Tenancy.
+     * Retrieve aggregated summary information of ComplianceRecords within a Compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -398,7 +451,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
             SummarizeComplianceRecordCountsRequest request);
 
     /**
-     * Retrieve aggregated summary information of Managed Entities within a Tenancy.
+     * Retrieve aggregated summary information of Managed entities within a Compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -415,7 +468,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
             SummarizeManagedEntityCountsRequest request);
 
     /**
-     * Retrieve aggregated summary information of Scheduler Jobs within a Tenancy.
+     * Retrieve aggregated summary information of Scheduler Jobs within a Compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -432,7 +485,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
             SummarizeSchedulerJobCountsRequest request);
 
     /**
-     * Updates the Patch
+     * Updates the patch specified by the identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -464,7 +517,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
             UpdateSchedulerDefinitionRequest request);
 
     /**
-     * Update a lifecycle operation job schedule in Fleet Application Management.
+     * Updates certain attributes for the specified schedule job.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

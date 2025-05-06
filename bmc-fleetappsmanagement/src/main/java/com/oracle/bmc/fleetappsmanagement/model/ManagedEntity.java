@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /** Possible values for Managed Entities. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public enum ManagedEntity implements com.oracle.bmc.http.internal.BmcEnum {
     Resource("RESOURCE"),
     Target("TARGET"),

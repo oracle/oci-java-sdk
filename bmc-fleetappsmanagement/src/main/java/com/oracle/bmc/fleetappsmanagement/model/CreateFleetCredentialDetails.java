@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CreateFleetCredentialDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -23,22 +23,14 @@ package com.oracle.bmc.fleetappsmanagement.model;
 public final class CreateFleetCredentialDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({
-        "displayName",
-        "compartmentId",
-        "entitySpecifics",
-        "user",
-        "password"
-    })
+    @java.beans.ConstructorProperties({"displayName", "entitySpecifics", "user", "password"})
     public CreateFleetCredentialDetails(
             String displayName,
-            String compartmentId,
             CredentialEntitySpecificDetails entitySpecifics,
             CredentialDetails user,
             CredentialDetails password) {
         super();
         this.displayName = displayName;
-        this.compartmentId = compartmentId;
         this.entitySpecifics = entitySpecifics;
         this.user = user;
         this.password = password;
@@ -67,21 +59,6 @@ public final class CreateFleetCredentialDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
-            return this;
-        }
-        /** Tenancy OCID */
-        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-        private String compartmentId;
-
-        /**
-         * Tenancy OCID
-         *
-         * @param compartmentId the value to set
-         * @return this builder
-         */
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            this.__explicitlySet__.add("compartmentId");
             return this;
         }
 
@@ -118,11 +95,7 @@ public final class CreateFleetCredentialDetails
         public CreateFleetCredentialDetails build() {
             CreateFleetCredentialDetails model =
                     new CreateFleetCredentialDetails(
-                            this.displayName,
-                            this.compartmentId,
-                            this.entitySpecifics,
-                            this.user,
-                            this.password);
+                            this.displayName, this.entitySpecifics, this.user, this.password);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -133,9 +106,6 @@ public final class CreateFleetCredentialDetails
         public Builder copy(CreateFleetCredentialDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
-            }
-            if (model.wasPropertyExplicitlySet("compartmentId")) {
-                this.compartmentId(model.getCompartmentId());
             }
             if (model.wasPropertyExplicitlySet("entitySpecifics")) {
                 this.entitySpecifics(model.getEntitySpecifics());
@@ -180,19 +150,6 @@ public final class CreateFleetCredentialDetails
         return displayName;
     }
 
-    /** Tenancy OCID */
-    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    private final String compartmentId;
-
-    /**
-     * Tenancy OCID
-     *
-     * @return the value
-     */
-    public String getCompartmentId() {
-        return compartmentId;
-    }
-
     @com.fasterxml.jackson.annotation.JsonProperty("entitySpecifics")
     private final CredentialEntitySpecificDetails entitySpecifics;
 
@@ -230,7 +187,6 @@ public final class CreateFleetCredentialDetails
         sb.append("CreateFleetCredentialDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
-        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", entitySpecifics=").append(String.valueOf(this.entitySpecifics));
         sb.append(", user=").append(String.valueOf(this.user));
         sb.append(", password=").append(String.valueOf(this.password));
@@ -249,7 +205,6 @@ public final class CreateFleetCredentialDetails
 
         CreateFleetCredentialDetails other = (CreateFleetCredentialDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.entitySpecifics, other.entitySpecifics)
                 && java.util.Objects.equals(this.user, other.user)
                 && java.util.Objects.equals(this.password, other.password)
@@ -261,9 +216,6 @@ public final class CreateFleetCredentialDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
                         + (this.entitySpecifics == null ? 43 : this.entitySpecifics.hashCode());

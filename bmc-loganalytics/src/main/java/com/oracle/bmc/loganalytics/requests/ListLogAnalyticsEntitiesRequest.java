@@ -354,6 +354,91 @@ public class ListLogAnalyticsEntitiesRequest
     public java.util.List<String> getMetadataEquals() {
         return metadataEquals;
     }
+    /**
+     * A list of tag filters to apply. Only entities with a defined tag matching the value will be
+     * returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All inputs
+     * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
+     * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
+     * names, or both) are interpreted as "AND".
+     */
+    private java.util.List<String> definedTagEquals;
+
+    /**
+     * A list of tag filters to apply. Only entities with a defined tag matching the value will be
+     * returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All inputs
+     * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
+     * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
+     * names, or both) are interpreted as "AND".
+     */
+    public java.util.List<String> getDefinedTagEquals() {
+        return definedTagEquals;
+    }
+    /**
+     * A list of tag filters to apply. Only entities with a freeform tag matching the value will be
+     * returned. The key for each tag is "{tagName}.{value}". All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR". Values for different tag names
+     * are interpreted as "AND".
+     */
+    private java.util.List<String> freeformTagEquals;
+
+    /**
+     * A list of tag filters to apply. Only entities with a freeform tag matching the value will be
+     * returned. The key for each tag is "{tagName}.{value}". All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR". Values for different tag names
+     * are interpreted as "AND".
+     */
+    public java.util.List<String> getFreeformTagEquals() {
+        return freeformTagEquals;
+    }
+    /**
+     * A list of tag existence filters to apply. Only entities for which the specified defined tags
+     * exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true"
+     * (for checking existence of a defined tag) or "{namespace}.true". All inputs are
+     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
+     * ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace
+     * and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
+     * different tag names, or both) are interpreted as "AND".
+     */
+    private java.util.List<String> definedTagExists;
+
+    /**
+     * A list of tag existence filters to apply. Only entities for which the specified defined tags
+     * exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true"
+     * (for checking existence of a defined tag) or "{namespace}.true". All inputs are
+     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
+     * ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace
+     * and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
+     * different tag names, or both) are interpreted as "AND".
+     */
+    public java.util.List<String> getDefinedTagExists() {
+        return definedTagExists;
+    }
+    /**
+     * A list of tag existence filters to apply. Only entities for which the specified freeform tags
+     * exist the value will be returned. The key for each tag is "{tagName}.true". All inputs are
+     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
+     * ("false" at the end) is not supported. Multiple values for different tag names are
+     * interpreted as "AND".
+     */
+    private java.util.List<String> freeformTagExists;
+
+    /**
+     * A list of tag existence filters to apply. Only entities for which the specified freeform tags
+     * exist the value will be returned. The key for each tag is "{tagName}.true". All inputs are
+     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
+     * ("false" at the end) is not supported. Multiple values for different tag names are
+     * interpreted as "AND".
+     */
+    public java.util.List<String> getFreeformTagExists() {
+        return freeformTagExists;
+    }
+    /** Option to return count of associated log sources for log analytics entity(s). */
+    private Boolean isShowAssociatedSourcesCount;
+
+    /** Option to return count of associated log sources for log analytics entity(s). */
+    public Boolean getIsShowAssociatedSourcesCount() {
+        return isShowAssociatedSourcesCount;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -745,6 +830,178 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
+         * A list of tag filters to apply. Only entities with a defined tag matching the value will
+         * be returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All
+         * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
+         * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
+         * different tag names, or both) are interpreted as "AND".
+         */
+        private java.util.List<String> definedTagEquals = null;
+
+        /**
+         * A list of tag filters to apply. Only entities with a defined tag matching the value will
+         * be returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All
+         * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
+         * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
+         * different tag names, or both) are interpreted as "AND".
+         *
+         * @param definedTagEquals the value to set
+         * @return this builder instance
+         */
+        public Builder definedTagEquals(java.util.List<String> definedTagEquals) {
+            this.definedTagEquals = definedTagEquals;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of tag filters to apply. Only entities with a defined tag
+         * matching the value will be returned. Each item in the list has the format
+         * "{namespace}.{tagName}.{value}". All inputs are case-insensitive. Multiple values for the
+         * same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different
+         * keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder definedTagEquals(String singularValue) {
+            return this.definedTagEquals(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A list of tag filters to apply. Only entities with a freeform tag matching the value will
+         * be returned. The key for each tag is "{tagName}.{value}". All inputs are
+         * case-insensitive. Multiple values for the same tag name are interpreted as "OR". Values
+         * for different tag names are interpreted as "AND".
+         */
+        private java.util.List<String> freeformTagEquals = null;
+
+        /**
+         * A list of tag filters to apply. Only entities with a freeform tag matching the value will
+         * be returned. The key for each tag is "{tagName}.{value}". All inputs are
+         * case-insensitive. Multiple values for the same tag name are interpreted as "OR". Values
+         * for different tag names are interpreted as "AND".
+         *
+         * @param freeformTagEquals the value to set
+         * @return this builder instance
+         */
+        public Builder freeformTagEquals(java.util.List<String> freeformTagEquals) {
+            this.freeformTagEquals = freeformTagEquals;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of tag filters to apply. Only entities with a freeform tag
+         * matching the value will be returned. The key for each tag is "{tagName}.{value}". All
+         * inputs are case-insensitive. Multiple values for the same tag name are interpreted as
+         * "OR". Values for different tag names are interpreted as "AND".
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder freeformTagEquals(String singularValue) {
+            return this.freeformTagEquals(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A list of tag existence filters to apply. Only entities for which the specified defined
+         * tags exist will be returned. Each item in the list has the format
+         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
+         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
+         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
+         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
+         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
+         * as "AND".
+         */
+        private java.util.List<String> definedTagExists = null;
+
+        /**
+         * A list of tag existence filters to apply. Only entities for which the specified defined
+         * tags exist will be returned. Each item in the list has the format
+         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
+         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
+         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
+         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
+         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
+         * as "AND".
+         *
+         * @param definedTagExists the value to set
+         * @return this builder instance
+         */
+        public Builder definedTagExists(java.util.List<String> definedTagExists) {
+            this.definedTagExists = definedTagExists;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of tag existence filters to apply. Only entities for which the
+         * specified defined tags exist will be returned. Each item in the list has the format
+         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
+         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
+         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
+         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
+         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
+         * as "AND".
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder definedTagExists(String singularValue) {
+            return this.definedTagExists(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A list of tag existence filters to apply. Only entities for which the specified freeform
+         * tags exist the value will be returned. The key for each tag is "{tagName}.true". All
+         * inputs are case-insensitive. Currently, only existence ("true" at the end) is supported.
+         * Absence ("false" at the end) is not supported. Multiple values for different tag names
+         * are interpreted as "AND".
+         */
+        private java.util.List<String> freeformTagExists = null;
+
+        /**
+         * A list of tag existence filters to apply. Only entities for which the specified freeform
+         * tags exist the value will be returned. The key for each tag is "{tagName}.true". All
+         * inputs are case-insensitive. Currently, only existence ("true" at the end) is supported.
+         * Absence ("false" at the end) is not supported. Multiple values for different tag names
+         * are interpreted as "AND".
+         *
+         * @param freeformTagExists the value to set
+         * @return this builder instance
+         */
+        public Builder freeformTagExists(java.util.List<String> freeformTagExists) {
+            this.freeformTagExists = freeformTagExists;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of tag existence filters to apply. Only entities for which the
+         * specified freeform tags exist the value will be returned. The key for each tag is
+         * "{tagName}.true". All inputs are case-insensitive. Currently, only existence ("true" at
+         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
+         * different tag names are interpreted as "AND".
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder freeformTagExists(String singularValue) {
+            return this.freeformTagExists(java.util.Arrays.asList(singularValue));
+        }
+
+        /** Option to return count of associated log sources for log analytics entity(s). */
+        private Boolean isShowAssociatedSourcesCount = null;
+
+        /**
+         * Option to return count of associated log sources for log analytics entity(s).
+         *
+         * @param isShowAssociatedSourcesCount the value to set
+         * @return this builder instance
+         */
+        public Builder isShowAssociatedSourcesCount(Boolean isShowAssociatedSourcesCount) {
+            this.isShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -794,6 +1051,11 @@ public class ListLogAnalyticsEntitiesRequest
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             metadataEquals(o.getMetadataEquals());
+            definedTagEquals(o.getDefinedTagEquals());
+            freeformTagEquals(o.getFreeformTagEquals());
+            definedTagExists(o.getDefinedTagExists());
+            freeformTagExists(o.getFreeformTagExists());
+            isShowAssociatedSourcesCount(o.getIsShowAssociatedSourcesCount());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -848,11 +1110,18 @@ public class ListLogAnalyticsEntitiesRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             request.metadataEquals = metadataEquals;
+            request.definedTagEquals = definedTagEquals;
+            request.freeformTagEquals = freeformTagEquals;
+            request.definedTagExists = definedTagExists;
+            request.freeformTagExists = freeformTagExists;
+            request.isShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
             return request;
             // new ListLogAnalyticsEntitiesRequest(namespaceName, compartmentId, name, nameContains,
             // entityTypeName, cloudResourceId, lifecycleState, lifecycleDetailsContains,
             // isManagementAgentIdNull, hostname, hostnameContains, sourceId, creationSourceType,
-            // creationSourceDetails, limit, page, sortOrder, sortBy, opcRequestId, metadataEquals);
+            // creationSourceDetails, limit, page, sortOrder, sortBy, opcRequestId, metadataEquals,
+            // definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists,
+            // isShowAssociatedSourcesCount);
         }
     }
 
@@ -882,7 +1151,12 @@ public class ListLogAnalyticsEntitiesRequest
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
-                .metadataEquals(metadataEquals);
+                .metadataEquals(metadataEquals)
+                .definedTagEquals(definedTagEquals)
+                .freeformTagEquals(freeformTagEquals)
+                .definedTagExists(definedTagExists)
+                .freeformTagExists(freeformTagExists)
+                .isShowAssociatedSourcesCount(isShowAssociatedSourcesCount);
     }
 
     /**
@@ -920,6 +1194,12 @@ public class ListLogAnalyticsEntitiesRequest
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",metadataEquals=").append(String.valueOf(this.metadataEquals));
+        sb.append(",definedTagEquals=").append(String.valueOf(this.definedTagEquals));
+        sb.append(",freeformTagEquals=").append(String.valueOf(this.freeformTagEquals));
+        sb.append(",definedTagExists=").append(String.valueOf(this.definedTagExists));
+        sb.append(",freeformTagExists=").append(String.valueOf(this.freeformTagExists));
+        sb.append(",isShowAssociatedSourcesCount=")
+                .append(String.valueOf(this.isShowAssociatedSourcesCount));
         sb.append(")");
         return sb.toString();
     }
@@ -956,7 +1236,13 @@ public class ListLogAnalyticsEntitiesRequest
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.metadataEquals, other.metadataEquals);
+                && java.util.Objects.equals(this.metadataEquals, other.metadataEquals)
+                && java.util.Objects.equals(this.definedTagEquals, other.definedTagEquals)
+                && java.util.Objects.equals(this.freeformTagEquals, other.freeformTagEquals)
+                && java.util.Objects.equals(this.definedTagExists, other.definedTagExists)
+                && java.util.Objects.equals(this.freeformTagExists, other.freeformTagExists)
+                && java.util.Objects.equals(
+                        this.isShowAssociatedSourcesCount, other.isShowAssociatedSourcesCount);
     }
 
     @Override
@@ -1013,6 +1299,23 @@ public class ListLogAnalyticsEntitiesRequest
         result =
                 (result * PRIME)
                         + (this.metadataEquals == null ? 43 : this.metadataEquals.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.definedTagEquals == null ? 43 : this.definedTagEquals.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.freeformTagEquals == null ? 43 : this.freeformTagEquals.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.definedTagExists == null ? 43 : this.definedTagExists.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.freeformTagExists == null ? 43 : this.freeformTagExists.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isShowAssociatedSourcesCount == null
+                                ? 43
+                                : this.isShowAssociatedSourcesCount.hashCode());
         return result;
     }
 }

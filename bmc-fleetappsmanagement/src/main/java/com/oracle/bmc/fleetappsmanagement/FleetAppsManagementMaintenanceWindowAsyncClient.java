@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class FleetAppsManagementMaintenanceWindowAsyncClient
         extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements FleetAppsManagementMaintenanceWindowAsync {
@@ -113,10 +113,10 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementMaintenanceWindow",
                         "CreateMaintenanceWindow",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/CreateMaintenanceWindow")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/MaintenanceWindow/CreateMaintenanceWindow")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateMaintenanceWindowRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("maintenanceWindows")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -146,10 +146,10 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementMaintenanceWindow",
                         "DeleteMaintenanceWindow",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/DeleteMaintenanceWindow")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/MaintenanceWindow/DeleteMaintenanceWindow")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMaintenanceWindowRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("maintenanceWindows")
                 .appendPathParam(request.getMaintenanceWindowId())
                 .accept("application/json")
@@ -178,10 +178,10 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementMaintenanceWindow",
                         "GetMaintenanceWindow",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/GetMaintenanceWindow")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/MaintenanceWindow/GetMaintenanceWindow")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMaintenanceWindowRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("maintenanceWindows")
                 .appendPathParam(request.getMaintenanceWindowId())
                 .accept("application/json")
@@ -207,10 +207,10 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementMaintenanceWindow",
                         "ListMaintenanceWindows",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindowCollection/ListMaintenanceWindows")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/MaintenanceWindowCollection/ListMaintenanceWindows")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMaintenanceWindowsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("maintenanceWindows")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
@@ -255,10 +255,10 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
                 .serviceDetails(
                         "FleetAppsManagementMaintenanceWindow",
                         "UpdateMaintenanceWindow",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/UpdateMaintenanceWindow")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/MaintenanceWindow/UpdateMaintenanceWindow")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateMaintenanceWindowRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("maintenanceWindows")
                 .appendPathParam(request.getMaintenanceWindowId())
                 .accept("application/json")

@@ -23,6 +23,7 @@ public enum OdmsJobPhases implements com.oracle.bmc.http.internal.BmcEnum {
     OdmsInitializeReplicationInfrastructure("ODMS_INITIALIZE_REPLICATION_INFRASTRUCTURE"),
     OdmsInitialLoadExport("ODMS_INITIAL_LOAD_EXPORT"),
     OdmsDataUpload("ODMS_DATA_UPLOAD"),
+    OdmsMetadataTransfer("ODMS_METADATA_TRANSFER"),
     OdmsInitialLoadExportDataUpload("ODMS_INITIAL_LOAD_EXPORT_DATA_UPLOAD"),
     OdmsInitialLoadImport("ODMS_INITIAL_LOAD_IMPORT"),
     OdmsPostInitialLoad("ODMS_POST_INITIAL_LOAD"),

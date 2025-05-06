@@ -12,7 +12,7 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * management tasks, validate patch compliance, and enhance operational efficiency across an
  * enterprise.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public interface FleetAppsManagementAdminAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -64,7 +64,45 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Creates a CompliancePolicyRule.
+     * Moves a PlatformConfiguration into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePlatformConfigurationCompartmentResponse>
+            changePlatformConfigurationCompartment(
+                    ChangePlatformConfigurationCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangePlatformConfigurationCompartmentRequest,
+                                    ChangePlatformConfigurationCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a Property into a different compartment within the same tenancy. For information about
+     * moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePropertyCompartmentResponse> changePropertyCompartment(
+            ChangePropertyCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangePropertyCompartmentRequest, ChangePropertyCompartmentResponse>
+                    handler);
+
+    /**
+     * Creates a compliance policy rule.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -113,8 +151,7 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a business-specific metadata property in Fleet Application Management and capture the
-     * business metadata classifications.
+     * Create a business-specific metadata property in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -129,7 +166,7 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a CompliancePolicyRule.
+     * Deletes a compliance policy rule specified by an identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -207,7 +244,7 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about a CompliancePolicy.
+     * Gets information about a compliance policy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -223,7 +260,7 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about a CompliancePolicyRule.
+     * Gets information about a compliance policy rule.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -284,7 +321,8 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetPropertyRequest, GetPropertyResponse> handler);
 
     /**
-     * Gets a list of compliancePolicies.
+     * Returns a list of all the Compliance Policies in the specified compartment. The query
+     * parameter `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -300,7 +338,7 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of CompliancePolicyRules.
+     * Gets a list of Compliance policy rules in a compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -332,7 +370,8 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of onboarding information for the Tenancy.
+     * Returns a list of all the onboardings in the specified root compartment (tenancy). The query
+     * parameter `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -347,7 +386,8 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of PlatformConfiguration for Tenancy.
+     * Returns a list of all the Platform Configurations in the specified compartment. The query
+     * parameter `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -363,7 +403,8 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List properties and their values for a tenancy in Fleet Application Management.
+     * Returns a list of all the Properties in the specified compartment. The query parameter
+     * `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -393,7 +434,7 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates a CompliancePolicyRule.
+     * Updates a compliance policy rule specified by an identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

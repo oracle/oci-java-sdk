@@ -15,7 +15,7 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public interface FleetAppsManagementMaintenanceWindow extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -115,7 +115,8 @@ public interface FleetAppsManagementMaintenanceWindow extends AutoCloseable {
     GetMaintenanceWindowResponse getMaintenanceWindow(GetMaintenanceWindowRequest request);
 
     /**
-     * List maintenance windows for a specified tenancy in\u00A0Fleet Application Management.
+     * Returns a list of all the Maintenance Windows in the specified compartment. The query
+     * parameter `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

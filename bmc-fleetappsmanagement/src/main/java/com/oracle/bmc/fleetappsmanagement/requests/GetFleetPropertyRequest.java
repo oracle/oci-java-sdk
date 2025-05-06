@@ -10,13 +10,13 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetFleetPropertyExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetFleetPropertyRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class GetFleetPropertyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique FleetProperty identifier. */
+    /** Unique fleetProperty identifier. */
     private String fleetPropertyId;
 
-    /** unique FleetProperty identifier. */
+    /** Unique fleetProperty identifier. */
     public String getFleetPropertyId() {
         return fleetPropertyId;
     }
@@ -41,11 +41,11 @@ public class GetFleetPropertyRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique FleetProperty identifier. */
+        /** Unique fleetProperty identifier. */
         private String fleetPropertyId = null;
 
         /**
-         * unique FleetProperty identifier.
+         * Unique fleetProperty identifier.
          *
          * @param fleetPropertyId the value to set
          * @return this builder instance

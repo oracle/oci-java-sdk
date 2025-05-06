@@ -95,6 +95,13 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
+    /** If provided, filters the results for the specified resource Id. */
+    private String resourceId;
+
+    /** If provided, filters the results for the specified resource Id. */
+    public String getResourceId() {
+        return resourceId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -190,6 +197,20 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /** If provided, filters the results for the specified resource Id. */
+        private String resourceId = null;
+
+        /**
+         * If provided, filters the results for the specified resource Id.
+         *
+         * @param resourceId the value to set
+         * @return this builder instance
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -226,6 +247,7 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             sortOrder(o.getSortOrder());
             shape(o.getShape());
             availabilityDomain(o.getAvailabilityDomain());
+            resourceId(o.getResourceId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -266,9 +288,10 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.sortOrder = sortOrder;
             request.shape = shape;
             request.availabilityDomain = availabilityDomain;
+            request.resourceId = resourceId;
             return request;
             // new ListGiVersionsRequest(compartmentId, limit, page, sortOrder, shape,
-            // availabilityDomain);
+            // availabilityDomain, resourceId);
         }
     }
 
@@ -284,7 +307,8 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .page(page)
                 .sortOrder(sortOrder)
                 .shape(shape)
-                .availabilityDomain(availabilityDomain);
+                .availabilityDomain(availabilityDomain)
+                .resourceId(resourceId);
     }
 
     /**
@@ -307,6 +331,7 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",shape=").append(String.valueOf(this.shape));
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(",resourceId=").append(String.valueOf(this.resourceId));
         sb.append(")");
         return sb.toString();
     }
@@ -327,7 +352,8 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.shape, other.shape)
-                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain);
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.resourceId, other.resourceId);
     }
 
     @Override
@@ -346,6 +372,7 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         return result;
     }
 }

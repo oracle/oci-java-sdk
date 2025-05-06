@@ -6,7 +6,7 @@ package com.oracle.bmc.fleetappsmanagement.responses;
 
 import com.oracle.bmc.fleetappsmanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class CreateRunbookResponse extends com.oracle.bmc.responses.BmcResponse {
     /** URL for the created runbook, the runbook id will be generated after this request is sent. */
     private String location;

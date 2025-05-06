@@ -15,7 +15,7 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public interface FleetAppsManagementAdmin extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -67,7 +67,45 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Creates a CompliancePolicyRule.
+     * Moves a PlatformConfiguration into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ChangePlatformConfigurationCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangePlatformConfigurationCompartment API.
+     */
+    ChangePlatformConfigurationCompartmentResponse changePlatformConfigurationCompartment(
+            ChangePlatformConfigurationCompartmentRequest request);
+
+    /**
+     * Moves a Property into a different compartment within the same tenancy. For information about
+     * moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ChangePropertyCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangePropertyCompartment API.
+     */
+    ChangePropertyCompartmentResponse changePropertyCompartment(
+            ChangePropertyCompartmentRequest request);
+
+    /**
+     * Creates a compliance policy rule.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -119,8 +157,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
             CreatePlatformConfigurationRequest request);
 
     /**
-     * Create a business-specific metadata property in Fleet Application Management and capture the
-     * business metadata classifications.
+     * Create a business-specific metadata property in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -135,7 +172,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     CreatePropertyResponse createProperty(CreatePropertyRequest request);
 
     /**
-     * Deletes a CompliancePolicyRule.
+     * Deletes a compliance policy rule specified by an identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -216,7 +253,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     EnableLatestPolicyResponse enableLatestPolicy(EnableLatestPolicyRequest request);
 
     /**
-     * Gets information about a CompliancePolicy.
+     * Gets information about a compliance policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -232,7 +269,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     GetCompliancePolicyResponse getCompliancePolicy(GetCompliancePolicyRequest request);
 
     /**
-     * Gets information about a CompliancePolicyRule.
+     * Gets information about a compliance policy rule.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -295,7 +332,8 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     GetPropertyResponse getProperty(GetPropertyRequest request);
 
     /**
-     * Gets a list of compliancePolicies.
+     * Returns a list of all the Compliance Policies in the specified compartment. The query
+     * parameter `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -311,7 +349,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     ListCompliancePoliciesResponse listCompliancePolicies(ListCompliancePoliciesRequest request);
 
     /**
-     * Gets a list of CompliancePolicyRules.
+     * Gets a list of Compliance policy rules in a compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -344,7 +382,8 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     ListOnboardingPoliciesResponse listOnboardingPolicies(ListOnboardingPoliciesRequest request);
 
     /**
-     * Returns a list of onboarding information for the Tenancy.
+     * Returns a list of all the onboardings in the specified root compartment (tenancy). The query
+     * parameter `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -360,7 +399,8 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     ListOnboardingsResponse listOnboardings(ListOnboardingsRequest request);
 
     /**
-     * Returns a list of PlatformConfiguration for Tenancy.
+     * Returns a list of all the Platform Configurations in the specified compartment. The query
+     * parameter `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -377,7 +417,8 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
             ListPlatformConfigurationsRequest request);
 
     /**
-     * List properties and their values for a tenancy in Fleet Application Management.
+     * Returns a list of all the Properties in the specified compartment. The query parameter
+     * `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -407,7 +448,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     ManageSettingsResponse manageSettings(ManageSettingsRequest request);
 
     /**
-     * Updates a CompliancePolicyRule.
+     * Updates a compliance policy rule specified by an identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

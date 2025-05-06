@@ -10,15 +10,36 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListSchedulerJobsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSchedulerJobsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     public String getCompartmentId() {
         return compartmentId;
+    }
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all
+     * compartments which descend from it. Which resources are returned and their field contents
+     * depends on the value of accessLevel.
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all
+     * compartments which descend from it. Which resources are returned and their field contents
+     * depends on the value of accessLevel.
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
     }
     /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     private com.oracle.bmc.fleetappsmanagement.model.SchedulerJob.LifecycleState lifecycleState;
@@ -57,11 +78,11 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
         return isRemediationJobNeeded;
     }
     /** A filter to return only resources their subState matches the given subState. */
-    private String subState;
+    private String substate;
 
     /** A filter to return only resources their subState matches the given subState. */
-    public String getSubState() {
-        return subState;
+    public String getSubstate() {
+        return substate;
     }
     /** A filter to return only resources that match the entire display name given. */
     private String displayName;
@@ -70,19 +91,25 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
     public String getDisplayName() {
         return displayName;
     }
-    /** unique SchedulerJob identifier */
+    /**
+     * Unique identifier or OCID for listing a single Schedule Job by id. Either compartmentId or id
+     * must be provided.
+     */
     private String id;
 
-    /** unique SchedulerJob identifier */
+    /**
+     * Unique identifier or OCID for listing a single Schedule Job by id. Either compartmentId or id
+     * must be provided.
+     */
     public String getId() {
         return id;
     }
-    /** SchedulerJob Definition identifier */
-    private String defintionId;
+    /** SchedulerDefinition identifier */
+    private String schedulerDefintionId;
 
-    /** SchedulerJob Definition identifier */
-    public String getDefintionId() {
-        return defintionId;
+    /** SchedulerDefinition identifier */
+    public String getSchedulerDefintionId() {
+        return schedulerDefintionId;
     }
     /** The maximum number of items to return. */
     private Integer limit;
@@ -176,17 +203,41 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
+         */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
          *
          * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * If set to true, resources will be returned for not only the provided compartment, but all
+         * compartments which descend from it. Which resources are returned and their field contents
+         * depends on the value of accessLevel.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * If set to true, resources will be returned for not only the provided compartment, but all
+         * compartments which descend from it. Which resources are returned and their field contents
+         * depends on the value of accessLevel.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
 
@@ -267,16 +318,16 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /** A filter to return only resources their subState matches the given subState. */
-        private String subState = null;
+        private String substate = null;
 
         /**
          * A filter to return only resources their subState matches the given subState.
          *
-         * @param subState the value to set
+         * @param substate the value to set
          * @return this builder instance
          */
-        public Builder subState(String subState) {
-            this.subState = subState;
+        public Builder substate(String substate) {
+            this.substate = substate;
             return this;
         }
 
@@ -294,11 +345,15 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** unique SchedulerJob identifier */
+        /**
+         * Unique identifier or OCID for listing a single Schedule Job by id. Either compartmentId
+         * or id must be provided.
+         */
         private String id = null;
 
         /**
-         * unique SchedulerJob identifier
+         * Unique identifier or OCID for listing a single Schedule Job by id. Either compartmentId
+         * or id must be provided.
          *
          * @param id the value to set
          * @return this builder instance
@@ -308,17 +363,17 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** SchedulerJob Definition identifier */
-        private String defintionId = null;
+        /** SchedulerDefinition identifier */
+        private String schedulerDefintionId = null;
 
         /**
-         * SchedulerJob Definition identifier
+         * SchedulerDefinition identifier
          *
-         * @param defintionId the value to set
+         * @param schedulerDefintionId the value to set
          * @return this builder instance
          */
-        public Builder defintionId(String defintionId) {
-            this.defintionId = defintionId;
+        public Builder schedulerDefintionId(String schedulerDefintionId) {
+            this.schedulerDefintionId = schedulerDefintionId;
             return this;
         }
 
@@ -431,15 +486,16 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder copy(ListSchedulerJobsRequest o) {
             compartmentId(o.getCompartmentId());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             lifecycleState(o.getLifecycleState());
             fleetId(o.getFleetId());
             timeScheduledGreaterThanOrEqualTo(o.getTimeScheduledGreaterThanOrEqualTo());
             timeScheduledLessThan(o.getTimeScheduledLessThan());
             isRemediationJobNeeded(o.getIsRemediationJobNeeded());
-            subState(o.getSubState());
+            substate(o.getSubstate());
             displayName(o.getDisplayName());
             id(o.getId());
-            defintionId(o.getDefintionId());
+            schedulerDefintionId(o.getSchedulerDefintionId());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -480,25 +536,26 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
         public ListSchedulerJobsRequest buildWithoutInvocationCallback() {
             ListSchedulerJobsRequest request = new ListSchedulerJobsRequest();
             request.compartmentId = compartmentId;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.lifecycleState = lifecycleState;
             request.fleetId = fleetId;
             request.timeScheduledGreaterThanOrEqualTo = timeScheduledGreaterThanOrEqualTo;
             request.timeScheduledLessThan = timeScheduledLessThan;
             request.isRemediationJobNeeded = isRemediationJobNeeded;
-            request.subState = subState;
+            request.substate = substate;
             request.displayName = displayName;
             request.id = id;
-            request.defintionId = defintionId;
+            request.schedulerDefintionId = schedulerDefintionId;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSchedulerJobsRequest(compartmentId, lifecycleState, fleetId,
-            // timeScheduledGreaterThanOrEqualTo, timeScheduledLessThan, isRemediationJobNeeded,
-            // subState, displayName, id, defintionId, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // new ListSchedulerJobsRequest(compartmentId, compartmentIdInSubtree, lifecycleState,
+            // fleetId, timeScheduledGreaterThanOrEqualTo, timeScheduledLessThan,
+            // isRemediationJobNeeded, substate, displayName, id, schedulerDefintionId, limit, page,
+            // sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -510,15 +567,16 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .lifecycleState(lifecycleState)
                 .fleetId(fleetId)
                 .timeScheduledGreaterThanOrEqualTo(timeScheduledGreaterThanOrEqualTo)
                 .timeScheduledLessThan(timeScheduledLessThan)
                 .isRemediationJobNeeded(isRemediationJobNeeded)
-                .subState(subState)
+                .substate(substate)
                 .displayName(displayName)
                 .id(id)
-                .defintionId(defintionId)
+                .schedulerDefintionId(schedulerDefintionId)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -541,16 +599,17 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",fleetId=").append(String.valueOf(this.fleetId));
         sb.append(",timeScheduledGreaterThanOrEqualTo=")
                 .append(String.valueOf(this.timeScheduledGreaterThanOrEqualTo));
         sb.append(",timeScheduledLessThan=").append(String.valueOf(this.timeScheduledLessThan));
         sb.append(",isRemediationJobNeeded=").append(String.valueOf(this.isRemediationJobNeeded));
-        sb.append(",subState=").append(String.valueOf(this.subState));
+        sb.append(",substate=").append(String.valueOf(this.substate));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",id=").append(String.valueOf(this.id));
-        sb.append(",defintionId=").append(String.valueOf(this.defintionId));
+        sb.append(",schedulerDefintionId=").append(String.valueOf(this.schedulerDefintionId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -572,6 +631,8 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
         ListSchedulerJobsRequest other = (ListSchedulerJobsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
                 && java.util.Objects.equals(
@@ -580,10 +641,10 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
                 && java.util.Objects.equals(this.timeScheduledLessThan, other.timeScheduledLessThan)
                 && java.util.Objects.equals(
                         this.isRemediationJobNeeded, other.isRemediationJobNeeded)
-                && java.util.Objects.equals(this.subState, other.subState)
+                && java.util.Objects.equals(this.substate, other.substate)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.id, other.id)
-                && java.util.Objects.equals(this.defintionId, other.defintionId)
+                && java.util.Objects.equals(this.schedulerDefintionId, other.schedulerDefintionId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -598,6 +659,11 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
@@ -617,10 +683,14 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
                         + (this.isRemediationJobNeeded == null
                                 ? 43
                                 : this.isRemediationJobNeeded.hashCode());
-        result = (result * PRIME) + (this.subState == null ? 43 : this.subState.hashCode());
+        result = (result * PRIME) + (this.substate == null ? 43 : this.substate.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
-        result = (result * PRIME) + (this.defintionId == null ? 43 : this.defintionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.schedulerDefintionId == null
+                                ? 43
+                                : this.schedulerDefintionId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

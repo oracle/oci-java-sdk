@@ -252,6 +252,19 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return categories;
     }
     /**
+     * The pattern text filter. Only sources with a pattern | which contains text with the specified
+     * string will be returned.
+     */
+    private String patternText;
+
+    /**
+     * The pattern text filter. Only sources with a pattern | which contains text with the specified
+     * string will be returned.
+     */
+    public String getPatternText() {
+        return patternText;
+    }
+    /**
      * A flag specifying whether or not to return all source information, or a subset of the
      * information about each source. A value of true will return only the source unique identifier
      * and the source name. A value of false will return all source information (such as author,
@@ -491,6 +504,24 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
+         * The pattern text filter. Only sources with a pattern | which contains text with the
+         * specified string will be returned.
+         */
+        private String patternText = null;
+
+        /**
+         * The pattern text filter. Only sources with a pattern | which contains text with the
+         * specified string will be returned.
+         *
+         * @param patternText the value to set
+         * @return this builder instance
+         */
+        public Builder patternText(String patternText) {
+            this.patternText = patternText;
+            return this;
+        }
+
+        /**
          * A flag specifying whether or not to return all source information, or a subset of the
          * information about each source. A value of true will return only the source unique
          * identifier and the source name. A value of false will return all source information (such
@@ -569,6 +600,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             name(o.getName());
             sourceType(o.getSourceType());
             categories(o.getCategories());
+            patternText(o.getPatternText());
             isSimplified(o.getIsSimplified());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -618,12 +650,13 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.name = name;
             request.sourceType = sourceType;
             request.categories = categories;
+            request.patternText = patternText;
             request.isSimplified = isSimplified;
             request.opcRequestId = opcRequestId;
             return request;
             // new ListSourcesRequest(namespaceName, compartmentId, entityType, sourceDisplayText,
             // isSystem, isAutoAssociated, sortOrder, sortBy, limit, page, name, sourceType,
-            // categories, isSimplified, opcRequestId);
+            // categories, patternText, isSimplified, opcRequestId);
         }
     }
 
@@ -647,6 +680,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .name(name)
                 .sourceType(sourceType)
                 .categories(categories)
+                .patternText(patternText)
                 .isSimplified(isSimplified)
                 .opcRequestId(opcRequestId);
     }
@@ -678,6 +712,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",sourceType=").append(String.valueOf(this.sourceType));
         sb.append(",categories=").append(String.valueOf(this.categories));
+        sb.append(",patternText=").append(String.valueOf(this.patternText));
         sb.append(",isSimplified=").append(String.valueOf(this.isSimplified));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -708,6 +743,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.sourceType, other.sourceType)
                 && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.patternText, other.patternText)
                 && java.util.Objects.equals(this.isSimplified, other.isSimplified)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -737,6 +773,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
         result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result = (result * PRIME) + (this.patternText == null ? 43 : this.patternText.hashCode());
         result = (result * PRIME) + (this.isSimplified == null ? 43 : this.isSimplified.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

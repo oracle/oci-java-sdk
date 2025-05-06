@@ -10,20 +10,26 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListTaskRecordsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTaskRecordsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query
+     * param is not specified.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The platform for the Task. */
+    /** The platform for the task record. */
     private String platform;
 
-    /** The platform for the Task. */
+    /** The platform for the task record. */
     public String getPlatform() {
         return platform;
     }
@@ -41,10 +47,23 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public String getDisplayName() {
         return displayName;
     }
-    /** unique TaskDetail identifier */
+    /** A filter to return task records whose operation matches the given lifecycle operation. */
+    private String operation;
+
+    /** A filter to return task records whose operation matches the given lifecycle operation. */
+    public String getOperation() {
+        return operation;
+    }
+    /**
+     * Unique identifier or OCID for listing a single task record by id. Either compartmentId or id
+     * must be provided.
+     */
     private String id;
 
-    /** unique TaskDetail identifier */
+    /**
+     * Unique identifier or OCID for listing a single task record by id. Either compartmentId or id
+     * must be provided.
+     */
     public String getId() {
         return id;
     }
@@ -68,10 +87,10 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public String getPage() {
         return page;
     }
-    /** The current state of the Task. */
+    /** The current state of the task record. */
     private com.oracle.bmc.fleetappsmanagement.model.TaskRecord.LifecycleState lifecycleState;
 
-    /** The current state of the Task. */
+    /** The current state of the task record. */
     public com.oracle.bmc.fleetappsmanagement.model.TaskRecord.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -79,50 +98,13 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    private SortBy sortBy;
+    private com.oracle.bmc.fleetappsmanagement.model.TaskRecordSortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
      * descending. Default order for displayName is ascending.
      */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid SortBy: " + key);
-        }
-    };
-
-    /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public SortBy getSortBy() {
+    public com.oracle.bmc.fleetappsmanagement.model.TaskRecordSortBy getSortBy() {
         return sortBy;
     }
     /** The sort order to use, either 'ASC' or 'DESC'. */
@@ -146,11 +128,15 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
+         */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The ID of the compartment in which to list resources. Empty only if the resource OCID
+         * query param is not specified.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -160,11 +146,11 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The platform for the Task. */
+        /** The platform for the task record. */
         private String platform = null;
 
         /**
-         * The platform for the Task.
+         * The platform for the task record.
          *
          * @param platform the value to set
          * @return this builder instance
@@ -202,11 +188,31 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** unique TaskDetail identifier */
+        /**
+         * A filter to return task records whose operation matches the given lifecycle operation.
+         */
+        private String operation = null;
+
+        /**
+         * A filter to return task records whose operation matches the given lifecycle operation.
+         *
+         * @param operation the value to set
+         * @return this builder instance
+         */
+        public Builder operation(String operation) {
+            this.operation = operation;
+            return this;
+        }
+
+        /**
+         * Unique identifier or OCID for listing a single task record by id. Either compartmentId or
+         * id must be provided.
+         */
         private String id = null;
 
         /**
-         * unique TaskDetail identifier
+         * Unique identifier or OCID for listing a single task record by id. Either compartmentId or
+         * id must be provided.
          *
          * @param id the value to set
          * @return this builder instance
@@ -248,12 +254,12 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The current state of the Task. */
+        /** The current state of the task record. */
         private com.oracle.bmc.fleetappsmanagement.model.TaskRecord.LifecycleState lifecycleState =
                 null;
 
         /**
-         * The current state of the Task.
+         * The current state of the task record.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -268,7 +274,7 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
          * is descending. Default order for displayName is ascending.
          */
-        private SortBy sortBy = null;
+        private com.oracle.bmc.fleetappsmanagement.model.TaskRecordSortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated
@@ -277,7 +283,7 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
          * @param sortBy the value to set
          * @return this builder instance
          */
-        public Builder sortBy(SortBy sortBy) {
+        public Builder sortBy(com.oracle.bmc.fleetappsmanagement.model.TaskRecordSortBy sortBy) {
             this.sortBy = sortBy;
             return this;
         }
@@ -344,6 +350,7 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             platform(o.getPlatform());
             type(o.getType());
             displayName(o.getDisplayName());
+            operation(o.getOperation());
             id(o.getId());
             limit(o.getLimit());
             page(o.getPage());
@@ -389,6 +396,7 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.platform = platform;
             request.type = type;
             request.displayName = displayName;
+            request.operation = operation;
             request.id = id;
             request.limit = limit;
             request.page = page;
@@ -397,8 +405,8 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListTaskRecordsRequest(compartmentId, platform, type, displayName, id, limit,
-            // page, lifecycleState, sortBy, sortOrder, opcRequestId);
+            // new ListTaskRecordsRequest(compartmentId, platform, type, displayName, operation, id,
+            // limit, page, lifecycleState, sortBy, sortOrder, opcRequestId);
         }
     }
 
@@ -413,6 +421,7 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .platform(platform)
                 .type(type)
                 .displayName(displayName)
+                .operation(operation)
                 .id(id)
                 .limit(limit)
                 .page(page)
@@ -440,6 +449,7 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
         sb.append(",platform=").append(String.valueOf(this.platform));
         sb.append(",type=").append(String.valueOf(this.type));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",operation=").append(String.valueOf(this.operation));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -466,6 +476,7 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 && java.util.Objects.equals(this.platform, other.platform)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.operation, other.operation)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -485,6 +496,7 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
         result = (result * PRIME) + (this.platform == null ? 43 : this.platform.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

@@ -26,13 +26,6 @@ public class ListSystemVersionsRequest extends com.oracle.bmc.requests.BmcReques
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Specifies shape query parameter. */
-    private String shape;
-
-    /** Specifies shape query parameter. */
-    public String getShape() {
-        return shape;
-    }
     /** Specifies gi version query parameter. */
     private String giVersion;
 
@@ -102,6 +95,27 @@ public class ListSystemVersionsRequest extends com.oracle.bmc.requests.BmcReques
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** If provided, filters the results for the given shape. */
+    private String shape;
+
+    /** If provided, filters the results for the given shape. */
+    public String getShape() {
+        return shape;
+    }
+    /** If provided, return highest versions from each major version family. */
+    private Boolean isLatest;
+
+    /** If provided, return highest versions from each major version family. */
+    public Boolean getIsLatest() {
+        return isLatest;
+    }
+    /** If provided, filters the results for the specified resource Id. */
+    private String resourceId;
+
+    /** If provided, filters the results for the specified resource Id. */
+    public String getResourceId() {
+        return resourceId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -124,20 +138,6 @@ public class ListSystemVersionsRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
-            return this;
-        }
-
-        /** Specifies shape query parameter. */
-        private String shape = null;
-
-        /**
-         * Specifies shape query parameter.
-         *
-         * @param shape the value to set
-         * @return this builder instance
-         */
-        public Builder shape(String shape) {
-            this.shape = shape;
             return this;
         }
 
@@ -211,6 +211,48 @@ public class ListSystemVersionsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /** If provided, filters the results for the given shape. */
+        private String shape = null;
+
+        /**
+         * If provided, filters the results for the given shape.
+         *
+         * @param shape the value to set
+         * @return this builder instance
+         */
+        public Builder shape(String shape) {
+            this.shape = shape;
+            return this;
+        }
+
+        /** If provided, return highest versions from each major version family. */
+        private Boolean isLatest = null;
+
+        /**
+         * If provided, return highest versions from each major version family.
+         *
+         * @param isLatest the value to set
+         * @return this builder instance
+         */
+        public Builder isLatest(Boolean isLatest) {
+            this.isLatest = isLatest;
+            return this;
+        }
+
+        /** If provided, filters the results for the specified resource Id. */
+        private String resourceId = null;
+
+        /**
+         * If provided, filters the results for the specified resource Id.
+         *
+         * @param resourceId the value to set
+         * @return this builder instance
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -242,12 +284,14 @@ public class ListSystemVersionsRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder copy(ListSystemVersionsRequest o) {
             compartmentId(o.getCompartmentId());
-            shape(o.getShape());
             giVersion(o.getGiVersion());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
             opcRequestId(o.getOpcRequestId());
+            shape(o.getShape());
+            isLatest(o.getIsLatest());
+            resourceId(o.getResourceId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -283,15 +327,17 @@ public class ListSystemVersionsRequest extends com.oracle.bmc.requests.BmcReques
         public ListSystemVersionsRequest buildWithoutInvocationCallback() {
             ListSystemVersionsRequest request = new ListSystemVersionsRequest();
             request.compartmentId = compartmentId;
-            request.shape = shape;
             request.giVersion = giVersion;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
+            request.shape = shape;
+            request.isLatest = isLatest;
+            request.resourceId = resourceId;
             return request;
-            // new ListSystemVersionsRequest(compartmentId, shape, giVersion, limit, page,
-            // sortOrder, opcRequestId);
+            // new ListSystemVersionsRequest(compartmentId, giVersion, limit, page, sortOrder,
+            // opcRequestId, shape, isLatest, resourceId);
         }
     }
 
@@ -303,12 +349,14 @@ public class ListSystemVersionsRequest extends com.oracle.bmc.requests.BmcReques
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
-                .shape(shape)
                 .giVersion(giVersion)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .shape(shape)
+                .isLatest(isLatest)
+                .resourceId(resourceId);
     }
 
     /**
@@ -326,12 +374,14 @@ public class ListSystemVersionsRequest extends com.oracle.bmc.requests.BmcReques
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(",shape=").append(String.valueOf(this.shape));
         sb.append(",giVersion=").append(String.valueOf(this.giVersion));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",shape=").append(String.valueOf(this.shape));
+        sb.append(",isLatest=").append(String.valueOf(this.isLatest));
+        sb.append(",resourceId=").append(String.valueOf(this.resourceId));
         sb.append(")");
         return sb.toString();
     }
@@ -348,12 +398,14 @@ public class ListSystemVersionsRequest extends com.oracle.bmc.requests.BmcReques
         ListSystemVersionsRequest other = (ListSystemVersionsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.giVersion, other.giVersion)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.isLatest, other.isLatest)
+                && java.util.Objects.equals(this.resourceId, other.resourceId);
     }
 
     @Override
@@ -363,12 +415,14 @@ public class ListSystemVersionsRequest extends com.oracle.bmc.requests.BmcReques
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.giVersion == null ? 43 : this.giVersion.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.isLatest == null ? 43 : this.isLatest.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         return result;
     }
 }

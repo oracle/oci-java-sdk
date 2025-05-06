@@ -15,13 +15,16 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
         property = "sourceType",
         defaultImpl = ContentDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CatalogContentDetails.class,
+            name = "CATALOG"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ObjectStorageBucketContentDetails.class,
             name = "OBJECT_STORAGE_BUCKET")
@@ -78,6 +81,7 @@ public class ContentDetails extends com.oracle.bmc.http.client.internal.Explicit
     /** Content Source type details. */
     public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
         ObjectStorageBucket("OBJECT_STORAGE_BUCKET"),
+        Catalog("CATALOG"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

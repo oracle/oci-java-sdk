@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = SchedulerJobSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -33,12 +33,10 @@ public final class SchedulerJobSummary
         "countOfAffectedActionGroups",
         "countOfAffectedResources",
         "countOfAffectedTargets",
-        "actionGroupTypes",
-        "applicationTypes",
         "products",
         "lifecycleOperations",
         "actionGroups",
-        "associatedScheduleDefinition",
+        "schedulerDefinition",
         "lifecycleState",
         "lifecycleDetails",
         "freeformTags",
@@ -55,12 +53,10 @@ public final class SchedulerJobSummary
             Integer countOfAffectedActionGroups,
             Integer countOfAffectedResources,
             Integer countOfAffectedTargets,
-            java.util.List<LifeCycleActionGroupType> actionGroupTypes,
-            java.util.List<String> applicationTypes,
             java.util.List<String> products,
             java.util.List<String> lifecycleOperations,
             java.util.List<ActionGroupDetails> actionGroups,
-            AssociatedSchedulerDefinition associatedScheduleDefinition,
+            AssociatedSchedulerDefinition schedulerDefinition,
             SchedulerJob.LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
@@ -76,12 +72,10 @@ public final class SchedulerJobSummary
         this.countOfAffectedActionGroups = countOfAffectedActionGroups;
         this.countOfAffectedResources = countOfAffectedResources;
         this.countOfAffectedTargets = countOfAffectedTargets;
-        this.actionGroupTypes = actionGroupTypes;
-        this.applicationTypes = applicationTypes;
         this.products = products;
         this.lifecycleOperations = lifecycleOperations;
         this.actionGroups = actionGroups;
-        this.associatedScheduleDefinition = associatedScheduleDefinition;
+        this.schedulerDefinition = schedulerDefinition;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
@@ -129,12 +123,12 @@ public final class SchedulerJobSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Tenancy OCID */
+        /** Compartment OCID */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Tenancy OCID
+         * Compartment OCID
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -240,38 +234,6 @@ public final class SchedulerJobSummary
             this.__explicitlySet__.add("countOfAffectedTargets");
             return this;
         }
-        /** All Action Group types are part of the schedule. */
-        @com.fasterxml.jackson.annotation.JsonProperty("actionGroupTypes")
-        private java.util.List<LifeCycleActionGroupType> actionGroupTypes;
-
-        /**
-         * All Action Group types are part of the schedule.
-         *
-         * @param actionGroupTypes the value to set
-         * @return this builder
-         */
-        public Builder actionGroupTypes(java.util.List<LifeCycleActionGroupType> actionGroupTypes) {
-            this.actionGroupTypes = actionGroupTypes;
-            this.__explicitlySet__.add("actionGroupTypes");
-            return this;
-        }
-        /**
-         * All application types that are part of the schedule for an ENVIRONMENT action group Type.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("applicationTypes")
-        private java.util.List<String> applicationTypes;
-
-        /**
-         * All application types that are part of the schedule for an ENVIRONMENT action group Type.
-         *
-         * @param applicationTypes the value to set
-         * @return this builder
-         */
-        public Builder applicationTypes(java.util.List<String> applicationTypes) {
-            this.applicationTypes = applicationTypes;
-            this.__explicitlySet__.add("applicationTypes");
-            return this;
-        }
         /** All products that are part of the schedule for a PRODUCT action group type. */
         @com.fasterxml.jackson.annotation.JsonProperty("products")
         private java.util.List<String> products;
@@ -318,13 +280,12 @@ public final class SchedulerJobSummary
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("associatedScheduleDefinition")
-        private AssociatedSchedulerDefinition associatedScheduleDefinition;
+        @com.fasterxml.jackson.annotation.JsonProperty("schedulerDefinition")
+        private AssociatedSchedulerDefinition schedulerDefinition;
 
-        public Builder associatedScheduleDefinition(
-                AssociatedSchedulerDefinition associatedScheduleDefinition) {
-            this.associatedScheduleDefinition = associatedScheduleDefinition;
-            this.__explicitlySet__.add("associatedScheduleDefinition");
+        public Builder schedulerDefinition(AssociatedSchedulerDefinition schedulerDefinition) {
+            this.schedulerDefinition = schedulerDefinition;
+            this.__explicitlySet__.add("schedulerDefinition");
             return this;
         }
         /** The current state of the SchedulerJob. */
@@ -435,12 +396,10 @@ public final class SchedulerJobSummary
                             this.countOfAffectedActionGroups,
                             this.countOfAffectedResources,
                             this.countOfAffectedTargets,
-                            this.actionGroupTypes,
-                            this.applicationTypes,
                             this.products,
                             this.lifecycleOperations,
                             this.actionGroups,
-                            this.associatedScheduleDefinition,
+                            this.schedulerDefinition,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.freeformTags,
@@ -481,12 +440,6 @@ public final class SchedulerJobSummary
             if (model.wasPropertyExplicitlySet("countOfAffectedTargets")) {
                 this.countOfAffectedTargets(model.getCountOfAffectedTargets());
             }
-            if (model.wasPropertyExplicitlySet("actionGroupTypes")) {
-                this.actionGroupTypes(model.getActionGroupTypes());
-            }
-            if (model.wasPropertyExplicitlySet("applicationTypes")) {
-                this.applicationTypes(model.getApplicationTypes());
-            }
             if (model.wasPropertyExplicitlySet("products")) {
                 this.products(model.getProducts());
             }
@@ -496,8 +449,8 @@ public final class SchedulerJobSummary
             if (model.wasPropertyExplicitlySet("actionGroups")) {
                 this.actionGroups(model.getActionGroups());
             }
-            if (model.wasPropertyExplicitlySet("associatedScheduleDefinition")) {
-                this.associatedScheduleDefinition(model.getAssociatedScheduleDefinition());
+            if (model.wasPropertyExplicitlySet("schedulerDefinition")) {
+                this.schedulerDefinition(model.getSchedulerDefinition());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -561,12 +514,12 @@ public final class SchedulerJobSummary
         return displayName;
     }
 
-    /** Tenancy OCID */
+    /** Compartment OCID */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Tenancy OCID
+     * Compartment OCID
      *
      * @return the value
      */
@@ -658,32 +611,6 @@ public final class SchedulerJobSummary
         return countOfAffectedTargets;
     }
 
-    /** All Action Group types are part of the schedule. */
-    @com.fasterxml.jackson.annotation.JsonProperty("actionGroupTypes")
-    private final java.util.List<LifeCycleActionGroupType> actionGroupTypes;
-
-    /**
-     * All Action Group types are part of the schedule.
-     *
-     * @return the value
-     */
-    public java.util.List<LifeCycleActionGroupType> getActionGroupTypes() {
-        return actionGroupTypes;
-    }
-
-    /** All application types that are part of the schedule for an ENVIRONMENT action group Type. */
-    @com.fasterxml.jackson.annotation.JsonProperty("applicationTypes")
-    private final java.util.List<String> applicationTypes;
-
-    /**
-     * All application types that are part of the schedule for an ENVIRONMENT action group Type.
-     *
-     * @return the value
-     */
-    public java.util.List<String> getApplicationTypes() {
-        return applicationTypes;
-    }
-
     /** All products that are part of the schedule for a PRODUCT action group type. */
     @com.fasterxml.jackson.annotation.JsonProperty("products")
     private final java.util.List<String> products;
@@ -723,11 +650,11 @@ public final class SchedulerJobSummary
         return actionGroups;
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("associatedScheduleDefinition")
-    private final AssociatedSchedulerDefinition associatedScheduleDefinition;
+    @com.fasterxml.jackson.annotation.JsonProperty("schedulerDefinition")
+    private final AssociatedSchedulerDefinition schedulerDefinition;
 
-    public AssociatedSchedulerDefinition getAssociatedScheduleDefinition() {
-        return associatedScheduleDefinition;
+    public AssociatedSchedulerDefinition getSchedulerDefinition() {
+        return schedulerDefinition;
     }
 
     /** The current state of the SchedulerJob. */
@@ -837,13 +764,10 @@ public final class SchedulerJobSummary
         sb.append(", countOfAffectedResources=")
                 .append(String.valueOf(this.countOfAffectedResources));
         sb.append(", countOfAffectedTargets=").append(String.valueOf(this.countOfAffectedTargets));
-        sb.append(", actionGroupTypes=").append(String.valueOf(this.actionGroupTypes));
-        sb.append(", applicationTypes=").append(String.valueOf(this.applicationTypes));
         sb.append(", products=").append(String.valueOf(this.products));
         sb.append(", lifecycleOperations=").append(String.valueOf(this.lifecycleOperations));
         sb.append(", actionGroups=").append(String.valueOf(this.actionGroups));
-        sb.append(", associatedScheduleDefinition=")
-                .append(String.valueOf(this.associatedScheduleDefinition));
+        sb.append(", schedulerDefinition=").append(String.valueOf(this.schedulerDefinition));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -875,13 +799,10 @@ public final class SchedulerJobSummary
                         this.countOfAffectedResources, other.countOfAffectedResources)
                 && java.util.Objects.equals(
                         this.countOfAffectedTargets, other.countOfAffectedTargets)
-                && java.util.Objects.equals(this.actionGroupTypes, other.actionGroupTypes)
-                && java.util.Objects.equals(this.applicationTypes, other.applicationTypes)
                 && java.util.Objects.equals(this.products, other.products)
                 && java.util.Objects.equals(this.lifecycleOperations, other.lifecycleOperations)
                 && java.util.Objects.equals(this.actionGroups, other.actionGroups)
-                && java.util.Objects.equals(
-                        this.associatedScheduleDefinition, other.associatedScheduleDefinition)
+                && java.util.Objects.equals(this.schedulerDefinition, other.schedulerDefinition)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -919,12 +840,6 @@ public final class SchedulerJobSummary
                         + (this.countOfAffectedTargets == null
                                 ? 43
                                 : this.countOfAffectedTargets.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.actionGroupTypes == null ? 43 : this.actionGroupTypes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.applicationTypes == null ? 43 : this.applicationTypes.hashCode());
         result = (result * PRIME) + (this.products == null ? 43 : this.products.hashCode());
         result =
                 (result * PRIME)
@@ -934,9 +849,9 @@ public final class SchedulerJobSummary
         result = (result * PRIME) + (this.actionGroups == null ? 43 : this.actionGroups.hashCode());
         result =
                 (result * PRIME)
-                        + (this.associatedScheduleDefinition == null
+                        + (this.schedulerDefinition == null
                                 ? 43
-                                : this.associatedScheduleDefinition.hashCode());
+                                : this.schedulerDefinition.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

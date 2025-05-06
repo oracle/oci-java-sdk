@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StepSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -56,12 +56,12 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of taskRecord assocaited with the step */
+        /** The OCID of taskRecord assocaited with the step. */
         @com.fasterxml.jackson.annotation.JsonProperty("taskRecordId")
         private String taskRecordId;
 
         /**
-         * The OCID of taskRecord assocaited with the step
+         * The OCID of taskRecord assocaited with the step.
          *
          * @param taskRecordId the value to set
          * @return this builder
@@ -71,12 +71,12 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("taskRecordId");
             return this;
         }
-        /** Name of the Step */
+        /** Name of the Step. */
         @com.fasterxml.jackson.annotation.JsonProperty("stepName")
         private String stepName;
 
         /**
-         * Name of the Step
+         * Name of the Step.
          *
          * @param stepName the value to set
          * @return this builder
@@ -86,12 +86,12 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("stepName");
             return this;
         }
-        /** The sequence of the step */
+        /** The sequence of the step. */
         @com.fasterxml.jackson.annotation.JsonProperty("sequence")
         private String sequence;
 
         /**
-         * The sequence of the step
+         * The sequence of the step.
          *
          * @param sequence the value to set
          * @return this builder
@@ -101,12 +101,12 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("sequence");
             return this;
         }
-        /** Status of the Task */
+        /** Status of the Task. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private JobStatus status;
 
         /**
-         * Status of the Task
+         * Status of the Task.
          *
          * @param status the value to set
          * @return this builder
@@ -161,12 +161,12 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("isRollbackTask");
             return this;
         }
-        /** Description of the step Execution */
+        /** Description of the step Execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of the step Execution
+         * Description of the step Execution.
          *
          * @param description the value to set
          * @return this builder
@@ -259,12 +259,12 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The OCID of taskRecord assocaited with the step */
+    /** The OCID of taskRecord assocaited with the step. */
     @com.fasterxml.jackson.annotation.JsonProperty("taskRecordId")
     private final String taskRecordId;
 
     /**
-     * The OCID of taskRecord assocaited with the step
+     * The OCID of taskRecord assocaited with the step.
      *
      * @return the value
      */
@@ -272,12 +272,12 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
         return taskRecordId;
     }
 
-    /** Name of the Step */
+    /** Name of the Step. */
     @com.fasterxml.jackson.annotation.JsonProperty("stepName")
     private final String stepName;
 
     /**
-     * Name of the Step
+     * Name of the Step.
      *
      * @return the value
      */
@@ -285,12 +285,12 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
         return stepName;
     }
 
-    /** The sequence of the step */
+    /** The sequence of the step. */
     @com.fasterxml.jackson.annotation.JsonProperty("sequence")
     private final String sequence;
 
     /**
-     * The sequence of the step
+     * The sequence of the step.
      *
      * @return the value
      */
@@ -298,12 +298,12 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
         return sequence;
     }
 
-    /** Status of the Task */
+    /** Status of the Task. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final JobStatus status;
 
     /**
-     * Status of the Task
+     * Status of the Task.
      *
      * @return the value
      */
@@ -350,12 +350,12 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
         return isRollbackTask;
     }
 
-    /** Description of the step Execution */
+    /** Description of the step Execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of the step Execution
+     * Description of the step Execution.
      *
      * @return the value
      */

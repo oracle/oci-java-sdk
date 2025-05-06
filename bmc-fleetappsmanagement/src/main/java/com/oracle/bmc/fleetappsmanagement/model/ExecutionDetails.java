@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -25,6 +25,9 @@ package com.oracle.bmc.fleetappsmanagement.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ScriptBasedExecutionDetails.class,
             name = "SCRIPT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = TerraformBasedExecutionDetails.class,
+            name = "TERRAFORM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ApiBasedExecutionDetails.class,
             name = "API")

@@ -6,8 +6,36 @@ package com.oracle.bmc.fleetappsmanagement.responses;
 
 import com.oracle.bmc.fleetappsmanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class CreatePlatformConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
+    /**
+     * URL for the created PlatformConfiguration, the PlatformConfiguration id will be generated
+     * after this request is sent.
+     */
+    private String location;
+
+    /**
+     * URL for the created PlatformConfiguration, the PlatformConfiguration id will be generated
+     * after this request is sent.
+     *
+     * @return the value
+     */
+    public String getLocation() {
+        return location;
+    }
+
+    /** Same as location */
+    private String contentLocation;
+
+    /**
+     * Same as location
+     *
+     * @return the value
+     */
+    public String getContentLocation() {
+        return contentLocation;
+    }
+
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
@@ -18,6 +46,22 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
      */
     public String getEtag() {
         return etag;
+    }
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
+     * status.
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
+     * status.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
     }
 
     /**
@@ -52,18 +96,27 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
+        "location",
+        "contentLocation",
         "etag",
+        "opcWorkRequestId",
         "opcRequestId",
         "platformConfiguration"
     })
     private CreatePlatformConfigurationResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
+            String location,
+            String contentLocation,
             String etag,
+            String opcWorkRequestId,
             String opcRequestId,
             com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration platformConfiguration) {
         super(__httpStatusCode__, headers);
+        this.location = location;
+        this.contentLocation = contentLocation;
         this.etag = etag;
+        this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
         this.platformConfiguration = platformConfiguration;
     }
@@ -87,6 +140,38 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * URL for the created PlatformConfiguration, the PlatformConfiguration id will be generated
+         * after this request is sent.
+         */
+        private String location;
+
+        /**
+         * URL for the created PlatformConfiguration, the PlatformConfiguration id will be generated
+         * after this request is sent.
+         *
+         * @param location the value to set
+         * @return this builder
+         */
+        public Builder location(String location) {
+            this.location = location;
+            return this;
+        }
+
+        /** Same as location */
+        private String contentLocation;
+
+        /**
+         * Same as location
+         *
+         * @param contentLocation the value to set
+         * @return this builder
+         */
+        public Builder contentLocation(String contentLocation) {
+            this.contentLocation = contentLocation;
+            return this;
+        }
+
         /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
@@ -98,6 +183,24 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
          */
         public Builder etag(String etag) {
             this.etag = etag;
+            return this;
+        }
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
+         * its status.
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
+         * its status.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
@@ -145,7 +248,10 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
         public Builder copy(CreatePlatformConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
+            location(o.getLocation());
+            contentLocation(o.getContentLocation());
             etag(o.getEtag());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
             platformConfiguration(o.getPlatformConfiguration());
 
@@ -160,7 +266,14 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
         @Override
         public CreatePlatformConfigurationResponse build() {
             return new CreatePlatformConfigurationResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, platformConfiguration);
+                    __httpStatusCode__,
+                    headers,
+                    location,
+                    contentLocation,
+                    etag,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    platformConfiguration);
         }
     }
 
@@ -178,7 +291,10 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",location=").append(String.valueOf(location));
+        sb.append(",contentLocation=").append(String.valueOf(contentLocation));
         sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",platformConfiguration=").append(String.valueOf(platformConfiguration));
         sb.append(")");
@@ -196,7 +312,10 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
 
         CreatePlatformConfigurationResponse other = (CreatePlatformConfigurationResponse) o;
         return super.equals(o)
+                && java.util.Objects.equals(this.location, other.location)
+                && java.util.Objects.equals(this.contentLocation, other.contentLocation)
                 && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(
                         this.platformConfiguration, other.platformConfiguration);
@@ -206,7 +325,14 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.contentLocation == null ? 43 : this.contentLocation.hashCode());
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)

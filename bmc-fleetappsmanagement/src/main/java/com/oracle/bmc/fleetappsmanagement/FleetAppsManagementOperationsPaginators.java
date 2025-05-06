@@ -33,7 +33,7 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class FleetAppsManagementOperationsPaginators {
     private final FleetAppsManagementOperations client;
 
@@ -279,6 +279,128 @@ public class FleetAppsManagementOperationsPaginators {
                     public java.util.List<com.oracle.bmc.fleetappsmanagement.model.ExecutionSummary>
                             apply(ListExecutionsResponse response) {
                         return response.getExecutionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listInventoryRecords operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListInventoryRecordsResponse> listInventoryRecordsResponseIterator(
+            final ListInventoryRecordsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListInventoryRecordsRequest.Builder,
+                ListInventoryRecordsRequest,
+                ListInventoryRecordsResponse>(
+                new java.util.function.Supplier<ListInventoryRecordsRequest.Builder>() {
+                    @Override
+                    public ListInventoryRecordsRequest.Builder get() {
+                        return ListInventoryRecordsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListInventoryRecordsResponse, String>() {
+                    @Override
+                    public String apply(ListInventoryRecordsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInventoryRecordsRequest.Builder>,
+                        ListInventoryRecordsRequest>() {
+                    @Override
+                    public ListInventoryRecordsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInventoryRecordsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListInventoryRecordsRequest, ListInventoryRecordsResponse>() {
+                    @Override
+                    public ListInventoryRecordsResponse apply(ListInventoryRecordsRequest request) {
+                        return client.listInventoryRecords(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.fleetappsmanagement.model.InventoryRecordSummary} objects contained in
+     * responses from the listInventoryRecords operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.fleetappsmanagement.model.InventoryRecordSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.fleetappsmanagement.model.InventoryRecordSummary>
+            listInventoryRecordsRecordIterator(final ListInventoryRecordsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListInventoryRecordsRequest.Builder,
+                ListInventoryRecordsRequest,
+                ListInventoryRecordsResponse,
+                com.oracle.bmc.fleetappsmanagement.model.InventoryRecordSummary>(
+                new java.util.function.Supplier<ListInventoryRecordsRequest.Builder>() {
+                    @Override
+                    public ListInventoryRecordsRequest.Builder get() {
+                        return ListInventoryRecordsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListInventoryRecordsResponse, String>() {
+                    @Override
+                    public String apply(ListInventoryRecordsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInventoryRecordsRequest.Builder>,
+                        ListInventoryRecordsRequest>() {
+                    @Override
+                    public ListInventoryRecordsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInventoryRecordsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListInventoryRecordsRequest, ListInventoryRecordsResponse>() {
+                    @Override
+                    public ListInventoryRecordsResponse apply(ListInventoryRecordsRequest request) {
+                        return client.listInventoryRecords(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListInventoryRecordsResponse,
+                        java.util.List<
+                                com.oracle.bmc.fleetappsmanagement.model
+                                        .InventoryRecordSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.fleetappsmanagement.model.InventoryRecordSummary>
+                            apply(ListInventoryRecordsResponse response) {
+                        return response.getInventoryRecordCollection().getItems();
                     }
                 });
     }
@@ -755,6 +877,132 @@ public class FleetAppsManagementOperationsPaginators {
                                             .SchedulerDefinitionSummary>
                             apply(ListSchedulerDefinitionsResponse response) {
                         return response.getSchedulerDefinitionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSchedulerExecutions operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSchedulerExecutionsResponse> listSchedulerExecutionsResponseIterator(
+            final ListSchedulerExecutionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSchedulerExecutionsRequest.Builder,
+                ListSchedulerExecutionsRequest,
+                ListSchedulerExecutionsResponse>(
+                new java.util.function.Supplier<ListSchedulerExecutionsRequest.Builder>() {
+                    @Override
+                    public ListSchedulerExecutionsRequest.Builder get() {
+                        return ListSchedulerExecutionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSchedulerExecutionsResponse, String>() {
+                    @Override
+                    public String apply(ListSchedulerExecutionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSchedulerExecutionsRequest.Builder>,
+                        ListSchedulerExecutionsRequest>() {
+                    @Override
+                    public ListSchedulerExecutionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSchedulerExecutionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSchedulerExecutionsRequest, ListSchedulerExecutionsResponse>() {
+                    @Override
+                    public ListSchedulerExecutionsResponse apply(
+                            ListSchedulerExecutionsRequest request) {
+                        return client.listSchedulerExecutions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.fleetappsmanagement.model.SchedulerExecutionSummary} objects contained in
+     * responses from the listSchedulerExecutions operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.fleetappsmanagement.model.SchedulerExecutionSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.fleetappsmanagement.model.SchedulerExecutionSummary>
+            listSchedulerExecutionsRecordIterator(final ListSchedulerExecutionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSchedulerExecutionsRequest.Builder,
+                ListSchedulerExecutionsRequest,
+                ListSchedulerExecutionsResponse,
+                com.oracle.bmc.fleetappsmanagement.model.SchedulerExecutionSummary>(
+                new java.util.function.Supplier<ListSchedulerExecutionsRequest.Builder>() {
+                    @Override
+                    public ListSchedulerExecutionsRequest.Builder get() {
+                        return ListSchedulerExecutionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSchedulerExecutionsResponse, String>() {
+                    @Override
+                    public String apply(ListSchedulerExecutionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSchedulerExecutionsRequest.Builder>,
+                        ListSchedulerExecutionsRequest>() {
+                    @Override
+                    public ListSchedulerExecutionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSchedulerExecutionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSchedulerExecutionsRequest, ListSchedulerExecutionsResponse>() {
+                    @Override
+                    public ListSchedulerExecutionsResponse apply(
+                            ListSchedulerExecutionsRequest request) {
+                        return client.listSchedulerExecutions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSchedulerExecutionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.fleetappsmanagement.model
+                                        .SchedulerExecutionSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.fleetappsmanagement.model
+                                            .SchedulerExecutionSummary>
+                            apply(ListSchedulerExecutionsResponse response) {
+                        return response.getSchedulerExecutionCollection().getItems();
                     }
                 });
     }

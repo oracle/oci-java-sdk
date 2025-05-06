@@ -15,40 +15,51 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Preferences.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class Preferences extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
-        "onUpcomingSchedule",
+        "upcomingSchedule",
         "onJobFailure",
-        "onTopologyModification"
+        "onTopologyModification",
+        "onTaskPause",
+        "onTaskFailure",
+        "onTaskSuccess",
+        "onResourceNonCompliance",
+        "onRunbookNewerVersion"
     })
     public Preferences(
-            Boolean onUpcomingSchedule, Boolean onJobFailure, Boolean onTopologyModification) {
+            UpcomingSchedule upcomingSchedule,
+            Boolean onJobFailure,
+            Boolean onTopologyModification,
+            Boolean onTaskPause,
+            Boolean onTaskFailure,
+            Boolean onTaskSuccess,
+            Boolean onResourceNonCompliance,
+            Boolean onRunbookNewerVersion) {
         super();
-        this.onUpcomingSchedule = onUpcomingSchedule;
+        this.upcomingSchedule = upcomingSchedule;
         this.onJobFailure = onJobFailure;
         this.onTopologyModification = onTopologyModification;
+        this.onTaskPause = onTaskPause;
+        this.onTaskFailure = onTaskFailure;
+        this.onTaskSuccess = onTaskSuccess;
+        this.onResourceNonCompliance = onResourceNonCompliance;
+        this.onRunbookNewerVersion = onRunbookNewerVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Enables notification on upcoming schedule. */
-        @com.fasterxml.jackson.annotation.JsonProperty("onUpcomingSchedule")
-        private Boolean onUpcomingSchedule;
 
-        /**
-         * Enables notification on upcoming schedule.
-         *
-         * @param onUpcomingSchedule the value to set
-         * @return this builder
-         */
-        public Builder onUpcomingSchedule(Boolean onUpcomingSchedule) {
-            this.onUpcomingSchedule = onUpcomingSchedule;
-            this.__explicitlySet__.add("onUpcomingSchedule");
+        @com.fasterxml.jackson.annotation.JsonProperty("upcomingSchedule")
+        private UpcomingSchedule upcomingSchedule;
+
+        public Builder upcomingSchedule(UpcomingSchedule upcomingSchedule) {
+            this.upcomingSchedule = upcomingSchedule;
+            this.__explicitlySet__.add("upcomingSchedule");
             return this;
         }
         /** Enables or disables notification on Job Failures. */
@@ -81,6 +92,85 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("onTopologyModification");
             return this;
         }
+        /** Enables or disables notification when a task is paused. */
+        @com.fasterxml.jackson.annotation.JsonProperty("onTaskPause")
+        private Boolean onTaskPause;
+
+        /**
+         * Enables or disables notification when a task is paused.
+         *
+         * @param onTaskPause the value to set
+         * @return this builder
+         */
+        public Builder onTaskPause(Boolean onTaskPause) {
+            this.onTaskPause = onTaskPause;
+            this.__explicitlySet__.add("onTaskPause");
+            return this;
+        }
+        /** Enables or disables notification on task failure. */
+        @com.fasterxml.jackson.annotation.JsonProperty("onTaskFailure")
+        private Boolean onTaskFailure;
+
+        /**
+         * Enables or disables notification on task failure.
+         *
+         * @param onTaskFailure the value to set
+         * @return this builder
+         */
+        public Builder onTaskFailure(Boolean onTaskFailure) {
+            this.onTaskFailure = onTaskFailure;
+            this.__explicitlySet__.add("onTaskFailure");
+            return this;
+        }
+        /** Enables or disables notification on task success. */
+        @com.fasterxml.jackson.annotation.JsonProperty("onTaskSuccess")
+        private Boolean onTaskSuccess;
+
+        /**
+         * Enables or disables notification on task success.
+         *
+         * @param onTaskSuccess the value to set
+         * @return this builder
+         */
+        public Builder onTaskSuccess(Boolean onTaskSuccess) {
+            this.onTaskSuccess = onTaskSuccess;
+            this.__explicitlySet__.add("onTaskSuccess");
+            return this;
+        }
+        /** Enables or disables notification when fleet resource becomes non compliant. */
+        @com.fasterxml.jackson.annotation.JsonProperty("onResourceNonCompliance")
+        private Boolean onResourceNonCompliance;
+
+        /**
+         * Enables or disables notification when fleet resource becomes non compliant.
+         *
+         * @param onResourceNonCompliance the value to set
+         * @return this builder
+         */
+        public Builder onResourceNonCompliance(Boolean onResourceNonCompliance) {
+            this.onResourceNonCompliance = onResourceNonCompliance;
+            this.__explicitlySet__.add("onResourceNonCompliance");
+            return this;
+        }
+        /**
+         * Enables or disables notification when a newer version of runbook associated with a fleet
+         * is available
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("onRunbookNewerVersion")
+        private Boolean onRunbookNewerVersion;
+
+        /**
+         * Enables or disables notification when a newer version of runbook associated with a fleet
+         * is available
+         *
+         * @param onRunbookNewerVersion the value to set
+         * @return this builder
+         */
+        public Builder onRunbookNewerVersion(Boolean onRunbookNewerVersion) {
+            this.onRunbookNewerVersion = onRunbookNewerVersion;
+            this.__explicitlySet__.add("onRunbookNewerVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -88,9 +178,14 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
         public Preferences build() {
             Preferences model =
                     new Preferences(
-                            this.onUpcomingSchedule,
+                            this.upcomingSchedule,
                             this.onJobFailure,
-                            this.onTopologyModification);
+                            this.onTopologyModification,
+                            this.onTaskPause,
+                            this.onTaskFailure,
+                            this.onTaskSuccess,
+                            this.onResourceNonCompliance,
+                            this.onRunbookNewerVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -99,14 +194,29 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Preferences model) {
-            if (model.wasPropertyExplicitlySet("onUpcomingSchedule")) {
-                this.onUpcomingSchedule(model.getOnUpcomingSchedule());
+            if (model.wasPropertyExplicitlySet("upcomingSchedule")) {
+                this.upcomingSchedule(model.getUpcomingSchedule());
             }
             if (model.wasPropertyExplicitlySet("onJobFailure")) {
                 this.onJobFailure(model.getOnJobFailure());
             }
             if (model.wasPropertyExplicitlySet("onTopologyModification")) {
                 this.onTopologyModification(model.getOnTopologyModification());
+            }
+            if (model.wasPropertyExplicitlySet("onTaskPause")) {
+                this.onTaskPause(model.getOnTaskPause());
+            }
+            if (model.wasPropertyExplicitlySet("onTaskFailure")) {
+                this.onTaskFailure(model.getOnTaskFailure());
+            }
+            if (model.wasPropertyExplicitlySet("onTaskSuccess")) {
+                this.onTaskSuccess(model.getOnTaskSuccess());
+            }
+            if (model.wasPropertyExplicitlySet("onResourceNonCompliance")) {
+                this.onResourceNonCompliance(model.getOnResourceNonCompliance());
+            }
+            if (model.wasPropertyExplicitlySet("onRunbookNewerVersion")) {
+                this.onRunbookNewerVersion(model.getOnRunbookNewerVersion());
             }
             return this;
         }
@@ -121,17 +231,11 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Enables notification on upcoming schedule. */
-    @com.fasterxml.jackson.annotation.JsonProperty("onUpcomingSchedule")
-    private final Boolean onUpcomingSchedule;
+    @com.fasterxml.jackson.annotation.JsonProperty("upcomingSchedule")
+    private final UpcomingSchedule upcomingSchedule;
 
-    /**
-     * Enables notification on upcoming schedule.
-     *
-     * @return the value
-     */
-    public Boolean getOnUpcomingSchedule() {
-        return onUpcomingSchedule;
+    public UpcomingSchedule getUpcomingSchedule() {
+        return upcomingSchedule;
     }
 
     /** Enables or disables notification on Job Failures. */
@@ -160,6 +264,75 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
         return onTopologyModification;
     }
 
+    /** Enables or disables notification when a task is paused. */
+    @com.fasterxml.jackson.annotation.JsonProperty("onTaskPause")
+    private final Boolean onTaskPause;
+
+    /**
+     * Enables or disables notification when a task is paused.
+     *
+     * @return the value
+     */
+    public Boolean getOnTaskPause() {
+        return onTaskPause;
+    }
+
+    /** Enables or disables notification on task failure. */
+    @com.fasterxml.jackson.annotation.JsonProperty("onTaskFailure")
+    private final Boolean onTaskFailure;
+
+    /**
+     * Enables or disables notification on task failure.
+     *
+     * @return the value
+     */
+    public Boolean getOnTaskFailure() {
+        return onTaskFailure;
+    }
+
+    /** Enables or disables notification on task success. */
+    @com.fasterxml.jackson.annotation.JsonProperty("onTaskSuccess")
+    private final Boolean onTaskSuccess;
+
+    /**
+     * Enables or disables notification on task success.
+     *
+     * @return the value
+     */
+    public Boolean getOnTaskSuccess() {
+        return onTaskSuccess;
+    }
+
+    /** Enables or disables notification when fleet resource becomes non compliant. */
+    @com.fasterxml.jackson.annotation.JsonProperty("onResourceNonCompliance")
+    private final Boolean onResourceNonCompliance;
+
+    /**
+     * Enables or disables notification when fleet resource becomes non compliant.
+     *
+     * @return the value
+     */
+    public Boolean getOnResourceNonCompliance() {
+        return onResourceNonCompliance;
+    }
+
+    /**
+     * Enables or disables notification when a newer version of runbook associated with a fleet is
+     * available
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("onRunbookNewerVersion")
+    private final Boolean onRunbookNewerVersion;
+
+    /**
+     * Enables or disables notification when a newer version of runbook associated with a fleet is
+     * available
+     *
+     * @return the value
+     */
+    public Boolean getOnRunbookNewerVersion() {
+        return onRunbookNewerVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -175,9 +348,15 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Preferences(");
         sb.append("super=").append(super.toString());
-        sb.append("onUpcomingSchedule=").append(String.valueOf(this.onUpcomingSchedule));
+        sb.append("upcomingSchedule=").append(String.valueOf(this.upcomingSchedule));
         sb.append(", onJobFailure=").append(String.valueOf(this.onJobFailure));
         sb.append(", onTopologyModification=").append(String.valueOf(this.onTopologyModification));
+        sb.append(", onTaskPause=").append(String.valueOf(this.onTaskPause));
+        sb.append(", onTaskFailure=").append(String.valueOf(this.onTaskFailure));
+        sb.append(", onTaskSuccess=").append(String.valueOf(this.onTaskSuccess));
+        sb.append(", onResourceNonCompliance=")
+                .append(String.valueOf(this.onResourceNonCompliance));
+        sb.append(", onRunbookNewerVersion=").append(String.valueOf(this.onRunbookNewerVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -192,10 +371,16 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
         }
 
         Preferences other = (Preferences) o;
-        return java.util.Objects.equals(this.onUpcomingSchedule, other.onUpcomingSchedule)
+        return java.util.Objects.equals(this.upcomingSchedule, other.upcomingSchedule)
                 && java.util.Objects.equals(this.onJobFailure, other.onJobFailure)
                 && java.util.Objects.equals(
                         this.onTopologyModification, other.onTopologyModification)
+                && java.util.Objects.equals(this.onTaskPause, other.onTaskPause)
+                && java.util.Objects.equals(this.onTaskFailure, other.onTaskFailure)
+                && java.util.Objects.equals(this.onTaskSuccess, other.onTaskSuccess)
+                && java.util.Objects.equals(
+                        this.onResourceNonCompliance, other.onResourceNonCompliance)
+                && java.util.Objects.equals(this.onRunbookNewerVersion, other.onRunbookNewerVersion)
                 && super.equals(other);
     }
 
@@ -205,15 +390,30 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
         int result = 1;
         result =
                 (result * PRIME)
-                        + (this.onUpcomingSchedule == null
-                                ? 43
-                                : this.onUpcomingSchedule.hashCode());
+                        + (this.upcomingSchedule == null ? 43 : this.upcomingSchedule.hashCode());
         result = (result * PRIME) + (this.onJobFailure == null ? 43 : this.onJobFailure.hashCode());
         result =
                 (result * PRIME)
                         + (this.onTopologyModification == null
                                 ? 43
                                 : this.onTopologyModification.hashCode());
+        result = (result * PRIME) + (this.onTaskPause == null ? 43 : this.onTaskPause.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.onTaskFailure == null ? 43 : this.onTaskFailure.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.onTaskSuccess == null ? 43 : this.onTaskSuccess.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.onResourceNonCompliance == null
+                                ? 43
+                                : this.onResourceNonCompliance.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.onRunbookNewerVersion == null
+                                ? 43
+                                : this.onRunbookNewerVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

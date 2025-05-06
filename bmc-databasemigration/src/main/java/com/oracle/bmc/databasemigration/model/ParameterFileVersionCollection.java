@@ -5,8 +5,8 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Results of request for Parameter Files. Contents is a collection of ParameterFileVersionSummary.
- * <br>
+ * The result of the request for Parameter Files. It contains a collection of
+ * ParameterFileVersionSummary <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class ParameterFileVersionCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A list of A parameter file metadata */
+        /** List of parameter file metadata */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ParameterFileVersionSummary> items;
 
         /**
-         * A list of A parameter file metadata
+         * List of parameter file metadata
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class ParameterFileVersionCollection
         return new Builder().copy(this);
     }
 
-    /** A list of A parameter file metadata */
+    /** List of parameter file metadata */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ParameterFileVersionSummary> items;
 
     /**
-     * A list of A parameter file metadata
+     * List of parameter file metadata
      *
      * @return the value
      */

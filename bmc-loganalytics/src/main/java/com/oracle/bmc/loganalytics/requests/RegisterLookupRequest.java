@@ -62,10 +62,18 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public Type getType() {
         return type;
     }
-    /** file containing data for lookup creation */
+    /**
+     * The lookup content to be created, with or without tags. The following formats are supported
+     * as binary data: 1. If there are no tags: file containing the lookup content. 2. If there are
+     * tags: JSON file containing the lookup content and tags.
+     */
     private java.io.InputStream registerLookupContentFileBody;
 
-    /** file containing data for lookup creation */
+    /**
+     * The lookup content to be created, with or without tags. The following formats are supported
+     * as binary data: 1. If there are no tags: file containing the lookup content. 2. If there are
+     * tags: JSON file containing the lookup content and tags.
+     */
     public java.io.InputStream getRegisterLookupContentFileBody() {
         return registerLookupContentFileBody;
     }
@@ -148,6 +156,13 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public String getExpect() {
         return expect;
     }
+    /** The compartment id */
+    private String compartmentId;
+
+    /** The compartment id */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -199,11 +214,17 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** file containing data for lookup creation */
+        /**
+         * The lookup content to be created, with or without tags. The following formats are
+         * supported as binary data: 1. If there are no tags: file containing the lookup content. 2.
+         * If there are tags: JSON file containing the lookup content and tags.
+         */
         private java.io.InputStream registerLookupContentFileBody = null;
 
         /**
-         * file containing data for lookup creation
+         * The lookup content to be created, with or without tags. The following formats are
+         * supported as binary data: 1. If there are no tags: file containing the lookup content. 2.
+         * If there are tags: JSON file containing the lookup content and tags.
          *
          * @param registerLookupContentFileBody the value to set
          * @return this builder instance
@@ -336,6 +357,20 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /** The compartment id */
+        private String compartmentId = null;
+
+        /**
+         * The compartment id
+         *
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -376,6 +411,7 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
             expect(o.getExpect());
+            compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -432,9 +468,11 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             request.expect = expect;
+            request.compartmentId = compartmentId;
             return request;
             // new RegisterLookupRequest(namespaceName, type, registerLookupContentFileBody, name,
-            // description, charEncoding, isHidden, opcRetryToken, opcRequestId, expect);
+            // description, charEncoding, isHidden, opcRetryToken, opcRequestId, expect,
+            // compartmentId);
         }
     }
 
@@ -454,7 +492,8 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .isHidden(isHidden)
                 .opcRetryToken(opcRetryToken)
                 .opcRequestId(opcRequestId)
-                .expect(expect);
+                .expect(expect)
+                .compartmentId(compartmentId);
     }
 
     /**
@@ -482,6 +521,7 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",expect=").append(String.valueOf(this.expect));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -507,7 +547,8 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 && java.util.Objects.equals(this.isHidden, other.isHidden)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.expect, other.expect);
+                && java.util.Objects.equals(this.expect, other.expect)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId);
     }
 
     @Override
@@ -532,6 +573,9 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.expect == null ? 43 : this.expect.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         return result;
     }
 }

@@ -12,7 +12,7 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * management tasks, validate patch compliance, and enhance operational efficiency across an
  * enterprise.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public interface FleetAppsManagementAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -64,6 +64,24 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Moves a Fleet into a different compartment within the same tenancy. For information about
+     * moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeFleetCompartmentResponse> changeFleetCompartment(
+            ChangeFleetCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeFleetCompartmentRequest, ChangeFleetCompartmentResponse>
+                    handler);
+
+    /**
      * Check if Fleet Application Management tags can be added to the resources.
      *
      * @param request The request object containing the details to send
@@ -81,7 +99,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
 
     /**
      * Confirm targets to be managed for a Fleet. Only targets that are confirmed will be managed by
-     * Fleet Application Management
+     * Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -96,8 +114,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a product, environment, group, or generic type of fleet in Fleet Application
-     * Management.
+     * Create a fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -143,7 +160,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Add resource to a fleet in\u00A0Fleet Application Management.
+     * Add resource to a fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -173,8 +190,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteFleetRequest, DeleteFleetResponse> handler);
 
     /**
-     * Delete a credential associated with a fleet product or application in\u00A0Fleet Application
-     * Management.
+     * Deletes a credential associated with a fleet or with a product/target with in a fleet.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -190,7 +206,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete a property associated with a fleet in Fleet Application Management.
+     * Deletes a property associated with a fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -222,7 +238,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Generate compliance reports for a Fleet.
+     * Generate compliance report for a Fleet.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -268,7 +284,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetFleetRequest, GetFleetResponse> handler);
 
     /**
-     * Gets a FleetCredential by identifier.
+     * Gets a fleet credential by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -284,7 +300,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a Fleet Property by identifier.
+     * Gets a fleet property by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -299,7 +315,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a Fleet Resource by identifier.
+     * Gets a fleet resource by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -314,22 +330,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets details of the work request with the given ID.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
-            GetWorkRequestRequest request,
-            com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
-                    handler);
-
-    /**
-     * Return a list of AnnouncementSummary items.
+     * Return a list of Announcement Summary items in a tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -345,7 +346,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List credentials in Fleet Application Management.
+     * List credentials associated with a fleet.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -377,7 +378,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List fleet properties in Fleet Application Management.
+     * List properties associated with a fleet.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -424,7 +425,8 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Fleets in the specified Tenancy.
+     * Returns a list of all the Fleets in the specified compartment. The query parameter
+     * `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -438,7 +440,8 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListFleetsRequest, ListFleetsResponse> handler);
 
     /**
-     * Returns a list of InventoryResources.
+     * Returns a list of Inventory Resources based on the criteria provided. instance, dbsystem,
+     * cloudvmcluster resources are supported.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -469,53 +472,6 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListTargetsRequest, ListTargetsResponse> handler);
 
     /**
-     * Returns a (paginated) list of errors for the work request with the given ID.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
-            ListWorkRequestErrorsRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
-                    handler);
-
-    /**
-     * Returns a (paginated) list of logs for the work request with the given ID.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
-            ListWorkRequestLogsRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
-                    handler);
-
-    /**
-     * Lists the work requests in a compartment.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
-            ListWorkRequestsRequest request,
-            com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
-                    handler);
-
-    /**
      * Request validation for resources within a fleet.
      *
      * @param request The request object containing the details to send
@@ -532,8 +488,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Confirm targets to be managed for a Fleet. Only targets that are confirmed will be managed by
-     * Fleet Application Management
+     * Request target discovery for resources with in a fleet.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -563,8 +518,7 @@ public interface FleetAppsManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateFleetRequest, UpdateFleetResponse> handler);
 
     /**
-     * Edit credentials associated with a product or application in\u00A0Fleet Application
-     * Management.
+     * Edit credential associated with a fleet or with a product/target with in a fleet.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

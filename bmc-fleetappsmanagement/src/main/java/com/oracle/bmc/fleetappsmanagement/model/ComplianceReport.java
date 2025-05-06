@@ -15,23 +15,31 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ComplianceReport.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class ComplianceReport
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "fleetId", "complianceState", "resources"})
+    @java.beans.ConstructorProperties({
+        "id",
+        "fleetId",
+        "complianceState",
+        "percentCompliant",
+        "resources"
+    })
     public ComplianceReport(
             String id,
             String fleetId,
             ComplianceState complianceState,
+            Float percentCompliant,
             java.util.List<ComplianceReportResource> resources) {
         super();
         this.id = id;
         this.fleetId = fleetId;
         this.complianceState = complianceState;
+        this.percentCompliant = percentCompliant;
         this.resources = resources;
     }
 
@@ -82,6 +90,21 @@ public final class ComplianceReport
             this.__explicitlySet__.add("complianceState");
             return this;
         }
+        /** The compliance percentage. */
+        @com.fasterxml.jackson.annotation.JsonProperty("percentCompliant")
+        private Float percentCompliant;
+
+        /**
+         * The compliance percentage.
+         *
+         * @param percentCompliant the value to set
+         * @return this builder
+         */
+        public Builder percentCompliant(Float percentCompliant) {
+            this.percentCompliant = percentCompliant;
+            this.__explicitlySet__.add("percentCompliant");
+            return this;
+        }
         /** Resources associated with the Fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<ComplianceReportResource> resources;
@@ -104,7 +127,11 @@ public final class ComplianceReport
         public ComplianceReport build() {
             ComplianceReport model =
                     new ComplianceReport(
-                            this.id, this.fleetId, this.complianceState, this.resources);
+                            this.id,
+                            this.fleetId,
+                            this.complianceState,
+                            this.percentCompliant,
+                            this.resources);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -121,6 +148,9 @@ public final class ComplianceReport
             }
             if (model.wasPropertyExplicitlySet("complianceState")) {
                 this.complianceState(model.getComplianceState());
+            }
+            if (model.wasPropertyExplicitlySet("percentCompliant")) {
+                this.percentCompliant(model.getPercentCompliant());
             }
             if (model.wasPropertyExplicitlySet("resources")) {
                 this.resources(model.getResources());
@@ -177,6 +207,19 @@ public final class ComplianceReport
         return complianceState;
     }
 
+    /** The compliance percentage. */
+    @com.fasterxml.jackson.annotation.JsonProperty("percentCompliant")
+    private final Float percentCompliant;
+
+    /**
+     * The compliance percentage.
+     *
+     * @return the value
+     */
+    public Float getPercentCompliant() {
+        return percentCompliant;
+    }
+
     /** Resources associated with the Fleet. */
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<ComplianceReportResource> resources;
@@ -208,6 +251,7 @@ public final class ComplianceReport
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", fleetId=").append(String.valueOf(this.fleetId));
         sb.append(", complianceState=").append(String.valueOf(this.complianceState));
+        sb.append(", percentCompliant=").append(String.valueOf(this.percentCompliant));
         sb.append(", resources=").append(String.valueOf(this.resources));
         sb.append(")");
         return sb.toString();
@@ -226,6 +270,7 @@ public final class ComplianceReport
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
                 && java.util.Objects.equals(this.complianceState, other.complianceState)
+                && java.util.Objects.equals(this.percentCompliant, other.percentCompliant)
                 && java.util.Objects.equals(this.resources, other.resources)
                 && super.equals(other);
     }
@@ -239,6 +284,9 @@ public final class ComplianceReport
         result =
                 (result * PRIME)
                         + (this.complianceState == null ? 43 : this.complianceState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.percentCompliant == null ? 43 : this.percentCompliant.hashCode());
         result = (result * PRIME) + (this.resources == null ? 43 : this.resources.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

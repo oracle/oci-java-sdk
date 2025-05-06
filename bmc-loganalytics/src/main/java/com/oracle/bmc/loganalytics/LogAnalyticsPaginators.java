@@ -2738,6 +2738,125 @@ public class LogAnalyticsPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listParserActions operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListParserActionsResponse> listParserActionsResponseIterator(
+            final ListParserActionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListParserActionsRequest.Builder,
+                ListParserActionsRequest,
+                ListParserActionsResponse>(
+                new java.util.function.Supplier<ListParserActionsRequest.Builder>() {
+                    @Override
+                    public ListParserActionsRequest.Builder get() {
+                        return ListParserActionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListParserActionsResponse, String>() {
+                    @Override
+                    public String apply(ListParserActionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListParserActionsRequest.Builder>,
+                        ListParserActionsRequest>() {
+                    @Override
+                    public ListParserActionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListParserActionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListParserActionsRequest, ListParserActionsResponse>() {
+                    @Override
+                    public ListParserActionsResponse apply(ListParserActionsRequest request) {
+                        return client.listParserActions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.loganalytics.model.ParserActionSummary} objects contained in responses from
+     * the listParserActions operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.loganalytics.model.ParserActionSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.ParserActionSummary>
+            listParserActionsRecordIterator(final ListParserActionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListParserActionsRequest.Builder,
+                ListParserActionsRequest,
+                ListParserActionsResponse,
+                com.oracle.bmc.loganalytics.model.ParserActionSummary>(
+                new java.util.function.Supplier<ListParserActionsRequest.Builder>() {
+                    @Override
+                    public ListParserActionsRequest.Builder get() {
+                        return ListParserActionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListParserActionsResponse, String>() {
+                    @Override
+                    public String apply(ListParserActionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListParserActionsRequest.Builder>,
+                        ListParserActionsRequest>() {
+                    @Override
+                    public ListParserActionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListParserActionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListParserActionsRequest, ListParserActionsResponse>() {
+                    @Override
+                    public ListParserActionsResponse apply(ListParserActionsRequest request) {
+                        return client.listParserActions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListParserActionsResponse,
+                        java.util.List<com.oracle.bmc.loganalytics.model.ParserActionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.loganalytics.model.ParserActionSummary>
+                            apply(ListParserActionsResponse response) {
+                        return response.getParserActionSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listParserFunctions operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
@@ -3455,6 +3574,122 @@ public class LogAnalyticsPaginators {
                     public java.util.List<com.oracle.bmc.loganalytics.model.RecalledData> apply(
                             ListRecalledDataResponse response) {
                         return response.getRecalledDataCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listRecalledInfo operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListRecalledInfoResponse> listRecalledInfoResponseIterator(
+            final ListRecalledInfoRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRecalledInfoRequest.Builder, ListRecalledInfoRequest, ListRecalledInfoResponse>(
+                new java.util.function.Supplier<ListRecalledInfoRequest.Builder>() {
+                    @Override
+                    public ListRecalledInfoRequest.Builder get() {
+                        return ListRecalledInfoRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRecalledInfoResponse, String>() {
+                    @Override
+                    public String apply(ListRecalledInfoResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRecalledInfoRequest.Builder>,
+                        ListRecalledInfoRequest>() {
+                    @Override
+                    public ListRecalledInfoRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRecalledInfoRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRecalledInfoRequest, ListRecalledInfoResponse>() {
+                    @Override
+                    public ListRecalledInfoResponse apply(ListRecalledInfoRequest request) {
+                        return client.listRecalledInfo(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.loganalytics.model.RecalledInfo} objects contained in responses from the
+     * listRecalledInfo operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.loganalytics.model.RecalledInfo} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.RecalledInfo> listRecalledInfoRecordIterator(
+            final ListRecalledInfoRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRecalledInfoRequest.Builder,
+                ListRecalledInfoRequest,
+                ListRecalledInfoResponse,
+                com.oracle.bmc.loganalytics.model.RecalledInfo>(
+                new java.util.function.Supplier<ListRecalledInfoRequest.Builder>() {
+                    @Override
+                    public ListRecalledInfoRequest.Builder get() {
+                        return ListRecalledInfoRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRecalledInfoResponse, String>() {
+                    @Override
+                    public String apply(ListRecalledInfoResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRecalledInfoRequest.Builder>,
+                        ListRecalledInfoRequest>() {
+                    @Override
+                    public ListRecalledInfoRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRecalledInfoRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRecalledInfoRequest, ListRecalledInfoResponse>() {
+                    @Override
+                    public ListRecalledInfoResponse apply(ListRecalledInfoRequest request) {
+                        return client.listRecalledInfo(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRecalledInfoResponse,
+                        java.util.List<com.oracle.bmc.loganalytics.model.RecalledInfo>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.loganalytics.model.RecalledInfo> apply(
+                            ListRecalledInfoResponse response) {
+                        return response.getRecalledInfoCollection().getItems();
                     }
                 });
     }
@@ -4922,6 +5157,123 @@ public class LogAnalyticsPaginators {
                                     com.oracle.bmc.loganalytics.model.StorageWorkRequestSummary>
                             apply(ListStorageWorkRequestsResponse response) {
                         return response.getStorageWorkRequestCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listTemplates
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListTemplatesResponse> listTemplatesResponseIterator(
+            final ListTemplatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTemplatesRequest.Builder, ListTemplatesRequest, ListTemplatesResponse>(
+                new java.util.function.Supplier<ListTemplatesRequest.Builder>() {
+                    @Override
+                    public ListTemplatesRequest.Builder get() {
+                        return ListTemplatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTemplatesResponse, String>() {
+                    @Override
+                    public String apply(ListTemplatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTemplatesRequest.Builder>,
+                        ListTemplatesRequest>() {
+                    @Override
+                    public ListTemplatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTemplatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListTemplatesRequest, ListTemplatesResponse>() {
+                    @Override
+                    public ListTemplatesResponse apply(ListTemplatesRequest request) {
+                        return client.listTemplates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.loganalytics.model.LogAnalyticsTemplateSummary} objects contained in responses
+     * from the listTemplates operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.loganalytics.model.LogAnalyticsTemplateSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.LogAnalyticsTemplateSummary>
+            listTemplatesRecordIterator(final ListTemplatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTemplatesRequest.Builder,
+                ListTemplatesRequest,
+                ListTemplatesResponse,
+                com.oracle.bmc.loganalytics.model.LogAnalyticsTemplateSummary>(
+                new java.util.function.Supplier<ListTemplatesRequest.Builder>() {
+                    @Override
+                    public ListTemplatesRequest.Builder get() {
+                        return ListTemplatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTemplatesResponse, String>() {
+                    @Override
+                    public String apply(ListTemplatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTemplatesRequest.Builder>,
+                        ListTemplatesRequest>() {
+                    @Override
+                    public ListTemplatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTemplatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListTemplatesRequest, ListTemplatesResponse>() {
+                    @Override
+                    public ListTemplatesResponse apply(ListTemplatesRequest request) {
+                        return client.listTemplates(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListTemplatesResponse,
+                        java.util.List<
+                                com.oracle.bmc.loganalytics.model.LogAnalyticsTemplateSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.loganalytics.model.LogAnalyticsTemplateSummary>
+                            apply(ListTemplatesResponse response) {
+                        return response.getLogAnalyticsTemplateCollection().getItems();
                     }
                 });
     }

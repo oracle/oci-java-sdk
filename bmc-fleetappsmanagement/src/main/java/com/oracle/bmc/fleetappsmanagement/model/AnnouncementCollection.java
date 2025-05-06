@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = AnnouncementCollection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -31,12 +31,12 @@ public final class AnnouncementCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of AnnouncementSummary items */
+        /** List of AnnouncementSummary items. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AnnouncementSummary> items;
 
         /**
-         * List of AnnouncementSummary items
+         * List of AnnouncementSummary items.
          *
          * @param items the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class AnnouncementCollection
         return new Builder().copy(this);
     }
 
-    /** List of AnnouncementSummary items */
+    /** List of AnnouncementSummary items. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AnnouncementSummary> items;
 
     /**
-     * List of AnnouncementSummary items
+     * List of AnnouncementSummary items.
      *
      * @return the value
      */

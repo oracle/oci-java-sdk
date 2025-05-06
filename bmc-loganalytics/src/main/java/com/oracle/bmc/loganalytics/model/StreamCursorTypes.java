@@ -2,13 +2,15 @@
  * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.fleetappsmanagement.model;
+package com.oracle.bmc.loganalytics.model;
 
-/** Possible Action Group types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
-public enum LifeCycleActionGroupType implements com.oracle.bmc.http.internal.BmcEnum {
-    Product("PRODUCT"),
-    Environment("ENVIRONMENT"),
+/** Allowed values for stream cursor types. */
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum StreamCursorTypes implements com.oracle.bmc.http.internal.BmcEnum {
+    Default("DEFAULT"),
+    TrimHorizon("TRIM_HORIZON"),
+    Latest("LATEST"),
+    AtTime("AT_TIME"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this
@@ -17,21 +19,21 @@ public enum LifeCycleActionGroupType implements com.oracle.bmc.http.internal.Bmc
     UnknownEnumValue(null);
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(LifeCycleActionGroupType.class);
+            org.slf4j.LoggerFactory.getLogger(StreamCursorTypes.class);
 
     private final String value;
-    private static java.util.Map<String, LifeCycleActionGroupType> map;
+    private static java.util.Map<String, StreamCursorTypes> map;
 
     static {
         map = new java.util.HashMap<>();
-        for (LifeCycleActionGroupType v : LifeCycleActionGroupType.values()) {
+        for (StreamCursorTypes v : StreamCursorTypes.values()) {
             if (v != UnknownEnumValue) {
                 map.put(v.getValue(), v);
             }
         }
     }
 
-    LifeCycleActionGroupType(String value) {
+    StreamCursorTypes(String value) {
         this.value = value;
     }
 
@@ -41,12 +43,12 @@ public enum LifeCycleActionGroupType implements com.oracle.bmc.http.internal.Bmc
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
-    public static LifeCycleActionGroupType create(String key) {
+    public static StreamCursorTypes create(String key) {
         if (map.containsKey(key)) {
             return map.get(key);
         }
         LOG.warn(
-                "Received unknown value '{}' for enum 'LifeCycleActionGroupType', returning UnknownEnumValue",
+                "Received unknown value '{}' for enum 'StreamCursorTypes', returning UnknownEnumValue",
                 key);
         return UnknownEnumValue;
     }

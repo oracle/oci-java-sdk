@@ -33,7 +33,7 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class FleetAppsManagementMaintenanceWindowPaginators {
     private final FleetAppsManagementMaintenanceWindow client;
 

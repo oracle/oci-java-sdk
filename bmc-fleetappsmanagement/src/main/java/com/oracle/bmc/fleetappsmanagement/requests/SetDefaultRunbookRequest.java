@@ -10,16 +10,16 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SetDefaultRunbookExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use SetDefaultRunbookRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class SetDefaultRunbookRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.SetDefaultRunbookDetails> {
 
-    /** Details for setting the Runbook as default. */
+    /** Details for setting the runbook as default for a platform and operation. */
     private com.oracle.bmc.fleetappsmanagement.model.SetDefaultRunbookDetails
             setDefaultRunbookDetails;
 
-    /** Details for setting the Runbook as default. */
+    /** Details for setting the runbook as default for a platform and operation. */
     public com.oracle.bmc.fleetappsmanagement.model.SetDefaultRunbookDetails
             getSetDefaultRunbookDetails() {
         return setDefaultRunbookDetails;
@@ -86,12 +86,12 @@ public class SetDefaultRunbookRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for setting the Runbook as default. */
+        /** Details for setting the runbook as default for a platform and operation. */
         private com.oracle.bmc.fleetappsmanagement.model.SetDefaultRunbookDetails
                 setDefaultRunbookDetails = null;
 
         /**
-         * Details for setting the Runbook as default.
+         * Details for setting the runbook as default for a platform and operation.
          *
          * @param setDefaultRunbookDetails the value to set
          * @return this builder instance

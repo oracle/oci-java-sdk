@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = SchedulerJobAggregation.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -32,12 +32,12 @@ public final class SchedulerJobAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Count of jobs in a Tenancy. */
+        /** Count of jobs in a Compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
-         * Count of jobs in a Tenancy.
+         * Count of jobs in a Compartment.
          *
          * @param count the value to set
          * @return this builder
@@ -90,12 +90,12 @@ public final class SchedulerJobAggregation
         return new Builder().copy(this);
     }
 
-    /** Count of jobs in a Tenancy. */
+    /** Count of jobs in a Compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
-     * Count of jobs in a Tenancy.
+     * Count of jobs in a Compartment.
      *
      * @return the value
      */

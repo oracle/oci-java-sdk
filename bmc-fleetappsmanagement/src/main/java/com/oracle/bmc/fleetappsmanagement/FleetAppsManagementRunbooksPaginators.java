@@ -33,12 +33,133 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class FleetAppsManagementRunbooksPaginators {
     private final FleetAppsManagementRunbooks client;
 
     public FleetAppsManagementRunbooksPaginators(FleetAppsManagementRunbooks client) {
         this.client = client;
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listRunbookVersions operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListRunbookVersionsResponse> listRunbookVersionsResponseIterator(
+            final ListRunbookVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRunbookVersionsRequest.Builder,
+                ListRunbookVersionsRequest,
+                ListRunbookVersionsResponse>(
+                new java.util.function.Supplier<ListRunbookVersionsRequest.Builder>() {
+                    @Override
+                    public ListRunbookVersionsRequest.Builder get() {
+                        return ListRunbookVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRunbookVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListRunbookVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRunbookVersionsRequest.Builder>,
+                        ListRunbookVersionsRequest>() {
+                    @Override
+                    public ListRunbookVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRunbookVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRunbookVersionsRequest, ListRunbookVersionsResponse>() {
+                    @Override
+                    public ListRunbookVersionsResponse apply(ListRunbookVersionsRequest request) {
+                        return client.listRunbookVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.fleetappsmanagement.model.RunbookVersionSummary} objects contained in
+     * responses from the listRunbookVersions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.fleetappsmanagement.model.RunbookVersionSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.fleetappsmanagement.model.RunbookVersionSummary>
+            listRunbookVersionsRecordIterator(final ListRunbookVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRunbookVersionsRequest.Builder,
+                ListRunbookVersionsRequest,
+                ListRunbookVersionsResponse,
+                com.oracle.bmc.fleetappsmanagement.model.RunbookVersionSummary>(
+                new java.util.function.Supplier<ListRunbookVersionsRequest.Builder>() {
+                    @Override
+                    public ListRunbookVersionsRequest.Builder get() {
+                        return ListRunbookVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRunbookVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListRunbookVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRunbookVersionsRequest.Builder>,
+                        ListRunbookVersionsRequest>() {
+                    @Override
+                    public ListRunbookVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRunbookVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRunbookVersionsRequest, ListRunbookVersionsResponse>() {
+                    @Override
+                    public ListRunbookVersionsResponse apply(ListRunbookVersionsRequest request) {
+                        return client.listRunbookVersions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRunbookVersionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.fleetappsmanagement.model.RunbookVersionSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.fleetappsmanagement.model.RunbookVersionSummary>
+                            apply(ListRunbookVersionsResponse response) {
+                        return response.getRunbookVersionCollection().getItems();
+                    }
+                });
     }
 
     /**

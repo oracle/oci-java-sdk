@@ -42,6 +42,9 @@ package com.oracle.bmc.loganalytics.model;
             value = OutlierCommandDescriptor.class,
             name = "OUTLIER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateTableCommandDescriptor.class,
+            name = "UPDATETABLE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DemoModeCommandDescriptor.class,
             name = "DEMO_MODE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -405,6 +408,7 @@ public class AbstractCommandDescriptor
         Delete("DELETE"),
         Createtable("CREATETABLE"),
         Sequence("SEQUENCE"),
+        Updatetable("UPDATETABLE"),
         Delta("DELTA"),
         Distinct("DISTINCT"),
         SearchLookup("SEARCH_LOOKUP"),

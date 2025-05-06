@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements FleetAppsManagementRunbooks {
     /** Service instance for FleetAppsManagementRunbooks. */
@@ -125,6 +125,78 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
     }
 
     @Override
+    public ChangeRunbookCompartmentResponse changeRunbookCompartment(
+            ChangeRunbookCompartmentRequest request) {
+
+        Validate.notBlank(request.getRunbookId(), "runbookId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeRunbookCompartmentDetails(),
+                "changeRunbookCompartmentDetails is required");
+
+        return clientCall(request, ChangeRunbookCompartmentResponse::builder)
+                .logger(LOG, "changeRunbookCompartment")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ChangeRunbookCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/ChangeRunbookCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRunbookCompartmentRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbooks")
+                .appendPathParam(request.getRunbookId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeRunbookCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeRunbookCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeTaskRecordCompartmentResponse changeTaskRecordCompartment(
+            ChangeTaskRecordCompartmentRequest request) {
+
+        Validate.notBlank(request.getTaskRecordId(), "taskRecordId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeTaskRecordCompartmentDetails(),
+                "changeTaskRecordCompartmentDetails is required");
+
+        return clientCall(request, ChangeTaskRecordCompartmentResponse::builder)
+                .logger(LOG, "changeTaskRecordCompartment")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ChangeTaskRecordCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TaskRecord/ChangeTaskRecordCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeTaskRecordCompartmentRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("taskRecords")
+                .appendPathParam(request.getTaskRecordId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeTaskRecordCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeTaskRecordCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateRunbookResponse createRunbook(CreateRunbookRequest request) {
         Objects.requireNonNull(
                 request.getCreateRunbookDetails(), "createRunbookDetails is required");
@@ -134,10 +206,10 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .serviceDetails(
                         "FleetAppsManagementRunbooks",
                         "CreateRunbook",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/CreateRunbook")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/CreateRunbook")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateRunbookRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("runbooks")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -159,6 +231,43 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
     }
 
     @Override
+    public CreateRunbookVersionResponse createRunbookVersion(CreateRunbookVersionRequest request) {
+        Objects.requireNonNull(
+                request.getCreateRunbookVersionDetails(),
+                "createRunbookVersionDetails is required");
+
+        return clientCall(request, CreateRunbookVersionResponse::builder)
+                .logger(LOG, "createRunbookVersion")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "CreateRunbookVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookVersion/CreateRunbookVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRunbookVersionRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbookVersions")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.RunbookVersion.class,
+                        CreateRunbookVersionResponse.Builder::runbookVersion)
+                .handleResponseHeaderString(
+                        "location", CreateRunbookVersionResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", CreateRunbookVersionResponse.Builder::contentLocation)
+                .handleResponseHeaderString("etag", CreateRunbookVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateRunbookVersionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRunbookVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateTaskRecordResponse createTaskRecord(CreateTaskRecordRequest request) {
         Objects.requireNonNull(
                 request.getCreateTaskRecordDetails(), "createTaskRecordDetails is required");
@@ -168,10 +277,10 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .serviceDetails(
                         "FleetAppsManagementRunbooks",
                         "CreateTaskRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/CreateTaskRecord")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TaskRecord/CreateTaskRecord")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateTaskRecordRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("taskRecords")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -197,10 +306,10 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .serviceDetails(
                         "FleetAppsManagementRunbooks",
                         "DeleteRunbook",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/DeleteRunbook")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/DeleteRunbook")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteRunbookRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("runbooks")
                 .appendPathParam(request.getRunbookId())
                 .accept("application/json")
@@ -215,6 +324,34 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
     }
 
     @Override
+    public DeleteRunbookVersionResponse deleteRunbookVersion(DeleteRunbookVersionRequest request) {
+
+        Validate.notBlank(request.getRunbookVersionId(), "runbookVersionId must not be blank");
+
+        return clientCall(request, DeleteRunbookVersionResponse::builder)
+                .logger(LOG, "deleteRunbookVersion")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "DeleteRunbookVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookVersion/DeleteRunbookVersion")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRunbookVersionRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbookVersions")
+                .appendPathParam(request.getRunbookVersionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteRunbookVersionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRunbookVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteTaskRecordResponse deleteTaskRecord(DeleteTaskRecordRequest request) {
 
         Validate.notBlank(request.getTaskRecordId(), "taskRecordId must not be blank");
@@ -224,10 +361,10 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .serviceDetails(
                         "FleetAppsManagementRunbooks",
                         "DeleteTaskRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/DeleteTaskRecord")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TaskRecord/DeleteTaskRecord")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteTaskRecordRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("taskRecords")
                 .appendPathParam(request.getTaskRecordId())
                 .accept("application/json")
@@ -251,10 +388,10 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .serviceDetails(
                         "FleetAppsManagementRunbooks",
                         "GetRunbook",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/GetRunbook")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/GetRunbook")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetRunbookRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("runbooks")
                 .appendPathParam(request.getRunbookId())
                 .accept("application/json")
@@ -270,6 +407,34 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
     }
 
     @Override
+    public GetRunbookVersionResponse getRunbookVersion(GetRunbookVersionRequest request) {
+
+        Validate.notBlank(request.getRunbookVersionId(), "runbookVersionId must not be blank");
+
+        return clientCall(request, GetRunbookVersionResponse::builder)
+                .logger(LOG, "getRunbookVersion")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "GetRunbookVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookVersion/GetRunbookVersion")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRunbookVersionRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbookVersions")
+                .appendPathParam(request.getRunbookVersionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.RunbookVersion.class,
+                        GetRunbookVersionResponse.Builder::runbookVersion)
+                .handleResponseHeaderString("etag", GetRunbookVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRunbookVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetTaskRecordResponse getTaskRecord(GetTaskRecordRequest request) {
 
         Validate.notBlank(request.getTaskRecordId(), "taskRecordId must not be blank");
@@ -279,10 +444,10 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .serviceDetails(
                         "FleetAppsManagementRunbooks",
                         "GetTaskRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/GetTaskRecord")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TaskRecord/GetTaskRecord")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetTaskRecordRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("taskRecords")
                 .appendPathParam(request.getTaskRecordId())
                 .accept("application/json")
@@ -298,6 +463,41 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
     }
 
     @Override
+    public ListRunbookVersionsResponse listRunbookVersions(ListRunbookVersionsRequest request) {
+
+        return clientCall(request, ListRunbookVersionsResponse::builder)
+                .logger(LOG, "listRunbookVersions")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ListRunbookVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookVersionCollection/ListRunbookVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRunbookVersionsRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbookVersions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("runbookId", request.getRunbookId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("name", request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.RunbookVersionCollection.class,
+                        ListRunbookVersionsResponse.Builder::runbookVersionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRunbookVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRunbookVersionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListRunbooksResponse listRunbooks(ListRunbooksRequest request) {
 
         return clientCall(request, ListRunbooksResponse::builder)
@@ -305,17 +505,16 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .serviceDetails(
                         "FleetAppsManagementRunbooks",
                         "ListRunbooks",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/RunbookCollection/ListRunbooks")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookCollection/ListRunbooks")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRunbooksRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("runbooks")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("id", request.getId())
                 .appendEnumQueryParam("type", request.getType())
-                .appendEnumQueryParam("runbookRelevance", request.getRunbookRelevance())
                 .appendQueryParam("platform", request.getPlatform())
                 .appendQueryParam("operation", request.getOperation())
                 .appendQueryParam("limit", request.getLimit())
@@ -343,15 +542,16 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .serviceDetails(
                         "FleetAppsManagementRunbooks",
                         "ListTaskRecords",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecordCollection/ListTaskRecords")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TaskRecordCollection/ListTaskRecords")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListTaskRecordsRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("taskRecords")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("platform", request.getPlatform())
                 .appendEnumQueryParam("type", request.getType())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("operation", request.getOperation())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -381,10 +581,10 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .serviceDetails(
                         "FleetAppsManagementRunbooks",
                         "PublishRunbook",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/PublishRunbook")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/PublishRunbook")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(PublishRunbookRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("runbooks")
                 .appendPathParam("actions")
                 .appendPathParam("publishRunbook")
@@ -411,10 +611,10 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .serviceDetails(
                         "FleetAppsManagementRunbooks",
                         "SetDefaultRunbook",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/SetDefaultRunbook")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/SetDefaultRunbook")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SetDefaultRunbookRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("runbooks")
                 .appendPathParam("actions")
                 .appendPathParam("setDefaultRunbook")
@@ -445,10 +645,10 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .serviceDetails(
                         "FleetAppsManagementRunbooks",
                         "UpdateRunbook",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/UpdateRunbook")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/Runbook/UpdateRunbook")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateRunbookRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("runbooks")
                 .appendPathParam(request.getRunbookId())
                 .accept("application/json")
@@ -464,6 +664,38 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
     }
 
     @Override
+    public UpdateRunbookVersionResponse updateRunbookVersion(UpdateRunbookVersionRequest request) {
+
+        Validate.notBlank(request.getRunbookVersionId(), "runbookVersionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRunbookVersionDetails(),
+                "updateRunbookVersionDetails is required");
+
+        return clientCall(request, UpdateRunbookVersionResponse::builder)
+                .logger(LOG, "updateRunbookVersion")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "UpdateRunbookVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/RunbookVersion/UpdateRunbookVersion")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRunbookVersionRequest::builder)
+                .basePath("/20250228")
+                .appendPathParam("runbookVersions")
+                .appendPathParam(request.getRunbookVersionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateRunbookVersionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRunbookVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateTaskRecordResponse updateTaskRecord(UpdateTaskRecordRequest request) {
 
         Validate.notBlank(request.getTaskRecordId(), "taskRecordId must not be blank");
@@ -475,10 +707,10 @@ public class FleetAppsManagementRunbooksClient extends com.oracle.bmc.http.inter
                 .serviceDetails(
                         "FleetAppsManagementRunbooks",
                         "UpdateTaskRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/UpdateTaskRecord")
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/TaskRecord/UpdateTaskRecord")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateTaskRecordRequest::builder)
-                .basePath("/20230831")
+                .basePath("/20250228")
                 .appendPathParam("taskRecords")
                 .appendPathParam(request.getTaskRecordId())
                 .accept("application/json")

@@ -14,7 +14,7 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class FleetAppsManagementOperationsWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final FleetAppsManagementOperations client;
@@ -346,9 +346,7 @@ public class FleetAppsManagementOperationsWaiters {
                                         response.getSchedulerJob().getLifecycleState());
                             }
                         },
-                        targetStatesSet.contains(
-                                com.oracle.bmc.fleetappsmanagement.model.SchedulerJob.LifecycleState
-                                        .Deleted)),
+                        false),
                 request);
     }
 }

@@ -38,6 +38,7 @@ public final class LogAnalyticsObjectCollectionRuleSummary
         "isEnabled",
         "objectNameFilters",
         "logType",
+        "streamId",
         "definedTags",
         "freeformTags"
     })
@@ -56,6 +57,7 @@ public final class LogAnalyticsObjectCollectionRuleSummary
             Boolean isEnabled,
             java.util.List<String> objectNameFilters,
             LogTypes logType,
+            String streamId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags) {
         super();
@@ -73,6 +75,7 @@ public final class LogAnalyticsObjectCollectionRuleSummary
         this.isEnabled = isEnabled;
         this.objectNameFilters = objectNameFilters;
         this.logType = logType;
+        this.streamId = streamId;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
     }
@@ -314,6 +317,27 @@ public final class LogAnalyticsObjectCollectionRuleSummary
             return this;
         }
         /**
+         * A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE,
+         * which will be used by Logging Analytics while creating Event Rule and consume the event
+         * notifications created by the Object Storage.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("streamId")
+        private String streamId;
+
+        /**
+         * A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE,
+         * which will be used by Logging Analytics while creating Event Rule and consume the event
+         * notifications created by the Object Storage.
+         *
+         * @param streamId the value to set
+         * @return this builder
+         */
+        public Builder streamId(String streamId) {
+            this.streamId = streamId;
+            this.__explicitlySet__.add("streamId");
+            return this;
+        }
+        /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          */
@@ -373,6 +397,7 @@ public final class LogAnalyticsObjectCollectionRuleSummary
                             this.isEnabled,
                             this.objectNameFilters,
                             this.logType,
+                            this.streamId,
                             this.definedTags,
                             this.freeformTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -424,6 +449,9 @@ public final class LogAnalyticsObjectCollectionRuleSummary
             }
             if (model.wasPropertyExplicitlySet("logType")) {
                 this.logType(model.getLogType());
+            }
+            if (model.wasPropertyExplicitlySet("streamId")) {
+                this.streamId(model.getStreamId());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
@@ -651,6 +679,25 @@ public final class LogAnalyticsObjectCollectionRuleSummary
     }
 
     /**
+     * A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which
+     * will be used by Logging Analytics while creating Event Rule and consume the event
+     * notifications created by the Object Storage.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("streamId")
+    private final String streamId;
+
+    /**
+     * A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which
+     * will be used by Logging Analytics while creating Event Rule and consume the event
+     * notifications created by the Object Storage.
+     *
+     * @return the value
+     */
+    public String getStreamId() {
+        return streamId;
+    }
+
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * {@code {"foo-namespace": {"bar-key": "value"}}}
      */
@@ -713,6 +760,7 @@ public final class LogAnalyticsObjectCollectionRuleSummary
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", objectNameFilters=").append(String.valueOf(this.objectNameFilters));
         sb.append(", logType=").append(String.valueOf(this.logType));
+        sb.append(", streamId=").append(String.valueOf(this.streamId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(")");
@@ -743,6 +791,7 @@ public final class LogAnalyticsObjectCollectionRuleSummary
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.objectNameFilters, other.objectNameFilters)
                 && java.util.Objects.equals(this.logType, other.logType)
+                && java.util.Objects.equals(this.streamId, other.streamId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && super.equals(other);
@@ -776,6 +825,7 @@ public final class LogAnalyticsObjectCollectionRuleSummary
                 (result * PRIME)
                         + (this.objectNameFilters == null ? 43 : this.objectNameFilters.hashCode());
         result = (result * PRIME) + (this.logType == null ? 43 : this.logType.hashCode());
+        result = (result * PRIME) + (this.streamId == null ? 43 : this.streamId.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + super.hashCode();

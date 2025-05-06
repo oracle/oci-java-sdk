@@ -15,7 +15,7 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public interface FleetAppsManagement extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -67,6 +67,24 @@ public interface FleetAppsManagement extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Moves a Fleet into a different compartment within the same tenancy. For information about
+     * moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ChangeFleetCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeFleetCompartment API.
+     */
+    ChangeFleetCompartmentResponse changeFleetCompartment(ChangeFleetCompartmentRequest request);
+
+    /**
      * Check if Fleet Application Management tags can be added to the resources.
      *
      * @param request The request object containing the details to send
@@ -84,7 +102,7 @@ public interface FleetAppsManagement extends AutoCloseable {
 
     /**
      * Confirm targets to be managed for a Fleet. Only targets that are confirmed will be managed by
-     * Fleet Application Management
+     * Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -99,8 +117,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     ConfirmTargetsResponse confirmTargets(ConfirmTargetsRequest request);
 
     /**
-     * Create a product, environment, group, or generic type of fleet in Fleet Application
-     * Management.
+     * Create a fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -147,7 +164,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     CreateFleetPropertyResponse createFleetProperty(CreateFleetPropertyRequest request);
 
     /**
-     * Add resource to a fleet in\u00A0Fleet Application Management.
+     * Add resource to a fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -178,8 +195,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     DeleteFleetResponse deleteFleet(DeleteFleetRequest request);
 
     /**
-     * Delete a credential associated with a fleet product or application in\u00A0Fleet Application
-     * Management.
+     * Deletes a credential associated with a fleet or with a product/target with in a fleet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -195,7 +211,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     DeleteFleetCredentialResponse deleteFleetCredential(DeleteFleetCredentialRequest request);
 
     /**
-     * Delete a property associated with a fleet in Fleet Application Management.
+     * Deletes a property associated with a fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -227,7 +243,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     DeleteFleetResourceResponse deleteFleetResource(DeleteFleetResourceRequest request);
 
     /**
-     * Generate compliance reports for a Fleet.
+     * Generate compliance report for a Fleet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -275,7 +291,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     GetFleetResponse getFleet(GetFleetRequest request);
 
     /**
-     * Gets a FleetCredential by identifier.
+     * Gets a fleet credential by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -291,7 +307,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     GetFleetCredentialResponse getFleetCredential(GetFleetCredentialRequest request);
 
     /**
-     * Gets a Fleet Property by identifier.
+     * Gets a fleet property by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -307,7 +323,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     GetFleetPropertyResponse getFleetProperty(GetFleetPropertyRequest request);
 
     /**
-     * Gets a Fleet Resource by identifier.
+     * Gets a fleet resource by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -323,22 +339,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     GetFleetResourceResponse getFleetResource(GetFleetResourceRequest request);
 
     /**
-     * Gets details of the work request with the given ID.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetWorkRequestExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
-     */
-    GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
-
-    /**
-     * Return a list of AnnouncementSummary items.
+     * Return a list of Announcement Summary items in a tenancy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -354,7 +355,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     ListAnnouncementsResponse listAnnouncements(ListAnnouncementsRequest request);
 
     /**
-     * List credentials in Fleet Application Management.
+     * List credentials associated with a fleet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -386,7 +387,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     ListFleetProductsResponse listFleetProducts(ListFleetProductsRequest request);
 
     /**
-     * List fleet properties in Fleet Application Management.
+     * List properties associated with a fleet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -434,7 +435,8 @@ public interface FleetAppsManagement extends AutoCloseable {
     ListFleetTargetsResponse listFleetTargets(ListFleetTargetsRequest request);
 
     /**
-     * Returns a list of Fleets in the specified Tenancy.
+     * Returns a list of all the Fleets in the specified compartment. The query parameter
+     * `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -449,7 +451,8 @@ public interface FleetAppsManagement extends AutoCloseable {
     ListFleetsResponse listFleets(ListFleetsRequest request);
 
     /**
-     * Returns a list of InventoryResources.
+     * Returns a list of Inventory Resources based on the criteria provided. instance, dbsystem,
+     * cloudvmcluster resources are supported.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -481,54 +484,6 @@ public interface FleetAppsManagement extends AutoCloseable {
     ListTargetsResponse listTargets(ListTargetsRequest request);
 
     /**
-     * Returns a (paginated) list of errors for the work request with the given ID.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListWorkRequestErrorsExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     ListWorkRequestErrors API.
-     */
-    ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
-
-    /**
-     * Returns a (paginated) list of logs for the work request with the given ID.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListWorkRequestLogsExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
-     *     API.
-     */
-    ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
-
-    /**
-     * Lists the work requests in a compartment.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListWorkRequestsExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
-     *     API.
-     */
-    ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
-
-    /**
      * Request validation for resources within a fleet.
      *
      * @param request The request object containing the details to send
@@ -546,8 +501,7 @@ public interface FleetAppsManagement extends AutoCloseable {
             RequestResourceValidationRequest request);
 
     /**
-     * Confirm targets to be managed for a Fleet. Only targets that are confirmed will be managed by
-     * Fleet Application Management
+     * Request target discovery for resources with in a fleet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -578,8 +532,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     UpdateFleetResponse updateFleet(UpdateFleetRequest request);
 
     /**
-     * Edit credentials associated with a product or application in\u00A0Fleet Application
-     * Management.
+     * Edit credential associated with a fleet or with a product/target with in a fleet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

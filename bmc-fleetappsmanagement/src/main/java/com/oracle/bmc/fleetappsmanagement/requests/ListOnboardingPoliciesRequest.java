@@ -11,10 +11,17 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListOnboardingPoliciesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class ListOnboardingPoliciesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
+    /** The ID of the compartment in which to list resources. */
+    private String compartmentId;
+
+    /** The ID of the compartment in which to list resources. */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /** The maximum number of items to return. */
     private Integer limit;
 
@@ -104,6 +111,20 @@ public class ListOnboardingPoliciesRequest
                     ListOnboardingPoliciesRequest, java.lang.Void> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        /** The ID of the compartment in which to list resources. */
+        private String compartmentId = null;
+
+        /**
+         * The ID of the compartment in which to list resources.
+         *
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
 
         /** The maximum number of items to return. */
         private Integer limit = null;
@@ -213,6 +234,7 @@ public class ListOnboardingPoliciesRequest
          * @return this builder instance
          */
         public Builder copy(ListOnboardingPoliciesRequest o) {
+            compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -252,13 +274,15 @@ public class ListOnboardingPoliciesRequest
          */
         public ListOnboardingPoliciesRequest buildWithoutInvocationCallback() {
             ListOnboardingPoliciesRequest request = new ListOnboardingPoliciesRequest();
+            request.compartmentId = compartmentId;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListOnboardingPoliciesRequest(limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListOnboardingPoliciesRequest(compartmentId, limit, page, sortOrder, sortBy,
+            // opcRequestId);
         }
     }
 
@@ -269,6 +293,7 @@ public class ListOnboardingPoliciesRequest
      */
     public Builder toBuilder() {
         return new Builder()
+                .compartmentId(compartmentId)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -290,6 +315,7 @@ public class ListOnboardingPoliciesRequest
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -310,6 +336,7 @@ public class ListOnboardingPoliciesRequest
 
         ListOnboardingPoliciesRequest other = (ListOnboardingPoliciesRequest) o;
         return super.equals(o)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -321,6 +348,9 @@ public class ListOnboardingPoliciesRequest
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

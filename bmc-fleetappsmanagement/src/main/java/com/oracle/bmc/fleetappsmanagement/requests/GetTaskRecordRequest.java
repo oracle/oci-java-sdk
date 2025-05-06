@@ -10,13 +10,13 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetTaskRecordExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTaskRecordRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class GetTaskRecordRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique TaskDetail identifier */
+    /** The OCID of the task record. */
     private String taskRecordId;
 
-    /** unique TaskDetail identifier */
+    /** The OCID of the task record. */
     public String getTaskRecordId() {
         return taskRecordId;
     }
@@ -34,11 +34,11 @@ public class GetTaskRecordRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique TaskDetail identifier */
+        /** The OCID of the task record. */
         private String taskRecordId = null;
 
         /**
-         * unique TaskDetail identifier
+         * The OCID of the task record.
          *
          * @param taskRecordId the value to set
          * @return this builder instance

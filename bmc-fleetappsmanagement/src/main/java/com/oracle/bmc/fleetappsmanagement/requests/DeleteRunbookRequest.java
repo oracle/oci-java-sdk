@@ -10,7 +10,7 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteRunbookExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteRunbookRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 public class DeleteRunbookRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** Unique Runbook identifier */

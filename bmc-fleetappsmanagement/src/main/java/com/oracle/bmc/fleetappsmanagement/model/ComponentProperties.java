@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = ComponentProperties.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -25,20 +25,20 @@ public final class ComponentProperties
     @Deprecated
     @java.beans.ConstructorProperties({
         "runOn",
-        "condition",
+        "preCondition",
         "actionOnFailure",
         "pauseDetails",
         "notificationPreferences"
     })
     public ComponentProperties(
-            String runOn,
-            String condition,
+            RunOnDetails runOn,
+            String preCondition,
             ActionOnFailure actionOnFailure,
             PauseDetails pauseDetails,
             TaskNotificationPreferences notificationPreferences) {
         super();
         this.runOn = runOn;
-        this.condition = condition;
+        this.preCondition = preCondition;
         this.actionOnFailure = actionOnFailure;
         this.pauseDetails = pauseDetails;
         this.notificationPreferences = notificationPreferences;
@@ -46,42 +46,28 @@ public final class ComponentProperties
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The runOn condition for the task/group/container. Build task execution conditions if
-         * applicable to product and product-specific components. This condition is relevant when
-         * handling product stack workflows. Example: target.product.name = Oracle WebLogic Server
-         * OR target.product.name = Oracle HTTP Server
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("runOn")
-        private String runOn;
 
-        /**
-         * The runOn condition for the task/group/container. Build task execution conditions if
-         * applicable to product and product-specific components. This condition is relevant when
-         * handling product stack workflows. Example: target.product.name = Oracle WebLogic Server
-         * OR target.product.name = Oracle HTTP Server
-         *
-         * @param runOn the value to set
-         * @return this builder
-         */
-        public Builder runOn(String runOn) {
+        @com.fasterxml.jackson.annotation.JsonProperty("runOn")
+        private RunOnDetails runOn;
+
+        public Builder runOn(RunOnDetails runOn) {
             this.runOn = runOn;
             this.__explicitlySet__.add("runOn");
             return this;
         }
         /** Build control flow conditions that determine the relevance of the task execution. */
-        @com.fasterxml.jackson.annotation.JsonProperty("condition")
-        private String condition;
+        @com.fasterxml.jackson.annotation.JsonProperty("preCondition")
+        private String preCondition;
 
         /**
          * Build control flow conditions that determine the relevance of the task execution.
          *
-         * @param condition the value to set
+         * @param preCondition the value to set
          * @return this builder
          */
-        public Builder condition(String condition) {
-            this.condition = condition;
-            this.__explicitlySet__.add("condition");
+        public Builder preCondition(String preCondition) {
+            this.preCondition = preCondition;
+            this.__explicitlySet__.add("preCondition");
             return this;
         }
         /** The action to be taken in case of a failure. */
@@ -126,7 +112,7 @@ public final class ComponentProperties
             ComponentProperties model =
                     new ComponentProperties(
                             this.runOn,
-                            this.condition,
+                            this.preCondition,
                             this.actionOnFailure,
                             this.pauseDetails,
                             this.notificationPreferences);
@@ -141,8 +127,8 @@ public final class ComponentProperties
             if (model.wasPropertyExplicitlySet("runOn")) {
                 this.runOn(model.getRunOn());
             }
-            if (model.wasPropertyExplicitlySet("condition")) {
-                this.condition(model.getCondition());
+            if (model.wasPropertyExplicitlySet("preCondition")) {
+                this.preCondition(model.getPreCondition());
             }
             if (model.wasPropertyExplicitlySet("actionOnFailure")) {
                 this.actionOnFailure(model.getActionOnFailure());
@@ -166,38 +152,24 @@ public final class ComponentProperties
         return new Builder().copy(this);
     }
 
-    /**
-     * The runOn condition for the task/group/container. Build task execution conditions if
-     * applicable to product and product-specific components. This condition is relevant when
-     * handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR
-     * target.product.name = Oracle HTTP Server
-     */
     @com.fasterxml.jackson.annotation.JsonProperty("runOn")
-    private final String runOn;
+    private final RunOnDetails runOn;
 
-    /**
-     * The runOn condition for the task/group/container. Build task execution conditions if
-     * applicable to product and product-specific components. This condition is relevant when
-     * handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR
-     * target.product.name = Oracle HTTP Server
-     *
-     * @return the value
-     */
-    public String getRunOn() {
+    public RunOnDetails getRunOn() {
         return runOn;
     }
 
     /** Build control flow conditions that determine the relevance of the task execution. */
-    @com.fasterxml.jackson.annotation.JsonProperty("condition")
-    private final String condition;
+    @com.fasterxml.jackson.annotation.JsonProperty("preCondition")
+    private final String preCondition;
 
     /**
      * Build control flow conditions that determine the relevance of the task execution.
      *
      * @return the value
      */
-    public String getCondition() {
-        return condition;
+    public String getPreCondition() {
+        return preCondition;
     }
 
     /** The action to be taken in case of a failure. */
@@ -290,7 +262,7 @@ public final class ComponentProperties
         sb.append("ComponentProperties(");
         sb.append("super=").append(super.toString());
         sb.append("runOn=").append(String.valueOf(this.runOn));
-        sb.append(", condition=").append(String.valueOf(this.condition));
+        sb.append(", preCondition=").append(String.valueOf(this.preCondition));
         sb.append(", actionOnFailure=").append(String.valueOf(this.actionOnFailure));
         sb.append(", pauseDetails=").append(String.valueOf(this.pauseDetails));
         sb.append(", notificationPreferences=")
@@ -310,7 +282,7 @@ public final class ComponentProperties
 
         ComponentProperties other = (ComponentProperties) o;
         return java.util.Objects.equals(this.runOn, other.runOn)
-                && java.util.Objects.equals(this.condition, other.condition)
+                && java.util.Objects.equals(this.preCondition, other.preCondition)
                 && java.util.Objects.equals(this.actionOnFailure, other.actionOnFailure)
                 && java.util.Objects.equals(this.pauseDetails, other.pauseDetails)
                 && java.util.Objects.equals(
@@ -323,7 +295,7 @@ public final class ComponentProperties
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.runOn == null ? 43 : this.runOn.hashCode());
-        result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
+        result = (result * PRIME) + (this.preCondition == null ? 43 : this.preCondition.hashCode());
         result =
                 (result * PRIME)
                         + (this.actionOnFailure == null ? 43 : this.actionOnFailure.hashCode());

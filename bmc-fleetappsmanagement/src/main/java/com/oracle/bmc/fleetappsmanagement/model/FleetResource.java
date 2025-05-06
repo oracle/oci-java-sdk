@@ -15,7 +15,7 @@ package com.oracle.bmc.fleetappsmanagement.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250228")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FleetResource.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -32,12 +32,12 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
         "resourceId",
         "compartment",
         "complianceState",
+        "percentCompliant",
         "tenancyName",
         "resourceType",
         "productCount",
         "targetCount",
         "product",
-        "applicationType",
         "environmentType",
         "lifecycleState",
         "lifecycleDetails",
@@ -54,12 +54,12 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
             String resourceId,
             String compartment,
             ComplianceState complianceState,
+            Float percentCompliant,
             String tenancyName,
             String resourceType,
             Integer productCount,
             Integer targetCount,
             String product,
-            String applicationType,
             String environmentType,
             LifecycleState lifecycleState,
             String lifecycleDetails,
@@ -75,12 +75,12 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
         this.resourceId = resourceId;
         this.compartment = compartment;
         this.complianceState = complianceState;
+        this.percentCompliant = percentCompliant;
         this.tenancyName = tenancyName;
         this.resourceType = resourceType;
         this.productCount = productCount;
         this.targetCount = targetCount;
         this.product = product;
-        this.applicationType = applicationType;
         this.environmentType = environmentType;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -247,6 +247,21 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("complianceState");
             return this;
         }
+        /** The compliance percentage. */
+        @com.fasterxml.jackson.annotation.JsonProperty("percentCompliant")
+        private Float percentCompliant;
+
+        /**
+         * The compliance percentage.
+         *
+         * @param percentCompliant the value to set
+         * @return this builder
+         */
+        public Builder percentCompliant(Float percentCompliant) {
+            this.percentCompliant = percentCompliant;
+            this.__explicitlySet__.add("percentCompliant");
+            return this;
+        }
         /** Resource Tenancy Name. */
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
         private String tenancyName;
@@ -324,25 +339,6 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
         public Builder product(String product) {
             this.product = product;
             this.__explicitlySet__.add("product");
-            return this;
-        }
-        /**
-         * Application Type associated with the resource when the resource type is fleet. Will only
-         * be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
-        private String applicationType;
-
-        /**
-         * Application Type associated with the resource when the resource type is fleet. Will only
-         * be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
-         *
-         * @param applicationType the value to set
-         * @return this builder
-         */
-        public Builder applicationType(String applicationType) {
-            this.applicationType = applicationType;
-            this.__explicitlySet__.add("applicationType");
             return this;
         }
         /**
@@ -434,12 +430,12 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
                             this.resourceId,
                             this.compartment,
                             this.complianceState,
+                            this.percentCompliant,
                             this.tenancyName,
                             this.resourceType,
                             this.productCount,
                             this.targetCount,
                             this.product,
-                            this.applicationType,
                             this.environmentType,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -482,6 +478,9 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
             if (model.wasPropertyExplicitlySet("complianceState")) {
                 this.complianceState(model.getComplianceState());
             }
+            if (model.wasPropertyExplicitlySet("percentCompliant")) {
+                this.percentCompliant(model.getPercentCompliant());
+            }
             if (model.wasPropertyExplicitlySet("tenancyName")) {
                 this.tenancyName(model.getTenancyName());
             }
@@ -496,9 +495,6 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("product")) {
                 this.product(model.getProduct());
-            }
-            if (model.wasPropertyExplicitlySet("applicationType")) {
-                this.applicationType(model.getApplicationType());
             }
             if (model.wasPropertyExplicitlySet("environmentType")) {
                 this.environmentType(model.getEnvironmentType());
@@ -663,6 +659,19 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
         return complianceState;
     }
 
+    /** The compliance percentage. */
+    @com.fasterxml.jackson.annotation.JsonProperty("percentCompliant")
+    private final Float percentCompliant;
+
+    /**
+     * The compliance percentage.
+     *
+     * @return the value
+     */
+    public Float getPercentCompliant() {
+        return percentCompliant;
+    }
+
     /** Resource Tenancy Name. */
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
     private final String tenancyName;
@@ -730,23 +739,6 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
      */
     public String getProduct() {
         return product;
-    }
-
-    /**
-     * Application Type associated with the resource when the resource type is fleet. Will only be
-     * returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
-    private final String applicationType;
-
-    /**
-     * Application Type associated with the resource when the resource type is fleet. Will only be
-     * returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
-     *
-     * @return the value
-     */
-    public String getApplicationType() {
-        return applicationType;
     }
 
     /**
@@ -886,12 +878,12 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", compartment=").append(String.valueOf(this.compartment));
         sb.append(", complianceState=").append(String.valueOf(this.complianceState));
+        sb.append(", percentCompliant=").append(String.valueOf(this.percentCompliant));
         sb.append(", tenancyName=").append(String.valueOf(this.tenancyName));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", productCount=").append(String.valueOf(this.productCount));
         sb.append(", targetCount=").append(String.valueOf(this.targetCount));
         sb.append(", product=").append(String.valueOf(this.product));
-        sb.append(", applicationType=").append(String.valueOf(this.applicationType));
         sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -920,12 +912,12 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.compartment, other.compartment)
                 && java.util.Objects.equals(this.complianceState, other.complianceState)
+                && java.util.Objects.equals(this.percentCompliant, other.percentCompliant)
                 && java.util.Objects.equals(this.tenancyName, other.tenancyName)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.productCount, other.productCount)
                 && java.util.Objects.equals(this.targetCount, other.targetCount)
                 && java.util.Objects.equals(this.product, other.product)
-                && java.util.Objects.equals(this.applicationType, other.applicationType)
                 && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -953,14 +945,14 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
         result =
                 (result * PRIME)
                         + (this.complianceState == null ? 43 : this.complianceState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.percentCompliant == null ? 43 : this.percentCompliant.hashCode());
         result = (result * PRIME) + (this.tenancyName == null ? 43 : this.tenancyName.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.productCount == null ? 43 : this.productCount.hashCode());
         result = (result * PRIME) + (this.targetCount == null ? 43 : this.targetCount.hashCode());
         result = (result * PRIME) + (this.product == null ? 43 : this.product.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.applicationType == null ? 43 : this.applicationType.hashCode());
         result =
                 (result * PRIME)
                         + (this.environmentType == null ? 43 : this.environmentType.hashCode());
